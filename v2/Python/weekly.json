@@ -1,0 +1,142 @@
+[
+  {
+    "q": "",
+    "c": "\ndef factorial(n):\n    if n == 0:\n        return 1\n    else:\n        return n * factorial(n - 1)\n\n# Example usage\nnumber = 5\nresult = factorial(number)\nprint(f\"The factorial of {number} is: {result}\")\n",
+    "o": [
+      "The factorial of 5 is: 120",
+      "The factorial of 5 is: 100",
+      "The factorial of 5 is: 110",
+      "The factorial of 5 is: 140"
+    ]
+  },
+  {
+    "q": "",
+    "c": "\ndef is_palindrome(s):\n    s = s.lower().replace(\" \", \"\").replace(\",\", \"\").replace(\".\", \"\")\n    return s == s[::-1]\n\n# Example usage\ninput_string = \"A man, a plan, a canal, Panama\"\nif is_palindrome(input_string):\n    print(\"The input string is a palindrome.\")\nelse:\n    print(\"The input string is not a palindrome.\")\n",
+    "o": [
+      "The input string is a palindrome.",
+      "The input string is not a palindrome.",
+      "TypeError",
+      "SyntaxError"
+    ]
+  },
+  {
+    "q": "",
+    "c": "\ndef binary_search(arr, target):\n    left, right = 0, len(arr) - 1\n    \n    while left <= right:\n        mid = (left + right) // 2\n        \n        # Check if the target is present at the middle\n        if arr[mid] == target:\n            return mid\n        \n        # If the target is greater, ignore the left half\n        elif arr[mid] < target:\n            left = mid + 1\n        \n        # If the target is smaller, ignore the right half\n        else:\n            right = mid - 1\n    \n    # Target was not found in the list\n    return -1\n\n# Example usage\nsorted_list = [2, 4, 7, 10, 14, 18, 23, 27]\ntarget = 14\nresult = binary_search(sorted_list, target)\n\nif result != -1:\n    print(f\"Element {target} is present at index {result}.\")\nelse:\n    print(f\"Element {target} is not present in the list.\")\n",
+    "o": [
+      "Element 14 is present at index 4.",
+      "Element 10 is present at index 1.",
+      "Element 14 is not present in the list.",
+      "Element 10 is not present in the list."
+    ]
+  },
+  {
+    "q": "",
+    "c": "\nnumbers = [1, 2, 3, 4, 5]\nsquared_numbers = map(lambda x: x ** 2, numbers)\neven_numbers = filter(lambda x: x % 2 == 0, squared_numbers)\nresult = sum(even_numbers)\nprint(result)\n",
+    "o": [
+      "20",
+      "14",
+      "30",
+      "6"
+    ]
+  },
+  {
+    "q": "",
+    "c": "\ndef recursive_factorial(n):\n    if n == 0:\n        return 1\n    else:\n        return n * recursive_factorial(n - 1)\n\ndef find_special_number(n):\n    return sum(int(digit) for digit in str(recursive_factorial(n)))\n\nresult = find_special_number(5)\nprint(result)\n",
+    "o": [
+      "3",
+      "120",
+      "45",
+      "100"
+    ]
+  },
+  {
+    "q": "",
+    "c": "\ndef func(a, b=[]):\n    b.append(a)\n    return b\n\nprint(func(1))\nprint(func(2))\n",
+    "o": [
+      "[1] [1, 2]",
+      "[1, 2]",
+      "[1, 1, 2]",
+      "[1] [2]"
+    ]
+  },
+  {
+    "q": "Requirements: Find the maximum subarray sum. Parameters: arr (list): List of integers. Returns: int: Maximum subarray sum.",
+    "c": "\nA. def max_subarray_sum(arr):\n       max_sum = float('-inf')\n       current_sum = 0\n       for num in arr:\n           current_sum = max(num, current_sum + num)\n           max_sum = max(max_sum, current_sum)\n       return max_sum\n\nB. def max_subarray_sum(arr):\n       max_sum = arr[0]\n       current_sum = arr[0]\n       for num in arr[1:]:\n           current_sum = max(num, current_sum + num)\n           max_sum = max(max_sum, current_sum)\n       return max_sum\n\nC. def max_subarray_sum(arr):\n       max_sum = 0\n       current_sum = 0\n       for num in arr:\n           current_sum = max(num, current_sum + num)\n           max_sum = max(max_sum, current_sum)\n       return max_sum\n\nD. def max_subarray_sum(arr):\n       max_sum = float('-inf')\n       current_sum = arr[0]\n       for num in arr[1:]:\n           current_sum = max(num, current_sum + num)\n           max_sum = max(max_sum, current_sum)\n       return max_sum\n",
+    "o": [
+      "Option A",
+      "Option B",
+      "Option C",
+      "Option D"
+    ]
+  },
+  {
+    "q": "Requirements: Check if the given string is a palindrome. Parameters: s (str): Input string. Returns: bool: True if the string is a palindrome, False otherwise.",
+    "c": "\nA. def is_palindrome(s):\n       cleaned_str = ''.join(char.lower() for char in s if char.isalnum())\n       return cleaned_str == cleaned_str[::-1]\n\nB. def is_palindrome(s):\n       return s == s[::-1]\n\nC. def is_palindrome(s):\n       cleaned_str = ''.join(char for char in s if char.isalpha())\n       return cleaned_str.lower() == cleaned_str[::-1].lower()\n\nD. def is_palindrome(s):\n       return ''.join(s.split()).lower() == ''.join(s.split())[::-1].lower()\n",
+    "o": [
+      "Option A",
+      "Option B",
+      "Option C",
+      "Option D"
+    ]
+  },
+  {
+    "q": "What will be the output of the following code that involves a closure and a default argument?",
+    "c": "\ndef create_multiplier(factor, values=[]):\n    def multiplier(x):\n        values.append(x * factor)\n        return values\n    return multiplier\n\nmult_by_2 = create_multiplier(2)\nprint(mult_by_2(3))\nprint(mult_by_2(4))\n",
+    "o": [
+    "[6] [6, 8]",
+    "[6] [8]",
+    "[6, 8]",
+    "[3, 4]"
+    ]
+    },
+    {
+    "q": "Requirements: Implement a function to find the longest palindromic substring. Parameters: s (str): Input string. Returns: str: Longest palindromic substring.",
+    "c": "\nA. def longest_palindrome(s):\n       if not s:\n           return ''\n       start, max_length = 0, 1\n       for i in range(1, len(s)):\n           # Check odd length palindromes\n           left, right = i - 1, i + 1\n           while left >= 0 and right < len(s) and s[left] == s[right]:\n               if right - left + 1 > max_length:\n                   start, max_length = left, right - left + 1\n               left -= 1\n               right += 1\n       return s[start:start + max_length]\n\nB. def longest_palindrome(s):\n       if not s:\n           return ''\n       longest = s[0]\n       for i in range(len(s)):\n           for j in range(i + 1, len(s)):\n               substring = s[i:j + 1]\n               if substring == substring[::-1] and len(substring) > len(longest):\n                   longest = substring\n       return longest\n\nC. def longest_palindrome(s):\n       if not s:\n           return ''\n       return max([s[i:j] for i in range(len(s)) for j in range(i + 1, len(s) + 1) if s[i:j] == s[i:j][::-1]], key=len, default=s[0])\n\nD. def longest_palindrome(s):\n       if not s:\n           return ''\n       longest = ''\n       for i in range(len(s)):\n           left, right = i, i\n           while left >= 0 and right < len(s) and s[left] == s[right]:\n               left -= 1\n               right += 1\n           if right - left - 1 > len(longest):\n               longest = s[left + 1:right]\n       return longest\n",
+    "o": [
+    "Option D",
+    "Option A",
+    "Option B",
+    "Option C"
+    ]
+    },
+    {
+    "q": "What will be the output of this code involving a generator and list comprehension?",
+    "c": "\ndef gen_squares(n):\n    for i in range(n):\n        yield i * i\n\nsquares = [x for x in gen_squares(4)]\ng = gen_squares(4)\nresult = [next(g) for _ in range(2)] + squares\nprint(result)\n",
+    "o": [
+    "[0, 1, 0, 1, 4, 9]",
+    "[0, 1, 4, 9]",
+    "[0, 1, 0, 1, 4, 9, 16]",
+    "[0, 1]"
+    ]
+    },
+    {
+      "q": "What will be the output of this code involving decorators and function attributes?",
+      "c": "\ndef track_calls(func):\n    def wrapper(*args, **kwargs):\n        wrapper.calls += 1\n        return func(*args, **kwargs)\n    wrapper.calls = 0\n    return wrapper\n\n@track_calls\ndef fibonacci(n):\n    if n <= 1:\n        return n\n    return fibonacci(n-1) + fibonacci(n-2)\n\nprint(fibonacci(4))\nprint(fibonacci.calls)\n",
+      "o": [
+      "3 9",
+      "3 5",
+      "3 15",
+      "3 4"
+      ]
+      },
+      {
+      "q": "Requirements: Implement a function to merge k sorted lists into one sorted list. Parameters: lists (list of lists): List of sorted integer lists. Returns: list: Single sorted list.",
+      "c": "\nA. from heapq import heappush, heappop\ndef merge_k_lists(lists):\n       if not lists:\n           return []\n       heap = []\n       for i, lst in enumerate(lists):\n           if lst:\n               heappush(heap, (lst[0], i, 0))\n       result = []\n       while heap:\n           val, list_idx, element_idx = heappop(heap)\n           result.append(val)\n           if element_idx + 1 < len(lists[list_idx]):\n               next_element = lists[list_idx][element_idx + 1]\n               heappush(heap, (next_element, list_idx, element_idx + 1))\n       return result\n\nB. def merge_k_lists(lists):\n       if not lists:\n           return []\n       result = []\n       for lst in lists:\n           result.extend(lst)\n       return sorted(result)\n\nC. def merge_k_lists(lists):\n       if not lists:\n           return []\n       result = lists[0]\n       for i in range(1, len(lists)):\n           temp = []\n           j, k = 0, 0\n           while j < len(result) and k < len(lists[i]):\n               if result[j] <= lists[i][k]:\n                   temp.append(result[j])\n                   j += 1\n               else:\n                   temp.append(lists[i][k])\n                   k += 1\n           temp.extend(result[j:])\n           temp.extend(lists[i][k:])\n           result = temp\n       return result\n\nD. def merge_k_lists(lists):\n       from itertools import chain\n       return sorted(chain(*lists)) if lists else []\n",
+      "o": [
+      "Option A",
+      "Option B",
+      "Option C",
+      "Option D"
+      ]
+      },
+        {
+        "q": "What will be the output of this code involving metaclasses and class creation?",
+        "c": "\nclass UpperMeta(type):\n    def new(cls, name, bases, dct):\n        upper_dct = {k.upper(): v for k, v in dct.items()}\n        return super().new(cls, name, bases, upper_dct)\n\nclass MyClass(metaclass=UpperMeta):\n    x = 1\n    def say_hello(self):\n        return 'Hello'\n\nobj = MyClass()\nprint(obj.X)\nprint(obj.SAY_HELLO())\n",
+        "o": [
+        "1 Hello",
+        "AttributeError",
+        "1 SAY_HELLO",
+        "None Hello"
+        ]
+        }
+]
