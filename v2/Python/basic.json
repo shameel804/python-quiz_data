@@ -241,7 +241,7 @@
     },
     {
         "q": "Which of the following is a valid way to remove an item from a list in Python?",
-        "c": "\n",
+        "c": "",
         "o": [
             "list.pop(2)",
             "list.remove(2)",
@@ -251,7 +251,7 @@
     },
     {
         "q": "Which of the following is a valid way to get the length of a list in Python?",
-        "c": "\n",
+        "c": "",
         "o": [
             "len(list)",
             "list.length()",
