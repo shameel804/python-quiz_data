@@ -1,0 +1,122 @@
+[
+  {
+    "title": "Definition and Importance",
+    "ques": "Explain in your own words what Data Structures and Algorithms (DSA) are and why they are important in programming.",
+    "answer": {
+      "type": "text",
+      "content": "Data Structures are ways to organize and store data efficiently, while Algorithms are step-by-step procedures to solve problems or perform computations. DSA is crucial because:\n1. **Efficiency**: They help optimize time and space usage in programs.\n2. **Problem-Solving**: They provide systematic ways to tackle complex problems.\n3. **Scalability**: Efficient DSA ensures applications can handle large datasets.\n4. **Reusability**: Common structures and algorithms can be reused across projects."
+    },
+    "explanation": "***Step 1:*** Define Data Structures (e.g., lists, trees).\n***Step 2:*** Define Algorithms (e.g., sorting, searching).\n***Step 3:*** Highlight key reasons for their importance (efficiency, scalability)."
+  },
+  {
+    "title": "Time and Space Complexity",
+    "ques": "Given the Python function below, analyze its time and space complexity.\n```python\ndef sum_list(lst):\n    total = 0\n    for num in lst:\n        total += num\n    return total\n```",
+    "answer": {
+      "type": "text",
+      "content": "**Time Complexity**: O(n) — The loop runs once for each element in the list (linear time).\n**Space Complexity**: O(1) — Only a constant amount of space (`total`) is used, regardless of input size."
+    },
+    "explanation": "***Step 1:*** Identify the loop iterating over `lst` (O(n) time).\n***Step 2:*** Check for auxiliary space usage (only `total` is stored, O(1))."
+  },
+  {
+    "title": "Big-O Notation",
+    "ques": "Classify the following operations into their Big-O complexities:\n1. Accessing an array element by index.\n2. Nested loops over an array of size `n`.\n3. Binary search on a sorted array.",
+    "answer": {
+      "type": "text",
+      "content": "1. O(1) — Constant time (direct access).\n2. O(n²) — Quadratic time (two nested loops).\n3. O(log n) — Logarithmic time (halving the search space each step)."
+    },
+    "explanation": "***Step 1:*** Array indexing is a direct operation (O(1)).\n***Step 2:*** Nested loops multiply the complexity (n * n = O(n²)).\n***Step 3:*** Binary search divides the problem size by 2 each iteration (O(log n))."
+  },
+  {
+    "title": "Algorithm Efficiency",
+    "ques": "Write a Python function to find duplicates in a list. Analyze its efficiency.",
+    "answer": {
+      "type": "code",
+      "lang": "python",
+      "content": "def find_duplicates(lst):\n    seen = set()\n    duplicates = []\n    for item in lst:\n        if item in seen:\n            duplicates.append(item)\n        else:\n            seen.add(item)\n    return duplicates"
+    },
+    "explanation": "***Step 1:*** Use a `set` (`seen`) to track unique items (O(1) lookups).\n***Step 2:*** Iterate through the list once (O(n) time).\n***Step 3:*** Space complexity is O(n) (worst-case if all items are unique)."
+  },
+  {
+    "title": "Trade-offs in Design",
+    "ques": "Compare arrays and linked lists in terms of trade-offs for insertion and lookup operations.",
+    "answer": {
+      "type": "text",
+      "content": "**Arrays**:\n- **Insertion**: O(n) (requires shifting elements).\n- **Lookup**: O(1) (direct indexing).\n**Linked Lists**:\n- **Insertion**: O(1) (if head/tail is known).\n- **Lookup**: O(n) (must traverse nodes).\n**Trade-off**: Linked lists sacrifice fast lookup for efficient insertions."
+    },
+    "explanation": "***Step 1:*** Arrays have fast lookup but slow insertion.\n***Step 2:*** Linked lists have fast insertion but slow lookup.\n***Step 3:*** Choose based on the dominant operation in your use case."
+  },
+  {
+    "title": "Common Complexity Classes",
+    "ques": "Match the following algorithms to their complexity classes:\n1. Linear Search\n2. Merge Sort\n3. Bubble Sort (worst-case)\n4. Fibonacci (recursive)\nOptions: O(n), O(n log n), O(n²), O(2^n)",
+    "answer": {
+      "type": "text",
+      "content": "1. O(n) — Linear Search scans each element once.\n2. O(n log n) — Merge Sort divides and merges recursively.\n3. O(n²) — Bubble Sort compares all pairs in nested loops.\n4. O(2^n) — Recursive Fibonacci recalculates exponentially."
+    },
+    "explanation": "***Step 1:*** Linear Search: Single loop → O(n).\n***Step 2:*** Merge Sort: Divide-and-conquer → O(n log n).\n***Step 3:*** Bubble Sort: Nested loops → O(n²).\n***Step 4:*** Recursive Fibonacci: Unoptimized recursion → O(2^n)."
+  },
+  {
+    "title": "Understanding Time Complexity",
+    "ques": "Given the following Python code, determine its time complexity:\n```python\ndef example_function(n):\n    for i in range(n):\n        print(i)\n    for j in range(n):\n        for k in range(n):\n            print(j, k)\n```",
+    "answer": {
+      "type": "text",
+      "content": "**Time Complexity**: O(n²)\n- The first loop runs in O(n).\n- The nested loops run in O(n²).\n- Dominant term is O(n²), so overall complexity is O(n²)."
+    },
+    "explanation": "***Step 1:*** The first loop is linear (O(n)).\n***Step 2:*** The nested loops contribute quadratic time (O(n²)).\n***Step 3:*** The total complexity is determined by the highest-order term (O(n²))."
+  },
+  {
+    "title": "Space Complexity Analysis",
+    "ques": "Analyze the space complexity of the following function:\n```python\ndef fibonacci(n):\n    fib_sequence = [0, 1]\n    for i in range(2, n):\n        fib_sequence.append(fib_sequence[i-1] + fib_sequence[i-2])\n    return fib_sequence\n```",
+    "answer": {
+      "type": "text",
+      "content": "**Space Complexity**: O(n)\n- The list `fib_sequence` grows linearly with input `n`.\n- No additional significant space is used."
+    },
+    "explanation": "***Step 1:*** The list stores `n` Fibonacci numbers.\n***Step 2:*** Auxiliary space (variables like `i`) is constant (O(1)).\n***Step 3:*** Total space depends on the list size (O(n))."
+  },
+  {
+    "title": "Big-O Notation Practice",
+    "ques": "Identify the Big-O complexity of the following operations:\n1. Inserting an element at the end of a Python list.\n2. Searching for a value in an unsorted list.\n3. Finding the maximum value in a sorted array.",
+    "answer": {
+      "type": "text",
+      "content": "1. **O(1)** (amortized) — Appending to a list is typically constant time.\n2. **O(n)** — Requires scanning the entire list in the worst case.\n3. **O(1)** — The maximum is the last element in a sorted array."
+    },
+    "explanation": "***Step 1:*** Python lists are dynamically sized (O(1) average append).\n***Step 2:*** Unsorted search requires checking each element (O(n)).\n***Step 3:*** Sorted arrays allow immediate access to max/min (O(1))."
+  },
+  {
+    "title": "Trade-offs: Lists vs. Sets",
+    "ques": "Why might you choose a Python `set` over a `list` for membership tests? Explain the trade-off.",
+    "answer": {
+      "type": "text",
+      "content": "**Advantage of Sets**:\n- **O(1)** average-time complexity for membership tests (uses hashing).\n**Trade-off**:\n- **No order** (elements are unordered).\n- **No duplicates** allowed.\n- **Higher memory usage** than lists."
+    },
+    "explanation": "***Step 1:*** Sets use hash tables for O(1) lookups.\n***Step 2:*** Lists require O(n) time for `in` checks.\n***Step 3:*** Sets sacrifice order and duplicates for speed."
+  },
+  {
+    "title": "Algorithm Efficiency: Binary Search",
+    "ques": "Write a Python function for binary search and analyze its complexity.",
+    "answer": {
+      "type": "code",
+      "lang": "python",
+      "content": "def binary_search(arr, target):\n    left, right = 0, len(arr) - 1\n    while left <= right:\n        mid = (left + right) // 2\n        if arr[mid] == target:\n            return mid\n        elif arr[mid] < target:\n            left = mid + 1\n        else:\n            right = mid - 1\n    return -1"
+    },
+    "explanation": "***Step 1:*** Initialize pointers (`left`, `right`).\n***Step 2:*** Halve the search space each iteration (O(log n) time).\n***Step 3:*** Space complexity is O(1) (no extra storage)."
+  },
+  {
+    "title": "Common Complexity Classes",
+    "ques": "Match the following scenarios to their complexity classes:\n1. Iterating through a list once.\n2. Recursive Fibonacci without memoization.\n3. Sorting a list using Merge Sort.\nOptions: O(n), O(2^n), O(n log n)",
+    "answer": {
+      "type": "text",
+      "content": "1. **O(n)** — Linear time (single loop).\n2. **O(2^n)** — Exponential time (recursive tree).\n3. **O(n log n)** — Linearithmic time (divide-and-conquer)."
+    },
+    "explanation": "***Step 1:*** Single iteration → O(n).\n***Step 2:*** Recursion recalculates overlapping subproblems → O(2^n).\n***Step 3:*** Merge Sort splits the list logarithmically → O(n log n)."
+  },
+  {
+    "title": "Optimizing for Space",
+    "ques": "Rewrite the following function to use O(1) space instead of O(n):\n```python\ndef sum_squares(n):\n    squares = [i**2 for i in range(n)]\n    return sum(squares)\n```",
+    "answer": {
+      "type": "code",
+      "lang": "python",
+      "content": "def sum_squares(n):\n    total = 0\n    for i in range(n):\n        total += i ** 2\n    return total"
+    },
+    "explanation": "***Step 1:*** Replace list comprehension with a loop.\n***Step 2:*** Accumulate the sum directly in `total` (O(1) space).\n***Step 3:*** Avoid storing the entire list of squares."
+  }
+]
