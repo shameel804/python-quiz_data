@@ -1,0 +1,6972 @@
+[
+  {
+    "q": "Which data structure is most suitable for solving problems involving prefix search in strings?",
+    "c": null,
+    "o": [
+      "Trie",
+      "Stack",
+      "Queue",
+      "HashMap"
+    ]
+  },
+  {
+    "q": "What is the time complexity to insert a word into a Trie with word length L?",
+    "c": null,
+    "o": [
+      "O(L)",
+      "O(log L)",
+      "O(1)",
+      "O(L^2)"
+    ]
+  },
+  {
+    "q": "Which operation is most efficiently supported by a segment tree?",
+    "c": null,
+    "o": [
+      "Range sum query",
+      "Finding median",
+      "Element sorting",
+      "Hashing strings"
+    ]
+  },
+  {
+    "q": "What is the typical time complexity for a range update and range query in a segment tree?",
+    "c": null,
+    "o": [
+      "O(log n)",
+      "O(n)",
+      "O(1)",
+      "O(n log n)"
+    ]
+  },
+  {
+    "q": "Fenwick Tree is also known as:",
+    "c": null,
+    "o": [
+      "Binary Indexed Tree",
+      "Segment Tree",
+      "AVL Tree",
+      "Suffix Tree"
+    ]
+  },
+  {
+    "q": "What is the main advantage of a Fenwick Tree over a Segment Tree?",
+    "c": null,
+    "o": [
+      "Less memory usage",
+      "Faster updates",
+      "Supports more types of queries",
+      "Easier implementation of binary search"
+    ]
+  },
+  {
+    "q": "Which of the following operations can a disjoint set (Union-Find) perform efficiently?",
+    "c": null,
+    "o": [
+      "Union and Find",
+      "Push and Pop",
+      "Insert and Delete",
+      "Traversal and Update"
+    ]
+  },
+  {
+    "q": "In the Union-Find data structure, what is the purpose of path compression?",
+    "c": null,
+    "o": [
+      "To flatten the tree and speed up future queries",
+      "To compress the input data",
+      "To reduce memory usage",
+      "To improve space complexity only"
+    ]
+  },
+  {
+    "q": "What is the time complexity of Find operation with path compression and union by rank?",
+    "c": null,
+    "o": [
+      "O(α(n))",
+      "O(log n)",
+      "O(n)",
+      "O(1)"
+    ]
+  },
+  {
+    "q": "Which of the following data structures is most suitable for solving problems involving substring search efficiently?",
+    "c": null,
+    "o": [
+      "Suffix Tree",
+      "Heap",
+      "Linked List",
+      "Queue"
+    ]
+  },
+  {
+    "q": "What is the key advantage of Suffix Arrays over Suffix Trees?",
+    "c": null,
+    "o": [
+      "Lower memory usage",
+      "Faster construction time",
+      "Better for long strings",
+      "Supports dynamic insertions"
+    ]
+  },
+  {
+    "q": "Which of the following best describes the construction time of a suffix array using a fast algorithm?",
+    "c": null,
+    "o": [
+      "O(n log n)",
+      "O(n^2)",
+      "O(log n)",
+      "O(n)"
+    ]
+  },
+  {
+    "q": "Given the following code, which data structure is being implemented?",
+    "c": "class DSU:\n    def __init__(self, n):\n        self.parent = list(range(n))\n\n    def find(self, x):\n        if self.parent[x] != x:\n            self.parent[x] = self.find(self.parent[x])\n        return self.parent[x]\n\n    def union(self, x, y):\n        self.parent[self.find(x)] = self.find(y)",
+    "o": [
+      "Disjoint Set (Union-Find)",
+      "Trie",
+      "Fenwick Tree",
+      "Segment Tree"
+    ]
+  },
+  {
+    "q": "Which of the following can be used to solve the Lowest Common Ancestor (LCA) problem efficiently?",
+    "c": null,
+    "o": [
+      "Segment Tree",
+      "Fenwick Tree",
+      "Trie",
+      "Hash Map"
+    ]
+  },
+  {
+    "q": "Which technique is most commonly used in advanced string matching algorithms using suffix structures?",
+    "c": null,
+    "o": [
+      "Longest Common Prefix (LCP)",
+      "Sliding Window",
+      "Two Pointers",
+      "Hash Collisions"
+    ]
+  },
+  {
+    "q": "In a Trie, each edge typically represents:",
+    "c": null,
+    "o": [
+      "A single character",
+      "A word",
+      "A sentence",
+      "An integer"
+    ]
+  },
+  {
+    "q": "Which of the following best describes the space complexity of a Trie storing n words of length m?",
+    "c": null,
+    "o": [
+      "O(n * m)",
+      "O(n + m)",
+      "O(m^2)",
+      "O(n log m)"
+    ]
+  },
+  {
+    "q": "Which operation is most optimized by using a Segment Tree over a simple array?",
+    "c": null,
+    "o": [
+      "Range minimum query",
+      "Element insertion",
+      "Random access",
+      "Array reversal"
+    ]
+  },
+  {
+    "q": "In which scenario is a Fenwick Tree preferred over a Segment Tree?",
+    "c": null,
+    "o": [
+      "When only point updates and prefix queries are needed",
+      "When dynamic size is required",
+      "When deletion is needed",
+      "When minimum value is needed over a range"
+    ]
+  },
+  {
+    "q": "Which of the following code snippets performs a Fenwick Tree update operation?",
+    "c": "def update(bit, i, val):\n    while i < len(bit):\n        bit[i] += val\n        i += i & -i",
+    "o": [
+      "Fenwick Tree point update",
+      "Segment Tree range update",
+      "Disjoint Set Union",
+      "Suffix Tree construction"
+    ]
+  },
+  {
+    "q": "What does the function 'i += i & -i' do in a Fenwick Tree?",
+    "c": null,
+    "o": [
+      "Moves to the next responsible node in the tree",
+      "Sets the value to 0",
+      "Finds the parent node",
+      "Performs a bitwise NOT operation"
+    ]
+  },
+  {
+    "q": "Which method is used to efficiently implement Union-Find with nearly constant time complexity?",
+    "c": null,
+    "o": [
+      "Union by rank and path compression",
+      "Breadth-first traversal",
+      "Binary search and recursion",
+      "Stack-based recursion"
+    ]
+  },
+  {
+    "q": "Which real-world application often uses Disjoint Set Union-Find?",
+    "c": null,
+    "o": [
+      "Detecting cycles in an undirected graph",
+      "Finding the shortest path in a graph",
+      "Prefix searching",
+      "Sorting arrays"
+    ]
+  },
+  {
+    "q": "Which algorithm uses Union-Find data structure for its implementation?",
+    "c": null,
+    "o": [
+      "Kruskal's Minimum Spanning Tree algorithm",
+      "Prim's algorithm",
+      "Dijkstra's algorithm",
+      "Bellman-Ford algorithm"
+    ]
+  },
+  {
+    "q": "Which suffix structure stores all suffixes of a string in a compressed trie form?",
+    "c": null,
+    "o": [
+      "Suffix Tree",
+      "Suffix Array",
+      "Fenwick Tree",
+      "Trie"
+    ]
+  },
+  {
+    "q": "What is the output of this code using Suffix Array logic?",
+    "c": "s = 'banana'\nsuffixes = sorted([(s[i:], i) for i in range(len(s))])\nprint([i for (_, i) in suffixes])",
+    "o": [
+      "[5, 3, 1, 0, 4, 2]",
+      "[0, 1, 2, 3, 4, 5]",
+      "[1, 3, 5, 0, 2, 4]",
+      "[5, 4, 3, 2, 1, 0]"
+    ]
+  },
+  {
+    "q": "What does the LCP (Longest Common Prefix) array store?",
+    "c": null,
+    "o": [
+      "Lengths of longest common prefixes between consecutive suffixes",
+      "Prefix sums of the array",
+      "Minimum values in a range",
+      "Character frequencies"
+    ]
+  },
+  {
+    "q": "Which of the following operations is NOT directly supported by a standard Fenwick Tree?",
+    "c": null,
+    "o": [
+      "Range minimum query",
+      "Prefix sum",
+      "Point update",
+      "Prefix max (with modifications)"
+    ]
+  },
+  {
+    "q": "In a Trie implementation, what is the typical branching factor for lowercase English characters?",
+    "c": null,
+    "o": [
+      "26",
+      "10",
+      "256",
+      "2"
+    ]
+  },
+  {
+    "q": "Which property of suffix arrays makes them suitable for binary search on substrings?",
+    "c": null,
+    "o": [
+      "They are sorted lexicographically",
+      "They store tree structure",
+      "They use heaps",
+      "They are built using graphs"
+    ]
+  },
+  {
+    "q": "Which of the following is true about a Segment Tree compared to a Binary Indexed Tree?",
+    "c": null,
+    "o": [
+      "Segment Tree supports a wider variety of range queries",
+      "Segment Tree is faster in all cases",
+      "Segment Tree uses less memory",
+      "Segment Tree is easier to implement"
+    ]
+  },
+  {
+    "q": "What is the main drawback of using a Trie for string storage?",
+    "c": null,
+    "o": [
+      "High memory usage for sparse nodes",
+      "Slow prefix lookup",
+      "Inability to store duplicate characters",
+      "Low insertion speed"
+    ]
+  },
+  {
+    "q": "What will be the output of this Fenwick Tree query code?",
+    "c": "def query(bit, i):\n    res = 0\n    while i > 0:\n        res += bit[i]\n        i -= i & -i\n    return res",
+    "o": [
+      "Prefix sum up to index i",
+      "Sum of entire array",
+      "Range minimum from 0 to i",
+      "Product of elements from 0 to i"
+    ]
+  },
+  {
+    "q": "What is the depth of the tree formed by path compression in a Disjoint Set Union structure?",
+    "c": null,
+    "o": [
+      "Very close to constant (inverse Ackermann function)",
+      "Always O(log n)",
+      "Linear in worst case",
+      "Depends on the number of elements only"
+    ]
+  },
+  {
+    "q": "What is the advantage of a compressed suffix tree over a regular suffix trie?",
+    "c": null,
+    "o": [
+      "It uses less space by compressing paths",
+      "It supports deletions",
+      "It builds faster",
+      "It doesn’t require preprocessing"
+    ]
+  },
+  {
+    "q": "Which one of the following is NOT a valid use case for a Trie?",
+    "c": null,
+    "o": [
+      "Finding minimum in a range",
+      "Autocomplete systems",
+      "Spell checkers",
+      "Prefix search"
+    ]
+  },
+  {
+    "q": "Which of the following best describes the memory complexity of a suffix array?",
+    "c": null,
+    "o": [
+      "O(n)",
+      "O(n log n)",
+      "O(n^2)",
+      "O(log n)"
+    ]
+  },
+  {
+    "q": "How can the Lowest Common Ancestor (LCA) be computed using a segment tree?",
+    "c": null,
+    "o": [
+      "By storing Euler tour and querying minimum depth in range",
+      "By performing BFS traversal",
+      "By storing all ancestors explicitly",
+      "By sorting all nodes"
+    ]
+  },
+  {
+    "q": "Which operation is more efficient in a Fenwick Tree than in a naive array approach?",
+    "c": null,
+    "o": [
+      "Prefix sum computation",
+      "Array rotation",
+      "Appending element",
+      "Matrix multiplication"
+    ]
+  },
+  {
+    "q": "How many children can a single node in a standard Trie have if it stores only lowercase English letters?",
+    "c": null,
+    "o": [
+      "26",
+      "2",
+      "128",
+      "10"
+    ]
+  },
+  {
+    "q": "Which data structure is used internally in Kruskal’s algorithm to detect cycles?",
+    "c": null,
+    "o": [
+      "Disjoint Set (Union-Find)",
+      "Min-Heap",
+      "Adjacency Matrix",
+      "Segment Tree"
+    ]
+  },
+  {
+    "q": "What does the following line in a Fenwick Tree do?\n`i += i & -i`",
+    "c": null,
+    "o": [
+      "Moves to the next index to update",
+      "Finds the last set bit",
+      "Resets the value to 0",
+      "Multiplies the index by 2"
+    ]
+  },
+  {
+    "q": "Which of the following is the suffix array of the string \"abab\"?",
+    "c": null,
+    "o": [
+      "[2, 0, 3, 1]",
+      "[1, 2, 3, 0]",
+      "[3, 0, 2, 1]",
+      "[0, 1, 2, 3]"
+    ]
+  },
+  {
+    "q": "In the context of suffix trees, what is a leaf node typically used for?",
+    "c": null,
+    "o": [
+      "To represent the end of a suffix",
+      "To represent a repeated substring",
+      "To store input in binary format",
+      "To track prefix counts"
+    ]
+  },
+  {
+    "q": "Which of the following range queries can be answered using a Segment Tree?",
+    "c": null,
+    "o": [
+      "Range maximum query",
+      "Next permutation query",
+      "Array shuffling",
+      "Finding prime numbers in range"
+    ]
+  },
+  {
+    "q": "Which of the following is true for the Suffix Array of a string?",
+    "c": null,
+    "o": [
+      "It contains indices of suffixes in lexicographical order",
+      "It stores the length of the longest prefix",
+      "It sorts characters of the string",
+      "It stores substring frequencies"
+    ]
+  },
+  {
+    "q": "In a Trie, how is the end of a word typically marked?",
+    "c": null,
+    "o": [
+      "With a special boolean flag at the node",
+      "With a '#' character",
+      "With a null pointer",
+      "With a number representing the word"
+    ]
+  },
+  {
+    "q": "Which operation is difficult to perform using a Fenwick Tree without modifications?",
+    "c": null,
+    "o": [
+      "Range minimum query",
+      "Prefix sum query",
+      "Point update",
+      "Cumulative frequency table"
+    ]
+  },
+  {
+    "q": "What is the time complexity to build a Segment Tree for an array of size n?",
+    "c": null,
+    "o": [
+      "O(n)",
+      "O(n log n)",
+      "O(log n)",
+      "O(n^2)"
+    ]
+  },
+  {
+    "q": "What is a major limitation of the Trie data structure?",
+    "c": null,
+    "o": [
+      "High memory usage for sparse data",
+      "Cannot store numeric data",
+      "Cannot perform prefix queries",
+      "Slow insertion speed"
+    ]
+  },
+  {
+    "q": "Which of the following statements about Union-Find with path compression is correct?",
+    "c": null,
+    "o": [
+      "It nearly flattens the tree structure",
+      "It increases the tree height",
+      "It always returns the root in O(n)",
+      "It is slower than naive find"
+    ]
+  },
+  {
+    "q": "Which algorithm is commonly used to construct a Suffix Array?",
+    "c": null,
+    "o": [
+      "Prefix doubling",
+      "Depth-first search",
+      "Dynamic programming",
+      "Union-Find"
+    ]
+  },
+  {
+    "q": "Which technique is used to combine results in a Segment Tree?",
+    "c": null,
+    "o": [
+      "Merge function (e.g., sum, min, max)",
+      "Divide and conquer",
+      "Backtracking",
+      "Memoization"
+    ]
+  },
+  {
+    "q": "Which of these queries can be efficiently answered using a Segment Tree?",
+    "c": null,
+    "o": [
+      "Range GCD query",
+      "Next greater element",
+      "Binary search on sorted array",
+      "Counting distinct elements"
+    ]
+  },
+  {
+    "q": "Which of these is the best-case time complexity of a 'find' operation in Union-Find with path compression?",
+    "c": null,
+    "o": [
+      "O(1)",
+      "O(n)",
+      "O(log n)",
+      "O(n log n)"
+    ]
+  },
+  {
+    "q": "Which tree structure is specifically designed for efficient prefix-based string operations?",
+    "c": null,
+    "o": [
+      "Trie",
+      "Segment Tree",
+      "Fenwick Tree",
+      "AVL Tree"
+    ]
+  },
+  {
+    "q": "What does the function `find` typically return in a Disjoint Set?",
+    "c": null,
+    "o": [
+      "The representative or root of the set",
+      "The size of the set",
+      "The depth of the tree",
+      "The total number of sets"
+    ]
+  },
+  {
+    "q": "What will be the result of the following Suffix Array construction code?",
+    "c": "s = 'mississippi'\nsuffixes = sorted([(s[i:], i) for i in range(len(s))])\nprint([i for (_, i) in suffixes])",
+    "o": [
+      "[10, 7, 4, 1, 0, 9, 8, 6, 3, 5, 2]",
+      "[0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10]",
+      "[1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 0]",
+      "[3, 4, 5, 0, 1, 2, 6, 7, 8, 9, 10]"
+    ]
+  },
+  {
+    "q": "Which of the following queries can be implemented in O(log n) using a Segment Tree?",
+    "c": null,
+    "o": [
+      "Sum of elements in range [l, r]",
+      "Insertion at random index",
+      "Reversal of a subarray",
+      "Sorting an array"
+    ]
+  },
+  {
+    "q": "What is a common application of Fenwick Tree in competitive programming?",
+    "c": null,
+    "o": [
+      "Efficient computation of prefix sums",
+      "Depth-first traversal",
+      "Graph shortest paths",
+      "Greedy algorithms"
+    ]
+  },
+  {
+    "q": "Which algorithm benefits most from using Disjoint Set Union (DSU)?",
+    "c": null,
+    "o": [
+      "Kruskal's Minimum Spanning Tree",
+      "Prim's MST",
+      "Floyd-Warshall",
+      "Topological Sort"
+    ]
+  },
+  {
+    "q": "What is the purpose of union by rank in Disjoint Set Union?",
+    "c": null,
+    "o": [
+      "To keep tree height minimal",
+      "To compress paths faster",
+      "To balance the memory usage",
+      "To track disjoint sets"
+    ]
+  },
+  {
+    "q": "What data structure is used for fast prefix sum queries and updates in logarithmic time?",
+    "c": null,
+    "o": [
+      "Fenwick Tree",
+      "Segment Tree",
+      "Queue",
+      "HashMap"
+    ]
+  },
+  {
+    "q": "Which of the following operations is not typically supported by a standard Trie?",
+    "c": null,
+    "o": [
+      "Range minimum query",
+      "Prefix search",
+      "Autocomplete suggestions",
+      "String insertion"
+    ]
+  },
+  {
+    "q": "What is the key difference between a Suffix Tree and a Suffix Array?",
+    "c": null,
+    "o": [
+      "Suffix Tree allows faster substring matching but uses more memory",
+      "Suffix Array is slower and uses more memory",
+      "Suffix Tree does not allow substring search",
+      "Suffix Array is built using trees"
+    ]
+  },
+  {
+    "q": "Which Python data type is best suited to implement a Trie node's children?",
+    "c": null,
+    "o": [
+      "Dictionary",
+      "List",
+      "Set",
+      "Tuple"
+    ]
+  },
+  {
+    "q": "In a Segment Tree, each internal node typically stores:",
+    "c": null,
+    "o": [
+      "A function result (e.g., sum, min) of its child segments",
+      "An index reference",
+      "Only the left child",
+      "A pointer to the parent node"
+    ]
+  },
+  {
+    "q": "Which of these best describes the time complexity for both updating and querying in a Binary Indexed Tree?",
+    "c": null,
+    "o": [
+      "O(log n)",
+      "O(1)",
+      "O(n)",
+      "O(n log n)"
+    ]
+  },
+  {
+    "q": "How many nodes will a full Segment Tree contain for an array of size n?",
+    "c": null,
+    "o": [
+      "2 * 2^ceil(log2(n)) - 1",
+      "n",
+      "2n",
+      "4n"
+    ]
+  },
+  {
+    "q": "What’s the correct way to perform a prefix sum using a Fenwick Tree?",
+    "c": "def prefix_sum(bit, i):\n    total = 0\n    while i > 0:\n        total += bit[i]\n        i -= i & -i\n    return total",
+    "o": [
+      "Using bitwise manipulation to move to parent nodes",
+      "Linear iteration over the array",
+      "Recursion without conditions",
+      "Binary search on array"
+    ]
+  },
+  {
+    "q": "What is the worst-case time complexity of inserting a word of length L into a Trie?",
+    "c": null,
+    "o": [
+      "O(L)",
+      "O(log L)",
+      "O(L log L)",
+      "O(1)"
+    ]
+  },
+  {
+    "q": "How is the Suffix Array of a string typically built?",
+    "c": null,
+    "o": [
+      "By sorting all suffixes lexicographically",
+      "By reversing the string and sorting it",
+      "By building a hash map of characters",
+      "By inserting substrings into a Trie"
+    ]
+  },
+  {
+    "q": "Which operation is usually optimized using path compression in DSU?",
+    "c": null,
+    "o": [
+      "Find",
+      "Union",
+      "Insert",
+      "Delete"
+    ]
+  },
+  {
+    "q": "What does a leaf node in a suffix tree typically represent?",
+    "c": null,
+    "o": [
+      "A complete suffix of the string",
+      "A prefix of the string",
+      "A common substring",
+      "An empty string"
+    ]
+  },
+  {
+    "q": "Which problem can be efficiently solved using a Trie?",
+    "c": null,
+    "o": [
+      "Counting words with a given prefix",
+      "Sorting integers",
+      "Finding shortest path",
+      "Finding longest increasing subsequence"
+    ]
+  },
+  {
+    "q": "What is the primary use of a Suffix Tree in string algorithms?",
+    "c": null,
+    "o": [
+      "Fast substring search",
+      "Storing sorted suffixes",
+      "Counting word frequency",
+      "Reversing strings"
+    ]
+  },
+  {
+    "q": "What is the benefit of combining path compression with union by rank in DSU?",
+    "c": null,
+    "o": [
+      "Achieves nearly constant time for find and union",
+      "Uses less memory than arrays",
+      "Maintains sorted order of elements",
+      "Improves time complexity of recursion"
+    ]
+  },
+  {
+    "q": "Which of the following is a correct use case for a Binary Indexed Tree?",
+    "c": null,
+    "o": [
+      "Calculating cumulative frequencies",
+      "Finding shortest path",
+      "Prefix matching",
+      "Checking for palindromes"
+    ]
+  },
+  {
+    "q": "In a Segment Tree, what does each node represent?",
+    "c": null,
+    "o": [
+      "A segment or range of the array",
+      "A single character",
+      "A complete string",
+      "A matrix cell"
+    ]
+  },
+  {
+    "q": "What is the maximum number of children a Trie node can have for lowercase English alphabets?",
+    "c": null,
+    "o": [
+      "26",
+      "2",
+      "10",
+      "256"
+    ]
+  },
+  {
+    "q": "Which operation in a Fenwick Tree utilizes `i -= i & -i`?",
+    "c": null,
+    "o": [
+      "Prefix sum query",
+      "Range maximum query",
+      "Point update",
+      "String match"
+    ]
+  },
+  {
+    "q": "Which of the following is a valid application of the Suffix Array?",
+    "c": null,
+    "o": [
+      "Pattern matching in strings",
+      "Stack-based parsing",
+      "Matrix traversal",
+      "Balanced tree operations"
+    ]
+  },
+  {
+    "q": "What kind of queries can a Segment Tree efficiently answer?",
+    "c": null,
+    "o": [
+      "Range sum and minimum queries",
+      "Prefix match in strings",
+      "Detecting cycles in graphs",
+      "Graph coloring"
+    ]
+  },
+  {
+    "q": "Which component is essential for efficient LCP computation along with the Suffix Array?",
+    "c": null,
+    "o": [
+      "LCP Array",
+      "Trie Node",
+      "Adjacency List",
+      "HashSet"
+    ]
+  },
+  {
+    "q": "What will the result of this code be?",
+    "c": "parent = [0, 1, 2, 3]\n\ndef find(x):\n    if parent[x] != x:\n        parent[x] = find(parent[x])\n    return parent[x]",
+    "o": [
+      "Performs find with path compression",
+      "Performs union operation",
+      "Implements segment tree query",
+      "Implements prefix sum"
+    ]
+  },
+  {
+    "q": "Which problem is a classic application of Suffix Trees?",
+    "c": null,
+    "o": [
+      "Longest repeated substring",
+      "Shortest path between nodes",
+      "Maximum flow in a graph",
+      "Palindrome partitioning"
+    ]
+  },
+  {
+    "q": "In Fenwick Tree, what does `i += i & -i` help achieve during updates?",
+    "c": null,
+    "o": [
+      "Move to the next responsible node",
+      "Move to the left child",
+      "Find the minimum in range",
+      "Sort the array"
+    ]
+  },
+  {
+    "q": "Which one of these tasks cannot be efficiently done with a standard Trie?",
+    "c": null,
+    "o": [
+      "Finding the longest palindrome",
+      "Autocomplete for strings",
+      "Checking if a prefix exists",
+      "Counting number of strings with a prefix"
+    ]
+  },
+  {
+    "q": "What is the time complexity to build a Suffix Tree using Ukkonen’s algorithm?",
+    "c": null,
+    "o": [
+      "O(n)",
+      "O(n log n)",
+      "O(n^2)",
+      "O(log n)"
+    ]
+  },
+  {
+    "q": "What is the best-case time complexity of a range query in a Segment Tree?",
+    "c": null,
+    "o": [
+      "O(log n)",
+      "O(n)",
+      "O(1)",
+      "O(n log n)"
+    ]
+  },
+  {
+    "q": "Which of the following is the correct purpose of a Trie?",
+    "c": null,
+    "o": [
+      "Efficient retrieval of words with common prefixes",
+      "Sorting numeric arrays",
+      "Range queries on integers",
+      "Detecting loops in graphs"
+    ]
+  },
+  {
+    "q": "Which of the following is a key difference between Segment Tree and Fenwick Tree?",
+    "c": null,
+    "o": [
+      "Segment Tree supports wider range of operations",
+      "Fenwick Tree is better for range minimum queries",
+      "Fenwick Tree is more flexible in dynamic range",
+      "Segment Tree has better memory efficiency"
+    ]
+  },
+  {
+    "q": "What does the term `i & -i` calculate in the context of a Binary Indexed Tree?",
+    "c": null,
+    "o": [
+      "The least significant bit",
+      "The highest power of 2 ≤ i",
+      "The floor of square root of i",
+      "The middle element of the array"
+    ]
+  },
+  {
+    "q": "Which data structure is most suitable for autocomplete systems?",
+    "c": null,
+    "o": [
+      "Trie",
+      "Heap",
+      "Stack",
+      "Queue"
+    ]
+  },
+  {
+    "q": "Which algorithm uses suffix arrays for efficient pattern searching?",
+    "c": null,
+    "o": [
+      "Binary search on suffix array",
+      "Dijkstra’s algorithm",
+      "Topological sort",
+      "Union-Find"
+    ]
+  },
+  {
+    "q": "What is the main limitation of a Binary Indexed Tree?",
+    "c": null,
+    "o": [
+      "Cannot handle range updates without modification",
+      "Cannot do point updates",
+      "Too much memory usage",
+      "Cannot store characters"
+    ]
+  },
+  {
+    "q": "What is the time complexity of finding the Lowest Common Ancestor (LCA) using Segment Tree and Euler tour?",
+    "c": null,
+    "o": [
+      "O(log n)",
+      "O(n)",
+      "O(1)",
+      "O(n log n)"
+    ]
+  },
+  {
+    "q": "Which of these correctly describes a node in a suffix tree?",
+    "c": null,
+    "o": [
+      "A node represents a substring of the original string",
+      "A node holds a full suffix",
+      "A node stores a single character",
+      "A node represents a range minimum"
+    ]
+  },
+  {
+    "q": "Which of the following can be computed using a segment tree?",
+    "c": null,
+    "o": [
+      "Range XOR queries",
+      "Prefix string match",
+      "Topological order",
+      "Cycle detection"
+    ]
+  },
+  {
+    "q": "What is the main advantage of suffix arrays over suffix trees?",
+    "c": null,
+    "o": [
+      "Uses less memory",
+      "Faster queries",
+      "Faster construction",
+      "Supports insertion"
+    ]
+  },
+  {
+    "q": "What is the function of `find()` in Disjoint Set Union (DSU)?",
+    "c": null,
+    "o": [
+      "To determine the representative of a set",
+      "To sort disjoint sets",
+      "To create a new set",
+      "To delete elements"
+    ]
+  },
+  {
+    "q": "In a Segment Tree storing range sums, how is the value of an internal node calculated?",
+    "c": null,
+    "o": [
+      "Sum of its left and right child nodes",
+      "Maximum of the children",
+      "Product of elements",
+      "Average of values"
+    ]
+  },
+  {
+    "q": "Which of the following problems can be solved using a Trie?",
+    "c": null,
+    "o": [
+      "Detecting if a string starts with a given prefix",
+      "Finding the minimum element in an array",
+      "Calculating maximum flow",
+      "Binary search on numbers"
+    ]
+  },
+  {
+    "q": "Which operation is not directly supported by a standard Binary Indexed Tree?",
+    "c": null,
+    "o": [
+      "Range maximum query",
+      "Point update",
+      "Prefix sum",
+      "Cumulative frequency query"
+    ]
+  },
+  {
+    "q": "What is the best use case for a Suffix Array?",
+    "c": null,
+    "o": [
+      "Efficient substring matching",
+      "Storing complete string structure",
+      "Counting characters in a string",
+      "Balancing binary trees"
+    ]
+  },
+  {
+    "q": "Which operation benefits from path compression in Disjoint Set Union (DSU)?",
+    "c": null,
+    "o": [
+      "find()",
+      "union()",
+      "insert()",
+      "merge()"
+    ]
+  },
+  {
+    "q": "Which of the following is true about Trie data structure?",
+    "c": null,
+    "o": [
+      "Each node can have multiple children corresponding to different characters",
+      "It stores sorted numbers efficiently",
+      "It helps in performing range queries",
+      "It requires a binary tree structure"
+    ]
+  },
+  {
+    "q": "What is the purpose of the `union()` operation in a Disjoint Set?",
+    "c": null,
+    "o": [
+      "Merges two sets together",
+      "Splits a set into subsets",
+      "Finds the maximum element",
+      "Sorts the elements"
+    ]
+  },
+  {
+    "q": "What is the typical time complexity of a range query using a Segment Tree?",
+    "c": null,
+    "o": [
+      "O(log n)",
+      "O(1)",
+      "O(n)",
+      "O(n log n)"
+    ]
+  },
+  {
+    "q": "Which of the following best describes a Suffix Tree?",
+    "c": null,
+    "o": [
+      "A compressed trie of all suffixes of a string",
+      "A binary search tree for strings",
+      "A tree storing prefix sums",
+      "A dynamic segment tree"
+    ]
+  },
+  {
+    "q": "What is the typical time complexity to build a Fenwick Tree?",
+    "c": null,
+    "o": [
+      "O(n)",
+      "O(n log n)",
+      "O(log n)",
+      "O(n^2)"
+    ]
+  },
+  {
+    "q": "In a Segment Tree, how many nodes are needed in the worst case for an array of size n?",
+    "c": null,
+    "o": [
+      "4 * n",
+      "n",
+      "2 * n",
+      "log n"
+    ]
+  },
+  {
+    "q": "Which operation is difficult to implement directly in a Fenwick Tree?",
+    "c": null,
+    "o": [
+      "Range update and range query",
+      "Point update",
+      "Prefix sum query",
+      "Cumulative frequency"
+    ]
+  },
+  {
+    "q": "What is the result of `find()` in Union-Find when path compression is used?",
+    "c": null,
+    "o": [
+      "It returns the root and flattens the tree",
+      "It always returns a leaf node",
+      "It gives the number of sets",
+      "It removes a node from the set"
+    ]
+  },
+  {
+    "q": "In a suffix array, what does each index store?",
+    "c": null,
+    "o": [
+      "The starting position of a suffix in the original string",
+      "The length of the suffix",
+      "The character frequency",
+      "The number of matches"
+    ]
+  },
+  {
+    "q": "How can a Trie improve search speed compared to linear search?",
+    "c": null,
+    "o": [
+      "By reducing redundant character comparisons",
+      "By parallelizing comparisons",
+      "By storing hash values",
+      "By sorting all words in advance"
+    ]
+  },
+  {
+    "q": "Which scenario is best handled by a Disjoint Set?",
+    "c": null,
+    "o": [
+      "Tracking connected components in a graph",
+      "Searching substrings in a string",
+      "Calculating prefix sums",
+      "Balancing a binary search tree"
+    ]
+  },
+  {
+    "q": "What is the ideal use case for a Fenwick Tree?",
+    "c": null,
+    "o": [
+      "Prefix sum queries with point updates",
+      "Suffix string matching",
+      "Graph traversal",
+      "Dynamic memory allocation"
+    ]
+  },
+  {
+    "q": "Which tree is most commonly used for Range Minimum Query problems?",
+    "c": null,
+    "o": [
+      "Segment Tree",
+      "Suffix Tree",
+      "Trie",
+      "AVL Tree"
+    ]
+  },
+  {
+    "q": "What is the space complexity of a Trie storing `n` strings with average length `m`?",
+    "c": null,
+    "o": [
+      "O(n * m)",
+      "O(n)",
+      "O(log n)",
+      "O(n^2)"
+    ]
+  },
+  {
+    "q": "Which technique is used to flatten the structure of a Disjoint Set tree?",
+    "c": null,
+    "o": [
+      "Path compression",
+      "Breadth-first search",
+      "Depth-first search",
+      "Heapification"
+    ]
+  },
+  {
+    "q": "What is the main advantage of using a Suffix Array over a Suffix Tree?",
+    "c": null,
+    "o": [
+      "Suffix Arrays use less memory",
+      "Suffix Arrays are faster to build",
+      "Suffix Arrays support dynamic updates",
+      "Suffix Arrays work for binary data only"
+    ]
+  },
+  {
+    "q": "Which operation is fastest with a Trie compared to a Hash Map?",
+    "c": null,
+    "o": [
+      "Prefix search",
+      "Exact match",
+      "Deletion",
+      "Iteration"
+    ]
+  },
+  {
+    "q": "Which tree structure efficiently answers 'How many elements are ≤ x?' queries in a frequency table?",
+    "c": null,
+    "o": [
+      "Fenwick Tree",
+      "Segment Tree",
+      "Trie",
+      "Suffix Tree"
+    ]
+  },
+  {
+    "q": "What is the main role of the `bitwise AND` operation in a Fenwick Tree?",
+    "c": null,
+    "o": [
+      "To find the lowest set bit",
+      "To calculate segment sums",
+      "To update all children",
+      "To perform prefix compression"
+    ]
+  },
+  {
+    "q": "What is the output of the following Disjoint Set operation sequence?",
+    "c": "dsu = DisjointSet(5)\ndsu.union(0, 1)\ndsu.union(1, 2)\nprint(dsu.find(2))",
+    "o": [
+      "0",
+      "1",
+      "2",
+      "None"
+    ]
+  },
+  {
+    "q": "Which data structure is most suitable for solving LCP (Longest Common Prefix) problems efficiently?",
+    "c": null,
+    "o": [
+      "Suffix Tree",
+      "Heap",
+      "Fenwick Tree",
+      "Hash Table"
+    ]
+  },
+  {
+    "q": "Which data structure does NOT support efficient prefix-based string queries?",
+    "c": null,
+    "o": [
+      "Hash Table",
+      "Trie",
+      "Suffix Tree",
+      "Suffix Array"
+    ]
+  },
+  {
+    "q": "Which data structure is most space efficient among those used for prefix and suffix queries?",
+    "c": null,
+    "o": [
+      "Suffix Array",
+      "Suffix Tree",
+      "Trie",
+      "Segment Tree"
+    ]
+  },
+  {
+    "q": "In a Fenwick Tree, what is the function of the update operation?",
+    "c": null,
+    "o": [
+      "Adds a value to a position and propagates changes upward",
+      "Replaces a value directly",
+      "Deletes a value from the tree",
+      "Updates all descendants of a node"
+    ]
+  },
+  {
+    "q": "How does a Suffix Tree support fast substring search?",
+    "c": null,
+    "o": [
+      "By reducing comparisons using shared paths",
+      "By storing the reverse of every string",
+      "By maintaining hash values",
+      "By using binary search"
+    ]
+  },
+  {
+    "q": "Which is the best data structure for dynamic range queries and updates?",
+    "c": null,
+    "o": [
+      "Segment Tree",
+      "Trie",
+      "Heap",
+      "Stack"
+    ]
+  },
+  {
+    "q": "What is the worst-case time complexity for building a suffix array using the naive method?",
+    "c": null,
+    "o": [
+      "O(n^2 log n)",
+      "O(n log n)",
+      "O(n)",
+      "O(log n)"
+    ]
+  },
+  {
+    "q": "Which of these operations is NOT typically supported by a Disjoint Set?",
+    "c": null,
+    "o": [
+      "Deleting a set",
+      "Find the root",
+      "Union two sets",
+      "Check if two elements are in the same set"
+    ]
+  },
+  {
+    "q": "Which type of data is best handled by a Trie?",
+    "c": null,
+    "o": [
+      "Dictionary of words",
+      "List of integers",
+      "Graph edges",
+      "Matrix values"
+    ]
+  },
+  {
+    "q": "Which operation is optimized using 'union by rank' in a Disjoint Set?",
+    "c": null,
+    "o": [
+      "Union operation",
+      "Find operation",
+      "Insert operation",
+      "Delete operation"
+    ]
+  },
+  {
+    "q": "What does the `find` operation return in a Union-Find data structure?",
+    "c": null,
+    "o": [
+      "The representative (or root) of the set",
+      "The number of sets",
+      "The total elements in the structure",
+      "The element value itself"
+    ]
+  },
+  {
+    "q": "Which of the following is true about Segment Trees?",
+    "c": null,
+    "o": [
+      "They can perform both range queries and point updates efficiently",
+      "They use less space than arrays",
+      "They are always binary search trees",
+      "They are used for prefix sum problems"
+    ]
+  },
+  {
+    "q": "Which Python implementation of Fenwick Tree is used for prefix sums?",
+    "c": "class FenwickTree:\n    def __init__(self, size):\n        self.tree = [0] * (size + 1)\n\n    def update(self, index, value):\n        while index < len(self.tree):\n            self.tree[index] += value\n            index += index & -index\n\n    def query(self, index):\n        result = 0\n        while index > 0:\n            result += self.tree[index]\n            index -= index & -index\n        return result\n\nft = FenwickTree(5)\nft.update(3, 4)\nprint(ft.query(3))",
+    "o": [
+      "4",
+      "0",
+      "3",
+      "5"
+    ]
+  },
+  {
+    "q": "Which algorithm is often used to construct Suffix Arrays in O(n log n) time?",
+    "c": null,
+    "o": [
+      "Doubling Algorithm",
+      "Kruskal’s Algorithm",
+      "Tarjan’s Algorithm",
+      "Dijkstra’s Algorithm"
+    ]
+  },
+  {
+    "q": "In which structure does every edge represent a character in a string?",
+    "c": null,
+    "o": [
+      "Suffix Tree",
+      "Segment Tree",
+      "Disjoint Set",
+      "Fenwick Tree"
+    ]
+  },
+  {
+    "q": "What is the result of union-by-rank if two trees have the same rank?",
+    "c": null,
+    "o": [
+      "One tree becomes the child of the other and its rank increases",
+      "The union is not possible",
+      "The rank of both trees decreases",
+      "They are merged without any rank change"
+    ]
+  },
+  {
+    "q": "Which type of query can a Segment Tree handle but a Fenwick Tree cannot?",
+    "c": null,
+    "o": [
+      "Range minimum/maximum query",
+      "Prefix sum query",
+      "Point update",
+      "Element access"
+    ]
+  },
+  {
+    "q": "What is the auxiliary space complexity of building a Trie for n strings of length m?",
+    "c": null,
+    "o": [
+      "O(n × m)",
+      "O(n)",
+      "O(m)",
+      "O(log n)"
+    ]
+  },
+  {
+    "q": "Which structure helps in efficiently finding the k-th smallest element in a subarray?",
+    "c": null,
+    "o": [
+      "Segment Tree",
+      "Suffix Tree",
+      "Trie",
+      "Disjoint Set"
+    ]
+  },
+  {
+    "q": "Which of the following operations does a Fenwick Tree support efficiently?",
+    "c": null,
+    "o": [
+      "Cumulative frequency queries and point updates",
+      "Sorting of elements",
+      "Binary search on array",
+      "Merging two arrays"
+    ]
+  },
+  {
+    "q": "Which algorithm is commonly used with Disjoint Set to detect cycles in an undirected graph?",
+    "c": null,
+    "o": [
+      "Kruskal’s Algorithm",
+      "Dijkstra’s Algorithm",
+      "Bellman-Ford Algorithm",
+      "Floyd-Warshall Algorithm"
+    ]
+  },
+  {
+    "q": "Which of the following is NOT a valid use case for a Trie?",
+    "c": null,
+    "o": [
+      "Finding median in a list of numbers",
+      "Auto-complete feature in search engines",
+      "Implementing a dictionary of words",
+      "Spell-checking"
+    ]
+  },
+  {
+    "q": "What does path compression do in a Disjoint Set?",
+    "c": null,
+    "o": [
+      "Flattens the tree structure for faster future queries",
+      "Increases the rank of all sets",
+      "Adds elements to every set",
+      "Splits the sets into smaller trees"
+    ]
+  },
+  {
+    "q": "How many children can a node have in a standard Trie built for lowercase English letters?",
+    "c": null,
+    "o": [
+      "26",
+      "2",
+      "10",
+      "None of the above"
+    ]
+  },
+  {
+    "q": "What is the time complexity of building a suffix array using the naive method?",
+    "c": null,
+    "o": [
+      "O(n^2 log n)",
+      "O(n)",
+      "O(log n)",
+      "O(n log n)"
+    ]
+  },
+  {
+    "q": "Which of the following is an advantage of suffix trees over suffix arrays?",
+    "c": null,
+    "o": [
+      "Faster substring search",
+      "Less memory usage",
+      "Simpler to implement",
+      "More compact representation"
+    ]
+  },
+  {
+    "q": "What is the result of the following operation on a Fenwick Tree?",
+    "c": "ft = FenwickTree(6)\nft.update(2, 5)\nft.update(4, 2)\nprint(ft.query(4))",
+    "o": [
+      "7",
+      "5",
+      "2",
+      "0"
+    ]
+  },
+  {
+    "q": "What is the main idea behind lazy propagation in Segment Trees?",
+    "c": null,
+    "o": [
+      "Deferring updates to improve performance",
+      "Using recursion to avoid stack overflow",
+      "Balancing the tree after every update",
+      "Propagating queries to multiple trees"
+    ]
+  },
+  {
+    "q": "Which of the following best describes a compressed Trie?",
+    "c": null,
+    "o": [
+      "A Trie where chains of single-child nodes are merged",
+      "A Trie that stores only compressed data",
+      "A Trie with all keys hashed",
+      "A Trie without any root node"
+    ]
+  },
+  {
+    "q": "Which operation is optimized by using Union by Rank in a Disjoint Set?",
+    "c": null,
+    "o": [
+      "Union operation",
+      "Find operation",
+      "Insert operation",
+      "Delete operation"
+    ]
+  },
+  {
+    "q": "What is the worst-case time complexity of a Find operation in a Disjoint Set using both union by rank and path compression?",
+    "c": null,
+    "o": [
+      "O(α(n))",
+      "O(log n)",
+      "O(n)",
+      "O(1)"
+    ]
+  },
+  {
+    "q": "Which data structure is most suitable for answering range sum queries and point updates?",
+    "c": null,
+    "o": [
+      "Fenwick Tree",
+      "Stack",
+      "Heap",
+      "Queue"
+    ]
+  },
+  {
+    "q": "In a Segment Tree, what does each internal node represent?",
+    "c": null,
+    "o": [
+      "A range of elements and their combined result (e.g., sum, min)",
+      "Only the maximum element of a range",
+      "Only a single element",
+      "A pointer to its parent"
+    ]
+  },
+  {
+    "q": "What is the maximum depth of a Segment Tree with 'n' elements?",
+    "c": null,
+    "o": [
+      "O(log n)",
+      "O(n)",
+      "O(1)",
+      "O(n log n)"
+    ]
+  },
+  {
+    "q": "What is the result of the following Trie insertion and search?",
+    "c": "trie = Trie()\ntrie.insert(\"apple\")\nprint(trie.search(\"app\"))",
+    "o": [
+      "False",
+      "True",
+      "None",
+      "Error"
+    ]
+  },
+  {
+    "q": "Which algorithm is most suitable for constructing a suffix array efficiently?",
+    "c": null,
+    "o": [
+      "Radix Sort based approach",
+      "Bubble Sort",
+      "Insertion Sort",
+      "Greedy Algorithm"
+    ]
+  },
+  {
+    "q": "What is the output of the following Fenwick Tree operation?",
+    "c": "ft = FenwickTree(5)\nft.update(1, 3)\nft.update(3, 2)\nprint(ft.query(3))",
+    "o": [
+      "5",
+      "2",
+      "3",
+      "0"
+    ]
+  },
+  {
+    "q": "What is the space complexity of a Segment Tree for an array of size n?",
+    "c": null,
+    "o": [
+      "O(4n)",
+      "O(n)",
+      "O(log n)",
+      "O(n log n)"
+    ]
+  },
+  {
+    "q": "What type of queries are suffix trees specifically designed to handle efficiently?",
+    "c": null,
+    "o": [
+      "Substring search",
+      "Finding primes",
+      "Sorting arrays",
+      "Matrix multiplication"
+    ]
+  },
+  {
+    "q": "What is the main benefit of using a Trie over a HashMap for word search?",
+    "c": null,
+    "o": [
+      "Prefix-based searching is faster",
+      "It uses less memory",
+      "Hash collisions are reduced",
+      "It supports faster deletions"
+    ]
+  },
+  {
+    "q": "Which of the following operations can a Fenwick Tree perform efficiently?",
+    "c": null,
+    "o": [
+      "Prefix sum queries and point updates",
+      "Range minimum queries",
+      "Graph traversal",
+      "Prefix product queries"
+    ]
+  },
+  {
+    "q": "Which of the following data structures is NOT typically used for string pattern matching?",
+    "c": null,
+    "o": [
+      "Heap",
+      "Trie",
+      "Suffix Tree",
+      "Suffix Array"
+    ]
+  },
+  {
+    "q": "What does the 'rank' represent in the Union by Rank optimization of Disjoint Sets?",
+    "c": null,
+    "o": [
+      "An upper bound on the height of the tree",
+      "The number of elements in the set",
+      "The total union operations performed",
+      "The number of find operations"
+    ]
+  },
+  {
+    "q": "Which of the following operations is optimized using 'path compression' in a Disjoint Set?",
+    "c": null,
+    "o": [
+      "Find operation",
+      "Union operation",
+      "Insert operation",
+      "Delete operation"
+    ]
+  },
+  {
+    "q": "What is the result of searching for 'bat' in a Trie that contains ['bat', 'batch', 'bake']?",
+    "c": "trie = Trie()\nfor word in ['bat', 'batch', 'bake']:\n    trie.insert(word)\nprint(trie.search('bat'))",
+    "o": [
+      "True",
+      "False",
+      "None",
+      "Error"
+    ]
+  },
+  {
+    "q": "In a Segment Tree, what kind of operations can be supported using lazy propagation?",
+    "c": null,
+    "o": [
+      "Range updates and range queries",
+      "Only point updates",
+      "Only prefix sum queries",
+      "Only range maximum queries"
+    ]
+  },
+  {
+    "q": "What is the key advantage of Suffix Arrays over Suffix Trees?",
+    "c": null,
+    "o": [
+      "Lower memory usage",
+      "Faster construction",
+      "Supports insertions",
+      "Better for real-time systems"
+    ]
+  },
+  {
+    "q": "How many children can a node in a Trie have if only lowercase English letters are stored?",
+    "c": null,
+    "o": [
+      "26",
+      "2",
+      "52",
+      "10"
+    ]
+  },
+  {
+    "q": "What is the typical time complexity for building a Suffix Array using a radix sort-based algorithm?",
+    "c": null,
+    "o": [
+      "O(n log n)",
+      "O(n²)",
+      "O(log n)",
+      "O(n)"
+    ]
+  },
+  {
+    "q": "Which of the following is true about the time complexity of the `find` operation in a Disjoint Set with path compression?",
+    "c": null,
+    "o": [
+      "Amortized O(α(n))",
+      "O(log n)",
+      "O(n)",
+      "O(1)"
+    ]
+  },
+  {
+    "q": "Which tree-based data structure is commonly used to implement cumulative frequency tables?",
+    "c": null,
+    "o": [
+      "Fenwick Tree",
+      "Red-Black Tree",
+      "Trie",
+      "Segment Tree"
+    ]
+  },
+  {
+    "q": "What is the key idea behind lazy propagation in Segment Trees?",
+    "c": null,
+    "o": [
+      "Delaying updates to avoid redundant operations",
+      "Removing unused segments",
+      "Propagating updates greedily to all children",
+      "Balancing the tree more frequently"
+    ]
+  },
+  {
+    "q": "What type of query is efficiently answered using a Segment Tree?",
+    "c": null,
+    "o": [
+      "Range sum query",
+      "Median in a stream",
+      "Top-K elements",
+      "Prefix product"
+    ]
+  },
+  {
+    "q": "Which of the following is NOT a feature of a Suffix Tree?",
+    "c": null,
+    "o": [
+      "O(n) space complexity",
+      "Supports pattern matching in O(m)",
+      "Supports online insertion",
+      "Contains all suffixes of a string"
+    ]
+  },
+  {
+    "q": "What is the space complexity of a Trie storing 'n' words of maximum length 'm' using only lowercase English letters?",
+    "c": null,
+    "o": [
+      "O(n * m)",
+      "O(n)",
+      "O(m)",
+      "O(log n)"
+    ]
+  },
+  {
+    "q": "What is the benefit of using Union by Rank in Disjoint Sets?",
+    "c": null,
+    "o": [
+      "Prevents tall trees, optimizing future find operations",
+      "Allows cyclic unions",
+      "Improves memory efficiency",
+      "Supports sorting operations"
+    ]
+  },
+  {
+    "q": "Which algorithm is used for efficient Suffix Array construction in O(n log n)?",
+    "c": null,
+    "o": [
+      "Prefix Doubling with Radix Sort",
+      "Boyer-Moore",
+      "Aho-Corasick",
+      "KMP"
+    ]
+  },
+  {
+    "q": "What is the maximum depth of a Trie node storing ASCII characters?",
+    "c": null,
+    "o": [
+      "256",
+      "128",
+      "26",
+      "52"
+    ]
+  },
+  {
+    "q": "Which operation is not typically supported by Fenwick Trees?",
+    "c": null,
+    "o": [
+      "Range updates",
+      "Point updates",
+      "Prefix sum queries",
+      "Cumulative frequency queries"
+    ]
+  },
+  {
+    "q": "In a Suffix Array, what does each index represent?",
+    "c": null,
+    "o": [
+      "The starting index of a suffix in lexicographical order",
+      "The ending index of a suffix",
+      "The length of the suffix",
+      "The hash of the suffix"
+    ]
+  },
+  {
+    "q": "Which of the following queries can be efficiently performed using a Segment Tree?",
+    "c": null,
+    "o": [
+      "Range minimum query",
+      "Binary search",
+      "Topological sorting",
+      "Cycle detection"
+    ]
+  },
+  {
+    "q": "What is the time complexity of the update operation in a Fenwick Tree?",
+    "c": null,
+    "o": [
+      "O(log n)",
+      "O(n)",
+      "O(1)",
+      "O(n log n)"
+    ]
+  },
+  {
+    "q": "Which of the following is true for the 'union' operation in Disjoint Set with union by rank?",
+    "c": null,
+    "o": [
+      "Always attach the smaller tree to the root of the larger tree",
+      "Always create a new root for the merged set",
+      "Always choose a random parent",
+      "None of the above"
+    ]
+  },
+  {
+    "q": "What is the primary purpose of a Trie?",
+    "c": null,
+    "o": [
+      "Efficient retrieval of strings based on prefixes",
+      "Efficient retrieval of numerical data",
+      "Dynamic memory allocation",
+      "Sorting integers in linear time"
+    ]
+  },
+  {
+    "q": "Which of the following operations is difficult to implement efficiently in a Fenwick Tree?",
+    "c": null,
+    "o": [
+      "Range update and range query",
+      "Point update",
+      "Prefix sum",
+      "Point query"
+    ]
+  },
+  {
+    "q": "What data structure is best suited for solving Lowest Common Ancestor (LCA) using range queries?",
+    "c": null,
+    "o": [
+      "Segment Tree",
+      "Queue",
+      "Stack",
+      "Hash Map"
+    ]
+  },
+  {
+    "q": "What is the time complexity of building a Suffix Array using the Prefix Doubling method?",
+    "c": null,
+    "o": [
+      "O(n log n)",
+      "O(n^2)",
+      "O(n)",
+      "O(n log^2 n)"
+    ]
+  },
+  {
+    "q": "Which structure is commonly used in Kruskal’s algorithm to detect cycles?",
+    "c": null,
+    "o": [
+      "Disjoint Set (Union-Find)",
+      "Heap",
+      "Adjacency Matrix",
+      "Priority Queue"
+    ]
+  },
+  {
+    "q": "What is the worst-case time complexity for pattern matching using a Suffix Tree?",
+    "c": null,
+    "o": [
+      "O(m)",
+      "O(n)",
+      "O(m log n)",
+      "O(n log m)"
+    ]
+  },
+  {
+    "q": "Which of the following operations is optimized in Union-Find with both union by rank and path compression?",
+    "c": null,
+    "o": [
+      "Find and Union operations become nearly O(1)",
+      "Only Union becomes O(1), Find is O(log n)",
+      "Only Find becomes O(1), Union is O(n)",
+      "Both operations stay O(log n)"
+    ]
+  },
+  {
+    "q": "Which data structure supports point updates and prefix sum queries in logarithmic time?",
+    "c": null,
+    "o": [
+      "Fenwick Tree",
+      "Hash Table",
+      "Stack",
+      "Queue"
+    ]
+  },
+  {
+    "q": "Which of the following is NOT a valid application of a Trie?",
+    "c": null,
+    "o": [
+      "Finding Lowest Common Ancestor (LCA)",
+      "Autocomplete system",
+      "Prefix matching",
+      "Spell checking"
+    ]
+  },
+  {
+    "q": "In a Segment Tree, what is the time complexity of building the tree?",
+    "c": null,
+    "o": [
+      "O(n)",
+      "O(log n)",
+      "O(n log n)",
+      "O(n^2)"
+    ]
+  },
+  {
+    "q": "Which of the following structures is best suited to represent compressed string suffixes for efficient substring queries?",
+    "c": null,
+    "o": [
+      "Suffix Tree",
+      "Heap",
+      "Deque",
+      "Fenwick Tree"
+    ]
+  },
+  {
+    "q": "What happens during path compression in a Disjoint Set?",
+    "c": null,
+    "o": [
+      "Each node points directly to the root of its set",
+      "The set is converted into a linked list",
+      "The union operation is skipped",
+      "Each node is removed from the set"
+    ]
+  },
+  {
+    "q": "What is the space complexity of a Trie storing `n` strings each of maximum length `m`?",
+    "c": null,
+    "o": [
+      "O(n * m)",
+      "O(n^2)",
+      "O(log n)",
+      "O(m)"
+    ]
+  },
+  {
+    "q": "Which tree-based structure is used in competitive programming for efficient range minimum queries?",
+    "c": null,
+    "o": [
+      "Segment Tree",
+      "Binary Heap",
+      "AVL Tree",
+      "Trie"
+    ]
+  },
+  {
+    "q": "What is the typical use of the `lowbit` function in a Fenwick Tree?",
+    "c": "\ndef lowbit(x):\n    return x & -x",
+    "o": [
+      "Isolates the lowest set bit",
+      "Checks if number is power of 2",
+      "Calculates parity of x",
+      "Returns x modulo 2"
+    ]
+  },
+  {
+    "q": "In a Suffix Array, binary search can be used to find:",
+    "c": null,
+    "o": [
+      "Occurrences of a substring",
+      "All permutations of a string",
+      "Minimum element",
+      "Longest palindromic prefix"
+    ]
+  },
+  {
+    "q": "What is the main advantage of using a Suffix Array over a Suffix Tree?",
+    "c": null,
+    "o": [
+      "Lower memory usage",
+      "Faster construction time",
+      "Better search speed",
+      "Built-in Python support"
+    ]
+  },
+  {
+    "q": "Which operation does NOT require rebuilding a Segment Tree?",
+    "c": null,
+    "o": [
+      "Querying a range",
+      "Changing a single element",
+      "Changing an entire range",
+      "Initializing the tree"
+    ]
+  },
+  {
+    "q": "In Union-Find, which technique helps to flatten the structure and speed up future queries?",
+    "c": null,
+    "o": [
+      "Path compression",
+      "Tree balancing",
+      "Hashing",
+      "Breadth-first traversal"
+    ]
+  },
+  {
+    "q": "Which of the following best describes the time complexity of a Fenwick Tree update operation?",
+    "c": null,
+    "o": [
+      "O(log n)",
+      "O(n)",
+      "O(1)",
+      "O(n log n)"
+    ]
+  },
+  {
+    "q": "Which of the following is TRUE about Trie insertion?",
+    "c": null,
+    "o": [
+      "Takes O(m) where m is the length of the string",
+      "Takes O(n log n)",
+      "Takes constant time",
+      "Takes O(n) where n is number of words"
+    ]
+  },
+  {
+    "q": "Which algorithm is often used to build a Suffix Array in O(n log n) time?",
+    "c": null,
+    "o": [
+      "Prefix Doubling",
+      "KMP",
+      "Rabin-Karp",
+      "DFS"
+    ]
+  },
+  {
+    "q": "Which query type is **not** efficiently supported by a basic Fenwick Tree?",
+    "c": null,
+    "o": [
+      "Range minimum query",
+      "Prefix sum",
+      "Point update",
+      "Cumulative frequency"
+    ]
+  },
+  {
+    "q": "What is the worst-case time complexity of the `find()` operation in Union-Find **with path compression**?",
+    "c": null,
+    "o": [
+      "O(α(n))",
+      "O(n)",
+      "O(log n)",
+      "O(1)"
+    ]
+  },
+  {
+    "q": "Which of the following problems is best solved using a Segment Tree?",
+    "c": null,
+    "o": [
+      "Range sum queries with updates",
+      "Finding duplicates in an array",
+      "Graph traversal",
+      "Checking if a string is palindrome"
+    ]
+  },
+  {
+    "q": "What is the output of the following code using a Fenwick Tree to compute prefix sums?",
+    "c": "tree = [0, 3, 5, 2, 8, 6]\n# 1-indexed Fenwick Tree\n\ndef prefix_sum(i):\n    total = 0\n    while i > 0:\n        total += tree[i]\n        i -= i & -i\n    return total\n\nprint(prefix_sum(4))",
+    "o": [
+      "18",
+      "16",
+      "10",
+      "20"
+    ]
+  },
+  {
+    "q": "In a Trie, how many children can each node have when storing lowercase English letters only?",
+    "c": null,
+    "o": [
+      "26",
+      "2",
+      "52",
+      "10"
+    ]
+  },
+  {
+    "q": "Which data structure is most suitable for answering range minimum queries with updates?",
+    "c": null,
+    "o": [
+      "Segment Tree",
+      "Suffix Tree",
+      "Trie",
+      "Disjoint Set"
+    ]
+  },
+  {
+    "q": "Which of the following operations is efficiently supported by a Fenwick Tree?",
+    "c": null,
+    "o": [
+      "Prefix sum",
+      "Finding minimum in a range",
+      "Range updates",
+      "String matching"
+    ]
+  },
+  {
+    "q": "Which method in the Disjoint Set structure ensures optimal performance over a series of union and find operations?",
+    "c": null,
+    "o": [
+      "Union by rank with path compression",
+      "Breadth-first union",
+      "Level-order merging",
+      "Segment linking"
+    ]
+  },
+  {
+    "q": "What is the time complexity to build a Suffix Tree for a string of length n?",
+    "c": null,
+    "o": [
+      "O(n)",
+      "O(n log n)",
+      "O(n^2)",
+      "O(log n)"
+    ]
+  },
+  {
+    "q": "Which algorithm is commonly used for LCP (Longest Common Prefix) array construction in suffix arrays?",
+    "c": null,
+    "o": [
+      "Kasai's algorithm",
+      "KMP algorithm",
+      "Dijkstra’s algorithm",
+      "Bellman-Ford algorithm"
+    ]
+  },
+  {
+    "q": "What does the expression `i & -i` typically compute in a Fenwick Tree?",
+    "c": null,
+    "o": [
+      "The lowest set bit of i",
+      "The highest set bit of i",
+      "Number of trailing zeros",
+      "All bits set to 1"
+    ]
+  },
+  {
+    "q": "Which data structure is ideal for fast prefix-based search in a dictionary of words?",
+    "c": null,
+    "o": [
+      "Trie",
+      "Hash Table",
+      "Heap",
+      "Stack"
+    ]
+  },
+  {
+    "q": "What would be the result of the following Disjoint Set operation?",
+    "c": "parent = [0, 1, 2, 3]\nrank = [0, 0, 0, 0]\n\ndef find(u):\n    if parent[u] != u:\n        parent[u] = find(parent[u])\n    return parent[u]\n\ndef union(u, v):\n    u_root = find(u)\n    v_root = find(v)\n    if u_root != v_root:\n        parent[u_root] = v_root\n\nunion(1, 2)\nprint(find(1))",
+    "o": [
+      "2",
+      "1",
+      "0",
+      "3"
+    ]
+  },
+  {
+    "q": "What is the main drawback of using a naive implementation of Suffix Arrays?",
+    "c": null,
+    "o": [
+      "High time complexity in sorting",
+      "High memory usage",
+      "Inability to store duplicate substrings",
+      "No support for substring search"
+    ]
+  },
+  {
+    "q": "Which of the following is a valid use case for a Segment Tree?",
+    "c": null,
+    "o": [
+      "Finding the maximum element in a range",
+      "Finding the shortest path between two nodes",
+      "Sorting an array",
+      "Detecting cycles in a graph"
+    ]
+  },
+  {
+    "q": "What is the typical time complexity for both update and query operations in a Fenwick Tree?",
+    "c": null,
+    "o": [
+      "O(log n)",
+      "O(n)",
+      "O(1)",
+      "O(n log n)"
+    ]
+  },
+  {
+    "q": "What is the worst-case time complexity of `find` operation in a Disjoint Set without optimizations?",
+    "c": null,
+    "o": [
+      "O(n)",
+      "O(log n)",
+      "O(1)",
+      "O(n log n)"
+    ]
+  },
+  {
+    "q": "What does the Trie data structure optimize?",
+    "c": null,
+    "o": [
+      "Prefix searches",
+      "Sorting arrays",
+      "Balanced trees",
+      "Matrix operations"
+    ]
+  },
+  {
+    "q": "Which of the following statements about Suffix Arrays is true?",
+    "c": null,
+    "o": [
+      "They allow efficient substring search in O(m + log n)",
+      "They use more memory than Suffix Trees",
+      "They are slower than Tries for prefix searches",
+      "They cannot be used in text compression"
+    ]
+  },
+  {
+    "q": "Which operation is **not** typically supported efficiently by a standard Fenwick Tree?",
+    "c": null,
+    "o": [
+      "Range update with range query",
+      "Prefix sum query",
+      "Single element update",
+      "Cumulative frequency queries"
+    ]
+  },
+  {
+    "q": "What is the primary goal of 'path compression' in the Disjoint Set data structure?",
+    "c": null,
+    "o": [
+      "Reduce the height of trees during find",
+      "Speed up union operations",
+      "Detect cycles",
+      "Optimize prefix queries"
+    ]
+  },
+  {
+    "q": "What is returned by this code using a Segment Tree to query the minimum value?",
+    "c": "arr = [5, 3, 7, 9, 6, 2]\n# Assume segment tree is properly built to support range minimum queries\n# Query minimum from index 1 to 4\n# Expected result is min(3, 7, 9, 6)\nprint(min(arr[1:5]))",
+    "o": [
+      "3",
+      "5",
+      "2",
+      "6"
+    ]
+  },
+  {
+    "q": "Which of the following applications can be efficiently solved using a Suffix Tree?",
+    "c": null,
+    "o": [
+      "Longest Repeated Substring",
+      "Finding next greater element",
+      "Finding connected components",
+      "Matrix multiplication"
+    ]
+  },
+  {
+    "q": "Which technique is used in advanced Segment Trees to support range updates?",
+    "c": null,
+    "o": [
+      "Lazy propagation",
+      "Path compression",
+      "Hashing",
+      "Backtracking"
+    ]
+  },
+  {
+    "q": "What is the primary advantage of using a Trie over a Hash Table for dictionary word searches?",
+    "c": null,
+    "o": [
+      "Tries can efficiently handle prefix-based searches",
+      "Hash Tables consume less memory",
+      "Tries provide faster O(1) access",
+      "Tries support complex hashing functions"
+    ]
+  },
+  {
+    "q": "Which data structure is most suitable for answering dynamic range sum queries and point updates efficiently?",
+    "c": null,
+    "o": [
+      "Fenwick Tree",
+      "Hash Map",
+      "Stack",
+      "Queue"
+    ]
+  },
+  {
+    "q": "Which of the following can be used to implement Union-Find efficiently?",
+    "c": null,
+    "o": [
+      "Disjoint Set with union by rank and path compression",
+      "Segment Tree",
+      "Binary Heap",
+      "Breadth First Search"
+    ]
+  },
+  {
+    "q": "Which of the following suffixes will come first in a lexicographically sorted suffix array of the string 'banana'?",
+    "c": null,
+    "o": [
+      "a",
+      "ana",
+      "anana",
+      "banana"
+    ]
+  },
+  {
+    "q": "Which operation does a Fenwick Tree fail to support efficiently?",
+    "c": null,
+    "o": [
+      "Range minimum queries",
+      "Prefix sum queries",
+      "Point updates",
+      "Cumulative frequency calculations"
+    ]
+  },
+  {
+    "q": "What will be the result of performing a union operation between two sets in a Disjoint Set Forest?",
+    "c": null,
+    "o": [
+      "It merges both sets into one",
+      "It deletes one of the sets",
+      "It returns the maximum element of both sets",
+      "It sorts the combined elements"
+    ]
+  },
+  {
+    "q": "Which operation benefits the most from lazy propagation in segment trees?",
+    "c": null,
+    "o": [
+      "Range updates",
+      "Single element deletion",
+      "Prefix sum",
+      "Union operations"
+    ]
+  },
+  {
+    "q": "In a Trie, what is the time complexity for inserting a string of length `k`?",
+    "c": null,
+    "o": [
+      "O(k)",
+      "O(log k)",
+      "O(k log k)",
+      "O(1)"
+    ]
+  },
+  {
+    "q": "What is the space complexity of a Suffix Tree for a string of length `n`?",
+    "c": null,
+    "o": [
+      "O(n)",
+      "O(n log n)",
+      "O(n^2)",
+      "O(log n)"
+    ]
+  },
+  {
+    "q": "Which of the following correctly describes the usage of Segment Trees?",
+    "c": null,
+    "o": [
+      "Efficient for range-based queries and updates",
+      "Best for storing unordered key-value pairs",
+      "Primarily used for shortest path algorithms",
+      "Good for detecting loops in graphs"
+    ]
+  },
+  {
+    "q": "Which technique optimizes Disjoint Set operations to nearly constant time?",
+    "c": null,
+    "o": [
+      "Union by rank and path compression",
+      "Binary search",
+      "Hashing",
+      "Divide and conquer"
+    ]
+  },
+  {
+    "q": "What is the main difference between a Trie and a Suffix Tree?",
+    "c": null,
+    "o": [
+      "Trie stores prefixes, Suffix Tree stores suffixes",
+      "Trie requires more memory",
+      "Suffix Trees cannot be used for pattern matching",
+      "Trie supports only lowercase characters"
+    ]
+  },
+  {
+    "q": "How much space does a Fenwick Tree require for an array of size n?",
+    "c": null,
+    "o": [
+      "O(n)",
+      "O(log n)",
+      "O(n log n)",
+      "O(1)"
+    ]
+  },
+  {
+    "q": "Which problem can be solved using Segment Trees with lazy propagation?",
+    "c": null,
+    "o": [
+      "Range update and range sum queries",
+      "Single element update",
+      "Sorting an array",
+      "Finding longest common prefix"
+    ]
+  },
+  {
+    "q": "Which of the following data structures is best for handling prefix-based string searches?",
+    "c": null,
+    "o": [
+      "Trie",
+      "Stack",
+      "Queue",
+      "HashMap"
+    ]
+  },
+  {
+    "q": "Which operation is the most optimized in a Suffix Array?",
+    "c": null,
+    "o": [
+      "Pattern searching",
+      "String reversal",
+      "Lexicographical sorting",
+      "String concatenation"
+    ]
+  },
+  {
+    "q": "Which of the following operations is performed in O(log n) time in a Fenwick Tree?",
+    "c": null,
+    "o": [
+      "Prefix sum query",
+      "Range minimum query",
+      "Array rotation",
+      "Pattern matching"
+    ]
+  },
+  {
+    "q": "What is a key application of Disjoint Set Union-Find?",
+    "c": null,
+    "o": [
+      "Cycle detection in graphs",
+      "Range queries",
+      "Sorting arrays",
+      "Searching substrings"
+    ]
+  },
+  {
+    "q": "What is the best case time complexity of finding the root of an element in Union-Find with path compression?",
+    "c": null,
+    "o": [
+      "O(1)",
+      "O(log n)",
+      "O(n)",
+      "O(n log n)"
+    ]
+  },
+  {
+    "q": "What is the main use of suffix trees in string processing?",
+    "c": null,
+    "o": [
+      "Efficient pattern matching",
+      "Sorting large numbers",
+      "Range minimum queries",
+      "Counting inversions"
+    ]
+  },
+  {
+    "q": "Which of the following is NOT true about a Segment Tree?",
+    "c": null,
+    "o": [
+      "It can handle prefix sum queries efficiently",
+      "It allows range updates and queries in O(log n)",
+      "It is a binary tree structure",
+      "It is useful for solving range minimum queries"
+    ]
+  },
+  {
+    "q": "What is the typical time complexity for building a Trie with n words of maximum length m?",
+    "c": null,
+    "o": [
+      "O(n * m)",
+      "O(n)",
+      "O(log n)",
+      "O(m log n)"
+    ]
+  },
+  {
+    "q": "Which of the following data structures supports efficient rollback of operations?",
+    "c": null,
+    "o": [
+      "Persistent Disjoint Set",
+      "Fenwick Tree",
+      "Segment Tree with Lazy Propagation",
+      "Suffix Array"
+    ]
+  },
+  {
+    "q": "Which of the following best describes a Fenwick Tree?",
+    "c": null,
+    "o": [
+      "Binary Indexed Tree",
+      "Modified Hash Table",
+      "Self-balancing BST",
+      "Linked Segment Tree"
+    ]
+  },
+  {
+    "q": "Which operation is used in both Trie and Suffix Tree construction?",
+    "c": null,
+    "o": [
+      "Character-wise insertion",
+      "Binary search",
+      "Hash mapping",
+      "Heapifying"
+    ]
+  },
+  {
+    "q": "What is the purpose of the LCP array in Suffix Arrays?",
+    "c": null,
+    "o": [
+      "Stores longest common prefix lengths between suffixes",
+      "Stores least common parent of substrings",
+      "Tracks lexicographical order",
+      "Caches substring hashes"
+    ]
+  },
+  {
+    "q": "What is a key limitation of a Trie?",
+    "c": null,
+    "o": [
+      "High memory usage",
+      "Slow lookup",
+      "Inability to store digits",
+      "Cannot handle lowercase characters"
+    ]
+  },
+  {
+    "q": "Which technique is essential for optimizing Union-Find operations?",
+    "c": null,
+    "o": [
+      "Path compression",
+      "Heapification",
+      "Radix sort",
+      "Rolling hash"
+    ]
+  },
+  {
+    "q": "What kind of queries can be efficiently solved using Segment Trees with Lazy Propagation?",
+    "c": null,
+    "o": [
+      "Range updates and queries",
+      "Only prefix sum queries",
+      "Static array queries",
+      "Sorting in-place"
+    ]
+  },
+  {
+    "q": "Which of the following is true about Suffix Trees?",
+    "c": null,
+    "o": [
+      "They allow O(m) pattern matching after O(n) preprocessing",
+      "They require O(n²) space",
+      "They are inefficient for substring search",
+      "They are built using heaps"
+    ]
+  },
+  {
+    "q": "What is the primary use case of a Disjoint Set (Union-Find)?",
+    "c": null,
+    "o": [
+      "Tracking connected components",
+      "Sorting arrays",
+      "Maintaining minimum spanning trees",
+      "Storing hash values of strings"
+    ]
+  },
+  {
+    "q": "Which of the following is used to optimize Suffix Array construction?",
+    "c": null,
+    "o": [
+      "Doubling Algorithm",
+      "Heap Sort",
+      "Union by Rank",
+      "Lazy Propagation"
+    ]
+  },
+  {
+    "q": "What is the time complexity of a single query in a Fenwick Tree?",
+    "c": null,
+    "o": [
+      "O(log n)",
+      "O(1)",
+      "O(n)",
+      "O(n log n)"
+    ]
+  },
+  {
+    "q": "Which operation takes the longest time in a basic Disjoint Set implementation without optimizations?",
+    "c": null,
+    "o": [
+      "Find",
+      "Union",
+      "Insert",
+      "Delete"
+    ]
+  },
+  {
+    "q": "What is stored at each node of a Segment Tree for range sum queries?",
+    "c": null,
+    "o": [
+      "Sum of the segment",
+      "Minimum of the segment",
+      "Frequency of elements",
+      "Pointer to parent"
+    ]
+  },
+  {
+    "q": "Which of the following string operations can be performed in O(1) using a Trie (assuming a limited character set)?",
+    "c": null,
+    "o": [
+      "Prefix search",
+      "Longest common substring search",
+      "String reversal",
+      "Suffix sorting"
+    ]
+  },
+  {
+    "q": "Which algorithm is commonly used with Disjoint Sets to find cycles in a graph?",
+    "c": null,
+    "o": [
+      "Kruskal's algorithm",
+      "Prim's algorithm",
+      "Dijkstra’s algorithm",
+      "Floyd-Warshall algorithm"
+    ]
+  },
+  {
+    "q": "What is the main benefit of using a Fenwick Tree over a Segment Tree?",
+    "c": null,
+    "o": [
+      "Simpler implementation with similar time complexity",
+      "Can handle more types of queries",
+      "Faster worst-case time complexity",
+      "Uses a recursive structure"
+    ]
+  },
+  {
+    "q": "In a Trie, what does each node typically represent?",
+    "c": null,
+    "o": [
+      "A single character",
+      "A complete string",
+      "A substring",
+      "An index"
+    ]
+  },
+  {
+    "q": "Which property makes Union-Find efficient for repeated find and union operations?",
+    "c": null,
+    "o": [
+      "Path compression and union by rank",
+      "Hashing and dynamic resizing",
+      "Memoization and tabulation",
+      "Recursion and backtracking"
+    ]
+  },
+  {
+    "q": "Which data structure is ideal for quickly checking if a string is a prefix of any previously inserted string?",
+    "c": null,
+    "o": [
+      "Trie",
+      "Hash Map",
+      "Segment Tree",
+      "Stack"
+    ]
+  },
+  {
+    "q": "What is the typical time complexity for updating a value in a Segment Tree?",
+    "c": null,
+    "o": [
+      "O(log n)",
+      "O(1)",
+      "O(n)",
+      "O(n log n)"
+    ]
+  },
+  {
+    "q": "What does path compression do in a Disjoint Set Union-Find?",
+    "c": null,
+    "o": [
+      "Flattens the structure to reduce future find time",
+      "Increases the tree depth",
+      "Sorts the disjoint sets",
+      "Compresses values into a smaller datatype"
+    ]
+  },
+  {
+    "q": "Which of the following is NOT a typical operation in a Trie?",
+    "c": null,
+    "o": [
+      "Deletion of random characters",
+      "Insertion of a string",
+      "Prefix matching",
+      "Search for an exact word"
+    ]
+  },
+  {
+    "q": "Which structure is best suited for answering cumulative frequency queries?",
+    "c": null,
+    "o": [
+      "Fenwick Tree",
+      "Stack",
+      "Queue",
+      "Priority Queue"
+    ]
+  },
+  {
+    "q": "Which technique is used in advanced Suffix Array construction to reduce time complexity?",
+    "c": null,
+    "o": [
+      "Radix Sort",
+      "Bubble Sort",
+      "Depth-First Search",
+      "Dynamic Programming"
+    ]
+  },
+  {
+    "q": "In Segment Trees, what does lazy propagation help with?",
+    "c": null,
+    "o": [
+      "Efficient range updates",
+      "Faster single element access",
+      "Handling prefix queries",
+      "Memory allocation"
+    ]
+  },
+  {
+    "q": "What is the time complexity of building a Segment Tree for n elements?",
+    "c": null,
+    "o": [
+      "O(n)",
+      "O(n log n)",
+      "O(log n)",
+      "O(n^2)"
+    ]
+  },
+  {
+    "q": "How many children can each node in a Trie for lowercase English letters have?",
+    "c": null,
+    "o": [
+      "26",
+      "2",
+      "10",
+      "Infinite"
+    ]
+  },
+  {
+    "q": "Which of these is an advantage of a Fenwick Tree over a naive cumulative sum array?",
+    "c": null,
+    "o": [
+      "Efficient updates and queries",
+      "Supports dynamic memory allocation",
+      "Uses recursion by default",
+      "Faster initialization time"
+    ]
+  },
+  {
+    "q": "What is the worst-case time complexity of the 'find' operation in a Disjoint Set without any optimizations?",
+    "c": null,
+    "o": [
+      "O(n)",
+      "O(log n)",
+      "O(1)",
+      "O(n log n)"
+    ]
+  },
+  {
+    "q": "Which string processing technique is commonly used for fast substring search and pattern matching?",
+    "c": null,
+    "o": [
+      "Suffix Array",
+      "Segment Tree",
+      "Fenwick Tree",
+      "Hash Table"
+    ]
+  },
+  {
+    "q": "Which tree structure supports efficient point updates and prefix queries in logarithmic time?",
+    "c": null,
+    "o": [
+      "Fenwick Tree",
+      "Binary Search Tree",
+      "AVL Tree",
+      "Heap"
+    ]
+  },
+  {
+    "q": "What does the union by rank heuristic do in a Disjoint Set?",
+    "c": null,
+    "o": [
+      "Attaches the shorter tree under the taller one",
+      "Sorts elements by weight",
+      "Reorders the tree randomly",
+      "Removes duplicate elements"
+    ]
+  },
+  {
+    "q": "Which of the following operations is most efficient in a Trie?",
+    "c": null,
+    "o": [
+      "Prefix search",
+      "Range sum",
+      "Finding minimum",
+      "Heap sort"
+    ]
+  },
+  {
+    "q": "Which data structure is best suited to solve range minimum queries?",
+    "c": null,
+    "o": [
+      "Segment Tree",
+      "Stack",
+      "Queue",
+      "Linked List"
+    ]
+  },
+  {
+    "q": "What is the auxiliary space complexity of a Fenwick Tree for n elements?",
+    "c": null,
+    "o": [
+      "O(n)",
+      "O(1)",
+      "O(log n)",
+      "O(n log n)"
+    ]
+  },
+  {
+    "q": "Which Python data structure can simulate a Trie if custom classes are not allowed?",
+    "c": null,
+    "o": [
+      "Nested dictionaries",
+      "Lists of tuples",
+      "Sets of strings",
+      "Flat list of characters"
+    ]
+  },
+  {
+    "q": "What is the time complexity to construct a Suffix Tree?",
+    "c": null,
+    "o": [
+      "O(n)",
+      "O(n^2)",
+      "O(n log n)",
+      "O(log n)"
+    ]
+  },
+  {
+    "q": "In a Segment Tree used for sum queries, what is stored at each node?",
+    "c": null,
+    "o": [
+      "Sum of a segment",
+      "Minimum value of segment",
+      "Prefix sum",
+      "Maximum value of entire array"
+    ]
+  },
+  {
+    "q": "What is the purpose of 'path compression' in the Union-Find data structure?",
+    "c": null,
+    "o": [
+      "To flatten the tree and optimize future 'find' operations",
+      "To compress the array used in the data structure",
+      "To reduce memory usage",
+      "To increase the depth of the trees"
+    ]
+  },
+  {
+    "q": "Which of the following operations is NOT efficiently supported by a Trie?",
+    "c": null,
+    "o": [
+      "Finding the longest increasing subsequence",
+      "Checking if a word exists",
+      "Finding all words with a common prefix",
+      "Autocomplete functionality"
+    ]
+  },
+  {
+    "q": "Which of the following is true for Suffix Arrays?",
+    "c": null,
+    "o": [
+      "They can be built using sorting and are space-efficient",
+      "They are built using a Fenwick Tree",
+      "They require more space than suffix trees",
+      "They are only applicable to numeric data"
+    ]
+  },
+  {
+    "q": "What is the key advantage of Segment Trees over Binary Indexed Trees?",
+    "c": null,
+    "o": [
+      "They support more types of queries like min/max",
+      "They use less memory",
+      "They are simpler to implement",
+      "They have faster point updates"
+    ]
+  },
+  {
+    "q": "Which data structure provides the best performance for solving the Lowest Common Ancestor (LCA) problem?",
+    "c": null,
+    "o": [
+      "Segment Tree with Euler Tour",
+      "Fenwick Tree",
+      "Trie",
+      "Heap"
+    ]
+  },
+  {
+    "q": "What is the size of a Binary Indexed Tree (Fenwick Tree) for an array of size n?",
+    "c": null,
+    "o": [
+      "n + 1",
+      "n",
+      "2n",
+      "log n"
+    ]
+  },
+  {
+    "q": "Which of the following is a use case of Suffix Trees?",
+    "c": null,
+    "o": [
+      "Finding the longest repeated substring",
+      "Sorting an array",
+      "Matrix multiplication",
+      "Shortest path finding"
+    ]
+  },
+  {
+    "q": "How many child nodes can each node of a Trie have (for lowercase English letters)?",
+    "c": null,
+    "o": [
+      "26",
+      "2",
+      "128",
+      "10"
+    ]
+  },
+  {
+    "q": "Which of the following operations is faster in a Fenwick Tree than in a naive array approach?",
+    "c": null,
+    "o": [
+      "Prefix sum query",
+      "Random access",
+      "Element deletion",
+      "Sorting"
+    ]
+  },
+  {
+    "q": "What happens in a Segment Tree when an element is updated?",
+    "c": null,
+    "o": [
+      "Only affected segments are updated",
+      "The entire tree is rebuilt",
+      "All nodes are reset to zero",
+      "The update is deferred until the next query"
+    ]
+  },
+  {
+    "q": "Which operation in Disjoint Set Union is optimized using 'union by rank'?",
+    "c": null,
+    "o": [
+      "Union",
+      "Find",
+      "Insert",
+      "Delete"
+    ]
+  },
+  {
+    "q": "In a Fenwick Tree, which bitwise operation is commonly used to compute the parent index?",
+    "c": "\nindex -= index & -index",
+    "o": [
+      "index -= index & -index",
+      "index += index & -index",
+      "index = index >> 1",
+      "index = index << 1"
+    ]
+  },
+  {
+    "q": "Which algorithm is commonly used to construct a Suffix Array efficiently?",
+    "c": null,
+    "o": [
+      "Prefix Doubling",
+      "DFS",
+      "Kruskal's Algorithm",
+      "Dynamic Programming"
+    ]
+  },
+  {
+    "q": "Which of the following is a valid use case of a Trie?",
+    "c": null,
+    "o": [
+      "IP routing",
+      "Dijkstra's Algorithm",
+      "Graph coloring",
+      "Matrix chain multiplication"
+    ]
+  },
+  {
+    "q": "What is the typical time complexity of range sum queries in a Segment Tree?",
+    "c": null,
+    "o": [
+      "O(log n)",
+      "O(1)",
+      "O(n)",
+      "O(log^2 n)"
+    ]
+  },
+  {
+    "q": "In the Union-Find structure, how is the parent of a node determined?",
+    "c": null,
+    "o": [
+      "By recursively finding its root using path compression",
+      "By checking the node's degree",
+      "Using binary search",
+      "By traversing all neighbors"
+    ]
+  },
+  {
+    "q": "Which data structure is most suitable for handling a large number of prefix queries efficiently?",
+    "c": null,
+    "o": [
+      "Trie",
+      "Stack",
+      "Queue",
+      "Graph"
+    ]
+  },
+  {
+    "q": "What is the worst-case time complexity to construct a Segment Tree?",
+    "c": null,
+    "o": [
+      "O(n)",
+      "O(n log n)",
+      "O(log n)",
+      "O(n^2)"
+    ]
+  },
+  {
+    "q": "Which of the following best describes a Suffix Tree?",
+    "c": null,
+    "o": [
+      "A compressed trie of all suffixes of a string",
+      "A heap that stores suffixes",
+      "A binary tree for pattern matching",
+      "A queue for suffix rotation"
+    ]
+  },
+  {
+    "q": "What data structure can answer the query 'How many times does a prefix occur?' in O(1) after preprocessing?",
+    "c": null,
+    "o": [
+      "Trie with frequency count",
+      "Segment Tree",
+      "Disjoint Set",
+      "Min-Heap"
+    ]
+  },
+  {
+    "q": "What does path compression do in a Union-Find structure?",
+    "c": null,
+    "o": [
+      "Flattens the tree by making each node point directly to the root",
+      "Increases the height of the tree",
+      "Merges two trees randomly",
+      "Splits a tree into two disjoint sets"
+    ]
+  },
+  {
+    "q": "What is the space complexity of a Trie storing n strings of average length m?",
+    "c": null,
+    "o": [
+      "O(n * m)",
+      "O(n + m)",
+      "O(n^2)",
+      "O(m log n)"
+    ]
+  },
+  {
+    "q": "Which data structure allows prefix matching in O(length of the string) time?",
+    "c": null,
+    "o": [
+      "Trie",
+      "HashMap",
+      "Segment Tree",
+      "Binary Search Tree"
+    ]
+  },
+  {
+    "q": "What is the main advantage of Fenwick Tree over Segment Tree?",
+    "c": null,
+    "o": [
+      "Requires less memory and is easier to implement",
+      "Supports a wider range of operations",
+      "Handles dynamic memory allocation",
+      "Stores multiple values at each node"
+    ]
+  },
+  {
+    "q": "Which operation is optimized by 'union by size' in Disjoint Set?",
+    "c": null,
+    "o": [
+      "Union",
+      "Find",
+      "Merge Sort",
+      "Depth First Search"
+    ]
+  },
+  {
+    "q": "What does the following line of code do in a Fenwick Tree?\n`index += index & -index`",
+    "c": "\nindex += index & -index",
+    "o": [
+      "Moves to the next node that covers more elements",
+      "Moves to the previous element",
+      "Finds the parent node",
+      "Calculates prefix sum directly"
+    ]
+  },
+  {
+    "q": "Which suffix-based data structure allows substring search in linear time with respect to query length?",
+    "c": null,
+    "o": [
+      "Suffix Tree",
+      "Suffix Array",
+      "Trie",
+      "Hash Table"
+    ]
+  },
+  {
+    "q": "What is the main difference between a Suffix Array and a Suffix Tree?",
+    "c": null,
+    "o": [
+      "Suffix Tree stores complete branching structure, while Suffix Array is sorted suffix indices",
+      "Suffix Array uses more space",
+      "Suffix Tree is only for numeric data",
+      "Suffix Array is slower in all operations"
+    ]
+  },
+  {
+    "q": "What is the time complexity of the 'find' operation in a Union-Find with path compression?",
+    "c": null,
+    "o": [
+      "O(α(n))",
+      "O(log n)",
+      "O(n)",
+      "O(1)"
+    ]
+  },
+  {
+    "q": "What does the 'lowbit' function return in the context of a Binary Indexed Tree (Fenwick Tree)?",
+    "c": "\ndef lowbit(x):\n    return x & -x",
+    "o": [
+      "The least significant set bit of x",
+      "The most significant bit of x",
+      "The bitwise NOT of x",
+      "All set bits of x"
+    ]
+  },
+  {
+    "q": "Which of the following best describes the structure of a Trie?",
+    "c": null,
+    "o": [
+      "A tree where each node represents a character of a string",
+      "A binary tree storing hash values",
+      "A list of linked lists",
+      "A balanced binary search tree"
+    ]
+  },
+  {
+    "q": "Which operation is typically NOT supported by a Segment Tree?",
+    "c": null,
+    "o": [
+      "Prefix sum in O(1) time",
+      "Range maximum query",
+      "Range sum query",
+      "Range update"
+    ]
+  },
+  {
+    "q": "Which of the following problems can be efficiently solved using a Disjoint Set Union-Find structure?",
+    "c": null,
+    "o": [
+      "Detecting cycles in an undirected graph",
+      "Finding shortest paths in a graph",
+      "Implementing a priority queue",
+      "Evaluating arithmetic expressions"
+    ]
+  },
+  {
+    "q": "In a Binary Indexed Tree (Fenwick Tree), what is the time complexity for both update and query operations?",
+    "c": null,
+    "o": [
+      "O(log n)",
+      "O(1)",
+      "O(n)",
+      "O(n log n)"
+    ]
+  },
+  {
+    "q": "Which technique helps optimize both 'find' and 'union' operations in a Disjoint Set?",
+    "c": null,
+    "o": [
+      "Path compression and union by rank",
+      "Hashing and memoization",
+      "Binary search and backtracking",
+      "Greedy and dynamic programming"
+    ]
+  },
+  {
+    "q": "Which data structure is best suited for handling queries like: 'What is the minimum element in a range [l, r]?'?",
+    "c": null,
+    "o": [
+      "Segment Tree",
+      "Stack",
+      "Hash Map",
+      "Heap"
+    ]
+  },
+  {
+    "q": "Which of the following can be used to construct a Suffix Array?",
+    "c": null,
+    "o": [
+      "Radix Sort and Doubling Technique",
+      "Heap Sort",
+      "Binary Search Tree",
+      "Backtracking and DFS"
+    ]
+  },
+  {
+    "q": "What is the main advantage of using a Trie for storing strings over using a HashMap?",
+    "c": null,
+    "o": [
+      "Faster prefix-based lookups",
+      "Takes less memory",
+      "Supports sorting by insertion order",
+      "Allows arithmetic operations on keys"
+    ]
+  },
+  {
+    "q": "Which of the following suffix array construction methods has a time complexity of O(n log n)?",
+    "c": null,
+    "o": [
+      "Prefix Doubling",
+      "Naive Sorting",
+      "Manber-Myers Algorithm",
+      "Z-Algorithm"
+    ]
+  },
+  {
+    "q": "What is a common application of a Suffix Tree in string algorithms?",
+    "c": null,
+    "o": [
+      "Finding longest repeated substring",
+      "Sorting strings alphabetically",
+      "Counting words in a sentence",
+      "Generating permutations"
+    ]
+  },
+  {
+    "q": "Which of the following is TRUE about Trie data structure?",
+    "c": null,
+    "o": [
+      "Each path from the root to a leaf represents a prefix of a string",
+      "Each node stores a full string",
+      "It cannot handle duplicate characters",
+      "It is slower than hash maps for prefix search"
+    ]
+  },
+  {
+    "q": "What does the 'find' operation do in a Disjoint Set (Union-Find)?",
+    "c": null,
+    "o": [
+      "Finds the representative (root) of the set to which an element belongs",
+      "Finds the maximum in a segment",
+      "Finds the smallest element in the tree",
+      "Finds all children of a node"
+    ]
+  },
+  {
+    "q": "In Segment Tree, which technique is used to handle range updates efficiently?",
+    "c": null,
+    "o": [
+      "Lazy Propagation",
+      "Binary Search",
+      "DFS Traversal",
+      "Hashing"
+    ]
+  },
+  {
+    "q": "Which of the following operations can a Fenwick Tree NOT perform efficiently?",
+    "c": null,
+    "o": [
+      "Range minimum query",
+      "Prefix sum query",
+      "Cumulative frequency query",
+      "Point update"
+    ]
+  },
+  {
+    "q": "Which of the following is a correct property of a Suffix Tree?",
+    "c": null,
+    "o": [
+      "It contains all suffixes of a string in its paths",
+      "It stores sorted characters only",
+      "It cannot be used for pattern matching",
+      "It is used to calculate Fibonacci numbers"
+    ]
+  },
+  {
+    "q": "Which function of the Disjoint Set is optimized by 'union by rank'?",
+    "c": null,
+    "o": [
+      "union",
+      "insert",
+      "find",
+      "delete"
+    ]
+  },
+  {
+    "q": "What is the time complexity of a 'find' operation in Disjoint Set with path compression?",
+    "c": null,
+    "o": [
+      "O(α(n))",
+      "O(log n)",
+      "O(n)",
+      "O(n log n)"
+    ]
+  },
+  {
+    "q": "Which of these is a practical application of Suffix Arrays?",
+    "c": null,
+    "o": [
+      "Searching substrings efficiently",
+      "Creating hash maps",
+      "Evaluating expressions",
+      "Balancing binary trees"
+    ]
+  },
+  {
+    "q": "What is the worst-case space complexity of a Trie storing 'n' strings of length 'm'?",
+    "c": null,
+    "o": [
+      "O(n * m)",
+      "O(n log m)",
+      "O(m)",
+      "O(n)"
+    ]
+  },
+  {
+    "q": "What is the value returned by a BIT when queried at index 'i'?",
+    "c": "\n# BIT array = [0, 5, 6, 2, 8, 3, 7, 0]\n# Query at index 5\n",
+    "o": [
+      "22",
+      "17",
+      "19",
+      "20"
+    ]
+  },
+  {
+    "q": "Which data structure is most suitable for implementing an autocomplete feature?",
+    "c": null,
+    "o": [
+      "Trie",
+      "Stack",
+      "Linked List",
+      "Hash Table"
+    ]
+  },
+  {
+    "q": "What is the main advantage of using a Fenwick Tree over a Segment Tree?",
+    "c": null,
+    "o": [
+      "Simpler implementation and less memory usage",
+      "Faster build time",
+      "Handles range minimum queries",
+      "Can be used for string searching"
+    ]
+  },
+  {
+    "q": "Which of the following suffix structures allows linear-time construction?",
+    "c": null,
+    "o": [
+      "Suffix Tree (using Ukkonen’s algorithm)",
+      "Naive suffix list",
+      "Suffix Array with bubble sort",
+      "KMP Table"
+    ]
+  },
+  {
+    "q": "What is the purpose of 'path compression' in Union-Find?",
+    "c": null,
+    "o": [
+      "To flatten the structure of the tree for faster future queries",
+      "To merge two sets quickly",
+      "To reduce memory usage",
+      "To maintain the balance of a binary search tree"
+    ]
+  },
+  {
+    "q": "How is the Trie structure typically represented in Python?",
+    "c": null,
+    "o": [
+      "Using nested dictionaries",
+      "Using lists only",
+      "Using a stack",
+      "Using a single string"
+    ]
+  },
+  {
+    "q": "Which operation is supported efficiently by Segment Trees but NOT by Fenwick Trees?",
+    "c": null,
+    "o": [
+      "Range minimum query",
+      "Prefix sum query",
+      "Point update",
+      "Cumulative frequency query"
+    ]
+  },
+  {
+    "q": "Which of the following algorithms is often used with Suffix Arrays for efficient pattern matching?",
+    "c": null,
+    "o": [
+      "Binary Search",
+      "Depth First Search",
+      "Greedy Algorithm",
+      "Dynamic Programming"
+    ]
+  },
+  {
+    "q": "What is the time complexity of inserting a word of length `m` into a Trie?",
+    "c": null,
+    "o": [
+      "O(m)",
+      "O(log m)",
+      "O(n)",
+      "O(m log m)"
+    ]
+  },
+  {
+    "q": "In a Binary Indexed Tree (Fenwick Tree), what does index `i & -i` compute?",
+    "c": null,
+    "o": [
+      "The least significant bit of `i`",
+      "The most significant bit of `i`",
+      "The parity of `i`",
+      "The average of `i` and `-i`"
+    ]
+  },
+  {
+    "q": "Which property distinguishes Suffix Arrays from Suffix Trees?",
+    "c": null,
+    "o": [
+      "Suffix Arrays store indices; Trees store paths",
+      "Suffix Arrays are not used for text search",
+      "Suffix Trees take less space than Suffix Arrays",
+      "Suffix Trees are sorted arrays"
+    ]
+  },
+  {
+    "q": "Which of the following operations is fastest in a Fenwick Tree?",
+    "c": null,
+    "o": [
+      "Prefix sum query",
+      "Range minimum query",
+      "String search",
+      "Median finding"
+    ]
+  },
+  {
+    "q": "Which two operations does a Disjoint Set (Union-Find) support efficiently?",
+    "c": null,
+    "o": [
+      "Find and Union",
+      "Insert and Delete",
+      "Push and Pop",
+      "Merge and Sort"
+    ]
+  },
+  {
+    "q": "What is the worst-case time complexity of a 'find' operation in a Disjoint Set using path compression?",
+    "c": null,
+    "o": [
+      "O(α(n))",
+      "O(log n)",
+      "O(n)",
+      "O(1)"
+    ]
+  },
+  {
+    "q": "What is the purpose of 'rank' in the Union operation of Disjoint Sets?",
+    "c": null,
+    "o": [
+      "To keep tree height minimal",
+      "To perform sorting",
+      "To improve hashing",
+      "To calculate depth"
+    ]
+  },
+  {
+    "q": "Which of these is true about Suffix Trees?",
+    "c": null,
+    "o": [
+      "They allow linear-time pattern matching",
+      "They are slower than suffix arrays for all operations",
+      "They are built using hash functions",
+      "They cannot store repeated substrings"
+    ]
+  },
+  {
+    "q": "In a Segment Tree, what is the typical time complexity for a point update and a range query?",
+    "c": null,
+    "o": [
+      "O(log n)",
+      "O(1)",
+      "O(n)",
+      "O(n log n)"
+    ]
+  },
+  {
+    "q": "Which of the following statements about Trie is FALSE?",
+    "c": null,
+    "o": [
+      "Trie uses more space than a hash map for sparse data",
+      "Trie supports prefix search efficiently",
+      "Trie stores the entire string at each node",
+      "Trie nodes are typically connected using dictionaries or arrays"
+    ]
+  },
+  {
+    "q": "Which of the following is NOT a valid use case for Suffix Arrays?",
+    "c": null,
+    "o": [
+      "Sorting user inputs in a form",
+      "Pattern matching in texts",
+      "Finding longest repeated substrings",
+      "Genome sequencing"
+    ]
+  },
+  {
+    "q": "Which data structure is most efficient for dynamic range sum queries and point updates?",
+    "c": null,
+    "o": [
+      "Segment Tree",
+      "Heap",
+      "Queue",
+      "Stack"
+    ]
+  },
+  {
+    "q": "Which tree structure stores substrings by traversing character-by-character from root to leaves?",
+    "c": null,
+    "o": [
+      "Trie",
+      "AVL Tree",
+      "Red-Black Tree",
+      "Heap"
+    ]
+  },
+  {
+    "q": "Which property of Fenwick Tree makes it efficient for prefix sum computations?",
+    "c": null,
+    "o": [
+      "It stores partial sums using binary indexing",
+      "It stores the complete array twice",
+      "It balances itself like AVL trees",
+      "It compresses the array using run-length encoding"
+    ]
+  },
+  {
+    "q": "What does the following code print for a Disjoint Set structure?",
+    "c": "parent = [0, 1, 2, 3, 4]\nrank = [0, 0, 0, 0, 0]\n\n# Union by rank\nif rank[1] == rank[2]:\n    parent[2] = 1\nprint(parent[2])",
+    "o": [
+      "1",
+      "2",
+      "0",
+      "None"
+    ]
+  },
+  {
+    "q": "How does a Segment Tree help with dynamic range minimum queries?",
+    "c": null,
+    "o": [
+      "It maintains a tree where each node represents the minimum in a range",
+      "It stores prefix sums at each node",
+      "It compresses the range using suffixes",
+      "It uses hashing to store range results"
+    ]
+  },
+  {
+    "q": "In a Trie, what is the maximum number of child pointers a node can have in an English alphabet Trie?",
+    "c": null,
+    "o": [
+      "26",
+      "2",
+      "52",
+      "10"
+    ]
+  },
+  {
+    "q": "Which operation is the slowest in a Suffix Array without an LCP array?",
+    "c": null,
+    "o": [
+      "Finding the longest repeated substring",
+      "Binary search for a pattern",
+      "Sorting suffixes",
+      "Creating the suffix array"
+    ]
+  },
+  {
+    "q": "What is the advantage of path compression in Disjoint Sets?",
+    "c": null,
+    "o": [
+      "It flattens the structure of the tree to speed up future queries",
+      "It removes duplicates from the set",
+      "It adds redundancy for fault tolerance",
+      "It optimizes rank values"
+    ]
+  },
+  {
+    "q": "Which is TRUE about Segment Tree size when storing n elements?",
+    "c": null,
+    "o": [
+      "The size is approximately 4n",
+      "It is always equal to n",
+      "It depends on the depth only",
+      "It must be a power of two"
+    ]
+  },
+  {
+    "q": "Which of the following suffix-based structures is a compressed form of a trie?",
+    "c": null,
+    "o": [
+      "Suffix Tree",
+      "Segment Tree",
+      "Fenwick Tree",
+      "Heap Tree"
+    ]
+  },
+  {
+    "q": "What kind of problems are best suited for Fenwick Trees?",
+    "c": null,
+    "o": [
+      "Prefix sum and point updates",
+      "Full range minimum queries",
+      "Graph traversal",
+      "Matrix multiplication"
+    ]
+  },
+  {
+    "q": "In a Suffix Array, what is the main benefit of maintaining an LCP (Longest Common Prefix) array?",
+    "c": null,
+    "o": [
+      "It speeds up pattern matching and duplicate detection",
+      "It allows reversing the suffix array",
+      "It enables constant-time suffix comparisons",
+      "It is used for hash generation"
+    ]
+  },
+  {
+    "q": "Which of the following operations is NOT efficiently supported by a Fenwick Tree?",
+    "c": null,
+    "o": [
+      "Range minimum query",
+      "Prefix sum query",
+      "Point update",
+      "Cumulative frequency calculation"
+    ]
+  },
+  {
+    "q": "What is the worst-case time complexity of the 'find' operation in a Disjoint Set with path compression?",
+    "c": null,
+    "o": [
+      "O(α(n))",
+      "O(log n)",
+      "O(n)",
+      "O(1)"
+    ]
+  },
+  {
+    "q": "Which technique is used in Suffix Array construction for improving sorting efficiency?",
+    "c": null,
+    "o": [
+      "Radix sort on ranks",
+      "DFS traversal",
+      "Dynamic programming",
+      "Min-heap structure"
+    ]
+  },
+  {
+    "q": "In a Trie, inserting n strings of maximum length m takes which time complexity?",
+    "c": null,
+    "o": [
+      "O(n * m)",
+      "O(n log m)",
+      "O(n + m)",
+      "O(log n * m)"
+    ]
+  },
+  {
+    "q": "Which of the following correctly describes a Segment Tree?",
+    "c": null,
+    "o": [
+      "A binary tree used for range queries and updates",
+      "A linear tree for prefix sums",
+      "A cyclic graph used for union-find",
+      "A stack-based tree for fast inserts"
+    ]
+  },
+  {
+    "q": "What does the following code compute using a Fenwick Tree?",
+    "c": "def query(BITree, i):\n    s = 0\n    while i > 0:\n        s += BITree[i]\n        i -= i & (-i)\n    return s",
+    "o": [
+      "Prefix sum from 1 to i",
+      "Suffix sum from i to end",
+      "Total count of i in array",
+      "Range minimum between 1 and i"
+    ]
+  },
+  {
+    "q": "Which of the following operations has a time complexity of O(log n) in a balanced Segment Tree?",
+    "c": null,
+    "o": [
+      "Point update and range query",
+      "Full array traversal",
+      "Range sum over O(n) elements",
+      "Prefix maximum query"
+    ]
+  },
+  {
+    "q": "In a Disjoint Set, what is the purpose of the 'union by rank' optimization?",
+    "c": null,
+    "o": [
+      "To keep tree heights minimal",
+      "To balance leaf nodes",
+      "To sort nodes by value",
+      "To delete cycles"
+    ]
+  },
+  {
+    "q": "What is the primary use case of a Suffix Tree in string algorithms?",
+    "c": null,
+    "o": [
+      "Efficient pattern matching",
+      "Sorting numeric arrays",
+      "Reducing hash collisions",
+      "Compressing binary trees"
+    ]
+  },
+  {
+    "q": "What is the output of the following code snippet?",
+    "c": "parent = [0, 1, 2]\n\n# Union operation\nparent[2] = 1\n# Find operation\nx = 2\nwhile parent[x] != x:\n    x = parent[x]\nprint(x)",
+    "o": [
+      "1",
+      "0",
+      "2",
+      "None"
+    ]
+  },
+  {
+    "q": "Which of the following is true about the Trie data structure?",
+    "c": null,
+    "o": [
+      "It stores keys character by character in a tree",
+      "It uses hash tables for fast lookup",
+      "It stores characters in arrays",
+      "It is suitable only for numerical data"
+    ]
+  },
+  {
+    "q": "What is the time complexity of building a suffix array using the Manber-Myers algorithm?",
+    "c": null,
+    "o": [
+      "O(n log n)",
+      "O(n)",
+      "O(n^2)",
+      "O(log n)"
+    ]
+  },
+  {
+    "q": "Which data structure is best suited for dynamic range sum queries and point updates?",
+    "c": null,
+    "o": [
+      "Fenwick Tree",
+      "Min Heap",
+      "Hash Map",
+      "Stack"
+    ]
+  },
+  {
+    "q": "What is the purpose of the `i & (-i)` operation in a Fenwick Tree?",
+    "c": null,
+    "o": [
+      "Isolates the lowest set bit",
+      "Finds the highest set bit",
+      "Calculates the midpoint",
+      "Performs a modulo operation"
+    ]
+  },
+  {
+    "q": "What is the output of the following segment tree query function?",
+    "c": "def range_query(seg, l, r):\n    res = 0\n    l += n\n    r += n\n    while l < r:\n        if l % 2:\n            res += seg[l]\n            l += 1\n        if r % 2:\n            r -= 1\n            res += seg[r]\n        l //= 2\n        r //= 2\n    return res",
+    "o": [
+      "Sum from index l to r-1",
+      "Sum from index l to r",
+      "Minimum from l to r-1",
+      "Maximum from l to r"
+    ]
+  },
+  {
+    "q": "In a union-find data structure, what is the effect of applying both path compression and union by rank?",
+    "c": null,
+    "o": [
+      "It flattens the tree and improves time complexity",
+      "It creates circular references",
+      "It converts the structure into a linked list",
+      "It reduces memory usage by eliminating pointers"
+    ]
+  },
+  {
+    "q": "Which of the following operations is optimized using Suffix Arrays?",
+    "c": null,
+    "o": [
+      "Substring search",
+      "Balanced parenthesis check",
+      "Prefix sum calculation",
+      "Depth-first traversal"
+    ]
+  },
+  {
+    "q": "Which data structure is most space-efficient for storing a set of strings with common prefixes?",
+    "c": null,
+    "o": [
+      "Trie",
+      "Binary Search Tree",
+      "Hash Map",
+      "Suffix Array"
+    ]
+  },
+  {
+    "q": "How is a range minimum query typically implemented using a Segment Tree?",
+    "c": null,
+    "o": [
+      "Storing the minimum in each segment node",
+      "Storing sums and dividing by segment size",
+      "Storing prefix maximums",
+      "Using Fenwick Tree logic"
+    ]
+  },
+  {
+    "q": "Which string matching technique is more efficient when many patterns are matched against a long text?",
+    "c": null,
+    "o": [
+      "Trie-based Aho-Corasick",
+      "Naive matching",
+      "KMP algorithm",
+      "Rabin-Karp"
+    ]
+  },
+  {
+    "q": "Which of the following operations can be done efficiently using a Fenwick Tree?",
+    "c": null,
+    "o": [
+      "Prefix sum queries and point updates",
+      "Finding shortest paths in a graph",
+      "Range minimum queries",
+      "Finding maximum subarray sum"
+    ]
+  },
+  {
+    "q": "In a Trie, what does each edge typically represent?",
+    "c": null,
+    "o": [
+      "A single character of a string",
+      "An entire word",
+      "A node's depth",
+      "A pointer to a parent node"
+    ]
+  },
+  {
+    "q": "What is the main advantage of using a Disjoint Set with path compression and union by rank?",
+    "c": null,
+    "o": [
+      "Amortized time per operation is nearly constant",
+      "Memory usage is minimized",
+      "It supports range queries",
+      "It can be used for dynamic programming"
+    ]
+  },
+  {
+    "q": "What is the purpose of the LCP array when used with a Suffix Array?",
+    "c": null,
+    "o": [
+      "Stores the longest common prefix lengths between adjacent suffixes",
+      "Stores the positions of all suffixes",
+      "Represents prefix sums of suffixes",
+      "Stores minimum values in a segment"
+    ]
+  },
+  {
+    "q": "What is the best case time complexity for a union operation in a Disjoint Set with path compression?",
+    "c": null,
+    "o": [
+      "O(1)",
+      "O(log n)",
+      "O(n)",
+      "O(n log n)"
+    ]
+  },
+  {
+    "q": "Which data structure is most suitable to solve the 'Range Sum Query – Mutable' problem efficiently?",
+    "c": null,
+    "o": [
+      "Segment Tree",
+      "Heap",
+      "Hash Table",
+      "Linked List"
+    ]
+  },
+  {
+    "q": "How many nodes can a Trie have in the worst case if n strings of length m are inserted with no common prefixes?",
+    "c": null,
+    "o": [
+      "O(n * m)",
+      "O(n)",
+      "O(log n)",
+      "O(m)"
+    ]
+  },
+  {
+    "q": "Which of these string algorithms benefits from the use of a suffix array?",
+    "c": null,
+    "o": [
+      "Pattern searching",
+      "Parenthesis balancing",
+      "Calculating hash values",
+      "Cycle detection"
+    ]
+  },
+  {
+    "q": "In a Segment Tree used for range maximum queries, what does each node store?",
+    "c": null,
+    "o": [
+      "Maximum of its segment",
+      "Sum of its segment",
+      "Minimum of its segment",
+      "Difference between max and min"
+    ]
+  },
+  {
+    "q": "Which tree-based data structure provides a compressed representation of suffixes of a string?",
+    "c": null,
+    "o": [
+      "Suffix Tree",
+      "Trie",
+      "AVL Tree",
+      "Binary Search Tree"
+    ]
+  },
+  {
+    "q": "Which of the following data structures is most efficient for dynamic cumulative frequency tables?",
+    "c": null,
+    "o": [
+      "Fenwick Tree",
+      "Segment Tree",
+      "Hash Map",
+      "Stack"
+    ]
+  },
+  {
+    "q": "What is the key idea behind the 'union by rank' optimization in Disjoint Set?",
+    "c": null,
+    "o": [
+      "Attach the shorter tree under the taller tree",
+      "Attach by comparing the node values",
+      "Always attach to the root node",
+      "Attach randomly"
+    ]
+  },
+  {
+    "q": "In a Segment Tree, what is the time complexity for both query and update operations?",
+    "c": null,
+    "o": [
+      "O(log n)",
+      "O(n)",
+      "O(1)",
+      "O(n log n)"
+    ]
+  },
+  {
+    "q": "Which technique helps improve Trie memory efficiency for large alphabets?",
+    "c": null,
+    "o": [
+      "Using hash maps at each node instead of fixed arrays",
+      "Adding more pointers per node",
+      "Storing reversed strings",
+      "Using circular linked lists"
+    ]
+  },
+  {
+    "q": "Which of the following applications is a classic use case of the Disjoint Set (Union-Find)?",
+    "c": null,
+    "o": [
+      "Detecting cycles in an undirected graph",
+      "Finding shortest path in a graph",
+      "Balancing binary trees",
+      "Implementing priority queues"
+    ]
+  },
+  {
+    "q": "What is the time complexity of building a Suffix Array using the prefix doubling algorithm?",
+    "c": null,
+    "o": [
+      "O(n log n)",
+      "O(n)",
+      "O(log n)",
+      "O(n^2)"
+    ]
+  },
+  {
+    "q": "In a Fenwick Tree, the parent of node i is found using which operation?",
+    "c": null,
+    "o": [
+      "i - (i & -i)",
+      "i + (i & -i)",
+      "i * 2",
+      "i // 2"
+    ]
+  },
+  {
+    "q": "What is the maximum number of nodes in a Segment Tree for an array of size n?",
+    "c": null,
+    "o": [
+      "4n",
+      "2n",
+      "n log n",
+      "n^2"
+    ]
+  },
+  {
+    "q": "Which of the following is a drawback of Suffix Trees compared to Suffix Arrays?",
+    "c": null,
+    "o": [
+      "Higher memory usage",
+      "Slower pattern matching",
+      "Unstable sorting",
+      "Cannot handle strings"
+    ]
+  },
+  {
+    "q": "What does the `find` operation in a Union-Find data structure return?",
+    "c": null,
+    "o": [
+      "Representative or parent of the set",
+      "The rank of the set",
+      "Size of the tree",
+      "The index of the root"
+    ]
+  },
+  {
+    "q": "What is the key difference between Segment Tree and Fenwick Tree?",
+    "c": null,
+    "o": [
+      "Segment Tree can handle more complex range queries like min or max",
+      "Fenwick Tree supports range updates directly",
+      "Segment Tree has worse time complexity",
+      "Fenwick Tree uses more memory"
+    ]
+  },
+  {
+    "q": "Which of the following operations does a Trie optimize?",
+    "c": null,
+    "o": [
+      "Prefix search",
+      "Finding minimum in a range",
+      "Sorting integers",
+      "Balancing a tree"
+    ]
+  },
+  {
+    "q": "In Union-Find, which optimization reduces the height of trees significantly?",
+    "c": null,
+    "o": [
+      "Path compression",
+      "Breadth-first traversal",
+      "Lazy propagation",
+      "Segment merging"
+    ]
+  },
+  {
+    "q": "Which problem is best solved using Suffix Arrays or Suffix Trees?",
+    "c": null,
+    "o": [
+      "Finding the longest repeated substring",
+      "Finding prime numbers",
+      "Counting inversions",
+      "Evaluating arithmetic expressions"
+    ]
+  },
+  {
+    "q": "What is the typical space complexity of a Trie storing n strings of length m (using arrays for children)?",
+    "c": null,
+    "o": [
+      "O(n * m * σ)",
+      "O(n log m)",
+      "O(m * log n)",
+      "O(n^2)"
+    ]
+  },
+  {
+    "q": "Which data structure supports efficient dynamic updates and queries like sum over a range?",
+    "c": null,
+    "o": [
+      "Segment Tree",
+      "Heap",
+      "Queue",
+      "Trie"
+    ]
+  },
+  {
+    "q": "Which of the following queries is NOT efficiently handled by a Fenwick Tree?",
+    "c": null,
+    "o": [
+      "Range minimum query",
+      "Cumulative frequency query",
+      "Point update",
+      "Prefix sum"
+    ]
+  },
+  {
+    "q": "What is the major advantage of a compressed Trie (Radix Tree) over a standard Trie?",
+    "c": null,
+    "o": [
+      "Reduced number of nodes and memory",
+      "Faster hash lookup",
+      "Supports circular strings",
+      "Handles numbers better"
+    ]
+  },
+  {
+    "q": "Which structure is commonly used in Kruskal’s Algorithm to manage connected components?",
+    "c": null,
+    "o": [
+      "Disjoint Set (Union-Find)",
+      "Priority Queue",
+      "Min Heap",
+      "Stack"
+    ]
+  },
+  {
+    "q": "What is the time complexity of finding the k-th smallest suffix using a Suffix Array?",
+    "c": null,
+    "o": [
+      "O(1)",
+      "O(k)",
+      "O(log k)",
+      "O(k log k)"
+    ]
+  },
+  {
+    "q": "Which data structure is used to efficiently solve dynamic range minimum queries?",
+    "c": null,
+    "o": [
+      "Segment Tree",
+      "Binary Heap",
+      "Fenwick Tree",
+      "Queue"
+    ]
+  },
+  {
+    "q": "What is the worst-case time complexity to build a Suffix Array using the naive method?",
+    "c": null,
+    "o": [
+      "O(n^2 log n)",
+      "O(n log n)",
+      "O(n^3)",
+      "O(n)"
+    ]
+  },
+  {
+    "q": "Which of the following is true about Fenwick Trees?",
+    "c": null,
+    "o": [
+      "They require elements to be stored in 1-based indexing",
+      "They work only for prefix maximum queries",
+      "They support range updates efficiently by default",
+      "They use recursion for queries"
+    ]
+  },
+  {
+    "q": "Which approach is used in path compression in Disjoint Set?",
+    "c": null,
+    "o": [
+      "Making every node on the path point directly to the root",
+      "Merging smaller tree into larger",
+      "Deleting unnecessary nodes",
+      "Sorting paths by length"
+    ]
+  },
+  {
+    "q": "Which algorithm benefits the most from using Suffix Arrays?",
+    "c": null,
+    "o": [
+      "Pattern matching in texts",
+      "Shortest path in graphs",
+      "Sorting integers",
+      "Dynamic programming on trees"
+    ]
+  },
+  {
+    "q": "How many children can a node in a Trie have in case of lowercase English letters?",
+    "c": null,
+    "o": [
+      "26",
+      "10",
+      "2",
+      "128"
+    ]
+  },
+  {
+    "q": "Which technique is used to avoid recomputing answers in Segment Trees?",
+    "c": null,
+    "o": [
+      "Lazy Propagation",
+      "Greedy Update",
+      "Pre-order Traversal",
+      "Stack Memory"
+    ]
+  },
+  {
+    "q": "In Disjoint Set Union (DSU), what is the time complexity for 'find' with both optimizations?",
+    "c": null,
+    "o": [
+      "O(α(n))",
+      "O(log n)",
+      "O(n)",
+      "O(1)"
+    ]
+  },
+  {
+    "q": "Which of the following is an application of Trie?",
+    "c": null,
+    "o": [
+      "Auto-complete feature",
+      "Binary search",
+      "Balancing expressions",
+      "Sorting integers"
+    ]
+  },
+  {
+    "q": "What is the purpose of the 'lowbit' function in Fenwick Tree implementations?",
+    "c": "\ndef lowbit(x):\n    return x & (-x)",
+    "o": [
+      "To isolate the lowest set bit",
+      "To compute XOR",
+      "To remove leading zeroes",
+      "To shift all bits left"
+    ]
+  },
+  {
+    "q": "Which of the following data structures is most efficient for answering multiple range sum queries on an immutable array?",
+    "c": null,
+    "o": [
+      "Prefix Sum Array",
+      "Trie",
+      "Disjoint Set",
+      "Min Heap"
+    ]
+  },
+  {
+    "q": "What is the key difference between Segment Trees and Fenwick Trees?",
+    "c": null,
+    "o": [
+      "Segment Trees handle wider range of queries",
+      "Fenwick Trees are faster for all use cases",
+      "Segment Trees require linear time updates",
+      "Fenwick Trees support range minimum queries"
+    ]
+  },
+  {
+    "q": "Which data structure allows insertion of a string in O(length) time and is ideal for prefix queries?",
+    "c": null,
+    "o": [
+      "Trie",
+      "Suffix Tree",
+      "HashMap",
+      "Fenwick Tree"
+    ]
+  },
+  {
+    "q": "In DSU, what does 'union by rank' help optimize?",
+    "c": null,
+    "o": [
+      "Tree height",
+      "Memory usage",
+      "Input size",
+      "Recursion depth"
+    ]
+  },
+  {
+    "q": "What does the value at index `i` in a Fenwick Tree typically represent?",
+    "c": null,
+    "o": [
+      "Sum of a specific range of elements",
+      "Maximum of all previous values",
+      "Count of distinct elements",
+      "Depth of tree at index i"
+    ]
+  },
+  {
+    "q": "Which of the following best describes the memory complexity of a Trie with `n` strings of average length `m`?",
+    "c": null,
+    "o": [
+      "O(n * m)",
+      "O(n^2)",
+      "O(log n)",
+      "O(1)"
+    ]
+  },
+  {
+    "q": "In Suffix Trees, what ensures fast substring search?",
+    "c": null,
+    "o": [
+      "Shared prefixes reduce redundant comparisons",
+      "Sorting of suffixes at every node",
+      "Binary search over the input string",
+      "Flattened tree structure"
+    ]
+  },
+  {
+    "q": "Which of the following operations is not supported efficiently by Fenwick Tree?",
+    "c": null,
+    "o": [
+      "Range minimum query",
+      "Prefix sum query",
+      "Single element update",
+      "Cumulative frequency"
+    ]
+  },
+  {
+    "q": "What is the time complexity of a pattern search using a Suffix Array and LCP array?",
+    "c": null,
+    "o": [
+      "O(m + log n)",
+      "O(m * n)",
+      "O(log m + n)",
+      "O(m^2 + n)"
+    ]
+  },
+  {
+    "q": "Which technique can be combined with Segment Tree to efficiently handle range updates?",
+    "c": null,
+    "o": [
+      "Lazy Propagation",
+      "Path Compression",
+      "Union by Rank",
+      "Bitmasking"
+    ]
+  },
+  {
+    "q": "What is the purpose of path compression in Disjoint Set Union (DSU)?",
+    "c": null,
+    "o": [
+      "To flatten the tree and speed up future queries",
+      "To avoid duplicate nodes",
+      "To compress memory usage",
+      "To prevent infinite loops"
+    ]
+  },
+  {
+    "q": "Which data structure is best suited for auto-complete features in search engines?",
+    "c": null,
+    "o": [
+      "Trie",
+      "Segment Tree",
+      "Heap",
+      "Fenwick Tree"
+    ]
+  },
+  {
+    "q": "What is the worst-case time complexity of find and union operations in Disjoint Set with both path compression and union by rank?",
+    "c": null,
+    "o": [
+      "O(α(n))",
+      "O(log n)",
+      "O(n)",
+      "O(1)"
+    ]
+  },
+  {
+    "q": "In a Segment Tree, how many nodes are there approximately for an array of size n?",
+    "c": null,
+    "o": [
+      "About 4 * n",
+      "Exactly n",
+      "n^2",
+      "log n"
+    ]
+  },
+  {
+    "q": "What is the key advantage of using a Suffix Array over a Suffix Tree?",
+    "c": null,
+    "o": [
+      "Uses less memory",
+      "Faster insertion time",
+      "Handles dynamic strings better",
+      "Supports range queries"
+    ]
+  },
+  {
+    "q": "Which algorithm is commonly used to build the LCP (Longest Common Prefix) array from a Suffix Array?",
+    "c": null,
+    "o": [
+      "Kasai’s Algorithm",
+      "KMP Algorithm",
+      "Z-Algorithm",
+      "Rabin-Karp Algorithm"
+    ]
+  },
+  {
+    "q": "What is the time complexity of inserting a string of length `m` into a Trie?",
+    "c": null,
+    "o": [
+      "O(m)",
+      "O(log m)",
+      "O(m^2)",
+      "O(1)"
+    ]
+  },
+  {
+    "q": "Which of the following can be used to compute the number of elements less than or equal to a value in a dynamic array efficiently?",
+    "c": null,
+    "o": [
+      "Fenwick Tree",
+      "Stack",
+      "Graph",
+      "Queue"
+    ]
+  },
+  {
+    "q": "How does Lazy Propagation improve Segment Tree performance?",
+    "c": null,
+    "o": [
+      "Delays updates until necessary to avoid redundant computations",
+      "Builds the tree faster",
+      "Uses recursion instead of iteration",
+      "Prevents memory overflow"
+    ]
+  },
+  {
+    "q": "Which problem type is most commonly solved using the Union-Find (DSU) data structure?",
+    "c": null,
+    "o": [
+      "Dynamic connectivity",
+      "Shortest path",
+      "Topological sort",
+      "Palindrome detection"
+    ]
+  },
+  {
+    "q": "Which of the following problems can be efficiently solved using a Suffix Tree?",
+    "c": null,
+    "o": [
+      "Finding the longest repeated substring",
+      "Sorting integers",
+      "Computing shortest path in a graph",
+      "Checking balanced parentheses"
+    ]
+  },
+  {
+    "q": "What does the `find` operation return in a Disjoint Set Union-Find data structure?",
+    "c": null,
+    "o": [
+      "The representative (or root) of the set",
+      "The number of sets",
+      "The size of the set",
+      "The depth of the tree"
+    ]
+  },
+  {
+    "q": "In a Fenwick Tree, which operation is typically used to retrieve the prefix sum up to index i?",
+    "c": null,
+    "o": [
+      "Query operation",
+      "Merge operation",
+      "Union operation",
+      "Split operation"
+    ]
+  },
+  {
+    "q": "What is the primary difference between Segment Tree and Fenwick Tree?",
+    "c": null,
+    "o": [
+      "Segment Tree supports range updates, Fenwick Tree does not",
+      "Fenwick Tree is slower in all cases",
+      "Segment Tree requires more memory than Fenwick Tree",
+      "Fenwick Tree can store characters, Segment Tree cannot"
+    ]
+  },
+  {
+    "q": "What is the output of the following code using Fenwick Tree?",
+    "c": "tree = [0, 2, 3, 5, 1, 6]\n# Assuming 1-based indexing, what is prefix sum till index 3?\ndef get_sum(i):\n    s = 0\n    while i > 0:\n        s += tree[i]\n        i -= (i & -i)\n    return s\nprint(get_sum(3))",
+    "o": [
+      "10",
+      "5",
+      "8",
+      "6"
+    ]
+  },
+  {
+    "q": "How are the children of a node represented in a Trie?",
+    "c": null,
+    "o": [
+      "Using a hash map or array of size 26 (for lowercase English letters)",
+      "Using a single linked list",
+      "As a binary tree",
+      "As a graph adjacency matrix"
+    ]
+  },
+  {
+    "q": "What is the primary use of the Suffix Array?",
+    "c": null,
+    "o": [
+      "Efficient pattern matching",
+      "Hashing integers",
+      "Compressing files",
+      "Scheduling tasks"
+    ]
+  },
+  {
+    "q": "Which method allows a Segment Tree to support range updates efficiently?",
+    "c": null,
+    "o": [
+      "Lazy propagation",
+      "Greedy propagation",
+      "Memoization",
+      "Backtracking"
+    ]
+  },
+  {
+    "q": "What is the best time complexity to build a suffix array?",
+    "c": null,
+    "o": [
+      "O(n log n)",
+      "O(n^2)",
+      "O(log n)",
+      "O(n)"
+    ]
+  },
+  {
+    "q": "Which of the following algorithms is NOT typically used with Disjoint Sets?",
+    "c": null,
+    "o": [
+      "Dijkstra's algorithm",
+      "Kruskal's algorithm",
+      "Connected components in graphs",
+      "Cycle detection in undirected graphs"
+    ]
+  },
+  {
+    "q": "In a Disjoint Set Union (DSU), what optimization technique helps to flatten the tree structure during the find operation?",
+    "c": null,
+    "o": [
+      "Path compression",
+      "Lazy propagation",
+      "Prefix sum",
+      "Post-order traversal"
+    ]
+  },
+  {
+    "q": "What is the time complexity of a single update or query in a Segment Tree?",
+    "c": null,
+    "o": [
+      "O(log n)",
+      "O(1)",
+      "O(n)",
+      "O(n log n)"
+    ]
+  },
+  {
+    "q": "Which data structure is commonly used to solve the 'Range Minimum Query' problem?",
+    "c": null,
+    "o": [
+      "Segment Tree",
+      "Fenwick Tree",
+      "Hash Table",
+      "Heap"
+    ]
+  },
+  {
+    "q": "Which of the following is true about a Trie?",
+    "c": null,
+    "o": [
+      "It provides efficient prefix searching",
+      "It uses hash functions for lookups",
+      "It stores elements in sorted order automatically",
+      "It can only store binary data"
+    ]
+  },
+  {
+    "q": "Which tree data structure can efficiently handle point updates and prefix sum queries?",
+    "c": null,
+    "o": [
+      "Fenwick Tree",
+      "Binary Search Tree",
+      "AVL Tree",
+      "Red-Black Tree"
+    ]
+  },
+  {
+    "q": "What is the result of union by rank in Disjoint Set?",
+    "c": null,
+    "o": [
+      "Attaching the shorter tree under the root of the taller tree",
+      "Merging both trees without checking height",
+      "Attaching the taller tree under the shorter one",
+      "Randomly choosing a root"
+    ]
+  },
+  {
+    "q": "Which of these is a drawback of Suffix Trees compared to Suffix Arrays?",
+    "c": null,
+    "o": [
+      "Higher memory usage",
+      "Slower query time",
+      "Limited to numeric data",
+      "Does not support pattern matching"
+    ]
+  },
+  {
+    "q": "What will be the time complexity of building a Fenwick Tree for an array of size n?",
+    "c": null,
+    "o": [
+      "O(n log n)",
+      "O(log n)",
+      "O(n)",
+      "O(n^2)"
+    ]
+  },
+  {
+    "q": "Which of the following operations is typically supported by a Segment Tree with lazy propagation?",
+    "c": null,
+    "o": [
+      "Range update and range query",
+      "Only point update",
+      "Only range query",
+      "Only point query"
+    ]
+  },
+  {
+    "q": "What is stored at each node in a Segment Tree solving range sum query?",
+    "c": null,
+    "o": [
+      "Sum of the elements in that segment",
+      "Minimum element in that segment",
+      "Maximum element in that segment",
+      "The root value of the tree"
+    ]
+  },
+  {
+    "q": "Which operation is optimized by path compression in the Union-Find data structure?",
+    "c": null,
+    "o": [
+      "Find",
+      "Union",
+      "Insert",
+      "Delete"
+    ]
+  },
+  {
+    "q": "What is the worst-case time complexity of the find operation with both union by rank and path compression in a Disjoint Set?",
+    "c": null,
+    "o": [
+      "O(α(n))",
+      "O(log n)",
+      "O(n)",
+      "O(1)"
+    ]
+  },
+  {
+    "q": "Which of the following data structures is **not** suitable for efficiently handling range minimum queries?",
+    "c": null,
+    "o": [
+      "Hash Table",
+      "Segment Tree",
+      "Sparse Table",
+      "Cartesian Tree"
+    ]
+  },
+  {
+    "q": "Which data structure is ideal for processing multiple prefix sum queries and updates in logarithmic time?",
+    "c": null,
+    "o": [
+      "Fenwick Tree",
+      "Queue",
+      "Deque",
+      "Stack"
+    ]
+  },
+  {
+    "q": "What is the space complexity of a Trie storing n strings of average length m?",
+    "c": null,
+    "o": [
+      "O(n * m)",
+      "O(n)",
+      "O(log n)",
+      "O(m)"
+    ]
+  },
+  {
+    "q": "Which of the following operations can be performed in O(log n) time in a Binary Indexed Tree (Fenwick Tree)?",
+    "c": null,
+    "o": [
+      "Update and query",
+      "Only update",
+      "Only query",
+      "Delete and insert"
+    ]
+  },
+  {
+    "q": "What is the primary advantage of a Suffix Array over a Suffix Tree?",
+    "c": null,
+    "o": [
+      "Uses less memory",
+      "Supports faster queries",
+      "Easier to implement substring search",
+      "Supports prefix queries"
+    ]
+  },
+  {
+    "q": "Which of the following is a key characteristic of a Suffix Tree?",
+    "c": null,
+    "o": [
+      "All suffixes of a string are stored in a compressed trie format",
+      "It is a binary tree",
+      "It only stores the first k characters",
+      "It is used for sorting arrays"
+    ]
+  },
+  {
+    "q": "What is the output of the following code using a Fenwick Tree?",
+    "c": "fenwick = [0, 1, 3, 2, 7, 2, 6, 5, 6]\n# Get prefix sum up to index 4\nindex = 4\nresult = 0\nwhile index > 0:\n    result += fenwick[index]\n    index -= index & -index\nprint(result)",
+    "o": [
+      "13",
+      "10",
+      "7",
+      "15"
+    ]
+  },
+  {
+    "q": "Which data structure is most suitable for answering Lowest Common Ancestor (LCA) queries in logarithmic time after linear preprocessing?",
+    "c": null,
+    "o": [
+      "Segment Tree",
+      "Binary Indexed Tree",
+      "Trie",
+      "Queue"
+    ]
+  },
+  {
+    "q": "Which of the following data structures allows you to find the k-th smallest element in a prefix efficiently?",
+    "c": null,
+    "o": [
+      "Fenwick Tree with frequency array",
+      "Queue",
+      "Trie",
+      "Stack"
+    ]
+  },
+  {
+    "q": "What is the key idea behind Segment Tree lazy propagation?",
+    "c": null,
+    "o": [
+      "Delay updates to improve performance",
+      "Propagate values greedily",
+      "Avoid recursion",
+      "Remove overlapping intervals"
+    ]
+  },
+  {
+    "q": "What is the main drawback of a Suffix Tree compared to a Suffix Array?",
+    "c": null,
+    "o": [
+      "Higher memory consumption",
+      "Cannot be used for pattern matching",
+      "Slower construction time",
+      "Limited to numeric data"
+    ]
+  },
+  {
+    "q": "In a Disjoint Set, what is the effect of union by rank?",
+    "c": null,
+    "o": [
+      "It keeps the tree shallow to optimize operations",
+      "It merges smaller value into larger",
+      "It eliminates cycles",
+      "It speeds up insertion"
+    ]
+  },
+  {
+    "q": "Which tree-based structure is preferred when you need to perform both range sum queries and point updates efficiently?",
+    "c": null,
+    "o": [
+      "Segment Tree",
+      "Trie",
+      "Suffix Tree",
+      "Heap"
+    ]
+  },
+  {
+    "q": "Which of the following operations is the most expensive in a Suffix Array?",
+    "c": null,
+    "o": [
+      "Construction",
+      "Pattern Matching",
+      "Longest Common Prefix Query",
+      "Substring Search"
+    ]
+  },
+  {
+    "q": "What is the time complexity to find the representative element of a set in a Union-Find structure with path compression?",
+    "c": null,
+    "o": [
+      "O(α(n))",
+      "O(log n)",
+      "O(n)",
+      "O(1)"
+    ]
+  },
+  {
+    "q": "How is a character stored in each node of a Trie typically implemented in Python?",
+    "c": null,
+    "o": [
+      "As a dictionary key",
+      "As a list item",
+      "As a tuple index",
+      "As a queue element"
+    ]
+  },
+  {
+    "q": "What does the following code using a Binary Indexed Tree (Fenwick Tree) do?",
+    "c": "def update(bit, n, index, val):\n    while index <= n:\n        bit[index] += val\n        index += index & -index",
+    "o": [
+      "Updates the BIT by adding val at index",
+      "Queries the prefix sum up to index",
+      "Removes an element from the tree",
+      "Builds the initial tree"
+    ]
+  },
+  {
+    "q": "Which one of these problems can be solved efficiently with a Suffix Array?",
+    "c": null,
+    "o": [
+      "Longest Repeated Substring",
+      "Finding the maximum in an array",
+      "Matrix multiplication",
+      "Topological sorting"
+    ]
+  },
+  {
+    "q": "What is the primary advantage of using a Trie over a HashMap for word storage?",
+    "c": null,
+    "o": [
+      "Efficient prefix searches",
+      "Faster memory allocation",
+      "Better support for numeric data",
+      "Allows reverse lookups"
+    ]
+  },
+  {
+    "q": "Which operation is NOT supported directly by a Fenwick Tree?",
+    "c": null,
+    "o": [
+      "Range minimum query",
+      "Prefix sum query",
+      "Point update",
+      "Cumulative frequency calculation"
+    ]
+  },
+  {
+    "q": "What is the worst-case time complexity of building a Suffix Array using the naïve approach?",
+    "c": null,
+    "o": [
+      "O(n^2 log n)",
+      "O(n log n)",
+      "O(n)",
+      "O(log n)"
+    ]
+  },
+  {
+    "q": "What does the following segment tree update code do?",
+    "c": "def update(pos, low, high, idx, val):\n    if low == high:\n        seg[pos] = val\n        return\n    mid = (low + high) // 2\n    if idx <= mid:\n        update(2*pos+1, low, mid, idx, val)\n    else:\n        update(2*pos+2, mid+1, high, idx, val)\n    seg[pos] = seg[2*pos+1] + seg[2*pos+2]",
+    "o": [
+      "Updates the value at a specific index in a segment tree",
+      "Finds minimum in a segment",
+      "Deletes a node from a segment tree",
+      "Performs a range sum query"
+    ]
+  },
+  {
+    "q": "Which of the following is an efficient method to check whether two nodes belong to the same set in Union-Find?",
+    "c": null,
+    "o": [
+      "Compare their root representatives",
+      "Compare their direct parents",
+      "Check adjacency in the original graph",
+      "Use BFS on the forest"
+    ]
+  },
+  {
+    "q": "Why are Suffix Trees space-intensive?",
+    "c": null,
+    "o": [
+      "They store a lot of nodes with overlapping substrings",
+      "They use recursion for construction",
+      "They store all characters individually",
+      "They do not compress repeated substrings"
+    ]
+  },
+  {
+    "q": "How many nodes can a complete Trie of all 3-letter lowercase strings have at most?",
+    "c": null,
+    "o": [
+      "1406",
+      "26",
+      "78",
+      "17576"
+    ]
+  },
+  {
+    "q": "Which of the following is true about the Fenwick Tree?",
+    "c": null,
+    "o": [
+      "It uses binary representation to navigate indices",
+      "It can perform range minimum queries",
+      "It stores values in a max-heap",
+      "It is slower than a segment tree in updates"
+    ]
+  },
+  {
+    "q": "What is the minimum time complexity for a single find operation in a Union-Find with path compression?",
+    "c": null,
+    "o": [
+      "Amortized O(α(n))",
+      "O(log n)",
+      "O(n)",
+      "O(1)"
+    ]
+  },
+  {
+    "q": "Which use case is best suited for a Trie?",
+    "c": null,
+    "o": [
+      "Autocomplete suggestions",
+      "Matrix multiplication",
+      "Graph traversal",
+      "Cycle detection"
+    ]
+  },
+  {
+    "q": "Which data structure is best suited for implementing Dijkstra’s algorithm efficiently?",
+    "c": null,
+    "o": [
+      "Min Heap (Priority Queue)",
+      "Stack",
+      "Binary Search Tree",
+      "Queue"
+    ]
+  },
+  {
+    "q": "What is the time complexity of inserting an element into a Binary Heap?",
+    "c": null,
+    "o": [
+      "O(log n)",
+      "O(1)",
+      "O(n)",
+      "O(n log n)"
+    ]
+  },
+  {
+    "q": "Which condition must a Red-Black Tree satisfy?",
+    "c": null,
+    "o": [
+      "No two red nodes can be adjacent",
+      "It must be a full binary tree",
+      "The root is always black or white",
+      "All leaves are red nodes"
+    ]
+  },
+  {
+    "q": "In which algorithm do we use 'low' and 'disc' arrays to find bridges in a graph?",
+    "c": null,
+    "o": [
+      "Tarjan’s Algorithm",
+      "Dijkstra’s Algorithm",
+      "Floyd-Warshall Algorithm",
+      "Kruskal’s Algorithm"
+    ]
+  },
+  {
+    "q": "What is the worst-case time complexity of accessing the kth smallest element in an AVL tree (if augmented for rank)?",
+    "c": null,
+    "o": [
+      "O(log n)",
+      "O(1)",
+      "O(n)",
+      "O(n log n)"
+    ]
+  },
+  {
+    "q": "Which of the following operations is NOT typically supported by a Min Heap?",
+    "c": null,
+    "o": [
+      "Finding the maximum value",
+      "Inserting an element",
+      "Extracting the minimum",
+      "Heapifying a list"
+    ]
+  },
+  {
+    "q": "What makes a Segment Tree with Lazy Propagation more efficient?",
+    "c": null,
+    "o": [
+      "Delays updates until necessary, reducing repeated work",
+      "Always updates all elements in O(1)",
+      "Stores only one segment at a time",
+      "It is based on greedy strategy"
+    ]
+  },
+  {
+    "q": "In a Disjoint Set Union (DSU), which two techniques optimize performance?",
+    "c": null,
+    "o": [
+      "Path Compression and Union by Rank",
+      "Breadth First Search and Depth First Search",
+      "Hashing and Sorting",
+      "Memoization and Tabulation"
+    ]
+  },
+  {
+    "q": "What is the minimum height of an AVL Tree with 7 nodes?",
+    "c": null,
+    "o": [
+      "3",
+      "2",
+      "1",
+      "4"
+    ]
+  },
+  {
+    "q": "Which traversal is used for evaluating expression trees?",
+    "c": null,
+    "o": [
+      "Postorder",
+      "Inorder",
+      "Preorder",
+      "Level-order"
+    ]
+  },
+    {
+        "q": "Which two optimizations make Union-Find efficient?",
+        "c": null,
+        "o": [
+            "Path compression and union by rank",
+            "Binary search and memoization",
+            "Backtracking and dynamic programming",
+            "Graph coloring and DFS"
+        ]
+    },
+    {
+        "q": "What is the time complexity of both update and query operations in a Fenwick Tree?",
+        "c": null,
+        "o": [
+            "O(log n)",
+            "O(1)",
+            "O(n)",
+            "O(n log n)"
+        ]
+    },
+    {
+        "q": "Which sorting algorithm is commonly used to construct a Suffix Array efficiently?",
+        "c": null,
+        "o": [
+            "Radix sort",
+            "Bubble sort",
+            "Insertion sort",
+            "Selection sort"
+        ]
+    },
+    {
+        "q": "What is a key application of a Suffix Array?",
+        "c": null,
+        "o": [
+            "Efficient substring search",
+            "Sorting integers",
+            "Image processing",
+            "Graph traversal"
+        ]
+    },
+    {
+        "q": "Which of the following is a key application of Tries?",
+        "c": null,
+        "o": [
+            "Auto-complete and spell checker",
+            "Sorting integers",
+            "Memory management",
+            "Cryptography"
+        ]
+    },
+    {
+        "q": "What type of query is a Fenwick Tree best suited for?",
+        "c": null,
+        "o": [
+            "Prefix sum",
+            "Matrix multiplication",
+            "String reversal",
+            "Maximum subarray"
+        ]
+    },
+    {
+        "q": "What is the main advantage of a Trie over a hash table for string storage?",
+        "c": null,
+        "o": [
+            "Efficient prefix search",
+            "Faster deletion",
+            "Supports integer keys",
+            "Uses less memory"
+        ]
+    },
+    {
+        "q": "What is the purpose of the 'low' and 'high' arrays in a Segment Tree?",
+        "c": null,
+        "o": [
+            "To define the range each node is responsible for",
+            "To track the minimum and maximum values of the tree",
+            "To maintain level-order traversal",
+            "To store left and right subtree sizes"
+        ]
+    },
+    {
+        "q": "Which data structure is most efficient for answering dynamic range minimum queries?",
+        "c": null,
+        "o": [
+            "Segment Tree",
+            "Binary Heap",
+            "AVL Tree",
+            "Hash Map"
+        ]
+    },
+    {
+        "q": "Which operation can be done in constant time after using path compression in Disjoint Set?",
+        "c": null,
+        "o": [
+            "Find",
+            "Insert",
+            "Delete",
+            "Search"
+        ]
+    },
+    {
+        "q": "Which of the following is an incorrect statement about Tries?",
+        "c": null,
+        "o": [
+            "Tries are used for arithmetic operations",
+            "Tries support efficient prefix matching",
+            "Each node in a Trie typically represents a character",
+            "Tries can be used for storing dictionaries"
+        ]
+    },
+    {
+        "q": "What is the worst-case space complexity of a Trie storing n strings of length m?",
+        "c": null,
+        "o": [
+            "O(n * m)",
+            "O(n + m)",
+            "O(log n)",
+            "O(m)"
+        ]
+    },
+    {
+        "q": "Which tree supports both point updates and range queries in logarithmic time?",
+        "c": null,
+        "o": [
+            "Segment Tree",
+            "Binary Tree",
+            "Trie",
+            "B+ Tree"
+        ]
+    },
+    {
+        "q": "Which of the following operations is not typically supported efficiently by a Fenwick Tree?",
+        "c": null,
+        "o": [
+            "Range minimum query",
+            "Prefix sum",
+            "Point update",
+            "Range update with point query"
+        ]
+    },
+  {
+    "q": "Which of the following is true about the suffix array of a string?",
+    "c": null,
+    "o": [
+      "It is a sorted array of all suffixes' starting indices",
+      "It stores the actual suffix strings",
+      "It is constructed using dynamic programming",
+      "It is only applicable for binary strings"
+    ]
+  },
+  {
+    "q": "Which algorithm is commonly used to build a suffix array in O(n log n) time?",
+    "c": null,
+    "o": [
+      "Prefix Doubling",
+      "KMP Algorithm",
+      "Z-Algorithm",
+      "Dijkstra's Algorithm"
+    ]
+  },
+  {
+    "q": "What is the main use case of the LCP (Longest Common Prefix) array with suffix arrays?",
+    "c": null,
+    "o": [
+      "To speed up pattern matching",
+      "To reduce memory usage",
+      "To compute shortest paths",
+      "To store compressed data"
+    ]
+  },
+  {
+    "q": "Which of the following is NOT an advantage of a Trie?",
+    "c": null,
+    "o": [
+      "It allows fast search with common prefixes",
+      "It requires less space than hash maps in all cases",
+      "It supports auto-completion efficiently",
+      "It avoids collisions unlike hash tables"
+    ]
+  },
+  {
+    "q": "How does union by rank help in optimizing Disjoint Set operations?",
+    "c": null,
+    "o": [
+      "It keeps the tree shallow by attaching smaller trees under larger trees",
+      "It balances the binary tree by weight",
+      "It increases memory efficiency",
+      "It avoids cyclic dependencies"
+    ]
+  },
+  {
+    "q": "Which of the following correctly describes a Fenwick Tree?",
+    "c": null,
+    "o": [
+      "It is a binary-indexed tree used for cumulative frequency tables",
+      "It is a binary search tree used for sorting",
+      "It is a min-heap used in graphs",
+      "It is a complete binary tree used in decision making"
+    ]
+  },
+  {
+    "q": "In a Segment Tree, what does each internal node usually store?",
+    "c": null,
+    "o": [
+      "Aggregated value (like sum/min/max) of its child segments",
+      "Pointers to parent and children only",
+      "Hash of the subtree",
+      "Height of the subtree"
+    ]
+  },
+  {
+    "q": "What is the time complexity for updating a value in a Fenwick Tree (Binary Indexed Tree)?",
+    "c": null,
+    "o": [
+      "O(log n)",
+      "O(1)",
+      "O(n)",
+      "O(n log n)"
+    ]
+  },
+  {
+    "q": "Which of the following best describes the 'union' operation in a Disjoint Set?",
+    "c": null,
+    "o": [
+      "Merging two sets into one",
+      "Finding the root of a set",
+      "Splitting a set into two",
+      "Counting elements in a set"
+    ]
+  },
+  {
+    "q": "What structure is commonly used to answer Range Minimum Queries (RMQ) efficiently?",
+    "c": null,
+    "o": [
+      "Segment Tree",
+      "Stack",
+      "Queue",
+      "Trie"
+    ]
+  },
+  {
+    "q": "Which is the main challenge in constructing a Suffix Tree?",
+    "c": null,
+    "o": [
+      "Handling overlapping suffixes efficiently",
+      "Sorting suffixes alphabetically",
+      "Managing large integer arrays",
+      "Building binary heaps"
+    ]
+  },
+  {
+    "q": "What is the maximum branching factor of a Trie node for lowercase English letters?",
+    "c": null,
+    "o": [
+      "26",
+      "2",
+      "10",
+      "52"
+    ]
+  },
+  {
+    "q": "Which algorithm is typically used for pattern searching using Suffix Arrays?",
+    "c": null,
+    "o": [
+      "Binary search",
+      "Depth-first search",
+      "Breadth-first search",
+      "Dynamic programming"
+    ]
+  },
+  {
+    "q": "What does the 'lazy propagation' technique optimize in a Segment Tree?",
+    "c": null,
+    "o": [
+      "Range updates",
+      "Memory usage",
+      "Single element access",
+      "Sorting speed"
+    ]
+  },
+  {
+    "q": "Which of the following operations can be done in O(log n) time using a Fenwick Tree?",
+    "c": null,
+    "o": [
+      "Prefix sum queries and point updates",
+      "Range minimum queries",
+      "Sorting arrays",
+      "Finding maximum value"
+    ]
+  },
+  {
+    "q": "In the Union-Find data structure, what does the 'union by size' optimization do?",
+    "c": null,
+    "o": [
+      "Attaches the smaller tree under the root of the larger tree",
+      "Always attaches the tree with smaller root value",
+      "Balances trees by height",
+      "Deletes smaller sets"
+    ]
+  },
+  {
+    "q": "Which traversal is used to build the Suffix Array from a Suffix Tree?",
+    "c": null,
+    "o": [
+      "Depth-first traversal",
+      "Breadth-first traversal",
+      "Level-order traversal",
+      "In-order traversal"
+    ]
+  },
+  {
+    "q": "What does each leaf node represent in a Suffix Tree?",
+    "c": null,
+    "o": [
+      "A suffix of the input string",
+      "A prefix of the input string",
+      "A single character",
+      "A substring of fixed length"
+    ]
+  },
+  {
+    "q": "Which of the following data structures is not typically used for string pattern matching?",
+    "c": null,
+    "o": [
+      "Heap",
+      "Trie",
+      "Suffix Array",
+      "Suffix Tree"
+    ]
+  },
+  {
+    "q": "What is the maximum number of nodes in a Segment Tree for an array of size n?",
+    "c": null,
+    "o": [
+      "About 4*n",
+      "n",
+      "2*n",
+      "log n"
+    ]
+  },
+  {
+    "q": "Which of the following is true about the path compression technique in Disjoint Set?",
+    "c": null,
+    "o": [
+      "It flattens the structure of the tree whenever find is called",
+      "It delays union operations",
+      "It balances the tree by height",
+      "It removes cycles"
+    ]
+  },
+  {
+    "q": "What is the main idea behind a Fenwick Tree (Binary Indexed Tree)?",
+    "c": null,
+    "o": [
+      "Using binary representation of indices to update and query prefix sums efficiently",
+      "Storing prefix sums in an array",
+      "Using hashing for cumulative frequency",
+      "Maintaining balanced binary trees"
+    ]
+  },
+  {
+    "q": "Which of the following best describes a 'lazy propagation' technique in Segment Trees?",
+    "c": null,
+    "o": [
+      "Deferring updates to child nodes until necessary",
+      "Updating all nodes eagerly",
+      "Compressing paths in the tree",
+      "Balancing the tree height"
+    ]
+  },
+  {
+    "q": "What does the 'find' operation in a Disjoint Set Union-Find data structure do?",
+    "c": null,
+    "o": [
+      "Returns the representative (root) of the set containing the element",
+      "Deletes an element from the set",
+      "Merges two sets",
+      "Checks if two elements are adjacent"
+    ]
+  },
+  {
+    "q": "Which of the following is an advantage of a Suffix Array over a Suffix Tree?",
+    "c": null,
+    "o": [
+      "Uses less memory",
+      "Faster queries",
+      "Easier to implement path compression",
+      "Supports incremental updates"
+    ]
+  },
+  {
+    "q": "What does each node in a Trie typically represent?",
+    "c": null,
+    "o": [
+      "A single character",
+      "An entire word",
+      "A prefix length",
+      "A hash code"
+    ]
+  },
+  {
+    "q": "Which of the following complexities is typical for query and update operations in a Segment Tree?",
+    "c": null,
+    "o": [
+      "O(log n)",
+      "O(1)",
+      "O(n)",
+      "O(n log n)"
+    ]
+  },
+  {
+    "q": "Which data structure is best suited for maintaining a collection of disjoint sets with efficient union and find operations?",
+    "c": null,
+    "o": [
+      "Disjoint Set Union (Union-Find)",
+      "Trie",
+      "Segment Tree",
+      "Fenwick Tree"
+    ]
+  },
+  {
+    "q": "In a Trie, what is the worst-case time complexity for searching a string of length m?",
+    "c": null,
+    "o": [
+      "O(m)",
+      "O(log m)",
+      "O(n)",
+      "O(1)"
+    ]
+  },
+  {
+    "q": "Which of the following is a key feature of a Segment Tree with lazy propagation?",
+    "c": null,
+    "o": [
+      "Efficient range updates",
+      "Faster point queries",
+      "Uses less memory than Fenwick Tree",
+      "Supports dynamic resizing"
+    ]
+  },
+  {
+    "q": "Which of the following problems can be efficiently solved using Disjoint Set Union (Union-Find)?",
+    "c": null,
+    "o": [
+      "Detecting cycles in an undirected graph",
+      "Shortest path in weighted graph",
+      "Topological sorting",
+      "Minimum spanning tree using Prim’s algorithm"
+    ]
+  },
+  {
+    "q": "What is the primary purpose of the Longest Common Prefix (LCP) array in suffix arrays?",
+    "c": null,
+    "o": [
+      "To speed up substring search queries",
+      "To compress strings",
+      "To balance the suffix tree",
+      "To count the number of suffixes"
+    ]
+  },
+  {
+    "q": "Which of the following operations is not efficiently supported by a Fenwick Tree?",
+    "c": null,
+    "o": [
+      "Range minimum query",
+      "Point update",
+      "Prefix sum query",
+      "Cumulative frequency calculation"
+    ]
+  },
+  {
+    "q": "What is the space complexity of a Segment Tree built for an array of size n?",
+    "c": null,
+    "o": [
+      "O(4n)",
+      "O(n)",
+      "O(log n)",
+      "O(n log n)"
+    ]
+  },
+  {
+    "q": "In Union-Find, what does 'union by rank' do?",
+    "c": null,
+    "o": [
+      "Attaches the smaller tree under the root of the taller tree",
+      "Always merges sets randomly",
+      "Deletes the smaller set",
+      "Balances the tree by value"
+    ]
+  },
+  {
+    "q": "What is the main difference between a Suffix Tree and a Suffix Array?",
+    "c": null,
+    "o": [
+      "Suffix Tree uses more memory but allows faster queries",
+      "Suffix Array uses more memory but is slower",
+      "Suffix Tree stores suffixes in a sorted array",
+      "Suffix Array is a tree-based structure"
+    ]
+  },
+  {
+    "q": "Which operation does the Fenwick Tree NOT support efficiently?",
+    "c": null,
+    "o": [
+      "Range minimum queries",
+      "Prefix sums",
+      "Point updates",
+      "Cumulative frequency queries"
+    ]
+  },
+  {
+    "q": "What is the time complexity to build a Segment Tree for an array of size n?",
+    "c": null,
+    "o": [
+      "O(n)",
+      "O(log n)",
+      "O(n log n)",
+      "O(n^2)"
+    ]
+  },
+  {
+    "q": "Which of the following best describes 'path compression' in Union-Find?",
+    "c": null,
+    "o": [
+      "Making nodes point directly to the root during find operations",
+      "Combining two sets without compression",
+      "Rebalancing the tree after union",
+      "Deleting redundant nodes"
+    ]
+  },
+  {
+    "q": "Which of these data structures can be used for efficient prefix searches?",
+    "c": null,
+    "o": [
+      "Trie",
+      "Stack",
+      "Queue",
+      "Heap"
+    ]
+  },
+  {
+    "q": "What kind of queries are Segment Trees especially good at handling?",
+    "c": null,
+    "o": [
+      "Range queries (sum, min, max)",
+      "Single element lookups",
+      "Sorting elements",
+      "Graph traversals"
+    ]
+  },
+  {
+    "q": "What is the advantage of using union by size or rank in Disjoint Set Union?",
+    "c": null,
+    "o": [
+      "Keeps trees shallow, optimizing find operations",
+      "Improves memory usage",
+      "Speeds up insertions",
+      "Balances the frequency of sets"
+    ]
+  },
+  {
+    "q": "Which data structure can be used to efficiently find the number of elements less than a given value in a dynamic array?",
+    "c": null,
+    "o": [
+      "Fenwick Tree",
+      "Stack",
+      "Queue",
+      "Hash Map"
+    ]
+  },
+  {
+    "q": "What is the main advantage of using a Segment Tree over a Fenwick Tree?",
+    "c": null,
+    "o": [
+      "Supports more types of range queries",
+      "Uses less memory",
+      "Faster updates",
+      "Simpler to implement"
+    ]
+  },
+  {
+    "q": "In Disjoint Set Union, what is the worst-case time complexity of the find operation with path compression?",
+    "c": null,
+    "o": [
+      "Amortized O(α(n)) (inverse Ackermann function)",
+      "O(log n)",
+      "O(n)",
+      "O(1)"
+    ]
+  },
+  {
+    "q": "What is the purpose of the LCP (Longest Common Prefix) array in suffix arrays?",
+    "c": null,
+    "o": [
+      "Speeds up repeated substring queries",
+      "Stores suffix indices",
+      "Tracks frequency of substrings",
+      "Balances suffix tree"
+    ]
+  },
+  {
+    "q": "What does the 'update' function in a Fenwick Tree typically do?",
+    "c": null,
+    "o": [
+      "Increases the frequency or value at a specific index and updates tree nodes accordingly",
+      "Removes an element",
+      "Finds the prefix sum",
+      "Builds the tree"
+    ]
+  },
+  {
+    "q": "Which of the following is NOT a valid use of a Trie?",
+    "c": null,
+    "o": [
+      "Graph shortest path calculation",
+      "Autocomplete suggestions",
+      "Spell checking",
+      "Prefix searching"
+    ]
+  },
+  {
+    "q": "What is the maximum number of nodes in a Segment Tree built from an array of size n?",
+    "c": null,
+    "o": [
+      "About 4 * n",
+      "2 * n",
+      "n",
+      "log n"
+    ]
+  },
+  {
+    "q": "Which data structure is used to efficiently merge sets and check connectivity in graphs?",
+    "c": null,
+    "o": [
+      "Disjoint Set Union (Union-Find)",
+      "Segment Tree",
+      "Fenwick Tree",
+      "Trie"
+    ]
+  },
+  {
+    "q": "What is the space complexity of a Trie storing n words with average length m?",
+    "c": null,
+    "o": [
+      "O(n * m)",
+      "O(n + m)",
+      "O(m log n)",
+      "O(n log m)"
+    ]
+  },
+  {
+    "q": "In a Segment Tree, what does the leaf node represent?",
+    "c": null,
+    "o": [
+      "An individual element of the array",
+      "The sum of the array",
+      "The maximum of the array",
+      "A prefix sum"
+    ]
+  },
+  {
+    "q": "Which of the following operations does a Fenwick Tree NOT support efficiently?",
+    "c": null,
+    "o": [
+      "Range minimum query",
+      "Prefix sum",
+      "Point update",
+      "Cumulative frequency calculation"
+    ]
+  },
+  {
+    "q": "What technique helps speed up the find operation in Disjoint Set Union?",
+    "c": null,
+    "o": [
+      "Path Compression",
+      "Breadth First Search",
+      "Union by Size",
+      "Sorting"
+    ]
+  },
+  {
+    "q": "What is the main use of a Suffix Tree?",
+    "c": null,
+    "o": [
+      "Fast substring search and pattern matching",
+      "Sorting integers",
+      "Memory management",
+      "Matrix operations"
+    ]
+  },
+  {
+    "q": "Which of the following best describes the 'union by rank' heuristic?",
+    "c": null,
+    "o": [
+      "Attach the smaller tree under the root of the taller tree",
+      "Attach the taller tree under the smaller tree",
+      "Merge sets arbitrarily",
+      "Balance tree by number of elements"
+    ]
+  },
+  {
+    "q": "What is the primary use of a Fenwick Tree (Binary Indexed Tree)?",
+    "c": null,
+    "o": [
+      "Efficient prefix sum and update queries",
+      "Fast sorting",
+      "Graph traversal",
+      "String matching"
+    ]
+  },
+  {
+    "q": "Which data structure allows efficient storage and querying of prefixes of strings?",
+    "c": null,
+    "o": [
+      "Trie",
+      "Stack",
+      "Queue",
+      "Heap"
+    ]
+  },
+  {
+    "q": "What is the worst-case time complexity for a range sum query in a Segment Tree?",
+    "c": null,
+    "o": [
+      "O(log n)",
+      "O(n)",
+      "O(1)",
+      "O(n log n)"
+    ]
+  },
+  {
+    "q": "Which algorithmic technique is commonly used in Disjoint Set Union to optimize find operations?",
+    "c": null,
+    "o": [
+      "Path Compression",
+      "Dynamic Programming",
+      "Memoization",
+      "Greedy Algorithm"
+    ]
+  },
+  {
+    "q": "What is the main advantage of suffix arrays compared to suffix trees?",
+    "c": null,
+    "o": [
+      "Less memory usage",
+      "Faster query times",
+      "Easier to update dynamically",
+      "Supports wider range of queries"
+    ]
+  },
+  {
+    "q": "Which of these operations is typically NOT efficient in a Fenwick Tree?",
+    "c": null,
+    "o": [
+      "Range minimum query",
+      "Prefix sum query",
+      "Point update",
+      "Cumulative frequency query"
+    ]
+  },
+  {
+    "q": "In a Trie, what data structure is commonly used to store children nodes?",
+    "c": null,
+    "o": [
+      "Dictionary (hash map)",
+      "Linked list",
+      "Array list",
+      "Stack"
+    ]
+  },
+  {
+    "q": "What is the amortized time complexity of find operation in a Union-Find with path compression?",
+    "c": null,
+    "o": [
+      "O(α(n)) (Inverse Ackermann function)",
+      "O(log n)",
+      "O(n)",
+      "O(1)"
+    ]
+  },
+  {
+    "q": "Which of the following best describes lazy propagation in Segment Trees?",
+    "c": null,
+    "o": [
+      "Delaying updates to child nodes until necessary",
+      "Updating all nodes immediately",
+      "Compressing paths in trees",
+      "Balancing tree height"
+    ]
+  },
+  {
+    "q": "Which of the following is NOT a typical application of a Trie?",
+    "c": null,
+    "o": [
+      "Graph shortest path computation",
+      "Autocomplete and prefix search",
+      "Spell checking",
+      "IP routing"
+    ]
+  },
+  {
+    "q": "In Fenwick Tree, which operation is used to get prefix sums?",
+    "c": null,
+    "o": [
+      "Query operation using binary indexed traversal",
+      "Insert operation",
+      "Delete operation",
+      "Merge operation"
+    ]
+  },
+  {
+    "q": "What is the maximum number of nodes in a Suffix Tree built for a string of length n?",
+    "c": null,
+    "o": [
+      "O(n)",
+      "O(n log n)",
+      "O(n^2)",
+      "O(log n)"
+    ]
+  },
+  {
+    "q": "What does 'union by rank' mean in Disjoint Set data structure?",
+    "c": null,
+    "o": [
+      "Attach the tree with smaller rank under the one with larger rank",
+      "Attach randomly",
+      "Delete smaller sets",
+      "Balance by number of elements"
+    ]
+  },
+  {
+    "q": "What type of query is a Segment Tree designed to handle efficiently?",
+    "c": null,
+    "o": [
+      "Range queries such as sum, min, or max",
+      "Single element access",
+      "Sorting elements",
+      "Graph traversal"
+    ]
+  },
+  {
+    "q": "What is the key idea behind path compression in Union-Find?",
+    "c": null,
+    "o": [
+      "Make each node on the find path point directly to the root",
+      "Remove cycles from the graph",
+      "Balance the tree height",
+      "Sort the sets"
+    ]
+  },
+  {
+    "q": "Which data structure is most suitable for fast prefix-based searches?",
+    "c": null,
+    "o": [
+      "Trie",
+      "Binary Search Tree",
+      "Heap",
+      "Queue"
+    ]
+  },
+  {
+    "q": "What is the complexity of building a Segment Tree for an array of size n?",
+    "c": null,
+    "o": [
+      "O(n)",
+      "O(n log n)",
+      "O(log n)",
+      "O(n^2)"
+    ]
+  },
+  {
+    "q": "Which of the following is NOT a feature of Fenwick Tree?",
+    "c": null,
+    "o": [
+      "Supports range minimum query efficiently",
+      "Supports prefix sum queries",
+      "Supports point updates",
+      "Uses O(n) space"
+    ]
+  },
+  {
+    "q": "Which data structure can be used for efficient substring search and has a construction time of O(n log n)?",
+    "c": null,
+    "o": [
+      "Suffix Array",
+      "Trie",
+      "Disjoint Set",
+      "Heap"
+    ]
+  },
+  {
+    "q": "In Disjoint Set Union, what does union by size mean?",
+    "c": null,
+    "o": [
+      "Attach the smaller set under the larger set",
+      "Attach randomly",
+      "Attach the larger set under the smaller set",
+      "Delete smaller sets"
+    ]
+  },
+  {
+    "q": "Which of the following is NOT true about a suffix tree?",
+    "c": null,
+    "o": [
+      "It requires O(n) space where n is the length of the string",
+      "It is a compressed trie of all suffixes",
+      "It stores all substrings explicitly",
+      "It supports fast substring queries"
+    ]
+  },
+  {
+    "q": "What is the primary use of the Fenwick Tree data structure?",
+    "c": null,
+    "o": [
+      "Efficient computation of prefix sums",
+      "Sorting elements",
+      "Graph traversal",
+      "String matching"
+    ]
+  },
+  {
+    "q": "What does 'lazy propagation' help optimize in Segment Trees?",
+    "c": null,
+    "o": [
+      "Range updates",
+      "Point queries",
+      "Memory usage",
+      "Initialization time"
+    ]
+  },
+  {
+    "q": "Which of the following is NOT an optimization used in Disjoint Set Union (Union-Find)?",
+    "c": null,
+    "o": [
+      "Balanced Binary Search",
+      "Path Compression",
+      "Union by Rank",
+      "Union by Size"
+    ]
+  },
+  {
+    "q": "What is stored at each internal node of a Segment Tree?",
+    "c": null,
+    "o": [
+      "Aggregated data for the node's segment (like sum or min)",
+      "Pointer to parent node",
+      "A single element",
+      "None of the above"
+    ]
+  },
+  {
+    "q": "Which data structure can efficiently perform prefix-based searches on strings?",
+    "c": null,
+    "o": [
+      "Trie",
+      "Heap",
+      "Queue",
+      "Stack"
+    ]
+  },
+  {
+    "q": "What is the time complexity to construct a suffix array using efficient algorithms?",
+    "c": null,
+    "o": [
+      "O(n log n)",
+      "O(n^2)",
+      "O(n)",
+      "O(log n)"
+    ]
+  },
+  {
+    "q": "What is the purpose of the 'find' operation in Disjoint Set Union?",
+    "c": null,
+    "o": [
+      "To find the representative of the set containing the element",
+      "To add a new element",
+      "To delete an element",
+      "To merge two sets"
+    ]
+  },
+  {
+    "q": "What does each node represent in a Segment Tree?",
+    "c": null,
+    "o": [
+      "A segment (range) of the original array",
+      "A single element only",
+      "A leaf in a binary search tree",
+      "A prefix sum of the array"
+    ]
+  },
+  {
+    "q": "What is the main benefit of using path compression in Disjoint Set Union?",
+    "c": null,
+    "o": [
+      "Speeds up future find operations by flattening the tree",
+      "Reduces memory usage",
+      "Prevents cycles",
+      "Balances tree heights"
+    ]
+  },
+  {
+    "q": "Which data structure is best for implementing autocomplete features?",
+    "c": null,
+    "o": [
+      "Trie",
+      "Heap",
+      "Stack",
+      "Queue"
+    ]
+  },
+  {
+    "q": "Which data structure efficiently supports point updates and prefix sum queries in logarithmic time?",
+    "c": null,
+    "o": [
+      "Fenwick Tree",
+      "Segment Tree",
+      "Binary Search Tree",
+      "Hash Map"
+    ]
+  },
+  {
+    "q": "Which of the following is NOT true about Suffix Trees?",
+    "c": null,
+    "o": [
+      "They store all suffixes of a string in a compressed form",
+      "They can be built in O(n) time",
+      "They use O(n^2) space in worst case",
+      "They allow fast substring search"
+    ]
+  },
+  {
+    "q": "What is the key difference between a Suffix Array and a Suffix Tree?",
+    "c": null,
+    "o": [
+      "Suffix Array is a sorted array of suffix indices, while Suffix Tree is a trie-like structure",
+      "Suffix Array is slower in queries",
+      "Suffix Tree uses less memory",
+      "Suffix Array supports incremental updates"
+    ]
+  },
+  {
+    "q": "What does 'union by rank' do in Disjoint Set Union?",
+    "c": null,
+    "o": [
+      "Attaches smaller tree under the root of the taller tree",
+      "Attaches taller tree under smaller tree",
+      "Always merges arbitrarily",
+      "Deletes smaller sets"
+    ]
+  },
+  {
+    "q": "Which of the following is a common use case of the Disjoint Set (Union-Find) data structure?",
+    "c": null,
+    "o": [
+      "Detecting cycles in an undirected graph",
+      "Finding shortest paths",
+      "Sorting data",
+      "String pattern matching"
+    ]
+  },
+  {
+    "q": "What is the main advantage of using a Fenwick Tree over a simple prefix sum array?",
+    "c": null,
+    "o": [
+      "Supports efficient updates and prefix sum queries",
+      "Uses less memory",
+      "Simpler implementation",
+      "Supports range minimum queries"
+    ]
+  },
+  {
+    "q": "What is the typical height of a Segment Tree built on an array of size n?",
+    "c": null,
+    "o": [
+      "O(log n)",
+      "O(n)",
+      "O(1)",
+      "O(n log n)"
+    ]
+  },
+  {
+    "q": "Which data structure can be used to efficiently find all occurrences of a pattern within a text?",
+    "c": null,
+    "o": [
+      "Suffix Tree",
+      "Heap",
+      "Queue",
+      "Stack"
+    ]
+  },
+  {
+    "q": "What does a node in a Trie represent?",
+    "c": null,
+    "o": [
+      "A character of a string",
+      "An integer value",
+      "A frequency count",
+      "A subtree size"
+    ]
+  },
+  {
+    "q": "Which operation is optimized by the 'union by size' technique in Disjoint Set Union?",
+    "c": null,
+    "o": [
+      "Merging smaller set under the larger set to keep trees shallow",
+      "Deleting smaller sets",
+      "Balancing search trees",
+      "Finding maximum element"
+    ]
+  },
+  {
+    "q": "What is the advantage of using lazy propagation in Segment Trees?",
+    "c": null,
+    "o": [
+      "Efficient range updates without immediate propagation to children",
+      "Less memory usage",
+      "Faster tree construction",
+      "Improved point queries"
+    ]
+  },
+  {
+    "q": "What is the main operation supported by a Fenwick Tree?",
+    "c": null,
+    "o": [
+      "Prefix sum query and point update",
+      "Range minimum query",
+      "Full array sort",
+      "Substring search"
+    ]
+  },
+  {
+    "q": "Which data structure is best suited for implementing auto-complete features?",
+    "c": null,
+    "o": [
+      "Trie",
+      "Binary Search Tree",
+      "Heap",
+      "Linked List"
+    ]
+  },
+  {
+    "q": "Which technique helps reduce the time complexity of the 'find' operation in Disjoint Set?",
+    "c": null,
+    "o": [
+      "Path compression",
+      "Breadth-first search",
+      "Dynamic programming",
+      "Memoization"
+    ]
+  },
+  {
+    "q": "In a Segment Tree, how many nodes can it have at most for an array of size n?",
+    "c": null,
+    "o": [
+      "About 4n",
+      "n",
+      "2n",
+      "n log n"
+    ]
+  },
+  {
+    "q": "What is the main difference between a Suffix Array and a Suffix Tree?",
+    "c": null,
+    "o": [
+      "Suffix Array is an array of suffix indices sorted lexicographically; Suffix Tree is a compressed trie of suffixes",
+      "Suffix Tree uses less memory",
+      "Suffix Array supports dynamic updates",
+      "Suffix Tree is built in O(n^2)"
+    ]
+  },
+  {
+    "q": "Which data structure helps efficiently answer range queries and point updates?",
+    "c": null,
+    "o": [
+      "Segment Tree",
+      "Stack",
+      "Queue",
+      "Hash Map"
+    ]
+  },
+  {
+    "q": "What does the 'union by rank' heuristic in Disjoint Set do?",
+    "c": null,
+    "o": [
+      "Attaches the tree with smaller rank under the tree with larger rank",
+      "Always merges arbitrarily",
+      "Deletes smaller sets",
+      "Balances tree by size"
+    ]
+  },
+  {
+    "q": "What does each node in a Fenwick Tree represent?",
+    "c": null,
+    "o": [
+      "Sum of a specific range of elements determined by the node's index",
+      "A single element",
+      "The maximum element in the array",
+      "A suffix of the input array"
+    ]
+  },
+  {
+    "q": "Which data structure is most suitable for efficient prefix-based string searches?",
+    "c": null,
+    "o": [
+      "Trie",
+      "Hash Table",
+      "Heap",
+      "Binary Search Tree"
+    ]
+  },
+  {
+    "q": "What is the advantage of using path compression in Disjoint Set Union?",
+    "c": null,
+    "o": [
+      "Flattens the structure of the tree to optimize future find operations",
+      "Prevents cycles",
+      "Balances tree height",
+      "Reduces memory usage"
+    ]
+  },
+  {
+    "q": "Which data structure is designed to answer range queries such as sum, min, or max efficiently?",
+    "c": null,
+    "o": [
+      "Segment Tree",
+      "Fenwick Tree",
+      "Binary Search Tree",
+      "Heap"
+    ]
+  },
+  {
+    "q": "How does lazy propagation optimize Segment Tree updates?",
+    "c": null,
+    "o": [
+      "By postponing updates to child nodes until necessary",
+      "By updating all nodes immediately",
+      "By compressing paths in the tree",
+      "By balancing the tree"
+    ]
+  },
+  {
+    "q": "What is the worst-case time complexity for building a suffix tree?",
+    "c": null,
+    "o": [
+      "O(n)",
+      "O(n log n)",
+      "O(n^2)",
+      "O(log n)"
+    ]
+  },
+  {
+    "q": "What is the typical space complexity of a Trie storing n strings with average length m?",
+    "c": null,
+    "o": [
+      "O(n * m)",
+      "O(n + m)",
+      "O(m log n)",
+      "O(n log m)"
+    ]
+  },
+  {
+    "q": "What is the main use of the 'union' operation in Disjoint Set Union (Union-Find)?",
+    "c": null,
+    "o": [
+      "Merge two distinct sets into one",
+      "Find the representative of a set",
+      "Check if two elements are in the same set",
+      "Delete an element from a set"
+    ]
+  },
+  {
+    "q": "Which data structure can efficiently perform prefix sum queries and single element updates?",
+    "c": null,
+    "o": [
+      "Fenwick Tree",
+      "Segment Tree",
+      "Trie",
+      "Disjoint Set"
+    ]
+  },
+  {
+    "q": "What is the time complexity for a range query in a Segment Tree of size n?",
+    "c": null,
+    "o": [
+      "O(log n)",
+      "O(n)",
+      "O(1)",
+      "O(n log n)"
+    ]
+  },
+  {
+    "q": "Which data structure represents all suffixes of a string in a compressed form to allow fast substring queries?",
+    "c": null,
+    "o": [
+      "Suffix Tree",
+      "Trie",
+      "Fenwick Tree",
+      "Segment Tree"
+    ]
+  },
+  {
+    "q": "In a Trie, each node typically contains which of the following?",
+    "c": null,
+    "o": [
+      "References to children nodes for each possible character",
+      "A value of the substring",
+      "A pointer to the parent only",
+      "A hash value"
+    ]
+  },
+  {
+    "q": "Which optimization reduces the tree height in Disjoint Set to speed up operations?",
+    "c": null,
+    "o": [
+      "Union by rank or size",
+      "Lazy propagation",
+      "Prefix sums",
+      "Dynamic programming"
+    ]
+  },
+  {
+    "q": "What is the primary advantage of lazy propagation in Segment Trees?",
+    "c": null,
+    "o": [
+      "Efficiently handle range updates without updating all nodes immediately",
+      "Less memory usage",
+      "Faster tree building",
+      "Improved point query speed"
+    ]
+  },
+  {
+    "q": "Which of the following operations is efficient in a Fenwick Tree?",
+    "c": null,
+    "o": [
+      "Calculating prefix sums",
+      "Range minimum queries",
+      "Sorting elements",
+      "Substring searches"
+    ]
+  },
+  {
+    "q": "What is the primary function of the 'find' operation in Disjoint Set Union?",
+    "c": null,
+    "o": [
+      "Identify the representative (root) of the set containing an element",
+      "Merge two sets",
+      "Delete a set",
+      "Insert a new element"
+    ]
+  },
+  {
+    "q": "Which data structure is designed for efficient substring pattern matching?",
+    "c": null,
+    "o": [
+      "Suffix Tree",
+      "Heap",
+      "Queue",
+      "Stack"
+    ]
+  },
+  {
+    "q": "What does 'union by size' mean in Disjoint Set Union?",
+    "c": null,
+    "o": [
+      "Attach the smaller set under the larger set",
+      "Attach the larger set under the smaller set",
+      "Merge sets randomly",
+      "Delete smaller sets"
+    ]
+  },
+  {
+    "q": "Which data structure is best for prefix-based searches in strings?",
+    "c": null,
+    "o": [
+      "Trie",
+      "Segment Tree",
+      "Fenwick Tree",
+      "Disjoint Set"
+    ]
+  },
+  {
+    "q": "What does lazy propagation optimize in Segment Trees?",
+    "c": null,
+    "o": [
+      "Range update operations",
+      "Point queries",
+      "Memory consumption",
+      "Sorting speed"
+    ]
+  },
+  {
+    "q": "What is the time complexity of building a suffix array using efficient algorithms?",
+    "c": null,
+    "o": [
+      "O(n log n)",
+      "O(n^2)",
+      "O(n)",
+      "O(log n)"
+    ]
+  },
+  {
+    "q": "Which data structure can be used to efficiently perform point updates and prefix sum queries?",
+    "c": null,
+    "o": [
+      "Fenwick Tree",
+      "Segment Tree",
+      "Trie",
+      "Disjoint Set"
+    ]
+  },
+  {
+    "q": "What is the key idea behind path compression in Disjoint Set Union?",
+    "c": null,
+    "o": [
+      "Flattening the tree by making every node point directly to the root during find",
+      "Deleting redundant nodes",
+      "Balancing tree heights by rank",
+      "Delaying union operations"
+    ]
+  },
+  {
+    "q": "What is the typical space complexity of a Segment Tree built over an array of size n?",
+    "c": null,
+    "o": [
+      "O(4n)",
+      "O(n)",
+      "O(log n)",
+      "O(n log n)"
+    ]
+  },
+  {
+    "q": "What data structure is commonly used to implement autocomplete features?",
+    "c": null,
+    "o": [
+      "Trie",
+      "Heap",
+      "Queue",
+      "Stack"
+    ]
+  },
+  {
+    "q": "Which operation is NOT efficient in Fenwick Tree?",
+    "c": null,
+    "o": [
+      "Range minimum query",
+      "Prefix sum query",
+      "Point update",
+      "Cumulative frequency query"
+    ]
+  },
+  {
+    "q": "What does 'union by rank' do in Disjoint Set Union?",
+    "c": null,
+    "o": [
+      "Attach the shorter tree under the root of the taller tree",
+      "Attach randomly",
+      "Delete smaller trees",
+      "Balance by the number of nodes"
+    ]
+  },
+  {
+    "q": "Which of the following is a compressed trie containing all suffixes of a string?",
+    "c": null,
+    "o": [
+      "Suffix Tree",
+      "Trie",
+      "Suffix Array",
+      "Fenwick Tree"
+    ]
+  },
+  {
+    "q": "Which data structure is most suitable for answering dynamic range sum queries and updates?",
+    "c": null,
+    "o": [
+      "Segment Tree",
+      "Fenwick Tree",
+      "Trie",
+      "Disjoint Set"
+    ]
+  },
+  {
+    "q": "What is the worst-case time complexity of the 'find' operation in Disjoint Set with path compression?",
+    "c": null,
+    "o": [
+      "Amortized O(α(n)) (inverse Ackermann function)",
+      "O(log n)",
+      "O(n)",
+      "O(1)"
+    ]
+  },
+  {
+    "q": "Which of the following is NOT true about a Trie?",
+    "c": null,
+    "o": [
+      "It can be used for efficient prefix search",
+      "Each node represents a character",
+      "It stores integers in sorted order",
+      "It supports fast autocomplete"
+    ]
+  },
+  {
+    "q": "What does lazy propagation do in Segment Trees?",
+    "c": null,
+    "o": [
+      "Delays updates to child nodes until necessary",
+      "Updates all nodes immediately",
+      "Deletes nodes",
+      "Balances the tree"
+    ]
+  },
+  {
+    "q": "What is the key difference between a Suffix Tree and a Suffix Array?",
+    "c": null,
+    "o": [
+      "Suffix Tree is a compressed trie of all suffixes, Suffix Array is a sorted array of suffix indices",
+      "Suffix Array uses more memory",
+      "Suffix Tree is slower in queries",
+      "Suffix Array supports dynamic insertion"
+    ]
+  },
+  {
+    "q": "Which of the following is NOT an optimization used in Disjoint Set Union?",
+    "c": null,
+    "o": [
+      "Balanced Binary Search",
+      "Union by Rank",
+      "Union by Size",
+      "Path Compression"
+    ]
+  },
+  {
+    "q": "What does the 'update' operation in Fenwick Tree do?",
+    "c": null,
+    "o": [
+      "Increments a value at a specific index and updates ancestors accordingly",
+      "Queries prefix sums",
+      "Deletes an element",
+      "Merges two trees"
+    ]
+  },
+  {
+    "q": "Which data structure allows efficient prefix queries and point updates with O(log n) complexity?",
+    "c": null,
+    "o": [
+      "Fenwick Tree",
+      "Segment Tree",
+      "Trie",
+      "Disjoint Set"
+    ]
+  },
+  {
+    "q": "What is the worst-case time complexity of building a Suffix Tree?",
+    "c": null,
+    "o": [
+      "O(n)",
+      "O(n log n)",
+      "O(n^2)",
+      "O(log n)"
+    ]
+  },
+  {
+    "q": "What is the primary purpose of the LCP (Longest Common Prefix) array in suffix arrays?",
+    "c": null,
+    "o": [
+      "To speed up substring queries",
+      "To compress strings",
+      "To balance the suffix tree",
+      "To count suffix lengths"
+    ]
+  },
+  {
+    "q": "Which operation is optimized by path compression in Disjoint Set?",
+    "c": null,
+    "o": [
+      "Find operation",
+      "Union operation",
+      "Insert operation",
+      "Delete operation"
+    ]
+  },
+  {
+    "q": "In a Segment Tree, what does each leaf node represent?",
+    "c": null,
+    "o": [
+      "An individual element of the input array",
+      "A range sum",
+      "The maximum value in a range",
+      "The root node"
+    ]
+  },
+  {
+    "q": "Which data structure is most suitable for autocomplete and spell-checking?",
+    "c": null,
+    "o": [
+      "Trie",
+      "Heap",
+      "Binary Search Tree",
+      "Queue"
+    ]
+  },
+  {
+    "q": "What does 'union by rank' do in a Disjoint Set?",
+    "c": null,
+    "o": [
+      "Attach the smaller rank tree under the root of the larger rank tree",
+      "Attach the larger rank tree under the smaller",
+      "Delete smaller sets",
+      "Merge sets arbitrarily"
+    ]
+  },
+  {
+    "q": "Which data structure allows for efficient dynamic range queries and point updates?",
+    "c": null,
+    "o": [
+      "Segment Tree",
+      "Fenwick Tree",
+      "Trie",
+      "Disjoint Set"
+    ]
+  },
+  {
+    "q": "What is the amortized time complexity of the find operation in a Union-Find with path compression?",
+    "c": null,
+    "o": [
+      "O(α(n)) (Inverse Ackermann function)",
+      "O(log n)",
+      "O(n)",
+      "O(1)"
+    ]
+  },
+  {
+    "q": "Which of the following is NOT an application of a Trie?",
+    "c": null,
+    "o": [
+      "Graph shortest path",
+      "Autocomplete",
+      "Spell checking",
+      "Prefix search"
+    ]
+  },
+  {
+    "q": "What does lazy propagation in Segment Trees help optimize?",
+    "c": null,
+    "o": [
+      "Range updates",
+      "Point queries",
+      "Tree height",
+      "Memory usage"
+    ]
+  },
+  {
+    "q": "Which data structure stores suffixes of a string in a compressed trie form?",
+    "c": null,
+    "o": [
+      "Suffix Tree",
+      "Suffix Array",
+      "Trie",
+      "Fenwick Tree"
+    ]
+  },
+  {
+    "q": "What does 'union by size' mean in Disjoint Set Union?",
+    "c": null,
+    "o": [
+      "Attach the smaller set under the larger set",
+      "Attach the larger set under the smaller set",
+      "Merge sets arbitrarily",
+      "Delete smaller sets"
+    ]
+  },
+  {
+    "q": "Which of these operations is NOT efficiently supported by a Fenwick Tree?",
+    "c": null,
+    "o": [
+      "Range minimum query",
+      "Prefix sum",
+      "Point update",
+      "Cumulative frequency query"
+    ]
+  },
+  {
+    "q": "What is the primary use of the Disjoint Set (Union-Find) data structure?",
+    "c": null,
+    "o": [
+      "Managing partitioning of a set into disjoint subsets",
+      "Sorting data",
+      "Searching strings",
+      "Graph traversal"
+    ]
+  },
+  {
+    "q": "Which data structure is most efficient for prefix-based search operations?",
+    "c": null,
+    "o": [
+      "Trie",
+      "Heap",
+      "Queue",
+      "Stack"
+    ]
+  },
+  {
+    "q": "What technique improves the efficiency of the find operation in Union-Find?",
+    "c": null,
+    "o": [
+      "Path Compression",
+      "Dynamic Programming",
+      "Greedy Algorithm",
+      "Memoization"
+    ]
+  },
+  {
+    "q": "Which data structure is used to efficiently handle range queries and updates on arrays?",
+    "c": null,
+    "o": [
+      "Segment Tree",
+      "Binary Search Tree",
+      "Heap",
+      "Disjoint Set"
+    ]
+  },
+  {
+    "q": "Which data structure provides a compressed representation of all suffixes of a string?",
+    "c": null,
+    "o": [
+      "Suffix Tree",
+      "Suffix Array",
+      "Trie",
+      "Fenwick Tree"
+    ]
+  },
+  {
+    "q": "What does the 'update' operation in a Fenwick Tree do?",
+    "c": null,
+    "o": [
+      "Increase the value at a specific index and update tree nodes accordingly",
+      "Find the prefix sum",
+      "Merge two trees",
+      "Delete an element"
+    ]
+  },
+  {
+    "q": "What is the advantage of lazy propagation in Segment Trees?",
+    "c": null,
+    "o": [
+      "Allows efficient range updates without immediate propagation to child nodes",
+      "Reduces tree size",
+      "Improves query time for point updates",
+      "Simplifies tree construction"
+    ]
+  },
+  {
+    "q": "What is the space complexity of a Fenwick Tree for an array of size n?",
+    "c": null,
+    "o": [
+      "O(n)",
+      "O(log n)",
+      "O(n log n)",
+      "O(1)"
+    ]
+  },
+  {
+    "q": "Which data structure is primarily used to store prefixes of strings for quick retrieval?",
+    "c": null,
+    "o": [
+      "Trie",
+      "Heap",
+      "Stack",
+      "Queue"
+    ]
+  },
+  {
+    "q": "Which optimization technique reduces the time complexity of find operations in Disjoint Sets?",
+    "c": null,
+    "o": [
+      "Path Compression",
+      "Memoization",
+      "Sorting",
+      "Hashing"
+    ]
+  },
+  {
+    "q": "In Segment Trees, what does each internal node typically represent?",
+    "c": null,
+    "o": [
+      "Aggregated information (e.g., sum, min, max) of a segment of the array",
+      "A single element",
+      "A pointer to a leaf node",
+      "A hash value"
+    ]
+  },
+  {
+    "q": "What is the construction time complexity of a Suffix Array using efficient algorithms?",
+    "c": null,
+    "o": [
+      "O(n log n)",
+      "O(n^2)",
+      "O(n)",
+      "O(log n)"
+    ]
+  },
+  {
+    "q": "What is the purpose of 'union by rank' in Disjoint Set Union?",
+    "c": null,
+    "o": [
+      "To keep the tree shallow by attaching smaller ranked tree under larger ranked tree",
+      "To balance binary search trees",
+      "To compress paths",
+      "To sort sets"
+    ]
+  },
+  {
+    "q": "Which data structure can efficiently answer prefix sum queries and also support point updates?",
+    "c": null,
+    "o": [
+      "Fenwick Tree",
+      "Trie",
+      "Disjoint Set",
+      "Segment Tree"
+    ]
+  }
+]
