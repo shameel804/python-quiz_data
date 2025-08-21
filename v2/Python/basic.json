@@ -1986,7 +1986,7 @@
             "int('-10')",
             "int('ten')",
             "float('abc')",
-            "str(True)"
+            "int('True')"
         ]
     },
     {
