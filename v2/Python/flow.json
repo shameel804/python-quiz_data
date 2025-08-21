@@ -1553,8 +1553,8 @@
     "q": "What does this while loop with break output?",
     "c": "x = 0\nwhile x < 8:\n    print(x)\n    if x == 5:\n        break\n    x += 2",
     "o": [
-      "0 2 4",
       "0 2 4 6",
+      "0 2 4",
       "5",
       "Infinite loop"
     ]
