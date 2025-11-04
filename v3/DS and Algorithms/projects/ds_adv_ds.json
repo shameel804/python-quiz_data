@@ -1,0 +1,502 @@
+[
+  {
+    "title": "Array Module Operations",
+    "ques": "Write a Python program using the array module to create an array of integers, append a value, and calculate the sum of elements.",
+    "answer": {
+      "type": "code",
+      "lang": "python",
+      "content": "import array\narr = array.array('i', [1, 2, 3, 4, 5])\narr.append(6)\ntotal = sum(arr)\nprint('Array:', arr)\nprint('Sum:', total)"
+    },
+    "explanation": "***Step 1:*** Import the ```array``` module.\n***Step 2:*** Create an array of integers using ```array.array('i', [1, 2, 3, 4, 5])```.\n***Step 3:*** Append the value ```6``` to the array using ```append()```.\n***Step 4:*** Calculate the sum of elements using ```sum()```.\n***Step 5:*** Print the array and the sum."
+  },
+  {
+    "title": "NumPy Array Manipulation",
+    "ques": "Write a Python program using NumPy to create a 2x3 array, multiply all elements by 2, and find the maximum value.",
+    "answer": {
+      "type": "code",
+      "lang": "python",
+      "content": "import numpy as np\narr = np.array([[1, 2, 3], [4, 5, 6]])\narr = arr * 2\nmax_val = np.max(arr)\nprint('Array:\\n', arr)\nprint('Max value:', max_val)"
+    },
+    "explanation": "***Step 1:*** Import ```numpy``` as ```np```.\n***Step 2:*** Create a 2x3 array using ```np.array()```.\n***Step 3:*** Multiply all elements by 2 using array broadcasting.\n***Step 4:*** Find the maximum value using ```np.max()```.\n***Step 5:*** Print the modified array and the maximum value."
+  },
+  {
+    "title": "Stack Implementation",
+    "ques": "Implement a stack using a list in Python with push, pop, and peek operations.",
+    "answer": {
+      "type": "code",
+      "lang": "python",
+      "content": "class Stack:\n    def __init__(self):\n        self.items = []\n    def push(self, item):\n        self.items.append(item)\n    def pop(self):\n        return self.items.pop() if self.items else None\n    def peek(self):\n        return self.items[-1] if self.items else None\nstack = Stack()\nstack.push(1)\nstack.push(2)\nprint('Peek:', stack.peek())\nprint('Pop:', stack.pop())"
+    },
+    "explanation": "***Step 1:*** Define a ```Stack``` class with a list ```items```.\n***Step 2:*** Implement ```push()``` to append items to the list.\n***Step 3:*** Implement ```pop()``` to remove and return the top item, or ```None``` if empty.\n***Step 4:*** Implement ```peek()``` to return the top item without removing it.\n***Step 5:*** Test the stack by pushing values, peeking, and popping."
+  },
+  {
+    "title": "Queue Using deque",
+    "ques": "Write a Python program using collections.deque to implement a queue with enqueue and dequeue operations.",
+    "answer": {
+      "type": "code",
+      "lang": "python",
+      "content": "from collections import deque\nqueue = deque()\nqueue.append(1)\nqueue.append(2)\nprint('Queue:', queue)\nprint('Dequeue:', queue.popleft())\nprint('Queue after dequeue:', queue)"
+    },
+    "explanation": "***Step 1:*** Import ```deque``` from ```collections```.\n***Step 2:*** Create a deque object to act as a queue.\n***Step 3:*** Use ```append()``` to enqueue items (FIFO).\n***Step 4:*** Use ```popleft()``` to dequeue the first item.\n***Step 5:*** Print the queue before and after dequeuing."
+  },
+  {
+    "title": "Priority Queue with heapq",
+    "ques": "Implement a priority queue using heapq to store tasks with priorities and retrieve the highest priority task.",
+    "answer": {
+      "type": "code",
+      "lang": "python",
+      "content": "import heapq\npq = []\nheapq.heappush(pq, (2, 'task2'))\nheapq.heappush(pq, (1, 'task1'))\nheapq.heappush(pq, (3, 'task3'))\npriority, task = heapq.heappop(pq)\nprint('Highest priority task:', task, 'with priority:', priority)"
+    },
+    "explanation": "***Step 1:*** Import ```heapq``` module.\n***Step 2:*** Create an empty list ```pq``` for the priority queue.\n***Step 3:*** Use ```heappush()``` to add tasks with priorities (lower number = higher priority).\n***Step 4:*** Use ```heappop()``` to retrieve the task with the highest priority.\n***Step 5:*** Print the task and its priority."
+  },
+  {
+    "title": "Singly Linked List Operations",
+    "ques": "Implement a singly linked list in Python with methods to insert at the beginning and print the list.",
+    "answer": {
+      "type": "code",
+      "lang": "python",
+      "content": "class Node:\n    def __init__(self, data):\n        self.data = data\n        self.next = None\nclass LinkedList:\n    def __init__(self):\n        self.head = None\n    def insert_front(self, data):\n        new_node = Node(data)\n        new_node.next = self.head\n        self.head = new_node\n    def print_list(self):\n        curr = self.head\n        while curr:\n            print(curr.data, end=' ')\n            curr = curr.next\nll = LinkedList()\nll.insert_front(1)\nll.insert_front(2)\nll.print_list()"
+    },
+    "explanation": "***Step 1:*** Define a ```Node``` class with ```data``` and ```next``` attributes.\n***Step 2:*** Define a ```LinkedList``` class with a ```head```.\n***Step 3:*** Implement ```insert_front()``` to add a node at the beginning.\n***Step 4:*** Implement ```print_list()``` to traverse and print nodes.\n***Step 5:*** Test by inserting values and printing the list."
+  },
+  {
+    "title": "Binary Search Tree Insertion",
+    "ques": "Implement a Binary Search Tree in Python with an insert method and in-order traversal.",
+    "answer": {
+      "type": "code",
+      "lang": "python",
+      "content": "class Node:\n    def __init__(self, value):\n        self.value = value\n        self.left = None\n        self.right = None\nclass BST:\n    def __init__(self):\n        self.root = None\n    def insert(self, value):\n        if not self.root:\n            self.root = Node(value)\n        else:\n            self._insert(self.root, value)\n    def _insert(self, node, value):\n        if value < node.value:\n            if node.left is None:\n                node.left = Node(value)\n            else:\n                self._insert(node.left, value)\n        else:\n            if node.right is None:\n                node.right = Node(value)\n            else:\n                self._insert(node.right, value)\n    def inorder(self):\n        self._inorder(self.root)\n    def _inorder(self, node):\n        if node:\n            self._inorder(node.left)\n            print(node.value, end=' ')\n            self._inorder(node.right)\nbst = BST()\nbst.insert(5)\nbst.insert(3)\nbst.insert(7)\nbst.inorder()"
+    },
+    "explanation": "***Step 1:*** Define a ```Node``` class with ```value```, ```left```, and ```right``` attributes.\n***Step 2:*** Define a ```BST``` class with a ```root```.\n***Step 3:*** Implement ```insert()``` to add values to the BST.\n***Step 4:*** Implement ```inorder()``` for in-order traversal (left, root, right).\n***Step 5:*** Test by inserting values and printing in-order."
+  },
+  {
+    "title": "Graph BFS Implementation",
+    "ques": "Implement a Breadth-First Search (BFS) traversal for a graph using an adjacency list in Python.",
+    "answer": {
+      "type": "code",
+      "lang": "python",
+      "content": "from collections import deque\nclass Graph:\n    def __init__(self):\n        self.graph = {}\n    def add_edge(self, u, v):\n        if u not in self.graph:\n            self.graph[u] = []\n        self.graph[u].append(v)\n    def bfs(self, start):\n        visited = set()\n        queue = deque([start])\n        visited.add(start)\n        while queue:\n            vertex = queue.popleft()\n            print(vertex, end=' ')\n            for neighbor in self.graph.get(vertex, []):\n                if neighbor not in visited:\n                    queue.append(neighbor)\n                    visited.add(neighbor)\ng = Graph()\ng.add_edge(0, 1)\ng.add_edge(0, 2)\ng.add_edge(1, 2)\ng.add_edge(2, 0)\ng.add_edge(2, 3)\ng.bfs(2)"
+    },
+    "explanation": "***Step 1:*** Import ```deque``` for queue operations.\n***Step 2:*** Define a ```Graph``` class with an adjacency list ```graph```.\n***Step 3:*** Implement ```add_edge()``` to add directed edges.\n***Step 4:*** Implement ```bfs()``` using a queue and visited set.\n***Step 5:*** Test by adding edges and performing BFS from a starting node."
+  },
+  {
+    "title": "Min Heap Operations",
+    "ques": "Write a Python program using heapq to create a min heap, push values, and pop the smallest value.",
+    "answer": {
+      "type": "code",
+      "lang": "python",
+      "content": "import heapq\nheap = [4, 2, 6]\nheapq.heapify(heap)\nheapq.heappush(heap, 1)\nsmallest = heapq.heappop(heap)\nprint('Heap:', heap)\nprint('Smallest:', smallest)"
+    },
+    "explanation": "***Step 1:*** Import ```heapq``` module.\n***Step 2:*** Create a list and convert it to a min heap using ```heapify()```.\n***Step 3:*** Push a value onto the heap using ```heappush()```.\n***Step 4:*** Pop the smallest value using ```heappop()```.\n***Step 5:*** Print the heap and the smallest value."
+  },
+  {
+    "title": "Hash Table with Linear Probing",
+    "ques": "Implement a hash table in Python with linear probing for collision resolution.",
+    "answer": {
+      "type": "code",
+      "lang": "python",
+      "content": "class HashTable:\n    def __init__(self, size):\n        self.size = size\n        self.table = [None] * size\n    def _hash(self, key):\n        return hash(key) % self.size\n    def insert(self, key, value):\n        index = self._hash(key)\n        while self.table[index] is not None:\n            index = (index + 1) % self.size\n        self.table[index] = (key, value)\n    def get(self, key):\n        index = self._hash(key)\n        original_index = index\n        while self.table[index] is not None:\n            if self.table[index][0] == key:\n                return self.table[index][1]\n            index = (index + 1) % self.size\n            if index == original_index:\n                break\n        return None\nht = HashTable(5)\nht.insert('apple', 1)\nht.insert('banana', 2)\nprint('Value for apple:', ht.get('apple'))"
+    },
+    "explanation": "***Step 1:*** Define a ```HashTable``` class with a fixed-size ```table```.\n***Step 2:*** Implement ```_hash()``` to compute the index for a key.\n***Step 3:*** Implement ```insert()``` with linear probing for collisions.\n***Step 4:*** Implement ```get()``` to retrieve a value by key, handling collisions.\n***Step 5:*** Test by inserting key-value pairs and retrieving a value."
+  },
+  {
+    "title": "Dynamic Array Resizing",
+    "ques": "Write a Python program to implement a dynamic array that doubles in size when full, with append and get operations.",
+    "answer": {
+      "type": "code",
+      "lang": "python",
+      "content": "class DynamicArray:\n    def __init__(self):\n        self.capacity = 1\n        self.size = 0\n        self.array = [None] * self.capacity\n    def append(self, item):\n        if self.size == self.capacity:\n            self._resize()\n        self.array[self.size] = item\n        self.size += 1\n    def _resize(self):\n        self.capacity *= 2\n        new_array = [None] * self.capacity\n        for i in range(self.size):\n            new_array[i] = self.array[i]\n        self.array = new_array\n    def get(self, index):\n        if 0 <= index < self.size:\n            return self.array[index]\n        return None\nda = DynamicArray()\nda.append(1)\nda.append(2)\nda.append(3)\nprint('Element at index 1:', da.get(1))"
+    },
+    "explanation": "***Step 1:*** Define a ```DynamicArray``` class with ```capacity```, ```size```, and ```array``` attributes.\n***Step 2:*** Implement ```append()``` to add items, resizing if necessary.\n***Step 3:*** Implement ```_resize()``` to double the array capacity.\n***Step 4:*** Implement ```get()``` to retrieve an element by index.\n***Step 5:*** Test by appending elements and retrieving one."
+  },
+  {
+    "title": "Stack Application: Parentheses Checker",
+    "ques": "Write a Python program using a stack to check if a string of parentheses is balanced.",
+    "answer": {
+      "type": "code",
+      "lang": "python",
+      "content": "class Stack:\n    def __init__(self):\n        self.items = []\n    def push(self, item):\n        self.items.append(item)\n    def pop(self):\n        return self.items.pop() if self.items else None\n    def is_empty(self):\n        return len(self.items) == 0\ndef is_balanced(s):\n    stack = Stack()\n    for char in s:\n        if char == '(':\n            stack.push(char)\n        elif char == ')':\n            if stack.is_empty():\n                return False\n            stack.pop()\n    return stack.is_empty()\nprint('Is \"()()\" balanced?', is_balanced('()()'))\nprint('Is \"(()\" balanced?', is_balanced('(()'))"
+    },
+    "explanation": "***Step 1:*** Define a ```Stack``` class with ```push()```, ```pop()```, and ```is_empty()``` methods.\n***Step 2:*** Implement ```is_balanced()``` to check parentheses.\n***Step 3:*** Push opening parentheses onto the stack.\n***Step 4:*** Pop for each closing parenthesis, checking for mismatches.\n***Step 5:*** Test with balanced and unbalanced strings."
+  },
+  {
+    "title": "Circular Queue Implementation",
+    "ques": "Implement a circular queue in Python with enqueue and dequeue operations.",
+    "answer": {
+      "type": "code",
+      "lang": "python",
+      "content": "class CircularQueue:\n    def __init__(self, size):\n        self.size = size\n        self.queue = [None] * size\n        self.front = -1\n        self.rear = -1\n    def enqueue(self, item):\n        if (self.rear + 1) % self.size == self.front:\n            return False\n        if self.front == -1:\n            self.front = 0\n        self.rear = (self.rear + 1) % self.size\n        self.queue[self.rear] = item\n        return True\n    def dequeue(self):\n        if self.front == -1:\n            return None\n        item = self.queue[self.front]\n        self.queue[self.front] = None\n        if self.front == self.rear:\n            self.front = -1\n            self.rear = -1\n        else:\n            self.front = (self.front + 1) % self.size\n        return item\ncq = CircularQueue(3)\ncq.enqueue(1)\ncq.enqueue(2)\nprint('Dequeue:', cq.dequeue())\ncq.enqueue(3)\nprint('Queue:', cq.queue)"
+    },
+    "explanation": "***Step 1:*** Define a ```CircularQueue``` class with ```size```, ```queue```, ```front```, and ```rear```.\n***Step 2:*** Implement ```enqueue()``` to add items, handling wrap-around.\n***Step 3:*** Implement ```dequeue()``` to remove items, resetting pointers if empty.\n***Step 4:*** Check for full or empty conditions.\n***Step 5:*** Test by enqueuing and dequeuing items."
+  },
+  {
+    "title": "Doubly Linked List Operations",
+    "ques": "Implement a doubly linked list in Python with methods to insert at the end and print the list.",
+    "answer": {
+      "type": "code",
+      "lang": "python",
+      "content": "class Node:\n    def __init__(self, data):\n        self.data = data\n        self.next = None\n        self.prev = None\nclass DoublyLinkedList:\n    def __init__(self):\n        self.head = None\n    def insert_end(self, data):\n        new_node = Node(data)\n        if not self.head:\n            self.head = new_node\n        else:\n            curr = self.head\n            while curr.next:\n                curr = curr.next\n            curr.next = new_node\n            new_node.prev = curr\n    def print_list(self):\n        curr = self.head\n        while curr:\n            print(curr.data, end=' ')\n            curr = curr.next\ndll = DoublyLinkedList()\ndll.insert_end(1)\ndll.insert_end(2)\ndll.print_list()"
+    },
+    "explanation": "***Step 1:*** Define a ```Node``` class with ```data```, ```next```, and ```prev``` attributes.\n***Step 2:*** Define a ```DoublyLinkedList``` class with a ```head```.\n***Step 3:*** Implement ```insert_end()``` to add nodes at the end, updating ```prev```.\n***Step 4:*** Implement ```print_list()``` to traverse and print nodes.\n***Step 5:*** Test by inserting values and printing the list."
+  },
+  {
+    "title": "Binary Tree Preorder Traversal",
+    "ques": "Implement a binary tree in Python with a preorder traversal (root, left, right).",
+    "answer": {
+      "type": "code",
+      "lang": "python",
+      "content": "class Node:\n    def __init__(self, value):\n        self.value = value\n        self.left = None\n        self.right = None\nclass BinaryTree:\n    def __init__(self):\n        self.root = None\n    def insert(self, value):\n        if not self.root:\n            self.root = Node(value)\n        else:\n            queue = [self.root]\n            while queue:\n                node = queue.pop(0)\n                if not node.left:\n                    node.left = Node(value)\n                    break\n                if not node.right:\n                    node.right = Node(value)\n                    break\n                queue.extend([node.left, node.right])\n    def preorder(self):\n        self._preorder(self.root)\n    def _preorder(self, node):\n        if node:\n            print(node.value, end=' ')\n            self._preorder(node.left)\n            self._preorder(node.right)\nbt = BinaryTree()\nbt.insert(1)\nbt.insert(2)\nbt.insert(3)\nbt.preorder()"
+    },
+    "explanation": "***Step 1:*** Define a ```Node``` class with ```value```, ```left```, and ```right```.\n***Step 2:*** Define a ```BinaryTree``` class with a ```root```.\n***Step 3:*** Implement ```insert()``` to add nodes level by level.\n***Step 4:*** Implement ```preorder()``` for root-first traversal.\n***Step 5:*** Test by inserting nodes and printing preorder traversal."
+  },
+  {
+    "title": "Graph DFS Implementation",
+    "ques": "Implement a Depth-First Search (DFS) traversal for a graph using recursion in Python.",
+    "answer": {
+      "type": "code",
+      "lang": "python",
+      "content": "class Graph:\n    def __init__(self):\n        self.graph = {}\n    def add_edge(self, u, v):\n        if u not in self.graph:\n            self.graph[u] = []\n        self.graph[u].append(v)\n    def dfs(self, start):\n        visited = set()\n        self._dfs(start, visited)\n    def _dfs(self, vertex, visited):\n        visited.add(vertex)\n        print(vertex, end=' ')\n        for neighbor in self.graph.get(vertex, []):\n            if neighbor not in visited:\n                self._dfs(neighbor, visited)\ng = Graph()\ng.add_edge(0, 1)\ng.add_edge(0, 2)\ng.add_edge(1, 2)\ng.add_edge(2, 3)\ng.dfs(0)"
+    },
+    "explanation": "***Step 1:*** Define a ```Graph``` class with an adjacency list ```graph```.\n***Step 2:*** Implement ```add_edge()``` to add directed edges.\n***Step 3:*** Implement ```dfs()``` using recursion and a visited set.\n***Step 4:*** Traverse neighbors recursively if not visited.\n***Step 5:*** Test by adding edges and performing DFS."
+  },
+  {
+    "title": "Max Heap Operations",
+    "ques": "Write a Python program using heapq to create a max heap by pushing negated values and pop the largest value.",
+    "answer": {
+      "type": "code",
+      "lang": "python",
+      "content": "import heapq\nheap = []\nvalues = [4, 2, 6]\nfor val in values:\n    heapq.heappush(heap, -val)\nlargest = -heapq.heappop(heap)\nprint('Heap (negated):', heap)\nprint('Largest:', largest)"
+    },
+    "explanation": "***Step 1:*** Import ```heapq``` module.\n***Step 2:*** Create an empty list for the heap.\n***Step 3:*** Push negated values to simulate a max heap.\n***Step 4:*** Pop the smallest negated value to get the largest original value.\n***Step 5:*** Print the heap and the largest value."
+  },
+  {
+    "title": "Hash Table with Chaining",
+    "ques": "Implement a hash table in Python using chaining (linked lists) for collision resolution.",
+    "answer": {
+      "type": "code",
+      "lang": "python",
+      "content": "class Node:\n    def __init__(self, key, value):\n        self.key = key\n        self.value = value\n        self.next = None\nclass HashTable:\n    def __init__(self, size):\n        self.size = size\n        self.table = [None] * size\n    def _hash(self, key):\n        return hash(key) % self.size\n    def insert(self, key, value):\n        index = self._hash(key)\n        if not self.table[index]:\n            self.table[index] = Node(key, value)\n        else:\n            curr = self.table[index]\n            while curr.next and curr.key != key:\n                curr = curr.next\n            if curr.key == key:\n                curr.value = value\n            else:\n                curr.next = Node(key, value)\n    def get(self, key):\n        index = self._hash(key)\n        curr = self.table[index]\n        while curr and curr.key != key:\n            curr = curr.next\n        return curr.value if curr else None\nht = HashTable(5)\nht.insert('apple', 1)\nht.insert('banana', 2)\nprint('Value for banana:', ht.get('banana'))"
+    },
+    "explanation": "***Step 1:*** Define a ```Node``` class for key-value pairs in the linked list.\n***Step 2:*** Define a ```HashTable``` class with a fixed-size ```table```.\n***Step 3:*** Implement ```_hash()``` to compute the index.\n***Step 4:*** Implement ```insert()``` using chaining for collisions.\n***Step 5:*** Implement ```get()``` to retrieve values, traversing the chain.\n***Step 6:*** Test by inserting and retrieving key-value pairs."
+  },
+  {
+    "title": "Array Rotation with NumPy",
+    "ques": "Write a Python program using NumPy to rotate a 1D array by k positions to the left.",
+    "answer": {
+      "type": "code",
+      "lang": "python",
+      "content": "import numpy as np\ndef rotate_array(arr, k):\n    arr = np.array(arr)\n    k = k % len(arr)\n    rotated = np.roll(arr, -k)\n    return rotated\narray = [1, 2, 3, 4, 5]\nk = 2\nresult = rotate_array(array, k)\nprint('Original array:', array)\nprint('Rotated array:', result)"
+    },
+    "explanation": "***Step 1:*** Import ```numpy``` as ```np```.\n***Step 2:*** Define ```rotate_array()``` to rotate the array by ```k``` positions.\n***Step 3:*** Convert input list to a NumPy array.\n***Step 4:*** Use ```np.roll()``` with a negative shift for left rotation.\n***Step 5:*** Test with an array and rotation value, printing original and rotated arrays."
+  },
+  {
+    "title": "Stack Application: Reverse String",
+    "ques": "Write a Python program using a stack to reverse a string.",
+    "answer": {
+      "type": "code",
+      "lang": "python",
+      "content": "class Stack:\n    def __init__(self):\n        self.items = []\n    def push(self, item):\n        self.items.append(item)\n    def pop(self):\n        return self.items.pop() if self.items else None\n    def is_empty(self):\n        return len(self.items) == 0\ndef reverse_string(s):\n    stack = Stack()\n    for char in s:\n        stack.push(char)\n    reversed_str = ''\n    while not stack.is_empty():\n        reversed_str += stack.pop()\n    return reversed_str\ns = 'hello'\nprint('Original:', s)\nprint('Reversed:', reverse_string(s))"
+    },
+    "explanation": "***Step 1:*** Define a ```Stack``` class with ```push()```, ```pop()```, and ```is_empty()``` methods.\n***Step 2:*** Implement ```reverse_string()``` to push characters onto the stack.\n***Step 3:*** Pop characters to build the reversed string.\n***Step 4:*** Test with a sample string and print results."
+  },
+  {
+    "title": "Deque-Based Palindrome Checker",
+    "ques": "Write a Python program using collections.deque to check if a string is a palindrome.",
+    "answer": {
+      "type": "code",
+      "lang": "python",
+      "content": "from collections import deque\ndef is_palindrome(s):\n    dq = deque(s.lower())\n    while len(dq) > 1:\n        if dq.popleft() != dq.pop():\n            return False\n    return True\nprint('Is \"radar\" a palindrome?', is_palindrome('radar'))\nprint('Is \"hello\" a palindrome?', is_palindrome('hello'))"
+    },
+    "explanation": "***Step 1:*** Import ```deque``` from ```collections```.\n***Step 2:*** Define ```is_palindrome()``` to convert string to lowercase and load into a deque.\n***Step 3:*** Compare characters from both ends using ```popleft()``` and ```pop()```.\n***Step 4:*** Return ```False``` if mismatch, ```True``` if deque is empty or has one character.\n***Step 5:*** Test with palindrome and non-palindrome strings."
+  },
+  {
+    "title": "Doubly Linked List Deletion",
+    "ques": "Implement a doubly linked list in Python with a method to delete a node by value.",
+    "answer": {
+      "type": "code",
+      "lang": "python",
+      "content": "class Node:\n    def __init__(self, data):\n        self.data = data\n        self.next = None\n        self.prev = None\nclass DoublyLinkedList:\n    def __init__(self):\n        self.head = None\n    def insert_end(self, data):\n        new_node = Node(data)\n        if not self.head:\n            self.head = new_node\n        else:\n            curr = self.head\n            while curr.next:\n                curr = curr.next\n            curr.next = new_node\n            new_node.prev = curr\n    def delete(self, value):\n        curr = self.head\n        while curr and curr.data != value:\n            curr = curr.next\n        if curr:\n            if curr.prev:\n                curr.prev.next = curr.next\n            else:\n                self.head = curr.next\n            if curr.next:\n                curr.next.prev = curr.prev\n    def print_list(self):\n        curr = self.head\n        while curr:\n            print(curr.data, end=' ')\n            curr = curr.next\ndll = DoublyLinkedList()\ndll.insert_end(1)\ndll.insert_end(2)\ndll.insert_end(3)\ndll.delete(2)\ndll.print_list()"
+    },
+    "explanation": "***Step 1:*** Define a ```Node``` class with ```data```, ```next```, and ```prev```.\n***Step 2:*** Define a ```DoublyLinkedList``` class with ```insert_end()``` to add nodes.\n***Step 3:*** Implement ```delete()``` to remove a node by value, updating links.\n***Step 4:*** Implement ```print_list()``` to display the list.\n***Step 5:*** Test by inserting nodes, deleting one, and printing the result."
+  },
+  {
+    "title": "Binary Tree Postorder Traversal",
+    "ques": "Implement a binary tree in Python with a postorder traversal (left, right, root).",
+    "answer": {
+      "type": "code",
+      "lang": "python",
+      "content": "class Node:\n    def __init__(self, value):\n        self.value = value\n        self.left = None\n        self.right = None\nclass BinaryTree:\n    def __init__(self):\n        self.root = None\n    def insert(self, value):\n        if not self.root:\n            self.root = Node(value)\n        else:\n            queue = [self.root]\n            while queue:\n                node = queue.pop(0)\n                if not node.left:\n                    node.left = Node(value)\n                    break\n                if not node.right:\n                    node.right = Node(value)\n                    break\n                queue.extend([node.left, node.right])\n    def postorder(self):\n        self._postorder(self.root)\n    def _postorder(self, node):\n        if node:\n            self._postorder(node.left)\n            self._postorder(node.right)\n            print(node.value, end=' ')\nbt = BinaryTree()\nbt.insert(1)\nbt.insert(2)\nbt.insert(3)\nbt.postorder()"
+    },
+    "explanation": "***Step 1:*** Define a ```Node``` class with ```value```, ```left```, and ```right```.\n***Step 2:*** Define a ```BinaryTree``` class with ```insert()``` for level-order insertion.\n***Step 3:*** Implement ```postorder()``` for left-right-root traversal.\n***Step 4:*** Use recursion in ```_postorder()``` to traverse the tree.\n***Step 5:*** Test by inserting nodes and printing postorder traversal."
+  },
+  {
+    "title": "Graph Adjacency Matrix",
+    "ques": "Implement a graph in Python using an adjacency matrix and print the matrix.",
+    "answer": {
+      "type": "code",
+      "lang": "python",
+      "content": "class Graph:\n    def __init__(self, vertices):\n        self.vertices = vertices\n        self.matrix = [[0] * vertices for _ in range(vertices)]\n    def add_edge(self, u, v):\n        self.matrix[u][v] = 1\n        self.matrix[v][u] = 1  # For undirected graph\n    def print_matrix(self):\n        for row in self.matrix:\n            print(row)\ng = Graph(4)\ng.add_edge(0, 1)\ng.add_edge(0, 2)\ng.add_edge(1, 3)\ng.print_matrix()"
+    },
+    "explanation": "***Step 1:*** Define a ```Graph``` class with a ```vertices``` count and ```matrix```.\n***Step 2:*** Initialize a square matrix with zeros.\n***Step 3:*** Implement ```add_edge()``` to set matrix entries for undirected edges.\n***Step 4:*** Implement ```print_matrix()``` to display the adjacency matrix.\n***Step 5:*** Test by adding edges and printing the matrix."
+  },
+  {
+    "title": "Heap Sort Using heapq",
+    "ques": "Write a Python program using heapq to implement heap sort on a list of numbers.",
+    "answer": {
+      "type": "code",
+      "lang": "python",
+      "content": "import heapq\ndef heap_sort(arr):\n    heap = arr.copy()\n    heapq.heapify(heap)\n    sorted_arr = []\n    while heap:\n        sorted_arr.append(heapq.heappop(heap))\n    return sorted_arr\nnumbers = [5, 2, 9, 1, 5, 6]\nprint('Original:', numbers)\nprint('Sorted:', heap_sort(numbers))"
+    },
+    "explanation": "***Step 1:*** Import ```heapq``` module.\n***Step 2:*** Define ```heap_sort()``` to sort using a min heap.\n***Step 3:*** Copy the input list and convert to a heap with ```heapify()```.\n***Step 4:*** Pop elements to build the sorted list.\n***Step 5:*** Test with a list of numbers and print results."
+  },
+  {
+    "title": "Hash Table with Open Addressing",
+    "ques": "Implement a hash table in Python using quadratic probing for collision resolution.",
+    "answer": {
+      "type": "code",
+      "lang": "python",
+      "content": "class HashTable:\n    def __init__(self, size):\n        self.size = size\n        self.table = [None] * size\n    def _hash(self, key, i):\n        return (hash(key) + i * i) % self.size\n    def insert(self, key, value):\n        i = 0\n        while i < self.size:\n            index = self._hash(key, i)\n            if self.table[index] is None:\n                self.table[index] = (key, value)\n                return True\n            i += 1\n        return False\n    def get(self, key):\n        i = 0\n        while i < self.size:\n            index = self._hash(key, i)\n            if self.table[index] is None:\n                return None\n            if self.table[index][0] == key:\n                return self.table[index][1]\n            i += 1\n        return None\nht = HashTable(5)\nht.insert('apple', 1)\nht.insert('banana', 2)\nprint('Value for apple:', ht.get('apple'))"
+    },
+    "explanation": "***Step 1:*** Define a ```HashTable``` class with a fixed-size ```table```.\n***Step 2:*** Implement ```_hash()``` with quadratic probing (i^2).\n***Step 3:*** Implement ```insert()``` to add key-value pairs, probing on collisions.\n***Step 4:*** Implement ```get()``` to retrieve values, probing until found or empty.\n***Step 5:*** Test by inserting and retrieving key-value pairs."
+  },
+  {
+    "title": "Sparse Array with NumPy",
+    "ques": "Write a Python program using NumPy to create a sparse array (mostly zeros) and count non-zero elements.",
+    "answer": {
+      "type": "code",
+      "lang": "python",
+      "content": "import numpy as np\ndef create_sparse_array(rows, cols, non_zero):\n    arr = np.zeros((rows, cols), dtype=int)\n    for i, j, val in non_zero:\n        arr[i][j] = val\n    non_zero_count = np.count_nonzero(arr)\n    return arr, non_zero_count\nrows, cols = 3, 3\nnon_zero = [(0, 1, 5), (1, 2, 7), (2, 0, 3)]\narray, count = create_sparse_array(rows, cols, non_zero)\nprint('Sparse Array:\\n', array)\nprint('Non-zero count:', count)"
+    },
+    "explanation": "***Step 1:*** Import ```numpy``` as ```np```.\n***Step 2:*** Define ```create_sparse_array()``` to initialize a zero-filled array.\n***Step 3:*** Set non-zero values from a list of (row, col, value) tuples.\n***Step 4:*** Use ```np.count_nonzero()``` to count non-zero elements.\n***Step 5:*** Test with a 3x3 array and print the array and count."
+  },
+  {
+    "title": "Stack Application: Expression Evaluation",
+    "ques": "Write a Python program using a stack to evaluate a simple arithmetic expression in postfix notation (e.g., '23*5+').",
+    "answer": {
+      "type": "code",
+      "lang": "python",
+      "content": "class Stack:\n    def __init__(self):\n        self.items = []\n    def push(self, item):\n        self.items.append(item)\n    def pop(self):\n        return self.items.pop() if self.items else None\ndef evaluate_postfix(expr):\n    stack = Stack()\n    for char in expr:\n        if char.isdigit():\n            stack.push(int(char))\n        else:\n            b = stack.pop()\n            a = stack.pop()\n            if char == '+':\n                stack.push(a + b)\n            elif char == '*':\n                stack.push(a * b)\n    return stack.pop()\nexpr = '23*5+'\nprint('Expression:', expr)\nprint('Result:', evaluate_postfix(expr))"
+    },
+    "explanation": "***Step 1:*** Define a ```Stack``` class with ```push()``` and ```pop()``` methods.\n***Step 2:*** Implement ```evaluate_postfix()``` to process a postfix expression.\n***Step 3:*** Push digits onto the stack; for operators, pop two operands and apply the operation.\n***Step 4:*** Push the result back onto the stack.\n***Step 5:*** Test with a sample expression and print the result."
+  },
+  {
+    "title": "Priority Queue Task Scheduler",
+    "ques": "Write a Python program using heapq to simulate a task scheduler that prioritizes tasks based on deadlines.",
+    "answer": {
+      "type": "code",
+      "lang": "python",
+      "content": "import heapq\ndef schedule_tasks(tasks):\n    pq = []\n    for deadline, task in tasks:\n        heapq.heappush(pq, (deadline, task))\n    schedule = []\n    while pq:\n        schedule.append(heapq.heappop(pq)[1])\n    return schedule\ntasks = [(2, 'Task A'), (1, 'Task B'), (3, 'Task C')]\nprint('Tasks:', tasks)\nprint('Schedule:', schedule_tasks(tasks))"
+    },
+    "explanation": "***Step 1:*** Import ```heapq``` for priority queue operations.\n***Step 2:*** Define ```schedule_tasks()``` to take a list of (deadline, task) tuples.\n***Step 3:*** Push tasks onto a min-heap based on deadlines.\n***Step 4:*** Pop tasks to create a schedule in order of earliest deadlines.\n***Step 5:*** Test with sample tasks and print the schedule."
+  },
+  {
+    "title": "Singly Linked List Cycle Detection",
+    "ques": "Implement a singly linked list in Python with a method to detect if it contains a cycle using Floyd’s cycle-finding algorithm.",
+    "answer": {
+      "type": "code",
+      "lang": "python",
+      "content": "class Node:\n    def __init__(self, data):\n        self.data = data\n        self.next = None\nclass LinkedList:\n    def __init__(self):\n        self.head = None\n    def insert_end(self, data):\n        new_node = Node(data)\n        if not self.head:\n            self.head = new_node\n        else:\n            curr = self.head\n            while curr.next:\n                curr = curr.next\n            curr.next = new_node\n    def has_cycle(self):\n        slow = fast = self.head\n        while fast and fast.next:\n            slow = slow.next\n            fast = fast.next.next\n            if slow == fast:\n                return True\n        return False\nll = LinkedList()\nll.insert_end(1)\nll.insert_end(2)\nll.insert_end(3)\nll.head.next.next.next = ll.head.next  # Create cycle\nprint('Has cycle?', ll.has_cycle())"
+    },
+    "explanation": "***Step 1:*** Define a ```Node``` class with ```data``` and ```next```.\n***Step 2:*** Define a ```LinkedList``` class with ```insert_end()``` to add nodes.\n***Step 3:*** Implement ```has_cycle()``` using Floyd’s algorithm with slow and fast pointers.\n***Step 4:*** Return ```True``` if pointers meet, indicating a cycle.\n***Step 5:*** Test by creating a list with a cycle and checking."
+  },
+  {
+    "title": "AVL Tree Insertion",
+    "ques": "Implement an AVL tree in Python with insertion and height balancing.",
+    "answer": {
+      "type": "code",
+      "lang": "python",
+      "content": "class Node:\n    def __init__(self, value):\n        self.value = value\n        self.left = None\n        self.right = None\n        self.height = 1\nclass AVLTree:\n    def __init__(self):\n        self.root = None\n    def height(self, node):\n        return node.height if node else 0\n    def balance_factor(self, node):\n        return self.height(node.left) - self.height(node.right)\n    def update_height(self, node):\n        node.height = max(self.height(node.left), self.height(node.right)) + 1\n    def right_rotate(self, y):\n        x = y.left\n        T2 = x.right\n        x.right = y\n        y.left = T2\n        self.update_height(y)\n        self.update_height(x)\n        return x\n    def insert(self, value):\n        self.root = self._insert(self.root, value)\n    def _insert(self, node, value):\n        if not node:\n            return Node(value)\n        if value < node.value:\n            node.left = self._insert(node.left, value)\n        else:\n            node.right = self._insert(node.right, value)\n        self.update_height(node)\n        balance = self.balance_factor(node)\n        if balance > 1 and value < node.left.value:\n            return self.right_rotate(node)\n        return node\n    def inorder(self):\n        self._inorder(self.root)\n    def _inorder(self, node):\n        if node:\n            self._inorder(node.left)\n            print(node.value, end=' ')\n            self._inorder(node.right)\navl = AVLTree()\navl.insert(10)\navl.insert(5)\navl.insert(3)\navl.inorder()"
+    },
+    "explanation": "***Step 1:*** Define a ```Node``` class with ```value```, ```left```, ```right```, and ```height```.\n***Step 2:*** Define an ```AVLTree``` class with helper methods for height and balance.\n***Step 3:*** Implement ```right_rotate()``` for balancing.\n***Step 4:*** Implement ```insert()``` with height updates and left-left case balancing.\n***Step 5:*** Test with insertions and print inorder traversal."
+  },
+  {
+    "title": "Graph Shortest Path with BFS",
+    "ques": "Implement a graph in Python and find the shortest path from a source to a target node using BFS.",
+    "answer": {
+      "type": "code",
+      "lang": "python",
+      "content": "from collections import deque\nclass Graph:\n    def __init__(self):\n        self.graph = {}\n    def add_edge(self, u, v):\n        if u not in self.graph:\n            self.graph[u] = []\n        self.graph[u].append(v)\n    def shortest_path(self, start, end):\n        queue = deque([(start, [start])])\n        visited = {start}\n        while queue:\n            node, path = queue.popleft()\n            if node == end:\n                return path\n            for neighbor in self.graph.get(node, []):\n                if neighbor not in visited:\n                    visited.add(neighbor)\n                    queue.append((neighbor, path + [neighbor]))\n        return []\ng = Graph()\ng.add_edge(0, 1)\ng.add_edge(0, 2)\ng.add_edge(1, 3)\ng.add_edge(2, 3)\nprint('Shortest path from 0 to 3:', g.shortest_path(0, 3))"
+    },
+    "explanation": "***Step 1:*** Define a ```Graph``` class with an adjacency list.\n***Step 2:*** Implement ```add_edge()``` for directed edges.\n***Step 3:*** Implement ```shortest_path()``` using BFS, tracking paths.\n***Step 4:*** Use a queue to explore nodes and a visited set to avoid cycles.\n***Step 5:*** Test by finding the shortest path between nodes."
+  },
+  {
+    "title": "Heap-Based Median Finder",
+    "ques": "Write a Python program using two heaps to find the median of a stream of numbers.",
+    "answer": {
+      "type": "code",
+      "lang": "python",
+      "content": "import heapq\nclass MedianFinder:\n    def __init__(self):\n        self.small = []  # Max heap (negated values)\n        self.large = []  # Min heap\n    def add_number(self, num):\n        if len(self.small) == 0 or num < -self.small[0]:\n            heapq.heappush(self.small, -num)\n        else:\n            heapq.heappush(self.large, num)\n        if len(self.small) > len(self.large) + 1:\n            heapq.heappush(self.large, -heapq.heappop(self.small))\n        elif len(self.large) > len(self.small):\n            heapq.heappush(self.small, -heapq.heappop(self.large))\n    def find_median(self):\n        if len(self.small) > len(self.large):\n            return -self.small[0]\n        return (-self.small[0] + self.large[0]) / 2\nmf = MedianFinder()\nmf.add_number(1)\nmf.add_number(2)\nmf.add_number(3)\nprint('Median:', mf.find_median())"
+    },
+    "explanation": "***Step 1:*** Import ```heapq``` for heap operations.\n***Step 2:*** Define ```MedianFinder``` with a max heap (```small```) and min heap (```large```).\n***Step 3:*** Implement ```add_number()``` to balance heaps.\n***Step 4:*** Implement ```find_median()``` to return the median based on heap sizes.\n***Step 5:*** Test by adding numbers and finding the median."
+  },
+  {
+    "title": "Hash Table Load Factor",
+    "ques": "Implement a hash table in Python with linear probing and a method to calculate the load factor.",
+    "answer": {
+      "type": "code",
+      "lang": "python",
+      "content": "class HashTable:\n    def __init__(self, size):\n        self.size = size\n        self.table = [None] * size\n        self.count = 0\n    def _hash(self, key):\n        return hash(key) % self.size\n    def insert(self, key, value):\n        if self.count >= self.size:\n            return False\n        index = self._hash(key)\n        while self.table[index] is not None:\n            index = (index + 1) % self.size\n        self.table[index] = (key, value)\n        self.count += 1\n        return True\n    def load_factor(self):\n        return self.count / self.size\nht = HashTable(5)\nht.insert('apple', 1)\nht.insert('banana', 2)\nprint('Load factor:', ht.load_factor())"
+    },
+    "explanation": "***Step 1:*** Define a ```HashTable``` class with ```size```, ```table```, and ```count```.\n***Step 2:*** Implement ```_hash()``` for index calculation.\n***Step 3:*** Implement ```insert()``` with linear probing, tracking item count.\n***Step 4:*** Implement ```load_factor()``` as count divided by size.\n***Step 5:*** Test by inserting items and calculating the load factor."
+  },
+  {
+    "title": "Array Subarray Sum with NumPy",
+    "ques": "Write a Python program using NumPy to find the maximum sum of a contiguous subarray in a given array.",
+    "answer": {
+      "type": "code",
+      "lang": "python",
+      "content": "import numpy as np\ndef max_subarray_sum(arr):\n    arr = np.array(arr)\n    max_sum = current_sum = arr[0]\n    for num in arr[1:]:\n        current_sum = max(num, current_sum + num)\n        max_sum = max(max_sum, current_sum)\n    return max_sum\narray = [1, -2, 3, -1, 4, -2, 5]\nprint('Array:', array)\nprint('Maximum subarray sum:', max_subarray_sum(array))"
+    },
+    "explanation": "***Step 1:*** Import ```numpy``` as ```np```.\n***Step 2:*** Define ```max_subarray_sum()``` using Kadane’s algorithm.\n***Step 3:*** Initialize ```max_sum``` and ```current_sum``` with the first element.\n***Step 4:*** Iterate through the array, updating ```current_sum``` and ```max_sum```.\n***Step 5:*** Test with a sample array and print the maximum subarray sum."
+  },
+  {
+    "title": "Stack Application: Undo Mechanism",
+    "ques": "Write a Python program using a stack to implement an undo mechanism for a sequence of actions.",
+    "answer": {
+      "type": "code",
+      "lang": "python",
+      "content": "class Stack:\n    def __init__(self):\n        self.items = []\n    def push(self, item):\n        self.items.append(item)\n    def pop(self):\n        return self.items.pop() if self.items else None\n    def is_empty(self):\n        return len(self.items) == 0\nclass UndoManager:\n    def __init__(self):\n        self.actions = Stack()\n    def do_action(self, action):\n        self.actions.push(action)\n        print(f'Performed action: {action}')\n    def undo(self):\n        action = self.actions.pop()\n        if action:\n            print(f'Undid action: {action}')\n        else:\n            print('No actions to undo')\num = UndoManager()\num.do_action('Type A')\num.do_action('Type B')\num.undo()\num.undo()"
+    },
+    "explanation": "***Step 1:*** Define a ```Stack``` class with ```push()```, ```pop()```, and ```is_empty()``` methods.\n***Step 2:*** Define ```UndoManager``` class with a stack to store actions.\n***Step 3:*** Implement ```do_action()``` to push actions onto the stack.\n***Step 4:*** Implement ```undo()``` to pop and display the last action.\n***Step 5:*** Test by performing actions and undoing them."
+  },
+  {
+    "title": "Double-Ended Queue Operations",
+    "ques": "Write a Python program using collections.deque to implement a deque with operations to add/remove from both ends.",
+    "answer": {
+      "type": "code",
+      "lang": "python",
+      "content": "from collections import deque\ndef deque_operations():\n    dq = deque()\n    dq.append(1)  # Add to right\n    dq.appendleft(2)  # Add to left\n    dq.append(3)\n    print('Deque:', dq)\n    right = dq.pop()\n    left = dq.popleft()\n    print('Popped right:', right)\n    print('Popped left:', left)\n    print('Deque after pops:', dq)\ndeque_operations()"
+    },
+    "explanation": "***Step 1:*** Import ```deque``` from ```collections```.\n***Step 2:*** Define ```deque_operations()``` to demonstrate deque functionality.\n***Step 3:*** Use ```append()``` and ```appendleft()``` to add elements to both ends.\n***Step 4:*** Use ```pop()``` and ```popleft()``` to remove elements from both ends.\n***Step 5:*** Print the deque state and popped elements."
+  },
+  {
+    "title": "Singly Linked List Reversal",
+    "ques": "Implement a singly linked list in Python with a method to reverse the list in-place.",
+    "answer": {
+      "type": "code",
+      "lang": "python",
+      "content": "class Node:\n    def __init__(self, data):\n        self.data = data\n        self.next = None\nclass LinkedList:\n    def __init__(self):\n        self.head = None\n    def insert_end(self, data):\n        new_node = Node(data)\n        if not self.head:\n            self.head = new_node\n        else:\n            curr = self.head\n            while curr.next:\n                curr = curr.next\n            curr.next = new_node\n    def reverse(self):\n        prev = None\n        curr = self.head\n        while curr:\n            next_node = curr.next\n            curr.next = prev\n            prev = curr\n            curr = next_node\n        self.head = prev\n    def print_list(self):\n        curr = self.head\n        while curr:\n            print(curr.data, end=' ')\n            curr = curr.next\nll = LinkedList()\nll.insert_end(1)\nll.insert_end(2)\nll.insert_end(3)\nll.reverse()\nll.print_list()"
+    },
+    "explanation": "***Step 1:*** Define a ```Node``` class with ```data``` and ```next```.\n***Step 2:*** Define a ```LinkedList``` class with ```insert_end()``` to add nodes.\n***Step 3:*** Implement ```reverse()``` to reverse the list in-place using three pointers.\n***Step 4:*** Implement ```print_list()``` to display the list.\n***Step 5:*** Test by inserting nodes, reversing, and printing the list."
+  },
+  {
+    "title": "Binary Tree Level Order Traversal",
+    "ques": "Implement a binary tree in Python with a level-order (breadth-first) traversal using a queue.",
+    "answer": {
+      "type": "code",
+      "lang": "python",
+      "content": "from collections import deque\nclass Node:\n    def __init__(self, value):\n        self.value = value\n        self.left = None\n        self.right = None\nclass BinaryTree:\n    def __init__(self):\n        self.root = None\n    def insert(self, value):\n        if not self.root:\n            self.root = Node(value)\n        else:\n            queue = deque([self.root])\n            while queue:\n                node = queue.popleft()\n                if not node.left:\n                    node.left = Node(value)\n                    break\n                if not node.right:\n                    node.right = Node(value)\n                    break\n                queue.extend([node.left, node.right])\n    def level_order(self):\n        if not self.root:\n            return\n        queue = deque([self.root])\n        while queue:\n            node = queue.popleft()\n            print(node.value, end=' ')\n            if node.left:\n                queue.append(node.left)\n            if node.right:\n                queue.append(node.right)\nbt = BinaryTree()\nbt.insert(1)\nbt.insert(2)\nbt.insert(3)\nbt.level_order()"
+    },
+    "explanation": "***Step 1:*** Import ```deque``` for queue operations.\n***Step 2:*** Define a ```Node``` class with ```value```, ```left```, and ```right```.\n***Step 3:*** Define a ```BinaryTree``` class with ```insert()``` for level-order insertion.\n***Step 4:*** Implement ```level_order()``` using a queue for breadth-first traversal.\n***Step 5:*** Test by inserting nodes and printing level-order traversal."
+  },
+  {
+    "title": "Graph Topological Sort",
+    "ques": "Implement a topological sort for a directed acyclic graph (DAG) in Python using DFS.",
+    "answer": {
+      "type": "code",
+      "lang": "python",
+      "content": "class Graph:\n    def __init__(self):\n        self.graph = {}\n    def add_edge(self, u, v):\n        if u not in self.graph:\n            self.graph[u] = []\n        self.graph[u].append(v)\n    def topological_sort(self):\n        visited = set()\n        stack = []\n        for vertex in self.graph:\n            if vertex not in visited:\n                self._dfs_topological(vertex, visited, stack)\n        return stack[::-1]\n    def _dfs_topological(self, vertex, visited, stack):\n        visited.add(vertex)\n        for neighbor in self.graph.get(vertex, []):\n            if neighbor not in visited:\n                self._dfs_topological(neighbor, visited, stack)\n        stack.append(vertex)\ng = Graph()\ng.add_edge(0, 1)\ng.add_edge(0, 2)\ng.add_edge(1, 3)\ng.add_edge(2, 3)\nprint('Topological sort:', g.topological_sort())"
+    },
+    "explanation": "***Step 1:*** Define a ```Graph``` class with an adjacency list.\n***Step 2:*** Implement ```add_edge()``` for directed edges.\n***Step 3:*** Implement ```topological_sort()``` using DFS and a stack.\n***Step 4:*** Use ```_dfs_topological()``` to visit nodes and append to stack post-traversal.\n***Step 5:*** Test by adding edges and printing the topological order."
+  },
+  {
+    "title": "Heap-Based Kth Largest Element",
+    "ques": "Write a Python program using heapq to find the kth largest element in an array.",
+    "answer": {
+      "type": "code",
+      "lang": "python",
+      "content": "import heapq\ndef find_kth_largest(arr, k):\n    heap = []\n    for num in arr:\n        heapq.heappush(heap, num)\n        if len(heap) > k:\n            heapq.heappop(heap)\n    return heap[0]\narray = [3, 1, 4, 1, 5, 9, 2]\nk = 3\nprint('Array:', array)\nprint(f'{k}th largest:', find_kth_largest(array, k))"
+    },
+    "explanation": "***Step 1:*** Import ```heapq``` for heap operations.\n***Step 2:*** Define ```find_kth_largest()``` to maintain a min-heap of size ```k```.\n***Step 3:*** Push elements to the heap, popping the smallest if size exceeds ```k```.\n***Step 4:*** Return the root as the kth largest element.\n***Step 5:*** Test with an array and k value, printing the result."
+  },
+  {
+    "title": "Hash Table with Custom Hash Function",
+    "ques": "Implement a hash table in Python with a custom hash function for strings and separate chaining for collisions.",
+    "answer": {
+      "type": "code",
+      "lang": "python",
+      "content": "class Node:\n    def __init__(self, key, value):\n        self.key = key\n        self.value = value\n        self.next = None\nclass HashTable:\n    def __init__(self, size):\n        self.size = size\n        self.table = [None] * size\n    def _hash(self, key):\n        total = 0\n        for char in key:\n            total = (total * 31 + ord(char)) % self.size\n        return total\n    def insert(self, key, value):\n        index = self._hash(key)\n        if not self.table[index]:\n            self.table[index] = Node(key, value)\n        else:\n            curr = self.table[index]\n            while curr.next and curr.key != key:\n                curr = curr.next\n            if curr.key == key:\n                curr.value = value\n            else:\n                curr.next = Node(key, value)\n    def get(self, key):\n        index = self._hash(key)\n        curr = self.table[index]\n        while curr and curr.key != key:\n            curr = curr.next\n        return curr.value if curr else None\nht = HashTable(5)\nht.insert('apple', 1)\nht.insert('pepla', 2)  # Same hash as 'apple'\nprint('Value for apple:', ht.get('apple'))\nprint('Value for pepla:', ht.get('pepla'))"
+    },
+    "explanation": "***Step 1:*** Define a ```Node``` class for key-value pairs in the chain.\n***Step 2:*** Define a ```HashTable``` class with a custom string hash function.\n***Step 3:*** Implement ```_hash()``` using polynomial rolling hash.\n***Step 4:*** Implement ```insert()``` and ```get()``` with separate chaining.\n***Step 5:*** Test with keys that hash to the same index, verifying collision handling."
+  },
+  {
+    "title": "Array Sliding Window Maximum",
+    "ques": "Write a Python program using NumPy and a deque to find the maximum element in each sliding window of size k in an array.",
+    "answer": {
+      "type": "code",
+      "lang": "python",
+      "content": "from collections import deque\nimport numpy as np\ndef sliding_window_max(arr, k):\n    arr = np.array(arr)\n    dq = deque()\n    result = []\n    for i in range(len(arr)):\n        while dq and dq[0] <= i - k:\n            dq.popleft()\n        while dq and arr[dq[-1]] <= arr[i]:\n            dq.pop()\n        dq.append(i)\n        if i >= k - 1:\n            result.append(arr[dq[0]])\n    return result\narray = [1, 3, -1, -3, 5, 3, 6, 7]\nk = 3\nprint('Array:', array)\nprint('Sliding window max:', sliding_window_max(array, k))"
+    },
+    "explanation": "***Step 1:*** Import ```numpy``` and ```deque```.\n***Step 2:*** Define ```sliding_window_max()``` to process the array with window size ```k```.\n***Step 3:*** Use a deque to store indices of potential maximums, removing outdated or smaller elements.\n***Step 4:*** Append the maximum (at deque’s front) to the result after each window.\n***Step 5:*** Test with an array and window size, printing the maximums."
+  },
+  {
+    "title": "Stack Application: Next Greater Element",
+    "ques": "Write a Python program using a stack to find the next greater element for each element in an array.",
+    "answer": {
+      "type": "code",
+      "lang": "python",
+      "content": "class Stack:\n    def __init__(self):\n        self.items = []\n    def push(self, item):\n        self.items.append(item)\n    def pop(self):\n        return self.items.pop() if self.items else None\n    def peek(self):\n        return self.items[-1] if self.items else None\n    def is_empty(self):\n        return len(self.items) == 0\ndef next_greater_element(arr):\n    stack = Stack()\n    result = [-1] * len(arr)\n    for i in range(len(arr)):\n        while not stack.is_empty() and arr[stack.peek()] < arr[i]:\n            result[stack.pop()] = arr[i]\n        stack.push(i)\n    return result\narray = [4, 5, 2, 25]\nprint('Array:', array)\nprint('Next greater elements:', next_greater_element(array))"
+    },
+    "explanation": "***Step 1:*** Define a ```Stack``` class with ```push()```, ```pop()```, ```peek()```, and ```is_empty()``` methods.\n***Step 2:*** Implement ```next_greater_element()``` to find the next larger element.\n***Step 3:*** Use a stack to track indices, popping when a larger element is found.\n***Step 4:*** Store results in an array, defaulting to -1 if no greater element exists.\n***Step 5:*** Test with an array and print the results."
+  },
+  {
+    "title": "Circular Queue with Dynamic Resizing",
+    "ques": "Implement a circular queue in Python that doubles its size when full, with enqueue and dequeue operations.",
+    "answer": {
+      "type": "code",
+      "lang": "python",
+      "content": "class CircularQueue:\n    def __init__(self, size):\n        self.size = size\n        self.queue = [None] * size\n        self.front = -1\n        self.rear = -1\n        self.count = 0\n    def enqueue(self, item):\n        if self.count == self.size:\n            self._resize()\n        if self.front == -1:\n            self.front = 0\n        self.rear = (self.rear + 1) % self.size\n        self.queue[self.rear] = item\n        self.count += 1\n    def dequeue(self):\n        if self.count == 0:\n            return None\n        item = self.queue[self.front]\n        self.queue[self.front] = None\n        self.front = (self.front + 1) % self.size\n        self.count -= 1\n        if self.count == 0:\n            self.front = -1\n            self.rear = -1\n        return item\n    def _resize(self):\n        new_size = self.size * 2\n        new_queue = [None] * new_size\n        for i in range(self.count):\n            new_queue[i] = self.queue[(self.front + i) % self.size]\n        self.queue = new_queue\n        self.front = 0\n        self.rear = self.count - 1\n        self.size = new_size\ncq = CircularQueue(2)\ncq.enqueue(1)\ncq.enqueue(2)\ncq.enqueue(3)\nprint('Dequeue:', cq.dequeue())\nprint('Queue:', cq.queue)"
+    },
+    "explanation": "***Step 1:*** Define a ```CircularQueue``` class with ```size```, ```queue```, ```front```, ```rear```, and ```count```.\n***Step 2:*** Implement ```enqueue()``` to add items, resizing if full.\n***Step 3:*** Implement ```dequeue()``` to remove items, handling empty cases.\n***Step 4:*** Implement ```_resize()``` to double the queue size and re-arrange elements.\n***Step 5:*** Test by enqueuing beyond initial capacity and dequeuing."
+  },
+  {
+    "title": "Doubly Linked List Merge",
+    "ques": "Implement a doubly linked list in Python with a method to merge two sorted lists into one sorted list.",
+    "answer": {
+      "type": "code",
+      "lang": "python",
+      "content": "class Node:\n    def __init__(self, data):\n        self.data = data\n        self.next = None\n        self.prev = None\nclass DoublyLinkedList:\n    def __init__(self):\n        self.head = None\n    def insert_end(self, data):\n        new_node = Node(data)\n        if not self.head:\n            self.head = new_node\n        else:\n            curr = self.head\n            while curr.next:\n                curr = curr.next\n            curr.next = new_node\n            new_node.prev = curr\n    def merge(self, other):\n        merged = DoublyLinkedList()\n        curr1, curr2 = self.head, other.head\n        dummy = Node(0)\n        tail = dummy\n        while curr1 and curr2:\n            if curr1.data <= curr2.data:\n                tail.next = curr1\n                curr1.prev = tail\n                curr1 = curr1.next\n            else:\n                tail.next = curr2\n                curr2.prev = tail\n                curr2 = curr2.next\n            tail = tail.next\n        tail.next = curr1 if curr1 else curr2\n        if tail.next:\n            tail.next.prev = tail\n        merged.head = dummy.next\n        if merged.head:\n            merged.head.prev = None\n        return merged\n    def print_list(self):\n        curr = self.head\n        while curr:\n            print(curr.data, end=' ')\n            curr = curr.next\nlist1 = DoublyLinkedList()\nlist1.insert_end(1)\nlist1.insert_end(3)\nlist2 = DoublyLinkedList()\nlist2.insert_end(2)\nlist2.insert_end(4)\nmerged = list1.merge(list2)\nmerged.print_list()"
+    },
+    "explanation": "***Step 1:*** Define a ```Node``` class with ```data```, ```next```, and ```prev```.\n***Step 2:*** Define a ```DoublyLinkedList``` class with ```insert_end()```.\n***Step 3:*** Implement ```merge()``` to combine two sorted lists using a dummy node.\n***Step 4:*** Implement ```print_list()``` to display the list.\n***Step 5:*** Test by merging two sorted lists and printing the result."
+  },
+  {
+    "title": "Binary Search Tree Deletion",
+    "ques": "Implement a binary search tree in Python with a method to delete a node by value.",
+    "answer": {
+      "type": "code",
+      "lang": "python",
+      "content": "class Node:\n    def __init__(self, value):\n        self.value = value\n        self.left = None\n        self.right = None\nclass BST:\n    def __init__(self):\n        self.root = None\n    def insert(self, value):\n        if not self.root:\n            self.root = Node(value)\n        else:\n            self._insert(self.root, value)\n    def _insert(self, node, value):\n        if value < node.value:\n            if node.left is None:\n                node.left = Node(value)\n            else:\n                self._insert(node.left, value)\n        else:\n            if node.right is None:\n                node.right = Node(value)\n            else:\n                self._insert(node.right, value)\n    def delete(self, value):\n        self.root = self._delete(self.root, value)\n    def _delete(self, node, value):\n        if not node:\n            return None\n        if value < node.value:\n            node.left = self._delete(node.left, value)\n        elif value > node.value:\n            node.right = self._delete(node.right, value)\n        else:\n            if not node.left:\n                return node.right\n            if not node.right:\n                return node.left\n            min_node = self._find_min(node.right)\n            node.value = min_node.value\n            node.right = self._delete(node.right, min_node.value)\n        return node\n    def _find_min(self, node):\n        while node.left:\n            node = node.left\n        return node\n    def inorder(self):\n        self._inorder(self.root)\n    def _inorder(self, node):\n        if node:\n            self._inorder(node.left)\n            print(node.value, end=' ')\n            self._inorder(node.right)\nbst = BST()\nbst.insert(5)\nbst.insert(3)\nbst.insert(7)\nbst.delete(3)\nbst.inorder()"
+    },
+    "explanation": "***Step 1:*** Define a ```Node``` class with ```value```, ```left```, and ```right```.\n***Step 2:*** Define a ```BST``` class with ```insert()``` for adding nodes.\n***Step 3:*** Implement ```delete()``` handling leaf, single-child, and two-child cases.\n***Step 4:*** Use ```_find_min()``` to replace deleted node with successor.\n***Step 5:*** Test by inserting nodes, deleting one, and printing inorder traversal."
+  },
+  {
+    "title": "Graph Cycle Detection",
+    "ques": "Implement a graph in Python and detect if it contains a cycle using DFS.",
+    "answer": {
+      "type": "code",
+      "lang": "python",
+      "content": "class Graph:\n    def __init__(self):\n        self.graph = {}\n    def add_edge(self, u, v):\n        if u not in self.graph:\n            self.graph[u] = []\n        self.graph[u].append(v)\n    def has_cycle(self):\n        visited = set()\n        rec_stack = set()\n        for vertex in self.graph:\n            if vertex not in visited:\n                if self._dfs_cycle(vertex, visited, rec_stack):\n                    return True\n        return False\n    def _dfs_cycle(self, vertex, visited, rec_stack):\n        visited.add(vertex)\n        rec_stack.add(vertex)\n        for neighbor in self.graph.get(vertex, []):\n            if neighbor not in visited:\n                if self._dfs_cycle(neighbor, visited, rec_stack):\n                    return True\n            elif neighbor in rec_stack:\n                return True\n        rec_stack.remove(vertex)\n        return False\ng = Graph()\ng.add_edge(0, 1)\ng.add_edge(1, 2)\ng.add_edge(2, 0)\nprint('Has cycle?', g.has_cycle())"
+    },
+    "explanation": "***Step 1:*** Define a ```Graph``` class with an adjacency list.\n***Step 2:*** Implement ```add_edge()``` for directed edges.\n***Step 3:*** Implement ```has_cycle()``` using DFS with a recursion stack.\n***Step 4:*** Use ```_dfs_cycle()``` to detect back edges in the recursion stack.\n***Step 5:*** Test with a cyclic graph and print the result."
+  },
+  {
+    "title": "Heap-Based Running Median",
+    "ques": "Write a Python program using two heaps to compute the running median of a stream of numbers after each insertion.",
+    "answer": {
+      "type": "code",
+      "lang": "python",
+      "content": "import heapq\nclass RunningMedian:\n    def __init__(self):\n        self.small = []  # Max heap (negated)\n        self.large = []  # Min heap\n    def add_number(self, num):\n        if len(self.small) == 0 or num < -self.small[0]:\n            heapq.heappush(self.small, -num)\n        else:\n            heapq.heappush(self.large, num)\n        if len(self.small) > len(self.large) + 1:\n            heapq.heappush(self.large, -heapq.heappop(self.small))\n        elif len(self.large) > len(self.small):\n            heapq.heappush(self.small, -heapq.heappop(self.large))\n    def get_median(self):\n        if len(self.small) > len(self.large):\n            return -self.small[0]\n        return (-self.small[0] + self.large[0]) / 2\nrm = RunningMedian()\nnums = [1, 2, 3, 4]\nfor num in nums:\n    rm.add_number(num)\n    print(f'Added {num}, Median: {rm.get_median()}')"
+    },
+    "explanation": "***Step 1:*** Import ```heapq``` for heap operations.\n***Step 2:*** Define ```RunningMedian``` with max heap (```small```) and min heap (```large```).\n***Step 3:*** Implement ```add_number()``` to balance heaps after insertion.\n***Step 4:*** Implement ```get_median()``` to return the median based on heap sizes.\n***Step 5:*** Test by adding numbers and printing the median after each addition."
+  },
+  {
+    "title": "Hash Table Rehashing",
+    "ques": "Implement a hash table in Python with linear probing that rehashes to double its size when the load factor exceeds 0.7.",
+    "answer": {
+      "type": "code",
+      "lang": "python",
+      "content": "class HashTable:\n    def __init__(self, size):\n        self.size = size\n        self.table = [None] * size\n        self.count = 0\n    def _hash(self, key):\n        return hash(key) % self.size\n    def _rehash(self):\n        old_table = self.table\n        self.size *= 2\n        self.table = [None] * self.size\n        self.count = 0\n        for item in old_table:\n            if item:\n                self.insert(item[0], item[1])\n    def insert(self, key, value):\n        if self.count / self.size > 0.7:\n            self._rehash()\n        index = self._hash(key)\n        while self.table[index] is not None:\n            index = (index + 1) % self.size\n        self.table[index] = (key, value)\n        self.count += 1\n    def get(self, key):\n        index = self._hash(key)\n        original = index\n        while self.table[index] is not None:\n            if self.table[index][0] == key:\n                return self.table[index][1]\n            index = (index + 1) % self.size\n            if index == original:\n                break\n        return None\nht = HashTable(3)\nht.insert('apple', 1)\nht.insert('banana', 2)\nht.insert('orange', 3)\nprint('Value for banana:', ht.get('banana'))\nprint('Table size:', ht.size)"
+    },
+    "explanation": "***Step 1:*** Define a ```HashTable``` class with ```size```, ```table```, and ```count```.\n***Step 2:*** Implement ```_hash()``` for index calculation.\n***Step 3:*** Implement ```_rehash()``` to double the table size and reinsert items.\n***Step 4:*** Implement ```insert()``` with linear probing, triggering rehashing at load factor > 0.7.\n***Step 5:*** Test by inserting items and checking values and table size."
+  }
+]

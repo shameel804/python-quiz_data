@@ -1,0 +1,362 @@
+[
+  {
+    "title": "Factorial Using Recursion",
+    "ques": "Write a Python program to calculate the factorial of a number using recursion, ensuring proper base and recursive cases.",
+    "answer": {
+      "type": "code",
+      "lang": "python",
+      "content": "def factorial(n):\n    if n == 0 or n == 1:  # Base case\n        return 1\n    else:  # Recursive case\n        return n * factorial(n - 1)\n\nprint(factorial(5))  # Output: 120"
+    },
+    "explanation": "***Step 1:*** Define the function `factorial(n)`.\n***Step 2:*** Check the base case: if `n` is 0 or 1, return 1.\n***Step 3:*** For other cases, recursively call `factorial(n - 1)` and multiply by `n`.\n***Step 4:*** Test with input 5, which computes `5 * 4 * 3 * 2 * 1 = 120`."
+  },
+  {
+    "title": "Fibonacci with Memoization",
+    "ques": "Write a Python program to compute the nth Fibonacci number using dynamic programming with memoization.",
+    "answer": {
+      "type": "code",
+      "lang": "python",
+      "content": "def fibonacci(n, memo={}):\n    if n <= 1:  # Base case\n        return n\n    if n not in memo:\n        memo[n] = fibonacci(n - 1, memo) + fibonacci(n - 2, memo)  # Memoized recursive call\n    return memo[n]\n\nprint(fibonacci(10))  # Output: 55"
+    },
+    "explanation": "***Step 1:*** Define `fibonacci(n, memo)` with a dictionary `memo` to store computed values.\n***Step 2:*** Base case: if `n <= 1`, return `n`.\n***Step 3:*** If `n` is not in `memo`, compute it recursively and store in `memo`.\n***Step 4:*** Return the memoized result. For `n=10`, the result is `55`."
+  },
+  {
+    "title": "Knapsack Problem with Tabulation",
+    "ques": "Write a Python program to solve the 0/1 knapsack problem using dynamic programming with tabulation.",
+    "answer": {
+      "type": "code",
+      "lang": "python",
+      "content": "def knapsack(values, weights, W):\n    n = len(values)\n    dp = [[0 for _ in range(W + 1)] for _ in range(n + 1)]\n    for i in range(1, n + 1):\n        for w in range(W + 1):\n            if weights[i-1] <= w:\n                dp[i][w] = max(values[i-1] + dp[i-1][w-weights[i-1]], dp[i-1][w])\n            else:\n                dp[i][w] = dp[i-1][w]\n    return dp[n][W]\n\nvalues = [60, 100, 120]\nweights = [10, 20, 30]\nW = 50\nprint(knapsack(values, weights, W))  # Output: 220"
+    },
+    "explanation": "***Step 1:*** Create a 2D table `dp` to store maximum values for subproblems.\n***Step 2:*** Iterate over items and capacities, choosing to include or exclude each item.\n***Step 3:*** If the current item’s weight fits, take the maximum of including or excluding it.\n***Step 4:*** Return the value at `dp[n][W]`. For given inputs, the maximum value is `220`."
+  },
+  {
+    "title": "Activity Selection with Greedy",
+    "ques": "Write a Python program to solve the activity selection problem using a greedy algorithm.",
+    "answer": {
+      "type": "code",
+      "lang": "python",
+      "content": "def activity_selection(start, finish):\n    activities = sorted(zip(start, finish), key=lambda x: x[1])\n    selected = [activities[0]]\n    for i in range(1, len(activities)):\n        if activities[i][0] >= selected[-1][1]:  # Greedy choice\n            selected.append(activities[i])\n    return [(s, f) for s, f in selected]\n\nstart = [1, 3, 0, 5, 8, 5]\nfinish = [2, 4, 6, 7, 9, 9]\nprint(activity_selection(start, finish))  # Output: [(1, 2), (3, 4), (5, 7), (8, 9)]"
+    },
+    "explanation": "***Step 1:*** Sort activities by finish time using `sorted` with `zip`.\n***Step 2:*** Select the first activity as the initial greedy choice.\n***Step 3:*** Iterate through remaining activities, selecting those that start after the last selected activity ends.\n***Step 4:*** Return the list of selected activities."
+  },
+  {
+    "title": "Merge Sort with Divide and Conquer",
+    "ques": "Write a Python program to implement merge sort using the divide and conquer strategy.",
+    "answer": {
+      "type": "code",
+      "lang": "python",
+      "content": "def merge_sort(arr):\n    if len(arr) <= 1:  # Base case\n        return arr\n    mid = len(arr) // 2\n    left = merge_sort(arr[:mid])  # Divide\n    right = merge_sort(arr[mid:])  # Divide\n    return merge(left, right)  # Conquer\n\ndef merge(left, right):\n    result = []\n    i = j = 0\n    while i < len(left) and j < len(right):\n        if left[i] <= right[j]:\n            result.append(left[i])\n            i += 1\n        else:\n            result.append(right[j])\n            j += 1\n    result.extend(left[i:])\n    result.extend(right[j:])\n    return result\n\narr = [64, 34, 25, 12, 22, 11, 90]\nprint(merge_sort(arr))  # Output: [11, 12, 22, 25, 34, 64, 90]"
+    },
+    "explanation": "***Step 1:*** If array length is 1 or less, return it (base case).\n***Step 2:*** Divide the array into two halves and recursively sort each half.\n***Step 3:*** Merge the sorted halves by comparing elements and combining them in order.\n***Step 4:*** Return the sorted array."
+  },
+  {
+    "title": "N-Queens with Backtracking",
+    "ques": "Write a Python program to solve the N-Queens problem using backtracking.",
+    "answer": {
+      "type": "code",
+      "lang": "python",
+      "content": "def solve_n_queens(n):\n    board = [[0] * n for _ in range(n)]\n    def is_safe(row, col):\n        for i in range(col):\n            if board[row][i] == 1:\n                return False\n        for i, j in zip(range(row, -1, -1), range(col, -1, -1)):\n            if board[i][j] == 1:\n                return False\n        for i, j in zip(range(row, n), range(col, -1, -1)):\n            if board[i][j] == 1:\n                return False\n        return True\n    def solve(col):\n        if col >= n:\n            return True\n        for i in range(n):\n            if is_safe(i, col):\n                board[i][col] = 1\n                if solve(col + 1):\n                    return True\n                board[i][col] = 0\n        return False\n    solve(0)\n    return board\n\nn = 4\nresult = solve_n_queens(n)\nfor row in result:\n    print(row)  # Example output for n=4: [0, 1, 0, 0], [0, 0, 0, 1], [1, 0, 0, 0], [0, 0, 1, 0]"
+    },
+    "explanation": "***Step 1:*** Initialize an `n x n` board with zeros.\n***Step 2:*** Use `is_safe` to check if a queen can be placed at `(row, col)`.\n***Step 3:*** Recursively place queens column by column, backtracking if a placement fails.\n***Step 4:*** Return the board with queens placed (1s indicate queens)."
+  },
+  {
+    "title": "Tower of Hanoi",
+    "ques": "Write a Python program to solve the Tower of Hanoi problem for n disks using recursion.",
+    "answer": {
+      "type": "code",
+      "lang": "python",
+      "content": "def tower_of_hanoi(n, source, auxiliary, target):\n    if n == 1:  # Base case\n        print(f'Move disk 1 from {source} to {target}')\n        return\n    tower_of_hanoi(n-1, source, target, auxiliary)  # Recursive case\n    print(f'Move disk {n} from {source} to {target}')\n    tower_of_hanoi(n-1, auxiliary, source, target)\n\ntower_of_hanoi(3, 'A', 'B', 'C')"
+    },
+    "explanation": "***Step 1:*** Define `tower_of_hanoi(n, source, auxiliary, target)` with base case for `n=1`.\n***Step 2:*** Move the top `n-1` disks to auxiliary peg recursively.\n***Step 3:*** Move the nth disk to target peg.\n***Step 4:*** Move `n-1` disks from auxiliary to target peg. For `n=3`, it prints the sequence of moves."
+  },
+  {
+    "title": "Longest Common Subsequence with Tabulation",
+    "ques": "Write a Python program to find the length of the longest common subsequence of two strings using dynamic programming with tabulation.",
+    "answer": {
+      "type": "code",
+      "lang": "python",
+      "content": "def lcs(X, Y):\n    m, n = len(X), len(Y)\n    dp = [[0] * (n + 1) for _ in range(m + 1)]\n    for i in range(1, m + 1):\n        for j in range(1, n + 1):\n            if X[i-1] == Y[j-1]:\n                dp[i][j] = dp[i-1][j-1] + 1\n            else:\n                dp[i][j] = max(dp[i-1][j], dp[i][j-1])\n    return dp[m][n]\n\nX = 'AGGTAB'\nY = 'GXTXAYB'\nprint(lcs(X, Y))  # Output: 4"
+    },
+    "explanation": "***Step 1:*** Create a 2D table `dp` to store lengths of LCS for substrings.\n***Step 2:*** If characters match, add 1 to the previous diagonal value.\n***Step 3:*** If they don’t match, take the maximum of left or top cell.\n***Step 4:*** Return `dp[m][n]`. For `X='AGGTAB'`, `Y='GXTXAYB'`, LCS length is `4` (e.g., 'GTAB')."
+  },
+  {
+    "title": "Huffman Coding with Greedy",
+    "ques": "Write a Python program to implement Huffman coding to find the optimal prefix codes for a set of characters and their frequencies using a greedy algorithm.",
+    "answer": {
+      "type": "code",
+      "lang": "python",
+      "content": "from heapq import heappush, heappop, heapify\nclass Node:\n    def __init__(self, char, freq):\n        self.char, self.freq, self.left, self.right = char, freq, None, None\n    def __lt__(self, other):\n        return self.freq < other.freq\n\ndef huffman_codes(chars, freqs):\n    heap = [Node(c, f) for c, f in zip(chars, freqs)]\n    heapify(heap)\n    while len(heap) > 1:\n        left = heappop(heap)\n        right = heappop(heap)\n        internal = Node(None, left.freq + right.freq)\n        internal.left, internal.right = left, right\n        heappush(heap, internal)\n    codes = {}\n    def generate_codes(node, code=''):\n        if node.char:\n            codes[node.char] = code or '0'\n            return\n        if node.left:\n            generate_codes(node.left, code + '0')\n        if node.right:\n            generate_codes(node.right, code + '1')\n    generate_codes(heap[0])\n    return codes\n\nchars = ['a', 'b', 'c', 'd']\nfreqs = [5, 9, 12, 13]\nprint(huffman_codes(chars, freqs))  # Example output: {'c': '0', 'd': '10', 'a': '110', 'b': '111'}"
+    },
+    "explanation": "***Step 1:*** Create a min-heap of nodes with characters and frequencies.\n***Step 2:*** Repeatedly extract two nodes with lowest frequencies, combine them into a new node, and reinsert.\n***Step 3:*** Generate binary codes by traversing the tree (left=0, right=1).\n***Step 4:*** Return the dictionary of Huffman codes."
+  },
+  {
+    "title": "Quick Sort with Divide and Conquer",
+    "ques": "Write a Python program to implement quick sort using the divide and conquer strategy.",
+    "answer": {
+      "type": "code",
+      "lang": "python",
+      "content": "def quick_sort(arr, low, high):\n    if low < high:\n        pi = partition(arr, low, high)  # Divide\n        quick_sort(arr, low, pi - 1)   # Conquer left\n        quick_sort(arr, pi + 1, high)  # Conquer right\n\ndef partition(arr, low, high):\n    pivot = arr[high]\n    i = low - 1\n    for j in range(low, high):\n        if arr[j] <= pivot:\n            i += 1\n            arr[i], arr[j] = arr[j], arr[i]\n    arr[i + 1], arr[high] = arr[high], arr[i + 1]\n    return i + 1\n\narr = [10, 7, 8, 9, 1, 5]\nquick_sort(arr, 0, len(arr) - 1)\nprint(arr)  # Output: [1, 5, 7, 8, 9, 10]"
+    },
+    "explanation": "***Step 1:*** Choose the last element as pivot and partition the array around it.\n***Step 2:*** Place smaller elements before the pivot and larger ones after.\n***Step 3:*** Recursively apply quick sort to the left and right subarrays.\n***Step 4:*** The array is sorted in-place, yielding `[1, 5, 7, 8, 9, 10]`."
+  },
+  {
+    "title": "Sudoku Solver with Backtracking",
+    "ques": "Write a Python program to solve a 9x9 Sudoku puzzle using backtracking.",
+    "answer": {
+      "type": "code",
+      "lang": "python",
+      "content": "def solve_sudoku(board):\n    def is_valid(row, col, num):\n        for i in range(9):\n            if board[row][i] == num or board[i][col] == num:\n                return False\n        start_row, start_col = 3 * (row // 3), 3 * (col // 3)\n        for i in range(start_row, start_row + 3):\n            for j in range(start_col, start_col + 3):\n                if board[i][j] == num:\n                    return False\n        return True\n    def solve():\n        for i in range(9):\n            for j in range(9):\n                if board[i][j] == 0:\n                    for num in range(1, 10):\n                        if is_valid(i, j, num):\n                            board[i][j] = num\n                            if solve():\n                                return True\n                            board[i][j] = 0\n                    return False\n        return True\n    solve()\n    return board\n\nboard = [\n    [5,3,0,0,7,0,0,0,0],\n    [6,0,0,1,9,5,0,0,0],\n    [0,9,8,0,0,0,0,6,0],\n    [8,0,0,0,6,0,0,0,3],\n    [4,0,0,8,0,3,0,0,1],\n    [7,0,0,0,2,0,0,0,6],\n    [0,6,0,0,0,0,2,8,0],\n    [0,0,0,4,1,9,0,0,5],\n    [0,0,0,0,8,0,0,7,9]\n]\nsolve_sudoku(board)\nfor row in board:\n    print(row)"
+    },
+    "explanation": "***Step 1:*** Define `is_valid` to check if a number can be placed at `(row, col)`.\n***Step 2:*** Iterate through empty cells (0s) and try numbers 1-9.\n***Step 3:*** If a number is valid, place it and recursively solve the rest of the board.\n***Step 4:*** Backtrack by resetting the cell to 0 if no solution is found. Print the solved board."
+  },
+  {
+    "title": "Permutations Using Recursion",
+    "ques": "Write a Python program to generate all permutations of a given list of numbers using recursion.",
+    "answer": {
+      "type": "code",
+      "lang": "python",
+      "content": "def permutations(nums):\n    if len(nums) <= 1:  # Base case\n        return [nums]\n    result = []\n    for i in range(len(nums)):\n        n = nums.pop(0)\n        perms = permutations(nums)  # Recursive case\n        for perm in perms:\n            perm.append(n)\n        result.extend(perms)\n        nums.append(n)\n    return result\n\nnums = [1, 2, 3]\nprint(permutations(nums))  # Output: [[1, 2, 3], [1, 3, 2], [2, 1, 3], [2, 3, 1], [3, 2, 1], [3, 1, 2]]"
+    },
+    "explanation": "***Step 1:*** Base case: if the list has 1 or fewer elements, return it as a single permutation.\n***Step 2:*** For each number, remove it, recursively generate permutations of the remaining numbers.\n***Step 3:*** Append the removed number to each permutation and collect results.\n***Step 4:*** Restore the list and return all permutations."
+  },
+  {
+    "title": "Longest Increasing Subsequence with Memoization",
+    "ques": "Write a Python program to find the length of the longest increasing subsequence in an array using dynamic programming with memoization.",
+    "answer": {
+      "type": "code",
+      "lang": "python",
+      "content": "def lis(arr):\n    memo = {}\n    def lis_helper(i, prev):\n        if i >= len(arr):  # Base case\n            return 0\n        key = (i, prev)\n        if key in memo:\n            return memo[key]\n        take = 0\n        if prev == -1 or arr[i] > arr[prev]:\n            take = 1 + lis_helper(i + 1, i)\n        skip = lis_helper(i + 1, prev)\n        memo[key] = max(take, skip)\n        return memo[key]\n    return lis_helper(0, -1)\n\narr = [10, 22, 9, 33, 21, 50, 41, 60]\nprint(lis(arr))  # Output: 5"
+    },
+    "explanation": "***Step 1:*** Use a memoization dictionary to store results for index `i` and previous index `prev`.\n***Step 2:*** Base case: if index exceeds array length, return 0.\n***Step 3:*** For each element, either include it (if greater than previous) or skip it, and memoize the maximum.\n***Step 4:*** Return the length of the longest increasing subsequence (e.g., [10, 22, 33, 50, 60])."
+  },
+  {
+    "title": "Fractional Knapsack with Greedy",
+    "ques": "Write a Python program to solve the fractional knapsack problem using a greedy algorithm.",
+    "answer": {
+      "type": "code",
+      "lang": "python",
+      "content": "def fractional_knapsack(values, weights, W):\n    items = sorted([(v/w, v, w) for v, w in zip(values, weights)], reverse=True)\n    total_value = 0\n    remaining = W\n    for value_per_weight, value, weight in items:\n        if remaining >= weight:  # Greedy choice: take full item\n            total_value += value\n            remaining -= weight\n        else:  # Take fraction of item\n            total_value += value_per_weight * remaining\n            break\n    return total_value\n\nvalues = [60, 100, 120]\nweights = [10, 20, 30]\nW = 50\nprint(fractional_knapsack(values, weights, W))  # Output: 240.0"
+    },
+    "explanation": "***Step 1:*** Compute value-to-weight ratios and sort items in descending order.\n***Step 2:*** Greedily select items with highest ratio, taking full items or fractions as needed.\n***Step 3:*** Update remaining capacity and total value.\n***Step 4:*** Return the maximum value achievable (e.g., 60 + 100 + 80/3 = 240)."
+  },
+  {
+    "title": "Binary Search with Divide and Conquer",
+    "ques": "Write a Python program to implement binary search using the divide and conquer strategy.",
+    "answer": {
+      "type": "code",
+      "lang": "python",
+      "content": "def binary_search(arr, target, low, high):\n    if low > high:  # Base case\n        return -1\n    mid = (low + high) // 2\n    if arr[mid] == target:\n        return mid\n    elif arr[mid] > target:\n        return binary_search(arr, target, low, mid - 1)  # Conquer left\n    else:\n        return binary_search(arr, target, mid + 1, high)  # Conquer right\n\narr = [2, 3, 4, 10, 40]\ntarget = 10\nprint(binary_search(arr, target, 0, len(arr) - 1))  # Output: 3"
+    },
+    "explanation": "***Step 1:*** Base case: if `low > high`, target is not found, return -1.\n***Step 2:*** Compute the middle index and compare the element with the target.\n***Step 3:*** Recursively search the left or right half based on comparison.\n***Step 4:*** Return the index of the target (e.g., 10 is at index 3)."
+  },
+  {
+    "title": "Knight's Tour with Backtracking",
+    "ques": "Write a Python program to solve the Knight's Tour problem on an 8x8 chessboard using backtracking.",
+    "answer": {
+      "type": "code",
+      "lang": "python",
+      "content": "def knights_tour():\n    board = [[-1] * 8 for _ in range(8)]\n    moves = [(2, 1), (1, 2), (-1, 2), (-2, 1), (-2, -1), (-1, -2), (1, -2), (2, -1)]\n    def is_safe(x, y):\n        return 0 <= x < 8 and 0 <= y < 8 and board[x][y] == -1\n    def solve_kt(x, y, move_count):\n        if move_count == 64:\n            return True\n        for dx, dy in moves:\n            next_x, next_y = x + dx, y + dy\n            if is_safe(next_x, next_y):\n                board[next_x][next_y] = move_count\n                if solve_kt(next_x, next_y, move_count + 1):\n                    return True\n                board[next_x][next_y] = -1\n        return False\n    board[0][0] = 0\n    solve_kt(0, 0, 1)\n    return board\n\nresult = knights_tour()\nfor row in result:\n    print(row)"
+    },
+    "explanation": "***Step 1:*** Initialize an 8x8 board with -1 (unvisited).\n***Step 2:*** Define possible knight moves and check if a move is valid with `is_safe`.\n***Step 3:*** Recursively try each move, backtracking if a path leads to no solution.\n***Step 4:*** Return the board with move numbers (0 to 63) if a valid tour is found."
+  },
+  {
+    "title": "Subset Sum Using Recursion",
+    "ques": "Write a Python program to determine if there exists a subset of a given array that sums to a target value using recursion.",
+    "answer": {
+      "type": "code",
+      "lang": "python",
+      "content": "def is_subset_sum(arr, n, target):\n    if target == 0:  # Base case: sum achieved\n        return True\n    if n == 0 and target != 0:  # Base case: no elements left\n        return False\n    if arr[n-1] > target:  # Skip if current element is too large\n        return is_subset_sum(arr, n-1, target)\n    return is_subset_sum(arr, n-1, target) or is_subset_sum(arr, n-1, target - arr[n-1])  # Recursive case\n\narr = [3, 34, 4, 12, 5, 2]\ntarget = 9\nprint(is_subset_sum(arr, len(arr), target))  # Output: True"
+    },
+    "explanation": "***Step 1:*** Base case: if `target` is 0, return `True` (subset found).\n***Step 2:*** Base case: if no elements remain and `target` is not 0, return `False`.\n***Step 3:*** If the current element exceeds ` vagas`, skip it; otherwise, try including or excluding it.\n***Step 4:*** For `arr=[3, 34, 4, 12, 5, 2]` and `target=9`, returns `True` (e.g., subset [4, 5])."
+  },
+  {
+    "title": "Matrix Chain Multiplication with Memoization",
+    "ques": "Write a Python program to find the minimum number of scalar multiplications needed for matrix chain multiplication using dynamic programming with memoization.",
+    "answer": {
+      "type": "code",
+      "lang": "python",
+      "content": "def matrix_chain_order(p, memo={}):\n    def mcm(i, j):\n        if i == j:  # Base case\n            return 0\n        key = (i, j)\n        if key in memo:\n            return memo[key]\n        min_cost = float('inf')\n        for k in range(i, j):\n            cost = mcm(i, k) + mcm(k + 1, j) + p[i-1] * p[k] * p[j]\n            min_cost = min(min_cost, cost)\n        memo[key] = min_cost\n        return min_cost\n    return mcm(1, len(p)-1)\n\np = [10, 20, 30, 40, 30]\nprint(matrix_chain_order(p))  # Output: 30000"
+    },
+    "explanation": "***Step 1:*** Base case: if `i == j`, no multiplication is needed, return 0.\n***Step 2:*** Use memoization to store results for subproblems `(i, j)`.\n***Step 3:*** Try all possible splits at index `k` and compute the minimum cost.\n***Step 4:*** For dimensions `[10, 20, 30, 40, 30]`, minimum multiplications is `30000`."
+  },
+  {
+    "title": "Minimum Coin Change with Greedy",
+    "ques": "Write a Python program to find the minimum number of coins needed to make a given amount using a greedy algorithm (assuming coin denominations allow a greedy approach).",
+    "answer": {
+      "type": "code",
+      "lang": "python",
+      "content": "def min_coins(coins, amount):\n    coins.sort(reverse=True)  # Sort in descending order\n    count = 0\n    for coin in coins:\n        while amount >= coin:  # Greedy choice: use largest possible coin\n            amount -= coin\n            count += 1\n        if amount == 0:\n            break\n    return count if amount == 0 else -1\n\ncoins = [1, 5, 10, 25]\namount = 30\nprint(min_coins(coins, amount))  # Output: 3"
+    },
+    "explanation": "***Step 1:*** Sort coins in descending order to prioritize larger denominations.\n***Step 2:*** Greedily select the largest coin that doesn’t exceed the remaining amount.\n***Step 3:*** Subtract the coin value and increment count until the amount is 0.\n***Step 4:*** For `coins=[1, 5, 10, 25]` and `amount=30`, use `25 + 5` (2 coins) or similar."
+  },
+  {
+    "title": "Strassen’s Matrix Multiplication with Divide and Conquer",
+    "ques": "Write a Python program to implement Strassen’s algorithm for 2x2 matrix multiplication using divide and conquer.",
+    "answer": {
+      "type": "code",
+      "lang": "python",
+      "content": "def strassen(A, B):\n    if len(A) == 1:\n        return [[A[0][0] * B[0][0]]]\n    a, b, c, d = A[0][0], A[0][1], A[1][0], A[1][1]\n    e, f, g, h = B[0][0], B[0][1], B[1][0], B[1][1]\n    p1 = a * (f - h)\n    p2 = (a + b) * h\n    p3 = (c + d) * e\n    p4 = d * (g - e)\n    p5 = (a + d) * (e + h)\n    p6 = (b - d) * (g + h)\n    p7 = (a - c) * (e + f)\n    result = [[0, 0], [0, 0]]\n    result[0][0] = p5 + p4 - p2 + p6\n    result[0][1] = p1 + p2\n    result[1][0] = p3 + p4\n    result[1][1] = p1 + p5 - p3 - p7\n    return result\n\nA = [[1, 2], [3, 4]]\nB = [[5, 6], [7, 8]]\nprint(strassen(A, B))  # Output: [[19, 22], [43, 50]]"
+    },
+    "explanation": "***Step 1:*** Base case: for 1x1 matrices, return their product.\n***Step 2:*** Divide matrices into scalars and compute 7 products (p1 to p7) using Strassen’s formulas.\n***Step 3:*** Combine products to form the resulting 2x2 matrix.\n***Step 4:*** For `A=[[1, 2], [3, 4]]` and `B=[[5, 6], [7, 8]]`, result is `[[19, 22], [43, 50]]`."
+  },
+  {
+    "title": "Graph Coloring with Backtracking",
+    "ques": "Write a Python program to solve the graph coloring problem using backtracking to assign colors to vertices of a graph.",
+    "answer": {
+      "type": "code",
+      "lang": "python",
+      "content": "def graph_coloring(graph, m):\n    colors = [0] * len(graph)\n    def is_safe(v, c):\n        for i in range(len(graph)):\n            if graph[v][i] == 1 and colors[i] == c:\n                return False\n        return True\n    def color_util(v):\n        if v == len(graph):\n            return True\n        for c in range(1, m + 1):\n            if is_safe(v, c):\n                colors[v] = c\n                if color_util(v + 1):\n                    return True\n                colors[v] = 0\n        return False\n    color_util(0)\n    return colors\n\ngraph = [[0, 1, 1, 1], [1, 0, 1, 0], [1, 1, 0, 1], [1, 0, 1, 0]]\nm = 3\nprint(graph_coloring(graph, m))  # Example output: [1, 2, 3, 2]"
+    },
+    "explanation": "***Step 1:*** Initialize an array to store colors for each vertex.\n***Step 2:*** Check if a color is safe for a vertex by ensuring no adjacent vertices share it.\n***Step 3:*** Recursively assign colors to vertices, backtracking if a color assignment fails.\n***Step 4:*** Return the color assignments for the graph with `m=3` colors."
+  },
+  {
+    "title": "Generate Parentheses Using Recursion",
+    "ques": "Write a Python program to generate all valid combinations of n pairs of parentheses using recursion.",
+    "answer": {
+      "type": "code",
+      "lang": "python",
+      "content": "def generate_parentheses(n):\n    def gen_paren(open, close, s, result):\n        if open == 0 and close == 0:  # Base case\n            result.append(s)\n            return\n        if open > 0:\n            gen_paren(open - 1, close, s + '(', result)  # Recursive case: add open\n        if close > open:\n            gen_paren(open, close - 1, s + ')', result)  # Recursive case: add close\n    result = []\n    gen_paren(n, n, '', result)\n    return result\n\nn = 3\nprint(generate_parentheses(n))  # Output: ['((()))', '(()())', '(())()', '()()()', '()()()']"
+    },
+    "explanation": "***Step 1:*** Define a helper function with parameters for remaining open/close parentheses and current string.\n***Step 2:*** Base case: if no open or close parentheses remain, add the string to results.\n***Step 3:*** Recursively add an open parenthesis if available, or a close parenthesis if more close than open remain.\n***Step 4:*** For `n=3`, generate all valid combinations like `((()))`, `(()())`, etc."
+  },
+  {
+    "title": "Edit Distance with Tabulation",
+    "ques": "Write a Python program to compute the minimum edit distance between two strings using dynamic programming with tabulation.",
+    "answer": {
+      "type": "code",
+      "lang": "python",
+      "content": "def edit_distance(str1, str2):\n    m, n = len(str1), len(str2)\n    dp = [[0] * (n + 1) for _ in range(m + 1)]\n    for i in range(m + 1):\n        dp[i][0] = i\n    for j in range(n + 1):\n        dp[0][j] = j\n    for i in range(1, m + 1):\n        for j in range(1, n + 1):\n            if str1[i-1] == str2[j-1]:\n                dp[i][j] = dp[i-1][j-1]\n            else:\n                dp[i][j] = min(dp[i-1][j-1], dp[i-1][j], dp[i][j-1]) + 1\n    return dp[m][n]\n\nstr1 = 'sunday'\nstr2 = 'saturday'\nprint(edit_distance(str1, str2))  # Output: 3"
+    },
+    "explanation": "***Step 1:*** Initialize a 2D table `dp` with base cases for empty strings.\n***Step 2:*** Fill the table: if characters match, copy the diagonal value; else, take the minimum of insert, delete, or replace operations plus 1.\n***Step 3:*** Iterate through both strings to compute minimum edits.\n***Step 4:*** For `sunday` to `saturday`, the minimum edit distance is `3` (e.g., insert 'a', 't', replace 'n' with 'r')."
+  },
+  {
+    "title": "Job Scheduling with Greedy",
+    "ques": "Write a Python program to maximize the number of jobs scheduled given their start times and deadlines using a greedy algorithm.",
+    "answer": {
+      "type": "code",
+      "lang": "python",
+      "content": "def job_scheduling(start, deadline):\n    jobs = sorted(zip(start, deadline), key=lambda x: x[1])  # Sort by deadline\n    schedule = []\n    current_time = 0\n    for s, d in jobs:\n        if current_time <= s and s <= d:  # Greedy choice\n            schedule.append((s, d))\n            current_time = s + 1\n    return schedule\n\nstart = [1, 2, 3, 4]\ndeadline = [4, 2, 4, 3]\nprint(job_scheduling(start, deadline))  # Output: [(2, 2), (1, 4), (3, 4)]"
+    },
+    "explanation": "***Step 1:*** Sort jobs by deadline to prioritize earlier deadlines.\n***Step 2:*** Greedily select jobs that can start after the current time and before their deadline.\n***Step 3:*** Update the current time after scheduling each job.\n***Step 4:*** Return the list of scheduled jobs, e.g., `[(2, 2), (1, 4), (3, 4)]`."
+  },
+  {
+    "title": "Karatsuba Multiplication with Divide and Conquer",
+    "ques": "Write a Python program to implement Karatsuba algorithm for multiplying two large numbers using divide and conquer.",
+    "answer": {
+      "type": "code",
+      "lang": "python",
+      "content": "def karatsuba(x, y):\n    if x < 10 or y < 10:  # Base case\n        return x * y\n    n = max(len(str(x)), len(str(y))) // 2\n    power = 10 ** n\n    a, b = x // power, x % power\n    c, d = y // power, y % power\n    ac = karatsuba(a, c)\n    bd = karatsuba(b, d)\n    ab_cd = karatsuba(a + b, c + d)\n    return ac * (10 ** (2 * n)) + (ab_cd - ac - bd) * (10 ** n) + bd\n\nx, y = 1234, 5678\nprint(karatsuba(x, y))  # Output: 7006652"
+    },
+    "explanation": "***Step 1:*** Base case: if numbers are single-digit, multiply directly.\n***Step 2:*** Split each number into two parts based on half its digit length.\n***Step 3:*** Recursively compute products `ac`, `bd`, and `(a+b)(c+d)`.\n***Step 4:*** Combine results using the formula `ac*10^(2n) + (ab+cd-ac-bd)*10^n + bd`. For `1234*5678`, result is `7006652`."
+  },
+  {
+    "title": "Maze Solving with Backtracking",
+    "ques": "Write a Python program to find a path through a maze from top-left to bottom-right using backtracking.",
+    "answer": {
+      "type": "code",
+      "lang": "python",
+      "content": "def solve_maze(maze):\n    n = len(maze)\n    path = [[0] * n for _ in range(n)]\n    def is_safe(x, y):\n        return 0 <= x < n and 0 <= y < n and maze[x][y] == 1\n    def solve(x, y):\n        if x == n-1 and y == n-1:  # Base case\n            path[x][y] = 1\n            return True\n        if is_safe(x, y):\n            path[x][y] = 1\n            if solve(x + 1, y) or solve(x, y + 1):\n                return True\n            path[x][y] = 0\n        return False\n    solve(0, 0)\n    return path\n\nmaze = [[1, 0, 0, 0], [1, 1, 0, 1], [0, 1, 0, 0], [1, 1, 1, 1]]\nresult = solve_maze(maze)\nfor row in result:\n    print(row)  # Example output: [[1, 0, 0, 0], [1, 1, 0, 0], [0, 1, 0, 0], [0, 1, 1, 1]]"
+    },
+    "explanation": "***Step 1:*** Initialize a path matrix to track the solution.\n***Step 2:*** Check if a cell is safe (within bounds and not a wall).\n***Step 3:*** Recursively try moving down or right, backtracking if no valid path is found.\n***Step 4:*** Mark the path with 1s and return it, showing the route from (0,0) to (n-1,n-1)."
+  },
+  {
+    "title": "Power Set Using Recursion",
+    "ques": "Write a Python program to generate the power set of a given set of elements using recursion.",
+    "answer": {
+      "type": "code",
+      "lang": "python",
+      "content": "def power_set(nums):\n    if not nums:  # Base case\n        return [[]]\n    first = nums[0]\n    rest = power_set(nums[1:])  # Recursive case\n    return rest + [[first] + subset for subset in rest]\n\nnums = [1, 2, 3]\nprint(power_set(nums))  # Output: [[], [3], [2], [2, 3], [1], [1, 3], [1, 2], [1, 2, 3]]"
+    },
+    "explanation": "***Step 1:*** Base case: if the input is empty, return a list containing an empty set.\n***Step 2:*** Take the first element and recursively generate the power set of the remaining elements.\n***Step 3:*** Combine the results by adding subsets with and without the first element.\n***Step 4:*** For `nums=[1, 2, 3]`, return all possible subsets, including the empty set and full set."
+  },
+  {
+    "title": "Word Break with Memoization",
+    "ques": "Write a Python program to check if a string can be segmented into words from a dictionary using dynamic programming with memoization.",
+    "answer": {
+      "type": "code",
+      "lang": "python",
+      "content": "def word_break(s, word_dict, memo=None):\n    if memo is None:\n        memo = {}\n    if s in memo:\n        return memo[s]\n    if s == '':  # Base case\n        return True\n    for word in word_dict:\n        if s.startswith(word):\n            if word_break(s[len(word):], word_dict, memo):\n                memo[s] = True\n                return True\n    memo[s] = False\n    return False\n\ns = 'leetcode'\nword_dict = ['leet', 'code']\nprint(word_break(s, word_dict))  # Output: True"
+    },
+    "explanation": "***Step 1:*** Initialize a memoization dictionary to store results for substrings.\n***Step 2:*** Base case: if the string is empty, return `True`.\n***Step 3:*** Check if the string starts with any dictionary word, then recursively check the remaining substring.\n***Step 4:*** For `s='leetcode'` and `word_dict=['leet', 'code']`, return `True` as it can be segmented as `leet + code`."
+  },
+  {
+    "title": "Kruskal’s Algorithm with Greedy",
+    "ques": "Write a Python program to find the minimum spanning tree of a graph using Kruskal’s algorithm with a greedy approach.",
+    "answer": {
+      "type": "code",
+      "lang": "python",
+      "content": "def kruskal(graph, V):\n    parent = list(range(V))\n    def find(u):\n        if parent[u] != u:\n            parent[u] = find(parent[u])\n        return parent[u]\n    def union(u, v):\n        parent[find(u)] = find(v)\n    edges = sorted([(w, u, v) for u, row in enumerate(graph) for v, w in enumerate(row) if w], key=lambda x: x[0])\n    mst = []\n    for w, u, v in edges:\n        if find(u) != find(v):  # Greedy choice: pick smallest edge\n            union(u, v)\n            mst.append((u, v, w))\n    return mst\n\ngraph = [[0, 2, 0, 6], [2, 0, 3, 8], [0, 3, 0, 0], [6, 8, 0, 0]]\nprint(kruskal(graph, 4))  # Output: [(0, 1, 2), (1, 2, 3), (0, 3, 6)]"
+    },
+    "explanation": "***Step 1:*** Initialize a parent array for union-find to track connected components.\n***Step 2:*** Sort all edges by weight in ascending order.\n***Step 3:*** Greedily select the smallest edge that doesn’t form a cycle (using find/union).\n***Step 4:*** For the given graph, return the minimum spanning tree edges, e.g., `[(0, 1, 2), (1, 2, 3), (0, 3, 6)]`."
+  },
+  {
+    "title": "Closest Pair of Points with Divide and Conquer",
+    "ques": "Write a Python program to find the closest pair of points in a 2D plane using divide and conquer.",
+    "answer": {
+      "type": "code",
+      "lang": "python",
+      "content": "import math\ndef closest_pair(points):\n    points = sorted(points, key=lambda x: x[0])\n    def distance(p1, p2):\n        return math.sqrt((p2[0] - p1[0])**2 + (p2[1] - p1[1])**2)\n    def closest_pair_rec(start, end):\n        if end - start <= 3:\n            min_dist = float('inf')\n            for i in range(start, end):\n                for j in range(i + 1, end):\n                    min_dist = min(min_dist, distance(points[i], points[j]))\n            return min_dist\n        mid = (start + end) // 2\n        mid_x = points[mid][0]\n        d1 = closest_pair_rec(start, mid)\n        d2 = closest_pair_rec(mid, end)\n        d = min(d1, d2)\n        strip = [p for p in points[start:end] if abs(p[0] - mid_x) < d]\n        strip.sort(key=lambda x: x[1])\n        for i in range(len(strip)):\n            for j in range(i + 1, min(i + 7, len(strip))):\n                d = min(d, distance(strip[i], strip[j]))\n        return d\n    return closest_pair_rec(0, len(points))\n\npoints = [(2, 3), (12, 30), (40, 50), (5, 1), (12, 10), (3, 4)]\nprint(closest_pair(points))  # Output: ~1.4142135623730951"
+    },
+    "explanation": "***Step 1:*** Sort points by x-coordinate.\n***Step 2:*** Divide points into two halves and recursively find the minimum distance in each half.\n***Step 3:*** Check points in a strip around the middle for pairs closer than the minimum found.\n***Step 4:*** For given points, the closest pair (e.g., (2, 3) and (3, 4)) has distance ~1.414."
+  },
+  {
+    "title": "Combination Sum with Backtracking",
+    "ques": "Write a Python program to find all combinations of numbers from a list that sum to a target value using backtracking.",
+    "answer": {
+      "type": "code",
+      "lang": "python",
+      "content": "def combination_sum(candidates, target):\n    result = []\n    def backtrack(start, curr_sum, curr_list):\n        if curr_sum == target:\n            result.append(curr_list[:])\n            return\n        if curr_sum > target:\n            return\n        for i in range(start, len(candidates)):\n            curr_list.append(candidates[i])\n            backtrack(i, curr_sum + candidates[i], curr_list)\n            curr_list.pop()\n    backtrack(0, 0, [])\n    return result\n\ncandidates = [2, 3, 6, 7]\ntarget = 7\nprint(combination_sum(candidates, target))  # Output: [[2, 2, 3], [7]]"
+    },
+    "explanation": "***Step 1:*** Initialize an empty result list to store valid combinations.\n***Step 2:*** Use backtracking to try each candidate, adding it to the current list and sum.\n***Step 3:*** If the sum equals the target, store the combination; if it exceeds, stop exploring.\n***Step 4:*** For `candidates=[2, 3, 6, 7]` and `target=7`, return `[[2, 2, 3], [7]]`."
+  },
+  {
+    "title": "Inorder Tree Traversal Using Recursion",
+    "ques": "Write a Python program to perform an inorder traversal of a binary tree using recursion.",
+    "answer": {
+      "type": "code",
+      "lang": "python",
+      "content": "class Node:\n    def __init__(self, val):\n        self.val = val\n        self.left = None\n        self.right = None\n\ndef inorder_traversal(root):\n    result = []\n    def inorder(node):\n        if not node:  # Base case\n            return\n        inorder(node.left)  # Recursive case: left subtree\n        result.append(node.val)\n        inorder(node.right)  # Recursive case: right subtree\n    inorder(root)\n    return result\n\nroot = Node(1)\nroot.left = Node(2)\nroot.right = Node(3)\nroot.left.left = Node(4)\nroot.left.right = Node(5)\nprint(inorder_traversal(root))  # Output: [4, 2, 5, 1, 3]"
+    },
+    "explanation": "***Step 1:*** Define a `Node` class for the binary tree.\n***Step 2:*** Base case: if the node is None, return.\n***Step 3:*** Recursively traverse the left subtree, visit the current node, then the right subtree.\n***Step 4:*** For the given tree, the inorder traversal yields `[4, 2, 5, 1, 3]`."
+  },
+  {
+    "title": "Maximum Subarray Sum with Tabulation",
+    "ques": "Write a Python program to find the maximum subarray sum using dynamic programming with tabulation (Kadane’s algorithm variation).",
+    "answer": {
+      "type": "code",
+      "lang": "python",
+      "content": "def max_subarray_sum(arr):\n    n = len(arr)\n    dp = [0] * n\n    dp[0] = arr[0]\n    max_sum = dp[0]\n    for i in range(1, n):\n        dp[i] = max(arr[i], dp[i-1] + arr[i])  # Include current or start new\n        max_sum = max(max_sum, dp[i])\n    return max_sum\n\narr = [-2, 1, -3, 4, -1, 2, 1, -5, 4]\nprint(max_subarray_sum(arr))  # Output: 6"
+    },
+    "explanation": "***Step 1:*** Initialize a `dp` array where `dp[i]` represents the maximum sum ending at index `i`.\n***Step 2:*** For each index, choose between starting a new subarray or extending the previous one.\n***Step 3:*** Track the global maximum sum.\n***Step 4:*** For `arr=[-2, 1, -3, 4, -1, 2, 1, -5, 4]`, the maximum sum is `6` (subarray `[4, -1, 2, 1]`)."
+  },
+  {
+    "title": "Prim’s Algorithm with Greedy",
+    "ques": "Write a Python program to find the minimum spanning tree of a graph using Prim’s algorithm with a greedy approach.",
+    "answer": {
+      "type": "code",
+      "lang": "python",
+      "content": "def prim(graph, V):\n    key = [float('inf')] * V\n    parent = [-1] * V\n    mst_set = [False] * V\n    key[0] = 0\n    for _ in range(V):\n        min_key = float('inf')\n        u = 0\n        for v in range(V):\n            if not mst_set[v] and key[v] < min_key:\n                min_key = key[v]\n                u = v\n        mst_set[u] = True\n        for v in range(V):\n            if graph[u][v] and not mst_set[v] and graph[u][v] < key[v]:\n                key[v] = graph[u][v]\n                parent[v] = u\n    return [(parent[i], i, graph[parent[i]][i]) for i in range(1, V)]\n\ngraph = [[0, 2, 0, 6], [2, 0, 3, 8], [0, 3, 0, 0], [6, 8, 0, 0]]\nprint(prim(graph, 4))  # Output: [(0, 1, 2), (1, 2, 3), (0, 3, 6)]"
+    },
+    "explanation": "***Step 1:*** Initialize arrays for keys (minimum edge weights), parents, and MST inclusion.\n***Step 2:*** Greedily select the vertex with the smallest key not yet in the MST.\n***Step 3:*** Update keys and parents for adjacent vertices.\n***Step 4:*** Return the MST edges, e.g., `[(0, 1, 2), (1, 2, 3), (0, 3, 6)]`."
+  },
+  {
+    "title": "Fast Fourier Transform with Divide and Conquer",
+    "ques": "Write a Python program to implement the Fast Fourier Transform (FFT) for polynomial multiplication using divide and conquer.",
+    "answer": {
+      "type": "code",
+      "lang": "python",
+      "content": "import cmath\ndef fft(poly):\n    n = len(poly)\n    if n == 1:  # Base case\n        return poly\n    even = fft(poly[0::2])\n    odd = fft(poly[1::2])\n    w = [cmath.exp(-2 * cmath.pi * 1j * k / n) for k in range(n // 2)]\n    result = [0] * n\n    for k in range(n // 2):\n        result[k] = even[k] + w[k] * odd[k]\n        result[k + n // 2] = even[k] - w[k] * odd[k]\n    return result\n\ndef poly_multiply(a, b):\n    n = 1\n    while n < len(a) + len(b):\n        n *= 2\n    a += [0] * (n - len(a))\n    b += [0] * (n - len(b))\n    fa, fb = fft(a), fft(b)\n    result = [fa[i] * fb[i] for i in range(n)]\n    return [int(round(x.real / n)) for x in fft(result)[::-1]]\n\na = [1, 2]  # 1 + 2x\nb = [3, 4]  # 3 + 4x\nprint(poly_multiply(a, b))  # Output: [3, 10, 8] (3 + 10x + 8x^2)"
+    },
+    "explanation": "***Step 1:*** Implement FFT to transform polynomial coefficients to point-value form.\n***Step 2:*** Base case: for a single coefficient, return it.\n***Step 3:*** Divide into even and odd indexed coefficients, apply FFT recursively, and combine using twiddle factors.\n***Step 4:*** Multiply polynomials by multiplying FFT results and applying inverse FFT, yielding `[3, 10, 8]` for `(1 + 2x)(3 + 4x)`."
+  },
+  {
+    "title": "Word Ladder with Backtracking",
+    "ques": "Write a Python program to find a transformation sequence from a start word to an end word, changing one letter at a time, using backtracking.",
+    "answer": {
+      "type": "code",
+      "lang": "python",
+      "content": "def word_ladder(begin, end, word_list):\n    def is_one_diff(w1, w2):\n        return sum(a != b for a, b in zip(w1, w2)) == 1\n    def backtrack(curr, end, path, visited):\n        if curr == end:\n            result.append(path[:])\n            return\n        for word in word_list:\n            if word not in visited and is_one_diff(curr, word):\n                visited.add(word)\n                path.append(word)\n                backtrack(word, end, path, visited)\n                path.pop()\n                visited.remove(word)\n    result = []\n    backtrack(begin, end, [begin], set([begin]))\n    return result[0] if result else []\n\nbegin = 'hit'\nend = 'cog'\nword_list = ['hot', 'dot', 'dog', 'lot', 'log', 'cog']\nprint(word_ladder(begin, end, word_list))  # Output: ['hit', 'hot', 'dot', 'dog', 'cog']"
+    },
+    "explanation": "***Step 1:*** Define a helper function to check if two words differ by one letter.\n***Step 2:*** Use backtracking to explore valid word transformations, ensuring each step is one letter different.\n***Step 3:*** Track visited words to avoid cycles and build the path.\n***Step 4:*** For `hit` to `cog`, return a valid sequence like `['hit', 'hot', 'dot', 'dog', 'cog']`."
+  }
+]
