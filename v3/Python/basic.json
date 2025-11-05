@@ -82,7 +82,7 @@
             "str(10.5)",
             "int(10.5)",
             "float(10.5)",
-            "None of the above"
+            "None of the options"
         ],
         "type": "mcq"
     },
@@ -217,7 +217,7 @@
             "int(True)",
             "str(True)",
             "float(True)",
-            "None of the above"
+            "None of the options"
         ],
         "type": "mcq"
     },
@@ -459,7 +459,7 @@
             "bool('True')",
             "int('True')",
             "str('True')",
-            "None of the above"
+            "None of the options"
         ],
         "type": "mcq"
     },
@@ -745,7 +745,7 @@
             "int(float(str(42)))",
             "float(int(str(42)))",
             "str(int(float(42)))",
-            "None of the above"
+            "None of the options"
         ],
         "type": "mcq"
     },
@@ -4753,7 +4753,7 @@
     {
         "q": "Which of the following correctly converts a Roman numeral string 'XV' to integer using base conversion?",
         "o": [
-            "None of the above",
+            "None of the options",
             "int('XV', 15)",
             "int('XV', 10)",
             "int('15', 10)"
@@ -6482,7 +6482,7 @@
     {
         "q": "Which of the following correctly converts a **base91-encoded** string to int using only standard library?",
         "o": [
-            "None of the above (requires custom decoder)",
+            "None of the options",
             "int('abc', 91)",
             "int.from_base91('abc')",
             "int(base64.b91decode('abc'), 10)"
@@ -6618,7 +6618,7 @@
             "int('1Az', 62)",
             "int.from_base62('1Az')",
             "int(base64.b62decode('1Az'), 10)",
-            "None of the above"
+            "None of the options"
         ],
         "type": "mcq"
     },
@@ -6710,7 +6710,7 @@
     {
         "q": "Which of the following creates **negative zero** in float using **bit-level copy** from int without `struct` or `ctypes`?",
         "o": [
-            "None of the above (requires external module)",
+            "None of the options",
             "float.frombytes(b'\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x80', 'little')",
             "float(int('-0'))",
             "-0.0"
@@ -6751,7 +6751,7 @@
             "int.from_bytes(base64.a85decode('<~9jqo~>'), 'big')",
             "int('<~9jqo~>', 85)",
             "int.a85decode('<~9jqo~>')",
-            "None of the above"
+            "None of the options"
         ],
         "type": "mcq"
     },
@@ -6881,7 +6881,7 @@
     {
         "q": "Which of the following correctly converts a **base45-encoded** string (RFC 9285) to int using only standard library?",
         "o": [
-            "None of the above (requires custom implementation)",
+            "None of the options",
             "int('ABC', 45)",
             "int.from_base45('ABC')",
             "int(base64.b45decode('ABC'), 10)"
@@ -6976,7 +6976,7 @@
     {
         "q": "Which of the following creates **negative zero** in float using **bitwise copy from positive zero** without external modules?",
         "o": [
-            "None of the above (impossible without struct/ctypes)",
+            "None of the options",
             "float.frombytes(bytes([0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x80]), 'little')",
             "0.0 * -1.0",
             "-float('0.0')"
@@ -7014,7 +7014,7 @@
     {
         "q": "Which of the following correctly converts a **z85 (ZeroMQ Base-85)** encoded string to int using only standard library?",
         "o": [
-            "None of the above (requires custom decoder)",
+            "None of the options",
             "int('JTKV', 85)",
             "int.z85decode('JTKV')",
             "int.from_bytes(z85.decode('JTKV'), 'big')"
@@ -7136,7 +7136,7 @@
     {
         "q": "Which of the following correctly converts a **base100-encoded** emoji string to int using only standard library?",
         "o": [
-            "None of the above (requires custom mapping)",
+            "None of the options",
             "int('A', 100)",
             "int.from_emoji('A')",
             "int(ord('A'), 100)"
@@ -7269,7 +7269,7 @@
     {
         "q": "Which of the following correctly converts a **base94-encoded** printable ASCII string to int using only standard library?",
         "o": [
-            "None of the above (requires custom mapping)",
+            "None of the options",
             "int('!@#', 94)",
             "int.from_base94('!@#')",
             "int(ord('!'), 94)"
@@ -7367,7 +7367,7 @@
             "float.frombytes(int.to_bytes(0, 8, 'little'), 'little')",
             "float.frombytes(int.to_bytes(0x8000000000000000, 8, 'little'), 'little')",
             "float.frombytes(int.to_bytes(0, 8, 'big'), 'big')",
-            "None of the above"
+            "None of the options"
         ],
         "type": "mcq"
     },
@@ -7402,7 +7402,7 @@
     {
         "q": "Which of the following correctly converts a **base85-encoded** string with XML-safe variant to int using only standard library?",
         "o": [
-            "None of the above (requires custom decoder)",
+            "None of the options",
             "int('u1', 85)",
             "int.from_xml85('u1')",
             "int(base64.b85decode('u1'), 10)"
@@ -7500,7 +7500,7 @@
             "import struct; bytes_obj = struct.pack('>d', 0.0); mv = memoryview(bytes_obj); mv[0] ^= 0x80; struct.unpack('>d', mv)[0]",
             "float.frombytes(b'\\x80\\x00\\x00\\x00\\x00\\x00\\x00\\x00', 'big')",
             "0.0 * -1.0",
-            "None of the above"
+            "None of the options"
         ],
         "type": "mcq"
     },
@@ -7538,7 +7538,7 @@
             "int('Zz', 36)",
             "int.from_base36('Zz')",
             "int('Zz', 10)",
-            "None of the above"
+            "None of the options"
         ],
         "type": "mcq"
     },
@@ -7633,7 +7633,7 @@
             "import struct; b = struct.pack('>d', 0.0); mv = memoryview(b); mv[0] ^= 0x80; struct.unpack('>d', mv)[0]",
             "float.frombytes(b'\\x80\\x00\\x00\\x00\\x00\\x00\\x00\\x00', 'big')",
             "-0.0",
-            "None of the above"
+            "None of the options"
         ],
         "type": "mcq"
     },
@@ -7671,7 +7671,7 @@
             "int.from_bytes(base64.urlsafe_b64decode('SGVsbG8'), 'big')",
             "int('SGVsbG8', 64)",
             "int.from_base64url('SGVsbG8')",
-            "None of the above"
+            "None of the options"
         ],
         "type": "mcq"
     },
@@ -7804,7 +7804,7 @@
             "int.from_bytes(base64.b85decode('4)'), 'big')",
             "int('4)', 85)",
             "int.from_base85('4)')",
-            "None of the above"
+            "None of the options"
         ],
         "type": "mcq"
     },
@@ -7894,7 +7894,7 @@
             "eval('-' + repr(0.0))",
             "eval(repr(-0.0))",
             "eval('+' + repr(0.0))",
-            "None of the above"
+            "None of the options"
         ],
         "type": "mcq"
     },
@@ -7932,7 +7932,7 @@
             "int('1A1zP1eP5QGefi2DMPTfTL5SLmv7DivfNa'[:34], 58)",
             "int.from_base58('1A1zP1eP5QGefi2DMPTfTL5SLmv7DivfNa')",
             "int(base64.b58decode('1A1zP1eP5QGefi2DMPTfTL5SLmv7DivfNa'), 10)",
-            "None of the above"
+            "None of the options"
         ],
         "type": "mcq"
     },
@@ -8027,7 +8027,7 @@
             "float('{:.0f}'.format(-0.0))",
             "float(format(-0.0, '.0f'))",
             "float(f'{-0.0:.0f}')",
-            "None of the above"
+            "None of the options"
         ],
         "type": "mcq"
     },
@@ -8065,7 +8065,7 @@
             "int.from_bytes(base64.b32hexdecode('CPMUE==='), 'big')",
             "int('CPMUE===', 32)",
             "int.from_base32hex('CPMUE===')",
-            "None of the above"
+            "None of the options"
         ],
         "type": "mcq"
     },
@@ -8195,7 +8195,7 @@
     {
         "q": "Which of the following correctly converts a **base91-encoded** string (without special characters) to int using only standard library?",
         "o": [
-            "None of the above (requires custom mapping)",
+            "None of the options",
             "int('ABC', 91)",
             "int.from_base91('ABC')",
             "int(base64.b91decode('ABC'), 10)"
