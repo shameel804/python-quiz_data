@@ -52,6 +52,12 @@
         ]
     },
     {
+        "q": "The 'else' block runs when the 'if' condition is ____.",
+        "type": "fill_blank",
+        "answers": ["False"],
+        "other_options": ["True", "None", "Error"]
+    },
+    {
         "q": "What is the output of the following code",
         "type": "mcq",
         "c": "i = 1\nwhile i < 4:\n    print(i)\n    i += 1",
@@ -124,12 +130,6 @@
             "True",
             "Error"
         ]
-    },
-    {
-        "q": "The 'else' block runs when the 'if' condition is ____.",
-        "type": "fill_blank",
-        "answers": ["False"],
-        "other_options": ["True", "None", "Error"]
     },
     {
         "q": "In Python, ____ loop is ideal when you know the number of iterations in advance.",

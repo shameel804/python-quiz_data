@@ -30,6 +30,12 @@
         "type": "mcq"
     },
     {
+        "q": "Match the Python data types with their characteristics:",
+        "type": "match",
+        "left": ["List", "Tuple", "Dictionary", "Set"],
+        "right": ["Mutable, ordered", "Immutable, ordered", "Key-value pairs", "Unique elements, unordered"]
+    },
+    {
         "q": "What is the output of the following code?",
         "c": "print(type(42))",
         "o": [
