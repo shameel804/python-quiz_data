@@ -4848,5 +4848,3638 @@
             "<class 'int'>",
             "NameError"
         ]
+    },
+    {
+        "q": "What is the output of the following code?",
+        "type": "mcq",
+        "c": "x = 10\ndef func():\n    global x\n    x = 20\nfunc()\nprint(x)",
+        "o": [
+            "20",
+            "10",
+            "Error",
+            "None"
+        ]
+    },
+    {
+        "q": "Which keyword allows a function to modify a global variable?",
+        "type": "mcq",
+        "o": [
+            "global",
+            "nonlocal", 
+            "extern",
+            "public"
+        ]
+    },
+    {
+        "q": "What is the output of the following recursive function?",
+        "type": "mcq",
+        "c": "def factorial(n):\n    if n == 1:\n        return 1\n    return n * factorial(n-1)\nprint(factorial(5))",
+        "o": [
+            "120",
+            "24",
+            "60",
+            "RecursionError"
+        ]
+    },
+    {
+        "q": "Which of the following is a valid lambda function?",
+        "type": "mcq",
+        "o": [
+            "lambda x: x**2",
+            "def lambda x: x**2",
+            "lambda(x): return x**2",
+            "function lambda x: x**2"
+        ]
+    },
+    {
+        "q": "What is the output of the following code?",
+        "type": "mcq",
+        "c": "def outer():\n    x = 5\n    def inner():\n        nonlocal x\n        x = 10\n    inner()\n    return x\nprint(outer())",
+        "o": [
+            "10",
+            "5",
+            "Error",
+            "None"
+        ]
+    },
+    {
+        "q": "Which type of function has no name and is defined using lambda?",
+        "type": "mcq",
+        "o": [
+            "Anonymous function",
+            "Recursive function",
+            "Generator function",
+            "Callback function"
+        ]
+    },
+    {
+        "q": "What is the output of the following code?",
+        "type": "mcq",
+        "c": "result = (lambda x, y=2: x**y)(3)\nprint(result)",
+        "o": [
+            "9",
+            "6",
+            "8",
+            "Error"
+        ]
+    },
+    {
+        "q": "Which concept describes a function calling itself?",
+        "type": "mcq",
+        "o": [
+            "Recursion",
+            "Iteration",
+            "Inheritance",
+            "Polymorphism"
+        ]
+    },
+    {
+        "q": "What is the output of the following code?",
+        "type": "mcq",
+        "c": "def func(a, *args, **kwargs):\n    return len(args) + len(kwargs)\nprint(func(1, 2, 3, x=4, y=5))",
+        "o": [
+            "4",
+            "3",
+            "5",
+            "Error"
+        ]
+    },
+    {
+        "q": "Which variable scope is accessible only within a function?",
+        "type": "mcq",
+        "o": [
+            "Local",
+            "Global",
+            "Built-in",
+            "Module"
+        ]
+    },
+    {
+        "q": "What is the output of the following recursive function?",
+        "type": "mcq",
+        "c": "def fib(n):\n    if n <= 1:\n        return n\n    return fib(n-1) + fib(n-2)\nprint(fib(6))",
+        "o": [
+            "8",
+            "5",
+            "13",
+            "21"
+        ]
+    },
+    {
+        "q": "Which of the following correctly uses a lambda function with filter?",
+        "type": "mcq",
+        "o": [
+            "list(filter(lambda x: x%2==0, [1,2,3,4]))",
+            "list(filter(def x: x%2==0, [1,2,3,4]))",
+            "list(filter(lambda(x): x%2==0, [1,2,3,4]))",
+            "list(filter(function x: x%2==0, [1,2,3,4]))"
+        ]
+    },
+    {
+        "q": "Match the function concepts with their descriptions:",
+        "type": "match",
+        "left": ["Recursion", "Lambda", "Global variable", "Local variable"],
+        "right": ["Function calls itself", "Anonymous function", "Accessible throughout program", "Accessible only in function"]
+    },
+    {
+        "q": "In Python, functions are ______ objects that can be passed as ______ to other functions.",
+        "type": "fill_blank",
+        "answers": ["first-class", "arguments"],
+        "other_options": ["mutable", "immutable", "parameters", "variables"]
+    },
+    {
+        "q": "Rearrange the words to form a valid recursive function:",
+        "type": "rearrange",
+        "words": ["def", "sum_n", "(n):", "if", "n", "==", "0:", "return", "0", "else:", "return", "n", "+", "sum_n", "(n-1)"]
+    },
+    {
+        "q": "A lambda function can contain multiple expressions and statements.",
+        "type": "true_false",
+        "correct": "False"
+    },
+    {
+        "q": "What is the output of the following code?",
+        "type": "mcq",
+        "c": "def counter():\n    count = 0\n    def increment():\n        nonlocal count\n        count += 1\n        return count\n    return increment\nc = counter()\nprint(c(), c())",
+        "o": [
+            "1 2",
+            "0 1",
+            "1 1",
+            "Error"
+        ]
+    },
+    {
+        "q": "Global variables can be modified inside a function without using any special keyword.",
+        "type": "true_false",
+        "correct": "False"
+    },
+    {
+        "q": "Rearrange the words to form a lambda function with map:",
+        "type": "rearrange", 
+        "words": ["list", "(map", "(lambda", "x:", "x*2,", "[1,2,3]))"]
+    },
+    {
+        "q": "Every recursive function must have a ______ case to prevent infinite recursion. The ______ keyword is used to modify variables in the enclosing scope.",
+        "type": "fill_blank",
+        "answers": ["base", "nonlocal"],
+        "other_options": ["terminal", "exit", "global", "local"]
+    },
+    {
+        "q": "What will be printed after executing this code?",
+        "type": "mcq",
+        "c": "def process_data(data, modifier=lambda x: x.upper() if isinstance(x, str) else x*2):\n    return modifier(data)\n\nresult1 = process_data(\"hello\")\nresult2 = process_data(5)\nprint(f\"{result1} {result2}\")",
+        "o": [
+            "HELLO 10",
+            "hello 5",
+            "hello 10",
+            "HELLO 5"
+        ]
+    },
+    {
+        "q": "Which statement about Python function arguments is incorrect?",
+        "type": "mcq",
+        "o": [
+            "Keyword arguments must always come before positional arguments",
+            "**kwargs collects extra keyword arguments as a dictionary",
+            "*args collects extra positional arguments as a tuple",
+            "Default parameters are evaluated only once when function is defined"
+        ]
+    },
+    {
+        "q": "What does this recursive function calculate?",
+        "type": "mcq",
+        "c": "def mystery(n, depth=0):\n    if n == 0:\n        return depth\n    return mystery(n // 2, depth + 1)\n\nprint(mystery(16))",
+        "o": [
+            "Number of times you can divide by 2 until reaching 0",
+            "Binary logarithm of n",
+            "Sum of digits in binary representation",
+            "Factorial of n divided by 2"
+        ]
+    },
+    {
+        "q": "Identify the output of this nested function scope example:",
+        "type": "mcq",
+        "c": "x = 100\n\ndef outer():\n    x = 50\n    \n    def inner():\n        nonlocal x\n        x += 25\n        return x\n    \n    inner()\n    return x\n\nprint(outer())\nprint(x)",
+        "o": [
+            "75 100",
+            "50 100", 
+            "75 75",
+            "125 100"
+        ]
+    },
+    {
+        "q": "Which lambda usage will produce [2, 4, 6]?",
+        "type": "mcq",
+        "o": [
+            "list(map(lambda x: x*2, [1, 2, 3]))",
+            "list(filter(lambda x: x*2, [1, 2, 3]))",
+            "list(lambda x: x*2, [1, 2, 3])",
+            "[lambda x: x*2 for x in [1, 2, 3]]"
+        ]
+    },
+    {
+        "q": "What makes this function recursive and what will it output?",
+        "type": "mcq",
+        "c": "def weave(a, b):\n    if not a:\n        return b\n    if not b:\n        return a\n    return a[0] + b[0] + weave(a[1:], b[1:])\n\nprint(weave(\"ace\", \"bdf\"))",
+        "o": [
+            "abcdef",
+            "acbdef",
+            "aabbccddeeff",
+            "Error - maximum recursion depth"
+        ]
+    },
+    {
+        "q": "Match the function parameter types with their behaviors:",
+        "type": "match",
+        "left": ["*args", "**kwargs", "positional-only", "keyword-only"],
+        "right": ["Accepts variable positional arguments", "Accepts variable keyword arguments", "Parameters before / in definition", "Parameters after * in definition"]
+    },
+    {
+        "q": "Analyze this function's variable scope:",
+        "type": "mcq", 
+        "c": "counter = 0\n\ndef increment():\n    global counter\n    counter += 1\n    local_count = 0\n    local_count += 1\n    return counter, local_count\n\nprint(increment())\nprint(increment())",
+        "o": [
+            "(1, 1) (2, 1)",
+            "(1, 1) (1, 1)",
+            "(1, 1) (2, 2)",
+            "(0, 1) (1, 1)"
+        ]
+    },
+    {
+        "q": "Which code snippet correctly uses a closure?",
+        "type": "mcq",
+        "o": [
+            "def multiplier(n): return lambda x: x * n",
+            "def multiplier(n): return x * n",
+            "def multiplier(n): global x; return x * n", 
+            "def multiplier(n): lambda x: x * n"
+        ]
+    },
+    {
+        "q": "What is the primary risk with this recursive implementation?",
+        "type": "mcq",
+        "c": "def sum_to_n(n):\n    return n + sum_to_n(n-1) if n > 0 else 0",
+        "o": [
+            "Missing base case for n <= 0",
+            "Too many parameters",
+            "Using recursion instead of iteration",
+            "No return statement"
+        ]
+    },
+    {
+        "q": "A ______ function calls itself until a ______ condition is met. The ______ keyword allows inner functions to modify variables in their enclosing scope.",
+        "type": "fill_blank", 
+        "answers": ["recursive", "base", "nonlocal"],
+        "other_options": ["iterative", "terminal", "global", "lambda"]
+    },
+    {
+        "q": "Rearrange to create a function that counts recursive depth:",
+        "type": "rearrange",
+        "words": ["def", "count_depth", "(lst,", "depth=1):", "if", "not", "isinstance(lst,", "list):", "return", "depth", "return", "max(count_depth(item,", "depth+1)", "for", "item", "in", "lst)"]
+    },
+    {
+        "q": "Lambda functions can contain print statements and multi-line expressions.",
+        "type": "true_false",
+        "correct": "False"
+    },
+    {
+        "q": "What distinguishes this higher-order function?",
+        "type": "mcq",
+        "c": "def apply_twice(func, arg):\n    return func(func(arg))\n\nresult = apply_twice(lambda x: x + 2, 10)\nprint(result)",
+        "o": [
+            "Applies function to result of same function",
+            "Calls function with two arguments",
+            "Runs function in parallel twice",
+            "Creates two lambda functions"
+        ]
+    },
+    {
+        "q": "Which scenario demonstrates proper global variable usage?",
+        "type": "mcq", 
+        "o": [
+            "Config settings shared across multiple functions",
+            "Loop counters inside functions",
+            "Temporary calculation variables",
+            "Function parameters"
+        ]
+    },
+    {
+        "q": "Predict the output of this complex recursion:",
+        "type": "mcq",
+        "c": "def strange_math(x, y):\n    if y == 0:\n        return x\n    if x < y:\n        return strange_math(y, x)\n    return strange_math(x - y, y)\n\nprint(strange_math(27, 15))",
+        "o": [
+            "3",
+            "12",
+            "27",
+            "15"
+        ]
+    },
+    {
+        "q": "Global variables defined at module level are accessible throughout the module without declaration.",
+        "type": "true_false", 
+        "correct": "True"
+    },
+    {
+        "q": "Rearrange to form a function using both *args and **kwargs:",
+        "type": "rearrange",
+        "words": ["def", "flexible_func", "(required,", "*args,", "**kwargs):", "return", "len(args)", "+", "len(kwargs)"]
+    },
+    {
+        "q": "Anonymous functions created with ______ are limited to single expressions. Functions can access ______ variables from enclosing scopes but need ______ declaration to modify them.",
+        "type": "fill_blank",
+        "answers": ["lambda", "nonlocal", "explicit"],
+        "other_options": ["def", "global", "local", "implicit"]
+    },
+    {
+        "q": "What makes this function's recursion tail-recursive?",
+        "type": "mcq",
+        "c": "def factorial(n, accumulator=1):\n    if n == 0:\n        return accumulator\n    return factorial(n - 1, n * accumulator)",
+        "o": [
+            "Recursive call is the last operation with accumulated result",
+            "It uses two parameters instead of one",
+            "It has a base case at the beginning",
+            "It calls itself multiple times"
+        ]
+    },
+    {
+        "q": "What is the key difference between these two function calls?",
+        "type": "mcq",
+        "c": "def analyze(*items):\n    return len(items), type(items)\n\n# Call 1\nanalyze(1, 2, 3)\n# Call 2\nanalyze([1, 2, 3])",
+        "o": [
+            "Call 1: 3 items in tuple, Call 2: 1 item (list) in tuple",
+            "Call 1: list of 3 items, Call 2: tuple of 1 item",
+            "Both calls produce identical results",
+            "Call 1 causes TypeError"
+        ]
+    },
+    {
+        "q": "Which scenario demonstrates a proper use case for a closure?",
+        "type": "mcq",
+        "o": [
+            "Creating specialized functions with preset configurations",
+            "Modifying global variables from multiple functions",
+            "Implementing simple mathematical operations",
+            "Reading constant values from a configuration file"
+        ]
+    },
+    {
+        "q": "What is the fundamental limitation of lambda functions compared to regular def functions?",
+        "type": "mcq",
+        "o": [
+            "Cannot contain statements or annotations",
+            "Cannot be assigned to variables",
+            "Cannot accept multiple parameters",
+            "Cannot return values"
+        ]
+    },
+    {
+        "q": "How does Python's LEGB rule resolve this variable reference?",
+        "type": "mcq",
+        "c": "value = 'global'\n\ndef outer():\n    value = 'enclosing'\n    \n    def inner():\n        value = 'local'\n        print(value)\n    \n    inner()\n\nouter()",
+        "o": [
+            "Prints 'local' - Local scope takes precedence",
+            "Prints 'enclosing' - Nonlocal scope is preferred",
+            "Prints 'global' - Global scope is fallback",
+            "Raises UnboundLocalError"
+        ]
+    },
+    {
+        "q": "What makes this pattern particularly dangerous with mutable default arguments?",
+        "type": "mcq",
+        "c": "def accumulate_items(item, container=[]):\n    container.append(item)\n    return container\n\nprint(accumulate_items(1))\nprint(accumulate_items(2))",
+        "o": [
+            "Same list object persists across function calls",
+            "Default list is recreated each call",
+            "List becomes global automatically",
+            "Append operation modifies original item"
+        ]
+    },
+    {
+        "q": "Which recursion approach would be most efficient for deep nesting?",
+        "type": "mcq",
+        "o": [
+            "Iterative conversion with explicit stack management",
+            "Direct recursion with multiple base cases",
+            "Mutual recursion between two functions",
+            "Recursion with large default parameters"
+        ]
+    },
+    {
+        "q": "What is the primary purpose of functools.wraps in decorators?",
+        "type": "mcq",
+        "o": [
+            "Preserves original function's metadata",
+            "Enables faster recursive execution",
+            "Allows access to global variables",
+            "Converts lambda to named function"
+        ]
+    },
+    {
+        "q": "How does argument unpacking affect this function call?",
+        "type": "mcq",
+        "c": "def configure(host, port, timeout=30):\n    return f\"{host}:{port} timeout={timeout}\"\n\nsettings = {'host': 'localhost', 'port': 8080, 'timeout': 60}\nresult = configure(**settings)",
+        "o": [
+            "Dictionary keys map to parameter names",
+            "Raises TypeError due to extra items",
+            "Uses only positional arguments",
+            "Ignores dictionary and uses defaults"
+        ]
+    },
+    {
+        "q": "Match the function attribute with its description:",
+        "type": "match",
+        "left": ["__code__", "__defaults__", "__closure__", "__annotations__"],
+        "right": ["Bytecode and variable names", "Tuple of default parameter values", "Bindings for free variables", "Type hints for parameters and return"]
+    },
+    {
+        "q": "A function's ______ object contains its compiled bytecode, while ______ stores bindings to variables from enclosing scopes. The ______ decorator helps preserve original function metadata.",
+        "type": "fill_blank",
+        "answers": ["__code__", "__closure__", "@wraps"],
+        "other_options": ["__dict__", "__globals__", "@decorate", "@preserve"]
+    },
+
+    {
+        "q": "All variables in a function are automatically local unless declared global or nonlocal.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "What is the critical flaw in this memoization attempt?",
+        "type": "mcq",
+        "c": "def memoize(func):\n    cache = {}\n    def wrapped(*args):\n        if args in cache:\n            return cache[args]\n        result = func(*args)\n        cache[args] = result\n        return result\n    return wrapped\n\n@memoize\ndef process(data):\n    return len(data)\n\nprocess([1, 2, 3])\nprocess([1, 2, 3, 4])",
+        "o": [
+            "Uses mutable arguments as dictionary keys",
+            "Cache is recreated on each function call",
+            "Doesn't handle keyword arguments",
+            "Missing base case for recursion"
+        ]
+    },
+    {
+        "q": "Which technique would help avoid recursion depth limits for deep data structures?",
+        "type": "mcq",
+        "o": [
+            "Convert recursion to iterative with explicit stack",
+            "Use larger default recursion limit",
+            "Implement with lambda functions only",
+            "Split into multiple smaller recursive functions"
+        ]
+    },
+    {
+        "q": "What distinguishes a generator function's execution from a regular function?",
+        "type": "mcq",
+        "o": [
+            "Pauses execution at yield and resumes on next()",
+            "Runs completely then returns all results",
+            "Cannot access global variables",
+            "Automatically converts recursion to iteration"
+        ]
+    },
+    {
+        "q": "How does scope resolution work with nested comprehensions?",
+        "type": "mcq",
+        "c": "x = 'global'\nresult = [x for x in 'abc']\nprint(x)",
+        "o": [
+            "Prints 'global' - comprehension leaks don't affect outer scope",
+            "Prints 'c' - last comprehension value persists",
+            "Raises NameError - x is undefined",
+            "Prints 'abc' - uses the string value"
+        ]
+    },
+    {
+        "q": "Function annotations do not affect runtime behavior but can be accessed via ______.",
+        "type": "fill_blank",
+        "answers": ["__annotations__"],
+        "other_options": ["__doc__", "__code__", "__defaults__", "__closure__"]
+    },
+    {
+        "q": "Rearrange to implement a function with type hints and default values:",
+        "type": "rearrange",
+        "words": ["def", "connect", "(host:", "str,", "port:", "int", "=", "80,", "timeout:", "float", "=", "30.0)", "->", "bool:", "return", "True"]
+    },
+    {
+        "q": "A function can modify a global list without the global keyword if using methods like append().",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "What is the key advantage of using partial from functools?",
+        "type": "mcq",
+        "o": [
+            "Pre-fills some arguments of a function",
+            "Converts recursive functions to iterative",
+            "Automatically handles global variables",
+            "Makes all function parameters optional"
+        ]
+    },
+    {
+        "q": "Complete the function to handle both positional and keyword arguments correctly:",
+        "type": "fill_blank",
+        "c": "def flexible_func(a, b, /, c, d, *, e, f):\n    # This function uses all parameter types:\n    # a, b: ______-only\n    # c, d: ______ or keyword\n    # e, f: ______-only\n    return a + b + c + d + e + f",
+        "answers": ["positional", "positional", "keyword"],
+        "other_options": ["required", "optional", "default", "variable"]
+    },
+    {
+        "q": "Which function correctly uses variable annotations?",
+        "type": "mcq",
+        "c": "# Option 1\ndef process(data: list[str]) -> dict[str, int]:\n    return {item: len(item) for item in data}\n\n# Option 2  \ndef process(data: list) -> dict:\n    return {item: len(item) for item in data}\n\n# Option 3\ndef process(data) -> list[str]:\n    return [str(x) for x in data]\n\n# Option 4\ndef process(data: 'sequence') -> 'mapping':\n    return {item: len(item) for item in data}",
+        "o": [
+            "Option 1 - uses generic type hints",
+            "Option 2 - uses basic container types",
+            "Option 3 - has incomplete annotations",
+            "Option 4 - uses string forward references"
+        ]
+    },
+    {
+        "q": "What is the primary purpose of the __code__ object attribute?",
+        "type": "mcq",
+        "o": [
+            "Contains compiled bytecode and variable names",
+            "Stores function documentation string",
+            "Holds default parameter values",
+            "Manages function closure bindings"
+        ]
+    },
+    {
+        "q": "Analyze this function's performance characteristics:",
+        "type": "mcq",
+        "c": "import sys\n\ndef deep_recursion(n, current=0):\n    if current >= n:\n        return current\n    return deep_recursion(n, current + 1)\n\n# What happens when n = 1500?",
+        "o": [
+            "RecursionError due to stack limit",
+            "Runs successfully with linear time",
+            "MemoryError from too many calls",
+            "Returns 1500 after deep recursion"
+        ]
+    },
+    {
+        "q": "Which decorator implementation properly preserves function identity?",
+        "type": "mcq",
+        "c": "# Decorator A\nfrom functools import wraps\ndef decorator_a(func):\n    @wraps(func)\n    def wrapper(*args, **kwargs):\n        return func(*args, **kwargs)\n    return wrapper\n\n# Decorator B\ndef decorator_b(func):\n    def wrapper(*args, **kwargs):\n        return func(*args, **kwargs)\n    return wrapper\n\n# Decorator C\ndef decorator_c(func):\n    wrapper = lambda *args, **kwargs: func(*args, **kwargs)\n    return wrapper",
+        "o": [
+            "Decorator A - uses functools.wraps",
+            "Decorator B - simple wrapper function",
+            "Decorator C - lambda wrapper",
+            "All preserve identity equally"
+        ]
+    },
+    {
+        "q": "Match the function introspection method with its purpose:",
+        "type": "match",
+        "left": ["inspect.signature()", "func.__code__.co_varnames", "func.__defaults__", "func.__closure__"],
+        "right": ["Get parameter information and annotations", "View local variable names in function", "Access default parameter values", "Access variables from enclosing scope"]
+    },
+    {
+        "q": "What makes this generator function different from regular recursion?",
+        "type": "mcq",
+        "c": "def traverse_nested(data):\n    if isinstance(data, list):\n        for item in data:\n            yield from traverse_nested(item)\n    else:\n        yield data\n\n# Usage\nresult = list(traverse_nested([1, [2, [3, 4]], 5]))",
+        "o": [
+            "Uses yield from for recursive delegation",
+            "Returns flattened list immediately",
+            "Cannot handle nested structures",
+            "Raises StopIteration immediately"
+        ]
+    },
+    {
+        "q": "Identify the variable scope issue in this code:",
+        "type": "mcq",
+        "c": "counter = 0\n\ndef increment():\n    print(counter)\n    counter += 1\n\nincrement()",
+        "o": [
+            "UnboundLocalError - counter referenced before assignment",
+            "Prints 0 then increments successfully",
+            "Modifies global counter correctly",
+            "NameError - counter not defined"
+        ]
+    },
+    {
+        "q": "Which technique demonstrates proper use of function attributes?",
+        "type": "mcq",
+        "c": "# Approach 1\ndef func():\n    pass\nfunc.call_count = 0\n\n# Approach 2\ndef func():\n    func.call_count = getattr(func, 'call_count', 0) + 1\n\n# Approach 3\nclass FuncTracker:\n    call_count = 0\n    def __call__(self):\n        self.call_count += 1\n\n# Approach 4\ndef func():\n    global call_count\n    call_count += 1",
+        "o": [
+            "Approach 2 - uses getattr with default",
+            "Approach 1 - simple attribute assignment",
+            "Approach 3 - callable class approach",
+            "Approach 4 - global variable tracking"
+        ]
+    },
+    {
+        "q": "Rearrange to create a function with parameter types: positional-only, keyword-or-positional, and keyword-only:",
+        "type": "rearrange",
+        "words": ["def", "advanced_func", "(pos1,", "pos2,", "/,", "flex,", "*,", "key1,", "key2):", "return", "pos1", "+", "pos2", "+", "flex", "+", "key1", "+", "key2"]
+    },
+    {
+        "q": "Function annotations are evaluated at definition time and stored in __annotations__.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "What is the effect of using a mutable object as a default argument?",
+        "type": "mcq",
+        "c": "def accumulate(value, storage=[]):\n    storage.append(value)\n    return storage\n\nr1 = accumulate(1)\nr2 = accumulate(2)\nprint(r1, r2)",
+        "o": [
+            "Both r1 and r2 reference same list object",
+            "r1 is [1], r2 is [2] - separate lists",
+            "Raises error for mutable default",
+            "r1 is [1, 2], r2 is [2] - partial sharing"
+        ]
+    },
+    {
+        "q": "How does Python handle variable scope in class definitions versus functions?",
+        "type": "mcq",
+        "o": [
+            "Class scope doesn't create closures like functions",
+            "Identical scoping rules apply to both",
+            "Classes use global scope exclusively",
+            "Class methods cannot access class variables"
+        ]
+    },
+    {
+        "q": "Which code demonstrates correct use of nonlocal with nested functions?",
+        "type": "mcq",
+        "c": "# Example 1\ndef outer():\n    x = 0\n    def inner():\n        nonlocal x\n        x += 1\n        return x\n    return inner\n\n# Example 2\ndef outer():\n    x = 0\n    def inner():\n        x = x + 1  # No nonlocal\n        return x\n    return inner\n\n# Example 3\ndef outer():\n    global x\n    x = 0\n    def inner():\n        global x\n        x += 1\n        return x\n    return inner",
+        "o": [
+            "Example 1 - proper nonlocal usage",
+            "Example 2 - creates new local variable",
+            "Example 3 - uses global variables",
+            "All examples work correctly"
+        ]
+    },
+    {
+        "q": "A function's ______ object contains information about its parameters, while ______ stores bindings from enclosing scopes. The ______ module provides tools for function introspection.",
+        "type": "fill_blank",
+        "answers": ["__code__", "__closure__", "inspect"],
+        "other_options": ["__dict__", "__globals__", "functools", "sys"]
+    },
+    {
+        "q": "What distinguishes a coroutine function from a regular generator?",
+        "type": "mcq",
+        "c": "async def coroutine_func():\n    await some_operation()\n    return \"done\"\n\ndef generator_func():\n    yield from some_sequence()\n    return \"done\"",
+        "o": [
+            "Uses async/await for asynchronous operations",
+            "Generator uses yield, coroutine uses return",
+            "Coroutine cannot be iterated like generator",
+            "All of the above differences"
+        ]
+    },
+    {
+        "q": "Which pattern correctly implements function memoization for recursive functions?",
+        "type": "mcq",
+        "c": "# Pattern A\nfrom functools import lru_cache\n\n@lru_cache(maxsize=None)\ndef fibonacci(n):\n    if n < 2:\n        return n\n    return fibonacci(n-1) + fibonacci(n-2)\n\n# Pattern B\ndef fibonacci(n, memo={}):\n    if n in memo:\n        return memo[n]\n    if n < 2:\n        return n\n    memo[n] = fibonacci(n-1, memo) + fibonacci(n-2, memo)\n    return memo[n]",
+        "o": [
+            "Both patterns work correctly",
+            "Pattern A only - uses built-in decorator",
+            "Pattern B only - explicit memoization",
+            "Neither pattern works for recursion"
+        ]
+    },
+    {
+        "q": "Function objects in Python are first-class citizens, meaning they can be ______, passed as ______, returned from ______, and assigned to ______.",
+        "type": "fill_blank",
+        "answers": ["created", "arguments", "functions", "variables"],
+        "other_options": ["compiled", "parameters", "methods", "constants"]
+    },
+    {
+        "q": "What is the key difference between __defaults__ and __kwdefaults__?",
+        "type": "mcq",
+        "o": [
+            "__defaults__ for positional, __kwdefaults__ for keyword-only",
+            "__defaults__ for required, __kwdefaults__ for optional",
+            "__defaults__ for args, __kwdefaults__ for kwargs",
+            "They are aliases for the same attribute"
+        ]
+    },
+    {
+        "q": "Which function correctly uses the walrus operator (:=) for both assignment and condition?",
+        "type": "mcq",
+        "c": "# Option 1\ndef process_data(data):\n    if (result := expensive_operation(data)) > threshold:\n        return result\n    return None\n\n# Option 2\ndef process_data(data):\n    result = expensive_operation(data)\n    if result > threshold:\n        return result\n    return None\n\n# Option 3\ndef process_data(data):\n    return (result := expensive_operation(data)) if result > threshold else None\n\n# Option 4\ndef process_data(data):\n    if expensive_operation(data) > threshold:\n        return expensive_operation(data)\n    return None",
+        "o": [
+            "Option 1 - avoids redundant function calls",
+            "Option 2 - traditional separate assignment",
+            "Option 3 - invalid syntax in return",
+            "Option 4 - calls function twice inefficiently"
+        ]
+    },
+    {
+        "q": "What is the primary risk when using exec() or eval() with function definitions?",
+        "type": "mcq",
+        "o": [
+            "Security vulnerabilities from code injection",
+            "Memory leaks from dynamic compilation",
+            "Slower execution compared to def",
+            "Incompatibility with type hints"
+        ]
+    },
+    {
+        "q": "How does Python's method resolution order affect function lookup in multiple inheritance?",
+        "type": "mcq",
+        "c": "class A:\n    def process(self):\n        return 'A'\n\nclass B(A):\n    def process(self):\n        return 'B'\n\nclass C(A):\n    def process(self):\n        return 'C'\n\nclass D(B, C):\n    pass\n\nprint(D().process())",
+        "o": [
+            "Prints 'B' - follows MRO D->B->C->A",
+            "Prints 'C' - alphabetical order",
+            "Prints 'A' - parent class method",
+            "Raises TypeError - ambiguous call"
+        ]
+    },
+    {
+        "q": "Which code demonstrates proper use of functools.singledispatch?",
+        "type": "mcq",
+        "c": "# Option 1\nfrom functools import singledispatch\n\n@singledispatch\ndef process(arg):\n    return f\"default: {arg}\"\n\n@process.register\ndef _(arg: int):\n    return f\"int: {arg}\"\n\n# Option 2\nfrom functools import singledispatch\n\n@singledispatch\ndef process(arg):\n    return f\"default: {arg}\"\n\n@process.register(int)\ndef process_int(arg):\n    return f\"int: {arg}\"",
+        "o": [
+            "Option 2 - correct decorator syntax",
+            "Option 1 - invalid register usage",
+            "Both work identically",
+            "Neither - singledispatch requires classes"
+        ]
+    },
+    {
+        "q": "What distinguishes a descriptor protocol implementation from regular methods?",
+        "type": "mcq",
+        "c": "class ValidatedString:\n    def __set_name__(self, owner, name):\n        self.name = name\n    \n    def __get__(self, obj, type=None):\n        return obj.__dict__.get(self.name)\n    \n    def __set__(self, obj, value):\n        if not isinstance(value, str):\n            raise TypeError(\"Must be string\")\n        obj.__dict__[self.name] = value\n\nclass Person:\n    name = ValidatedString()",
+        "o": [
+            "Controls attribute access via __get__/__set__",
+            "Uses special naming convention",
+            "Requires metaclass declaration",
+            "Automatically validates all attributes"
+        ]
+    },
+    {
+        "q": "Match the function optimization technique with its use case:",
+        "type": "match",
+        "left": ["functools.cache", "functools.partial", "__slots__", "lazy evaluation"],
+        "right": ["Memoization for pure functions", "Pre-filling function arguments", "Reduces memory for many instances", "Defers computation until needed"]
+    },
+    {
+        "q": "What is the effect of using yield inside a try/finally block?",
+        "type": "mcq",
+        "c": "def generator_with_cleanup():\n    try:\n        yield \"working\"\n        yield \"still working\"\n    finally:\n        print(\"Cleanup executed\")\n\ngen = generator_with_cleanup()\nprint(next(gen))\nprint(next(gen))",
+        "o": [
+            "Prints cleanup when generator closes",
+            "Finally executes after each yield",
+            "Finally block never executes",
+            "Raises GeneratorExit immediately"
+        ]
+    },
+    {
+        "q": "Which pattern correctly implements a context manager using contextlib?",
+        "type": "mcq",
+        "c": "# Pattern 1\nfrom contextlib import contextmanager\n\n@contextmanager\ndef temporary_config():\n    old_value = get_config()\n    set_config(\"temp\")\n    try:\n        yield\n    finally:\n        set_config(old_value)\n\n# Pattern 2\nclass TemporaryConfig:\n    def __enter__(self):\n        self.old_value = get_config()\n        set_config(\"temp\")\n    \n    def __exit__(self, *args):\n        set_config(self.old_value)",
+        "o": [
+            "Both implement context managers correctly",
+            "Pattern 1 only - uses decorator",
+            "Pattern 2 only - proper class-based",
+            "Neither - missing error handling"
+        ]
+    },
+    {
+        "q": "How does asyncio.create_task() differ from directly calling async functions?",
+        "type": "mcq",
+        "c": "import asyncio\n\nasync def slow_operation():\n    await asyncio.sleep(1)\n    return \"done\"\n\n# Approach 1\nasync def main1():\n    result = await slow_operation()\n    return result\n\n# Approach 2  \nasync def main2():\n    task = asyncio.create_task(slow_operation())\n    result = await task\n    return result",
+        "o": [
+            "Approach 2 allows concurrent execution",
+            "Both execute identically sequentially",
+            "Approach 1 is faster for single calls",
+            "Approach 2 requires more memory"
+        ]
+    },
+    {
+        "q": "What is the primary advantage of using dataclasses for function parameter validation?",
+        "type": "mcq",
+        "o": [
+            "Automatic __init__ with type enforcement",
+            "Built-in JSON serialization",
+            "Database integration features",
+            "Automatic method generation"
+        ]
+    },
+    {
+        "q": "Rearrange to create a property with getter and setter validation:",
+        "type": "rearrange",
+        "words": ["class", "Temperature:", "def", "__init__(self,", "celsius):", "self._celsius", "=", "celsius", "@property", "def", "celsius(self):", "return", "self._celsius", "@celsius.setter", "def", "celsius(self,", "value):", "if", "value", "<", "-273.15:", "raise", "ValueError", "self._celsius", "=", "value"]
+    },
+    {
+        "q": "Python's GIL (Global Interpreter Lock) affects threading but not multiprocessing for CPU-bound functions.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Which code demonstrates correct usage of __call__ for function-like objects?",
+        "type": "mcq",
+        "c": "# Option 1\nclass Adder:\n    def __init__(self, n):\n        self.n = n\n    \n    def __call__(self, x):\n        return self.n + x\n\nadd5 = Adder(5)\nresult = add5(10)\n\n# Option 2\nclass Multiplier:\n    def __init__(self, n):\n        self.n = n\n    \n    def multiply(self, x):\n        return self.n * x\n\nmul5 = Multiplier(5)\nresult = mul5.multiply(10)",
+        "o": [
+            "Option 1 - instance can be called directly",
+            "Option 2 - requires explicit method call",
+            "Both achieve similar results",
+            "Option 1 is invalid syntax"
+        ]
+    },
+    {
+        "q": "What is the key difference between __getattr__ and __getattribute__?",
+        "type": "mcq",
+        "o": [
+            "__getattr__ only called for missing attributes",
+            "__getattribute__ called for every attribute access",
+            "__getattr__ can be faster for common cases",
+            "All of the above"
+        ]
+    },
+    {
+        "q": "How does Python's copy module affect function arguments?",
+        "type": "mcq",
+        "c": "import copy\n\ndef modify_data(data, use_deepcopy=False):\n    if use_deepcopy:\n        data = copy.deepcopy(data)\n    data.append(\"modified\")\n    return data\n\noriginal = [[1, 2], [3, 4]]\nresult1 = modify_data(original, False)\nresult2 = modify_data(original, True)",
+        "o": [
+            "result1 modifies original, result2 doesn't",
+            "Both modify the original list",
+            "Neither modifies the original",
+            "Raises error for deepcopy on lists"
+        ]
+    },
+    {
+        "q": "A ______ function uses yield to produce values incrementally, while an ______ function uses await for asynchronous operations. The ______ protocol enables objects to be called like functions.",
+        "type": "fill_blank",
+        "answers": ["generator", "async", "__call__"],
+        "other_options": ["iterator", "coroutine", "__init__", "decorator"]
+    },
+    {
+        "q": "What is the primary purpose of the __wrapped__ attribute in decorators?",
+        "type": "mcq",
+        "o": [
+            "Accesses the original undecorated function",
+            "Stores decorator configuration parameters",
+            "Tracks number of times function was called",
+            "Contains documentation for decorated function"
+        ]
+    },
+    {
+        "q": "Which pattern correctly uses abstract base classes for function interfaces?",
+        "type": "mcq",
+        "c": "from abc import ABC, abstractmethod\n\nclass DataProcessor(ABC):\n    @abstractmethod\n    def process(self, data):\n        pass\n\nclass CSVProcessor(DataProcessor):\n    def process(self, data):\n        return f\"Processing CSV: {data}\"\n\n# vs.\n\nclass JSONProcessor:\n    def process(self, data):\n        return f\"Processing JSON: {data}\"",
+        "o": [
+            "CSVProcessor enforces interface contract",
+            "Both implement the same interface",
+            "JSONProcessor is more flexible",
+            "ABC adds unnecessary complexity"
+        ]
+    },
+    {
+        "q": "What distinguishes a coroutine function marked with async def from a regular function?",
+        "type": "mcq",
+        "c": "async def async_func():\n    await asyncio.sleep(1)\n    return \"done\"\n\ndef regular_func():\n    time.sleep(1)\n    return \"done\"",
+        "o": [
+            "async_func returns a coroutine object, not the value",
+            "Both block execution for 1 second",
+            "regular_func can be used with await",
+            "async_func executes immediately when called"
+        ]
+    },
+    {
+        "q": "The ______ module provides utilities for functional programming, while ______ enables creating functions with pre-filled arguments. Method ______ order determines function lookup in inheritance hierarchies.",
+        "type": "fill_blank",
+        "answers": ["functools", "partial", "resolution"],
+        "other_options": ["itertools", "lambda", "execution", "delegation"]
+    },
+    {
+        "q": "Which code correctly uses function type hints with Protocol for structural subtyping?",
+        "type": "mcq",
+        "c": "# Option 1\nfrom typing import Protocol\n\nclass Renderable(Protocol):\n    def render(self) -> str: ...\n\ndef display(obj: Renderable) -> None:\n    print(obj.render())\n\n# Option 2\nfrom typing import Protocol\n\nclass Renderable(Protocol):\n    def render(self):\n        return \"\"\n\ndef display(obj: Renderable) -> None:\n    print(obj.render())",
+        "o": [
+            "Option 1 - Protocol uses ellipsis for abstract methods",
+            "Option 2 - Protocol requires method implementations",
+            "Both are valid Protocol usage",
+            "Neither - Protocol cannot be used for typing"
+        ]
+    },
+    {
+        "q": "What is the effect of using @functools.singledispatchmethod in a class?",
+        "type": "mcq",
+        "c": "from functools import singledispatchmethod\n\nclass Formatter:\n    @singledispatchmethod\n    def format(self, arg):\n        return f\"Unknown: {arg}\"\n    \n    @format.register\n    def _(self, arg: int):\n        return f\"Integer: {arg}\"\n    \n    @format.register\n    def _(self, arg: str):\n        return f\"String: {arg}\"",
+        "o": [
+            "Enables method overloading based on argument types",
+            "Creates multiple method implementations",
+            "Automatically converts arguments",
+            "Raises TypeError for unsupported types"
+        ]
+    },
+    {
+        "q": "How does __annotations__ differ between Python 3.9 and 3.10+ for generic types?",
+        "type": "mcq",
+        "c": "# Python 3.9\nfrom typing import List, Dict\n\ndef process(items: List[str]) -> Dict[str, int]: ...\n\n# Python 3.10+\ndef process(items: list[str]) -> dict[str, int]: ...",
+        "o": [
+            "3.10+ uses built-in generic syntax, 3.9 requires typing module",
+            "3.9 syntax is faster at runtime",
+            "3.10+ annotations are not stored in __annotations__",
+            "Both produce identical __annotations__"
+        ]
+    },
+    {
+        "q": "Which code demonstrates proper use of ParamSpec for decorator type safety?",
+        "type": "mcq",
+        "c": "# Option 1\nfrom typing import ParamSpec, TypeVar\n\nP = ParamSpec('P')\nR = TypeVar('R')\n\ndef decorator(func: Callable[P, R]) -> Callable[P, R]:\n    def wrapper(*args: P.args, **kwargs: P.kwargs) -> R:\n        return func(*args, **kwargs)\n    return wrapper\n\n# Option 2\ndef decorator(func):\n    def wrapper(*args, **kwargs):\n        return func(*args, **kwargs)\n    return wrapper",
+        "o": [
+            "Option 1 - preserves function signature in type hints",
+            "Option 2 - simpler and equally type safe",
+            "Both lose type information equally",
+            "ParamSpec is only for callback functions"
+        ]
+    },
+    {
+        "q": "What is the purpose of __init_subclass__ in function-based class customization?",
+        "type": "mcq",
+        "c": "class Validated:\n    def __init_subclass__(cls, **kwargs):\n        super().__init_subclass__(**kwargs)\n        for name, value in cls.__annotations__.items():\n            if hasattr(cls, name):\n                setattr(cls, name, validated_property(value))\n\nclass Person(Validated):\n    name: str\n    age: int",
+        "o": [
+            "Automatically processes class annotations at definition time",
+            "Runs when class is instantiated",
+            "Validates method parameters at runtime",
+            "Creates properties for all class attributes"
+        ]
+    },
+    {
+        "q": "Match the advanced function feature with its Python version introduction:",
+        "type": "match",
+        "left": ["Positional-only parameters", "Walrus operator", "Structural pattern matching", "ParamSpec"],
+        "right": ["Python 3.8", "Python 3.8", "Python 3.10", "Python 3.10"]
+    },
+    {
+        "q": "What distinguishes a weak reference to a function from a regular reference?",
+        "type": "mcq",
+        "c": "import weakref\n\ndef large_function():\n    return \"memory intensive operation\"\n\n# Regular reference\nfunc_ref = large_function\n\n# Weak reference  \nweak_func_ref = weakref.ref(large_function)",
+        "o": [
+            "Weak reference doesn't prevent garbage collection",
+            "Weak reference is faster to call",
+            "Regular reference uses less memory",
+            "Both references behave identically"
+        ]
+    },
+    {
+        "q": "Which code correctly uses @functools.cached_property?",
+        "type": "mcq",
+        "c": "# Option 1\nfrom functools import cached_property\n\nclass DataSet:\n    def __init__(self, data):\n        self._data = data\n    \n    @cached_property\n    def stats(self):\n        return expensive_statistics(self._data)\n\n# Option 2\nclass DataSet:\n    def __init__(self, data):\n        self._data = data\n        self._stats = None\n    \n    @property\n    def stats(self):\n        if self._stats is None:\n            self._stats = expensive_statistics(self._data)\n        return self._stats",
+        "o": [
+            "Option 1 - built-in caching without boilerplate",
+            "Option 2 - manual caching is more reliable",
+            "Both implement identical caching behavior",
+            "cached_property cannot be used with properties"
+        ]
+    },
+    {
+        "q": "How does sys.setrecursionlimit() affect recursive function performance?",
+        "type": "mcq",
+        "o": [
+            "Doesn't improve performance, only prevents stack overflow",
+            "Makes recursive calls faster by allocating more stack",
+            "Enables tail call optimization in Python",
+            "Automatically converts recursion to iteration"
+        ]
+    },
+    {
+        "q": "What is the effect of using @typing.final on a method?",
+        "type": "mcq",
+        "c": "from typing import final\n\nclass Base:\n    @final\n    def critical_operation(self):\n        return \"cannot override\"\n\nclass Derived(Base):\n    def critical_operation(self):\n        return \"attempting override\"",
+        "o": [
+            "Type checker error - cannot override final method",
+            "Runtime error when method is called",
+            "Method is automatically made private",
+            "No effect - final is only documentation"
+        ]
+    },
+    {
+        "q": "Rearrange to create a context manager using contextlib asynccontextmanager:",
+        "type": "rearrange",
+        "words": ["from", "contextlib", "import", "asynccontextmanager", "@asynccontextmanager", "async", "def", "async_connection", "(url):", "connection", "=", "await", "connect(url)", "try:", "yield", "connection", "finally:", "await", "connection.close()"]
+    },
+    {
+        "q": "Python's descriptor protocol has higher precedence than instance dictionaries for attribute lookup.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Which code demonstrates correct usage of @functools.total_ordering?",
+        "type": "mcq",
+        "c": "# Option 1\nfrom functools import total_ordering\n\n@total_ordering\nclass Version:\n    def __init__(self, major, minor):\n        self.major = major\n        self.minor = minor\n    \n    def __eq__(self, other):\n        return (self.major, self.minor) == (other.major, other.minor)\n    \n    def __lt__(self, other):\n        return (self.major, self.minor) < (other.major, other.minor)\n\n# Option 2\nclass Version:\n    def __init__(self, major, minor):\n        self.major = major\n        self.minor = minor\n    \n    def __eq__(self, other):\n        return (self.major, self.minor) == (other.major, other.minor)\n    \n    def __ne__(self, other):\n        return not self.__eq__(other)",
+        "o": [
+            "Option 1 - generates missing comparison methods automatically",
+            "Option 2 - explicit implementation is more reliable",
+            "Both require all comparison methods",
+            "total_ordering only works with dataclasses"
+        ]
+    },
+    {
+        "q": "What is the purpose of __set_name__ in descriptor classes?",
+        "type": "mcq",
+        "o": [
+            "Called when descriptor is assigned to a class attribute",
+            "Sets the descriptor's internal name",
+            "Validates the attribute name format",
+            "Automatically creates property methods"
+        ]
+    },
+    {
+        "q": "How does functools.partial differ from lambda for argument binding?",
+        "type": "mcq",
+        "c": "def multiply(x, y, z):\n    return x * y * z\n\n# Using partial\nfrom functools import partial\npartial_func = partial(multiply, 2, 3)\n\n# Using lambda\nlambda_func = lambda z: multiply(2, 3, z)",
+        "o": [
+            "partial preserves original function attributes",
+            "lambda is faster for simple cases",
+            "partial cannot handle keyword arguments",
+            "Both create identical function objects"
+        ]
+    },
+    {
+        "q": "The ______ protocol enables context managers, while ______ creates asynchronous context managers. The ______ module provides utilities for functional programming patterns.",
+        "type": "fill_blank",
+        "answers": ["__enter__/__exit__", "__aenter__/__aexit__", "functools"],
+        "other_options": ["__init__/__del__", "__start__/__stop__", "itertools", "collections"]
+    },
+    {
+        "q": "What is the effect of using @staticmethod versus @classmethod on method binding?",
+        "type": "mcq",
+        "c": "class Processor:\n    @staticmethod\n    def static_process(data):\n        return data.upper()\n    \n    @classmethod\n    def class_process(cls, data):\n        return f\"{cls.__name__}: {data}\"",
+        "o": [
+            "staticmethod gets no implicit arguments, classmethod gets class",
+            "Both receive the instance as first argument",
+            "classmethod is faster for inheritance",
+            "staticmethod cannot access class attributes"
+        ]
+    },
+    {
+        "q": "Which pattern correctly uses __slots__ for memory optimization?",
+        "type": "mcq",
+        "c": "# Option 1\nclass Point:\n    __slots__ = ['x', 'y']\n    def __init__(self, x, y):\n        self.x = x\n        self.y = y\n\n# Option 2\nclass Point:\n    __slots__ = ('x', 'y')\n    def __init__(self, x, y):\n        self.x = x\n        self.y = y\n        self.z = 0  # Dynamic assignment",
+        "o": [
+            "Option 1 - prevents dynamic attribute creation",
+            "Option 2 - allows limited dynamic attributes",
+            "Both work identically with slots",
+            "Option 2 raises AttributeError for z assignment"
+        ]
+    },
+    {
+        "q": "What distinguishes a metaclass __prepare__ method from regular class creation?",
+        "type": "mcq",
+        "o": [
+            "__prepare__ returns the namespace dict for class body",
+            "__prepare__ validates class attributes",
+            "__prepare__ runs after class is created",
+            "__prepare__ replaces __new__ in metaclasses"
+        ]
+    },
+    {
+        "q": "The ______ operator allows assignment in expressions, while ______ enables structural pattern matching. ______ parameters are positional-only in function definitions.",
+        "type": "fill_blank",
+        "answers": ["walrus", "match", "Before /"],
+        "other_options": ["assignment", "switch", "After *", "keyword"]
+    },
+    {
+        "q": "What will this function return when called?",
+        "type": "mcq",
+        "c": "def greet(name=\"friend\"):\n    return f\"Hello, {name}!\"\n\nprint(greet())",
+        "o": [
+            "Hello, friend!",
+            "Hello, name!",
+            "Error - missing argument",
+            "Hello, !"
+        ]
+    },
+    {
+        "q": "Which keyword is used to create a function that calls itself?",
+        "type": "mcq",
+        "o": [
+            "def",
+            "function",
+            "lambda",
+            "return"
+        ]
+    },
+    {
+        "q": "What is a lambda function also known as?",
+        "type": "mcq",
+        "o": [
+            "Anonymous function",
+            "Hidden function",
+            "Quick function",
+            "Simple function"
+        ]
+    },
+    {
+        "q": "Where can a local variable be accessed?",
+        "type": "mcq",
+        "o": [
+            "Only inside its function",
+            "Anywhere in the program",
+            "Only in other functions",
+            "Only before the function call"
+        ]
+    },
+    {
+        "q": "What does this recursive function calculate?",
+        "type": "mcq",
+        "c": "def count_down(n):\n    if n <= 0:\n        print(\"Done!\")\n    else:\n        print(n)\n        count_down(n-1)\n\ncount_down(3)",
+        "o": [
+            "Prints 3, 2, 1, Done!",
+            "Prints Done! 3 times",
+            "Prints 1, 2, 3, Done!",
+            "Error - infinite recursion"
+        ]
+    },
+    {
+        "q": "Which symbol is used for lambda functions?",
+        "type": "mcq",
+        "o": [
+            "lambda",
+            "def",
+            "function",
+            "anon"
+        ]
+    },
+    {
+        "q": "What is the main purpose of using functions?",
+        "type": "mcq",
+        "o": [
+            "Reuse code and organize programs",
+            "Make programs run faster",
+            "Use less memory",
+            "Create variables"
+        ]
+    },
+    {
+        "q": "Match the function part with its purpose:",
+        "type": "match",
+        "left": ["def", "return", "parameter", "argument"],
+        "right": ["Defines a function", "Sends value back", "Variable in function definition", "Value passed to function"]
+    },
+    {
+        "q": "What does the 'global' keyword do?",
+        "type": "mcq",
+        "o": [
+            "Allows modifying global variables inside functions",
+            "Creates a new global variable",
+            "Makes local variables global",
+            "Imports global functions"
+        ]
+    },
+    {
+        "q": "Which of these is a valid function definition?",
+        "type": "mcq",
+        "o": [
+            "def my_function():",
+            "function my_function():",
+            "def: my_function()",
+            "function: my_function()"
+        ]
+    },
+    {
+        "q": "What will this code output?",
+        "type": "mcq",
+        "c": "def add_numbers(a, b):\n    result = a + b\n    return result\n\nprint(add_numbers(2, 3))",
+        "o": [
+            "5",
+            "result",
+            "a + b",
+            "None"
+        ]
+    },
+    {
+        "q": "A function that calls itself is called ______. A function without a name is called ______.",
+        "type": "fill_blank",
+        "answers": ["recursive", "anonymous"],
+        "other_options": ["looping", "repeating", "hidden", "simple"]
+    },
+    {
+        "q": "Rearrange the words to create a simple function:",
+        "type": "rearrange",
+        "words": ["def", "say_hello", "():", "print", "(\"Hello!\")"]
+    },
+    {
+        "q": "All functions in Python must return a value.",
+        "type": "true_false",
+        "correct": "False"
+    },
+    {
+        "q": "What is the default return value of a function?",
+        "type": "mcq",
+        "o": [
+            "None",
+            "0",
+            "False",
+            "Empty string"
+        ]
+    },
+    {
+        "q": "Which of these creates a lambda function?",
+        "type": "mcq",
+        "o": [
+            "lambda x: x * 2",
+            "def lambda x: x * 2",
+            "function lambda x: x * 2",
+            "lambda(x): return x * 2"
+        ]
+    },
+    {
+        "q": "Where is a global variable accessible?",
+        "type": "mcq",
+        "o": [
+            "Throughout the entire program",
+            "Only in one function",
+            "Only in the main program",
+            "Only after it's declared"
+        ]
+    },
+    {
+        "q": "What does this function do?",
+        "type": "mcq",
+        "c": "def double(x):\n    return x * 2",
+        "o": [
+            "Multiplies input by 2",
+            "Adds 2 to input",
+            "Squares the input",
+            "Divides input by 2"
+        ]
+    },
+    {
+        "q": "To use a function, you need to ______ it first.",
+        "type": "fill_blank",
+        "answers": ["define"],
+        "other_options": ["call", "create", "declare", "name"]
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "x = 5\n\ndef show_x():\n    print(x)\n\nshow_x()",
+        "o": [
+            "5",
+            "x",
+            "Error",
+            "None"
+        ]
+    },
+    {
+        "q": "Which of these is a function call?",
+        "type": "mcq",
+        "o": [
+            "my_function()",
+            "def my_function()",
+            "function my_function",
+            "call my_function"
+        ]
+    },
+    {
+        "q": "What is a parameter in a function?",
+        "type": "mcq",
+        "o": [
+            "A variable that receives data",
+            "The value you pass to a function",
+            "The function's return value",
+            "The function's name"
+        ]
+    },
+    {
+        "q": "Rearrange to create a function with parameters:",
+        "type": "rearrange",
+        "words": ["def", "multiply", "(a,", "b):", "return", "a", "*", "b"]
+    },
+    {
+        "q": "Lambda functions can have multiple lines of code.",
+        "type": "true_false",
+        "correct": "False"
+    },
+    {
+        "q": "What happens if you don't use 'global' keyword?",
+        "type": "mcq",
+        "c": "count = 0\n\ndef increment():\n    count = count + 1\n\nincrement()",
+        "o": [
+            "Error - local variable referenced before assignment",
+            "count becomes 1",
+            "Creates a new local variable",
+            "Nothing happens"
+        ]
+    },
+    {
+        "q": "Which of these is a recursive function feature?",
+        "type": "mcq",
+        "o": [
+            "Calls itself",
+            "Runs forever",
+            "Uses lambda",
+            "Has no parameters"
+        ]
+    },
+    {
+        "q": "Functions help make code more ______ and ______.",
+        "type": "fill_blank",
+        "answers": ["organized", "reusable"],
+        "other_options": ["complex", "longer", "faster", "smaller"]
+    },
+    {
+        "q": "What is the purpose of the 'return' statement?",
+        "type": "mcq",
+        "o": [
+            "Send a value back from function",
+            "Stop the function",
+            "Print a value",
+            "Define the function"
+        ]
+    },
+    {
+        "q": "Which of these is correct about local variables?",
+        "type": "mcq",
+        "o": [
+            "Created inside a function",
+            "Available everywhere",
+            "Same as global variables",
+            "Cannot be used in functions"
+        ]
+    },
+    {
+        "q": "Which function correctly uses type hints?",
+        "type": "mcq",
+        "c": "# Option 1\ndef greet(name: str) -> str:\n    return f\"Hello, {name}!\"\n\n# Option 2\ndef greet(name: string) -> string:\n    return f\"Hello, {name}!\"\n\n# Option 3\ndef greet(name: str) -> print:\n    print(f\"Hello, {name}!\")\n\n# Option 4\ndef greet(name) -> str:\n    return \"Hello, \" + name",
+        "o": [
+            "Option 1 - correct type hints for string parameter and return",
+            "Option 2 - should use str not string",
+            "Option 3 - return type should be None for print",
+            "Option 4 - missing parameter type hint"
+        ]
+    },
+    {
+        "q": "What is a docstring used for?",
+        "type": "mcq",
+        "o": [
+            "Documenting what a function does",
+            "Making functions run faster",
+            "Hiding function code",
+            "Creating function names"
+        ]
+    },
+    {
+        "q": "Which code shows a proper docstring?",
+        "type": "mcq",
+        "c": "# Option 1\ndef calculate_area(length, width):\n    \"\"\"Calculate the area of a rectangle.\n    \n    Args:\n        length: The length of the rectangle\n        width: The width of the rectangle\n        \n    Returns:\n        The area of the rectangle\n    \"\"\"\n    return length * width\n\n# Option 2\ndef calculate_area(length, width):\n    # This function calculates area\n    return length * width\n\n# Option 3\ndef calculate_area(length, width):\n    '''Calculate area'''\n    return length * width\n\n# Option 4\ndef calculate_area(length, width):\n    \"Calculate area of rectangle\"\n    return length * width",
+        "o": [
+            "Option 1 - multi-line docstring with proper formatting",
+            "Option 2 - uses comment instead of docstring",
+            "Option 3 - single line docstring works but less detailed",
+            "Option 4 - single quotes also work for docstrings"
+        ]
+    },
+    {
+        "q": "What does the *args parameter allow?",
+        "type": "mcq",
+        "o": [
+            "Passing any number of positional arguments",
+            "Passing keyword arguments only",
+            "Making arguments optional",
+            "Creating global variables"
+        ]
+    },
+    {
+        "q": "Which function uses *args correctly?",
+        "type": "mcq",
+        "c": "# Option 1\ndef sum_all(*args):\n    total = 0\n    for number in args:\n        total += number\n    return total\n\n# Option 2\ndef sum_all(args):\n    return sum(args)\n\n# Option 3\ndef sum_all(*numbers):\n    return numbers.sum()\n\n# Option 4\ndef sum_all(args*):\n    return sum(args)",
+        "o": [
+            "Option 1 - correctly uses *args and loops through values",
+            "Option 2 - missing asterisk for args",
+            "Option 3 - tuples don't have .sum() method",
+            "Option 4 - invalid syntax for *args"
+        ]
+    },
+    {
+        "q": "What is the purpose of **kwargs?",
+        "type": "mcq",
+        "o": [
+            "Accept any number of keyword arguments",
+            "Make all arguments required",
+            "Create keyword-only functions",
+            "Replace default parameters"
+        ]
+    },
+    {
+        "q": "Match the function concept with its description:",
+        "type": "match",
+        "left": ["Docstring", "Type hint", "*args", "**kwargs"],
+        "right": ["Function documentation string", "Specifies expected data types", "Variable positional arguments", "Variable keyword arguments"]
+    },
+    {
+        "q": "How do you access a function's docstring?",
+        "type": "mcq",
+        "o": [
+            "Using .__doc__ attribute",
+            "With help() function",
+            "Both .__doc__ and help() work",
+            "Through the documentation file"
+        ]
+    },
+    {
+        "q": "What will this code output?",
+        "type": "mcq",
+        "c": "def introduce(**person_info):\n    for key, value in person_info.items():\n        print(f\"{key}: {value}\")\n\nintroduce(name=\"Alice\", age=25, city=\"Boston\")",
+        "o": [
+            "name: Alice\\nage: 25\\ncity: Boston",
+            "person_info: {'name': 'Alice', 'age': 25, 'city': 'Boston'}",
+            "Error - too many arguments",
+            "Alice 25 Boston"
+        ]
+    },
+    {
+        "q": "A ______ provides function documentation, while ______ specify expected data types. Use ______ for multiple positional arguments and ______ for keyword arguments.",
+        "type": "fill_blank",
+        "answers": ["docstring", "type hints", "*args", "**kwargs"],
+        "other_options": ["comment", "annotations", "parameters", "variables"]
+    },
+    {
+        "q": "Rearrange to create a function with docstring and type hints:",
+        "type": "rearrange",
+        "words": ["def", "divide", "(a:", "float,", "b:", "float)", "->", "float:", "\"\"\"", "Divide", "two", "numbers.", "\"\"\"", "return", "a", "/", "b"]
+    },
+    {
+        "q": "Type hints affect how Python runs the code at runtime.",
+        "type": "true_false",
+        "correct": "False"
+    },
+    {
+        "q": "Which is the correct way to write a type hint for a function that returns a list of strings?",
+        "type": "mcq",
+        "o": [
+            "-> list[str]",
+            "-> List[string]",
+            "-> list<String>",
+            "-> str[]"
+        ]
+    },
+    {
+        "q": "What does help() function display?",
+        "type": "mcq",
+        "c": "def multiply(a: int, b: int) -> int:\n    \"\"\"Multiply two integers together.\n    \n    Args:\n        a: First number\n        b: Second number\n        \n    Returns:\n        Product of a and b\n    \"\"\"\n    return a * b\n\nhelp(multiply)",
+        "o": [
+            "The function's docstring and signature",
+            "Only the function name",
+            "The function's source code",
+            "Just the return type"
+        ]
+    },
+    {
+        "q": "What is the main benefit of using type hints?",
+        "type": "mcq",
+        "o": [
+            "Better code clarity and IDE support",
+            "Makes code run faster",
+            "Reduces memory usage",
+            "Automatically fixes errors"
+        ]
+    },
+    {
+        "q": "Which code correctly combines *args and **kwargs?",
+        "type": "mcq",
+        "c": "# Option 1\ndef flexible_func(a, b, *args, **kwargs):\n    print(f\"Required: {a}, {b}\")\n    print(f\"Extra args: {args}\")\n    print(f\"Extra kwargs: {kwargs}\")\n\n# Option 2\ndef flexible_func(*args, a, b, **kwargs):\n    print(f\"Required: {a}, {b}\")\n    print(f\"Extra args: {args}\")\n    print(f\"Extra kwargs: {kwargs}\")\n\n# Option 3\ndef flexible_func(a, b, **kwargs, *args):\n    print(f\"Required: {a}, {b}\")\n    print(f\"Extra args: {args}\")\n    print(f\"Extra kwargs: {kwargs}\")",
+        "o": [
+            "Option 1 - correct order: positional, *args, **kwargs",
+            "Option 2 - *args must come after required positional",
+            "Option 3 - **kwargs must come last",
+            "All are valid"
+        ]
+    },
+    {
+        "q": "Type hints use ______ to specify function return types. Docstrings are accessed using the ______ attribute. The ______ parameter collects extra positional arguments.",
+        "type": "fill_blank",
+        "answers": ["->", "__doc__", "*args"],
+        "other_options": ["return", "__help__", "**kwargs", "params"]
+    },
+    {
+        "q": "What is PEP 8?",
+        "type": "mcq",
+        "o": [
+            "Python style guide",
+            "A Python library",
+            "A type of function",
+            "Error handling method"
+        ]
+    },
+    {
+        "q": "Which docstring format is most commonly used?",
+        "type": "mcq",
+        "o": [
+            "Google style",
+            "XML format",
+            "JSON format",
+            "Markdown"
+        ]
+    },
+    {
+        "q": "Rearrange to show proper function documentation:",
+        "type": "rearrange",
+        "words": ["def", "connect", "(host:", "str,", "port:", "int", "=", "80)", "->", "bool:", "\"\"\"", "Connect", "to", "a", "server.", "\"\"\"", "return", "True"]
+    },
+    {
+        "q": "**kwargs collects arguments into a list data structure.",
+        "type": "true_false",
+        "correct": "False"
+    },
+    {
+        "q": "What is the advantage of using type hints with modern IDEs?",
+        "type": "mcq",
+        "o": [
+            "Better autocomplete and error detection",
+            "Faster code execution",
+            "Smaller file size",
+            "Automatic code generation"
+        ]
+    },
+    {
+        "q": "How can you make a function's parameter keyword-only?",
+        "type": "mcq",
+        "o": [
+            "Place it after * in parameter list",
+            "Use the keyword keyword",
+            "Put it in quotes",
+            "Make it uppercase"
+        ]
+    },
+    {
+        "q": "What does this function's type hint indicate?",
+        "type": "mcq",
+        "c": "def process(items: list[str]) -> dict[str, int]:\n    return {item: len(item) for item in items}",
+        "o": [
+            "Takes list of strings, returns dictionary mapping strings to integers",
+            "Takes any list, returns any dictionary",
+            "Takes strings, returns integers",
+            "Takes dictionary, returns list"
+        ]
+    },
+    {
+        "q": "Which function correctly uses decorator syntax?",
+        "type": "mcq",
+        "c": "# Option 1\n@timer\ndef long_operation():\n    time.sleep(1)\n\n# Option 2\ndef long_operation():\n    @timer\n    time.sleep(1)\n\n# Option 3\ndef long_operation():\n    time.sleep(1)\n@timer\n\n# Option 4\ndef @timer long_operation():\n    time.sleep(1)",
+        "o": [
+            "Option 1 - @decorator above function definition",
+            "Option 2 - decorator inside function body",
+            "Option 3 - decorator after function definition",
+            "Option 4 - invalid syntax"
+        ]
+    },
+    {
+        "q": "What is a generator function?",
+        "type": "mcq",
+        "o": [
+            "Function that yields values one at a time",
+            "Function that creates other functions",
+            "Function that generates random numbers",
+            "Function that makes code faster"
+        ]
+    },
+    {
+        "q": "Which keyword turns a function into a generator?",
+        "type": "mcq",
+        "o": [
+            "yield",
+            "generate",
+            "return",
+            "next"
+        ]
+    },
+    {
+        "q": "What is the main advantage of using generators?",
+        "type": "mcq",
+        "o": [
+            "Memory efficiency for large datasets",
+            "Faster execution speed",
+            "Easier to write and read",
+            "Automatic error handling"
+        ]
+    },
+    {
+        "q": "Which code shows a proper generator function?",
+        "type": "mcq",
+        "c": "# Option 1\ndef count_up_to(n):\n    i = 1\n    while i <= n:\n        yield i\n        i += 1\n\n# Option 2\ndef count_up_to(n):\n    i = 1\n    while i <= n:\n        return i\n        i += 1\n\n# Option 3\ndef count_up_to(n):\n    i = 1\n    while i <= n:\n        print(i)\n        i += 1\n\n# Option 4\ndef count_up_to(n):\n    results = []\n    i = 1\n    while i <= n:\n        results.append(i)\n        i += 1\n    return results",
+        "o": [
+            "Option 1 - uses yield to generate values",
+            "Option 2 - return stops the function immediately",
+            "Option 3 - prints but doesn't return values",
+            "Option 4 - builds list in memory"
+        ]
+    },
+    {
+        "q": "How do you use a generator function?",
+        "type": "mcq",
+        "o": [
+            "Call it and use next() or loop through it",
+            "Just call it like a normal function",
+            "Use the generate() method",
+            "Assign it to a variable"
+        ]
+    },
+    {
+        "q": "What is a decorator in Python?",
+        "type": "mcq",
+        "o": [
+            "Function that modifies another function",
+            "Special comment for functions",
+            "Way to make functions prettier",
+            "Type of generator function"
+        ]
+    },
+    {
+        "q": "Match the function type with its characteristic:",
+        "type": "match",
+        "left": ["Generator", "Decorator", "Lambda", "Recursive"],
+        "right": ["Uses yield keyword", "Wraps another function", "Anonymous function", "Calls itself"]
+    },
+    {
+        "q": "What happens when a generator runs out of values?",
+        "type": "mcq",
+        "o": [
+            "Raises StopIteration exception",
+            "Returns None",
+            "Starts over from beginning",
+            "Raises GeneratorExit"
+        ]
+    },
+    {
+        "q": "Which code creates a simple decorator?",
+        "type": "mcq",
+        "c": "# Option 1\ndef my_decorator(func):\n    def wrapper():\n        print(\"Before function\")\n        func()\n        print(\"After function\")\n    return wrapper\n\n# Option 2\ndef my_decorator(func):\n    print(\"Before function\")\n    func()\n    print(\"After function\")\n\n# Option 3\ndef my_decorator():\n    def wrapper(func):\n        func()\n    return wrapper\n\n# Option 4\n@my_decorator\ndef my_decorator(func):\n    return func",
+        "o": [
+            "Option 1 - returns wrapper function that calls original",
+            "Option 2 - calls function immediately, doesn't return wrapper",
+            "Option 3 - decorator takes no parameters",
+            "Option 4 - circular decorator definition"
+        ]
+    },
+    {
+        "q": "Generator functions use ______ to produce values gradually. Decorators are functions that ______ other functions. Use ______ to get the next value from a generator.",
+        "type": "fill_blank",
+        "answers": ["yield", "modify", "next()"],
+        "other_options": ["return", "create", "call()", "generate()"]
+    },
+    {
+        "q": "Rearrange to create a generator that produces squares:",
+        "type": "rearrange",
+        "words": ["def", "squares", "(n):", "for", "i", "in", "range(n):", "yield", "i", "*", "i"]
+    },
+    {
+        "q": "Decorators can only be used with functions, not with methods.",
+        "type": "true_false",
+        "correct": "False"
+    },
+    {
+        "q": "What is the difference between yield and return?",
+        "type": "mcq",
+        "o": [
+            "yield pauses function, return ends it",
+            "yield is faster than return",
+            "return can be used in generators",
+            "yield returns multiple values at once"
+        ]
+    },
+    {
+        "q": "How do you create a generator expression?",
+        "type": "mcq",
+        "o": [
+            "Use parentheses instead of brackets",
+            "Use the generator keyword",
+            "Put yield in a list comprehension",
+            "Use angle brackets"
+        ]
+    },
+    {
+        "q": "What will this code output?",
+        "type": "mcq",
+        "c": "def number_generator():\n    yield 1\n    yield 2\n    yield 3\n\ngen = number_generator()\nprint(next(gen))\nprint(next(gen))",
+        "o": [
+            "1 then 2",
+            "1 then 1",
+            "3 then 3",
+            "Error - too many next() calls"
+        ]
+    },
+    {
+        "q": "Which is a generator expression equivalent to this function?",
+        "type": "mcq",
+        "c": "def squares(n):\n    for i in range(n):\n        yield i * i",
+        "o": [
+            "(i*i for i in range(n))",
+            "[i*i for i in range(n)]",
+            "{i*i for i in range(n)}",
+            "lambda i: i*i for i in range(n)"
+        ]
+    },
+    {
+        "q": "Decorators are applied ______ the function definition. Generators ______ values on demand. The ______ function advances a generator.",
+        "type": "fill_blank",
+        "answers": ["above", "yield", "next"],
+        "other_options": ["below", "return", "call", "advance"]
+    },
+    {
+        "q": "What is a common use case for generators?",
+        "type": "mcq",
+        "o": [
+            "Processing large files line by line",
+            "Simple mathematical calculations",
+            "Storing configuration data",
+            "Defining constants"
+        ]
+    },
+    {
+        "q": "Rearrange to create a decorator that counts function calls:",
+        "type": "rearrange",
+        "words": ["def", "count_calls", "(func):", "def", "wrapper", "(*args,", "**kwargs):", "wrapper.calls", "+=", "1", "return", "func", "(*args,", "**kwargs)", "wrapper.calls", "=", "0", "return", "wrapper"]
+    },
+    {
+        "q": "Generator expressions use more memory than list comprehensions.",
+        "type": "true_false",
+        "correct": "False"
+    },
+    {
+        "q": "How can you pass arguments to a decorator?",
+        "type": "mcq",
+        "o": [
+            "Create a decorator factory function",
+            "Put them after the @ symbol",
+            "Decorators cannot take arguments",
+            "Use special argument syntax"
+        ]
+    },
+    {
+        "q": "What happens if you try to use return with a value in a generator?",
+        "type": "mcq",
+        "o": [
+            "Raises StopIteration with the value",
+            "Returns the value normally",
+            "Syntax error",
+            "Value is ignored"
+        ]
+    },
+    {
+        "q": "Which statement about decorators is true?",
+        "type": "mcq",
+        "o": [
+            "They can modify function behavior without changing its code",
+            "They make functions run faster",
+            "They are only for debugging purposes",
+            "They cannot be stacked together"
+        ]
+    },
+    {
+        "q": "Which function correctly uses the 'nonlocal' keyword?",
+        "type": "mcq",
+        "c": "# Option 1\ndef outer():\n    count = 0\n    def inner():\n        nonlocal count\n        count += 1\n        return count\n    return inner\n\n# Option 2\ndef outer():\n    count = 0\n    def inner():\n        global count\n        count += 1\n        return count\n    return inner\n\n# Option 3\ndef outer():\n    count = 0\n    def inner():\n        count = count + 1\n        return count\n    return inner\n\n# Option 4\ndef outer():\n    nonlocal count = 0\n    def inner():\n        count += 1\n        return count\n    return inner",
+        "o": [
+            "Option 1 - correctly modifies variable from enclosing scope",
+            "Option 2 - tries to use global instead of nonlocal",
+            "Option 3 - creates new local variable 'count'",
+            "Option 4 - invalid nonlocal syntax"
+        ]
+    },
+    {
+        "q": "What is function currying?",
+        "type": "mcq",
+        "o": [
+            "Transforming multi-argument function into single-argument functions",
+            "Making functions run faster",
+            "Adding type hints to functions",
+            "Converting functions to methods"
+        ]
+    },
+    {
+        "q": "Which code demonstrates function currying?",
+        "type": "mcq",
+        "c": "# Option 1\ndef multiply(a):\n    def by(b):\n        return a * b\n    return by\n\ndouble = multiply(2)\nresult = double(5)\n\n# Option 2\ndef multiply(a, b):\n    return a * b\n\nresult = multiply(2, 5)\n\n# Option 3\ndef multiply():\n    a = 2\n    b = 5\n    return a * b\n\nresult = multiply()\n\n# Option 4\nmultiply = lambda a, b: a * b\nresult = multiply(2, 5)",
+        "o": [
+            "Option 1 - returns inner function with preset argument",
+            "Option 2 - standard two-argument function",
+            "Option 3 - no-argument function with hardcoded values",
+            "Option 4 - lambda function with two arguments"
+        ]
+    },
+    {
+        "q": "What is a higher-order function?",
+        "type": "mcq",
+        "o": [
+            "Function that takes other functions as arguments or returns them",
+            "Function with more than 10 parameters",
+            "Function defined in an imported module",
+            "Function that uses advanced mathematics"
+        ]
+    },
+    {
+        "q": "Which built-in functions are higher-order functions?",
+        "type": "mcq",
+        "o": [
+            "map, filter, sorted",
+            "print, len, type",
+            "int, str, float",
+            "range, list, dict"
+        ]
+    },
+    {
+        "q": "What is the difference between 'global' and 'nonlocal'?",
+        "type": "mcq",
+        "o": [
+            "global modifies module-level variables, nonlocal modifies enclosing scope variables",
+            "nonlocal is for constants, global is for variables",
+            "global works in all functions, nonlocal only in classes",
+            "There is no difference - they are synonyms"
+        ]
+    },
+    {
+        "q": "Match the function concept with its definition:",
+        "type": "match",
+        "left": ["Currying", "Higher-order function", "Closure", "Nonlocal"],
+        "right": ["Breaking multi-arg function into single-arg functions", "Takes or returns functions as values", "Function with access to enclosing scope", "Modifies variable from outer (non-global) scope"]
+    },
+    {
+        "q": "What is a closure in Python?",
+        "type": "mcq",
+        "o": [
+            "Inner function that remembers variables from outer scope",
+            "Function that cannot access global variables",
+            "Function that automatically closes files",
+            "Decorator that wraps another function"
+        ]
+    },
+    {
+        "q": "Which code creates a closure?",
+        "type": "mcq",
+        "c": "# Option 1\ndef make_adder(x):\n    def adder(y):\n        return x + y\n    return adder\n\nadd_five = make_adder(5)\nresult = add_five(3)\n\n# Option 2\ndef adder(x, y):\n    return x + y\n\nresult = adder(5, 3)\n\n# Option 3\nx = 5\ndef adder(y):\n    return x + y\n\nresult = adder(3)\n\n# Option 4\nclass Adder:\n    def __init__(self, x):\n        self.x = x\n    def add(self, y):\n        return self.x + y\n\nadd_five = Adder(5)\nresult = add_five.add(3)",
+        "o": [
+            "Option 1 - inner function remembers x from outer scope",
+            "Option 2 - regular function with two parameters",
+            "Option 3 - uses global variable, not closure",
+            "Option 4 - class-based approach, not closure"
+        ]
+    },
+    {
+        "q": "______ functions take or return other functions. ______ allows inner functions to modify enclosing scope variables. ______ transforms multi-argument functions into nested single-argument functions.",
+        "type": "fill_blank",
+        "answers": ["Higher-order", "nonlocal", "Currying"],
+        "other_options": ["First-class", "global", "Decorating", "Wrapping"]
+    },
+    {
+        "q": "Rearrange to create a closure that remembers a prefix:",
+        "type": "rearrange",
+        "words": ["def", "make_prefixed", "(prefix):", "def", "add_prefix", "(text):", "return", "prefix", "+", "text", "return", "add_prefix"]
+    },
+    {
+        "q": "All inner functions automatically create closures.",
+        "type": "true_false",
+        "correct": "False"
+    },
+    {
+        "q": "What is the main benefit of using closures?",
+        "type": "mcq",
+        "o": [
+            "Encapsulation and data hiding",
+            "Faster execution speed",
+            "Automatic memory management",
+            "Built-in error handling"
+        ]
+    },
+    {
+        "q": "Which statement about 'nonlocal' is correct?",
+        "type": "mcq",
+        "o": [
+            "It only works with variables from the immediate enclosing scope",
+            "It can modify global variables from any function",
+            "It creates new variables in the global scope",
+            "It works the same way as 'global' keyword"
+        ]
+    },
+    {
+        "q": "What will this code output?",
+        "type": "mcq",
+        "c": "def counter():\n    count = 0\n    def increment():\n        nonlocal count\n        count += 1\n        return count\n    return increment\n\nc1 = counter()\nc2 = counter()\nprint(c1(), c1(), c2())",
+        "o": [
+            "1 2 1",
+            "1 1 1",
+            "1 2 3",
+            "Error - nonlocal variable conflict"
+        ]
+    },
+    {
+        "q": "Which is an example of a higher-order function?",
+        "type": "mcq",
+        "c": "# Option 1\ndef apply_twice(func, arg):\n    return func(func(arg))\n\n# Option 2\ndef add(a, b):\n    return a + b\n\n# Option 3\ndef calculate():\n    return 2 + 3\n\n# Option 4\ndef print_hello():\n    print(\"Hello\")",
+        "o": [
+            "Option 1 - takes a function as parameter",
+            "Option 2 - regular mathematical function",
+            "Option 3 - simple calculation function",
+            "Option 4 - function with no parameters"
+        ]
+    },
+    {
+        "q": "Closures ______ variables from their enclosing scope. Currying ______ functions with multiple arguments. The ______ keyword is needed to modify enclosing scope variables.",
+        "type": "fill_blank",
+        "answers": ["remember", "transforms", "nonlocal"],
+        "other_options": ["forget", "creates", "global", "local"]
+    },
+    {
+        "q": "What is a practical use case for currying?",
+        "type": "mcq",
+        "o": [
+            "Creating specialized functions from general ones",
+            "Making functions run in parallel",
+            "Converting functions to strings",
+            "Adding documentation to functions"
+        ]
+    },
+    {
+        "q": "Rearrange to create a higher-order function that applies operation:",
+        "type": "rearrange",
+        "words": ["def", "apply_operation", "(func,", "values):", "return", "[func(x)", "for", "x", "in", "values]"]
+    },
+    {
+        "q": "The 'nonlocal' keyword can modify variables from any outer scope, including global scope.",
+        "type": "true_false",
+        "correct": "False"
+    },
+    {
+        "q": "How does functools.partial relate to currying?",
+        "type": "mcq",
+        "o": [
+            "It's a convenient way to create partially applied functions",
+            "It automatically curries any function",
+            "It prevents currying from happening",
+            "It's an alternative to using closures"
+        ]
+    },
+    {
+        "q": "What distinguishes a closure from a regular nested function?",
+        "type": "mcq",
+        "o": [
+            "Closure accesses variables from outer scope after it ends",
+            "Closure must use the nonlocal keyword",
+            "Closure cannot take any parameters",
+            "Closure always returns a value"
+        ]
+    },
+    {
+        "q": "Which statement about higher-order functions is true?",
+        "type": "mcq",
+        "o": [
+            "They enable functional programming patterns in Python",
+            "They are only used for mathematical operations",
+            "They cannot be used with lambda functions",
+            "They make code run slower in all cases"
+        ]
+    },
+    {
+        "q": "Which function correctly uses variable-length keyword arguments with type hints?",
+        "type": "mcq",
+        "c": "# Option 1\ndef create_profile(name: str, **kwargs: str) -> dict:\n    profile = {\"name\": name}\n    profile.update(kwargs)\n    return profile\n\n# Option 2\ndef create_profile(name: str, **kwargs) -> dict[str]:\n    return {\"name\": name, **kwargs}\n\n# Option 3\ndef create_profile(name: str, **kwargs: any) -> dict:\n    return {\"name\": name} | kwargs\n\n# Option 4\ndef create_profile(name, **kwargs: str) -> dict:\n    return {name: name, **kwargs}",
+        "o": [
+            "Option 1 - correct type hints for parameters and return",
+            "Option 2 - invalid dict type parameter",
+            "Option 3 - 'any' is not a valid type",
+            "Option 4 - missing type hint for name parameter"
+        ]
+    },
+    {
+        "q": "What is the purpose of functools.wraps in decorators?",
+        "type": "mcq",
+        "o": [
+            "Preserves the original function's metadata",
+            "Makes decorators run faster",
+            "Automatically handles exceptions",
+            "Adds type hints to decorated functions"
+        ]
+    },
+    {
+        "q": "Which code shows proper use of functools.wraps?",
+        "type": "mcq",
+        "c": "# Option 1\nfrom functools import wraps\n\ndef logger(func):\n    @wraps(func)\n    def wrapper(*args, **kwargs):\n        print(f\"Calling {func.__name__}\")\n        return func(*args, **kwargs)\n    return wrapper\n\n# Option 2\nfrom functools import wraps\n\ndef logger(func):\n    def wrapper(*args, **kwargs):\n        wraps(func)\n        print(f\"Calling {func.__name__}\")\n        return func(*args, **kwargs)\n    return wrapper\n\n# Option 3\nfrom functools import wraps\n\ndef logger(func):\n    @wraps\n    def wrapper(*args, **kwargs):\n        print(f\"Calling {func.__name__}\")\n        return func(*args, **kwargs)\n    return wrapper\n\n# Option 4\ndef logger(func):\n    def wrapper(*args, **kwargs):\n        print(f\"Calling {func.__name__}\")\n        return func(*args, **kwargs)\n    wrapper.__name__ = func.__name__\n    return wrapper",
+        "o": [
+            "Option 1 - correct @wraps decorator usage",
+            "Option 2 - calls wraps instead of using as decorator",
+            "Option 3 - missing function argument for @wraps",
+            "Option 4 - manual metadata copying, less reliable"
+        ]
+    },
+    {
+        "q": "What are function annotations used for?",
+        "type": "mcq",
+        "o": [
+            "Providing type information and documentation",
+            "Making functions execute faster",
+            "Creating automatic tests",
+            "Hiding function implementation"
+        ]
+    },
+    {
+        "q": "Which code demonstrates forward references in type hints?",
+        "type": "mcq",
+        "c": "# Option 1\nfrom __future__ import annotations\n\ndef process_data(data: 'DataProcessor') -> 'Result':\n    return data.process()\n\n# Option 2\ndef process_data(data: DataProcessor) -> Result:\n    return data.process()\n\n# Option 3\ndef process_data(data: any) -> any:\n    return data.process()\n\n# Option 4\ndef process_data(data):\n    \"\"\"\n    data: DataProcessor\n    returns: Result\n    \"\"\"\n    return data.process()",
+        "o": [
+            "Option 1 - uses string literals for forward references",
+            "Option 2 - requires classes to be defined already",
+            "Option 3 - uses 'any' which is too vague",
+            "Option 4 - uses docstring instead of type hints"
+        ]
+    },
+    {
+        "q": "What is the difference between *args and **kwargs in function signatures?",
+        "type": "mcq",
+        "o": [
+            "*args collects positional arguments, **kwargs collects keyword arguments",
+            "*args is for required arguments, **kwargs for optional",
+            "*args works with lists, **kwargs with dictionaries",
+            "There is no functional difference"
+        ]
+    },
+    {
+        "q": "Match the function feature with its Python version introduction:",
+        "type": "match",
+        "left": ["Function annotations", "functools.wraps", "Positional-only parameters", "Variable annotations"],
+        "right": ["Python 3.0", "Python 2.5", "Python 3.8", "Python 3.6"]
+    },
+    {
+        "q": "What is the purpose of the __annotations__ attribute?",
+        "type": "mcq",
+        "o": [
+            "Stores type hints and other function annotations",
+            "Contains function documentation string",
+            "Tracks function call statistics",
+            "Stores default parameter values"
+        ]
+    },
+    {
+        "q": "Which code correctly uses positional-only parameters?",
+        "type": "mcq",
+        "c": "# Option 1\ndef process_data(data, /, options=None):\n    return f\"Processing {data} with {options}\"\n\n# Option 2\ndef process_data(data, / options=None):\n    return f\"Processing {data} with {options}\"\n\n# Option 3\ndef process_data(/ data, options=None):\n    return f\"Processing {data} with {options}\"\n\n# Option 4\ndef process_data(data, options=None /):\n    return f\"Processing {data} with {options}\"",
+        "o": [
+            "Option 1 - correct use of / to mark positional-only",
+            "Option 2 - missing comma after /",
+            "Option 3 - / must come after positional parameters",
+            "Option 4 - / in wrong position"
+        ]
+    },
+    {
+        "q": "Function ______ store type information in __annotations__. The ______ decorator preserves metadata in decorators. ______ parameters come before / in function definitions.",
+        "type": "fill_blank",
+        "answers": ["annotations", "@wraps", "Positional-only"],
+        "other_options": ["comments", "@preserve", "Keyword", "Required"]
+    },
+    {
+        "q": "Rearrange to create a function with comprehensive type hints:",
+        "type": "rearrange",
+        "words": ["def", "parse_data", "(content:", "str,", "strict:", "bool", "=", "False)", "->", "list[str]:", "\"\"\"Parse string data into list.\"\"\"", "return", "content.split", "(\",\")"]
+    },
+    {
+        "q": "Function annotations are enforced at runtime by Python.",
+        "type": "true_false",
+        "correct": "False"
+    },
+    {
+        "q": "What is the benefit of using positional-only parameters?",
+        "type": "mcq",
+        "o": [
+            "Prevents breaking changes when parameter names change",
+            "Makes functions run faster",
+            "Reduces memory usage",
+            "Automatically validates arguments"
+        ]
+    },
+    {
+        "q": "How can you access a function's annotations?",
+        "type": "mcq",
+        "c": "def calculate(x: int, y: float = 1.5) -> float:\n    return x * y",
+        "o": [
+            "Using calculate.__annotations__",
+            "With help(calculate)",
+            "Through calculate.__doc__",
+            "Both __annotations__ and help() work"
+        ]
+    },
+    {
+        "q": "Which statement about **kwargs is correct?",
+        "type": "mcq",
+        "o": [
+            "It collects extra keyword arguments into a dictionary",
+            "It must always come after *args",
+            "It can only accept string keys",
+            "It makes all arguments optional"
+        ]
+    },
+    {
+        "q": "What does this function's type hint indicate?",
+        "type": "mcq",
+        "c": "from typing import Optional\n\ndef find_user(user_id: int) -> Optional[dict]:\n    # implementation...",
+        "o": [
+            "Returns either a dictionary or None",
+            "User ID must be provided",
+            "Returns an optional dictionary type",
+            "The function might raise an exception"
+        ]
+    },
+    {
+        "q": "The ______ module provides utilities for functional programming. Function ______ help tools provide better autocomplete. ______ arguments are collected into a tuple by *args.",
+        "type": "fill_blank",
+        "answers": ["functools", "annotations", "Positional"],
+        "other_options": ["functional", "comments", "Keyword", "Extra"]
+    },
+    {
+        "q": "What is a common use case for **kwargs?",
+        "type": "mcq",
+        "o": [
+            "Passing configuration options to functions",
+            "Handling required function parameters",
+            "Creating mathematical functions",
+            "Defining function return types"
+        ]
+    },
+    {
+        "q": "Rearrange to show proper decorator with functools.wraps:",
+        "type": "rearrange",
+        "words": ["from", "functools", "import", "wraps", "def", "timing", "(func):", "@wraps", "(func)", "def", "wrapper", "(*args,", "**kwargs):", "import", "time", "start", "=", "time.time()", "result", "=", "func", "(*args,", "**kwargs)", "print", "(f\"Time:\", time.time() - start)", "return", "result", "return", "wrapper"]
+    },
+    {
+        "q": "Positional-only parameters were introduced in Python 3.0.",
+        "type": "true_false",
+        "correct": "False"
+    },
+    {
+        "q": "How do forward references help with type hints?",
+        "type": "mcq",
+        "o": [
+            "Allow referencing classes before they are defined",
+            "Make type hints execute faster",
+            "Automatically import required modules",
+            "Convert strings to actual types"
+        ]
+    },
+    {
+        "q": "Which is a valid use of function annotations?",
+        "type": "mcq",
+        "o": [
+            "Providing type information for static analysis",
+            "Adding runtime validation to functions",
+            "Creating function documentation automatically",
+            "All of the above"
+        ]
+    },
+    {
+        "q": "What does a function do?",
+        "type": "mcq",
+        "o": [
+            "Performs a specific task",
+            "Creates variables",
+            "Imports modules",
+            "Stores data"
+        ]
+    },
+    {
+        "q": "Which keyword is used to define a function?",
+        "type": "mcq",
+        "o": [
+            "def",
+            "function",
+            "define",
+            "func"
+        ]
+    },
+    {
+        "q": "What is the basic structure of a function?",
+        "type": "mcq",
+        "c": "def function_name():\n    # code here",
+        "o": [
+            "def, function name, parentheses, colon, indented code",
+            "function, name, brackets, code",
+            "def, name, curly braces, code",
+            "function, name, parentheses, equals, code"
+        ]
+    },
+    {
+        "q": "How do you call a function?",
+        "type": "mcq",
+        "o": [
+            "Write its name followed by parentheses",
+            "Use the call keyword",
+            "Just write the function name",
+            "Use the run command"
+        ]
+    },
+    {
+        "q": "What are parameters in a function?",
+        "type": "mcq",
+        "o": [
+            "Variables that receive data",
+            "The function's return value",
+            "Comments inside the function",
+            "The function's name"
+        ]
+    },
+    {
+        "q": "What are arguments?",
+        "type": "mcq",
+        "o": [
+            "Values passed to a function",
+            "The function's documentation",
+            "Error messages",
+            "Function names"
+        ]
+    },
+    {
+        "q": "What does the return statement do?",
+        "type": "mcq",
+        "o": [
+            "Sends a value back from the function",
+            "Stops the program",
+            "Prints the result",
+            "Imports a module"
+        ]
+    },
+    {
+        "q": "Match the function part with its purpose:",
+        "type": "match",
+        "left": ["def", "()", "return", "parameters"],
+        "right": ["Starts function definition", "Holds arguments", "Sends back result", "Receive data"]
+    },
+    {
+        "q": "What is a function call?",
+        "type": "mcq",
+        "o": [
+            "Using the function to execute its code",
+            "Defining the function",
+            "Naming the function",
+            "Documenting the function"
+        ]
+    },
+    {
+        "q": "Which of these is a valid function definition?",
+        "type": "mcq",
+        "o": [
+            "def say_hello():",
+            "define say_hello():",
+            "def say_hello:",
+            "function say_hello():"
+        ]
+    },
+    {
+        "q": "What will this code do?",
+        "type": "mcq",
+        "c": "def greet():\n    print(\"Hello!\")\n\ngreet()",
+        "o": [
+            "Print \"Hello!\"",
+            "Do nothing",
+            "Cause an error",
+            "Create a variable"
+        ]
+    },
+    {
+        "q": "To create a function, use the ______ keyword followed by the function name and ______. Use ______ to send a value back from the function.",
+        "type": "fill_blank",
+        "answers": ["def", "parentheses", "return"],
+        "other_options": ["function", "brackets", "print", "send"]
+    },
+    {
+        "q": "Rearrange to make a simple function:",
+        "type": "rearrange",
+        "words": ["def", "my_function", "():", "print", "(\"Hello World\")"]
+    },
+    {
+        "q": "All functions in Python must have parameters.",
+        "type": "true_false",
+        "correct": "False"
+    },
+    {
+        "q": "What is the purpose of using functions?",
+        "type": "mcq",
+        "o": [
+            "Reuse code and make it organized",
+            "Make programs longer",
+            "Use more memory",
+            "Slow down execution"
+        ]
+    },
+    {
+        "q": "How many values can a function return?",
+        "type": "mcq",
+        "o": [
+            "One value (but it can be a tuple with multiple values)",
+            "Exactly one value only",
+            "Multiple separate values",
+            "No values can be returned"
+        ]
+    },
+    {
+        "q": "What happens if a function has no return statement?",
+        "type": "mcq",
+        "o": [
+            "It returns None",
+            "It returns 0",
+            "It causes an error",
+            "It returns True"
+        ]
+    },
+    {
+        "q": "Which of these calls a function correctly?",
+        "type": "mcq",
+        "o": [
+            "function_name()",
+            "function_name",
+            "call function_name()",
+            "function_name[]"
+        ]
+    },
+    {
+        "q": "What are the values passed to a function called?",
+        "type": "mcq",
+        "o": [
+            "Arguments",
+            "Parameters",
+            "Variables",
+            "Constants"
+        ]
+    },
+    {
+        "q": "Functions help avoid ______ the same code multiple times. They make programs easier to ______ and ______.",
+        "type": "fill_blank",
+        "answers": ["repeating", "read", "maintain"],
+        "other_options": ["writing", "run", "debug", "compile"]
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "def add_numbers(a, b):\n    return a + b\n\nresult = add_numbers(3, 4)\nprint(result)",
+        "o": [
+            "7",
+            "3 + 4",
+            "a + b",
+            "Nothing"
+        ]
+    },
+    {
+        "q": "Rearrange to create a function that adds two numbers:",
+        "type": "rearrange",
+        "words": ["def", "add", "(x,", "y):", "return", "x", "+", "y"]
+    },
+    {
+        "q": "Function names can contain spaces.",
+        "type": "true_false",
+        "correct": "False"
+    },
+    {
+        "q": "What is a function definition?",
+        "type": "mcq",
+        "o": [
+            "Creating the function with its code",
+            "Calling the function to use it",
+            "Naming the function",
+            "Importing the function"
+        ]
+    },
+    {
+        "q": "Which part of a function contains the code that runs?",
+        "type": "mcq",
+        "o": [
+            "The indented block after the colon",
+            "The function name",
+            "The parentheses",
+            "The def keyword"
+        ]
+    },
+    {
+        "q": "Why are functions useful?",
+        "type": "mcq",
+        "o": [
+            "They help organize code into logical pieces",
+            "They make variable names shorter",
+            "They automatically fix errors",
+            "They import all needed modules"
+        ]
+    },
+    {
+        "q": "What is the main difference between print() and return in functions?",
+        "type": "mcq",
+        "o": [
+            "print() displays output, return sends a value back",
+            "print() is faster than return",
+            "return displays output, print() sends values back",
+            "They do the same thing"
+        ]
+    },
+    {
+        "q": "Which function correctly uses a default parameter?",
+        "type": "mcq",
+        "c": "# Option 1\ndef greet(name=\"Guest\"):\n    return f\"Hello, {name}!\"\n\n# Option 2\ndef greet(name=Guest):\n    return \"Hello, \" + name\n\n# Option 3\ndef greet(name=\"Guest\"):\n    print(f\"Hello, {name}!\")\n\n# Option 4\ndef greet(name):\n    if name is None:\n        name = \"Guest\"\n    return f\"Hello, {name}!\"",
+        "o": [
+            "Option 1 - correct default parameter syntax",
+            "Option 2 - Guest should be in quotes",
+            "Option 3 - uses print instead of return",
+            "Option 4 - manual default, not parameter default"
+        ]
+    },
+    {
+        "q": "What happens when you call a function that doesn't exist?",
+        "type": "mcq",
+        "o": [
+            "NameError - function not defined",
+            "The program continues running",
+            "It creates the function automatically",
+            "SyntaxError - invalid code"
+        ]
+    },
+    {
+        "q": "Which of these is a built-in Python function?",
+        "type": "mcq",
+        "o": [
+            "len()",
+            "calculate()",
+            "display()",
+            "show()"
+        ]
+    },
+    {
+        "q": "What is function scope?",
+        "type": "mcq",
+        "o": [
+            "Where variables can be accessed in a program",
+            "The size of the function",
+            "How many parameters a function has",
+            "The function's return value"
+        ]
+    },
+    {
+        "q": "Which variable is local to the function?",
+        "type": "mcq",
+        "c": "x = 10\n\ndef my_func():\n    y = 5\n    return y\n\nresult = my_func()",
+        "o": [
+            "y - created inside the function",
+            "x - defined outside the function",
+            "result - stores the return value",
+            "my_func - the function name"
+        ]
+    },
+    {
+        "q": "What is the difference between defining and calling a function?",
+        "type": "mcq",
+        "o": [
+            "Defining creates it, calling uses it",
+            "Defining uses it, calling creates it",
+            "They are the same thing",
+            "Defining imports it, calling creates it"
+        ]
+    },
+    {
+        "q": "Match the function error with its cause:",
+        "type": "match",
+        "left": ["NameError", "TypeError", "SyntaxError", "IndentationError"],
+        "right": ["Function not defined", "Wrong argument type", "Invalid code structure", "Incorrect spacing"]
+    },
+    {
+        "q": "What does this function do?",
+        "type": "mcq",
+        "c": "def check_even(number):\n    if number % 2 == 0:\n        return True\n    else:\n        return False",
+        "o": [
+            "Checks if a number is even",
+            "Divides number by 2",
+            "Returns the number doubled",
+            "Prints even numbers"
+        ]
+    },
+    {
+        "q": "Why would you use multiple return statements?",
+        "type": "mcq",
+        "o": [
+            "To return different values based on conditions",
+            "To make the function faster",
+            "To return multiple values at once",
+            "To avoid using parameters"
+        ]
+    },
+    {
+        "q": "Functions can ______ other functions. Variables inside functions are ______ to that function. Default parameters provide ______ values when no argument is given.",
+        "type": "fill_blank",
+        "answers": ["call", "local", "default"],
+        "other_options": ["create", "global", "optional", "import"]
+    },
+    {
+        "q": "Rearrange to create a function with conditional return:",
+        "type": "rearrange",
+        "words": ["def", "is_positive", "(number):", "if", "number", ">", "0:", "return", "True", "else:", "return", "False"]
+    },
+    {
+        "q": "A function can be called before it is defined.",
+        "type": "true_false",
+        "correct": "False"
+    },
+    {
+        "q": "What is the purpose of function parameters?",
+        "type": "mcq",
+        "o": [
+            "To make functions work with different data",
+            "To make functions run faster",
+            "To document the function",
+            "To import modules"
+        ]
+    },
+    {
+        "q": "Which statement about function names is true?",
+        "type": "mcq",
+        "o": [
+            "They should describe what the function does",
+            "They must be single letters",
+            "They can include special characters",
+            "They are case insensitive"
+        ]
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "def multiply(a, b=2):\n    return a * b\n\nprint(multiply(5))",
+        "o": [
+            "10",
+            "5",
+            "Error - missing argument",
+            "2"
+        ]
+    },
+    {
+        "q": "How can you make a function more reusable?",
+        "type": "mcq",
+        "o": [
+            "Use parameters instead of hard-coded values",
+            "Make it longer with more features",
+            "Use global variables",
+            "Avoid return statements"
+        ]
+    },
+    {
+        "q": "What is a function's signature?",
+        "type": "mcq",
+        "o": [
+            "The function name and its parameters",
+            "The function's return value",
+            "The function's documentation",
+            "The function's file location"
+        ]
+    },
+    {
+        "q": "Built-in functions like ______ and ______ are always available. Functions help organize code into logical ______.",
+        "type": "fill_blank",
+        "answers": ["print", "len", "blocks"],
+        "other_options": ["calculate", "display", "sections", "files"]
+    },
+    {
+        "q": "Rearrange to show function calling another function:",
+        "type": "rearrange",
+        "words": ["def", "calculate_total", "(price,", "tax):", "return", "price", "+", "calculate_tax", "(price,", "tax)"]
+    },
+    {
+        "q": "All functions must have at least one parameter.",
+        "type": "true_false",
+        "correct": "False"
+    },
+    {
+        "q": "What is the advantage of using default parameters?",
+        "type": "mcq",
+        "o": [
+            "Makes some arguments optional",
+            "Makes functions run faster",
+            "Prevents errors in the function",
+            "Automatically validates input"
+        ]
+    },
+    {
+        "q": "Which of these is good function naming?",
+        "type": "mcq",
+        "o": [
+            "calculate_area",
+            "func1",
+            "do_stuff",
+            "x"
+        ]
+    },
+    {
+        "q": "What does this code demonstrate?",
+        "type": "mcq",
+        "c": "def get_full_name(first, last):\n    return first + \" \" + last\n\nname = get_full_name(\"John\", \"Doe\")\nprint(name)",
+        "o": [
+            "Function with multiple parameters",
+            "Function with default values",
+            "Function that prints directly",
+            "Function with no return"
+        ]
+    },
+    {
+        "q": "What is the purpose of the 'pass' keyword in functions?",
+        "type": "mcq",
+        "o": [
+            "Creates empty function that does nothing",
+            "Stops function execution",
+            "Skips to next iteration",
+            "Passes arguments to function"
+        ]
+    },
+    {
+        "q": "Which function correctly handles different data types?",
+        "type": "mcq",
+        "c": "# Option 1\ndef process_data(data):\n    if isinstance(data, str):\n        return data.upper()\n    elif isinstance(data, int):\n        return data * 2\n    return data\n\n# Option 2\ndef process_data(data):\n    return data.upper() * 2\n\n# Option 3\ndef process_data(data):\n    if type(data) == \"string\":\n        return data.upper()\n\n# Option 4\ndef process_data(data):\n    try:\n        return data.upper()\n    except:\n        return data",
+        "o": [
+            "Option 1 - checks types with isinstance()",
+            "Option 2 - assumes all inputs have upper() method",
+            "Option 3 - incorrect type checking syntax",
+            "Option 4 - only handles one type properly"
+        ]
+    },
+    {
+        "q": "What is function overloading in Python?",
+        "type": "mcq",
+        "o": [
+            "Creating multiple functions with same name but different parameters",
+            "Making functions run too many times",
+            "Using functions that are too large",
+            "Importing the same function multiple times"
+        ]
+    },
+    {
+        "q": "Which code shows a function that can accept any number of arguments?",
+        "type": "mcq",
+        "c": "# Option 1\ndef sum_all(*numbers):\n    return sum(numbers)\n\n# Option 2\ndef sum_all(numbers):\n    return sum(numbers)\n\n# Option 3\ndef sum_all():\n    numbers = [1, 2, 3]\n    return sum(numbers)\n\n# Option 4\ndef sum_all(*):\n    return 0",
+        "o": [
+            "Option 1 - *numbers collects all arguments",
+            "Option 2 - expects single list argument",
+            "Option 3 - fixed numbers, no parameters",
+            "Option 4 - invalid syntax"
+        ]
+    },
+    {
+        "q": "What is a pure function?",
+        "type": "mcq",
+        "o": [
+            "Function that always gives same output for same input",
+            "Function with no parameters",
+            "Function that doesn't use variables",
+            "Function that only does calculations"
+        ]
+    },
+    {
+        "q": "Which function is considered pure?",
+        "type": "mcq",
+        "c": "# Option 1\ndef add(a, b):\n    return a + b\n\n# Option 2\ndef get_random():\n    import random\n    return random.randint(1, 10)\n\n# Option 3\ndef append_to_list(lst, item):\n    lst.append(item)\n    return lst\n\n# Option 4\ncounter = 0\ndef increment():\n    global counter\n    counter += 1\n    return counter",
+        "o": [
+            "Option 1 - same input always gives same output",
+            "Option 2 - output changes each call",
+            "Option 3 - modifies input list",
+            "Option 4 - depends on external state"
+        ]
+    },
+    {
+        "q": "What is the difference between a function and a method?",
+        "type": "mcq",
+        "o": [
+            "Method belongs to an object, function is standalone",
+            "Method is faster than function",
+            "Function has parameters, method doesn't",
+            "Method returns values, function doesn't"
+        ]
+    },
+    {
+        "q": "Match the function concept with its description:",
+        "type": "match",
+        "left": ["Pure function", "Method", "Function overloading", "pass keyword"],
+        "right": ["No side effects, same output for same input", "Function associated with object", "Multiple functions with same name", "Placeholder for empty function"]
+    },
+    {
+        "q": "What is a side effect in functions?",
+        "type": "mcq",
+        "o": [
+            "When function changes something outside itself",
+            "When function takes too long to run",
+            "When function has syntax errors",
+            "When function returns wrong value"
+        ]
+    },
+    {
+        "q": "Which function has no side effects?",
+        "type": "mcq",
+        "c": "# Option 1\ndef calculate_area(width, height):\n    return width * height\n\n# Option 2\ndef add_to_file(text):\n    with open('log.txt', 'a') as f:\n        f.write(text)\n\n# Option 3\ndef update_counter():\n    global count\n    count += 1\n\n# Option 4\ndef modify_list(items):\n    items.append('new')",
+        "o": [
+            "Option 1 - only returns value, changes nothing",
+            "Option 2 - writes to file",
+            "Option 3 - modifies global variable",
+            "Option 4 - modifies input list"
+        ]
+    },
+    {
+        "q": "The ______ keyword creates empty functions. ______ functions have no side effects. ______ are functions attached to objects.",
+        "type": "fill_blank",
+        "answers": ["pass", "Pure", "Methods"],
+        "other_options": ["return", "Simple", "Actions", "def"]
+    },
+    {
+        "q": "Rearrange to create a function that can handle any number of numbers:",
+        "type": "rearrange",
+        "words": ["def", "average", "(*numbers):", "return", "sum", "(numbers)", "/", "len", "(numbers)"]
+    },
+    {
+        "q": "All methods in Python are also functions.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Why would you use the 'pass' keyword?",
+        "type": "mcq",
+        "o": [
+            "As placeholder for future code",
+            "To make function run faster",
+            "To skip error checking",
+            "To pass arguments between functions"
+        ]
+    },
+    {
+        "q": "What makes a function impure?",
+        "type": "mcq",
+        "o": [
+            "Modifying external state or using random values",
+            "Having too many parameters",
+            "Using complex calculations",
+            "Being defined inside another function"
+        ]
+    },
+    {
+        "q": "How can you create function overloading in Python?",
+        "type": "mcq",
+        "o": [
+            "Use default parameters and type checking",
+            "Create functions with different names",
+            "Use the overload decorator",
+            "Python doesn't support function overloading"
+        ]
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "def process(*values):\n    return len(values)\n\nprint(process(1, 2, 3, 4, 5))",
+        "o": [
+            "5",
+            "15",
+            "(1, 2, 3, 4, 5)",
+            "Error"
+        ]
+    },
+    {
+        "q": "Pure functions are easier to ______ because they don't depend on external ______. The ______ keyword helps when planning function structure.",
+        "type": "fill_blank",
+        "answers": ["test", "state", "pass"],
+        "other_options": ["write", "variables", "return", "debug"]
+    },
+    {
+        "q": "What is a common use case for *args?",
+        "type": "mcq",
+        "o": [
+            "When number of arguments is unknown",
+            "When all arguments are required",
+            "When function needs exactly 3 arguments",
+            "When arguments must be keywords"
+        ]
+    },
+    {
+        "q": "Rearrange to show a method definition in a class:",
+        "type": "rearrange",
+        "words": ["class", "Calculator:", "def", "add", "(self,", "a,", "b):", "return", "a", "+", "b"]
+    },
+    {
+        "q": "Functions with *args can also have regular parameters.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Which is an example of a side effect?",
+        "type": "mcq",
+        "o": [
+            "Printing to the screen",
+            "Adding two numbers",
+            "Calculating square root",
+            "Comparing two strings"
+        ]
+    },
+    {
+        "q": "What advantage do pure functions provide?",
+        "type": "mcq",
+        "o": [
+            "Predictable behavior and easier testing",
+            "Faster execution speed",
+            "Smaller memory usage",
+            "Automatic error handling"
+        ]
+    },
+    {
+        "q": "How does *args help with function flexibility?",
+        "type": "mcq",
+        "o": [
+            "Allows calling with different numbers of arguments",
+            "Makes all arguments optional",
+            "Forces arguments to be tuples",
+            "Automatically converts data types"
+        ]
+    },
+    {
+        "q": "What is the primary purpose of function composition?",
+        "type": "mcq",
+        "o": [
+            "Combining simple functions to build complex ones",
+            "Making functions run in parallel",
+            "Reducing function memory usage",
+            "Automatically documenting functions"
+        ]
+    },
+    {
+        "q": "Which code demonstrates proper function composition?",
+        "type": "mcq",
+        "c": "# Option 1\ndef add_one(x):\n    return x + 1\n\ndef double(x):\n    return x * 2\n\nresult = double(add_one(5))\n\n# Option 2\ndef add_one(x):\n    return x + 1\n\ndef double(x):\n    return x * 2\n\nresult = add_one(double(5))\n\n# Option 3\ndef compose_and_double(x):\n    return (x + 1) * 2\n\n# Option 4\nimport math\nresult = math.sqrt(len(\"hello\"))",
+        "o": [
+            "All options demonstrate function composition",
+            "Option 1 only - explicit nesting",
+            "Option 3 only - single combined function",
+            "Option 4 only - built-in function composition"
+        ]
+    },
+    {
+        "q": "What are first-class functions in Python?",
+        "type": "mcq",
+        "o": [
+            "Functions that can be treated like any other variable",
+            "Functions imported from standard library",
+            "Functions with type hints",
+            "Functions that run faster than others"
+        ]
+    },
+    {
+        "q": "Which code shows first-class function usage?",
+        "type": "mcq",
+        "c": "# Option 1\ndef greet(name):\n    return f\"Hello, {name}!\"\n\nmy_function = greet\nresult = my_function(\"Alice\")\n\n# Option 2\ndef greet(name):\n    return f\"Hello, {name}!\"\n\nresult = greet(\"Alice\")\n\n# Option 3\ndef outer():\n    def inner():\n        return \"Hello\"\n    return inner\n\n# Option 4\nclass Greeter:\n    def greet(self, name):\n        return f\"Hello, {name}!\"",
+        "o": [
+            "Option 1 - function assigned to variable",
+            "Option 2 - normal function call",
+            "Option 3 - returns inner function",
+            "All demonstrate first-class functions"
+        ]
+    },
+    {
+        "q": "What is function memoization?",
+        "type": "mcq",
+        "o": [
+            "Caching function results to avoid recomputation",
+            "Making functions remember their history",
+            "Converting functions to methods",
+            "Adding memory to function objects"
+        ]
+    },
+    {
+        "q": "Which pattern implements simple memoization?",
+        "type": "mcq",
+        "c": "# Option 1\ncache = {}\ndef expensive_func(x):\n    if x in cache:\n        return cache[x]\n    result = x * x  # expensive calculation\n    cache[x] = result\n    return result\n\n# Option 2\ndef expensive_func(x):\n    return x * x\n\n# Option 3\nfrom functools import lru_cache\n\n@lru_cache\ndef expensive_func(x):\n    return x * x\n\n# Option 4\ndef expensive_func(x, memo={}):\n    if x in memo:\n        return memo[x]\n    result = x * x\n    memo[x] = result\n    return result",
+        "o": [
+            "All implement memoization correctly",
+            "Option 1 only - explicit cache dictionary",
+            "Option 3 only - using decorator",
+            "Option 4 only - using default parameter"
+        ]
+    },
+    {
+        "q": "What is a callback function?",
+        "type": "mcq",
+        "o": [
+            "Function passed as argument to be called later",
+            "Function that calls back to its caller",
+            "Function that handles errors",
+            "Function that returns a function"
+        ]
+    },
+    {
+        "q": "Match the functional programming concept with its description:",
+        "type": "match",
+        "left": ["Function composition", "First-class functions", "Memoization", "Callback function"],
+        "right": ["Combining functions in sequence", "Functions as variables and arguments", "Caching expensive computations", "Function passed for later execution"]
+    },
+    {
+        "q": "What is the benefit of using functools.lru_cache?",
+        "type": "mcq",
+        "o": [
+            "Automatic memoization with size limit",
+            "Faster function definition",
+            "Automatic parallel execution",
+            "Built-in error handling"
+        ]
+    },
+    {
+        "q": "Which scenario is ideal for memoization?",
+        "type": "mcq",
+        "o": [
+            "Pure functions with expensive computations",
+            "Functions with side effects",
+            "Functions that read files",
+            "Functions with random outputs"
+        ]
+    },
+    {
+        "q": "Function ______ allows treating functions as variables. ______ caches function results. ______ functions are passed as arguments for later execution.",
+        "type": "fill_blank",
+        "answers": ["first-class", "Memoization", "Callback"],
+        "other_options": ["composition", "Caching", "Handler", "delegation"]
+    },
+    {
+        "q": "Rearrange to create a function that uses a callback:",
+        "type": "rearrange",
+        "words": ["def", "process_data", "(data,", "callback):", "result", "=", "[]", "for", "item", "in", "data:", "result.append", "(callback", "(item))", "return", "result"]
+    },
+    {
+        "q": "All functions in Python are first-class functions.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "What is a common use case for callback functions?",
+        "type": "mcq",
+        "o": [
+            "Event handling and asynchronous operations",
+            "Mathematical calculations",
+            "Data validation",
+            "File operations"
+        ]
+    },
+    {
+        "q": "How does function composition improve code?",
+        "type": "mcq",
+        "o": [
+            "Creates reusable building blocks",
+            "Makes code run faster",
+            "Reduces number of variables",
+            "Automatically optimizes execution"
+        ]
+    },
+    {
+        "q": "What is the risk of memoization with mutable arguments?",
+        "type": "mcq",
+        "o": [
+            "Cache key collisions with unhashable types",
+            "Functions running too fast",
+            "Memory usage decreasing",
+            "Automatic type conversion"
+        ]
+    },
+    {
+        "q": "Which module provides tools for functional programming?",
+        "type": "mcq",
+        "o": [
+            "functools",
+            "functional",
+            "composition",
+            "callback"
+        ]
+    },
+    {
+        "q": "First-class functions enable ______ programming patterns. Memoization is useful for ______ computations. Callbacks are essential for ______ programming.",
+        "type": "fill_blank",
+        "answers": ["functional", "expensive", "event-driven"],
+        "other_options": ["object-oriented", "simple", "synchronous", "procedural"]
+    },
+    {
+        "q": "What distinguishes a callback from a regular function call?",
+        "type": "mcq",
+        "o": [
+            "Callback is passed as argument and called by other code",
+            "Callback must be an anonymous function",
+            "Callback always returns a value",
+            "Callback cannot have parameters"
+        ]
+    },
+    {
+        "q": "Rearrange to show function composition with three operations:",
+        "type": "rearrange",
+        "words": ["def", "pipeline", "(x):", "return", "format", "(double", "(increment", "(x)))"]
+    },
+    {
+        "q": "Memoization only works with functions that have no parameters.",
+        "type": "true_false",
+        "correct": "False"
+    },
+    {
+        "q": "Why are first-class functions powerful?",
+        "type": "mcq",
+        "o": [
+            "Enable higher-order functions and dynamic behavior",
+            "Make all functions run in parallel",
+            "Automatically optimize code",
+            "Eliminate need for classes"
+        ]
+    },
+    {
+        "q": "What is a practical example of function composition?",
+        "type": "mcq",
+        "o": [
+            "Data processing pipelines",
+            "Simple arithmetic operations",
+            "Variable assignments",
+            "Import statements"
+        ]
+    },
+    {
+        "q": "How can callbacks make code more flexible?",
+        "type": "mcq",
+        "o": [
+            "Allow custom behavior to be injected",
+            "Make functions shorter",
+            "Reduce parameter count",
+            "Automate error handling"
+        ]
+    },
+    {
+        "q": "What is the purpose of the __name__ attribute in functions?",
+        "type": "mcq",
+        "o": [
+            "Stores the function's name as a string",
+            "Tracks how many times function was called",
+            "Contains the function's documentation",
+            "Specifies the module where function is defined"
+        ]
+    },
+    {
+        "q": "Which code correctly uses __name__ for debugging?",
+        "type": "mcq",
+        "c": "# Option 1\ndef calculate(x, y):\n    print(f\"Calling {calculate.__name__} with {x}, {y}\")\n    return x * y\n\n# Option 2\ndef calculate(x, y):\n    print(f\"Calling calculate with {x}, {y}\")\n    return x * y\n\n# Option 3\ndef calculate(x, y):\n    name = \"calculate\"\n    print(f\"Calling {name} with {x}, {y}\")\n    return x * y\n\n# Option 4\ndef calculate(x, y):\n    print(__name__ + f\" called with {x}, {y}\")\n    return x * y",
+        "o": [
+            "Option 1 - uses function.__name__ attribute",
+            "Option 2 - hardcodes function name",
+            "Option 3 - creates redundant variable",
+            "Option 4 - uses module __name__ instead"
+        ]
+    },
+    {
+        "q": "What are function attributes used for?",
+        "type": "mcq",
+        "o": [
+            "Storing metadata and state information",
+            "Making functions run faster",
+            "Controlling function visibility",
+            "Automating function documentation"
+        ]
+    },
+    {
+        "q": "Which code demonstrates custom function attributes?",
+        "type": "mcq",
+        "c": "# Option 1\ndef processor(data):\n    return data.upper()\n\nprocessor.version = \"1.0\"\nprocessor.author = \"AI Team\"\n\n# Option 2\ndef processor(data):\n    version = \"1.0\"\n    return data.upper()\n\n# Option 3\nclass Processor:\n    version = \"1.0\"\n    def process(self, data):\n        return data.upper()\n\n# Option 4\ndef processor(data, version=\"1.0\"):\n    return data.upper()",
+        "o": [
+            "Option 1 - adds attributes to function object",
+            "Option 2 - creates local variable only",
+            "Option 3 - uses class instead of function attributes",
+            "Option 4 - uses parameter, not attribute"
+        ]
+    },
+    {
+        "q": "What is function introspection?",
+        "type": "mcq",
+        "o": [
+            "Examining function properties at runtime",
+            "Looking inside function implementation",
+            "Testing function performance",
+            "Documenting function behavior"
+        ]
+    },
+    {
+        "q": "Which module provides tools for function introspection?",
+        "type": "mcq",
+        "o": [
+            "inspect",
+            "introspect",
+            "reflection",
+            "metadata"
+        ]
+    },
+    {
+        "q": "What information can you get from function introspection?",
+        "type": "mcq",
+        "o": [
+            "Parameter names, defaults, and annotations",
+            "Function execution speed",
+            "Memory usage statistics",
+            "Number of lines in function"
+        ]
+    },
+    {
+        "q": "Match the introspection attribute with its purpose:",
+        "type": "match",
+        "left": ["__code__", "__defaults__", "__annotations__", "__closure__"],
+        "right": ["Bytecode and local names", "Default parameter values", "Type hints information", "Variables from enclosing scope"]
+    },
+    {
+        "q": "What is the difference between __name__ and __qualname__?",
+        "type": "mcq",
+        "o": [
+            "__qualname__ includes class path for methods",
+            "__name__ is longer than __qualname__",
+            "__qualname__ only works for built-in functions",
+            "They are always the same"
+        ]
+    },
+    {
+        "q": "Which code uses inspect module correctly?",
+        "type": "mcq",
+        "c": "# Option 1\nimport inspect\n\ndef example(a: int, b: str = \"hello\") -> bool:\n    return True\n\nsig = inspect.signature(example)\n\n# Option 2\nimport inspect\n\ndef example(a, b):\n    return True\n\nsource = inspect.source(example)\n\n# Option 3\nimport inspect\n\ndef example():\n    pass\n\nmembers = inspect.members(example)\n\n# Option 4\nimport inspect\n\ndef example(x):\n    return x * 2\n\nresult = inspect.execute(example, 5)",
+        "o": [
+            "Option 1 - gets function signature",
+            "Option 2 - gets source code",
+            "Option 3 - should be inspect.getmembers()",
+            "Option 4 - inspect doesn't have execute function"
+        ]
+    },
+    {
+        "q": "Function ______ stores the function's name. The ______ module provides introspection tools. ______ attributes can store custom metadata on functions.",
+        "type": "fill_blank",
+        "answers": ["__name__", "inspect", "Custom"],
+        "other_options": ["__qualname__", "introspect", "Built-in", "__doc__"]
+    },
+    {
+        "q": "Rearrange to create a function with custom attributes:",
+        "type": "rearrange",
+        "words": ["def", "validator", "(data):", "return", "isinstance", "(data,", "str)", "validator", ".description", "=", "\"String", "type", "checker\"", "validator", ".category", "=", "\"validation\""]
+    },
+    {
+        "q": "All functions automatically have a __name__ attribute.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Why would you use function introspection?",
+        "type": "mcq",
+        "o": [
+            "For debugging, testing, and dynamic analysis",
+            "To make functions run faster",
+            "To automatically generate documentation",
+            "To prevent function errors"
+        ]
+    },
+    {
+        "q": "What does inspect.signature() return?",
+        "type": "mcq",
+        "o": [
+            "Signature object with parameter information",
+            "Function's source code as string",
+            "List of function attributes",
+            "Function's return value"
+        ]
+    },
+    {
+        "q": "How can custom function attributes be useful?",
+        "type": "mcq",
+        "o": [
+            "Storing version info, documentation, or configuration",
+            "Making functions more secure",
+            "Reducing memory usage",
+            "Automating function calls"
+        ]
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "def example(x, y=10):\n    \"\"\"Example function.\"\"\"\n    return x + y\n\nprint(example.__name__)\nprint(example.__defaults__)",
+        "o": [
+            "example then (10,)",
+            "example then 10",
+            "__name__ then __defaults__",
+            "Error - attributes don't exist"
+        ]
+    },
+    {
+        "q": "Function introspection allows ______ examination of function properties. Custom attributes can store ______ like version numbers. The ______ attribute shows the function's qualified name.",
+        "type": "fill_blank",
+        "answers": ["runtime", "metadata", "__qualname__"],
+        "other_options": ["compile-time", "code", "__name__", "static"]
+    },
+    {
+        "q": "What is a practical use of function introspection?",
+        "type": "mcq",
+        "o": [
+            "Building dynamic APIs and frameworks",
+            "Optimizing mathematical calculations",
+            "Creating user interfaces",
+            "Managing database connections"
+        ]
+    },
+    {
+        "q": "Rearrange to use inspect.getmembers() on a function:",
+        "type": "rearrange",
+        "words": ["import", "inspect", "def", "sample", "(x):", "return", "x", "*", "2", "members", "=", "inspect.getmembers", "(sample)"]
+    },
+    {
+        "q": "The __qualname__ attribute is only available for class methods.",
+        "type": "true_false",
+        "correct": "False"
+    },
+    {
+        "q": "How does function introspection help with testing?",
+        "type": "mcq",
+        "o": [
+            "Verifying function signatures and parameters",
+            "Making tests run faster",
+            "Automatically generating test data",
+            "Eliminating need for unit tests"
+        ]
+    },
+    {
+        "q": "What information does __code__ provide?",
+        "type": "mcq",
+        "o": [
+            "Bytecode, variable names, and constants",
+            "Function execution history",
+            "Memory address of function",
+            "Source code line numbers"
+        ]
+    },
+    {
+        "q": "Why are custom function attributes flexible?",
+        "type": "mcq",
+        "o": [
+            "Can store any data without modifying function code",
+            "Make functions immutable",
+            "Automatically synchronize across modules",
+            "Prevent attribute name conflicts"
+        ]
+    },
+    {
+        "q": "What is the primary purpose of function stubs in development?",
+        "type": "mcq",
+        "o": [
+            "Placeholder implementations for unfinished functions",
+            "Making functions run faster during testing",
+            "Creating backup copies of functions",
+            "Documenting function parameters"
+        ]
+    },
+    {
+        "q": "Which code correctly creates a function stub?",
+        "type": "mcq",
+        "c": "# Option 1\ndef process_data(data):\n    \"\"\"TODO: Implement data processing logic\"\"\"\n    pass\n\n# Option 2\ndef process_data(data):\n    # This function will process data\n    return None\n\n# Option 3\ndef process_data(data):\n    raise NotImplementedError(\"process_data not implemented\")\n\n# Option 4\ndef process_data(data):\n    \"\"\"Process data\"\"\"\n    # Implementation pending",
+        "o": [
+            "All options are valid function stubs",
+            "Option 1 only - uses pass with TODO",
+            "Option 3 only - raises NotImplementedError",
+            "Option 4 only - has docstring but no code"
+        ]
+    },
+    {
+        "q": "What are function factories?",
+        "type": "mcq",
+        "o": [
+            "Functions that create and return other functions",
+            "Functions that optimize other functions",
+            "Built-in Python functions",
+            "Functions that handle manufacturing processes"
+        ]
+    },
+    {
+        "q": "Which code demonstrates a function factory?",
+        "type": "mcq",
+        "c": "# Option 1\ndef create_multiplier(factor):\n    def multiplier(x):\n        return x * factor\n    return multiplier\n\ndouble = create_multiplier(2)\n\n# Option 2\ndef multiply(x, y):\n    return x * y\n\n# Option 3\ndef calculate():\n    def inner():\n        return 42\n    return inner()\n\n# Option 4\nclass Multiplier:\n    def __init__(self, factor):\n        self.factor = factor\n    def multiply(self, x):\n        return x * self.factor",
+        "o": [
+            "Option 1 - returns a new function with preset factor",
+            "Option 2 - regular function",
+            "Option 3 - returns result, not function",
+            "Option 4 - class-based approach, not function factory"
+        ]
+    },
+    {
+        "q": "What is function instrumentation?",
+        "type": "mcq",
+        "o": [
+            "Adding monitoring or logging to functions",
+            "Making functions play musical notes",
+            "Converting functions to machine code",
+            "Measuring function physical size"
+        ]
+    },
+    {
+        "q": "Which technique is used for function instrumentation?",
+        "type": "mcq",
+        "o": [
+            "Decorators that wrap functions with extra functionality",
+            "Modifying function source code directly",
+            "Creating function copies with different names",
+            "Using special instrumentation keywords"
+        ]
+    },
+    {
+        "q": "What is the benefit of using function stubs?",
+        "type": "mcq",
+        "o": [
+            "Allows testing interface before implementation",
+            "Makes final implementation easier",
+            "Reduces function memory usage",
+            "Automatically generates documentation"
+        ]
+    },
+    {
+        "q": "Match the function concept with its primary use:",
+        "type": "match",
+        "left": ["Function Stubs", "Function Factories", "Function Instrumentation", "Function Composition"],
+        "right": ["Placeholders during development", "Dynamic function creation", "Adding monitoring and logging", "Building complex operations from simple ones"]
+    },
+    {
+        "q": "What distinguishes a function factory from a regular function?",
+        "type": "mcq",
+        "o": [
+            "Function factory returns new functions, regular function returns data",
+            "Function factory has more parameters",
+            "Regular functions cannot create other functions",
+            "Function factories are only for mathematical operations"
+        ]
+    },
+    {
+        "q": "Which scenario is ideal for function instrumentation?",
+        "type": "mcq",
+        "o": [
+            "Performance monitoring and debugging",
+            "Data processing pipelines",
+            "Mathematical calculations",
+            "User input validation"
+        ]
+    },
+    {
+        "q": "Function ______ are placeholders for unimplemented code. ______ factories create customized functions dynamically. ______ adds monitoring capabilities to functions.",
+        "type": "fill_blank",
+        "answers": ["stubs", "Function", "Instrumentation"],
+        "other_options": ["skeletons", "Class", "Decoration", "prototypes"]
+    },
+    {
+        "q": "Function stubs should always raise NotImplementedError.",
+        "type": "true_false",
+        "correct": "False"
+    },
+    {
+        "q": "How do function factories enable code reuse?",
+        "type": "mcq",
+        "o": [
+            "By creating specialized functions from templates",
+            "By making all functions global",
+            "By automatically optimizing function code",
+            "By reducing the number of function parameters"
+        ]
+    },
+    {
+        "q": "What is a common use case for function instrumentation?",
+        "type": "mcq",
+        "o": [
+            "Logging function calls and execution times",
+            "Validating function parameters",
+            "Formatting function return values",
+            "Importing function dependencies"
+        ]
+    },
+    {
+        "q": "Which code shows basic function instrumentation?",
+        "type": "mcq",
+        "c": "# Option 1\ndef log_calls(func):\n    def wrapper(*args, **kwargs):\n        print(f\"Calling {func.__name__}\")\n        return func(*args, **kwargs)\n    return wrapper\n\n# Option 2\ndef calculate(x, y):\n    result = x + y\n    print(f\"Calculated {x} + {y} = {result}\")\n    return result\n\n# Option 3\ndef monitored_function():\n    import time\n    start = time.time()\n    # function logic\n    end = time.time()\n    print(f\"Execution time: {end - start}\")\n\n# Option 4\nclass InstrumentedFunction:\n    def __init__(self, func):\n        self.func = func\n        self.call_count = 0",
+        "o": [
+            "All demonstrate function instrumentation",
+            "Option 1 only - decorator-based instrumentation",
+            "Option 2 only - manual logging in function",
+            "Option 3 only - timing instrumentation"
+        ]
+    },
+    {
+        "q": "Function stubs help with ______-first development. Factories enable ______ function creation. Instrumentation provides runtime ______ and debugging.",
+        "type": "fill_blank",
+        "answers": ["interface", "dynamic", "visibility"],
+        "other_options": ["test", "static", "performance", "code"]
+    },
+    {
+        "q": "What advantage do function factories provide over classes?",
+        "type": "mcq",
+        "o": [
+            "Lighter weight for simple behavior customization",
+            "Better performance for all use cases",
+            "Automatic memory management",
+            "Built-in inheritance support"
+        ]
+    },
+    {
+        "q": "Function instrumentation should only be used in production code.",
+        "type": "true_false",
+        "correct": "False"
+    },
+    {
+        "q": "How can function stubs improve team development?",
+        "type": "mcq",
+        "o": [
+            "Allow parallel work on different components",
+            "Make code reviews faster",
+            "Automatically generate test cases",
+            "Reduce communication between developers"
+        ]
+    },
+    {
+        "q": "What makes function factories flexible?",
+        "type": "mcq",
+        "o": [
+            "Can generate functions with different behaviors at runtime",
+            "Always produce optimized functions",
+            "Work with any programming language",
+            "Don't require parameter validation"
+        ]
+    },
+    {
+        "q": "Which is a key benefit of function instrumentation?",
+        "type": "mcq",
+        "o": [
+            "Insight into function behavior without modifying core logic",
+            "Making functions run faster",
+            "Reducing code complexity",
+            "Automatically fixing function bugs"
+        ]
+    },
+    {
+        "q": "What is function partial application?",
+        "type": "mcq",
+        "o": [
+            "Fixing some arguments of a function to create a new function",
+            "Running only part of a function's code",
+            "Splitting a function into smaller pieces",
+            "Applying functions to partial data sets"
+        ]
+    },
+    {
+        "q": "Which code correctly uses functools.partial?",
+        "type": "mcq",
+        "c": "# Option 1\nfrom functools import partial\n\ndef power(base, exponent):\n    return base ** exponent\n\nsquare = partial(power, exponent=2)\n\n# Option 2\nfrom functools import partial\n\ndef multiply(x, y):\n    return x * y\n\ndouble = multiply(2)\n\n# Option 3\nfrom functools import partial\n\ndef greet(name, greeting):\n    return f\"{greeting}, {name}!\"\n\nhello = partial(greet, \"Hello\")\n\n# Option 4\nfrom functools import partial\n\ndef calculate(a, b, c):\n    return a + b + c\n\nadd_five = partial(calculate, a=5)",
+        "o": [
+            "Option 1 - fixes exponent parameter correctly",
+            "Option 2 - doesn't use partial, just calls function",
+            "Option 3 - fixes greeting as positional argument",
+            "Option 4 - uses keyword for first argument incorrectly"
+        ]
+    },
+    {
+        "q": "What are function predicates?",
+        "type": "mcq",
+        "o": [
+            "Functions that return True or False based on a condition",
+            "Functions that predict future values",
+            "Functions that validate all input types",
+            "Functions that always return the same value"
+        ]
+    },
+    {
+        "q": "Which code demonstrates function predicates?",
+        "type": "mcq",
+        "c": "# Option 1\ndef is_positive(x):\n    return x > 0\n\ndef is_even(x):\n    return x % 2 == 0\n\n# Option 2\ndef calculate_sum(numbers):\n    return sum(numbers)\n\n# Option 3\ndef process_data(data):\n    return data.upper()\n\n# Option 4\ndef get_length(items):\n    return len(items)",
+        "o": [
+            "Option 1 - both functions return boolean values",
+            "Option 2 - returns numerical result",
+            "Option 3 - returns modified string",
+            "Option 4 - returns integer length"
+        ]
+    },
+    {
+        "q": "What is function method chaining?",
+        "type": "mcq",
+        "o": [
+            "Calling multiple methods in sequence on the same object",
+            "Connecting functions together in a chain",
+            "Linking functions from different modules",
+            "Creating chains of function decorators"
+        ]
+    },
+    {
+        "q": "Which code shows proper method chaining?",
+        "type": "mcq",
+        "c": "# Option 1\nresult = \" hello \".strip().upper().replace(\"E\", \"3\")\n\n# Option 2\nname = \"john\"\nname.capitalize()\nname += \" smith\"\n\n# Option 3\ndef process(text):\n    text = text.strip()\n    text = text.upper()\n    return text\n\n# Option 4\nclass Processor:\n    def step1(self):\n        return self\n    def step2(self):\n        return self",
+        "o": [
+            "Option 1 - multiple string methods chained together",
+            "Option 2 - separate method calls, not chained",
+            "Option 3 - sequential assignments, not chaining",
+            "Option 4 - class methods returning self for chaining"
+        ]
+    },
+    {
+        "q": "What is the main advantage of partial application?",
+        "type": "mcq",
+        "o": [
+            "Creating specialized functions from general ones",
+            "Making functions run faster",
+            "Reducing memory usage",
+            "Automatically handling errors"
+        ]
+    },
+    {
+        "q": "Match the function pattern with its description:",
+        "type": "match",
+        "left": ["Partial Application", "Predicate Functions", "Method Chaining", "Function Stubbing"],
+        "right": ["Pre-filling some function arguments", "Return boolean True/False results", "Sequential method calls on objects", "Temporary placeholder implementations"]
+    },
+    {
+        "q": "How are predicate functions commonly used?",
+        "type": "mcq",
+        "o": [
+            "With filter() to select items from collections",
+            "To predict mathematical outcomes",
+            "For generating random test data",
+            "In function documentation"
+        ]
+    },
+    {
+        "q": "What makes method chaining possible?",
+        "type": "mcq",
+        "o": [
+            "Each method returns an object that has the next method",
+            "Special chaining operators in Python",
+            "All methods being in the same class",
+            "Using global variables to track state"
+        ]
+    },
+    {
+        "q": "______ application creates functions with preset arguments. ______ functions return True/False for filtering. ______ chaining allows fluent interfaces.",
+        "type": "fill_blank",
+        "answers": ["Partial", "Predicate", "Method"],
+        "other_options": ["Full", "Boolean", "Function", "Complete"]
+    },
+    {
+        "q": "Rearrange to create a predicate function for filtering:",
+        "type": "rearrange",
+        "words": ["def", "is_adult", "(age):", "return", "age", ">=", "18"]
+    },
+    {
+        "q": "All functions that return booleans are predicate functions.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "What is a common use case for partial application?",
+        "type": "mcq",
+        "o": [
+            "Creating callback functions with fixed parameters",
+            "Making recursive functions iterative",
+            "Optimizing mathematical computations",
+            "Reducing function parameter counts"
+        ]
+    },
+    {
+        "q": "How does method chaining improve code readability?",
+        "type": "mcq",
+        "o": [
+            "Shows data transformation steps clearly in sequence",
+            "Makes code run faster",
+            "Reduces variable assignments",
+            "Eliminates need for comments"
+        ]
+    },
+    {
+        "q": "Which built-in function often works with predicates?",
+        "type": "mcq",
+        "o": [
+            "filter()",
+            "map()",
+            "reduce()",
+            "sorted()"
+        ]
+    },
+    {
+        "q": "Partial application ______ function flexibility. Predicates enable ______ operations. Method chaining creates ______ interfaces.",
+        "type": "fill_blank",
+        "answers": ["increases", "filtering", "fluent"],
+        "other_options": ["reduces", "mapping", "complex", "maintains"]
+    },
+    {
+        "q": "What is the key requirement for method chaining?",
+        "type": "mcq",
+        "o": [
+            "Each method must return an object",
+            "All methods must be static",
+            "Methods cannot have parameters",
+            "Only string methods can be chained"
+        ]
+    },
+    {
+        "q": "Rearrange to use partial application with map:",
+        "type": "rearrange",
+        "words": ["from", "functools", "import", "partial", "def", "multiply", "(x,", "y):", "return", "x", "*", "y", "double", "=", "partial", "(multiply,", "2)", "result", "=", "list", "(map", "(double,", "[1,", "2,", "3]))"]
+    },
+    {
+        "q": "Partial application can only be used with functions that have two parameters.",
+        "type": "true_false",
+        "correct": "False"
+    },
+    {
+        "q": "How do predicates help with data processing?",
+        "type": "mcq",
+        "o": [
+            "They filter data based on conditions",
+            "They predict data patterns",
+            "They sort data automatically",
+            "They validate data types"
+        ]
+    },
+    {
+        "q": "What makes partial application different from default parameters?",
+        "type": "mcq",
+        "o": [
+            "Partial application happens at call time, defaults at definition",
+            "Default parameters are more flexible",
+            "Partial application only works with built-in functions",
+            "There is no practical difference"
+        ]
+    },
+    {
+        "q": "Which is a benefit of method chaining in APIs?",
+        "type": "mcq",
+        "o": [
+            "Creates readable, expressive code flows",
+            "Makes all methods required",
+            "Eliminates error handling",
+            "Reduces the number of classes needed"
+        ]
     }
 ]
