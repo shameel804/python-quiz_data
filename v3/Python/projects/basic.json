@@ -1,32 +1,49 @@
 [
   {
-    "title": "Variable Declaration",
-    "ques": "Write a Python program that declares and prints different types of variables.",
+    "title": "Defining Python and Its Importance 🐍",
+    "ques": "In your own words, briefly explain **what Python is** and list **three reasons** why it is widely used in modern technology.",
     "answer": {
-      "type": "code",
-      "lang": "python",
-      "content": "x = 10  # Integer\ny = 3.14  # Float\nz = 'Hello'  # String\nprint(x, y, z)"
+      "type": "text",
+      "content": "* **What Python is:** Python is a high-level, interpreted programming language known for its readability and simplicity. It supports multiple programming paradigms, including object-oriented, imperative, and functional programming.\n* **Importance/Reasons for Use:**\n    1.  **Readability and Easy to Learn:** Its simple, English-like syntax drastically reduces the cost of program maintenance and makes it an excellent choice for beginners.\n    2.  **Extensive Standard Library and Third-Party Packages:** It has a massive ecosystem (e.g., NumPy, Pandas, TensorFlow) that supports diverse fields like Data Science, Web Development, and Machine Learning.\n    3.  **Versatility and Cross-Platform Compatibility:** It can be used for a wide range of applications (backend web development, scripting, data analysis) and runs on all major operating systems."
     },
-    "explanation": "***Step 1:*** The variable ```x``` is assigned an integer value of ```10```.\n***Step 2:*** The variable ```y``` is assigned a floating-point value of ```3.14```.\n***Step 3:*** The variable ```z``` is assigned a string value ```'Hello'```.\n***Step 4:*** The ```print()``` function outputs all three variables."
+    "explanation": "This exercise tests the foundational understanding of the Python language itself. Its **simplicity** and vast **library ecosystem** are its primary selling points."
   },
   {
-    "title": "Check Data Type",
-    "ques": "Write a Python program that prints the data types of different variables.",
+    "title": "Variables and Basic Data Types",
+    "ques": "Write a Python script that declares four variables representing a student's data:\n1.  **`student_name`** (String)\n2.  **`age`** (Integer)\n3.  **`gpa`** (Floating-point number)\n4.  **`is_enrolled`** (Boolean)\n\nPrint the **value** and the **data type** of each variable using the `type()` function.",
     "answer": {
       "type": "code",
       "lang": "python",
-      "content": "x = 10\ny = 3.14\nz = 'Hello'\nprint(type(x))\nprint(type(y))\nprint(type(z))"
+      "content": "student_name = \"Alice\"\nage = 20\ngpa = 3.85\nis_enrolled = True\n\nprint(f\"Name: {student_name}, Type: {type(student_name)}\")\nprint(f\"Age: {age}, Type: {type(age)}\")\nprint(f\"GPA: {gpa}, Type: {type(gpa)}\")\nprint(f\"Enrolled: {is_enrolled}, Type: {type(is_enrolled)}\")"
     },
-    "explanation": "***Step 1:*** Three variables are declared: ```x``` (integer), ```y``` (float), and ```z``` (string).\n***Step 2:*** The ```type()``` function is used to get the data type of each variable.\n***Step 3:*** The ```print()``` function outputs the data type of each variable."
+    "explanation": "This exercise covers variable declaration and the four fundamental **primitive data types** in Python: **`str`** (string), **`int`** (integer), **`float`** (floating-point), and **`bool`** (boolean). The `type()` function is key for inspecting the data type of a variable."
   },
   {
-    "title": "Type Conversion",
-    "ques": "Write a Python program that converts an integer to a float and a float to an integer.",
+    "title": "Implicit and Explicit Type Conversion",
+    "ques": "Given the variables **`x = 10`** (integer) and **`y = 5.5`** (float):\n1.  Calculate **`z1 = x + y`**. What is the resulting data type of `z1` (Implicit Conversion)?\n2.  Use a type conversion function to convert `y` to an integer **before** adding it to `x`, calculating **`z2 = x + int(y)`**. What is the resulting data type and value of `z2` (Explicit Conversion)?",
     "answer": {
       "type": "code",
       "lang": "python",
-      "content": "x = 10\ny = float(x)\nz = int(y)\nprint(y, z)"
+      "content": "x = 10 # int\ny = 5.5 # float\n\n# 1. Implicit Conversion\nz1 = x + y\nprint(f\"z1 = {z1}, Type of z1: {type(z1)}\")\n\n# 2. Explicit Conversion\nz2 = x + int(y)\nprint(f\"z2 = {z2}, Type of z2: {type(z2)}\")"
     },
-    "explanation": "***Step 1:*** The variable ```x``` is assigned an integer value ```10```.\n***Step 2:*** The function ```float(x)``` converts ```x``` to a float and stores it in ```y```.\n***Step 3:*** The function ```int(y)``` converts ```y``` (which is float) back to an integer and stores it in ```z```.\n***Step 4:*** The ```print()``` function outputs both converted values."
+    "explanation": "The first calculation (**`z1`**) demonstrates **Implicit Type Conversion** (or Coercion), where Python automatically promotes the integer to a float to perform the operation, resulting in a **`float`**. The second calculation (**`z2`**) demonstrates **Explicit Type Conversion** using the **`int()`** function, where the float is manually truncated to an integer before the addition, resulting in an **`int`**."
+  },
+  {
+    "title": "Understanding Algorithm Complexity (Big-O)",
+    "ques": "An algorithm processes a list of $N$ items. If the algorithm involves: \n1.  A single loop that iterates over all $N$ items. \n2.  A step that only takes a fixed, constant amount of time, regardless of $N$. \n\nWhat is the **Time Complexity** (using Big-O Notation) for each of these operations, and what fundamental concept does Big-O notation help measure?",
+    "answer": {
+      "type": "text",
+      "content": "* **Time Complexity for a single loop over $N$ items (1):** $O(N)$ (Linear Time)\n* **Time Complexity for a fixed-time step (2):** $O(1)$ (Constant Time)\n* **Big-O Notation Concept:** Big-O notation is a mathematical tool used to describe the **asymptotic behavior** of an algorithm's **time or space requirements** as the input size ($N$) approaches infinity. It helps measure the **efficiency** and **scalability** of an algorithm."
+    },
+    "explanation": "This exercise differentiates between **$O(1)$** (Constant Time, the fastest complexity) and **$O(N)$** (Linear Time), which is common for simple iterations. It also reinforces the definition of Big-O as a measure of how an algorithm's resources scale with the input size."
+  },
+  {
+    "title": "Space Complexity and Memory Usage",
+    "ques": "Consider two Python code snippets that process a list of $N$ numbers:\n\n**Snippet A:** Calculates and returns the sum of all $N$ numbers.\n**Snippet B:** Creates and returns a **new list** containing the square of every number in the input list (total $N$ squares).\n\nAnalyze and state the **Space Complexity** (using Big-O) for each snippet's auxiliary space.",
+    "answer": {
+      "type": "text",
+      "content": "* **Snippet A (Calculating Sum):** $O(1)$ (Constant Space)\n    * **Reasoning:** Only a single variable (the running sum) is needed, regardless of how large $N$ is. The memory usage remains constant.\n* **Snippet B (Creating New List of Squares):** $O(N)$ (Linear Space)\n    * **Reasoning:** The algorithm must store $N$ new squared values in a new list. The auxiliary space required grows linearly with the size of the input $N$."
+    },
+    "explanation": "This exercise clarifies **Space Complexity**, which measures the amount of **temporary or auxiliary memory** an algorithm requires. **$O(1)$** is achieved when only a fixed number of variables are used, whereas **$O(N)$** is necessary when the algorithm generates and stores data that scales directly with the input size $N$."
   }
 ]
