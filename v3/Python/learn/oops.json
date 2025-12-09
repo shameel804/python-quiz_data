@@ -1,0 +1,117 @@
+{
+    "id": "learn_oops",
+    "topicId": "oops",
+    "topicTitle": "Object-Oriented Programming",
+    "description": "Master OOP in Python: classes, objects, inheritance, and operator overloading",
+    "baseKP": 80,
+    "slides": [
+        {
+            "id": "oops_1",
+            "type": "content",
+            "title": "Introduction to OOP",
+            "content": "# Object-Oriented Programming 🏗️\n\nOOP is a programming paradigm based on **objects** that contain data and code.\n\n## What you'll learn:\n- **OOP Concepts** - Encapsulation, abstraction, inheritance, polymorphism\n- **Classes & Objects** - Blueprints and instances\n- **Inheritance** - Reuse and extend functionality\n- **Multiple Inheritance** - Inherit from multiple classes\n- **Operator Overloading** - Customize operators for your classes\n\n## Why OOP?\n- 🧩 **Modularity** - Break down complex systems\n- 🔄 **Reusability** - Don't repeat yourself\n- 🔒 **Encapsulation** - Hide implementation details\n- 📐 **Abstraction** - Simplify complex reality\n\nLet's build something great!"
+        },
+        {
+            "id": "oops_2",
+            "type": "content",
+            "title": "Classes and Objects",
+            "content": "# Classes & Objects 📦\n\nA **class** is a blueprint; an **object** is an instance of that blueprint.\n\n## Defining a Class\n\n```python\nclass Dog:\n    # Class attribute (shared by all instances)\n    species = \"Canis familiaris\"\n    \n    # Constructor (initializer)\n    def __init__(self, name, age):\n        # Instance attributes\n        self.name = name\n        self.age = age\n    \n    # Instance method\n    def bark(self):\n        return f\"{self.name} says Woof!\"\n\n# Create objects (instances)\nbuddy = Dog(\"Buddy\", 3)\nmax_dog = Dog(\"Max\", 5)\n\nprint(buddy.name)       # \"Buddy\"\nprint(buddy.bark())     # \"Buddy says Woof!\"\nprint(buddy.species)    # \"Canis familiaris\"\n```\n\n## The `self` Parameter\n\n- `self` refers to the **current instance**\n- Must be the first parameter in all instance methods\n- Python passes it automatically when you call methods"
+        },
+        {
+            "id": "oops_3",
+            "type": "content",
+            "title": "Instance vs Class Attributes",
+            "content": "# Attributes Deep Dive 🔍\n\n## Instance Attributes\n\nUnique to each object.\n\n```python\nclass Person:\n    def __init__(self, name):\n        self.name = name  # Different for each person\n\nalice = Person(\"Alice\")\nbob = Person(\"Bob\")\nprint(alice.name)  # \"Alice\"\nprint(bob.name)    # \"Bob\"\n```\n\n## Class Attributes\n\nShared by all instances.\n\n```python\nclass Counter:\n    count = 0  # Class attribute\n    \n    def __init__(self):\n        Counter.count += 1\n\nc1 = Counter()\nc2 = Counter()\nc3 = Counter()\nprint(Counter.count)  # 3\n```\n\n## Methods Types\n\n```python\nclass MyClass:\n    # Instance method - accesses instance data\n    def instance_method(self):\n        return f\"Instance: {self}\"\n    \n    # Class method - accesses class data\n    @classmethod\n    def class_method(cls):\n        return f\"Class: {cls}\"\n    \n    # Static method - no access to class or instance\n    @staticmethod\n    def static_method():\n        return \"I'm just a regular function\"\n```"
+        },
+        {
+            "id": "oops_quiz_1",
+            "type": "quiz",
+            "title": "Classes Quiz",
+            "content": "Test your understanding of classes!",
+            "quizQuestion": "What is `self` in a Python class method?",
+            "quizOptions": [
+                "A keyword that creates new objects",
+                "A reference to the current instance",
+                "The class name",
+                "A built-in Python function"
+            ],
+            "correctOptionIndex": 1
+        },
+        {
+            "id": "oops_4",
+            "type": "content",
+            "title": "Encapsulation",
+            "content": "# Encapsulation 🔐\n\n**Encapsulation** bundles data and methods that operate on that data.\n\n## Access Modifiers (Convention)\n\n```python\nclass BankAccount:\n    def __init__(self, balance):\n        self.owner = \"Public\"      # Public\n        self._balance = balance    # Protected (convention)\n        self.__pin = \"1234\"        # Private (name mangling)\n    \n    def get_balance(self):\n        return self._balance\n    \n    def deposit(self, amount):\n        if amount > 0:\n            self._balance += amount\n    \n    def __secret_method(self):\n        pass  # Private method\n\naccount = BankAccount(1000)\nprint(account.owner)        # Works\nprint(account._balance)     # Works (but shouldn't)\n# print(account.__pin)      # AttributeError!\nprint(account._BankAccount__pin)  # Name mangling bypass\n```\n\n## Properties (Getters/Setters)\n\n```python\nclass Person:\n    def __init__(self, age):\n        self._age = age\n    \n    @property\n    def age(self):\n        return self._age\n    \n    @age.setter\n    def age(self, value):\n        if value < 0:\n            raise ValueError(\"Age can't be negative\")\n        self._age = value\n\np = Person(25)\nprint(p.age)  # Uses getter: 25\np.age = 30    # Uses setter\n```"
+        },
+        {
+            "id": "oops_5",
+            "type": "content",
+            "title": "Inheritance",
+            "content": "# Inheritance 🧬\n\n**Inheritance** allows a class to reuse another class's attributes and methods.\n\n## Basic Inheritance\n\n```python\n# Parent (Base) class\nclass Animal:\n    def __init__(self, name):\n        self.name = name\n    \n    def speak(self):\n        return \"Some sound\"\n\n# Child (Derived) class\nclass Dog(Animal):\n    def speak(self):  # Override parent method\n        return f\"{self.name} says Woof!\"\n\nclass Cat(Animal):\n    def speak(self):\n        return f\"{self.name} says Meow!\"\n\ndog = Dog(\"Buddy\")\ncat = Cat(\"Whiskers\")\n\nprint(dog.speak())  # \"Buddy says Woof!\"\nprint(cat.speak())  # \"Whiskers says Meow!\"\n```\n\n## Using super()\n\n```python\nclass Employee:\n    def __init__(self, name, salary):\n        self.name = name\n        self.salary = salary\n\nclass Manager(Employee):\n    def __init__(self, name, salary, department):\n        super().__init__(name, salary)  # Call parent __init__\n        self.department = department\n\nmgr = Manager(\"Alice\", 80000, \"Engineering\")\n```"
+        },
+        {
+            "id": "oops_6",
+            "type": "content",
+            "title": "Polymorphism",
+            "content": "# Polymorphism 🦎\n\n**Polymorphism** means \"many forms\" - same interface, different implementations.\n\n## Method Overriding\n\n```python\nclass Shape:\n    def area(self):\n        pass\n\nclass Rectangle(Shape):\n    def __init__(self, width, height):\n        self.width = width\n        self.height = height\n    \n    def area(self):\n        return self.width * self.height\n\nclass Circle(Shape):\n    def __init__(self, radius):\n        self.radius = radius\n    \n    def area(self):\n        return 3.14159 * self.radius ** 2\n\n# Same method name, different behavior\nshapes = [Rectangle(4, 5), Circle(3)]\n\nfor shape in shapes:\n    print(f\"Area: {shape.area()}\")\n# Area: 20\n# Area: 28.27...\n```\n\n## Duck Typing\n\n```python\n# \"If it walks like a duck and quacks like a duck...\"\nclass Duck:\n    def quack(self):\n        print(\"Quack!\")\n\nclass Person:\n    def quack(self):\n        print(\"I'm pretending to be a duck!\")\n\ndef make_it_quack(thing):\n    thing.quack()  # Works for any object with quack()\n\nmake_it_quack(Duck())    # \"Quack!\"\nmake_it_quack(Person())  # \"I'm pretending to be a duck!\"\n```"
+        },
+        {
+            "id": "oops_quiz_2",
+            "type": "quiz",
+            "title": "Inheritance Quiz",
+            "content": "Test your inheritance knowledge!",
+            "quizQuestion": "What does `super().__init__()` do in a child class?",
+            "quizOptions": [
+                "Creates a new parent class",
+                "Calls the parent class constructor",
+                "Deletes the parent class",
+                "Makes the class abstract"
+            ],
+            "correctOptionIndex": 1
+        },
+        {
+            "id": "oops_7",
+            "type": "content",
+            "title": "Multiple Inheritance",
+            "content": "# Multiple Inheritance 🌳\n\nA class can inherit from **multiple** parent classes.\n\n## Basic Multiple Inheritance\n\n```python\nclass Flyable:\n    def fly(self):\n        return \"Flying high!\"\n\nclass Swimmable:\n    def swim(self):\n        return \"Swimming fast!\"\n\nclass Duck(Flyable, Swimmable):\n    def quack(self):\n        return \"Quack!\"\n\ndonald = Duck()\nprint(donald.fly())   # \"Flying high!\"\nprint(donald.swim())  # \"Swimming fast!\"\nprint(donald.quack()) # \"Quack!\"\n```\n\n## The Diamond Problem\n\n```python\nclass A:\n    def greet(self):\n        return \"Hello from A\"\n\nclass B(A):\n    def greet(self):\n        return \"Hello from B\"\n\nclass C(A):\n    def greet(self):\n        return \"Hello from C\"\n\nclass D(B, C):  # Which greet() is used?\n    pass\n\nd = D()\nprint(d.greet())  # \"Hello from B\" - MRO decides\nprint(D.__mro__)  # Method Resolution Order\n# (<class 'D'>, <class 'B'>, <class 'C'>, <class 'A'>, <class 'object'>)\n```\n\n## Mixins Pattern\n\n```python\nclass LoggerMixin:\n    def log(self, message):\n        print(f\"[LOG] {message}\")\n\nclass DatabaseHandler(LoggerMixin):\n    def save(self, data):\n        self.log(\"Saving data...\")\n        # save logic here\n```"
+        },
+        {
+            "id": "oops_8",
+            "type": "content",
+            "title": "Operator Overloading",
+            "content": "# Operator Overloading ➕\n\nCustomize how operators work with your classes using **dunder** (double underscore) methods.\n\n## Arithmetic Operators\n\n```python\nclass Vector:\n    def __init__(self, x, y):\n        self.x = x\n        self.y = y\n    \n    def __add__(self, other):       # +\n        return Vector(self.x + other.x, self.y + other.y)\n    \n    def __sub__(self, other):       # -\n        return Vector(self.x - other.x, self.y - other.y)\n    \n    def __mul__(self, scalar):      # *\n        return Vector(self.x * scalar, self.y * scalar)\n    \n    def __repr__(self):\n        return f\"Vector({self.x}, {self.y})\"\n\nv1 = Vector(1, 2)\nv2 = Vector(3, 4)\n\nprint(v1 + v2)  # Vector(4, 6)\nprint(v2 - v1)  # Vector(2, 2)\nprint(v1 * 3)   # Vector(3, 6)\n```\n\n## Common Dunder Methods\n\n| Method | Operator/Function |\n|--------|------------------|\n| `__add__` | + |\n| `__sub__` | - |\n| `__mul__` | * |\n| `__truediv__` | / |\n| `__eq__` | == |\n| `__lt__` | < |\n| `__str__` | str() |\n| `__repr__` | repr() |\n| `__len__` | len() |"
+        },
+        {
+            "id": "oops_9",
+            "type": "content",
+            "title": "More Magic Methods",
+            "content": "# More Dunder Methods 🪄\n\n## Comparison Operators\n\n```python\nclass Product:\n    def __init__(self, name, price):\n        self.name = name\n        self.price = price\n    \n    def __eq__(self, other):   # ==\n        return self.price == other.price\n    \n    def __lt__(self, other):   # <\n        return self.price < other.price\n    \n    def __le__(self, other):   # <=\n        return self.price <= other.price\n\np1 = Product(\"A\", 10)\np2 = Product(\"B\", 20)\nprint(p1 < p2)   # True\nprint(p1 == p2)  # False\n```\n\n## Container Methods\n\n```python\nclass Playlist:\n    def __init__(self):\n        self.songs = []\n    \n    def __len__(self):              # len()\n        return len(self.songs)\n    \n    def __getitem__(self, index):   # playlist[0]\n        return self.songs[index]\n    \n    def __contains__(self, song):   # 'song' in playlist\n        return song in self.songs\n    \n    def __iter__(self):             # for song in playlist\n        return iter(self.songs)\n    \n    def add(self, song):\n        self.songs.append(song)\n\nplaylist = Playlist()\nplaylist.add(\"Song A\")\nplaylist.add(\"Song B\")\n\nprint(len(playlist))        # 2\nprint(playlist[0])          # \"Song A\"\nprint(\"Song A\" in playlist) # True\n```"
+        },
+        {
+            "id": "oops_quiz_3",
+            "type": "quiz",
+            "title": "Operator Overloading Quiz",
+            "content": "Test your knowledge of magic methods!",
+            "quizQuestion": "Which dunder method is called when you use `len()` on an object?",
+            "quizOptions": [
+                "__length__",
+                "__len__",
+                "__size__",
+                "__count__"
+            ],
+            "correctOptionIndex": 1
+        },
+        {
+            "id": "oops_10",
+            "type": "content",
+            "title": "Abstract Classes",
+            "content": "# Abstract Classes 📐\n\nEnforce that child classes implement certain methods.\n\n```python\nfrom abc import ABC, abstractmethod\n\nclass Shape(ABC):  # Abstract Base Class\n    @abstractmethod\n    def area(self):\n        \"\"\"Calculate the area\"\"\"\n        pass\n    \n    @abstractmethod\n    def perimeter(self):\n        \"\"\"Calculate the perimeter\"\"\"\n        pass\n\n# shape = Shape()  # ❌ Error! Can't instantiate abstract class\n\nclass Rectangle(Shape):\n    def __init__(self, width, height):\n        self.width = width\n        self.height = height\n    \n    def area(self):  # Must implement\n        return self.width * self.height\n    \n    def perimeter(self):  # Must implement\n        return 2 * (self.width + self.height)\n\nrect = Rectangle(4, 5)\nprint(rect.area())       # 20\nprint(rect.perimeter())  # 18\n```\n\n## When to Use Abstract Classes\n\n- Define a common interface for related classes\n- Ensure child classes implement specific methods\n- Create frameworks and libraries"
+        },
+        {
+            "id": "oops_11",
+            "type": "content",
+            "title": "Summary",
+            "content": "# Amazing Work! 🎉\n\nYou've mastered Object-Oriented Programming in Python!\n\n## Core Concepts\n- ✅ Classes and Objects\n- ✅ `__init__` constructor and `self`\n- ✅ Instance vs Class attributes\n\n## Pillars of OOP\n- ✅ **Encapsulation** - Bundling data and methods\n- ✅ **Inheritance** - Reusing and extending classes\n- ✅ **Polymorphism** - Same interface, different implementations\n- ✅ **Abstraction** - Abstract base classes\n\n## Advanced Topics\n- ✅ Multiple Inheritance & MRO\n- ✅ Operator Overloading (dunder methods)\n- ✅ Properties and access modifiers\n- ✅ Class methods and static methods\n\n> 🚀 **Challenge:** Design a library management system with Book, User, and Library classes using OOP principles!"
+        }
+    ]
+}

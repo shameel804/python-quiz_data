@@ -1,0 +1,117 @@
+{
+    "id": "learn_file",
+    "topicId": "file",
+    "topicTitle": "File Handling",
+    "description": "Master file operations, directory handling, and exception management in Python",
+    "baseKP": 75,
+    "slides": [
+        {
+            "id": "file_1",
+            "type": "content",
+            "title": "Introduction to File Handling",
+            "content": "# File Handling in Python 📁\n\nLearn how to read, write, and manage files and directories.\n\n## What you'll learn:\n- **File Operations** - Open, read, write, close files\n- **File Modes** - Different ways to open files\n- **Directory Operations** - Navigate and manage folders\n- **Exceptions** - Handle errors gracefully\n- **Custom Exceptions** - Create your own error types\n\n## Why File Handling Matters\n- 💾 Save user data and settings\n- 📊 Process data files (CSV, JSON, etc.)\n- 📝 Create logs and reports\n- 🔄 Persist application state\n\nLet's get started!"
+        },
+        {
+            "id": "file_2",
+            "type": "content",
+            "title": "Opening and Reading Files",
+            "content": "# Reading Files 📖\n\nUse `open()` to work with files.\n\n## Basic File Reading\n\n```python\n# Open and read entire file\nfile = open(\"data.txt\", \"r\")\ncontent = file.read()\nprint(content)\nfile.close()  # Always close files!\n```\n\n## Reading Methods\n\n```python\n# read() - Read entire file as string\ncontent = file.read()\n\n# readline() - Read one line at a time\nline = file.readline()\n\n# readlines() - Read all lines as a list\nlines = file.readlines()\n```\n\n## The 'with' Statement (Recommended!)\n\n```python\n# Automatically closes file when done\nwith open(\"data.txt\", \"r\") as file:\n    content = file.read()\n    print(content)\n# File is automatically closed here!\n```\n\n## Reading Line by Line\n\n```python\nwith open(\"data.txt\", \"r\") as file:\n    for line in file:\n        print(line.strip())  # Remove newline\n```"
+        },
+        {
+            "id": "file_3",
+            "type": "content",
+            "title": "Writing to Files",
+            "content": "# Writing Files ✍️\n\n## Write Mode ('w') - Overwrites Existing Content\n\n```python\nwith open(\"output.txt\", \"w\") as file:\n    file.write(\"Hello, World!\\n\")\n    file.write(\"This is line 2\\n\")\n```\n\n## Append Mode ('a') - Adds to Existing Content\n\n```python\nwith open(\"log.txt\", \"a\") as file:\n    file.write(\"New log entry\\n\")\n```\n\n## Write Multiple Lines\n\n```python\nlines = [\"Line 1\\n\", \"Line 2\\n\", \"Line 3\\n\"]\n\nwith open(\"output.txt\", \"w\") as file:\n    file.writelines(lines)\n```\n\n## Read and Write Mode ('r+')\n\n```python\nwith open(\"data.txt\", \"r+\") as file:\n    content = file.read()\n    file.write(\"\\nAppended text\")\n```\n\n> ⚠️ **Warning:** 'w' mode will **erase** existing content! Use 'a' to append."
+        },
+        {
+            "id": "file_quiz_1",
+            "type": "quiz",
+            "title": "File Operations Quiz",
+            "content": "Test your file handling knowledge!",
+            "quizQuestion": "Which file mode would you use to ADD text to an existing file without erasing its contents?",
+            "quizOptions": [
+                "r",
+                "w",
+                "a",
+                "x"
+            ],
+            "correctOptionIndex": 2
+        },
+        {
+            "id": "file_4",
+            "type": "content",
+            "title": "File Modes Reference",
+            "content": "# File Modes 📋\n\n| Mode | Description | Existing Content |\n|------|-------------|------------------|\n| `'r'` | Read only | Preserved |\n| `'w'` | Write only | **Erased** |\n| `'a'` | Append only | Preserved |\n| `'x'` | Create new | Error if exists |\n| `'r+'` | Read + Write | Preserved |\n| `'w+'` | Write + Read | **Erased** |\n| `'a+'` | Append + Read | Preserved |\n\n## Binary Mode\n\nAdd `'b'` for binary files (images, videos, etc.):\n\n```python\n# Read binary file\nwith open(\"image.png\", \"rb\") as file:\n    data = file.read()\n\n# Write binary file\nwith open(\"copy.png\", \"wb\") as file:\n    file.write(data)\n```\n\n## Text Encoding\n\n```python\n# Specify encoding (UTF-8 is recommended)\nwith open(\"data.txt\", \"r\", encoding=\"utf-8\") as file:\n    content = file.read()\n```"
+        },
+        {
+            "id": "file_5",
+            "type": "content",
+            "title": "Working with Directories",
+            "content": "# Directory Operations 📂\n\nUse the `os` and `pathlib` modules for directory management.\n\n## Using os Module\n\n```python\nimport os\n\n# Get current directory\ncurrent = os.getcwd()\nprint(current)\n\n# Change directory\nos.chdir(\"/path/to/folder\")\n\n# List directory contents\nfiles = os.listdir(\".\")\nprint(files)\n\n# Create directory\nos.mkdir(\"new_folder\")\n\n# Create nested directories\nos.makedirs(\"parent/child/grandchild\")\n\n# Remove directory\nos.rmdir(\"empty_folder\")\n```\n\n## Check Existence\n\n```python\n# Check if file exists\nif os.path.exists(\"data.txt\"):\n    print(\"File exists!\")\n\n# Check if it's a file or directory\nprint(os.path.isfile(\"data.txt\"))  # True/False\nprint(os.path.isdir(\"my_folder\"))  # True/False\n```\n\n## Join Paths (Cross-Platform)\n\n```python\n# Works on Windows, Mac, Linux\npath = os.path.join(\"folder\", \"subfolder\", \"file.txt\")\nprint(path)  # folder/subfolder/file.txt\n```"
+        },
+        {
+            "id": "file_6",
+            "type": "content",
+            "title": "Modern Path Handling with pathlib",
+            "content": "# pathlib Module 🛤️\n\nThe modern, object-oriented way to handle paths.\n\n```python\nfrom pathlib import Path\n\n# Create a Path object\npath = Path(\"data/files/report.txt\")\n\n# Get parts of the path\nprint(path.name)      # report.txt\nprint(path.stem)      # report\nprint(path.suffix)    # .txt\nprint(path.parent)    # data/files\n\n# Check existence\nif path.exists():\n    print(\"File exists!\")\n\n# Create directories\nPath(\"new/folder/structure\").mkdir(parents=True, exist_ok=True)\n\n# List files in directory\nfor file in Path(\".\").iterdir():\n    print(file)\n\n# Find files with pattern\nfor py_file in Path(\".\").glob(\"*.py\"):\n    print(py_file)\n\n# Recursive search\nfor file in Path(\".\").rglob(\"*.txt\"):\n    print(file)\n```\n\n## Reading/Writing with pathlib\n\n```python\npath = Path(\"data.txt\")\n\n# Write text\npath.write_text(\"Hello, World!\")\n\n# Read text\ncontent = path.read_text()\n```"
+        },
+        {
+            "id": "file_quiz_2",
+            "type": "quiz",
+            "title": "Directory Quiz",
+            "content": "Test your directory knowledge!",
+            "quizQuestion": "Which function creates nested directories like 'a/b/c' in one call?",
+            "quizOptions": [
+                "os.mkdir()",
+                "os.makedirs()",
+                "os.create()",
+                "os.newdir()"
+            ],
+            "correctOptionIndex": 1
+        },
+        {
+            "id": "file_7",
+            "type": "content",
+            "title": "Exceptions",
+            "content": "# Exceptions ⚠️\n\nExceptions are errors that occur during program execution.\n\n## Common Exceptions\n\n```python\n# FileNotFoundError\nopen(\"nonexistent.txt\")  # File doesn't exist\n\n# ZeroDivisionError\nresult = 10 / 0  # Can't divide by zero\n\n# TypeError\n\"hello\" + 5  # Can't add string and int\n\n# ValueError\nint(\"hello\")  # Can't convert to int\n\n# KeyError\ndata = {\"a\": 1}\nprint(data[\"b\"])  # Key doesn't exist\n\n# IndexError\nlist = [1, 2, 3]\nprint(list[10])  # Index out of range\n```\n\n## Exception Hierarchy\n\n```\nBaseException\n└── Exception\n    ├── ValueError\n    ├── TypeError\n    ├── KeyError\n    ├── IndexError\n    ├── FileNotFoundError\n    └── ... many more\n```\n\n> 💡 Without handling, exceptions **crash** your program!"
+        },
+        {
+            "id": "file_8",
+            "type": "content",
+            "title": "Exception Handling",
+            "content": "# Try-Except Blocks 🛡️\n\nHandle exceptions gracefully with try-except.\n\n## Basic Try-Except\n\n```python\ntry:\n    result = 10 / 0\nexcept ZeroDivisionError:\n    print(\"Cannot divide by zero!\")\n```\n\n## Handling Multiple Exceptions\n\n```python\ntry:\n    value = int(input(\"Enter a number: \"))\n    result = 10 / value\nexcept ValueError:\n    print(\"That's not a valid number!\")\nexcept ZeroDivisionError:\n    print(\"Cannot divide by zero!\")\n```\n\n## Catch-All (Use Sparingly!)\n\n```python\ntry:\n    risky_operation()\nexcept Exception as e:\n    print(f\"Error occurred: {e}\")\n```\n\n## Else and Finally\n\n```python\ntry:\n    file = open(\"data.txt\")\n    content = file.read()\nexcept FileNotFoundError:\n    print(\"File not found!\")\nelse:\n    print(\"File read successfully!\")  # Runs if no exception\nfinally:\n    print(\"Cleanup here\")  # ALWAYS runs\n```"
+        },
+        {
+            "id": "file_9",
+            "type": "content",
+            "title": "File Handling with Exceptions",
+            "content": "# Safe File Operations 🔒\n\nAlways handle potential file errors!\n\n## Safe File Reading\n\n```python\ndef read_file_safely(filename):\n    try:\n        with open(filename, \"r\") as file:\n            return file.read()\n    except FileNotFoundError:\n        print(f\"Error: '{filename}' not found\")\n        return None\n    except PermissionError:\n        print(f\"Error: No permission to read '{filename}'\")\n        return None\n    except IOError as e:\n        print(f\"Error reading file: {e}\")\n        return None\n\ncontent = read_file_safely(\"data.txt\")\nif content:\n    print(content)\n```\n\n## Safe File Writing\n\n```python\ndef save_data(filename, data):\n    try:\n        with open(filename, \"w\") as file:\n            file.write(data)\n        return True\n    except IOError as e:\n        print(f\"Error saving file: {e}\")\n        return False\n```\n\n## Raising Exceptions\n\n```python\ndef validate_age(age):\n    if age < 0:\n        raise ValueError(\"Age cannot be negative!\")\n    return age\n\ntry:\n    validate_age(-5)\nexcept ValueError as e:\n    print(e)  # \"Age cannot be negative!\"\n```"
+        },
+        {
+            "id": "file_quiz_3",
+            "type": "quiz",
+            "title": "Exception Quiz",
+            "content": "Test your exception handling knowledge!",
+            "quizQuestion": "Which block ALWAYS runs, whether an exception occurred or not?",
+            "quizOptions": [
+                "try",
+                "except",
+                "else",
+                "finally"
+            ],
+            "correctOptionIndex": 3
+        },
+        {
+            "id": "file_10",
+            "type": "content",
+            "title": "User-Defined Exceptions",
+            "content": "# Custom Exceptions 🎨\n\nCreate your own exception types for specific error scenarios.\n\n## Basic Custom Exception\n\n```python\nclass InvalidAgeError(Exception):\n    \"\"\"Raised when age is invalid\"\"\"\n    pass\n\ndef set_age(age):\n    if age < 0 or age > 150:\n        raise InvalidAgeError(f\"Invalid age: {age}\")\n    return age\n\ntry:\n    set_age(200)\nexcept InvalidAgeError as e:\n    print(e)  # \"Invalid age: 200\"\n```\n\n## Custom Exception with Attributes\n\n```python\nclass ValidationError(Exception):\n    def __init__(self, field, message):\n        self.field = field\n        self.message = message\n        super().__init__(f\"{field}: {message}\")\n\ndef validate_email(email):\n    if \"@\" not in email:\n        raise ValidationError(\"email\", \"Must contain @\")\n\ntry:\n    validate_email(\"invalid-email\")\nexcept ValidationError as e:\n    print(f\"Field: {e.field}\")\n    print(f\"Error: {e.message}\")\n```\n\n## Exception Hierarchy for Your App\n\n```python\nclass AppError(Exception):\n    \"\"\"Base exception for our app\"\"\"\n    pass\n\nclass DatabaseError(AppError):\n    pass\n\nclass NetworkError(AppError):\n    pass\n```"
+        },
+        {
+            "id": "file_11",
+            "type": "content",
+            "title": "Summary",
+            "content": "# Excellent Work! 🎉\n\nYou've mastered File Handling in Python!\n\n## File Operations\n- ✅ `open()`, `read()`, `write()`, `close()`\n- ✅ Using `with` statement for safe file handling\n- ✅ File modes: 'r', 'w', 'a', 'r+', 'w+', 'a+'\n- ✅ Binary mode with 'b' suffix\n\n## Directory Operations\n- ✅ `os` module for directory management\n- ✅ `pathlib` for modern path handling\n- ✅ Creating, listing, and navigating directories\n\n## Exception Handling\n- ✅ `try`, `except`, `else`, `finally`\n- ✅ Catching specific exceptions\n- ✅ Raising exceptions with `raise`\n\n## Custom Exceptions\n- ✅ Creating exception classes\n- ✅ Adding attributes to exceptions\n- ✅ Building exception hierarchies\n\n> 🚀 **Challenge:** Create a program that reads a CSV file, processes the data, and handles all potential errors gracefully!"
+        }
+    ]
+}

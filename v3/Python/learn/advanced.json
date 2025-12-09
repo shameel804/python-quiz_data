@@ -1,0 +1,123 @@
+{
+    "id": "learn_advanced",
+    "topicId": "advanced",
+    "topicTitle": "Advanced Python",
+    "description": "Master advanced Python concepts: iterators, generators, closures, decorators, properties, and RegEx",
+    "baseKP": 90,
+    "slides": [
+        {
+            "id": "adv_1",
+            "type": "content",
+            "title": "Welcome to Advanced Python",
+            "content": "# Advanced Python 🚀\n\nLevel up your Python skills with advanced concepts!\n\n## What you'll learn:\n- **Iterators** - Custom iteration protocols\n- **Generators** - Memory-efficient sequences\n- **Closures** - Functions that remember\n- **Decorators** - Modify function behavior\n- **Properties** - Pythonic getters/setters\n- **Regular Expressions** - Powerful pattern matching\n\n## Prerequisites\n- Functions and scope\n- Object-oriented programming\n- Basic Python syntax\n\n> 💡 These concepts are what separate **beginners** from **professionals**!\n\nLet's dive deep!"
+        },
+        {
+            "id": "adv_2",
+            "type": "content",
+            "title": "Iterators",
+            "content": "# Iterators 🔄\n\nAn **iterator** is an object that can be iterated (looped) upon.\n\n## The Iterator Protocol\n\nIterators must implement:\n- `__iter__()` - Returns the iterator object\n- `__next__()` - Returns the next value\n\n```python\n# Built-in iterators\nnumbers = [1, 2, 3]\niterator = iter(numbers)  # Get iterator\n\nprint(next(iterator))  # 1\nprint(next(iterator))  # 2\nprint(next(iterator))  # 3\n# next(iterator)       # StopIteration error!\n```\n\n## Custom Iterator\n\n```python\nclass CountUp:\n    def __init__(self, max_value):\n        self.max = max_value\n        self.current = 0\n    \n    def __iter__(self):\n        return self\n    \n    def __next__(self):\n        if self.current >= self.max:\n            raise StopIteration\n        self.current += 1\n        return self.current\n\nfor num in CountUp(5):\n    print(num)  # 1, 2, 3, 4, 5\n```\n\n## Why Iterators?\n- Memory efficient (generate one value at a time)\n- Can represent infinite sequences\n- Lazy evaluation"
+        },
+        {
+            "id": "adv_3",
+            "type": "content",
+            "title": "Generators",
+            "content": "# Generators 🏭\n\n**Generators** are a simpler way to create iterators using functions.\n\n## Generator Function (with yield)\n\n```python\ndef count_up(max_value):\n    current = 1\n    while current <= max_value:\n        yield current  # Pause and return value\n        current += 1\n\nfor num in count_up(5):\n    print(num)  # 1, 2, 3, 4, 5\n```\n\n## How yield Works\n\n- `yield` **pauses** the function and returns a value\n- On next call, execution **resumes** after yield\n- When function ends, `StopIteration` is raised\n\n## Generator Expression\n\n```python\n# Like list comprehension, but with ()\nsquares = (x**2 for x in range(1000000))\n\n# Lazy evaluation - doesn't compute all immediately\nprint(next(squares))  # 0\nprint(next(squares))  # 1\n```\n\n## Memory Comparison\n\n```python\nimport sys\n\n# List - stores all values in memory\nlist_comp = [x**2 for x in range(1000)]\nprint(sys.getsizeof(list_comp))  # ~9000 bytes\n\n# Generator - stores only the recipe\ngen_exp = (x**2 for x in range(1000))\nprint(sys.getsizeof(gen_exp))    # ~112 bytes!\n```"
+        },
+        {
+            "id": "adv_quiz_1",
+            "type": "quiz",
+            "title": "Generators Quiz",
+            "content": "Test your generator knowledge!",
+            "quizQuestion": "What keyword is used to create a generator function?",
+            "quizOptions": [
+                "generate",
+                "return",
+                "yield",
+                "iterate"
+            ],
+            "correctOptionIndex": 2
+        },
+        {
+            "id": "adv_4",
+            "type": "content",
+            "title": "Generator Use Cases",
+            "content": "# Practical Generators 💡\n\n## Reading Large Files\n\n```python\ndef read_large_file(filepath):\n    with open(filepath, 'r') as file:\n        for line in file:\n            yield line.strip()\n\n# Process line by line - never loads entire file!\nfor line in read_large_file('huge_file.txt'):\n    process(line)\n```\n\n## Infinite Sequences\n\n```python\ndef infinite_counter():\n    num = 0\n    while True:\n        yield num\n        num += 1\n\ncounter = infinite_counter()\nprint(next(counter))  # 0\nprint(next(counter))  # 1\n# Can go forever!\n```\n\n## Pipeline Processing\n\n```python\ndef numbers():\n    for i in range(10):\n        yield i\n\ndef squared(nums):\n    for n in nums:\n        yield n ** 2\n\ndef evens_only(nums):\n    for n in nums:\n        if n % 2 == 0:\n            yield n\n\n# Chain generators\npipeline = evens_only(squared(numbers()))\nprint(list(pipeline))  # [0, 4, 16, 36, 64]\n```"
+        },
+        {
+            "id": "adv_5",
+            "type": "content",
+            "title": "Closures",
+            "content": "# Closures 📦\n\nA **closure** is a function that remembers values from its enclosing scope.\n\n## Understanding Closures\n\n```python\ndef make_multiplier(factor):\n    # 'factor' is remembered by the inner function\n    def multiply(number):\n        return number * factor\n    return multiply\n\ndouble = make_multiplier(2)\ntriple = make_multiplier(3)\n\nprint(double(5))   # 10 - remembers factor=2\nprint(triple(5))   # 15 - remembers factor=3\n```\n\n## Closure Requirements\n\n1. Nested function\n2. Inner function references outer function's variable\n3. Outer function returns the inner function\n\n## Practical Example: Counter\n\n```python\ndef make_counter():\n    count = 0\n    \n    def counter():\n        nonlocal count\n        count += 1\n        return count\n    \n    return counter\n\nmy_counter = make_counter()\nprint(my_counter())  # 1\nprint(my_counter())  # 2\nprint(my_counter())  # 3\n\n# Different counter - independent state!\nother_counter = make_counter()\nprint(other_counter())  # 1\n```"
+        },
+        {
+            "id": "adv_6",
+            "type": "content",
+            "title": "Decorators Basics",
+            "content": "# Decorators 🎀\n\n**Decorators** modify or enhance functions without changing their code.\n\n## Basic Decorator\n\n```python\ndef my_decorator(func):\n    def wrapper():\n        print(\"Before function call\")\n        func()\n        print(\"After function call\")\n    return wrapper\n\n@my_decorator\ndef say_hello():\n    print(\"Hello!\")\n\nsay_hello()\n# Output:\n# Before function call\n# Hello!\n# After function call\n```\n\n## @ Syntax is Syntactic Sugar\n\n```python\n# These are equivalent:\n@my_decorator\ndef say_hello():\n    pass\n\n# Same as:\ndef say_hello():\n    pass\nsay_hello = my_decorator(say_hello)\n```\n\n## Decorator with Arguments\n\n```python\ndef my_decorator(func):\n    def wrapper(*args, **kwargs):\n        print(f\"Calling: {func.__name__}\")\n        result = func(*args, **kwargs)\n        print(f\"Result: {result}\")\n        return result\n    return wrapper\n\n@my_decorator\ndef add(a, b):\n    return a + b\n\nadd(3, 5)\n# Calling: add\n# Result: 8\n```"
+        },
+        {
+            "id": "adv_7",
+            "type": "content",
+            "title": "Practical Decorators",
+            "content": "# Real-World Decorators 🌟\n\n## Timing Decorator\n\n```python\nimport time\n\ndef timer(func):\n    def wrapper(*args, **kwargs):\n        start = time.time()\n        result = func(*args, **kwargs)\n        end = time.time()\n        print(f\"{func.__name__} took {end-start:.4f}s\")\n        return result\n    return wrapper\n\n@timer\ndef slow_function():\n    time.sleep(1)\n    return \"Done!\"\n\nslow_function()  # slow_function took 1.0012s\n```\n\n## Caching Decorator\n\n```python\ndef memoize(func):\n    cache = {}\n    def wrapper(*args):\n        if args not in cache:\n            cache[args] = func(*args)\n        return cache[args]\n    return wrapper\n\n@memoize\ndef fibonacci(n):\n    if n < 2:\n        return n\n    return fibonacci(n-1) + fibonacci(n-2)\n\nprint(fibonacci(100))  # Instant! (without memo: very slow)\n```\n\n## functools.wraps (Best Practice)\n\n```python\nfrom functools import wraps\n\ndef my_decorator(func):\n    @wraps(func)  # Preserves function metadata\n    def wrapper(*args, **kwargs):\n        return func(*args, **kwargs)\n    return wrapper\n```"
+        },
+        {
+            "id": "adv_quiz_2",
+            "type": "quiz",
+            "title": "Decorators Quiz",
+            "content": "Test your decorator knowledge!",
+            "quizQuestion": "What does a decorator do?",
+            "quizOptions": [
+                "Deletes functions",
+                "Modifies function behavior without changing its code",
+                "Creates new classes",
+                "Compiles Python to machine code"
+            ],
+            "correctOptionIndex": 1
+        },
+        {
+            "id": "adv_8",
+            "type": "content",
+            "title": "Property Decorator",
+            "content": "# The @property Decorator 🏠\n\nCreate **managed attributes** with getter, setter, and deleter.\n\n## Basic Property\n\n```python\nclass Circle:\n    def __init__(self, radius):\n        self._radius = radius\n    \n    @property\n    def radius(self):\n        \"\"\"Getter for radius\"\"\"\n        return self._radius\n    \n    @radius.setter\n    def radius(self, value):\n        \"\"\"Setter with validation\"\"\"\n        if value < 0:\n            raise ValueError(\"Radius can't be negative\")\n        self._radius = value\n    \n    @property\n    def area(self):\n        \"\"\"Computed property (read-only)\"\"\"\n        return 3.14159 * self._radius ** 2\n\nc = Circle(5)\nprint(c.radius)   # 5 (uses getter)\nc.radius = 10     # uses setter\nprint(c.area)     # 314.159 (computed)\n# c.area = 100    # Error! No setter\n```\n\n## Why Use Properties?\n\n- ✅ Validate data before setting\n- ✅ Compute values on-the-fly\n- ✅ Make attributes read-only\n- ✅ Maintain backward compatibility"
+        },
+        {
+            "id": "adv_9",
+            "type": "content",
+            "title": "Regular Expressions Basics",
+            "content": "# Regular Expressions 🔍\n\nPattern matching for strings using the `re` module.\n\n## Basic Matching\n\n```python\nimport re\n\ntext = \"Hello, my email is john@example.com\"\n\n# search() - Find first match\nmatch = re.search(r\"\\w+@\\w+\\.\\w+\", text)\nif match:\n    print(match.group())  # john@example.com\n\n# findall() - Find all matches\nnumbers = \"Phone: 123-456-7890, Alt: 098-765-4321\"\nphones = re.findall(r\"\\d{3}-\\d{3}-\\d{4}\", numbers)\nprint(phones)  # ['123-456-7890', '098-765-4321']\n```\n\n## Common Patterns\n\n| Pattern | Meaning |\n|---------|--------|\n| `\\d` | Digit (0-9) |\n| `\\w` | Word character (a-z, A-Z, 0-9, _) |\n| `\\s` | Whitespace |\n| `.` | Any character |\n| `*` | 0 or more |\n| `+` | 1 or more |\n| `?` | 0 or 1 |\n| `{n}` | Exactly n times |\n| `[abc]` | Any of a, b, c |\n| `^` | Start of string |\n| `$` | End of string |"
+        },
+        {
+            "id": "adv_10",
+            "type": "content",
+            "title": "RegEx Operations",
+            "content": "# RegEx Operations 📝\n\n## Substitution\n\n```python\nimport re\n\ntext = \"Hello World World\"\n\n# Replace all occurrences\nresult = re.sub(r\"World\", \"Python\", text)\nprint(result)  # \"Hello Python Python\"\n\n# Replace with limit\nresult = re.sub(r\"World\", \"Python\", text, count=1)\nprint(result)  # \"Hello Python World\"\n```\n\n## Splitting\n\n```python\ntext = \"apple,banana;cherry orange\"\n\n# Split by multiple delimiters\nfruits = re.split(r\"[,;\\s]+\", text)\nprint(fruits)  # ['apple', 'banana', 'cherry', 'orange']\n```\n\n## Groups (Capturing)\n\n```python\nlog = \"2024-03-15: User login successful\"\n\n# Capture date parts\nmatch = re.search(r\"(\\d{4})-(\\d{2})-(\\d{2})\", log)\nif match:\n    year = match.group(1)   # \"2024\"\n    month = match.group(2)  # \"03\"\n    day = match.group(3)    # \"15\"\n    print(f\"{day}/{month}/{year}\")  # \"15/03/2024\"\n\n# Named groups\nmatch = re.search(r\"(?P<year>\\d{4})-(?P<month>\\d{2})\", log)\nprint(match.group('year'))  # \"2024\"\n```"
+        },
+        {
+            "id": "adv_11",
+            "type": "content",
+            "title": "Practical RegEx Examples",
+            "content": "# RegEx Patterns in Action 🎯\n\n## Email Validation\n\n```python\nimport re\n\ndef is_valid_email(email):\n    pattern = r'^[\\w\\.-]+@[\\w\\.-]+\\.\\w+$'\n    return bool(re.match(pattern, email))\n\nprint(is_valid_email(\"user@example.com\"))  # True\nprint(is_valid_email(\"invalid-email\"))     # False\n```\n\n## Phone Number Extraction\n\n```python\ntext = \"Call us at (555) 123-4567 or 555.987.6543\"\n\npattern = r'\\(?\\d{3}\\)?[-.\\s]?\\d{3}[-.\\s]?\\d{4}'\nphones = re.findall(pattern, text)\nprint(phones)  # ['(555) 123-4567', '555.987.6543']\n```\n\n## URL Parsing\n\n```python\nurl = \"https://www.example.com/path?query=value\"\n\npattern = r'(https?)://([\\w.]+)(/[\\w/]*)?(\\?.*)?' \nmatch = re.match(pattern, url)\nif match:\n    protocol = match.group(1)  # https\n    domain = match.group(2)    # www.example.com\n    path = match.group(3)      # /path\n    query = match.group(4)     # ?query=value\n```\n\n## Password Strength\n\n```python\ndef is_strong_password(password):\n    # At least 8 chars, 1 upper, 1 lower, 1 digit, 1 special\n    pattern = r'^(?=.*[a-z])(?=.*[A-Z])(?=.*\\d)(?=.*[@$!%*?&]).{8,}$'\n    return bool(re.match(pattern, password))\n```"
+        },
+        {
+            "id": "adv_quiz_3",
+            "type": "quiz",
+            "title": "RegEx Quiz",
+            "content": "Test your regex knowledge!",
+            "quizQuestion": "What does `\\d+` match in a regex pattern?",
+            "quizOptions": [
+                "Exactly one digit",
+                "One or more digits",
+                "Zero or more digits",
+                "The letter 'd'"
+            ],
+            "correctOptionIndex": 1
+        },
+        {
+            "id": "adv_12",
+            "type": "content",
+            "title": "Summary",
+            "content": "# Congratulations! 🏆\n\nYou've mastered Advanced Python!\n\n## Iterators\n- ✅ `__iter__()` and `__next__()` protocol\n- ✅ Creating custom iterators\n\n## Generators\n- ✅ `yield` keyword\n- ✅ Generator expressions\n- ✅ Memory efficiency\n\n## Closures\n- ✅ Functions that remember state\n- ✅ `nonlocal` keyword\n\n## Decorators\n- ✅ `@decorator` syntax\n- ✅ Practical decorators (timer, cache)\n- ✅ `@functools.wraps`\n\n## Properties\n- ✅ `@property` for getters\n- ✅ `@property.setter` for setters\n- ✅ Computed properties\n\n## Regular Expressions\n- ✅ `re.search()`, `re.findall()`, `re.sub()`\n- ✅ Pattern syntax and groups\n- ✅ Practical validation patterns\n\n> 🚀 **You're now an Advanced Python Developer!** Keep practicing and building projects!"
+        }
+    ]
+}

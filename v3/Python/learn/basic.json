@@ -1,0 +1,99 @@
+{
+  "id": "learn_basic",
+  "topicId": "basic",
+  "topicTitle": "Python Basics",
+  "description": "Learn the fundamental building blocks of Python: variables, data types, and type conversion",
+  "baseKP": 60,
+  "slides": [
+    {
+      "id": "basic_1",
+      "type": "content",
+      "title": "Welcome to Python Basics",
+      "content": "# Python Basics 🐍\n\nWelcome to your Python journey! In this lesson, you'll master the **fundamental building blocks** of Python programming.\n\n## What you'll learn:\n- **Variables** - How to store and name data\n- **Data Types** - Numbers, strings, booleans, and more\n- **Type Conversion** - Converting between different types\n\n> 💡 **Fun Fact:** Python is named after Monty Python, not the snake!\n\nLet's dive in!"
+    },
+    {
+      "id": "basic_2",
+      "type": "content",
+      "title": "Variables in Python",
+      "content": "# Variables 📦\n\nA **variable** is like a labeled container that holds data. Python makes creating variables super easy!\n\n## Creating Variables\n\n```python\n# No need to declare types - Python figures it out!\nname = \"Alice\"\nage = 25\nis_student = True\n```\n\n## Naming Rules\n\n1. Must start with a letter or underscore (`_`)\n2. Can contain letters, numbers, and underscores\n3. **Case-sensitive** (`name` ≠ `Name`)\n4. Cannot use reserved keywords (`if`, `for`, `class`, etc.)\n\n## Good vs Bad Names\n\n```python\n# ✅ Good variable names\nuser_name = \"John\"\ntotalScore = 100\n_private_var = \"secret\"\n\n# ❌ Invalid names\n2nd_place = \"error\"  # Can't start with number\nmy-var = \"error\"     # No hyphens allowed\n```"
+    },
+    {
+      "id": "basic_quiz_1",
+      "type": "quiz",
+      "title": "Quick Check",
+      "content": "Test your understanding of variables!",
+      "quizQuestion": "Which of the following is a VALID Python variable name?",
+      "quizOptions": [
+        "2fast2furious",
+        "my-variable",
+        "_secret_value",
+        "class"
+      ],
+      "correctOptionIndex": 2
+    },
+    {
+      "id": "basic_3",
+      "type": "content",
+      "title": "Python Data Types",
+      "content": "# Data Types 📊\n\nPython has several built-in data types. Here are the most common ones:\n\n## Numeric Types\n\n```python\n# Integer (whole numbers)\ncount = 42\nnegative = -10\n\n# Float (decimal numbers)\nprice = 19.99\npi = 3.14159\n\n# Complex numbers\ncomplex_num = 3 + 4j\n```\n\n## Text Type\n\n```python\n# Strings - text wrapped in quotes\nsingle = 'Hello'\ndouble = \"World\"\nmulti_line = '''This is\na multi-line\nstring'''\n```\n\n## Boolean Type\n\n```python\n# True or False values\nis_active = True\nis_deleted = False\n```\n\n## None Type\n\n```python\n# Represents \"nothing\" or \"no value\"\nresult = None\n```"
+    },
+    {
+      "id": "basic_4",
+      "type": "content",
+      "title": "Collection Data Types",
+      "content": "# Collection Types 📚\n\nPython provides powerful built-in collections:\n\n## Lists (Ordered, Mutable)\n\n```python\nfruits = [\"apple\", \"banana\", \"cherry\"]\nnumbers = [1, 2, 3, 4, 5]\nmixed = [1, \"hello\", True, 3.14]\n\n# Access by index\nprint(fruits[0])  # \"apple\"\n```\n\n## Tuples (Ordered, Immutable)\n\n```python\ncoordinates = (10, 20)\ncolors = (\"red\", \"green\", \"blue\")\n\n# Cannot modify after creation\n# coordinates[0] = 5  # ❌ Error!\n```\n\n## Dictionaries (Key-Value Pairs)\n\n```python\nperson = {\n    \"name\": \"Alice\",\n    \"age\": 25,\n    \"city\": \"NYC\"\n}\n\nprint(person[\"name\"])  # \"Alice\"\n```\n\n## Sets (Unordered, Unique Values)\n\n```python\nunique_nums = {1, 2, 3, 3, 3}  # Stores {1, 2, 3}\ncolors = {\"red\", \"blue\", \"green\"}\n```"
+    },
+    {
+      "id": "basic_quiz_2",
+      "type": "quiz",
+      "title": "Data Types Quiz",
+      "content": "Let's test your knowledge of Python data types!",
+      "quizQuestion": "What data type would `3.14` be in Python?",
+      "quizOptions": [
+        "int",
+        "float",
+        "str",
+        "double"
+      ],
+      "correctOptionIndex": 1
+    },
+    {
+      "id": "basic_5",
+      "type": "content",
+      "title": "Checking Data Types",
+      "content": "# The type() Function 🔍\n\nUse `type()` to check what type a value is:\n\n```python\nprint(type(42))        # <class 'int'>\nprint(type(3.14))      # <class 'float'>\nprint(type(\"Hello\"))   # <class 'str'>\nprint(type(True))      # <class 'bool'>\nprint(type([1, 2, 3])) # <class 'list'>\nprint(type({\"a\": 1}))  # <class 'dict'>\n```\n\n## Using isinstance()\n\nFor checking if a value is of a specific type:\n\n```python\nage = 25\n\nif isinstance(age, int):\n    print(\"Age is an integer!\")\n\n# Check multiple types\nif isinstance(age, (int, float)):\n    print(\"Age is a number!\")\n```\n\n> 💡 **Tip:** `isinstance()` is preferred over `type() ==` because it handles inheritance properly."
+    },
+    {
+      "id": "basic_6",
+      "type": "content",
+      "title": "Type Conversion",
+      "content": "# Type Conversion 🔄\n\nConverting between data types is called **type casting** or **type conversion**.\n\n## Common Conversions\n\n```python\n# String to Integer\nnum_str = \"42\"\nnum = int(num_str)  # 42\n\n# Integer to String\nage = 25\nage_str = str(age)  # \"25\"\n\n# String to Float\nprice_str = \"19.99\"\nprice = float(price_str)  # 19.99\n\n# Float to Integer (truncates!)\npi = 3.99\nwhole = int(pi)  # 3 (not 4!)\n```\n\n## Converting Collections\n\n```python\n# List to Tuple\nmy_list = [1, 2, 3]\nmy_tuple = tuple(my_list)  # (1, 2, 3)\n\n# String to List\nword = \"Python\"\nletters = list(word)  # ['P', 'y', 't', 'h', 'o', 'n']\n\n# List to Set (removes duplicates)\nnums = [1, 2, 2, 3, 3, 3]\nunique = set(nums)  # {1, 2, 3}\n```"
+    },
+    {
+      "id": "basic_quiz_3",
+      "type": "quiz",
+      "title": "Type Conversion Quiz",
+      "content": "Test your understanding of type conversion!",
+      "quizQuestion": "What is the result of `int(3.9)`?",
+      "quizOptions": [
+        "4",
+        "3",
+        "3.9",
+        "Error"
+      ],
+      "correctOptionIndex": 1
+    },
+    {
+      "id": "basic_7",
+      "type": "content",
+      "title": "Implicit vs Explicit Conversion",
+      "content": "# Implicit vs Explicit Conversion 🎯\n\n## Implicit Conversion (Automatic)\n\nPython automatically converts types when safe:\n\n```python\n# int + float = float (automatic upgrade)\nresult = 5 + 3.14\nprint(result)       # 8.14\nprint(type(result)) # <class 'float'>\n\n# bool in arithmetic (True=1, False=0)\ntotal = 10 + True\nprint(total)  # 11\n```\n\n## Explicit Conversion (Manual)\n\nYou must do this manually when Python can't auto-convert:\n\n```python\n# String + int requires explicit conversion\nage = 25\nmessage = \"I am \" + str(age) + \" years old\"\n\n# Or use f-strings (recommended!)\nmessage = f\"I am {age} years old\"\n```\n\n## Common Pitfalls\n\n```python\n# ❌ These will cause errors!\nresult = \"5\" + 10        # TypeError\nresult = int(\"hello\")    # ValueError\nresult = int(\"3.14\")     # ValueError (use float first!)\n\n# ✅ Correct way\nresult = float(\"3.14\")   # 3.14\nresult = int(float(\"3.14\"))  # 3\n```"
+    },
+    {
+      "id": "basic_8",
+      "type": "content",
+      "title": "Summary",
+      "content": "# Congratulations! 🎉\n\nYou've mastered Python Basics! Here's what you learned:\n\n## Variables\n- ✅ Creating and naming variables\n- ✅ Variable naming rules and conventions\n\n## Data Types\n- ✅ **Numeric**: `int`, `float`, `complex`\n- ✅ **Text**: `str`\n- ✅ **Boolean**: `bool`\n- ✅ **Collections**: `list`, `tuple`, `dict`, `set`\n- ✅ **None**: `None`\n\n## Type Conversion\n- ✅ Using `int()`, `float()`, `str()`, etc.\n- ✅ Implicit vs explicit conversion\n- ✅ Common pitfalls to avoid\n\n## Key Functions\n- `type()` - Check the type of a value\n- `isinstance()` - Check if value is of specific type\n\n> 🚀 **Next Steps:** Practice by creating variables of different types and converting between them!"
+    }
+  ]
+}

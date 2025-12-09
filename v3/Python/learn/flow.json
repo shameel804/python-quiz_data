@@ -1,0 +1,111 @@
+{
+    "id": "learn_flow",
+    "topicId": "flow",
+    "topicTitle": "Flow Control",
+    "description": "Master control flow in Python: conditionals, loops, and flow control statements",
+    "baseKP": 70,
+    "slides": [
+        {
+            "id": "flow_1",
+            "type": "content",
+            "title": "Introduction to Flow Control",
+            "content": "# Flow Control 🚦\n\nFlow control determines **how your program executes** based on conditions and repetition.\n\n## What you'll learn:\n- **Conditional Statements** - if, elif, else\n- **For Loops** - Iterate over sequences\n- **While Loops** - Repeat while condition is true\n- **Control Statements** - break, continue, pass\n\n> 💡 **Why it matters:** Flow control is the backbone of any program logic!\n\nLet's start with conditionals!"
+        },
+        {
+            "id": "flow_2",
+            "type": "content",
+            "title": "If...Else Statements",
+            "content": "# Conditional Statements 🔀\n\nMake decisions in your code with `if`, `elif`, and `else`.\n\n## Basic If Statement\n\n```python\nage = 18\n\nif age >= 18:\n    print(\"You are an adult!\")\n```\n\n## If-Else Statement\n\n```python\ntemperature = 30\n\nif temperature > 25:\n    print(\"It's hot outside! ☀️\")\nelse:\n    print(\"It's cool outside! 🌤️\")\n```\n\n## If-Elif-Else Chain\n\n```python\nscore = 85\n\nif score >= 90:\n    grade = \"A\"\nelif score >= 80:\n    grade = \"B\"\nelif score >= 70:\n    grade = \"C\"\nelse:\n    grade = \"F\"\n\nprint(f\"Your grade: {grade}\")  # \"B\"\n```\n\n> ⚠️ **Important:** Python uses **indentation** (4 spaces) to define code blocks!"
+        },
+        {
+            "id": "flow_3",
+            "type": "content",
+            "title": "Comparison & Logical Operators",
+            "content": "# Operators for Conditions 🧪\n\n## Comparison Operators\n\n```python\nx = 10\ny = 5\n\nprint(x == y)   # Equal: False\nprint(x != y)   # Not equal: True\nprint(x > y)    # Greater than: True\nprint(x < y)    # Less than: False\nprint(x >= y)   # Greater or equal: True\nprint(x <= y)   # Less or equal: False\n```\n\n## Logical Operators\n\n```python\nage = 25\nhas_license = True\n\n# AND - both must be true\nif age >= 18 and has_license:\n    print(\"You can drive! 🚗\")\n\n# OR - at least one must be true\nif age < 13 or age > 65:\n    print(\"Discounted ticket!\")\n\n# NOT - inverts the condition\nif not has_license:\n    print(\"Get a license first!\")\n```\n\n## Chained Comparisons\n\n```python\n# Python's elegant way!\nscore = 85\nif 80 <= score < 90:\n    print(\"Grade B\")\n```"
+        },
+        {
+            "id": "flow_quiz_1",
+            "type": "quiz",
+            "title": "Conditionals Quiz",
+            "content": "Test your understanding of if statements!",
+            "quizQuestion": "What will this code print?\n```python\nx = 5\nif x > 3:\n    print(\"A\")\nelif x > 4:\n    print(\"B\")\nelse:\n    print(\"C\")\n```",
+            "quizOptions": [
+                "A",
+                "B",
+                "A and B",
+                "C"
+            ],
+            "correctOptionIndex": 0
+        },
+        {
+            "id": "flow_4",
+            "type": "content",
+            "title": "For Loops",
+            "content": "# For Loops 🔄\n\nIterate over sequences like lists, strings, and ranges.\n\n## Iterating Over a List\n\n```python\nfruits = [\"apple\", \"banana\", \"cherry\"]\n\nfor fruit in fruits:\n    print(f\"I love {fruit}!\")\n```\n\n## Iterating Over a String\n\n```python\nword = \"Python\"\n\nfor letter in word:\n    print(letter)\n# P, y, t, h, o, n\n```\n\n## Using range()\n\n```python\n# range(stop)\nfor i in range(5):\n    print(i)  # 0, 1, 2, 3, 4\n\n# range(start, stop)\nfor i in range(2, 6):\n    print(i)  # 2, 3, 4, 5\n\n# range(start, stop, step)\nfor i in range(0, 10, 2):\n    print(i)  # 0, 2, 4, 6, 8\n```\n\n## Enumerate for Index + Value\n\n```python\ncolors = [\"red\", \"green\", \"blue\"]\n\nfor index, color in enumerate(colors):\n    print(f\"{index}: {color}\")\n# 0: red, 1: green, 2: blue\n```"
+        },
+        {
+            "id": "flow_5",
+            "type": "content",
+            "title": "While Loops",
+            "content": "# While Loops ⏳\n\nRepeat code **while a condition is true**.\n\n## Basic While Loop\n\n```python\ncount = 0\n\nwhile count < 5:\n    print(f\"Count: {count}\")\n    count += 1  # Don't forget this!\n\n# Output: 0, 1, 2, 3, 4\n```\n\n## User Input Loop\n\n```python\npassword = \"\"\n\nwhile password != \"secret123\":\n    password = input(\"Enter password: \")\n\nprint(\"Access granted! 🔓\")\n```\n\n## Infinite Loop (Use with Caution!)\n\n```python\nwhile True:\n    user_input = input(\"Type 'quit' to exit: \")\n    if user_input == \"quit\":\n        break  # Exit the loop\n    print(f\"You typed: {user_input}\")\n```\n\n> ⚠️ **Warning:** Always ensure your while loop has an **exit condition** to avoid infinite loops!"
+        },
+        {
+            "id": "flow_quiz_2",
+            "type": "quiz",
+            "title": "Loops Quiz",
+            "content": "Test your loop knowledge!",
+            "quizQuestion": "How many times will this loop execute?\n```python\nfor i in range(2, 8, 2):\n    print(i)\n```",
+            "quizOptions": [
+                "6 times",
+                "4 times",
+                "3 times",
+                "8 times"
+            ],
+            "correctOptionIndex": 2
+        },
+        {
+            "id": "flow_6",
+            "type": "content",
+            "title": "Break Statement",
+            "content": "# Break Statement 🛑\n\n`break` **immediately exits** the loop.\n\n## Breaking Out of a Loop\n\n```python\n# Find the first even number\nnumbers = [1, 3, 5, 8, 9, 10]\n\nfor num in numbers:\n    if num % 2 == 0:\n        print(f\"First even: {num}\")\n        break  # Stop the loop\n    print(f\"Checking {num}...\")\n\n# Output:\n# Checking 1...\n# Checking 3...\n# Checking 5...\n# First even: 8\n```\n\n## Break in While Loop\n\n```python\nwhile True:\n    response = input(\"Continue? (yes/no): \")\n    if response == \"no\":\n        print(\"Goodbye!\")\n        break  # Exit infinite loop\n```\n\n## Nested Loop Break\n\n```python\n# break only exits the INNERMOST loop\nfor i in range(3):\n    for j in range(3):\n        if j == 1:\n            break  # Only breaks inner loop\n        print(f\"i={i}, j={j}\")\n```"
+        },
+        {
+            "id": "flow_7",
+            "type": "content",
+            "title": "Continue Statement",
+            "content": "# Continue Statement ⏭️\n\n`continue` **skips** the rest of the current iteration and moves to the next.\n\n## Skip Specific Values\n\n```python\n# Print only odd numbers\nfor i in range(10):\n    if i % 2 == 0:\n        continue  # Skip even numbers\n    print(i)\n\n# Output: 1, 3, 5, 7, 9\n```\n\n## Skip Invalid Data\n\n```python\ndata = [10, -5, 20, -3, 15]\n\nfor value in data:\n    if value < 0:\n        continue  # Skip negative values\n    print(f\"Processing: {value}\")\n\n# Output: 10, 20, 15\n```\n\n## Break vs Continue\n\n```python\n# break = EXIT the entire loop\n# continue = SKIP current iteration only\n\nfor i in range(5):\n    if i == 2:\n        continue  # Skips 2, continues with 3\n    if i == 4:\n        break     # Stops the loop entirely\n    print(i)\n\n# Output: 0, 1, 3\n```"
+        },
+        {
+            "id": "flow_quiz_3",
+            "type": "quiz",
+            "title": "Break & Continue Quiz",
+            "content": "Let's test break and continue!",
+            "quizQuestion": "What will this code output?\n```python\nfor i in range(5):\n    if i == 2:\n        continue\n    print(i, end=\" \")\n```",
+            "quizOptions": [
+                "0 1 2 3 4",
+                "0 1 3 4",
+                "0 1",
+                "2"
+            ],
+            "correctOptionIndex": 1
+        },
+        {
+            "id": "flow_8",
+            "type": "content",
+            "title": "Pass Statement",
+            "content": "# Pass Statement 💭\n\n`pass` is a **placeholder** that does nothing. It's useful when syntax requires a statement but you don't want any action.\n\n## Empty Function Placeholder\n\n```python\ndef future_function():\n    pass  # TODO: implement later\n\n# Without pass, this would cause an error!\n```\n\n## Empty Class Placeholder\n\n```python\nclass EmptyClass:\n    pass  # Will add methods later\n```\n\n## Empty Loop or Condition\n\n```python\n# Placeholder in a loop\nfor i in range(100):\n    pass  # Will add logic later\n\n# Placeholder in if statement\nif condition:\n    pass  # Handle this case later\nelse:\n    print(\"Handling else case\")\n```\n\n## Pass vs Continue\n\n```python\n# pass = do nothing, continue to next line\n# continue = skip to next iteration\n\nfor i in range(3):\n    if i == 1:\n        pass  # Does nothing, still prints 1\n    print(i)\n\n# Output: 0, 1, 2\n```"
+        },
+        {
+            "id": "flow_9",
+            "type": "content",
+            "title": "Loop Else Clause",
+            "content": "# Loop Else Clause 🔄➡️\n\nPython loops can have an `else` clause that runs **after the loop completes normally** (not via break).\n\n## For-Else\n\n```python\n# Search for an item\nnumbers = [1, 3, 5, 7, 9]\ntarget = 4\n\nfor num in numbers:\n    if num == target:\n        print(\"Found!\")\n        break\nelse:\n    print(\"Not found!\")  # Runs because no break\n\n# Output: \"Not found!\"\n```\n\n## While-Else\n\n```python\ncount = 0\n\nwhile count < 3:\n    print(count)\n    count += 1\nelse:\n    print(\"Loop completed!\")  # Runs after while finishes\n\n# Output: 0, 1, 2, \"Loop completed!\"\n```\n\n## When Else Doesn't Run\n\n```python\nfor i in range(5):\n    if i == 3:\n        break\nelse:\n    print(\"Completed\")  # Won't run due to break!\n```\n\n> 💡 **Use case:** Great for search operations where you need to know if something was NOT found!"
+        },
+        {
+            "id": "flow_10",
+            "type": "content",
+            "title": "Summary",
+            "content": "# Great Work! 🎉\n\nYou've mastered Flow Control in Python!\n\n## Conditionals\n- ✅ `if`, `elif`, `else` statements\n- ✅ Comparison operators (`==`, `!=`, `<`, `>`, `<=`, `>=`)\n- ✅ Logical operators (`and`, `or`, `not`)\n\n## Loops\n- ✅ `for` loops with lists, strings, and `range()`\n- ✅ `while` loops for condition-based repetition\n- ✅ `enumerate()` for index + value\n\n## Control Statements\n- ✅ `break` - Exit loop immediately\n- ✅ `continue` - Skip to next iteration\n- ✅ `pass` - Do nothing (placeholder)\n\n## Bonus\n- ✅ Loop `else` clause for completion detection\n\n> 🚀 **Practice Challenge:** Write a program that prints FizzBuzz (1-100): \"Fizz\" for multiples of 3, \"Buzz\" for 5, \"FizzBuzz\" for both!"
+        }
+    ]
+}

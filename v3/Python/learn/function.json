@@ -1,0 +1,111 @@
+{
+    "id": "learn_function",
+    "topicId": "function",
+    "topicTitle": "Functions",
+    "description": "Master Python functions: arguments, recursion, lambdas, and variable scope",
+    "baseKP": 70,
+    "slides": [
+        {
+            "id": "func_1",
+            "type": "content",
+            "title": "Introduction to Functions",
+            "content": "# Functions in Python 🔧\n\nFunctions are **reusable blocks of code** that perform specific tasks.\n\n## What you'll learn:\n- **Defining Functions** - Create and call functions\n- **Arguments & Parameters** - Pass data to functions\n- **Recursion** - Functions that call themselves\n- **Lambda Functions** - Anonymous inline functions\n- **Scope** - Global vs local variables\n\n## Why Use Functions?\n- ✅ **Reusability** - Write once, use many times\n- ✅ **Organization** - Keep code clean and modular\n- ✅ **Testing** - Easier to test small pieces\n- ✅ **Debugging** - Isolate problems easily\n\nLet's get started!"
+        },
+        {
+            "id": "func_2",
+            "type": "content",
+            "title": "Defining Functions",
+            "content": "# Creating Functions 📝\n\nUse the `def` keyword to define a function.\n\n## Basic Function\n\n```python\ndef greet():\n    print(\"Hello, World!\")\n\n# Call the function\ngreet()  # Output: Hello, World!\n```\n\n## Function with Return Value\n\n```python\ndef add(a, b):\n    return a + b\n\nresult = add(5, 3)\nprint(result)  # 8\n```\n\n## Multiple Return Values\n\n```python\ndef get_stats(numbers):\n    minimum = min(numbers)\n    maximum = max(numbers)\n    average = sum(numbers) / len(numbers)\n    return minimum, maximum, average\n\nmin_val, max_val, avg = get_stats([1, 2, 3, 4, 5])\nprint(f\"Min: {min_val}, Max: {max_val}, Avg: {avg}\")\n```\n\n## Docstrings\n\n```python\ndef calculate_area(radius):\n    \"\"\"Calculate the area of a circle.\n    \n    Args:\n        radius: The radius of the circle\n    Returns:\n        The area of the circle\n    \"\"\"\n    return 3.14159 * radius ** 2\n```"
+        },
+        {
+            "id": "func_3",
+            "type": "content",
+            "title": "Function Arguments",
+            "content": "# Arguments & Parameters 📨\n\n## Positional Arguments\n\n```python\ndef introduce(name, age):\n    print(f\"I'm {name}, {age} years old\")\n\nintroduce(\"Alice\", 25)  # Order matters!\n```\n\n## Keyword Arguments\n\n```python\n# Specify parameter names - order doesn't matter\nintroduce(age=30, name=\"Bob\")\n```\n\n## Default Values\n\n```python\ndef greet(name, greeting=\"Hello\"):\n    print(f\"{greeting}, {name}!\")\n\ngreet(\"Alice\")           # \"Hello, Alice!\"\ngreet(\"Bob\", \"Hi\")       # \"Hi, Bob!\"\n```\n\n## *args - Variable Positional Arguments\n\n```python\ndef add_all(*numbers):\n    return sum(numbers)\n\nprint(add_all(1, 2, 3))        # 6\nprint(add_all(1, 2, 3, 4, 5))  # 15\n```\n\n## **kwargs - Variable Keyword Arguments\n\n```python\ndef print_info(**data):\n    for key, value in data.items():\n        print(f\"{key}: {value}\")\n\nprint_info(name=\"Alice\", age=25, city=\"NYC\")\n```"
+        },
+        {
+            "id": "func_quiz_1",
+            "type": "quiz",
+            "title": "Arguments Quiz",
+            "content": "Test your understanding of function arguments!",
+            "quizQuestion": "What will this code output?\n```python\ndef greet(name=\"World\"):\n    print(f\"Hello, {name}!\")\n\ngreet()\n```",
+            "quizOptions": [
+                "Hello, !",
+                "Hello, World!",
+                "Error",
+                "Hello, name!"
+            ],
+            "correctOptionIndex": 1
+        },
+        {
+            "id": "func_4",
+            "type": "content",
+            "title": "Recursion",
+            "content": "# Recursion 🔄\n\nA **recursive function** calls itself to solve smaller subproblems.\n\n## Factorial Example\n\n```python\ndef factorial(n):\n    # Base case\n    if n <= 1:\n        return 1\n    # Recursive case\n    return n * factorial(n - 1)\n\nprint(factorial(5))  # 120 (5*4*3*2*1)\n```\n\n## How It Works\n\n```\nfactorial(5)\n└── 5 * factorial(4)\n    └── 4 * factorial(3)\n        └── 3 * factorial(2)\n            └── 2 * factorial(1)\n                └── 1 (base case)\n```\n\n## Fibonacci Sequence\n\n```python\ndef fibonacci(n):\n    if n <= 1:\n        return n\n    return fibonacci(n-1) + fibonacci(n-2)\n\n# 0, 1, 1, 2, 3, 5, 8, 13...\nfor i in range(8):\n    print(fibonacci(i), end=\" \")\n```\n\n> ⚠️ **Warning:** Always have a **base case** to prevent infinite recursion!"
+        },
+        {
+            "id": "func_5",
+            "type": "content",
+            "title": "Recursion Best Practices",
+            "content": "# Recursion Tips 💡\n\n## Key Components\n\n1. **Base Case** - When to stop recursing\n2. **Recursive Case** - How to break down the problem\n3. **Progress** - Each call should move toward the base case\n\n## Sum of List (Recursive)\n\n```python\ndef sum_list(numbers):\n    # Base case: empty list\n    if not numbers:\n        return 0\n    # Recursive case: first element + sum of rest\n    return numbers[0] + sum_list(numbers[1:])\n\nprint(sum_list([1, 2, 3, 4, 5]))  # 15\n```\n\n## When to Use Recursion\n\n✅ **Good for:**\n- Tree/graph traversal\n- Divide and conquer algorithms\n- Problems with recursive definitions (factorial, fibonacci)\n\n❌ **Avoid when:**\n- Simple loops would work\n- Very deep recursion (Python has a limit ~1000)\n\n## Tail Recursion (Optimized)\n\n```python\ndef factorial_tail(n, acc=1):\n    if n <= 1:\n        return acc\n    return factorial_tail(n - 1, n * acc)\n```"
+        },
+        {
+            "id": "func_quiz_2",
+            "type": "quiz",
+            "title": "Recursion Quiz",
+            "content": "Test your recursion knowledge!",
+            "quizQuestion": "What is the BASE CASE in a recursive function?",
+            "quizOptions": [
+                "The first function call",
+                "The condition that stops recursion",
+                "The function's return type",
+                "The recursive call itself"
+            ],
+            "correctOptionIndex": 1
+        },
+        {
+            "id": "func_6",
+            "type": "content",
+            "title": "Lambda Functions",
+            "content": "# Lambda Functions λ\n\n**Lambda** functions are small, anonymous functions defined inline.\n\n## Syntax\n\n```python\n# lambda arguments: expression\n\n# Regular function\ndef add(a, b):\n    return a + b\n\n# Lambda equivalent\nadd = lambda a, b: a + b\nprint(add(3, 5))  # 8\n```\n\n## Common Use Cases\n\n### Sorting with Key\n\n```python\nstudents = [\n    {\"name\": \"Alice\", \"grade\": 85},\n    {\"name\": \"Bob\", \"grade\": 92},\n    {\"name\": \"Charlie\", \"grade\": 78}\n]\n\n# Sort by grade\nsorted_students = sorted(students, key=lambda s: s[\"grade\"])\n```\n\n### With map()\n\n```python\nnumbers = [1, 2, 3, 4, 5]\nsquared = list(map(lambda x: x**2, numbers))\nprint(squared)  # [1, 4, 9, 16, 25]\n```\n\n### With filter()\n\n```python\nnumbers = [1, 2, 3, 4, 5, 6]\nevens = list(filter(lambda x: x % 2 == 0, numbers))\nprint(evens)  # [2, 4, 6]\n```"
+        },
+        {
+            "id": "func_7",
+            "type": "content",
+            "title": "Map, Filter, Reduce",
+            "content": "# Functional Programming 🧮\n\nLambdas shine with functional programming tools!\n\n## map() - Transform Each Element\n\n```python\nnames = [\"alice\", \"bob\", \"charlie\"]\ncapitalized = list(map(lambda x: x.title(), names))\nprint(capitalized)  # ['Alice', 'Bob', 'Charlie']\n\n# Equivalent list comprehension\ncapitalized = [x.title() for x in names]\n```\n\n## filter() - Keep Matching Elements\n\n```python\nages = [12, 18, 25, 8, 30]\nadults = list(filter(lambda x: x >= 18, ages))\nprint(adults)  # [18, 25, 30]\n\n# Equivalent list comprehension\nadults = [x for x in ages if x >= 18]\n```\n\n## reduce() - Combine All Elements\n\n```python\nfrom functools import reduce\n\nnumbers = [1, 2, 3, 4, 5]\nproduct = reduce(lambda a, b: a * b, numbers)\nprint(product)  # 120 (1*2*3*4*5)\n\n# Sum example\ntotal = reduce(lambda a, b: a + b, numbers)\nprint(total)  # 15\n```\n\n> 💡 **Tip:** List comprehensions are often more Pythonic than map/filter!"
+        },
+        {
+            "id": "func_quiz_3",
+            "type": "quiz",
+            "title": "Lambda Quiz",
+            "content": "Test your lambda knowledge!",
+            "quizQuestion": "What does this lambda return for input 5?\n```python\nf = lambda x: x * 2 if x > 3 else x\nprint(f(5))\n```",
+            "quizOptions": [
+                "5",
+                "10",
+                "3",
+                "Error"
+            ],
+            "correctOptionIndex": 1
+        },
+        {
+            "id": "func_8",
+            "type": "content",
+            "title": "Global and Local Scope",
+            "content": "# Variable Scope 🌍\n\n**Scope** determines where variables are accessible.\n\n## Local Scope\n\n```python\ndef my_function():\n    local_var = \"I'm local\"\n    print(local_var)  # Works inside function\n\nmy_function()\n# print(local_var)  # ❌ Error! Not accessible outside\n```\n\n## Global Scope\n\n```python\nglobal_var = \"I'm global\"\n\ndef my_function():\n    print(global_var)  # Can READ global variables\n\nmy_function()  # \"I'm global\"\n```\n\n## Modifying Global Variables\n\n```python\ncounter = 0\n\ndef increment():\n    global counter  # Declare as global to modify\n    counter += 1\n\nincrement()\nincrement()\nprint(counter)  # 2\n```\n\n## The LEGB Rule\n\nPython searches for variables in this order:\n1. **L**ocal - Inside current function\n2. **E**nclosing - In enclosing function (nested functions)\n3. **G**lobal - At module level\n4. **B**uilt-in - Python built-ins (print, len, etc.)"
+        },
+        {
+            "id": "func_9",
+            "type": "content",
+            "title": "Nested Functions & Closures",
+            "content": "# Nested Functions 🪆\n\nFunctions can be defined inside other functions!\n\n## Basic Nested Function\n\n```python\ndef outer():\n    message = \"Hello from outer!\"\n    \n    def inner():\n        print(message)  # Can access outer's variables\n    \n    inner()\n\nouter()  # \"Hello from outer!\"\n```\n\n## Closures\n\nA **closure** remembers values from its enclosing scope.\n\n```python\ndef make_multiplier(factor):\n    def multiply(number):\n        return number * factor  # Remembers 'factor'\n    return multiply\n\ndouble = make_multiplier(2)\ntriple = make_multiplier(3)\n\nprint(double(5))  # 10\nprint(triple(5))  # 15\n```\n\n## Using nonlocal\n\n```python\ndef counter():\n    count = 0\n    \n    def increment():\n        nonlocal count  # Modify enclosing variable\n        count += 1\n        return count\n    \n    return increment\n\nmy_counter = counter()\nprint(my_counter())  # 1\nprint(my_counter())  # 2\nprint(my_counter())  # 3\n```"
+        },
+        {
+            "id": "func_10",
+            "type": "content",
+            "title": "Summary",
+            "content": "# Excellent Work! 🎉\n\nYou've mastered Python Functions!\n\n## Defining Functions\n- ✅ `def` keyword and return values\n- ✅ Docstrings for documentation\n\n## Arguments\n- ✅ Positional and keyword arguments\n- ✅ Default parameter values\n- ✅ `*args` and `**kwargs`\n\n## Recursion\n- ✅ Base case and recursive case\n- ✅ Common patterns (factorial, fibonacci)\n- ✅ Tail recursion optimization\n\n## Lambda Functions\n- ✅ Anonymous inline functions\n- ✅ `map()`, `filter()`, `reduce()`\n\n## Scope\n- ✅ Local vs global variables\n- ✅ LEGB rule for name resolution\n- ✅ `global` and `nonlocal` keywords\n- ✅ Closures and nested functions\n\n> 🚀 **Challenge:** Create a decorator function that logs function calls!"
+        }
+    ]
+}
