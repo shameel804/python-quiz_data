@@ -2,40 +2,52 @@
     "id": "learn_cache",
     "topicId": "cache",
     "topicTitle": "Caching",
-    "description": "Improve performance with Django caching",
-    "baseKP": 80,
+    "description": "Improve performance with Django's caching framework",
+    "baseKP": 90,
     "slides": [
         {
             "id": "cache_1",
             "type": "content",
-            "title": "Django Caching",
-            "content": "# Caching in Django ⚡\n\nSpeed up your app by caching expensive operations!\n\n## Cache Types\n\n| Backend | Description |\n|---------|-------------|\n| Memcached | Distributed memory cache |\n| Redis | Key-value store |\n| Database | Cache in DB table |\n| File | Cache in filesystem |\n| Local Memory | In-process cache (dev) |\n\n## Configuration\n\n```python\n# settings.py\nCACHES = {\n    'default': {\n        'BACKEND': 'django.core.cache.backends.redis.RedisCache',\n        'LOCATION': 'redis://127.0.0.1:6379',\n    }\n}\n```\n\n> 💡 **Caching can make your site 10-100x faster!**"
+            "title": "Introduction to Caching",
+            "content": "# Django Caching 🚀\n\nSpeed up your site by storing computed results!\n\n## What you'll learn:\n- **Cache types** - Different caching backends\n- **Using cache in views and templates** - Practical usage\n\n## Why Cache?\n\n```\nWithout Cache:\nRequest → Query DB → Process → Render → Response\n                  (slow!)           \n\nWith Cache:\nRequest → Check Cache → HIT? Return cached → Response\n                      → MISS? Generate & store → Response\n```\n\n## What to Cache?\n\n- 📊 **Database queries** - Expensive queries\n- 🖼️ **Rendered templates** - Complex pages\n- 🔌 **API responses** - External API calls\n- 📈 **Computed results** - Heavy calculations\n\n## Performance Impact\n\n| Scenario | Without Cache | With Cache |\n|----------|--------------|------------|\n| DB Query | 100ms | 1ms |\n| Page Render | 500ms | 10ms |\n| API Call | 2000ms | 5ms |\n\n> 💡 **Caching is the fastest way to speed up Django!**"
         },
         {
             "id": "cache_2",
             "type": "content",
-            "title": "Using Cache",
-            "content": "# Cache API 🔧\n\n## Low-Level API\n\n```python\nfrom django.core.cache import cache\n\n# Set cache (5 minutes)\ncache.set('my_key', 'my_value', 300)\n\n# Get cache\nvalue = cache.get('my_key')  # Returns None if expired\nvalue = cache.get('my_key', 'default')\n\n# Delete cache\ncache.delete('my_key')\n\n# Get or set\nvalue = cache.get_or_set('my_key', expensive_function, 300)\n```\n\n## View Caching\n\n```python\nfrom django.views.decorators.cache import cache_page\n\n@cache_page(60 * 15)  # Cache for 15 minutes\ndef my_view(request):\n    # Expensive operations\n    return render(request, 'template.html')\n```\n\n## Template Fragment Caching\n\n```html\n{% load cache %}\n\n{% cache 500 sidebar %}\n    <!-- Expensive sidebar content -->\n{% endcache %}\n```"
+            "title": "Cache Types",
+            "content": "# Cache Backends 🗄️\n\n## Local Memory Cache (Development)\n\n```python\n# settings.py\nCACHES = {\n    'default': {\n        'BACKEND': 'django.core.cache.backends.locmem.LocMemCache',\n        'LOCATION': 'unique-snowflake',\n    }\n}\n```\n\n## Redis (Recommended for Production)\n\n```bash\npip install django-redis\n```\n\n```python\nCACHES = {\n    'default': {\n        'BACKEND': 'django.core.cache.backends.redis.RedisCache',\n        'LOCATION': 'redis://127.0.0.1:6379/1',\n    }\n}\n```\n\n## Memcached (High Performance)\n\n```python\nCACHES = {\n    'default': {\n        'BACKEND': 'django.core.cache.backends.memcached.PyMemcacheCache',\n        'LOCATION': '127.0.0.1:11211',\n    }\n}\n```\n\n## Database Cache\n\n```python\nCACHES = {\n    'default': {\n        'BACKEND': 'django.core.cache.backends.db.DatabaseCache',\n        'LOCATION': 'cache_table',\n    }\n}\n\n# Create cache table\n# python manage.py createcachetable\n```\n\n## File-Based Cache\n\n```python\nCACHES = {\n    'default': {\n        'BACKEND': 'django.core.cache.backends.filebased.FileBasedCache',\n        'LOCATION': '/var/tmp/django_cache',\n    }\n}\n```\n\n> 🎯 **Use Redis for production** - fast, persistent, feature-rich!"
+        },
+        {
+            "id": "cache_3",
+            "type": "content",
+            "title": "Using Cache in Views",
+            "content": "# Caching in Views 📝\n\n## Low-Level Cache API\n\n```python\nfrom django.core.cache import cache\n\ndef get_products(request):\n    # Try to get from cache\n    products = cache.get('products_list')\n    \n    if products is None:\n        # Cache miss - fetch from database\n        products = list(Product.objects.all().values())\n        # Store in cache for 5 minutes (300 seconds)\n        cache.set('products_list', products, 300)\n    \n    return JsonResponse({'products': products})\n\n# Other cache operations\ncache.get('key', default='not found')  # Get with default\ncache.set('key', 'value', timeout=60)  # Set with timeout\ncache.delete('key')                     # Delete key\ncache.clear()                           # Clear all\n```\n\n## View Caching Decorator\n\n```python\nfrom django.views.decorators.cache import cache_page\n\n@cache_page(60 * 15)  # Cache for 15 minutes\ndef product_list(request):\n    products = Product.objects.all()\n    return render(request, 'products.html', {'products': products})\n```\n\n## Per-View Cache in URLs\n\n```python\nfrom django.views.decorators.cache import cache_page\n\nurlpatterns = [\n    path('products/', cache_page(60 * 15)(views.product_list)),\n]\n```\n\n## Conditional Caching\n\n```python\ndef product_detail(request, pk):\n    cache_key = f'product_{pk}'\n    product = cache.get(cache_key)\n    \n    if product is None:\n        product = get_object_or_404(Product, pk=pk)\n        cache.set(cache_key, product, 3600)  # 1 hour\n    \n    return render(request, 'detail.html', {'product': product})\n```"
         },
         {
             "id": "cache_quiz_1",
             "type": "quiz",
             "title": "Caching Quiz",
             "content": "Test your caching knowledge!",
-            "quizQuestion": "Which decorator caches an entire view?",
+            "quizQuestion": "Which function retrieves data from cache?",
             "quizOptions": [
-                "@cache_view",
-                "@cache_page",
-                "@view_cache",
-                "@memoize"
+                "cache.read('key')",
+                "cache.fetch('key')",
+                "cache.get('key')",
+                "cache.load('key')"
             ],
-            "correctOptionIndex": 1
+            "correctOptionIndex": 2
         },
         {
-            "id": "cache_3",
+            "id": "cache_4",
+            "type": "content",
+            "title": "Using Cache in Templates",
+            "content": "# Template Fragment Caching 🧩\n\nCache parts of templates!\n\n## Fragment Caching\n\n```html\n{% load cache %}\n\n<!-- Cache this block for 500 seconds -->\n{% cache 500 sidebar %}\n    <div class=\"sidebar\">\n        {% for item in expensive_query %}\n            <p>{{ item.name }}</p>\n        {% endfor %}\n    </div>\n{% endcache %}\n\n<!-- Cache with variable key (per-user cache) -->\n{% cache 300 user_sidebar request.user.id %}\n    <div class=\"sidebar\">\n        Welcome, {{ request.user.username }}!\n        <!-- User-specific content -->\n    </div>\n{% endcache %}\n```\n\n## Cache Invalidation\n\n```python\nfrom django.core.cache import cache\n\n# When product is updated, invalidate cache\ndef update_product(request, pk):\n    product = Product.objects.get(pk=pk)\n    # ... update product ...\n    product.save()\n    \n    # Invalidate related caches\n    cache.delete(f'product_{pk}')\n    cache.delete('products_list')\n```\n\n## Cache Versioning\n\n```python\n# Increment version to invalidate all keys\nCACHES = {\n    'default': {\n        'BACKEND': '...',\n        'VERSION': 2,  # Change to invalidate all\n    }\n}\n```\n\n> 💡 **Cache invalidation is hard!** Always have a strategy for clearing stale data."
+        },
+        {
+            "id": "cache_5",
             "type": "content",
             "title": "Summary",
-            "content": "# Excellent Work! 🎉\n\nYou've learned Django Caching!\n\n## Cache Backends\n- ✅ Redis, Memcached, Database, File\n\n## Caching Methods\n- ✅ Low-level: `cache.get()`, `cache.set()`\n- ✅ View: `@cache_page`\n- ✅ Template: `{% cache %}`\n\n## Best Practices\n- 📊 Cache expensive queries\n- ⏱️ Set appropriate timeouts\n- 🔄 Invalidate on data changes\n\n> 🎯 **You've completed Django!** Practice by building a blog or API!"
+            "content": "# Excellent Work! 🎉\n\nYou've mastered Django Caching!\n\n## Cache Types\n- ✅ **Local Memory** - Development\n- ✅ **Redis** - Production (recommended)\n- ✅ **Memcached** - High performance\n- ✅ **Database** - Simple persistence\n- ✅ **File-based** - Shared filesystem\n\n## Using Cache in Views\n- ✅ `cache.get()` / `cache.set()`\n- ✅ `@cache_page(seconds)` decorator\n- ✅ `cache.delete()` for invalidation\n\n## Using Cache in Templates\n- ✅ `{% load cache %}`\n- ✅ `{% cache timeout name %}` tag\n- ✅ Variable cache keys for per-user caching\n\n## Cache API Summary\n\n```python\nfrom django.core.cache import cache\n\ncache.set('key', value, timeout)  # Store\ncache.get('key', default=None)    # Retrieve\ncache.delete('key')               # Remove\ncache.clear()                     # Clear all\n```\n\n## Best Practices\n- 💡 Use Redis for production\n- 💡 Set appropriate timeouts\n- 💡 Invalidate on data changes\n- 💡 Use meaningful cache keys\n\n> 🎉 **Congratulations!** You've completed Django Caching!"
         }
     ]
 }

@@ -1,47 +1,59 @@
 {
-    "id": "learn_deploy",
+    "id": "learn_ml_deploy",
     "topicId": "deploy",
     "topicTitle": "Model Deployment",
-    "description": "Save models, create APIs, and deploy to cloud",
-    "baseKP": 85,
+    "description": "Model serialization, APIs, and cloud deployment",
+    "baseKP": 100,
     "slides": [
         {
             "id": "deploy_1",
             "type": "content",
-            "title": "Model Deployment",
-            "content": "# Deploying ML Models 🚀\n\nTake your model to production!\n\n## What you'll learn:\n- **Model Serialization** - Save/load models\n- **APIs** - Serve predictions\n- **Cloud Deployment** - Scale globally\n\n## Deployment Pipeline\n\n```\nTrain → Save → API → Deploy → Monitor\n```"
+            "title": "Introduction to Deployment",
+            "content": "# Model Deployment 🚀\n\nTake your model from notebook to production!\n\n## What you'll learn:\n- **Model Serialization** - Saving and loading models\n- **APIs** - Serving predictions\n- **Cloud Deployment** - Hosting on cloud platforms\n\n## Why Deployment Matters\n\n```\nJupyter Notebook → Only you can use it\n        ↓\nDeployed API → Anyone can get predictions!\n```\n\n## Deployment Pipeline\n\n```\n1. Train model → 2. Save model → 3. Create API → 4. Deploy → 5. Monitor\n```\n\n> 💡 **85% of ML projects never make it to production** - don't be one of them!"
         },
         {
             "id": "deploy_2",
             "type": "content",
-            "title": "Saving Models",
-            "content": "# Model Serialization 💾\n\n## Joblib (Scikit-learn)\n\n```python\nimport joblib\n\n# Save model\njoblib.dump(model, 'model.pkl')\n\n# Load model\nmodel = joblib.load('model.pkl')\npredictions = model.predict(X_new)\n```\n\n## Pickle\n\n```python\nimport pickle\n\nwith open('model.pkl', 'wb') as f:\n    pickle.dump(model, f)\n\nwith open('model.pkl', 'rb') as f:\n    model = pickle.load(f)\n```\n\n## TensorFlow SavedModel\n\n```python\nmodel.save('my_model')  # Directory\nmodel = tf.keras.models.load_model('my_model')\n```"
+            "title": "Model Serialization",
+            "content": "# Saving and Loading Models 💾\n\n## Joblib (Recommended for sklearn)\n\n```python\nimport joblib\n\n# Save model\nmodel = RandomForestClassifier()\nmodel.fit(X_train, y_train)\njoblib.dump(model, 'model.joblib')\n\n# Load model\nloaded_model = joblib.load('model.joblib')\npredictions = loaded_model.predict(X_new)\n```\n\n## Pickle (Built-in Python)\n\n```python\nimport pickle\n\n# Save\nwith open('model.pkl', 'wb') as f:\n    pickle.dump(model, f)\n\n# Load\nwith open('model.pkl', 'rb') as f:\n    model = pickle.load(f)\n```\n\n## Saving TensorFlow/Keras Models\n\n```python\n# Save entire model\nmodel.save('my_model.h5')\n# or\nmodel.save('my_model')  # SavedModel format\n\n# Load\nloaded = tf.keras.models.load_model('my_model.h5')\n```\n\n## PyTorch Models\n\n```python\n# Save state dict (recommended)\ntorch.save(model.state_dict(), 'model.pth')\n\n# Load\nmodel = MyModel()\nmodel.load_state_dict(torch.load('model.pth'))\nmodel.eval()\n```\n\n> 💡 **Joblib is faster than Pickle** for large numpy arrays!"
         },
         {
             "id": "deploy_3",
             "type": "content",
-            "title": "Creating APIs",
-            "content": "# ML API with FastAPI 🌐\n\n```python\nfrom fastapi import FastAPI\nimport joblib\n\napp = FastAPI()\nmodel = joblib.load('model.pkl')\n\n@app.post('/predict')\ndef predict(features: dict):\n    data = [[features['age'], features['income']]]\n    prediction = model.predict(data)\n    return {'prediction': int(prediction[0])}\n```\n\n## Run Server\n\n```bash\nuvicorn main:app --reload\n```\n\n## Test API\n\n```python\nimport requests\n\nresponse = requests.post(\n    'http://localhost:8000/predict',\n    json={'age': 30, 'income': 50000}\n)\nprint(response.json())  # {'prediction': 1}\n```"
+            "title": "Creating APIs with FastAPI",
+            "content": "# Serving Models with FastAPI 🔌\n\n## Simple Prediction API\n\n```python\n# app.py\nfrom fastapi import FastAPI\nfrom pydantic import BaseModel\nimport joblib\nimport numpy as np\n\napp = FastAPI()\n\n# Load model once at startup\nmodel = joblib.load('model.joblib')\n\nclass PredictionInput(BaseModel):\n    feature1: float\n    feature2: float\n    feature3: float\n\nclass PredictionOutput(BaseModel):\n    prediction: int\n    probability: float\n\n@app.post('/predict', response_model=PredictionOutput)\nasync def predict(data: PredictionInput):\n    features = np.array([[data.feature1, data.feature2, data.feature3]])\n    prediction = model.predict(features)[0]\n    probability = model.predict_proba(features)[0].max()\n    \n    return PredictionOutput(\n        prediction=int(prediction),\n        probability=float(probability)\n    )\n```\n\n## Running the API\n\n```bash\npip install fastapi uvicorn\nuvicorn app:app --reload\n\n# API available at http://localhost:8000\n# Docs at http://localhost:8000/docs\n```\n\n## Making Requests\n\n```python\nimport requests\n\nresponse = requests.post(\n    'http://localhost:8000/predict',\n    json={'feature1': 5.1, 'feature2': 3.5, 'feature3': 1.4}\n)\nprint(response.json())\n# {'prediction': 0, 'probability': 0.95}\n```"
         },
         {
             "id": "deploy_quiz_1",
             "type": "quiz",
             "title": "Deployment Quiz",
             "content": "Test your knowledge!",
-            "quizQuestion": "Which library is commonly used to save scikit-learn models?",
+            "quizQuestion": "Which library is recommended for saving scikit-learn models?",
             "quizOptions": [
-                "TensorFlow",
-                "Joblib",
-                "FastAPI",
-                "Pandas"
+                "pickle",
+                "json",
+                "joblib",
+                "yaml"
             ],
-            "correctOptionIndex": 1
+            "correctOptionIndex": 2
         },
         {
             "id": "deploy_4",
             "type": "content",
+            "title": "Cloud Deployment",
+            "content": "# Deploying to the Cloud ☁️\n\n## Docker Container\n\n```dockerfile\n# Dockerfile\nFROM python:3.9-slim\n\nWORKDIR /app\nCOPY requirements.txt .\nRUN pip install -r requirements.txt\n\nCOPY . .\n\nCMD [\"uvicorn\", \"app:app\", \"--host\", \"0.0.0.0\", \"--port\", \"8000\"]\n```\n\n```bash\n# Build and run\ndocker build -t ml-api .\ndocker run -p 8000:8000 ml-api\n```\n\n## Cloud Platforms\n\n| Platform | Best For |\n|----------|----------|\n| **AWS SageMaker** | Full ML lifecycle |\n| **Google Cloud AI** | AutoML, easy scaling |\n| **Azure ML** | Enterprise integration |\n| **Heroku** | Simple, quick deploys |\n| **Railway/Render** | Modern, easy CI/CD |\n\n## MLflow for ML Lifecycle\n\n```python\nimport mlflow\n\n# Track experiments\nwith mlflow.start_run():\n    model.fit(X_train, y_train)\n    mlflow.log_param('n_estimators', 100)\n    mlflow.log_metric('accuracy', 0.95)\n    mlflow.sklearn.log_model(model, 'model')\n\n# Deploy registered model\nmlflow models serve -m \"models:/my_model/1\" --port 5001\n```\n\n> 🎯 **Docker ensures your model runs the same everywhere!**"
+        },
+        {
+            "id": "deploy_5",
+            "type": "content",
+            "title": "Best Practices",
+            "content": "# Deployment Best Practices 📋\n\n## Model Versioning\n\n```python\nimport joblib\nfrom datetime import datetime\n\n# Version your models\nversion = datetime.now().strftime('%Y%m%d_%H%M%S')\njoblib.dump(model, f'model_v{version}.joblib')\n```\n\n## Input Validation\n\n```python\nfrom pydantic import BaseModel, validator\n\nclass PredictionInput(BaseModel):\n    age: int\n    income: float\n    \n    @validator('age')\n    def validate_age(cls, v):\n        if v < 0 or v > 150:\n            raise ValueError('Invalid age')\n        return v\n```\n\n## Monitoring\n\n```python\nimport logging\nimport time\n\nlogger = logging.getLogger(__name__)\n\n@app.post('/predict')\nasync def predict(data: PredictionInput):\n    start = time.time()\n    \n    prediction = model.predict([data.features])[0]\n    \n    duration = time.time() - start\n    logger.info(f\"Prediction: {prediction}, Time: {duration:.3f}s\")\n    \n    return {'prediction': prediction}\n```\n\n## Health Check Endpoint\n\n```python\n@app.get('/health')\nasync def health():\n    return {'status': 'healthy', 'model_loaded': model is not None}\n```\n\n> 💡 **Always log predictions for debugging and monitoring!**"
+        },
+        {
+            "id": "deploy_6",
+            "type": "content",
             "title": "Summary",
-            "content": "# Congratulations! 🎉\n\nYou've completed Machine Learning!\n\n## Serialization\n- ✅ Joblib, Pickle\n- ✅ TensorFlow SavedModel\n\n## APIs\n- ✅ FastAPI for ML\n- ✅ Serve predictions\n\n## Cloud Options\n- ☁️ AWS SageMaker\n- ☁️ Google AI Platform\n- ☁️ Azure ML\n\n> 🏆 **You're now an ML practitioner!** Build projects to solidify your skills!"
+            "content": "# Congratulations! 🎉\n\nYou've completed the Machine Learning course!\n\n## Model Serialization\n- ✅ Joblib for sklearn\n- ✅ model.save() for Keras\n- ✅ torch.save() for PyTorch\n\n## APIs\n- ✅ FastAPI for modern APIs\n- ✅ Pydantic for validation\n- ✅ Auto-generated docs\n\n## Cloud Deployment\n- ✅ Docker for containerization\n- ✅ AWS, GCP, Azure options\n- ✅ MLflow for lifecycle management\n\n## Deployment Checklist\n\n```\n□ Save model with versioning\n□ Create API with validation\n□ Add health check endpoint\n□ Containerize with Docker\n□ Deploy to cloud platform\n□ Set up monitoring/logging\n```\n\n## Quick Deployment Template\n\n```python\nfrom fastapi import FastAPI\nimport joblib\n\napp = FastAPI()\nmodel = joblib.load('model.joblib')\n\n@app.post('/predict')\nasync def predict(data: dict):\n    return {'prediction': model.predict([data['features']])[0]}\n```\n\n> 🎯 **You now know the full ML pipeline from data to deployment!**"
         }
     ]
 }

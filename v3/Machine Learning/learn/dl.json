@@ -1,53 +1,79 @@
 {
-    "id": "learn_dl",
+    "id": "learn_ml_dl",
     "topicId": "dl",
     "topicTitle": "Deep Learning",
-    "description": "Understand neural networks, CNNs, and RNNs",
-    "baseKP": 95,
+    "description": "Neural networks, CNNs, RNNs, and training methods",
+    "baseKP": 100,
     "slides": [
         {
             "id": "dl_1",
             "type": "content",
             "title": "Introduction to Deep Learning",
-            "content": "# Deep Learning 🧠\n\nNeural networks with many layers!\n\n## What you'll learn:\n- **Neural Networks** - Basics\n- **Activation Functions** - Non-linearity\n- **CNNs** - Image processing\n- **RNNs** - Sequences\n\n## Deep Learning vs ML\n\n| ML | Deep Learning |\n|----|--------------|\n| Feature engineering | Automatic features |\n| Smaller data | Big data |\n| CPU | GPU |\n| Interpretable | Black box |\n\n> 💡 **Deep Learning powers ChatGPT, self-driving cars, and image recognition!**"
+            "content": "# Deep Learning 🧠\n\nPowerful neural networks that learn hierarchical representations!\n\n## What you'll learn:\n- **Neural Networks and Activation Functions** - Building blocks\n- **CNNs and RNNs** - For images and sequences\n- **Training Methods** - Making models learn\n\n## Deep Learning vs Machine Learning\n\n```\nTraditional ML:\nRaw Data → Hand-crafted Features → Model → Output\n\nDeep Learning:\nRaw Data → Neural Network (learns features!) → Output\n```\n\n## Why Deep Learning?\n\n- 🖼️ **Image recognition** - Better than humans!\n- 🗣️ **Speech recognition** - Siri, Alexa\n- 📝 **Natural language** - ChatGPT, translation\n- 🎮 **Game AI** - AlphaGo, game bots\n\n> 💡 **Deep learning excels when you have lots of data!**"
         },
         {
             "id": "dl_2",
             "type": "content",
-            "title": "Neural Networks",
-            "content": "# Neural Network Basics 🔗\n\n## Structure\n\n```\nInput Layer → Hidden Layers → Output Layer\n    [x]    →    [h1][h2]   →    [y]\n```\n\n## Simple Neural Network\n\n```python\nimport tensorflow as tf\nfrom tensorflow import keras\n\nmodel = keras.Sequential([\n    keras.layers.Dense(128, activation='relu', input_shape=(10,)),\n    keras.layers.Dense(64, activation='relu'),\n    keras.layers.Dense(1, activation='sigmoid')\n])\n\nmodel.compile(\n    optimizer='adam',\n    loss='binary_crossentropy',\n    metrics=['accuracy']\n)\n\nmodel.fit(X_train, y_train, epochs=10, batch_size=32)\n```\n\n## Activation Functions\n\n| Function | Use Case |\n|----------|----------|\n| ReLU | Hidden layers |\n| Sigmoid | Binary output |\n| Softmax | Multi-class output |\n| Tanh | Hidden layers |"
+            "title": "Neural Networks Basics",
+            "content": "# Neural Network Architecture 🏗️\n\n## Structure\n\n```\nInput Layer → Hidden Layer(s) → Output Layer\n   [X]    →     [Neurons]    →    [y]\n```\n\n## Basic Neural Network\n\n```python\nimport tensorflow as tf\nfrom tensorflow import keras\n\nmodel = keras.Sequential([\n    # Input layer (784 features)\n    keras.layers.Input(shape=(784,)),\n    \n    # Hidden layers\n    keras.layers.Dense(128, activation='relu'),\n    keras.layers.Dense(64, activation='relu'),\n    \n    # Output layer (10 classes)\n    keras.layers.Dense(10, activation='softmax')\n])\n```\n\n## Neuron Computation\n\n```\nNeuron:\n1. Weighted sum: z = w₁x₁ + w₂x₂ + ... + b\n2. Activation: a = activation(z)\n```\n\n## PyTorch Alternative\n\n```python\nimport torch.nn as nn\n\nclass Net(nn.Module):\n    def __init__(self):\n        super().__init__()\n        self.fc1 = nn.Linear(784, 128)\n        self.fc2 = nn.Linear(128, 64)\n        self.fc3 = nn.Linear(64, 10)\n    \n    def forward(self, x):\n        x = torch.relu(self.fc1(x))\n        x = torch.relu(self.fc2(x))\n        x = self.fc3(x)\n        return x\n```"
         },
         {
             "id": "dl_3",
             "type": "content",
-            "title": "CNNs for Images",
-            "content": "# Convolutional Neural Networks 📸\n\nDesigned for image processing!\n\n## Key Layers\n\n```\nConv2D → Pooling → Conv2D → Pooling → Flatten → Dense\n```\n\n## Code Example\n\n```python\nmodel = keras.Sequential([\n    keras.layers.Conv2D(32, (3,3), activation='relu', input_shape=(28,28,1)),\n    keras.layers.MaxPooling2D((2,2)),\n    keras.layers.Conv2D(64, (3,3), activation='relu'),\n    keras.layers.MaxPooling2D((2,2)),\n    keras.layers.Flatten(),\n    keras.layers.Dense(64, activation='relu'),\n    keras.layers.Dense(10, activation='softmax')\n])\n```\n\n## Applications\n- 👁️ Image classification\n- 🚗 Object detection\n- 😊 Face recognition\n- 🏥 Medical imaging"
+            "title": "Activation Functions",
+            "content": "# Activation Functions ⚡\n\nAdd non-linearity to neural networks!\n\n## Common Activations\n\n### ReLU (Most Popular)\n```python\n# f(x) = max(0, x)\nkeras.layers.Dense(64, activation='relu')\n\n# Pros: Fast, avoids vanishing gradient\n# Cons: Can \"die\" (output 0 for all inputs)\n```\n\n### Sigmoid\n```python\n# f(x) = 1 / (1 + e^(-x))  → Output: 0 to 1\nkeras.layers.Dense(1, activation='sigmoid')  # Binary classification\n```\n\n### Softmax (Multi-class)\n```python\n# Converts to probabilities that sum to 1\nkeras.layers.Dense(10, activation='softmax')  # 10 classes\n```\n\n### Tanh\n```python\n# f(x) = (e^x - e^(-x)) / (e^x + e^(-x))  → Output: -1 to 1\nkeras.layers.Dense(64, activation='tanh')\n```\n\n## When to Use Which?\n\n| Activation | Use Case |\n|------------|----------|\n| ReLU | Hidden layers (default) |\n| Sigmoid | Binary output (0/1) |\n| Softmax | Multi-class probabilities |\n| Tanh | When you need negative values |\n\n> 💡 **Use ReLU for hidden layers, Sigmoid/Softmax for output!**"
         },
         {
             "id": "dl_quiz_1",
             "type": "quiz",
-            "title": "Deep Learning Quiz",
+            "title": "Neural Network Quiz",
             "content": "Test your knowledge!",
-            "quizQuestion": "Which layer type is essential for image processing in CNNs?",
+            "quizQuestion": "Which activation function is most commonly used in hidden layers?",
             "quizOptions": [
-                "Dense",
-                "Conv2D",
-                "LSTM",
-                "Embedding"
+                "Sigmoid",
+                "Softmax",
+                "ReLU",
+                "Linear"
             ],
-            "correctOptionIndex": 1
+            "correctOptionIndex": 2
         },
         {
             "id": "dl_4",
             "type": "content",
-            "title": "RNNs for Sequences",
-            "content": "# Recurrent Neural Networks 🔄\n\nProcess sequences with memory!\n\n## LSTM Example\n\n```python\nmodel = keras.Sequential([\n    keras.layers.Embedding(vocab_size, 128),\n    keras.layers.LSTM(64, return_sequences=True),\n    keras.layers.LSTM(32),\n    keras.layers.Dense(1, activation='sigmoid')\n])\n```\n\n## Applications\n- 📝 Text generation\n- 🌐 Language translation\n- 📈 Time series prediction\n- 🎤 Speech recognition\n\n> 💡 **LSTM solves vanishing gradient problem** in basic RNNs!"
+            "title": "CNNs for Images",
+            "content": "# Convolutional Neural Networks 📷\n\nSpecialized for image processing!\n\n## Key Components\n\n```\nConvolution → Pooling → Convolution → Pooling → Dense → Output\n```\n\n## CNN Architecture\n\n```python\nmodel = keras.Sequential([\n    # Convolutional layers\n    keras.layers.Conv2D(32, (3, 3), activation='relu', input_shape=(28, 28, 1)),\n    keras.layers.MaxPooling2D((2, 2)),\n    \n    keras.layers.Conv2D(64, (3, 3), activation='relu'),\n    keras.layers.MaxPooling2D((2, 2)),\n    \n    keras.layers.Conv2D(64, (3, 3), activation='relu'),\n    \n    # Dense layers\n    keras.layers.Flatten(),\n    keras.layers.Dense(64, activation='relu'),\n    keras.layers.Dense(10, activation='softmax')\n])\n```\n\n## What Each Layer Does\n\n| Layer | Purpose |\n|-------|--------|\n| Conv2D | Detect features (edges, shapes) |\n| MaxPooling2D | Reduce size, keep important info |\n| Flatten | Convert 2D to 1D for Dense |\n| Dense | Classification |\n\n## CNN Applications\n\n- 🖼️ Image classification\n- 👤 Face recognition\n- 🚗 Self-driving cars\n- 🏥 Medical imaging\n\n> 💡 **CNNs learn features automatically** - no manual feature engineering!"
         },
         {
             "id": "dl_5",
             "type": "content",
+            "title": "RNNs for Sequences",
+            "content": "# Recurrent Neural Networks 📝\n\nProcess sequential data with memory!\n\n## Why RNNs?\n\n```\nSentence: \"I love Python programming\"\n\nRegular NN: Looks at each word independently\nRNN: Remembers context from previous words\n```\n\n## LSTM (Long Short-Term Memory)\n\n```python\nmodel = keras.Sequential([\n    keras.layers.Embedding(vocab_size, 128),\n    keras.layers.LSTM(64, return_sequences=True),\n    keras.layers.LSTM(32),\n    keras.layers.Dense(1, activation='sigmoid')\n])\n```\n\n## GRU (Gated Recurrent Unit)\n\n```python\nmodel = keras.Sequential([\n    keras.layers.Embedding(vocab_size, 128),\n    keras.layers.GRU(64),\n    keras.layers.Dense(1, activation='sigmoid')\n])\n```\n\n## RNN Applications\n\n| Application | Example |\n|-------------|--------|\n| Text classification | Sentiment analysis |\n| Language modeling | Text generation |\n| Machine translation | English → French |\n| Speech recognition | Audio → Text |\n| Time series | Stock prediction |\n\n## LSTM vs GRU\n\n```\nLSTM: More parameters, handles long sequences better\nGRU: Simpler, trains faster, often similar performance\n```\n\n> 💡 **Use LSTM/GRU instead of basic RNN** to avoid vanishing gradients!"
+        },
+        {
+            "id": "dl_6",
+            "type": "content",
+            "title": "Training Methods",
+            "content": "# Training Neural Networks 🎓\n\n## Compile and Train\n\n```python\nmodel.compile(\n    optimizer='adam',           # How to update weights\n    loss='sparse_categorical_crossentropy',  # What to minimize\n    metrics=['accuracy']        # What to track\n)\n\nhistory = model.fit(\n    X_train, y_train,\n    epochs=10,                  # Times through data\n    batch_size=32,              # Samples per update\n    validation_split=0.2        # Hold out for validation\n)\n```\n\n## Common Optimizers\n\n| Optimizer | Best For |\n|-----------|----------|\n| Adam | General purpose (default) |\n| SGD | Fine-grained control |\n| RMSprop | RNNs |\n\n## Preventing Overfitting\n\n```python\n# Dropout - Randomly disable neurons\nkeras.layers.Dropout(0.5)  # 50% dropout\n\n# Early Stopping\nearly_stop = keras.callbacks.EarlyStopping(\n    monitor='val_loss',\n    patience=3,\n    restore_best_weights=True\n)\nmodel.fit(..., callbacks=[early_stop])\n\n# Regularization\nkeras.layers.Dense(64, kernel_regularizer='l2')\n```\n\n## Batch Normalization\n\n```python\nkeras.layers.BatchNormalization()\n# Stabilizes training, enables higher learning rates\n```\n\n> 🎯 **Adam optimizer + Dropout + Early Stopping = Good baseline!**"
+        },
+        {
+            "id": "dl_quiz_2",
+            "type": "quiz",
+            "title": "Training Quiz",
+            "content": "Test your understanding!",
+            "quizQuestion": "Which technique randomly disables neurons during training to prevent overfitting?",
+            "quizOptions": [
+                "Batch Normalization",
+                "Early Stopping",
+                "Dropout",
+                "L2 Regularization"
+            ],
+            "correctOptionIndex": 2
+        },
+        {
+            "id": "dl_7",
+            "type": "content",
             "title": "Summary",
-            "content": "# Excellent Work! 🎉\n\nYou've learned Deep Learning basics!\n\n## Neural Networks\n- ✅ Layers and neurons\n- ✅ Activation functions\n\n## CNNs\n- ✅ Conv2D, Pooling\n- ✅ Image classification\n\n## RNNs\n- ✅ LSTM for sequences\n- ✅ Text and time series\n\n> 🚀 **Next Steps:** Learn about Model Evaluation!"
+            "content": "# Excellent Work! 🎉\n\nYou've learned Deep Learning basics!\n\n## Neural Networks and Activations\n- ✅ Layers: Input → Hidden → Output\n- ✅ ReLU for hidden, Sigmoid/Softmax for output\n- ✅ TensorFlow/Keras or PyTorch\n\n## CNNs for Images\n- ✅ Conv2D → Pooling → Dense\n- ✅ Learn features automatically\n- ✅ Great for image tasks\n\n## RNNs for Sequences\n- ✅ LSTM/GRU for text and time series\n- ✅ Remember context\n- ✅ Handle variable-length sequences\n\n## Training Methods\n- ✅ Adam optimizer (default)\n- ✅ Dropout for regularization\n- ✅ Early stopping\n- ✅ Batch normalization\n\n## Quick Model Template\n\n```python\nmodel = keras.Sequential([\n    keras.layers.Dense(128, activation='relu'),\n    keras.layers.Dropout(0.3),\n    keras.layers.Dense(64, activation='relu'),\n    keras.layers.Dense(10, activation='softmax')\n])\nmodel.compile(optimizer='adam', loss='sparse_categorical_crossentropy')\nmodel.fit(X_train, y_train, epochs=10, validation_split=0.2)\n```\n\n> 🚀 **Next Steps:** Learn about Model Evaluation!"
         }
     ]
 }

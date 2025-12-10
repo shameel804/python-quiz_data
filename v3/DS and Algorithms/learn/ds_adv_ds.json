@@ -2,58 +2,70 @@
     "id": "learn_ds_adv_ds",
     "topicId": "ds_adv_ds",
     "topicTitle": "Advanced Data Structures",
-    "description": "Arrays, stacks, queues, linked lists, trees, graphs, heaps, hash tables",
-    "baseKP": 95,
+    "description": "Arrays, stacks, queues, linked lists, trees, graphs, heaps, and hash tables",
+    "baseKP": 100,
     "slides": [
         {
-            "id": "ds_adv_1",
+            "id": "adv_ds_1",
             "type": "content",
-            "title": "Arrays & Lists",
-            "content": "# Arrays in Python 📊\n\n## Python Lists\n\n```python\n# Dynamic arrays\narr = [1, 2, 3, 4, 5]\n\narr.append(6)      # O(1) amortized\narr.pop()          # O(1)\narr.insert(0, 0)   # O(n)\narr[2]             # O(1) access\n```\n\n## NumPy Arrays\n\n```python\nimport numpy as np\n\narr = np.array([1, 2, 3, 4, 5])\narr * 2  # Vectorized operations\n```\n\n## 2D Arrays\n\n```python\nmatrix = [\n    [1, 2, 3],\n    [4, 5, 6],\n    [7, 8, 9]\n]\nmatrix[1][2]  # Access: 6\n```"
+            "title": "Arrays",
+            "content": "# Arrays 📊\n\n## Python Lists\n\n```python\n# Creation\narr = [1, 2, 3, 4, 5]\narr = list(range(10))\n\n# Access - O(1)\nfirst = arr[0]\nlast = arr[-1]\n\n# Modification\narr.append(6)       # O(1) amortized\narr.insert(0, 0)    # O(n)\narr.pop()           # O(1)\narr.pop(0)          # O(n)\n```\n\n## NumPy Arrays (Faster!)\n\n```python\nimport numpy as np\n\narr = np.array([1, 2, 3, 4, 5])\narr2d = np.zeros((3, 4))  # 3x4 matrix\n\n# Vectorized operations\nresult = arr * 2  # Multiply all elements\n```\n\n## Array Operations Complexity\n\n| Operation | Time |\n|-----------|------|\n| Access by index | O(1) |\n| Append | O(1) amortized |\n| Insert at beginning | O(n) |\n| Search (unsorted) | O(n) |\n| Search (sorted) | O(log n) |\n\n> 💡 **Use arrays when you need fast random access!**"
         },
         {
-            "id": "ds_adv_2",
+            "id": "adv_ds_2",
             "type": "content",
-            "title": "Stacks & Queues",
-            "content": "# Stacks & Queues 📚\n\n## Stack (LIFO)\n\n```python\nstack = []\nstack.append(1)  # Push\nstack.append(2)\ntop = stack.pop()  # Pop: 2\n```\n\n## Queue (FIFO)\n\n```python\nfrom collections import deque\n\nqueue = deque()\nqueue.append(1)      # Enqueue\nqueue.append(2)\nfront = queue.popleft()  # Dequeue: 1\n```\n\n## Applications\n\n| Stack | Queue |\n|-------|-------|\n| Undo/Redo | Task scheduling |\n| Parentheses | BFS |\n| Call stack | Print queue |"
+            "title": "Stacks",
+            "content": "# Stacks 📚\n\nLast In, First Out (LIFO)\n\n## Implementation\n\n```python\n# Using list\nstack = []\nstack.append(1)  # Push - O(1)\nstack.append(2)\nstack.append(3)\ntop = stack.pop() # Pop - O(1) → returns 3\npeek = stack[-1]  # Peek - O(1) → returns 2\n\n# Using deque (faster)\nfrom collections import deque\nstack = deque()\nstack.append(1)\ntop = stack.pop()\n```\n\n## Applications\n\n```python\n# Balanced parentheses checker\ndef is_balanced(s):\n    stack = []\n    pairs = {')': '(', '}': '{', ']': '['}\n    \n    for char in s:\n        if char in '({[':\n            stack.append(char)\n        elif char in ')}]':\n            if not stack or stack[-1] != pairs[char]:\n                return False\n            stack.pop()\n    \n    return len(stack) == 0\n\nprint(is_balanced(\"({[]})\"))  # True\nprint(is_balanced(\"({[})\"))   # False\n```\n\n## Use Cases\n\n- 🔙 Undo/Redo functionality\n- 📞 Function call stack\n- 🧮 Expression evaluation\n- 🌐 Browser history"
         },
         {
-            "id": "ds_adv_3",
+            "id": "adv_ds_3",
             "type": "content",
-            "title": "Linked Lists",
-            "content": "# Linked Lists 🔗\n\n## Node Definition\n\n```python\nclass Node:\n    def __init__(self, data):\n        self.data = data\n        self.next = None\n\nclass LinkedList:\n    def __init__(self):\n        self.head = None\n    \n    def append(self, data):\n        if not self.head:\n            self.head = Node(data)\n            return\n        current = self.head\n        while current.next:\n            current = current.next\n        current.next = Node(data)\n```\n\n## Array vs Linked List\n\n| Operation | Array | Linked List |\n|-----------|-------|-------------|\n| Access | O(1) | O(n) |\n| Insert start | O(n) | O(1) |\n| Insert end | O(1) | O(n) |"
+            "title": "Queues",
+            "content": "# Queues 🎢\n\nFirst In, First Out (FIFO)\n\n## Implementation\n\n```python\nfrom collections import deque\n\nqueue = deque()\nqueue.append(1)      # Enqueue - O(1)\nqueue.append(2)\nqueue.append(3)\nfront = queue.popleft()  # Dequeue - O(1) → returns 1\n```\n\n## Priority Queue\n\n```python\nimport heapq\n\npq = []\nheapq.heappush(pq, (3, 'task3'))  # (priority, item)\nheapq.heappush(pq, (1, 'task1'))\nheapq.heappush(pq, (2, 'task2'))\n\ntask = heapq.heappop(pq)  # (1, 'task1') - lowest priority first\n```\n\n## Circular Queue\n\n```python\nclass CircularQueue:\n    def __init__(self, k):\n        self.queue = [None] * k\n        self.head = self.tail = -1\n        self.size = k\n    \n    def enqueue(self, value):\n        self.tail = (self.tail + 1) % self.size\n        self.queue[self.tail] = value\n```\n\n## Use Cases\n\n- 🖨️ Print queue\n- 🌐 BFS traversal\n- 📋 Task scheduling\n- 💬 Message queues"
         },
         {
-            "id": "ds_adv_4",
-            "type": "content",
-            "title": "Trees",
-            "content": "# Binary Trees 🌳\n\n## Node Definition\n\n```python\nclass TreeNode:\n    def __init__(self, val):\n        self.val = val\n        self.left = None\n        self.right = None\n```\n\n## Tree Traversals\n\n```python\n# Inorder: Left → Root → Right\ndef inorder(node):\n    if node:\n        inorder(node.left)\n        print(node.val)\n        inorder(node.right)\n\n# Preorder: Root → Left → Right\ndef preorder(node):\n    if node:\n        print(node.val)\n        preorder(node.left)\n        preorder(node.right)\n\n# Postorder: Left → Right → Root\ndef postorder(node):\n    if node:\n        postorder(node.left)\n        postorder(node.right)\n        print(node.val)\n```"
-        },
-        {
-            "id": "ds_adv_quiz_1",
+            "id": "adv_ds_quiz_1",
             "type": "quiz",
             "title": "DS Quiz",
             "content": "Test your knowledge!",
-            "quizQuestion": "Which data structure follows LIFO (Last In, First Out)?",
+            "quizQuestion": "Which data structure uses LIFO (Last In, First Out)?",
             "quizOptions": [
                 "Queue",
                 "Stack",
                 "Linked List",
-                "Tree"
+                "Array"
             ],
             "correctOptionIndex": 1
         },
         {
-            "id": "ds_adv_5",
+            "id": "adv_ds_4",
             "type": "content",
-            "title": "Hash Tables",
-            "content": "# Hash Tables (Dictionaries) 🗂️\n\n## Python Dicts\n\n```python\nhash_map = {}\nhash_map['key'] = 'value'  # O(1) average\nprint(hash_map['key'])      # O(1) access\ndel hash_map['key']         # O(1) delete\n```\n\n## Common Uses\n\n```python\n# Count frequency\ndef count_chars(s):\n    freq = {}\n    for c in s:\n        freq[c] = freq.get(c, 0) + 1\n    return freq\n\n# Two Sum problem\ndef two_sum(nums, target):\n    seen = {}\n    for i, n in enumerate(nums):\n        complement = target - n\n        if complement in seen:\n            return [seen[complement], i]\n        seen[n] = i\n```\n\n> 💡 **Hash tables = O(1) lookup!**"
+            "title": "Linked Lists",
+            "content": "# Linked Lists 🔗\n\n## Node Structure\n\n```python\nclass Node:\n    def __init__(self, data):\n        self.data = data\n        self.next = None  # Singly linked\n        # self.prev = None  # Doubly linked\n\nclass LinkedList:\n    def __init__(self):\n        self.head = None\n    \n    def append(self, data):  # O(n)\n        new_node = Node(data)\n        if not self.head:\n            self.head = new_node\n            return\n        current = self.head\n        while current.next:\n            current = current.next\n        current.next = new_node\n    \n    def prepend(self, data):  # O(1)\n        new_node = Node(data)\n        new_node.next = self.head\n        self.head = new_node\n```\n\n## Complexity\n\n| Operation | Array | Linked List |\n|-----------|-------|-------------|\n| Access by index | O(1) | O(n) |\n| Insert at beginning | O(n) | O(1) |\n| Insert at end | O(1) | O(n) or O(1)* |\n| Delete by value | O(n) | O(n) |\n\n*O(1) if you maintain a tail pointer\n\n> 💡 **Use linked lists when you need fast insertions/deletions!**"
         },
         {
-            "id": "ds_adv_6",
+            "id": "adv_ds_5",
+            "type": "content",
+            "title": "Trees",
+            "content": "# Trees 🌲\n\n## Binary Search Tree (BST)\n\n```python\nclass TreeNode:\n    def __init__(self, val):\n        self.val = val\n        self.left = None\n        self.right = None\n\nclass BST:\n    def __init__(self):\n        self.root = None\n    \n    def insert(self, val):  # O(log n) average\n        if not self.root:\n            self.root = TreeNode(val)\n            return\n        self._insert_recursive(self.root, val)\n    \n    def _insert_recursive(self, node, val):\n        if val < node.val:\n            if node.left:\n                self._insert_recursive(node.left, val)\n            else:\n                node.left = TreeNode(val)\n        else:\n            if node.right:\n                self._insert_recursive(node.right, val)\n            else:\n                node.right = TreeNode(val)\n```\n\n## Tree Traversals\n\n```python\ndef inorder(node):    # Left, Root, Right (sorted!)\n    if node:\n        inorder(node.left)\n        print(node.val)\n        inorder(node.right)\n\ndef preorder(node):   # Root, Left, Right\n    if node:\n        print(node.val)\n        preorder(node.left)\n        preorder(node.right)\n\ndef postorder(node):  # Left, Right, Root\n    if node:\n        postorder(node.left)\n        postorder(node.right)\n        print(node.val)\n```\n\n> 🎯 **BST gives O(log n) search, insert, delete on average!**"
+        },
+        {
+            "id": "adv_ds_6",
+            "type": "content",
+            "title": "Graphs and Hash Tables",
+            "content": "# Graphs & Hash Tables 📍\n\n## Graph Representations\n\n```python\n# Adjacency List (most common)\ngraph = {\n    'A': ['B', 'C'],\n    'B': ['A', 'D', 'E'],\n    'C': ['A', 'F'],\n    'D': ['B'],\n    'E': ['B', 'F'],\n    'F': ['C', 'E']\n}\n\n# Adjacency Matrix\nmatrix = [\n    [0, 1, 1, 0],\n    [1, 0, 0, 1],\n    [1, 0, 0, 1],\n    [0, 1, 1, 0]\n]\n```\n\n## DFS and BFS\n\n```python\n# DFS - Use stack\ndef dfs(graph, start):\n    visited = set()\n    stack = [start]\n    while stack:\n        node = stack.pop()\n        if node not in visited:\n            print(node)\n            visited.add(node)\n            stack.extend(graph[node])\n\n# BFS - Use queue\nfrom collections import deque\n\ndef bfs(graph, start):\n    visited = set([start])\n    queue = deque([start])\n    while queue:\n        node = queue.popleft()\n        print(node)\n        for neighbor in graph[node]:\n            if neighbor not in visited:\n                visited.add(neighbor)\n                queue.append(neighbor)\n```\n\n## Hash Tables (Dictionary)\n\n```python\n# O(1) average lookup, insert, delete\nhash_table = {}\nhash_table['key'] = 'value'  # O(1)\nvalue = hash_table.get('key')  # O(1)\n```"
+        },
+        {
+            "id": "adv_ds_7",
+            "type": "content",
+            "title": "Heaps",
+            "content": "# Heaps 🏔️\n\n## Min Heap with heapq\n\n```python\nimport heapq\n\n# Create min heap\nheap = []\nheapq.heappush(heap, 5)  # O(log n)\nheapq.heappush(heap, 1)\nheapq.heappush(heap, 3)\n\nprint(heap[0])  # 1 (minimum element) - O(1)\nmin_val = heapq.heappop(heap)  # O(log n) → returns 1\n\n# Convert list to heap\nnums = [3, 1, 4, 1, 5, 9]\nheapq.heapify(nums)  # O(n)\n```\n\n## Max Heap (use negation)\n\n```python\n# Python only has min heap, so negate values\nmax_heap = []\nheapq.heappush(max_heap, -5)\nheapq.heappush(max_heap, -1)\nheapq.heappush(max_heap, -3)\n\nmax_val = -heapq.heappop(max_heap)  # 5\n```\n\n## Use Cases\n\n| Use Case | Heap Type |\n|----------|----------|\n| Priority queue | Min/Max heap |\n| K largest elements | Min heap of size K |\n| K smallest elements | Max heap of size K |\n| Median of stream | Two heaps |\n\n> 💡 **Heaps give O(log n) insert and O(1) min/max access!**"
+        },
+        {
+            "id": "adv_ds_8",
             "type": "content",
             "title": "Summary",
-            "content": "# Great Work! 🎉\n\nYou've learned Data Structures!\n\n## Linear\n- ✅ Arrays, Linked Lists\n- ✅ Stacks (LIFO), Queues (FIFO)\n\n## Non-Linear\n- ✅ Trees, Graphs\n- ✅ Hash Tables\n\n## Python Built-ins\n- ✅ `list`, `dict`, `set`\n- ✅ `collections.deque`\n\n> 🚀 **Next Steps:** Learn Sorting & Searching!"
+            "content": "# Excellent Work! 🎉\n\nYou've mastered Advanced Data Structures!\n\n## Quick Reference\n\n| Structure | Best For |\n|-----------|----------|\n| Array | Random access |\n| Stack | LIFO, undo/redo |\n| Queue | FIFO, BFS |\n| Linked List | Fast insert/delete |\n| BST | Sorted data, search |\n| Graph | Networks, paths |\n| Heap | Priority queue |\n| Hash Table | Fast lookup |\n\n## Complexity Summary\n\n| Operation | Array | Linked List | BST | Hash |\n|-----------|-------|-------------|-----|------|\n| Access | O(1) | O(n) | O(log n) | O(1) |\n| Search | O(n) | O(n) | O(log n) | O(1) |\n| Insert | O(n) | O(1) | O(log n) | O(1) |\n| Delete | O(n) | O(1) | O(log n) | O(1) |\n\n> 🚀 **Next Steps:** Learn Searching and Sorting Algorithms!"
         }
     ]
 }

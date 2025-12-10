@@ -1,38 +1,38 @@
 {
     "id": "learn_ds_intro",
     "topicId": "ds_intro",
-    "topicTitle": "Intro",
-    "description": "Understand data structures, algorithms, and complexity analysis",
-    "baseKP": 80,
+    "topicTitle": "Introduction to DS & Algorithms",
+    "description": "Fundamentals of data structures, algorithms, and complexity analysis",
+    "baseKP": 100,
     "slides": [
         {
             "id": "ds_intro_1",
             "type": "content",
             "title": "Welcome to DS & Algorithms",
-            "content": "# Data Structures & Algorithms 🏗️\n\nThe foundation of efficient programming!\n\n## What you'll learn:\n- **Data Structures** - Organize data\n- **Algorithms** - Solve problems\n- **Complexity** - Measure efficiency\n\n## Why DSA Matters\n- 💼 Required for tech interviews\n- ⚡ Write faster code\n- 🧠 Better problem solving\n- 📈 Handle large data\n\n> 💡 **Every major tech company tests DSA!**"
+            "content": "# Data Structures & Algorithms 🏗️\n\nThe foundation of computer science!\n\n## What you'll learn:\n- **Definition and Importance** - Why DSA matters\n- **Time and Space Complexity** - Measuring efficiency\n- **Big-O Notation** - The standard measure\n- **Algorithm Efficiency** - Fast vs slow\n- **Trade-offs in Design** - Space vs time\n- **Common Complexity Classes** - O(1) to O(n!)\n\n## Why Learn DSA?\n\n- 💼 **Crack Coding Interviews** - FAANG requirements\n- 🚀 **Write Efficient Code** - 100x faster programs\n- 🧠 **Problem-Solving Skills** - Think like a programmer\n- 📈 **Career Growth** - Higher salaries\n\n> 💡 **DSA is the difference between a 1-second and 1-hour program!**"
         },
         {
             "id": "ds_intro_2",
             "type": "content",
-            "title": "Big-O Notation",
-            "content": "# Time Complexity ⏱️\n\nHow does runtime grow with input size?\n\n## Common Complexities\n\n| Big-O | Name | Example |\n|-------|------|---------|\n| O(1) | Constant | Array access |\n| O(log n) | Logarithmic | Binary search |\n| O(n) | Linear | Loop through array |\n| O(n log n) | Linearithmic | Merge sort |\n| O(n²) | Quadratic | Nested loops |\n| O(2ⁿ) | Exponential | Recursive fib |\n\n## Examples\n\n```python\n# O(1) - Constant\ndef get_first(arr):\n    return arr[0]\n\n# O(n) - Linear\ndef find_max(arr):\n    max_val = arr[0]\n    for x in arr:\n        if x > max_val:\n            max_val = x\n    return max_val\n\n# O(n²) - Quadratic\ndef pairs(arr):\n    for i in arr:\n        for j in arr:\n            print(i, j)\n```"
+            "title": "What is a Data Structure?",
+            "content": "# Data Structures 📊\n\n## Definition\n\nA data structure is a way to organize and store data for efficient access and modification.\n\n## Types of Data Structures\n\n```\nData Structures\n├── Linear\n│   ├── Arrays\n│   ├── Linked Lists\n│   ├── Stacks\n│   └── Queues\n└── Non-Linear\n    ├── Trees\n    ├── Graphs\n    └── Hash Tables\n```\n\n## Choosing the Right One\n\n| Need | Data Structure |\n|------|---------------|\n| Fast lookup by index | Array |\n| Fast insert/delete | Linked List |\n| LIFO operations | Stack |\n| FIFO operations | Queue |\n| Fast lookup by key | Hash Table |\n| Hierarchical data | Tree |\n| Networks/relationships | Graph |\n\n> 🎯 **The right data structure makes code 100x faster!**"
         },
         {
             "id": "ds_intro_3",
             "type": "content",
-            "title": "Space Complexity",
-            "content": "# Space Complexity 💾\n\nHow much memory does the algorithm use?\n\n## Examples\n\n```python\n# O(1) Space - In-place\ndef swap(arr, i, j):\n    arr[i], arr[j] = arr[j], arr[i]\n\n# O(n) Space - New array\ndef double(arr):\n    result = [x * 2 for x in arr]\n    return result\n\n# O(n) Space - Recursion stack\ndef factorial(n):\n    if n <= 1:\n        return 1\n    return n * factorial(n - 1)\n```\n\n## Trade-offs\n\n| Approach | Time | Space |\n|----------|------|-------|\n| Brute force | Slow | Low |\n| Memoization | Fast | High |\n| Optimal | Fast | Low |\n\n> 💡 **Often we trade space for time!**"
+            "title": "Time and Space Complexity",
+            "content": "# Complexity Analysis ⏱️\n\n## Time Complexity\n\nHow runtime grows with input size:\n\n```python\n# O(1) - Constant time\ndef get_first(arr):\n    return arr[0]  # Always 1 operation\n\n# O(n) - Linear time\ndef find_item(arr, item):\n    for x in arr:  # n operations (worst case)\n        if x == item:\n            return True\n    return False\n\n# O(n²) - Quadratic time\ndef bubble_sort(arr):\n    for i in range(len(arr)):      # n times\n        for j in range(len(arr)):  # n times each\n            # Compare and swap\n```\n\n## Space Complexity\n\nHow memory grows with input size:\n\n```python\n# O(1) - Constant space\ndef sum_array(arr):\n    total = 0  # Only 1 variable\n    for x in arr:\n        total += x\n    return total\n\n# O(n) - Linear space\ndef copy_array(arr):\n    new_arr = arr.copy()  # New array of size n\n    return new_arr\n```\n\n> 💡 **We care about worst-case complexity!**"
         },
         {
             "id": "ds_intro_quiz_1",
             "type": "quiz",
             "title": "Complexity Quiz",
-            "content": "Test your knowledge!",
-            "quizQuestion": "What is the time complexity of binary search?",
+            "content": "Test your understanding!",
+            "quizQuestion": "What is the time complexity of accessing an array element by index?",
             "quizOptions": [
-                "O(1)",
                 "O(n)",
                 "O(log n)",
+                "O(1)",
                 "O(n²)"
             ],
             "correctOptionIndex": 2
@@ -40,8 +40,40 @@
         {
             "id": "ds_intro_4",
             "type": "content",
+            "title": "Big-O Notation",
+            "content": "# Big-O Notation 📈\n\n## Common Complexities (Best to Worst)\n\n```\nO(1)       Constant     → Hash table lookup\nO(log n)   Logarithmic  → Binary search\nO(n)       Linear       → Simple search\nO(n log n) Linearithmic → Merge sort\nO(n²)      Quadratic    → Nested loops\nO(2ⁿ)      Exponential  → Recursive fibonacci\nO(n!)      Factorial    → Permutations\n```\n\n## Visual Comparison (n = 1000)\n\n| Complexity | Operations | Time (1μs/op) |\n|------------|------------|---------------|\n| O(1) | 1 | 1 μs |\n| O(log n) | 10 | 10 μs |\n| O(n) | 1,000 | 1 ms |\n| O(n log n) | 10,000 | 10 ms |\n| O(n²) | 1,000,000 | 1 second |\n| O(2ⁿ) | 10^301 | Heat death of universe |\n\n## Big-O Rules\n\n```python\n# Drop constants\nO(2n) → O(n)\nO(100) → O(1)\n\n# Keep dominant term\nO(n² + n) → O(n²)\nO(n + log n) → O(n)\n```\n\n> 🎯 **Big-O describes the growth rate, not exact time!**"
+        },
+        {
+            "id": "ds_intro_5",
+            "type": "content",
+            "title": "Algorithm Efficiency",
+            "content": "# Measuring Efficiency 🏎️\n\n## Same Problem, Different Speeds\n\n```python\n# Find if number exists in sorted array\n\n# O(n) - Linear Search\ndef linear_search(arr, target):\n    for x in arr:\n        if x == target:\n            return True\n    return False\n\n# O(log n) - Binary Search (much faster!)\ndef binary_search(arr, target):\n    left, right = 0, len(arr) - 1\n    while left <= right:\n        mid = (left + right) // 2\n        if arr[mid] == target:\n            return True\n        elif arr[mid] < target:\n            left = mid + 1\n        else:\n            right = mid - 1\n    return False\n```\n\n## Real Impact\n\n| Array Size | Linear Search | Binary Search |\n|------------|---------------|---------------|\n| 1,000 | 1,000 ops | 10 ops |\n| 1,000,000 | 1,000,000 ops | 20 ops |\n| 1 billion | 1 billion ops | 30 ops |\n\n> 💡 **Algorithm choice matters more than hardware!**"
+        },
+        {
+            "id": "ds_intro_6",
+            "type": "content",
+            "title": "Trade-offs in Design",
+            "content": "# Space vs Time Trade-offs ⚖️\n\n## The Fundamental Trade-off\n\n```\nFaster algorithms often use more memory.\nMemory-efficient algorithms are often slower.\n```\n\n## Examples\n\n### Hash Table (Trade space for time)\n\n```python\n# O(n) space, O(1) lookup\nlookup = {item: index for index, item in enumerate(items)}\n\n# vs O(1) space, O(n) lookup\nfor i, item in enumerate(items):\n    if item == target:\n        return i\n```\n\n### Caching/Memoization\n\n```python\n# Without cache: O(2ⁿ) time, O(n) space\ndef fib(n):\n    if n <= 1: return n\n    return fib(n-1) + fib(n-2)\n\n# With cache: O(n) time, O(n) space\nfrom functools import lru_cache\n\n@lru_cache(maxsize=None)\ndef fib(n):\n    if n <= 1: return n\n    return fib(n-1) + fib(n-2)\n```\n\n## Choosing the Right Trade-off\n\n| Constraint | Optimize For |\n|------------|-------------|\n| Limited memory (embedded) | Space |\n| Speed critical (realtime) | Time |\n| Neither | Balance / Readability |\n\n> 🎯 **Know your constraints before optimizing!**"
+        },
+        {
+            "id": "ds_intro_quiz_2",
+            "type": "quiz",
+            "title": "Trade-offs Quiz",
+            "content": "Test your understanding!",
+            "quizQuestion": "Which complexity is better for sorting: O(n²) or O(n log n)?",
+            "quizOptions": [
+                "O(n²)",
+                "O(n log n)",
+                "They are the same",
+                "Depends on the data"
+            ],
+            "correctOptionIndex": 1
+        },
+        {
+            "id": "ds_intro_7",
+            "type": "content",
             "title": "Summary",
-            "content": "# Great Start! 🎉\n\nYou've learned complexity analysis!\n\n## Big-O\n- ✅ Measures growth rate\n- ✅ O(1) < O(log n) < O(n) < O(n²)\n\n## Time vs Space\n- ✅ Trade-offs are common\n- ✅ Consider both\n\n> 🚀 **Next Steps:** Learn about Data Structures!"
+            "content": "# Excellent Work! 🎉\n\nYou've learned DSA fundamentals!\n\n## Definition and Importance\n- ✅ DSA = Efficient problem solving\n- ✅ Critical for interviews and career\n\n## Time and Space Complexity\n- ✅ Time = How runtime grows\n- ✅ Space = How memory grows\n\n## Big-O Notation\n- ✅ O(1) < O(log n) < O(n) < O(n log n) < O(n²)\n- ✅ Drop constants and lower terms\n- ✅ Focus on worst case\n\n## Algorithm Efficiency\n- ✅ Choice of algorithm > Hardware\n- ✅ Binary search beats linear search\n\n## Trade-offs\n- ✅ Space vs Time trade-off\n- ✅ Caching trades memory for speed\n- ✅ Know your constraints\n\n## Complexity Cheat Sheet\n\n```\nO(1)       → Hash table, array access\nO(log n)   → Binary search\nO(n)       → Linear search\nO(n log n) → Merge sort, quick sort\nO(n²)      → Bubble sort, nested loops\n```\n\n> 🚀 **Next Steps:** Learn Advanced Data Structures!"
         }
     ]
 }

@@ -1,73 +1,79 @@
 {
-    "id": "learn_basic",
+    "id": "learn_ml_basic",
     "topicId": "basic",
     "topicTitle": "Basics",
-    "description": "Learn ML fundamentals, types, applications, and key terminology",
-    "baseKP": 80,
+    "description": "Introduction to Machine Learning concepts and terminology",
+    "baseKP": 100,
     "slides": [
         {
             "id": "ml_basic_1",
             "type": "content",
             "title": "Welcome to Machine Learning",
-            "content": "# Machine Learning 🤖\n\nTeach computers to learn from data!\n\n## What you'll learn:\n- **What is ML?** - Definition and concepts\n- **Types of ML** - Supervised, unsupervised, reinforcement\n- **Applications** - Real-world uses\n- **Workflow** - ML project steps\n- **Key Terminology** - Essential vocabulary\n\n## Why Machine Learning?\n- 📧 Spam detection in emails\n- 🎵 Music recommendations (Spotify)\n- 🚗 Self-driving cars (Tesla)\n- 🏥 Disease diagnosis\n- 🎮 Game AI (AlphaGo)\n\n> 💡 **ML is everywhere!** Any app that gets \"smarter\" over time likely uses ML."
+            "content": "# Machine Learning Basics 🤖\n\nTeach computers to learn from data!\n\n## What you'll learn:\n- **Definition and Types** - What ML is and how it works\n- **Applications and Workflow** - Where ML is used\n- **Key Terminology** - Essential concepts\n\n## What is Machine Learning?\n\n```\nTraditional Programming:\nRules + Data → Program → Output\n\nMachine Learning:\nData + Output → ML Algorithm → Rules (Model)\n```\n\n## Real-World Examples\n\n- 📧 **Email spam filtering**\n- 🎵 **Music recommendations** (Spotify)\n- 🚗 **Self-driving cars** (Tesla)\n- 🗣️ **Voice assistants** (Siri, Alexa)\n- 📸 **Face recognition** (iPhone)\n- 🏥 **Medical diagnosis**\n\n> 💡 **ML is everywhere!** Any app that improves from data likely uses ML."
         },
         {
             "id": "ml_basic_2",
             "type": "content",
-            "title": "What is Machine Learning?",
-            "content": "# Definition 📖\n\n**Machine Learning** is a subset of AI where systems learn patterns from data without being explicitly programmed.\n\n## Traditional Programming vs ML\n\n```\nTraditional Programming:\nData + Rules → Output\n\nMachine Learning:\nData + Output → Rules (learned)\n```\n\n## Example: Email Spam\n\n```python\n# Traditional: Define rules manually\nif 'free money' in email or 'click here' in email:\n    spam = True\n\n# ML: Learn from examples\nmodel.fit(emails, labels)  # Learn patterns\nspam = model.predict(new_email)\n```\n\n## Key Insight\n\n> 🎯 **ML finds patterns humans might miss!** A model can analyze millions of examples to find subtle patterns.\n\n## When to Use ML\n- ✅ Too many rules to write\n- ✅ Patterns hard to define\n- ✅ Lots of data available\n- ✅ Problem changes over time"
-        },
-        {
-            "id": "ml_basic_3",
-            "type": "content",
             "title": "Types of Machine Learning",
-            "content": "# ML Categories 📊\n\n## 1. Supervised Learning\n\nLearn from labeled examples.\n\n```\nInput: Photo of cat → Label: \"cat\"\nInput: Email text → Label: \"spam\"/\"not spam\"\n```\n\n**Tasks:**\n- Classification (categories)\n- Regression (numbers)\n\n## 2. Unsupervised Learning\n\nFind patterns in unlabeled data.\n\n```\nInput: Customer data → Discover: 3 customer groups\nInput: Products → Discover: Similar items\n```\n\n**Tasks:**\n- Clustering\n- Dimensionality reduction\n\n## 3. Reinforcement Learning\n\nLearn by trial and error.\n\n```\nAgent → Action → Environment → Reward/Penalty\nGame AI learns: \"This move = +10 points\"\n```\n\n**Examples:** Game AI, Robotics, Trading"
+            "content": "# Types of ML 📊\n\n## 1. Supervised Learning\n\nLearn from labeled examples:\n\n```python\n# Training data has answers (labels)\nX = [[feature1, feature2], ...]  # Input features\ny = [label1, label2, ...]         # Known answers\n\nmodel.fit(X, y)  # Learn from labeled data\npredictions = model.predict(new_X)\n```\n\n**Examples:**\n- 📧 Email → Spam/Not Spam\n- 🏠 House features → Price prediction\n- 📷 Image → Cat/Dog classification\n\n## 2. Unsupervised Learning\n\nFind patterns without labels:\n\n```python\n# No labels - find hidden structure\nX = [[feature1, feature2], ...]\n\nmodel.fit(X)  # Discover patterns\nclusters = model.predict(X)\n```\n\n**Examples:**\n- 👥 Customer segmentation\n- 🔎 Anomaly detection\n- 📰 Topic modeling\n\n## 3. Reinforcement Learning\n\nLearn through trial and error:\n\n```\nAgent → Action → Environment → Reward\n  ↑                              ↓\n  ←────── Learn from feedback ←──\n```\n\n**Examples:**\n- 🎮 Game playing (AlphaGo)\n- 🤖 Robot control\n- 📈 Trading algorithms"
         },
         {
             "id": "ml_basic_quiz_1",
             "type": "quiz",
             "title": "ML Types Quiz",
             "content": "Test your understanding!",
-            "quizQuestion": "Which type of ML learns from labeled data?",
+            "quizQuestion": "Which type of ML uses labeled data for training?",
             "quizOptions": [
                 "Unsupervised Learning",
                 "Supervised Learning",
                 "Reinforcement Learning",
-                "Deep Learning"
+                "Semi-supervised Learning"
             ],
             "correctOptionIndex": 1
+        },
+        {
+            "id": "ml_basic_3",
+            "type": "content",
+            "title": "ML Applications",
+            "content": "# Applications of ML 🌍\n\n## Classification\n\nPredict categories:\n\n```python\n# Binary classification\nemail → \"spam\" or \"not spam\"\n\n# Multi-class classification\nimage → \"cat\", \"dog\", \"bird\", \"fish\"\n```\n\n## Regression\n\nPredict continuous values:\n\n```python\n# Predict a number\nhouse_features → $450,000\ntemperature_data → 72.5°F\n```\n\n## Clustering\n\nGroup similar items:\n\n```python\n# Find natural groups\ncustomers → Cluster A, B, C, D\ndocuments → Topics 1, 2, 3\n```\n\n## Industry Applications\n\n| Industry | Use Case |\n|----------|----------|\n| 🏥 Healthcare | Disease diagnosis, drug discovery |\n| 💰 Finance | Fraud detection, credit scoring |\n| 🛒 Retail | Recommendations, demand forecasting |\n| 🚗 Automotive | Autonomous driving, predictive maintenance |\n| 🎬 Entertainment | Content recommendations, content creation |\n\n> 🎯 **ML transforms industries** by automating decisions and finding patterns humans can't see!"
         },
         {
             "id": "ml_basic_4",
             "type": "content",
             "title": "ML Workflow",
-            "content": "# ML Project Workflow 🔄\n\n## Step-by-Step Process\n\n```\n1. Define Problem\n      ↓\n2. Collect Data\n      ↓\n3. Prepare Data (cleaning, features)\n      ↓\n4. Choose Model\n      ↓\n5. Train Model\n      ↓\n6. Evaluate Model\n      ↓\n7. Tune & Improve\n      ↓\n8. Deploy\n```\n\n## Real Example: House Price Prediction\n\n```python\n# 1. Define: Predict house prices\n# 2. Collect: House sales data\n# 3. Prepare: Clean data, select features\nimport pandas as pd\ndata = pd.read_csv('houses.csv')\nX = data[['bedrooms', 'sqft', 'location']]\ny = data['price']\n\n# 4-5. Choose & Train\nfrom sklearn.linear_model import LinearRegression\nmodel = LinearRegression()\nmodel.fit(X_train, y_train)\n\n# 6. Evaluate\nscore = model.score(X_test, y_test)\n\n# 7. Tune: Try different models/parameters\n# 8. Deploy: Save and use in production\n```"
+            "content": "# The ML Workflow 🔄\n\n## Step-by-Step Process\n\n```\n1. Define Problem       → What are we trying to predict?\n2. Collect Data         → Gather relevant data\n3. Prepare Data         → Clean, transform, split\n4. Choose Model         → Select algorithm\n5. Train Model          → Fit on training data\n6. Evaluate Model       → Test on unseen data\n7. Tune Model           → Optimize performance\n8. Deploy Model         → Use in production\n9. Monitor & Update     → Maintain over time\n```\n\n## Python Workflow Example\n\n```python\n# Step 1-2: Load data\nimport pandas as pd\nfrom sklearn.model_selection import train_test_split\n\ndf = pd.read_csv('data.csv')\nX = df.drop('target', axis=1)\ny = df['target']\n\n# Step 3: Prepare data\nX_train, X_test, y_train, y_test = train_test_split(\n    X, y, test_size=0.2, random_state=42\n)\n\n# Step 4-5: Train model\nfrom sklearn.ensemble import RandomForestClassifier\nmodel = RandomForestClassifier()\nmodel.fit(X_train, y_train)\n\n# Step 6: Evaluate\nfrom sklearn.metrics import accuracy_score\npredictions = model.predict(X_test)\nprint(f\"Accuracy: {accuracy_score(y_test, predictions):.2%}\")\n```\n\n> 💡 **80% of ML work is data preparation!** Good data = good model."
         },
         {
             "id": "ml_basic_5",
             "type": "content",
-            "title": "Key Terminology",
-            "content": "# Essential ML Vocabulary 📚\n\n## Data Terms\n\n| Term | Meaning |\n|------|--------|\n| **Feature** | Input variable (bedrooms, sqft) |\n| **Label/Target** | Output to predict (price) |\n| **Sample** | One data point |\n| **Dataset** | Collection of samples |\n| **Training Set** | Data for learning |\n| **Test Set** | Data for evaluation |\n\n## Model Terms\n\n| Term | Meaning |\n|------|--------|\n| **Model** | Algorithm that learns |\n| **Training** | Learning from data |\n| **Prediction** | Model output |\n| **Parameters** | Learned values |\n| **Hyperparameters** | Settings you choose |\n\n## Evaluation Terms\n\n| Term | Meaning |\n|------|--------|\n| **Accuracy** | % correct predictions |\n| **Overfitting** | Too good on training, bad on test |\n| **Underfitting** | Bad on everything |\n| **Generalization** | Works on new data |"
+            "title": "Key Terminology - Part 1",
+            "content": "# ML Vocabulary 📖 (Part 1)\n\n## Core Concepts\n\n### Features (X)\n\n```python\n# Input variables used for prediction\nfeatures = ['age', 'income', 'education']\n\n# Example: Predicting loan approval\nX = [[25, 50000, 'bachelor'],\n     [35, 80000, 'master'],\n     [45, 120000, 'phd']]\n```\n\n### Labels/Target (y)\n\n```python\n# The answer we're trying to predict\ny = ['denied', 'approved', 'approved']\n```\n\n### Training Data\n\nData used to teach the model:\n\n```python\n# 80% of data for training\nX_train, y_train = X[:80], y[:80]\n```\n\n### Test Data\n\nData used to evaluate (never seen during training):\n\n```python\n# 20% of data for testing\nX_test, y_test = X[80:], y[80:]\n```\n\n### Model\n\nThe trained algorithm that makes predictions:\n\n```python\nmodel = RandomForestClassifier()\nmodel.fit(X_train, y_train)  # Train\nprediction = model.predict(X_test)  # Predict\n```\n\n> 🎯 **Features = What you know, Target = What you predict**"
+        },
+        {
+            "id": "ml_basic_6",
+            "type": "content",
+            "title": "Key Terminology - Part 2",
+            "content": "# ML Vocabulary 📖 (Part 2)\n\n## Model Performance\n\n### Accuracy\n\n```python\n# Percentage of correct predictions\naccuracy = correct_predictions / total_predictions\n# 95% accuracy = 95 out of 100 correct\n```\n\n### Overfitting\n\n```\nModel memorizes training data but fails on new data.\n\nTraining accuracy: 99%\nTest accuracy: 60%  ← Big gap = Overfitting!\n```\n\n### Underfitting\n\n```\nModel is too simple to capture patterns.\n\nTraining accuracy: 50%\nTest accuracy: 45%  ← Both low = Underfitting!\n```\n\n### Hyperparameters\n\n```python\n# Settings you configure before training\nmodel = RandomForestClassifier(\n    n_estimators=100,    # Hyperparameter\n    max_depth=10,        # Hyperparameter\n    random_state=42      # Hyperparameter\n)\n```\n\n### Parameters\n\n```python\n# Values learned during training (internal)\n# You don't set these - the model learns them\n# Examples: weights in neural networks, split points in trees\n```\n\n> 💡 **Hyperparameters = You set, Parameters = Model learns**"
         },
         {
             "id": "ml_basic_quiz_2",
             "type": "quiz",
             "title": "Terminology Quiz",
             "content": "Test your vocabulary!",
-            "quizQuestion": "What is a 'feature' in machine learning?",
+            "quizQuestion": "What term describes when a model performs well on training data but poorly on test data?",
             "quizOptions": [
-                "The output to predict",
-                "An input variable",
-                "The trained model",
-                "The learning algorithm"
+                "Underfitting",
+                "Overfitting",
+                "Regularization",
+                "Normalization"
             ],
             "correctOptionIndex": 1
         },
         {
-            "id": "ml_basic_6",
+            "id": "ml_basic_7",
             "type": "content",
             "title": "Summary",
-            "content": "# Great Start! 🎉\n\nYou've learned ML fundamentals!\n\n## What is ML?\n- ✅ Learning patterns from data\n- ✅ Data + Output → Rules\n\n## Types of ML\n- ✅ **Supervised** - Labeled data\n- ✅ **Unsupervised** - Unlabeled data\n- ✅ **Reinforcement** - Trial and error\n\n## Workflow\n- ✅ Define → Collect → Prepare → Train → Evaluate → Deploy\n\n## Key Terms\n- ✅ Features, labels, samples\n- ✅ Training/test sets\n- ✅ Overfitting/underfitting\n\n> 🚀 **Next Steps:** Learn about Data Preprocessing!"
+            "content": "# Excellent Work! 🎉\n\nYou've learned ML Basics!\n\n## Definition and Types\n- ✅ **Supervised** - Learn from labeled data\n- ✅ **Unsupervised** - Find hidden patterns\n- ✅ **Reinforcement** - Learn from feedback\n\n## Applications and Workflow\n- ✅ Classification, Regression, Clustering\n- ✅ Data → Prepare → Train → Evaluate → Deploy\n- ✅ 80% of work is data preparation\n\n## Key Terminology\n- ✅ **Features (X)** - Input variables\n- ✅ **Target (y)** - What we predict\n- ✅ **Training/Test split** - Evaluate on unseen data\n- ✅ **Overfitting** - Memorizing vs learning\n- ✅ **Hyperparameters** - Settings you configure\n\n## Remember\n\n```\nGood data → Good features → Good model → Good predictions\n```\n\n> 🚀 **Next Steps:** Learn about Data Preprocessing!"
         }
     ]
 }

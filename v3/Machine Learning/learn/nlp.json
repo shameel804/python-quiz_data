@@ -1,36 +1,36 @@
 {
-    "id": "learn_nlp",
+    "id": "learn_ml_nlp",
     "topicId": "nlp",
     "topicTitle": "Natural Language Processing (NLP)",
     "description": "Text preprocessing, vectorization, and NLP models",
-    "baseKP": 90,
+    "baseKP": 100,
     "slides": [
         {
             "id": "nlp_1",
             "type": "content",
             "title": "Introduction to NLP",
-            "content": "# Natural Language Processing 📝\n\nTeach machines to understand text!\n\n## What you'll learn:\n- **Text Preprocessing** - Clean text\n- **Vectorization** - Text to numbers\n- **NLP Models** - Classification, sentiment\n\n## Applications\n- 💬 Chatbots\n- 😊😢 Sentiment analysis\n- 🌐 Translation\n- 📧 Spam detection\n- 🤖 ChatGPT!"
+            "content": "# Natural Language Processing 📝\n\nTeach machines to understand human language!\n\n## What you'll learn:\n- **Text Preprocessing and Vectorization** - Prepare text data\n- **NLP Models** - Algorithms for text\n- **Applications** - Real-world uses\n\n## What is NLP?\n\n```\nNLP = Making computers understand human language\n\nText: \"I love this movie! It's amazing.\"\n  ↓ NLP\nSentiment: Positive (95% confidence)\n```\n\n## NLP Applications\n\n| Application | Example |\n|-------------|--------|\n| 🎭 Sentiment Analysis | Product reviews |\n| 🤖 Chatbots | Customer support |\n| 🌐 Translation | Google Translate |\n| 📧 Spam Detection | Email filtering |\n| 📝 Text Summarization | News articles |\n| ❓ Question Answering | Search engines |\n\n> 💡 **NLP powers ChatGPT, Siri, and Google Search!**"
         },
         {
             "id": "nlp_2",
             "type": "content",
             "title": "Text Preprocessing",
-            "content": "# Preprocessing Text 🧹\n\n## Steps\n\n```python\nimport re\nimport nltk\nfrom nltk.corpus import stopwords\nfrom nltk.stem import WordNetLemmatizer\n\ndef preprocess(text):\n    # Lowercase\n    text = text.lower()\n    \n    # Remove punctuation\n    text = re.sub(r'[^a-zA-Z\\s]', '', text)\n    \n    # Tokenize\n    tokens = text.split()\n    \n    # Remove stopwords\n    stop_words = set(stopwords.words('english'))\n    tokens = [t for t in tokens if t not in stop_words]\n    \n    # Lemmatize\n    lemmatizer = WordNetLemmatizer()\n    tokens = [lemmatizer.lemmatize(t) for t in tokens]\n    \n    return ' '.join(tokens)\n```\n\n## Result\n\n```\nInput: \"I am LOVING these new features!!!\"\nOutput: \"love new feature\"\n```"
+            "content": "# Cleaning Text Data 🧹\n\n## Basic Preprocessing\n\n```python\nimport re\nimport nltk\nfrom nltk.corpus import stopwords\nfrom nltk.stem import WordNetLemmatizer\n\nnltk.download('stopwords')\nnltk.download('wordnet')\n\ndef preprocess_text(text):\n    # Lowercase\n    text = text.lower()\n    \n    # Remove special characters\n    text = re.sub(r'[^a-zA-Z\\s]', '', text)\n    \n    # Tokenize\n    words = text.split()\n    \n    # Remove stopwords\n    stop_words = set(stopwords.words('english'))\n    words = [w for w in words if w not in stop_words]\n    \n    # Lemmatization\n    lemmatizer = WordNetLemmatizer()\n    words = [lemmatizer.lemmatize(w) for w in words]\n    \n    return ' '.join(words)\n\ntext = \"I'm LOVING these movies! They're absolutely amazing!!!\"\nclean = preprocess_text(text)\n# Output: \"love movie absolutely amazing\"\n```\n\n## Preprocessing Steps\n\n| Step | Before | After |\n|------|--------|-------|\n| Lowercase | \"HELLO World\" | \"hello world\" |\n| Remove punctuation | \"Hello!\" | \"Hello\" |\n| Tokenize | \"hello world\" | [\"hello\", \"world\"] |\n| Remove stopwords | [\"the\", \"cat\", \"is\", \"big\"] | [\"cat\", \"big\"] |\n| Lemmatize | \"running\", \"ran\" | \"run\", \"run\" |\n\n> 💡 **Clean text = Better model performance!**"
         },
         {
             "id": "nlp_3",
             "type": "content",
             "title": "Text Vectorization",
-            "content": "# Text to Numbers 🔢\n\n## Bag of Words\n\n```python\nfrom sklearn.feature_extraction.text import CountVectorizer\n\nvectorizer = CountVectorizer()\nX = vectorizer.fit_transform(texts)\n# Each word = one feature\n```\n\n## TF-IDF\n\n```python\nfrom sklearn.feature_extraction.text import TfidfVectorizer\n\nvectorizer = TfidfVectorizer(max_features=5000)\nX = vectorizer.fit_transform(texts)\n# Words weighted by importance\n```\n\n## Word Embeddings\n\n```python\n# Pre-trained embeddings (Word2Vec, GloVe)\n# Similar words have similar vectors\n# king - man + woman ≈ queen\n```\n\n> 💡 **TF-IDF is most common** for traditional ML!"
+            "content": "# Converting Text to Numbers 🔢\n\nML models need numbers, not words!\n\n## Bag of Words (CountVectorizer)\n\n```python\nfrom sklearn.feature_extraction.text import CountVectorizer\n\ncorpus = [\n    \"I love python\",\n    \"Python is great\",\n    \"I love programming\"\n]\n\nvectorizer = CountVectorizer()\nX = vectorizer.fit_transform(corpus)\n\nprint(vectorizer.get_feature_names_out())\n# ['great', 'is', 'love', 'programming', 'python']\n\nprint(X.toarray())\n# [[0, 0, 1, 0, 1],   # \"I love python\"\n#  [1, 1, 0, 0, 1],   # \"Python is great\"\n#  [0, 0, 1, 1, 0]]   # \"I love programming\"\n```\n\n## TF-IDF (Better!)\n\n```python\nfrom sklearn.feature_extraction.text import TfidfVectorizer\n\nvectorizer = TfidfVectorizer(\n    max_features=5000,  # Limit vocabulary\n    ngram_range=(1, 2), # Unigrams and bigrams\n    min_df=2            # Minimum document frequency\n)\nX = vectorizer.fit_transform(corpus)\n```\n\n## Word Embeddings (Best!)\n\n```python\n# Using pre-trained embeddings\nfrom gensim.models import Word2Vec\n\nmodel = Word2Vec(sentences, vector_size=100, window=5)\nvector = model.wv['python']  # 100-dim vector\n\n# Semantic similarity\nmodel.wv.similarity('python', 'programming')  # 0.85\n```\n\n> 🎯 **TF-IDF for traditional ML, Embeddings for deep learning!**"
         },
         {
             "id": "nlp_quiz_1",
             "type": "quiz",
-            "title": "NLP Quiz",
+            "title": "Vectorization Quiz",
             "content": "Test your knowledge!",
-            "quizQuestion": "Which technique weights words by their importance in documents?",
+            "quizQuestion": "Which vectorization method considers word importance across documents?",
             "quizOptions": [
-                "Bag of Words",
+                "CountVectorizer (Bag of Words)",
                 "TF-IDF",
                 "One-Hot Encoding",
                 "Label Encoding"
@@ -40,8 +40,20 @@
         {
             "id": "nlp_4",
             "type": "content",
+            "title": "NLP Models",
+            "content": "# NLP Models 🤖\n\n## Traditional ML Approach\n\n```python\nfrom sklearn.feature_extraction.text import TfidfVectorizer\nfrom sklearn.naive_bayes import MultinomialNB\nfrom sklearn.pipeline import Pipeline\n\n# Text classification pipeline\npipeline = Pipeline([\n    ('tfidf', TfidfVectorizer(max_features=5000)),\n    ('clf', MultinomialNB())\n])\n\npipeline.fit(train_texts, train_labels)\npredictions = pipeline.predict(test_texts)\n```\n\n## Deep Learning Approach\n\n```python\nimport tensorflow as tf\nfrom tensorflow.keras.layers import Embedding, LSTM, Dense\n\nmodel = tf.keras.Sequential([\n    Embedding(vocab_size, 128, input_length=max_len),\n    LSTM(64),\n    Dense(1, activation='sigmoid')\n])\n\nmodel.compile(optimizer='adam', loss='binary_crossentropy')\nmodel.fit(X_train, y_train, epochs=5)\n```\n\n## Transformer Models (State-of-the-Art)\n\n```python\nfrom transformers import pipeline\n\n# Sentiment analysis\nclassifier = pipeline('sentiment-analysis')\nresult = classifier(\"I love this product!\")\n# [{'label': 'POSITIVE', 'score': 0.999}]\n\n# Named entity recognition\nner = pipeline('ner')\nentities = ner(\"Apple CEO Tim Cook visited Paris\")\n```\n\n> 💡 **Transformers (BERT, GPT) are the current state-of-the-art!**"
+        },
+        {
+            "id": "nlp_5",
+            "type": "content",
+            "title": "NLP Applications",
+            "content": "# Real-World NLP 🌍\n\n## Sentiment Analysis\n\n```python\nfrom sklearn.feature_extraction.text import TfidfVectorizer\nfrom sklearn.linear_model import LogisticRegression\n\n# Train classifier\nvectorizer = TfidfVectorizer(max_features=5000)\nX_train = vectorizer.fit_transform(reviews)\nmodel = LogisticRegression()\nmodel.fit(X_train, sentiments)\n\n# Predict\nnew_review = [\"This movie is amazing!\"]\nX_new = vectorizer.transform(new_review)\nsentiment = model.predict(X_new)\n```\n\n## Named Entity Recognition (NER)\n\n```python\nimport spacy\n\nnlp = spacy.load('en_core_web_sm')\ndoc = nlp(\"Apple CEO Tim Cook visited Paris last Friday\")\n\nfor ent in doc.ents:\n    print(f\"{ent.text}: {ent.label_}\")\n# Apple: ORG\n# Tim Cook: PERSON\n# Paris: GPE\n# last Friday: DATE\n```\n\n## Text Summarization\n\n```python\nfrom transformers import pipeline\n\nsummarizer = pipeline('summarization')\nlong_text = \"Very long article...\"\nsummary = summarizer(long_text, max_length=100)\n```\n\n## Question Answering\n\n```python\nqa = pipeline('question-answering')\nresult = qa(\n    question=\"What is Python?\",\n    context=\"Python is a programming language created by Guido van Rossum.\"\n)\n# {'answer': 'a programming language', 'score': 0.95}\n```"
+        },
+        {
+            "id": "nlp_6",
+            "type": "content",
             "title": "Summary",
-            "content": "# Excellent Work! 🎉\n\nYou've learned NLP basics!\n\n## Preprocessing\n- ✅ Lowercase, remove punctuation\n- ✅ Tokenization, stopwords\n- ✅ Lemmatization\n\n## Vectorization\n- ✅ Bag of Words\n- ✅ TF-IDF\n- ✅ Word Embeddings\n\n> 🚀 **Next Steps:** Learn about Model Deployment!"
+            "content": "# Excellent Work! 🎉\n\nYou've learned NLP basics!\n\n## Text Preprocessing\n- ✅ Lowercase, remove punctuation\n- ✅ Tokenization, stopword removal\n- ✅ Stemming/Lemmatization\n\n## Text Vectorization\n- ✅ **CountVectorizer** - Simple word counts\n- ✅ **TF-IDF** - Word importance\n- ✅ **Embeddings** - Semantic meaning\n\n## NLP Models\n- ✅ Traditional: Naive Bayes, SVM with TF-IDF\n- ✅ Deep Learning: LSTM, Transformers\n- ✅ Pre-trained: BERT, GPT via Hugging Face\n\n## Applications\n- ✅ Sentiment analysis\n- ✅ Named entity recognition\n- ✅ Text summarization\n- ✅ Question answering\n\n## Quick Pipeline\n\n```python\nfrom sklearn.pipeline import Pipeline\nfrom sklearn.feature_extraction.text import TfidfVectorizer\nfrom sklearn.naive_bayes import MultinomialNB\n\npipeline = Pipeline([\n    ('tfidf', TfidfVectorizer()),\n    ('clf', MultinomialNB())\n])\npipeline.fit(X_train, y_train)\n```\n\n> 🚀 **Next Steps:** Learn about Model Deployment!"
         }
     ]
 }

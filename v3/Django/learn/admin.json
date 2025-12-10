@@ -2,40 +2,52 @@
     "id": "learn_admin",
     "topicId": "admin",
     "topicTitle": "Django Admin",
-    "description": "Master Django's powerful admin interface",
-    "baseKP": 75,
+    "description": "Master Django's powerful admin interface configuration and customization",
+    "baseKP": 90,
     "slides": [
         {
             "id": "admin_1",
             "type": "content",
-            "title": "Introduction to Admin",
-            "content": "# Django Admin Panel 🎛️\n\nDjango includes a powerful, production-ready admin interface!\n\n## What you'll learn:\n- **Registering Models** - Add models to admin\n- **Customization** - List display, filters, search\n- **Actions** - Bulk operations\n\n## Create Superuser\n\n```bash\npython manage.py createsuperuser\n# Enter username, email, password\n```\n\n## Access Admin\n\n```\nhttp://127.0.0.1:8000/admin/\n```\n\n> 💡 **The admin is auto-generated!** Just register your models and Django creates CRUD interfaces."
+            "title": "Introduction to Django Admin",
+            "content": "# Django Admin 🛠️\n\nA powerful, auto-generated admin interface for managing your data!\n\n## What you'll learn:\n- **Configuring the admin panel** - Setup and registration\n- **Customizing admin interface** - Fields, filters, search\n\n## Why Django Admin?\n\n- 🚀 **Instant CRUD** - No code needed\n- 🔐 **Secure** - Permission-based access\n- 📊 **Rich features** - Filtering, search, export\n- 🎨 **Customizable** - Make it your own\n\n## Quick Start\n\n```bash\n# Create a superuser to access admin\npython manage.py createsuperuser\n\n# Run server\npython manage.py runserver\n\n# Visit: http://127.0.0.1:8000/admin/\n```\n\n## URL Configuration (Already included!)\n\n```python\n# urls.py\nfrom django.contrib import admin\nfrom django.urls import path\n\nurlpatterns = [\n    path('admin/', admin.site.urls),  # Admin at /admin/\n]\n```\n\n> 💡 **Fun Fact:** The Django admin was originally created to allow newspaper editors to manage content quickly!"
         },
         {
             "id": "admin_2",
             "type": "content",
-            "title": "Registering Models",
-            "content": "# Register Models 📝\n\n## Basic Registration\n\n```python\n# admin.py\nfrom django.contrib import admin\nfrom .models import Article, Category\n\nadmin.site.register(Article)\nadmin.site.register(Category)\n```\n\n## Customized Registration\n\n```python\n@admin.register(Article)\nclass ArticleAdmin(admin.ModelAdmin):\n    list_display = ['title', 'author', 'published', 'is_active']\n    list_filter = ['is_active', 'category', 'published']\n    search_fields = ['title', 'content']\n    date_hierarchy = 'published'\n    ordering = ['-published']\n    list_per_page = 20\n```\n\n## Key Options\n\n| Option | Description |\n|--------|-------------|\n| `list_display` | Columns to show |\n| `list_filter` | Sidebar filters |\n| `search_fields` | Search bar fields |\n| `ordering` | Default sort |\n| `prepopulated_fields` | Auto-fill (slugs) |"
+            "title": "Configuring Admin Panel",
+            "content": "# Registering Models 📋\n\n## Basic Registration\n\n```python\n# blog/admin.py\nfrom django.contrib import admin\nfrom .models import Article, Category, Tag\n\n# Simplest form - just register\nadmin.site.register(Article)\nadmin.site.register(Category)\nadmin.site.register(Tag)\n```\n\n## ModelAdmin Class\n\n```python\n# blog/admin.py\nfrom django.contrib import admin\nfrom .models import Article\n\n@admin.register(Article)  # Decorator syntax\nclass ArticleAdmin(admin.ModelAdmin):\n    # Display these columns in the list view\n    list_display = ['title', 'author', 'category', 'status', 'published']\n    \n    # Add filters in the sidebar\n    list_filter = ['status', 'category', 'published']\n    \n    # Search these fields\n    search_fields = ['title', 'content', 'author__username']\n    \n    # Date-based navigation\n    date_hierarchy = 'published'\n    \n    # Default ordering\n    ordering = ['-published']\n```\n\n## Alternative Registration\n\n```python\n# Without decorator\nclass ArticleAdmin(admin.ModelAdmin):\n    list_display = ['title', 'author']\n\nadmin.site.register(Article, ArticleAdmin)\n```\n\n> 💡 **`list_display`** shows columns in the list view - essential for usability!"
+        },
+        {
+            "id": "admin_3",
+            "type": "content",
+            "title": "Customizing Admin Interface",
+            "content": "# Advanced Customization 🎨\n\n## Edit Form Customization\n\n```python\n@admin.register(Article)\nclass ArticleAdmin(admin.ModelAdmin):\n    # Which fields to show in edit form\n    fields = ['title', 'slug', 'content', 'category', 'tags', 'status']\n    \n    # Or exclude fields\n    exclude = ['created_by']\n    \n    # Read-only fields\n    readonly_fields = ['created', 'updated', 'view_count']\n    \n    # Auto-generate slug from title\n    prepopulated_fields = {'slug': ('title',)}\n    \n    # Organize with fieldsets\n    fieldsets = [\n        ('Content', {\n            'fields': ['title', 'slug', 'content']\n        }),\n        ('Categorization', {\n            'fields': ['category', 'tags']\n        }),\n        ('Publishing', {\n            'fields': ['status', 'published'],\n            'classes': ['collapse']  # Collapsible section\n        }),\n    ]\n```\n\n## Inline Models\n\n```python\n# Edit related objects on same page\nclass CommentInline(admin.TabularInline):  # or StackedInline\n    model = Comment\n    extra = 1  # Number of empty forms\n\n@admin.register(Article)\nclass ArticleAdmin(admin.ModelAdmin):\n    inlines = [CommentInline]\n```\n\n## Custom Actions\n\n```python\n@admin.register(Article)\nclass ArticleAdmin(admin.ModelAdmin):\n    actions = ['make_published', 'make_draft']\n    \n    @admin.action(description='Mark selected as published')\n    def make_published(self, request, queryset):\n        queryset.update(status='published')\n        self.message_user(request, f'{queryset.count()} articles published.')\n```"
         },
         {
             "id": "admin_quiz_1",
             "type": "quiz",
             "title": "Admin Quiz",
             "content": "Test your admin knowledge!",
-            "quizQuestion": "Which option adds a search bar to the admin list view?",
+            "quizQuestion": "Which attribute displays specific columns in the admin list view?",
             "quizOptions": [
-                "list_filter",
+                "display_columns",
                 "list_display",
-                "search_fields",
-                "ordering"
+                "show_fields",
+                "columns"
             ],
-            "correctOptionIndex": 2
+            "correctOptionIndex": 1
         },
         {
-            "id": "admin_3",
+            "id": "admin_4",
+            "type": "content",
+            "title": "More Customizations",
+            "content": "# Additional Features 🔧\n\n## List Editable\n\n```python\n@admin.register(Article)\nclass ArticleAdmin(admin.ModelAdmin):\n    list_display = ['title', 'status', 'category', 'is_featured']\n    list_editable = ['status', 'is_featured']  # Editable in list view!\n```\n\n## Custom Display Functions\n\n```python\n@admin.register(Article)\nclass ArticleAdmin(admin.ModelAdmin):\n    list_display = ['title', 'author_name', 'word_count', 'status_badge']\n    \n    @admin.display(description='Author')\n    def author_name(self, obj):\n        return obj.author.get_full_name() or obj.author.username\n    \n    @admin.display(description='Words')\n    def word_count(self, obj):\n        return len(obj.content.split())\n    \n    @admin.display(description='Status')\n    def status_badge(self, obj):\n        colors = {'draft': 'red', 'published': 'green'}\n        return format_html(\n            '<span style=\"color: {}\">{}</span>',\n            colors.get(obj.status, 'gray'),\n            obj.status\n        )\n```\n\n## Admin Site Customization\n\n```python\n# admin.py\nadmin.site.site_header = 'My Blog Admin'\nadmin.site.site_title = 'Blog Admin Portal'\nadmin.site.index_title = 'Welcome to the Admin Panel'\n```\n\n> 🎯 **The admin is meant for trusted users** - not a public-facing CMS!"
+        },
+        {
+            "id": "admin_5",
             "type": "content",
             "title": "Summary",
-            "content": "# Great Work! 🎉\n\nYou've learned Django Admin!\n\n## Key Points\n- ✅ Create superuser: `createsuperuser`\n- ✅ Register models: `admin.site.register()`\n- ✅ Customize with `ModelAdmin`\n- ✅ Options: `list_display`, `list_filter`, `search_fields`\n\n> 🚀 **Next Steps:** Learn about Django REST Framework!"
+            "content": "# Excellent Work! 🎉\n\nYou've mastered Django Admin!\n\n## Configuring the Admin Panel\n- ✅ `admin.site.register(Model)`\n- ✅ Create superuser with `createsuperuser`\n- ✅ Access at `/admin/`\n\n## Customizing Admin Interface\n- ✅ **list_display** - Columns in list view\n- ✅ **list_filter** - Sidebar filters\n- ✅ **search_fields** - Search bar\n- ✅ **list_editable** - Edit in list view\n- ✅ **fieldsets** - Organize edit form\n- ✅ **inlines** - Edit related objects\n- ✅ **actions** - Bulk operations\n- ✅ **prepopulated_fields** - Auto-generate slugs\n- ✅ Custom display functions\n\n## Quick Reference\n\n```python\n@admin.register(Article)\nclass ArticleAdmin(admin.ModelAdmin):\n    list_display = ['title', 'status', 'published']\n    list_filter = ['status', 'category']\n    search_fields = ['title', 'content']\n    prepopulated_fields = {'slug': ('title',)}\n    date_hierarchy = 'published'\n    ordering = ['-published']\n```\n\n> 🚀 **Next Steps:** Learn about Django REST Framework!"
         }
     ]
 }

@@ -2,40 +2,58 @@
     "id": "learn_ds_graph",
     "topicId": "ds_graph",
     "topicTitle": "Graph Algorithms",
-    "description": "DFS, BFS, and shortest path algorithms",
-    "baseKP": 90,
+    "description": "BFS, DFS, shortest path, and graph traversal techniques",
+    "baseKP": 100,
     "slides": [
         {
-            "id": "graph_1",
+            "id": "ds_graph_1",
             "type": "content",
-            "title": "Graph Basics",
-            "content": "# Graphs 🕸️\n\nNodes connected by edges!\n\n## Representation\n\n```python\n# Adjacency List\ngraph = {\n    'A': ['B', 'C'],\n    'B': ['A', 'D'],\n    'C': ['A', 'D'],\n    'D': ['B', 'C']\n}\n\n# Adjacency Matrix\nmatrix = [\n    [0, 1, 1, 0],\n    [1, 0, 0, 1],\n    [1, 0, 0, 1],\n    [0, 1, 1, 0]\n]\n```\n\n## Types\n- **Directed** vs **Undirected**\n- **Weighted** vs **Unweighted**\n- **Cyclic** vs **Acyclic**"
+            "title": "Graph Representation",
+            "content": "# Graph Basics 📊\n\n## Adjacency List (Most Common)\n\n```python\ngraph = {\n    'A': ['B', 'C'],\n    'B': ['A', 'D', 'E'],\n    'C': ['A', 'F'],\n    'D': ['B'],\n    'E': ['B', 'F'],\n    'F': ['C', 'E']\n}\n```\n\n## Adjacency Matrix\n\n```python\n#     A  B  C  D\nmatrix = [\n    [0, 1, 1, 0],  # A\n    [1, 0, 0, 1],  # B\n    [1, 0, 0, 1],  # C\n    [0, 1, 1, 0]   # D\n]\n```\n\n| Representation | Space | Edge Check |\n|---------------|-------|------------|\n| Adjacency List | O(V+E) | O(degree) |\n| Adjacency Matrix | O(V²) | O(1) |\n\n> 💡 **Use adjacency list for sparse graphs!**"
         },
         {
-            "id": "graph_2",
+            "id": "ds_graph_2",
             "type": "content",
-            "title": "DFS & BFS",
-            "content": "# Graph Traversal 🚶\n\n## DFS (Depth-First Search)\n\n```python\ndef dfs(graph, node, visited=set()):\n    if node in visited:\n        return\n    visited.add(node)\n    print(node)\n    for neighbor in graph[node]:\n        dfs(graph, neighbor, visited)\n```\n\n## BFS (Breadth-First Search)\n\n```python\nfrom collections import deque\n\ndef bfs(graph, start):\n    visited = {start}\n    queue = deque([start])\n    while queue:\n        node = queue.popleft()\n        print(node)\n        for neighbor in graph[node]:\n            if neighbor not in visited:\n                visited.add(neighbor)\n                queue.append(neighbor)\n```\n\n## When to Use\n- **DFS**: Pathfinding, cycle detection\n- **BFS**: Shortest path (unweighted)"
+            "title": "BFS - Breadth First Search",
+            "content": "# BFS 🌊\n\nExplore level by level using a queue!\n\n```python\nfrom collections import deque\n\ndef bfs(graph, start):\n    visited = set([start])\n    queue = deque([start])\n    result = []\n    \n    while queue:\n        node = queue.popleft()\n        result.append(node)\n        \n        for neighbor in graph[node]:\n            if neighbor not in visited:\n                visited.add(neighbor)\n                queue.append(neighbor)\n    \n    return result\n\nprint(bfs(graph, 'A'))  # ['A', 'B', 'C', 'D', 'E', 'F']\n```\n\n## Use Cases\n- ✅ Shortest path (unweighted)\n- ✅ Level-order traversal\n- ✅ Finding connected components\n\n> 🎯 **BFS = Queue + Level by Level!**"
         },
         {
-            "id": "graph_quiz_1",
+            "id": "ds_graph_3",
+            "type": "content",
+            "title": "DFS - Depth First Search",
+            "content": "# DFS 🏊\n\nExplore as deep as possible first!\n\n```python\n# Iterative (using stack)\ndef dfs(graph, start):\n    visited = set()\n    stack = [start]\n    result = []\n    \n    while stack:\n        node = stack.pop()\n        if node not in visited:\n            visited.add(node)\n            result.append(node)\n            stack.extend(graph[node])\n    \n    return result\n\n# Recursive\ndef dfs_recursive(graph, node, visited=None):\n    if visited is None:\n        visited = set()\n    \n    visited.add(node)\n    print(node)\n    \n    for neighbor in graph[node]:\n        if neighbor not in visited:\n            dfs_recursive(graph, neighbor, visited)\n```\n\n## Use Cases\n- ✅ Cycle detection\n- ✅ Topological sorting\n- ✅ Path finding\n- ✅ Maze solving"
+        },
+        {
+            "id": "ds_graph_quiz_1",
             "type": "quiz",
             "title": "Graph Quiz",
-            "content": "Test your knowledge!",
-            "quizQuestion": "Which traversal finds shortest path in unweighted graphs?",
+            "content": "Test your understanding!",
+            "quizQuestion": "Which data structure does BFS use?",
             "quizOptions": [
-                "DFS",
-                "BFS",
-                "Dijkstra",
-                "Binary Search"
+                "Stack",
+                "Queue",
+                "Heap",
+                "Tree"
             ],
             "correctOptionIndex": 1
         },
         {
-            "id": "graph_3",
+            "id": "ds_graph_4",
+            "type": "content",
+            "title": "Dijkstra's Algorithm",
+            "content": "# Dijkstra's Shortest Path 🛤️\n\n```python\nimport heapq\n\ndef dijkstra(graph, start):\n    distances = {node: float('inf') for node in graph}\n    distances[start] = 0\n    pq = [(0, start)]\n    \n    while pq:\n        curr_dist, node = heapq.heappop(pq)\n        \n        if curr_dist > distances[node]:\n            continue\n        \n        for neighbor, weight in graph[node]:\n            distance = curr_dist + weight\n            if distance < distances[neighbor]:\n                distances[neighbor] = distance\n                heapq.heappush(pq, (distance, neighbor))\n    \n    return distances\n\n# Weighted graph\ngraph = {\n    'A': [('B', 1), ('C', 4)],\n    'B': [('C', 2), ('D', 5)],\n    'C': [('D', 1)],\n    'D': []\n}\n```\n\n> ⚠️ **Dijkstra doesn't work with negative edges!**"
+        },
+        {
+            "id": "ds_graph_5",
+            "type": "content",
+            "title": "Topological Sort",
+            "content": "# Topological Sort 📋\n\nOrder tasks with dependencies!\n\n```python\nfrom collections import deque\n\ndef topological_sort(graph):\n    # Calculate in-degrees\n    in_degree = {node: 0 for node in graph}\n    for node in graph:\n        for neighbor in graph[node]:\n            in_degree[neighbor] += 1\n    \n    # Start with nodes having 0 in-degree\n    queue = deque([n for n in in_degree if in_degree[n] == 0])\n    result = []\n    \n    while queue:\n        node = queue.popleft()\n        result.append(node)\n        \n        for neighbor in graph[node]:\n            in_degree[neighbor] -= 1\n            if in_degree[neighbor] == 0:\n                queue.append(neighbor)\n    \n    return result if len(result) == len(graph) else []  # Empty if cycle\n```\n\n## Use Cases\n- ✅ Build systems (make, gradle)\n- ✅ Course prerequisites\n- ✅ Task scheduling"
+        },
+        {
+            "id": "ds_graph_6",
             "type": "content",
             "title": "Summary",
-            "content": "# Excellent Work! 🎉\n\nYou've learned Graph Algorithms!\n\n## Representation\n- ✅ Adjacency List\n- ✅ Adjacency Matrix\n\n## Traversal\n- ✅ DFS (stack/recursion)\n- ✅ BFS (queue)\n\n## Algorithms\n- ✅ Dijkstra (shortest path)\n- ✅ Kruskal/Prim (MST)\n\n> 🚀 **Next Steps:** Learn Python Tools!"
+            "content": "# Graph Algorithms Mastered! 🎉\n\n## Quick Reference\n\n| Algorithm | Use Case | Time |\n|-----------|----------|------|\n| BFS | Shortest path (unweighted) | O(V+E) |\n| DFS | Cycle detection, paths | O(V+E) |\n| Dijkstra | Shortest path (weighted) | O((V+E)logV) |\n| Topological | Task ordering | O(V+E) |\n\n## Data Structures Used\n\n| Algorithm | Data Structure |\n|-----------|---------------|\n| BFS | Queue |\n| DFS | Stack/Recursion |\n| Dijkstra | Priority Queue |\n\n> 🚀 **Next: Greedy Algorithms!**"
         }
     ]
 }

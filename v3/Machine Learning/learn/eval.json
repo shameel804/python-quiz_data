@@ -1,39 +1,39 @@
 {
-    "id": "learn_eval",
+    "id": "learn_ml_eval",
     "topicId": "eval",
     "topicTitle": "Model Evaluation and Validation",
-    "description": "Cross-validation, hyperparameter tuning, and overfitting",
-    "baseKP": 85,
+    "description": "Cross-validation, hyperparameter tuning, and handling overfitting",
+    "baseKP": 100,
     "slides": [
         {
             "id": "eval_1",
             "type": "content",
-            "title": "Model Evaluation",
-            "content": "# Model Evaluation 📊\n\nHow do we know our model is good?\n\n## What you'll learn:\n- **Cross-Validation** - Robust evaluation\n- **Hyperparameter Tuning** - Find best settings\n- **Overfitting/Underfitting** - Balance bias-variance\n\n## The Goal\n\n```\nGood on training data? ✅\nGood on NEW data? ✅ ← This matters!\n```"
+            "title": "Introduction to Model Evaluation",
+            "content": "# Model Evaluation 📊\n\nEnsure your model generalizes well!\n\n## What you'll learn:\n- **Cross-Validation and Hyperparameter Tuning** - Robust evaluation\n- **Overfitting and Underfitting** - Bias-variance tradeoff\n- **Evaluation Metrics** - Measuring performance\n\n## Why Evaluate Properly?\n\n```\nBad Practice:\nTrain on all data → Test on same data → 99% accuracy!\n→ Model just memorized, fails on new data!\n\nGood Practice:\nTrain on 80% → Test on 20% unseen → True accuracy!\n→ Model actually generalizes\n```\n\n> 💡 **A model is only as good as its performance on unseen data!**"
         },
         {
             "id": "eval_2",
             "type": "content",
             "title": "Cross-Validation",
-            "content": "# K-Fold Cross-Validation 🔄\n\n## How It Works\n\n```\n5-Fold: Data split into 5 parts\nFold 1: [Test] [Train] [Train] [Train] [Train]\nFold 2: [Train] [Test] [Train] [Train] [Train]\n...and so on\n\nFinal score = Average of all folds\n```\n\n## Code Example\n\n```python\nfrom sklearn.model_selection import cross_val_score\n\nscores = cross_val_score(model, X, y, cv=5)\nprint(f\"Mean: {scores.mean():.3f} (+/- {scores.std():.3f})\")\n```\n\n## Stratified K-Fold\n\n```python\nfrom sklearn.model_selection import StratifiedKFold\n\nskf = StratifiedKFold(n_splits=5, shuffle=True)\nfor train_idx, test_idx in skf.split(X, y):\n    X_train, X_test = X[train_idx], X[test_idx]\n```\n\n> 💡 **Use stratified for classification** with imbalanced classes!"
+            "content": "# Cross-Validation 🔄\n\nMore robust evaluation using multiple folds!\n\n## K-Fold Cross-Validation\n\n```python\nfrom sklearn.model_selection import cross_val_score\n\nmodel = RandomForestClassifier()\nscores = cross_val_score(model, X, y, cv=5)  # 5 folds\n\nprint(f\"Scores: {scores}\")\nprint(f\"Mean: {scores.mean():.3f} (+/- {scores.std() * 2:.3f})\")\n```\n\n## How K-Fold Works\n\n```\nFold 1: [Test] [Train] [Train] [Train] [Train]\nFold 2: [Train] [Test] [Train] [Train] [Train]\nFold 3: [Train] [Train] [Test] [Train] [Train]\nFold 4: [Train] [Train] [Train] [Test] [Train]\nFold 5: [Train] [Train] [Train] [Train] [Test]\n\n→ Average all 5 scores for final estimate\n```\n\n## Stratified K-Fold (For Classification)\n\n```python\nfrom sklearn.model_selection import StratifiedKFold\n\nskf = StratifiedKFold(n_splits=5, shuffle=True, random_state=42)\n\nfor train_idx, test_idx in skf.split(X, y):\n    X_train, X_test = X[train_idx], X[test_idx]\n    y_train, y_test = y[train_idx], y[test_idx]\n    # Train and evaluate\n```\n\n> 💡 **Use 5-10 folds** - more gives better estimates but takes longer."
         },
         {
             "id": "eval_3",
             "type": "content",
             "title": "Hyperparameter Tuning",
-            "content": "# Hyperparameter Tuning ⚙️\n\nFind the best model settings!\n\n## Grid Search\n\n```python\nfrom sklearn.model_selection import GridSearchCV\n\nparam_grid = {\n    'n_estimators': [50, 100, 200],\n    'max_depth': [5, 10, 20]\n}\n\ngrid_search = GridSearchCV(\n    RandomForestClassifier(),\n    param_grid,\n    cv=5,\n    scoring='accuracy'\n)\ngrid_search.fit(X_train, y_train)\n\nprint(grid_search.best_params_)\nprint(grid_search.best_score_)\n```\n\n## Random Search (Faster!)\n\n```python\nfrom sklearn.model_selection import RandomizedSearchCV\n\nparam_dist = {\n    'n_estimators': range(50, 300),\n    'max_depth': range(5, 30)\n}\n\nrandom_search = RandomizedSearchCV(\n    model, param_dist, n_iter=20, cv=5\n)\n```"
+            "content": "# Finding Best Hyperparameters 🎛️\n\n## Grid Search\n\n```python\nfrom sklearn.model_selection import GridSearchCV\n\nparam_grid = {\n    'n_estimators': [50, 100, 200],\n    'max_depth': [5, 10, 20, None],\n    'min_samples_split': [2, 5, 10]\n}\n\ngrid_search = GridSearchCV(\n    RandomForestClassifier(),\n    param_grid,\n    cv=5,\n    scoring='accuracy',\n    n_jobs=-1  # Use all CPU cores\n)\n\ngrid_search.fit(X_train, y_train)\n\nprint(f\"Best params: {grid_search.best_params_}\")\nprint(f\"Best score: {grid_search.best_score_:.3f}\")\nbest_model = grid_search.best_estimator_\n```\n\n## Random Search (Faster!)\n\n```python\nfrom sklearn.model_selection import RandomizedSearchCV\nfrom scipy.stats import randint, uniform\n\nparam_distributions = {\n    'n_estimators': randint(50, 500),\n    'max_depth': randint(5, 30),\n    'min_samples_split': randint(2, 20)\n}\n\nrandom_search = RandomizedSearchCV(\n    RandomForestClassifier(),\n    param_distributions,\n    n_iter=50,  # Try 50 random combinations\n    cv=5,\n    random_state=42\n)\nrandom_search.fit(X_train, y_train)\n```\n\n> 🎯 **Random Search is usually better** - explores more diverse combinations!"
         },
         {
             "id": "eval_quiz_1",
             "type": "quiz",
-            "title": "Evaluation Quiz",
+            "title": "Tuning Quiz",
             "content": "Test your knowledge!",
-            "quizQuestion": "What does cross-validation help prevent?",
+            "quizQuestion": "Which search method tries a random subset of hyperparameter combinations?",
             "quizOptions": [
-                "Underfitting",
-                "Overfitting on one split",
-                "Feature scaling issues",
-                "Missing data"
+                "GridSearchCV",
+                "RandomizedSearchCV",
+                "BayesSearchCV",
+                "ManualSearch"
             ],
             "correctOptionIndex": 1
         },
@@ -41,13 +41,33 @@
             "id": "eval_4",
             "type": "content",
             "title": "Overfitting vs Underfitting",
-            "content": "# Bias-Variance Tradeoff ⚖️\n\n## The Problem\n\n```\nUnderfitting: Too simple → Bad on everything ❌\nOverfitting: Too complex → Good on train, bad on test ❌\nJust Right: Good on both ✅\n```\n\n## Signs\n\n| Problem | Training Score | Test Score |\n|---------|---------------|------------|\n| Underfit | Low | Low |\n| Overfit | High | Low |\n| Good | High | High |\n\n## Solutions\n\n**For Overfitting:**\n- 📊 More data\n- 🎯 Simpler model\n- 📉 Regularization\n- ✂️ Feature selection\n\n**For Underfitting:**\n- 🔧 More features\n- 🧠 Complex model\n- ⏰ Train longer"
+            "content": "# Bias-Variance Tradeoff ⚖️\n\n## Diagnosing Problems\n\n```\nUnderfitting (High Bias):\n- Training accuracy: LOW\n- Test accuracy: LOW\n- Model is too simple\n\nOverfitting (High Variance):\n- Training accuracy: HIGH\n- Test accuracy: LOW\n- Model is too complex (memorizing)\n\nGood Fit:\n- Training accuracy: HIGH\n- Test accuracy: HIGH (close to training)\n```\n\n## Visual Comparison\n\n```\n                 Underfitting    Good Fit      Overfitting\n                 ──────────      ────────      ──────────\nTraining Acc:       60%           95%            99%\nTest Acc:           58%           93%            70%\n                   Both low      Similar        Big gap!\n```\n\n## Solutions\n\n### For Underfitting:\n- Use more complex model\n- Add more features\n- Train longer\n- Reduce regularization\n\n### For Overfitting:\n- Use simpler model\n- Add regularization\n- Get more data\n- Use dropout (for neural networks)\n- Early stopping\n\n> 💡 **Track both training and validation metrics** to diagnose issues!"
         },
         {
             "id": "eval_5",
             "type": "content",
+            "title": "Evaluation Metrics Review",
+            "content": "# Choosing the Right Metric 📏\n\n## Classification Metrics\n\n```python\nfrom sklearn.metrics import (\n    accuracy_score,\n    precision_score,\n    recall_score,\n    f1_score,\n    roc_auc_score,\n    confusion_matrix\n)\n\ny_pred = model.predict(X_test)\ny_prob = model.predict_proba(X_test)[:, 1]\n\nprint(f\"Accuracy: {accuracy_score(y_test, y_pred):.3f}\")\nprint(f\"Precision: {precision_score(y_test, y_pred):.3f}\")\nprint(f\"Recall: {recall_score(y_test, y_pred):.3f}\")\nprint(f\"F1: {f1_score(y_test, y_pred):.3f}\")\nprint(f\"AUC-ROC: {roc_auc_score(y_test, y_prob):.3f}\")\n```\n\n## When to Use Which?\n\n| Metric | Use When |\n|--------|----------|\n| Accuracy | Balanced classes |\n| Precision | False positives costly (spam) |\n| Recall | False negatives costly (cancer) |\n| F1 | Balance precision/recall |\n| AUC-ROC | Compare models, imbalanced data |\n\n## Regression Metrics\n\n```python\nfrom sklearn.metrics import mean_squared_error, mean_absolute_error, r2_score\nimport numpy as np\n\nrmse = np.sqrt(mean_squared_error(y_test, y_pred))\nmae = mean_absolute_error(y_test, y_pred)\nr2 = r2_score(y_test, y_pred)\n```\n\n> 🎯 **Choose metrics that align with business goals!**"
+        },
+        {
+            "id": "eval_quiz_2",
+            "type": "quiz",
+            "title": "Metrics Quiz",
+            "content": "Test your understanding!",
+            "quizQuestion": "If training accuracy is 99% but test accuracy is 60%, what is the problem?",
+            "quizOptions": [
+                "Underfitting",
+                "Overfitting",
+                "Good fit",
+                "Not enough data cleaning"
+            ],
+            "correctOptionIndex": 1
+        },
+        {
+            "id": "eval_6",
+            "type": "content",
             "title": "Summary",
-            "content": "# Great Work! 🎉\n\nYou've learned Model Evaluation!\n\n## Cross-Validation\n- ✅ K-Fold, Stratified K-Fold\n- ✅ `cross_val_score()`\n\n## Hyperparameter Tuning\n- ✅ Grid Search\n- ✅ Random Search\n\n## Bias-Variance\n- ✅ Identify overfitting/underfitting\n- ✅ Solutions for each\n\n> 🚀 **Next Steps:** Learn about NLP!"
+            "content": "# Excellent Work! 🎉\n\nYou've mastered Model Evaluation!\n\n## Cross-Validation\n- ✅ K-Fold for robust estimates\n- ✅ StratifiedKFold for imbalanced classes\n- ✅ `cross_val_score` for quick evaluation\n\n## Hyperparameter Tuning\n- ✅ GridSearchCV - exhaustive\n- ✅ RandomizedSearchCV - faster, often better\n- ✅ Use `cv=5` for cross-validated tuning\n\n## Overfitting vs Underfitting\n- ✅ **Underfit**: Both low → simpler model\n- ✅ **Overfit**: Train high, test low → regularize\n- ✅ Compare train vs test metrics\n\n## Evaluation Metrics\n- ✅ Classification: Accuracy, Precision, Recall, F1, AUC\n- ✅ Regression: RMSE, MAE, R²\n- ✅ Align metrics with business goals\n\n## Best Practices\n\n```python\n# Complete evaluation pipeline\nfrom sklearn.model_selection import cross_val_score, GridSearchCV\n\n# Cross-validate\nscores = cross_val_score(model, X, y, cv=5)\n\n# Tune hyperparameters\ngrid = GridSearchCV(model, param_grid, cv=5)\ngrid.fit(X_train, y_train)\n\n# Final evaluation on test set\nbest_model = grid.best_estimator_\ntest_score = best_model.score(X_test, y_test)\n```\n\n> 🚀 **Next Steps:** Learn about NLP!"
         }
     ]
 }
