@@ -15,7 +15,7 @@
             "id": "django_cache_2",
             "type": "content",
             "title": "Per-Site & Per-View",
-            "content": "# Caching Strategies 📐\n\n## Per-Site Cache\nCache the entire website. Add `UpdateCacheMiddleware` (first) and `FetchFromCacheMiddleware` (last) to settings.\n\n## Per-View Cache\nMost common. Cache specific views.\n```python\nfrom django.views.decorators.cache import cache_page\n\n@cache_page(60 * 15) # Cache for 15 minutes\ndef my_view(request):\n    ...\n```"
+            "content": "# Caching Strategies 📐\n\n## Per-Site Cache\nCache the entire website. Add `UpdateCacheMiddleware` (first) and `FetchFromCacheMiddleware` (last) to settings.\n\n## Per-View Cache\nMost common. Cache specific views.\n```django\nfrom django.views.decorators.cache import cache_page\n\n@cache_page(60 * 15) # Cache for 15 minutes\ndef my_view(request):\n    ...\n```"
         },
         {
             "id": "django_cache_3",

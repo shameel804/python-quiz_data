@@ -15,7 +15,7 @@
             "id": "django_forms_2",
             "type": "content",
             "title": "Building a Form",
-            "content": "# Creating a Form Class 📝\n\nSimilar to Models, defined in `forms.py`.\n\n```python\nfrom django import forms\n\nclass ContactForm(forms.Form):\n    subject = forms.CharField(max_length=100)\n    message = forms.CharField(widget=forms.Textarea)\n    sender = forms.EmailField()\n    cc_myself = forms.BooleanField(required=False)\n```\n\n## In the View:\n```python\ndef contact(request):\n    if request.method == 'POST':\n        form = ContactForm(request.POST)\n        if form.is_valid():\n            # Cleaned data is now safe to use\n            subject = form.cleaned_data['subject']\n            # ... send email ...\n            return redirect('success')\n    else:\n        form = ContactForm()\n    return render(request, 'contact.html', {'form': form})\n```"
+            "content": "# Creating a Form Class 📝\n\nSimilar to Models, defined in `forms.py`.\n\n```django\nfrom django import forms\n\nclass ContactForm(forms.Form):\n    subject = forms.CharField(max_length=100)\n    message = forms.CharField(widget=forms.Textarea)\n    sender = forms.EmailField()\n    cc_myself = forms.BooleanField(required=False)\n```\n\n## In the View:\n```django\ndef contact(request):\n    if request.method == 'POST':\n        form = ContactForm(request.POST)\n        if form.is_valid():\n            # Cleaned data is now safe to use\n            subject = form.cleaned_data['subject']\n            # ... send email ...\n            return redirect('success')\n    else:\n        form = ContactForm()\n    return render(request, 'contact.html', {'form': form})\n```"
         },
         {
             "id": "django_forms_3",
@@ -27,7 +27,7 @@
             "id": "django_forms_4",
             "type": "content",
             "title": "Form Validation",
-            "content": "# Form Validation ✅\n\nValidation happens when you call `form.is_valid()`.\n\n## Built-in Validation\n- Checks types (EmailField ensures `@`).\n- Checks `required=True`.\n- Checks max/min lengths.\n\n## Custom Validation\nDefine a method `clean_<fieldname>`:\n```python\ndef clean_sender(self):\n    data = self.cleaned_data['sender']\n    if \"@gmail.com\" not in data:\n        raise forms.ValidationError(\"Only Gmail allowed!\")\n    return data\n```"
+            "content": "# Form Validation ✅\n\nValidation happens when you call `form.is_valid()`.\n\n## Built-in Validation\n- Checks types (EmailField ensures `@`).\n- Checks `required=True`.\n- Checks max/min lengths.\n\n## Custom Validation\nDefine a method `clean_<fieldname>`:\n```django\ndef clean_sender(self):\n    data = self.cleaned_data['sender']\n    if \"@gmail.com\" not in data:\n        raise forms.ValidationError(\"Only Gmail allowed!\")\n    return data\n```"
         },
         {
             "id": "django_forms_quiz_1",
@@ -47,7 +47,7 @@
             "id": "django_forms_5",
             "type": "content",
             "title": "ModelForms",
-            "content": "# ModelForms 🚀\n\nIf your form maps directly to a Model (e.g., a form to create a User), don't duplicate code! Use `ModelForm`.\n\n```python\nfrom django import forms\nfrom .models import Article\n\nclass ArticleForm(forms.ModelForm):\n    class Meta:\n        model = Article\n        fields = ['title', 'content', 'pub_date']\n        # Or use fields = '__all__'\n```\n\n**Saving is magical:**\n```python\nif form.is_valid():\n    form.save()  # Creates specific Article instance in DB!\n```"
+            "content": "# ModelForms 🚀\n\nIf your form maps directly to a Model (e.g., a form to create a User), don't duplicate code! Use `ModelForm`.\n\n```django\nfrom django import forms\nfrom .models import Article\n\nclass ArticleForm(forms.ModelForm):\n    class Meta:\n        model = Article\n        fields = ['title', 'content', 'pub_date']\n        # Or use fields = '__all__'\n```\n\n**Saving is magical:**\n```django\nif form.is_valid():\n    form.save()  # Creates specific Article instance in DB!\n```"
         },
         {
             "id": "django_forms_quiz_2",

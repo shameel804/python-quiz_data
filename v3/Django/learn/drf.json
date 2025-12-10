@@ -15,13 +15,13 @@
             "id": "django_drf_2",
             "type": "content",
             "title": "Serializers",
-            "content": "# Serializers 📦\n\nSerializers work like Django Forms but for APIs. They convert Model instances to JSON (Serialization) and JSON to Model instances (Deserialization).\n\n```python\nfrom rest_framework import serializers\nfrom .models import User\n\nclass UserSerializer(serializers.ModelSerializer):\n    class Meta:\n        model = User\n        fields = ['id', 'username', 'email']\n```"
+            "content": "# Serializers 📦\n\nSerializers work like Django Forms but for APIs. They convert Model instances to JSON (Serialization) and JSON to Model instances (Deserialization).\n\n```django\nfrom rest_framework import serializers\nfrom .models import User\n\nclass UserSerializer(serializers.ModelSerializer):\n    class Meta:\n        model = User\n        fields = ['id', 'username', 'email']\n```"
         },
         {
             "id": "django_drf_3",
             "type": "content",
             "title": "Views and Routers",
-            "content": "# Views & ViewSets 🛣️\n\n## APIView\nLike a standard Django View, but receives `Request` (DRF) and returns `Response`.\n\n## ViewSets\nCombine logic for list, create, retrieve, update, destroy into one class.\n```python\nclass UserViewSet(viewsets.ModelViewSet):\n    queryset = User.objects.all()\n    serializer_class = UserSerializer\n```\n\n## Routers\nAutomatically generate URLs for ViewSets.\n```python\nrouter = DefaultRouter()\nrouter.register(r'users', UserViewSet)\nurlpatterns = router.urls\n```"
+            "content": "# Views & ViewSets 🛣️\n\n## APIView\nLike a standard Django View, but receives `Request` (DRF) and returns `Response`.\n\n## ViewSets\nCombine logic for list, create, retrieve, update, destroy into one class.\n```django\nclass UserViewSet(viewsets.ModelViewSet):\n    queryset = User.objects.all()\n    serializer_class = UserSerializer\n```\n\n## Routers\nAutomatically generate URLs for ViewSets.\n```django\nrouter = DefaultRouter()\nrouter.register(r'users', UserViewSet)\nurlpatterns = router.urls\n```"
         },
         {
             "id": "django_drf_quiz_1",

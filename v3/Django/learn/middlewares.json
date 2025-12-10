@@ -15,7 +15,7 @@
             "id": "django_mid_2",
             "type": "content",
             "title": "Creating Custom Middleware",
-            "content": "# Custom Middleware 🛠️\n\nA middleware is a class that implements `__call__`.\n\n```python\nclass SimpleMiddleware:\n    def __init__(self, get_response):\n        self.get_response = get_response\n\n    def __call__(self, request):\n        # Code to be executed for each request before\n        # the view (and later middleware) are called.\n        print(\"Before View\")\n\n        response = self.get_response(request)\n\n        # Code to be executed for each request/response after\n        # the view is called.\n        print(\"After View\")\n\n        return response\n```\n\n> 💡 **Tip**: Don't forget to add `'path.to.SimpleMiddleware'` to `MIDDLEWARE` in settings!"
+            "content": "# Custom Middleware 🛠️\n\nA middleware is a class that implements `__call__`.\n\n```django\nclass SimpleMiddleware:\n    def __init__(self, get_response):\n        self.get_response = get_response\n\n    def __call__(self, request):\n        # Code to be executed for each request before\n        # the view (and later middleware) are called.\n        print(\"Before View\")\n\n        response = self.get_response(request)\n\n        # Code to be executed for each request/response after\n        # the view is called.\n        print(\"After View\")\n\n        return response\n```\n\n> 💡 **Tip**: Don't forget to add `'path.to.SimpleMiddleware'` to `MIDDLEWARE` in settings!"
         },
         {
             "id": "django_mid_quiz_1",
