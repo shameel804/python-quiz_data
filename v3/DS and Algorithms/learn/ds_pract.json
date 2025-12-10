@@ -2,40 +2,34 @@
     "id": "learn_ds_pract",
     "topicId": "ds_pract",
     "topicTitle": "Practical Applications",
-    "description": "Real-world use cases and competitive programming patterns",
-    "baseKP": 85,
+    "description": "Using DSA in the Real World",
+    "baseKP": 80,
     "slides": [
         {
-            "id": "pract_1",
+            "id": "ds_pra_1",
             "type": "content",
-            "title": "Choosing Data Structures",
-            "content": "# When to Use What? 🤔\n\n## Quick Reference\n\n| Need | Use |\n|------|-----|\n| Fast lookup | `dict`, `set` |\n| Ordered data | `list` |\n| FIFO queue | `deque` |\n| Priority | `heapq` |\n| Counting | `Counter` |\n| Graph | `dict` of `list`s |\n\n## Examples\n\n```python\n# Duplicate check → set\ndef has_duplicates(arr):\n    return len(arr) != len(set(arr))\n\n# Frequency count → Counter\nfrom collections import Counter\nfreq = Counter(arr)\n```"
+            "title": "Choosing the Right DS",
+            "content": "# The Right Tool 🛠️\n\n- **Need to check generic existence?** -> **Set** (O(1)).\n- **Need Key-Value pairs?** -> **Dict** (O(1)).\n- **Need Min/Max constantly?** -> **Heap** (O(log n)).\n- **Need FIFO (Queue)?** -> **Deque** (O(1)).\n- **Need to check connections?** -> **Graph**.\n\n## Example: Rate Limiter\nPrevent user from spamming API.\n- Use a **Queue** of timestamps.\n- Remove timestamps older than 1 min.\n- If queue size > Limit, block."
         },
         {
-            "id": "pract_2",
+            "id": "ds_pra_2",
             "type": "content",
-            "title": "Common Patterns",
-            "content": "# Coding Interview Patterns 💼\n\n## Two Pointers\n\n```python\ndef two_sum_sorted(arr, target):\n    left, right = 0, len(arr) - 1\n    while left < right:\n        total = arr[left] + arr[right]\n        if total == target:\n            return [left, right]\n        elif total < target:\n            left += 1\n        else:\n            right -= 1\n```\n\n## Sliding Window\n\n```python\ndef max_sum_subarray(arr, k):\n    window_sum = sum(arr[:k])\n    max_sum = window_sum\n    for i in range(k, len(arr)):\n        window_sum += arr[i] - arr[i-k]\n        max_sum = max(max_sum, window_sum)\n    return max_sum\n```"
+            "title": "Real World Use Cases",
+            "content": "# Where is this used? 🌍\n\n- **Database Indexing**: B-Trees (Balanced Trees).\n- **Google Maps**: Dijkstra / A* (Graphs).\n- **Social Feed**: Graph API (Friend Connections).\n- **Text Search (Ctrl+F)**: KMP Algorithm or Boyer-Moore.\n- **Spell Check**: Tries or Bloom Filters.\n- **DNA Sequencing**: Dynamic Programming (Edit Distance)."
         },
         {
-            "id": "pract_quiz_1",
+            "id": "ds_pra_quiz_1",
             "type": "quiz",
-            "title": "Patterns Quiz",
-            "content": "Test your knowledge!",
-            "quizQuestion": "Which data structure gives O(1) lookup?",
+            "title": "Selection Quiz",
+            "content": "Check your understanding",
+            "quizQuestion": "Which Data Structure is the best conceptual fit for a Rate Limiter (First-In, First-Out)?",
             "quizOptions": [
-                "List",
-                "Set",
-                "Linked List",
-                "Stack"
+                "Stack",
+                "Queue",
+                "Tree",
+                "Graph"
             ],
             "correctOptionIndex": 1
-        },
-        {
-            "id": "pract_3",
-            "type": "content",
-            "title": "Summary",
-            "content": "# Great Work! 🎉\n\nYou've learned Practical Applications!\n\n## Data Structure Selection\n- ✅ Match structure to problem\n\n## Common Patterns\n- ✅ Two Pointers\n- ✅ Sliding Window\n- ✅ Hash Map lookups\n\n> 🚀 **Next Steps:** Learn Advanced Topics!"
         }
     ]
 }

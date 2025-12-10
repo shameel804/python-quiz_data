@@ -1,41 +1,41 @@
 {
-    "id": "learn_beautifulsoup",
+    "id": "learn_lib_bs4",
     "topicId": "beautifulsoup",
     "topicTitle": "Beautiful Soup",
-    "description": "Web scraping library",
-    "baseKP": 80,
+    "description": "Web Scraping made easy",
+    "baseKP": 65,
     "slides": [
         {
-            "id": "bs_1",
+            "id": "lib_bs4_1",
             "type": "content",
-            "title": "Web Scraping",
-            "content": "# Beautiful Soup 🍲\n\nParse HTML/XML!\n\n```python\nfrom bs4 import BeautifulSoup\nimport requests\n\nhtml = requests.get('https://example.com').text\nsoup = BeautifulSoup(html, 'html.parser')\n\n# Find elements\ntitle = soup.title.text\nlinks = soup.find_all('a')\n```"
+            "title": "Parsing HTML",
+            "content": "# Soup for the Soul 🍜\n\nBeautiful Soup parses HTML (and XML) documents and creates a parse tree for traversing the pages.\n\n```python\nfrom bs4 import BeautifulSoup\nimport requests\n\nhtml = requests.get('https://example.com').text\nsoup = BeautifulSoup(html, 'html.parser')\n\nprint(soup.title.string) # 'Example Domain'\n```"
         },
         {
-            "id": "bs_2",
+            "id": "lib_bs4_2",
             "type": "content",
-            "title": "Selecting Elements",
-            "content": "# Selectors 🎯\n\n```python\n# By tag\nsoup.find('h1')\nsoup.find_all('p')\n\n# By class\nsoup.find('div', class_='container')\n\n# By id\nsoup.find(id='main')\n\n# CSS selectors\nsoup.select('div.card h2')\nsoup.select('#header a')\n```"
+            "title": "Finding Elements",
+            "content": "# Search Methods 🔎\n\n## `find()`\nReturns the **first** match.\n```python\nh1 = soup.find('h1')\n```\n\n## `find_all()`\nReturns a **list** of all matches.\n```python\nlinks = soup.find_all('a')\nfor link in links:\n    print(link['href']) # Get attribute\n```"
         },
         {
-            "id": "bs_quiz_1",
+            "id": "lib_bs4_quiz_1",
             "type": "quiz",
-            "title": "Quiz",
-            "content": "Test your knowledge!",
-            "quizQuestion": "Which method finds ALL matching elements?",
+            "title": "Scraping Quiz",
+            "content": "Check your understanding",
+            "quizQuestion": "Which method returns a specific attribute (like 'href' or 'src') from a tag object?",
             "quizOptions": [
-                "soup.find()",
-                "soup.find_all()",
-                "soup.get()",
-                "soup.select_one()"
+                "tag.attr('href')",
+                "tag['href']",
+                "tag.get_attr('href')",
+                "tag.href"
             ],
             "correctOptionIndex": 1
         },
         {
-            "id": "bs_3",
+            "id": "lib_bs4_3",
             "type": "content",
-            "title": "Summary",
-            "content": "# Great! 🎉\n\n## Key Methods\n- ✅ `find()`, `find_all()`\n- ✅ `select()` for CSS selectors\n- ✅ `.text` for content\n\n> 🚀 **Next:** Learn spaCy!"
+            "title": "CSS Selectors",
+            "content": "# Only One Select 🎯\n\nUse `select()` to find elements using CSS selectors (like jQuery or `querySelector`).\n\n- Class: `.classname`\n- ID: `#idname`\n- Nested: `div p span`\n\n```python\n# Find all links inside footer div\nitems = soup.select(\"div.footer a\")\n```"
         }
     ]
 }

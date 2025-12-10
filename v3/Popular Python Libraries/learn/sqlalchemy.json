@@ -1,41 +1,41 @@
 {
-    "id": "learn_sqlalchemy",
+    "id": "learn_lib_sqlalchemy",
     "topicId": "sqlalchemy",
     "topicTitle": "SQLAlchemy",
-    "description": "SQL toolkit and ORM",
-    "baseKP": 85,
+    "description": "The Python SQL Toolkit and Object Relational Mapper",
+    "baseKP": 70,
     "slides": [
         {
-            "id": "sql_1",
+            "id": "lib_sql_1",
             "type": "content",
-            "title": "Introduction",
-            "content": "# SQLAlchemy 🗄️\n\nPython SQL toolkit!\n\n```python\nfrom sqlalchemy import create_engine\nfrom sqlalchemy.orm import declarative_base, Session\n\nengine = create_engine('sqlite:///db.sqlite')\nBase = declarative_base()\n\nclass User(Base):\n    __tablename__ = 'users'\n    id = Column(Integer, primary_key=True)\n    name = Column(String)\n\nBase.metadata.create_all(engine)\n```"
+            "title": "Core vs ORM",
+            "content": "# Two Layers 🍰\n\n1. **Core**: SQL Expression Language. Pythonic way to write SQL.\n   `select([users]).where(users.c.name == 'ed')`\n2. **ORM**: High-level Object abstraction (Like Django ORM).\n\n## Establishing Connection\nThe **Engine** is the starting point.\n```python\nfrom sqlalchemy import create_engine\nengine = create_engine('sqlite:///example.db')\n```"
         },
         {
-            "id": "sql_2",
+            "id": "lib_sql_2",
             "type": "content",
-            "title": "CRUD Operations",
-            "content": "# Database Operations 📊\n\n```python\nwith Session(engine) as session:\n    # Create\n    user = User(name='Alice')\n    session.add(user)\n    session.commit()\n    \n    # Read\n    users = session.query(User).all()\n    user = session.query(User).filter_by(name='Alice').first()\n    \n    # Update\n    user.name = 'Bob'\n    session.commit()\n    \n    # Delete\n    session.delete(user)\n    session.commit()\n```"
+            "title": "Declarative Mapping",
+            "content": "# Defining Models 🏗️\n\n```python\nfrom sqlalchemy.orm import declarative_base, Session\nfrom sqlalchemy import Column, Integer, String\n\nBase = declarative_base()\n\nclass User(Base):\n    __tablename__ = 'users'\n    id = Column(Integer, primary_key=True)\n    name = Column(String)\n\n# Create tables\nBase.metadata.create_all(engine)\n```"
         },
         {
-            "id": "sql_quiz_1",
+            "id": "lib_sql_3",
+            "type": "content",
+            "title": "Session & Queries",
+            "content": "# Interacting with DB 🤝\n\nUse a **Session** to manage transactions.\n\n```python\nsession = Session(engine)\n\n# Create\ned = User(name='Ed')\nsession.add(ed)\nsession.commit()\n\n# Query\nour_user = session.query(User).filter_by(name='Ed').first()\n```"
+        },
+        {
+            "id": "lib_sql_quiz_1",
             "type": "quiz",
-            "title": "Quiz",
-            "content": "Test your knowledge!",
-            "quizQuestion": "Which function retrieves all matching records?",
+            "title": "Concept Quiz",
+            "content": "Check your understanding",
+            "quizQuestion": "What object manages the 'transaction' (adding, committing changes) in SQLAlchemy ORM?",
             "quizOptions": [
-                ".one()",
-                ".first()",
-                ".all()",
-                ".get()"
+                "Engine",
+                "Connection",
+                "Session",
+                "Cursor"
             ],
             "correctOptionIndex": 2
-        },
-        {
-            "id": "sql_3",
-            "type": "content",
-            "title": "Summary",
-            "content": "# Great! 🎉\n\n## Key Concepts\n- ✅ Engine and Session\n- ✅ Declarative models\n- ✅ CRUD operations\n\n> 🚀 **Next:** Learn Pytest!"
         }
     ]
 }

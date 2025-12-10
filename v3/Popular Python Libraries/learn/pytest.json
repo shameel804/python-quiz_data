@@ -1,41 +1,41 @@
 {
-    "id": "learn_pytest",
+    "id": "learn_lib_pytest",
     "topicId": "pytest",
-    "topicTitle": "Pytest",
-    "description": "Python testing framework",
-    "baseKP": 80,
+    "topicTitle": "pytest",
+    "description": "Simple, scalable testing",
+    "baseKP": 60,
     "slides": [
         {
-            "id": "pytest_1",
+            "id": "lib_test_1",
             "type": "content",
-            "title": "Writing Tests",
-            "content": "# Pytest 🧪\n\nSimple and powerful testing!\n\n```python\n# test_math.py\ndef add(a, b):\n    return a + b\n\ndef test_add():\n    assert add(1, 2) == 3\n    assert add(-1, 1) == 0\n    assert add(0, 0) == 0\n```\n\n```bash\npytest test_math.py\n```\n\n> 💡 **Just use `assert`!** No boilerplate needed."
+            "title": "Why pytest? 🧪",
+            "content": "# No Boilerplate 🚫\n\nUnlike traditional `unittest` (which requires classes), pytest uses plain functions.\n\n## Basic Test\nCreate a file named `test_sample.py`.\n```python\ndef func(x):\n    return x + 1\n\ndef test_answer():\n    assert func(3) == 5\n```\nRun it with `pytest` command. It will fail (4 != 5) and show a detailed diff."
         },
         {
-            "id": "pytest_2",
+            "id": "lib_test_2",
             "type": "content",
             "title": "Fixtures",
-            "content": "# Fixtures 🔧\n\n```python\nimport pytest\n\n@pytest.fixture\ndef sample_data():\n    return [1, 2, 3, 4, 5]\n\ndef test_sum(sample_data):\n    assert sum(sample_data) == 15\n\ndef test_length(sample_data):\n    assert len(sample_data) == 5\n```\n\n## Parametrize\n\n```python\n@pytest.mark.parametrize('input,expected', [\n    (1, 1),\n    (2, 4),\n    (3, 9),\n])\ndef test_square(input, expected):\n    assert input ** 2 == expected\n```"
+            "content": "# Setup & Teardown 🛠️\n\n**Fixtures** provide data/objects to tests. Dependency injection at its finest.\n\n```python\nimport pytest\n\n@pytest.fixture\ndef sample_data():\n    return {\"a\": 1, \"b\": 2}\n\ndef test_data(sample_data):\n    assert sample_data[\"a\"] == 1\n```"
         },
         {
-            "id": "pytest_quiz_1",
-            "type": "quiz",
-            "title": "Quiz",
-            "content": "Test your knowledge!",
-            "quizQuestion": "Which decorator creates reusable test setup?",
-            "quizOptions": [
-                "@pytest.setup",
-                "@pytest.fixture",
-                "@pytest.before",
-                "@pytest.init"
-            ],
-            "correctOptionIndex": 1
-        },
-        {
-            "id": "pytest_3",
+            "id": "lib_test_3",
             "type": "content",
-            "title": "Summary",
-            "content": "# Congratulations! 🏆\n\nYou've completed Popular Python Libraries!\n\n## Key Concepts\n- ✅ Simple `assert` tests\n- ✅ Fixtures for setup\n- ✅ Parametrize for multiple cases\n\n```bash\npytest -v           # Verbose\npytest --cov=.      # Coverage\n```\n\n> 🎯 **You're now library-literate!** Build amazing projects!"
+            "title": "Parametrization",
+            "content": "# DRY Testing 🔁\n\nRun the same test with different inputs.\n\n```python\n@pytest.mark.parametrize(\"input,expected\", [\n    (1, 2),\n    (2, 3),\n    (10, 11),\n])\ndef test_increment(input, expected):\n    assert input + 1 == expected\n```"
+        },
+        {
+            "id": "lib_test_quiz_1",
+            "type": "quiz",
+            "title": "Pytest Quiz",
+            "content": "Check your understanding",
+            "quizQuestion": "What Python keyword is primarily used in pytest to check if details are correct?",
+            "quizOptions": [
+                "check",
+                "expect",
+                "assert",
+                "verify"
+            ],
+            "correctOptionIndex": 2
         }
     ]
 }

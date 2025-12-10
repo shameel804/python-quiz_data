@@ -2,78 +2,40 @@
     "id": "learn_ml_preprocess",
     "topicId": "preprocess",
     "topicTitle": "Data Preprocessing",
-    "description": "Prepare data for machine learning models",
-    "baseKP": 100,
+    "description": "Prepare your data for optimal model performance",
+    "baseKP": 60,
     "slides": [
         {
-            "id": "preprocess_1",
+            "id": "ml_prep_1",
             "type": "content",
-            "title": "Introduction to Data Preprocessing",
-            "content": "# Data Preprocessing 🧹\n\nPrepare raw data for ML models!\n\n## What you'll learn:\n- **Data Cleaning and Feature Scaling** - Handle missing values and normalize data\n- **Encoding Categorical Variables** - Convert text to numbers\n- **Data Splitting** - Training, validation, and test sets\n\n## Why Preprocess?\n\n```\nRaw Data:\n- Missing values\n- Different scales\n- Text categories\n- Outliers\n\n     ↓ Preprocessing\n\nClean Data:\n- Complete records\n- Normalized values\n- Numeric format\n- Quality checked\n```\n\n## Impact on Model Performance\n\n| Data Quality | Model Accuracy |\n|--------------|---------------|\n| Raw, messy data | 60-70% |\n| Cleaned data | 80-85% |\n| Well-preprocessed | 90-95% |\n\n> 💡 **\"Garbage in, garbage out\"** - Data quality determines model quality!"
+            "title": "Data Keep It Clean",
+            "content": "# Data Cleaning 🧹\n\nReal-world data is messy. \"Garbage In, Garbage Out\" (GIGO).\n\n## Handling Missing Values\n1. **Drop them**: If dataset is huge and missing rows are few.\n   ```python\n   df.dropna()\n   ```\n2. **Imputation**: Fill with Mean, Median, or Mode.\n   ```python\n   from sklearn.impute import SimpleImputer\n   imputer = SimpleImputer(strategy='mean')\n   ```\n\n## Feature Scaling\nModels like KNN and SVM are sensitive to scale (Age: 20-60, Salary: 10000-50000). Scaling fixes this.\n- **Standardization (Z-score)**: Mean=0, Std=1.\n- **Normalization (Min-Max)**: Scales to range [0, 1]."
         },
         {
-            "id": "preprocess_2",
-            "type": "content",
-            "title": "Data Cleaning",
-            "content": "# Handling Missing Values 🔍\n\n## Identify Missing Data\n\n```python\nimport pandas as pd\n\ndf = pd.read_csv('data.csv')\n\n# Check for missing values\nprint(df.isnull().sum())\n\n# Percentage missing\nprint(df.isnull().mean() * 100)\n```\n\n## Handle Missing Values\n\n```python\n# Option 1: Drop rows with missing values\ndf_clean = df.dropna()\n\n# Option 2: Drop columns with too many missing values\ndf = df.drop(['column_with_many_nulls'], axis=1)\n\n# Option 3: Fill with a value\ndf['age'].fillna(df['age'].mean(), inplace=True)  # Mean\ndf['age'].fillna(df['age'].median(), inplace=True)  # Median\ndf['category'].fillna('Unknown', inplace=True)  # Constant\n\n# Option 4: Forward/backward fill\ndf['date'].fillna(method='ffill', inplace=True)  # Use previous value\n```\n\n## Scikit-learn Imputer\n\n```python\nfrom sklearn.impute import SimpleImputer\n\n# Impute with mean\nimputer = SimpleImputer(strategy='mean')  # 'median', 'most_frequent', 'constant'\nX_imputed = imputer.fit_transform(X)\n```\n\n> ⚠️ **Don't fill too aggressively!** Sometimes dropping is better than inventing data."
-        },
-        {
-            "id": "preprocess_3",
-            "type": "content",
-            "title": "Feature Scaling",
-            "content": "# Feature Scaling ⚖️\n\n## Why Scale?\n\n```\nWithout scaling:\nAge: 25-60          (small range)\nIncome: 30000-500000 (large range)\n\n→ Income dominates the model unfairly!\n```\n\n## Standardization (Z-Score)\n\nScale to mean=0, std=1:\n\n```python\nfrom sklearn.preprocessing import StandardScaler\n\nscaler = StandardScaler()\nX_scaled = scaler.fit_transform(X)\n\n# Formula: z = (x - mean) / std\n# Result: values typically between -3 and 3\n```\n\n## Normalization (Min-Max)\n\nScale to 0-1 range:\n\n```python\nfrom sklearn.preprocessing import MinMaxScaler\n\nscaler = MinMaxScaler()\nX_normalized = scaler.fit_transform(X)\n\n# Formula: x_new = (x - min) / (max - min)\n# Result: values between 0 and 1\n```\n\n## When to Use Which?\n\n| Method | Best For |\n|--------|----------|\n| StandardScaler | Neural networks, SVM, linear models |\n| MinMaxScaler | Image data, algorithms sensitive to range |\n| No scaling | Tree-based models (RandomForest, XGBoost) |\n\n> 💡 **Always fit on training data, transform both train and test!**\n\n```python\nscaler.fit(X_train)              # Learn from training\nX_train_scaled = scaler.transform(X_train)\nX_test_scaled = scaler.transform(X_test)  # Use same scaling!\n```"
-        },
-        {
-            "id": "preprocess_quiz_1",
-            "type": "quiz",
-            "title": "Scaling Quiz",
-            "content": "Test your knowledge!",
-            "quizQuestion": "Which scaler transforms data to have mean=0 and std=1?",
-            "quizOptions": [
-                "MinMaxScaler",
-                "StandardScaler",
-                "RobustScaler",
-                "Normalizer"
-            ],
-            "correctOptionIndex": 1
-        },
-        {
-            "id": "preprocess_4",
+            "id": "ml_prep_2",
             "type": "content",
             "title": "Encoding Categorical Variables",
-            "content": "# Encoding Categories 🔢\n\nConvert text to numbers for ML models!\n\n## Label Encoding\n\nFor ordinal data (has order):\n\n```python\nfrom sklearn.preprocessing import LabelEncoder\n\nle = LabelEncoder()\ndf['size_encoded'] = le.fit_transform(df['size'])\n\n# small → 0, medium → 1, large → 2\n```\n\n## One-Hot Encoding\n\nFor nominal data (no order):\n\n```python\nfrom sklearn.preprocessing import OneHotEncoder\nimport pandas as pd\n\n# Method 1: Pandas\ndf_encoded = pd.get_dummies(df, columns=['color'])\n\n# color: red, blue, green\n# → color_red: 0/1, color_blue: 0/1, color_green: 0/1\n\n# Method 2: Scikit-learn\nohe = OneHotEncoder(sparse=False)\nencoded = ohe.fit_transform(df[['color']])\n```\n\n## When to Use Which?\n\n| Encoding | Use When |\n|----------|----------|\n| Label | Ordinal data (small < medium < large) |\n| One-Hot | Nominal data (red, blue, green - no order) |\n| Target | High cardinality (many unique values) |\n\n## Avoid the Dummy Variable Trap\n\n```python\n# Drop one category to avoid multicollinearity\ndf_encoded = pd.get_dummies(df, columns=['color'], drop_first=True)\n```\n\n> ⚠️ **Never label encode nominal data!** The model will think blue > red > green."
+            "content": "# Encoding Variables 🔢\n\nComputers only understand numbers. We must convert text categories (Red, Blue) to numbers.\n\n## 1. Label Encoding\nAssigns a number to each category.\n- Red -> 0, Blue -> 1, Green -> 2\n- **Issue**: Models might think 2 > 0 implies order (Green > Red) which is wrong for colors.\n- **Use for**: Ordinal data (Low, Medium, High).\n\n## 2. One-Hot Encoding\nCreates binary columns for each category.\n- Is_Red: [1, 0], Is_Blue: [0, 1]\n- **Pros**: No false ordering.\n- **Cons**: Increases memory usage if many categories.\n- **Use for**: Nominal data (Colors, Cities)."
         },
         {
-            "id": "preprocess_5",
+            "id": "ml_prep_quiz_1",
+            "type": "quiz",
+            "title": "Encoding Quiz",
+            "content": "Check your understanding",
+            "quizQuestion": "Which encoding technique is best for 'City' names where no order exists?",
+            "quizOptions": [
+                "Label Encoding",
+                "Ordinal Encoding",
+                "One-Hot Encoding",
+                "Count Encoding"
+            ],
+            "correctOptionIndex": 2
+        },
+        {
+            "id": "ml_prep_3",
             "type": "content",
             "title": "Data Splitting",
-            "content": "# Train-Test Split ✂️\n\n## Basic Split\n\n```python\nfrom sklearn.model_selection import train_test_split\n\nX_train, X_test, y_train, y_test = train_test_split(\n    X, y,\n    test_size=0.2,      # 20% for testing\n    random_state=42,    # For reproducibility\n    stratify=y          # Keep class proportions\n)\n```\n\n## Three-Way Split (With Validation)\n\n```python\n# First split: separate test set\nX_temp, X_test, y_temp, y_test = train_test_split(\n    X, y, test_size=0.2, random_state=42\n)\n\n# Second split: train and validation\nX_train, X_val, y_train, y_val = train_test_split(\n    X_temp, y_temp, test_size=0.25, random_state=42  # 0.25 × 0.8 = 0.2\n)\n\n# Result: 60% train, 20% validation, 20% test\n```\n\n## Split Purposes\n\n```\nTraining Set (60-80%)\n→ Train the model\n\nValidation Set (10-20%)\n→ Tune hyperparameters\n→ Early stopping\n\nTest Set (10-20%)\n→ Final evaluation only\n→ NEVER use for tuning!\n```\n\n## Stratification for Imbalanced Data\n\n```python\n# If you have 90% class A, 10% class B:\n# stratify=y ensures the same ratio in train/test\n\nX_train, X_test, y_train, y_test = train_test_split(\n    X, y,\n    test_size=0.2,\n    stratify=y  # Maintain class proportions!\n)\n```\n\n> 💡 **Always stratify when classes are imbalanced!**"
-        },
-        {
-            "id": "preprocess_quiz_2",
-            "type": "quiz",
-            "title": "Split Quiz",
-            "content": "Test your knowledge!",
-            "quizQuestion": "What does the `stratify` parameter ensure?",
-            "quizOptions": [
-                "Data is shuffled randomly",
-                "Class proportions are maintained in splits",
-                "More data goes to training",
-                "Test data is not used for training"
-            ],
-            "correctOptionIndex": 1
-        },
-        {
-            "id": "preprocess_6",
-            "type": "content",
-            "title": "Complete Preprocessing Pipeline",
-            "content": "# Putting It Together 🔧\n\n## Sklearn Pipeline\n\n```python\nfrom sklearn.pipeline import Pipeline\nfrom sklearn.preprocessing import StandardScaler, OneHotEncoder\nfrom sklearn.compose import ColumnTransformer\nfrom sklearn.impute import SimpleImputer\n\n# Define numeric preprocessing\nnumeric_pipeline = Pipeline([\n    ('imputer', SimpleImputer(strategy='median')),\n    ('scaler', StandardScaler())\n])\n\n# Define categorical preprocessing\ncategorical_pipeline = Pipeline([\n    ('imputer', SimpleImputer(strategy='most_frequent')),\n    ('encoder', OneHotEncoder(handle_unknown='ignore'))\n])\n\n# Combine for different column types\npreprocessor = ColumnTransformer([\n    ('num', numeric_pipeline, ['age', 'income', 'credit_score']),\n    ('cat', categorical_pipeline, ['education', 'employment'])\n])\n\n# Full pipeline with model\nfull_pipeline = Pipeline([\n    ('preprocessor', preprocessor),\n    ('classifier', RandomForestClassifier())\n])\n\n# Fit and predict\nfull_pipeline.fit(X_train, y_train)\npredictions = full_pipeline.predict(X_test)\n```\n\n> 💡 **Pipelines prevent data leakage** by ensuring preprocessing is fit only on training data!"
-        },
-        {
-            "id": "preprocess_7",
-            "type": "content",
-            "title": "Summary",
-            "content": "# Excellent Work! 🎉\n\nYou've mastered Data Preprocessing!\n\n## Data Cleaning and Feature Scaling\n- ✅ Handle missing values: dropna, fillna, SimpleImputer\n- ✅ StandardScaler: mean=0, std=1\n- ✅ MinMaxScaler: range 0-1\n- ✅ Fit on train, transform both\n\n## Encoding Categorical Variables\n- ✅ LabelEncoder: ordinal data (small < large)\n- ✅ OneHotEncoder: nominal data (no order)\n- ✅ drop_first to avoid dummy trap\n\n## Data Splitting\n- ✅ train_test_split: 80/20 common\n- ✅ stratify for imbalanced classes\n- ✅ Validation set for hyperparameter tuning\n- ✅ Test set for final evaluation only\n\n## Best Practices\n- 💡 Explore data before preprocessing\n- 💡 Use pipelines to prevent leakage\n- 💡 Document your preprocessing steps\n\n> 🚀 **Next Steps:** Learn about Supervised Learning!"
+            "content": "# Train-Test Split ✂️\n\nNever test a model on the same data it learned from! (That's cheating).\n\n## The Golden Rule\nSplit your data into two (or three) parts:\n1. **Train Set (70-80%)**: Model learns from this.\n2. **Test Set (20-30%)**: Used to verify final performance.\n\n```python\nfrom sklearn.model_selection import train_test_split\n\nX_train, X_test, y_train, y_test = train_test_split(\n    X, y, test_size=0.2, random_state=42\n)\n```\n\n> 🎯 **Tip**: `random_state=42` ensures the split is reproducible every time you run the code."
         }
     ]
 }

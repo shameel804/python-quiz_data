@@ -1,41 +1,41 @@
 {
-    "id": "learn_spacy",
+    "id": "learn_lib_spacy",
     "topicId": "spacy",
     "topicTitle": "spaCy",
-    "description": "Industrial-strength NLP",
-    "baseKP": 85,
+    "description": "Industrial-Strength Natural Language Processing",
+    "baseKP": 70,
     "slides": [
         {
-            "id": "spacy_1",
+            "id": "lib_spacy_1",
             "type": "content",
-            "title": "Introduction",
-            "content": "# spaCy 📝\n\nFast NLP library!\n\n```python\nimport spacy\n\nnlp = spacy.load('en_core_web_sm')\ndoc = nlp('Apple is looking at buying U.K. startup')\n\nfor token in doc:\n    print(token.text, token.pos_, token.dep_)\n```\n\n> 💡 **Optimized for production!**"
+            "title": "The Pipeline 🏭",
+            "content": "# Processing Text\n\nUnlike NLTK (which is a toolkit), spaCy is a pipeline. You pour text in, and a `Doc` object comes out with linguistic annotations.\n\n```python\nimport spacy\n\n# Load English model\nnlp = spacy.load(\"en_core_web_sm\")\n\n# Process text\ndoc = nlp(\"Apple is looking at buying U.K. startup for $1 billion\")\n```"
         },
         {
-            "id": "spacy_2",
+            "id": "lib_spacy_2",
             "type": "content",
-            "title": "NER & POS",
-            "content": "# Named Entity Recognition 🏷️\n\n```python\ndoc = nlp('Apple CEO Tim Cook visited Paris')\n\n# Named entities\nfor ent in doc.ents:\n    print(ent.text, ent.label_)\n# Apple (ORG), Tim Cook (PERSON), Paris (GPE)\n\n# Noun chunks\nfor chunk in doc.noun_chunks:\n    print(chunk.text)\n```"
+            "title": "Linguistic Features",
+            "content": "# Understanding Syntax 🧩\n\n## Part-of-Speech (POS) Tagging\nIs it a Noun? Verb? Adjective?\n```python\nfor token in doc:\n    print(token.text, token.pos_)\n    # Apple PROPN (Proper Noun)\n    # is AUX (Auxiliary Verb)\n```\n\n## Named Entity Recognition (NER)\nFinds real-world objects like companies, countries, dates.\n```python\nfor ent in doc.ents:\n    print(ent.text, ent.label_)\n    # Apple ORG\n    # U.K. GPE\n    # $1 billion MONEY\n```"
         },
         {
-            "id": "spacy_quiz_1",
+            "id": "lib_spacy_3",
+            "type": "content",
+            "title": "Word Vectors",
+            "content": "# Similarity 👯\n\nUsing medium/large models (`en_core_web_md`), spaCy provides word vectors.\n\n```python\ndoc1 = nlp(\"I like apples.\")\ndoc2 = nlp(\"I like oranges.\")\n\nprint(doc1.similarity(doc2)) # High score (e.g. 0.95)\n```"
+        },
+        {
+            "id": "lib_spacy_quiz_1",
             "type": "quiz",
-            "title": "Quiz",
-            "content": "Test your knowledge!",
-            "quizQuestion": "What does NER stand for?",
+            "title": "NER Quiz",
+            "content": "Check your understanding",
+            "quizQuestion": "What label would spaCy likely assign to 'Google' in specific text?",
             "quizOptions": [
-                "Natural Entity Recognition",
-                "Named Entity Recognition",
-                "Neural Entity Research",
-                "Name Extraction Routine"
+                "PERSON",
+                "GPE",
+                "ORG",
+                "DATE"
             ],
-            "correctOptionIndex": 1
-        },
-        {
-            "id": "spacy_3",
-            "type": "content",
-            "title": "Summary",
-            "content": "# Great! 🎉\n\n## Key Features\n- ✅ Tokenization, POS tagging\n- ✅ Named Entity Recognition\n- ✅ Dependency parsing\n\n> 🚀 **Next:** Learn OpenCV!"
+            "correctOptionIndex": 2
         }
     ]
 }

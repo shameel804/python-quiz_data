@@ -1,97 +1,73 @@
 {
-    "id": "learn_models",
+    "id": "learn_django_models",
     "topicId": "models",
     "topicTitle": "Models",
-    "description": "Master Django ORM, defining models, migrations, and relationships",
-    "baseKP": 100,
+    "description": "Design your database schema with Django Models",
+    "baseKP": 65,
     "slides": [
         {
-            "id": "models_1",
+            "id": "django_models_1",
             "type": "content",
-            "title": "Introduction to Models",
-            "content": "# Django Models 🗄️\n\nModels are Python classes that define your database structure!\n\n## What you'll learn:\n- **ORM** - Object-Relational Mapping\n- **Defining models** - Fields and options\n- **Database migrations** - Schema changes\n- **Model Relationships** - ForeignKey, ManyToMany\n\n## Why Use Models?\n\n```python\n# Without ORM (raw SQL - error-prone, unsafe)\ncursor.execute(\"SELECT * FROM users WHERE id = %s\", [user_id])\nrow = cursor.fetchone()\n\n# With Django ORM (safe, readable, portable)\nuser = User.objects.get(id=user_id)\n```\n\n## Model = Database Table\n\n```python\nclass Article(models.Model):    # → articles table\n    title = models.CharField()   # → title column\n    content = models.TextField() # → content column\n    created = models.DateTimeField() # → created column\n```\n\n> 💡 **The ORM translates Python to SQL!** You write Python, Django generates optimized, database-specific SQL automatically."
+            "title": "ORM Basics",
+            "content": "# The ORM 🪄\n\n**Object-Relational Mapping (ORM)** allows you to interact with your database using Python code instead of raw SQL.\n\n| Python Code | SQL Generated |\n|-------------|---------------|\n| `User.objects.all()` | `SELECT * FROM auth_user;` |\n| `user.save()` | `INSERT INTO ...` or `UPDATE ...` |\n\n## Advantages\n- **Portability**: Code works with SQLite, Postgres, MySQL without changes.\n- **Security**: Automatically escapes queries preventing SQL injection.\n- **Productivity**: Write less code to do more."
         },
         {
-            "id": "models_2",
+            "id": "django_models_2",
             "type": "content",
-            "title": "ORM - Object-Relational Mapping",
-            "content": "# Understanding the ORM 🔄\n\nThe ORM is a bridge between Python objects and database tables.\n\n## How it Works\n\n```\nPython Class  ←→  Database Table\nClass Attribute ←→ Table Column\nClass Instance ←→ Table Row\n```\n\n## ORM Benefits\n\n### 1. Database Portability\n```python\n# Same code works with SQLite, PostgreSQL, MySQL\nDATABASES = {\n    'default': {\n        'ENGINE': 'django.db.backends.postgresql',  # Just change this!\n        'NAME': 'mydb',\n    }\n}\n```\n\n### 2. SQL Injection Prevention\n```python\n# ORM automatically escapes inputs\nUser.objects.filter(username=user_input)  # Safe!\n# vs raw SQL susceptible to injection\n```\n\n### 3. Pythonic Querying\n```python\n# Complex queries in readable Python\narticles = Article.objects.filter(\n    published__year=2024,\n    category__name='Python',\n    author__is_active=True\n).order_by('-created')[:10]\n\n# Django generates optimized SQL:\n# SELECT ... FROM articles\n# INNER JOIN categories ON ...\n# INNER JOIN users ON ...\n# WHERE ... ORDER BY created DESC LIMIT 10\n```\n\n> 🎯 **ORM lets you think in objects, not SQL!**"
+            "title": "Defining Models",
+            "content": "# Defining Models 🧱\n\nA model is a Python class that inherits from `django.db.models.Model`. Each attribute represents a database field.\n\n```python\nfrom django.db import models\n\nclass Book(models.Model):\n    title = models.CharField(max_length=200)\n    author = models.CharField(max_length=100)\n    publication_date = models.DateField()\n    price = models.DecimalField(max_digits=5, decimal_places=2)\n    in_stock = models.BooleanField(default=True)\n\n    def __str__(self):\n        return self.title\n```\n> 💡 **Tip**: Defining `__str__` is crucial for readable representations in the Admin panel and shell!"
         },
         {
-            "id": "models_3",
+            "id": "django_models_3",
             "type": "content",
-            "title": "Defining Models - Part 1",
-            "content": "# Creating Models 📝 (Part 1)\n\n## Basic Model Structure\n\n```python\n# models.py\nfrom django.db import models\n\nclass Article(models.Model):\n    # Fields define columns\n    title = models.CharField(max_length=200)\n    slug = models.SlugField(unique=True)\n    content = models.TextField()\n    excerpt = models.TextField(max_length=500, blank=True)\n    \n    # Timestamps\n    published = models.DateTimeField(auto_now_add=True)\n    updated = models.DateTimeField(auto_now=True)\n    \n    # Boolean\n    is_active = models.BooleanField(default=True)\n    is_featured = models.BooleanField(default=False)\n    \n    # String representation\n    def __str__(self):\n        return self.title\n    \n    # Metadata\n    class Meta:\n        ordering = ['-published']  # Default ordering\n        verbose_name_plural = 'Articles'\n```\n\n## Common Field Types\n\n| Field | Description | Example |\n|-------|-------------|--------|\n| `CharField` | Short text (max_length required) | title, name |\n| `TextField` | Long text (unlimited) | content, description |\n| `IntegerField` | Integers | count, age |\n| `DecimalField` | Precise decimals | price, rating |\n| `BooleanField` | True/False | is_active |\n| `DateField` | Date only | birth_date |\n| `DateTimeField` | Date and time | created_at |\n| `EmailField` | Validated email | email |\n| `URLField` | Validated URL | website |"
+            "title": "Field Types",
+            "content": "# Common Field Types 📝\n\n- **CharField**: Short text strings. Requires `max_length`.\n- **TextField**: Large text, infinite length.\n- **IntegerField**: Integers.\n- **BooleanField**: True/False.\n- **DateTimeField**: Date and Time.\n  - `auto_now_add=True`: Set to now on creation (unchangeable).\n  - `auto_now=True`: Update to now on every save.\n- **EmailField**, **URLField**: Validates format.\n\n## Field Options\n- `null=True`: Allows database NULL.\n- `blank=True`: Allows empty value in Forms.\n- `choices=...`: Restrict values to a list.\n- `unique=True`: No duplicates allowed."
         },
         {
-            "id": "models_4",
+            "id": "django_models_4",
             "type": "content",
-            "title": "Defining Models - Part 2",
-            "content": "# Creating Models 📝 (Part 2)\n\n## Field Options\n\n```python\nclass Product(models.Model):\n    # Required vs Optional\n    name = models.CharField(max_length=100)  # Required by default\n    description = models.TextField(blank=True)  # Optional in forms\n    \n    # Null values\n    category = models.CharField(max_length=50, null=True)  # NULL in DB\n    \n    # Default values\n    price = models.DecimalField(max_digits=10, decimal_places=2, default=0.00)\n    in_stock = models.BooleanField(default=True)\n    \n    # Unique constraint\n    sku = models.CharField(max_length=50, unique=True)\n    \n    # Choices\n    STATUS_CHOICES = [\n        ('draft', 'Draft'),\n        ('published', 'Published'),\n        ('archived', 'Archived'),\n    ]\n    status = models.CharField(max_length=20, choices=STATUS_CHOICES, default='draft')\n    \n    # Help text (shown in forms)\n    notes = models.TextField(blank=True, help_text='Internal notes')\n```\n\n## More Field Types\n\n```python\n# Files and Images\nimage = models.ImageField(upload_to='products/')\ndocument = models.FileField(upload_to='docs/')\n\n# JSON data\nmetadata = models.JSONField(default=dict)\n\n# UUID\nid = models.UUIDField(primary_key=True, default=uuid.uuid4)\n\n# Slug (URL-friendly text)\nslug = models.SlugField(max_length=100, unique=True)\n```\n\n> 💡 **`blank=True`** affects forms (optional field), **`null=True`** affects database (allows NULL)."
+            "title": "Migrations",
+            "content": "# Database Migrations 🚛\n\nMigrations are Django's way of propagating changes you make to your models into your database schema.\n\n## The Workflow\n\n1. **Modify** your `models.py`.\n2. **Generate** migration files:\n   ```bash\n   python manage.py makemigrations\n   ```\n   This creates a file in `migrations/` describing the changes.\n3. **Apply** the changes:\n   ```bash\n   python manage.py migrate\n   ```\n   This executes the necessary SQL commands.\n\n> ⚠️ **Warning**: Always commit your migration files to Git!"
         },
         {
-            "id": "models_quiz_1",
+            "id": "django_models_quiz_1",
             "type": "quiz",
-            "title": "Models Quiz",
-            "content": "Test your model knowledge!",
-            "quizQuestion": "Which field option allows a field to be empty in forms?",
+            "title": "Migration Quiz",
+            "content": "Test your process knowledge",
+            "quizQuestion": "Which command actualy modifies the database schema?",
             "quizOptions": [
-                "null=True",
-                "blank=True",
-                "empty=True",
-                "required=False"
+                "makemigrations",
+                "migrate",
+                "sqlmigrate",
+                "syncdb"
             ],
             "correctOptionIndex": 1
         },
         {
-            "id": "models_5",
+            "id": "django_models_5",
             "type": "content",
-            "title": "Database Migrations",
-            "content": "# Migrations 🔄\n\nMigrations track changes to your models and apply them to the database.\n\n## Migration Workflow\n\n```bash\n# Step 1: Make changes to your models.py\n\n# Step 2: Create migration files\npython manage.py makemigrations\n# Output: Migrations for 'blog':\n#   blog/migrations/0001_initial.py\n#     - Create model Article\n\n# Step 3: Apply migrations to database\npython manage.py migrate\n# Output: Applying blog.0001_initial... OK\n```\n\n## Viewing Migrations\n\n```bash\n# See all migrations and their status\npython manage.py showmigrations\n# blog\n#  [X] 0001_initial\n#  [X] 0002_add_category\n#  [ ] 0003_add_tags   ← Not applied yet\n\n# See SQL that will be executed\npython manage.py sqlmigrate blog 0001\n# BEGIN;\n# CREATE TABLE \"blog_article\" (...)\n# COMMIT;\n```\n\n## Migration Commands\n\n```bash\n# Rollback to specific migration\npython manage.py migrate blog 0001\n\n# Rollback all migrations for an app\npython manage.py migrate blog zero\n\n# Create migration with custom name\npython manage.py makemigrations blog --name add_article_views\n```\n\n> ⚠️ **Always commit migration files to version control!** They're essential for team collaboration and deployment."
+            "title": "Relationships",
+            "content": "# Model Relationships 🔗\n\nRelational databases are all about... relations!\n\n## 1. Many-to-One (ForeignKey)\nExample: A Car belongs to one Manufacturer.\n```python\nmanufacturer = models.ForeignKey(Manufacturer, on_delete=models.CASCADE)\n```\n*`on_delete=models.CASCADE` means if Manufacturer is deleted, delete their Cars too.*\n\n## 2. Many-to-Many\nExample: A Pizza has many Toppings, a Topping is on many Pizzas.\n```python\ntoppings = models.ManyToManyField(Topping)\n```\n\n## 3. One-to-One\nExample: A User has one Profile.\n```python\nprofile = models.OneToOneField(User, on_delete=models.CASCADE)\n```"
         },
         {
-            "id": "models_6",
+            "id": "django_models_6",
             "type": "content",
-            "title": "Model Relationships - ForeignKey",
-            "content": "# Relationships 🔗 (Part 1)\n\n## ForeignKey (One-to-Many)\n\nOne category has many articles.\n\n```python\nclass Category(models.Model):\n    name = models.CharField(max_length=100)\n    slug = models.SlugField(unique=True)\n    \n    def __str__(self):\n        return self.name\n\nclass Article(models.Model):\n    title = models.CharField(max_length=200)\n    category = models.ForeignKey(\n        Category,\n        on_delete=models.CASCADE,  # Delete articles if category deleted\n        related_name='articles'    # Access from category: category.articles.all()\n    )\n```\n\n## on_delete Options\n\n| Option | Behavior |\n|--------|----------|\n| `CASCADE` | Delete related objects too |\n| `PROTECT` | Prevent deletion (raise error) |\n| `SET_NULL` | Set foreign key to NULL |\n| `SET_DEFAULT` | Set to default value |\n| `DO_NOTHING` | Do nothing (database may error) |\n\n## Using ForeignKey\n\n```python\n# Creating with relationship\ncategory = Category.objects.get(name='Python')\narticle = Article.objects.create(\n    title='Learn Django',\n    category=category\n)\n\n# Forward relation (article → category)\narticle.category.name  # 'Python'\n\n# Reverse relation (category → articles)\ncategory.articles.all()  # All articles in this category\ncategory.articles.count()  # Number of articles\n```"
+            "title": "Querying Data",
+            "content": "# Basic Queries 🔎\n\nDjango gives you a `Manager` usually named `objects`.\n\n```python\n# CREATE\np = Person(name=\"Fred\", age=30)\np.save()\n# OR\nPerson.objects.create(name=\"Fred\", age=30)\n\n# READ\nall_people = Person.objects.all()\nspecific = Person.objects.get(id=1)  # Throws error if not found\nfiltered = Person.objects.filter(age__gt=20) # Age > 20\n\n# UPDATE\np.age = 31\np.save()\n\n# DELETE\np.delete()\n```"
         },
         {
-            "id": "models_7",
-            "type": "content",
-            "title": "Model Relationships - ManyToMany",
-            "content": "# Relationships 🔗 (Part 2)\n\n## ManyToManyField\n\nAn article can have many tags, a tag can be on many articles.\n\n```python\nclass Tag(models.Model):\n    name = models.CharField(max_length=50)\n    \n    def __str__(self):\n        return self.name\n\nclass Article(models.Model):\n    title = models.CharField(max_length=200)\n    tags = models.ManyToManyField(\n        Tag,\n        related_name='articles',\n        blank=True  # Optional\n    )\n```\n\n## Working with ManyToMany\n\n```python\n# Add tags to article\narticle = Article.objects.get(pk=1)\npython_tag = Tag.objects.get(name='Python')\ndjango_tag = Tag.objects.get(name='Django')\n\narticle.tags.add(python_tag, django_tag)\n\n# Remove tag\narticle.tags.remove(python_tag)\n\n# Clear all tags\narticle.tags.clear()\n\n# Set specific tags (replaces all)\narticle.tags.set([tag1, tag2])\n\n# Query through relationship\narticle.tags.all()  # All tags on article\npython_tag.articles.all()  # All articles with this tag\n\n# Filter using relationship\nArticle.objects.filter(tags__name='Python')\n```\n\n## OneToOneField\n\n```python\n# One user has one profile\nclass Profile(models.Model):\n    user = models.OneToOneField(\n        User,\n        on_delete=models.CASCADE,\n        related_name='profile'\n    )\n    bio = models.TextField()\n    avatar = models.ImageField(upload_to='avatars/')\n\n# Access: user.profile.bio\n```"
-        },
-        {
-            "id": "models_quiz_2",
+            "id": "django_models_quiz_2",
             "type": "quiz",
-            "title": "Relationships Quiz",
-            "content": "Test your relationship knowledge!",
-            "quizQuestion": "Which on_delete option prevents deletion of the parent object?",
+            "title": "Relationship Quiz",
+            "content": "Check your understanding",
+            "quizQuestion": "What argument is required for ForeignKey to specify behavior when the referenced object is deleted?",
             "quizOptions": [
-                "CASCADE",
-                "SET_NULL",
-                "PROTECT",
-                "DO_NOTHING"
+                "on_delete",
+                "on_remove",
+                "cascade_option",
+                "delete_behavior"
             ],
-            "correctOptionIndex": 2
-        },
-        {
-            "id": "models_8",
-            "type": "content",
-            "title": "QuerySet API - CRUD",
-            "content": "# QuerySet API 🔍\n\n## Create\n\n```python\n# Method 1: create() - saves immediately\narticle = Article.objects.create(\n    title='My Article',\n    content='Hello World',\n    category=category\n)\n\n# Method 2: save() - more control\narticle = Article(title='My Article', content='Hello')\narticle.save()  # Explicit save\n\n# Bulk create (efficient for many objects)\nArticle.objects.bulk_create([\n    Article(title='Article 1', content='...'),\n    Article(title='Article 2', content='...'),\n])\n```\n\n## Read\n\n```python\n# Get all objects\narticles = Article.objects.all()\n\n# Get single object\narticle = Article.objects.get(pk=5)  # Raises DoesNotExist if not found\n\n# Filter (returns QuerySet)\nactive = Article.objects.filter(is_active=True)\npython_articles = Article.objects.filter(title__contains='Python')\n\n# Exclude\nnot_drafts = Article.objects.exclude(status='draft')\n\n# First/Last\nfirst = Article.objects.first()\nlast = Article.objects.last()\n\n# Check existence\nif Article.objects.filter(pk=5).exists():\n    print('Found!')\n```\n\n## Update & Delete\n\n```python\n# Update single object\narticle = Article.objects.get(pk=5)\narticle.title = 'New Title'\narticle.save()\n\n# Bulk update (efficient)\nArticle.objects.filter(is_active=False).update(is_active=True)\n\n# Delete single object\narticle.delete()\n\n# Bulk delete\nArticle.objects.filter(status='draft').delete()\n```"
-        },
-        {
-            "id": "models_9",
-            "type": "content",
-            "title": "QuerySet API - Field Lookups",
-            "content": "# Field Lookups 🎯\n\nPowerful filtering with double underscores!\n\n## Comparison Lookups\n\n```python\n# Greater than / Less than\nArticle.objects.filter(views__gt=100)    # views > 100\nArticle.objects.filter(views__gte=100)   # views >= 100\nArticle.objects.filter(views__lt=100)    # views < 100\nArticle.objects.filter(views__lte=100)   # views <= 100\n\n# Exact match (default)\nArticle.objects.filter(status='published')  # Same as status__exact\n\n# In list\nArticle.objects.filter(status__in=['published', 'featured'])\n\n# Range\nArticle.objects.filter(views__range=(100, 1000))\n```\n\n## Text Lookups\n\n```python\n# Contains (case-sensitive)\nArticle.objects.filter(title__contains='Python')\n\n# Contains (case-insensitive)\nArticle.objects.filter(title__icontains='python')\n\n# Starts/ends with\nArticle.objects.filter(title__startswith='How')\nArticle.objects.filter(title__iendswith='?')\n\n# Exact (case-insensitive)\nArticle.objects.filter(title__iexact='python basics')\n```\n\n## Date Lookups\n\n```python\n# Extract year/month/day\nArticle.objects.filter(published__year=2024)\nArticle.objects.filter(published__month=3)\nArticle.objects.filter(published__day=15)\n\n# Date ranges\nfrom datetime import date\nArticle.objects.filter(published__date=date.today())\nArticle.objects.filter(published__gte=date(2024, 1, 1))\n```\n\n## Null/Empty Checks\n\n```python\nArticle.objects.filter(category__isnull=True)   # No category\nArticle.objects.filter(content__isnull=False)   # Has content\n```"
-        },
-        {
-            "id": "models_10",
-            "type": "content",
-            "title": "Summary",
-            "content": "# Excellent Work! 🎉\n\nYou've mastered Django Models!\n\n## ORM\n- ✅ Maps Python classes to database tables\n- ✅ Database-agnostic code\n- ✅ Protection from SQL injection\n\n## Defining Models\n- ✅ Field types: CharField, TextField, IntegerField, etc.\n- ✅ Field options: blank, null, default, choices\n- ✅ `__str__` method for display\n- ✅ Meta class for model options\n\n## Database Migrations\n- ✅ `makemigrations` - Create migration files\n- ✅ `migrate` - Apply to database\n- ✅ `showmigrations` - View status\n\n## Model Relationships\n- ✅ ForeignKey (One-to-Many)\n- ✅ ManyToManyField (Many-to-Many)\n- ✅ OneToOneField (One-to-One)\n- ✅ `on_delete` options\n- ✅ `related_name` for reverse access\n\n## QuerySet API\n- ✅ CRUD: create, get, filter, update, delete\n- ✅ Field lookups: `__contains`, `__gt`, `__year`, etc.\n- ✅ Chaining querysets\n\n> 🚀 **Next Steps:** Learn about Forms for user input!"
+            "correctOptionIndex": 0
         }
     ]
 }

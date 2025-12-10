@@ -1,111 +1,61 @@
 {
-    "id": "learn_templates",
+    "id": "learn_django_templates",
     "topicId": "templates",
     "topicTitle": "Templates",
-    "description": "Master Django's template language, inheritance, and static files",
-    "baseKP": 100,
+    "description": "Understand the Django Template Language (DTL)",
+    "baseKP": 55,
     "slides": [
         {
-            "id": "templates_1",
+            "id": "django_templates_1",
             "type": "content",
-            "title": "Introduction to Templates",
-            "content": "# Django Templates 📝\n\nCreate dynamic HTML pages with Django's template language!\n\n## What you'll learn:\n- **Template language basics** - Variables, tags, filters\n- **Template inheritance** - Reusable layouts\n- **Static files** - CSS, JavaScript, images\n\n## Why Use Templates?\n\n```python\n# Without templates (messy, unmaintainable!)\ndef home(request):\n    return HttpResponse(f\"\"\"\n        <html>\n        <head><title>{title}</title></head>\n        <body><h1>{heading}</h1><p>{content}</p></body>\n        </html>\n    \"\"\")\n\n# With templates (clean, maintainable!)\ndef home(request):\n    return render(request, 'home.html', {\n        'title': title,\n        'heading': heading,\n        'content': content\n    })\n```\n\n## Template Location\n\n```\nmyproject/\n├── templates/              # Project-wide templates\n│   └── base.html\n└── blog/\n    └── templates/          # App-specific templates\n        └── blog/           # Namespace to avoid conflicts\n            ├── list.html\n            └── detail.html\n```\n\n> 💡 **Templates separate presentation logic from business logic!**"
+            "title": "Template Language Basics",
+            "content": "# Django Template Language 📝\n\nDjango templates are just HTML files with special syntax to inject logic and data.\n\n## Variables `{{ }}`\nOutput a value from the context.\n```html\n<h1>Hello, {{ user.username }}!</h1>\n<p>Score: {{ user.profile.score }}</p>\n```\n\n## Tags `{% %}`\nControl logic (loops, conditions).\n```html\n{% if user.is_authenticated %}\n    <p>Welcome back!</p>\n{% else %}\n    <a href=\"/login\">Log in</a>\n{% endif %}\n```\n\n## Filters `|`\nModify variables for display.\n```html\n{{ name|upper }}      <!-- 'john' -> 'JOHN' -->\n{{ date|date:\"Y-m-d\" }} <!-- Formats date -->\n```"
         },
         {
-            "id": "templates_2",
+            "id": "django_templates_2",
             "type": "content",
-            "title": "Template Language Basics - Variables",
-            "content": "# Template Variables 📊\n\n## Passing Data to Templates\n\n```python\n# views.py\ndef article_detail(request, pk):\n    article = Article.objects.get(pk=pk)\n    return render(request, 'article.html', {\n        'article': article,\n        'author': article.author,\n        'tags': ['python', 'django', 'web'],\n        'published': True,\n    })\n```\n\n## Displaying Variables\n\n```html\n<!-- Use double curly braces {{ }} -->\n<h1>{{ article.title }}</h1>\n<p>By {{ author.name }}</p>\n<p>{{ article.content }}</p>\n\n<!-- Access object attributes -->\n{{ user.email }}\n{{ article.published_date }}\n\n<!-- Access dictionary keys -->\n{{ person.name }}\n{{ settings.DEBUG }}\n\n<!-- Access list items by index -->\n{{ tags.0 }}    <!-- First item: 'python' -->\n{{ tags.1 }}    <!-- Second item: 'django' -->\n```\n\n## Variable Fallbacks\n\n```html\n<!-- Default if variable is empty/None -->\n{{ name|default:\"Anonymous User\" }}\n\n<!-- Check if exists before using -->\n{% if article.image %}\n    <img src=\"{{ article.image.url }}\" alt=\"{{ article.title }}\">\n{% else %}\n    <img src=\"{% static 'images/placeholder.jpg' %}\" alt=\"No image\">\n{% endif %}\n```\n\n> 💡 **Dot notation** works for attributes, methods, dictionary keys, and list indices!"
+            "title": "Common Tags",
+            "content": "# Essential Tags 🏷️\n\n## For Loop\nIterate over lists or querysets.\n```html\n<ul>\n{% for item in items %}\n    <li>{{ item.name }} - ${{ item.price }}</li>\n{% empty %}\n    <li>No items found.</li>\n{% endfor %}\n</ul>\n```\n> 💡 **Tip**: The `{% empty %}` block runs if the list is empty!\n\n## URL Tag\nGenerate links dynamically.\n```html\n<a href=\"{% url 'app:view_name' id=5 %}\">Link</a>\n```\n\n## CSRF Token\nRequired for security in forms.\n```html\n<form method=\"post\">\n    {% csrf_token %}\n    ...\n</form>\n```"
         },
         {
-            "id": "templates_3",
-            "type": "content",
-            "title": "Template Tags - Control Flow",
-            "content": "# Template Tags 🏷️\n\nTags provide logic in templates using `{% tag %}`.\n\n## If/Else Statements\n\n```html\n{% if user.is_authenticated %}\n    <p>Welcome back, {{ user.username }}!</p>\n    <a href=\"{% url 'logout' %}\">Logout</a>\n{% elif user.is_guest %}\n    <p>Welcome, Guest! Consider signing up.</p>\n{% else %}\n    <p>Please <a href=\"{% url 'login' %}\">log in</a></p>\n{% endif %}\n\n<!-- Comparison operators -->\n{% if score >= 90 %}\n    <span class=\"grade-a\">Excellent!</span>\n{% elif score >= 70 %}\n    <span class=\"grade-b\">Good job!</span>\n{% elif score >= 50 %}\n    <span class=\"grade-c\">Passed</span>\n{% else %}\n    <span class=\"grade-f\">Try again</span>\n{% endif %}\n\n<!-- Boolean operators -->\n{% if user.is_authenticated and user.is_verified %}\n    <p>Full access granted</p>\n{% endif %}\n\n{% if not user.is_banned %}\n    <button>Post Comment</button>\n{% endif %}\n```\n\n## Checking Membership\n\n```html\n{% if 'admin' in user.roles %}\n    <a href=\"/admin/\">Admin Panel</a>\n{% endif %}\n\n{% if item in shopping_cart %}\n    <button>Remove from Cart</button>\n{% else %}\n    <button>Add to Cart</button>\n{% endif %}\n```"
-        },
-        {
-            "id": "templates_4",
-            "type": "content",
-            "title": "Template Tags - Loops",
-            "content": "# For Loops 🔄\n\n## Basic Loop\n\n```html\n<ul>\n{% for article in articles %}\n    <li>\n        <a href=\"{{ article.get_absolute_url }}\">{{ article.title }}</a>\n        <span>by {{ article.author.name }}</span>\n    </li>\n{% empty %}\n    <li>No articles found.</li>\n{% endfor %}\n</ul>\n```\n\n## Loop Variables\n\n```html\n{% for item in items %}\n    {{ forloop.counter }}     <!-- 1, 2, 3... -->\n    {{ forloop.counter0 }}    <!-- 0, 1, 2... -->\n    {{ forloop.revcounter }}  <!-- ..., 3, 2, 1 -->\n    {{ forloop.first }}       <!-- True if first iteration -->\n    {{ forloop.last }}        <!-- True if last iteration -->\n    {{ forloop.parentloop }}  <!-- For nested loops -->\n{% endfor %}\n\n<!-- Practical example -->\n<table>\n{% for product in products %}\n    <tr class=\"{% if forloop.first %}first-row{% endif %}\n               {% cycle 'odd' 'even' %}\">\n        <td>{{ forloop.counter }}</td>\n        <td>{{ product.name }}</td>\n        <td>${{ product.price }}</td>\n    </tr>\n{% endfor %}\n</table>\n```\n\n## URL Tag\n\n```html\n<!-- Named URLs -->\n<a href=\"{% url 'article_detail' pk=article.id %}\">Read More</a>\n<a href=\"{% url 'home' %}\">Home</a>\n\n<!-- With namespace -->\n<a href=\"{% url 'blog:list' %}\">Blog Posts</a>\n```"
-        },
-        {
-            "id": "templates_quiz_1",
+            "id": "django_templates_quiz_1",
             "type": "quiz",
-            "title": "Template Basics Quiz",
-            "content": "Test your template knowledge!",
-            "quizQuestion": "How do you display a variable in a Django template?",
+            "title": "Syntax Quiz",
+            "content": "Test your syntax knowledge",
+            "quizQuestion": "Which syntax is used to output a variable's value?",
             "quizOptions": [
-                "<%= variable %>",
-                "{{ variable }}",
                 "{% variable %}",
-                "${variable}"
+                "{{ variable }}",
+                "[[ variable ]]",
+                "(( variable ))"
             ],
             "correctOptionIndex": 1
         },
         {
-            "id": "templates_5",
-            "type": "content",
-            "title": "Template Filters",
-            "content": "# Template Filters 🔧\n\nTransform variables using the pipe `|` symbol.\n\n## Text Filters\n\n```html\n{{ name|upper }}              <!-- JOHN DOE -->\n{{ name|lower }}              <!-- john doe -->\n{{ name|title }}              <!-- John Doe -->\n{{ name|capfirst }}           <!-- John doe -->\n{{ text|truncatewords:30 }}   <!-- First 30 words... -->\n{{ text|truncatechars:100 }}  <!-- First 100 characters... -->\n{{ text|wordcount }}          <!-- Number of words -->\n{{ text|linebreaks }}         <!-- Convert \\n to <br> -->\n{{ text|striptags }}          <!-- Remove HTML tags -->\n```\n\n## Date Filters\n\n```html\n{{ article.published|date:\"F j, Y\" }}    <!-- March 15, 2024 -->\n{{ article.published|date:\"d/m/Y\" }}     <!-- 15/03/2024 -->\n{{ article.published|date:\"D, M d\" }}    <!-- Fri, Mar 15 -->\n{{ article.published|timesince }}        <!-- 2 days ago -->\n{{ article.published|timeuntil }}        <!-- in 3 hours -->\n```\n\n## Number Filters\n\n```html\n{{ price|floatformat:2 }}     <!-- 49.99 -->\n{{ count|add:5 }}             <!-- count + 5 -->\n{{ items|length }}            <!-- Number of items -->\n{{ ratio|percentage }}        <!-- 0.85 → 85% -->\n```\n\n## List Filters\n\n```html\n{{ items|first }}             <!-- First item -->\n{{ items|last }}              <!-- Last item -->\n{{ items|join:\", \" }}         <!-- item1, item2, item3 -->\n{{ items|slice:\":3\" }}        <!-- First 3 items -->\n```\n\n## Safety Filters\n\n```html\n{{ html_content|safe }}       <!-- Render as HTML (careful!) -->\n{{ text|escape }}             <!-- Escape HTML entities -->\n```\n\n> ⚠️ **Only use `|safe` with trusted content!** It can cause XSS vulnerabilities."
-        },
-        {
-            "id": "templates_6",
+            "id": "django_templates_3",
             "type": "content",
             "title": "Template Inheritance",
-            "content": "# Template Inheritance 🏗️\n\nCreate reusable layouts with base templates!\n\n## Base Template (Parent)\n\n```html\n<!-- templates/base.html -->\n<!DOCTYPE html>\n<html>\n<head>\n    <title>{% block title %}My Site{% endblock %}</title>\n    <link rel=\"stylesheet\" href=\"{% static 'css/style.css' %}\">\n    {% block extra_css %}{% endblock %}\n</head>\n<body>\n    <header>\n        <nav>\n            <a href=\"{% url 'home' %}\">Home</a>\n            <a href=\"{% url 'about' %}\">About</a>\n            <a href=\"{% url 'contact' %}\">Contact</a>\n        </nav>\n    </header>\n    \n    <main>\n        {% block content %}\n        <!-- Child content goes here -->\n        {% endblock %}\n    </main>\n    \n    <footer>\n        <p>&copy; 2024 My Site. All rights reserved.</p>\n    </footer>\n    \n    <script src=\"{% static 'js/main.js' %}\"></script>\n    {% block extra_js %}{% endblock %}\n</body>\n</html>\n```\n\n## Child Template\n\n```html\n<!-- templates/blog/home.html -->\n{% extends 'base.html' %}\n\n{% block title %}Home - My Site{% endblock %}\n\n{% block content %}\n    <h1>Welcome to My Blog!</h1>\n    <p>This content replaces the content block in base.html</p>\n    \n    {% for post in posts %}\n        <article>\n            <h2>{{ post.title }}</h2>\n            <p>{{ post.excerpt }}</p>\n        </article>\n    {% endfor %}\n{% endblock %}\n```\n\n> 💡 **DRY Principle:** Define your layout once in base.html, reuse everywhere!"
+            "content": "# Template Inheritance 🧬\n\nThe most powerful feature of DTL! It allows you to build a base \"skeleton\" template containing common elements (nav, footer) and define **blocks** that child templates can override.\n\n**base.html**:\n```html\n<html>\n<body>\n    <nav>...</nav>\n    <div class=\"content\">\n        {% block content %}{% endblock %}\n    </div>\n    <footer>...</footer>\n</body>\n</html>\n```\n\n**home.html**:\n```html\n{% extends \"base.html\" %}\n\n{% block content %}\n    <h1>Home Page</h1>\n    <p>This replaces the block in base!</p>\n{% endblock %}\n```"
         },
         {
-            "id": "templates_7",
+            "id": "django_templates_4",
             "type": "content",
-            "title": "Including Partial Templates",
-            "content": "# Include and Block Tags 📦\n\n## Including Partial Templates\n\n```html\n<!-- templates/includes/navbar.html -->\n<nav class=\"navbar\">\n    <a href=\"{% url 'home' %}\">Home</a>\n    <a href=\"{% url 'about' %}\">About</a>\n    {% if user.is_authenticated %}\n        <a href=\"{% url 'profile' %}\">{{ user.username }}</a>\n        <a href=\"{% url 'logout' %}\">Logout</a>\n    {% else %}\n        <a href=\"{% url 'login' %}\">Login</a>\n    {% endif %}\n</nav>\n```\n\n```html\n<!-- templates/base.html -->\n<!DOCTYPE html>\n<html>\n<body>\n    {% include 'includes/navbar.html' %}\n    {% block content %}{% endblock %}\n    {% include 'includes/footer.html' %}\n</body>\n</html>\n```\n\n## Include with Variables\n\n```html\n<!-- Pass variables to included template -->\n{% include 'includes/card.html' with title=article.title image=article.image %}\n\n<!-- Use only passed variables (more explicit) -->\n{% include 'includes/card.html' with title=\"Hello\" only %}\n```\n\n## Block Super (Keep Parent Content)\n\n```html\n<!-- base.html -->\n{% block sidebar %}\n    <h3>Default Sidebar</h3>\n    <ul><li>Link 1</li><li>Link 2</li></ul>\n{% endblock %}\n\n<!-- child.html -->\n{% block sidebar %}\n    {{ block.super }}  <!-- Include parent content -->\n    <h3>Additional Content</h3>\n    <p>This is added to the sidebar</p>\n{% endblock %}\n```\n\n> 🎯 **Use `include` for reusable components** like cards, modals, and alerts!"
+            "title": "Handling Static Files",
+            "content": "# Static Files 🖼️\n\nStatic files are images, CSS, and JavaScript that don't change dynamically.\n\n## Setup\n1. Make sure `django.contrib.staticfiles` is in `INSTALLED_APPS`.\n2. Define `STATIC_URL = '/static/'` in `settings.py`.\n\n## Usage in Templates\nAlways load the `static` tag library first.\n\n```html\n{% load static %}\n\n<html>\n<head>\n    <!-- CSS -->\n    <link rel=\"stylesheet\" href=\"{% static 'css/style.css' %}\">\n</head>\n<body>\n    <!-- Image -->\n    <img src=\"{% static 'images/logo.png' %}\" alt=\"Logo\">\n</body>\n</html>\n```"
         },
         {
-            "id": "templates_quiz_2",
+            "id": "django_templates_quiz_2",
             "type": "quiz",
-            "title": "Inheritance Quiz",
-            "content": "Test your template inheritance knowledge!",
-            "quizQuestion": "Which tag is used to inherit from a parent template?",
+            "title": "Static Quiz",
+            "content": "Check your understanding",
+            "quizQuestion": "What template tag must you load to use the {% static %} tag?",
             "quizOptions": [
-                "{% include 'base.html' %}",
-                "{% extends 'base.html' %}",
-                "{% inherit 'base.html' %}",
-                "{% parent 'base.html' %}"
-            ],
-            "correctOptionIndex": 1
-        },
-        {
-            "id": "templates_8",
-            "type": "content",
-            "title": "Static Files - Configuration",
-            "content": "# Static Files 📁 (Part 1)\n\nServe CSS, JavaScript, and images in Django.\n\n## Configure Static Files\n\n```python\n# settings.py\n\n# URL prefix for static files\nSTATIC_URL = '/static/'\n\n# Additional directories to look for static files\nSTATICFILES_DIRS = [\n    BASE_DIR / 'static',  # Project-wide static files\n]\n\n# Where collectstatic gathers files (for production)\nSTATIC_ROOT = BASE_DIR / 'staticfiles'\n\n# Media files (user uploads)\nMEDIA_URL = '/media/'\nMEDIA_ROOT = BASE_DIR / 'media'\n```\n\n## Directory Structure\n\n```\nmyproject/\n├── static/                 # Project-wide static files\n│   ├── css/\n│   │   └── style.css\n│   ├── js/\n│   │   └── main.js\n│   └── images/\n│       └── logo.png\n├── blog/\n│   └── static/             # App-specific static files\n│       └── blog/           # Namespace to avoid conflicts\n│           ├── css/\n│           │   └── blog.css\n│           └── js/\n│               └── blog.js\n└── templates/\n```\n\n> 💡 **Always namespace app static files** (blog/static/blog/) to prevent file name conflicts between apps!"
-        },
-        {
-            "id": "templates_9",
-            "type": "content",
-            "title": "Static Files - Usage",
-            "content": "# Static Files 📁 (Part 2)\n\n## Using Static Files in Templates\n\n```html\n{% load static %}  <!-- REQUIRED at top of template! -->\n\n<!DOCTYPE html>\n<html>\n<head>\n    <title>My Site</title>\n    <!-- CSS -->\n    <link rel=\"stylesheet\" href=\"{% static 'css/style.css' %}\">\n    <link rel=\"stylesheet\" href=\"{% static 'blog/css/blog.css' %}\">\n    \n    <!-- Favicon -->\n    <link rel=\"icon\" href=\"{% static 'images/favicon.ico' %}\">\n</head>\n<body>\n    <!-- Images -->\n    <img src=\"{% static 'images/logo.png' %}\" alt=\"Logo\">\n    \n    <!-- JavaScript -->\n    <script src=\"{% static 'js/main.js' %}\"></script>\n</body>\n</html>\n```\n\n## In Base Template\n\n```html\n<!-- templates/base.html -->\n{% load static %}\n<!DOCTYPE html>\n<html>\n<head>\n    <link rel=\"stylesheet\" href=\"{% static 'css/base.css' %}\">\n    {% block extra_css %}{% endblock %}\n</head>\n<body>\n    {% block content %}{% endblock %}\n    \n    <script src=\"{% static 'js/base.js' %}\"></script>\n    {% block extra_js %}{% endblock %}\n</body>\n</html>\n```\n\n## Production Deployment\n\n```bash\n# Collect all static files into STATIC_ROOT\npython manage.py collectstatic\n\n# This copies all static files to one location\n# for your web server (Nginx, Apache) to serve\n```\n\n> ⚠️ **Don't forget `{% load static %}` at the top of your template!**"
-        },
-        {
-            "id": "templates_quiz_3",
-            "type": "quiz",
-            "title": "Static Files Quiz",
-            "content": "Test your static files knowledge!",
-            "quizQuestion": "What must you add at the top of a template to use static files?",
-            "quizOptions": [
-                "{% import static %}",
+                "{% load assets %}",
+                "{% load staticfiles %}",
                 "{% load static %}",
-                "{% include static %}",
-                "{% static load %}"
+                "No need to load anything"
             ],
-            "correctOptionIndex": 1
-        },
-        {
-            "id": "templates_10",
-            "type": "content",
-            "title": "Summary",
-            "content": "# Excellent Work! 🎉\n\nYou've mastered Django Templates!\n\n## Template Language Basics\n- ✅ Variables: `{{ variable }}`\n- ✅ Tags: `{% tag %}`\n- ✅ Filters: `{{ var|filter }}`\n- ✅ Comments: `{# comment #}`\n\n## Control Flow\n- ✅ `{% if %}` / `{% elif %}` / `{% else %}` / `{% endif %}`\n- ✅ `{% for %}` loops with `{% empty %}`\n- ✅ Loop variables (`forloop.counter`, etc.)\n\n## Template Inheritance\n- ✅ `{% extends 'base.html' %}`\n- ✅ `{% block name %}` ... `{% endblock %}`\n- ✅ `{% include 'partial.html' %}`\n- ✅ `{{ block.super }}` to keep parent content\n\n## Filters\n- ✅ Text: `upper`, `lower`, `title`, `truncatewords`\n- ✅ Dates: `date`, `timesince`\n- ✅ Lists: `length`, `first`, `join`\n- ✅ Safety: `safe`, `escape`\n\n## Static Files\n- ✅ `{% load static %}` at template top\n- ✅ `{% static 'path/to/file' %}` to reference files\n- ✅ Configure `STATIC_URL` and `STATICFILES_DIRS`\n- ✅ Namespace app static files\n\n> 🚀 **Next Steps:** Learn about Models to work with databases!"
+            "correctOptionIndex": 2
         }
     ]
 }

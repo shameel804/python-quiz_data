@@ -1,41 +1,41 @@
 {
-    "id": "learn_flask",
+    "id": "learn_lib_flask",
     "topicId": "flask",
     "topicTitle": "Flask",
-    "description": "Lightweight web framework",
-    "baseKP": 85,
+    "description": "Micro web framework for simple apps",
+    "baseKP": 65,
     "slides": [
         {
-            "id": "flask_1",
+            "id": "lib_flask_1",
             "type": "content",
-            "title": "Introduction",
-            "content": "# Flask 🌶️\n\nMicro web framework!\n\n```python\nfrom flask import Flask\n\napp = Flask(__name__)\n\n@app.route('/')\ndef home():\n    return 'Hello, Flask!'\n\nif __name__ == '__main__':\n    app.run(debug=True)\n```\n\n> 💡 **Flask is lightweight** - add only what you need!"
+            "title": "Minimal App",
+            "content": "# The Micro Framework 🌶️\n\nFlask is lightweight. No built-in DB or Auth.\n\n## 5-Line Server\n```python\nfrom flask import Flask\napp = Flask(__name__)\n\n@app.route(\"/\")\ndef hello():\n    return \"Hello World!\"\n\nif __name__ == \"__main__\":\n    app.run(debug=True)\n```"
         },
         {
-            "id": "flask_2",
+            "id": "lib_flask_2",
             "type": "content",
-            "title": "Routes & Methods",
-            "content": "# Routing 🛤️\n\n```python\n@app.route('/user/<username>')\ndef user_profile(username):\n    return f'User: {username}'\n\n@app.route('/post', methods=['GET', 'POST'])\ndef post():\n    if request.method == 'POST':\n        data = request.form['data']\n        return f'Posted: {data}'\n    return 'Form page'\n\n@app.route('/api/data')\ndef api():\n    return jsonify({'status': 'ok'})\n```"
+            "title": "Routing & Dynamic URLs",
+            "content": "# Routing 🛣️\n\nHandle different URLs with decorators.\n\n```python\n@app.route(\"/user/<username>\")\ndef profile(username):\n    return f\"User: {username}\"\n\n@app.route(\"/post/<int:id>\")\ndef post(id):\n    # logic to get post by ID\n    return f\"Post ID: {id}\"\n```"
         },
         {
-            "id": "flask_quiz_1",
+            "id": "lib_flask_3",
+            "type": "content",
+            "title": "Templates (Jinja2)",
+            "content": "# Rendering HTML 🎨\n\nFlask uses **Jinja2** (same engine as Django's default).\n\n```python\nfrom flask import render_template\n\n@app.route(\"/hello/<name>\")\ndef hello(name):\n    return render_template('hello.html', name=name)\n```\n\n**hello.html**:\n```html\n<h1>Hello, {{ name }}!</h1>\n```"
+        },
+        {
+            "id": "lib_flask_quiz_1",
             "type": "quiz",
-            "title": "Quiz",
-            "content": "Test your knowledge!",
-            "quizQuestion": "Which decorator defines a route in Flask?",
+            "title": "Routing Quiz",
+            "content": "Check your understanding",
+            "quizQuestion": "Which converter ensures the captured URL part is a number?",
             "quizOptions": [
-                "@app.url",
-                "@app.route",
-                "@app.path",
-                "@app.endpoint"
+                "<num:id>",
+                "<int:id>",
+                "<number:id>",
+                "<digit:id>"
             ],
             "correctOptionIndex": 1
-        },
-        {
-            "id": "flask_3",
-            "type": "content",
-            "title": "Summary",
-            "content": "# Great! 🎉\n\n## Key Concepts\n- ✅ `@app.route()` decorator\n- ✅ Dynamic routes\n- ✅ HTTP methods\n- ✅ `jsonify()` for APIs\n\n> 🚀 **Next:** Learn FastAPI!"
         }
     ]
 }

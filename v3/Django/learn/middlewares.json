@@ -1,53 +1,41 @@
 {
-    "id": "learn_middlewares",
+    "id": "learn_django_middlewares",
     "topicId": "middlewares",
     "topicTitle": "Middlewares",
-    "description": "Understand and create custom Django middleware",
-    "baseKP": 90,
+    "description": "Understand the hooks into Django's request/response processing",
+    "baseKP": 85,
     "slides": [
         {
-            "id": "middleware_1",
+            "id": "django_mid_1",
             "type": "content",
-            "title": "Introduction to Middleware",
-            "content": "# Django Middleware 🔧\n\nMiddleware processes requests/responses globally!\n\n## What you'll learn:\n- **Creating custom middleware** - Write your own\n- **Default middleware** - Built-in middleware explained\n\n## What is Middleware?\n\nMiddleware is code that runs on every request/response:\n\n```\nRequest → Middleware → View → Middleware → Response\n           ↓ Process request        ↓ Process response\n```\n\n## Middleware Stack\n\n```python\n# settings.py - Order matters!\nMIDDLEWARE = [\n    'django.middleware.security.SecurityMiddleware',        # 1st: Security\n    'django.contrib.sessions.middleware.SessionMiddleware', # 2nd: Sessions\n    'django.middleware.common.CommonMiddleware',            # 3rd: Common operations\n    'django.middleware.csrf.CsrfViewMiddleware',           # 4th: CSRF protection\n    'django.contrib.auth.middleware.AuthenticationMiddleware', # 5th: Auth\n    'django.contrib.messages.middleware.MessageMiddleware', # 6th: Messages\n    'django.middleware.clickjacking.XFrameOptionsMiddleware', # 7th: Clickjacking\n]\n```\n\n## Request Flow\n\n```\nRequest:\n  Security → Session → Common → CSRF → Auth → Messages → YOUR VIEW\n\nResponse:\n  Messages → Auth → CSRF → Common → Session → Security → CLIENT\n```\n\n> 💡 **Middleware runs on EVERY request** - use it for cross-cutting concerns!"
+            "title": "What is Middleware?",
+            "content": "# Structure of Middleware 🌉\n\nMiddleware is a framework of hooks into Django's request/response processing. It's a light, low-level \"plugin\" system.\n\nEx: `AuthenticationMiddleware`, `CsrfViewMiddleware`.\n\n## How it works\nIt's like an onion 🧅. The request passes through each middleware layer to the view, and the response passes back out through them."
         },
         {
-            "id": "middleware_2",
-            "type": "content",
-            "title": "Default Middleware",
-            "content": "# Built-in Middleware 📦\n\n## Security Middleware\n\n```python\n# SecurityMiddleware\n# - SSL redirect\n# - HSTS headers\n# - Content type sniffing prevention\n\n# settings.py\nSECURE_SSL_REDIRECT = True     # Redirect HTTP to HTTPS\nSECURE_HSTS_SECONDS = 31536000  # Strict transport security\n```\n\n## Session Middleware\n\n```python\n# SessionMiddleware\n# - Manages session data\n# - Required for auth and messages\n\n# Using sessions in views\nrequest.session['cart'] = ['item1', 'item2']\nitems = request.session.get('cart', [])\n```\n\n## Common Middleware\n\n```python\n# CommonMiddleware\n# - Appends trailing slashes (optional)\n# - Handles conditional GET\n\n# settings.py\nAPPEND_SLASH = True  # /page becomes /page/\n```\n\n## CSRF Middleware\n\n```python\n# CsrfViewMiddleware\n# - Adds CSRF tokens to forms\n# - Validates CSRF tokens on POST\n\n# Exempt a view (use carefully!)\nfrom django.views.decorators.csrf import csrf_exempt\n\n@csrf_exempt\ndef webhook(request):\n    pass\n```\n\n## Authentication Middleware\n\n```python\n# AuthenticationMiddleware\n# - Adds request.user\n# - Must come after SessionMiddleware\n\n# Always available in views!\nif request.user.is_authenticated:\n    print(f\"Hello, {request.user.username}\")\n```"
-        },
-        {
-            "id": "middleware_3",
+            "id": "django_mid_2",
             "type": "content",
             "title": "Creating Custom Middleware",
-            "content": "# Custom Middleware 🛠️\n\n## Function-Based Middleware (Simple)\n\n```python\n# myapp/middleware.py\ndef simple_middleware(get_response):\n    # One-time configuration\n    print('Middleware initialized!')\n    \n    def middleware(request):\n        # Code before view\n        print(f'Before: {request.path}')\n        \n        response = get_response(request)  # Call the view\n        \n        # Code after view\n        print(f'After: {response.status_code}')\n        \n        return response\n    \n    return middleware\n```\n\n## Class-Based Middleware (Full Control)\n\n```python\nclass RequestLoggingMiddleware:\n    def __init__(self, get_response):\n        self.get_response = get_response\n    \n    def __call__(self, request):\n        # Process request\n        start_time = time.time()\n        \n        response = self.get_response(request)\n        \n        # Process response\n        duration = time.time() - start_time\n        print(f'{request.path}: {duration:.2f}s')\n        \n        return response\n    \n    def process_view(self, request, view_func, view_args, view_kwargs):\n        # Called just before the view\n        print(f'Calling view: {view_func.__name__}')\n        return None  # Continue normally\n    \n    def process_exception(self, request, exception):\n        # Called if view raises exception\n        print(f'Exception: {exception}')\n        return None  # Let Django handle it\n```\n\n## Register in Settings\n\n```python\n# settings.py\nMIDDLEWARE = [\n    ...\n    'myapp.middleware.RequestLoggingMiddleware',  # Add your middleware\n]\n```"
+            "content": "# Custom Middleware 🛠️\n\nA middleware is a class that implements `__call__`.\n\n```python\nclass SimpleMiddleware:\n    def __init__(self, get_response):\n        self.get_response = get_response\n\n    def __call__(self, request):\n        # Code to be executed for each request before\n        # the view (and later middleware) are called.\n        print(\"Before View\")\n\n        response = self.get_response(request)\n\n        # Code to be executed for each request/response after\n        # the view is called.\n        print(\"After View\")\n\n        return response\n```\n\n> 💡 **Tip**: Don't forget to add `'path.to.SimpleMiddleware'` to `MIDDLEWARE` in settings!"
         },
         {
-            "id": "middleware_quiz_1",
+            "id": "django_mid_quiz_1",
             "type": "quiz",
-            "title": "Middleware Quiz",
-            "content": "Test your middleware knowledge!",
-            "quizQuestion": "When does middleware's `process_view` method run?",
+            "title": "Flow Quiz",
+            "content": "Check your understanding",
+            "quizQuestion": "When is the code AFTER 'self.get_response(request)' executed?",
             "quizOptions": [
-                "After the view returns",
-                "Just before the view is called",
-                "When the server starts",
-                "After the response is sent"
+                "Before the view is called",
+                "After the view has processed the request",
+                "Only if an error occurs",
+                "Never"
             ],
             "correctOptionIndex": 1
         },
         {
-            "id": "middleware_4",
+            "id": "django_mid_3",
             "type": "content",
-            "title": "Practical Examples",
-            "content": "# Real-World Middleware 🌍\n\n## Maintenance Mode\n\n```python\nfrom django.http import HttpResponse\nfrom django.conf import settings\n\nclass MaintenanceModeMiddleware:\n    def __init__(self, get_response):\n        self.get_response = get_response\n    \n    def __call__(self, request):\n        if settings.MAINTENANCE_MODE:\n            return HttpResponse(\n                '<h1>Site under maintenance</h1>',\n                status=503\n            )\n        return self.get_response(request)\n```\n\n## Force HTTPS\n\n```python\nclass ForceHTTPSMiddleware:\n    def __init__(self, get_response):\n        self.get_response = get_response\n    \n    def __call__(self, request):\n        if not request.is_secure() and not settings.DEBUG:\n            url = request.build_absolute_uri()\n            secure_url = url.replace('http://', 'https://')\n            return HttpResponseRedirect(secure_url)\n        return self.get_response(request)\n```\n\n## Add Custom Headers\n\n```python\nclass CustomHeaderMiddleware:\n    def __init__(self, get_response):\n        self.get_response = get_response\n    \n    def __call__(self, request):\n        response = self.get_response(request)\n        response['X-Custom-Header'] = 'My Value'\n        response['X-Request-ID'] = str(uuid.uuid4())\n        return response\n```\n\n> 💡 **Middleware is perfect for** logging, authentication checks, header manipulation, and request/response modification!"
-        },
-        {
-            "id": "middleware_5",
-            "type": "content",
-            "title": "Summary",
-            "content": "# Excellent Work! 🎉\n\nYou've mastered Django Middleware!\n\n## Default Middleware\n- ✅ **SecurityMiddleware** - SSL, HSTS\n- ✅ **SessionMiddleware** - Session handling\n- ✅ **CommonMiddleware** - Trailing slashes\n- ✅ **CsrfViewMiddleware** - CSRF protection\n- ✅ **AuthenticationMiddleware** - `request.user`\n\n## Creating Custom Middleware\n- ✅ Function-based (simple)\n- ✅ Class-based (full control)\n- ✅ Hooks: `__call__`, `process_view`, `process_exception`\n\n## Key Points\n- 📍 Order matters in `MIDDLEWARE` list\n- 📍 Request flows top-to-bottom\n- 📍 Response flows bottom-to-top\n- 📍 Each middleware can modify request/response\n\n## Template\n\n```python\nclass MyMiddleware:\n    def __init__(self, get_response):\n        self.get_response = get_response\n    \n    def __call__(self, request):\n        # Before view\n        response = self.get_response(request)\n        # After view\n        return response\n```\n\n> 🚀 **Next Steps:** Learn about Caching!"
+            "title": "Default Middleware",
+            "content": "# Common Built-ins 📦\n\n- **SecurityMiddleware**: Handles SSL redirection, XSS headers.\n- **SessionMiddleware**: Manages user sessions across requests.\n- **CommonMiddleware**: URL rewriting and other common niceties.\n- **CsrfViewMiddleware**: Protects against Cross-Site Request Forgery.\n- **AuthenticationMiddleware**: Associates users with requests using sessions."
         }
     ]
 }

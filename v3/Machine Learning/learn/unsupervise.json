@@ -2,72 +2,40 @@
     "id": "learn_ml_unsupervise",
     "topicId": "unsupervise",
     "topicTitle": "Unsupervised Learning",
-    "description": "Learn clustering, dimensionality reduction, and anomaly detection",
-    "baseKP": 100,
+    "description": "Find hidden patterns in unlabeled data",
+    "baseKP": 65,
     "slides": [
         {
-            "id": "unsupervise_1",
+            "id": "ml_unsup_1",
             "type": "content",
-            "title": "Introduction to Unsupervised Learning",
-            "content": "# Unsupervised Learning 🔍\n\nDiscover hidden patterns without labels!\n\n## What you'll learn:\n- **Clustering** - Group similar data points\n- **Dimensionality Reduction** - Simplify complex data\n- **Anomaly Detection** - Find outliers\n\n## Unsupervised vs Supervised\n\n```\nSupervised:\nX = [[...], [...]]  # Features\ny = [1, 0, 1, ...]  # Labels (have answers!)\n\nUnsupervised:\nX = [[...], [...]]  # Features only\n# No labels - find patterns yourself!\n```\n\n## Use Cases\n\n| Task | Application |\n|------|-------------|\n| Clustering | Customer segmentation |\n| Dimensionality Reduction | Visualization, feature reduction |\n| Anomaly Detection | Fraud detection, defect detection |\n\n> 💡 **Unsupervised learning finds structure** in data without being told what to look for!"
+            "title": "Clustering",
+            "content": "# Clustering 🍇\n\nGrouping similar data points together. No labels provided.\n\n## K-Means Clustering\nMost popular algorithm.\n1. Choose `K` (number of groups).\n2. Randomly place `K` centroids.\n3. Assign each point to nearest centroid.\n4. Move centroid to the average of its points.\n5. Repeat until centroids stop moving.\n\n## Hierarchical Clustering\nBuilds a tree of clusters (Dendrogram). Good for visualizing hierarchy.\n\n## DBSCAN\nDensity-based. Can find weird shapes and ignores noise (outliers)."
         },
         {
-            "id": "unsupervise_2",
+            "id": "ml_unsup_2",
             "type": "content",
-            "title": "Clustering - K-Means",
-            "content": "# K-Means Clustering 📊\n\nGroup data into K clusters!\n\n## How It Works\n\n```\n1. Choose K (number of clusters)\n2. Initialize K centroids randomly\n3. Assign each point to nearest centroid\n4. Move centroids to cluster means\n5. Repeat 3-4 until convergence\n```\n\n## Implementation\n\n```python\nfrom sklearn.cluster import KMeans\n\n# Create and fit model\nkmeans = KMeans(\n    n_clusters=3,      # Number of clusters\n    random_state=42,\n    n_init=10          # Number of initializations\n)\nkmeans.fit(X)\n\n# Get cluster assignments\nlabels = kmeans.labels_\n\n# Predict for new data\nnew_labels = kmeans.predict(new_X)\n\n# Cluster centers\ncenters = kmeans.cluster_centers_\n```\n\n## Finding Optimal K (Elbow Method)\n\n```python\nfrom sklearn.metrics import silhouette_score\n\ninertias = []\nfor k in range(2, 11):\n    kmeans = KMeans(n_clusters=k, random_state=42)\n    kmeans.fit(X)\n    inertias.append(kmeans.inertia_)\n\n# Plot inertias - look for \"elbow\" point\nimport matplotlib.pyplot as plt\nplt.plot(range(2, 11), inertias, 'bo-')\nplt.xlabel('Number of clusters')\nplt.ylabel('Inertia')\nplt.show()\n```\n\n> 💡 **The \"elbow\" is where adding more clusters stops helping much!**"
+            "title": "Dimensionality Reduction",
+            "content": "# Dimensionality Reduction 📉\n\nWhat if you have 1000 features? The \"Curse of Dimensionality\" makes models slow and inaccurate. reducing columns helps.\n\n## PCA (Principal Component Analysis)\nProjects data onto new axes (Principal Components) that capture the most variance. You reduce 1000 columns to 50, but keep 95% of information!\n\n## t-SNE\nMainly used for **visualization**. Compresses high-dimensional data into 2D or 3D plots so humans can see clusters."
         },
         {
-            "id": "unsupervise_3",
-            "type": "content",
-            "title": "Other Clustering Methods",
-            "content": "# More Clustering Algorithms 🎯\n\n## Hierarchical Clustering\n\n```python\nfrom sklearn.cluster import AgglomerativeClustering\n\nmodel = AgglomerativeClustering(\n    n_clusters=3,\n    linkage='ward'  # 'average', 'complete', 'single'\n)\nlabels = model.fit_predict(X)\n```\n\n## DBSCAN (Density-Based)\n\n```python\nfrom sklearn.cluster import DBSCAN\n\nmodel = DBSCAN(\n    eps=0.5,         # Maximum distance between points\n    min_samples=5    # Minimum points to form cluster\n)\nlabels = model.fit_predict(X)\n\n# -1 means noise/outlier!\n```\n\n## When to Use Which?\n\n| Algorithm | Best For |\n|-----------|----------|\n| K-Means | Large datasets, spherical clusters |\n| Hierarchical | Small datasets, want dendrogram |\n| DBSCAN | Arbitrary shapes, outlier detection |\n\n## Evaluating Clusters\n\n```python\nfrom sklearn.metrics import silhouette_score\n\nscore = silhouette_score(X, labels)\n# Range: -1 to 1, higher is better\n# > 0.5 is good, > 0.7 is excellent\n```\n\n> 🎯 **DBSCAN is great for outlier detection** - points labeled -1 are anomalies!"
-        },
-        {
-            "id": "unsupervise_quiz_1",
-            "type": "quiz",
-            "title": "Clustering Quiz",
-            "content": "Test your knowledge!",
-            "quizQuestion": "Which method helps find the optimal number of clusters for K-Means?",
-            "quizOptions": [
-                "Cross-validation",
-                "Elbow method",
-                "Grid search",
-                "Confusion matrix"
-            ],
-            "correctOptionIndex": 1
-        },
-        {
-            "id": "unsupervise_4",
-            "type": "content",
-            "title": "Dimensionality Reduction - PCA",
-            "content": "# PCA - Principal Component Analysis 📉\n\nReduce dimensions while keeping important information!\n\n## Why Reduce Dimensions?\n\n- 🚀 **Faster training** - Fewer features\n- 📊 **Visualization** - Plot in 2D or 3D\n- 🧹 **Remove noise** - Focus on signal\n- 🔧 **Avoid curse of dimensionality**\n\n## How PCA Works\n\n```\n1. Center the data (subtract mean)\n2. Find directions of maximum variance\n3. Project data onto top N directions\n```\n\n## Implementation\n\n```python\nfrom sklearn.decomposition import PCA\n\n# Reduce to 2 dimensions\npca = PCA(n_components=2)\nX_reduced = pca.fit_transform(X)\n\n# Or keep 95% of variance\npca = PCA(n_components=0.95)\nX_reduced = pca.fit_transform(X)\n\n# Explained variance\nprint(pca.explained_variance_ratio_)\n# [0.72, 0.18] → First 2 components explain 90%\n```\n\n## Visualization\n\n```python\nimport matplotlib.pyplot as plt\n\npca = PCA(n_components=2)\nX_2d = pca.fit_transform(X)\n\nplt.scatter(X_2d[:, 0], X_2d[:, 1], c=labels, cmap='viridis')\nplt.xlabel('PC1')\nplt.ylabel('PC2')\nplt.title('PCA Visualization')\nplt.show()\n```\n\n> 💡 **PCA is perfect for visualizing high-dimensional data!**"
-        },
-        {
-            "id": "unsupervise_5",
+            "id": "ml_unsup_3",
             "type": "content",
             "title": "Anomaly Detection",
-            "content": "# Anomaly Detection 🚨\n\nFind unusual data points!\n\n## Isolation Forest\n\n```python\nfrom sklearn.ensemble import IsolationForest\n\nmodel = IsolationForest(\n    contamination=0.1,  # Expected outlier percentage\n    random_state=42\n)\n\n# -1 = outlier, 1 = normal\npredictions = model.fit_predict(X)\n\n# Get anomaly scores (lower = more anomalous)\nscores = model.score_samples(X)\n```\n\n## One-Class SVM\n\n```python\nfrom sklearn.svm import OneClassSVM\n\nmodel = OneClassSVM(\n    kernel='rbf',\n    nu=0.1  # Upper bound on outlier fraction\n)\n\n# -1 = outlier, 1 = normal\npredictions = model.fit_predict(X)\n```\n\n## Using DBSCAN for Anomalies\n\n```python\nfrom sklearn.cluster import DBSCAN\n\nmodel = DBSCAN(eps=0.5, min_samples=5)\nlabels = model.fit_predict(X)\n\n# Points with label -1 are outliers!\nanomalies = X[labels == -1]\n```\n\n## Applications\n\n| Domain | Anomaly Type |\n|--------|-------------|\n| 💳 Finance | Fraudulent transactions |\n| 🏭 Manufacturing | Defective products |\n| 🔐 Security | Intrusion detection |\n| 🏥 Healthcare | Unusual test results |\n\n> 🎯 **Anomaly detection is key for fraud and security!**"
+            "content": "# Anomaly Detection 🚨\n\nIdentifying rare items that differ significantly from the majority.\n\n## Use Cases\n- **Fraud Detection**: Credit card transactions.\n- **IT Security**: Detecting intrusions.\n- **Manufacturing**: Finding defective parts.\n\n## Techiques\n- **Isolation Forest**: Isolates anomalies by randomly splitting data. Anomalies are easier to isolate (shorter path in tree).\n- **One-Class SVM**: Learns the boundary of \"normal\" data."
         },
         {
-            "id": "unsupervise_quiz_2",
+            "id": "ml_unsup_quiz_1",
             "type": "quiz",
-            "title": "Final Quiz",
-            "content": "Test your understanding!",
-            "quizQuestion": "What does PCA primarily help with?",
+            "title": "Concepts Quiz",
+            "content": "Check your understanding",
+            "quizQuestion": "Which technique is primarily used to visualize high-dimensional data in 2D?",
             "quizOptions": [
-                "Classification",
-                "Dimensionality reduction",
-                "Clustering",
-                "Regression"
+                "PCA",
+                "t-SNE",
+                "K-Means",
+                "DBSCAN"
             ],
             "correctOptionIndex": 1
-        },
-        {
-            "id": "unsupervise_6",
-            "type": "content",
-            "title": "Summary",
-            "content": "# Excellent Work! 🎉\n\nYou've mastered Unsupervised Learning!\n\n## Clustering\n- ✅ **K-Means** - Fast, simple, spherical clusters\n- ✅ **DBSCAN** - Arbitrary shapes, finds outliers\n- ✅ **Hierarchical** - Dendrograms, small datasets\n- ✅ Elbow method to find optimal K\n\n## Dimensionality Reduction\n- ✅ **PCA** - Linear, fast, interpretable\n- ✅ Keep X% of variance OR N components\n- ✅ Great for visualization\n\n## Anomaly Detection\n- ✅ **Isolation Forest** - Fast, scalable\n- ✅ **One-Class SVM** - Boundary-based\n- ✅ **DBSCAN** - Cluster-based outliers\n\n## Quick Reference\n\n```python\n# Clustering\nfrom sklearn.cluster import KMeans\nkmeans = KMeans(n_clusters=3)\nlabels = kmeans.fit_predict(X)\n\n# Dimensionality Reduction\nfrom sklearn.decomposition import PCA\npca = PCA(n_components=2)\nX_2d = pca.fit_transform(X)\n\n# Anomaly Detection\nfrom sklearn.ensemble import IsolationForest\nif_model = IsolationForest(contamination=0.1)\nanomalies = if_model.fit_predict(X)  # -1 = anomaly\n```\n\n> 🚀 **Next Steps:** Learn about Deep Learning!"
         }
     ]
 }

@@ -1,137 +1,73 @@
 {
-    "id": "learn_intro",
+    "id": "learn_django_intro",
     "topicId": "intro",
-    "topicTitle": "Introduction to Django",
-    "description": "Learn what Django is, its advantages, how to install it, and understand the project structure",
-    "baseKP": 100,
+    "topicTitle": "Introduction",
+    "description": "Get started with Django, a high-level Python web framework",
+    "baseKP": 50,
     "slides": [
         {
-            "id": "intro_1",
-            "type": "content",
-            "title": "Welcome to Django",
-            "content": "# Introduction to Django 🎸\n\nWelcome to Django - the web framework for perfectionists with deadlines!\n\n## What you'll learn:\n- **What is Django?** - Understanding the framework\n- **Advantages of Django** - Why choose Django\n- **Installing Django** - Setting up your environment\n- **Django project structure** - How projects are organized\n\n## Why Learn Django?\n\n- 🚀 **Rapid Development** - Build web apps in hours, not days\n- 🔒 **Security Built-in** - Protection from common web attacks\n- 📈 **Scalable** - Powers Instagram, Pinterest, Spotify\n- 🔋 **Batteries Included** - Admin panel, ORM, auth out of the box\n- 📚 **Excellent Documentation** - Legendary docs for learning\n\n> 💡 **Fun Fact:** Django was named after the famous jazz guitarist Django Reinhardt. The creators were jazz fans working at a newspaper!\n\nLet's build something amazing together!"
-        },
-        {
-            "id": "intro_2",
+            "id": "django_intro_1",
             "type": "content",
             "title": "What is Django?",
-            "content": "# What is Django? 🤔\n\nDjango is a **high-level Python web framework** that encourages rapid development and clean, pragmatic design.\n\n## Framework vs Library\n\n```\nLibrary: You call its code\n    → You're in control\n\nFramework: It calls your code\n    → Framework is in control (Inversion of Control)\n```\n\n## Django's Philosophy\n\n### The DRY Principle\n**Don't Repeat Yourself** - Every piece of knowledge should have a single, unambiguous representation.\n\n```python\n# Instead of writing this everywhere:\ndb_connection = connect()\nquery = \"SELECT * FROM users WHERE id = ?\"\nresult = db_connection.execute(query, [user_id])\n\n# Django's ORM (write once, use everywhere):\nuser = User.objects.get(id=user_id)\n```\n\n### Explicit is Better than Implicit\nDjango makes its behavior predictable and transparent.\n\n## Who Uses Django?\n\n| Company | Use Case |\n|---------|----------|\n| 📸 Instagram | Photo sharing platform |\n| 📌 Pinterest | Visual discovery |\n| 🎵 Spotify | Some backend services |\n| 📰 Washington Post | Content management |\n| 🔬 NASA | Internal tools |\n\n> 🎯 **Django powers over 12,000 of the top 1 million websites!**"
+            "content": "# What is Django? 🎸\n\nDjango is a high-level Python web framework that encourages rapid development and clean, pragmatic design. It was created by a team of developers at a newspaper in Kansas (Lawrence Journal-World) to meet tight deadlines.\n\n## Key Characteristics:\n- **\"Batteries Included\"**: It comes with everything you need (ORM, Auth, Admin, etc.) so you don't have to reinvent the wheel.\n- **Open Source**: Free and open to the public.\n- **Secure**: Built-in protection against common attacks like SQL injection and XSS.\n\n> 🎯 **Fun Fact**: Django is named after the famous jazz guitarist **Django Reinhardt**!"
         },
         {
-            "id": "intro_3",
+            "id": "django_intro_2",
             "type": "content",
-            "title": "MTV Architecture",
-            "content": "# How Django Works - MTV Pattern 🏗️\n\nDjango follows the **Model-Template-View (MTV)** architecture, similar to MVC.\n\n## The Request/Response Cycle\n\n```\n1. User requests URL (e.g., /products/5)\n        ↓\n2. URL dispatcher finds matching pattern\n        ↓\n3. View function/class is called\n        ↓\n4. View fetches data from Model\n        ↓\n5. View renders Template with data\n        ↓\n6. HTML response sent to user\n```\n\n## MTV Components\n\n### Model (M) - The Data Layer\n```python\n# Defines your database structure\nclass Product(models.Model):\n    name = models.CharField(max_length=100)\n    price = models.DecimalField(max_digits=10, decimal_places=2)\n    created = models.DateTimeField(auto_now_add=True)\n```\n\n### Template (T) - The Presentation Layer\n```html\n<!-- HTML with Django template language -->\n<h1>{{ product.name }}</h1>\n<p>Price: ${{ product.price }}</p>\n```\n\n### View (V) - The Business Logic Layer\n```python\n# Connects Model and Template\ndef product_detail(request, pk):\n    product = Product.objects.get(pk=pk)\n    return render(request, 'product.html', {'product': product})\n```\n\n> 💡 **MTV vs MVC:** Django's \"View\" = MVC's \"Controller\", Django's \"Template\" = MVC's \"View\""
+            "title": "Advantages of Django",
+            "content": "# Why Choose Django? 🚀\n\n## 1. Speed 🏎️\nDjango was designed to help developers take applications from concept to completion as quickly as possible.\n\n## 2. Security 🛡️\nDjango takes security seriously. It provides tools to easily avoid common security mistakes, such as:\n- **Cross-site scripting (XSS)**\n- **Cross-site request forgery (CSRF)**\n- **SQL injection**\n\n## 3. Scalability 📈\nDjango uses a \"shared-nothing\" architecture, meaning you can add hardware at any level (web servers, database servers, caching servers) to handle massive traffic. Giants like **Instagram** and **Pinterest** use Django!"
         },
         {
-            "id": "intro_quiz_1",
+            "id": "django_intro_quiz_1",
             "type": "quiz",
-            "title": "Quick Check",
-            "content": "Test your understanding of Django basics!",
-            "quizQuestion": "What does DRY stand for in Django's philosophy?",
+            "title": "Django Quiz",
+            "content": "Test your knowledge!",
+            "quizQuestion": "Which of the following is a key philosophy of Django?",
             "quizOptions": [
-                "Do Run Yourself",
-                "Don't Repeat Yourself",
-                "Data Retrieval Yield",
-                "Django Runs Yesterday"
+                "Batteries Included",
+                "Do It Yourself",
+                "Minimalism",
+                "Configuration over Convention"
             ],
-            "correctOptionIndex": 1
+            "correctOptionIndex": 0
         },
         {
-            "id": "intro_4",
+            "id": "django_intro_3",
             "type": "content",
-            "title": "Advantages of Django - Part 1",
-            "content": "# Why Choose Django? ⭐ (Part 1)\n\n## 1. Rapid Development\n\nDjango lets you build apps incredibly fast!\n\n```python\n# Create a complete admin interface in 2 lines!\nfrom django.contrib import admin\nfrom .models import Product\n\nadmin.site.register(Product)  # Instant CRUD interface!\n```\n\n## 2. Batteries Included\n\nEverything you need is built-in:\n\n| Feature | Django | Other Frameworks |\n|---------|--------|------------------|\n| Admin Panel | ✅ Built-in | ❌ Add-on needed |\n| User Auth | ✅ Built-in | ❌ Add-on needed |\n| ORM | ✅ Built-in | ❌ Add-on needed |\n| Form Handling | ✅ Built-in | ❌ Add-on needed |\n| URL Routing | ✅ Built-in | ❌ Add-on needed |\n| Template Engine | ✅ Built-in | ❌ Add-on needed |\n\n## 3. Built-in Security\n\nDjango protects you from common attacks by default:\n\n- 🛡️ **SQL Injection** - ORM escapes all queries\n- 🛡️ **XSS** - Template auto-escaping\n- 🛡️ **CSRF** - Token protection on forms\n- 🛡️ **Clickjacking** - X-Frame-Options middleware\n- 🛡️ **Session Hijacking** - Secure cookies\n\n> 💡 **Pro Tip:** Django's security features work automatically - you get protection without extra code!"
+            "title": "Installing Django",
+            "content": "# Installing Django 📦\n\nTo install Django, you usually do it inside a **Virtual Environment** to avoid conflicts with other projects.\n\n## Step 1: Create Virtual Env\n```bash\n# Mac/Linux\npython3 -m venv myenv\n\n# Windows\npython -m venv myenv\n```\n\n## Step 2: Activate It\n```bash\n# Mac/Linux\nsource myenv/bin/activate\n\n# Windows\nmyenv\\Scripts\\activate\n```\n\n## Step 3: Install Django\n```bash\npip install django\n```\n\n## Step 4: Verify\n```bash\npython -m django --version\n```"
         },
         {
-            "id": "intro_5",
+            "id": "django_intro_4",
             "type": "content",
-            "title": "Advantages of Django - Part 2",
-            "content": "# Why Choose Django? ⭐ (Part 2)\n\n## 4. Scalability\n\nDjango handles growth with ease:\n\n```\nSmall Blog → Medium App → Enterprise System\n     ↓           ↓              ↓\n   Same Django code scales!\n\nInstagram: 2 billion+ users\nPinterest: 450 million+ monthly users\nAll built on Django!\n```\n\n## 5. Excellent Documentation\n\nDjango's documentation is legendary:\n\n- 📖 **Comprehensive tutorials** for beginners\n- 📋 **Topic guides** for specific features\n- 📚 **Reference docs** for every detail\n- 💬 **Active community** for support\n\n## 6. Versatility\n\nOne framework, many possibilities:\n\n- 🌐 **Web Applications** - Full-featured websites\n- 📱 **REST APIs** - Backend for mobile apps\n- 🔧 **Microservices** - Modular architecture\n- 📊 **Data Dashboards** - Analytics platforms\n- 🛒 **E-commerce** - Online stores\n\n## 7. ORM (Object-Relational Mapping)\n\n```python\n# Write Python, not SQL!\n# Get all products under $50, sorted by name\nproducts = Product.objects.filter(\n    price__lt=50\n).order_by('name')\n\n# Django generates optimized SQL automatically!\n```\n\n> 🎯 **Django lets you focus on building, not boilerplate!**"
+            "title": "Django Project Structure",
+            "content": "# Project Structure 🏗️\n\nWhen you run `django-admin startproject mysite`, Django creates specific files.\n\n```text\nmysite/\n    manage.py        # Command-line utility\n    mysite/\n        __init__.py  # Tells Python this is a package\n        settings.py  # Configuration (DB, apps, etc.)\n        urls.py      # URL declarations (Table of Contents)\n        asgi.py      # Entry point for ASGI (Async)\n        wsgi.py      # Entry point for WSGI (Deploy)\n```\n\n> ⚠️ **Important**: `manage.py` is your best friend! You'll use it for running the server, making migrations, and creating apps."
         },
         {
-            "id": "intro_quiz_2",
-            "type": "quiz",
-            "title": "Advantages Quiz",
-            "content": "Test your knowledge of Django's advantages!",
-            "quizQuestion": "Which security attack does Django's template auto-escaping protect against?",
-            "quizOptions": [
-                "SQL Injection",
-                "XSS (Cross-Site Scripting)",
-                "CSRF",
-                "DDoS"
-            ],
-            "correctOptionIndex": 1
-        },
-        {
-            "id": "intro_6",
-            "type": "content",
-            "title": "Installing Django - Part 1",
-            "content": "# Installing Django 🔧 (Part 1)\n\n## Step 1: Install Python\n\nDjango requires Python 3.8 or higher.\n\n```bash\n# Check Python version\npython --version\n# or\npython3 --version\n\n# Should show: Python 3.8+ (e.g., Python 3.11.4)\n```\n\n## Step 2: Create Virtual Environment\n\n**Always use virtual environments** to isolate project dependencies!\n\n```bash\n# Create a new virtual environment\npython -m venv myenv\n\n# Activate it (Windows)\nmyenv\\Scripts\\activate\n\n# Activate it (macOS/Linux)\nsource myenv/bin/activate\n\n# You'll see (myenv) in your terminal prompt\n```\n\n## Why Virtual Environments?\n\n```\nProject A needs Django 4.0\nProject B needs Django 3.2\n\nWithout venv: CONFLICT! 💥\nWith venv: Each project has its own dependencies ✅\n```\n\n> ⚠️ **Never install Django globally!** Always use a virtual environment to avoid version conflicts between projects.\n\n## Step 3: Install Django\n\n```bash\n# Install latest Django\npip install django\n\n# Or install specific version\npip install django==4.2\n```"
-        },
-        {
-            "id": "intro_7",
-            "type": "content",
-            "title": "Installing Django - Part 2",
-            "content": "# Installing Django 🔧 (Part 2)\n\n## Verify Installation\n\n```bash\n# Check Django version\npython -m django --version\n# Output: 4.2.x\n\n# Or in Python shell\npython\n>>> import django\n>>> print(django.VERSION)\n(4, 2, 0, 'final', 0)\n```\n\n## Create Your First Project\n\n```bash\n# Create new project\ndjango-admin startproject myproject\n\n# Navigate into project\ncd myproject\n\n# Run development server\npython manage.py runserver\n```\n\n## Access Your Site\n\n```\nOpen browser: http://127.0.0.1:8000/\n\nYou should see:\n🚀 \"The install worked successfully! Congratulations!\"\n```\n\n## Managing Dependencies\n\n```bash\n# Save all installed packages\npip freeze > requirements.txt\n\n# Install from requirements (for collaboration)\npip install -r requirements.txt\n```\n\n> 💡 **Tip:** Always include `requirements.txt` in your project for reproducible builds!\n\n## Common Commands Summary\n\n```bash\npython -m venv myenv           # Create virtual env\nsource myenv/bin/activate       # Activate (Mac/Linux)\npip install django              # Install Django\ndjango-admin startproject name  # Create project\npython manage.py runserver      # Run server\n```"
-        },
-        {
-            "id": "intro_quiz_3",
-            "type": "quiz",
-            "title": "Installation Quiz",
-            "content": "Test your installation knowledge!",
-            "quizQuestion": "Which command creates a new Django project?",
-            "quizOptions": [
-                "python manage.py startproject myproject",
-                "django-admin startproject myproject",
-                "pip install django myproject",
-                "django create myproject"
-            ],
-            "correctOptionIndex": 1
-        },
-        {
-            "id": "intro_8",
-            "type": "content",
-            "title": "Django Project Structure - Part 1",
-            "content": "# Django Project Structure 📁 (Part 1)\n\n## Project vs App\n\nUnderstanding the difference is crucial!\n\n```\nProject = The entire website/application\n          (settings, configuration, main URLs)\n\nApp = A specific feature module\n      (blog, users, shop, payments)\n\nOne project can contain multiple apps!\n```\n\n## Basic Project Structure\n\nAfter running `django-admin startproject myproject`:\n\n```\nmyproject/               ← Root directory\n├── manage.py            ← Command-line utility\n└── myproject/           ← Project package\n    ├── __init__.py      ← Makes it a Python package\n    ├── settings.py      ← All configuration\n    ├── urls.py          ← Main URL routing\n    ├── asgi.py          ← ASGI config (async)\n    └── wsgi.py          ← WSGI config (production)\n```\n\n## manage.py\n\nYour command-line tool for everything:\n\n```bash\npython manage.py runserver        # Start dev server\npython manage.py makemigrations   # Create migrations\npython manage.py migrate          # Apply migrations\npython manage.py createsuperuser  # Create admin user\npython manage.py startapp blog    # Create new app\npython manage.py shell            # Django Python shell\npython manage.py test             # Run tests\npython manage.py collectstatic    # Collect static files\n```\n\n> 💡 **Tip:** Run `python manage.py help` to see all available commands!"
-        },
-        {
-            "id": "intro_9",
-            "type": "content",
-            "title": "Django Project Structure - Part 2",
-            "content": "# Django Project Structure 📁 (Part 2)\n\n## settings.py - The Configuration Hub\n\n```python\n# Key settings you'll work with:\n\n# Debug mode (disable in production!)\nDEBUG = True\n\n# Allowed hosts for security\nALLOWED_HOSTS = ['localhost', '127.0.0.1', 'mysite.com']\n\n# Installed apps (add your apps here!)\nINSTALLED_APPS = [\n    'django.contrib.admin',      # Admin site\n    'django.contrib.auth',       # Authentication\n    'django.contrib.contenttypes',\n    'django.contrib.sessions',   # Session framework\n    'django.contrib.messages',   # Messaging framework\n    'django.contrib.staticfiles', # Static files\n    \n    # Your apps go here:\n    'blog',\n    'users',\n    'shop',\n]\n\n# Database configuration\nDATABASES = {\n    'default': {\n        'ENGINE': 'django.db.backends.sqlite3',\n        'NAME': BASE_DIR / 'db.sqlite3',\n    }\n}\n\n# Static files (CSS, JavaScript, Images)\nSTATIC_URL = '/static/'\n```\n\n## urls.py - The URL Router\n\n```python\nfrom django.urls import path, include\n\nurlpatterns = [\n    path('admin/', admin.site.urls),\n    path('blog/', include('blog.urls')),  # Include app URLs\n    path('', include('pages.urls')),\n]\n```"
-        },
-        {
-            "id": "intro_10",
-            "type": "content",
-            "title": "Creating an App",
-            "content": "# Creating Django Apps 📦\n\n## Create Your First App\n\n```bash\npython manage.py startapp blog\n```\n\n## App Structure\n\n```\nblog/\n├── __init__.py      ← Python package\n├── admin.py         ← Admin site config\n├── apps.py          ← App configuration\n├── models.py        ← Database models\n├── views.py         ← View functions/classes\n├── tests.py         ← Unit tests\n└── migrations/      ← Database migrations\n    └── __init__.py\n```\n\n## Register the App\n\nApps must be added to `settings.py`:\n\n```python\n# settings.py\nINSTALLED_APPS = [\n    # Django built-in apps...\n    \n    # Add your app here!\n    'blog',  # or 'blog.apps.BlogConfig'\n]\n```\n\n## Recommended Project Layout\n\n```\nmyproject/\n├── manage.py\n├── myproject/           # Project config\n│   ├── settings.py\n│   ├── urls.py\n│   └── wsgi.py\n├── blog/                # App 1\n│   ├── models.py\n│   ├── views.py\n│   ├── urls.py          # Create this!\n│   └── templates/\n│       └── blog/\n│           └── list.html\n├── users/               # App 2\n├── static/              # CSS, JS, images\n├── templates/           # Base templates\n└── requirements.txt\n```\n\n> 🎯 **Best Practice:** Each app should be focused on a single feature and be reusable!"
-        },
-        {
-            "id": "intro_11",
-            "type": "content",
-            "title": "Your First Django Page",
-            "content": "# Hello Django! 👋\n\nLet's create your first working page!\n\n## Step 1: Create a View\n\n```python\n# blog/views.py\nfrom django.http import HttpResponse\n\ndef home(request):\n    return HttpResponse(\"<h1>Hello, Django!</h1>\")\n\ndef about(request):\n    return HttpResponse(\"<h1>About Us</h1><p>We build with Django!</p>\")\n```\n\n## Step 2: Create URL Routes\n\n```python\n# blog/urls.py (create this file!)\nfrom django.urls import path\nfrom . import views\n\nurlpatterns = [\n    path('', views.home, name='home'),\n    path('about/', views.about, name='about'),\n]\n```\n\n## Step 3: Include in Project URLs\n\n```python\n# myproject/urls.py\nfrom django.contrib import admin\nfrom django.urls import path, include\n\nurlpatterns = [\n    path('admin/', admin.site.urls),\n    path('', include('blog.urls')),  # Add this line!\n]\n```\n\n## Step 4: Run and Test\n\n```bash\npython manage.py runserver\n\n# Visit:\n# http://127.0.0.1:8000/       → \"Hello, Django!\"\n# http://127.0.0.1:8000/about/ → \"About Us\"\n```\n\n> 🎉 **Congratulations!** You've built your first Django pages!"
-        },
-        {
-            "id": "intro_quiz_4",
+            "id": "django_intro_quiz_2",
             "type": "quiz",
             "title": "Structure Quiz",
-            "content": "Test your knowledge of Django's project structure!",
-            "quizQuestion": "Where should you add your app name to enable it in Django?",
+            "content": "Check your understanding",
+            "quizQuestion": "Which file is the main configuration file for a Django project?",
             "quizOptions": [
-                "urls.py",
-                "models.py",
-                "settings.py (INSTALLED_APPS)",
-                "views.py"
+                "manage.py",
+                "config.py",
+                "settings.py",
+                "main.py"
             ],
             "correctOptionIndex": 2
         },
         {
-            "id": "intro_12",
+            "id": "django_intro_5",
             "type": "content",
-            "title": "Summary",
-            "content": "# Congratulations! 🎉\n\nYou've mastered Django fundamentals!\n\n## What is Django?\n- ✅ High-level Python web framework\n- ✅ Follows MTV (Model-Template-View) pattern\n- ✅ \"Batteries included\" philosophy\n- ✅ DRY principle\n\n## Advantages of Django\n- ✅ **Rapid development** - Build fast\n- ✅ **Security** - Protection by default\n- ✅ **Scalability** - Powers major websites\n- ✅ **Documentation** - Best in class\n- ✅ **ORM** - Write Python, not SQL\n\n## Installing Django\n- ✅ Use virtual environments\n- ✅ `pip install django`\n- ✅ `django-admin startproject`\n\n## Project Structure\n- ✅ **Project** = Configuration + Apps\n- ✅ **App** = Reusable feature module\n- ✅ `settings.py` = Configuration\n- ✅ `urls.py` = URL routing\n- ✅ `manage.py` = CLI tool\n\n## Key Commands\n\n```bash\ndjango-admin startproject myproject\npython manage.py startapp myapp\npython manage.py runserver\npython manage.py migrate\npython manage.py createsuperuser\n```\n\n> 🚀 **Next Steps:** Learn about URLs and Views to build real web applications!"
+            "title": "The MTV Pattern",
+            "content": "# Model-Template-View (MTV) 🏛️\n\nDjango follows the MTV pattern, which is similar to MVC (Model-View-Controller).\n\n| Component | Responsibility |\n|-----------|----------------|\n| **Model** | The data layer. Handles database structure and queries. |\n| **Template**| The presentation layer (HTML). How the user sees data. |\n| **View** | The business logic. Fetches data from Model and passes it to Template. |\n\n> 💡 **Analogy**: \n> - **Model**: The Chef (cooks raw ingredients)\n> - **View**: The Waiter (takes order, gets food from chef)\n> - **Template**: The Menu/Plate (how food is presented)"
+        },
+        {
+            "id": "django_intro_6",
+            "type": "content",
+            "title": "Creating an App",
+            "content": "# Projects vs. Apps 🧩\n\n- **Project**: The whole website (e.g., A social network).\n- **App**: A functional module inside the project (e.g., The timeline, the chat, the authentication system).\n\n## Creating an App\n```bash\npython manage.py startapp polls\n```\n\nThis creates a `polls` directory with:\n- `models.py` (Database tables)\n- `views.py` (Logic)\n- `apps.py` (App config)\n- `admin.py` (Admin panel config)\n- `tests.py` (Testing)\n\n> 💡 **Tip**: Don't forget to add your new app to `INSTALLED_APPS` in `settings.py`!"
         }
     ]
 }

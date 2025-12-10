@@ -1,111 +1,73 @@
 {
-    "id": "learn_urls",
+    "id": "learn_django_urls",
     "topicId": "urls",
     "topicTitle": "URLs and Views",
-    "description": "Master URL routing, path converters, and creating views in Django",
-    "baseKP": 100,
+    "description": "Master URL routing and View creation in Django",
+    "baseKP": 60,
     "slides": [
         {
-            "id": "urls_1",
+            "id": "django_urls_1",
             "type": "content",
-            "title": "Introduction to URLs and Views",
-            "content": "# URLs and Views 🔗\n\nLearn how Django routes requests to your code!\n\n## What you'll learn:\n- **URL routing** - How Django matches URLs\n- **Creating views** - Function and class-based views\n- **CBV & FBV** - When to use which\n- **URL dispatcher** - The routing system\n- **Path converters** - Dynamic URL parameters\n\n## The Request Flow\n\n```\nUser Request → URL Router → View → Response\n     ↓              ↓         ↓        ↓\n  /blog/5/      urls.py   views.py   HTML/JSON\n```\n\n## Why URL Design Matters\n\nClean URLs are:\n- 👁️ **User-friendly** - Easy to read and remember\n- 🔍 **SEO-friendly** - Search engines love them\n- 🔧 **Maintainable** - Easy to update\n\n```\n✅ Good: /products/electronics/laptops/\n❌ Bad:  /index.php?cat=5&subcat=12&type=3\n```\n\n> 💡 **Django's URL Philosophy:** URLs should be beautiful and permanent. Once published, they shouldn't change!"
+            "title": "URL Routing Logic",
+            "content": "# URL Routing 🗺️\n\nWhen a user requests a page, Django needs to know which view logic to execute. This mapping happens in `urls.py`.\n\n## How it works:\n1. Django looks at `ROOT_URLCONF` in `settings.py`.\n2. It loads the `urlpatterns` list from that file.\n3. It runs through each URL pattern, in order, and stops at the first one that matches the requested URL.\n4. It imports and calls the given view function.\n\n```python\n# urls.py\nfrom django.urls import path\nfrom . import views\n\nurlpatterns = [\n    path('home/', views.home),\n    path('about/', views.about),\n]\n```"
         },
         {
-            "id": "urls_2",
+            "id": "django_urls_2",
             "type": "content",
-            "title": "URL Routing Basics",
-            "content": "# URL Routing 📍\n\n## How Django Finds the Right View\n\n```\n1. Request comes in: /blog/article/5/\n2. Django loads ROOT_URLCONF (main urls.py)\n3. Django tries each pattern in urlpatterns list\n4. First match wins → calls the view\n5. View returns response\n```\n\n## Basic URL Configuration\n\n```python\n# myproject/urls.py (main project)\nfrom django.contrib import admin\nfrom django.urls import path, include\n\nurlpatterns = [\n    path('admin/', admin.site.urls),\n    path('blog/', include('blog.urls')),  # Include app URLs\n    path('shop/', include('shop.urls')),\n    path('', include('pages.urls')),      # Home pages\n]\n```\n\n## App-Level URLs\n\n```python\n# blog/urls.py\nfrom django.urls import path\nfrom . import views\n\nurlpatterns = [\n    path('', views.post_list, name='post_list'),\n    path('create/', views.post_create, name='post_create'),\n    path('<int:pk>/', views.post_detail, name='post_detail'),\n]\n```\n\n## URL Resolution Order\n\n```python\n# Django tries patterns in order - first match wins!\nurlpatterns = [\n    path('about/', views.about),    # Checked first\n    path('<slug:slug>/', views.page), # Checked second\n]\n# /about/ → about view (even though slug would match)\n```\n\n> ⚠️ **Order matters!** Put more specific patterns before general ones."
+            "title": "Creating Views",
+            "content": "# Creating Views 🖼️\n\nA view is a Python function (or class) that takes a Web request and returns a Web response.\n\n## Review: The Request-Response Cycle\n\n```python\nfrom django.http import HttpResponse\n\n# 1. Takes a 'request' object\ndef home(request):\n    # 2. Does logic\n    # 3. Returns a 'response' object\n    return HttpResponse(\"Hello, World!\")\n```\n\nNormally, instead of returning raw strings, we return **HTML Templates**:\n```python\nfrom django.shortcuts import render\n\ndef home(request):\n    return render(request, 'home.html', {'key': 'value'})\n```"
         },
         {
-            "id": "urls_3",
-            "type": "content",
-            "title": "Path Converters",
-            "content": "# Path Converters 🔄\n\nCapture values from URLs and pass them to views!\n\n## Syntax\n\n```python\npath('<converter:name>/', views.my_view)\n```\n\n## Built-in Converters\n\n| Converter | Matches | Example |\n|-----------|---------|--------|\n| `str` | Any string (except `/`) | `hello-world` |\n| `int` | Positive integers | `123` |\n| `slug` | ASCII letters, numbers, hyphens, underscores | `my-post-title` |\n| `uuid` | UUID format | `075194d3-6885-...` |\n| `path` | Any string (including `/`) | `path/to/file` |\n\n## Examples\n\n```python\n# blog/urls.py\nurlpatterns = [\n    # Integer ID\n    path('article/<int:id>/', views.article_detail),\n    # Matches: /article/5/, /article/123/\n    \n    # Slug for SEO-friendly URLs\n    path('post/<slug:slug>/', views.post_detail),\n    # Matches: /post/my-first-post/\n    \n    # Multiple converters\n    path('archive/<int:year>/<int:month>/', views.archive),\n    # Matches: /archive/2024/03/\n    \n    # UUID for unique identifiers\n    path('order/<uuid:order_id>/', views.order_detail),\n]\n```\n\n## Using Captured Values\n\n```python\n# views.py\ndef article_detail(request, id):\n    # 'id' is automatically an integer!\n    article = Article.objects.get(pk=id)\n    return render(request, 'article.html', {'article': article})\n\ndef archive(request, year, month):\n    # Both are integers\n    posts = Post.objects.filter(date__year=year, date__month=month)\n    return render(request, 'archive.html', {'posts': posts})\n```\n\n> 🎯 **Path converters validate and convert automatically!**"
-        },
-        {
-            "id": "urls_quiz_1",
-            "type": "quiz",
-            "title": "URL Routing Quiz",
-            "content": "Test your URL knowledge!",
-            "quizQuestion": "Which path converter matches only positive integers?",
-            "quizOptions": [
-                "str",
-                "int",
-                "slug",
-                "path"
-            ],
-            "correctOptionIndex": 1
-        },
-        {
-            "id": "urls_4",
-            "type": "content",
-            "title": "Creating Views - FBV",
-            "content": "# Function-Based Views (FBV) 📝\n\nThe simplest way to create views!\n\n## Basic Structure\n\n```python\nfrom django.http import HttpResponse\n\ndef my_view(request):\n    # request contains all info about the HTTP request\n    # Must return an HttpResponse (or subclass)\n    return HttpResponse(\"Hello, World!\")\n```\n\n## View with Template\n\n```python\nfrom django.shortcuts import render\n\ndef article_list(request):\n    articles = Article.objects.all()\n    context = {\n        'articles': articles,\n        'title': 'All Articles'\n    }\n    return render(request, 'articles/list.html', context)\n```\n\n## Handling HTTP Methods\n\n```python\nfrom django.shortcuts import render, redirect\n\ndef contact(request):\n    if request.method == 'POST':\n        # Process form data\n        name = request.POST.get('name')\n        email = request.POST.get('email')\n        message = request.POST.get('message')\n        \n        # Save to database or send email\n        Contact.objects.create(name=name, email=email, message=message)\n        \n        return redirect('thank_you')\n    \n    # GET request - show form\n    return render(request, 'contact.html')\n```\n\n## When to Use FBV\n\n- ✅ Simple views with straightforward logic\n- ✅ Quick prototyping\n- ✅ Custom, unique logic\n- ✅ When you need full control\n- ✅ Learning Django (easier to understand)\n\n> 💡 **FBVs are explicit and easy to follow - great for beginners!**"
-        },
-        {
-            "id": "urls_5",
-            "type": "content",
-            "title": "Creating Views - CBV",
-            "content": "# Class-Based Views (CBV) 🏗️\n\nPowerful, reusable views using classes!\n\n## Basic Class-Based View\n\n```python\nfrom django.views import View\nfrom django.http import HttpResponse\n\nclass HomeView(View):\n    def get(self, request):\n        return HttpResponse(\"Welcome to our site!\")\n    \n    def post(self, request):\n        # Handle POST requests\n        return HttpResponse(\"Data received!\")\n```\n\n## URL Configuration for CBV\n\n```python\n# Note: Use .as_view() method!\nfrom .views import HomeView\n\nurlpatterns = [\n    path('', HomeView.as_view(), name='home'),\n]\n```\n\n## Adding Context Data\n\n```python\nfrom django.views.generic import TemplateView\n\nclass AboutView(TemplateView):\n    template_name = 'about.html'\n    \n    def get_context_data(self, **kwargs):\n        context = super().get_context_data(**kwargs)\n        context['team_members'] = User.objects.filter(is_staff=True)\n        context['company_name'] = \"My Company\"\n        return context\n```\n\n## When to Use CBV\n\n- ✅ Standard CRUD operations\n- ✅ Reusable, DRY code\n- ✅ Complex views with mixins\n- ✅ Following Django patterns\n- ✅ Large projects with many similar views\n\n> 🎯 **CBVs promote reusability through inheritance and mixins!**"
-        },
-        {
-            "id": "urls_6",
-            "type": "content",
-            "title": "CBV vs FBV Comparison",
-            "content": "# CBV vs FBV - When to Use Which? ⚖️\n\n## Side-by-Side Comparison\n\n```python\n# Function-Based View\ndef article_list(request):\n    articles = Article.objects.all()\n    return render(request, 'articles/list.html', {'articles': articles})\n\n# Class-Based View\nclass ArticleListView(ListView):\n    model = Article\n    template_name = 'articles/list.html'\n    context_object_name = 'articles'\n```\n\n## Comparison Table\n\n| Aspect | FBV | CBV |\n|--------|-----|-----|\n| **Simplicity** | ✅ Easy to understand | ❌ Steeper learning curve |\n| **Reusability** | ❌ Less reusable | ✅ Highly reusable |\n| **Flexibility** | ✅ Full control | ❌ May need overrides |\n| **Code length** | ❌ More boilerplate | ✅ Less code for common patterns |\n| **Debugging** | ✅ Easy to follow | ❌ Need to know parent classes |\n\n## Decision Guide\n\n```\nUse FBV when:\n├── Simple, unique logic\n├── Learning Django\n└── Full control needed\n\nUse CBV when:\n├── Standard CRUD operations\n├── Reusing across views\n└── Team consistency\n```\n\n> 💡 **Pro Tip:** Many developers start with FBV and refactor to CBV when patterns emerge. Both are valid!"
-        },
-        {
-            "id": "urls_quiz_2",
+            "id": "django_urls_quiz_1",
             "type": "quiz",
             "title": "Views Quiz",
-            "content": "Test your view knowledge!",
-            "quizQuestion": "When using a Class-Based View in urls.py, what method must you call?",
+            "content": "Check your understanding",
+            "quizQuestion": "What must every Django view function receive as its first argument?",
             "quizOptions": [
-                ".view()",
-                ".as_view()",
-                ".render()",
-                ".dispatch()"
+                "The template name",
+                "A request object",
+                "The user ID",
+                "The database connection"
             ],
             "correctOptionIndex": 1
         },
         {
-            "id": "urls_7",
+            "id": "django_urls_3",
             "type": "content",
-            "title": "Generic Class-Based Views",
-            "content": "# Generic Views 📦\n\nDjango provides built-in views for common patterns!\n\n## Display Views\n\n```python\nfrom django.views.generic import ListView, DetailView, TemplateView\n\n# Simple template rendering\nclass AboutView(TemplateView):\n    template_name = 'about.html'\n\n# List of objects\nclass ArticleListView(ListView):\n    model = Article\n    template_name = 'articles/list.html'\n    context_object_name = 'articles'\n    paginate_by = 10  # Built-in pagination!\n    ordering = ['-created_at']\n\n# Single object detail\nclass ArticleDetailView(DetailView):\n    model = Article\n    template_name = 'articles/detail.html'\n    context_object_name = 'article'\n```\n\n## Editing Views\n\n```python\nfrom django.views.generic.edit import CreateView, UpdateView, DeleteView\nfrom django.urls import reverse_lazy\n\nclass ArticleCreateView(CreateView):\n    model = Article\n    fields = ['title', 'content', 'category']\n    template_name = 'articles/form.html'\n    success_url = reverse_lazy('article_list')\n\nclass ArticleUpdateView(UpdateView):\n    model = Article\n    fields = ['title', 'content', 'category']\n    template_name = 'articles/form.html'\n\nclass ArticleDeleteView(DeleteView):\n    model = Article\n    template_name = 'articles/confirm_delete.html'\n    success_url = reverse_lazy('article_list')\n```\n\n> 💡 **Generic views handle forms, validation, and DB operations automatically!**"
+            "title": "Path Converters",
+            "content": "# Path Converters 🔍\n\nOften you need to capture values from the URL, like a blog post ID or username.\n\n## Syntax: `<type:name>`\n\n```python\nurlpatterns = [\n    # Matches integers like /posts/5/\n    path('posts/<int:post_id>/', views.post_detail),\n    \n    # Matches strings (excluding /) like /profile/john/\n    path('profile/<str:username>/', views.profile),\n    \n    # Matches paths (including /) like /files/images/logo.png\n    path('files/<path:file_path>/', views.serve_file),\n]\n```\n\nThe captured value is passed to the view:\n```python\ndef post_detail(request, post_id):\n    # post_id is an integer here\n    return HttpResponse(f\"Viewing post {post_id}\")\n```"
         },
         {
-            "id": "urls_8",
+            "id": "django_urls_4",
             "type": "content",
-            "title": "URL Dispatcher Features",
-            "content": "# URL Dispatcher 🎯\n\nAdvanced URL configuration features!\n\n## Naming URLs\n\n```python\n# Name your URLs for reverse resolution\nurlpatterns = [\n    path('', views.home, name='home'),\n    path('article/<int:pk>/', views.article_detail, name='article_detail'),\n    path('article/create/', views.article_create, name='article_create'),\n]\n```\n\n## Using Named URLs in Templates\n\n```html\n<!-- Instead of hardcoding -->\n<a href=\"/article/5/\">Read Article</a>  ❌\n\n<!-- Use the url tag -->\n<a href=\"{% url 'article_detail' pk=5 %}\">Read Article</a>  ✅\n\n<!-- More examples -->\n<a href=\"{% url 'home' %}\">Home</a>\n<form action=\"{% url 'article_create' %}\" method=\"post\">\n```\n\n## Reverse in Views\n\n```python\nfrom django.urls import reverse\nfrom django.shortcuts import redirect\n\ndef my_view(request):\n    # Get URL string\n    url = reverse('article_detail', kwargs={'pk': 5})\n    # url = '/article/5/'\n    \n    # Redirect to named URL\n    return redirect('article_list')\n    \n    # Or with arguments\n    return redirect('article_detail', pk=5)\n```\n\n## App Namespacing\n\n```python\n# blog/urls.py\napp_name = 'blog'  # Add namespace\n\nurlpatterns = [\n    path('', views.list, name='list'),\n]\n\n# Usage in templates:\n{% url 'blog:list' %}\n\n# Usage in views:\nreverse('blog:list')\n```\n\n> 🎯 **Namespaces prevent conflicts between apps with same URL names!**"
+            "title": "URL Dispatcher & Includes",
+            "content": "# Organizing URLs 🗂️\n\nInstead of putting every URL in the main project `urls.py`, we should decouple them into their respective apps.\n\n## Using `include()`\n\n**project/urls.py**:\n```python\nfrom django.urls import include, path\n\nurlpatterns = [\n    # Forward any request starting with 'blog/' to blog.urls\n    path('blog/', include('blog.urls')),\n    path('shop/', include('shop.urls')),\n]\n```\n\n**blog/urls.py**:\n```python\nfrom django.urls import path\nfrom . import views\n\n# Only handles the part AFTER 'blog/'\nurlpatterns = [\n    path('', views.index),      # Matches /blog/\n    path('new/', views.create), # Matches /blog/new/\n]\n```"
         },
         {
-            "id": "urls_9",
+            "id": "django_urls_5",
             "type": "content",
-            "title": "Request and Response Objects",
-            "content": "# Request & Response 📨\n\n## The Request Object\n\n```python\ndef my_view(request):\n    # HTTP Method\n    method = request.method  # 'GET', 'POST', etc.\n    \n    # GET parameters (query string ?key=value)\n    search = request.GET.get('search', '')\n    page = request.GET.get('page', 1)\n    \n    # POST data (form submission)\n    username = request.POST.get('username')\n    password = request.POST.get('password')\n    \n    # User info\n    user = request.user  # Current user object\n    is_authenticated = request.user.is_authenticated\n    \n    # Headers\n    user_agent = request.headers.get('User-Agent')\n    content_type = request.headers.get('Content-Type')\n    \n    # Path info\n    path = request.path  # '/blog/article/5/'\n    full_path = request.get_full_path()  # with query string\n    \n    # Other useful attributes\n    request.is_ajax()  # AJAX request?\n    request.FILES      # Uploaded files\n    request.COOKIES    # Cookies\n    request.session    # Session data\n```\n\n## Response Types\n\n```python\nfrom django.http import (\n    HttpResponse,\n    JsonResponse,\n    HttpResponseRedirect,\n    Http404,\n)\n\n# HTML response\nreturn HttpResponse(\"<h1>Hello</h1>\")\n\n# JSON response (for APIs)\nreturn JsonResponse({'status': 'ok', 'data': [1, 2, 3]})\n\n# Redirect\nreturn HttpResponseRedirect('/new-url/')\n\n# 404 error\nraise Http404(\"Page not found\")\n\n# Shortcut for rendering templates\nreturn render(request, 'template.html', context)\n```"
+            "title": "FBV vs CBV",
+            "content": "# Function vs Class Based Views ⚖️\n\n## Function-Based Views (FBV)\nSimple, explicit, easy to read. Great for custom logic.\n```python\ndef my_view(request):\n    if request.method == 'POST':\n        # Handle post\n    return render(request, 'template.html')\n```\n\n## Class-Based Views (CBV)\nObject-oriented, reusable, less code for common patterns (CRUD).\n```python\nfrom django.views.generic import ListView\nfrom .models import Article\n\nclass ArticleList(ListView):\n    model = Article\n    template_name = 'article_list.html'\n```\n\n> 💡 **Tip**: Start with FBVs to learn. Use CBVs when you find yourself writing the same code over and over."
         },
         {
-            "id": "urls_quiz_3",
+            "id": "django_urls_quiz_2",
             "type": "quiz",
-            "title": "Final Quiz",
-            "content": "Test your overall URL and View knowledge!",
-            "quizQuestion": "How do you access form data submitted via POST in a Django view?",
+            "title": "CBV Quiz",
+            "content": "Test your knowledge",
+            "quizQuestion": "Which generic CBV is best for displaying a list of database objects?",
             "quizOptions": [
-                "request.data['field']",
-                "request.POST.get('field')",
-                "request.form['field']",
-                "request.body['field']"
+                "DetailView",
+                "ListView",
+                "CreateView",
+                "FormView"
             ],
             "correctOptionIndex": 1
         },
         {
-            "id": "urls_10",
+            "id": "django_urls_6",
             "type": "content",
-            "title": "Summary",
-            "content": "# Excellent Work! 🎉\n\nYou've mastered Django URLs and Views!\n\n## URL Routing\n- ✅ `urlpatterns` list in `urls.py`\n- ✅ `path()` and `include()` functions\n- ✅ App-level URL configuration\n- ✅ Order matters - first match wins!\n\n## Path Converters\n- ✅ `int`, `str`, `slug`, `uuid`, `path`\n- ✅ Automatic validation and conversion\n- ✅ Multiple converters in one URL\n\n## Creating Views (FBV)\n- ✅ Simple functions that take `request`\n- ✅ Return `HttpResponse` or use `render()`\n- ✅ Handle GET/POST with `request.method`\n\n## Class-Based Views (CBV)\n- ✅ Use `.as_view()` in URL config\n- ✅ Methods for each HTTP verb\n- ✅ Generic views for common patterns\n\n## URL Dispatcher\n- ✅ Named URLs with `name='...'`\n- ✅ `{% url %}` tag in templates\n- ✅ `reverse()` in Python code\n- ✅ App namespacing with `app_name`\n\n## Request/Response\n- ✅ `request.GET`, `request.POST`\n- ✅ `JsonResponse` for APIs\n- ✅ `render()` for templates\n\n> 🚀 **Next Steps:** Learn about Templates to create beautiful HTML pages!"
+            "title": "URL Naming & Naming Spacing",
+            "content": "# Reverse Resolution ↩️\n\nNever hardcode URLs in your templates or code! Use **names**.\n\n**urls.py**:\n```python\npath('article/<int:id>/', views.detail, name='article-detail')\n```\n\n**Template**:\n```html\n<!-- BAD -->\n<a href=\"/article/{{ article.id }}/\">Read</a>\n\n<!-- GOOD -->\n<a href=\"{% url 'article-detail' article.id %}\">Read</a>\n```\n\n## Namespacing\nWhen multiple apps have the same view names (e.g., both have `detail`), use namespaces.\n\n**urls.py**:\n```python\napp_name = 'blog'\nurlpatterns = [...]\n```\n**Usage**:\n`{% url 'blog:detail' id %}`"
         }
     ]
 }

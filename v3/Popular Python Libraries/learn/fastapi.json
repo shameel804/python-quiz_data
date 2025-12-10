@@ -1,41 +1,41 @@
 {
-    "id": "learn_fastapi",
+    "id": "learn_lib_fastapi",
     "topicId": "fastapi",
     "topicTitle": "FastAPI",
-    "description": "Modern async API framework",
-    "baseKP": 90,
+    "description": "Modern, high-performance web framework",
+    "baseKP": 75,
     "slides": [
         {
-            "id": "fastapi_1",
+            "id": "lib_fast_1",
             "type": "content",
-            "title": "Introduction",
-            "content": "# FastAPI ⚡\n\nModern, fast, async API framework!\n\n```python\nfrom fastapi import FastAPI\n\napp = FastAPI()\n\n@app.get('/')\nasync def home():\n    return {'message': 'Hello FastAPI!'}\n\n@app.get('/items/{item_id}')\nasync def read_item(item_id: int):\n    return {'item_id': item_id}\n```\n\n```bash\nuvicorn main:app --reload\n```\n\n> 💡 **Auto-generates docs** at `/docs`!"
+            "title": "Why FastAPI? ⚡",
+            "content": "# Speed & Standards\n\n1. **Fast**: On par with NodeJS and Go.\n2. **Type Hints**: Uses Python type hints for validation.\n3. **Async**: Native support for `async` / `await`.\n4. **Auto Docs**: Generates Swagger UI automatically.\n\n```python\nfrom fastapi import FastAPI\napp = FastAPI()\n\n@app.get(\"/\")\nasync def root():\n    return {\"message\": \"Hello World\"}\n```"
         },
         {
-            "id": "fastapi_2",
+            "id": "lib_fast_2",
             "type": "content",
-            "title": "Pydantic Models",
-            "content": "# Type Validation 📋\n\n```python\nfrom pydantic import BaseModel\n\nclass Item(BaseModel):\n    name: str\n    price: float\n    in_stock: bool = True\n\n@app.post('/items')\nasync def create_item(item: Item):\n    return item\n\n# Auto validates!\n# POST {\"name\": \"Phone\", \"price\": 999.99}\n```\n\n> ✅ **Automatic validation & documentation!**"
+            "title": "Request Validation",
+            "content": "# Pydantic Models 🛡️\n\nDefine schema using standard Python classes.\n\n```python\nfrom pydantic import BaseModel\n\nclass Item(BaseModel):\n    name: str\n    price: float\n    is_offer: bool = None\n\n@app.post(\"/items/\")\nasync def create_item(item: Item):\n    # item is now a valid object!\n    return {\"name\": item.name, \"price_tax\": item.price * 1.2}\n```\nIf user sends bad data, FastAPI returns detailed error JSON automatically."
         },
         {
-            "id": "fastapi_quiz_1",
+            "id": "lib_fast_quiz_1",
             "type": "quiz",
-            "title": "Quiz",
-            "content": "Test your knowledge!",
-            "quizQuestion": "Which library does FastAPI use for data validation?",
+            "title": "Validation Quiz",
+            "content": "Check your understanding",
+            "quizQuestion": "What library does FastAPI use for data validation?",
             "quizOptions": [
                 "Marshmallow",
+                "Django Forms",
                 "Pydantic",
-                "Cerberus",
-                "Django Forms"
+                "Cerberus"
             ],
-            "correctOptionIndex": 1
+            "correctOptionIndex": 2
         },
         {
-            "id": "fastapi_3",
+            "id": "lib_fast_3",
             "type": "content",
-            "title": "Summary",
-            "content": "# Excellent! 🎉\n\n## Key Features\n- ✅ Async by default\n- ✅ Type hints + Pydantic\n- ✅ Auto-generated docs\n- ✅ High performance\n\n> 🚀 **Next:** Learn Requests!"
+            "title": "Query & Path Params",
+            "content": "# Parameters 📥\n\n- **Path Param**: Part of URL path.\n- **Query Param**: After `?` in URL.\n\n```python\n# /items/5?q=search\n@app.get(\"/items/{item_id}\")\nasync def read_item(item_id: int, q: str = None):\n    return {\"item_id\": item_id, \"q\": q}\n```"
         }
     ]
 }

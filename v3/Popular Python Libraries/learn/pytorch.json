@@ -1,41 +1,41 @@
 {
-    "id": "learn_pytorch",
+    "id": "learn_lib_pytorch",
     "topicId": "pytorch",
     "topicTitle": "PyTorch",
-    "description": "Deep learning framework",
-    "baseKP": 95,
+    "description": "Facebook's dynamic deep learning framework",
+    "baseKP": 80,
     "slides": [
         {
-            "id": "pt_1",
+            "id": "lib_torch_1",
             "type": "content",
-            "title": "Introduction",
-            "content": "# PyTorch 🔥\n\nDeep learning by Meta!\n\n```python\nimport torch\nimport torch.nn as nn\n\nclass Net(nn.Module):\n    def __init__(self):\n        super().__init__()\n        self.fc1 = nn.Linear(784, 128)\n        self.fc2 = nn.Linear(128, 10)\n    \n    def forward(self, x):\n        x = torch.relu(self.fc1(x))\n        return self.fc2(x)\n\nmodel = Net()\n```\n\n> 💡 **Dynamic graphs** - more Pythonic!"
+            "title": "Tensors & Autograd",
+            "content": "# Dynamic Graphs 🕸️\n\nPyTorch builds the computation graph **dynamically** as you run the code. This makes debugging much easier (you can use print statements!).\n\n## Autograd\nAutomatically calculates gradients (derivatives) for backpropagation.\n```python\nimport torch\nx = torch.tensor(2.0, requires_grad=True)\ny = x ** 3 # y = 8\ny.backward() # Compute dy/dx = 3x^2\nprint(x.grad) # 3 * (2^2) = 12.0\n```"
         },
         {
-            "id": "pt_2",
+            "id": "lib_torch_2",
             "type": "content",
-            "title": "Training",
-            "content": "# Training Loop 🔄\n\n```python\ncriterion = nn.CrossEntropyLoss()\noptimizer = torch.optim.Adam(model.parameters())\n\nfor epoch in range(10):\n    for data, target in loader:\n        optimizer.zero_grad()\n        output = model(data)\n        loss = criterion(output, target)\n        loss.backward()\n        optimizer.step()\n```"
+            "title": "The nn.Module",
+            "content": "# Building Networks 🧱\n\nDefine models as Python classes inheriting from `nn.Module`.\n\n```python\nimport torch.nn as nn\nimport torch.nn.functional as F\n\nclass Net(nn.Module):\n    def __init__(self):\n        super().__init__()\n        self.fc1 = nn.Linear(784, 128)\n        self.fc2 = nn.Linear(128, 10)\n\n    def forward(self, x):\n        x = F.relu(self.fc1(x))\n        return self.fc2(x)\n```"
         },
         {
-            "id": "pt_quiz_1",
+            "id": "lib_torch_quiz_1",
             "type": "quiz",
-            "title": "Quiz",
-            "content": "Test your knowledge!",
-            "quizQuestion": "Which method computes gradients in PyTorch?",
+            "title": "PyTorch Quiz",
+            "content": "Check your understanding",
+            "quizQuestion": "Which method in a PyTorch model class defines how data flows through the layers?",
             "quizOptions": [
-                "loss.gradient()",
-                "loss.backward()",
-                "loss.compute()",
-                "loss.derive()"
+                "__init__",
+                "backward",
+                "forward",
+                "train"
             ],
-            "correctOptionIndex": 1
+            "correctOptionIndex": 2
         },
         {
-            "id": "pt_3",
+            "id": "lib_torch_3",
             "type": "content",
-            "title": "Summary",
-            "content": "# Great! 🎉\n\n## Key Concepts\n- ✅ `nn.Module` for models\n- ✅ Dynamic computation graphs\n- ✅ `backward()` for gradients\n\n> 🚀 **Next:** Learn Hugging Face!"
+            "title": "DataLoaders",
+            "content": "# Data Handling 🚚\n\n`Dataset` stores samples. `DataLoader` wraps it to provide batching, shuffling, and parallel loading.\n\n```python\nfrom torch.utils.data import DataLoader\n\ntrain_loader = DataLoader(\n    dataset,\n    batch_size=64,\n    shuffle=True\n)\n\nfor batch, (X, y) in enumerate(train_loader):\n    # Training loop code...\n```"
         }
     ]
 }

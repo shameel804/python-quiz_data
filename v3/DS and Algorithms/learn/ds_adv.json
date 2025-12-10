@@ -2,40 +2,34 @@
     "id": "learn_ds_adv",
     "topicId": "ds_adv",
     "topicTitle": "Advanced Topics",
-    "description": "Trie, segment trees, union-find, and advanced string algorithms",
-    "baseKP": 95,
+    "description": "Tries, Disjoint Sets, and more",
+    "baseKP": 90,
     "slides": [
         {
-            "id": "adv_topic_1",
+            "id": "ds_adv_top_1",
             "type": "content",
-            "title": "Trie",
-            "content": "# Trie (Prefix Tree) 🌲\n\nEfficient string search!\n\n## Implementation\n\n```python\nclass TrieNode:\n    def __init__(self):\n        self.children = {}\n        self.is_end = False\n\nclass Trie:\n    def __init__(self):\n        self.root = TrieNode()\n    \n    def insert(self, word):\n        node = self.root\n        for char in word:\n            if char not in node.children:\n                node.children[char] = TrieNode()\n            node = node.children[char]\n        node.is_end = True\n    \n    def search(self, word):\n        node = self.root\n        for char in word:\n            if char not in node.children:\n                return False\n            node = node.children[char]\n        return node.is_end\n```\n\n## Use Cases\n- 🔤 Autocomplete\n- ✓ Spell checker\n- 🔍 Prefix search"
+            "title": "Tries (Prefix Trees)",
+            "content": "# Tries 🌲\n\nOptimization for strings. A tree where each node is a character.\n\n## Use Case: Autocomplete\nStoring \"Cat\", \"Car\", \"Cart\" efficienty.\n`Root -> C -> A -> [T, R -> T]`\n\n- **Search**: O(L) where L is length of word (independent of N items!).\n- **Prefix Search**: Very fast."
         },
         {
-            "id": "adv_topic_2",
+            "id": "ds_adv_top_2",
             "type": "content",
-            "title": "Union-Find",
-            "content": "# Union-Find (Disjoint Set) 🔗\n\nTrack connected components!\n\n## Implementation\n\n```python\nclass UnionFind:\n    def __init__(self, n):\n        self.parent = list(range(n))\n        self.rank = [0] * n\n    \n    def find(self, x):\n        if self.parent[x] != x:\n            self.parent[x] = self.find(self.parent[x])  # Path compression\n        return self.parent[x]\n    \n    def union(self, x, y):\n        px, py = self.find(x), self.find(y)\n        if px == py:\n            return False\n        # Union by rank\n        if self.rank[px] < self.rank[py]:\n            px, py = py, px\n        self.parent[py] = px\n        if self.rank[px] == self.rank[py]:\n            self.rank[px] += 1\n        return True\n```\n\n## Use Cases\n- 🕸️ Connected components\n- 🌲 Kruskal's MST\n- 🎮 Social networks"
+            "title": "Union-Find (DSU)",
+            "content": "# Disjoint Set Union 🖇️\n\nTracks elements partitioned into disjoint sets. \n\n## Operations\n1. **Find**: Which group is A in?\n2. **Union**: Merge group A and group B.\n\n## Optimizations\n- **Path Compression**: When finding, point node directly to root.\n- **Union by Rank**: Attach small tree to big tree.\n\nResult: Nearly **O(1)** amortized time (Inverse Ackermann function)."
         },
         {
-            "id": "adv_topic_quiz_1",
+            "id": "ds_adv_top_quiz_1",
             "type": "quiz",
             "title": "Advanced Quiz",
-            "content": "Test your knowledge!",
-            "quizQuestion": "Which data structure is best for prefix-based search?",
+            "content": "Check your understanding",
+            "quizQuestion": "Which data structure is ideal for implementing an autocomplete system?",
             "quizOptions": [
-                "Hash Table",
-                "Binary Tree",
+                "Union-Find",
                 "Trie",
-                "Heap"
+                "Stack",
+                "Linked List"
             ],
-            "correctOptionIndex": 2
-        },
-        {
-            "id": "adv_topic_3",
-            "type": "content",
-            "title": "Summary",
-            "content": "# Congratulations! 🏆\n\nYou've completed DS & Algorithms!\n\n## Advanced Structures\n- ✅ Trie for strings\n- ✅ Union-Find for connectivity\n- ✅ Segment Trees for ranges\n\n## Key Takeaways\n- 📊 Choose right data structure\n- ⚡ Optimize with proper algorithms\n- 🧠 Practice problem-solving\n\n> 🎯 **Keep practicing on LeetCode!**"
+            "correctOptionIndex": 1
         }
     ]
 }

@@ -1,59 +1,47 @@
 {
     "id": "learn_ds_search",
     "topicId": "ds_search",
-    "topicTitle": "Searching Algorithms",
-    "description": "Linear search, binary search, and advanced searching techniques",
-    "baseKP": 100,
+    "topicTitle": "Searching and Sorting Algorithms",
+    "description": "Master the fundamental algorithms for organization",
+    "baseKP": 65,
     "slides": [
         {
             "id": "ds_search_1",
             "type": "content",
-            "title": "Linear Search",
-            "content": "# Linear Search 🔍\n\nThe simplest search algorithm!\n\n## How It Works\n\nCheck each element one by one until you find the target.\n\n```python\ndef linear_search(arr, target):\n    \"\"\"O(n) time, O(1) space\"\"\"\n    for i, element in enumerate(arr):\n        if element == target:\n            return i  # Found! Return index\n    return -1  # Not found\n\n# Example\nnumbers = [5, 2, 8, 1, 9, 3]\nindex = linear_search(numbers, 8)\nprint(f\"Found at index: {index}\")  # Found at index: 2\n```\n\n## Complexity Analysis\n\n| Case | Time |\n|------|------|\n| Best | O(1) - Found first |\n| Average | O(n/2) → O(n) |\n| Worst | O(n) - Found last or not found |\n\n## Advantages & Disadvantages\n\n✅ Works on unsorted arrays\n✅ Simple to implement\n✅ Good for small datasets\n\n❌ Slow for large datasets\n❌ Not efficient for repeated searches\n\n> 💡 **Use linear search when the array is small or unsorted!**"
+            "title": "Searching",
+            "content": "# Search Algorithms 🔍\n\n## Linear Search O(n)\nCheck one by one. Works on unsorted data.\n\n## Binary Search O(log n)\nDivide and conquer! **Requires sorted data**.\n1. Check middle.\n2. If target < mid, search left.\n3. If target > mid, search right.\n4. Repeat.\n\n> 💡 **Fun Fact**: Binary search can find a specific atom in the observable universe in just ~270 steps!"
         },
         {
             "id": "ds_search_2",
             "type": "content",
-            "title": "Binary Search",
-            "content": "# Binary Search ⚡\n\nDivide and conquer on sorted arrays!\n\n## Iterative Implementation\n\n```python\ndef binary_search(arr, target):\n    \"\"\"O(log n) time, O(1) space\"\"\"\n    left, right = 0, len(arr) - 1\n    \n    while left <= right:\n        mid = (left + right) // 2\n        \n        if arr[mid] == target:\n            return mid  # Found!\n        elif arr[mid] < target:\n            left = mid + 1  # Search right half\n        else:\n            right = mid - 1  # Search left half\n    \n    return -1  # Not found\n\n# Example\nsorted_nums = [1, 2, 3, 5, 8, 9, 12]\nindex = binary_search(sorted_nums, 8)\nprint(f\"Found at index: {index}\")  # Found at index: 4\n```\n\n## Visual Example\n\n```\nSearching for 8 in [1, 2, 3, 5, 8, 9, 12]\n\nStep 1: mid=5 → 5 < 8 → Search right\n        [1, 2, 3, 5, 8, 9, 12]\n                     ↑\nStep 2: mid=9 → 9 > 8 → Search left\n                  [8, 9, 12]\n                   ↑\nStep 3: mid=8 → Found!\n```\n\n> 🎯 **Binary search is 100x faster than linear for 1 million elements!**"
+            "title": "Basic Sorting",
+            "content": "# Quadratic Sorts O(n²) 🐢\n\nGood for teaching, bad for production.\n\n## Bubble Sort\nRepeatedly swap adjacent elements if they are in wrong order. Largest element \"bubbles\" to top.\n\n## Selection Sort\nFind minimum, swap to front. Repeat for rest.\n\n## Insertion Sort\nTake element, insert into correct position in sorted part. Very fast for **small** or **nearly sorted** arrays."
         },
         {
             "id": "ds_search_3",
             "type": "content",
-            "title": "Binary Search Variants",
-            "content": "# Binary Search Variants 🔄\n\n## Recursive Implementation\n\n```python\ndef binary_search_recursive(arr, target, left, right):\n    \"\"\"O(log n) time, O(log n) space (call stack)\"\"\"\n    if left > right:\n        return -1\n    \n    mid = (left + right) // 2\n    \n    if arr[mid] == target:\n        return mid\n    elif arr[mid] < target:\n        return binary_search_recursive(arr, target, mid + 1, right)\n    else:\n        return binary_search_recursive(arr, target, left, mid - 1)\n```\n\n## Find First/Last Occurrence\n\n```python\ndef find_first(arr, target):\n    \"\"\"Find leftmost occurrence\"\"\"\n    result = -1\n    left, right = 0, len(arr) - 1\n    \n    while left <= right:\n        mid = (left + right) // 2\n        if arr[mid] == target:\n            result = mid\n            right = mid - 1  # Keep searching left\n        elif arr[mid] < target:\n            left = mid + 1\n        else:\n            right = mid - 1\n    \n    return result\n\n# [1, 2, 2, 2, 3] → find_first(arr, 2) = 1\n```\n\n## Python's bisect Module\n\n```python\nimport bisect\n\narr = [1, 2, 4, 4, 5]\nbisect.bisect_left(arr, 4)   # 2 (leftmost insertion point)\nbisect.bisect_right(arr, 4)  # 4 (rightmost insertion point)\n```"
+            "title": "Efficient Sorting",
+            "content": "# Log-Linear Sorts O(n log n) 🐇\n\n## Merge Sort\nDivide array in half, sort halves recursively, then **merge** sorted sorted halves. \n- **Pros**: Stable, consistent O(n log n).\n- **Cons**: Uses O(n) extra space.\n\n## Quick Sort\nPick a \"pivot\", partition array (smaller left, larger right), recurse.\n- **Pros**: Very fast in practice, in-place.\n- **Cons**: Worst case O(n²) if bad pivot."
         },
         {
             "id": "ds_search_quiz_1",
             "type": "quiz",
-            "title": "Search Quiz",
-            "content": "Test your knowledge!",
-            "quizQuestion": "What is the time complexity of binary search?",
+            "title": "Sorting Quiz",
+            "content": "Check your understanding",
+            "quizQuestion": "Which sorting algorithm is typically fastest in practice but has a bad worst-case?",
             "quizOptions": [
-                "O(n)",
-                "O(n²)",
-                "O(log n)",
-                "O(1)"
+                "Merge Sort",
+                "Quick Sort",
+                "Bubble Sort",
+                "Insertion Sort"
             ],
-            "correctOptionIndex": 2
+            "correctOptionIndex": 1
         },
         {
             "id": "ds_search_4",
             "type": "content",
-            "title": "Advanced Search Techniques",
-            "content": "# Advanced Search 🚀\n\n## Jump Search\n\n```python\nimport math\n\ndef jump_search(arr, target):\n    \"\"\"O(√n) time - between linear and binary\"\"\"\n    n = len(arr)\n    step = int(math.sqrt(n))\n    prev = 0\n    \n    # Jump in blocks\n    while arr[min(step, n) - 1] < target:\n        prev = step\n        step += int(math.sqrt(n))\n        if prev >= n:\n            return -1\n    \n    # Linear search in block\n    while arr[prev] < target:\n        prev += 1\n        if prev == min(step, n):\n            return -1\n    \n    if arr[prev] == target:\n        return prev\n    return -1\n```\n\n## Exponential Search\n\n```python\ndef exponential_search(arr, target):\n    \"\"\"O(log n) - good for unbounded arrays\"\"\"\n    if arr[0] == target:\n        return 0\n    \n    # Find range with exponential jumps\n    i = 1\n    while i < len(arr) and arr[i] <= target:\n        i *= 2\n    \n    # Binary search in range\n    return binary_search(arr[i//2:min(i, len(arr))], target)\n```\n\n## Interpolation Search\n\n```python\ndef interpolation_search(arr, target):\n    \"\"\"O(log log n) for uniform distribution\"\"\"\n    low, high = 0, len(arr) - 1\n    \n    while low <= high and arr[low] <= target <= arr[high]:\n        # Estimate position\n        pos = low + ((target - arr[low]) * (high - low) //\n                     (arr[high] - arr[low]))\n        \n        if arr[pos] == target:\n            return pos\n        elif arr[pos] < target:\n            low = pos + 1\n        else:\n            high = pos - 1\n    return -1\n```"
-        },
-        {
-            "id": "ds_search_5",
-            "type": "content",
-            "title": "Search Comparison",
-            "content": "# Search Algorithms Comparison 📊\n\n## Complexity Comparison\n\n| Algorithm | Time | Space | Sorted? |\n|-----------|------|-------|--------|\n| Linear | O(n) | O(1) | No |\n| Binary | O(log n) | O(1) | Yes |\n| Jump | O(√n) | O(1) | Yes |\n| Interpolation | O(log log n)* | O(1) | Yes |\n| Exponential | O(log n) | O(1) | Yes |\n\n*Best case for uniformly distributed data\n\n## Real-World Performance (1 million elements)\n\n| Algorithm | Operations |\n|-----------|------------|\n| Linear | 1,000,000 |\n| Jump | 1,000 |\n| Binary | 20 |\n| Interpolation | ~4 |\n\n## When to Use What?\n\n| Scenario | Best Choice |\n|----------|------------|\n| Unsorted small array | Linear Search |\n| Sorted array | Binary Search |\n| Uniformly distributed | Interpolation |\n| Unbounded/infinite array | Exponential |\n| Block-based storage | Jump Search |\n\n> 🎯 **Binary search is the go-to for most cases!**"
-        },
-        {
-            "id": "ds_search_6",
-            "type": "content",
-            "title": "Summary",
-            "content": "# Excellent Work! 🎉\n\nYou've mastered Searching Algorithms!\n\n## Key Takeaways\n\n### Linear Search\n- ✅ O(n) time complexity\n- ✅ Works on unsorted arrays\n- ✅ Simple but slow\n\n### Binary Search\n- ✅ O(log n) time complexity\n- ✅ Requires sorted array\n- ✅ Much faster for large data\n- ✅ Use `bisect` module in Python\n\n### Advanced Techniques\n- ✅ Jump Search: O(√n) - good for linked lists\n- ✅ Interpolation: O(log log n) - uniform data\n- ✅ Exponential: O(log n) - unbounded arrays\n\n## Quick Code Reference\n\n```python\n# Python built-in (uses binary search)\nimport bisect\nindex = bisect.bisect_left(sorted_list, target)\n\n# Check if found\nif index < len(arr) and arr[index] == target:\n    print(\"Found!\")\n```\n\n## Interview Tips\n\n1. Always ask if array is sorted\n2. Consider edge cases (empty, single element)\n3. Watch for integer overflow in mid calculation\n4. Practice both iterative and recursive\n\n> 🚀 **Next Steps:** Learn Sorting Algorithms!"
+            "title": "Python's Sort",
+            "content": "# Timsort 🐍\n\nPython's `sorted()` and `list.sort()` use **Timsort**.\n\n- Hybrid of **Merge Sort** and **Insertion Sort**.\n- Takes advantage of existing order in real-world data.\n- **Best Case**: O(n)!\n- **Average/Worst**: O(n log n).\n- **Stable**: Preserves order of equal elements."
         }
     ]
 }

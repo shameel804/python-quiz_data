@@ -1,53 +1,47 @@
 {
-    "id": "learn_pandas",
+    "id": "learn_lib_pandas",
     "topicId": "pandas",
     "topicTitle": "Pandas",
-    "description": "DataFrames, data manipulation, and analysis",
-    "baseKP": 90,
+    "description": "Data Analysis and Manipulation",
+    "baseKP": 65,
     "slides": [
         {
-            "id": "pandas_1",
+            "id": "lib_pd_1",
             "type": "content",
-            "title": "Introduction to Pandas",
-            "content": "# Pandas 🐼\n\nData analysis and manipulation!\n\n## Installation\n\n```bash\npip install pandas\n```\n\n## Key Structures\n\n```python\nimport pandas as pd\n\n# Series (1D)\ns = pd.Series([1, 2, 3, 4])\n\n# DataFrame (2D)\ndf = pd.DataFrame({\n    'Name': ['Alice', 'Bob'],\n    'Age': [25, 30]\n})\n```\n\n> 💡 **Pandas is essential for data science!**"
+            "title": "DataFrames & Series",
+            "content": "# Excel for Python 📊\n\n## Series\nA 1D labeled array (like a column).\n```python\nimport pandas as pd\ns = pd.Series([10, 20, 30])\n```\n\n## DataFrame\nA 2D table with rows and columns.\n```python\ndata = {\n    'Name': ['Alice', 'Bob'],\n    'Age': [25, 30]\n}\ndf = pd.DataFrame(data)\n```"
         },
         {
-            "id": "pandas_2",
+            "id": "lib_pd_2",
             "type": "content",
             "title": "Reading Data",
-            "content": "# Data Import/Export 📂\n\n```python\n# Read CSV\ndf = pd.read_csv('data.csv')\n\n# Read Excel\ndf = pd.read_excel('data.xlsx')\n\n# Read JSON\ndf = pd.read_json('data.json')\n\n# Save\ndf.to_csv('output.csv', index=False)\n```\n\n## Quick Exploration\n\n```python\ndf.head()        # First 5 rows\ndf.tail()        # Last 5 rows\ndf.info()        # Column types\ndf.describe()    # Statistics\ndf.shape         # (rows, cols)\n```"
+            "content": "# I/O Superpowers 📥\n\nPandas can read almost anything.\n\n```python\n# CSV\ndf = pd.read_csv('data.csv')\n\n# Excel\ndf = pd.read_excel('data.xlsx')\n\n# JSON\ndf = pd.read_json('data.json')\n\n# HTML Tables (scrapes web!)\ndfs = pd.read_html('https://en.wikipedia.org/...')\n```"
         },
         {
-            "id": "pandas_3",
+            "id": "lib_pd_3",
             "type": "content",
-            "title": "Data Selection",
-            "content": "# Selecting Data 🎯\n\n```python\n# Single column\ndf['Name']\n\n# Multiple columns\ndf[['Name', 'Age']]\n\n# Rows by index\ndf.iloc[0]       # First row\ndf.iloc[0:3]     # First 3 rows\n\n# Rows by label\ndf.loc[0]\n\n# Filtering\ndf[df['Age'] > 25]\ndf[df['Name'] == 'Alice']\n\n# Multiple conditions\ndf[(df['Age'] > 20) & (df['Age'] < 30)]\n```"
+            "title": "Data Inspection",
+            "content": "# Sneak Peek 👀\n\nOnce data is loaded:\n\n- `df.head(5)`: View first 5 rows.\n- `df.info()`: Check data types and missing values.\n- `df.describe()`: Statistical summary (mean, max, min) for numeric columns.\n- `df.shape`: (rows, cols) tuple."
         },
         {
-            "id": "pandas_4",
-            "type": "content",
-            "title": "Data Manipulation",
-            "content": "# Transforming Data 🔄\n\n```python\n# Add column\ndf['Salary'] = [50000, 60000]\n\n# Apply function\ndf['Age_Plus_10'] = df['Age'].apply(lambda x: x + 10)\n\n# Grouping\ndf.groupby('Category')['Sales'].sum()\n\n# Sorting\ndf.sort_values('Age', ascending=False)\n\n# Handle missing\ndf.dropna()              # Remove rows with NaN\ndf.fillna(0)             # Replace NaN\ndf['Age'].fillna(df['Age'].mean())\n```"
-        },
-        {
-            "id": "pandas_quiz_1",
+            "id": "lib_pd_quiz_1",
             "type": "quiz",
-            "title": "Pandas Quiz",
-            "content": "Test your knowledge!",
-            "quizQuestion": "How do you read a CSV file in Pandas?",
+            "title": "Inspection Quiz",
+            "content": "Check your understanding",
+            "quizQuestion": "Which method gives you technical info like data types and null counts?",
             "quizOptions": [
-                "pd.open_csv('file.csv')",
-                "pd.read_csv('file.csv')",
-                "pd.load('file.csv')",
-                "pd.csv('file.csv')"
+                "df.head()",
+                "df.describe()",
+                "df.info()",
+                "df.show()"
             ],
-            "correctOptionIndex": 1
+            "correctOptionIndex": 2
         },
         {
-            "id": "pandas_5",
+            "id": "lib_pd_4",
             "type": "content",
-            "title": "Summary",
-            "content": "# Great Work! 🎉\n\nYou've learned Pandas!\n\n## Data Structures\n- ✅ Series, DataFrame\n\n## I/O\n- ✅ `read_csv`, `read_excel`, `to_csv`\n\n## Operations\n- ✅ Selection, Filtering\n- ✅ Groupby, Sorting\n- ✅ Missing data handling\n\n> 🚀 **Next Steps:** Learn Matplotlib for visualization!"
+            "title": "Analysis & Cleaning",
+            "content": "# Wrangling Data 🤠\n\n## Filtering\n```python\n# People older than 25\nadults = df[df['Age'] > 25]\n```\n\n## Grouping\nLike SQL GROUP BY.\n```python\n# Average salary by Department\ndf.groupby('Dept')['Salary'].mean()\n```\n\n## Missing Data\n```python\ndf.dropna() # Drop rows with missing values\ndf.fillna(0) # Fill missing with 0\n```"
         }
     ]
 }

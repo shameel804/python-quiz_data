@@ -1,41 +1,41 @@
 {
-    "id": "learn_opencv",
+    "id": "learn_lib_opencv",
     "topicId": "opencv",
     "topicTitle": "OpenCV",
-    "description": "Computer vision library",
-    "baseKP": 90,
+    "description": "Computer Vision magic",
+    "baseKP": 65,
     "slides": [
         {
-            "id": "cv_1",
+            "id": "lib_cv_1",
+            "type": "content",
+            "title": "Images as Arrays",
+            "content": "# Computer Vision 👁️\n\nOpenCV (`cv2`) reads images as NumPy arrays of BGR (Blue-Green-Red) pixels.\n\n```python\nimport cv2\n\n# Read image (0 = Grayscale, 1 = Color)\nimg = cv2.imread('logo.png', 1)\n\n# Display\ncv2.imshow('Window', img)\ncv2.waitKey(0) # Wait key press\ncv2.destroyAllWindows()\n```"
+        },
+        {
+            "id": "lib_cv_2",
             "type": "content",
             "title": "Image Processing",
-            "content": "# OpenCV 👁️\n\nComputer vision!\n\n```python\nimport cv2\n\n# Read image\nimg = cv2.imread('image.jpg')\n\n# Convert color\ngray = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)\n\n# Resize\nresized = cv2.resize(img, (300, 300))\n\n# Save\ncv2.imwrite('output.jpg', gray)\n```"
+            "content": "# Modifying Pixels 🖌️\n\n## Resizing\n```python\nresized = cv2.resize(img, (100, 100))\n```\n\n## Color Conversion\nOften convert BGR to Grayscale for processing.\n```python\ngray = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)\n```\n\n## Blurring (Smoothing)\nReduces noise.\n```python\nblurred = cv2.GaussianBlur(img, (5, 5), 0)\n```"
         },
         {
-            "id": "cv_2",
+            "id": "lib_cv_3",
             "type": "content",
-            "title": "Operations",
-            "content": "# Image Operations 🔧\n\n```python\n# Blur\nblurred = cv2.GaussianBlur(img, (5, 5), 0)\n\n# Edge detection\nedges = cv2.Canny(img, 100, 200)\n\n# Draw shapes\ncv2.rectangle(img, (10, 10), (100, 100), (0, 255, 0), 2)\ncv2.circle(img, (50, 50), 30, (255, 0, 0), -1)\n\n# Display\ncv2.imshow('Image', img)\ncv2.waitKey(0)\n```"
+            "title": "Video Capture",
+            "content": "# Webcam Access 📹\n\n```python\ncap = cv2.VideoCapture(0) # 0 is default webcam\n\nwhile True:\n    ret, frame = cap.read()\n    cv2.imshow('Webcam', frame)\n    if cv2.waitKey(1) == ord('q'):\n        break\n\ncap.release()\n```"
         },
         {
-            "id": "cv_quiz_1",
+            "id": "lib_cv_quiz_1",
             "type": "quiz",
-            "title": "Quiz",
-            "content": "Test your knowledge!",
-            "quizQuestion": "Which function reads an image in OpenCV?",
+            "title": "Format Quiz",
+            "content": "Check your understanding",
+            "quizQuestion": "In what color order does OpenCV load images by default?",
             "quizOptions": [
-                "cv2.load()",
-                "cv2.imread()",
-                "cv2.open()",
-                "cv2.read()"
+                "RGB (Red, Green, Blue)",
+                "BGR (Blue, Green, Red)",
+                "Grayscale",
+                "CMYK"
             ],
             "correctOptionIndex": 1
-        },
-        {
-            "id": "cv_3",
-            "type": "content",
-            "title": "Summary",
-            "content": "# Excellent! 🎉\n\n## Key Functions\n- ✅ `imread()`, `imwrite()`\n- ✅ Color conversion, resize\n- ✅ Edge detection, blur\n\n> 🚀 **Next:** Learn SQLAlchemy!"
         }
     ]
 }
