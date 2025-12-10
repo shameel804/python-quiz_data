@@ -1,0 +1,41 @@
+{
+    "id": "learn_middlewares",
+    "topicId": "middlewares",
+    "topicTitle": "Middlewares",
+    "description": "Understand Django middleware and create custom ones",
+    "baseKP": 80,
+    "slides": [
+        {
+            "id": "mw_1",
+            "type": "content",
+            "title": "What is Middleware?",
+            "content": "# Django Middleware ⚙️\n\nMiddleware processes requests/responses globally!\n\n## Request/Response Cycle\n\n```\nRequest → Middleware → View → Middleware → Response\n              ↓           ↓         ↑\n          process_request  →  process_response\n```\n\n## Default Middleware\n\n```python\n# settings.py\nMIDDLEWARE = [\n    'django.middleware.security.SecurityMiddleware',\n    'django.contrib.sessions.middleware.SessionMiddleware',\n    'django.middleware.common.CommonMiddleware',\n    'django.middleware.csrf.CsrfViewMiddleware',\n    'django.contrib.auth.middleware.AuthenticationMiddleware',\n    'django.contrib.messages.middleware.MessageMiddleware',\n]\n```\n\n> 💡 **Order matters!** Middleware runs top-to-bottom for requests, bottom-to-top for responses."
+        },
+        {
+            "id": "mw_2",
+            "type": "content",
+            "title": "Custom Middleware",
+            "content": "# Creating Custom Middleware 🛠️\n\n## Function-Based\n\n```python\ndef simple_middleware(get_response):\n    def middleware(request):\n        # Code before view\n        print(f\"Request: {request.path}\")\n        \n        response = get_response(request)  # Call view\n        \n        # Code after view\n        print(f\"Response: {response.status_code}\")\n        return response\n    \n    return middleware\n```\n\n## Class-Based\n\n```python\nclass TimingMiddleware:\n    def __init__(self, get_response):\n        self.get_response = get_response\n    \n    def __call__(self, request):\n        import time\n        start = time.time()\n        \n        response = self.get_response(request)\n        \n        duration = time.time() - start\n        print(f\"Request took {duration:.2f}s\")\n        return response\n```\n\n## Register in settings.py\n\n```python\nMIDDLEWARE = [\n    # ...\n    'myapp.middleware.TimingMiddleware',\n]\n```"
+        },
+        {
+            "id": "mw_quiz_1",
+            "type": "quiz",
+            "title": "Middleware Quiz",
+            "content": "Test your middleware knowledge!",
+            "quizQuestion": "When is middleware executed?",
+            "quizOptions": [
+                "Only before views",
+                "Only after views",
+                "Both before and after views",
+                "Only on error"
+            ],
+            "correctOptionIndex": 2
+        },
+        {
+            "id": "mw_3",
+            "type": "content",
+            "title": "Summary",
+            "content": "# Great Work! 🎉\n\nYou've learned Django Middleware!\n\n## Key Points\n- ✅ Middleware processes ALL requests/responses\n- ✅ Order in MIDDLEWARE list matters\n- ✅ Create function or class-based middleware\n- ✅ Register in settings.py\n\n## Use Cases\n- 📝 Logging requests\n- ⏱️ Performance timing\n- 🔐 Custom authentication\n- 🌍 Language detection\n\n> 🚀 **Next Steps:** Learn about Caching!"
+        }
+    ]
+}

@@ -1,0 +1,47 @@
+{
+    "id": "learn_deploy",
+    "topicId": "deploy",
+    "topicTitle": "Model Deployment",
+    "description": "Save models, create APIs, and deploy to cloud",
+    "baseKP": 85,
+    "slides": [
+        {
+            "id": "deploy_1",
+            "type": "content",
+            "title": "Model Deployment",
+            "content": "# Deploying ML Models 🚀\n\nTake your model to production!\n\n## What you'll learn:\n- **Model Serialization** - Save/load models\n- **APIs** - Serve predictions\n- **Cloud Deployment** - Scale globally\n\n## Deployment Pipeline\n\n```\nTrain → Save → API → Deploy → Monitor\n```"
+        },
+        {
+            "id": "deploy_2",
+            "type": "content",
+            "title": "Saving Models",
+            "content": "# Model Serialization 💾\n\n## Joblib (Scikit-learn)\n\n```python\nimport joblib\n\n# Save model\njoblib.dump(model, 'model.pkl')\n\n# Load model\nmodel = joblib.load('model.pkl')\npredictions = model.predict(X_new)\n```\n\n## Pickle\n\n```python\nimport pickle\n\nwith open('model.pkl', 'wb') as f:\n    pickle.dump(model, f)\n\nwith open('model.pkl', 'rb') as f:\n    model = pickle.load(f)\n```\n\n## TensorFlow SavedModel\n\n```python\nmodel.save('my_model')  # Directory\nmodel = tf.keras.models.load_model('my_model')\n```"
+        },
+        {
+            "id": "deploy_3",
+            "type": "content",
+            "title": "Creating APIs",
+            "content": "# ML API with FastAPI 🌐\n\n```python\nfrom fastapi import FastAPI\nimport joblib\n\napp = FastAPI()\nmodel = joblib.load('model.pkl')\n\n@app.post('/predict')\ndef predict(features: dict):\n    data = [[features['age'], features['income']]]\n    prediction = model.predict(data)\n    return {'prediction': int(prediction[0])}\n```\n\n## Run Server\n\n```bash\nuvicorn main:app --reload\n```\n\n## Test API\n\n```python\nimport requests\n\nresponse = requests.post(\n    'http://localhost:8000/predict',\n    json={'age': 30, 'income': 50000}\n)\nprint(response.json())  # {'prediction': 1}\n```"
+        },
+        {
+            "id": "deploy_quiz_1",
+            "type": "quiz",
+            "title": "Deployment Quiz",
+            "content": "Test your knowledge!",
+            "quizQuestion": "Which library is commonly used to save scikit-learn models?",
+            "quizOptions": [
+                "TensorFlow",
+                "Joblib",
+                "FastAPI",
+                "Pandas"
+            ],
+            "correctOptionIndex": 1
+        },
+        {
+            "id": "deploy_4",
+            "type": "content",
+            "title": "Summary",
+            "content": "# Congratulations! 🎉\n\nYou've completed Machine Learning!\n\n## Serialization\n- ✅ Joblib, Pickle\n- ✅ TensorFlow SavedModel\n\n## APIs\n- ✅ FastAPI for ML\n- ✅ Serve predictions\n\n## Cloud Options\n- ☁️ AWS SageMaker\n- ☁️ Google AI Platform\n- ☁️ Azure ML\n\n> 🏆 **You're now an ML practitioner!** Build projects to solidify your skills!"
+        }
+    ]
+}

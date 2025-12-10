@@ -1,0 +1,47 @@
+{
+    "id": "learn_ds_techni",
+    "topicId": "ds_techni",
+    "topicTitle": "Algorithm Techniques",
+    "description": "Recursion, dynamic programming, greedy, divide and conquer",
+    "baseKP": 95,
+    "slides": [
+        {
+            "id": "techni_1",
+            "type": "content",
+            "title": "Recursion",
+            "content": "# Recursion 🔄\n\nA function that calls itself!\n\n## Structure\n\n```python\ndef recursive_function(n):\n    # Base case - stop condition\n    if n <= 0:\n        return\n    \n    # Recursive case\n    do_something()\n    recursive_function(n - 1)\n```\n\n## Examples\n\n```python\ndef factorial(n):\n    if n <= 1:\n        return 1\n    return n * factorial(n - 1)\n\ndef fibonacci(n):\n    if n <= 1:\n        return n\n    return fibonacci(n-1) + fibonacci(n-2)\n```\n\n> ⚠️ **Always have a base case** to prevent infinite recursion!"
+        },
+        {
+            "id": "techni_2",
+            "type": "content",
+            "title": "Dynamic Programming",
+            "content": "# Dynamic Programming 💡\n\nSolve overlapping subproblems once!\n\n## Memoization (Top-Down)\n\n```python\ndef fib_memo(n, memo={}):\n    if n in memo:\n        return memo[n]\n    if n <= 1:\n        return n\n    memo[n] = fib_memo(n-1, memo) + fib_memo(n-2, memo)\n    return memo[n]\n```\n\n## Tabulation (Bottom-Up)\n\n```python\ndef fib_tab(n):\n    if n <= 1:\n        return n\n    dp = [0] * (n + 1)\n    dp[1] = 1\n    for i in range(2, n + 1):\n        dp[i] = dp[i-1] + dp[i-2]\n    return dp[n]\n```\n\n## Performance\n\n```\nNaive Fib: O(2^n)  ❌\nDP Fib: O(n)        ✅\n```"
+        },
+        {
+            "id": "techni_3",
+            "type": "content",
+            "title": "Greedy Algorithms",
+            "content": "# Greedy Approach 🤑\n\nMake the best choice at each step!\n\n## Coin Change (Greedy)\n\n```python\ndef coin_change_greedy(amount, coins):\n    coins = sorted(coins, reverse=True)\n    result = []\n    for coin in coins:\n        while amount >= coin:\n            result.append(coin)\n            amount -= coin\n    return result\n\n# coins = [25, 10, 5, 1], amount = 41\n# Result: [25, 10, 5, 1] = 4 coins\n```\n\n## When Greedy Works\n- ✅ Activity selection\n- ✅ Huffman coding\n- ✅ Fractional knapsack\n\n> ⚠️ **Greedy doesn't always give optimal solution!**"
+        },
+        {
+            "id": "techni_quiz_1",
+            "type": "quiz",
+            "title": "Techniques Quiz",
+            "content": "Test your knowledge!",
+            "quizQuestion": "What technique stores results to avoid recomputation?",
+            "quizOptions": [
+                "Recursion",
+                "Memoization",
+                "Greedy",
+                "Brute Force"
+            ],
+            "correctOptionIndex": 1
+        },
+        {
+            "id": "techni_4",
+            "type": "content",
+            "title": "Summary",
+            "content": "# Great Work! 🎉\n\nYou've learned Algorithm Techniques!\n\n## Recursion\n- ✅ Base case + recursive case\n\n## Dynamic Programming\n- ✅ Memoization (top-down)\n- ✅ Tabulation (bottom-up)\n\n## Greedy\n- ✅ Local optimal choices\n\n## Divide & Conquer\n- ✅ Split, solve, combine\n\n> 🚀 **Next Steps:** Learn Graph Algorithms!"
+        }
+    ]
+}

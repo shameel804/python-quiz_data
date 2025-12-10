@@ -1,0 +1,59 @@
+{
+    "id": "learn_forms",
+    "topicId": "forms",
+    "topicTitle": "Forms",
+    "description": "Master Django forms, validation, and ModelForms",
+    "baseKP": 80,
+    "slides": [
+        {
+            "id": "forms_1",
+            "type": "content",
+            "title": "Introduction to Forms",
+            "content": "# Django Forms 📋\n\nForms handle user input, validation, and data processing!\n\n## What you'll learn:\n- **Form Classes** - Define form structure\n- **Rendering Forms** - Display in templates\n- **Validation** - Built-in and custom\n- **ModelForms** - Forms from models\n\n## Why Django Forms?\n\n```python\n# Without Django forms (manual)\ndef contact(request):\n    if request.method == 'POST':\n        name = request.POST.get('name', '')\n        if not name:  # Manual validation\n            error = 'Name is required'\n        # ... more validation\n\n# With Django forms (automatic)\ndef contact(request):\n    form = ContactForm(request.POST or None)\n    if form.is_valid():  # All validation done!\n        data = form.cleaned_data\n```\n\n> 💡 **Django Forms handle validation, security (CSRF), and rendering automatically!**"
+        },
+        {
+            "id": "forms_2",
+            "type": "content",
+            "title": "Creating Forms",
+            "content": "# Form Classes 📝\n\n## Basic Form\n\n```python\n# forms.py\nfrom django import forms\n\nclass ContactForm(forms.Form):\n    name = forms.CharField(max_length=100)\n    email = forms.EmailField()\n    message = forms.CharField(widget=forms.Textarea)\n    subscribe = forms.BooleanField(required=False)\n```\n\n## Common Field Types\n\n| Field | HTML Input |\n|-------|------------|\n| `CharField` | Text input |\n| `EmailField` | Email input |\n| `IntegerField` | Number input |\n| `BooleanField` | Checkbox |\n| `ChoiceField` | Select dropdown |\n| `DateField` | Date input |\n| `FileField` | File upload |\n\n## Field Options\n\n```python\nname = forms.CharField(\n    max_length=100,\n    required=True,           # Required by default\n    label='Your Name',       # Custom label\n    initial='John',          # Default value\n    help_text='Enter name',  # Help text\n    widget=forms.TextInput(  # Custom widget\n        attrs={'class': 'form-control', 'placeholder': 'Name'}\n    )\n)\n```"
+        },
+        {
+            "id": "forms_3",
+            "type": "content",
+            "title": "Rendering Forms",
+            "content": "# Displaying Forms in Templates 🖼️\n\n## View\n\n```python\nfrom .forms import ContactForm\n\ndef contact(request):\n    form = ContactForm()\n    return render(request, 'contact.html', {'form': form})\n```\n\n## Template Rendering Options\n\n```html\n<form method=\"post\">\n    {% csrf_token %}\n    \n    <!-- Option 1: Auto render all -->\n    {{ form.as_p }}     <!-- Wrapped in <p> tags -->\n    {{ form.as_table }} <!-- As table rows -->\n    {{ form.as_ul }}    <!-- As list items -->\n    \n    <!-- Option 2: Manual control -->\n    {{ form.name.label_tag }}\n    {{ form.name }}\n    {{ form.name.errors }}\n    {{ form.name.help_text }}\n    \n    <button type=\"submit\">Submit</button>\n</form>\n```\n\n## Styling with CSS Classes\n\n```python\nclass ContactForm(forms.Form):\n    name = forms.CharField(\n        widget=forms.TextInput(attrs={\n            'class': 'form-control',\n            'placeholder': 'Enter your name'\n        })\n    )\n```\n\n> ⚠️ **Always include `{% csrf_token %}` in POST forms!** It protects against CSRF attacks."
+        },
+        {
+            "id": "forms_quiz_1",
+            "type": "quiz",
+            "title": "Forms Quiz",
+            "content": "Test your form knowledge!",
+            "quizQuestion": "Which Django template tag is required in POST forms for security?",
+            "quizOptions": [
+                "{% csrf %}",
+                "{% csrf_token %}",
+                "{% security_token %}",
+                "{% form_token %}"
+            ],
+            "correctOptionIndex": 1
+        },
+        {
+            "id": "forms_4",
+            "type": "content",
+            "title": "Form Validation",
+            "content": "# Validation ✅\n\n## Processing Form Submissions\n\n```python\ndef contact(request):\n    if request.method == 'POST':\n        form = ContactForm(request.POST)\n        if form.is_valid():\n            # Data is validated and cleaned\n            name = form.cleaned_data['name']\n            email = form.cleaned_data['email']\n            # Process data...\n            return redirect('success')\n    else:\n        form = ContactForm()\n    \n    return render(request, 'contact.html', {'form': form})\n```\n\n## Custom Field Validation\n\n```python\nclass ContactForm(forms.Form):\n    email = forms.EmailField()\n    \n    def clean_email(self):\n        email = self.cleaned_data['email']\n        if not email.endswith('@company.com'):\n            raise forms.ValidationError('Must use company email')\n        return email\n```\n\n## Cross-Field Validation\n\n```python\nclass SignupForm(forms.Form):\n    password = forms.CharField(widget=forms.PasswordInput)\n    confirm_password = forms.CharField(widget=forms.PasswordInput)\n    \n    def clean(self):\n        cleaned_data = super().clean()\n        password = cleaned_data.get('password')\n        confirm = cleaned_data.get('confirm_password')\n        \n        if password != confirm:\n            raise forms.ValidationError('Passwords do not match')\n        return cleaned_data\n```"
+        },
+        {
+            "id": "forms_5",
+            "type": "content",
+            "title": "ModelForms",
+            "content": "# ModelForms 🔗\n\nAutomatically create forms from models!\n\n## Basic ModelForm\n\n```python\nfrom django import forms\nfrom .models import Article\n\nclass ArticleForm(forms.ModelForm):\n    class Meta:\n        model = Article\n        fields = ['title', 'content', 'category']\n        # Or use: fields = '__all__'\n        # Or exclude: exclude = ['author']\n```\n\n## Customizing ModelForm\n\n```python\nclass ArticleForm(forms.ModelForm):\n    class Meta:\n        model = Article\n        fields = ['title', 'content']\n        labels = {\n            'title': 'Article Title',\n        }\n        widgets = {\n            'content': forms.Textarea(attrs={'rows': 10}),\n        }\n        help_texts = {\n            'title': 'Enter a descriptive title',\n        }\n```\n\n## Saving ModelForm\n\n```python\ndef create_article(request):\n    if request.method == 'POST':\n        form = ArticleForm(request.POST)\n        if form.is_valid():\n            article = form.save()  # Saves to database!\n            return redirect('article_detail', pk=article.pk)\n    else:\n        form = ArticleForm()\n    return render(request, 'create.html', {'form': form})\n```\n\n> 💡 **ModelForms are the recommended way to create/edit model instances!**"
+        },
+        {
+            "id": "forms_6",
+            "type": "content",
+            "title": "Summary",
+            "content": "# Excellent Work! 🎉\n\nYou've mastered Django Forms!\n\n## Form Basics\n- ✅ Creating form classes\n- ✅ Field types and options\n- ✅ Custom widgets\n\n## Rendering\n- ✅ `{{ form.as_p }}`, `{{ form.as_table }}`\n- ✅ Manual field rendering\n- ✅ `{% csrf_token %}` protection\n\n## Validation\n- ✅ `form.is_valid()`\n- ✅ `form.cleaned_data`\n- ✅ `clean_fieldname()` methods\n- ✅ `clean()` for cross-field validation\n\n## ModelForms\n- ✅ `forms.ModelForm`\n- ✅ `class Meta` configuration\n- ✅ `form.save()` for database operations\n\n> 🚀 **Next Steps:** Learn about Authentication for user login/logout!"
+        }
+    ]
+}

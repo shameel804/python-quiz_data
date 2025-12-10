@@ -1,0 +1,41 @@
+{
+    "id": "learn_huggingface",
+    "topicId": "huggingface",
+    "topicTitle": "Hugging Face Transformers",
+    "description": "Pre-trained NLP models",
+    "baseKP": 90,
+    "slides": [
+        {
+            "id": "hf_1",
+            "type": "content",
+            "title": "Introduction",
+            "content": "# Hugging Face 🤗\n\nState-of-the-art NLP!\n\n```python\nfrom transformers import pipeline\n\n# Sentiment analysis\nclassifier = pipeline('sentiment-analysis')\nresult = classifier('I love Python!')\n# [{'label': 'POSITIVE', 'score': 0.999}]\n```\n\n> 💡 **Pre-trained models** - BERT, GPT, T5!"
+        },
+        {
+            "id": "hf_2",
+            "type": "content",
+            "title": "Common Tasks",
+            "content": "# Pipelines 🔧\n\n```python\nfrom transformers import pipeline\n\n# Text generation\ngenerator = pipeline('text-generation')\ngenerator('Python is')\n\n# Question answering\nqa = pipeline('question-answering')\nqa(question='What is Python?', context='...')\n\n# Translation\ntranslator = pipeline('translation_en_to_fr')\ntranslator('Hello world')\n```"
+        },
+        {
+            "id": "hf_quiz_1",
+            "type": "quiz",
+            "title": "Quiz",
+            "content": "Test your knowledge!",
+            "quizQuestion": "Which function creates a ready-to-use NLP model?",
+            "quizOptions": [
+                "model()",
+                "pipeline()",
+                "load()",
+                "create()"
+            ],
+            "correctOptionIndex": 1
+        },
+        {
+            "id": "hf_3",
+            "type": "content",
+            "title": "Summary",
+            "content": "# Excellent! 🎉\n\n## Key Concepts\n- ✅ `pipeline()` for easy inference\n- ✅ Pre-trained models: BERT, GPT\n- ✅ Tasks: sentiment, QA, translation\n\n> 🚀 **Next:** Learn BeautifulSoup!"
+        }
+    ]
+}

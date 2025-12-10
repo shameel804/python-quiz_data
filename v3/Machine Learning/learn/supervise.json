@@ -1,0 +1,59 @@
+{
+    "id": "learn_supervise",
+    "topicId": "supervise",
+    "topicTitle": "Supervised Learning",
+    "description": "Master regression, classification, and ensemble methods",
+    "baseKP": 90,
+    "slides": [
+        {
+            "id": "supervise_1",
+            "type": "content",
+            "title": "Supervised Learning",
+            "content": "# Supervised Learning 🎯\n\nLearn from labeled examples!\n\n## What you'll learn:\n- **Regression** - Predict numbers\n- **Classification** - Predict categories\n- **Ensemble Methods** - Combine models\n- **Evaluation Metrics** - Measure performance\n\n## How It Works\n\n```\nTraining: Features + Labels → Model learns patterns\nPrediction: New Features → Model predicts Label\n```\n\n## Example\n\n```python\n# Training: House features → Prices\nX = [[3, 1500], [4, 2000]]  # bedrooms, sqft\ny = [200000, 300000]         # prices\n\nmodel.fit(X, y)  # Learn\n\n# Prediction: New house → Price?\nprice = model.predict([[3, 1800]])  # ~$250,000\n```"
+        },
+        {
+            "id": "supervise_2",
+            "type": "content",
+            "title": "Regression",
+            "content": "# Regression Algorithms 📈\n\nPredict continuous values.\n\n## Linear Regression\n\n```python\nfrom sklearn.linear_model import LinearRegression\n\nmodel = LinearRegression()\nmodel.fit(X_train, y_train)\npredictions = model.predict(X_test)\n\n# Coefficients\nprint(model.coef_)       # Feature weights\nprint(model.intercept_)  # Bias term\n```\n\n## Polynomial Regression\n\n```python\nfrom sklearn.preprocessing import PolynomialFeatures\n\npoly = PolynomialFeatures(degree=2)\nX_poly = poly.fit_transform(X)\nmodel.fit(X_poly, y)\n```\n\n## Other Regressors\n\n```python\nfrom sklearn.tree import DecisionTreeRegressor\nfrom sklearn.ensemble import RandomForestRegressor\nfrom sklearn.svm import SVR\n\n# All have same interface!\nmodel = RandomForestRegressor()\nmodel.fit(X_train, y_train)\n```"
+        },
+        {
+            "id": "supervise_3",
+            "type": "content",
+            "title": "Classification",
+            "content": "# Classification Algorithms 🏷️\n\nPredict categories.\n\n## Logistic Regression\n\n```python\nfrom sklearn.linear_model import LogisticRegression\n\nmodel = LogisticRegression()\nmodel.fit(X_train, y_train)\n\n# Predict class\npredictions = model.predict(X_test)\n\n# Predict probabilities\nprobs = model.predict_proba(X_test)\n```\n\n## Decision Trees\n\n```python\nfrom sklearn.tree import DecisionTreeClassifier\n\nmodel = DecisionTreeClassifier(max_depth=5)\nmodel.fit(X_train, y_train)\n```\n\n## K-Nearest Neighbors\n\n```python\nfrom sklearn.neighbors import KNeighborsClassifier\n\nmodel = KNeighborsClassifier(n_neighbors=5)\nmodel.fit(X_train, y_train)\n```\n\n## Support Vector Machine\n\n```python\nfrom sklearn.svm import SVC\n\nmodel = SVC(kernel='rbf')\nmodel.fit(X_train, y_train)\n```"
+        },
+        {
+            "id": "supervise_quiz_1",
+            "type": "quiz",
+            "title": "Supervised Learning Quiz",
+            "content": "Test your knowledge!",
+            "quizQuestion": "Which task predicts continuous values like prices?",
+            "quizOptions": [
+                "Classification",
+                "Regression",
+                "Clustering",
+                "Dimensionality Reduction"
+            ],
+            "correctOptionIndex": 1
+        },
+        {
+            "id": "supervise_4",
+            "type": "content",
+            "title": "Ensemble Methods",
+            "content": "# Ensemble Learning 🌲🌲🌲\n\nCombine multiple models for better results!\n\n## Random Forest\n\n```python\nfrom sklearn.ensemble import RandomForestClassifier\n\nmodel = RandomForestClassifier(\n    n_estimators=100,  # Number of trees\n    max_depth=10\n)\nmodel.fit(X_train, y_train)\n\n# Feature importance\nimportance = model.feature_importances_\n```\n\n## Gradient Boosting\n\n```python\nfrom sklearn.ensemble import GradientBoostingClassifier\n\nmodel = GradientBoostingClassifier(\n    n_estimators=100,\n    learning_rate=0.1\n)\nmodel.fit(X_train, y_train)\n```\n\n## XGBoost (Popular!)\n\n```python\nimport xgboost as xgb\n\nmodel = xgb.XGBClassifier(\n    n_estimators=100,\n    learning_rate=0.1\n)\nmodel.fit(X_train, y_train)\n```\n\n> 💡 **Random Forest wins most Kaggle competitions!**"
+        },
+        {
+            "id": "supervise_5",
+            "type": "content",
+            "title": "Evaluation Metrics",
+            "content": "# Model Evaluation 📊\n\n## Regression Metrics\n\n```python\nfrom sklearn.metrics import mean_squared_error, r2_score\n\nmse = mean_squared_error(y_true, y_pred)\nrmse = mse ** 0.5  # Root MSE\nr2 = r2_score(y_true, y_pred)  # 0-1, higher better\n```\n\n## Classification Metrics\n\n```python\nfrom sklearn.metrics import accuracy_score, precision_score, recall_score, f1_score\n\naccuracy = accuracy_score(y_true, y_pred)\nprecision = precision_score(y_true, y_pred)\nrecall = recall_score(y_true, y_pred)\nf1 = f1_score(y_true, y_pred)\n```\n\n## Confusion Matrix\n\n```python\nfrom sklearn.metrics import confusion_matrix\n\ncm = confusion_matrix(y_true, y_pred)\n#           Predicted\n#           0    1\n# Actual 0 [TN,  FP]\n#        1 [FN,  TP]\n```\n\n> 🎯 Use **F1-score** for imbalanced datasets!"
+        },
+        {
+            "id": "supervise_6",
+            "type": "content",
+            "title": "Summary",
+            "content": "# Excellent Work! 🎉\n\nYou've learned Supervised Learning!\n\n## Regression\n- ✅ Linear Regression\n- ✅ Polynomial Regression\n\n## Classification\n- ✅ Logistic Regression\n- ✅ Decision Trees\n- ✅ KNN, SVM\n\n## Ensemble\n- ✅ Random Forest\n- ✅ Gradient Boosting\n- ✅ XGBoost\n\n## Metrics\n- ✅ MSE, RMSE, R²\n- ✅ Accuracy, Precision, Recall, F1\n\n> 🚀 **Next Steps:** Learn about Unsupervised Learning!"
+        }
+    ]
+}

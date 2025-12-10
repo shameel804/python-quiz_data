@@ -1,0 +1,41 @@
+{
+    "id": "learn_fastapi",
+    "topicId": "fastapi",
+    "topicTitle": "FastAPI",
+    "description": "Modern async API framework",
+    "baseKP": 90,
+    "slides": [
+        {
+            "id": "fastapi_1",
+            "type": "content",
+            "title": "Introduction",
+            "content": "# FastAPI ⚡\n\nModern, fast, async API framework!\n\n```python\nfrom fastapi import FastAPI\n\napp = FastAPI()\n\n@app.get('/')\nasync def home():\n    return {'message': 'Hello FastAPI!'}\n\n@app.get('/items/{item_id}')\nasync def read_item(item_id: int):\n    return {'item_id': item_id}\n```\n\n```bash\nuvicorn main:app --reload\n```\n\n> 💡 **Auto-generates docs** at `/docs`!"
+        },
+        {
+            "id": "fastapi_2",
+            "type": "content",
+            "title": "Pydantic Models",
+            "content": "# Type Validation 📋\n\n```python\nfrom pydantic import BaseModel\n\nclass Item(BaseModel):\n    name: str\n    price: float\n    in_stock: bool = True\n\n@app.post('/items')\nasync def create_item(item: Item):\n    return item\n\n# Auto validates!\n# POST {\"name\": \"Phone\", \"price\": 999.99}\n```\n\n> ✅ **Automatic validation & documentation!**"
+        },
+        {
+            "id": "fastapi_quiz_1",
+            "type": "quiz",
+            "title": "Quiz",
+            "content": "Test your knowledge!",
+            "quizQuestion": "Which library does FastAPI use for data validation?",
+            "quizOptions": [
+                "Marshmallow",
+                "Pydantic",
+                "Cerberus",
+                "Django Forms"
+            ],
+            "correctOptionIndex": 1
+        },
+        {
+            "id": "fastapi_3",
+            "type": "content",
+            "title": "Summary",
+            "content": "# Excellent! 🎉\n\n## Key Features\n- ✅ Async by default\n- ✅ Type hints + Pydantic\n- ✅ Auto-generated docs\n- ✅ High performance\n\n> 🚀 **Next:** Learn Requests!"
+        }
+    ]
+}

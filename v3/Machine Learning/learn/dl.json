@@ -1,0 +1,53 @@
+{
+    "id": "learn_dl",
+    "topicId": "dl",
+    "topicTitle": "Deep Learning",
+    "description": "Understand neural networks, CNNs, and RNNs",
+    "baseKP": 95,
+    "slides": [
+        {
+            "id": "dl_1",
+            "type": "content",
+            "title": "Introduction to Deep Learning",
+            "content": "# Deep Learning 🧠\n\nNeural networks with many layers!\n\n## What you'll learn:\n- **Neural Networks** - Basics\n- **Activation Functions** - Non-linearity\n- **CNNs** - Image processing\n- **RNNs** - Sequences\n\n## Deep Learning vs ML\n\n| ML | Deep Learning |\n|----|--------------|\n| Feature engineering | Automatic features |\n| Smaller data | Big data |\n| CPU | GPU |\n| Interpretable | Black box |\n\n> 💡 **Deep Learning powers ChatGPT, self-driving cars, and image recognition!**"
+        },
+        {
+            "id": "dl_2",
+            "type": "content",
+            "title": "Neural Networks",
+            "content": "# Neural Network Basics 🔗\n\n## Structure\n\n```\nInput Layer → Hidden Layers → Output Layer\n    [x]    →    [h1][h2]   →    [y]\n```\n\n## Simple Neural Network\n\n```python\nimport tensorflow as tf\nfrom tensorflow import keras\n\nmodel = keras.Sequential([\n    keras.layers.Dense(128, activation='relu', input_shape=(10,)),\n    keras.layers.Dense(64, activation='relu'),\n    keras.layers.Dense(1, activation='sigmoid')\n])\n\nmodel.compile(\n    optimizer='adam',\n    loss='binary_crossentropy',\n    metrics=['accuracy']\n)\n\nmodel.fit(X_train, y_train, epochs=10, batch_size=32)\n```\n\n## Activation Functions\n\n| Function | Use Case |\n|----------|----------|\n| ReLU | Hidden layers |\n| Sigmoid | Binary output |\n| Softmax | Multi-class output |\n| Tanh | Hidden layers |"
+        },
+        {
+            "id": "dl_3",
+            "type": "content",
+            "title": "CNNs for Images",
+            "content": "# Convolutional Neural Networks 📸\n\nDesigned for image processing!\n\n## Key Layers\n\n```\nConv2D → Pooling → Conv2D → Pooling → Flatten → Dense\n```\n\n## Code Example\n\n```python\nmodel = keras.Sequential([\n    keras.layers.Conv2D(32, (3,3), activation='relu', input_shape=(28,28,1)),\n    keras.layers.MaxPooling2D((2,2)),\n    keras.layers.Conv2D(64, (3,3), activation='relu'),\n    keras.layers.MaxPooling2D((2,2)),\n    keras.layers.Flatten(),\n    keras.layers.Dense(64, activation='relu'),\n    keras.layers.Dense(10, activation='softmax')\n])\n```\n\n## Applications\n- 👁️ Image classification\n- 🚗 Object detection\n- 😊 Face recognition\n- 🏥 Medical imaging"
+        },
+        {
+            "id": "dl_quiz_1",
+            "type": "quiz",
+            "title": "Deep Learning Quiz",
+            "content": "Test your knowledge!",
+            "quizQuestion": "Which layer type is essential for image processing in CNNs?",
+            "quizOptions": [
+                "Dense",
+                "Conv2D",
+                "LSTM",
+                "Embedding"
+            ],
+            "correctOptionIndex": 1
+        },
+        {
+            "id": "dl_4",
+            "type": "content",
+            "title": "RNNs for Sequences",
+            "content": "# Recurrent Neural Networks 🔄\n\nProcess sequences with memory!\n\n## LSTM Example\n\n```python\nmodel = keras.Sequential([\n    keras.layers.Embedding(vocab_size, 128),\n    keras.layers.LSTM(64, return_sequences=True),\n    keras.layers.LSTM(32),\n    keras.layers.Dense(1, activation='sigmoid')\n])\n```\n\n## Applications\n- 📝 Text generation\n- 🌐 Language translation\n- 📈 Time series prediction\n- 🎤 Speech recognition\n\n> 💡 **LSTM solves vanishing gradient problem** in basic RNNs!"
+        },
+        {
+            "id": "dl_5",
+            "type": "content",
+            "title": "Summary",
+            "content": "# Excellent Work! 🎉\n\nYou've learned Deep Learning basics!\n\n## Neural Networks\n- ✅ Layers and neurons\n- ✅ Activation functions\n\n## CNNs\n- ✅ Conv2D, Pooling\n- ✅ Image classification\n\n## RNNs\n- ✅ LSTM for sequences\n- ✅ Text and time series\n\n> 🚀 **Next Steps:** Learn about Model Evaluation!"
+        }
+    ]
+}

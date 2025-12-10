@@ -1,0 +1,47 @@
+{
+    "id": "learn_numpy",
+    "topicId": "numpy",
+    "topicTitle": "NumPy",
+    "description": "Array operations, linear algebra, and numerical computing",
+    "baseKP": 85,
+    "slides": [
+        {
+            "id": "numpy_1",
+            "type": "content",
+            "title": "Introduction to NumPy",
+            "content": "# NumPy 🔢\n\nThe foundation of Python data science!\n\n## Installation\n\n```bash\npip install numpy\n```\n\n## Why NumPy?\n- ⚡ 50x faster than lists\n- 📊 N-dimensional arrays\n- 🧮 Mathematical operations\n- 🔗 Base for Pandas, TensorFlow\n\n```python\nimport numpy as np\n```\n\n> 💡 **NumPy powers nearly all data science in Python!**"
+        },
+        {
+            "id": "numpy_2",
+            "type": "content",
+            "title": "Array Creation",
+            "content": "# Creating Arrays 📊\n\n```python\nimport numpy as np\n\n# From list\narr = np.array([1, 2, 3, 4, 5])\n\n# Zeros and ones\nzeros = np.zeros((3, 4))\nones = np.ones((2, 3))\n\n# Range\narr = np.arange(0, 10, 2)  # [0, 2, 4, 6, 8]\nspace = np.linspace(0, 1, 5)  # 5 evenly spaced\n\n# Random\nrand = np.random.rand(3, 3)  # 0-1\nrandint = np.random.randint(0, 10, (3, 3))\n```\n\n## Array Properties\n\n```python\narr.shape    # (3, 4)\narr.dtype    # int64\narr.ndim     # 2\narr.size     # 12\n```"
+        },
+        {
+            "id": "numpy_3",
+            "type": "content",
+            "title": "Array Operations",
+            "content": "# Operations ⚡\n\n## Vectorized Operations\n\n```python\narr = np.array([1, 2, 3, 4, 5])\n\narr + 10      # [11, 12, 13, 14, 15]\narr * 2       # [2, 4, 6, 8, 10]\narr ** 2      # [1, 4, 9, 16, 25]\nnp.sqrt(arr)  # Square roots\n```\n\n## Aggregations\n\n```python\narr.sum()      # Total\narr.mean()     # Average\narr.std()      # Standard deviation\narr.min()      # Minimum\narr.max()      # Maximum\narr.argmax()   # Index of max\n```\n\n## Reshaping\n\n```python\narr = np.arange(12)\narr.reshape(3, 4)   # 3x4 matrix\narr.reshape(-1, 1)  # Column vector\narr.flatten()       # Back to 1D\n```"
+        },
+        {
+            "id": "numpy_quiz_1",
+            "type": "quiz",
+            "title": "NumPy Quiz",
+            "content": "Test your knowledge!",
+            "quizQuestion": "How do you create an array of zeros with shape (3, 4)?",
+            "quizOptions": [
+                "np.zeros(3, 4)",
+                "np.zeros((3, 4))",
+                "np.array(zeros=12)",
+                "np.zeros[3, 4]"
+            ],
+            "correctOptionIndex": 1
+        },
+        {
+            "id": "numpy_4",
+            "type": "content",
+            "title": "Summary",
+            "content": "# Excellent! 🎉\n\nYou've learned NumPy basics!\n\n## Array Creation\n- ✅ `np.array()`, `np.zeros()`, `np.ones()`\n- ✅ `np.arange()`, `np.linspace()`\n\n## Operations\n- ✅ Vectorized math\n- ✅ Aggregations\n- ✅ Reshaping\n\n> 🚀 **Next Steps:** Learn Pandas for data analysis!"
+        }
+    ]
+}

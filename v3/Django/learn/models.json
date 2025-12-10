@@ -1,0 +1,85 @@
+{
+    "id": "learn_models",
+    "topicId": "models",
+    "topicTitle": "Models",
+    "description": "Master Django ORM, defining models, migrations, and relationships",
+    "baseKP": 85,
+    "slides": [
+        {
+            "id": "models_1",
+            "type": "content",
+            "title": "Introduction to Models",
+            "content": "# Django Models 🗄️\n\nModels are Python classes that define your database structure!\n\n## What you'll learn:\n- **ORM Basics** - Object-Relational Mapping\n- **Defining Models** - Fields and options\n- **Migrations** - Database schema changes\n- **Relationships** - ForeignKey, ManyToMany\n- **Queries** - CRUD operations\n\n## Why Use Models?\n\n```python\n# Without ORM (raw SQL)\ncursor.execute(\"SELECT * FROM articles WHERE id = %s\", [5])\nrow = cursor.fetchone()\n\n# With Django ORM\narticle = Article.objects.get(id=5)\n```\n\n> 💡 **The ORM translates Python to SQL!** You write Python, Django generates optimized SQL.\n\n## Model = Database Table\n\n```python\nclass Article(models.Model):    # → articles table\n    title = models.CharField()   # → title column\n    content = models.TextField() # → content column\n```"
+        },
+        {
+            "id": "models_2",
+            "type": "content",
+            "title": "Defining Models",
+            "content": "# Creating Models 📝\n\n## Basic Model\n\n```python\nfrom django.db import models\n\nclass Article(models.Model):\n    title = models.CharField(max_length=200)\n    content = models.TextField()\n    published = models.DateTimeField(auto_now_add=True)\n    updated = models.DateTimeField(auto_now=True)\n    is_active = models.BooleanField(default=True)\n    \n    def __str__(self):\n        return self.title\n```\n\n## Common Field Types\n\n| Field | Description |\n|-------|-------------|\n| `CharField` | Short text (max_length required) |\n| `TextField` | Long text |\n| `IntegerField` | Integer |\n| `FloatField` | Decimal number |\n| `BooleanField` | True/False |\n| `DateField` | Date |\n| `DateTimeField` | Date and time |\n| `EmailField` | Validated email |\n| `URLField` | Validated URL |\n| `ImageField` | Image upload |\n| `FileField` | File upload |\n\n## Field Options\n\n```python\ntitle = models.CharField(\n    max_length=200,\n    blank=True,       # Can be empty in forms\n    null=True,        # Can be NULL in database\n    default='Draft',  # Default value\n    unique=True,      # Must be unique\n)\n```"
+        },
+        {
+            "id": "models_3",
+            "type": "content",
+            "title": "Database Migrations",
+            "content": "# Migrations 🔄\n\nMigrations track changes to your models and apply them to the database.\n\n## Migration Workflow\n\n```bash\n# 1. Make changes to models.py\n\n# 2. Create migration files\npython manage.py makemigrations\n\n# 3. Apply migrations to database\npython manage.py migrate\n```\n\n## Migration Commands\n\n```bash\n# See migration status\npython manage.py showmigrations\n\n# See SQL for a migration\npython manage.py sqlmigrate blog 0001\n\n# Rollback to specific migration\npython manage.py migrate blog 0001\n\n# Rollback all migrations\npython manage.py migrate blog zero\n```\n\n## What Migrations Handle\n\n- ✅ Creating tables\n- ✅ Adding/removing columns\n- ✅ Changing field types\n- ✅ Creating indexes\n- ✅ Adding constraints\n\n> 💡 **Always commit migration files to version control!** They're essential for team collaboration.\n\n> ⚠️ **Never delete migrations manually** unless you know what you're doing!"
+        },
+        {
+            "id": "models_quiz_1",
+            "type": "quiz",
+            "title": "Models Quiz",
+            "content": "Test your model knowledge!",
+            "quizQuestion": "Which command creates migration files from model changes?",
+            "quizOptions": [
+                "python manage.py migrate",
+                "python manage.py makemigrations",
+                "python manage.py syncdb",
+                "python manage.py createdb"
+            ],
+            "correctOptionIndex": 1
+        },
+        {
+            "id": "models_4",
+            "type": "content",
+            "title": "Model Relationships",
+            "content": "# Relationships 🔗\n\n## ForeignKey (One-to-Many)\n\n```python\nclass Category(models.Model):\n    name = models.CharField(max_length=100)\n\nclass Article(models.Model):\n    title = models.CharField(max_length=200)\n    category = models.ForeignKey(\n        Category,\n        on_delete=models.CASCADE,  # Delete articles if category deleted\n        related_name='articles'    # category.articles.all()\n    )\n```\n\n## on_delete Options\n\n| Option | Behavior |\n|--------|----------|\n| `CASCADE` | Delete related objects |\n| `PROTECT` | Prevent deletion |\n| `SET_NULL` | Set to NULL |\n| `SET_DEFAULT` | Set to default |\n| `DO_NOTHING` | Do nothing |\n\n## ManyToManyField\n\n```python\nclass Tag(models.Model):\n    name = models.CharField(max_length=50)\n\nclass Article(models.Model):\n    title = models.CharField(max_length=200)\n    tags = models.ManyToManyField(Tag, related_name='articles')\n```\n\n## OneToOneField\n\n```python\nclass Profile(models.Model):\n    user = models.OneToOneField(\n        User,\n        on_delete=models.CASCADE\n    )\n    bio = models.TextField()\n```"
+        },
+        {
+            "id": "models_5",
+            "type": "content",
+            "title": "Querying Data",
+            "content": "# QuerySet API 🔍\n\n## Basic Queries\n\n```python\n# Get all objects\narticles = Article.objects.all()\n\n# Get single object\narticle = Article.objects.get(id=5)\n\n# Filter objects\nactive = Article.objects.filter(is_active=True)\npython_articles = Article.objects.filter(title__contains='Python')\n\n# Exclude objects  \nno_drafts = Article.objects.exclude(status='draft')\n\n# First/Last\nfirst = Article.objects.first()\nlast = Article.objects.last()\n```\n\n## Field Lookups\n\n```python\n# Comparison\nArticle.objects.filter(views__gt=100)    # Greater than\nArticle.objects.filter(views__gte=100)   # Greater than or equal\nArticle.objects.filter(views__lt=100)    # Less than\nArticle.objects.filter(views__lte=100)   # Less than or equal\n\n# Text\nArticle.objects.filter(title__contains='python')     # Case sensitive\nArticle.objects.filter(title__icontains='python')    # Case insensitive\nArticle.objects.filter(title__startswith='How')\nArticle.objects.filter(title__endswith='?')\n\n# Date\nArticle.objects.filter(published__year=2024)\nArticle.objects.filter(published__month=3)\n```"
+        },
+        {
+            "id": "models_6",
+            "type": "content",
+            "title": "CRUD Operations",
+            "content": "# Create, Read, Update, Delete 📊\n\n## Create\n\n```python\n# Method 1: create()\narticle = Article.objects.create(\n    title='My Article',\n    content='Hello World'\n)\n\n# Method 2: save()\narticle = Article(title='My Article', content='Hello')\narticle.save()\n\n# Bulk create\nArticle.objects.bulk_create([\n    Article(title='Article 1'),\n    Article(title='Article 2'),\n])\n```\n\n## Read\n\n```python\narticle = Article.objects.get(pk=5)  # Single object\narticles = Article.objects.all()      # All objects\nfiltered = Article.objects.filter(is_active=True)\n```\n\n## Update\n\n```python\n# Single object\narticle = Article.objects.get(pk=5)\narticle.title = 'New Title'\narticle.save()\n\n# Bulk update\nArticle.objects.filter(is_active=False).update(is_active=True)\n```\n\n## Delete\n\n```python\n# Single object\narticle = Article.objects.get(pk=5)\narticle.delete()\n\n# Bulk delete\nArticle.objects.filter(status='draft').delete()\n```"
+        },
+        {
+            "id": "models_quiz_2",
+            "type": "quiz",
+            "title": "Queries Quiz",
+            "content": "Test your QuerySet knowledge!",
+            "quizQuestion": "Which lookup finds articles with titles containing 'python' (case-insensitive)?",
+            "quizOptions": [
+                "filter(title__contains='python')",
+                "filter(title__icontains='python')",
+                "filter(title__like='python')",
+                "filter(title='python')"
+            ],
+            "correctOptionIndex": 1
+        },
+        {
+            "id": "models_7",
+            "type": "content",
+            "title": "Advanced Queries",
+            "content": "# Advanced QuerySet Features 🚀\n\n## Ordering\n\n```python\n# Ascending\nArticle.objects.order_by('title')\n\n# Descending\nArticle.objects.order_by('-published')\n\n# Multiple fields\nArticle.objects.order_by('category', '-published')\n```\n\n## Aggregation\n\n```python\nfrom django.db.models import Count, Avg, Sum, Max, Min\n\n# Count\ncount = Article.objects.count()\n\n# Aggregate\nstats = Article.objects.aggregate(\n    total=Count('id'),\n    avg_views=Avg('views'),\n    max_views=Max('views')\n)\n# {'total': 100, 'avg_views': 50.5, 'max_views': 1000}\n```\n\n## Related Objects\n\n```python\n# Forward relation\narticle = Article.objects.get(pk=5)\ncategory_name = article.category.name\n\n# Reverse relation\ncategory = Category.objects.get(pk=1)\ncategory_articles = category.articles.all()\n\n# Prefetch for performance\narticles = Article.objects.prefetch_related('tags').all()\n\n# Select related (ForeignKey)\narticles = Article.objects.select_related('category').all()\n```"
+        },
+        {
+            "id": "models_8",
+            "type": "content",
+            "title": "Summary",
+            "content": "# Excellent Work! 🎉\n\nYou've mastered Django Models!\n\n## Model Basics\n- ✅ Defining models with fields\n- ✅ Field types and options\n- ✅ `__str__` method for display\n\n## Migrations\n- ✅ `makemigrations` - Create migration files\n- ✅ `migrate` - Apply to database\n- ✅ Migration management commands\n\n## Relationships\n- ✅ ForeignKey (One-to-Many)\n- ✅ ManyToManyField\n- ✅ OneToOneField\n- ✅ `on_delete` options\n\n## QuerySet API\n- ✅ `all()`, `get()`, `filter()`, `exclude()`\n- ✅ Field lookups (`__contains`, `__gt`, etc.)\n- ✅ Ordering and aggregation\n\n## CRUD\n- ✅ Create: `create()`, `save()`\n- ✅ Read: `get()`, `filter()`\n- ✅ Update: `save()`, `update()`\n- ✅ Delete: `delete()`\n\n> 🚀 **Next Steps:** Learn about Forms for user input!"
+        }
+    ]
+}

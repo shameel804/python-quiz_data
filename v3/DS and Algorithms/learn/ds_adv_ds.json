@@ -1,0 +1,59 @@
+{
+    "id": "learn_ds_adv_ds",
+    "topicId": "ds_adv_ds",
+    "topicTitle": "Advanced Data Structures",
+    "description": "Arrays, stacks, queues, linked lists, trees, graphs, heaps, hash tables",
+    "baseKP": 95,
+    "slides": [
+        {
+            "id": "ds_adv_1",
+            "type": "content",
+            "title": "Arrays & Lists",
+            "content": "# Arrays in Python 📊\n\n## Python Lists\n\n```python\n# Dynamic arrays\narr = [1, 2, 3, 4, 5]\n\narr.append(6)      # O(1) amortized\narr.pop()          # O(1)\narr.insert(0, 0)   # O(n)\narr[2]             # O(1) access\n```\n\n## NumPy Arrays\n\n```python\nimport numpy as np\n\narr = np.array([1, 2, 3, 4, 5])\narr * 2  # Vectorized operations\n```\n\n## 2D Arrays\n\n```python\nmatrix = [\n    [1, 2, 3],\n    [4, 5, 6],\n    [7, 8, 9]\n]\nmatrix[1][2]  # Access: 6\n```"
+        },
+        {
+            "id": "ds_adv_2",
+            "type": "content",
+            "title": "Stacks & Queues",
+            "content": "# Stacks & Queues 📚\n\n## Stack (LIFO)\n\n```python\nstack = []\nstack.append(1)  # Push\nstack.append(2)\ntop = stack.pop()  # Pop: 2\n```\n\n## Queue (FIFO)\n\n```python\nfrom collections import deque\n\nqueue = deque()\nqueue.append(1)      # Enqueue\nqueue.append(2)\nfront = queue.popleft()  # Dequeue: 1\n```\n\n## Applications\n\n| Stack | Queue |\n|-------|-------|\n| Undo/Redo | Task scheduling |\n| Parentheses | BFS |\n| Call stack | Print queue |"
+        },
+        {
+            "id": "ds_adv_3",
+            "type": "content",
+            "title": "Linked Lists",
+            "content": "# Linked Lists 🔗\n\n## Node Definition\n\n```python\nclass Node:\n    def __init__(self, data):\n        self.data = data\n        self.next = None\n\nclass LinkedList:\n    def __init__(self):\n        self.head = None\n    \n    def append(self, data):\n        if not self.head:\n            self.head = Node(data)\n            return\n        current = self.head\n        while current.next:\n            current = current.next\n        current.next = Node(data)\n```\n\n## Array vs Linked List\n\n| Operation | Array | Linked List |\n|-----------|-------|-------------|\n| Access | O(1) | O(n) |\n| Insert start | O(n) | O(1) |\n| Insert end | O(1) | O(n) |"
+        },
+        {
+            "id": "ds_adv_4",
+            "type": "content",
+            "title": "Trees",
+            "content": "# Binary Trees 🌳\n\n## Node Definition\n\n```python\nclass TreeNode:\n    def __init__(self, val):\n        self.val = val\n        self.left = None\n        self.right = None\n```\n\n## Tree Traversals\n\n```python\n# Inorder: Left → Root → Right\ndef inorder(node):\n    if node:\n        inorder(node.left)\n        print(node.val)\n        inorder(node.right)\n\n# Preorder: Root → Left → Right\ndef preorder(node):\n    if node:\n        print(node.val)\n        preorder(node.left)\n        preorder(node.right)\n\n# Postorder: Left → Right → Root\ndef postorder(node):\n    if node:\n        postorder(node.left)\n        postorder(node.right)\n        print(node.val)\n```"
+        },
+        {
+            "id": "ds_adv_quiz_1",
+            "type": "quiz",
+            "title": "DS Quiz",
+            "content": "Test your knowledge!",
+            "quizQuestion": "Which data structure follows LIFO (Last In, First Out)?",
+            "quizOptions": [
+                "Queue",
+                "Stack",
+                "Linked List",
+                "Tree"
+            ],
+            "correctOptionIndex": 1
+        },
+        {
+            "id": "ds_adv_5",
+            "type": "content",
+            "title": "Hash Tables",
+            "content": "# Hash Tables (Dictionaries) 🗂️\n\n## Python Dicts\n\n```python\nhash_map = {}\nhash_map['key'] = 'value'  # O(1) average\nprint(hash_map['key'])      # O(1) access\ndel hash_map['key']         # O(1) delete\n```\n\n## Common Uses\n\n```python\n# Count frequency\ndef count_chars(s):\n    freq = {}\n    for c in s:\n        freq[c] = freq.get(c, 0) + 1\n    return freq\n\n# Two Sum problem\ndef two_sum(nums, target):\n    seen = {}\n    for i, n in enumerate(nums):\n        complement = target - n\n        if complement in seen:\n            return [seen[complement], i]\n        seen[n] = i\n```\n\n> 💡 **Hash tables = O(1) lookup!**"
+        },
+        {
+            "id": "ds_adv_6",
+            "type": "content",
+            "title": "Summary",
+            "content": "# Great Work! 🎉\n\nYou've learned Data Structures!\n\n## Linear\n- ✅ Arrays, Linked Lists\n- ✅ Stacks (LIFO), Queues (FIFO)\n\n## Non-Linear\n- ✅ Trees, Graphs\n- ✅ Hash Tables\n\n## Python Built-ins\n- ✅ `list`, `dict`, `set`\n- ✅ `collections.deque`\n\n> 🚀 **Next Steps:** Learn Sorting & Searching!"
+        }
+    ]
+}

@@ -1,0 +1,41 @@
+{
+    "id": "learn_cache",
+    "topicId": "cache",
+    "topicTitle": "Caching",
+    "description": "Improve performance with Django caching",
+    "baseKP": 80,
+    "slides": [
+        {
+            "id": "cache_1",
+            "type": "content",
+            "title": "Django Caching",
+            "content": "# Caching in Django ⚡\n\nSpeed up your app by caching expensive operations!\n\n## Cache Types\n\n| Backend | Description |\n|---------|-------------|\n| Memcached | Distributed memory cache |\n| Redis | Key-value store |\n| Database | Cache in DB table |\n| File | Cache in filesystem |\n| Local Memory | In-process cache (dev) |\n\n## Configuration\n\n```python\n# settings.py\nCACHES = {\n    'default': {\n        'BACKEND': 'django.core.cache.backends.redis.RedisCache',\n        'LOCATION': 'redis://127.0.0.1:6379',\n    }\n}\n```\n\n> 💡 **Caching can make your site 10-100x faster!**"
+        },
+        {
+            "id": "cache_2",
+            "type": "content",
+            "title": "Using Cache",
+            "content": "# Cache API 🔧\n\n## Low-Level API\n\n```python\nfrom django.core.cache import cache\n\n# Set cache (5 minutes)\ncache.set('my_key', 'my_value', 300)\n\n# Get cache\nvalue = cache.get('my_key')  # Returns None if expired\nvalue = cache.get('my_key', 'default')\n\n# Delete cache\ncache.delete('my_key')\n\n# Get or set\nvalue = cache.get_or_set('my_key', expensive_function, 300)\n```\n\n## View Caching\n\n```python\nfrom django.views.decorators.cache import cache_page\n\n@cache_page(60 * 15)  # Cache for 15 minutes\ndef my_view(request):\n    # Expensive operations\n    return render(request, 'template.html')\n```\n\n## Template Fragment Caching\n\n```html\n{% load cache %}\n\n{% cache 500 sidebar %}\n    <!-- Expensive sidebar content -->\n{% endcache %}\n```"
+        },
+        {
+            "id": "cache_quiz_1",
+            "type": "quiz",
+            "title": "Caching Quiz",
+            "content": "Test your caching knowledge!",
+            "quizQuestion": "Which decorator caches an entire view?",
+            "quizOptions": [
+                "@cache_view",
+                "@cache_page",
+                "@view_cache",
+                "@memoize"
+            ],
+            "correctOptionIndex": 1
+        },
+        {
+            "id": "cache_3",
+            "type": "content",
+            "title": "Summary",
+            "content": "# Excellent Work! 🎉\n\nYou've learned Django Caching!\n\n## Cache Backends\n- ✅ Redis, Memcached, Database, File\n\n## Caching Methods\n- ✅ Low-level: `cache.get()`, `cache.set()`\n- ✅ View: `@cache_page`\n- ✅ Template: `{% cache %}`\n\n## Best Practices\n- 📊 Cache expensive queries\n- ⏱️ Set appropriate timeouts\n- 🔄 Invalidate on data changes\n\n> 🎯 **You've completed Django!** Practice by building a blog or API!"
+        }
+    ]
+}

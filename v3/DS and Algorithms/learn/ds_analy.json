@@ -1,0 +1,33 @@
+{
+    "id": "learn_ds_analy",
+    "topicId": "ds_analy",
+    "topicTitle": "Algorithm Analysis and Optimization",
+    "description": "Time complexity cases, profiling, and optimization techniques",
+    "baseKP": 85,
+    "slides": [
+        {
+            "id": "analy_1",
+            "type": "content",
+            "title": "Complexity Cases",
+            "content": "# Best, Average, Worst Case ⏱️\n\n## Example: Linear Search\n\n```python\ndef find(arr, target):\n    for i, val in enumerate(arr):\n        if val == target:\n            return i\n    return -1\n```\n\n| Case | When | Complexity |\n|------|------|------------|\n| Best | First element | O(1) |\n| Average | Middle | O(n/2) = O(n) |\n| Worst | Last or not found | O(n) |\n\n> 💡 **We usually analyze worst case** for guarantees!"
+        },
+        {
+            "id": "analy_2",
+            "type": "content",
+            "title": "Profiling Code",
+            "content": "# Performance Profiling 🔬\n\n## Time Measurement\n\n```python\nimport time\n\nstart = time.time()\n# Your code here\nend = time.time()\nprint(f\"Time: {end - start:.4f}s\")\n```\n\n## cProfile\n\n```python\nimport cProfile\n\ncProfile.run('your_function()')\n```\n\n## timeit\n\n```python\nimport timeit\n\ntime = timeit.timeit(\n    'sum(range(1000))',\n    number=10000\n)\nprint(f\"Average: {time/10000:.6f}s\")\n```"
+        },
+        {
+            "id": "analy_3",
+            "type": "content",
+            "title": "Optimization Tips",
+            "content": "# Optimization Techniques ⚡\n\n## Use Built-ins\n\n```python\n# Slow\nresult = 0\nfor x in nums:\n    result += x\n\n# Fast\nresult = sum(nums)\n```\n\n## List Comprehensions\n\n```python\n# Slower\nsquares = []\nfor x in range(1000):\n    squares.append(x**2)\n\n# Faster\nsquares = [x**2 for x in range(1000)]\n```\n\n## Generators for Large Data\n\n```python\n# Memory heavy\ndata = [x**2 for x in range(10_000_000)]\n\n# Memory efficient\ndata = (x**2 for x in range(10_000_000))\n```"
+        },
+        {
+            "id": "analy_4",
+            "type": "content",
+            "title": "Summary",
+            "content": "# Excellent Work! 🎉\n\nYou've learned Algorithm Analysis!\n\n## Complexity Cases\n- ✅ Best, Average, Worst\n\n## Profiling\n- ✅ `time`, `cProfile`, `timeit`\n\n## Optimization\n- ✅ Built-in functions\n- ✅ List comprehensions\n- ✅ Generators\n\n> 🚀 **Next Steps:** Learn Practical Applications!"
+        }
+    ]
+}

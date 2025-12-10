@@ -1,0 +1,41 @@
+{
+    "id": "learn_flask",
+    "topicId": "flask",
+    "topicTitle": "Flask",
+    "description": "Lightweight web framework",
+    "baseKP": 85,
+    "slides": [
+        {
+            "id": "flask_1",
+            "type": "content",
+            "title": "Introduction",
+            "content": "# Flask 🌶️\n\nMicro web framework!\n\n```python\nfrom flask import Flask\n\napp = Flask(__name__)\n\n@app.route('/')\ndef home():\n    return 'Hello, Flask!'\n\nif __name__ == '__main__':\n    app.run(debug=True)\n```\n\n> 💡 **Flask is lightweight** - add only what you need!"
+        },
+        {
+            "id": "flask_2",
+            "type": "content",
+            "title": "Routes & Methods",
+            "content": "# Routing 🛤️\n\n```python\n@app.route('/user/<username>')\ndef user_profile(username):\n    return f'User: {username}'\n\n@app.route('/post', methods=['GET', 'POST'])\ndef post():\n    if request.method == 'POST':\n        data = request.form['data']\n        return f'Posted: {data}'\n    return 'Form page'\n\n@app.route('/api/data')\ndef api():\n    return jsonify({'status': 'ok'})\n```"
+        },
+        {
+            "id": "flask_quiz_1",
+            "type": "quiz",
+            "title": "Quiz",
+            "content": "Test your knowledge!",
+            "quizQuestion": "Which decorator defines a route in Flask?",
+            "quizOptions": [
+                "@app.url",
+                "@app.route",
+                "@app.path",
+                "@app.endpoint"
+            ],
+            "correctOptionIndex": 1
+        },
+        {
+            "id": "flask_3",
+            "type": "content",
+            "title": "Summary",
+            "content": "# Great! 🎉\n\n## Key Concepts\n- ✅ `@app.route()` decorator\n- ✅ Dynamic routes\n- ✅ HTTP methods\n- ✅ `jsonify()` for APIs\n\n> 🚀 **Next:** Learn FastAPI!"
+        }
+    ]
+}

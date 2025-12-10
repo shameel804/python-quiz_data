@@ -1,0 +1,41 @@
+{
+    "id": "learn_pytorch",
+    "topicId": "pytorch",
+    "topicTitle": "PyTorch",
+    "description": "Deep learning framework",
+    "baseKP": 95,
+    "slides": [
+        {
+            "id": "pt_1",
+            "type": "content",
+            "title": "Introduction",
+            "content": "# PyTorch 🔥\n\nDeep learning by Meta!\n\n```python\nimport torch\nimport torch.nn as nn\n\nclass Net(nn.Module):\n    def __init__(self):\n        super().__init__()\n        self.fc1 = nn.Linear(784, 128)\n        self.fc2 = nn.Linear(128, 10)\n    \n    def forward(self, x):\n        x = torch.relu(self.fc1(x))\n        return self.fc2(x)\n\nmodel = Net()\n```\n\n> 💡 **Dynamic graphs** - more Pythonic!"
+        },
+        {
+            "id": "pt_2",
+            "type": "content",
+            "title": "Training",
+            "content": "# Training Loop 🔄\n\n```python\ncriterion = nn.CrossEntropyLoss()\noptimizer = torch.optim.Adam(model.parameters())\n\nfor epoch in range(10):\n    for data, target in loader:\n        optimizer.zero_grad()\n        output = model(data)\n        loss = criterion(output, target)\n        loss.backward()\n        optimizer.step()\n```"
+        },
+        {
+            "id": "pt_quiz_1",
+            "type": "quiz",
+            "title": "Quiz",
+            "content": "Test your knowledge!",
+            "quizQuestion": "Which method computes gradients in PyTorch?",
+            "quizOptions": [
+                "loss.gradient()",
+                "loss.backward()",
+                "loss.compute()",
+                "loss.derive()"
+            ],
+            "correctOptionIndex": 1
+        },
+        {
+            "id": "pt_3",
+            "type": "content",
+            "title": "Summary",
+            "content": "# Great! 🎉\n\n## Key Concepts\n- ✅ `nn.Module` for models\n- ✅ Dynamic computation graphs\n- ✅ `backward()` for gradients\n\n> 🚀 **Next:** Learn Hugging Face!"
+        }
+    ]
+}

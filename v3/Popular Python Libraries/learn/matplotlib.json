@@ -1,0 +1,41 @@
+{
+    "id": "learn_matplotlib",
+    "topicId": "matplotlib",
+    "topicTitle": "Matplotlib",
+    "description": "Data visualization and plotting",
+    "baseKP": 80,
+    "slides": [
+        {
+            "id": "mpl_1",
+            "type": "content",
+            "title": "Introduction",
+            "content": "# Matplotlib 📊\n\nCreate beautiful visualizations!\n\n```python\nimport matplotlib.pyplot as plt\n\nplt.plot([1, 2, 3, 4], [1, 4, 9, 16])\nplt.xlabel('X')\nplt.ylabel('Y')\nplt.title('My Plot')\nplt.show()\n```"
+        },
+        {
+            "id": "mpl_2",
+            "type": "content",
+            "title": "Plot Types",
+            "content": "# Common Plots 📈\n\n```python\n# Line plot\nplt.plot(x, y)\n\n# Scatter\nplt.scatter(x, y)\n\n# Bar\nplt.bar(categories, values)\n\n# Histogram\nplt.hist(data, bins=20)\n\n# Pie\nplt.pie(sizes, labels=labels)\n```"
+        },
+        {
+            "id": "mpl_quiz_1",
+            "type": "quiz",
+            "title": "Quiz",
+            "content": "Test your knowledge!",
+            "quizQuestion": "Which function displays the plot?",
+            "quizOptions": [
+                "plt.display()",
+                "plt.show()",
+                "plt.render()",
+                "plt.print()"
+            ],
+            "correctOptionIndex": 1
+        },
+        {
+            "id": "mpl_3",
+            "type": "content",
+            "title": "Summary",
+            "content": "# Great! 🎉\n\n## Key Functions\n- ✅ `plt.plot()`, `plt.scatter()`\n- ✅ `plt.bar()`, `plt.hist()`\n- ✅ `plt.show()`, `plt.savefig()`\n\n> 🚀 **Next:** Learn Seaborn!"
+        }
+    ]
+}

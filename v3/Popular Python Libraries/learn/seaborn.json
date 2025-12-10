@@ -1,0 +1,41 @@
+{
+    "id": "learn_seaborn",
+    "topicId": "seaborn",
+    "topicTitle": "Seaborn",
+    "description": "Statistical data visualization",
+    "baseKP": 80,
+    "slides": [
+        {
+            "id": "sns_1",
+            "type": "content",
+            "title": "Introduction",
+            "content": "# Seaborn 🎨\n\nBeautiful statistical plots!\n\n```python\nimport seaborn as sns\n\nsns.set_theme()  # Nice default style\n```\n\n## Built on Matplotlib\n- ✨ Better defaults\n- 📊 Statistical functions\n- 🎨 Beautiful themes"
+        },
+        {
+            "id": "sns_2",
+            "type": "content",
+            "title": "Plot Types",
+            "content": "# Statistical Plots 📈\n\n```python\nimport seaborn as sns\n\n# Distribution\nsns.histplot(data['age'])\nsns.kdeplot(data['age'])\n\n# Categorical\nsns.boxplot(x='category', y='value', data=df)\nsns.violinplot(x='category', y='value', data=df)\n\n# Relationships\nsns.scatterplot(x='x', y='y', data=df)\nsns.heatmap(correlation_matrix, annot=True)\n\n# Regression\nsns.regplot(x='x', y='y', data=df)\n```"
+        },
+        {
+            "id": "sns_quiz_1",
+            "type": "quiz",
+            "title": "Quiz",
+            "content": "Test your knowledge!",
+            "quizQuestion": "Which Seaborn plot shows correlations as a colored grid?",
+            "quizOptions": [
+                "boxplot",
+                "scatterplot",
+                "heatmap",
+                "histplot"
+            ],
+            "correctOptionIndex": 2
+        },
+        {
+            "id": "sns_3",
+            "type": "content",
+            "title": "Summary",
+            "content": "# Excellent! 🎉\n\n## Key Plots\n- ✅ `histplot`, `boxplot`\n- ✅ `scatterplot`, `heatmap`\n\n> 🚀 **Next:** Learn Flask!"
+        }
+    ]
+}

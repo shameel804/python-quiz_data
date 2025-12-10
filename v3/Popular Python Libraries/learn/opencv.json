@@ -1,0 +1,41 @@
+{
+    "id": "learn_opencv",
+    "topicId": "opencv",
+    "topicTitle": "OpenCV",
+    "description": "Computer vision library",
+    "baseKP": 90,
+    "slides": [
+        {
+            "id": "cv_1",
+            "type": "content",
+            "title": "Image Processing",
+            "content": "# OpenCV 👁️\n\nComputer vision!\n\n```python\nimport cv2\n\n# Read image\nimg = cv2.imread('image.jpg')\n\n# Convert color\ngray = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)\n\n# Resize\nresized = cv2.resize(img, (300, 300))\n\n# Save\ncv2.imwrite('output.jpg', gray)\n```"
+        },
+        {
+            "id": "cv_2",
+            "type": "content",
+            "title": "Operations",
+            "content": "# Image Operations 🔧\n\n```python\n# Blur\nblurred = cv2.GaussianBlur(img, (5, 5), 0)\n\n# Edge detection\nedges = cv2.Canny(img, 100, 200)\n\n# Draw shapes\ncv2.rectangle(img, (10, 10), (100, 100), (0, 255, 0), 2)\ncv2.circle(img, (50, 50), 30, (255, 0, 0), -1)\n\n# Display\ncv2.imshow('Image', img)\ncv2.waitKey(0)\n```"
+        },
+        {
+            "id": "cv_quiz_1",
+            "type": "quiz",
+            "title": "Quiz",
+            "content": "Test your knowledge!",
+            "quizQuestion": "Which function reads an image in OpenCV?",
+            "quizOptions": [
+                "cv2.load()",
+                "cv2.imread()",
+                "cv2.open()",
+                "cv2.read()"
+            ],
+            "correctOptionIndex": 1
+        },
+        {
+            "id": "cv_3",
+            "type": "content",
+            "title": "Summary",
+            "content": "# Excellent! 🎉\n\n## Key Functions\n- ✅ `imread()`, `imwrite()`\n- ✅ Color conversion, resize\n- ✅ Edge detection, blur\n\n> 🚀 **Next:** Learn SQLAlchemy!"
+        }
+    ]
+}

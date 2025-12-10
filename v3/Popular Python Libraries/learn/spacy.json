@@ -1,0 +1,41 @@
+{
+    "id": "learn_spacy",
+    "topicId": "spacy",
+    "topicTitle": "spaCy",
+    "description": "Industrial-strength NLP",
+    "baseKP": 85,
+    "slides": [
+        {
+            "id": "spacy_1",
+            "type": "content",
+            "title": "Introduction",
+            "content": "# spaCy 📝\n\nFast NLP library!\n\n```python\nimport spacy\n\nnlp = spacy.load('en_core_web_sm')\ndoc = nlp('Apple is looking at buying U.K. startup')\n\nfor token in doc:\n    print(token.text, token.pos_, token.dep_)\n```\n\n> 💡 **Optimized for production!**"
+        },
+        {
+            "id": "spacy_2",
+            "type": "content",
+            "title": "NER & POS",
+            "content": "# Named Entity Recognition 🏷️\n\n```python\ndoc = nlp('Apple CEO Tim Cook visited Paris')\n\n# Named entities\nfor ent in doc.ents:\n    print(ent.text, ent.label_)\n# Apple (ORG), Tim Cook (PERSON), Paris (GPE)\n\n# Noun chunks\nfor chunk in doc.noun_chunks:\n    print(chunk.text)\n```"
+        },
+        {
+            "id": "spacy_quiz_1",
+            "type": "quiz",
+            "title": "Quiz",
+            "content": "Test your knowledge!",
+            "quizQuestion": "What does NER stand for?",
+            "quizOptions": [
+                "Natural Entity Recognition",
+                "Named Entity Recognition",
+                "Neural Entity Research",
+                "Name Extraction Routine"
+            ],
+            "correctOptionIndex": 1
+        },
+        {
+            "id": "spacy_3",
+            "type": "content",
+            "title": "Summary",
+            "content": "# Great! 🎉\n\n## Key Features\n- ✅ Tokenization, POS tagging\n- ✅ Named Entity Recognition\n- ✅ Dependency parsing\n\n> 🚀 **Next:** Learn OpenCV!"
+        }
+    ]
+}

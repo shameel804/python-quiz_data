@@ -1,0 +1,41 @@
+{
+    "id": "learn_admin",
+    "topicId": "admin",
+    "topicTitle": "Django Admin",
+    "description": "Master Django's powerful admin interface",
+    "baseKP": 75,
+    "slides": [
+        {
+            "id": "admin_1",
+            "type": "content",
+            "title": "Introduction to Admin",
+            "content": "# Django Admin Panel 🎛️\n\nDjango includes a powerful, production-ready admin interface!\n\n## What you'll learn:\n- **Registering Models** - Add models to admin\n- **Customization** - List display, filters, search\n- **Actions** - Bulk operations\n\n## Create Superuser\n\n```bash\npython manage.py createsuperuser\n# Enter username, email, password\n```\n\n## Access Admin\n\n```\nhttp://127.0.0.1:8000/admin/\n```\n\n> 💡 **The admin is auto-generated!** Just register your models and Django creates CRUD interfaces."
+        },
+        {
+            "id": "admin_2",
+            "type": "content",
+            "title": "Registering Models",
+            "content": "# Register Models 📝\n\n## Basic Registration\n\n```python\n# admin.py\nfrom django.contrib import admin\nfrom .models import Article, Category\n\nadmin.site.register(Article)\nadmin.site.register(Category)\n```\n\n## Customized Registration\n\n```python\n@admin.register(Article)\nclass ArticleAdmin(admin.ModelAdmin):\n    list_display = ['title', 'author', 'published', 'is_active']\n    list_filter = ['is_active', 'category', 'published']\n    search_fields = ['title', 'content']\n    date_hierarchy = 'published'\n    ordering = ['-published']\n    list_per_page = 20\n```\n\n## Key Options\n\n| Option | Description |\n|--------|-------------|\n| `list_display` | Columns to show |\n| `list_filter` | Sidebar filters |\n| `search_fields` | Search bar fields |\n| `ordering` | Default sort |\n| `prepopulated_fields` | Auto-fill (slugs) |"
+        },
+        {
+            "id": "admin_quiz_1",
+            "type": "quiz",
+            "title": "Admin Quiz",
+            "content": "Test your admin knowledge!",
+            "quizQuestion": "Which option adds a search bar to the admin list view?",
+            "quizOptions": [
+                "list_filter",
+                "list_display",
+                "search_fields",
+                "ordering"
+            ],
+            "correctOptionIndex": 2
+        },
+        {
+            "id": "admin_3",
+            "type": "content",
+            "title": "Summary",
+            "content": "# Great Work! 🎉\n\nYou've learned Django Admin!\n\n## Key Points\n- ✅ Create superuser: `createsuperuser`\n- ✅ Register models: `admin.site.register()`\n- ✅ Customize with `ModelAdmin`\n- ✅ Options: `list_display`, `list_filter`, `search_fields`\n\n> 🚀 **Next Steps:** Learn about Django REST Framework!"
+        }
+    ]
+}

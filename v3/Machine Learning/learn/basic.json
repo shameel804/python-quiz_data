@@ -1,0 +1,73 @@
+{
+    "id": "learn_basic",
+    "topicId": "basic",
+    "topicTitle": "Basics",
+    "description": "Learn ML fundamentals, types, applications, and key terminology",
+    "baseKP": 80,
+    "slides": [
+        {
+            "id": "ml_basic_1",
+            "type": "content",
+            "title": "Welcome to Machine Learning",
+            "content": "# Machine Learning 🤖\n\nTeach computers to learn from data!\n\n## What you'll learn:\n- **What is ML?** - Definition and concepts\n- **Types of ML** - Supervised, unsupervised, reinforcement\n- **Applications** - Real-world uses\n- **Workflow** - ML project steps\n- **Key Terminology** - Essential vocabulary\n\n## Why Machine Learning?\n- 📧 Spam detection in emails\n- 🎵 Music recommendations (Spotify)\n- 🚗 Self-driving cars (Tesla)\n- 🏥 Disease diagnosis\n- 🎮 Game AI (AlphaGo)\n\n> 💡 **ML is everywhere!** Any app that gets \"smarter\" over time likely uses ML."
+        },
+        {
+            "id": "ml_basic_2",
+            "type": "content",
+            "title": "What is Machine Learning?",
+            "content": "# Definition 📖\n\n**Machine Learning** is a subset of AI where systems learn patterns from data without being explicitly programmed.\n\n## Traditional Programming vs ML\n\n```\nTraditional Programming:\nData + Rules → Output\n\nMachine Learning:\nData + Output → Rules (learned)\n```\n\n## Example: Email Spam\n\n```python\n# Traditional: Define rules manually\nif 'free money' in email or 'click here' in email:\n    spam = True\n\n# ML: Learn from examples\nmodel.fit(emails, labels)  # Learn patterns\nspam = model.predict(new_email)\n```\n\n## Key Insight\n\n> 🎯 **ML finds patterns humans might miss!** A model can analyze millions of examples to find subtle patterns.\n\n## When to Use ML\n- ✅ Too many rules to write\n- ✅ Patterns hard to define\n- ✅ Lots of data available\n- ✅ Problem changes over time"
+        },
+        {
+            "id": "ml_basic_3",
+            "type": "content",
+            "title": "Types of Machine Learning",
+            "content": "# ML Categories 📊\n\n## 1. Supervised Learning\n\nLearn from labeled examples.\n\n```\nInput: Photo of cat → Label: \"cat\"\nInput: Email text → Label: \"spam\"/\"not spam\"\n```\n\n**Tasks:**\n- Classification (categories)\n- Regression (numbers)\n\n## 2. Unsupervised Learning\n\nFind patterns in unlabeled data.\n\n```\nInput: Customer data → Discover: 3 customer groups\nInput: Products → Discover: Similar items\n```\n\n**Tasks:**\n- Clustering\n- Dimensionality reduction\n\n## 3. Reinforcement Learning\n\nLearn by trial and error.\n\n```\nAgent → Action → Environment → Reward/Penalty\nGame AI learns: \"This move = +10 points\"\n```\n\n**Examples:** Game AI, Robotics, Trading"
+        },
+        {
+            "id": "ml_basic_quiz_1",
+            "type": "quiz",
+            "title": "ML Types Quiz",
+            "content": "Test your understanding!",
+            "quizQuestion": "Which type of ML learns from labeled data?",
+            "quizOptions": [
+                "Unsupervised Learning",
+                "Supervised Learning",
+                "Reinforcement Learning",
+                "Deep Learning"
+            ],
+            "correctOptionIndex": 1
+        },
+        {
+            "id": "ml_basic_4",
+            "type": "content",
+            "title": "ML Workflow",
+            "content": "# ML Project Workflow 🔄\n\n## Step-by-Step Process\n\n```\n1. Define Problem\n      ↓\n2. Collect Data\n      ↓\n3. Prepare Data (cleaning, features)\n      ↓\n4. Choose Model\n      ↓\n5. Train Model\n      ↓\n6. Evaluate Model\n      ↓\n7. Tune & Improve\n      ↓\n8. Deploy\n```\n\n## Real Example: House Price Prediction\n\n```python\n# 1. Define: Predict house prices\n# 2. Collect: House sales data\n# 3. Prepare: Clean data, select features\nimport pandas as pd\ndata = pd.read_csv('houses.csv')\nX = data[['bedrooms', 'sqft', 'location']]\ny = data['price']\n\n# 4-5. Choose & Train\nfrom sklearn.linear_model import LinearRegression\nmodel = LinearRegression()\nmodel.fit(X_train, y_train)\n\n# 6. Evaluate\nscore = model.score(X_test, y_test)\n\n# 7. Tune: Try different models/parameters\n# 8. Deploy: Save and use in production\n```"
+        },
+        {
+            "id": "ml_basic_5",
+            "type": "content",
+            "title": "Key Terminology",
+            "content": "# Essential ML Vocabulary 📚\n\n## Data Terms\n\n| Term | Meaning |\n|------|--------|\n| **Feature** | Input variable (bedrooms, sqft) |\n| **Label/Target** | Output to predict (price) |\n| **Sample** | One data point |\n| **Dataset** | Collection of samples |\n| **Training Set** | Data for learning |\n| **Test Set** | Data for evaluation |\n\n## Model Terms\n\n| Term | Meaning |\n|------|--------|\n| **Model** | Algorithm that learns |\n| **Training** | Learning from data |\n| **Prediction** | Model output |\n| **Parameters** | Learned values |\n| **Hyperparameters** | Settings you choose |\n\n## Evaluation Terms\n\n| Term | Meaning |\n|------|--------|\n| **Accuracy** | % correct predictions |\n| **Overfitting** | Too good on training, bad on test |\n| **Underfitting** | Bad on everything |\n| **Generalization** | Works on new data |"
+        },
+        {
+            "id": "ml_basic_quiz_2",
+            "type": "quiz",
+            "title": "Terminology Quiz",
+            "content": "Test your vocabulary!",
+            "quizQuestion": "What is a 'feature' in machine learning?",
+            "quizOptions": [
+                "The output to predict",
+                "An input variable",
+                "The trained model",
+                "The learning algorithm"
+            ],
+            "correctOptionIndex": 1
+        },
+        {
+            "id": "ml_basic_6",
+            "type": "content",
+            "title": "Summary",
+            "content": "# Great Start! 🎉\n\nYou've learned ML fundamentals!\n\n## What is ML?\n- ✅ Learning patterns from data\n- ✅ Data + Output → Rules\n\n## Types of ML\n- ✅ **Supervised** - Labeled data\n- ✅ **Unsupervised** - Unlabeled data\n- ✅ **Reinforcement** - Trial and error\n\n## Workflow\n- ✅ Define → Collect → Prepare → Train → Evaluate → Deploy\n\n## Key Terms\n- ✅ Features, labels, samples\n- ✅ Training/test sets\n- ✅ Overfitting/underfitting\n\n> 🚀 **Next Steps:** Learn about Data Preprocessing!"
+        }
+    ]
+}

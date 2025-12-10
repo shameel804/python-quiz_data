@@ -1,0 +1,41 @@
+{
+    "id": "learn_beautifulsoup",
+    "topicId": "beautifulsoup",
+    "topicTitle": "Beautiful Soup",
+    "description": "Web scraping library",
+    "baseKP": 80,
+    "slides": [
+        {
+            "id": "bs_1",
+            "type": "content",
+            "title": "Web Scraping",
+            "content": "# Beautiful Soup 🍲\n\nParse HTML/XML!\n\n```python\nfrom bs4 import BeautifulSoup\nimport requests\n\nhtml = requests.get('https://example.com').text\nsoup = BeautifulSoup(html, 'html.parser')\n\n# Find elements\ntitle = soup.title.text\nlinks = soup.find_all('a')\n```"
+        },
+        {
+            "id": "bs_2",
+            "type": "content",
+            "title": "Selecting Elements",
+            "content": "# Selectors 🎯\n\n```python\n# By tag\nsoup.find('h1')\nsoup.find_all('p')\n\n# By class\nsoup.find('div', class_='container')\n\n# By id\nsoup.find(id='main')\n\n# CSS selectors\nsoup.select('div.card h2')\nsoup.select('#header a')\n```"
+        },
+        {
+            "id": "bs_quiz_1",
+            "type": "quiz",
+            "title": "Quiz",
+            "content": "Test your knowledge!",
+            "quizQuestion": "Which method finds ALL matching elements?",
+            "quizOptions": [
+                "soup.find()",
+                "soup.find_all()",
+                "soup.get()",
+                "soup.select_one()"
+            ],
+            "correctOptionIndex": 1
+        },
+        {
+            "id": "bs_3",
+            "type": "content",
+            "title": "Summary",
+            "content": "# Great! 🎉\n\n## Key Methods\n- ✅ `find()`, `find_all()`\n- ✅ `select()` for CSS selectors\n- ✅ `.text` for content\n\n> 🚀 **Next:** Learn spaCy!"
+        }
+    ]
+}

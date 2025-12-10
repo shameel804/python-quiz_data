@@ -1,0 +1,41 @@
+{
+    "id": "learn_requests",
+    "topicId": "requests",
+    "topicTitle": "Requests",
+    "description": "HTTP library for Python",
+    "baseKP": 75,
+    "slides": [
+        {
+            "id": "req_1",
+            "type": "content",
+            "title": "Making Requests",
+            "content": "# Requests 🌐\n\nHTTP for humans!\n\n```python\nimport requests\n\n# GET\nresponse = requests.get('https://api.github.com')\nprint(response.status_code)  # 200\nprint(response.json())        # Dict\n\n# POST\nresponse = requests.post(\n    'https://api.example.com/data',\n    json={'key': 'value'}\n)\n```"
+        },
+        {
+            "id": "req_2",
+            "type": "content",
+            "title": "Advanced Features",
+            "content": "# Headers & Auth 🔐\n\n```python\n# Custom headers\nheaders = {'Authorization': 'Bearer TOKEN'}\nresponse = requests.get(url, headers=headers)\n\n# Query parameters\nparams = {'page': 1, 'limit': 10}\nresponse = requests.get(url, params=params)\n\n# Session\nsession = requests.Session()\nsession.headers.update({'Authorization': 'Bearer TOKEN'})\nresponse = session.get(url)\n```"
+        },
+        {
+            "id": "req_quiz_1",
+            "type": "quiz",
+            "title": "Quiz",
+            "content": "Test your knowledge!",
+            "quizQuestion": "How do you get JSON from a response?",
+            "quizOptions": [
+                "response.text",
+                "response.json()",
+                "response.data",
+                "response.content"
+            ],
+            "correctOptionIndex": 1
+        },
+        {
+            "id": "req_3",
+            "type": "content",
+            "title": "Summary",
+            "content": "# Great! 🎉\n\n## Key Methods\n- ✅ `requests.get()`, `requests.post()`\n- ✅ `response.json()`, `response.status_code`\n- ✅ Headers, params, auth\n\n> 🚀 **Next:** Learn Scikit-learn!"
+        }
+    ]
+}

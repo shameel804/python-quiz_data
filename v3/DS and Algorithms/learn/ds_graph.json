@@ -1,0 +1,41 @@
+{
+    "id": "learn_ds_graph",
+    "topicId": "ds_graph",
+    "topicTitle": "Graph Algorithms",
+    "description": "DFS, BFS, and shortest path algorithms",
+    "baseKP": 90,
+    "slides": [
+        {
+            "id": "graph_1",
+            "type": "content",
+            "title": "Graph Basics",
+            "content": "# Graphs 🕸️\n\nNodes connected by edges!\n\n## Representation\n\n```python\n# Adjacency List\ngraph = {\n    'A': ['B', 'C'],\n    'B': ['A', 'D'],\n    'C': ['A', 'D'],\n    'D': ['B', 'C']\n}\n\n# Adjacency Matrix\nmatrix = [\n    [0, 1, 1, 0],\n    [1, 0, 0, 1],\n    [1, 0, 0, 1],\n    [0, 1, 1, 0]\n]\n```\n\n## Types\n- **Directed** vs **Undirected**\n- **Weighted** vs **Unweighted**\n- **Cyclic** vs **Acyclic**"
+        },
+        {
+            "id": "graph_2",
+            "type": "content",
+            "title": "DFS & BFS",
+            "content": "# Graph Traversal 🚶\n\n## DFS (Depth-First Search)\n\n```python\ndef dfs(graph, node, visited=set()):\n    if node in visited:\n        return\n    visited.add(node)\n    print(node)\n    for neighbor in graph[node]:\n        dfs(graph, neighbor, visited)\n```\n\n## BFS (Breadth-First Search)\n\n```python\nfrom collections import deque\n\ndef bfs(graph, start):\n    visited = {start}\n    queue = deque([start])\n    while queue:\n        node = queue.popleft()\n        print(node)\n        for neighbor in graph[node]:\n            if neighbor not in visited:\n                visited.add(neighbor)\n                queue.append(neighbor)\n```\n\n## When to Use\n- **DFS**: Pathfinding, cycle detection\n- **BFS**: Shortest path (unweighted)"
+        },
+        {
+            "id": "graph_quiz_1",
+            "type": "quiz",
+            "title": "Graph Quiz",
+            "content": "Test your knowledge!",
+            "quizQuestion": "Which traversal finds shortest path in unweighted graphs?",
+            "quizOptions": [
+                "DFS",
+                "BFS",
+                "Dijkstra",
+                "Binary Search"
+            ],
+            "correctOptionIndex": 1
+        },
+        {
+            "id": "graph_3",
+            "type": "content",
+            "title": "Summary",
+            "content": "# Excellent Work! 🎉\n\nYou've learned Graph Algorithms!\n\n## Representation\n- ✅ Adjacency List\n- ✅ Adjacency Matrix\n\n## Traversal\n- ✅ DFS (stack/recursion)\n- ✅ BFS (queue)\n\n## Algorithms\n- ✅ Dijkstra (shortest path)\n- ✅ Kruskal/Prim (MST)\n\n> 🚀 **Next Steps:** Learn Python Tools!"
+        }
+    ]
+}

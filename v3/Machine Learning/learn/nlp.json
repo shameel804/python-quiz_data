@@ -1,0 +1,47 @@
+{
+    "id": "learn_nlp",
+    "topicId": "nlp",
+    "topicTitle": "Natural Language Processing (NLP)",
+    "description": "Text preprocessing, vectorization, and NLP models",
+    "baseKP": 90,
+    "slides": [
+        {
+            "id": "nlp_1",
+            "type": "content",
+            "title": "Introduction to NLP",
+            "content": "# Natural Language Processing 📝\n\nTeach machines to understand text!\n\n## What you'll learn:\n- **Text Preprocessing** - Clean text\n- **Vectorization** - Text to numbers\n- **NLP Models** - Classification, sentiment\n\n## Applications\n- 💬 Chatbots\n- 😊😢 Sentiment analysis\n- 🌐 Translation\n- 📧 Spam detection\n- 🤖 ChatGPT!"
+        },
+        {
+            "id": "nlp_2",
+            "type": "content",
+            "title": "Text Preprocessing",
+            "content": "# Preprocessing Text 🧹\n\n## Steps\n\n```python\nimport re\nimport nltk\nfrom nltk.corpus import stopwords\nfrom nltk.stem import WordNetLemmatizer\n\ndef preprocess(text):\n    # Lowercase\n    text = text.lower()\n    \n    # Remove punctuation\n    text = re.sub(r'[^a-zA-Z\\s]', '', text)\n    \n    # Tokenize\n    tokens = text.split()\n    \n    # Remove stopwords\n    stop_words = set(stopwords.words('english'))\n    tokens = [t for t in tokens if t not in stop_words]\n    \n    # Lemmatize\n    lemmatizer = WordNetLemmatizer()\n    tokens = [lemmatizer.lemmatize(t) for t in tokens]\n    \n    return ' '.join(tokens)\n```\n\n## Result\n\n```\nInput: \"I am LOVING these new features!!!\"\nOutput: \"love new feature\"\n```"
+        },
+        {
+            "id": "nlp_3",
+            "type": "content",
+            "title": "Text Vectorization",
+            "content": "# Text to Numbers 🔢\n\n## Bag of Words\n\n```python\nfrom sklearn.feature_extraction.text import CountVectorizer\n\nvectorizer = CountVectorizer()\nX = vectorizer.fit_transform(texts)\n# Each word = one feature\n```\n\n## TF-IDF\n\n```python\nfrom sklearn.feature_extraction.text import TfidfVectorizer\n\nvectorizer = TfidfVectorizer(max_features=5000)\nX = vectorizer.fit_transform(texts)\n# Words weighted by importance\n```\n\n## Word Embeddings\n\n```python\n# Pre-trained embeddings (Word2Vec, GloVe)\n# Similar words have similar vectors\n# king - man + woman ≈ queen\n```\n\n> 💡 **TF-IDF is most common** for traditional ML!"
+        },
+        {
+            "id": "nlp_quiz_1",
+            "type": "quiz",
+            "title": "NLP Quiz",
+            "content": "Test your knowledge!",
+            "quizQuestion": "Which technique weights words by their importance in documents?",
+            "quizOptions": [
+                "Bag of Words",
+                "TF-IDF",
+                "One-Hot Encoding",
+                "Label Encoding"
+            ],
+            "correctOptionIndex": 1
+        },
+        {
+            "id": "nlp_4",
+            "type": "content",
+            "title": "Summary",
+            "content": "# Excellent Work! 🎉\n\nYou've learned NLP basics!\n\n## Preprocessing\n- ✅ Lowercase, remove punctuation\n- ✅ Tokenization, stopwords\n- ✅ Lemmatization\n\n## Vectorization\n- ✅ Bag of Words\n- ✅ TF-IDF\n- ✅ Word Embeddings\n\n> 🚀 **Next Steps:** Learn about Model Deployment!"
+        }
+    ]
+}

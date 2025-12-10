@@ -1,0 +1,41 @@
+{
+    "id": "learn_tensorflow",
+    "topicId": "tensorflow",
+    "topicTitle": "TensorFlow",
+    "description": "Deep learning framework",
+    "baseKP": 95,
+    "slides": [
+        {
+            "id": "tf_1",
+            "type": "content",
+            "title": "Introduction",
+            "content": "# TensorFlow 🧠\n\nDeep learning by Google!\n\n```python\nimport tensorflow as tf\nfrom tensorflow import keras\n\nmodel = keras.Sequential([\n    keras.layers.Dense(128, activation='relu'),\n    keras.layers.Dense(10, activation='softmax')\n])\n\nmodel.compile(\n    optimizer='adam',\n    loss='sparse_categorical_crossentropy',\n    metrics=['accuracy']\n)\n\nmodel.fit(X_train, y_train, epochs=5)\n```"
+        },
+        {
+            "id": "tf_2",
+            "type": "content",
+            "title": "Layers & Models",
+            "content": "# Building Models 🏗️\n\n```python\n# Convolutional\nkeras.layers.Conv2D(32, (3, 3), activation='relu')\nkeras.layers.MaxPooling2D((2, 2))\n\n# Recurrent\nkeras.layers.LSTM(64)\n\n# Regularization\nkeras.layers.Dropout(0.5)\nkeras.layers.BatchNormalization()\n```"
+        },
+        {
+            "id": "tf_quiz_1",
+            "type": "quiz",
+            "title": "Quiz",
+            "content": "Test your knowledge!",
+            "quizQuestion": "Which method trains a Keras model?",
+            "quizOptions": [
+                "model.train()",
+                "model.fit()",
+                "model.learn()",
+                "model.run()"
+            ],
+            "correctOptionIndex": 1
+        },
+        {
+            "id": "tf_3",
+            "type": "content",
+            "title": "Summary",
+            "content": "# Excellent! 🎉\n\n## Key Concepts\n- ✅ `keras.Sequential` for models\n- ✅ Layers: Dense, Conv2D, LSTM\n- ✅ `compile()` then `fit()`\n\n> 🚀 **Next:** Learn PyTorch!"
+        }
+    ]
+}
