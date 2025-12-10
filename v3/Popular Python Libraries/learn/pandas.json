@@ -9,13 +9,13 @@
             "id": "lib_pd_1",
             "type": "content",
             "title": "DataFrames & Series",
-            "content": "# Excel for Python 📊\n\n## Series\nA 1D labeled array (like a column).\n```python\nimport pandas as pd\ns = pd.Series([10, 20, 30])\n```\n\n## DataFrame\nA 2D table with rows and columns.\n```python\ndata = {\n    'Name': ['Alice', 'Bob'],\n    'Age': [25, 30]\n}\ndf = pd.DataFrame(data)\n```"
+            "content": "# Excel for Python 📊\n\n## Series\nA 1D labeled array (like a column).\n```python\nimport pandas as pd\n\ns = pd.Series([10, 20, 30])\n```\n\n## DataFrame\nA 2D table with rows and columns.\n```python\ndata = {\n    'Name': ['Alice', 'Bob'],\n    'Age': [25, 30]\n}\ndf = pd.DataFrame(data)\n```"
         },
         {
             "id": "lib_pd_2",
             "type": "content",
             "title": "Reading Data",
-            "content": "# I/O Superpowers 📥\n\nPandas can read almost anything.\n\n```python\n# CSV\ndf = pd.read_csv('data.csv')\n\n# Excel\ndf = pd.read_excel('data.xlsx')\n\n# JSON\ndf = pd.read_json('data.json')\n\n# HTML Tables (scrapes web!)\ndfs = pd.read_html('https://en.wikipedia.org/...')\n```"
+            "content": "# I/O Superpowers 📥\n\nPandas can read almost anything.\n\n```python\nimport pandas as pd\n\n# CSV\ndf = pd.read_csv('data.csv')\n\n# Excel\ndf = pd.read_excel('data.xlsx')\n\n# JSON\ndf = pd.read_json('data.json')\n\n# HTML Tables (scrapes web!)\ndfs = pd.read_html('https://en.wikipedia.org/...')\n```"
         },
         {
             "id": "lib_pd_3",

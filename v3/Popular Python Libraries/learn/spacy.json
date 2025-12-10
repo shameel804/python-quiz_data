@@ -9,19 +9,19 @@
             "id": "lib_spacy_1",
             "type": "content",
             "title": "The Pipeline 🏭",
-            "content": "# Processing Text\n\nUnlike NLTK (which is a toolkit), spaCy is a pipeline. You pour text in, and a `Doc` object comes out with linguistic annotations.\n\n```python\nimport spacy\n\n# Load English model\nnlp = spacy.load(\"en_core_web_sm\")\n\n# Process text\ndoc = nlp(\"Apple is looking at buying U.K. startup for $1 billion\")\n```"
+            "content": "# Processing Text\n\nUnlike NLTK (which is a toolkit), spaCy is a pipeline. You pour text in, and a `Doc` object comes out with linguistic annotations.\n\n```spacy\nimport spacy\n\n# Load English model\nnlp = spacy.load(\"en_core_web_sm\")\n\n# Process text\ndoc = nlp(\"Apple is looking at buying U.K. startup for $1 billion\")\n```"
         },
         {
             "id": "lib_spacy_2",
             "type": "content",
             "title": "Linguistic Features",
-            "content": "# Understanding Syntax 🧩\n\n## Part-of-Speech (POS) Tagging\nIs it a Noun? Verb? Adjective?\n```python\nfor token in doc:\n    print(token.text, token.pos_)\n    # Apple PROPN (Proper Noun)\n    # is AUX (Auxiliary Verb)\n```\n\n## Named Entity Recognition (NER)\nFinds real-world objects like companies, countries, dates.\n```python\nfor ent in doc.ents:\n    print(ent.text, ent.label_)\n    # Apple ORG\n    # U.K. GPE\n    # $1 billion MONEY\n```"
+            "content": "# Understanding Syntax 🧩\n\n## Part-of-Speech (POS) Tagging\nIs it a Noun? Verb? Adjective?\n```spacy\nfor token in doc:\n    print(token.text, token.pos_)\n    # Apple PROPN (Proper Noun)\n    # is AUX (Auxiliary Verb)\n```\n\n## Named Entity Recognition (NER)\nFinds real-world objects like companies, countries, dates.\n```spacy\nfor ent in doc.ents:\n    print(ent.text, ent.label_)\n    # Apple ORG\n    # U.K. GPE\n    # $1 billion MONEY\n```"
         },
         {
             "id": "lib_spacy_3",
             "type": "content",
             "title": "Word Vectors",
-            "content": "# Similarity 👯\n\nUsing medium/large models (`en_core_web_md`), spaCy provides word vectors.\n\n```python\ndoc1 = nlp(\"I like apples.\")\ndoc2 = nlp(\"I like oranges.\")\n\nprint(doc1.similarity(doc2)) # High score (e.g. 0.95)\n```"
+            "content": "# Similarity 👯\n\nUsing medium/large models (`en_core_web_md`), spaCy provides word vectors.\n\n```spacy\ndoc1 = nlp(\"I like apples.\")\ndoc2 = nlp(\"I like oranges.\")\n\nprint(doc1.similarity(doc2)) # High score (e.g. 0.95)\n```"
         },
         {
             "id": "lib_spacy_quiz_1",

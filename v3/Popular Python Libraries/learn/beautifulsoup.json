@@ -9,13 +9,13 @@
             "id": "lib_bs4_1",
             "type": "content",
             "title": "Parsing HTML",
-            "content": "# Soup for the Soul 🍜\n\nBeautiful Soup parses HTML (and XML) documents and creates a parse tree for traversing the pages.\n\n```python\nfrom bs4 import BeautifulSoup\nimport requests\n\nhtml = requests.get('https://example.com').text\nsoup = BeautifulSoup(html, 'html.parser')\n\nprint(soup.title.string) # 'Example Domain'\n```"
+            "content": "# Soup for the Soul 🍜\n\nBeautiful Soup parses HTML (and XML) documents and creates a parse tree for traversing the pages.\n\n```soup\nfrom bs4 import BeautifulSoup\nimport requests\n\nhtml = requests.get('https://example.com').text\nsoup = BeautifulSoup(html, 'html.parser')\n\nprint(soup.title.string) # 'Example Domain'\n```"
         },
         {
             "id": "lib_bs4_2",
             "type": "content",
             "title": "Finding Elements",
-            "content": "# Search Methods 🔎\n\n## `find()`\nReturns the **first** match.\n```python\nh1 = soup.find('h1')\n```\n\n## `find_all()`\nReturns a **list** of all matches.\n```python\nlinks = soup.find_all('a')\nfor link in links:\n    print(link['href']) # Get attribute\n```"
+            "content": "# Search Methods 🔎\n\n## `find()`\nReturns the **first** match.\n```soup\nh1 = soup.find('h1')\n```\n\n## `find_all()`\nReturns a **list** of all matches.\n```soup\nlinks = soup.find_all('a')\nfor link in links:\n    print(link['href']) # Get attribute\n```"
         },
         {
             "id": "lib_bs4_quiz_1",
@@ -35,7 +35,7 @@
             "id": "lib_bs4_3",
             "type": "content",
             "title": "CSS Selectors",
-            "content": "# Only One Select 🎯\n\nUse `select()` to find elements using CSS selectors (like jQuery or `querySelector`).\n\n- Class: `.classname`\n- ID: `#idname`\n- Nested: `div p span`\n\n```python\n# Find all links inside footer div\nitems = soup.select(\"div.footer a\")\n```"
+            "content": "# Only One Select 🎯\n\nUse `select()` to find elements using CSS selectors (like jQuery or `querySelector`).\n\n- Class: `.classname`\n- ID: `#idname`\n- Nested: `div p span`\n\n```soup\n# Find all links inside footer div\nitems = soup.select(\"div.footer a\")\n```"
         }
     ]
 }

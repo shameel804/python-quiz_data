@@ -9,19 +9,19 @@
             "id": "lib_flask_1",
             "type": "content",
             "title": "Minimal App",
-            "content": "# The Micro Framework 🌶️\n\nFlask is lightweight. No built-in DB or Auth.\n\n## 5-Line Server\n```python\nfrom flask import Flask\napp = Flask(__name__)\n\n@app.route(\"/\")\ndef hello():\n    return \"Hello World!\"\n\nif __name__ == \"__main__\":\n    app.run(debug=True)\n```"
+            "content": "# The Micro Framework 🌶️\n\nFlask is lightweight. No built-in DB or Auth.\n\n## 5-Line Server\n```flask\nfrom flask import Flask\napp = Flask(__name__)\n\n@app.route(\"/\")\ndef hello():\n    return \"Hello World!\"\n\nif __name__ == \"__main__\":\n    app.run(debug=True)\n```"
         },
         {
             "id": "lib_flask_2",
             "type": "content",
             "title": "Routing & Dynamic URLs",
-            "content": "# Routing 🛣️\n\nHandle different URLs with decorators.\n\n```python\n@app.route(\"/user/<username>\")\ndef profile(username):\n    return f\"User: {username}\"\n\n@app.route(\"/post/<int:id>\")\ndef post(id):\n    # logic to get post by ID\n    return f\"Post ID: {id}\"\n```"
+            "content": "# Routing 🛣️\n\nHandle different URLs with decorators.\n\n```flask\n@app.route(\"/user/<username>\")\ndef profile(username):\n    return f\"User: {username}\"\n\n@app.route(\"/post/<int:id>\")\ndef post(id):\n    # logic to get post by ID\n    return f\"Post ID: {id}\"\n```"
         },
         {
             "id": "lib_flask_3",
             "type": "content",
             "title": "Templates (Jinja2)",
-            "content": "# Rendering HTML 🎨\n\nFlask uses **Jinja2** (same engine as Django's default).\n\n```python\nfrom flask import render_template\n\n@app.route(\"/hello/<name>\")\ndef hello(name):\n    return render_template('hello.html', name=name)\n```\n\n**hello.html**:\n```html\n<h1>Hello, {{ name }}!</h1>\n```"
+            "content": "# Rendering HTML 🎨\n\nFlask uses **Jinja2** (same engine as Django's default).\n\n```flask\nfrom flask import render_template\n\n@app.route(\"/hello/<name>\")\ndef hello(name):\n    return render_template('hello.html', name=name)\n```\n\n**hello.html**:\n```html\n<h1>Hello, {{ name }}!</h1>\n```"
         },
         {
             "id": "lib_flask_quiz_1",

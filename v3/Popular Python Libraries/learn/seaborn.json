@@ -9,19 +9,19 @@
             "id": "lib_sns_1",
             "type": "content",
             "title": "Matplotlib Upgrade 💅",
-            "content": "# Why Seaborn?\n\nBuilt on top of Matplotlib, but provides:\n1. **Better defaults**: Plots look modern instantly.\n2. **Statistical functions**: Auto-calculates regressions, confidence intervals.\n3. **Pandas integration**: Works directly with DataFrames.\n\n```python\nimport seaborn as sns\nsns.set_theme() # Apply pretty defaults\n```"
+            "content": "# Why Seaborn?\n\nBuilt on top of Matplotlib, but provides:\n1. **Better defaults**: Plots look modern instantly.\n2. **Statistical functions**: Auto-calculates regressions, confidence intervals.\n3. **Pandas integration**: Works directly with DataFrames.\n\n```seaborn\nimport seaborn as sns\nsns.set_theme() # Apply pretty defaults\n```"
         },
         {
             "id": "lib_sns_2",
             "type": "content",
             "title": "Key Plots",
-            "content": "# Powerful Visuals 📊\n\n## Relational\n```python\n# Scatter with hue (color by category)\nsns.scatterplot(data=df, x='total_bill', y='tip', hue='sex')\n```\n\n## Distribution\n```python\n# Histogram + Kernel Density Estimate (smooth curve)\nsns.displot(data=df, x='age', kde=True)\n```\n\n## Categorical\n```python\n# Box Plot (shows median & quartiles)\nsns.boxplot(data=df, x='day', y='total_bill')\n```"
+            "content": "# Powerful Visuals 📊\n\n## Relational\n```seaborn\n# Scatter with hue (color by category)\nsns.scatterplot(data=df, x='total_bill', y='tip', hue='sex')\n```\n\n## Distribution\n```seaborn\n# Histogram + Kernel Density Estimate (smooth curve)\nsns.displot(data=df, x='age', kde=True)\n```\n\n## Categorical\n```seaborn\n# Box Plot (shows median & quartiles)\nsns.boxplot(data=df, x='day', y='total_bill')\n```"
         },
         {
             "id": "lib_sns_3",
             "type": "content",
             "title": "Pair Plot",
-            "content": "# The Summary Plot 🕵️\n\n`pairplot` creates a grid of plots comparing EVERY numerical variable against EVERY other variable.\n\n```python\nsns.pairplot(df, hue='species')\n```\n\n> 💡 **Tip**: This is the first thing Data Scientists do to explore a new dataset!"
+            "content": "# The Summary Plot 🕵️\n\n`pairplot` creates a grid of plots comparing EVERY numerical variable against EVERY other variable.\n\n```seaborn\nsns.pairplot(df, hue='species')\n```\n\n> 💡 **Tip**: This is the first thing Data Scientists do to explore a new dataset!"
         },
         {
             "id": "lib_sns_quiz_1",

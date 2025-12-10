@@ -15,7 +15,7 @@
             "id": "lib_np_2",
             "type": "content",
             "title": "Array Operations",
-            "content": "# Vectorization ⚡\n\nNo loops needed! Operations apply element-wise.\n\n```python\na = np.array([1, 2, 3])\nb = np.array([10, 20, 30])\n\nprint(a + b) # [11, 22, 33]\nprint(a * 2) # [2, 4, 6]\nprint(a > 2) # [False, False, True]\n```\n\n## Universal Functions (ufuncs)\nFast math functions.\n```python\nnp.sqrt(a)\nnp.log(a)\nnp.mean(a)\n```"
+            "content": "# Vectorization ⚡\n\nNo loops needed! Operations apply element-wise.\n\n```python\nimport numpy as np\n\na = np.array([1, 2, 3])\nb = np.array([10, 20, 30])\n\nprint(a + b) # [11, 22, 33]\nprint(a * 2) # [2, 4, 6]\nprint(a > 2) # [False, False, True]\n```\n\n## Universal Functions (ufuncs)\nFast math functions.\n```python\nimport numpy as np\n\nnp.sqrt(a)\nnp.log(a)\nnp.mean(a)\n```"
         },
         {
             "id": "lib_np_quiz_1",
@@ -35,7 +35,7 @@
             "id": "lib_np_3",
             "type": "content",
             "title": "Indexing and Slicing",
-            "content": "# Advanced Access 🕵️\n\n## Slicing 2D Arrays\n`arr[row, col]`\n```python\nmat = np.array([[1, 2], [3, 4]])\n\n# Get row 0\nprint(mat[0, :]) # [1, 2]\n\n# Get column 1\nprint(mat[:, 1]) # [2, 4]\n```\n\n## Boolean Indexing (Filtering)\nSelect data based on conditions.\n```python\narr = np.array([10, 20, 30, 40])\nmask = arr > 25\nprint(arr[mask]) # [30, 40]\n```"
+            "content": "# Advanced Access 🕵️\n\n## Slicing 2D Arrays\n`arr[row, col]`\n```python\nmat = np.array([[1, 2], [3, 4]])\n\n# Get row 0\nprint(mat[0, :]) # [1, 2]\n\n# Get column 1\nprint(mat[:, 1]) # [2, 4]\n```\n\n## Boolean Indexing (Filtering)\nSelect data based on conditions.\n```python\nimport numpy as np\n\narr = np.array([10, 20, 30, 40])\nmask = arr > 25\nprint(arr[mask]) # [30, 40]\n```"
         }
     ]
 }

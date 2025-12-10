@@ -9,13 +9,13 @@
             "id": "lib_hf_1",
             "type": "content",
             "title": "The Transformers Library",
-            "content": "# NLP Democratized 🤗\n\nProvides thousands of pre-trained models (BERT, GPT, RoBERTa) easy to use.\n\n## The Pipeline API\nThe highest level abstraction. Zero code model usage.\n\n```python\nfrom transformers import pipeline\n\nclassifier = pipeline(\"sentiment-analysis\")\nres = classifier(\"I love this movie!\")\n# [{'label': 'POSITIVE', 'score': 0.99}]\n```"
+            "content": "# NLP Democratized 🤗\n\nProvides thousands of pre-trained models (BERT, GPT, RoBERTa) easy to use.\n\n## The Pipeline API\nThe highest level abstraction. Zero code model usage.\n\n```huggingface\nfrom transformers import pipeline\n\nclassifier = pipeline(\"sentiment-analysis\")\nres = classifier(\"I love this movie!\")\n# [{'label': 'POSITIVE', 'score': 0.99}]\n```"
         },
         {
             "id": "lib_hf_2",
             "type": "content",
             "title": "Tokenizers",
-            "content": "# Tokenization ✂️\n\nModels don't understand text strings. Tokenizers convert text into number IDs the model was trained on.\n\n```python\nfrom transformers import AutoTokenizer\n\ntokenizer = AutoTokenizer.from_pretrained(\"bert-base-uncased\")\ninputs = tokenizer(\"Hello world\", return_tensors=\"pt\")\n# Input IDs: [101, 7592, 2088, 102]\n```"
+            "content": "# Tokenization ✂️\n\nModels don't understand text strings. Tokenizers convert text into number IDs the model was trained on.\n\n```huggingface\nfrom transformers import AutoTokenizer\n\ntokenizer = AutoTokenizer.from_pretrained(\"bert-base-uncased\")\ninputs = tokenizer(\"Hello world\", return_tensors=\"pt\")\n# Input IDs: [101, 7592, 2088, 102]\n```"
         },
         {
             "id": "lib_hf_quiz_1",
@@ -35,7 +35,7 @@
             "id": "lib_hf_3",
             "type": "content",
             "title": "Fine-Tuning",
-            "content": "# Using Pre-trained Models 🔧\n\nDon't train from scratch! Take a model trained on billions of words (like BERT) and fine-tune it on your specific small dataset.\n\n## The `Trainer` API\nHandles the training loop (epochs, batches, saving) for you.\n```python\ntrainer = Trainer(\n    model=model,\n    args=training_args,\n    train_dataset=small_train_dataset,\n    eval_dataset=small_eval_dataset\n)\ntrainer.train()\n```"
+            "content": "# Using Pre-trained Models 🔧\n\nDon't train from scratch! Take a model trained on billions of words (like BERT) and fine-tune it on your specific small dataset.\n\n## The `Trainer` API\nHandles the training loop (epochs, batches, saving) for you.\n```huggingface\ntrainer = Trainer(\n    model=model,\n    args=training_args,\n    train_dataset=small_train_dataset,\n    eval_dataset=small_eval_dataset\n)\ntrainer.train()\n```"
         }
     ]
 }
