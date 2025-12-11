@@ -36,8 +36,7 @@
         "q": "The if statement checks if a condition is ______.",
         "type": "fill_blank",
         "answers": [
-            "True",
-            "true"
+            "True"
         ],
         "other_options": [
             "False",
@@ -106,8 +105,7 @@
         "q": "Python checks elif conditions in ______ order.",
         "type": "fill_blank",
         "answers": [
-            "sequential",
-            "top-down"
+            "sequential"
         ],
         "other_options": [
             "random",
@@ -186,19 +184,6 @@
             "yes",
             "2",
             "Error"
-        ]
-    },
-    {
-        "q": "The ternary operator returns the ______ value when condition is False.",
-        "type": "fill_blank",
-        "answers": [
-            "else",
-            "second"
-        ],
-        "other_options": [
-            "if",
-            "first",
-            "None"
         ]
     },
     {
@@ -290,8 +275,7 @@
         "q": "Negative step makes range count ______.",
         "type": "fill_blank",
         "answers": [
-            "backwards",
-            "down"
+            "backwards"
         ],
         "other_options": [
             "forwards",
@@ -346,8 +330,7 @@
         "q": "for loop iterates over each ______ in a list.",
         "type": "fill_blank",
         "answers": [
-            "element",
-            "item"
+            "element"
         ],
         "other_options": [
             "index",
@@ -455,8 +438,7 @@
         "q": "After while loop ends, the variable retains its ______ value.",
         "type": "fill_blank",
         "answers": [
-            "final",
-            "last"
+            "final"
         ],
         "other_options": [
             "initial",
