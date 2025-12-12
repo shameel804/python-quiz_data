@@ -3794,7 +3794,7 @@
     {
         "q": "Arrange the components of a typical Inception module:",
         "type": "rearrange",
-        "correct": [
+        "words": [
             "Input feature maps",
             "Parallel branches with different kernels",
             "1x1 dimensionality reduction",
@@ -4168,7 +4168,7 @@
     {
         "q": "Arrange the evolution of language models:",
         "type": "rearrange",
-        "correct": [
+        "words": [
             "N-gram models",
             "RNN language models",
             "LSTM/GRU models",
@@ -4500,7 +4500,7 @@
     {
         "q": "Arrange the steps in speculative decoding:",
         "type": "rearrange",
-        "correct": [
+        "words": [
             "Draft model generates candidate tokens",
             "Target model scores all candidates in parallel",
             "Accept tokens matching target distribution",
@@ -4695,7 +4695,7 @@
     {
         "q": "Arrange the steps in federated learning:",
         "type": "rearrange",
-        "correct": [
+        "words": [
             "Server distributes model to clients",
             "Clients train on local data",
             "Clients send model updates",
@@ -4943,7 +4943,7 @@
     {
         "q": "Arrange the steps in Grad-CAM visualization:",
         "type": "rearrange",
-        "correct": [
+        "words": [
             "Forward pass through CNN",
             "Compute gradients for target class",
             "Pool gradients to get weights",
@@ -5138,7 +5138,7 @@
     {
         "q": "Arrange the types of uncertainty:",
         "type": "rearrange",
-        "correct": [
+        "words": [
             "Aleatoric uncertainty from data noise",
             "Epistemic uncertainty from model",
             "Total uncertainty is their combination",
@@ -5312,7 +5312,7 @@
     {
         "q": "Arrange the components of the OneCycle learning rate policy:",
         "type": "rearrange",
-        "correct": [
+        "words": [
             "Start with low learning rate",
             "Increase to maximum over epochs",
             "Decrease back to minimum",
@@ -5444,7 +5444,7 @@
     {
         "q": "Arrange the steps in progressive GAN training:",
         "type": "rearrange",
-        "correct": [
+        "words": [
             "Train at lowest resolution",
             "Add new layers for higher resolution",
             "Fade in new layers smoothly",
@@ -5576,7 +5576,7 @@
     {
         "q": "Arrange the evolution of generative models:",
         "type": "rearrange",
-        "correct": [
+        "words": [
             "Boltzmann Machines",
             "Variational Autoencoders",
             "Generative Adversarial Networks",

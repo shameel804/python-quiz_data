@@ -165,7 +165,7 @@
     {
         "q": "Arrange text preprocessing steps in typical order:",
         "type": "rearrange",
-        "correct": [
+        "words": [
             "Load text data",
             "Lowercase",
             "Tokenize",
@@ -318,7 +318,7 @@
     {
         "q": "Arrange the steps to compute TF-IDF:",
         "type": "rearrange",
-        "correct": [
+        "words": [
             "Count word frequency (TF)",
             "Count document frequency",
             "Calculate IDF",
@@ -471,7 +471,7 @@
     {
         "q": "Arrange word embedding methods by their introduction:",
         "type": "rearrange",
-        "correct": [
+        "words": [
             "One-hot encoding",
             "Word2Vec",
             "GloVe",
@@ -624,7 +624,7 @@
     {
         "q": "Arrange NLP complexity levels:",
         "type": "rearrange",
-        "correct": [
+        "words": [
             "Tokenization",
             "POS tagging",
             "Named entity recognition",
@@ -798,7 +798,7 @@
     {
         "q": "Arrange NLP libraries by typical use case complexity:",
         "type": "rearrange",
-        "correct": [
+        "words": [
             "NLTK for learning",
             "spaCy for production",
             "Gensim for topic modeling",
@@ -951,7 +951,7 @@
     {
         "q": "Arrange the seq2seq processing steps:",
         "type": "rearrange",
-        "correct": [
+        "words": [
             "Encode input sequence",
             "Create context vector",
             "Initialize decoder",
@@ -1104,7 +1104,7 @@
     {
         "q": "Arrange BERT training objectives:",
         "type": "rearrange",
-        "correct": [
+        "words": [
             "Mask some tokens",
             "Predict masked tokens",
             "Next sentence prediction",
@@ -1257,7 +1257,7 @@
     {
         "q": "Arrange subword tokenization methods by complexity:",
         "type": "rearrange",
-        "correct": [
+        "words": [
             "Character tokenization",
             "BPE",
             "WordPiece",
@@ -1431,7 +1431,7 @@
     {
         "q": "Arrange the NLP model evolution:",
         "type": "rearrange",
-        "correct": [
+        "words": [
             "Bag of Words",
             "Word2Vec",
             "LSTM",
@@ -1584,7 +1584,7 @@
     {
         "q": "Arrange GPT versions by scale:",
         "type": "rearrange",
-        "correct": [
+        "words": [
             "GPT (117M)",
             "GPT-2 (1.5B)",
             "GPT-3 (175B)",
@@ -1737,7 +1737,7 @@
     {
         "q": "Arrange decoding methods by diversity:",
         "type": "rearrange",
-        "correct": [
+        "words": [
             "Greedy decoding",
             "Beam search",
             "Top-k sampling",
@@ -1911,7 +1911,7 @@
     {
         "q": "Arrange NLP understanding levels:",
         "type": "rearrange",
-        "correct": [
+        "words": [
             "Tokenization",
             "POS tagging",
             "Named entity recognition",
@@ -2143,7 +2143,7 @@
     {
         "q": "Arrange the dialogue system components:",
         "type": "rearrange",
-        "correct": [
+        "words": [
             "Natural language understanding",
             "State tracking",
             "Policy decision",
@@ -2275,7 +2275,7 @@
     {
         "q": "Arrange RAG pipeline steps:",
         "type": "rearrange",
-        "correct": [
+        "words": [
             "Receive query",
             "Retrieve relevant documents",
             "Combine with context",
@@ -2428,7 +2428,7 @@
     {
         "q": "Arrange LLM training stages:",
         "type": "rearrange",
-        "correct": [
+        "words": [
             "Pre-training on corpus",
             "Instruction tuning",
             "RLHF",
@@ -2581,7 +2581,7 @@
     {
         "q": "Arrange document processing steps:",
         "type": "rearrange",
-        "correct": [
+        "words": [
             "Document scanning",
             "OCR",
             "Layout analysis",
@@ -2734,7 +2734,7 @@
     {
         "q": "Arrange sentiment analysis complexity:",
         "type": "rearrange",
-        "correct": [
+        "words": [
             "Binary sentiment",
             "Three-class sentiment",
             "Fine-grained sentiment",
@@ -2887,7 +2887,7 @@
     {
         "q": "Arrange summarization methods by abstraction level:",
         "type": "rearrange",
-        "correct": [
+        "words": [
             "Sentence extraction",
             "Sentence compression",
             "Sentence fusion",
@@ -3040,7 +3040,7 @@
     {
         "q": "Arrange text generation control methods:",
         "type": "rearrange",
-        "correct": [
+        "words": [
             "Prompting",
             "Prefix tuning",
             "Control codes",
@@ -3172,7 +3172,7 @@
     {
         "q": "Arrange LLM capability tiers:",
         "type": "rearrange",
-        "correct": [
+        "words": [
             "Text completion",
             "Following instructions",
             "Few-shot learning",
@@ -3304,7 +3304,7 @@
     {
         "q": "Arrange the voice assistant pipeline:",
         "type": "rearrange",
-        "correct": [
+        "words": [
             "Wake word detection",
             "Speech recognition",
             "Natural language understanding",
@@ -3436,7 +3436,7 @@
     {
         "q": "Arrange embedding granularity levels:",
         "type": "rearrange",
-        "correct": [
+        "words": [
             "Character embedding",
             "Subword embedding",
             "Word embedding",
@@ -3568,7 +3568,7 @@
     {
         "q": "Arrange bias mitigation stages:",
         "type": "rearrange",
-        "correct": [
+        "words": [
             "Identify bias",
             "Measure bias",
             "Mitigate in data",
@@ -3700,7 +3700,7 @@
     {
         "q": "Arrange text augmentation complexity:",
         "type": "rearrange",
-        "correct": [
+        "words": [
             "Synonym replacement",
             "Random insertion",
             "Back-translation",
@@ -3832,7 +3832,7 @@
     {
         "q": "Arrange model efficiency techniques:",
         "type": "rearrange",
-        "correct": [
+        "words": [
             "Pruning",
             "Quantization",
             "Knowledge distillation",
@@ -3985,7 +3985,7 @@
     {
         "q": "Arrange attention mechanisms by efficiency:",
         "type": "rearrange",
-        "correct": [
+        "words": [
             "Full attention",
             "Sliding window",
             "Sparse patterns",
@@ -4138,7 +4138,7 @@
     {
         "q": "Arrange multilingual NLP complexity:",
         "type": "rearrange",
-        "correct": [
+        "words": [
             "Language identification",
             "Monolingual processing",
             "Cross-lingual transfer",
@@ -4291,7 +4291,7 @@
     {
         "q": "Arrange LLM safety layers:",
         "type": "rearrange",
-        "correct": [
+        "words": [
             "Pre-training filtering",
             "RLHF alignment",
             "System prompts",
@@ -4465,7 +4465,7 @@
     {
         "q": "Arrange text segmentation granularities:",
         "type": "rearrange",
-        "correct": [
+        "words": [
             "Character",
             "Word",
             "Sentence",
@@ -4618,7 +4618,7 @@
     {
         "q": "Arrange NLI relationship strength:",
         "type": "rearrange",
-        "correct": [
+        "words": [
             "Contradiction",
             "Neutral",
             "Paraphrase",
@@ -4750,7 +4750,7 @@
     {
         "q": "Arrange multimodal AI complexity:",
         "type": "rearrange",
-        "correct": [
+        "words": [
             "Image classification",
             "Image captioning",
             "Visual QA",

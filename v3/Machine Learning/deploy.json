@@ -123,7 +123,7 @@
     {
         "q": "Arrange model lifecycle stages:",
         "type": "rearrange",
-        "correct": [
+        "words": [
             "Data collection",
             "Model training",
             "Model evaluation",
@@ -255,7 +255,7 @@
     {
         "q": "Arrange API request flow:",
         "type": "rearrange",
-        "correct": [
+        "words": [
             "Client sends request",
             "Server receives request",
             "Server processes data",
@@ -387,7 +387,7 @@
     {
         "q": "Arrange Docker workflow:",
         "type": "rearrange",
-        "correct": [
+        "words": [
             "Write Dockerfile",
             "Build image",
             "Push to registry",
@@ -519,7 +519,7 @@
     {
         "q": "Arrange cloud ML workflow:",
         "type": "rearrange",
-        "correct": [
+        "words": [
             "Upload data",
             "Configure training",
             "Train model",
@@ -672,7 +672,7 @@
     {
         "q": "Arrange deployment considerations:",
         "type": "rearrange",
-        "correct": [
+        "words": [
             "Model selection",
             "Environment setup",
             "API creation",
@@ -862,7 +862,7 @@
     {
         "q": "Arrange Kubernetes scaling hierarchy:",
         "type": "rearrange",
-        "correct": [
+        "words": [
             "Container",
             "Pod",
             "ReplicaSet",
@@ -973,7 +973,7 @@
     {
         "q": "Arrange drift detection workflow:",
         "type": "rearrange",
-        "correct": [
+        "words": [
             "Collect production data",
             "Compare distributions",
             "Detect drift",
@@ -1105,7 +1105,7 @@
     {
         "q": "Arrange MLOps maturity levels:",
         "type": "rearrange",
-        "correct": [
+        "words": [
             "Manual ML",
             "ML pipeline automation",
             "CI/CD pipelines",
@@ -1237,7 +1237,7 @@
     {
         "q": "Arrange deployment testing progression:",
         "type": "rearrange",
-        "correct": [
+        "words": [
             "Unit tests",
             "Integration tests",
             "Staging environment",
@@ -1390,7 +1390,7 @@
     {
         "q": "Arrange model serving optimization:",
         "type": "rearrange",
-        "correct": [
+        "words": [
             "Model optimization",
             "Batching configuration",
             "Hardware selection",
@@ -1543,7 +1543,7 @@
     {
         "q": "Arrange API security layers:",
         "type": "rearrange",
-        "correct": [
+        "words": [
             "HTTPS encryption",
             "Authentication",
             "Authorization",
@@ -1675,7 +1675,7 @@
     {
         "q": "Arrange observability pillars:",
         "type": "rearrange",
-        "correct": [
+        "words": [
             "Metrics",
             "Logs",
             "Traces",
@@ -1828,7 +1828,7 @@
     {
         "q": "Arrange model optimization techniques:",
         "type": "rearrange",
-        "correct": [
+        "words": [
             "Pruning",
             "Quantization",
             "Knowledge distillation",
@@ -1960,7 +1960,7 @@
     {
         "q": "Arrange infrastructure automation layers:",
         "type": "rearrange",
-        "correct": [
+        "words": [
             "Cloud account setup",
             "Network configuration",
             "Compute resources",
@@ -2092,7 +2092,7 @@
     {
         "q": "Arrange inference hardware by performance:",
         "type": "rearrange",
-        "correct": [
+        "words": [
             "CPU",
             "GPU",
             "TPU",
@@ -2224,7 +2224,7 @@
     {
         "q": "Arrange microservices infrastructure:",
         "type": "rearrange",
-        "correct": [
+        "words": [
             "API Gateway",
             "Load Balancer",
             "Service Discovery",
@@ -2377,7 +2377,7 @@
     {
         "q": "Arrange testing pyramid for ML:",
         "type": "rearrange",
-        "correct": [
+        "words": [
             "Unit tests",
             "Data tests",
             "Model tests",
@@ -2530,7 +2530,7 @@
     {
         "q": "Arrange availability levels (nines):",
         "type": "rearrange",
-        "correct": [
+        "words": [
             "99% (two nines)",
             "99.9% (three nines)",
             "99.99% (four nines)",
@@ -2683,7 +2683,7 @@
     {
         "q": "Arrange model serving optimizations:",
         "type": "rearrange",
-        "correct": [
+        "words": [
             "Model conversion",
             "Quantization",
             "Batching",
@@ -2836,7 +2836,7 @@
     {
         "q": "Arrange ML pipeline stages:",
         "type": "rearrange",
-        "correct": [
+        "words": [
             "Data ingestion",
             "Data processing",
             "Feature engineering",
@@ -2989,7 +2989,7 @@
     {
         "q": "Arrange ML system redundancy:",
         "type": "rearrange",
-        "correct": [
+        "words": [
             "Primary model",
             "Secondary model",
             "Rule-based fallback",
@@ -3121,7 +3121,7 @@
     {
         "q": "Arrange deployment readiness checklist:",
         "type": "rearrange",
-        "correct": [
+        "words": [
             "Model validation",
             "Performance testing",
             "Security review",
@@ -3374,7 +3374,7 @@
     {
         "q": "Arrange security measures:",
         "type": "rearrange",
-        "correct": [
+        "words": [
             "Authentication",
             "Authorization",
             "Encryption",
@@ -3506,7 +3506,7 @@
     {
         "q": "Arrange AI governance levels:",
         "type": "rearrange",
-        "correct": [
+        "words": [
             "Principles",
             "Policies",
             "Processes",
@@ -3659,7 +3659,7 @@
     {
         "q": "Arrange LLM optimization techniques:",
         "type": "rearrange",
-        "correct": [
+        "words": [
             "Quantization",
             "KV cache",
             "Continuous batching",
@@ -3833,7 +3833,7 @@
     {
         "q": "Arrange RAG deployment components:",
         "type": "rearrange",
-        "correct": [
+        "words": [
             "Document store",
             "Embedding model",
             "Vector database",
@@ -3965,7 +3965,7 @@
     {
         "q": "Arrange LLM safety layers:",
         "type": "rearrange",
-        "correct": [
+        "words": [
             "Input filtering",
             "Prompt injection detection",
             "Model safety training",
@@ -4118,7 +4118,7 @@
     {
         "q": "Arrange deployment evolution:",
         "type": "rearrange",
-        "correct": [
+        "words": [
             "Manual deployment",
             "Scripted deployment",
             "CI/CD pipelines",
@@ -4271,7 +4271,7 @@
     {
         "q": "Arrange deployment best practices:",
         "type": "rearrange",
-        "correct": [
+        "words": [
             "Automate everything",
             "Test thoroughly",
             "Deploy frequently",
@@ -4497,7 +4497,7 @@
     {
         "q": "Arrange payload optimization steps:",
         "type": "rearrange",
-        "correct": [
+        "words": [
             "Analyze payload size",
             "Remove unnecessary fields",
             "Compress data",
@@ -4650,7 +4650,7 @@
     {
         "q": "Arrange API development lifecycle:",
         "type": "rearrange",
-        "correct": [
+        "words": [
             "Design",
             "Development",
             "Testing",
@@ -4782,7 +4782,7 @@
     {
         "q": "Arrange incident response steps:",
         "type": "rearrange",
-        "correct": [
+        "words": [
             "Detection",
             "Triage",
             "Mitigation",

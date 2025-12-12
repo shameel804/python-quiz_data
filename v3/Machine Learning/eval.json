@@ -265,7 +265,7 @@
     {
         "q": "Arrange the steps in k-fold cross-validation:",
         "type": "rearrange",
-        "correct": [
+        "words": [
             "Split data into k folds",
             "Use one fold as validation",
             "Train on remaining k-1 folds",
@@ -581,7 +581,7 @@
     {
         "q": "Arrange bias-variance concepts from low to high complexity:",
         "type": "rearrange",
-        "correct": [
+        "words": [
             "High bias, low variance",
             "Moderate bias, moderate variance",
             "Low bias, high variance",
@@ -1013,7 +1013,7 @@
     {
         "q": "Arrange calibration methods by complexity:",
         "type": "rearrange",
-        "correct": [
+        "words": [
             "Temperature scaling",
             "Platt scaling",
             "Histogram binning",
@@ -1392,7 +1392,7 @@
     {
         "q": "Arrange techniques for handling class imbalance:",
         "type": "rearrange",
-        "correct": [
+        "words": [
             "Collect more minority samples",
             "Apply resampling techniques",
             "Use class weights",
@@ -1587,7 +1587,7 @@
     {
         "q": "Arrange the steps in model selection pipeline:",
         "type": "rearrange",
-        "correct": [
+        "words": [
             "Split data into train/test",
             "Define hyperparameter search space",
             "Perform cross-validation",
@@ -1740,7 +1740,7 @@
     {
         "q": "Arrange the steps in complete model evaluation:",
         "type": "rearrange",
-        "correct": [
+        "words": [
             "Train-test split",
             "Model training",
             "Performance metrics",
@@ -1972,7 +1972,7 @@
     {
         "q": "Arrange the steps in ML model monitoring:",
         "type": "rearrange",
-        "correct": [
+        "words": [
             "Define key metrics",
             "Set up data pipelines",
             "Configure alerts",
@@ -2146,7 +2146,7 @@
     {
         "q": "Arrange types of prediction intervals by complexity:",
         "type": "rearrange",
-        "correct": [
+        "words": [
             "Point prediction only",
             "Naive percentile intervals",
             "Quantile regression",
@@ -2320,7 +2320,7 @@
     {
         "q": "Arrange the components of generalization error:",
         "type": "rearrange",
-        "correct": [
+        "words": [
             "Bias term",
             "Variance term",
             "Irreducible noise",
@@ -2494,7 +2494,7 @@
     {
         "q": "Arrange the levels of experimental reliability:",
         "type": "rearrange",
-        "correct": [
+        "words": [
             "Repeatability (same conditions)",
             "Reproducibility (same code/data)",
             "Replicability (new implementation)",
@@ -2647,7 +2647,7 @@
     {
         "q": "Arrange the steps in comprehensive model evaluation:",
         "type": "rearrange",
-        "correct": [
+        "words": [
             "Performance metrics",
             "Statistical significance",
             "Fairness analysis",
@@ -2879,7 +2879,7 @@
     {
         "q": "Arrange ranking metrics by complexity:",
         "type": "rearrange",
-        "correct": [
+        "words": [
             "Precision@K",
             "Mean Reciprocal Rank",
             "Average Precision",
@@ -3011,7 +3011,7 @@
     {
         "q": "Arrange the steps in production model evaluation:",
         "type": "rearrange",
-        "correct": [
+        "words": [
             "Offline evaluation",
             "Shadow deployment",
             "Canary rollout",
@@ -3206,7 +3206,7 @@
     {
         "q": "Arrange transfer learning strategies by complexity:",
         "type": "rearrange",
-        "correct": [
+        "words": [
             "Feature extraction",
             "Fine-tuning top layers",
             "Full fine-tuning",
@@ -3359,7 +3359,7 @@
     {
         "q": "Arrange continual learning metrics by their focus:",
         "type": "rearrange",
-        "correct": [
+        "words": [
             "Final performance",
             "Average accuracy",
             "Backward transfer",
@@ -3512,7 +3512,7 @@
     {
         "q": "Arrange MLOps metrics by their focus:",
         "type": "rearrange",
-        "correct": [
+        "words": [
             "Model accuracy",
             "Inference latency",
             "System throughput",
@@ -3665,7 +3665,7 @@
     {
         "q": "Arrange the data validation stages:",
         "type": "rearrange",
-        "correct": [
+        "words": [
             "Schema validation",
             "Range checking",
             "Distribution comparison",
@@ -3818,7 +3818,7 @@
     {
         "q": "Arrange online experimentation methods by sensitivity:",
         "type": "rearrange",
-        "correct": [
+        "words": [
             "A/B testing",
             "A/B/n testing",
             "Interleaving",
@@ -3971,7 +3971,7 @@
     {
         "q": "Arrange ML testing stages:",
         "type": "rearrange",
-        "correct": [
+        "words": [
             "Data validation",
             "Model training tests",
             "Model evaluation tests",
@@ -4145,7 +4145,7 @@
     {
         "q": "Arrange the steps in ML pipeline validation:",
         "type": "rearrange",
-        "correct": [
+        "words": [
             "Data validation",
             "Feature validation",
             "Model validation",
@@ -4277,7 +4277,7 @@
     {
         "q": "Arrange the model lifecycle stages:",
         "type": "rearrange",
-        "correct": [
+        "words": [
             "Development",
             "Training",
             "Evaluation",
@@ -4530,7 +4530,7 @@
     {
         "q": "Arrange the model debugging steps:",
         "type": "rearrange",
-        "correct": [
+        "words": [
             "Reproduce the error",
             "Isolate the cause",
             "Identify the fix",
@@ -4741,7 +4741,7 @@
     {
         "q": "Arrange the types of distribution shift:",
         "type": "rearrange",
-        "correct": [
+        "words": [
             "Covariate shift",
             "Label shift",
             "Concept shift",
