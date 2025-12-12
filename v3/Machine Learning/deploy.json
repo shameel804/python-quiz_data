@@ -1,1152 +1,4808 @@
 [
     {
         "q": "What is model deployment?",
-        "c": null,
+        "type": "mcq",
         "o": [
-            "Making the model available for use",
-            "Training the model",
-            "Evaluating model performance",
-            "Collecting data"
+            "Making a trained model available for use",
+            "Training a model",
+            "Collecting data",
+            "Cleaning data"
+        ],
+        "correct": "Making a trained model available for use"
+    },
+    {
+        "q": "Model deployment makes models available for _____.",
+        "type": "fill_blank",
+        "correct": "predictions"
+    },
+    {
+        "q": "Deployment is the final step in the ML lifecycle.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "What is model serialization?",
+        "type": "mcq",
+        "o": [
+            "Saving a model to disk",
+            "Training a model",
+            "Validating a model",
+            "Testing a model"
+        ],
+        "correct": "Saving a model to disk"
+    },
+    {
+        "q": "Serialization converts model to _____ format.",
+        "type": "fill_blank",
+        "correct": "file"
+    },
+    {
+        "q": "Pickle is a Python serialization format.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "What is pickle in Python?",
+        "type": "mcq",
+        "o": [
+            "A serialization library",
+            "A machine learning algorithm",
+            "A database",
+            "A web framework"
+        ],
+        "correct": "A serialization library"
+    },
+    {
+        "q": "Pickle files typically have _____ extension.",
+        "type": "fill_blank",
+        "correct": ".pkl"
+    },
+    {
+        "q": "Pickle can serialize most Python objects.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Match the serialization format with its library:",
+        "type": "match",
+        "left": [
+            "pickle",
+            "joblib",
+            "HDF5",
+            "ONNX"
+        ],
+        "right": [
+            "Python standard",
+            "NumPy arrays",
+            "Keras models",
+            "Cross-framework"
         ]
     },
     {
-        "q": "Which platform is commonly used for deploying ML models?",
-        "c": null,
+        "q": "What is joblib?",
+        "type": "mcq",
         "o": [
-            "AWS",
-            "WordPress",
-            "Photoshop",
-            "Excel"
-        ]
+            "Library for efficient serialization of NumPy arrays",
+            "Job scheduling library",
+            "Database library",
+            "Web framework"
+        ],
+        "correct": "Library for efficient serialization of NumPy arrays"
     },
     {
-        "q": "What is an API in the context of model deployment?",
-        "c": null,
-        "o": [
-            "Application Programming Interface",
-            "Advanced Programming Interface",
-            "Automated Process Interface",
-            "Analog Protocol Interface"
-        ]
+        "q": "Joblib is often preferred for _____ models.",
+        "type": "fill_blank",
+        "correct": "scikit-learn"
     },
     {
-        "q": "What does REST stand for?",
-        "c": null,
-        "o": [
-            "Representational State Transfer",
-            "Real-Time State Transfer",
-            "Remote System Transfer",
-            "Rapid State Transfer"
-        ]
+        "q": "Joblib is more efficient than pickle for large arrays.",
+        "type": "true_false",
+        "correct": "True"
     },
     {
-        "q": "Which format is commonly used for saving machine learning models?",
-        "c": null,
+        "q": "What is ONNX?",
+        "type": "mcq",
         "o": [
-            "Pickle",
-            "CSV",
-            "JSON",
-            "XML"
-        ]
+            "Open Neural Network Exchange format",
+            "Online Neural Network eXecution",
+            "Open Network Neural eXchange",
+            "Original Neural Network XML"
+        ],
+        "correct": "Open Neural Network Exchange format"
     },
     {
-        "q": "What is Docker used for in deployment?",
-        "c": null,
-        "o": [
-            "Containerization",
-            "Data storage",
-            "Data processing",
-            "Model training"
-        ]
+        "q": "ONNX enables model _____ across frameworks.",
+        "type": "fill_blank",
+        "correct": "portability"
     },
     {
-        "q": "What is CI/CD?",
-        "c": null,
-        "o": [
-            "Continuous Integration/Continuous Deployment",
-            "Constant Integration/Constant Deployment",
-            "Continuous Improvement/Continuous Development",
-            "Cyclic Integration/Cyclic Deployment"
-        ]
+        "q": "ONNX models can run on multiple frameworks.",
+        "type": "true_false",
+        "correct": "True"
     },
     {
-        "q": "What is A/B testing?",
-        "c": null,
-        "o": [
-            "Comparing two versions",
-            "Training multiple models",
-            "Data preprocessing",
-            "Feature selection"
-        ]
-    },
-    {
-        "q": "Which cloud service can host ML models?",
-        "c": null,
-        "o": [
-            "Google Cloud",
-            "Google Docs",
-            "Google Sheets",
-            "Google Maps"
-        ]
-    },
-    {
-        "q": "What is Flask used for?",
-        "c": null,
-        "o": [
-            "Web framework for APIs",
-            "Data visualization",
-            "Model training",
-            "Database management"
-        ]
-    },
-    {
-        "q": "What does 'scalability' refer to?",
-        "c": null,
-        "o": [
-            "Ability to handle growth",
-            "Speed of model training",
-            "Size of the model",
-            "Accuracy of predictions"
-        ]
-    },
-    {
-        "q": "What is a deployment pipeline?",
-        "c": null,
-        "o": [
-            "Automated workflow for deployment",
-            "Data collection process",
-            "Model evaluation technique",
-            "Training method"
-        ]
-    },
-    {
-        "q": "What is Kubernetes used for?",
-        "c": null,
-        "o": [
-            "Orchestration of containers",
-            "Model training",
-            "Data storage",
-            "Data preprocessing"
-        ]
-    },
-    {
-        "q": "What is the purpose of load balancing?",
-        "c": null,
-        "o": [
-            "Distributing traffic",
-            "Data validation",
-            "Model evaluation",
-            "Error handling"
-        ]
-    },
-    {
-        "q": "What is a microservice architecture?",
-        "c": null,
-        "o": [
-            "Breaking applications into smaller services",
-            "Using a monolithic design",
-            "Deploying single models",
-            "Data analysis"
-        ]
-    },
-    {
-        "q": "What does 'monitoring' refer to in deployment?",
-        "c": null,
-        "o": [
-            "Tracking model performance",
-            "Training accuracy",
-            "Data collection methods",
-            "Feature engineering"
-        ]
-    },
-    {
-        "q": "Which of the following is a deployment strategy?",
-        "c": null,
-        "o": [
-            "Blue/Green deployment",
-            "Data mining",
-            "Feature extraction",
-            "Model training"
-        ]
-    },
-    {
-        "q": "What is versioning in ML models?",
-        "c": null,
-        "o": [
-            "Tracking changes to models",
-            "Data version control",
-            "Model accuracy tracking",
-            "Feature selection"
-        ]
-    },
-    {
-        "q": "What is rollback in deployment?",
-        "c": null,
-        "o": [
-            "Reverting to a previous model",
-            "Training a new model",
-            "Data preprocessing",
-            "Feature engineering"
-        ]
-    },
-    {
-        "q": "What is container orchestration?",
-        "c": null,
-        "o": [
-            "Managing multiple containers",
-            "Training containers",
-            "Creating data containers",
-            "Model evaluation"
-        ]
-    },
-    {
-        "q": "Which framework is commonly used for serving models?",
-        "c": null,
-        "o": [
-            "TensorFlow Serving",
-            "Matplotlib",
-            "NumPy",
-            "Pandas"
-        ]
-    },
-    {
-        "q": "What is model inferencing?",
-        "c": null,
-        "o": [
-            "Making predictions",
-            "Training the model",
-            "Evaluating the model",
-            "Data cleaning"
-        ]
-    },
-    {
-        "q": "What is edge deployment?",
-        "c": null,
-        "o": [
-            "Deploying models on local devices",
-            "Using cloud servers",
-            "Training in data centers",
-            "Centralized deployment"
-        ]
-    },
-    {
-        "q": "What is the role of a load tester?",
-        "c": null,
-        "o": [
-            "Testing system performance",
-            "Training models",
+        "q": "Arrange model lifecycle stages:",
+        "type": "rearrange",
+        "correct": [
             "Data collection",
-            "Feature extraction"
-        ]
-    },
-    {
-        "q": "What is a model registry?",
-        "c": null,
-        "o": [
-            "Central storage for models",
-            "Data storage",
-            "Training data management",
-            "Model evaluation tool"
-        ]
-    },
-    {
-        "q": "What does latency refer to?",
-        "c": null,
-        "o": [
-            "Delay in response time",
-            "Data processing speed",
-            "Training duration",
-            "Model accuracy"
-        ]
-    },
-    {
-        "q": "Which format is often used for model configuration?",
-        "c": null,
-        "o": [
-            "YAML",
-            "HTML",
-            "XML",
-            "CSV"
-        ]
-    },
-    {
-        "q": "What is a prediction endpoint?",
-        "c": null,
-        "o": [
-            "URL for making predictions",
-            "Data storage location",
-            "Training server address",
-            "Monitoring dashboard"
-        ]
-    },
-    {
-        "q": "What is a CI/CD tool?",
-        "c": null,
-        "o": [
-            "Automates deployment processes",
-            "Data analysis software",
-            "Model training library",
-            "Visualization tool"
-        ]
-    },
-    {
-        "q": "What is shadow deployment?",
-        "c": null,
-        "o": [
-            "Testing new models alongside old ones",
-            "Deploying multiple models",
-            "Training models in the cloud",
-            "Using local servers"
-        ]
-    },
-    {
-        "q": "What is an inference server?",
-        "c": null,
-        "o": [
-            "Server for running models",
-            "Data storage server",
-            "Training server",
-            "Database server"
-        ]
-    },
-    {
-        "q": "What does the term 'drift' refer to?",
-        "c": null,
-        "o": [
-            "Change in model performance",
-            "Training speed",
-            "Data storage size",
-            "Feature importance"
-        ]
-    },
-    {
-        "q": "What is a model serving layer?",
-        "c": null,
-        "o": [
-            "Component for serving predictions",
-            "Training component",
-            "Data preprocessing layer",
-            "Data storage layer"
-        ]
-    },
-    {
-        "q": "What is the primary benefit of using a model API?",
-        "c": null,
-        "o": [
-            "Easier access for predictions",
-            "Faster training times",
-            "Data collection",
-            "Feature selection"
-        ]
-    },
-    {
-        "q": "What is version control for models?",
-        "c": null,
-        "o": [
-            "Managing changes over time",
-            "Data versioning",
-            "Model evaluation tracking",
-            "Feature tracking"
-        ]
-    },
-    {
-        "q": "What is the purpose of a load balancer?",
-        "c": null,
-        "o": [
-            "Distributing traffic",
             "Model training",
-            "Data storage",
-            "Error handling"
-        ]
-    },
-    {
-        "q": "What is a service mesh?",
-        "c": null,
-        "o": [
-            "Infrastructure for managing microservices",
-            "Data storage system",
-            "Training framework",
-            "Model evaluation tool"
-        ]
-    },
-    {
-        "q": "What is continuous deployment?",
-        "c": null,
-        "o": [
-            "Automatically releasing changes to production",
-            "Manual model training",
-            "Data cleaning",
-            "Feature engineering"
-        ]
-    },
-    {
-        "q": "What is a model's lifecycle?",
-        "c": null,
-        "o": [
-            "Stages from training to deployment",
-            "Data collection phases",
-            "Model evaluation steps",
-            "Feature selection processes"
-        ]
-    },
-    {
-        "q": "What is an online learning model?",
-        "c": null,
-        "o": [
-            "Learns incrementally from data",
-            "Trains on static datasets",
-            "Does not adapt over time",
-            "Requires batch processing"
-        ]
-    },
-    {
-        "q": "What is a rollback strategy?",
-        "c": null,
-        "o": [
-            "Reverting to a stable version",
-            "Data analysis strategy",
-            "Model training strategy",
-            "Feature engineering strategy"
-        ]
-    },
-    {
-        "q": "What is a canary deployment?",
-        "c": null,
-        "o": [
-            "Testing new features on a small scale",
-            "Full-scale deployment",
-            "Batch processing of data",
-            "Feature extraction process"
-        ]
-    },
-    {
-        "q": "What is the primary purpose of a deployment dashboard?",
-        "c": null,
-        "o": [
-            "Monitoring deployments",
-            "Data storage",
-            "Model training",
-            "Feature selection"
-        ]
-    },
-    {
-        "q": "What is a hardware accelerator?",
-        "c": null,
-        "o": [
-            "Improves model inference speed",
-            "Data storage device",
-            "Model training tool",
-            "Data collection tool"
-        ]
-    },
-    {
-        "q": "What does containerization achieve?",
-        "c": null,
-        "o": [
-            "Isolation of applications",
-            "Data storage management",
             "Model evaluation",
-            "Feature selection"
-        ]
-    },
-    {
-        "q": "What is a service discovery mechanism?",
-        "c": null,
-        "o": [
-            "Locates services in a network",
-            "Data storage solution",
-            "Model training strategy",
-            "Feature extraction tool"
-        ]
-    },
-    {
-        "q": "What is a model endpoint?",
-        "c": null,
-        "o": [
-            "Address for predictions",
-            "Data storage location",
-            "Training server address",
-            "Monitoring location"
-        ]
-    },
-    {
-        "q": "What is the significance of model performance metrics?",
-        "c": null,
-        "o": [
-            "Evaluating effectiveness",
-            "Data collection methods",
-            "Model training techniques",
-            "Feature extraction methods"
-        ]
-    },
-    {
-        "q": "What does auto-scaling do?",
-        "c": null,
-        "o": [
-            "Adjusts resources based on demand",
-            "Trains models automatically",
-            "Data cleaning",
-            "Feature selection"
-        ]
-    },
-    {
-        "q": "What is a serverless architecture?",
-        "c": null,
-        "o": [
-            "No server management needed",
-            "Data management is manual",
-            "Requires physical servers",
-            "Data processing is slower"
-        ]
-    },
-    {
-        "q": "What is the primary function of a data pipeline?",
-        "c": null,
-        "o": [
-            "Automates data flow",
-            "Model evaluation",
-            "Data visualization",
-            "Feature engineering"
-        ]
-    },
-    {
-        "q": "What is a feature flag?",
-        "c": null,
-        "o": [
-            "Controls feature availability",
-            "Data storage indicator",
-            "Model accuracy tracker",
-            "Feature extraction tool"
-        ]
-    },
-    {
-        "q": "What is a model signature?",
-        "c": null,
-        "o": [
-            "Defines input/output schema",
-            "Trains models",
-            "Stores data",
-            "Visualizes results"
-        ]
-    },
-    {
-        "q": "What does load testing assess?",
-        "c": null,
-        "o": [
-            "System performance under load",
-            "Data collection speed",
-            "Model training duration",
-            "Feature extraction accuracy"
-        ]
-    },
-    {
-        "q": "What is a reverse proxy?",
-        "c": null,
-        "o": [
-            "Forwards requests to servers",
-            "Data storage solution",
-            "Model training framework",
-            "Feature engineering tool"
-        ]
-    },
-    {
-        "q": "What is a model deployment environment?",
-        "c": null,
-        "o": [
-            "Where models are hosted",
-            "Data storage space",
-            "Training location",
-            "Feature extraction space"
-        ]
-    },
-    {
-        "q": "What is the role of an API gateway?",
-        "c": null,
-        "o": [
-            "Manages API requests",
-            "Data storage",
-            "Model training",
-            "Feature selection"
-        ]
-    },
-    {
-        "q": "What is serverless computing?",
-        "c": null,
-        "o": [
-            "Run code without server management",
-            "Requires physical servers",
-            "Data storage management",
-            "Model training management"
-        ]
-    },
-    {
-        "q": "What does anomaly detection do?",
-        "c": null,
-        "o": [
-            "Identifies unusual patterns",
-            "Trains models",
-            "Data storage analysis",
-            "Feature selection"
-        ]
-    },
-    {
-        "q": "What is a data warehouse?",
-        "c": null,
-        "o": [
-            "Central repository for data",
-            "Training server",
-            "Model evaluation tool",
-            "Feature extraction tool"
-        ]
-    },
-    {
-        "q": "What is a cloud-native application?",
-        "c": null,
-        "o": [
-            "Designed for cloud environments",
-            "Requires physical servers",
-            "Data processing is manual",
-            "Model training is centralized"
-        ]
-    },
-    {
-        "q": "What is model scaling?",
-        "c": null,
-        "o": [
-            "Increasing model capacity",
-            "Data cleaning process",
-            "Model training duration",
-            "Feature extraction process"
-        ]
-    },
-    {
-        "q": "What is a network policy?",
-        "c": null,
-        "o": [
-            "Defines network rules for services",
-            "Data storage rules",
-            "Model training policies",
-            "Feature engineering rules"
-        ]
-    },
-    {
-        "q": "What is multi-tenancy?",
-        "c": null,
-        "o": [
-            "Single instance serving multiple users",
-            "Data collection method",
-            "Model evaluation technique",
-            "Feature selection process"
-        ]
-    },
-    {
-        "q": "What is a virtual machine?",
-        "c": null,
-        "o": [
-            "Emulates a physical computer",
-            "Data storage device",
-            "Model training tool",
-            "Feature extraction tool"
-        ]
-    },
-    {
-        "q": "What is an orchestrator?",
-        "c": null,
-        "o": [
-            "Manages containerized applications",
-            "Data collection tool",
-            "Model training tool",
-            "Feature selection tool"
-        ]
-    },
-    {
-        "q": "What is a public cloud?",
-        "c": null,
-        "o": [
-            "Available to anyone",
-            "Requires a subscription",
-            "For private use only",
-            "Data storage only"
-        ]
-    },
-    {
-        "q": "What is an on-premises deployment?",
-        "c": null,
-        "o": [
-            "Hosted in local data centers",
-            "Cloud-hosted",
-            "Requires internet connection",
-            "Managed by third parties"
-        ]
-    },
-    {
-        "q": "What is a data lake?",
-        "c": null,
-        "o": [
-            "Storage for raw data",
-            "Trains models",
-            "Data preprocessing tool",
-            "Model evaluation tool"
-        ]
-    },
-    {
-        "q": "What does high availability mean?",
-        "c": null,
-        "o": [
-            "System is operational most of the time",
-            "Data storage size",
-            "Model training duration",
-            "Feature extraction speed"
-        ]
-    },
-    {
-        "q": "What is an HTTP request?",
-        "c": null,
-        "o": [
-            "Message sent to a server",
-            "Data storage query",
-            "Model training message",
-            "Feature extraction request"
-        ]
-    },
-    {
-        "q": "What is a front-end application?",
-        "c": null,
-        "o": [
-            "User interface for interaction",
-            "Data storage application",
-            "Model training interface",
-            "Feature selection interface"
-        ]
-    },
-    {
-        "q": "What is a back-end application?",
-        "c": null,
-        "o": [
-            "Server-side processing",
-            "User interface application",
-            "Data storage application",
-            "Feature extraction interface"
-        ]
-    },
-    {
-        "q": "What is data encryption?",
-        "c": null,
-        "o": [
-            "Protects data confidentiality",
-            "Data storage process",
-            "Model training step",
-            "Feature extraction method"
-        ]
-    },
-    {
-        "q": "What is data governance?",
-        "c": null,
-        "o": [
-            "Management of data availability and integrity",
-            "Data storage method",
-            "Model training technique",
-            "Feature extraction process"
-        ]
-    },
-    {
-        "q": "What is a data access layer?",
-        "c": null,
-        "o": [
-            "Manages database access",
-            "Data storage interface",
-            "Model training layer",
-            "Feature selection layer"
-        ]
-    },
-    {
-        "q": "What is a CI/CD pipeline?",
-        "c": null,
-        "o": [
-            "Automates software delivery",
-            "Data storage solution",
-            "Model training process",
-            "Feature extraction process"
-        ]
-    },
-    {
-        "q": "What is version control?",
-        "c": null,
-        "o": [
-            "Tracks changes in code",
-            "Data storage process",
-            "Model training steps",
-            "Feature selection process"
-        ]
-    },
-    {
-        "q": "What is a monitoring system?",
-        "c": null,
-        "o": [
-            "Tracks application performance",
-            "Data storage method",
-            "Model training process",
-            "Feature extraction method"
-        ]
-    },
-    {
-        "q": "What does data redundancy mean?",
-        "c": null,
-        "o": [
-            "Duplicate data storage",
-            "Data processing speed",
-            "Model training method",
-            "Feature extraction method"
-        ]
-    },
-    {
-        "q": "What is model auditing?",
-        "c": null,
-        "o": [
-            "Reviewing model performance",
-            "Data storage process",
-            "Model training technique",
-            "Feature selection process"
-        ]
-    },
-    {
-        "q": "What is a microservices architecture?",
-        "c": null,
-        "o": [
-            "Application structure using small services",
-            "Data storage method",
-            "Model training process",
-            "Feature extraction method"
-        ]
-    },
-    {
-        "q": "What is edge computing?",
-        "c": null,
-        "o": [
-            "Processing data closer to the source",
-            "Data storage method",
-            "Model training method",
-            "Feature selection process"
-        ]
-    },
-    {
-        "q": "What is a data integration tool?",
-        "c": null,
-        "o": [
-            "Combines data from different sources",
-            "Data storage tool",
-            "Model training tool",
-            "Feature extraction tool"
-        ]
-    },
-    {
-        "q": "What is load balancing?",
-        "c": null,
-        "o": [
-            "Distributes traffic across servers",
-            "Data storage technique",
-            "Model training strategy",
-            "Feature extraction method"
-        ]
-    },
-    {
-        "q": "What is data privacy?",
-        "c": null,
-        "o": [
-            "Protection of personal information",
-            "Data storage process",
-            "Model training technique",
-            "Feature selection process"
+            "Model deployment",
+            "Monitoring"
         ]
     },
     {
         "q": "What is an API?",
-        "c": null,
+        "type": "mcq",
         "o": [
-            "Interface for software interaction",
-            "Data storage method",
-            "Model training tool",
-            "Feature extraction tool"
+            "Application Programming Interface",
+            "Automated Processing Integration",
+            "Application Process Integration",
+            "Automated Programming Interface"
+        ],
+        "correct": "Application Programming Interface"
+    },
+    {
+        "q": "APIs allow applications to _____ with each other.",
+        "type": "fill_blank",
+        "correct": "communicate"
+    },
+    {
+        "q": "REST APIs are commonly used for ML deployment.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "What is REST?",
+        "type": "mcq",
+        "o": [
+            "Representational State Transfer",
+            "Remote Execution Service Transfer",
+            "Request State Transfer",
+            "Remote Service Technology"
+        ],
+        "correct": "Representational State Transfer"
+    },
+    {
+        "q": "REST APIs use HTTP _____ like GET and POST.",
+        "type": "fill_blank",
+        "correct": "methods"
+    },
+    {
+        "q": "REST is stateless architecture.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "What is Flask?",
+        "type": "mcq",
+        "o": [
+            "A lightweight Python web framework",
+            "A machine learning library",
+            "A database",
+            "A serialization format"
+        ],
+        "correct": "A lightweight Python web framework"
+    },
+    {
+        "q": "Flask is commonly used to create ML _____.",
+        "type": "fill_blank",
+        "correct": "APIs"
+    },
+    {
+        "q": "Flask is a microframework for Python.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Match the web framework with its characteristic:",
+        "type": "match",
+        "left": [
+            "Flask",
+            "FastAPI",
+            "Django",
+            "Streamlit"
+        ],
+        "right": [
+            "Lightweight",
+            "Async and fast",
+            "Full-featured",
+            "ML dashboards"
         ]
     },
     {
-        "q": "What is data migration?",
-        "c": null,
+        "q": "What is FastAPI?",
+        "type": "mcq",
         "o": [
-            "Moving data between storage locations",
-            "Data cleaning process",
-            "Model training process",
-            "Feature selection process"
+            "Modern async Python web framework",
+            "Fast database API",
+            "Quick API testing tool",
+            "API caching system"
+        ],
+        "correct": "Modern async Python web framework"
+    },
+    {
+        "q": "FastAPI automatically generates API _____.",
+        "type": "fill_blank",
+        "correct": "documentation"
+    },
+    {
+        "q": "FastAPI supports asynchronous programming.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "What is an endpoint?",
+        "type": "mcq",
+        "o": [
+            "A URL where API receives requests",
+            "The end of training",
+            "A data point",
+            "A model output"
+        ],
+        "correct": "A URL where API receives requests"
+    },
+    {
+        "q": "Each API endpoint handles specific _____.",
+        "type": "fill_blank",
+        "correct": "requests"
+    },
+    {
+        "q": "/predict is a common endpoint name for ML APIs.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Arrange API request flow:",
+        "type": "rearrange",
+        "correct": [
+            "Client sends request",
+            "Server receives request",
+            "Server processes data",
+            "Model makes prediction",
+            "Server returns response"
         ]
     },
     {
-        "q": "What is a stateful service?",
-        "c": null,
+        "q": "What is JSON?",
+        "type": "mcq",
         "o": [
-            "Retains user session data",
-            "Does not store any data",
-            "Requires constant network access",
-            "Data storage service"
+            "JavaScript Object Notation",
+            "Java Standard Object Notation",
+            "Joint System Object Network",
+            "JSON Script Object Notation"
+        ],
+        "correct": "JavaScript Object Notation"
+    },
+    {
+        "q": "JSON is a common data _____ format for APIs.",
+        "type": "fill_blank",
+        "correct": "exchange"
+    },
+    {
+        "q": "JSON is human-readable.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "What is HTTP status code 200?",
+        "type": "mcq",
+        "o": [
+            "Success",
+            "Not Found",
+            "Server Error",
+            "Bad Request"
+        ],
+        "correct": "Success"
+    },
+    {
+        "q": "HTTP status code 404 means _____ not found.",
+        "type": "fill_blank",
+        "correct": "resource"
+    },
+    {
+        "q": "Status code 500 indicates server error.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Match the HTTP status code with its meaning:",
+        "type": "match",
+        "left": [
+            "200",
+            "400",
+            "404",
+            "500"
+        ],
+        "right": [
+            "OK",
+            "Bad Request",
+            "Not Found",
+            "Server Error"
         ]
     },
     {
-        "q": "What is an asynchronous process?",
-        "c": null,
+        "q": "What is Docker?",
+        "type": "mcq",
         "o": [
-            "Does not require immediate response",
-            "Requires immediate feedback",
-            "Processes data synchronously",
-            "Data storage process"
+            "A containerization platform",
+            "A web framework",
+            "A database",
+            "A cloud provider"
+        ],
+        "correct": "A containerization platform"
+    },
+    {
+        "q": "Docker packages applications into _____.",
+        "type": "fill_blank",
+        "correct": "containers"
+    },
+    {
+        "q": "Docker ensures consistent environments.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "What is a Docker container?",
+        "type": "mcq",
+        "o": [
+            "Isolated runtime environment",
+            "Physical server",
+            "Database container",
+            "Web browser"
+        ],
+        "correct": "Isolated runtime environment"
+    },
+    {
+        "q": "Containers share the host OS _____.",
+        "type": "fill_blank",
+        "correct": "kernel"
+    },
+    {
+        "q": "Containers are lighter than virtual machines.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "What is a Dockerfile?",
+        "type": "mcq",
+        "o": [
+            "Instructions to build Docker image",
+            "Docker configuration file",
+            "Docker log file",
+            "Docker database"
+        ],
+        "correct": "Instructions to build Docker image"
+    },
+    {
+        "q": "Dockerfile starts with _____ instruction.",
+        "type": "fill_blank",
+        "correct": "FROM"
+    },
+    {
+        "q": "Dockerfiles are used to create Docker images.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Arrange Docker workflow:",
+        "type": "rearrange",
+        "correct": [
+            "Write Dockerfile",
+            "Build image",
+            "Push to registry",
+            "Pull image",
+            "Run container"
         ]
     },
     {
-        "q": "What is a distributed system?",
-        "c": null,
+        "q": "What is a Docker image?",
+        "type": "mcq",
         "o": [
-            "Multiple interconnected components",
-            "Single centralized component",
-            "Data storage system",
-            "Model training system"
+            "Template for creating containers",
+            "Running container",
+            "Docker configuration",
+            "Docker network"
+        ],
+        "correct": "Template for creating containers"
+    },
+    {
+        "q": "Docker images are built in _____.",
+        "type": "fill_blank",
+        "correct": "layers"
+    },
+    {
+        "q": "Docker images are immutable.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "What is Docker Hub?",
+        "type": "mcq",
+        "o": [
+            "Public registry for Docker images",
+            "Docker development tool",
+            "Docker database",
+            "Docker IDE"
+        ],
+        "correct": "Public registry for Docker images"
+    },
+    {
+        "q": "Docker Hub is like GitHub for _____.",
+        "type": "fill_blank",
+        "correct": "containers"
+    },
+    {
+        "q": "Docker Hub hosts official images.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "What is cloud deployment?",
+        "type": "mcq",
+        "o": [
+            "Running applications on cloud servers",
+            "Local deployment",
+            "Desktop application",
+            "Mobile deployment"
+        ],
+        "correct": "Running applications on cloud servers"
+    },
+    {
+        "q": "Cloud deployment offers _____ compared to on-premise.",
+        "type": "fill_blank",
+        "correct": "scalability"
+    },
+    {
+        "q": "AWS, GCP, and Azure are major cloud providers.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Match the cloud provider with its ML service:",
+        "type": "match",
+        "left": [
+            "AWS",
+            "GCP",
+            "Azure",
+            "Hugging Face"
+        ],
+        "right": [
+            "SageMaker",
+            "Vertex AI",
+            "Azure ML",
+            "Inference API"
         ]
     },
     {
-        "q": "What is a real-time application?",
-        "c": null,
+        "q": "What is AWS?",
+        "type": "mcq",
         "o": [
-            "Processes data instantly",
-            "Data storage method",
-            "Model training tool",
-            "Feature extraction tool"
+            "Amazon Web Services",
+            "Advanced Web System",
+            "Automatic Web Server",
+            "Amazon Workflow Services"
+        ],
+        "correct": "Amazon Web Services"
+    },
+    {
+        "q": "AWS is the largest _____ provider.",
+        "type": "fill_blank",
+        "correct": "cloud"
+    },
+    {
+        "q": "AWS offers many ML-related services.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "What is AWS SageMaker?",
+        "type": "mcq",
+        "o": [
+            "AWS managed ML platform",
+            "AWS database service",
+            "AWS storage service",
+            "AWS networking service"
+        ],
+        "correct": "AWS managed ML platform"
+    },
+    {
+        "q": "SageMaker provides notebooks, training, and _____.",
+        "type": "fill_blank",
+        "correct": "deployment"
+    },
+    {
+        "q": "SageMaker simplifies the ML workflow.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Arrange cloud ML workflow:",
+        "type": "rearrange",
+        "correct": [
+            "Upload data",
+            "Configure training",
+            "Train model",
+            "Create endpoint",
+            "Serve predictions"
         ]
     },
     {
-        "q": "What is a batch processing system?",
-        "c": null,
+        "q": "What is GCP?",
+        "type": "mcq",
         "o": [
-            "Processes data in groups",
-            "Real-time data processing",
-            "Data storage method",
-            "Model training method"
+            "Google Cloud Platform",
+            "General Computing Platform",
+            "Global Cloud Provider",
+            "Google Computing Process"
+        ],
+        "correct": "Google Cloud Platform"
+    },
+    {
+        "q": "GCP's ML platform is called _____.",
+        "type": "fill_blank",
+        "correct": "Vertex AI"
+    },
+    {
+        "q": "GCP offers TensorFlow integration.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "What is Azure?",
+        "type": "mcq",
+        "o": [
+            "Microsoft's cloud platform",
+            "Amazon's cloud platform",
+            "Google's cloud platform",
+            "IBM's cloud platform"
+        ],
+        "correct": "Microsoft's cloud platform"
+    },
+    {
+        "q": "Azure ML is Microsoft's machine learning _____.",
+        "type": "fill_blank",
+        "correct": "service"
+    },
+    {
+        "q": "Azure integrates well with Microsoft tools.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "What is serverless computing?",
+        "type": "mcq",
+        "o": [
+            "Running code without managing servers",
+            "No server deployment",
+            "Client-side only",
+            "Offline computing"
+        ],
+        "correct": "Running code without managing servers"
+    },
+    {
+        "q": "Serverless functions scale _____.",
+        "type": "fill_blank",
+        "correct": "automatically"
+    },
+    {
+        "q": "AWS Lambda is a serverless service.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Match the serverless service with its provider:",
+        "type": "match",
+        "left": [
+            "AWS Lambda",
+            "Cloud Functions",
+            "Azure Functions",
+            "Cloud Run"
+        ],
+        "right": [
+            "Amazon",
+            "Google",
+            "Microsoft",
+            "Google containers"
         ]
     },
     {
-        "q": "What is a monitoring dashboard?",
-        "c": null,
+        "q": "What is latency in ML deployment?",
+        "type": "mcq",
         "o": [
-            "Displays performance metrics",
-            "Data storage interface",
-            "Model training visualization",
-            "Feature extraction tool"
+            "Time delay for prediction",
+            "Model accuracy",
+            "Data size",
+            "Training time"
+        ],
+        "correct": "Time delay for prediction"
+    },
+    {
+        "q": "Low latency means _____ response times.",
+        "type": "fill_blank",
+        "correct": "fast"
+    },
+    {
+        "q": "Real-time applications require low latency.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "What is throughput?",
+        "type": "mcq",
+        "o": [
+            "Number of requests handled per unit time",
+            "Request size",
+            "Response time",
+            "Data transfer speed"
+        ],
+        "correct": "Number of requests handled per unit time"
+    },
+    {
+        "q": "High throughput means handling many _____ requests.",
+        "type": "fill_blank",
+        "correct": "concurrent"
+    },
+    {
+        "q": "Batching can increase throughput.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "What is model versioning?",
+        "type": "mcq",
+        "o": [
+            "Tracking different model versions",
+            "Model training",
+            "Model evaluation",
+            "Model compression"
+        ],
+        "correct": "Tracking different model versions"
+    },
+    {
+        "q": "Versioning helps with _____ and recovery.",
+        "type": "fill_blank",
+        "correct": "rollback"
+    },
+    {
+        "q": "MLflow can track model versions.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Arrange deployment considerations:",
+        "type": "rearrange",
+        "correct": [
+            "Model selection",
+            "Environment setup",
+            "API creation",
+            "Testing",
+            "Monitoring"
         ]
     },
     {
-        "q": "What is a data catalog?",
-        "c": null,
+        "q": "What is model registry?",
+        "type": "mcq",
         "o": [
-            "Organizes data assets",
-            "Data storage method",
-            "Model training tool",
-            "Feature extraction tool"
+            "Central storage for model versions",
+            "Training logs",
+            "Data storage",
+            "Code repository"
+        ],
+        "correct": "Central storage for model versions"
+    },
+    {
+        "q": "MLflow provides a model _____ feature.",
+        "type": "fill_blank",
+        "correct": "registry"
+    },
+    {
+        "q": "Model registries help manage model lifecycle.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "What is Streamlit?",
+        "type": "mcq",
+        "o": [
+            "Python library for ML web apps",
+            "Database library",
+            "Training framework",
+            "Testing library"
+        ],
+        "correct": "Python library for ML web apps"
+    },
+    {
+        "q": "Streamlit makes building dashboards _____.",
+        "type": "fill_blank",
+        "correct": "easy"
+    },
+    {
+        "q": "Streamlit requires minimal frontend knowledge.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "What is Gradio?",
+        "type": "mcq",
+        "o": [
+            "Library for ML demos and interfaces",
+            "Gradient optimization library",
+            "Database library",
+            "Testing framework"
+        ],
+        "correct": "Library for ML demos and interfaces"
+    },
+    {
+        "q": "Gradio creates _____ interfaces for models.",
+        "type": "fill_blank",
+        "correct": "interactive"
+    },
+    {
+        "q": "Hugging Face uses Gradio for Spaces.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Match the deployment tool with its use case:",
+        "type": "match",
+        "left": [
+            "Flask",
+            "Streamlit",
+            "Gradio",
+            "FastAPI"
+        ],
+        "right": [
+            "REST APIs",
+            "Dashboards",
+            "ML demos",
+            "Async APIs"
         ]
     },
     {
-        "q": "What is an SLA?",
-        "c": null,
+        "q": "What is Kubernetes?",
+        "type": "mcq",
+        "o": [
+            "Container orchestration platform",
+            "Container runtime",
+            "Database system",
+            "Web framework"
+        ],
+        "correct": "Container orchestration platform"
+    },
+    {
+        "q": "Kubernetes is often abbreviated as _____.",
+        "type": "fill_blank",
+        "correct": "K8s"
+    },
+    {
+        "q": "Kubernetes manages containerized applications.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "What is a Kubernetes pod?",
+        "type": "mcq",
+        "o": [
+            "Smallest deployable unit in Kubernetes",
+            "Kubernetes cluster",
+            "Kubernetes node",
+            "Kubernetes service"
+        ],
+        "correct": "Smallest deployable unit in Kubernetes"
+    },
+    {
+        "q": "A pod can contain one or more _____.",
+        "type": "fill_blank",
+        "correct": "containers"
+    },
+    {
+        "q": "Pods share network and storage.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Match the Kubernetes resource with its function:",
+        "type": "match",
+        "left": [
+            "Pod",
+            "Service",
+            "Deployment",
+            "ConfigMap"
+        ],
+        "right": [
+            "Container group",
+            "Network endpoint",
+            "Replicas management",
+            "Configuration data"
+        ]
+    },
+    {
+        "q": "What is a Kubernetes service?",
+        "type": "mcq",
+        "o": [
+            "Stable network endpoint for pods",
+            "Pod manager",
+            "Container runtime",
+            "Storage system"
+        ],
+        "correct": "Stable network endpoint for pods"
+    },
+    {
+        "q": "Services provide _____ discovery for pods.",
+        "type": "fill_blank",
+        "correct": "load balancing"
+    },
+    {
+        "q": "Services abstract away pod IP addresses.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "What is a Kubernetes deployment?",
+        "type": "mcq",
+        "o": [
+            "Declarative pod management",
+            "Single pod creation",
+            "Network configuration",
+            "Storage allocation"
+        ],
+        "correct": "Declarative pod management"
+    },
+    {
+        "q": "Deployments manage _____ sets of pods.",
+        "type": "fill_blank",
+        "correct": "replica"
+    },
+    {
+        "q": "Deployments enable rolling updates.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Arrange Kubernetes scaling hierarchy:",
+        "type": "rearrange",
+        "correct": [
+            "Container",
+            "Pod",
+            "ReplicaSet",
+            "Deployment",
+            "Namespace"
+        ]
+    },
+    {
+        "q": "What is horizontal pod autoscaler (HPA)?",
+        "type": "mcq",
+        "o": [
+            "Automatically scales pods based on metrics",
+            "Vertical scaling",
+            "Manual scaling",
+            "Storage scaling"
+        ],
+        "correct": "Automatically scales pods based on metrics"
+    },
+    {
+        "q": "HPA scales based on CPU or custom _____.",
+        "type": "fill_blank",
+        "correct": "metrics"
+    },
+    {
+        "q": "HPA can respond to traffic spikes automatically.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "What is model monitoring?",
+        "type": "mcq",
+        "o": [
+            "Tracking model performance over time",
+            "Model training",
+            "Model development",
+            "Model testing"
+        ],
+        "correct": "Tracking model performance over time"
+    },
+    {
+        "q": "Monitoring detects model _____ in production.",
+        "type": "fill_blank",
+        "correct": "degradation"
+    },
+    {
+        "q": "Production models should be continuously monitored.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Match the monitoring concern with its metric:",
+        "type": "match",
+        "left": [
+            "Performance",
+            "Data drift",
+            "Concept drift",
+            "System health"
+        ],
+        "right": [
+            "Accuracy metrics",
+            "Feature statistics",
+            "Target distribution",
+            "CPU/Memory"
+        ]
+    },
+    {
+        "q": "What is data drift?",
+        "type": "mcq",
+        "o": [
+            "Input data distribution change over time",
+            "Model weight change",
+            "API change",
+            "Code change"
+        ],
+        "correct": "Input data distribution change over time"
+    },
+    {
+        "q": "Data drift can cause model _____ to degrade.",
+        "type": "fill_blank",
+        "correct": "performance"
+    },
+    {
+        "q": "Monitoring for drift is essential in production.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "What is concept drift?",
+        "type": "mcq",
+        "o": [
+            "Change in relationship between input and output",
+            "Feature change",
+            "API change",
+            "Code change"
+        ],
+        "correct": "Change in relationship between input and output"
+    },
+    {
+        "q": "Concept drift means the underlying _____ changes.",
+        "type": "fill_blank",
+        "correct": "patterns"
+    },
+    {
+        "q": "Concept drift requires model retraining.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Arrange drift detection workflow:",
+        "type": "rearrange",
+        "correct": [
+            "Collect production data",
+            "Compare distributions",
+            "Detect drift",
+            "Alert team",
+            "Trigger retraining"
+        ]
+    },
+    {
+        "q": "What is CI/CD?",
+        "type": "mcq",
+        "o": [
+            "Continuous Integration/Continuous Deployment",
+            "Code Integration/Code Deployment",
+            "Central Integration/Central Deployment",
+            "Cloud Integration/Cloud Deployment"
+        ],
+        "correct": "Continuous Integration/Continuous Deployment"
+    },
+    {
+        "q": "CI/CD automates the _____ pipeline.",
+        "type": "fill_blank",
+        "correct": "deployment"
+    },
+    {
+        "q": "GitHub Actions can be used for CI/CD.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "What is MLOps?",
+        "type": "mcq",
+        "o": [
+            "Machine Learning Operations",
+            "ML Optimization",
+            "Model Operations",
+            "Machine Learning Options"
+        ],
+        "correct": "Machine Learning Operations"
+    },
+    {
+        "q": "MLOps combines ML with DevOps _____.",
+        "type": "fill_blank",
+        "correct": "practices"
+    },
+    {
+        "q": "MLOps aims to automate ML lifecycle.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Match the MLOps tool with its function:",
+        "type": "match",
+        "left": [
+            "MLflow",
+            "Kubeflow",
+            "Airflow",
+            "DVC"
+        ],
+        "right": [
+            "Experiment tracking",
+            "ML pipelines on K8s",
+            "Workflow orchestration",
+            "Data versioning"
+        ]
+    },
+    {
+        "q": "What is MLflow?",
+        "type": "mcq",
+        "o": [
+            "Platform for ML lifecycle management",
+            "ML framework",
+            "Database",
+            "Cloud service"
+        ],
+        "correct": "Platform for ML lifecycle management"
+    },
+    {
+        "q": "MLflow provides tracking, projects, models, and _____.",
+        "type": "fill_blank",
+        "correct": "registry"
+    },
+    {
+        "q": "MLflow is open source.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "What is experiment tracking?",
+        "type": "mcq",
+        "o": [
+            "Recording experiments and results",
+            "Running experiments",
+            "Designing experiments",
+            "Analyzing experiments"
+        ],
+        "correct": "Recording experiments and results"
+    },
+    {
+        "q": "Experiment tracking records parameters, metrics, and _____.",
+        "type": "fill_blank",
+        "correct": "artifacts"
+    },
+    {
+        "q": "Weights & Biases is popular for experiment tracking.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "What is Kubeflow?",
+        "type": "mcq",
+        "o": [
+            "ML toolkit for Kubernetes",
+            "Kubernetes extension",
+            "Cloud service",
+            "Database"
+        ],
+        "correct": "ML toolkit for Kubernetes"
+    },
+    {
+        "q": "Kubeflow pipelines orchestrate ML _____.",
+        "type": "fill_blank",
+        "correct": "workflows"
+    },
+    {
+        "q": "Kubeflow runs on Kubernetes.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Arrange MLOps maturity levels:",
+        "type": "rearrange",
+        "correct": [
+            "Manual ML",
+            "ML pipeline automation",
+            "CI/CD pipelines",
+            "Automated retraining",
+            "Full MLOps"
+        ]
+    },
+    {
+        "q": "What is feature store?",
+        "type": "mcq",
+        "o": [
+            "Centralized repository for ML features",
+            "Feature extraction tool",
+            "ML library",
+            "Database type"
+        ],
+        "correct": "Centralized repository for ML features"
+    },
+    {
+        "q": "Feature stores enable feature _____ across teams.",
+        "type": "fill_blank",
+        "correct": "sharing"
+    },
+    {
+        "q": "Feast is an open-source feature store.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "What is A/B testing?",
+        "type": "mcq",
+        "o": [
+            "Comparing two versions with real users",
+            "Unit testing",
+            "Integration testing",
+            "Load testing"
+        ],
+        "correct": "Comparing two versions with real users"
+    },
+    {
+        "q": "A/B testing compares model _____ in production.",
+        "type": "fill_blank",
+        "correct": "performance"
+    },
+    {
+        "q": "A/B testing requires statistical significance.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Match the deployment strategy with its approach:",
+        "type": "match",
+        "left": [
+            "Blue-green",
+            "Canary",
+            "Rolling",
+            "Shadow"
+        ],
+        "right": [
+            "Switch between two environments",
+            "Gradual traffic shift",
+            "Incremental pod updates",
+            "Parallel silent testing"
+        ]
+    },
+    {
+        "q": "What is blue-green deployment?",
+        "type": "mcq",
+        "o": [
+            "Switching between two identical environments",
+            "Color-coded deployment",
+            "Gradual deployment",
+            "Manual deployment"
+        ],
+        "correct": "Switching between two identical environments"
+    },
+    {
+        "q": "Blue-green enables instant _____ if issues occur.",
+        "type": "fill_blank",
+        "correct": "rollback"
+    },
+    {
+        "q": "Blue-green requires two production environments.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "What is canary deployment?",
+        "type": "mcq",
+        "o": [
+            "Gradually routing traffic to new version",
+            "Instant switch",
+            "Manual deployment",
+            "No traffic routing"
+        ],
+        "correct": "Gradually routing traffic to new version"
+    },
+    {
+        "q": "Canary releases to small _____ of users first.",
+        "type": "fill_blank",
+        "correct": "percentage"
+    },
+    {
+        "q": "Canary deployment reduces risk of full rollout.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "What is shadow deployment?",
+        "type": "mcq",
+        "o": [
+            "Running new model without serving predictions",
+            "Dark deployment",
+            "Hidden deployment",
+            "Secret deployment"
+        ],
+        "correct": "Running new model without serving predictions"
+    },
+    {
+        "q": "Shadow deployment tests with real _____ safely.",
+        "type": "fill_blank",
+        "correct": "traffic"
+    },
+    {
+        "q": "Shadow mode predictions are not returned to users.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Arrange deployment testing progression:",
+        "type": "rearrange",
+        "correct": [
+            "Unit tests",
+            "Integration tests",
+            "Staging environment",
+            "Shadow mode",
+            "Production"
+        ]
+    },
+    {
+        "q": "What is load balancing?",
+        "type": "mcq",
+        "o": [
+            "Distributing traffic across multiple servers",
+            "Server loading",
+            "Data loading",
+            "Model loading"
+        ],
+        "correct": "Distributing traffic across multiple servers"
+    },
+    {
+        "q": "Load balancers improve _____ and availability.",
+        "type": "fill_blank",
+        "correct": "scalability"
+    },
+    {
+        "q": "NGINX can be used as a load balancer.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "What is auto-scaling?",
+        "type": "mcq",
+        "o": [
+            "Automatically adjusting resources based on demand",
+            "Manual scaling",
+            "Fixed scaling",
+            "Scheduled scaling"
+        ],
+        "correct": "Automatically adjusting resources based on demand"
+    },
+    {
+        "q": "Auto-scaling responds to _____ changes.",
+        "type": "fill_blank",
+        "correct": "traffic"
+    },
+    {
+        "q": "Auto-scaling can reduce costs during low traffic.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "What is edge deployment?",
+        "type": "mcq",
+        "o": [
+            "Running models on edge devices",
+            "Cloud deployment",
+            "Server deployment",
+            "Desktop deployment"
+        ],
+        "correct": "Running models on edge devices"
+    },
+    {
+        "q": "Edge deployment reduces _____ by processing locally.",
+        "type": "fill_blank",
+        "correct": "latency"
+    },
+    {
+        "q": "TensorFlow Lite is used for edge deployment.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Match the edge framework with its platform:",
+        "type": "match",
+        "left": [
+            "TensorFlow Lite",
+            "Core ML",
+            "ONNX Runtime",
+            "OpenVINO"
+        ],
+        "right": [
+            "Mobile/embedded",
+            "Apple devices",
+            "Cross-platform",
+            "Intel hardware"
+        ]
+    },
+    {
+        "q": "What is TensorFlow Serving?",
+        "type": "mcq",
+        "o": [
+            "Production ML serving system",
+            "TensorFlow training tool",
+            "TensorFlow debugger",
+            "TensorFlow visualizer"
+        ],
+        "correct": "Production ML serving system"
+    },
+    {
+        "q": "TensorFlow Serving supports _____ protocol by default.",
+        "type": "fill_blank",
+        "correct": "gRPC"
+    },
+    {
+        "q": "TensorFlow Serving handles model versioning.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "What is Triton Inference Server?",
+        "type": "mcq",
+        "o": [
+            "NVIDIA's ML serving platform",
+            "ML training platform",
+            "Database server",
+            "Web server"
+        ],
+        "correct": "NVIDIA's ML serving platform"
+    },
+    {
+        "q": "Triton supports multiple ML _____.",
+        "type": "fill_blank",
+        "correct": "frameworks"
+    },
+    {
+        "q": "Triton optimizes for GPU inference.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "What is BentoML?",
+        "type": "mcq",
+        "o": [
+            "Framework for serving ML models",
+            "ML training framework",
+            "Database tool",
+            "Visualization tool"
+        ],
+        "correct": "Framework for serving ML models"
+    },
+    {
+        "q": "BentoML packages models into _____.",
+        "type": "fill_blank",
+        "correct": "Bentos"
+    },
+    {
+        "q": "BentoML simplifies model packaging.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Arrange model serving optimization:",
+        "type": "rearrange",
+        "correct": [
+            "Model optimization",
+            "Batching configuration",
+            "Hardware selection",
+            "Caching setup",
+            "Load testing"
+        ]
+    },
+    {
+        "q": "What is model batching?",
+        "type": "mcq",
+        "o": [
+            "Processing multiple requests together",
+            "Single request processing",
+            "Sequential processing",
+            "Random processing"
+        ],
+        "correct": "Processing multiple requests together"
+    },
+    {
+        "q": "Batching increases GPU _____ efficiency.",
+        "type": "fill_blank",
+        "correct": "utilization"
+    },
+    {
+        "q": "Batching can increase throughput significantly.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "What is request queuing?",
+        "type": "mcq",
+        "o": [
+            "Holding requests before processing",
+            "Instant processing",
+            "Request rejection",
+            "Request duplication"
+        ],
+        "correct": "Holding requests before processing"
+    },
+    {
+        "q": "Queues help handle traffic _____.",
+        "type": "fill_blank",
+        "correct": "spikes"
+    },
+    {
+        "q": "Message queues like RabbitMQ can queue ML requests.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "What is caching in ML deployment?",
+        "type": "mcq",
+        "o": [
+            "Storing predictions for repeated inputs",
+            "Model storage",
+            "Data storage",
+            "Code storage"
+        ],
+        "correct": "Storing predictions for repeated inputs"
+    },
+    {
+        "q": "Caching reduces _____ load.",
+        "type": "fill_blank",
+        "correct": "inference"
+    },
+    {
+        "q": "Redis is commonly used for prediction caching.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Match the optimization strategy with its benefit:",
+        "type": "match",
+        "left": [
+            "Batching",
+            "Caching",
+            "Quantization",
+            "Async processing"
+        ],
+        "right": [
+            "GPU efficiency",
+            "Reduced computation",
+            "Smaller model size",
+            "Non-blocking calls"
+        ]
+    },
+    {
+        "q": "What is API authentication?",
+        "type": "mcq",
+        "o": [
+            "Verifying client identity",
+            "API testing",
+            "API documentation",
+            "API versioning"
+        ],
+        "correct": "Verifying client identity"
+    },
+    {
+        "q": "API keys are a simple form of _____.",
+        "type": "fill_blank",
+        "correct": "authentication"
+    },
+    {
+        "q": "OAuth is used for API authentication.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "What is rate limiting?",
+        "type": "mcq",
+        "o": [
+            "Restricting number of requests per time period",
+            "Speed limiting",
+            "Data limiting",
+            "Response limiting"
+        ],
+        "correct": "Restricting number of requests per time period"
+    },
+    {
+        "q": "Rate limiting protects against _____ attacks.",
+        "type": "fill_blank",
+        "correct": "abuse"
+    },
+    {
+        "q": "Rate limiting is important for public APIs.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "What is API versioning?",
+        "type": "mcq",
+        "o": [
+            "Managing different API versions",
+            "API testing",
+            "API documentation",
+            "API security"
+        ],
+        "correct": "Managing different API versions"
+    },
+    {
+        "q": "API versioning helps maintain backwards _____.",
+        "type": "fill_blank",
+        "correct": "compatibility"
+    },
+    {
+        "q": "/v1/predict and /v2/predict show API versioning.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Arrange API security layers:",
+        "type": "rearrange",
+        "correct": [
+            "HTTPS encryption",
+            "Authentication",
+            "Authorization",
+            "Input validation",
+            "Rate limiting"
+        ]
+    },
+    {
+        "q": "What is input validation?",
+        "type": "mcq",
+        "o": [
+            "Checking request data format and values",
+            "Data collection",
+            "Data storage",
+            "Data transformation"
+        ],
+        "correct": "Checking request data format and values"
+    },
+    {
+        "q": "Input validation prevents _____ inputs.",
+        "type": "fill_blank",
+        "correct": "malicious"
+    },
+    {
+        "q": "Pydantic is used for input validation in FastAPI.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "What is logging?",
+        "type": "mcq",
+        "o": [
+            "Recording application events and errors",
+            "Log files creation",
+            "Data logging",
+            "User tracking"
+        ],
+        "correct": "Recording application events and errors"
+    },
+    {
+        "q": "Logging helps with _____ and monitoring.",
+        "type": "fill_blank",
+        "correct": "debugging"
+    },
+    {
+        "q": "Structured logging in JSON format is recommended.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "What is Prometheus?",
+        "type": "mcq",
+        "o": [
+            "Metrics collection and monitoring system",
+            "Logging system",
+            "Database",
+            "Web server"
+        ],
+        "correct": "Metrics collection and monitoring system"
+    },
+    {
+        "q": "Prometheus scrapes _____ from endpoints.",
+        "type": "fill_blank",
+        "correct": "metrics"
+    },
+    {
+        "q": "Prometheus is commonly used with Grafana.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Match the monitoring tool with its function:",
+        "type": "match",
+        "left": [
+            "Prometheus",
+            "Grafana",
+            "ELK Stack",
+            "Jaeger"
+        ],
+        "right": [
+            "Metrics collection",
+            "Visualization",
+            "Log aggregation",
+            "Distributed tracing"
+        ]
+    },
+    {
+        "q": "What is Grafana?",
+        "type": "mcq",
+        "o": [
+            "Visualization platform for metrics",
+            "Metrics database",
+            "Log collector",
+            "Alert system"
+        ],
+        "correct": "Visualization platform for metrics"
+    },
+    {
+        "q": "Grafana creates dashboards from Prometheus _____.",
+        "type": "fill_blank",
+        "correct": "metrics"
+    },
+    {
+        "q": "Grafana supports alerting.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "What is distributed tracing?",
+        "type": "mcq",
+        "o": [
+            "Tracking requests across microservices",
+            "Single service tracing",
+            "Data tracing",
+            "User tracing"
+        ],
+        "correct": "Tracking requests across microservices"
+    },
+    {
+        "q": "Tracing helps identify performance _____.",
+        "type": "fill_blank",
+        "correct": "bottlenecks"
+    },
+    {
+        "q": "Jaeger is an open-source tracing system.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Arrange observability pillars:",
+        "type": "rearrange",
+        "correct": [
+            "Metrics",
+            "Logs",
+            "Traces",
+            "Alerts",
+            "Dashboards"
+        ]
+    },
+    {
+        "q": "What is model compression?",
+        "type": "mcq",
+        "o": [
+            "Reducing model size for deployment",
+            "Model training",
+            "Model evaluation",
+            "Model testing"
+        ],
+        "correct": "Reducing model size for deployment"
+    },
+    {
+        "q": "Compression enables deployment on _____ devices.",
+        "type": "fill_blank",
+        "correct": "resource-constrained"
+    },
+    {
+        "q": "Quantization is a model compression technique.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "What is TensorFlow Lite?",
+        "type": "mcq",
+        "o": [
+            "TensorFlow for mobile and embedded devices",
+            "Lite version of TensorFlow",
+            "TensorFlow debugger",
+            "TensorFlow visualizer"
+        ],
+        "correct": "TensorFlow for mobile and embedded devices"
+    },
+    {
+        "q": "TFLite models have _____ file extension.",
+        "type": "fill_blank",
+        "correct": ".tflite"
+    },
+    {
+        "q": "TFLite supports model quantization.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "What is Core ML?",
+        "type": "mcq",
+        "o": [
+            "Apple's ML framework for iOS/macOS",
+            "Core machine learning",
+            "Central ML",
+            "Core Model Library"
+        ],
+        "correct": "Apple's ML framework for iOS/macOS"
+    },
+    {
+        "q": "Core ML models have _____ file extension.",
+        "type": "fill_blank",
+        "correct": ".mlmodel"
+    },
+    {
+        "q": "Core ML can convert models from other frameworks.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Match the mobile ML framework with its platform:",
+        "type": "match",
+        "left": [
+            "TensorFlow Lite",
+            "Core ML",
+            "ML Kit",
+            "PyTorch Mobile"
+        ],
+        "right": [
+            "Android/iOS",
+            "Apple only",
+            "Firebase",
+            "Cross-platform"
+        ]
+    },
+    {
+        "q": "What is ONNX Runtime?",
+        "type": "mcq",
+        "o": [
+            "Cross-platform ML inference engine",
+            "ONNX converter",
+            "ONNX visualizer",
+            "ONNX trainer"
+        ],
+        "correct": "Cross-platform ML inference engine"
+    },
+    {
+        "q": "ONNX Runtime optimizes inference for various _____.",
+        "type": "fill_blank",
+        "correct": "hardware"
+    },
+    {
+        "q": "ONNX Runtime supports multiple backends.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "What is model warm-up?",
+        "type": "mcq",
+        "o": [
+            "Running initial predictions to initialize model",
+            "Model training",
+            "Model testing",
+            "Model storage"
+        ],
+        "correct": "Running initial predictions to initialize model"
+    },
+    {
+        "q": "Warm-up avoids cold start _____ delays.",
+        "type": "fill_blank",
+        "correct": "latency"
+    },
+    {
+        "q": "First prediction is often slower without warm-up.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "What is model optimization?",
+        "type": "mcq",
+        "o": [
+            "Making models faster or smaller for deployment",
+            "Training optimization",
+            "Data optimization",
+            "Code optimization"
+        ],
+        "correct": "Making models faster or smaller for deployment"
+    },
+    {
+        "q": "TensorRT provides GPU _____ optimization.",
+        "type": "fill_blank",
+        "correct": "inference"
+    },
+    {
+        "q": "Model optimization can dramatically improve latency.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Arrange model optimization techniques:",
+        "type": "rearrange",
+        "correct": [
+            "Pruning",
+            "Quantization",
+            "Knowledge distillation",
+            "Operator fusion",
+            "Hardware-specific optimization"
+        ]
+    },
+    {
+        "q": "What is TensorRT?",
+        "type": "mcq",
+        "o": [
+            "NVIDIA's deep learning inference optimizer",
+            "TensorFlow runtime",
+            "Training tool",
+            "Visualization tool"
+        ],
+        "correct": "NVIDIA's deep learning inference optimizer"
+    },
+    {
+        "q": "TensorRT optimizes for NVIDIA _____.",
+        "type": "fill_blank",
+        "correct": "GPUs"
+    },
+    {
+        "q": "TensorRT can provide significant speedups.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "What is health check endpoint?",
+        "type": "mcq",
+        "o": [
+            "Endpoint to verify service is running",
+            "Health monitoring",
+            "User health check",
+            "Data health check"
+        ],
+        "correct": "Endpoint to verify service is running"
+    },
+    {
+        "q": "Common health check endpoint is _____ or /health.",
+        "type": "fill_blank",
+        "correct": "/healthz"
+    },
+    {
+        "q": "Load balancers use health checks to route traffic.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "What is graceful shutdown?",
+        "type": "mcq",
+        "o": [
+            "Completing in-flight requests before stopping",
+            "Immediate shutdown",
+            "Force shutdown",
+            "Restart"
+        ],
+        "correct": "Completing in-flight requests before stopping"
+    },
+    {
+        "q": "Graceful shutdown prevents request _____.",
+        "type": "fill_blank",
+        "correct": "failures"
+    },
+    {
+        "q": "Kubernetes sends SIGTERM for graceful shutdown.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Match the deployment concern with its solution:",
+        "type": "match",
+        "left": [
+            "High availability",
+            "Disaster recovery",
+            "Cost optimization",
+            "Security"
+        ],
+        "right": [
+            "Multiple replicas",
+            "Backup systems",
+            "Auto-scaling",
+            "Encryption"
+        ]
+    },
+    {
+        "q": "What is secrets management?",
+        "type": "mcq",
+        "o": [
+            "Securely storing sensitive configuration",
+            "Secret creation",
+            "Password management",
+            "Key generation"
+        ],
+        "correct": "Securely storing sensitive configuration"
+    },
+    {
+        "q": "API keys and database passwords are _____.",
+        "type": "fill_blank",
+        "correct": "secrets"
+    },
+    {
+        "q": "HashiCorp Vault is used for secrets management.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "What is infrastructure as code (IaC)?",
+        "type": "mcq",
+        "o": [
+            "Managing infrastructure through code files",
+            "Building infrastructure",
+            "Manual configuration",
+            "GUI configuration"
+        ],
+        "correct": "Managing infrastructure through code files"
+    },
+    {
+        "q": "Terraform is a popular _____ tool.",
+        "type": "fill_blank",
+        "correct": "IaC"
+    },
+    {
+        "q": "IaC enables reproducible infrastructure.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Arrange infrastructure automation layers:",
+        "type": "rearrange",
+        "correct": [
+            "Cloud account setup",
+            "Network configuration",
+            "Compute resources",
+            "Application deployment",
+            "Monitoring setup"
+        ]
+    },
+    {
+        "q": "What is GitOps?",
+        "type": "mcq",
+        "o": [
+            "Managing infrastructure through Git",
+            "Git operations",
+            "Git development",
+            "Git versioning"
+        ],
+        "correct": "Managing infrastructure through Git"
+    },
+    {
+        "q": "GitOps uses Git as single source of _____.",
+        "type": "fill_blank",
+        "correct": "truth"
+    },
+    {
+        "q": "ArgoCD is a GitOps tool for Kubernetes.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "What is Helm?",
+        "type": "mcq",
+        "o": [
+            "Package manager for Kubernetes",
+            "Chart creator",
+            "Container manager",
+            "Network manager"
+        ],
+        "correct": "Package manager for Kubernetes"
+    },
+    {
+        "q": "Helm packages are called _____.",
+        "type": "fill_blank",
+        "correct": "charts"
+    },
+    {
+        "q": "Helm simplifies Kubernetes deployments.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "What is resource limits in Kubernetes?",
+        "type": "mcq",
+        "o": [
+            "Maximum CPU and memory per container",
+            "Cluster limits",
+            "Network limits",
+            "Storage limits"
+        ],
+        "correct": "Maximum CPU and memory per container"
+    },
+    {
+        "q": "Resource limits prevent containers from consuming too much _____.",
+        "type": "fill_blank",
+        "correct": "resources"
+    },
+    {
+        "q": "Resource requests guarantee minimum resources.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Match the K8s resource type with its purpose:",
+        "type": "match",
+        "left": [
+            "Requests",
+            "Limits",
+            "QoS",
+            "LimitRange"
+        ],
+        "right": [
+            "Minimum resources",
+            "Maximum resources",
+            "Priority class",
+            "Default limits"
+        ]
+    },
+    {
+        "q": "What is GPU inference?",
+        "type": "mcq",
+        "o": [
+            "Running model predictions on GPU",
+            "GPU training",
+            "GPU storage",
+            "GPU networking"
+        ],
+        "correct": "Running model predictions on GPU"
+    },
+    {
+        "q": "GPU inference is faster for deep learning _____.",
+        "type": "fill_blank",
+        "correct": "models"
+    },
+    {
+        "q": "CUDA is used for NVIDIA GPU computing.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "What is CPU inference?",
+        "type": "mcq",
+        "o": [
+            "Running model predictions on CPU",
+            "CPU training only",
+            "CPU storage",
+            "CPU networking"
+        ],
+        "correct": "Running model predictions on CPU"
+    },
+    {
+        "q": "CPU inference is more cost-effective for _____ models.",
+        "type": "fill_blank",
+        "correct": "simpler"
+    },
+    {
+        "q": "ONNX Runtime optimizes CPU inference.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Arrange inference hardware by performance:",
+        "type": "rearrange",
+        "correct": [
+            "CPU",
+            "GPU",
+            "TPU",
+            "Custom ASIC",
+            "Quantum (future)"
+        ]
+    },
+    {
+        "q": "What is gRPC?",
+        "type": "mcq",
+        "o": [
+            "High-performance RPC framework",
+            "Graph RPC",
+            "General Remote Procedure Call",
+            "Google Remote Protocol Call"
+        ],
+        "correct": "High-performance RPC framework"
+    },
+    {
+        "q": "gRPC uses Protocol Buffers for _____.",
+        "type": "fill_blank",
+        "correct": "serialization"
+    },
+    {
+        "q": "gRPC is faster than REST for many use cases.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "What is Protocol Buffers?",
+        "type": "mcq",
+        "o": [
+            "Binary serialization format",
+            "Text serialization",
+            "JSON alternative",
+            "XML alternative"
+        ],
+        "correct": "Binary serialization format"
+    },
+    {
+        "q": "Protocol Buffers are more efficient than _____.",
+        "type": "fill_blank",
+        "correct": "JSON"
+    },
+    {
+        "q": "protobuf files have .proto extension.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Match the API protocol with its characteristic:",
+        "type": "match",
+        "left": [
+            "REST",
+            "gRPC",
+            "GraphQL",
+            "WebSocket"
+        ],
+        "right": [
+            "HTTP/JSON",
+            "Binary protocol",
+            "Query language",
+            "Bidirectional"
+        ]
+    },
+    {
+        "q": "What is microservices architecture?",
+        "type": "mcq",
+        "o": [
+            "Breaking application into independent services",
+            "Monolithic architecture",
+            "Single service",
+            "Desktop application"
+        ],
+        "correct": "Breaking application into independent services"
+    },
+    {
+        "q": "Microservices communicate via APIs or _____.",
+        "type": "fill_blank",
+        "correct": "messaging"
+    },
+    {
+        "q": "Microservices enable independent scaling.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "What is service mesh?",
+        "type": "mcq",
+        "o": [
+            "Infrastructure layer for service-to-service communication",
+            "Service registry",
+            "Load balancer",
+            "API gateway"
+        ],
+        "correct": "Infrastructure layer for service-to-service communication"
+    },
+    {
+        "q": "Istio is a popular _____ mesh.",
+        "type": "fill_blank",
+        "correct": "service"
+    },
+    {
+        "q": "Service mesh handles traffic management.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "What is API gateway?",
+        "type": "mcq",
+        "o": [
+            "Single entry point for API requests",
+            "API testing tool",
+            "API documentation",
+            "API versioning"
+        ],
+        "correct": "Single entry point for API requests"
+    },
+    {
+        "q": "API gateways can handle authentication and _____.",
+        "type": "fill_blank",
+        "correct": "routing"
+    },
+    {
+        "q": "Kong is an API gateway.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Arrange microservices infrastructure:",
+        "type": "rearrange",
+        "correct": [
+            "API Gateway",
+            "Load Balancer",
+            "Service Discovery",
+            "Microservices",
+            "Data Stores"
+        ]
+    },
+    {
+        "q": "What is circuit breaker pattern?",
+        "type": "mcq",
+        "o": [
+            "Preventing cascading failures in services",
+            "Electrical circuit",
+            "Breaking connections",
+            "Security pattern"
+        ],
+        "correct": "Preventing cascading failures in services"
+    },
+    {
+        "q": "Circuit breakers stop calling failing _____.",
+        "type": "fill_blank",
+        "correct": "services"
+    },
+    {
+        "q": "Circuit breakers improve system resilience.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "What is retry pattern?",
+        "type": "mcq",
+        "o": [
+            "Automatically retrying failed operations",
+            "Manual retry",
+            "Single attempt",
+            "Failure acceptance"
+        ],
+        "correct": "Automatically retrying failed operations"
+    },
+    {
+        "q": "Exponential backoff increases delay between _____.",
+        "type": "fill_blank",
+        "correct": "retries"
+    },
+    {
+        "q": "Too many retries can overload systems.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "What is timeout pattern?",
+        "type": "mcq",
+        "o": [
+            "Limiting wait time for operations",
+            "Time tracking",
+            "Scheduling",
+            "Time management"
+        ],
+        "correct": "Limiting wait time for operations"
+    },
+    {
+        "q": "Timeouts prevent requests from _____ indefinitely.",
+        "type": "fill_blank",
+        "correct": "hanging"
+    },
+    {
+        "q": "All network calls should have timeouts.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Match the resilience pattern with its purpose:",
+        "type": "match",
+        "left": [
+            "Circuit breaker",
+            "Retry",
+            "Timeout",
+            "Bulkhead"
+        ],
+        "right": [
+            "Stop failing calls",
+            "Handle transient failures",
+            "Limit wait time",
+            "Isolate failures"
+        ]
+    },
+    {
+        "q": "What is bulkhead pattern?",
+        "type": "mcq",
+        "o": [
+            "Isolating failures to prevent spread",
+            "Container isolation",
+            "Network isolation",
+            "Data isolation"
+        ],
+        "correct": "Isolating failures to prevent spread"
+    },
+    {
+        "q": "Bulkhead pattern is named after ship _____.",
+        "type": "fill_blank",
+        "correct": "compartments"
+    },
+    {
+        "q": "Bulkheads limit the blast radius of failures.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "What is load testing?",
+        "type": "mcq",
+        "o": [
+            "Testing system under expected load",
+            "Feature testing",
+            "Unit testing",
+            "Integration testing"
+        ],
+        "correct": "Testing system under expected load"
+    },
+    {
+        "q": "Load testing identifies performance _____.",
+        "type": "fill_blank",
+        "correct": "limits"
+    },
+    {
+        "q": "Locust is a Python load testing tool.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "What is stress testing?",
+        "type": "mcq",
+        "o": [
+            "Testing system beyond normal capacity",
+            "Normal testing",
+            "Feature testing",
+            "Security testing"
+        ],
+        "correct": "Testing system beyond normal capacity"
+    },
+    {
+        "q": "Stress testing finds breaking _____.",
+        "type": "fill_blank",
+        "correct": "points"
+    },
+    {
+        "q": "Stress testing helps understand system limits.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Arrange testing pyramid for ML:",
+        "type": "rearrange",
+        "correct": [
+            "Unit tests",
+            "Data tests",
+            "Model tests",
+            "Integration tests",
+            "End-to-end tests"
+        ]
+    },
+    {
+        "q": "What is chaos engineering?",
+        "type": "mcq",
+        "o": [
+            "Intentionally introducing failures to test resilience",
+            "Random testing",
+            "Disorganized engineering",
+            "Breaking production"
+        ],
+        "correct": "Intentionally introducing failures to test resilience"
+    },
+    {
+        "q": "Netflix developed _____ Monkey for chaos engineering.",
+        "type": "fill_blank",
+        "correct": "Chaos"
+    },
+    {
+        "q": "Chaos engineering improves system reliability.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "What is SLA?",
+        "type": "mcq",
         "o": [
             "Service Level Agreement",
-            "Data storage location",
-            "Model training metric",
-            "Feature extraction metric"
+            "Service Level Application",
+            "System Level Agreement",
+            "Standard Level Agreement"
+        ],
+        "correct": "Service Level Agreement"
+    },
+    {
+        "q": "SLA defines _____ guarantees.",
+        "type": "fill_blank",
+        "correct": "uptime"
+    },
+    {
+        "q": "99.9% uptime allows about 8.7 hours downtime per year.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "What is SLO?",
+        "type": "mcq",
+        "o": [
+            "Service Level Objective",
+            "Service Level Operation",
+            "System Level Objective",
+            "Standard Level Objective"
+        ],
+        "correct": "Service Level Objective"
+    },
+    {
+        "q": "SLOs are internal _____ targets.",
+        "type": "fill_blank",
+        "correct": "performance"
+    },
+    {
+        "q": "SLOs should be stricter than SLAs.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Match the reliability term with its definition:",
+        "type": "match",
+        "left": [
+            "SLA",
+            "SLO",
+            "SLI",
+            "Error budget"
+        ],
+        "right": [
+            "External commitment",
+            "Internal target",
+            "Measured metric",
+            "Allowed failures"
         ]
     },
     {
-        "q": "What is a service mesh?",
-        "c": null,
+        "q": "What is SLI?",
+        "type": "mcq",
         "o": [
-            "Manages microservices communication",
-            "Data storage solution",
-            "Model training interface",
-            "Feature extraction interface"
+            "Service Level Indicator",
+            "Service Level Index",
+            "System Level Indicator",
+            "Standard Level Indicator"
+        ],
+        "correct": "Service Level Indicator"
+    },
+    {
+        "q": "SLIs are the _____ values for SLOs.",
+        "type": "fill_blank",
+        "correct": "measured"
+    },
+    {
+        "q": "Latency and availability are common SLIs.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "What is error budget?",
+        "type": "mcq",
+        "o": [
+            "Allowed amount of failures before violating SLO",
+            "Error tracking",
+            "Budget for fixes",
+            "Financial budget"
+        ],
+        "correct": "Allowed amount of failures before violating SLO"
+    },
+    {
+        "q": "Error budgets balance reliability and feature _____.",
+        "type": "fill_blank",
+        "correct": "development"
+    },
+    {
+        "q": "Exhausting error budget triggers reliability focus.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "What is high availability?",
+        "type": "mcq",
+        "o": [
+            "Minimizing downtime",
+            "High performance",
+            "High security",
+            "High throughput"
+        ],
+        "correct": "Minimizing downtime"
+    },
+    {
+        "q": "High availability often uses multiple _____.",
+        "type": "fill_blank",
+        "correct": "replicas"
+    },
+    {
+        "q": "Multi-region deployment improves availability.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Arrange availability levels (nines):",
+        "type": "rearrange",
+        "correct": [
+            "99% (two nines)",
+            "99.9% (three nines)",
+            "99.99% (four nines)",
+            "99.999% (five nines)",
+            "99.9999% (six nines)"
         ]
     },
     {
-        "q": "What is a Kubernetes cluster?",
-        "c": null,
+        "q": "What is disaster recovery?",
+        "type": "mcq",
         "o": [
-            "Group of containerized applications",
-            "Data storage cluster",
-            "Model training environment",
-            "Feature extraction cluster"
+            "Recovering from major failures",
+            "Preventing disasters",
+            "Disaster planning",
+            "Emergency response"
+        ],
+        "correct": "Recovering from major failures"
+    },
+    {
+        "q": "DR includes _____ and recovery procedures.",
+        "type": "fill_blank",
+        "correct": "backup"
+    },
+    {
+        "q": "RTO and RPO define disaster recovery goals.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "What is RTO?",
+        "type": "mcq",
+        "o": [
+            "Recovery Time Objective",
+            "Recovery Target Objective",
+            "Return Time Objective",
+            "Restore Time Objective"
+        ],
+        "correct": "Recovery Time Objective"
+    },
+    {
+        "q": "RTO is maximum acceptable _____ time.",
+        "type": "fill_blank",
+        "correct": "downtime"
+    },
+    {
+        "q": "Shorter RTO requires more investment.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "What is RPO?",
+        "type": "mcq",
+        "o": [
+            "Recovery Point Objective",
+            "Recovery Process Objective",
+            "Return Point Objective",
+            "Restore Point Objective"
+        ],
+        "correct": "Recovery Point Objective"
+    },
+    {
+        "q": "RPO is maximum acceptable _____ loss.",
+        "type": "fill_blank",
+        "correct": "data"
+    },
+    {
+        "q": "RPO of 0 means no data loss tolerance.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Match the DR metric with its concern:",
+        "type": "match",
+        "left": [
+            "RTO",
+            "RPO",
+            "MTTR",
+            "MTBF"
+        ],
+        "right": [
+            "Downtime limit",
+            "Data loss limit",
+            "Repair time",
+            "Time between failures"
         ]
     },
     {
-        "q": "What is a data synchronization process?",
-        "c": null,
+        "q": "What is multi-tenancy?",
+        "type": "mcq",
         "o": [
-            "Aligns data across systems",
-            "Data storage technique",
-            "Model training technique",
-            "Feature selection process"
+            "Serving multiple customers from same system",
+            "Multiple deployments",
+            "Multiple servers",
+            "Multiple databases"
+        ],
+        "correct": "Serving multiple customers from same system"
+    },
+    {
+        "q": "Multi-tenancy requires data _____ between tenants.",
+        "type": "fill_blank",
+        "correct": "isolation"
+    },
+    {
+        "q": "SaaS products often use multi-tenancy.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "What is model endpoint?",
+        "type": "mcq",
+        "o": [
+            "URL where model serves predictions",
+            "Model ending",
+            "Training endpoint",
+            "Data endpoint"
+        ],
+        "correct": "URL where model serves predictions"
+    },
+    {
+        "q": "Endpoints expose models as _____.",
+        "type": "fill_blank",
+        "correct": "services"
+    },
+    {
+        "q": "SageMaker creates endpoints automatically.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "What is inference optimization?",
+        "type": "mcq",
+        "o": [
+            "Making predictions faster and cheaper",
+            "Training optimization",
+            "Data optimization",
+            "Code optimization"
+        ],
+        "correct": "Making predictions faster and cheaper"
+    },
+    {
+        "q": "Inference optimization reduces _____ costs.",
+        "type": "fill_blank",
+        "correct": "serving"
+    },
+    {
+        "q": "Batching is one inference optimization technique.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Arrange model serving optimizations:",
+        "type": "rearrange",
+        "correct": [
+            "Model conversion",
+            "Quantization",
+            "Batching",
+            "GPU utilization",
+            "Caching"
         ]
     },
     {
-        "q": "What is data lineage?",
-        "c": null,
+        "q": "What is asynchronous inference?",
+        "type": "mcq",
         "o": [
-            "Traceability of data origin",
-            "Data storage method",
-            "Model training method",
-            "Feature extraction method"
+            "Non-blocking prediction requests",
+            "Synchronous requests",
+            "Blocking calls",
+            "Sequential processing"
+        ],
+        "correct": "Non-blocking prediction requests"
+    },
+    {
+        "q": "Async inference uses callbacks or _____.",
+        "type": "fill_blank",
+        "correct": "queues"
+    },
+    {
+        "q": "Async inference is useful for long-running predictions.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "What is batch inference?",
+        "type": "mcq",
+        "o": [
+            "Processing many samples at once",
+            "Single prediction",
+            "Real-time prediction",
+            "Streaming prediction"
+        ],
+        "correct": "Processing many samples at once"
+    },
+    {
+        "q": "Batch inference is suitable for _____ processing.",
+        "type": "fill_blank",
+        "correct": "offline"
+    },
+    {
+        "q": "Batch inference is often more cost-effective.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "What is streaming inference?",
+        "type": "mcq",
+        "o": [
+            "Continuous real-time predictions",
+            "Batch processing",
+            "Offline inference",
+            "Scheduled inference"
+        ],
+        "correct": "Continuous real-time predictions"
+    },
+    {
+        "q": "Streaming uses tools like Kafka or _____.",
+        "type": "fill_blank",
+        "correct": "Spark"
+    },
+    {
+        "q": "Streaming inference processes data as it arrives.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Match the inference pattern with its use case:",
+        "type": "match",
+        "left": [
+            "Real-time",
+            "Batch",
+            "Streaming",
+            "Async"
+        ],
+        "right": [
+            "User-facing",
+            "Report generation",
+            "IoT data",
+            "Long processing"
         ]
     },
     {
-        "q": "What is a load testing tool?",
-        "c": null,
+        "q": "What is DVC?",
+        "type": "mcq",
         "o": [
-            "Simulates user traffic",
-            "Data storage tool",
-            "Model training tool",
-            "Feature extraction tool"
+            "Data Version Control",
+            "Data Visual Control",
+            "Development Version Control",
+            "Deep Version Control"
+        ],
+        "correct": "Data Version Control"
+    },
+    {
+        "q": "DVC tracks data and model _____.",
+        "type": "fill_blank",
+        "correct": "versions"
+    },
+    {
+        "q": "DVC works alongside Git.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "What is Apache Airflow?",
+        "type": "mcq",
+        "o": [
+            "Workflow orchestration platform",
+            "ML training platform",
+            "Database system",
+            "Web server"
+        ],
+        "correct": "Workflow orchestration platform"
+    },
+    {
+        "q": "Airflow uses DAGs to define _____.",
+        "type": "fill_blank",
+        "correct": "workflows"
+    },
+    {
+        "q": "Airflow can orchestrate ML pipelines.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "What is Prefect?",
+        "type": "mcq",
+        "o": [
+            "Modern workflow orchestration tool",
+            "ML framework",
+            "Database",
+            "Web framework"
+        ],
+        "correct": "Modern workflow orchestration tool"
+    },
+    {
+        "q": "Prefect is often seen as a modern alternative to _____.",
+        "type": "fill_blank",
+        "correct": "Airflow"
+    },
+    {
+        "q": "Prefect supports dynamic workflows.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Arrange ML pipeline stages:",
+        "type": "rearrange",
+        "correct": [
+            "Data ingestion",
+            "Data processing",
+            "Feature engineering",
+            "Training",
+            "Deployment"
         ]
     },
     {
-        "q": "What is a predictive maintenance system?",
-        "c": null,
+        "q": "What is Seldon Core?",
+        "type": "mcq",
         "o": [
-            "Prevents equipment failure",
-            "Data storage solution",
-            "Model training environment",
-            "Feature extraction tool"
+            "Open source ML deployment platform",
+            "ML training tool",
+            "Database",
+            "Web framework"
+        ],
+        "correct": "Open source ML deployment platform"
+    },
+    {
+        "q": "Seldon Core runs on _____.",
+        "type": "fill_blank",
+        "correct": "Kubernetes"
+    },
+    {
+        "q": "Seldon Core supports A/B testing.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "What is Ray Serve?",
+        "type": "mcq",
+        "o": [
+            "Scalable ML model serving library",
+            "Ray tracing",
+            "Lighting library",
+            "Graphics library"
+        ],
+        "correct": "Scalable ML model serving library"
+    },
+    {
+        "q": "Ray Serve is part of the _____ ecosystem.",
+        "type": "fill_blank",
+        "correct": "Ray"
+    },
+    {
+        "q": "Ray Serve supports multi-model composition.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "What is model composition?",
+        "type": "mcq",
+        "o": [
+            "Combining multiple models in a pipeline",
+            "Model creation",
+            "Model training",
+            "Model evaluation"
+        ],
+        "correct": "Combining multiple models in a pipeline"
+    },
+    {
+        "q": "Ensemble serving combines multiple model _____.",
+        "type": "fill_blank",
+        "correct": "predictions"
+    },
+    {
+        "q": "Model pipelines can chain preprocessing with inference.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Match the serving platform with its feature:",
+        "type": "match",
+        "left": [
+            "TF Serving",
+            "Triton",
+            "Seldon",
+            "BentoML"
+        ],
+        "right": [
+            "TensorFlow focus",
+            "Multi-framework GPU",
+            "Kubernetes native",
+            "Easy packaging"
         ]
     },
     {
-        "q": "What is a network load balancer?",
-        "c": null,
+        "q": "What is model explainability in production?",
+        "type": "mcq",
         "o": [
-            "Distributes network traffic",
-            "Data storage device",
-            "Model training tool",
-            "Feature extraction tool"
+            "Understanding predictions for deployed models",
+            "Explaining model architecture",
+            "Documentation",
+            "Model description"
+        ],
+        "correct": "Understanding predictions for deployed models"
+    },
+    {
+        "q": "SHAP values can explain individual _____.",
+        "type": "fill_blank",
+        "correct": "predictions"
+    },
+    {
+        "q": "Explainability increases user trust.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "What is human-in-the-loop?",
+        "type": "mcq",
+        "o": [
+            "Involving humans in ML decision process",
+            "Automated only",
+            "Human replacement",
+            "Manual only"
+        ],
+        "correct": "Involving humans in ML decision process"
+    },
+    {
+        "q": "HITL is important for _____ applications.",
+        "type": "fill_blank",
+        "correct": "high-stakes"
+    },
+    {
+        "q": "Human review can catch edge cases.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "What is model fallback?",
+        "type": "mcq",
+        "o": [
+            "Using backup model when primary fails",
+            "Model failure",
+            "Model retirement",
+            "Model deletion"
+        ],
+        "correct": "Using backup model when primary fails"
+    },
+    {
+        "q": "Fallbacks ensure service _____ during failures.",
+        "type": "fill_blank",
+        "correct": "continuity"
+    },
+    {
+        "q": "Simpler models can serve as fallbacks.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Arrange ML system redundancy:",
+        "type": "rearrange",
+        "correct": [
+            "Primary model",
+            "Secondary model",
+            "Rule-based fallback",
+            "Default response",
+            "Error handling"
         ]
     },
     {
-        "q": "What is a compliance audit?",
-        "c": null,
+        "q": "What is spot instances?",
+        "type": "mcq",
         "o": [
-            "Verifies adherence to regulations",
-            "Data storage review",
-            "Model training compliance",
-            "Feature extraction review"
+            "Discounted unused cloud capacity",
+            "Reserved instances",
+            "On-demand instances",
+            "Premium instances"
+        ],
+        "correct": "Discounted unused cloud capacity"
+    },
+    {
+        "q": "Spot instances can reduce _____ significantly.",
+        "type": "fill_blank",
+        "correct": "costs"
+    },
+    {
+        "q": "Spot instances can be terminated with short notice.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "What is cost optimization?",
+        "type": "mcq",
+        "o": [
+            "Minimizing cloud spending",
+            "Feature optimization",
+            "Performance optimization",
+            "Code optimization"
+        ],
+        "correct": "Minimizing cloud spending"
+    },
+    {
+        "q": "Right-sizing instances is a cost _____ strategy.",
+        "type": "fill_blank",
+        "correct": "optimization"
+    },
+    {
+        "q": "Auto-scaling can reduce costs.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "What is FinOps?",
+        "type": "mcq",
+        "o": [
+            "Financial operations for cloud",
+            "Financial planning",
+            "Final operations",
+            "Financial optimization"
+        ],
+        "correct": "Financial operations for cloud"
+    },
+    {
+        "q": "FinOps helps manage cloud _____.",
+        "type": "fill_blank",
+        "correct": "costs"
+    },
+    {
+        "q": "FinOps promotes cost awareness culture.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Match the cost strategy with its approach:",
+        "type": "match",
+        "left": [
+            "Reserved instances",
+            "Spot instances",
+            "Right-sizing",
+            "Auto-scaling"
+        ],
+        "right": [
+            "Long-term commitment",
+            "Flexible workloads",
+            "Optimal resources",
+            "Demand-based"
         ]
     },
     {
-        "q": "What is an event-driven architecture?",
-        "c": null,
+        "q": "What is green ML?",
+        "type": "mcq",
         "o": [
-            "Responds to events or triggers",
-            "Data storage system",
-            "Model training technique",
-            "Feature selection process"
+            "Environmentally sustainable ML",
+            "ML for agriculture",
+            "Eco-friendly hardware",
+            "Solar-powered ML"
+        ],
+        "correct": "Environmentally sustainable ML"
+    },
+    {
+        "q": "Green ML considers carbon _____.",
+        "type": "fill_blank",
+        "correct": "footprint"
+    },
+    {
+        "q": "Efficient models reduce environmental impact.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "What is model carbon footprint?",
+        "type": "mcq",
+        "o": [
+            "CO2 emissions from training and inference",
+            "Model size",
+            "Model complexity",
+            "Model parameters"
+        ],
+        "correct": "CO2 emissions from training and inference"
+    },
+    {
+        "q": "Large models have significant carbon _____.",
+        "type": "fill_blank",
+        "correct": "emissions"
+    },
+    {
+        "q": "Training location affects carbon footprint.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Arrange deployment readiness checklist:",
+        "type": "rearrange",
+        "correct": [
+            "Model validation",
+            "Performance testing",
+            "Security review",
+            "Documentation",
+            "Monitoring setup"
         ]
     },
     {
-        "q": "What is a data processing pipeline?",
-        "c": null,
+        "q": "What is production ML testing?",
+        "type": "mcq",
         "o": [
-            "Sequence of data operations",
-            "Data storage system",
-            "Model training pipeline",
-            "Feature extraction pipeline"
+            "Testing models in production-like environment",
+            "Development testing",
+            "Unit testing only",
+            "Manual testing"
+        ],
+        "correct": "Testing models in production-like environment"
+    },
+    {
+        "q": "Production tests validate model _____ under real conditions.",
+        "type": "fill_blank",
+        "correct": "behavior"
+    },
+    {
+        "q": "Shadow testing validates before full rollout.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "What is model governance?",
+        "type": "mcq",
+        "o": [
+            "Managing models throughout lifecycle",
+            "Model creation",
+            "Model training",
+            "Model deletion"
+        ],
+        "correct": "Managing models throughout lifecycle"
+    },
+    {
+        "q": "Governance ensures compliance and _____.",
+        "type": "fill_blank",
+        "correct": "accountability"
+    },
+    {
+        "q": "Model governance is important for regulated industries.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "What is ML reproducibility?",
+        "type": "mcq",
+        "o": [
+            "Ability to recreate exact results",
+            "Model copying",
+            "Code duplication",
+            "Data copying"
+        ],
+        "correct": "Ability to recreate exact results"
+    },
+    {
+        "q": "Reproducibility requires tracking code, data, and _____.",
+        "type": "fill_blank",
+        "correct": "environment"
+    },
+    {
+        "q": "Random seeds help with reproducibility.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Match the governance aspect with its tool:",
+        "type": "match",
+        "left": [
+            "Model tracking",
+            "Data versioning",
+            "Code versioning",
+            "Documentation"
+        ],
+        "right": [
+            "MLflow",
+            "DVC",
+            "Git",
+            "Model cards"
         ]
     },
     {
-        "q": "What is a data governance framework?",
-        "c": null,
+        "q": "What is model deprecation?",
+        "type": "mcq",
         "o": [
-            "Policies for data management",
-            "Data storage method",
-            "Model training guideline",
-            "Feature extraction guideline"
+            "Retiring old model versions",
+            "Model failure",
+            "Model deletion",
+            "Model archiving"
+        ],
+        "correct": "Retiring old model versions"
+    },
+    {
+        "q": "Deprecation should include migration _____.",
+        "type": "fill_blank",
+        "correct": "plan"
+    },
+    {
+        "q": "Old models should be deprecated gradually.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "What is model lineage?",
+        "type": "mcq",
+        "o": [
+            "Tracking model history and origin",
+            "Model family",
+            "Model inheritance",
+            "Model hierarchy"
+        ],
+        "correct": "Tracking model history and origin"
+    },
+    {
+        "q": "Lineage tracks data, code, and _____ used.",
+        "type": "fill_blank",
+        "correct": "parameters"
+    },
+    {
+        "q": "Lineage helps with debugging and auditing.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "What is model audit?",
+        "type": "mcq",
+        "o": [
+            "Systematic review of model behavior and compliance",
+            "Model testing",
+            "Model training",
+            "Model deletion"
+        ],
+        "correct": "Systematic review of model behavior and compliance"
+    },
+    {
+        "q": "Audits ensure models meet regulatory _____.",
+        "type": "fill_blank",
+        "correct": "requirements"
+    },
+    {
+        "q": "Regular audits are required in regulated industries.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "What is model documentation?",
+        "type": "mcq",
+        "o": [
+            "Recording model details and behavior",
+            "Code documentation",
+            "API documentation",
+            "User manual"
+        ],
+        "correct": "Recording model details and behavior"
+    },
+    {
+        "q": "Model cards document intended _____ and limitations.",
+        "type": "fill_blank",
+        "correct": "use"
+    },
+    {
+        "q": "Documentation improves model transparency.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Match the documentation type with its focus:",
+        "type": "match",
+        "left": [
+            "Model card",
+            "API docs",
+            "Data sheet",
+            "README"
+        ],
+        "right": [
+            "Model behavior",
+            "Usage instructions",
+            "Dataset details",
+            "Quick start"
         ]
     },
     {
-        "q": "What is an orchestration tool?",
-        "c": null,
+        "q": "What is model security?",
+        "type": "mcq",
         "o": [
-            "Coordinates multiple processes",
-            "Data storage tool",
-            "Model training tool",
-            "Feature extraction tool"
+            "Protecting models from attacks and misuse",
+            "Model testing",
+            "Model performance",
+            "Model accuracy"
+        ],
+        "correct": "Protecting models from attacks and misuse"
+    },
+    {
+        "q": "Adversarial attacks can fool ML _____.",
+        "type": "fill_blank",
+        "correct": "models"
+    },
+    {
+        "q": "Model security is crucial for production systems.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "What is model stealing?",
+        "type": "mcq",
+        "o": [
+            "Extracting model through API queries",
+            "Model theft",
+            "Physical stealing",
+            "Code stealing"
+        ],
+        "correct": "Extracting model through API queries"
+    },
+    {
+        "q": "Rate limiting helps prevent model _____ attacks.",
+        "type": "fill_blank",
+        "correct": "extraction"
+    },
+    {
+        "q": "API access control protects against model stealing.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "What is model inversion attack?",
+        "type": "mcq",
+        "o": [
+            "Recovering training data from model",
+            "Inverting model",
+            "Reversing training",
+            "Flipping predictions"
+        ],
+        "correct": "Recovering training data from model"
+    },
+    {
+        "q": "Model inversion can expose _____ information.",
+        "type": "fill_blank",
+        "correct": "private"
+    },
+    {
+        "q": "Differential privacy can mitigate model inversion.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Arrange security measures:",
+        "type": "rearrange",
+        "correct": [
+            "Authentication",
+            "Authorization",
+            "Encryption",
+            "Rate limiting",
+            "Monitoring"
         ]
     },
     {
-        "q": "What is a machine learning model registry?",
-        "c": null,
+        "q": "What is differential privacy?",
+        "type": "mcq",
         "o": [
-            "Tracks versions of models",
-            "Data storage location",
-            "Model evaluation tool",
-            "Feature selection tool"
+            "Mathematical privacy guarantee for data",
+            "Different privacy levels",
+            "Privacy differences",
+            "Varying privacy"
+        ],
+        "correct": "Mathematical privacy guarantee for data"
+    },
+    {
+        "q": "Differential privacy adds _____ to protect individuals.",
+        "type": "fill_blank",
+        "correct": "noise"
+    },
+    {
+        "q": "Apple and Google use differential privacy.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "What is federated learning?",
+        "type": "mcq",
+        "o": [
+            "Training without centralizing data",
+            "Central training",
+            "Distributed storage",
+            "Federal regulations"
+        ],
+        "correct": "Training without centralizing data"
+    },
+    {
+        "q": "Federated learning keeps data on local _____.",
+        "type": "fill_blank",
+        "correct": "devices"
+    },
+    {
+        "q": "Federated learning improves privacy.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Match the privacy technique with its approach:",
+        "type": "match",
+        "left": [
+            "Differential privacy",
+            "Federated learning",
+            "Homomorphic encryption",
+            "Secure enclaves"
+        ],
+        "right": [
+            "Adding noise",
+            "Local training",
+            "Encrypted computation",
+            "Hardware isolation"
         ]
     },
     {
-        "q": "What is a data quality assessment?",
-        "c": null,
+        "q": "What is GDPR compliance?",
+        "type": "mcq",
         "o": [
-            "Evaluates data accuracy",
-            "Data storage method",
-            "Model training quality",
-            "Feature extraction quality"
+            "Meeting EU data protection requirements",
+            "General Data Processing",
+            "Global Data Protection",
+            "Government Data Rules"
+        ],
+        "correct": "Meeting EU data protection requirements"
+    },
+    {
+        "q": "GDPR requires data minimization and _____.",
+        "type": "fill_blank",
+        "correct": "consent"
+    },
+    {
+        "q": "GDPR affects ML systems processing EU data.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "What is right to explanation?",
+        "type": "mcq",
+        "o": [
+            "User right to understand automated decisions",
+            "Code explanation",
+            "Documentation right",
+            "Training transparency"
+        ],
+        "correct": "User right to understand automated decisions"
+    },
+    {
+        "q": "Explainability supports right to _____.",
+        "type": "fill_blank",
+        "correct": "explanation"
+    },
+    {
+        "q": "Some regulations require explainable AI.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "What is AI governance?",
+        "type": "mcq",
+        "o": [
+            "Frameworks for responsible AI development",
+            "Government AI",
+            "AI regulation only",
+            "AI management"
+        ],
+        "correct": "Frameworks for responsible AI development"
+    },
+    {
+        "q": "AI governance includes ethics and _____.",
+        "type": "fill_blank",
+        "correct": "compliance"
+    },
+    {
+        "q": "Organizations need AI governance frameworks.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Arrange AI governance levels:",
+        "type": "rearrange",
+        "correct": [
+            "Principles",
+            "Policies",
+            "Processes",
+            "Tools",
+            "Metrics"
         ]
     },
     {
-        "q": "What is an incident response plan?",
-        "c": null,
+        "q": "What is WebAssembly for ML?",
+        "type": "mcq",
         "o": [
-            "Guides response to incidents",
-            "Data storage method",
-            "Model training process",
-            "Feature extraction plan"
+            "Running ML in browsers efficiently",
+            "Web assembly language",
+            "HTML for ML",
+            "JavaScript alternative"
+        ],
+        "correct": "Running ML in browsers efficiently"
+    },
+    {
+        "q": "WASM enables edge ML in _____.",
+        "type": "fill_blank",
+        "correct": "browsers"
+    },
+    {
+        "q": "TensorFlow.js can use WebAssembly.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "What is serverless ML?",
+        "type": "mcq",
+        "o": [
+            "ML inference without managing servers",
+            "No server ML",
+            "Client-only ML",
+            "Offline ML"
+        ],
+        "correct": "ML inference without managing servers"
+    },
+    {
+        "q": "Serverless ML scales to _____ automatically.",
+        "type": "fill_blank",
+        "correct": "zero"
+    },
+    {
+        "q": "AWS Lambda can run ML inference.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "What is MLaaS?",
+        "type": "mcq",
+        "o": [
+            "Machine Learning as a Service",
+            "ML as a System",
+            "Model Learning as Service",
+            "ML API Service"
+        ],
+        "correct": "Machine Learning as a Service"
+    },
+    {
+        "q": "MLaaS providers offer pre-built ML _____.",
+        "type": "fill_blank",
+        "correct": "APIs"
+    },
+    {
+        "q": "Google Cloud Vision is an MLaaS offering.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Match the MLaaS with its provider:",
+        "type": "match",
+        "left": [
+            "Rekognition",
+            "Vision AI",
+            "Cognitive Services",
+            "Hugging Face"
+        ],
+        "right": [
+            "AWS",
+            "Google",
+            "Azure",
+            "Open source"
         ]
     },
     {
-        "q": "What is an API endpoint?",
-        "c": null,
+        "q": "What is LLM deployment?",
+        "type": "mcq",
         "o": [
-            "Specific URL for API calls",
-            "Data storage point",
-            "Model training endpoint",
-            "Feature extraction endpoint"
+            "Serving large language models",
+            "LLM training",
+            "LLM development",
+            "LLM testing"
+        ],
+        "correct": "Serving large language models"
+    },
+    {
+        "q": "LLM deployment requires significant _____.",
+        "type": "fill_blank",
+        "correct": "resources"
+    },
+    {
+        "q": "LLMs often need GPU for inference.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "What is vLLM?",
+        "type": "mcq",
+        "o": [
+            "High-throughput LLM serving library",
+            "Virtual LLM",
+            "Visual LLM",
+            "Voice LLM"
+        ],
+        "correct": "High-throughput LLM serving library"
+    },
+    {
+        "q": "vLLM uses PagedAttention for efficient _____.",
+        "type": "fill_blank",
+        "correct": "memory"
+    },
+    {
+        "q": "vLLM improves LLM serving throughput.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "What is text generation inference (TGI)?",
+        "type": "mcq",
+        "o": [
+            "Hugging Face's LLM serving solution",
+            "Text generation training",
+            "TensorFlow inference",
+            "Text processing"
+        ],
+        "correct": "Hugging Face's LLM serving solution"
+    },
+    {
+        "q": "TGI optimizes for transformer _____.",
+        "type": "fill_blank",
+        "correct": "inference"
+    },
+    {
+        "q": "TGI supports continuous batching.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Arrange LLM optimization techniques:",
+        "type": "rearrange",
+        "correct": [
+            "Quantization",
+            "KV cache",
+            "Continuous batching",
+            "Speculative decoding",
+            "Tensor parallelism"
         ]
     },
     {
-        "q": "What is a security patch?",
-        "c": null,
+        "q": "What is continuous batching?",
+        "type": "mcq",
         "o": [
-            "Fixes vulnerabilities",
-            "Data storage patch",
-            "Model training fix",
-            "Feature extraction fix"
+            "Adding requests to batch during inference",
+            "Batch training",
+            "Fixed batch size",
+            "No batching"
+        ],
+        "correct": "Adding requests to batch during inference"
+    },
+    {
+        "q": "Continuous batching improves GPU _____.",
+        "type": "fill_blank",
+        "correct": "utilization"
+    },
+    {
+        "q": "Continuous batching is important for LLM serving.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "What is speculative decoding?",
+        "type": "mcq",
+        "o": [
+            "Using small model to speed up large model",
+            "Speculation in trading",
+            "Random guessing",
+            "Fast decoding only"
+        ],
+        "correct": "Using small model to speed up large model"
+    },
+    {
+        "q": "Speculative decoding maintains output _____.",
+        "type": "fill_blank",
+        "correct": "quality"
+    },
+    {
+        "q": "Speculative decoding can reduce latency.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "What is KV cache?",
+        "type": "mcq",
+        "o": [
+            "Caching key-value pairs in transformers",
+            "Key-value database",
+            "Kafka Vault",
+            "Kubernetes Volume"
+        ],
+        "correct": "Caching key-value pairs in transformers"
+    },
+    {
+        "q": "KV cache avoids recomputing past _____.",
+        "type": "fill_blank",
+        "correct": "tokens"
+    },
+    {
+        "q": "KV cache requires significant memory.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "What is tensor parallelism?",
+        "type": "mcq",
+        "o": [
+            "Splitting model across GPUs",
+            "Data parallelism",
+            "Pipeline parallelism",
+            "No parallelism"
+        ],
+        "correct": "Splitting model across GPUs"
+    },
+    {
+        "q": "Tensor parallelism is needed for models too large for one _____.",
+        "type": "fill_blank",
+        "correct": "GPU"
+    },
+    {
+        "q": "Large LLMs often use tensor parallelism.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Match the parallelism type with its approach:",
+        "type": "match",
+        "left": [
+            "Data parallelism",
+            "Tensor parallelism",
+            "Pipeline parallelism",
+            "Expert parallelism"
+        ],
+        "right": [
+            "Same model, different data",
+            "Split layers across GPUs",
+            "Sequential layer stages",
+            "MoE experts distribution"
         ]
     },
     {
-        "q": "What is an application load balancer?",
-        "c": null,
+        "q": "What is embedding API?",
+        "type": "mcq",
         "o": [
-            "Balances incoming application traffic",
-            "Data storage balancer",
-            "Model training balancer",
-            "Feature extraction balancer"
+            "API for generating vector embeddings",
+            "API embedding",
+            "Code embedding",
+            "Web embedding"
+        ],
+        "correct": "API for generating vector embeddings"
+    },
+    {
+        "q": "Embedding APIs power semantic _____.",
+        "type": "fill_blank",
+        "correct": "search"
+    },
+    {
+        "q": "OpenAI provides embedding APIs.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "What is vector database?",
+        "type": "mcq",
+        "o": [
+            "Database optimized for similarity search",
+            "Regular database",
+            "Graph database",
+            "Document database"
+        ],
+        "correct": "Database optimized for similarity search"
+    },
+    {
+        "q": "Vector databases store and query _____.",
+        "type": "fill_blank",
+        "correct": "embeddings"
+    },
+    {
+        "q": "Pinecone is a vector database.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "What is RAG deployment?",
+        "type": "mcq",
+        "o": [
+            "Serving retrieval-augmented generation systems",
+            "RAG training",
+            "Random deployment",
+            "Resource allocation"
+        ],
+        "correct": "Serving retrieval-augmented generation systems"
+    },
+    {
+        "q": "RAG deployment requires both LLM and _____.",
+        "type": "fill_blank",
+        "correct": "retriever"
+    },
+    {
+        "q": "RAG reduces hallucinations in LLMs.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Arrange RAG deployment components:",
+        "type": "rearrange",
+        "correct": [
+            "Document store",
+            "Embedding model",
+            "Vector database",
+            "Retriever",
+            "LLM"
         ]
     },
     {
-        "q": "What is a version control system?",
-        "c": null,
+        "q": "What is LLM gateway?",
+        "type": "mcq",
         "o": [
-            "Tracks changes in files",
-            "Data storage method",
-            "Model training system",
-            "Feature selection system"
+            "Unified interface for multiple LLM providers",
+            "LLM API",
+            "Gateway protocol",
+            "LLM router"
+        ],
+        "correct": "Unified interface for multiple LLM providers"
+    },
+    {
+        "q": "LLM gateways enable provider _____.",
+        "type": "fill_blank",
+        "correct": "switching"
+    },
+    {
+        "q": "LiteLLM provides LLM gateway functionality.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "What is prompt caching?",
+        "type": "mcq",
+        "o": [
+            "Caching repeated prompt computations",
+            "Prompt storage",
+            "Cache prompting",
+            "Prompt optimization"
+        ],
+        "correct": "Caching repeated prompt computations"
+    },
+    {
+        "q": "Prompt caching reduces _____ for repeated prompts.",
+        "type": "fill_blank",
+        "correct": "costs"
+    },
+    {
+        "q": "System prompts are good candidates for caching.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "What is LLM observability?",
+        "type": "mcq",
+        "o": [
+            "Monitoring LLM inputs, outputs, and performance",
+            "LLM training tracking",
+            "LLM development",
+            "LLM testing"
+        ],
+        "correct": "Monitoring LLM inputs, outputs, and performance"
+    },
+    {
+        "q": "LLM observability helps detect _____ and issues.",
+        "type": "fill_blank",
+        "correct": "hallucinations"
+    },
+    {
+        "q": "LangSmith provides LLM observability.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Match the LLM tool with its purpose:",
+        "type": "match",
+        "left": [
+            "vLLM",
+            "LangChain",
+            "LangSmith",
+            "Guardrails"
+        ],
+        "right": [
+            "High-throughput serving",
+            "LLM applications",
+            "Observability",
+            "Output validation"
         ]
+    },
+    {
+        "q": "What is guardrails for LLMs?",
+        "type": "mcq",
+        "o": [
+            "Validating and filtering LLM outputs",
+            "Physical barriers",
+            "Training constraints",
+            "Memory limits"
+        ],
+        "correct": "Validating and filtering LLM outputs"
+    },
+    {
+        "q": "Guardrails prevent harmful or incorrect _____.",
+        "type": "fill_blank",
+        "correct": "outputs"
+    },
+    {
+        "q": "NeMo Guardrails is an open-source option.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "What is content moderation?",
+        "type": "mcq",
+        "o": [
+            "Filtering harmful or inappropriate content",
+            "Content creation",
+            "Content editing",
+            "Content storage"
+        ],
+        "correct": "Filtering harmful or inappropriate content"
+    },
+    {
+        "q": "Content moderation protects users from _____ content.",
+        "type": "fill_blank",
+        "correct": "harmful"
+    },
+    {
+        "q": "ML models can automate content moderation.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Arrange LLM safety layers:",
+        "type": "rearrange",
+        "correct": [
+            "Input filtering",
+            "Prompt injection detection",
+            "Model safety training",
+            "Output filtering",
+            "Human review"
+        ]
+    },
+    {
+        "q": "What is prompt injection?",
+        "type": "mcq",
+        "o": [
+            "Malicious prompts to manipulate LLM behavior",
+            "Prompt enhancement",
+            "Injection training",
+            "Code injection"
+        ],
+        "correct": "Malicious prompts to manipulate LLM behavior"
+    },
+    {
+        "q": "Prompt injection can bypass safety _____.",
+        "type": "fill_blank",
+        "correct": "measures"
+    },
+    {
+        "q": "Prompt injection is a security concern for LLMs.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "What is PII detection?",
+        "type": "mcq",
+        "o": [
+            "Identifying personal information in text",
+            "PDF identification",
+            "Private data storage",
+            "Personal interface"
+        ],
+        "correct": "Identifying personal information in text"
+    },
+    {
+        "q": "PII detection helps with privacy _____.",
+        "type": "fill_blank",
+        "correct": "compliance"
+    },
+    {
+        "q": "LLMs can be used for PII detection.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "What is model cards for deployed models?",
+        "type": "mcq",
+        "o": [
+            "Documentation of model capabilities and limitations",
+            "Identity cards",
+            "Business cards",
+            "Memory cards"
+        ],
+        "correct": "Documentation of model capabilities and limitations"
+    },
+    {
+        "q": "Model cards improve model _____.",
+        "type": "fill_blank",
+        "correct": "transparency"
+    },
+    {
+        "q": "Hugging Face popularized model cards.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Match the documentation with its content:",
+        "type": "match",
+        "left": [
+            "Model card",
+            "Datasheet",
+            "API documentation",
+            "SLA"
+        ],
+        "right": [
+            "Model details",
+            "Training data",
+            "Usage instructions",
+            "Service guarantees"
+        ]
+    },
+    {
+        "q": "What is on-premise deployment?",
+        "type": "mcq",
+        "o": [
+            "Running models on company's own infrastructure",
+            "Cloud deployment",
+            "Edge deployment",
+            "Mobile deployment"
+        ],
+        "correct": "Running models on company's own infrastructure"
+    },
+    {
+        "q": "On-premise offers more control over _____.",
+        "type": "fill_blank",
+        "correct": "data"
+    },
+    {
+        "q": "On-premise is important for data-sensitive industries.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "What is hybrid deployment?",
+        "type": "mcq",
+        "o": [
+            "Combining cloud and on-premise infrastructure",
+            "Mixed models",
+            "Hybrid training",
+            "Combined testing"
+        ],
+        "correct": "Combining cloud and on-premise infrastructure"
+    },
+    {
+        "q": "Hybrid deployment balances control and _____.",
+        "type": "fill_blank",
+        "correct": "scalability"
+    },
+    {
+        "q": "Many enterprises use hybrid deployments.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "What is multi-cloud deployment?",
+        "type": "mcq",
+        "o": [
+            "Using multiple cloud providers",
+            "Single cloud only",
+            "Cloud comparison",
+            "Cloud testing"
+        ],
+        "correct": "Using multiple cloud providers"
+    },
+    {
+        "q": "Multi-cloud reduces vendor _____.",
+        "type": "fill_blank",
+        "correct": "lock-in"
+    },
+    {
+        "q": "Multi-cloud increases deployment complexity.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Arrange deployment evolution:",
+        "type": "rearrange",
+        "correct": [
+            "Manual deployment",
+            "Scripted deployment",
+            "CI/CD pipelines",
+            "GitOps",
+            "MLOps"
+        ]
+    },
+    {
+        "q": "What is zero-downtime deployment?",
+        "type": "mcq",
+        "o": [
+            "Deploying without service interruption",
+            "No deployments",
+            "Fast deployment",
+            "Automatic deployment"
+        ],
+        "correct": "Deploying without service interruption"
+    },
+    {
+        "q": "Zero-downtime requires careful traffic _____.",
+        "type": "fill_blank",
+        "correct": "management"
+    },
+    {
+        "q": "Blue-green deployment enables zero-downtime.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "What is immutable infrastructure?",
+        "type": "mcq",
+        "o": [
+            "Replacing rather than modifying infrastructure",
+            "Static infrastructure",
+            "Fixed servers",
+            "Permanent systems"
+        ],
+        "correct": "Replacing rather than modifying infrastructure"
+    },
+    {
+        "q": "Immutable infrastructure prevents configuration _____.",
+        "type": "fill_blank",
+        "correct": "drift"
+    },
+    {
+        "q": "Containers enable immutable infrastructure.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "What is GPU time-slicing?",
+        "type": "mcq",
+        "o": [
+            "Sharing GPU across multiple workloads",
+            "GPU scheduling",
+            "GPU partitioning",
+            "Time measurement"
+        ],
+        "correct": "Sharing GPU across multiple workloads"
+    },
+    {
+        "q": "Time-slicing improves GPU _____.",
+        "type": "fill_blank",
+        "correct": "utilization"
+    },
+    {
+        "q": "NVIDIA MPS enables GPU sharing.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Match the GPU feature with its benefit:",
+        "type": "match",
+        "left": [
+            "Time-slicing",
+            "MIG",
+            "vGPU",
+            "Tensor cores"
+        ],
+        "right": [
+            "Workload sharing",
+            "Hardware partitioning",
+            "Virtualization",
+            "Fast matrix ops"
+        ]
+    },
+    {
+        "q": "What is deployment automation?",
+        "type": "mcq",
+        "o": [
+            "Automating the deployment process",
+            "Manual deployment",
+            "Automatic training",
+            "Auto-scaling"
+        ],
+        "correct": "Automating the deployment process"
+    },
+    {
+        "q": "Automation reduces deployment _____ and errors.",
+        "type": "fill_blank",
+        "correct": "time"
+    },
+    {
+        "q": "Deployment automation is essential for MLOps.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "What is progressive rollout?",
+        "type": "mcq",
+        "o": [
+            "Gradually increasing traffic to new version",
+            "Instant rollout",
+            "Progressive training",
+            "Slow deployment"
+        ],
+        "correct": "Gradually increasing traffic to new version"
+    },
+    {
+        "q": "Progressive rollout limits _____ of issues.",
+        "type": "fill_blank",
+        "correct": "impact"
+    },
+    {
+        "q": "Feature flags enable progressive rollouts.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "What is feature flags?",
+        "type": "mcq",
+        "o": [
+            "Runtime toggles for features",
+            "Code flags",
+            "Debug flags",
+            "Compiler flags"
+        ],
+        "correct": "Runtime toggles for features"
+    },
+    {
+        "q": "Feature flags enable _____ from deployment.",
+        "type": "fill_blank",
+        "correct": "decoupling releases"
+    },
+    {
+        "q": "LaunchDarkly is a feature flag service.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Arrange deployment best practices:",
+        "type": "rearrange",
+        "correct": [
+            "Automate everything",
+            "Test thoroughly",
+            "Deploy frequently",
+            "Monitor continuously",
+            "Roll back quickly"
+        ]
+    },
+    {
+        "q": "What is deployment testing?",
+        "type": "mcq",
+        "o": [
+            "Validating deployment works correctly",
+            "Code testing",
+            "Unit testing",
+            "Integration testing"
+        ],
+        "correct": "Validating deployment works correctly"
+    },
+    {
+        "q": "Smoke tests verify basic _____ after deployment.",
+        "type": "fill_blank",
+        "correct": "functionality"
+    },
+    {
+        "q": "Automated deployment tests catch issues early.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "What is deployment rollback?",
+        "type": "mcq",
+        "o": [
+            "Reverting to previous working version",
+            "Rolling forward",
+            "Deployment restart",
+            "Deployment retry"
+        ],
+        "correct": "Reverting to previous working version"
+    },
+    {
+        "q": "Fast rollback minimizes _____ time.",
+        "type": "fill_blank",
+        "correct": "downtime"
+    },
+    {
+        "q": "Rollback plans are essential for production.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "What is deployment artifact?",
+        "type": "mcq",
+        "o": [
+            "Packaged application ready for deployment",
+            "Deployment log",
+            "Deployment script",
+            "Deployment config"
+        ],
+        "correct": "Packaged application ready for deployment"
+    },
+    {
+        "q": "Docker images are deployment _____.",
+        "type": "fill_blank",
+        "correct": "artifacts"
+    },
+    {
+        "q": "Artifacts should be immutable.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Match the deployment concept with its definition:",
+        "type": "match",
+        "left": [
+            "Artifact",
+            "Environment",
+            "Configuration",
+            "Secret"
+        ],
+        "right": [
+            "Deployable package",
+            "Target system",
+            "Settings",
+            "Sensitive data"
+        ]
+    },
+    {
+        "q": "Model deployment is continuously evolving.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Successful deployment requires collaboration across teams.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Production ML requires ongoing maintenance.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "What is inference latency?",
+        "type": "mcq",
+        "o": [
+            "Time to generate prediction",
+            "Training time",
+            "Data loading time",
+            "Network latency only"
+        ],
+        "correct": "Time to generate prediction"
+    },
+    {
+        "q": "Latency is measured in _____ or seconds.",
+        "type": "fill_blank",
+        "correct": "milliseconds"
+    },
+    {
+        "q": "P99 latency shows 99th percentile response time.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "What is cold start?",
+        "type": "mcq",
+        "o": [
+            "Delay when starting dormant container",
+            "Cold weather startup",
+            "Initial training",
+            "First prediction"
+        ],
+        "correct": "Delay when starting dormant container"
+    },
+    {
+        "q": "Cold starts affect _____ functions especially.",
+        "type": "fill_blank",
+        "correct": "serverless"
+    },
+    {
+        "q": "Provisioned concurrency reduces cold starts.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Match the latency concept with its definition:",
+        "type": "match",
+        "left": [
+            "P50",
+            "P95",
+            "P99",
+            "Max"
+        ],
+        "right": [
+            "Median latency",
+            "95th percentile",
+            "99th percentile",
+            "Worst case"
+        ]
+    },
+    {
+        "q": "What is request timeout?",
+        "type": "mcq",
+        "o": [
+            "Maximum wait time for response",
+            "Request delay",
+            "Response time",
+            "Processing time"
+        ],
+        "correct": "Maximum wait time for response"
+    },
+    {
+        "q": "Timeouts prevent _____ from hanging.",
+        "type": "fill_blank",
+        "correct": "requests"
+    },
+    {
+        "q": "All API calls should have timeouts configured.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "What is connection pooling?",
+        "type": "mcq",
+        "o": [
+            "Reusing network connections",
+            "Pool of servers",
+            "Connection monitoring",
+            "Network management"
+        ],
+        "correct": "Reusing network connections"
+    },
+    {
+        "q": "Connection pooling reduces _____ overhead.",
+        "type": "fill_blank",
+        "correct": "connection"
+    },
+    {
+        "q": "Database connection pools improve performance.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "What is request payload?",
+        "type": "mcq",
+        "o": [
+            "Data sent in API request",
+            "Request header",
+            "Response data",
+            "API endpoint"
+        ],
+        "correct": "Data sent in API request"
+    },
+    {
+        "q": "Large payloads increase _____ time.",
+        "type": "fill_blank",
+        "correct": "transfer"
+    },
+    {
+        "q": "Payload compression can reduce latency.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Arrange payload optimization steps:",
+        "type": "rearrange",
+        "correct": [
+            "Analyze payload size",
+            "Remove unnecessary fields",
+            "Compress data",
+            "Use efficient formats",
+            "Validate results"
+        ]
+    },
+    {
+        "q": "What is response caching?",
+        "type": "mcq",
+        "o": [
+            "Storing responses for reuse",
+            "Response logging",
+            "Response compression",
+            "Response validation"
+        ],
+        "correct": "Storing responses for reuse"
+    },
+    {
+        "q": "Caching reduces _____ and costs.",
+        "type": "fill_blank",
+        "correct": "latency"
+    },
+    {
+        "q": "CDNs cache responses at edge locations.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "What is SSL/TLS?",
+        "type": "mcq",
+        "o": [
+            "Encryption for secure communication",
+            "Server Load Balancing",
+            "Secure Login System",
+            "Speed Limiting Service"
+        ],
+        "correct": "Encryption for secure communication"
+    },
+    {
+        "q": "HTTPS uses TLS for _____ communication.",
+        "type": "fill_blank",
+        "correct": "secure"
+    },
+    {
+        "q": "All production APIs should use HTTPS.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "What is API documentation?",
+        "type": "mcq",
+        "o": [
+            "Description of API endpoints and usage",
+            "Code documentation",
+            "System documentation",
+            "User manual"
+        ],
+        "correct": "Description of API endpoints and usage"
+    },
+    {
+        "q": "OpenAPI/Swagger is popular for API _____.",
+        "type": "fill_blank",
+        "correct": "documentation"
+    },
+    {
+        "q": "Good documentation improves API adoption.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Match the API standard with its purpose:",
+        "type": "match",
+        "left": [
+            "OpenAPI",
+            "JSON Schema",
+            "OAuth",
+            "JWT"
+        ],
+        "right": [
+            "API documentation",
+            "Data validation",
+            "Authentication",
+            "Token format"
+        ]
+    },
+    {
+        "q": "What is JWT?",
+        "type": "mcq",
+        "o": [
+            "JSON Web Token for authentication",
+            "JavaScript Web Token",
+            "JSON Wrapper Token",
+            "Java Web Technology"
+        ],
+        "correct": "JSON Web Token for authentication"
+    },
+    {
+        "q": "JWT contains encoded user _____ information.",
+        "type": "fill_blank",
+        "correct": "identity"
+    },
+    {
+        "q": "JWT tokens are stateless.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "What is CORS?",
+        "type": "mcq",
+        "o": [
+            "Cross-Origin Resource Sharing",
+            "Common Origin Resources",
+            "Cross Origin Response System",
+            "Client Origin Request Service"
+        ],
+        "correct": "Cross-Origin Resource Sharing"
+    },
+    {
+        "q": "CORS allows browsers to make cross-domain _____.",
+        "type": "fill_blank",
+        "correct": "requests"
+    },
+    {
+        "q": "CORS headers control cross-origin access.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "What is webhook?",
+        "type": "mcq",
+        "o": [
+            "HTTP callback for event notification",
+            "Web hook",
+            "API hook",
+            "URL hook"
+        ],
+        "correct": "HTTP callback for event notification"
+    },
+    {
+        "q": "Webhooks push data instead of _____.",
+        "type": "fill_blank",
+        "correct": "polling"
+    },
+    {
+        "q": "Webhooks enable real-time integrations.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Arrange API development lifecycle:",
+        "type": "rearrange",
+        "correct": [
+            "Design",
+            "Development",
+            "Testing",
+            "Documentation",
+            "Deployment"
+        ]
+    },
+    {
+        "q": "What is infrastructure monitoring?",
+        "type": "mcq",
+        "o": [
+            "Tracking system resources",
+            "Code monitoring",
+            "User monitoring",
+            "Model monitoring"
+        ],
+        "correct": "Tracking system resources"
+    },
+    {
+        "q": "Infrastructure monitoring tracks CPU, memory, and _____.",
+        "type": "fill_blank",
+        "correct": "disk"
+    },
+    {
+        "q": "CloudWatch monitors AWS infrastructure.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "What is application monitoring?",
+        "type": "mcq",
+        "o": [
+            "Tracking application performance and errors",
+            "System monitoring",
+            "Network monitoring",
+            "Hardware monitoring"
+        ],
+        "correct": "Tracking application performance and errors"
+    },
+    {
+        "q": "APM stands for Application Performance _____.",
+        "type": "fill_blank",
+        "correct": "Monitoring"
+    },
+    {
+        "q": "New Relic provides APM capabilities.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "What is alerting?",
+        "type": "mcq",
+        "o": [
+            "Notifying when issues occur",
+            "Alert creation",
+            "Warning display",
+            "Error logging"
+        ],
+        "correct": "Notifying when issues occur"
+    },
+    {
+        "q": "Alerts should be _____ and not noisy.",
+        "type": "fill_blank",
+        "correct": "actionable"
+    },
+    {
+        "q": "PagerDuty manages on-call alerts.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Match the monitoring level with its focus:",
+        "type": "match",
+        "left": [
+            "Infrastructure",
+            "Application",
+            "Business",
+            "User"
+        ],
+        "right": [
+            "Resources",
+            "Performance",
+            "KPIs",
+            "Experience"
+        ]
+    },
+    {
+        "q": "What is runbook?",
+        "type": "mcq",
+        "o": [
+            "Documentation for handling incidents",
+            "Running scripts",
+            "Book about running",
+            "Exercise manual"
+        ],
+        "correct": "Documentation for handling incidents"
+    },
+    {
+        "q": "Runbooks guide incident _____ steps.",
+        "type": "fill_blank",
+        "correct": "response"
+    },
+    {
+        "q": "Runbooks reduce mean time to resolution.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "What is postmortem?",
+        "type": "mcq",
+        "o": [
+            "Analysis after incidents",
+            "Pre-deployment review",
+            "Post-deployment testing",
+            "Project completion"
+        ],
+        "correct": "Analysis after incidents"
+    },
+    {
+        "q": "Postmortems identify root _____ of failures.",
+        "type": "fill_blank",
+        "correct": "causes"
+    },
+    {
+        "q": "Blameless postmortems encourage learning.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Arrange incident response steps:",
+        "type": "rearrange",
+        "correct": [
+            "Detection",
+            "Triage",
+            "Mitigation",
+            "Resolution",
+            "Postmortem"
+        ]
+    },
+    {
+        "q": "Model deployment is a critical skill for ML practitioners.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "ML deployment best practices continue to evolve.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Production ML systems require robust monitoring.",
+        "type": "true_false",
+        "correct": "True"
     }
 ]

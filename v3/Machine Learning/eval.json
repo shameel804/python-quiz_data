@@ -1,642 +1,4794 @@
 [
     {
-        "q": "What is the purpose of model validation?",
-        "c": null,
+        "q": "What is model evaluation in machine learning?",
+        "type": "mcq",
         "o": [
-            "Evaluate model performance",
-            "Train the model",
-            "Improve dataset",
-            "Generate new features"
+            "Assessing how well a model performs on unseen data",
+            "Training the model on data",
+            "Collecting training data",
+            "Deploying the model"
+        ],
+        "correct": "Assessing how well a model performs on unseen data"
+    },
+    {
+        "q": "Model _____ measures how well a trained model performs.",
+        "type": "fill_blank",
+        "correct": "evaluation"
+    },
+    {
+        "q": "Model evaluation is only done after deployment.",
+        "type": "true_false",
+        "correct": "False"
+    },
+    {
+        "q": "What is the purpose of a test set?",
+        "type": "mcq",
+        "o": [
+            "To evaluate model performance on unseen data",
+            "To train the model",
+            "To tune hyperparameters",
+            "To collect more data"
+        ],
+        "correct": "To evaluate model performance on unseen data"
+    },
+    {
+        "q": "A test set should be _____ from the training data.",
+        "type": "fill_blank",
+        "correct": "separate"
+    },
+    {
+        "q": "The test set should never be used during model training.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "What is accuracy in classification?",
+        "type": "mcq",
+        "o": [
+            "Proportion of correct predictions out of total predictions",
+            "Proportion of false positives",
+            "Average error value",
+            "Model training speed"
+        ],
+        "correct": "Proportion of correct predictions out of total predictions"
+    },
+    {
+        "q": "Accuracy = (Correct Predictions) / (_____ Predictions)",
+        "type": "fill_blank",
+        "correct": "Total"
+    },
+    {
+        "q": "Accuracy is always the best metric for classification.",
+        "type": "true_false",
+        "correct": "False"
+    },
+    {
+        "q": "What is a confusion matrix?",
+        "type": "mcq",
+        "o": [
+            "Table showing predicted vs actual classification results",
+            "Matrix of model weights",
+            "Table of hyperparameters",
+            "Graph of training loss"
+        ],
+        "correct": "Table showing predicted vs actual classification results"
+    },
+    {
+        "q": "A confusion matrix shows true positives, true negatives, false positives, and false _____.",
+        "type": "fill_blank",
+        "correct": "negatives"
+    },
+    {
+        "q": "Match the confusion matrix term with its meaning:",
+        "type": "match",
+        "left": [
+            "True Positive",
+            "True Negative",
+            "False Positive",
+            "False Negative"
+        ],
+        "right": [
+            "Correctly predicted positive",
+            "Correctly predicted negative",
+            "Incorrectly predicted positive",
+            "Incorrectly predicted negative"
         ]
     },
     {
-        "q": "Which metric is commonly used for classification problems?",
-        "c": null,
+        "q": "A confusion matrix can only be used for binary classification.",
+        "type": "true_false",
+        "correct": "False"
+    },
+    {
+        "q": "What is precision in classification?",
+        "type": "mcq",
         "o": [
-            "Accuracy",
-            "Mean Squared Error",
-            "R-squared",
-            "Precision"
-        ]
+            "Proportion of true positives among predicted positives",
+            "Proportion of correct predictions",
+            "Proportion of true negatives",
+            "Average prediction time"
+        ],
+        "correct": "Proportion of true positives among predicted positives"
+    },
+    {
+        "q": "Precision = TP / (TP + _____)",
+        "type": "fill_blank",
+        "correct": "FP"
+    },
+    {
+        "q": "High precision means few false positives.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "What is recall in classification?",
+        "type": "mcq",
+        "o": [
+            "Proportion of true positives among actual positives",
+            "Proportion of true negatives",
+            "Proportion of predicted positives",
+            "Model training accuracy"
+        ],
+        "correct": "Proportion of true positives among actual positives"
+    },
+    {
+        "q": "Recall = TP / (TP + _____)",
+        "type": "fill_blank",
+        "correct": "FN"
+    },
+    {
+        "q": "Recall is also known as sensitivity or true positive rate.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "What is the F1 score?",
+        "type": "mcq",
+        "o": [
+            "Harmonic mean of precision and recall",
+            "Arithmetic mean of precision and recall",
+            "Product of precision and recall",
+            "Sum of precision and recall"
+        ],
+        "correct": "Harmonic mean of precision and recall"
+    },
+    {
+        "q": "F1 score balances _____ and recall.",
+        "type": "fill_blank",
+        "correct": "precision"
+    },
+    {
+        "q": "F1 score ranges from 0 to 1, with 1 being perfect.",
+        "type": "true_false",
+        "correct": "True"
     },
     {
         "q": "What is overfitting?",
-        "c": null,
+        "type": "mcq",
         "o": [
-            "Model performs well on training but poorly on test data",
-            "Model performs equally well on both training and test data",
-            "Model fails to learn the training data",
-            "Model learns from validation data"
-        ]
+            "Model performs well on training data but poorly on new data",
+            "Model performs poorly on all data",
+            "Model trains too slowly",
+            "Model uses too little data"
+        ],
+        "correct": "Model performs well on training data but poorly on new data"
     },
     {
-        "q": "Which of the following is used to split the dataset for model evaluation?",
-        "c": null,
+        "q": "An overfitted model has _____ training error but high test error.",
+        "type": "fill_blank",
+        "correct": "low"
+    },
+    {
+        "q": "Overfitting means the model has memorized the training data.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "What is underfitting?",
+        "type": "mcq",
         "o": [
-            "Train-test split",
-            "Normalization",
-            "Random Forest",
-            "Standardization"
+            "Model is too simple to capture patterns in the data",
+            "Model is too complex",
+            "Model trains too long",
+            "Model uses too much data"
+        ],
+        "correct": "Model is too simple to capture patterns in the data"
+    },
+    {
+        "q": "An underfitted model has _____ error on both training and test data.",
+        "type": "fill_blank",
+        "correct": "high"
+    },
+    {
+        "q": "Underfitting occurs when a model has high bias.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Match the fitting issue with its characteristic:",
+        "type": "match",
+        "left": [
+            "Overfitting",
+            "Underfitting",
+            "Good fit",
+            "High variance"
+        ],
+        "right": [
+            "Low train, high test error",
+            "High train, high test error",
+            "Low train, low test error",
+            "Sensitive to training data"
         ]
     },
     {
         "q": "What is cross-validation?",
-        "c": null,
+        "type": "mcq",
         "o": [
-            "Technique to assess how a model generalizes to new data",
-            "Method for feature scaling",
-            "An algorithm for clustering",
-            "A tool for data augmentation"
+            "Technique to evaluate model by splitting data into multiple folds",
+            "Method to combine multiple models",
+            "Way to collect more data",
+            "Technique to speed up training"
+        ],
+        "correct": "Technique to evaluate model by splitting data into multiple folds"
+    },
+    {
+        "q": "Cross-validation helps get a more _____ estimate of model performance.",
+        "type": "fill_blank",
+        "correct": "reliable"
+    },
+    {
+        "q": "Cross-validation uses all data for both training and validation.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "What is k-fold cross-validation?",
+        "type": "mcq",
+        "o": [
+            "Splitting data into k parts and using each as validation once",
+            "Using k different models",
+            "Training for k epochs",
+            "Using k features"
+        ],
+        "correct": "Splitting data into k parts and using each as validation once"
+    },
+    {
+        "q": "In k-fold CV, the model is trained and validated _____ times.",
+        "type": "fill_blank",
+        "correct": "k"
+    },
+    {
+        "q": "5-fold cross-validation splits data into 5 equal parts.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Arrange the steps in k-fold cross-validation:",
+        "type": "rearrange",
+        "correct": [
+            "Split data into k folds",
+            "Use one fold as validation",
+            "Train on remaining k-1 folds",
+            "Repeat for each fold",
+            "Average the results"
         ]
     },
     {
-        "q": "Which cross-validation method uses all data for training and testing?",
-        "c": null,
+        "q": "What is leave-one-out cross-validation?",
+        "type": "mcq",
         "o": [
-            "Leave-One-Out",
-            "K-Fold",
-            "Stratified Split",
-            "Shuffle Split"
+            "Using each single sample as validation once",
+            "Leaving out one feature",
+            "Removing one model from ensemble",
+            "Skipping one training epoch"
+        ],
+        "correct": "Using each single sample as validation once"
+    },
+    {
+        "q": "Leave-one-out CV is computationally _____ for large datasets.",
+        "type": "fill_blank",
+        "correct": "expensive"
+    },
+    {
+        "q": "Leave-one-out CV has the same number of folds as samples.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "What is a validation set?",
+        "type": "mcq",
+        "o": [
+            "Data used to tune hyperparameters during training",
+            "Data used for final model evaluation",
+            "Data used to train the model",
+            "Data used for deployment"
+        ],
+        "correct": "Data used to tune hyperparameters during training"
+    },
+    {
+        "q": "The validation set helps prevent _____ during hyperparameter tuning.",
+        "type": "fill_blank",
+        "correct": "overfitting"
+    },
+    {
+        "q": "The validation set is different from the test set.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "What is Mean Squared Error (MSE)?",
+        "type": "mcq",
+        "o": [
+            "Average of squared differences between predicted and actual values",
+            "Square root of average error",
+            "Maximum error value",
+            "Minimum error value"
+        ],
+        "correct": "Average of squared differences between predicted and actual values"
+    },
+    {
+        "q": "MSE penalizes _____ errors more heavily.",
+        "type": "fill_blank",
+        "correct": "larger"
+    },
+    {
+        "q": "Lower MSE indicates better model performance.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "What is Root Mean Squared Error (RMSE)?",
+        "type": "mcq",
+        "o": [
+            "Square root of MSE, in same units as target",
+            "MSE divided by sample size",
+            "Logarithm of MSE",
+            "MSE multiplied by 2"
+        ],
+        "correct": "Square root of MSE, in same units as target"
+    },
+    {
+        "q": "RMSE = sqrt(_____)",
+        "type": "fill_blank",
+        "correct": "MSE"
+    },
+    {
+        "q": "RMSE is more interpretable than MSE because it's in original units.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "What is Mean Absolute Error (MAE)?",
+        "type": "mcq",
+        "o": [
+            "Average of absolute differences between predicted and actual values",
+            "Maximum absolute error",
+            "Minimum absolute error",
+            "Sum of all errors"
+        ],
+        "correct": "Average of absolute differences between predicted and actual values"
+    },
+    {
+        "q": "MAE treats all errors _____.",
+        "type": "fill_blank",
+        "correct": "equally"
+    },
+    {
+        "q": "MAE is less sensitive to outliers than MSE.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Match the regression metric with its formula:",
+        "type": "match",
+        "left": [
+            "MSE",
+            "MAE",
+            "RMSE",
+            "R²"
+        ],
+        "right": [
+            "Mean of squared errors",
+            "Mean of absolute errors",
+            "Square root of MSE",
+            "Explained variance ratio"
         ]
     },
     {
-        "q": "What is K-fold cross-validation?",
-        "c": null,
+        "q": "What is R-squared (R²)?",
+        "type": "mcq",
         "o": [
-            "Divides the data into K subsets for training and validation",
-            "A method for tuning hyperparameters",
-            "A method for feature selection",
-            "Algorithm for boosting"
+            "Proportion of variance explained by the model",
+            "Square of correlation",
+            "Regression error rate",
+            "Model complexity measure"
+        ],
+        "correct": "Proportion of variance explained by the model"
+    },
+    {
+        "q": "R² ranges from 0 to 1, with _____ being a perfect fit.",
+        "type": "fill_blank",
+        "correct": "1"
+    },
+    {
+        "q": "R² can be negative for very poor models.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "What is a hyperparameter?",
+        "type": "mcq",
+        "o": [
+            "Parameter set before training that controls learning process",
+            "Parameter learned during training",
+            "Model output value",
+            "Training data feature"
+        ],
+        "correct": "Parameter set before training that controls learning process"
+    },
+    {
+        "q": "Hyperparameters are set _____ training begins.",
+        "type": "fill_blank",
+        "correct": "before"
+    },
+    {
+        "q": "Learning rate is an example of a hyperparameter.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "What is hyperparameter tuning?",
+        "type": "mcq",
+        "o": [
+            "Finding optimal hyperparameter values for a model",
+            "Training model weights",
+            "Collecting more data",
+            "Feature engineering"
+        ],
+        "correct": "Finding optimal hyperparameter values for a model"
+    },
+    {
+        "q": "Hyperparameter tuning aims to improve model _____.",
+        "type": "fill_blank",
+        "correct": "performance"
+    },
+    {
+        "q": "Hyperparameter tuning should use the validation set, not test set.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "What is grid search?",
+        "type": "mcq",
+        "o": [
+            "Exhaustively searching all combinations of hyperparameters",
+            "Randomly selecting hyperparameters",
+            "Using default hyperparameters",
+            "Training multiple models"
+        ],
+        "correct": "Exhaustively searching all combinations of hyperparameters"
+    },
+    {
+        "q": "Grid search evaluates _____ possible combinations.",
+        "type": "fill_blank",
+        "correct": "all"
+    },
+    {
+        "q": "Grid search can be computationally expensive.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "What is random search for hyperparameters?",
+        "type": "mcq",
+        "o": [
+            "Randomly sampling hyperparameter combinations",
+            "Using all combinations",
+            "Sequential optimization",
+            "Default settings"
+        ],
+        "correct": "Randomly sampling hyperparameter combinations"
+    },
+    {
+        "q": "Random search can be more _____ than grid search for many hyperparameters.",
+        "type": "fill_blank",
+        "correct": "efficient"
+    },
+    {
+        "q": "Random search samples from specified distributions.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Match the search method with its approach:",
+        "type": "match",
+        "left": [
+            "Grid search",
+            "Random search",
+            "Bayesian optimization",
+            "Manual tuning"
+        ],
+        "right": [
+            "All combinations",
+            "Random sampling",
+            "Probabilistic model",
+            "Expert selection"
         ]
     },
     {
-        "q": "What does a confusion matrix display?",
-        "c": null,
+        "q": "What is the bias-variance tradeoff?",
+        "type": "mcq",
         "o": [
-            "True positives, false positives, true negatives, and false negatives",
-            "Precision and recall",
-            "Error rates",
-            "Learning rates"
+            "Balancing model simplicity vs complexity for best generalization",
+            "Trading accuracy for speed",
+            "Choosing between models",
+            "Data vs computation tradeoff"
+        ],
+        "correct": "Balancing model simplicity vs complexity for best generalization"
+    },
+    {
+        "q": "High bias leads to _____ while high variance leads to overfitting.",
+        "type": "fill_blank",
+        "correct": "underfitting"
+    },
+    {
+        "q": "The goal is to minimize both bias and variance.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "What is bias in machine learning?",
+        "type": "mcq",
+        "o": [
+            "Error from simplifying assumptions in the model",
+            "Random error in predictions",
+            "Training data error",
+            "Measurement noise"
+        ],
+        "correct": "Error from simplifying assumptions in the model"
+    },
+    {
+        "q": "High bias models are too _____ to capture data patterns.",
+        "type": "fill_blank",
+        "correct": "simple"
+    },
+    {
+        "q": "Linear regression on nonlinear data has high bias.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "What is variance in machine learning?",
+        "type": "mcq",
+        "o": [
+            "Model sensitivity to small fluctuations in training data",
+            "Average prediction error",
+            "Target variable spread",
+            "Feature variability"
+        ],
+        "correct": "Model sensitivity to small fluctuations in training data"
+    },
+    {
+        "q": "High variance models are too _____ to the training data.",
+        "type": "fill_blank",
+        "correct": "sensitive"
+    },
+    {
+        "q": "Complex models with many parameters often have high variance.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Arrange bias-variance concepts from low to high complexity:",
+        "type": "rearrange",
+        "correct": [
+            "High bias, low variance",
+            "Moderate bias, moderate variance",
+            "Low bias, high variance",
+            "Optimal balance point",
+            "Overfitting region"
         ]
     },
     {
-        "q": "What is precision?",
-        "c": null,
+        "q": "What is the ROC curve?",
+        "type": "mcq",
         "o": [
-            "True positives / (True positives + False positives)",
-            "True positives / (True positives + False negatives)",
-            "True negatives / (True negatives + False negatives)",
-            "False negatives / (True negatives + False positives)"
-        ]
+            "Plot of True Positive Rate vs False Positive Rate",
+            "Plot of precision vs recall",
+            "Training loss curve",
+            "Learning rate schedule"
+        ],
+        "correct": "Plot of True Positive Rate vs False Positive Rate"
     },
     {
-        "q": "Which metric measures the balance between precision and recall?",
-        "c": null,
-        "o": [
-            "F1-score",
-            "Accuracy",
-            "ROC-AUC",
-            "Specificity"
-        ]
+        "q": "ROC stands for Receiver Operating _____.",
+        "type": "fill_blank",
+        "correct": "Characteristic"
     },
     {
-        "q": "What is recall?",
-        "c": null,
-        "o": [
-            "True positives / (True positives + False negatives)",
-            "True positives / (True positives + False positives)",
-            "False negatives / (False negatives + True positives)",
-            "True negatives / (True negatives + False negatives)"
-        ]
-    },
-    {
-        "q": "What does ROC stand for?",
-        "c": null,
-        "o": [
-            "Receiver Operating Characteristic",
-            "Random Overlap Curve",
-            "Regression Output Classifier",
-            "Residual Operating Class"
-        ]
-    },
-    {
-        "q": "What does the ROC curve plot?",
-        "c": null,
-        "o": [
-            "True positive rate vs. false positive rate",
-            "Precision vs. recall",
-            "Accuracy vs. error",
-            "Learning rate vs. epochs"
-        ]
+        "q": "A perfect classifier has an ROC curve that passes through (0,1).",
+        "type": "true_false",
+        "correct": "True"
     },
     {
         "q": "What is AUC?",
-        "c": null,
+        "type": "mcq",
         "o": [
-            "Area under the ROC curve",
-            "Accuracy under the classifier",
-            "Area under confidence interval",
-            "Algorithm utility coefficient"
-        ]
+            "Area Under the ROC Curve",
+            "Average User Count",
+            "Automated Update Control",
+            "Accuracy Under Constraints"
+        ],
+        "correct": "Area Under the ROC Curve"
     },
     {
-        "q": "Which metric should be used when class distribution is imbalanced?",
-        "c": null,
-        "o": [
-            "F1-score",
-            "Accuracy",
-            "Mean Squared Error",
-            "R-squared"
-        ]
+        "q": "AUC of _____ indicates a random classifier.",
+        "type": "fill_blank",
+        "correct": "0.5"
     },
     {
-        "q": "Which metric penalizes false positives and false negatives equally?",
-        "c": null,
+        "q": "Higher AUC indicates better classification performance.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "What is specificity?",
+        "type": "mcq",
         "o": [
-            "F1-score",
+            "Proportion of true negatives among actual negatives",
+            "Proportion of true positives",
+            "Overall accuracy",
+            "Prediction confidence"
+        ],
+        "correct": "Proportion of true negatives among actual negatives"
+    },
+    {
+        "q": "Specificity = TN / (TN + _____)",
+        "type": "fill_blank",
+        "correct": "FP"
+    },
+    {
+        "q": "Specificity is also called the true negative rate.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "What is a classification threshold?",
+        "type": "mcq",
+        "o": [
+            "Probability cutoff for classifying as positive or negative",
+            "Maximum number of classes",
+            "Training iteration limit",
+            "Feature selection criterion"
+        ],
+        "correct": "Probability cutoff for classifying as positive or negative"
+    },
+    {
+        "q": "Lowering the threshold increases _____ but may decrease precision.",
+        "type": "fill_blank",
+        "correct": "recall"
+    },
+    {
+        "q": "The default classification threshold is usually 0.5.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Match the metric with what it measures:",
+        "type": "match",
+        "left": [
             "Precision",
-            "Specificity",
-            "Mean Absolute Error"
-        ]
-    },
-    {
-        "q": "What is the goal of hyperparameter tuning?",
-        "c": null,
-        "o": [
-            "Optimize model performance",
-            "Train the model faster",
-            "Increase dataset size",
-            "Reduce overfitting"
-        ]
-    },
-    {
-        "q": "Which method is commonly used for hyperparameter tuning?",
-        "c": null,
-        "o": [
-            "Grid Search",
-            "Gradient Descent",
-            "Bagging",
-            "Normalization"
-        ]
-    },
-    {
-        "q": "What is the difference between validation and test data?",
-        "c": null,
-        "o": [
-            "Validation is used to tune the model, test data is used for final evaluation",
-            "Validation is larger than test data",
-            "Validation is for overfitting detection, test data is for training",
-            "No difference"
-        ]
-    },
-    {
-        "q": "Which technique can prevent overfitting?",
-        "c": null,
-        "o": [
-            "Regularization",
-            "Increasing model complexity",
-            "Early stopping",
-            "Cross-validation"
-        ]
-    },
-    {
-        "q": "Which regularization method adds the absolute value of weights as a penalty term?",
-        "c": null,
-        "o": [
-            "L1 regularization",
-            "L2 regularization",
-            "Dropout",
-            "Bagging"
-        ]
-    },
-    {
-        "q": "What is the purpose of the validation set?",
-        "c": null,
-        "o": [
-            "To tune hyperparameters",
-            "To train the model",
-            "To test the model",
-            "To reduce overfitting"
-        ]
-    },
-    {
-        "q": "What does early stopping do?",
-        "c": null,
-        "o": [
-            "Stops training when validation error increases",
-            "Stops training after all data is seen",
-            "Continues training until model converges",
-            "Stops model testing early"
-        ]
-    },
-    {
-        "q": "Which metric is most important for a medical diagnostic system?",
-        "c": null,
-        "o": [
             "Recall",
-            "Accuracy",
-            "Precision",
-            "F1-score"
-        ]
-    },
-    {
-        "q": "Which type of error occurs when a model predicts a positive class incorrectly?",
-        "c": null,
-        "o": [
-            "False Positive",
-            "False Negative",
-            "True Positive",
-            "True Negative"
-        ]
-    },
-    {
-        "q": "What is model generalization?",
-        "c": null,
-        "o": [
-            "Model’s ability to perform well on unseen data",
-            "Model’s ability to memorize training data",
-            "Model’s ability to predict validation data",
-            "Model’s ability to adjust hyperparameters"
-        ]
-    },
-    {
-        "q": "Which metric measures error for regression problems?",
-        "c": null,
-        "o": [
-            "Mean Squared Error",
-            "F1-score",
-            "Accuracy",
-            "Precision"
-        ]
-    },
-    {
-        "q": "What is the purpose of a test set?",
-        "c": null,
-        "o": [
-            "Evaluate the final model performance",
-            "Tune model parameters",
-            "Train the model",
-            "Normalize data"
-        ]
-    },
-    {
-        "q": "Which of the following is a method to validate regression models?",
-        "c": null,
-        "o": [
-            "R-squared",
-            "Accuracy",
-            "F1-score",
-            "Confusion Matrix"
-        ]
-    },
-    {
-        "q": "What is bias in model evaluation?",
-        "c": null,
-        "o": [
-            "Difference between predicted and actual values",
-            "Model’s error on the training data",
-            "Error due to noise in data",
-            "Model’s complexity"
-        ]
-    },
-    {
-        "q": "Which technique is used to evaluate how well a model will perform on unseen data?",
-        "c": null,
-        "o": [
-            "Cross-validation",
-            "Clustering",
-            "Feature scaling",
-            "Random sampling"
-        ]
-    },
-    {
-        "q": "What is model validation in machine learning?",
-        "c": null,
-        "o": [
-            "Checking model performance on unseen data",
-            "Increasing model complexity",
-            "Removing outliers from data",
-            "Reducing dimensionality"
-        ]
-    },
-    {
-        "q": "What is the purpose of a confusion matrix?",
-        "c": null,
-        "o": [
-            "To visualize the performance of a classification model",
-            "To calculate regression errors",
-            "To balance class weights",
-            "To standardize the dataset"
-        ]
-    },
-    {
-        "q": "What does sensitivity measure in a model?",
-        "c": null,
-        "o": [
-            "True positive rate",
-            "True negative rate",
-            "False positive rate",
-            "False negative rate"
-        ]
-    },
-    {
-        "q": "What does specificity measure in a model?",
-        "c": null,
-        "o": [
-            "True negative rate",
-            "True positive rate",
-            "False negative rate",
+            "Specificity",
             "Accuracy"
+        ],
+        "right": [
+            "Positive predictive value",
+            "Sensitivity/TPR",
+            "True negative rate",
+            "Overall correctness"
         ]
     },
     {
-        "q": "What does k represent in k-fold cross-validation?",
-        "c": null,
+        "q": "What is stratified sampling?",
+        "type": "mcq",
         "o": [
-            "Number of subsets data is split into",
-            "Number of iterations",
-            "Number of epochs",
-            "Number of features used"
-        ]
+            "Ensuring class proportions are maintained in train/test splits",
+            "Random sampling",
+            "Sequential sampling",
+            "Weighted sampling"
+        ],
+        "correct": "Ensuring class proportions are maintained in train/test splits"
     },
     {
-        "q": "In model evaluation, what is bias?",
-        "c": null,
+        "q": "Stratified sampling preserves class _____ across splits.",
+        "type": "fill_blank",
+        "correct": "distribution"
+    },
+    {
+        "q": "Stratified sampling is important for imbalanced datasets.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "What is data leakage?",
+        "type": "mcq",
         "o": [
-            "Error introduced by approximating a real-world problem with a simpler model",
-            "Error caused by a model's inability to capture the data's complexity",
-            "Error caused by random fluctuations in the training data",
-            "Error due to the use of a noisy dataset"
-        ]
+            "When information from test data influences training",
+            "Loss of training data",
+            "Data corruption",
+            "Network security issue"
+        ],
+        "correct": "When information from test data influences training"
     },
     {
-        "q": "What is variance in the context of model evaluation?",
-        "c": null,
+        "q": "Data leakage leads to _____ optimistic performance estimates.",
+        "type": "fill_blank",
+        "correct": "overly"
+    },
+    {
+        "q": "Feature engineering using test data causes data leakage.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "What is a learning curve?",
+        "type": "mcq",
         "o": [
-            "Error due to model’s sensitivity to small changes in the training data",
-            "Model's generalization ability",
-            "Difference between predicted and actual values",
-            "Measure of model’s complexity"
-        ]
+            "Plot showing model performance vs training set size",
+            "Path of gradient descent",
+            "Neural network activation function",
+            "Rate of learning change"
+        ],
+        "correct": "Plot showing model performance vs training set size"
     },
     {
-        "q": "What type of model evaluation involves splitting data into training, validation, and test sets?",
-        "c": null,
-        "o": [
-            "Hold-out validation",
-            "K-fold cross-validation",
-            "Bootstrap validation",
-            "Leave-one-out cross-validation"
-        ]
+        "q": "Learning curves help diagnose _____ and underfitting.",
+        "type": "fill_blank",
+        "correct": "overfitting"
     },
     {
-        "q": "Which method is most commonly used for model evaluation on imbalanced datasets?",
-        "c": null,
-        "o": [
-            "F1-score",
-            "Accuracy",
-            "Mean Absolute Error",
-            "R-squared"
-        ]
+        "q": "Converging training and validation curves indicate good fit.",
+        "type": "true_false",
+        "correct": "True"
     },
     {
-        "q": "What is the main drawback of the hold-out method?",
-        "c": null,
-        "o": [
-            "Less efficient use of the dataset",
-            "Leads to overfitting",
-            "Works poorly with large datasets",
-            "Increases computational complexity"
-        ]
-    },
-    {
-        "q": "Which performance metric considers both false positives and false negatives?",
-        "c": null,
-        "o": [
-            "F1-score",
-            "Accuracy",
-            "Specificity",
-            "Recall"
-        ]
-    },
-    {
-        "q": "Which validation technique uses subsets of data to avoid overfitting?",
-        "c": null,
-        "o": [
-            "Cross-validation",
-            "Bootstrapping",
-            "Feature scaling",
-            "Normalization"
-        ]
-    },
-    {
-        "q": "Which model evaluation technique randomly resamples data with replacement?",
-        "c": null,
-        "o": [
-            "Bootstrapping",
-            "K-fold cross-validation",
-            "Hold-out validation",
-            "Leave-one-out validation"
-        ]
-    },
-    {
-        "q": "What is the objective of cross-validation?",
-        "c": null,
-        "o": [
-            "To estimate how well the model will perform on unseen data",
-            "To reduce the size of the dataset",
-            "To improve the speed of model training",
-            "To minimize data preprocessing"
-        ]
-    },
-    {
-        "q": "Which of the following is true about precision?",
-        "c": null,
-        "o": [
-            "It is the ratio of true positives to all predicted positives",
-            "It is the ratio of true negatives to all actual negatives",
-            "It is the ratio of true positives to all actual positives",
-            "It is the ratio of false positives to true negatives"
-        ]
-    },
-    {
-        "q": "What is the role of a validation set in model training?",
-        "c": null,
-        "o": [
-            "To tune model hyperparameters",
-            "To train the model",
-            "To generate synthetic data",
-            "To reduce model variance"
-        ]
-    },
-    {
-        "q": "Which metric is most useful when classes in a dataset are imbalanced?",
-        "c": null,
-        "o": [
-            "ROC-AUC",
-            "Accuracy",
-            "Mean Absolute Error",
-            "Adjusted R-squared"
-        ]
-    },
-    {
-        "q": "What is the risk of using only training accuracy for model evaluation?",
-        "c": null,
+        "q": "What does a large gap between training and validation curves indicate?",
+        "type": "mcq",
         "o": [
             "Overfitting",
             "Underfitting",
-            "Bias",
-            "Variance"
-        ]
+            "Perfect fit",
+            "Data leakage"
+        ],
+        "correct": "Overfitting"
     },
     {
-        "q": "What is the purpose of a learning curve?",
-        "c": null,
-        "o": [
-            "To show how model performance improves with more data",
-            "To show model loss after each epoch",
-            "To demonstrate how a model makes predictions",
-            "To compare different models"
-        ]
+        "q": "If both curves plateau at high error, the model is _____.",
+        "type": "fill_blank",
+        "correct": "underfitting"
     },
     {
-        "q": "Which is true about the recall metric?",
-        "c": null,
-        "o": [
-            "It measures how many of the actual positives were predicted correctly",
-            "It measures how many of the predicted positives were correct",
-            "It evaluates model variance",
-            "It is used for regression tasks"
-        ]
+        "q": "More training data helps reduce overfitting.",
+        "type": "true_false",
+        "correct": "True"
     },
     {
-        "q": "What is stratified cross-validation?",
-        "c": null,
+        "q": "What is regularization?",
+        "type": "mcq",
         "o": [
-            "It maintains the class distribution across folds",
-            "It randomly shuffles data across folds",
-            "It increases model variance",
-            "It decreases the number of training folds"
-        ]
+            "Technique to prevent overfitting by adding penalty to model complexity",
+            "Method to speed up training",
+            "Data preprocessing step",
+            "Feature selection technique"
+        ],
+        "correct": "Technique to prevent overfitting by adding penalty to model complexity"
     },
     {
-        "q": "What is the difference between accuracy and F1-score?",
-        "c": null,
-        "o": [
-            "F1-score considers both precision and recall, accuracy does not",
-            "Accuracy measures error, F1-score measures true negatives",
-            "F1-score is for regression models, accuracy is for classification",
-            "F1-score is used when datasets are balanced"
-        ]
+        "q": "L2 regularization adds the sum of _____ weights to the loss.",
+        "type": "fill_blank",
+        "correct": "squared"
     },
     {
-        "q": "What does a low bias and high variance model indicate?",
-        "c": null,
-        "o": [
-            "Overfitting",
-            "Underfitting",
-            "Correct generalization",
-            "Model stability"
-        ]
+        "q": "L1 regularization can produce sparse models.",
+        "type": "true_false",
+        "correct": "True"
     },
     {
-        "q": "What does the term 'regularization' mean in model training?",
-        "c": null,
-        "o": [
-            "Adding a penalty term to reduce model complexity",
-            "Increasing the model complexity",
-            "Introducing more features",
-            "Reducing the training time"
-        ]
-    },
-    {
-        "q": "Which of the following is a performance metric used in regression?",
-        "c": null,
-        "o": [
-            "Mean Squared Error",
-            "Precision",
-            "Accuracy",
-            "F1-score"
-        ]
-    },
-    {
-        "q": "Which evaluation metric can handle a trade-off between precision and recall?",
-        "c": null,
-        "o": [
-            "F1-score",
-            "Accuracy",
-            "ROC-AUC",
-            "Mean Absolute Error"
-        ]
-    },
-    {
-        "q": "What does the term 'model underfitting' mean?",
-        "c": null,
-        "o": [
-            "Model fails to capture the underlying pattern in the data",
-            "Model performs well on training but poorly on test data",
-            "Model performs equally well on training and test data",
-            "Model has too many parameters"
-        ]
-    },
-    {
-        "q": "What is the objective of using L2 regularization?",
-        "c": null,
-        "o": [
-            "To reduce overfitting by shrinking large model coefficients",
-            "To improve model speed by pruning features",
-            "To enhance recall over precision",
-            "To increase the dataset size"
-        ]
-    },
-    {
-        "q": "Which performance metric is best for a regression model?",
-        "c": null,
-        "o": [
-            "Mean Absolute Error",
-            "Precision",
-            "Recall",
-            "F1-score"
-        ]
-    },
-    {
-        "q": "What happens when a model is too complex?",
-        "c": null,
-        "o": [
-            "It may overfit the training data",
-            "It may underfit the training data",
-            "It will generalize better on test data",
-            "It will reduce bias"
-        ]
-    },
-    {
-        "q": "What is grid search used for?",
-        "c": null,
-        "o": [
-            "Hyperparameter tuning",
+        "q": "Match the regularization technique with its effect:",
+        "type": "match",
+        "left": [
+            "L1 (Lasso)",
+            "L2 (Ridge)",
+            "Elastic Net",
+            "Dropout"
+        ],
+        "right": [
             "Feature selection",
-            "Model evaluation",
+            "Weight shrinkage",
+            "Combined L1+L2",
+            "Random neuron deactivation"
+        ]
+    },
+    {
+        "q": "What is early stopping?",
+        "type": "mcq",
+        "o": [
+            "Stopping training when validation performance stops improving",
+            "Stopping after fixed epochs",
+            "Initializing with small weights",
+            "Using small batch size"
+        ],
+        "correct": "Stopping training when validation performance stops improving"
+    },
+    {
+        "q": "Early stopping prevents _____ by monitoring validation loss.",
+        "type": "fill_blank",
+        "correct": "overfitting"
+    },
+    {
+        "q": "Early stopping is a form of implicit regularization.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "What is the precision-recall curve?",
+        "type": "mcq",
+        "o": [
+            "Plot showing precision vs recall at different thresholds",
+            "Plot of training vs validation accuracy",
+            "Learning rate schedule",
+            "Loss function visualization"
+        ],
+        "correct": "Plot showing precision vs recall at different thresholds"
+    },
+    {
+        "q": "The area under the precision-recall curve is called _____.",
+        "type": "fill_blank",
+        "correct": "AUPRC"
+    },
+    {
+        "q": "Precision-recall curves are useful for imbalanced datasets.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "What is macro averaging for multi-class metrics?",
+        "type": "mcq",
+        "o": [
+            "Computing metric for each class and averaging equally",
+            "Weighted average by class frequency",
+            "Single global computation",
+            "Maximum across classes"
+        ],
+        "correct": "Computing metric for each class and averaging equally"
+    },
+    {
+        "q": "Macro averaging treats all classes _____.",
+        "type": "fill_blank",
+        "correct": "equally"
+    },
+    {
+        "q": "Macro averaging is less affected by class imbalance than micro averaging.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "What is micro averaging?",
+        "type": "mcq",
+        "o": [
+            "Computing global TP, FP, FN across all classes",
+            "Averaging per-class metrics",
+            "Using only minority class",
+            "Weighted by inverse frequency"
+        ],
+        "correct": "Computing global TP, FP, FN across all classes"
+    },
+    {
+        "q": "Micro averaging gives more weight to _____ classes.",
+        "type": "fill_blank",
+        "correct": "larger"
+    },
+    {
+        "q": "Micro F1 equals overall accuracy for multi-class problems.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "What is weighted averaging in multi-class metrics?",
+        "type": "mcq",
+        "o": [
+            "Averaging metrics weighted by class support",
+            "Equal weight to all classes",
+            "Only using majority class",
+            "Random weighting"
+        ],
+        "correct": "Averaging metrics weighted by class support"
+    },
+    {
+        "q": "Weighted averaging considers class _____ when computing metrics.",
+        "type": "fill_blank",
+        "correct": "imbalance"
+    },
+    {
+        "q": "Match the averaging method with its characteristic:",
+        "type": "match",
+        "left": [
+            "Micro",
+            "Macro",
+            "Weighted",
+            "Samples"
+        ],
+        "right": [
+            "Global pooling",
+            "Equal class importance",
+            "Support-weighted",
+            "Per-sample average"
+        ]
+    },
+    {
+        "q": "What is Cohen's Kappa?",
+        "type": "mcq",
+        "o": [
+            "Metric measuring agreement accounting for chance",
+            "Measure of model complexity",
+            "Learning rate coefficient",
+            "Regularization strength"
+        ],
+        "correct": "Metric measuring agreement accounting for chance"
+    },
+    {
+        "q": "Kappa of _____ indicates perfect agreement.",
+        "type": "fill_blank",
+        "correct": "1"
+    },
+    {
+        "q": "Cohen's Kappa is more robust than accuracy for imbalanced classes.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "What is log loss (cross-entropy loss)?",
+        "type": "mcq",
+        "o": [
+            "Loss function that penalizes confident wrong predictions heavily",
+            "Logarithm of training time",
+            "Log of model weights",
+            "Loss from data logging"
+        ],
+        "correct": "Loss function that penalizes confident wrong predictions heavily"
+    },
+    {
+        "q": "Log loss uses _____ probabilities rather than hard predictions.",
+        "type": "fill_blank",
+        "correct": "predicted"
+    },
+    {
+        "q": "Lower log loss indicates better probability calibration.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "What is model calibration?",
+        "type": "mcq",
+        "o": [
+            "Aligning predicted probabilities with actual outcome frequencies",
+            "Adjusting model weights",
+            "Setting hyperparameters",
+            "Data normalization"
+        ],
+        "correct": "Aligning predicted probabilities with actual outcome frequencies"
+    },
+    {
+        "q": "A well-calibrated model's confidence matches its _____.",
+        "type": "fill_blank",
+        "correct": "accuracy"
+    },
+    {
+        "q": "Platt scaling is a post-hoc calibration method.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "What is a calibration curve?",
+        "type": "mcq",
+        "o": [
+            "Plot of predicted probabilities vs actual frequencies",
+            "Learning curve plot",
+            "ROC curve variant",
+            "Loss curve"
+        ],
+        "correct": "Plot of predicted probabilities vs actual frequencies"
+    },
+    {
+        "q": "A perfectly calibrated model has a calibration curve along the _____.",
+        "type": "fill_blank",
+        "correct": "diagonal"
+    },
+    {
+        "q": "Isotonic regression can calibrate predicted probabilities.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Arrange calibration methods by complexity:",
+        "type": "rearrange",
+        "correct": [
+            "Temperature scaling",
+            "Platt scaling",
+            "Histogram binning",
+            "Isotonic regression",
+            "Beta calibration"
+        ]
+    },
+    {
+        "q": "What is the Brier score?",
+        "type": "mcq",
+        "o": [
+            "Mean squared error of predicted probabilities",
+            "Classification accuracy",
+            "Model complexity score",
+            "Training time metric"
+        ],
+        "correct": "Mean squared error of predicted probabilities"
+    },
+    {
+        "q": "Lower Brier score indicates _____ probability predictions.",
+        "type": "fill_blank",
+        "correct": "better"
+    },
+    {
+        "q": "Brier score combines calibration and discrimination.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "What is nested cross-validation?",
+        "type": "mcq",
+        "o": [
+            "Two loops of CV - outer for evaluation, inner for hyperparameter tuning",
+            "Single loop of CV",
+            "Leave-one-out variant",
+            "Stratified sampling"
+        ],
+        "correct": "Two loops of CV - outer for evaluation, inner for hyperparameter tuning"
+    },
+    {
+        "q": "Nested CV prevents _____ from hyperparameter tuning.",
+        "type": "fill_blank",
+        "correct": "overfitting"
+    },
+    {
+        "q": "Nested CV gives an unbiased estimate of model performance.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "What is time series cross-validation?",
+        "type": "mcq",
+        "o": [
+            "CV that respects temporal ordering of data",
+            "Standard k-fold CV",
+            "Random time sampling",
+            "Leave-one-out CV"
+        ],
+        "correct": "CV that respects temporal ordering of data"
+    },
+    {
+        "q": "Time series CV uses only _____ data for training.",
+        "type": "fill_blank",
+        "correct": "past"
+    },
+    {
+        "q": "Standard k-fold CV can cause data leakage with time series data.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "What is group k-fold cross-validation?",
+        "type": "mcq",
+        "o": [
+            "CV ensuring groups are not split across train and validation",
+            "Standard k-fold",
+            "Stratified k-fold",
+            "Leave-one-out"
+        ],
+        "correct": "CV ensuring groups are not split across train and validation"
+    },
+    {
+        "q": "Group k-fold is used when samples have _____ dependencies.",
+        "type": "fill_blank",
+        "correct": "group"
+    },
+    {
+        "q": "Group k-fold prevents leakage from related samples.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Match the CV type with its use case:",
+        "type": "match",
+        "left": [
+            "Standard k-fold",
+            "Stratified k-fold",
+            "Time series CV",
+            "Group k-fold"
+        ],
+        "right": [
+            "General purpose",
+            "Imbalanced classes",
+            "Temporal data",
+            "Related samples"
+        ]
+    },
+    {
+        "q": "What is bootstrap sampling?",
+        "type": "mcq",
+        "o": [
+            "Sampling with replacement to estimate statistics",
+            "Sampling without replacement",
+            "Stratified sampling",
+            "Cluster sampling"
+        ],
+        "correct": "Sampling with replacement to estimate statistics"
+    },
+    {
+        "q": "Bootstrap creates multiple samples by sampling with _____.",
+        "type": "fill_blank",
+        "correct": "replacement"
+    },
+    {
+        "q": "Bootstrap can estimate confidence intervals for model performance.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "What is the .632 bootstrap?",
+        "type": "mcq",
+        "o": [
+            "Bootstrap estimator that combines in-bag and out-of-bag estimates",
+            "Standard bootstrap",
+            "Stratified bootstrap",
+            "Weighted bootstrap"
+        ],
+        "correct": "Bootstrap estimator that combines in-bag and out-of-bag estimates"
+    },
+    {
+        "q": "About _____ of samples appear in each bootstrap sample.",
+        "type": "fill_blank",
+        "correct": "63.2%"
+    },
+    {
+        "q": "Out-of-bag samples can be used for validation.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "What is statistical significance testing for models?",
+        "type": "mcq",
+        "o": [
+            "Determining if performance differences are real or due to chance",
+            "Testing model accuracy",
+            "Checking data quality",
+            "Validating features"
+        ],
+        "correct": "Determining if performance differences are real or due to chance"
+    },
+    {
+        "q": "A p-value less than _____ is typically considered significant.",
+        "type": "fill_blank",
+        "correct": "0.05"
+    },
+    {
+        "q": "McNemar's test compares two classifiers on paired data.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "What is the paired t-test for model comparison?",
+        "type": "mcq",
+        "o": [
+            "Statistical test comparing means of paired observations",
+            "Unpaired comparison test",
+            "Single model test",
+            "Variance test"
+        ],
+        "correct": "Statistical test comparing means of paired observations"
+    },
+    {
+        "q": "Paired t-test assumes normally distributed _____.",
+        "type": "fill_blank",
+        "correct": "differences"
+    },
+    {
+        "q": "Wilcoxon signed-rank test is a non-parametric alternative to paired t-test.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "What is Adjusted R-squared?",
+        "type": "mcq",
+        "o": [
+            "R² adjusted for number of predictors",
+            "Standard R²",
+            "Squared correlation",
+            "Average of R²"
+        ],
+        "correct": "R² adjusted for number of predictors"
+    },
+    {
+        "q": "Adjusted R² penalizes adding _____ features.",
+        "type": "fill_blank",
+        "correct": "irrelevant"
+    },
+    {
+        "q": "Adjusted R² can decrease when adding unhelpful predictors.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "What is MAPE (Mean Absolute Percentage Error)?",
+        "type": "mcq",
+        "o": [
+            "Average of absolute percentage differences",
+            "Maximum percentage error",
+            "Minimum percentage error",
+            "Standard percentage deviation"
+        ],
+        "correct": "Average of absolute percentage differences"
+    },
+    {
+        "q": "MAPE is undefined when actual values are _____.",
+        "type": "fill_blank",
+        "correct": "zero"
+    },
+    {
+        "q": "MAPE is scale-independent and expressed as a percentage.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "What is SMAPE (Symmetric MAPE)?",
+        "type": "mcq",
+        "o": [
+            "MAPE variant that handles zero values better",
+            "Standard MAPE",
+            "Weighted MAPE",
+            "Squared MAPE"
+        ],
+        "correct": "MAPE variant that handles zero values better"
+    },
+    {
+        "q": "SMAPE uses the average of actual and predicted in the _____.",
+        "type": "fill_blank",
+        "correct": "denominator"
+    },
+    {
+        "q": "SMAPE ranges from 0% to 200%.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Match the regression metric with its interpretation:",
+        "type": "match",
+        "left": [
+            "R²",
+            "RMSE",
+            "MAPE",
+            "MAE"
+        ],
+        "right": [
+            "Explained variance",
+            "Same units as target",
+            "Percentage error",
+            "Average absolute deviation"
+        ]
+    },
+    {
+        "q": "What is Matthews Correlation Coefficient (MCC)?",
+        "type": "mcq",
+        "o": [
+            "Balanced metric using all confusion matrix values",
+            "Simple correlation",
+            "Accuracy variant",
+            "Precision variant"
+        ],
+        "correct": "Balanced metric using all confusion matrix values"
+    },
+    {
+        "q": "MCC ranges from _____ to +1.",
+        "type": "fill_blank",
+        "correct": "-1"
+    },
+    {
+        "q": "MCC is considered the most informative single metric for binary classification.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "What is the F-beta score?",
+        "type": "mcq",
+        "o": [
+            "Generalized F1 score with adjustable precision-recall weighting",
+            "Standard F1 score",
+            "Beta distribution metric",
+            "Feature importance score"
+        ],
+        "correct": "Generalized F1 score with adjustable precision-recall weighting"
+    },
+    {
+        "q": "F2 score weights _____ twice as much as precision.",
+        "type": "fill_blank",
+        "correct": "recall"
+    },
+    {
+        "q": "F0.5 score emphasizes precision over recall.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "What is the balanced accuracy?",
+        "type": "mcq",
+        "o": [
+            "Average of sensitivity and specificity",
+            "Standard accuracy",
+            "Weighted accuracy",
+            "Maximum accuracy"
+        ],
+        "correct": "Average of sensitivity and specificity"
+    },
+    {
+        "q": "Balanced accuracy handles _____ imbalance better than accuracy.",
+        "type": "fill_blank",
+        "correct": "class"
+    },
+    {
+        "q": "Balanced accuracy equals accuracy for balanced datasets.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "What is class imbalance?",
+        "type": "mcq",
+        "o": [
+            "When classes have very different sample sizes",
+            "Equal class distribution",
+            "Feature imbalance",
+            "Model bias"
+        ],
+        "correct": "When classes have very different sample sizes"
+    },
+    {
+        "q": "Accuracy is misleading for _____ datasets.",
+        "type": "fill_blank",
+        "correct": "imbalanced"
+    },
+    {
+        "q": "Undersampling reduces the majority class size.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "What is oversampling?",
+        "type": "mcq",
+        "o": [
+            "Increasing minority class samples",
+            "Reducing majority class",
+            "Feature selection",
+            "Data normalization"
+        ],
+        "correct": "Increasing minority class samples"
+    },
+    {
+        "q": "SMOTE creates synthetic _____ class samples.",
+        "type": "fill_blank",
+        "correct": "minority"
+    },
+    {
+        "q": "SMOTE interpolates between minority class neighbors.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Arrange techniques for handling class imbalance:",
+        "type": "rearrange",
+        "correct": [
+            "Collect more minority samples",
+            "Apply resampling techniques",
+            "Use class weights",
+            "Try threshold adjustment",
+            "Use appropriate metrics"
+        ]
+    },
+    {
+        "q": "What is cost-sensitive learning?",
+        "type": "mcq",
+        "o": [
+            "Assigning different misclassification costs to different classes",
+            "Reducing computational cost",
+            "Low-cost models",
+            "Budget constraints"
+        ],
+        "correct": "Assigning different misclassification costs to different classes"
+    },
+    {
+        "q": "Cost-sensitive learning assigns higher _____ to minority class errors.",
+        "type": "fill_blank",
+        "correct": "weights"
+    },
+    {
+        "q": "Class weights can be inversely proportional to class frequency.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "What is Bayesian optimization for hyperparameters?",
+        "type": "mcq",
+        "o": [
+            "Using probabilistic model to guide hyperparameter search",
+            "Grid search",
+            "Random search",
+            "Manual tuning"
+        ],
+        "correct": "Using probabilistic model to guide hyperparameter search"
+    },
+    {
+        "q": "Bayesian optimization builds a _____ model of the objective function.",
+        "type": "fill_blank",
+        "correct": "surrogate"
+    },
+    {
+        "q": "Bayesian optimization balances exploration and exploitation.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "What is the acquisition function in Bayesian optimization?",
+        "type": "mcq",
+        "o": [
+            "Function that determines next hyperparameters to try",
+            "Objective function",
+            "Loss function",
+            "Activation function"
+        ],
+        "correct": "Function that determines next hyperparameters to try"
+    },
+    {
+        "q": "Expected improvement (EI) is a common _____ function.",
+        "type": "fill_blank",
+        "correct": "acquisition"
+    },
+    {
+        "q": "Gaussian Process is commonly used as surrogate in Bayesian optimization.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Match the optimization method with its characteristic:",
+        "type": "match",
+        "left": [
+            "Grid search",
+            "Random search",
+            "Bayesian",
+            "Hyperband"
+        ],
+        "right": [
+            "Exhaustive",
+            "Unguided sampling",
+            "Model-guided",
+            "Adaptive budgeting"
+        ]
+    },
+    {
+        "q": "What is Hyperband?",
+        "type": "mcq",
+        "o": [
+            "Hyperparameter optimization using adaptive resource allocation",
+            "Standard grid search",
+            "Bayesian method",
+            "Random search variant"
+        ],
+        "correct": "Hyperparameter optimization using adaptive resource allocation"
+    },
+    {
+        "q": "Hyperband quickly _____ poor configurations early.",
+        "type": "fill_blank",
+        "correct": "eliminates"
+    },
+    {
+        "q": "Hyperband combines random search with early stopping.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "What is a validation curve?",
+        "type": "mcq",
+        "o": [
+            "Plot of performance vs hyperparameter value",
+            "Learning curve",
+            "Loss curve",
+            "ROC curve"
+        ],
+        "correct": "Plot of performance vs hyperparameter value"
+    },
+    {
+        "q": "Validation curves help identify optimal _____ values.",
+        "type": "fill_blank",
+        "correct": "hyperparameter"
+    },
+    {
+        "q": "Validation curves can reveal under/overfitting regions.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "What is model complexity curve?",
+        "type": "mcq",
+        "o": [
+            "Plot showing bias-variance tradeoff with model complexity",
+            "Training time curve",
+            "Memory usage curve",
+            "Data size curve"
+        ],
+        "correct": "Plot showing bias-variance tradeoff with model complexity"
+    },
+    {
+        "q": "Model complexity curve shows where _____ and variance intersect.",
+        "type": "fill_blank",
+        "correct": "bias"
+    },
+    {
+        "q": "Optimal complexity minimizes total expected error.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "What is expected calibration error (ECE)?",
+        "type": "mcq",
+        "o": [
+            "Weighted average of calibration error across bins",
+            "Maximum calibration error",
+            "Minimum calibration error",
+            "Average prediction error"
+        ],
+        "correct": "Weighted average of calibration error across bins"
+    },
+    {
+        "q": "ECE measures how well predicted probabilities match _____.",
+        "type": "fill_blank",
+        "correct": "frequencies"
+    },
+    {
+        "q": "Lower ECE indicates better calibration.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "What is temperature scaling for calibration?",
+        "type": "mcq",
+        "o": [
+            "Dividing logits by a learned temperature parameter",
+            "Using temperature as hyperparameter",
+            "Training at different temperatures",
+            "Annealing schedule"
+        ],
+        "correct": "Dividing logits by a learned temperature parameter"
+    },
+    {
+        "q": "Temperature greater than 1 makes predictions less _____.",
+        "type": "fill_blank",
+        "correct": "confident"
+    },
+    {
+        "q": "Temperature scaling is a simple and effective calibration method.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Arrange the steps in model selection pipeline:",
+        "type": "rearrange",
+        "correct": [
+            "Split data into train/test",
+            "Define hyperparameter search space",
+            "Perform cross-validation",
+            "Select best hyperparameters",
+            "Evaluate on test set"
+        ]
+    },
+    {
+        "q": "What is the holdout method?",
+        "type": "mcq",
+        "o": [
+            "Splitting data once into train and test sets",
+            "Using all data for training",
+            "Cross-validation",
+            "Bootstrap method"
+        ],
+        "correct": "Splitting data once into train and test sets"
+    },
+    {
+        "q": "Common holdout splits are 70-30 or _____-20.",
+        "type": "fill_blank",
+        "correct": "80"
+    },
+    {
+        "q": "Holdout method can have high variance with small datasets.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "What is repeated k-fold cross-validation?",
+        "type": "mcq",
+        "o": [
+            "Running k-fold CV multiple times with different random splits",
+            "Single k-fold run",
+            "Leave-one-out CV",
+            "Stratified k-fold"
+        ],
+        "correct": "Running k-fold CV multiple times with different random splits"
+    },
+    {
+        "q": "Repeated CV provides more _____ performance estimates.",
+        "type": "fill_blank",
+        "correct": "stable"
+    },
+    {
+        "q": "Repeated CV reduces variance of performance estimates.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "What is feature importance evaluation?",
+        "type": "mcq",
+        "o": [
+            "Measuring how much each feature contributes to predictions",
+            "Selecting features",
+            "Creating new features",
+            "Normalizing features"
+        ],
+        "correct": "Measuring how much each feature contributes to predictions"
+    },
+    {
+        "q": "Permutation importance measures decrease in performance when feature is _____.",
+        "type": "fill_blank",
+        "correct": "shuffled"
+    },
+    {
+        "q": "SHAP values provide consistent feature importance measures.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Match the feature importance method with its approach:",
+        "type": "match",
+        "left": [
+            "Permutation",
+            "Tree-based",
+            "SHAP",
+            "LIME"
+        ],
+        "right": [
+            "Shuffle feature values",
+            "Split statistics",
+            "Shapley values",
+            "Local linear model"
+        ]
+    },
+    {
+        "q": "What is partial dependence plot?",
+        "type": "mcq",
+        "o": [
+            "Plot showing effect of a feature on predictions",
+            "Feature correlation plot",
+            "Learning curve",
+            "Residual plot"
+        ],
+        "correct": "Plot showing effect of a feature on predictions"
+    },
+    {
+        "q": "Partial dependence plots marginalize over other _____.",
+        "type": "fill_blank",
+        "correct": "features"
+    },
+    {
+        "q": "Partial dependence plots can reveal non-linear relationships.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "What is residual analysis in regression?",
+        "type": "mcq",
+        "o": [
+            "Examining differences between predicted and actual values",
+            "Analyzing feature importance",
+            "Studying model weights",
+            "Checking hyperparameters"
+        ],
+        "correct": "Examining differences between predicted and actual values"
+    },
+    {
+        "q": "Random scatter in residual plots indicates a _____ model.",
+        "type": "fill_blank",
+        "correct": "good"
+    },
+    {
+        "q": "Patterns in residuals suggest model misspecification.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "What is the Q-Q plot?",
+        "type": "mcq",
+        "o": [
+            "Plot comparing distribution of data to theoretical distribution",
+            "Quality control plot",
+            "Quantile regression plot",
+            "Query quality plot"
+        ],
+        "correct": "Plot comparing distribution of data to theoretical distribution"
+    },
+    {
+        "q": "Q-Q plots check if residuals are _____ distributed.",
+        "type": "fill_blank",
+        "correct": "normally"
+    },
+    {
+        "q": "Points on the diagonal indicate the distributions match.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Arrange the steps in complete model evaluation:",
+        "type": "rearrange",
+        "correct": [
+            "Train-test split",
+            "Model training",
+            "Performance metrics",
+            "Statistical significance",
+            "Deployment decision"
+        ]
+    },
+    {
+        "q": "What is the Kolmogorov-Smirnov test?",
+        "type": "mcq",
+        "o": [
+            "Test comparing two distributions",
+            "Classification accuracy test",
+            "Regression error test",
+            "Feature selection test"
+        ],
+        "correct": "Test comparing two distributions"
+    },
+    {
+        "q": "The KS statistic measures the maximum _____ between CDFs.",
+        "type": "fill_blank",
+        "correct": "difference"
+    },
+    {
+        "q": "KS test can compare training and test distributions.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "What is covariate shift?",
+        "type": "mcq",
+        "o": [
+            "Change in input distribution between training and test data",
+            "Output distribution change",
+            "Feature scaling",
+            "Model shift"
+        ],
+        "correct": "Change in input distribution between training and test data"
+    },
+    {
+        "q": "Covariate shift can cause model performance to _____.",
+        "type": "fill_blank",
+        "correct": "degrade"
+    },
+    {
+        "q": "Feature importance changes can indicate covariate shift.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "What is concept drift?",
+        "type": "mcq",
+        "o": [
+            "Change in relationship between inputs and outputs over time",
+            "Feature distribution change",
+            "Model weight drift",
+            "Learning rate decay"
+        ],
+        "correct": "Change in relationship between inputs and outputs over time"
+    },
+    {
+        "q": "Concept drift requires model _____ over time.",
+        "type": "fill_blank",
+        "correct": "retraining"
+    },
+    {
+        "q": "Monitoring model performance helps detect concept drift.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Match the drift type with its definition:",
+        "type": "match",
+        "left": [
+            "Covariate shift",
+            "Prior shift",
+            "Concept drift",
+            "Data drift"
+        ],
+        "right": [
+            "P(X) changes",
+            "P(Y) changes",
+            "P(Y|X) changes",
+            "General distribution change"
+        ]
+    },
+    {
+        "q": "What is A/B testing for ML models?",
+        "type": "mcq",
+        "o": [
+            "Comparing two model versions with real traffic",
+            "Testing models A and B separately",
+            "Alphabet-based testing",
+            "Binary classification testing"
+        ],
+        "correct": "Comparing two model versions with real traffic"
+    },
+    {
+        "q": "A/B testing requires _____ traffic assignment to variants.",
+        "type": "fill_blank",
+        "correct": "random"
+    },
+    {
+        "q": "A/B testing measures real-world model impact.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "What is multi-armed bandit for model selection?",
+        "type": "mcq",
+        "o": [
+            "Adaptive allocation balancing exploration and exploitation",
+            "Standard A/B testing",
+            "Random model selection",
+            "Sequential testing"
+        ],
+        "correct": "Adaptive allocation balancing exploration and exploitation"
+    },
+    {
+        "q": "Multi-armed bandit _____ shifts traffic to better-performing variants.",
+        "type": "fill_blank",
+        "correct": "dynamically"
+    },
+    {
+        "q": "Multi-armed bandits can reduce regret compared to fixed A/B tests.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "What is shadow mode deployment?",
+        "type": "mcq",
+        "o": [
+            "Running new model alongside production without serving predictions",
+            "Dark theme deployment",
+            "Hidden model training",
+            "Background processing"
+        ],
+        "correct": "Running new model alongside production without serving predictions"
+    },
+    {
+        "q": "Shadow mode helps evaluate model _____ before full deployment.",
+        "type": "fill_blank",
+        "correct": "performance"
+    },
+    {
+        "q": "Shadow deployment allows comparing predictions without user impact.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "What is canary deployment for ML?",
+        "type": "mcq",
+        "o": [
+            "Gradually rolling out new model to a small percentage of traffic",
+            "Full model replacement",
+            "A/B testing",
+            "Shadow deployment"
+        ],
+        "correct": "Gradually rolling out new model to a small percentage of traffic"
+    },
+    {
+        "q": "Canary deployment starts with a _____ percentage of traffic.",
+        "type": "fill_blank",
+        "correct": "small"
+    },
+    {
+        "q": "Canary deployment allows early detection of production issues.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Match the deployment strategy with its characteristic:",
+        "type": "match",
+        "left": [
+            "Blue-green",
+            "Canary",
+            "Shadow",
+            "A/B test"
+        ],
+        "right": [
+            "Two environments",
+            "Gradual rollout",
+            "No user impact",
+            "Statistical comparison"
+        ]
+    },
+    {
+        "q": "What is model monitoring in production?",
+        "type": "mcq",
+        "o": [
+            "Continuously tracking model performance and data quality",
+            "One-time model evaluation",
+            "Training monitoring",
+            "Hardware monitoring"
+        ],
+        "correct": "Continuously tracking model performance and data quality"
+    },
+    {
+        "q": "Model monitoring detects performance _____ in production.",
+        "type": "fill_blank",
+        "correct": "degradation"
+    },
+    {
+        "q": "Model monitoring should include both prediction and data quality metrics.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "What are ground truth labels in model monitoring?",
+        "type": "mcq",
+        "o": [
+            "Actual outcomes used to measure prediction accuracy",
+            "Model predictions",
+            "Training labels",
+            "Feature values"
+        ],
+        "correct": "Actual outcomes used to measure prediction accuracy"
+    },
+    {
+        "q": "Ground truth may be _____ in production monitoring.",
+        "type": "fill_blank",
+        "correct": "delayed"
+    },
+    {
+        "q": "Proxy metrics may be used when ground truth is unavailable.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Arrange the steps in ML model monitoring:",
+        "type": "rearrange",
+        "correct": [
+            "Define key metrics",
+            "Set up data pipelines",
+            "Configure alerts",
+            "Monitor dashboards",
+            "Take corrective actions"
+        ]
+    },
+    {
+        "q": "What are fairness metrics in ML?",
+        "type": "mcq",
+        "o": [
+            "Metrics measuring bias and discrimination in model predictions",
+            "Accuracy by class",
+            "Training fairness",
+            "Data quality metrics"
+        ],
+        "correct": "Metrics measuring bias and discrimination in model predictions"
+    },
+    {
+        "q": "Demographic parity checks if predictions are independent of _____ attributes.",
+        "type": "fill_blank",
+        "correct": "protected"
+    },
+    {
+        "q": "Equalized odds requires equal TPR and FPR across groups.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "What is disparate impact?",
+        "type": "mcq",
+        "o": [
+            "Ratio of selection rates between groups",
+            "Overall impact measurement",
+            "Feature impact",
+            "Model complexity"
+        ],
+        "correct": "Ratio of selection rates between groups"
+    },
+    {
+        "q": "Disparate impact ratio below _____ often indicates potential discrimination.",
+        "type": "fill_blank",
+        "correct": "0.8"
+    },
+    {
+        "q": "Different fairness metrics can be mutually incompatible.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Match the fairness metric with its definition:",
+        "type": "match",
+        "left": [
+            "Demographic parity",
+            "Equalized odds",
+            "Predictive parity",
+            "Individual fairness"
+        ],
+        "right": [
+            "Equal selection rates",
+            "Equal TPR and FPR",
+            "Equal PPV",
+            "Similar individuals treated similarly"
+        ]
+    },
+    {
+        "q": "What is ensemble model evaluation?",
+        "type": "mcq",
+        "o": [
+            "Evaluating combined predictions from multiple models",
+            "Single model evaluation",
+            "Feature ensemble",
+            "Data ensemble"
+        ],
+        "correct": "Evaluating combined predictions from multiple models"
+    },
+    {
+        "q": "Ensemble diversity is important for improving _____ performance.",
+        "type": "fill_blank",
+        "correct": "ensemble"
+    },
+    {
+        "q": "Ensembles should have uncorrelated errors for best performance.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "What is out-of-bag evaluation in random forests?",
+        "type": "mcq",
+        "o": [
+            "Using samples not in bootstrap to evaluate each tree",
+            "External test set evaluation",
+            "Cross-validation",
+            "Holdout evaluation"
+        ],
+        "correct": "Using samples not in bootstrap to evaluate each tree"
+    },
+    {
+        "q": "OOB score approximates _____ performance for random forests.",
+        "type": "fill_blank",
+        "correct": "test"
+    },
+    {
+        "q": "OOB evaluation provides validation without separate holdout set.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "What is stacking evaluation?",
+        "type": "mcq",
+        "o": [
+            "Evaluating meta-model that combines base model predictions",
+            "Single model testing",
+            "Feature stacking",
+            "Layer evaluation"
+        ],
+        "correct": "Evaluating meta-model that combines base model predictions"
+    },
+    {
+        "q": "Stacking uses _____ predictions as features for meta-model.",
+        "type": "fill_blank",
+        "correct": "base model"
+    },
+    {
+        "q": "Cross-validated predictions prevent overfitting in stacking.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "What is uncertainty quantification?",
+        "type": "mcq",
+        "o": [
+            "Estimating confidence in model predictions",
+            "Removing uncertainty",
+            "Data cleaning",
+            "Feature selection"
+        ],
+        "correct": "Estimating confidence in model predictions"
+    },
+    {
+        "q": "_____ uncertainty comes from model limitations.",
+        "type": "fill_blank",
+        "correct": "Epistemic"
+    },
+    {
+        "q": "Prediction intervals provide uncertainty bounds for regression.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "What is conformal prediction?",
+        "type": "mcq",
+        "o": [
+            "Method providing prediction sets with guaranteed coverage",
+            "Standard prediction",
+            "Confidence intervals",
+            "Bayesian prediction"
+        ],
+        "correct": "Method providing prediction sets with guaranteed coverage"
+    },
+    {
+        "q": "Conformal prediction provides _____ coverage guarantees.",
+        "type": "fill_blank",
+        "correct": "finite-sample"
+    },
+    {
+        "q": "Conformal prediction makes minimal distributional assumptions.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Arrange types of prediction intervals by complexity:",
+        "type": "rearrange",
+        "correct": [
+            "Point prediction only",
+            "Naive percentile intervals",
+            "Quantile regression",
+            "Conformal prediction",
+            "Full posterior predictive"
+        ]
+    },
+    {
+        "q": "What is the coverage probability?",
+        "type": "mcq",
+        "o": [
+            "Proportion of times prediction interval contains true value",
+            "Model accuracy",
+            "Interval width",
+            "Prediction confidence"
+        ],
+        "correct": "Proportion of times prediction interval contains true value"
+    },
+    {
+        "q": "A 95% prediction interval should contain the true value _____% of the time.",
+        "type": "fill_blank",
+        "correct": "95"
+    },
+    {
+        "q": "Empirical coverage should match nominal coverage for well-calibrated intervals.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "What is selective prediction?",
+        "type": "mcq",
+        "o": [
+            "Abstaining from predictions when confidence is low",
+            "Selecting best model",
+            "Feature selection",
+            "Sample selection"
+        ],
+        "correct": "Abstaining from predictions when confidence is low"
+    },
+    {
+        "q": "Selective prediction trades off coverage for _____.",
+        "type": "fill_blank",
+        "correct": "accuracy"
+    },
+    {
+        "q": "Reject option allows models to abstain on uncertain predictions.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Match the uncertainty type with its source:",
+        "type": "match",
+        "left": [
+            "Aleatoric",
+            "Epistemic",
+            "Distributional",
+            "Model"
+        ],
+        "right": [
+            "Data noise",
+            "Lack of knowledge",
+            "Out of distribution",
+            "Wrong assumptions"
+        ]
+    },
+    {
+        "q": "What is AutoML evaluation?",
+        "type": "mcq",
+        "o": [
+            "Evaluating automatically generated ML pipelines",
+            "Manual model evaluation",
+            "Automated testing",
+            "Self-evaluation"
+        ],
+        "correct": "Evaluating automatically generated ML pipelines"
+    },
+    {
+        "q": "AutoML search requires proper _____ to avoid overfitting.",
+        "type": "fill_blank",
+        "correct": "validation"
+    },
+    {
+        "q": "AutoML can introduce selection bias through extensive hyperparameter search.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "What is meta-learning for model selection?",
+        "type": "mcq",
+        "o": [
+            "Using prior task experience to select models for new tasks",
+            "Manual model selection",
+            "Random selection",
+            "Grid search"
+        ],
+        "correct": "Using prior task experience to select models for new tasks"
+    },
+    {
+        "q": "Meta-features describe dataset _____ for model selection.",
+        "type": "fill_blank",
+        "correct": "characteristics"
+    },
+    {
+        "q": "Meta-learning can warm-start hyperparameter search.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "What is neural network specific evaluation?",
+        "type": "mcq",
+        "o": [
+            "Evaluation considering neural network training dynamics",
+            "Standard accuracy",
+            "Loss evaluation only",
+            "Weight analysis"
+        ],
+        "correct": "Evaluation considering neural network training dynamics"
+    },
+    {
+        "q": "Training and validation _____ help diagnose neural network training.",
+        "type": "fill_blank",
+        "correct": "curves"
+    },
+    {
+        "q": "Gradient statistics can indicate training problems.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "What is double descent in model evaluation?",
+        "type": "mcq",
+        "o": [
+            "Error decreasing again after interpolation threshold",
+            "Training twice",
+            "Two-step evaluation",
+            "Descent optimization"
+        ],
+        "correct": "Error decreasing again after interpolation threshold"
+    },
+    {
+        "q": "Double descent challenges classical _____ complexity theory.",
+        "type": "fill_blank",
+        "correct": "bias-variance"
+    },
+    {
+        "q": "Overparameterized models can generalize better than expected.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "What is generalization gap?",
+        "type": "mcq",
+        "o": [
+            "Difference between training and test performance",
+            "Gap in training data",
+            "Model architecture gap",
+            "Feature gap"
+        ],
+        "correct": "Difference between training and test performance"
+    },
+    {
+        "q": "Large generalization gap indicates _____.",
+        "type": "fill_blank",
+        "correct": "overfitting"
+    },
+    {
+        "q": "Generalization bounds provide theoretical performance guarantees.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Arrange the components of generalization error:",
+        "type": "rearrange",
+        "correct": [
+            "Bias term",
+            "Variance term",
+            "Irreducible noise",
+            "Total error",
+            "Expected test error"
+        ]
+    },
+    {
+        "q": "What is sample complexity in model evaluation?",
+        "type": "mcq",
+        "o": [
+            "Amount of data needed for reliable performance estimates",
+            "Data complexity measure",
+            "Sample size only",
+            "Computational complexity"
+        ],
+        "correct": "Amount of data needed for reliable performance estimates"
+    },
+    {
+        "q": "More complex models typically need _____ sample sizes for reliable evaluation.",
+        "type": "fill_blank",
+        "correct": "larger"
+    },
+    {
+        "q": "Power analysis helps determine required sample size for significance testing.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "What is effect size in model comparison?",
+        "type": "mcq",
+        "o": [
+            "Magnitude of performance difference between models",
+            "P-value",
+            "Sample size",
+            "Model size"
+        ],
+        "correct": "Magnitude of performance difference between models"
+    },
+    {
+        "q": "Cohen's d measures effect size in _____ of standard deviation.",
+        "type": "fill_blank",
+        "correct": "units"
+    },
+    {
+        "q": "Statistical significance doesn't guarantee practical significance.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "What is multiple comparison correction?",
+        "type": "mcq",
+        "o": [
+            "Adjusting p-values when testing multiple hypotheses",
+            "Comparing multiple models",
+            "Multiple evaluation metrics",
+            "Repeated experiments"
+        ],
+        "correct": "Adjusting p-values when testing multiple hypotheses"
+    },
+    {
+        "q": "Bonferroni correction divides significance level by number of _____.",
+        "type": "fill_blank",
+        "correct": "tests"
+    },
+    {
+        "q": "Multiple comparison correction reduces false positive rate.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Match the comparison correction with its approach:",
+        "type": "match",
+        "left": [
+            "Bonferroni",
+            "Holm",
+            "Benjamini-Hochberg",
+            "Nemenyi"
+        ],
+        "right": [
+            "Divide alpha by n",
+            "Sequential rejection",
+            "FDR control",
+            "Multiple classifier comparison"
+        ]
+    },
+    {
+        "q": "What is Friedman test?",
+        "type": "mcq",
+        "o": [
+            "Non-parametric test for comparing multiple classifiers",
+            "Paired t-test",
+            "Single classifier test",
+            "Correlation test"
+        ],
+        "correct": "Non-parametric test for comparing multiple classifiers"
+    },
+    {
+        "q": "Friedman test ranks algorithms across multiple _____.",
+        "type": "fill_blank",
+        "correct": "datasets"
+    },
+    {
+        "q": "Friedman test is recommended for comparing multiple classifiers.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "What is critical difference diagram?",
+        "type": "mcq",
+        "o": [
+            "Visualization of significant differences between classifiers",
+            "Training diagram",
+            "Learning curve",
+            "ROC curve"
+        ],
+        "correct": "Visualization of significant differences between classifiers"
+    },
+    {
+        "q": "Connected groups in CD diagrams are not _____ different.",
+        "type": "fill_blank",
+        "correct": "significantly"
+    },
+    {
+        "q": "Critical difference diagrams follow post-hoc tests.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "What is reproducibility in ML experiments?",
+        "type": "mcq",
+        "o": [
+            "Ability to obtain same results with same code and data",
+            "Model accuracy",
+            "Training speed",
+            "Data quality"
+        ],
+        "correct": "Ability to obtain same results with same code and data"
+    },
+    {
+        "q": "Setting random _____ helps ensure reproducibility.",
+        "type": "fill_blank",
+        "correct": "seeds"
+    },
+    {
+        "q": "Reproducibility requires documenting all experimental details.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "What is replicability in ML?",
+        "type": "mcq",
+        "o": [
+            "Obtaining similar results with new implementation or data",
+            "Same as reproducibility",
+            "Model copying",
+            "Data duplication"
+        ],
+        "correct": "Obtaining similar results with new implementation or data"
+    },
+    {
+        "q": "Replicability is _____ than reproducibility to achieve.",
+        "type": "fill_blank",
+        "correct": "harder"
+    },
+    {
+        "q": "Replicability validates that results generalize beyond specific setup.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Arrange the levels of experimental reliability:",
+        "type": "rearrange",
+        "correct": [
+            "Repeatability (same conditions)",
+            "Reproducibility (same code/data)",
+            "Replicability (new implementation)",
+            "Generalizability (new contexts)",
+            "Robustness (variations)"
+        ]
+    },
+    {
+        "q": "What is ablation study?",
+        "type": "mcq",
+        "o": [
+            "Systematically removing components to measure their contribution",
+            "Adding new components",
+            "Model comparison",
+            "Feature selection"
+        ],
+        "correct": "Systematically removing components to measure their contribution"
+    },
+    {
+        "q": "Ablation studies reveal which components are _____ important.",
+        "type": "fill_blank",
+        "correct": "most"
+    },
+    {
+        "q": "Ablation studies help understand model architecture choices.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "What is sensitivity analysis?",
+        "type": "mcq",
+        "o": [
+            "Measuring how outputs change with varying inputs or parameters",
+            "Recall analysis",
+            "Specificity analysis",
+            "Accuracy analysis"
+        ],
+        "correct": "Measuring how outputs change with varying inputs or parameters"
+    },
+    {
+        "q": "Sensitivity analysis identifies _____ parameters and features.",
+        "type": "fill_blank",
+        "correct": "influential"
+    },
+    {
+        "q": "Sensitivity analysis helps prioritize what to optimize.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "What is robustness testing?",
+        "type": "mcq",
+        "o": [
+            "Testing model performance under perturbations and edge cases",
+            "Normal performance testing",
+            "Speed testing",
+            "Memory testing"
+        ],
+        "correct": "Testing model performance under perturbations and edge cases"
+    },
+    {
+        "q": "Robustness testing evaluates model behavior on _____ inputs.",
+        "type": "fill_blank",
+        "correct": "adversarial"
+    },
+    {
+        "q": "A robust model maintains performance under input variations.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Match the testing type with its focus:",
+        "type": "match",
+        "left": [
+            "Unit testing",
+            "Integration testing",
+            "Robustness testing",
+            "Stress testing"
+        ],
+        "right": [
+            "Individual components",
+            "Component interaction",
+            "Edge cases",
+            "High load"
+        ]
+    },
+    {
+        "q": "What is slice-based evaluation?",
+        "type": "mcq",
+        "o": [
+            "Evaluating model on specific subsets of data",
+            "Full dataset evaluation",
+            "Random sampling",
+            "Time-based slicing"
+        ],
+        "correct": "Evaluating model on specific subsets of data"
+    },
+    {
+        "q": "Slice-based evaluation can reveal hidden _____ in aggregate metrics.",
+        "type": "fill_blank",
+        "correct": "biases"
+    },
+    {
+        "q": "Model may perform differently on different data subsets.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "What is stratified evaluation?",
+        "type": "mcq",
+        "o": [
+            "Reporting metrics for each important data stratum",
+            "Overall evaluation",
+            "Random evaluation",
+            "Sequential evaluation"
+        ],
+        "correct": "Reporting metrics for each important data stratum"
+    },
+    {
+        "q": "Stratified evaluation ensures performance is measured across _____ groups.",
+        "type": "fill_blank",
+        "correct": "all"
+    },
+    {
+        "q": "Aggregate metrics can hide poor performance on minority groups.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "What is feature attribution evaluation?",
+        "type": "mcq",
+        "o": [
+            "Assessing quality of feature importance explanations",
+            "Feature selection",
+            "Feature engineering",
+            "Feature normalization"
+        ],
+        "correct": "Assessing quality of feature importance explanations"
+    },
+    {
+        "q": "Faithfulness measures whether attributions reflect model's true _____.",
+        "type": "fill_blank",
+        "correct": "reasoning"
+    },
+    {
+        "q": "Feature attributions should be consistent across similar inputs.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Arrange the steps in comprehensive model evaluation:",
+        "type": "rearrange",
+        "correct": [
+            "Performance metrics",
+            "Statistical significance",
+            "Fairness analysis",
+            "Robustness testing",
+            "Production readiness"
+        ]
+    },
+    {
+        "q": "What is lift chart?",
+        "type": "mcq",
+        "o": [
+            "Plot showing how much better model is than random",
+            "Weight lifting chart",
+            "Training progress",
+            "Learning curve"
+        ],
+        "correct": "Plot showing how much better model is than random"
+    },
+    {
+        "q": "Lift of 2 means the model is _____ times better than random.",
+        "type": "fill_blank",
+        "correct": "2"
+    },
+    {
+        "q": "Lift charts are useful for marketing and targeted campaigns.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "What is gain chart?",
+        "type": "mcq",
+        "o": [
+            "Cumulative plot of positive cases captured vs population",
+            "Training gain",
+            "Feature gain",
+            "Weight gain"
+        ],
+        "correct": "Cumulative plot of positive cases captured vs population"
+    },
+    {
+        "q": "Gain charts show the _____ of targeting with the model.",
+        "type": "fill_blank",
+        "correct": "benefit"
+    },
+    {
+        "q": "Perfect model has gain chart reaching 100% at lowest decile.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "What is Gini coefficient in classification?",
+        "type": "mcq",
+        "o": [
+            "Measure of model's discriminative ability from 0 to 1",
+            "Income inequality measure",
+            "Feature importance",
+            "Class imbalance"
+        ],
+        "correct": "Measure of model's discriminative ability from 0 to 1"
+    },
+    {
+        "q": "Gini coefficient equals _____ * AUC - 1.",
+        "type": "fill_blank",
+        "correct": "2"
+    },
+    {
+        "q": "Higher Gini coefficient indicates better classification.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Match the chart with its purpose:",
+        "type": "match",
+        "left": [
+            "ROC curve",
+            "Lift chart",
+            "Gain chart",
+            "Calibration curve"
+        ],
+        "right": [
+            "TPR vs FPR",
+            "Model vs random",
+            "Cumulative capture",
+            "Probability accuracy"
+        ]
+    },
+    {
+        "q": "What is Huber loss?",
+        "type": "mcq",
+        "o": [
+            "Loss that combines MSE and MAE properties",
+            "Standard MSE",
+            "Standard MAE",
+            "Cross-entropy"
+        ],
+        "correct": "Loss that combines MSE and MAE properties"
+    },
+    {
+        "q": "Huber loss is less sensitive to _____ than MSE.",
+        "type": "fill_blank",
+        "correct": "outliers"
+    },
+    {
+        "q": "Huber loss is quadratic for small errors and linear for large errors.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "What is quantile loss?",
+        "type": "mcq",
+        "o": [
+            "Loss for predicting specific quantiles of distribution",
+            "Standard regression loss",
+            "Classification loss",
+            "Ranking loss"
+        ],
+        "correct": "Loss for predicting specific quantiles of distribution"
+    },
+    {
+        "q": "Median regression uses quantile of _____.",
+        "type": "fill_blank",
+        "correct": "0.5"
+    },
+    {
+        "q": "Quantile regression can predict prediction intervals.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "What is pinball loss?",
+        "type": "mcq",
+        "o": [
+            "Asymmetric loss for quantile regression",
+            "Symmetric loss",
+            "Classification loss",
+            "Ranking loss"
+        ],
+        "correct": "Asymmetric loss for quantile regression"
+    },
+    {
+        "q": "Pinball loss penalizes under and overprediction _____.",
+        "type": "fill_blank",
+        "correct": "asymmetrically"
+    },
+    {
+        "q": "Pinball loss is another name for quantile loss.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "What is ranking evaluation?",
+        "type": "mcq",
+        "o": [
+            "Evaluating quality of item orderings",
+            "Classification accuracy",
+            "Regression error",
+            "Clustering quality"
+        ],
+        "correct": "Evaluating quality of item orderings"
+    },
+    {
+        "q": "NDCG measures the quality of ranked results considering _____.",
+        "type": "fill_blank",
+        "correct": "position"
+    },
+    {
+        "q": "Mean Average Precision is used for information retrieval evaluation.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Match the ranking metric with its focus:",
+        "type": "match",
+        "left": [
+            "NDCG",
+            "MAP",
+            "MRR",
+            "Precision@K"
+        ],
+        "right": [
+            "Graded relevance",
+            "Binary relevance",
+            "First relevant item",
+            "Top K items"
+        ]
+    },
+    {
+        "q": "What is Mean Reciprocal Rank (MRR)?",
+        "type": "mcq",
+        "o": [
+            "Average of reciprocal of first relevant item rank",
+            "Mean rank",
+            "Median rank",
+            "Maximum rank"
+        ],
+        "correct": "Average of reciprocal of first relevant item rank"
+    },
+    {
+        "q": "MRR focuses on the rank of the _____ relevant result.",
+        "type": "fill_blank",
+        "correct": "first"
+    },
+    {
+        "q": "Higher MRR indicates relevant items appear earlier.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "What is Normalized Discounted Cumulative Gain (NDCG)?",
+        "type": "mcq",
+        "o": [
+            "Ranking metric that accounts for position and graded relevance",
+            "Simple accuracy",
+            "Binary metric",
+            "Unranked metric"
+        ],
+        "correct": "Ranking metric that accounts for position and graded relevance"
+    },
+    {
+        "q": "NDCG is normalized by the _____ possible DCG.",
+        "type": "fill_blank",
+        "correct": "ideal"
+    },
+    {
+        "q": "NDCG ranges from 0 to 1.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Arrange ranking metrics by complexity:",
+        "type": "rearrange",
+        "correct": [
+            "Precision@K",
+            "Mean Reciprocal Rank",
+            "Average Precision",
+            "Discounted Cumulative Gain",
+            "NDCG"
+        ]
+    },
+    {
+        "q": "What is clustering evaluation?",
+        "type": "mcq",
+        "o": [
+            "Assessing quality of discovered clusters",
+            "Classification accuracy",
+            "Regression error",
+            "Ranking quality"
+        ],
+        "correct": "Assessing quality of discovered clusters"
+    },
+    {
+        "q": "Silhouette score measures how similar samples are to their own cluster vs _____.",
+        "type": "fill_blank",
+        "correct": "other clusters"
+    },
+    {
+        "q": "External clustering metrics require ground truth labels.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "What is Adjusted Rand Index?",
+        "type": "mcq",
+        "o": [
+            "Clustering metric adjusted for chance agreement",
+            "Unadjusted Rand Index",
+            "Simple accuracy",
+            "Precision metric"
+        ],
+        "correct": "Clustering metric adjusted for chance agreement"
+    },
+    {
+        "q": "ARI of _____ indicates random clustering.",
+        "type": "fill_blank",
+        "correct": "0"
+    },
+    {
+        "q": "ARI can be negative for worse than random clustering.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "What is Normalized Mutual Information?",
+        "type": "mcq",
+        "o": [
+            "Information-theoretic clustering metric normalized to [0,1]",
+            "Unnormalized MI",
+            "Entropy measure",
+            "Variance measure"
+        ],
+        "correct": "Information-theoretic clustering metric normalized to [0,1]"
+    },
+    {
+        "q": "NMI measures shared _____ between clusterings.",
+        "type": "fill_blank",
+        "correct": "information"
+    },
+    {
+        "q": "NMI of 1 indicates perfect agreement between clusterings.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Match the clustering metric type with its requirement:",
+        "type": "match",
+        "left": [
+            "Silhouette",
+            "Calinski-Harabasz",
+            "Adjusted Rand",
+            "NMI"
+        ],
+        "right": [
+            "No labels needed",
+            "No labels needed",
+            "Labels required",
+            "Labels required"
+        ]
+    },
+    {
+        "q": "What is the Davies-Bouldin Index?",
+        "type": "mcq",
+        "o": [
+            "Ratio of within-cluster to between-cluster distances",
+            "Cluster count metric",
+            "Accuracy metric",
+            "Precision metric"
+        ],
+        "correct": "Ratio of within-cluster to between-cluster distances"
+    },
+    {
+        "q": "Lower Davies-Bouldin Index indicates _____ clustering.",
+        "type": "fill_blank",
+        "correct": "better"
+    },
+    {
+        "q": "Davies-Bouldin Index doesn't require ground truth labels.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "What is the elbow method?",
+        "type": "mcq",
+        "o": [
+            "Choosing k where inertia curve bends sharply",
+            "Finding optimal hyperparameters",
+            "Feature selection",
+            "Model selection"
+        ],
+        "correct": "Choosing k where inertia curve bends sharply"
+    },
+    {
+        "q": "The elbow method helps choose the number of _____.",
+        "type": "fill_blank",
+        "correct": "clusters"
+    },
+    {
+        "q": "The elbow point is where adding clusters gives diminishing returns.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Arrange the steps in production model evaluation:",
+        "type": "rearrange",
+        "correct": [
+            "Offline evaluation",
+            "Shadow deployment",
+            "Canary rollout",
+            "A/B testing",
+            "Full production"
+        ]
+    },
+    {
+        "q": "What is model card?",
+        "type": "mcq",
+        "o": [
+            "Documentation of model details, performance, and limitations",
+            "Credit card for models",
+            "Model ID",
+            "Weight storage"
+        ],
+        "correct": "Documentation of model details, performance, and limitations"
+    },
+    {
+        "q": "Model cards include performance across different _____.",
+        "type": "fill_blank",
+        "correct": "subgroups"
+    },
+    {
+        "q": "Model cards improve transparency and accountability.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "What is datasheet for datasets?",
+        "type": "mcq",
+        "o": [
+            "Documentation describing dataset characteristics and intended use",
+            "Data storage format",
+            "Data schema",
+            "Data dictionary"
+        ],
+        "correct": "Documentation describing dataset characteristics and intended use"
+    },
+    {
+        "q": "Datasheets document data collection _____ and limitations.",
+        "type": "fill_blank",
+        "correct": "methodology"
+    },
+    {
+        "q": "Datasheets help identify potential biases in training data.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "What is error analysis in ML?",
+        "type": "mcq",
+        "o": [
+            "Systematic study of model mistakes to identify improvement areas",
+            "Error measurement",
+            "Bug fixing",
+            "Code debugging"
+        ],
+        "correct": "Systematic study of model mistakes to identify improvement areas"
+    },
+    {
+        "q": "Error analysis categorizes mistakes by their _____.",
+        "type": "fill_blank",
+        "correct": "type"
+    },
+    {
+        "q": "Error analysis helps prioritize what to improve in a model.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "What is ceiling analysis?",
+        "type": "mcq",
+        "o": [
+            "Estimating maximum possible improvement from fixing each component",
+            "Finding model limits",
+            "Performance ceiling",
+            "Top accuracy"
+        ],
+        "correct": "Estimating maximum possible improvement from fixing each component"
+    },
+    {
+        "q": "Ceiling analysis helps _____ improvement efforts.",
+        "type": "fill_blank",
+        "correct": "prioritize"
+    },
+    {
+        "q": "Ceiling analysis shows which component improvements matter most.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "What is oracle evaluation?",
+        "type": "mcq",
+        "o": [
+            "Testing with perfect upstream components to measure ceiling",
+            "Standard evaluation",
+            "Human evaluation",
+            "Production testing"
+        ],
+        "correct": "Testing with perfect upstream components to measure ceiling"
+    },
+    {
+        "q": "Oracle evaluation reveals the maximum _____ improvement possible.",
+        "type": "fill_blank",
+        "correct": "potential"
+    },
+    {
+        "q": "Oracle evaluation uses ground truth instead of predicted inputs.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Match the analysis type with its purpose:",
+        "type": "match",
+        "left": [
+            "Error analysis",
+            "Ceiling analysis",
+            "Ablation study",
+            "Sensitivity analysis"
+        ],
+        "right": [
+            "Categorize mistakes",
+            "Prioritize improvements",
+            "Component contribution",
+            "Parameter effects"
+        ]
+    },
+    {
+        "q": "What is active learning evaluation?",
+        "type": "mcq",
+        "o": [
+            "Measuring efficiency of label query strategies",
+            "Standard evaluation",
+            "Online evaluation",
+            "Interactive testing"
+        ],
+        "correct": "Measuring efficiency of label query strategies"
+    },
+    {
+        "q": "Active learning aims to achieve good performance with fewer _____.",
+        "type": "fill_blank",
+        "correct": "labels"
+    },
+    {
+        "q": "Learning curves compare active vs random sampling performance.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "What is transfer learning evaluation?",
+        "type": "mcq",
+        "o": [
+            "Measuring how well pre-trained models adapt to new tasks",
+            "Standard evaluation",
+            "Source task evaluation",
+            "Training evaluation"
+        ],
+        "correct": "Measuring how well pre-trained models adapt to new tasks"
+    },
+    {
+        "q": "Transfer learning evaluation compares pretrained vs training from _____.",
+        "type": "fill_blank",
+        "correct": "scratch"
+    },
+    {
+        "q": "Fine-tuning performance depends on domain similarity.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "What is domain adaptation evaluation?",
+        "type": "mcq",
+        "o": [
+            "Measuring model performance on target domain after adaptation",
+            "Source domain evaluation",
+            "Standard evaluation",
+            "Domain comparison"
+        ],
+        "correct": "Measuring model performance on target domain after adaptation"
+    },
+    {
+        "q": "Domain adaptation bridges the gap between source and _____ domains.",
+        "type": "fill_blank",
+        "correct": "target"
+    },
+    {
+        "q": "Domain adaptation can be evaluated with or without target labels.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Arrange transfer learning strategies by complexity:",
+        "type": "rearrange",
+        "correct": [
+            "Feature extraction",
+            "Fine-tuning top layers",
+            "Full fine-tuning",
+            "Domain adaptation",
+            "Multi-task learning"
+        ]
+    },
+    {
+        "q": "What is few-shot learning evaluation?",
+        "type": "mcq",
+        "o": [
+            "Measuring performance with very few examples per class",
+            "Standard evaluation",
+            "Zero-shot evaluation",
+            "Full dataset evaluation"
+        ],
+        "correct": "Measuring performance with very few examples per class"
+    },
+    {
+        "q": "N-way K-shot evaluation uses K examples from _____ classes.",
+        "type": "fill_blank",
+        "correct": "N"
+    },
+    {
+        "q": "Episode-based evaluation simulates few-shot learning scenarios.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "What is zero-shot evaluation?",
+        "type": "mcq",
+        "o": [
+            "Measuring performance on classes never seen during training",
+            "Few-shot evaluation",
+            "Standard evaluation",
+            "Transfer evaluation"
+        ],
+        "correct": "Measuring performance on classes never seen during training"
+    },
+    {
+        "q": "Zero-shot learning relies on _____ descriptions of classes.",
+        "type": "fill_blank",
+        "correct": "semantic"
+    },
+    {
+        "q": "GPT-3 can perform zero-shot classification using prompts.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "What is multi-task learning evaluation?",
+        "type": "mcq",
+        "o": [
+            "Measuring performance across multiple related tasks simultaneously",
+            "Single task evaluation",
+            "Sequential evaluation",
+            "Random task evaluation"
+        ],
+        "correct": "Measuring performance across multiple related tasks simultaneously"
+    },
+    {
+        "q": "Multi-task models should show positive _____ between tasks.",
+        "type": "fill_blank",
+        "correct": "transfer"
+    },
+    {
+        "q": "Task-specific performance may be sacrificed for overall multi-task performance.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Match the learning paradigm with its evaluation focus:",
+        "type": "match",
+        "left": [
+            "Transfer learning",
+            "Few-shot learning",
+            "Zero-shot learning",
+            "Multi-task learning"
+        ],
+        "right": [
+            "Domain adaptation",
+            "Sample efficiency",
+            "Unseen classes",
+            "Multiple objectives"
+        ]
+    },
+    {
+        "q": "What is continual learning evaluation?",
+        "type": "mcq",
+        "o": [
+            "Measuring ability to learn new tasks without forgetting old ones",
+            "Standard evaluation",
+            "Single task learning",
+            "Batch evaluation"
+        ],
+        "correct": "Measuring ability to learn new tasks without forgetting old ones"
+    },
+    {
+        "q": "Catastrophic forgetting is measured by _____ in old task performance.",
+        "type": "fill_blank",
+        "correct": "drop"
+    },
+    {
+        "q": "Average accuracy across all tasks measures overall continual learning.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "What is backward transfer in continual learning?",
+        "type": "mcq",
+        "o": [
+            "Effect of learning new tasks on performance on old tasks",
+            "Forward transfer",
+            "No transfer",
+            "Lateral transfer"
+        ],
+        "correct": "Effect of learning new tasks on performance on old tasks"
+    },
+    {
+        "q": "Negative backward transfer indicates _____.",
+        "type": "fill_blank",
+        "correct": "forgetting"
+    },
+    {
+        "q": "Positive backward transfer is possible when new and old tasks share structure.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "What is forward transfer?",
+        "type": "mcq",
+        "o": [
+            "How learning old tasks affects performance on new tasks",
+            "Backward transfer",
+            "No transfer",
+            "Parallel transfer"
+        ],
+        "correct": "How learning old tasks affects performance on new tasks"
+    },
+    {
+        "q": "Positive forward transfer means learning old tasks _____ new task learning.",
+        "type": "fill_blank",
+        "correct": "helps"
+    },
+    {
+        "q": "Forward and backward transfer should both be measured in continual learning.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Arrange continual learning metrics by their focus:",
+        "type": "rearrange",
+        "correct": [
+            "Final performance",
+            "Average accuracy",
+            "Backward transfer",
+            "Forward transfer",
+            "Plasticity-stability tradeoff"
+        ]
+    },
+    {
+        "q": "What is online learning evaluation?",
+        "type": "mcq",
+        "o": [
+            "Evaluating models that update with each new example",
+            "Batch evaluation",
+            "Offline evaluation",
+            "Internet-based evaluation"
+        ],
+        "correct": "Evaluating models that update with each new example"
+    },
+    {
+        "q": "Online learning uses _____ error to evaluate performance.",
+        "type": "fill_blank",
+        "correct": "cumulative"
+    },
+    {
+        "q": "Regret measures total excess loss compared to the best model in hindsight.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "What is prequential error?",
+        "type": "mcq",
+        "o": [
+            "Testing each example before using it for training",
+            "Post-training error",
+            "Validation error",
+            "Training error"
+        ],
+        "correct": "Testing each example before using it for training"
+    },
+    {
+        "q": "Prequential evaluation is also called _____-then-train.",
+        "type": "fill_blank",
+        "correct": "test"
+    },
+    {
+        "q": "Prequential evaluation naturally handles streaming data.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "What is interleaved test-train evaluation?",
+        "type": "mcq",
+        "o": [
+            "Alternating between testing and training on streaming data",
+            "Batch evaluation",
+            "Holdout evaluation",
             "Cross-validation"
+        ],
+        "correct": "Alternating between testing and training on streaming data"
+    },
+    {
+        "q": "Interleaved evaluation is suitable for _____ data.",
+        "type": "fill_blank",
+        "correct": "streaming"
+    },
+    {
+        "q": "Sliding window evaluation uses recent data for performance estimation.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Match the streaming evaluation with its approach:",
+        "type": "match",
+        "left": [
+            "Holdout",
+            "Prequential",
+            "Sliding window",
+            "Fading factors"
+        ],
+        "right": [
+            "Static test set",
+            "Test then train",
+            "Recent data only",
+            "Weighted average"
         ]
     },
     {
-        "q": "What does the term 'model generalization' mean?",
-        "c": null,
+        "q": "What is MLOps evaluation?",
+        "type": "mcq",
         "o": [
-            "Model's ability to perform well on unseen data",
-            "Model’s performance on training data",
-            "Model’s performance on validation data",
-            "Model’s ability to overfit"
+            "Evaluating operational aspects of ML systems",
+            "Model accuracy only",
+            "Training evaluation",
+            "Development evaluation"
+        ],
+        "correct": "Evaluating operational aspects of ML systems"
+    },
+    {
+        "q": "MLOps includes latency, throughput, and system _____.",
+        "type": "fill_blank",
+        "correct": "reliability"
+    },
+    {
+        "q": "Model performance is only one aspect of production ML evaluation.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "What is model latency?",
+        "type": "mcq",
+        "o": [
+            "Time from receiving request to returning prediction",
+            "Training time",
+            "Data processing time",
+            "Network delay only"
+        ],
+        "correct": "Time from receiving request to returning prediction"
+    },
+    {
+        "q": "P99 latency measures the latency of the 99th _____.",
+        "type": "fill_blank",
+        "correct": "percentile"
+    },
+    {
+        "q": "Both average and tail latencies should be monitored.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "What is model throughput?",
+        "type": "mcq",
+        "o": [
+            "Number of predictions processed per unit time",
+            "Model accuracy",
+            "Training speed",
+            "Data rate"
+        ],
+        "correct": "Number of predictions processed per unit time"
+    },
+    {
+        "q": "Throughput is often measured in queries per _____.",
+        "type": "fill_blank",
+        "correct": "second"
+    },
+    {
+        "q": "Batching can increase throughput at the cost of latency.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Arrange MLOps metrics by their focus:",
+        "type": "rearrange",
+        "correct": [
+            "Model accuracy",
+            "Inference latency",
+            "System throughput",
+            "Resource utilization",
+            "Cost per prediction"
         ]
     },
     {
-        "q": "What does 'leave-one-out cross-validation' involve?",
-        "c": null,
+        "q": "What is model serving evaluation?",
+        "type": "mcq",
         "o": [
-            "Using one sample as a test set and the rest as the training set",
-            "Using a random subset as a test set",
-            "Splitting data into a large test set and small training set",
-            "Resampling data multiple times with replacement"
+            "Measuring performance of deployed model infrastructure",
+            "Training evaluation",
+            "Development testing",
+            "Accuracy measurement"
+        ],
+        "correct": "Measuring performance of deployed model infrastructure"
+    },
+    {
+        "q": "Model serving should handle _____ spikes gracefully.",
+        "type": "fill_blank",
+        "correct": "traffic"
+    },
+    {
+        "q": "Autoscaling helps maintain performance under varying load.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "What is resource utilization monitoring?",
+        "type": "mcq",
+        "o": [
+            "Tracking CPU, memory, and GPU usage of model inference",
+            "Model accuracy",
+            "Data usage",
+            "Code coverage"
+        ],
+        "correct": "Tracking CPU, memory, and GPU usage of model inference"
+    },
+    {
+        "q": "High GPU utilization during inference indicates _____ resource use.",
+        "type": "fill_blank",
+        "correct": "efficient"
+    },
+    {
+        "q": "Memory leaks can degrade serving performance over time.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "What is cost evaluation for ML?",
+        "type": "mcq",
+        "o": [
+            "Measuring financial cost of training and serving models",
+            "Model accuracy",
+            "Performance evaluation",
+            "Quality assessment"
+        ],
+        "correct": "Measuring financial cost of training and serving models"
+    },
+    {
+        "q": "Cost per prediction is important for _____ efficiency.",
+        "type": "fill_blank",
+        "correct": "operational"
+    },
+    {
+        "q": "More accurate models may not be cost-effective in production.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Match the operational metric with its measurement:",
+        "type": "match",
+        "left": [
+            "Latency",
+            "Throughput",
+            "Availability",
+            "Cost"
+        ],
+        "right": [
+            "Response time",
+            "Requests per second",
+            "Uptime percentage",
+            "Dollars per prediction"
         ]
+    },
+    {
+        "q": "What is data quality monitoring?",
+        "type": "mcq",
+        "o": [
+            "Tracking input data characteristics for anomalies",
+            "Model monitoring",
+            "Feature monitoring only",
+            "Label monitoring"
+        ],
+        "correct": "Tracking input data characteristics for anomalies"
+    },
+    {
+        "q": "Data quality issues can cause model _____ in production.",
+        "type": "fill_blank",
+        "correct": "failures"
+    },
+    {
+        "q": "Missing values and schema violations should be monitored.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "What is feature store validation?",
+        "type": "mcq",
+        "o": [
+            "Ensuring features meet expected schemas and distributions",
+            "Feature selection",
+            "Feature engineering",
+            "Feature importance"
+        ],
+        "correct": "Ensuring features meet expected schemas and distributions"
+    },
+    {
+        "q": "Feature stores should validate data _____ and statistics.",
+        "type": "fill_blank",
+        "correct": "types"
+    },
+    {
+        "q": "Feature validation prevents garbage-in-garbage-out problems.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "What is prediction logging?",
+        "type": "mcq",
+        "o": [
+            "Recording model inputs and outputs for later analysis",
+            "Training logging",
+            "Error logging only",
+            "System logging"
+        ],
+        "correct": "Recording model inputs and outputs for later analysis"
+    },
+    {
+        "q": "Prediction logs enable _____ model evaluation.",
+        "type": "fill_blank",
+        "correct": "offline"
+    },
+    {
+        "q": "Prediction logging is essential for counterfactual analysis.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Arrange the data validation stages:",
+        "type": "rearrange",
+        "correct": [
+            "Schema validation",
+            "Range checking",
+            "Distribution comparison",
+            "Feature correlation",
+            "Outlier detection"
+        ]
+    },
+    {
+        "q": "What is human evaluation for ML?",
+        "type": "mcq",
+        "o": [
+            "Using human judgment to assess model outputs",
+            "Automated evaluation",
+            "Statistical testing",
+            "Metric computation"
+        ],
+        "correct": "Using human judgment to assess model outputs"
+    },
+    {
+        "q": "Human evaluation is often needed for _____ tasks.",
+        "type": "fill_blank",
+        "correct": "subjective"
+    },
+    {
+        "q": "Inter-rater reliability measures consistency among human evaluators.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "What is Turing test for conversational AI?",
+        "type": "mcq",
+        "o": [
+            "Test where humans judge if responses are from AI or human",
+            "Accuracy test",
+            "Speed test",
+            "Memory test"
+        ],
+        "correct": "Test where humans judge if responses are from AI or human"
+    },
+    {
+        "q": "Turing test measures how _____ AI responses appear.",
+        "type": "fill_blank",
+        "correct": "human-like"
+    },
+    {
+        "q": "Passing Turing test doesn't guarantee AI understands language.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "What is crowdsourced evaluation?",
+        "type": "mcq",
+        "o": [
+            "Using distributed human workers to evaluate model outputs",
+            "Expert evaluation",
+            "Automated evaluation",
+            "Self evaluation"
+        ],
+        "correct": "Using distributed human workers to evaluate model outputs"
+    },
+    {
+        "q": "Crowdsourced evaluation requires quality _____ mechanisms.",
+        "type": "fill_blank",
+        "correct": "control"
+    },
+    {
+        "q": "Amazon Mechanical Turk is commonly used for crowdsourced evaluation.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Match the evaluation type with its use case:",
+        "type": "match",
+        "left": [
+            "Human evaluation",
+            "Crowdsourcing",
+            "Expert evaluation",
+            "Automated evaluation"
+        ],
+        "right": [
+            "Subjective quality",
+            "Scale with cost",
+            "Domain expertise",
+            "Objective metrics"
+        ]
+    },
+    {
+        "q": "What is inter-annotator agreement?",
+        "type": "mcq",
+        "o": [
+            "Measure of consistency between human labelers",
+            "Model agreement",
+            "Data agreement",
+            "Feature agreement"
+        ],
+        "correct": "Measure of consistency between human labelers"
+    },
+    {
+        "q": "Fleiss' kappa extends Cohen's kappa to multiple _____.",
+        "type": "fill_blank",
+        "correct": "annotators"
+    },
+    {
+        "q": "Low inter-annotator agreement suggests task ambiguity.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "What is A/B/n testing?",
+        "type": "mcq",
+        "o": [
+            "Comparing multiple variants simultaneously",
+            "Binary testing",
+            "Sequential testing",
+            "Unit testing"
+        ],
+        "correct": "Comparing multiple variants simultaneously"
+    },
+    {
+        "q": "A/B/n testing requires more _____ than A/B testing.",
+        "type": "fill_blank",
+        "correct": "traffic"
+    },
+    {
+        "q": "Multiple comparison correction is needed for A/B/n tests.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "What is interleaving in online evaluation?",
+        "type": "mcq",
+        "o": [
+            "Mixing results from two systems and measuring user preference",
+            "A/B testing",
+            "Sequential testing",
+            "Batch testing"
+        ],
+        "correct": "Mixing results from two systems and measuring user preference"
+    },
+    {
+        "q": "Interleaving is more sensitive than A/B testing for ranking _____.",
+        "type": "fill_blank",
+        "correct": "systems"
+    },
+    {
+        "q": "Interleaving reduces variance in online experiments.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Arrange online experimentation methods by sensitivity:",
+        "type": "rearrange",
+        "correct": [
+            "A/B testing",
+            "A/B/n testing",
+            "Interleaving",
+            "Multi-armed bandit",
+            "Contextual bandit"
+        ]
+    },
+    {
+        "q": "What is counterfactual evaluation?",
+        "type": "mcq",
+        "o": [
+            "Evaluating what would have happened with a different model",
+            "Standard evaluation",
+            "Online evaluation",
+            "Offline evaluation"
+        ],
+        "correct": "Evaluating what would have happened with a different model"
+    },
+    {
+        "q": "Counterfactual evaluation uses _____ data to simulate new policies.",
+        "type": "fill_blank",
+        "correct": "logged"
+    },
+    {
+        "q": "Inverse propensity scoring corrects for logged policy bias.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "What is off-policy evaluation?",
+        "type": "mcq",
+        "o": [
+            "Evaluating new policy using data from old policy",
+            "On-policy evaluation",
+            "Online evaluation",
+            "Standard evaluation"
+        ],
+        "correct": "Evaluating new policy using data from old policy"
+    },
+    {
+        "q": "Off-policy evaluation avoids _____ deployment of new policies.",
+        "type": "fill_blank",
+        "correct": "risky"
+    },
+    {
+        "q": "Importance sampling is used for off-policy evaluation.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "What is regression testing for ML?",
+        "type": "mcq",
+        "o": [
+            "Ensuring model updates don't break existing functionality",
+            "Linear regression",
+            "Standard testing",
+            "Unit testing"
+        ],
+        "correct": "Ensuring model updates don't break existing functionality"
+    },
+    {
+        "q": "Regression tests use _____ test cases to detect regressions.",
+        "type": "fill_blank",
+        "correct": "golden"
+    },
+    {
+        "q": "Model regression testing should be automated in CI/CD pipelines.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Match the testing approach with its purpose:",
+        "type": "match",
+        "left": [
+            "Unit testing",
+            "Integration testing",
+            "Regression testing",
+            "Acceptance testing"
+        ],
+        "right": [
+            "Component behavior",
+            "System interaction",
+            "No degradation",
+            "User requirements"
+        ]
+    },
+    {
+        "q": "What is metamorphic testing for ML?",
+        "type": "mcq",
+        "o": [
+            "Testing using relationships between inputs and outputs",
+            "Standard testing",
+            "Mutation testing",
+            "Fuzz testing"
+        ],
+        "correct": "Testing using relationships between inputs and outputs"
+    },
+    {
+        "q": "Metamorphic relations define expected _____ between inputs and outputs.",
+        "type": "fill_blank",
+        "correct": "relationships"
+    },
+    {
+        "q": "Metamorphic testing helps when oracle is unavailable.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "What is property-based testing?",
+        "type": "mcq",
+        "o": [
+            "Testing that model outputs satisfy certain properties",
+            "Standard testing",
+            "Value testing",
+            "Type testing"
+        ],
+        "correct": "Testing that model outputs satisfy certain properties"
+    },
+    {
+        "q": "Property-based testing generates _____ test inputs automatically.",
+        "type": "fill_blank",
+        "correct": "random"
+    },
+    {
+        "q": "Properties like monotonicity can be tested across inputs.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "What is differential testing?",
+        "type": "mcq",
+        "o": [
+            "Comparing outputs of multiple implementations on same input",
+            "Single implementation testing",
+            "A/B testing",
+            "Unit testing"
+        ],
+        "correct": "Comparing outputs of multiple implementations on same input"
+    },
+    {
+        "q": "Differential testing can detect _____ between implementations.",
+        "type": "fill_blank",
+        "correct": "discrepancies"
+    },
+    {
+        "q": "Differential testing is useful when migrating to new frameworks.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Arrange ML testing stages:",
+        "type": "rearrange",
+        "correct": [
+            "Data validation",
+            "Model training tests",
+            "Model evaluation tests",
+            "Integration tests",
+            "Production monitoring"
+        ]
+    },
+    {
+        "q": "What is behavioral testing for NLP?",
+        "type": "mcq",
+        "o": [
+            "Testing model behavior on specific linguistic phenomena",
+            "Standard accuracy testing",
+            "Speed testing",
+            "Memory testing"
+        ],
+        "correct": "Testing model behavior on specific linguistic phenomena"
+    },
+    {
+        "q": "CheckList provides templates for NLP behavioral _____.",
+        "type": "fill_blank",
+        "correct": "testing"
+    },
+    {
+        "q": "Minimum functionality tests check basic model capabilities.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "What is invariance testing?",
+        "type": "mcq",
+        "o": [
+            "Testing that predictions don't change under certain transformations",
+            "Variance testing",
+            "Standard testing",
+            "Accuracy testing"
+        ],
+        "correct": "Testing that predictions don't change under certain transformations"
+    },
+    {
+        "q": "Synonym substitution should not change _____ classification.",
+        "type": "fill_blank",
+        "correct": "sentiment"
+    },
+    {
+        "q": "Invariance tests reveal model brittleness.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "What is directional expectation testing?",
+        "type": "mcq",
+        "o": [
+            "Testing that predictions change appropriately under transformations",
+            "Invariance testing",
+            "Standard testing",
+            "Random testing"
+        ],
+        "correct": "Testing that predictions change appropriately under transformations"
+    },
+    {
+        "q": "Adding negative words should _____ sentiment predictions.",
+        "type": "fill_blank",
+        "correct": "decrease"
+    },
+    {
+        "q": "Directional tests check model sensitivity to meaningful changes.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Match the NLP test type with its purpose:",
+        "type": "match",
+        "left": [
+            "Minimum functionality",
+            "Invariance",
+            "Directional",
+            "Stress"
+        ],
+        "right": [
+            "Basic capability",
+            "Robustness to noise",
+            "Appropriate sensitivity",
+            "Edge case handling"
+        ]
+    },
+    {
+        "q": "What is label noise evaluation?",
+        "type": "mcq",
+        "o": [
+            "Measuring model robustness to incorrect labels",
+            "Label quality assessment",
+            "Data cleaning",
+            "Standard evaluation"
+        ],
+        "correct": "Measuring model robustness to incorrect labels"
+    },
+    {
+        "q": "Some models are more _____ to label noise than others.",
+        "type": "fill_blank",
+        "correct": "robust"
+    },
+    {
+        "q": "Label noise can be artificially injected to test robustness.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "What is noisy label learning?",
+        "type": "mcq",
+        "o": [
+            "Training methods designed to handle incorrect labels",
+            "Data augmentation",
+            "Standard training",
+            "Label smoothing"
+        ],
+        "correct": "Training methods designed to handle incorrect labels"
+    },
+    {
+        "q": "Confident learning identifies samples with _____ labels.",
+        "type": "fill_blank",
+        "correct": "noisy"
+    },
+    {
+        "q": "Noise transition matrices model label corruption patterns.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "What is OOD detection evaluation?",
+        "type": "mcq",
+        "o": [
+            "Measuring ability to detect out-of-distribution inputs",
+            "Standard classification",
+            "Regression evaluation",
+            "Clustering evaluation"
+        ],
+        "correct": "Measuring ability to detect out-of-distribution inputs"
+    },
+    {
+        "q": "AUROC for OOD detection uses in-distribution vs OOD _____.",
+        "type": "fill_blank",
+        "correct": "samples"
+    },
+    {
+        "q": "Good OOD detection is crucial for safe deployment.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "What is anomaly detection evaluation?",
+        "type": "mcq",
+        "o": [
+            "Measuring ability to identify unusual patterns",
+            "Standard classification",
+            "Regression evaluation",
+            "Clustering evaluation"
+        ],
+        "correct": "Measuring ability to identify unusual patterns"
+    },
+    {
+        "q": "Anomaly detection often uses _____ data for training.",
+        "type": "fill_blank",
+        "correct": "normal"
+    },
+    {
+        "q": "Precision-recall curves are preferred for anomaly detection evaluation.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Arrange the steps in ML pipeline validation:",
+        "type": "rearrange",
+        "correct": [
+            "Data validation",
+            "Feature validation",
+            "Model validation",
+            "Prediction validation",
+            "Business metric validation"
+        ]
+    },
+    {
+        "q": "What is model assertion?",
+        "type": "mcq",
+        "o": [
+            "Runtime checks that model outputs meet expected constraints",
+            "Unit assertion",
+            "Code assertion",
+            "Type assertion"
+        ],
+        "correct": "Runtime checks that model outputs meet expected constraints"
+    },
+    {
+        "q": "Model assertions can check if predictions are within valid _____.",
+        "type": "fill_blank",
+        "correct": "ranges"
+    },
+    {
+        "q": "Failed assertions can trigger fallback predictions.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "What is model governance?",
+        "type": "mcq",
+        "o": [
+            "Policies and procedures for managing ML models throughout lifecycle",
+            "Model training",
+            "Model evaluation",
+            "Model deployment"
+        ],
+        "correct": "Policies and procedures for managing ML models throughout lifecycle"
+    },
+    {
+        "q": "Model governance includes tracking model _____ and approval.",
+        "type": "fill_blank",
+        "correct": "versions"
+    },
+    {
+        "q": "Regulatory compliance often requires model governance.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "What is model versioning?",
+        "type": "mcq",
+        "o": [
+            "Tracking different versions of models and their performance",
+            "Data versioning",
+            "Code versioning",
+            "Feature versioning"
+        ],
+        "correct": "Tracking different versions of models and their performance"
+    },
+    {
+        "q": "Model versioning enables _____ to previous models if needed.",
+        "type": "fill_blank",
+        "correct": "rollback"
+    },
+    {
+        "q": "MLflow and DVC are tools for model versioning.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Match the governance aspect with its focus:",
+        "type": "match",
+        "left": [
+            "Model registry",
+            "Audit trail",
+            "Access control",
+            "Compliance"
+        ],
+        "right": [
+            "Version tracking",
+            "Change history",
+            "Permissions",
+            "Regulatory requirements"
+        ]
+    },
+    {
+        "q": "What is experiment tracking?",
+        "type": "mcq",
+        "o": [
+            "Recording hyperparameters, metrics, and artifacts for each run",
+            "Model tracking",
+            "Data tracking",
+            "Code tracking"
+        ],
+        "correct": "Recording hyperparameters, metrics, and artifacts for each run"
+    },
+    {
+        "q": "Experiment tracking enables _____ of successful experiments.",
+        "type": "fill_blank",
+        "correct": "reproduction"
+    },
+    {
+        "q": "Weights & Biases and Neptune are experiment tracking tools.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "What is model lineage?",
+        "type": "mcq",
+        "o": [
+            "Complete history of data, code, and artifacts used to create model",
+            "Model ancestry",
+            "Data lineage only",
+            "Code history"
+        ],
+        "correct": "Complete history of data, code, and artifacts used to create model"
+    },
+    {
+        "q": "Model lineage helps debug _____ in production models.",
+        "type": "fill_blank",
+        "correct": "issues"
+    },
+    {
+        "q": "Full lineage is required for regulatory compliance in some industries.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Arrange the model lifecycle stages:",
+        "type": "rearrange",
+        "correct": [
+            "Development",
+            "Training",
+            "Evaluation",
+            "Deployment",
+            "Monitoring and retirement"
+        ]
+    },
+    {
+        "q": "What is stakeholder communication for evaluation?",
+        "type": "mcq",
+        "o": [
+            "Presenting model performance in understandable terms",
+            "Technical reporting",
+            "Code review",
+            "Data sharing"
+        ],
+        "correct": "Presenting model performance in understandable terms"
+    },
+    {
+        "q": "Business stakeholders need metrics translated to _____ impact.",
+        "type": "fill_blank",
+        "correct": "business"
+    },
+    {
+        "q": "Visualization helps communicate complex evaluation results.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "What is decision threshold optimization?",
+        "type": "mcq",
+        "o": [
+            "Finding threshold that optimizes business objective",
+            "Default threshold",
+            "Random threshold",
+            "Maximum threshold"
+        ],
+        "correct": "Finding threshold that optimizes business objective"
+    },
+    {
+        "q": "Optimal threshold depends on _____ of different error types.",
+        "type": "fill_blank",
+        "correct": "costs"
+    },
+    {
+        "q": "Different thresholds trade off precision and recall.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "What is expected value framework for ML?",
+        "type": "mcq",
+        "o": [
+            "Evaluating models based on expected business outcomes",
+            "Average prediction",
+            "Expected training time",
+            "Value estimation"
+        ],
+        "correct": "Evaluating models based on expected business outcomes"
+    },
+    {
+        "q": "Expected value considers both _____ and error costs.",
+        "type": "fill_blank",
+        "correct": "benefits"
+    },
+    {
+        "q": "Cost-benefit analysis should drive threshold selection.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "What is profit curve in ML?",
+        "type": "mcq",
+        "o": [
+            "Plot of cumulative profit vs population fraction targeted",
+            "Revenue curve",
+            "Cost curve only",
+            "Training curve"
+        ],
+        "correct": "Plot of cumulative profit vs population fraction targeted"
+    },
+    {
+        "q": "Profit curves help optimize _____ allocation.",
+        "type": "fill_blank",
+        "correct": "resource"
+    },
+    {
+        "q": "Maximum profit point determines optimal targeting threshold.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "What is model compression evaluation?",
+        "type": "mcq",
+        "o": [
+            "Measuring trade-off between model size and performance",
+            "Data compression",
+            "Feature compression",
+            "File compression"
+        ],
+        "correct": "Measuring trade-off between model size and performance"
+    },
+    {
+        "q": "Compressed models should maintain acceptable _____ levels.",
+        "type": "fill_blank",
+        "correct": "accuracy"
+    },
+    {
+        "q": "Quantization can significantly reduce model size with minor accuracy loss.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Match the compression technique with its approach:",
+        "type": "match",
+        "left": [
+            "Pruning",
+            "Quantization",
+            "Distillation",
+            "Low-rank factorization"
+        ],
+        "right": [
+            "Remove weights",
+            "Reduce precision",
+            "Smaller model",
+            "Matrix decomposition"
+        ]
+    },
+    {
+        "q": "What is hardware-aware evaluation?",
+        "type": "mcq",
+        "o": [
+            "Measuring model performance on target deployment hardware",
+            "Hardware testing",
+            "Standard evaluation",
+            "CPU testing"
+        ],
+        "correct": "Measuring model performance on target deployment hardware"
+    },
+    {
+        "q": "Mobile deployment requires evaluating _____ and battery impact.",
+        "type": "fill_blank",
+        "correct": "latency"
+    },
+    {
+        "q": "GPU inference can be faster than CPU for large models.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "What is edge deployment evaluation?",
+        "type": "mcq",
+        "o": [
+            "Evaluating models running on edge devices like IoT",
+            "Cloud evaluation",
+            "Server evaluation",
+            "Central evaluation"
+        ],
+        "correct": "Evaluating models running on edge devices like IoT"
+    },
+    {
+        "q": "Edge devices have limited _____ and compute resources.",
+        "type": "fill_blank",
+        "correct": "memory"
+    },
+    {
+        "q": "TensorFlow Lite and ONNX Runtime are edge deployment tools.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "What is interpretability evaluation?",
+        "type": "mcq",
+        "o": [
+            "Assessing how understandable model decisions are",
+            "Accuracy evaluation",
+            "Speed evaluation",
+            "Size evaluation"
+        ],
+        "correct": "Assessing how understandable model decisions are"
+    },
+    {
+        "q": "Interpretability helps build _____ in model predictions.",
+        "type": "fill_blank",
+        "correct": "trust"
+    },
+    {
+        "q": "Linear models are more interpretable than deep neural networks.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Match interpretability method with its scope:",
+        "type": "match",
+        "left": [
+            "Feature importance",
+            "LIME",
+            "SHAP",
+            "Attention visualization"
+        ],
+        "right": [
+            "Global",
+            "Local",
+            "Both global and local",
+            "Model-specific"
+        ]
+    },
+    {
+        "q": "What is debugging for ML models?",
+        "type": "mcq",
+        "o": [
+            "Identifying and fixing sources of model errors",
+            "Code debugging",
+            "Data debugging only",
+            "Hardware debugging"
+        ],
+        "correct": "Identifying and fixing sources of model errors"
+    },
+    {
+        "q": "ML debugging involves data, code, and _____ issues.",
+        "type": "fill_blank",
+        "correct": "model"
+    },
+    {
+        "q": "Careful logging helps identify root causes of model failures.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "What is model autopsy?",
+        "type": "mcq",
+        "o": [
+            "Detailed analysis of a failed or retired model",
+            "Model creation",
+            "Model training",
+            "Model deployment"
+        ],
+        "correct": "Detailed analysis of a failed or retired model"
+    },
+    {
+        "q": "Model autopsy documents _____ learned from failures.",
+        "type": "fill_blank",
+        "correct": "lessons"
+    },
+    {
+        "q": "Post-mortems help prevent similar failures in future models.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Arrange the model debugging steps:",
+        "type": "rearrange",
+        "correct": [
+            "Reproduce the error",
+            "Isolate the cause",
+            "Identify the fix",
+            "Validate the solution",
+            "Document the issue"
+        ]
+    },
+    {
+        "q": "What is benchmark evaluation?",
+        "type": "mcq",
+        "o": [
+            "Comparing models against standard datasets and baselines",
+            "Production evaluation",
+            "Custom evaluation",
+            "Random evaluation"
+        ],
+        "correct": "Comparing models against standard datasets and baselines"
+    },
+    {
+        "q": "Standard benchmarks enable fair _____ between methods.",
+        "type": "fill_blank",
+        "correct": "comparison"
+    },
+    {
+        "q": "ImageNet is a standard benchmark for image classification.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "What is leaderboard evaluation?",
+        "type": "mcq",
+        "o": [
+            "Ranking models on benchmark performance",
+            "Training ranking",
+            "Data ranking",
+            "Feature ranking"
+        ],
+        "correct": "Ranking models on benchmark performance"
+    },
+    {
+        "q": "Public leaderboards can encourage _____ to specific benchmarks.",
+        "type": "fill_blank",
+        "correct": "overfitting"
+    },
+    {
+        "q": "Held-out test sets prevent leaderboard overfitting.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "What is cross-dataset generalization?",
+        "type": "mcq",
+        "o": [
+            "Evaluating model on datasets different from training",
+            "Same dataset evaluation",
+            "Training evaluation",
+            "Validation only"
+        ],
+        "correct": "Evaluating model on datasets different from training"
+    },
+    {
+        "q": "Cross-dataset evaluation tests model _____.",
+        "type": "fill_blank",
+        "correct": "generalization"
+    },
+    {
+        "q": "Performance often drops on out-of-domain datasets.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Match the benchmark with its domain:",
+        "type": "match",
+        "left": [
+            "ImageNet",
+            "GLUE",
+            "COCO",
+            "SQuAD"
+        ],
+        "right": [
+            "Image classification",
+            "NLU tasks",
+            "Object detection",
+            "Question answering"
+        ]
+    },
+    {
+        "q": "What is temporal validation?",
+        "type": "mcq",
+        "o": [
+            "Using time-ordered splits for train and test",
+            "Random validation",
+            "Cross-validation",
+            "Holdout validation"
+        ],
+        "correct": "Using time-ordered splits for train and test"
+    },
+    {
+        "q": "Temporal validation prevents _____ from the future.",
+        "type": "fill_blank",
+        "correct": "leakage"
+    },
+    {
+        "q": "Financial models should always use temporal validation.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "What is seasonal validation?",
+        "type": "mcq",
+        "o": [
+            "Testing on seasons not in training data",
+            "Standard validation",
+            "Random validation",
+            "Yearly validation"
+        ],
+        "correct": "Testing on seasons not in training data"
+    },
+    {
+        "q": "Seasonal patterns require validation across different _____.",
+        "type": "fill_blank",
+        "correct": "periods"
+    },
+    {
+        "q": "Models can overfit to seasonal patterns in training data.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "What is adversarial robustness evaluation?",
+        "type": "mcq",
+        "o": [
+            "Testing model resistance to adversarial attacks",
+            "Standard evaluation",
+            "Accuracy testing",
+            "Speed testing"
+        ],
+        "correct": "Testing model resistance to adversarial attacks"
+    },
+    {
+        "q": "Adversarial examples are crafted to cause model _____.",
+        "type": "fill_blank",
+        "correct": "mistakes"
+    },
+    {
+        "q": "Robust models maintain accuracy under adversarial perturbations.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Match the adversarial attack with its approach:",
+        "type": "match",
+        "left": [
+            "FGSM",
+            "PGD",
+            "C&W",
+            "AutoAttack"
+        ],
+        "right": [
+            "Single step gradient",
+            "Iterative gradient",
+            "Optimization based",
+            "Ensemble attack"
+        ]
+    },
+    {
+        "q": "What is certified robustness?",
+        "type": "mcq",
+        "o": [
+            "Provable bounds on model robustness",
+            "Empirical robustness",
+            "Heuristic robustness",
+            "Approximate robustness"
+        ],
+        "correct": "Provable bounds on model robustness"
+    },
+    {
+        "q": "Certified robustness provides _____ guarantees against attacks.",
+        "type": "fill_blank",
+        "correct": "mathematical"
+    },
+    {
+        "q": "Randomized smoothing can provide certified robustness.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "What is distribution shift evaluation?",
+        "type": "mcq",
+        "o": [
+            "Testing model on data different from training distribution",
+            "Standard evaluation",
+            "Training evaluation",
+            "Same distribution testing"
+        ],
+        "correct": "Testing model on data different from training distribution"
+    },
+    {
+        "q": "Distribution shift can cause _____ performance degradation.",
+        "type": "fill_blank",
+        "correct": "significant"
+    },
+    {
+        "q": "Wild test sets evaluate real-world distribution shifts.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Arrange the types of distribution shift:",
+        "type": "rearrange",
+        "correct": [
+            "Covariate shift",
+            "Label shift",
+            "Concept shift",
+            "Domain shift",
+            "Dataset shift"
+        ]
+    },
+    {
+        "q": "What is privacy-preserving evaluation?",
+        "type": "mcq",
+        "o": [
+            "Evaluating models without accessing raw data",
+            "Standard evaluation",
+            "Full data access",
+            "Training evaluation"
+        ],
+        "correct": "Evaluating models without accessing raw data"
+    },
+    {
+        "q": "Differential privacy can be applied during _____.",
+        "type": "fill_blank",
+        "correct": "evaluation"
+    },
+    {
+        "q": "Federated evaluation aggregates metrics without sharing data.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "What is carbon footprint evaluation?",
+        "type": "mcq",
+        "o": [
+            "Measuring environmental impact of training and inference",
+            "Model size",
+            "Training time only",
+            "Accuracy measurement"
+        ],
+        "correct": "Measuring environmental impact of training and inference"
+    },
+    {
+        "q": "Large models have higher _____ footprints.",
+        "type": "fill_blank",
+        "correct": "carbon"
+    },
+    {
+        "q": "Green AI considers environmental impact in model development.",
+        "type": "true_false",
+        "correct": "True"
     }
 ]

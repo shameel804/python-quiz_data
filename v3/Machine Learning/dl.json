@@ -1,622 +1,5650 @@
 [
     {
-        "q": "What is a neural network primarily used for?",
-        "c": null,
+        "q": "What is deep learning?",
+        "type": "mcq",
         "o": [
-            "Pattern recognition",
-            "Data compression",
-            "Database management",
-            "Web scraping"
+            "Subset of machine learning using neural networks with multiple layers",
+            "Simple algorithms",
+            "Basic statistics",
+            "Rule-based systems"
         ]
     },
     {
-        "q": "What is the function of an activation function in neural networks?",
-        "c": null,
-        "o": [
-            "Introduce non-linearity",
-            "Increase training speed",
-            "Reduce memory usage",
-            "Improve model accuracy"
+        "q": "Deep learning models learn _____ from raw data.",
+        "type": "fill_blank",
+        "answers": [
+            "features"
+        ],
+        "other_options": [
+            "rules",
+            "labels",
+            "inputs"
         ]
     },
     {
-        "q": "Which of the following is a popular deep learning framework?",
-        "c": null,
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "# Neural network concept\nlayers = ['input', 'hidden1', 'hidden2', 'output']\nprint(len(layers))",
         "o": [
-            "TensorFlow",
-            "Pandas",
-            "NumPy",
-            "Matplotlib"
+            "4",
+            "3",
+            "2",
+            "1"
         ]
     },
     {
-        "q": "What does CNN stand for in deep learning?",
-        "c": null,
-        "o": [
-            "Convolutional Neural Network",
-            "Cascading Neural Network",
-            "Complex Neural Network",
-            "Comprehensive Neural Network"
+        "q": "Match the term with its definition:",
+        "type": "match",
+        "left": [
+            "Neuron",
+            "Layer",
+            "Weight",
+            "Bias"
+        ],
+        "right": [
+            "Basic unit",
+            "Group of neurons",
+            "Connection strength",
+            "Offset term"
         ]
     },
     {
-        "q": "Which layer in a CNN is responsible for detecting edges and textures?",
-        "c": null,
+        "q": "Deep learning requires large amounts of data to train effectively.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "What is an artificial neural network?",
+        "type": "mcq",
         "o": [
-            "Convolutional layer",
-            "Pooling layer",
-            "Fully connected layer",
-            "Recurrent layer"
+            "Computational model inspired by biological neural networks",
+            "Human brain",
+            "Computer program",
+            "Database system"
+        ]
+    },
+    {
+        "q": "A neuron receives inputs, applies _____, and produces output.",
+        "type": "fill_blank",
+        "answers": [
+            "weights"
+        ],
+        "other_options": [
+            "data",
+            "labels",
+            "features"
+        ]
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "import numpy as np\nweights = np.array([0.5, 0.3, 0.2])\ninputs = np.array([1, 2, 3])\noutput = np.dot(weights, inputs)\nprint(output)",
+        "o": [
+            "1.7",
+            "1.0",
+            "2.0",
+            "0.5"
+        ]
+    },
+    {
+        "q": "Neural networks can learn non-linear relationships.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Rearrange the neural network components:",
+        "type": "rearrange",
+        "words": [
+            "Input Layer",
+            "Hidden Layers",
+            "Output Layer",
+            "Prediction"
+        ]
+    },
+    {
+        "q": "What is an activation function?",
+        "type": "mcq",
+        "o": [
+            "Function that introduces non-linearity to neural network",
+            "Linear function",
+            "Loss function",
+            "Cost function"
+        ]
+    },
+    {
+        "q": "Without activation functions, neural networks would be _____ models.",
+        "type": "fill_blank",
+        "answers": [
+            "linear"
+        ],
+        "other_options": [
+            "complex",
+            "non-linear",
+            "deep"
+        ]
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "import numpy as np\ndef relu(x):\n    return max(0, x)\nprint(relu(-5))",
+        "o": [
+            "0",
+            "-5",
+            "5",
+            "1"
+        ]
+    },
+    {
+        "q": "Match the activation function with its range:",
+        "type": "match",
+        "left": [
+            "Sigmoid",
+            "Tanh",
+            "ReLU",
+            "Softmax"
+        ],
+        "right": [
+            "(0, 1)",
+            "(-1, 1)",
+            "[0, infinity)",
+            "(0, 1) sum=1"
+        ]
+    },
+    {
+        "q": "ReLU is the most commonly used activation function in hidden layers.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "What is the sigmoid activation function?",
+        "type": "mcq",
+        "o": [
+            "Function that maps values to range between 0 and 1",
+            "Linear function",
+            "Step function",
+            "Identity function"
+        ]
+    },
+    {
+        "q": "Sigmoid function formula is 1 / (1 + e to the power of negative _____)",
+        "type": "fill_blank",
+        "answers": [
+            "x"
+        ],
+        "other_options": [
+            "y",
+            "w",
+            "b"
+        ]
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "import numpy as np\ndef sigmoid(x):\n    return 1 / (1 + np.exp(-x))\nprint(round(sigmoid(0), 1))",
+        "o": [
+            "0.5",
+            "0.0",
+            "1.0",
+            "0.7"
+        ]
+    },
+    {
+        "q": "Sigmoid can cause vanishing gradient problem in deep networks.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Rearrange activation functions by introduction:",
+        "type": "rearrange",
+        "words": [
+            "Step Function",
+            "Sigmoid",
+            "Tanh",
+            "ReLU"
+        ]
+    },
+    {
+        "q": "What is ReLU activation function?",
+        "type": "mcq",
+        "o": [
+            "Rectified Linear Unit returning max of 0 and input",
+            "Random function",
+            "Recursive function",
+            "Regression function"
+        ]
+    },
+    {
+        "q": "ReLU outputs 0 for all _____ values.",
+        "type": "fill_blank",
+        "answers": [
+            "negative"
+        ],
+        "other_options": [
+            "positive",
+            "zero",
+            "large"
+        ]
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "import numpy as np\ndef relu(x):\n    return np.maximum(0, x)\nresult = relu(np.array([-1, 0, 2]))\nprint(result.sum())",
+        "o": [
+            "2",
+            "1",
+            "0",
+            "3"
+        ]
+    },
+    {
+        "q": "Match the ReLU variant with its property:",
+        "type": "match",
+        "left": [
+            "ReLU",
+            "Leaky ReLU",
+            "PReLU",
+            "ELU"
+        ],
+        "right": [
+            "Zero for negative",
+            "Small slope",
+            "Learned slope",
+            "Exponential"
+        ]
+    },
+    {
+        "q": "ReLU is computationally efficient compared to sigmoid.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "What is the softmax activation function?",
+        "type": "mcq",
+        "o": [
+            "Function converting outputs to probability distribution",
+            "Soft function",
+            "Maximum function",
+            "Minimum function"
+        ]
+    },
+    {
+        "q": "Softmax outputs sum to _____.",
+        "type": "fill_blank",
+        "answers": [
+            "1"
+        ],
+        "other_options": [
+            "0",
+            "100",
+            "infinity"
+        ]
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "import numpy as np\ndef softmax(x):\n    e_x = np.exp(x - np.max(x))\n    return e_x / e_x.sum()\nresult = softmax(np.array([1, 2, 3]))\nprint(round(result.sum(), 1))",
+        "o": [
+            "1.0",
+            "0.5",
+            "3.0",
+            "0.0"
+        ]
+    },
+    {
+        "q": "Softmax is typically used in the output layer for multi-class classification.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Rearrange output activations for different tasks:",
+        "type": "rearrange",
+        "words": [
+            "Linear (regression)",
+            "Sigmoid (binary)",
+            "Softmax (multi-class)",
+            "Tanh (bounded)"
+        ]
+    },
+    {
+        "q": "What is forward propagation?",
+        "type": "mcq",
+        "o": [
+            "Process of passing input through network to get output",
+            "Backward pass",
+            "Random process",
+            "Training process"
+        ]
+    },
+    {
+        "q": "Forward propagation computes _____ from input to output.",
+        "type": "fill_blank",
+        "answers": [
+            "predictions"
+        ],
+        "other_options": [
+            "gradients",
+            "weights",
+            "errors"
+        ]
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "# Forward pass concept\nimport numpy as np\nx = np.array([1, 2])\nw = np.array([[0.5, 0.3], [0.2, 0.4]])\nz = np.dot(w, x)\nprint(z[0])",
+        "o": [
+            "1.1",
+            "0.5",
+            "2.0",
+            "0.7"
+        ]
+    },
+    {
+        "q": "Forward propagation is used during both training and inference.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Rearrange forward propagation steps:",
+        "type": "rearrange",
+        "words": [
+            "Input Data",
+            "Weighted Sum",
+            "Activation Function",
+            "Output"
         ]
     },
     {
         "q": "What is backpropagation?",
-        "c": null,
+        "type": "mcq",
         "o": [
-            "Algorithm for training neural networks",
-            "Data normalization technique",
+            "Algorithm for computing gradients to update weights",
+            "Forward pass",
+            "Data preprocessing",
+            "Feature extraction"
+        ]
+    },
+    {
+        "q": "Backpropagation uses the _____ rule to compute gradients.",
+        "type": "fill_blank",
+        "answers": [
+            "chain"
+        ],
+        "other_options": [
+            "product",
+            "sum",
+            "quotient"
+        ]
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "# Gradient concept\nimport numpy as np\ny_pred = 0.8\ny_true = 1.0\ngradient = 2 * (y_pred - y_true)\nprint(gradient)",
+        "o": [
+            "-0.4",
+            "0.4",
+            "0.2",
+            "-0.2"
+        ]
+    },
+    {
+        "q": "Match the training component with its role:",
+        "type": "match",
+        "left": [
+            "Forward pass",
+            "Loss function",
+            "Backprop",
+            "Optimizer"
+        ],
+        "right": [
+            "Compute output",
+            "Measure error",
+            "Compute gradients",
+            "Update weights"
+        ]
+    },
+    {
+        "q": "Backpropagation propagates errors from output to input layer.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "What is a loss function?",
+        "type": "mcq",
+        "o": [
+            "Function measuring difference between predictions and targets",
+            "Activation function",
+            "Weight function",
+            "Bias function"
+        ]
+    },
+    {
+        "q": "The goal of training is to _____ the loss function.",
+        "type": "fill_blank",
+        "answers": [
+            "minimize"
+        ],
+        "other_options": [
+            "maximize",
+            "ignore",
+            "calculate"
+        ]
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "import numpy as np\ny_true = np.array([1, 0, 1])\ny_pred = np.array([0.9, 0.1, 0.8])\nmse = np.mean((y_true - y_pred)**2)\nprint(round(mse, 4))",
+        "o": [
+            "0.02",
+            "0.1",
+            "0.5",
+            "0.01"
+        ]
+    },
+    {
+        "q": "Mean Squared Error is commonly used for regression tasks.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Rearrange loss functions by common use case:",
+        "type": "rearrange",
+        "words": [
+            "MSE (regression)",
+            "BCE (binary)",
+            "CCE (multi-class)",
+            "Huber (robust)"
+        ]
+    },
+    {
+        "q": "What is gradient descent?",
+        "type": "mcq",
+        "o": [
+            "Optimization algorithm updating parameters in direction of steepest descent",
+            "Random search",
+            "Grid search",
+            "Data augmentation"
+        ]
+    },
+    {
+        "q": "Gradient descent updates weights by subtracting learning rate times _____.",
+        "type": "fill_blank",
+        "answers": [
+            "gradient"
+        ],
+        "other_options": [
+            "weight",
+            "loss",
+            "error"
+        ]
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "# Gradient descent update\nweight = 0.5\nlearning_rate = 0.1\ngradient = 0.2\nweight = weight - learning_rate * gradient\nprint(weight)",
+        "o": [
+            "0.48",
+            "0.5",
+            "0.52",
+            "0.3"
+        ]
+    },
+    {
+        "q": "Match the gradient descent variant with its property:",
+        "type": "match",
+        "left": [
+            "Batch GD",
+            "Stochastic GD",
+            "Mini-batch GD",
+            "Momentum"
+        ],
+        "right": [
+            "All data",
+            "One sample",
+            "Subset",
+            "Velocity term"
+        ]
+    },
+    {
+        "q": "Learning rate controls the step size in gradient descent.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "What is the learning rate?",
+        "type": "mcq",
+        "o": [
+            "Hyperparameter controlling step size during optimization",
+            "Model accuracy",
+            "Number of layers",
+            "Batch size"
+        ]
+    },
+    {
+        "q": "Too large learning rate can cause training to _____.",
+        "type": "fill_blank",
+        "answers": [
+            "diverge"
+        ],
+        "other_options": [
+            "converge",
+            "stop",
+            "improve"
+        ]
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "# Learning rate comparison\nlearning_rates = [0.001, 0.01, 0.1, 1.0]\nprint(f'Smallest: {min(learning_rates)}')",
+        "o": [
+            "Smallest: 0.001",
+            "Smallest: 0.01",
+            "Smallest: 0.1",
+            "Smallest: 1.0"
+        ]
+    },
+    {
+        "q": "Too small learning rate causes slow convergence.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Rearrange learning rates from conservative to aggressive:",
+        "type": "rearrange",
+        "words": [
+            "0.0001",
+            "0.001",
+            "0.01",
+            "0.1"
+        ]
+    },
+    {
+        "q": "What is an epoch in deep learning?",
+        "type": "mcq",
+        "o": [
+            "One complete pass through entire training dataset",
+            "One sample",
+            "One batch",
+            "One gradient update"
+        ]
+    },
+    {
+        "q": "Training for more epochs can lead to _____ on training data.",
+        "type": "fill_blank",
+        "answers": [
+            "overfitting"
+        ],
+        "other_options": [
+            "underfitting",
+            "improvement",
+            "stability"
+        ]
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "# Epochs calculation\ndata_size = 1000\nbatch_size = 100\nbatches_per_epoch = data_size // batch_size\nprint(batches_per_epoch)",
+        "o": [
+            "10",
+            "100",
+            "1000",
+            "1"
+        ]
+    },
+    {
+        "q": "Match the training term with its definition:",
+        "type": "match",
+        "left": [
+            "Epoch",
+            "Batch",
+            "Iteration",
+            "Step"
+        ],
+        "right": [
+            "Full dataset pass",
+            "Subset of data",
+            "One batch update",
+            "One weight update"
+        ]
+    },
+    {
+        "q": "One epoch means the model has seen every training sample once.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "What is batch size?",
+        "type": "mcq",
+        "o": [
+            "Number of samples processed before weight update",
+            "Total dataset size",
+            "Number of epochs",
+            "Number of layers"
+        ]
+    },
+    {
+        "q": "Larger batch sizes provide more _____ gradient estimates.",
+        "type": "fill_blank",
+        "answers": [
+            "stable"
+        ],
+        "other_options": [
+            "noisy",
+            "random",
+            "small"
+        ]
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "# Batch processing\nimport numpy as np\ndata = np.arange(100)\nbatch_size = 32\nnum_batches = len(data) // batch_size\nprint(num_batches)",
+        "o": [
+            "3",
+            "32",
+            "100",
+            "4"
+        ]
+    },
+    {
+        "q": "Smaller batch sizes introduce more noise but can help escape local minima.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Rearrange batch sizes from small to large:",
+        "type": "rearrange",
+        "words": [
+            "1 (SGD)",
+            "32",
+            "128",
+            "Full Batch"
+        ]
+    },
+    {
+        "q": "What is a Convolutional Neural Network (CNN)?",
+        "type": "mcq",
+        "o": [
+            "Neural network specialized for processing grid-like data such as images",
+            "Recurrent network",
+            "Fully connected network",
+            "Autoencoder"
+        ]
+    },
+    {
+        "q": "CNNs use _____ to detect local patterns in images.",
+        "type": "fill_blank",
+        "answers": [
+            "filters"
+        ],
+        "other_options": [
+            "neurons",
+            "layers",
+            "activations"
+        ]
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "# CNN layer\nimport numpy as np\nimage = np.random.rand(32, 32, 3)\nfilter_size = 3\noutput_size = image.shape[0] - filter_size + 1\nprint(output_size)",
+        "o": [
+            "30",
+            "32",
+            "29",
+            "31"
+        ]
+    },
+    {
+        "q": "Match the CNN component with its function:",
+        "type": "match",
+        "left": [
+            "Convolution",
+            "Pooling",
+            "Flatten",
+            "Dense"
+        ],
+        "right": [
+            "Feature extraction",
+            "Downsampling",
+            "1D conversion",
+            "Classification"
+        ]
+    },
+    {
+        "q": "CNNs share weights across spatial locations.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "What is a convolution operation?",
+        "type": "mcq",
+        "o": [
+            "Sliding filter over input to compute dot products",
+            "Addition operation",
+            "Subtraction operation",
+            "Division operation"
+        ]
+    },
+    {
+        "q": "Convolution detects _____ features like edges and textures.",
+        "type": "fill_blank",
+        "answers": [
+            "local"
+        ],
+        "other_options": [
+            "global",
+            "random",
+            "complex"
+        ]
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "import numpy as np\nfilter = np.array([[1, 0], [0, -1]])\nimage_patch = np.array([[5, 3], [2, 1]])\nresult = np.sum(filter * image_patch)\nprint(result)",
+        "o": [
+            "4",
+            "5",
+            "3",
+            "2"
+        ]
+    },
+    {
+        "q": "Convolution layers learn filters during training.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Rearrange CNN layer types from input to output:",
+        "type": "rearrange",
+        "words": [
+            "Input Image",
+            "Convolution",
+            "Pooling",
+            "Fully Connected"
+        ]
+    },
+    {
+        "q": "What is pooling in CNNs?",
+        "type": "mcq",
+        "o": [
+            "Operation reducing spatial dimensions of feature maps",
+            "Adding more filters",
+            "Increasing resolution",
+            "Adding noise"
+        ]
+    },
+    {
+        "q": "Max pooling selects the _____ value in each window.",
+        "type": "fill_blank",
+        "answers": [
+            "maximum"
+        ],
+        "other_options": [
+            "minimum",
+            "average",
+            "median"
+        ]
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "import numpy as np\nfeature_map = np.array([[1, 2], [3, 4]])\nmax_pool = np.max(feature_map)\nprint(max_pool)",
+        "o": [
+            "4",
+            "1",
+            "2.5",
+            "10"
+        ]
+    },
+    {
+        "q": "Match the pooling type with its operation:",
+        "type": "match",
+        "left": [
+            "Max Pooling",
+            "Average Pooling",
+            "Global Average",
+            "Stride"
+        ],
+        "right": [
+            "Maximum value",
+            "Mean value",
+            "Single value per channel",
+            "Skip pixels"
+        ]
+    },
+    {
+        "q": "Pooling reduces computational cost and provides translation invariance.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "What is stride in CNNs?",
+        "type": "mcq",
+        "o": [
+            "Number of pixels the filter moves at each step",
+            "Filter size",
+            "Number of filters",
+            "Padding amount"
+        ]
+    },
+    {
+        "q": "Stride of 2 reduces spatial dimensions by half.",
+        "type": "fill_blank",
+        "answers": [
+            "approximately"
+        ],
+        "other_options": [
+            "exactly",
+            "randomly",
+            "never"
+        ]
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "# Output size calculation\ninput_size = 28\nfilter_size = 3\nstride = 2\noutput = (input_size - filter_size) // stride + 1\nprint(output)",
+        "o": [
+            "13",
+            "14",
+            "28",
+            "12"
+        ]
+    },
+    {
+        "q": "Larger stride reduces output size more aggressively.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Rearrange stride values by aggressiveness:",
+        "type": "rearrange",
+        "words": [
+            "Stride 1 (gentle)",
+            "Stride 2",
+            "Stride 4",
+            "Stride 8 (aggressive)"
+        ]
+    },
+    {
+        "q": "What is padding in CNNs?",
+        "type": "mcq",
+        "o": [
+            "Adding zeros around input to control output size",
+            "Removing edges",
+            "Cropping image",
+            "Resizing image"
+        ]
+    },
+    {
+        "q": "Same padding keeps output size _____ to input size.",
+        "type": "fill_blank",
+        "answers": [
+            "equal"
+        ],
+        "other_options": [
+            "different",
+            "smaller",
+            "larger"
+        ]
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "import numpy as np\nimage = np.ones((3, 3))\npadded = np.pad(image, 1, mode='constant')\nprint(padded.shape)",
+        "o": [
+            "(5, 5)",
+            "(3, 3)",
+            "(4, 4)",
+            "(6, 6)"
+        ]
+    },
+    {
+        "q": "Match the padding type with its result:",
+        "type": "match",
+        "left": [
+            "Valid",
+            "Same",
+            "Full",
+            "Zero"
+        ],
+        "right": [
+            "No padding",
+            "Preserve size",
+            "Larger output",
+            "Add zeros"
+        ]
+    },
+    {
+        "q": "Padding prevents information loss at image borders.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "What is a Recurrent Neural Network (RNN)?",
+        "type": "mcq",
+        "o": [
+            "Neural network with connections forming directed cycles for sequences",
+            "Convolutional network",
+            "Feedforward network",
+            "Autoencoder"
+        ]
+    },
+    {
+        "q": "RNNs maintain _____ state to remember previous inputs.",
+        "type": "fill_blank",
+        "answers": [
+            "hidden"
+        ],
+        "other_options": [
+            "visible",
+            "output",
+            "input"
+        ]
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "# RNN concept\nsequence = ['hello', 'world', 'of', 'deep', 'learning']\nprint(len(sequence))",
+        "o": [
+            "5",
+            "4",
+            "3",
+            "6"
+        ]
+    },
+    {
+        "q": "Match the sequence model with its application:",
+        "type": "match",
+        "left": [
+            "RNN",
+            "LSTM",
+            "GRU",
+            "Transformer"
+        ],
+        "right": [
+            "Basic sequences",
+            "Long dependencies",
+            "Faster LSTM",
+            "Attention-based"
+        ]
+    },
+    {
+        "q": "RNNs are suitable for processing sequential data like text and time series.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "What is LSTM (Long Short-Term Memory)?",
+        "type": "mcq",
+        "o": [
+            "RNN variant with gates to control information flow over long sequences",
+            "Linear model",
+            "Simple RNN",
+            "Feedforward network"
+        ]
+    },
+    {
+        "q": "LSTM uses _____ gates to control information flow.",
+        "type": "fill_blank",
+        "answers": [
+            "three"
+        ],
+        "other_options": [
+            "two",
+            "one",
+            "four"
+        ]
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "# LSTM gates\ngates = ['forget', 'input', 'output']\nprint(len(gates))",
+        "o": [
+            "3",
+            "2",
+            "4",
+            "1"
+        ]
+    },
+    {
+        "q": "Match the LSTM gate with its function:",
+        "type": "match",
+        "left": [
+            "Forget Gate",
+            "Input Gate",
+            "Output Gate",
+            "Cell State"
+        ],
+        "right": [
+            "What to discard",
+            "What to add",
+            "What to output",
+            "Long-term memory"
+        ]
+    },
+    {
+        "q": "LSTM solves the vanishing gradient problem in standard RNNs.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "What is GRU (Gated Recurrent Unit)?",
+        "type": "mcq",
+        "o": [
+            "Simplified version of LSTM with fewer gates",
+            "Complex RNN",
+            "Feedforward layer",
+            "Convolutional unit"
+        ]
+    },
+    {
+        "q": "GRU has _____ gates compared to LSTM's three.",
+        "type": "fill_blank",
+        "answers": [
+            "two"
+        ],
+        "other_options": [
+            "three",
+            "one",
+            "four"
+        ]
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "# GRU gates\ngru_gates = ['reset', 'update']\nlstm_gates = ['forget', 'input', 'output']\nprint(len(gru_gates) < len(lstm_gates))",
+        "o": [
+            "True",
+            "False",
+            "Error",
+            "None"
+        ]
+    },
+    {
+        "q": "GRU is computationally more efficient than LSTM.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Rearrange sequence models by complexity:",
+        "type": "rearrange",
+        "words": [
+            "Simple RNN",
+            "GRU",
+            "LSTM",
+            "Transformer"
+        ]
+    },
+    {
+        "q": "What is the attention mechanism?",
+        "type": "mcq",
+        "o": [
+            "Mechanism allowing model to focus on relevant parts of input",
+            "Memory mechanism",
             "Activation function",
             "Loss function"
         ]
     },
     {
-        "q": "What is the purpose of a pooling layer in CNNs?",
-        "c": null,
-        "o": [
-            "Reduce dimensionality",
-            "Increase computational power",
-            "Train faster",
-            "Enhance resolution"
+        "q": "Attention computes weighted sum of _____ based on relevance.",
+        "type": "fill_blank",
+        "answers": [
+            "values"
+        ],
+        "other_options": [
+            "keys",
+            "queries",
+            "inputs"
         ]
     },
     {
-        "q": "Which activation function is commonly used in hidden layers of deep networks?",
-        "c": null,
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "import numpy as np\nscores = np.array([0.1, 0.7, 0.2])\nweights = np.exp(scores) / np.sum(np.exp(scores))\nprint(round(weights.max(), 2))",
         "o": [
-            "ReLU",
-            "Softmax",
-            "Sigmoid",
-            "Tanh"
+            "0.47",
+            "0.7",
+            "1.0",
+            "0.33"
         ]
     },
     {
-        "q": "Which deep learning model is typically used for sequence data?",
-        "c": null,
-        "o": [
-            "RNN",
-            "CNN",
-            "SVM",
-            "GAN"
+        "q": "Match the attention component with its role:",
+        "type": "match",
+        "left": [
+            "Query",
+            "Key",
+            "Value",
+            "Score"
+        ],
+        "right": [
+            "What to look for",
+            "What to match",
+            "What to retrieve",
+            "Relevance measure"
         ]
     },
     {
-        "q": "What is overfitting in deep learning?",
-        "c": null,
+        "q": "Attention allows processing of variable length sequences efficiently.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "What is self-attention?",
+        "type": "mcq",
         "o": [
-            "Model learns noise instead of pattern",
-            "Model is undertrained",
-            "Too few layers in the network",
-            "Excessive data preprocessing"
+            "Attention where queries, keys, and values come from same sequence",
+            "External attention",
+            "Cross attention",
+            "No attention"
         ]
     },
     {
-        "q": "Which technique is used to prevent overfitting?",
-        "c": null,
+        "q": "Self-attention captures _____ within a sequence.",
+        "type": "fill_blank",
+        "answers": [
+            "relationships"
+        ],
+        "other_options": [
+            "weights",
+            "values",
+            "outputs"
+        ]
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "# Self-attention concept\nsequence = ['The', 'cat', 'sat', 'on', 'mat']\nattention_matrix_shape = (len(sequence), len(sequence))\nprint(attention_matrix_shape)",
         "o": [
+            "(5, 5)",
+            "(5, 1)",
+            "(1, 5)",
+            "(25, 25)"
+        ]
+    },
+    {
+        "q": "Self-attention complexity is O(n squared) where n is sequence length.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Rearrange attention types:",
+        "type": "rearrange",
+        "words": [
+            "Self-Attention",
+            "Cross-Attention",
+            "Multi-Head",
+            "Masked"
+        ]
+    },
+    {
+        "q": "What is a Transformer?",
+        "type": "mcq",
+        "o": [
+            "Architecture based entirely on attention mechanisms",
+            "RNN variant",
+            "CNN variant",
+            "Simple network"
+        ]
+    },
+    {
+        "q": "Transformers use _____ attention to process sequences in parallel.",
+        "type": "fill_blank",
+        "answers": [
+            "self"
+        ],
+        "other_options": [
+            "cross",
+            "external",
+            "simple"
+        ]
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "# Transformer components\ncomponents = ['encoder', 'decoder', 'attention', 'feedforward']\nprint(len(components))",
+        "o": [
+            "4",
+            "3",
+            "5",
+            "2"
+        ]
+    },
+    {
+        "q": "Match the Transformer component with its function:",
+        "type": "match",
+        "left": [
+            "Encoder",
+            "Decoder",
+            "Multi-head attention",
+            "Positional encoding"
+        ],
+        "right": [
+            "Process input",
+            "Generate output",
+            "Parallel attention",
+            "Sequence order"
+        ]
+    },
+    {
+        "q": "Transformers can process all positions in parallel unlike RNNs.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "What is multi-head attention?",
+        "type": "mcq",
+        "o": [
+            "Running multiple attention operations in parallel",
+            "Single attention",
+            "Sequential attention",
+            "No attention"
+        ]
+    },
+    {
+        "q": "Multi-head attention allows learning _____ representation subspaces.",
+        "type": "fill_blank",
+        "answers": [
+            "multiple"
+        ],
+        "other_options": [
+            "single",
+            "no",
+            "few"
+        ]
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "# Multi-head attention\nnum_heads = 8\nd_model = 512\nhead_dim = d_model // num_heads\nprint(head_dim)",
+        "o": [
+            "64",
+            "8",
+            "512",
+            "128"
+        ]
+    },
+    {
+        "q": "Multi-head attention outputs are concatenated and projected.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Rearrange attention computation steps:",
+        "type": "rearrange",
+        "words": [
+            "Compute Q, K, V",
+            "Calculate Scores",
+            "Apply Softmax",
+            "Weighted Sum"
+        ]
+    },
+    {
+        "q": "What is positional encoding?",
+        "type": "mcq",
+        "o": [
+            "Adding position information to embeddings since attention has no order",
+            "Encoding values",
+            "Data encoding",
+            "Feature encoding"
+        ]
+    },
+    {
+        "q": "Positional encoding uses _____ functions in original Transformer.",
+        "type": "fill_blank",
+        "answers": [
+            "sinusoidal"
+        ],
+        "other_options": [
+            "linear",
+            "step",
+            "random"
+        ]
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "import numpy as np\nposition = 0\nd_model = 4\npe = np.sin(position / (10000 ** (0 / d_model)))\nprint(round(pe, 1))",
+        "o": [
+            "0.0",
+            "1.0",
+            "-1.0",
+            "0.5"
+        ]
+    },
+    {
+        "q": "Match the positional encoding type with its property:",
+        "type": "match",
+        "left": [
+            "Sinusoidal",
+            "Learned",
+            "Relative",
+            "Rotary"
+        ],
+        "right": [
+            "Fixed pattern",
+            "Trainable",
+            "Distance-based",
+            "Rotation matrix"
+        ]
+    },
+    {
+        "q": "Without positional encoding, Transformer cannot distinguish word order.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "What is dropout regularization?",
+        "type": "mcq",
+        "o": [
+            "Randomly setting neurons to zero during training to prevent overfitting",
+            "Removing layers",
+            "Adding noise",
+            "Weight decay"
+        ]
+    },
+    {
+        "q": "Dropout is only applied during _____.",
+        "type": "fill_blank",
+        "answers": [
+            "training"
+        ],
+        "other_options": [
+            "inference",
+            "testing",
+            "validation"
+        ]
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "import numpy as np\nnp.random.seed(42)\nactivations = np.array([1, 2, 3, 4, 5])\nmask = np.random.binomial(1, 0.5, 5)\nprint(sum(mask))",
+        "o": [
+            "3",
+            "5",
+            "0",
+            "2"
+        ]
+    },
+    {
+        "q": "Match the regularization technique with its approach:",
+        "type": "match",
+        "left": [
             "Dropout",
+            "L1",
+            "L2",
+            "Early stopping"
+        ],
+        "right": [
+            "Random zeroing",
+            "Sparsity",
+            "Weight decay",
+            "Stop training"
+        ]
+    },
+    {
+        "q": "Dropout rate of 0.5 means 50% of neurons are dropped.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "What is batch normalization?",
+        "type": "mcq",
+        "o": [
+            "Normalizing layer inputs to stabilize and speed up training",
+            "Batch processing",
+            "Data normalization",
+            "Weight normalization"
+        ]
+    },
+    {
+        "q": "Batch normalization normalizes using _____ and variance.",
+        "type": "fill_blank",
+        "answers": [
+            "mean"
+        ],
+        "other_options": [
+            "median",
+            "mode",
+            "range"
+        ]
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "import numpy as np\nbatch = np.array([1, 2, 3, 4, 5])\nmean = batch.mean()\nstd = batch.std()\nnormalized = (batch - mean) / std\nprint(round(normalized.mean(), 1))",
+        "o": [
+            "0.0",
+            "3.0",
+            "1.0",
+            "-1.0"
+        ]
+    },
+    {
+        "q": "Batch normalization allows higher learning rates.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Rearrange normalization techniques:",
+        "type": "rearrange",
+        "words": [
+            "Batch Norm",
+            "Layer Norm",
+            "Instance Norm",
+            "Group Norm"
+        ]
+    },
+    {
+        "q": "What is the Adam optimizer?",
+        "type": "mcq",
+        "o": [
+            "Adaptive optimizer combining momentum and RMSprop",
+            "Simple gradient descent",
+            "Random optimizer",
+            "Fixed learning rate"
+        ]
+    },
+    {
+        "q": "Adam maintains _____ moment estimates of gradients.",
+        "type": "fill_blank",
+        "answers": [
+            "two"
+        ],
+        "other_options": [
+            "one",
+            "three",
+            "zero"
+        ]
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "# Adam hyperparameters\nbeta1 = 0.9\nbeta2 = 0.999\nepsilon = 1e-8\nprint(f'beta1={beta1}')",
+        "o": [
+            "beta1=0.9",
+            "beta1=0.999",
+            "beta1=1e-8",
+            "Error"
+        ]
+    },
+    {
+        "q": "Match the optimizer with its key feature:",
+        "type": "match",
+        "left": [
+            "SGD",
+            "Momentum",
+            "RMSprop",
+            "Adam"
+        ],
+        "right": [
+            "Basic updates",
+            "Velocity",
+            "Adaptive rates",
+            "Both momentum and adaptive"
+        ]
+    },
+    {
+        "q": "Adam is often the default choice for deep learning.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "What is transfer learning?",
+        "type": "mcq",
+        "o": [
+            "Using pretrained model knowledge for new task",
+            "Data transfer",
+            "Weight initialization",
+            "Random learning"
+        ]
+    },
+    {
+        "q": "Transfer learning works by _____ early layers and fine-tuning later ones.",
+        "type": "fill_blank",
+        "answers": [
+            "freezing"
+        ],
+        "other_options": [
+            "training",
+            "removing",
+            "adding"
+        ]
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "# Transfer learning concept\npretrained_layers = ['conv1', 'conv2', 'conv3']\nfrozen = pretrained_layers[:2]\ntrainable = pretrained_layers[2:]\nprint(len(frozen))",
+        "o": [
+            "2",
+            "3",
+            "1",
+            "0"
+        ]
+    },
+    {
+        "q": "Transfer learning reduces training time and data requirements.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Rearrange transfer learning steps:",
+        "type": "rearrange",
+        "words": [
+            "Load Pretrained",
+            "Freeze Layers",
+            "Add New Head",
+            "Fine-tune"
+        ]
+    },
+    {
+        "q": "What is fine-tuning?",
+        "type": "mcq",
+        "o": [
+            "Training pretrained model on new task with small learning rate",
+            "Initial training",
+            "Random initialization",
+            "No training"
+        ]
+    },
+    {
+        "q": "Fine-tuning typically uses _____ learning rate than initial training.",
+        "type": "fill_blank",
+        "answers": [
+            "lower"
+        ],
+        "other_options": [
+            "higher",
+            "same",
+            "zero"
+        ]
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "# Fine-tuning learning rate\npretrain_lr = 0.001\nfinetune_lr = pretrain_lr / 10\nprint(finetune_lr)",
+        "o": [
+            "0.0001",
+            "0.001",
+            "0.01",
+            "0.1"
+        ]
+    },
+    {
+        "q": "Match the training strategy with its description:",
+        "type": "match",
+        "left": [
+            "From scratch",
+            "Feature extraction",
+            "Fine-tuning",
+            "Progressive unfreezing"
+        ],
+        "right": [
+            "Random init",
+            "Frozen backbone",
+            "Train all",
+            "Gradual unfreezing"
+        ]
+    },
+    {
+        "q": "Fine-tuning all layers risks catastrophic forgetting.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "What is data augmentation?",
+        "type": "mcq",
+        "o": [
+            "Artificially increasing training data by applying transformations",
+            "Data cleaning",
+            "Data reduction",
+            "Data collection"
+        ]
+    },
+    {
+        "q": "Augmentation creates _____ versions of training samples.",
+        "type": "fill_blank",
+        "answers": [
+            "modified"
+        ],
+        "other_options": [
+            "identical",
+            "reduced",
+            "removed"
+        ]
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "# Image augmentation types\naugmentations = ['flip', 'rotate', 'crop', 'color_jitter', 'blur']\nprint(len(augmentations))",
+        "o": [
+            "5",
+            "4",
+            "3",
+            "6"
+        ]
+    },
+    {
+        "q": "Match the augmentation with its domain:",
+        "type": "match",
+        "left": [
+            "Flip/Rotate",
+            "Synonym replacement",
+            "Mixup",
+            "SpecAugment"
+        ],
+        "right": [
+            "Images",
+            "Text",
+            "General",
+            "Audio"
+        ]
+    },
+    {
+        "q": "Data augmentation helps prevent overfitting.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "What is ResNet (Residual Network)?",
+        "type": "mcq",
+        "o": [
+            "CNN with skip connections allowing training of very deep networks",
+            "Recurrent network",
+            "Simple CNN",
+            "Transformer"
+        ]
+    },
+    {
+        "q": "ResNet uses _____ connections to skip layers.",
+        "type": "fill_blank",
+        "answers": [
+            "residual"
+        ],
+        "other_options": [
+            "direct",
+            "dense",
+            "sequential"
+        ]
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "# ResNet variants\nvariants = ['ResNet18', 'ResNet34', 'ResNet50', 'ResNet101', 'ResNet152']\nprint(len(variants))",
+        "o": [
+            "5",
+            "4",
+            "3",
+            "6"
+        ]
+    },
+    {
+        "q": "Match the CNN architecture with its innovation:",
+        "type": "match",
+        "left": [
+            "LeNet",
+            "AlexNet",
+            "VGG",
+            "ResNet"
+        ],
+        "right": [
+            "First CNN",
+            "Deep CNNs",
+            "3x3 convs",
+            "Skip connections"
+        ]
+    },
+    {
+        "q": "Skip connections help gradient flow in deep networks.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "What is VGG network?",
+        "type": "mcq",
+        "o": [
+            "Deep CNN using only 3x3 convolutions throughout",
+            "Shallow network",
+            "Recurrent network",
+            "Transformer"
+        ]
+    },
+    {
+        "q": "VGG uses 3x3 convolutions with stride _____.",
+        "type": "fill_blank",
+        "answers": [
+            "1"
+        ],
+        "other_options": [
+            "2",
+            "3",
+            "4"
+        ]
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "# VGG configurations\nvgg_configs = {'VGG11': 11, 'VGG13': 13, 'VGG16': 16, 'VGG19': 19}\nprint(max(vgg_configs.values()))",
+        "o": [
+            "19",
+            "11",
+            "16",
+            "13"
+        ]
+    },
+    {
+        "q": "VGG demonstrated that depth is important for CNN performance.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Rearrange CNN architectures by depth:",
+        "type": "rearrange",
+        "words": [
+            "LeNet (5)",
+            "AlexNet (8)",
+            "VGG16 (16)",
+            "ResNet152 (152)"
+        ]
+    },
+    {
+        "q": "What is an autoencoder?",
+        "type": "mcq",
+        "o": [
+            "Network learning to compress and reconstruct input",
+            "Classifier",
+            "RNN variant",
+            "Attention model"
+        ]
+    },
+    {
+        "q": "Autoencoder consists of _____ and decoder.",
+        "type": "fill_blank",
+        "answers": [
+            "encoder"
+        ],
+        "other_options": [
+            "input",
+            "output",
+            "hidden"
+        ]
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "# Autoencoder structure\ninput_dim = 784\nlatent_dim = 32\ncompression_ratio = input_dim / latent_dim\nprint(compression_ratio)",
+        "o": [
+            "24.5",
+            "32.0",
+            "784.0",
+            "1.0"
+        ]
+    },
+    {
+        "q": "Match the autoencoder type with its purpose:",
+        "type": "match",
+        "left": [
+            "Vanilla",
+            "Variational",
+            "Denoising",
+            "Sparse"
+        ],
+        "right": [
+            "Reconstruction",
+            "Generation",
+            "Noise removal",
+            "Feature learning"
+        ]
+    },
+    {
+        "q": "Autoencoders can be used for dimensionality reduction.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "What is a Variational Autoencoder (VAE)?",
+        "type": "mcq",
+        "o": [
+            "Autoencoder with probabilistic latent space for generation",
+            "Simple autoencoder",
+            "Denoising autoencoder",
+            "Sparse autoencoder"
+        ]
+    },
+    {
+        "q": "VAE learns _____ representation of latent space.",
+        "type": "fill_blank",
+        "answers": [
+            "probabilistic"
+        ],
+        "other_options": [
+            "deterministic",
+            "fixed",
+            "random"
+        ]
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "# VAE loss components\nloss_components = ['reconstruction', 'kl_divergence']\nprint(len(loss_components))",
+        "o": [
+            "2",
+            "1",
+            "3",
+            "4"
+        ]
+    },
+    {
+        "q": "VAE uses KL divergence to regularize the latent space.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Rearrange generative models by complexity:",
+        "type": "rearrange",
+        "words": [
+            "Autoencoder",
+            "VAE",
+            "GAN",
+            "Diffusion"
+        ]
+    },
+    {
+        "q": "What is a Generative Adversarial Network (GAN)?",
+        "type": "mcq",
+        "o": [
+            "Two networks competing: generator creates, discriminator judges",
+            "Single network",
+            "Autoencoder variant",
+            "RNN variant"
+        ]
+    },
+    {
+        "q": "GAN generator tries to _____ the discriminator.",
+        "type": "fill_blank",
+        "answers": [
+            "fool"
+        ],
+        "other_options": [
+            "help",
+            "train",
+            "remove"
+        ]
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "# GAN components\ncomponents = ['generator', 'discriminator']\nprint(len(components))",
+        "o": [
+            "2",
+            "1",
+            "3",
+            "4"
+        ]
+    },
+    {
+        "q": "Match the GAN variant with its feature:",
+        "type": "match",
+        "left": [
+            "DCGAN",
+            "WGAN",
+            "StyleGAN",
+            "CycleGAN"
+        ],
+        "right": [
+            "Convolutional",
+            "Wasserstein loss",
+            "Style mixing",
+            "Unpaired translation"
+        ]
+    },
+    {
+        "q": "GANs can suffer from mode collapse.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "What is BERT?",
+        "type": "mcq",
+        "o": [
+            "Bidirectional Encoder Representations from Transformers for NLP",
+            "Basic RNN",
+            "CNN for text",
+            "Simple embedding"
+        ]
+    },
+    {
+        "q": "BERT is pretrained using _____ language modeling.",
+        "type": "fill_blank",
+        "answers": [
+            "masked"
+        ],
+        "other_options": [
+            "autoregressive",
+            "simple",
+            "sequential"
+        ]
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "# BERT variants\nvariants = ['BERT-base', 'BERT-large', 'RoBERTa', 'DistilBERT']\nprint(len(variants))",
+        "o": [
+            "4",
+            "3",
+            "5",
+            "2"
+        ]
+    },
+    {
+        "q": "Match the language model with its approach:",
+        "type": "match",
+        "left": [
+            "BERT",
+            "GPT",
+            "T5",
+            "XLNet"
+        ],
+        "right": [
+            "Masked LM",
+            "Autoregressive",
+            "Text-to-text",
+            "Permutation LM"
+        ]
+    },
+    {
+        "q": "BERT uses bidirectional context for understanding.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "What is GPT (Generative Pre-trained Transformer)?",
+        "type": "mcq",
+        "o": [
+            "Autoregressive language model for text generation",
+            "Bidirectional model",
+            "Image model",
+            "RNN variant"
+        ]
+    },
+    {
+        "q": "GPT generates text _____ token at a time.",
+        "type": "fill_blank",
+        "answers": [
+            "one"
+        ],
+        "other_options": [
+            "many",
+            "all",
+            "two"
+        ]
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "# GPT model sizes\ngpt_sizes = {'GPT-1': 117, 'GPT-2': 1542, 'GPT-3': 175000}\nprint(f'GPT-3: {gpt_sizes[\"GPT-3\"]}M')",
+        "o": [
+            "GPT-3: 175000M",
+            "GPT-3: 117M",
+            "GPT-3: 1542M",
+            "Error"
+        ]
+    },
+    {
+        "q": "GPT uses decoder-only Transformer architecture.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Rearrange GPT versions by size:",
+        "type": "rearrange",
+        "words": [
+            "GPT-1 (117M)",
+            "GPT-2 (1.5B)",
+            "GPT-3 (175B)",
+            "GPT-4 (largest)"
+        ]
+    },
+    {
+        "q": "What is cross-entropy loss?",
+        "type": "mcq",
+        "o": [
+            "Loss measuring difference between predicted and true probability distributions",
+            "Regression loss",
+            "Hinge loss",
+            "Distance loss"
+        ]
+    },
+    {
+        "q": "Cross-entropy is commonly used for _____ tasks.",
+        "type": "fill_blank",
+        "answers": [
+            "classification"
+        ],
+        "other_options": [
+            "regression",
+            "clustering",
+            "embedding"
+        ]
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "import numpy as np\ny_true = np.array([1, 0, 0])\ny_pred = np.array([0.9, 0.05, 0.05])\nce = -np.sum(y_true * np.log(y_pred + 1e-10))\nprint(round(ce, 2))",
+        "o": [
+            "0.11",
+            "0.9",
+            "1.0",
+            "0.0"
+        ]
+    },
+    {
+        "q": "Match the loss function with its task:",
+        "type": "match",
+        "left": [
+            "MSE",
+            "Binary CE",
+            "Categorical CE",
+            "Focal Loss"
+        ],
+        "right": [
+            "Regression",
+            "Binary class",
+            "Multi-class",
+            "Imbalanced"
+        ]
+    },
+    {
+        "q": "Lower cross-entropy indicates better predictions.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "What is weight initialization?",
+        "type": "mcq",
+        "o": [
+            "Setting initial values of weights before training",
+            "Final weights",
+            "Weight decay",
+            "Weight sharing"
+        ]
+    },
+    {
+        "q": "Xavier initialization scales weights based on _____ neurons.",
+        "type": "fill_blank",
+        "answers": [
+            "fan-in/fan-out"
+        ],
+        "other_options": [
+            "layer",
+            "random",
+            "fixed"
+        ]
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "import numpy as np\nnp.random.seed(42)\nfan_in = 256\nfan_out = 128\nxavier_std = np.sqrt(2.0 / (fan_in + fan_out))\nprint(round(xavier_std, 3))",
+        "o": [
+            "0.072",
+            "0.256",
+            "0.128",
+            "1.0"
+        ]
+    },
+    {
+        "q": "Match the initialization with its best activation:",
+        "type": "match",
+        "left": [
+            "Xavier",
+            "He",
+            "LeCun",
+            "Orthogonal"
+        ],
+        "right": [
+            "Tanh/Sigmoid",
+            "ReLU",
+            "SELU",
+            "RNN"
+        ]
+    },
+    {
+        "q": "Poor initialization can cause vanishing or exploding gradients.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "What is a Vision Transformer (ViT)?",
+        "type": "mcq",
+        "o": [
+            "Transformer architecture applied to image patches for vision tasks",
+            "CNN variant",
+            "RNN for images",
+            "Simple classifier"
+        ]
+    },
+    {
+        "q": "ViT divides images into fixed-size _____.",
+        "type": "fill_blank",
+        "answers": [
+            "patches"
+        ],
+        "other_options": [
+            "pixels",
+            "regions",
+            "segments"
+        ]
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "# ViT patch size\nimage_size = 224\npatch_size = 16\nnum_patches = (image_size // patch_size) ** 2\nprint(num_patches)",
+        "o": [
+            "196",
+            "224",
+            "16",
+            "14"
+        ]
+    },
+    {
+        "q": "Match the vision model with its architecture:",
+        "type": "match",
+        "left": [
+            "ResNet",
+            "ViT",
+            "DeiT",
+            "Swin"
+        ],
+        "right": [
+            "CNN",
+            "Transformer",
+            "Data-efficient ViT",
+            "Hierarchical Transformer"
+        ]
+    },
+    {
+        "q": "ViT requires less inductive bias than CNNs.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "What is a diffusion model?",
+        "type": "mcq",
+        "o": [
+            "Generative model learning to denoise progressively",
+            "Classification model",
+            "RNN variant",
+            "Attention model"
+        ]
+    },
+    {
+        "q": "Diffusion adds _____ in forward process and removes it in reverse.",
+        "type": "fill_blank",
+        "answers": [
+            "noise"
+        ],
+        "other_options": [
+            "data",
+            "features",
+            "labels"
+        ]
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "# Diffusion steps\nnum_steps = 1000\nbeta_start = 0.0001\nbeta_end = 0.02\nprint(f'Steps: {num_steps}')",
+        "o": [
+            "Steps: 1000",
+            "Steps: 0.0001",
+            "Steps: 0.02",
+            "Error"
+        ]
+    },
+    {
+        "q": "Match the diffusion model with its application:",
+        "type": "match",
+        "left": [
+            "DDPM",
+            "Stable Diffusion",
+            "DALL-E 2",
+            "Imagen"
+        ],
+        "right": [
+            "Original diffusion",
+            "Latent diffusion",
+            "Image generation",
+            "Text-to-image"
+        ]
+    },
+    {
+        "q": "Diffusion models currently achieve state-of-the-art image generation.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "What is layer normalization?",
+        "type": "mcq",
+        "o": [
+            "Normalizing across features for each sample instead of batch",
             "Batch normalization",
-            "Gradient descent",
+            "Instance normalization",
+            "Group normalization"
+        ]
+    },
+    {
+        "q": "Layer norm normalizes across _____ dimension.",
+        "type": "fill_blank",
+        "answers": [
+            "feature"
+        ],
+        "other_options": [
+            "batch",
+            "spatial",
+            "channel"
+        ]
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "import numpy as np\nsample = np.array([[1, 2, 3], [4, 5, 6]])\nlayer_norm = (sample - sample.mean(axis=1, keepdims=True)) / sample.std(axis=1, keepdims=True)\nprint(round(layer_norm[0].mean(), 1))",
+        "o": [
+            "0.0",
+            "2.0",
+            "1.0",
+            "-1.0"
+        ]
+    },
+    {
+        "q": "Layer normalization is preferred in Transformers over batch norm.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Rearrange normalization by when they normalize:",
+        "type": "rearrange",
+        "words": [
+            "Batch (across batch)",
+            "Layer (across features)",
+            "Instance (per channel)",
+            "Group (channel groups)"
+        ]
+    },
+    {
+        "q": "What is gradient clipping?",
+        "type": "mcq",
+        "o": [
+            "Limiting gradient magnitude to prevent exploding gradients",
+            "Removing gradients",
+            "Increasing gradients",
+            "Gradient averaging"
+        ]
+    },
+    {
+        "q": "Gradient clipping sets a _____ threshold for gradient norms.",
+        "type": "fill_blank",
+        "answers": [
+            "maximum"
+        ],
+        "other_options": [
+            "minimum",
+            "average",
+            "median"
+        ]
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "import numpy as np\ngradient = np.array([10, 20, 30])\nmax_norm = 5.0\nnorm = np.linalg.norm(gradient)\nif norm > max_norm:\n    gradient = gradient * max_norm / norm\nprint(round(np.linalg.norm(gradient), 1))",
+        "o": [
+            "5.0",
+            "10.0",
+            "30.0",
+            "1.0"
+        ]
+    },
+    {
+        "q": "Match the gradient issue with its solution:",
+        "type": "match",
+        "left": [
+            "Vanishing",
+            "Exploding",
+            "Noisy",
+            "Sparse"
+        ],
+        "right": [
+            "Skip connections",
+            "Clipping",
+            "Larger batch",
             "Momentum"
         ]
     },
     {
-        "q": "What is a common loss function for classification tasks?",
-        "c": null,
+        "q": "Gradient clipping is commonly used in RNN training.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "What is learning rate scheduling?",
+        "type": "mcq",
         "o": [
-            "Cross-entropy",
-            "Mean squared error",
-            "Log-cosh",
-            "Huber loss"
+            "Adjusting learning rate during training for better convergence",
+            "Fixed learning rate",
+            "Random learning rate",
+            "No learning rate"
         ]
     },
     {
-        "q": "What type of problem is solved by an autoencoder?",
-        "c": null,
+        "q": "Learning rate warmup gradually _____ learning rate at start.",
+        "type": "fill_blank",
+        "answers": [
+            "increases"
+        ],
+        "other_options": [
+            "decreases",
+            "fixes",
+            "removes"
+        ]
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "# Step decay schedule\ninitial_lr = 0.1\ndecay_rate = 0.1\nepoch = 30\nstep_size = 10\nlr = initial_lr * (decay_rate ** (epoch // step_size))\nprint(lr)",
         "o": [
-            "Dimensionality reduction",
+            "0.001",
+            "0.1",
+            "0.01",
+            "0.0001"
+        ]
+    },
+    {
+        "q": "Match the schedule with its pattern:",
+        "type": "match",
+        "left": [
+            "Step decay",
+            "Cosine",
+            "Warmup",
+            "One-cycle"
+        ],
+        "right": [
+            "Discrete drops",
+            "Smooth curve",
+            "Initial ramp",
+            "Rise and fall"
+        ]
+    },
+    {
+        "q": "Cosine annealing provides smooth learning rate decay.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "What is early stopping?",
+        "type": "mcq",
+        "o": [
+            "Stopping training when validation performance stops improving",
+            "Starting training",
+            "Continuing training",
+            "Random stopping"
+        ]
+    },
+    {
+        "q": "Early stopping monitors _____ set performance.",
+        "type": "fill_blank",
+        "answers": [
+            "validation"
+        ],
+        "other_options": [
+            "training",
+            "test",
+            "all"
+        ]
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "# Early stopping logic\npatience = 5\nbest_loss = 0.5\ncurrent_loss = 0.6\nwait_count = 3\nif current_loss < best_loss:\n    wait_count = 0\nelse:\n    wait_count += 1\nprint(wait_count)",
+        "o": [
+            "4",
+            "3",
+            "0",
+            "5"
+        ]
+    },
+    {
+        "q": "Early stopping is a form of regularization.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Rearrange training strategies to prevent overfitting:",
+        "type": "rearrange",
+        "words": [
+            "Early Stopping",
+            "Dropout",
+            "Data Augmentation",
+            "Weight Decay"
+        ]
+    },
+    {
+        "q": "What is mixed precision training?",
+        "type": "mcq",
+        "o": [
+            "Using both 16-bit and 32-bit floating point for efficiency",
+            "Single precision",
+            "Double precision",
+            "Integer precision"
+        ]
+    },
+    {
+        "q": "Mixed precision uses FP16 for _____ and FP32 for critical operations.",
+        "type": "fill_blank",
+        "answers": [
+            "forward/backward"
+        ],
+        "other_options": [
+            "storage",
+            "logging",
+            "output"
+        ]
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "# Memory comparison\nfp32_size = 4  # bytes\nfp16_size = 2  # bytes\nsavings = (1 - fp16_size / fp32_size) * 100\nprint(f'{savings}% savings')",
+        "o": [
+            "50.0% savings",
+            "25.0% savings",
+            "75.0% savings",
+            "100.0% savings"
+        ]
+    },
+    {
+        "q": "Match the precision with its use case:",
+        "type": "match",
+        "left": [
+            "FP32",
+            "FP16",
+            "BF16",
+            "INT8"
+        ],
+        "right": [
+            "Full precision",
+            "Half precision",
+            "Brain float",
+            "Quantized"
+        ]
+    },
+    {
+        "q": "Mixed precision can speed up training significantly on modern GPUs.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "What is model quantization?",
+        "type": "mcq",
+        "o": [
+            "Reducing precision of weights to compress model",
+            "Increasing precision",
+            "Adding layers",
+            "Removing layers"
+        ]
+    },
+    {
+        "q": "INT8 quantization uses _____ bits per weight.",
+        "type": "fill_blank",
+        "answers": [
+            "8"
+        ],
+        "other_options": [
+            "16",
+            "32",
+            "4"
+        ]
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "# Quantization compression\nfp32_bits = 32\nint8_bits = 8\ncompression = fp32_bits / int8_bits\nprint(f'{compression}x compression')",
+        "o": [
+            "4.0x compression",
+            "2.0x compression",
+            "8.0x compression",
+            "1.0x compression"
+        ]
+    },
+    {
+        "q": "Match the quantization type with its approach:",
+        "type": "match",
+        "left": [
+            "PTQ",
+            "QAT",
+            "Dynamic",
+            "Static"
+        ],
+        "right": [
+            "Post-training",
+            "Training-aware",
+            "Runtime",
+            "Pre-computed"
+        ]
+    },
+    {
+        "q": "Quantization enables deployment on edge devices.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "What is knowledge distillation?",
+        "type": "mcq",
+        "o": [
+            "Training smaller student model to mimic larger teacher model",
+            "Data augmentation",
+            "Model pruning",
+            "Quantization"
+        ]
+    },
+    {
+        "q": "Distillation uses _____ outputs from teacher model.",
+        "type": "fill_blank",
+        "answers": [
+            "soft"
+        ],
+        "other_options": [
+            "hard",
+            "binary",
+            "random"
+        ]
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "# Distillation temperature\nlogits = [2.0, 1.0, 0.1]\ntemperature = 2.0\nsoft_logits = [l / temperature for l in logits]\nprint(soft_logits[0])",
+        "o": [
+            "1.0",
+            "2.0",
+            "4.0",
+            "0.5"
+        ]
+    },
+    {
+        "q": "Match the compression technique with its approach:",
+        "type": "match",
+        "left": [
+            "Pruning",
+            "Quantization",
+            "Distillation",
+            "Low-rank"
+        ],
+        "right": [
+            "Remove weights",
+            "Reduce precision",
+            "Train smaller",
+            "Matrix decomposition"
+        ]
+    },
+    {
+        "q": "Higher temperature in distillation produces softer probability distributions.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "What is model pruning?",
+        "type": "mcq",
+        "o": [
+            "Removing unnecessary weights or neurons from model",
+            "Adding weights",
+            "Training model",
+            "Testing model"
+        ]
+    },
+    {
+        "q": "Pruning can be structured or _____.",
+        "type": "fill_blank",
+        "answers": [
+            "unstructured"
+        ],
+        "other_options": [
+            "random",
+            "sequential",
+            "parallel"
+        ]
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "import numpy as np\nweights = np.array([0.01, 0.5, 0.02, 0.8, 0.03])\nthreshold = 0.1\npruned = weights[np.abs(weights) > threshold]\nprint(len(pruned))",
+        "o": [
+            "2",
+            "5",
+            "3",
+            "0"
+        ]
+    },
+    {
+        "q": "Structured pruning removes entire filters or layers.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Rearrange model compression by aggressiveness:",
+        "type": "rearrange",
+        "words": [
+            "Pruning (partial)",
+            "Quantization",
+            "Distillation",
+            "Combined (aggressive)"
+        ]
+    },
+    {
+        "q": "What is a U-Net architecture?",
+        "type": "mcq",
+        "o": [
+            "Encoder-decoder with skip connections for segmentation",
+            "Simple CNN",
+            "RNN variant",
+            "Transformer"
+        ]
+    },
+    {
+        "q": "U-Net has symmetric _____ and decoder paths.",
+        "type": "fill_blank",
+        "answers": [
+            "encoder"
+        ],
+        "other_options": [
+            "input",
+            "output",
+            "hidden"
+        ]
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "# U-Net levels\nlevels = ['conv1', 'conv2', 'conv3', 'conv4', 'bottleneck']\nprint(len(levels))",
+        "o": [
+            "5",
+            "4",
+            "3",
+            "6"
+        ]
+    },
+    {
+        "q": "Match the architecture with its task:",
+        "type": "match",
+        "left": [
+            "U-Net",
+            "YOLO",
+            "Mask R-CNN",
+            "FCN"
+        ],
+        "right": [
+            "Medical segmentation",
+            "Real-time detection",
+            "Instance segmentation",
+            "Semantic segmentation"
+        ]
+    },
+    {
+        "q": "U-Net skip connections preserve spatial information.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "What is object detection?",
+        "type": "mcq",
+        "o": [
+            "Locating and classifying objects in images with bounding boxes",
+            "Image classification",
+            "Segmentation",
+            "Generation"
+        ]
+    },
+    {
+        "q": "Detection models output bounding _____ and class labels.",
+        "type": "fill_blank",
+        "answers": [
+            "boxes"
+        ],
+        "other_options": [
+            "circles",
+            "polygons",
+            "masks"
+        ]
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "# Bounding box format\nbbox = [100, 150, 200, 250]  # x, y, width, height\narea = bbox[2] * bbox[3]\nprint(area)",
+        "o": [
+            "50000",
+            "100",
+            "250",
+            "200"
+        ]
+    },
+    {
+        "q": "Match the detector with its type:",
+        "type": "match",
+        "left": [
+            "Faster R-CNN",
+            "YOLO",
+            "SSD",
+            "RetinaNet"
+        ],
+        "right": [
+            "Two-stage",
+            "One-stage",
+            "Multi-scale",
+            "Focal loss"
+        ]
+    },
+    {
+        "q": "One-stage detectors are generally faster than two-stage.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "What is semantic segmentation?",
+        "type": "mcq",
+        "o": [
+            "Classifying each pixel in an image into categories",
+            "Object detection",
+            "Classification",
+            "Generation"
+        ]
+    },
+    {
+        "q": "Semantic segmentation outputs _____ dense as input.",
+        "type": "fill_blank",
+        "answers": [
+            "map"
+        ],
+        "other_options": [
+            "box",
+            "point",
+            "line"
+        ]
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "# Segmentation mask\nimport numpy as np\nmask = np.zeros((256, 256), dtype=np.int32)\nmask[100:150, 100:150] = 1\nprint(mask.sum())",
+        "o": [
+            "2500",
+            "256",
+            "0",
+            "65536"
+        ]
+    },
+    {
+        "q": "Match the segmentation type with its output:",
+        "type": "match",
+        "left": [
+            "Semantic",
+            "Instance",
+            "Panoptic",
+            "Part"
+        ],
+        "right": [
+            "Class per pixel",
+            "Object instances",
+            "Both semantic and instance",
+            "Object parts"
+        ]
+    },
+    {
+        "q": "Instance segmentation distinguishes between different objects of same class.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "What is Embedding layer?",
+        "type": "mcq",
+        "o": [
+            "Layer converting discrete tokens to continuous vectors",
+            "Pooling layer",
+            "Normalization layer",
+            "Activation layer"
+        ]
+    },
+    {
+        "q": "Embedding dimension is a _____.",
+        "type": "fill_blank",
+        "answers": [
+            "hyperparameter"
+        ],
+        "other_options": [
+            "constant",
+            "variable",
+            "output"
+        ]
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "# Embedding size\nvocab_size = 10000\nembed_dim = 256\ntotal_params = vocab_size * embed_dim\nprint(f'{total_params} parameters')",
+        "o": [
+            "2560000 parameters",
+            "10000 parameters",
+            "256 parameters",
+            "10256 parameters"
+        ]
+    },
+    {
+        "q": "Embeddings capture semantic relationships between tokens.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Rearrange NLP pipeline:",
+        "type": "rearrange",
+        "words": [
+            "Tokenization",
+            "Embedding",
+            "Encoding",
+            "Output"
+        ]
+    },
+    {
+        "q": "What is tokenization?",
+        "type": "mcq",
+        "o": [
+            "Splitting text into smaller units for processing",
+            "Embedding text",
+            "Encoding text",
+            "Decoding text"
+        ]
+    },
+    {
+        "q": "Subword tokenization handles _____ vocabulary problem.",
+        "type": "fill_blank",
+        "answers": [
+            "out-of"
+        ],
+        "other_options": [
+            "large",
+            "small",
+            "fixed"
+        ]
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "# Simple tokenization\ntext = 'Hello world of deep learning'\ntokens = text.split()\nprint(len(tokens))",
+        "o": [
+            "5",
+            "4",
+            "6",
+            "26"
+        ]
+    },
+    {
+        "q": "Match the tokenizer with its method:",
+        "type": "match",
+        "left": [
+            "Word",
+            "BPE",
+            "WordPiece",
+            "SentencePiece"
+        ],
+        "right": [
+            "Whitespace split",
+            "Byte pair",
+            "Subword",
+            "Language agnostic"
+        ]
+    },
+    {
+        "q": "BPE tokenization is used in GPT models.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "What is seq2seq (sequence-to-sequence)?",
+        "type": "mcq",
+        "o": [
+            "Architecture mapping input sequence to output sequence",
+            "Single output model",
+            "Classification model",
+            "Clustering model"
+        ]
+    },
+    {
+        "q": "Seq2seq consists of _____ and decoder.",
+        "type": "fill_blank",
+        "answers": [
+            "encoder"
+        ],
+        "other_options": [
+            "input",
+            "output",
+            "hidden"
+        ]
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "# Seq2seq applications\napplications = ['translation', 'summarization', 'chatbot', 'speech_recognition']\nprint(len(applications))",
+        "o": [
+            "4",
+            "3",
+            "5",
+            "2"
+        ]
+    },
+    {
+        "q": "Match the seq2seq task with its example:",
+        "type": "match",
+        "left": [
+            "Translation",
+            "Summarization",
+            "Dialogue",
+            "Transcription"
+        ],
+        "right": [
+            "English to French",
+            "Long to short",
+            "Question to answer",
+            "Speech to text"
+        ]
+    },
+    {
+        "q": "Encoder-decoder attention connects encoder output to decoder.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "What is teacher forcing?",
+        "type": "mcq",
+        "o": [
+            "Using ground truth as input during training instead of predictions",
+            "Using predictions only",
+            "No supervision",
+            "Random input"
+        ]
+    },
+    {
+        "q": "Teacher forcing speeds up _____ but can cause exposure bias.",
+        "type": "fill_blank",
+        "answers": [
+            "training"
+        ],
+        "other_options": [
+            "inference",
+            "testing",
+            "validation"
+        ]
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "# Teacher forcing concept\nuse_teacher_forcing = True\nground_truth = ['I', 'love', 'AI']\npredicted = ['I', 'like', 'ML']\nnext_input = ground_truth[1] if use_teacher_forcing else predicted[1]\nprint(next_input)",
+        "o": [
+            "love",
+            "like",
+            "I",
+            "AI"
+        ]
+    },
+    {
+        "q": "Exposure bias occurs when training differs from inference conditions.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Rearrange training strategies:",
+        "type": "rearrange",
+        "words": [
+            "Teacher Forcing (full)",
+            "Scheduled Sampling",
+            "Curriculum Learning",
+            "Free Running"
+        ]
+    },
+    {
+        "q": "What is beam search?",
+        "type": "mcq",
+        "o": [
+            "Decoding strategy keeping top-k candidates at each step",
+            "Greedy search",
+            "Random search",
+            "Exhaustive search"
+        ]
+    },
+    {
+        "q": "Beam search with beam width 1 is equivalent to _____ decoding.",
+        "type": "fill_blank",
+        "answers": [
+            "greedy"
+        ],
+        "other_options": [
+            "random",
+            "exhaustive",
+            "optimal"
+        ]
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "# Beam search\nbeam_width = 5\nsequence_length = 10\ncandidates_at_each_step = beam_width\nprint(f'Candidates: {candidates_at_each_step}')",
+        "o": [
+            "Candidates: 5",
+            "Candidates: 10",
+            "Candidates: 50",
+            "Candidates: 1"
+        ]
+    },
+    {
+        "q": "Match the decoding method with its property:",
+        "type": "match",
+        "left": [
+            "Greedy",
+            "Beam",
+            "Sampling",
+            "Top-k"
+        ],
+        "right": [
+            "Single best",
+            "Multiple paths",
+            "Random selection",
+            "Truncated sampling"
+        ]
+    },
+    {
+        "q": "Larger beam width generally produces better but slower results.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "What is nucleus (top-p) sampling?",
+        "type": "mcq",
+        "o": [
+            "Sampling from smallest set of tokens whose probability sums to p",
+            "Fixed number sampling",
+            "Greedy sampling",
+            "Random sampling"
+        ]
+    },
+    {
+        "q": "Top-p sampling uses cumulative _____ threshold.",
+        "type": "fill_blank",
+        "answers": [
+            "probability"
+        ],
+        "other_options": [
+            "count",
+            "rank",
+            "score"
+        ]
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "# Top-p sampling\nimport numpy as np\nprobs = np.array([0.5, 0.3, 0.1, 0.05, 0.05])\ncumsum = np.cumsum(probs)\np_threshold = 0.9\nnucleus_size = np.sum(cumsum <= p_threshold) + 1\nprint(nucleus_size)",
+        "o": [
+            "3",
+            "5",
+            "2",
+            "4"
+        ]
+    },
+    {
+        "q": "Top-p dynamically adjusts the sample space unlike top-k.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Rearrange sampling methods by diversity:",
+        "type": "rearrange",
+        "words": [
+            "Greedy (lowest)",
+            "Beam",
+            "Top-k",
+            "Top-p (highest)"
+        ]
+    },
+    {
+        "q": "What is prompt engineering?",
+        "type": "mcq",
+        "o": [
+            "Designing input text to guide language model output",
+            "Model training",
+            "Data preprocessing",
+            "Model fine-tuning"
+        ]
+    },
+    {
+        "q": "Few-shot prompting includes _____ in the prompt.",
+        "type": "fill_blank",
+        "answers": [
+            "examples"
+        ],
+        "other_options": [
+            "labels",
+            "data",
+            "models"
+        ]
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "# Prompt types\nprompt_types = ['zero-shot', 'one-shot', 'few-shot', 'chain-of-thought']\nprint(len(prompt_types))",
+        "o": [
+            "4",
+            "3",
+            "5",
+            "2"
+        ]
+    },
+    {
+        "q": "Match the prompt type with its characteristic:",
+        "type": "match",
+        "left": [
+            "Zero-shot",
+            "One-shot",
+            "Few-shot",
+            "CoT"
+        ],
+        "right": [
+            "No examples",
+            "Single example",
+            "Multiple examples",
+            "Reasoning steps"
+        ]
+    },
+    {
+        "q": "Chain-of-thought prompting improves reasoning in LLMs.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "What is RLHF (Reinforcement Learning from Human Feedback)?",
+        "type": "mcq",
+        "o": [
+            "Training models using human preferences as reward signal",
+            "Pure RL",
+            "Supervised learning",
+            "Unsupervised learning"
+        ]
+    },
+    {
+        "q": "RLHF trains a _____ model from human comparisons.",
+        "type": "fill_blank",
+        "answers": [
+            "reward"
+        ],
+        "other_options": [
+            "policy",
+            "value",
+            "actor"
+        ]
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "# RLHF steps\nsteps = ['supervised_finetuning', 'reward_model', 'ppo_training']\nprint(len(steps))",
+        "o": [
+            "3",
+            "2",
+            "4",
+            "1"
+        ]
+    },
+    {
+        "q": "Match the RLHF component with its role:",
+        "type": "match",
+        "left": [
+            "SFT",
+            "Reward Model",
+            "PPO",
+            "KL penalty"
+        ],
+        "right": [
+            "Initial fine-tuning",
+            "Score responses",
+            "Policy optimization",
+            "Prevent drift"
+        ]
+    },
+    {
+        "q": "ChatGPT uses RLHF for alignment.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "What is LoRA (Low-Rank Adaptation)?",
+        "type": "mcq",
+        "o": [
+            "Efficient fine-tuning by adding low-rank matrices to pretrained weights",
+            "Full fine-tuning",
+            "Pruning",
+            "Quantization"
+        ]
+    },
+    {
+        "q": "LoRA freezes original weights and trains _____ matrices.",
+        "type": "fill_blank",
+        "answers": [
+            "adapter"
+        ],
+        "other_options": [
+            "full",
+            "random",
+            "dense"
+        ]
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "# LoRA rank\noriginal_dim = 4096\nlora_rank = 8\nlora_params = 2 * original_dim * lora_rank\nprint(f'{lora_params} params per layer')",
+        "o": [
+            "65536 params per layer",
+            "4096 params per layer",
+            "8 params per layer",
+            "32768 params per layer"
+        ]
+    },
+    {
+        "q": "Match the adapter method with its approach:",
+        "type": "match",
+        "left": [
+            "LoRA",
+            "Prefix Tuning",
+            "Adapter",
+            "Prompt Tuning"
+        ],
+        "right": [
+            "Low-rank decomposition",
+            "Virtual tokens",
+            "Bottleneck layers",
+            "Soft prompts"
+        ]
+    },
+    {
+        "q": "LoRA significantly reduces memory needed for fine-tuning.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "What is contrastive learning?",
+        "type": "mcq",
+        "o": [
+            "Learning representations by contrasting similar and dissimilar samples",
             "Classification",
             "Regression",
             "Clustering"
         ]
     },
     {
-        "q": "Which of the following is a generative model?",
-        "c": null,
-        "o": [
-            "GAN",
-            "CNN",
-            "RNN",
-            "KNN"
+        "q": "Contrastive loss pulls _____ samples together.",
+        "type": "fill_blank",
+        "answers": [
+            "similar"
+        ],
+        "other_options": [
+            "random",
+            "all",
+            "different"
         ]
     },
     {
-        "q": "What does LSTM stand for?",
-        "c": null,
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "# Contrastive methods\nmethods = ['SimCLR', 'MoCo', 'CLIP', 'BYOL']\nprint(len(methods))",
         "o": [
-            "Long Short-Term Memory",
-            "Linear Sequential Training Model",
-            "Layered Softmax Transfer Machine",
-            "Large Scalable Tensor Model"
+            "4",
+            "3",
+            "5",
+            "2"
         ]
     },
     {
-        "q": "Which neural network is best suited for time series data?",
-        "c": null,
-        "o": [
-            "RNN",
-            "CNN",
-            "ANN",
-            "SVM"
+        "q": "Match the contrastive method with its key idea:",
+        "type": "match",
+        "left": [
+            "SimCLR",
+            "MoCo",
+            "CLIP",
+            "BYOL"
+        ],
+        "right": [
+            "Large batch",
+            "Momentum encoder",
+            "Image-text",
+            "No negatives"
         ]
     },
     {
-        "q": "In GANs, what does the generator do?",
-        "c": null,
+        "q": "CLIP learns joint image-text representations.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "What is Neural Architecture Search (NAS)?",
+        "type": "mcq",
         "o": [
-            "Generates fake data",
-            "Discriminates between real and fake data",
-            "Reduces dimensionality",
-            "Predicts future data points"
+            "Automated method for finding optimal neural network architectures",
+            "Manual process of designing layers",
+            "Method for finding training data",
+            "Technique for deploying models"
+        ],
+        "correct": "Automated method for finding optimal neural network architectures"
+    },
+    {
+        "q": "NAS automates the process of finding optimal _____ architectures.",
+        "type": "fill_blank",
+        "correct": "neural network"
+    },
+    {
+        "q": "Neural Architecture Search can discover architectures that outperform hand-designed ones.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "What is hyperparameter tuning in deep learning?",
+        "type": "mcq",
+        "o": [
+            "Finding optimal values for learning rate, batch size, etc.",
+            "Training the model weights",
+            "Collecting training data",
+            "Deploying the model"
+        ],
+        "correct": "Finding optimal values for learning rate, batch size, etc."
+    },
+    {
+        "q": "_____ search explores all combinations of hyperparameters.",
+        "type": "fill_blank",
+        "correct": "Grid"
+    },
+    {
+        "q": "Match the hyperparameter search method with its approach:",
+        "type": "match",
+        "left": [
+            "Grid Search",
+            "Random Search",
+            "Bayesian Optimization",
+            "Hyperband"
+        ],
+        "right": [
+            "Exhaustive combinations",
+            "Random sampling",
+            "Probabilistic model",
+            "Adaptive resource allocation"
         ]
     },
     {
-        "q": "What is a common optimization algorithm used in deep learning?",
-        "c": null,
+        "q": "Random search is often more efficient than grid search for hyperparameter tuning.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "What is distributed training in deep learning?",
+        "type": "mcq",
         "o": [
-            "Adam",
-            "Gradient Boosting",
-            "SVM",
-            "KNN"
+            "Training models across multiple devices or machines",
+            "Training on a single GPU",
+            "Distributing data to users",
+            "Deploying models to edge devices"
+        ],
+        "correct": "Training models across multiple devices or machines"
+    },
+    {
+        "q": "Data _____ distributes different batches to different workers during training.",
+        "type": "fill_blank",
+        "correct": "parallelism"
+    },
+    {
+        "q": "Model parallelism splits the model across multiple devices.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "What is a Graph Neural Network (GNN)?",
+        "type": "mcq",
+        "o": [
+            "Neural network that operates on graph-structured data",
+            "Network for image classification",
+            "Text processing network",
+            "Audio processing network"
+        ],
+        "correct": "Neural network that operates on graph-structured data"
+    },
+    {
+        "q": "GNNs aggregate information from _____ nodes in a graph.",
+        "type": "fill_blank",
+        "correct": "neighboring"
+    },
+    {
+        "q": "Match the GNN variant with its description:",
+        "type": "match",
+        "left": [
+            "GCN",
+            "GraphSAGE",
+            "GAT",
+            "GIN"
+        ],
+        "right": [
+            "Spectral convolution",
+            "Sampling neighbors",
+            "Attention over neighbors",
+            "Weisfeiler-Lehman test"
         ]
     },
     {
-        "q": "Which deep learning architecture uses layers to mimic the human brain?",
-        "c": null,
+        "q": "Graph Attention Networks use attention to weight neighbor contributions.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "What is message passing in GNNs?",
+        "type": "mcq",
         "o": [
-            "Neural networks",
-            "Random forest",
-            "K-nearest neighbors",
-            "Linear regression"
+            "Process where nodes exchange and aggregate information with neighbors",
+            "Sending data between servers",
+            "Forward propagation in CNNs",
+            "Backpropagation algorithm"
+        ],
+        "correct": "Process where nodes exchange and aggregate information with neighbors"
+    },
+    {
+        "q": "In GNNs, node embeddings are updated through _____ passing.",
+        "type": "fill_blank",
+        "correct": "message"
+    },
+    {
+        "q": "What are Neural ODEs?",
+        "type": "mcq",
+        "o": [
+            "Neural networks that parameterize differential equations",
+            "Networks for object detection",
+            "Optical character recognition networks",
+            "Networks for audio processing"
+        ],
+        "correct": "Neural networks that parameterize differential equations"
+    },
+    {
+        "q": "Neural ODEs model the hidden state as a continuous-time _____ system.",
+        "type": "fill_blank",
+        "correct": "dynamical"
+    },
+    {
+        "q": "Neural ODEs can have adaptive computation depth.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "What is neuroevolution?",
+        "type": "mcq",
+        "o": [
+            "Using evolutionary algorithms to design neural networks",
+            "Training networks with gradient descent",
+            "Pruning neural networks",
+            "Quantizing neural networks"
+        ],
+        "correct": "Using evolutionary algorithms to design neural networks"
+    },
+    {
+        "q": "NEAT stands for Neuro_____ of Augmenting Topologies.",
+        "type": "fill_blank",
+        "correct": "Evolution"
+    },
+    {
+        "q": "Neuroevolution can optimize both network weights and architecture.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "What is a Capsule Network?",
+        "type": "mcq",
+        "o": [
+            "Network that groups neurons into capsules to capture entity properties",
+            "Standard convolutional network",
+            "Recurrent neural network",
+            "Graph neural network"
+        ],
+        "correct": "Network that groups neurons into capsules to capture entity properties"
+    },
+    {
+        "q": "Capsule networks use dynamic _____ to route information between capsules.",
+        "type": "fill_blank",
+        "correct": "routing"
+    },
+    {
+        "q": "Capsule networks aim to preserve spatial hierarchies better than CNNs.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "What is a normalizing flow?",
+        "type": "mcq",
+        "o": [
+            "Generative model using invertible transformations",
+            "Data normalization technique",
+            "Gradient flow method",
+            "Batch normalization variant"
+        ],
+        "correct": "Generative model using invertible transformations"
+    },
+    {
+        "q": "Normalizing flows transform a simple distribution into a _____ one through invertible functions.",
+        "type": "fill_blank",
+        "correct": "complex"
+    },
+    {
+        "q": "Normalizing flows allow exact likelihood computation.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "What is a Memory Network?",
+        "type": "mcq",
+        "o": [
+            "Network with external memory component for reasoning",
+            "Network optimized for GPU memory",
+            "Network for image storage",
+            "Recurrent network variant"
+        ],
+        "correct": "Network with external memory component for reasoning"
+    },
+    {
+        "q": "Memory networks read from and write to an external _____ component.",
+        "type": "fill_blank",
+        "correct": "memory"
+    },
+    {
+        "q": "Memory networks are useful for question answering tasks.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "What is sparse attention?",
+        "type": "mcq",
+        "o": [
+            "Attention mechanism that only attends to a subset of positions",
+            "Full attention over all tokens",
+            "Attention without softmax",
+            "Binary attention weights"
+        ],
+        "correct": "Attention mechanism that only attends to a subset of positions"
+    },
+    {
+        "q": "Sparse attention reduces the complexity from O(n²) to O(n log n) or O(n).",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Match the attention variant with its approach:",
+        "type": "match",
+        "left": [
+            "Sparse Transformer",
+            "Longformer",
+            "Performer",
+            "Linear Attention"
+        ],
+        "right": [
+            "Fixed patterns",
+            "Sliding window",
+            "Random features",
+            "Kernel approximation"
         ]
     },
     {
-        "q": "Which regularization technique adds a penalty proportional to the square of the weights?",
-        "c": null,
+        "q": "What is cross-attention?",
+        "type": "mcq",
         "o": [
-            "L2 regularization",
-            "L1 regularization",
-            "Dropout",
-            "Batch normalization"
-        ]
+            "Attention where queries come from one sequence and keys/values from another",
+            "Self-attention within a single sequence",
+            "Attention without queries",
+            "Binary attention mechanism"
+        ],
+        "correct": "Attention where queries come from one sequence and keys/values from another"
     },
     {
-        "q": "Which of the following is an unsupervised deep learning technique?",
-        "c": null,
-        "o": [
-            "Autoencoders",
-            "Convolutional networks",
-            "RNN",
-            "Deep Q-learning"
-        ]
+        "q": "Cross-attention is used in encoder-decoder architectures.",
+        "type": "true_false",
+        "correct": "True"
     },
     {
-        "q": "Which type of neural network is designed for spatial data processing?",
-        "c": null,
+        "q": "What is the Mixture of Experts (MoE)?",
+        "type": "mcq",
         "o": [
-            "CNN",
-            "RNN",
-            "ANN",
-            "LSTM"
-        ]
+            "Architecture where only a subset of parameters are activated per input",
+            "Ensemble of different model types",
+            "Committee of human experts",
+            "Multi-head attention variant"
+        ],
+        "correct": "Architecture where only a subset of parameters are activated per input"
     },
     {
-        "q": "What is vanishing gradient problem in deep networks?",
-        "c": null,
-        "o": [
-            "Gradients become too small for effective training",
-            "Gradients increase exponentially",
-            "Loss function becomes undefined",
-            "Weights become fixed"
-        ]
+        "q": "MoE uses a _____ network to route inputs to different experts.",
+        "type": "fill_blank",
+        "correct": "gating"
     },
     {
-        "q": "Which optimization algorithm adjusts learning rates for each parameter?",
-        "c": null,
-        "o": [
-            "Adam",
-            "SGD",
-            "Momentum",
-            "RMSprop"
-        ]
+        "q": "Mixture of Experts allows scaling model capacity without proportional compute increase.",
+        "type": "true_false",
+        "correct": "True"
     },
     {
-        "q": "What is transfer learning in deep learning?",
-        "c": null,
+        "q": "What is weight sharing in neural networks?",
+        "type": "mcq",
         "o": [
-            "Using a pre-trained model for a new task",
-            "Transferring data between layers",
-            "Learning multiple tasks simultaneously",
-            "Fine-tuning hyperparameters"
-        ]
+            "Using the same weights across different parts of the network",
+            "Distributing weights to multiple machines",
+            "Sharing weights between different models",
+            "Reducing weight precision"
+        ],
+        "correct": "Using the same weights across different parts of the network"
     },
     {
-        "q": "Which activation function helps mitigate vanishing gradients?",
-        "c": null,
-        "o": [
-            "ReLU",
-            "Sigmoid",
-            "Tanh",
-            "Softmax"
-        ]
+        "q": "CNNs use weight sharing through _____ filters.",
+        "type": "fill_blank",
+        "correct": "convolutional"
     },
     {
-        "q": "What is the purpose of batch normalization?",
-        "c": null,
-        "o": [
-            "Stabilize learning process",
-            "Prevent overfitting",
-            "Reduce model size",
-            "Increase batch size"
-        ]
+        "q": "Weight sharing reduces the number of learnable parameters.",
+        "type": "true_false",
+        "correct": "True"
     },
     {
-        "q": "Which loss function is used for regression tasks?",
-        "c": null,
+        "q": "What is the vanishing gradient problem?",
+        "type": "mcq",
         "o": [
-            "Mean squared error",
-            "Cross-entropy",
-            "Hinge loss",
-            "Kullback-Leibler divergence"
-        ]
+            "Gradients becoming extremely small during backpropagation",
+            "Gradients becoming very large",
+            "Loss function reaching zero",
+            "Model accuracy decreasing"
+        ],
+        "correct": "Gradients becoming extremely small during backpropagation"
     },
     {
-        "q": "Which part of a neural network adjusts the weights to minimize the loss?",
-        "c": null,
-        "o": [
-            "Backpropagation",
-            "Forward pass",
-            "Activation function",
-            "Pooling layer"
-        ]
+        "q": "The vanishing gradient problem is common in deep networks with _____ activation functions.",
+        "type": "fill_blank",
+        "correct": "sigmoid"
     },
     {
-        "q": "What does the softmax function do?",
-        "c": null,
-        "o": [
-            "Converts logits to probabilities",
-            "Normalizes inputs to range [-1,1]",
-            "Introduces non-linearity",
-            "Detects edges in images"
-        ]
+        "q": "ReLU activations help mitigate the vanishing gradient problem.",
+        "type": "true_false",
+        "correct": "True"
     },
     {
-        "q": "Which type of network is effective in processing sequential data?",
-        "c": null,
+        "q": "What is the exploding gradient problem?",
+        "type": "mcq",
         "o": [
-            "RNN",
-            "CNN",
-            "MLP",
-            "Autoencoder"
-        ]
+            "Gradients becoming extremely large during training",
+            "Gradients becoming very small",
+            "Model parameters exploding in memory",
+            "Training time increasing exponentially"
+        ],
+        "correct": "Gradients becoming extremely large during training"
     },
     {
-        "q": "What is the main characteristic of a deep neural network?",
-        "c": null,
-        "o": [
-            "Multiple hidden layers",
-            "No hidden layers",
-            "Single hidden layer",
-            "Only one output layer"
-        ]
+        "q": "_____ clipping is used to prevent exploding gradients.",
+        "type": "fill_blank",
+        "correct": "Gradient"
     },
     {
-        "q": "Which of the following is an application of deep learning?",
-        "c": null,
-        "o": [
-            "Image recognition",
-            "Database indexing",
-            "Packet routing",
-            "Memory management"
-        ]
+        "q": "Exploding gradients can cause numerical overflow during training.",
+        "type": "true_false",
+        "correct": "True"
     },
     {
-        "q": "Which layer helps reduce the spatial size of an image in a CNN?",
-        "c": null,
+        "q": "What is a skip connection?",
+        "type": "mcq",
         "o": [
-            "Pooling layer",
+            "Connection that bypasses one or more layers",
+            "Connection between input and output only",
+            "Connection within the same layer",
+            "Connection to external memory"
+        ],
+        "correct": "Connection that bypasses one or more layers"
+    },
+    {
+        "q": "Skip connections allow gradients to flow directly to _____ layers.",
+        "type": "fill_blank",
+        "correct": "earlier"
+    },
+    {
+        "q": "Skip connections are also known as residual connections.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "What is a dense connection in DenseNet?",
+        "type": "mcq",
+        "o": [
+            "Each layer receives input from all previous layers",
+            "Fully connected layers only",
+            "High-density weight matrices",
+            "Compressed layer connections"
+        ],
+        "correct": "Each layer receives input from all previous layers"
+    },
+    {
+        "q": "DenseNet uses feature _____ instead of summation for skip connections.",
+        "type": "fill_blank",
+        "correct": "concatenation"
+    },
+    {
+        "q": "DenseNet encourages feature reuse across layers.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "What is depthwise separable convolution?",
+        "type": "mcq",
+        "o": [
+            "Convolution decomposed into depthwise and pointwise operations",
+            "Standard 3x3 convolution",
+            "Convolution with increased depth",
+            "3D convolution for video"
+        ],
+        "correct": "Convolution decomposed into depthwise and pointwise operations"
+    },
+    {
+        "q": "MobileNet uses depthwise separable convolutions to reduce _____ cost.",
+        "type": "fill_blank",
+        "correct": "computational"
+    },
+    {
+        "q": "Depthwise separable convolutions have fewer parameters than standard convolutions.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "What is squeeze-and-excitation in neural networks?",
+        "type": "mcq",
+        "o": [
+            "Mechanism to recalibrate channel-wise feature responses",
+            "Method to compress models",
+            "Technique for data augmentation",
+            "Loss function variant"
+        ],
+        "correct": "Mechanism to recalibrate channel-wise feature responses"
+    },
+    {
+        "q": "SE blocks learn channel-wise _____ weights.",
+        "type": "fill_blank",
+        "correct": "attention"
+    },
+    {
+        "q": "Squeeze-and-Excitation networks improve representational power with minimal overhead.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "What is an Inception module?",
+        "type": "mcq",
+        "o": [
+            "Module with parallel convolutions of different kernel sizes",
+            "Single large convolution layer",
             "Fully connected layer",
-            "Convolutional layer",
-            "Normalization layer"
+            "Pooling layer only"
+        ],
+        "correct": "Module with parallel convolutions of different kernel sizes"
+    },
+    {
+        "q": "Inception modules capture features at _____ scales simultaneously.",
+        "type": "fill_blank",
+        "correct": "multiple"
+    },
+    {
+        "q": "Inception modules use 1x1 convolutions for dimensionality reduction.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Arrange the components of a typical Inception module:",
+        "type": "rearrange",
+        "correct": [
+            "Input feature maps",
+            "Parallel branches with different kernels",
+            "1x1 dimensionality reduction",
+            "Concatenate outputs",
+            "Output to next layer"
         ]
     },
     {
-        "q": "What is the role of a loss function in neural networks?",
-        "c": null,
+        "q": "What is neural style transfer?",
+        "type": "mcq",
         "o": [
-            "Quantify error in predictions",
-            "Update weights",
-            "Control learning rate",
-            "Initialize network"
+            "Applying artistic style from one image to content of another",
+            "Transferring weights between networks",
+            "Moving models between devices",
+            "Changing activation functions"
+        ],
+        "correct": "Applying artistic style from one image to content of another"
+    },
+    {
+        "q": "Neural style transfer uses _____ features to capture style.",
+        "type": "fill_blank",
+        "correct": "Gram matrix"
+    },
+    {
+        "q": "Neural style transfer uses pretrained CNN features.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "What is super-resolution in deep learning?",
+        "type": "mcq",
+        "o": [
+            "Increasing image resolution using neural networks",
+            "Decreasing image size",
+            "Image classification",
+            "Object detection"
+        ],
+        "correct": "Increasing image resolution using neural networks"
+    },
+    {
+        "q": "SRGAN uses _____ networks for image super-resolution.",
+        "type": "fill_blank",
+        "correct": "generative adversarial"
+    },
+    {
+        "q": "Super-resolution networks can hallucinate realistic details.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "What is image inpainting?",
+        "type": "mcq",
+        "o": [
+            "Filling in missing or corrupted parts of images",
+            "Adding noise to images",
+            "Cropping images",
+            "Rotating images"
+        ],
+        "correct": "Filling in missing or corrupted parts of images"
+    },
+    {
+        "q": "Inpainting networks learn to fill _____ regions with plausible content.",
+        "type": "fill_blank",
+        "correct": "missing"
+    },
+    {
+        "q": "Deep learning inpainting uses context from surrounding pixels.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "What is optical flow estimation?",
+        "type": "mcq",
+        "o": [
+            "Estimating motion between video frames",
+            "Measuring light intensity",
+            "Detecting optical illusions",
+            "Processing optical fibers"
+        ],
+        "correct": "Estimating motion between video frames"
+    },
+    {
+        "q": "Optical flow represents pixel _____ between consecutive frames.",
+        "type": "fill_blank",
+        "correct": "displacement"
+    },
+    {
+        "q": "FlowNet uses CNNs for optical flow estimation.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "What is video prediction?",
+        "type": "mcq",
+        "o": [
+            "Generating future video frames from past frames",
+            "Classifying video content",
+            "Compressing video files",
+            "Streaming video content"
+        ],
+        "correct": "Generating future video frames from past frames"
+    },
+    {
+        "q": "Video prediction networks learn _____ dynamics from data.",
+        "type": "fill_blank",
+        "correct": "temporal"
+    },
+    {
+        "q": "Video prediction is challenging due to inherent uncertainty about the future.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "What is action recognition?",
+        "type": "mcq",
+        "o": [
+            "Classifying human actions in videos",
+            "Recognizing text in images",
+            "Detecting audio events",
+            "Identifying object locations"
+        ],
+        "correct": "Classifying human actions in videos"
+    },
+    {
+        "q": "3D CNNs process both spatial and _____ information for action recognition.",
+        "type": "fill_blank",
+        "correct": "temporal"
+    },
+    {
+        "q": "Two-stream networks process RGB and optical flow separately for action recognition.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Match the video understanding task with its description:",
+        "type": "match",
+        "left": [
+            "Action recognition",
+            "Action detection",
+            "Video captioning",
+            "Video segmentation"
+        ],
+        "right": [
+            "Classify video action",
+            "Localize action in time",
+            "Generate text description",
+            "Segment objects over time"
         ]
     },
     {
-        "q": "Which gradient descent variant uses the entire dataset to compute gradients?",
-        "c": null,
+        "q": "What is speech recognition?",
+        "type": "mcq",
         "o": [
-            "Batch Gradient Descent",
-            "Stochastic Gradient Descent",
-            "Mini-Batch Gradient Descent",
-            "Momentum-based Gradient Descent"
+            "Converting spoken language to text",
+            "Synthesizing speech from text",
+            "Identifying speakers",
+            "Detecting audio events"
+        ],
+        "correct": "Converting spoken language to text"
+    },
+    {
+        "q": "End-to-end speech recognition uses _____ networks directly on audio.",
+        "type": "fill_blank",
+        "correct": "neural"
+    },
+    {
+        "q": "CTC loss is commonly used for speech recognition.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "What is text-to-speech (TTS)?",
+        "type": "mcq",
+        "o": [
+            "Synthesizing natural speech from text",
+            "Converting speech to text",
+            "Translating text between languages",
+            "Generating text descriptions"
+        ],
+        "correct": "Synthesizing natural speech from text"
+    },
+    {
+        "q": "Tacotron is a neural network for _____ synthesis.",
+        "type": "fill_blank",
+        "correct": "speech"
+    },
+    {
+        "q": "WaveNet generates high-quality audio waveforms.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Match the audio task with its deep learning approach:",
+        "type": "match",
+        "left": [
+            "Speech recognition",
+            "Text-to-speech",
+            "Voice conversion",
+            "Music generation"
+        ],
+        "right": [
+            "Wav2Vec/Conformer",
+            "Tacotron/VITS",
+            "StarGAN-VC",
+            "Jukebox/MusicLM"
         ]
     },
     {
-        "q": "Which of the following is a vanishing gradient problem solution?",
-        "c": null,
+        "q": "What is speaker diarization?",
+        "type": "mcq",
         "o": [
-            "Using ReLU activation",
-            "Increasing batch size",
-            "Using a sigmoid function",
-            "Decreasing learning rate"
+            "Determining who spoke when in audio",
+            "Identifying what was said",
+            "Translating speech",
+            "Enhancing audio quality"
+        ],
+        "correct": "Determining who spoke when in audio"
+    },
+    {
+        "q": "Speaker diarization segments audio by _____ identity.",
+        "type": "fill_blank",
+        "correct": "speaker"
+    },
+    {
+        "q": "Speaker embeddings are used for speaker verification and diarization.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "What is named entity recognition (NER)?",
+        "type": "mcq",
+        "o": [
+            "Identifying and classifying named entities in text",
+            "Generating entity names",
+            "Linking entities to databases",
+            "Creating entity relationships"
+        ],
+        "correct": "Identifying and classifying named entities in text"
+    },
+    {
+        "q": "NER classifies entities into categories like person, organization, and _____.",
+        "type": "fill_blank",
+        "correct": "location"
+    },
+    {
+        "q": "BERT-based models achieve state-of-the-art NER performance.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "What is sentiment analysis?",
+        "type": "mcq",
+        "o": [
+            "Determining the emotional tone of text",
+            "Analyzing sentence structure",
+            "Counting word frequencies",
+            "Translating text"
+        ],
+        "correct": "Determining the emotional tone of text"
+    },
+    {
+        "q": "Sentiment analysis classifies text as positive, negative, or _____.",
+        "type": "fill_blank",
+        "correct": "neutral"
+    },
+    {
+        "q": "Sentiment analysis is a form of text classification.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "What is question answering in NLP?",
+        "type": "mcq",
+        "o": [
+            "Extracting or generating answers from text given questions",
+            "Generating questions from answers",
+            "Summarizing text content",
+            "Translating questions"
+        ],
+        "correct": "Extracting or generating answers from text given questions"
+    },
+    {
+        "q": "Extractive QA identifies answer _____ within the given context.",
+        "type": "fill_blank",
+        "correct": "spans"
+    },
+    {
+        "q": "Generative QA can produce answers not present in the source text.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Match the NLP task with its description:",
+        "type": "match",
+        "left": [
+            "NER",
+            "POS tagging",
+            "Coreference resolution",
+            "Relation extraction"
+        ],
+        "right": [
+            "Entity classification",
+            "Word type labeling",
+            "Pronoun linking",
+            "Entity relationships"
         ]
     },
     {
-        "q": "Which deep learning model is suitable for text generation tasks?",
-        "c": null,
+        "q": "What is machine translation?",
+        "type": "mcq",
         "o": [
-            "RNN",
-            "CNN",
-            "DQN",
-            "SVM"
+            "Automatically translating text between languages",
+            "Converting speech to text",
+            "Summarizing documents",
+            "Generating text"
+        ],
+        "correct": "Automatically translating text between languages"
+    },
+    {
+        "q": "Neural machine translation uses _____ architectures.",
+        "type": "fill_blank",
+        "correct": "encoder-decoder"
+    },
+    {
+        "q": "Transformer-based models dominate neural machine translation.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "What is abstractive summarization?",
+        "type": "mcq",
+        "o": [
+            "Generating new sentences that capture document meaning",
+            "Extracting key sentences from documents",
+            "Counting word frequencies",
+            "Translating documents"
+        ],
+        "correct": "Generating new sentences that capture document meaning"
+    },
+    {
+        "q": "Abstractive summarization may generate words not in the _____ document.",
+        "type": "fill_blank",
+        "correct": "original"
+    },
+    {
+        "q": "Extractive summarization selects existing sentences from the source.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "What is a language model?",
+        "type": "mcq",
+        "o": [
+            "Model that predicts probability of word sequences",
+            "Dictionary of language words",
+            "Grammar checker tool",
+            "Translation memory"
+        ],
+        "correct": "Model that predicts probability of word sequences"
+    },
+    {
+        "q": "Causal language models predict the _____ token given previous tokens.",
+        "type": "fill_blank",
+        "correct": "next"
+    },
+    {
+        "q": "Masked language models predict tokens in any position.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Arrange the evolution of language models:",
+        "type": "rearrange",
+        "correct": [
+            "N-gram models",
+            "RNN language models",
+            "LSTM/GRU models",
+            "Transformer models",
+            "Large Language Models"
         ]
     },
     {
-        "q": "Which type of learning involves an agent learning from environment rewards?",
-        "c": null,
+        "q": "What is in-context learning?",
+        "type": "mcq",
         "o": [
-            "Reinforcement Learning",
-            "Supervised Learning",
-            "Unsupervised Learning",
-            "Transfer Learning"
+            "Learning from examples provided in the prompt without weight updates",
+            "Training on context-specific data",
+            "Learning during inference time",
+            "Contextual word embeddings"
+        ],
+        "correct": "Learning from examples provided in the prompt without weight updates"
+    },
+    {
+        "q": "In-context learning is a key capability of _____ language models.",
+        "type": "fill_blank",
+        "correct": "large"
+    },
+    {
+        "q": "In-context learning requires no gradient updates.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "What is chain-of-thought prompting?",
+        "type": "mcq",
+        "o": [
+            "Prompting LLMs to show step-by-step reasoning",
+            "Chaining multiple models together",
+            "Linking prompt templates",
+            "Sequential model training"
+        ],
+        "correct": "Prompting LLMs to show step-by-step reasoning"
+    },
+    {
+        "q": "Chain-of-thought prompting improves performance on _____ tasks.",
+        "type": "fill_blank",
+        "correct": "reasoning"
+    },
+    {
+        "q": "Chain-of-thought prompting helps with complex multi-step problems.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "What is instruction tuning?",
+        "type": "mcq",
+        "o": [
+            "Fine-tuning models on instruction-following datasets",
+            "Tuning hyperparameters",
+            "Adjusting learning rate",
+            "Instruction set optimization"
+        ],
+        "correct": "Fine-tuning models on instruction-following datasets"
+    },
+    {
+        "q": "Instruction tuning improves model _____ to user commands.",
+        "type": "fill_blank",
+        "correct": "alignment"
+    },
+    {
+        "q": "FLAN and InstructGPT are examples of instruction-tuned models.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Match the LLM capability with its description:",
+        "type": "match",
+        "left": [
+            "Few-shot learning",
+            "Zero-shot learning",
+            "Chain-of-thought",
+            "Self-consistency"
+        ],
+        "right": [
+            "Learning from examples in prompt",
+            "No examples needed",
+            "Step-by-step reasoning",
+            "Multiple reasoning paths"
         ]
     },
     {
-        "q": "Which optimizer includes momentum and adaptive learning rates?",
-        "c": null,
+        "q": "What is model alignment in AI?",
+        "type": "mcq",
         "o": [
-            "Adam",
-            "RMSprop",
+            "Making AI systems behave according to human values and intentions",
+            "Aligning model weights",
+            "Synchronizing distributed models",
+            "Calibrating model outputs"
+        ],
+        "correct": "Making AI systems behave according to human values and intentions"
+    },
+    {
+        "q": "RLHF aligns models using human _____ as reward.",
+        "type": "fill_blank",
+        "correct": "feedback"
+    },
+    {
+        "q": "Constitutional AI uses AI feedback for alignment.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "What is Direct Preference Optimization (DPO)?",
+        "type": "mcq",
+        "o": [
+            "Method to align LLMs without explicit reward modeling",
+            "Direct gradient optimization",
+            "Preference-based hyperparameter tuning",
+            "Optimizer for preference data"
+        ],
+        "correct": "Method to align LLMs without explicit reward modeling"
+    },
+    {
+        "q": "DPO directly optimizes the _____ between preferred and dispreferred responses.",
+        "type": "fill_blank",
+        "correct": "likelihood"
+    },
+    {
+        "q": "DPO is simpler than RLHF as it doesn't require training a reward model.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "What is parameter-efficient fine-tuning (PEFT)?",
+        "type": "mcq",
+        "o": [
+            "Fine-tuning only a small subset of model parameters",
+            "Reducing model size before training",
+            "Efficient parameter initialization",
+            "Parallel parameter updates"
+        ],
+        "correct": "Fine-tuning only a small subset of model parameters"
+    },
+    {
+        "q": "PEFT methods like LoRA reduce the cost of _____ large models.",
+        "type": "fill_blank",
+        "correct": "fine-tuning"
+    },
+    {
+        "q": "Adapter layers add trainable parameters while freezing the base model.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Match the PEFT method with its approach:",
+        "type": "match",
+        "left": [
+            "LoRA",
+            "Prefix tuning",
+            "Prompt tuning",
+            "Adapters"
+        ],
+        "right": [
+            "Low-rank weight updates",
+            "Learnable prefix tokens",
+            "Soft prompt embeddings",
+            "Bottleneck layers"
+        ]
+    },
+    {
+        "q": "What is QLoRA?",
+        "type": "mcq",
+        "o": [
+            "Combining quantization with LoRA for efficient fine-tuning",
+            "Quantum-inspired LoRA",
+            "Quality-focused LoRA",
+            "Quick LoRA implementation"
+        ],
+        "correct": "Combining quantization with LoRA for efficient fine-tuning"
+    },
+    {
+        "q": "QLoRA enables fine-tuning _____ parameter models on consumer GPUs.",
+        "type": "fill_blank",
+        "correct": "billion"
+    },
+    {
+        "q": "QLoRA uses 4-bit quantization of the base model.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "What is activation checkpointing?",
+        "type": "mcq",
+        "o": [
+            "Trading compute for memory by recomputing activations",
+            "Saving model checkpoints",
+            "Checking activation function outputs",
+            "Verifying gradient computations"
+        ],
+        "correct": "Trading compute for memory by recomputing activations"
+    },
+    {
+        "q": "Activation checkpointing saves _____ at the cost of additional computation.",
+        "type": "fill_blank",
+        "correct": "memory"
+    },
+    {
+        "q": "Gradient checkpointing is another name for activation checkpointing.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "What is tensor parallelism?",
+        "type": "mcq",
+        "o": [
+            "Splitting individual layers across multiple devices",
+            "Processing multiple tensors simultaneously",
+            "Parallel tensor operations on single GPU",
+            "Tensor compression technique"
+        ],
+        "correct": "Splitting individual layers across multiple devices"
+    },
+    {
+        "q": "Tensor parallelism splits _____ matrix operations across GPUs.",
+        "type": "fill_blank",
+        "correct": "large"
+    },
+    {
+        "q": "Tensor parallelism requires communication within each layer.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "What is pipeline parallelism?",
+        "type": "mcq",
+        "o": [
+            "Distributing different layers across different devices",
+            "Processing multiple batches in parallel",
+            "Parallel data preprocessing",
+            "Sequential layer processing"
+        ],
+        "correct": "Distributing different layers across different devices"
+    },
+    {
+        "q": "Pipeline parallelism can suffer from _____ bubbles.",
+        "type": "fill_blank",
+        "correct": "pipeline"
+    },
+    {
+        "q": "Micro-batching helps reduce pipeline bubble overhead.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Match the parallelism strategy with its description:",
+        "type": "match",
+        "left": [
+            "Data parallelism",
+            "Tensor parallelism",
+            "Pipeline parallelism",
+            "Expert parallelism"
+        ],
+        "right": [
+            "Split batches",
+            "Split layers horizontally",
+            "Split layers vertically",
+            "Split MoE experts"
+        ]
+    },
+    {
+        "q": "What is Flash Attention?",
+        "type": "mcq",
+        "o": [
+            "Memory-efficient attention algorithm using tiling",
+            "Faster attention with approximations",
+            "Attention with flash memory",
+            "Quick attention initialization"
+        ],
+        "correct": "Memory-efficient attention algorithm using tiling"
+    },
+    {
+        "q": "Flash Attention reduces memory usage from O(n²) to O(n) for attention.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Flash Attention uses _____ to avoid materializing full attention matrices.",
+        "type": "fill_blank",
+        "correct": "tiling"
+    },
+    {
+        "q": "What is KV-cache in transformer inference?",
+        "type": "mcq",
+        "o": [
+            "Caching key-value pairs to avoid recomputation",
+            "Cache for model weights",
+            "Memory cache for inputs",
+            "Output caching mechanism"
+        ],
+        "correct": "Caching key-value pairs to avoid recomputation"
+    },
+    {
+        "q": "KV-cache grows _____ with sequence length during generation.",
+        "type": "fill_blank",
+        "correct": "linearly"
+    },
+    {
+        "q": "KV-cache significantly speeds up autoregressive generation.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "What is speculative decoding?",
+        "type": "mcq",
+        "o": [
+            "Using a smaller model to draft tokens verified by larger model",
+            "Random token generation",
+            "Parallel token decoding",
+            "Probabilistic sampling"
+        ],
+        "correct": "Using a smaller model to draft tokens verified by larger model"
+    },
+    {
+        "q": "Speculative decoding can speed up inference without changing output _____.",
+        "type": "fill_blank",
+        "correct": "distribution"
+    },
+    {
+        "q": "Speculative decoding trades off additional compute for faster generation.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Arrange the steps in speculative decoding:",
+        "type": "rearrange",
+        "correct": [
+            "Draft model generates candidate tokens",
+            "Target model scores all candidates in parallel",
+            "Accept tokens matching target distribution",
+            "Reject and resample diverging tokens",
+            "Continue with accepted prefix"
+        ]
+    },
+    {
+        "q": "What is continuous batching?",
+        "type": "mcq",
+        "o": [
+            "Dynamically adding/removing sequences from inference batch",
+            "Processing batches without interruption",
+            "Continuous data streaming",
+            "Batch size scheduling"
+        ],
+        "correct": "Dynamically adding/removing sequences from inference batch"
+    },
+    {
+        "q": "Continuous batching improves GPU _____ for LLM serving.",
+        "type": "fill_blank",
+        "correct": "utilization"
+    },
+    {
+        "q": "Continuous batching allows sequences to complete independently.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "What is PagedAttention?",
+        "type": "mcq",
+        "o": [
+            "Managing KV-cache memory like OS virtual memory pages",
+            "Attention with pagination",
+            "Page-by-page attention computation",
+            "Document page processing"
+        ],
+        "correct": "Managing KV-cache memory like OS virtual memory pages"
+    },
+    {
+        "q": "PagedAttention is used in _____ for efficient LLM serving.",
+        "type": "fill_blank",
+        "correct": "vLLM"
+    },
+    {
+        "q": "PagedAttention reduces memory waste from KV-cache fragmentation.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "What is multimodal learning?",
+        "type": "mcq",
+        "o": [
+            "Learning from multiple types of data like text, images, and audio",
+            "Learning multiple tasks at once",
+            "Using multiple GPUs for training",
+            "Training with multiple loss functions"
+        ],
+        "correct": "Learning from multiple types of data like text, images, and audio"
+    },
+    {
+        "q": "Multimodal models learn to align representations across different _____.",
+        "type": "fill_blank",
+        "correct": "modalities"
+    },
+    {
+        "q": "CLIP and DALL-E are examples of multimodal models.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "What is a Neural Radiance Field (NeRF)?",
+        "type": "mcq",
+        "o": [
+            "Method for synthesizing novel views of 3D scenes from images",
+            "Network for processing radio signals",
+            "Field for neural research",
+            "Radiation detection network"
+        ],
+        "correct": "Method for synthesizing novel views of 3D scenes from images"
+    },
+    {
+        "q": "NeRF represents scenes as continuous _____ functions.",
+        "type": "fill_blank",
+        "correct": "volumetric"
+    },
+    {
+        "q": "NeRF can generate photorealistic novel view synthesis.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "What is point cloud processing in deep learning?",
+        "type": "mcq",
+        "o": [
+            "Processing 3D point data using neural networks",
+            "Cloud computing for deep learning",
+            "Distributed data processing",
+            "Processing scatter plots"
+        ],
+        "correct": "Processing 3D point data using neural networks"
+    },
+    {
+        "q": "PointNet processes point clouds by learning _____ features.",
+        "type": "fill_blank",
+        "correct": "permutation-invariant"
+    },
+    {
+        "q": "Point clouds are unordered sets of 3D coordinates.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Match the 3D vision task with its description:",
+        "type": "match",
+        "left": [
+            "Depth estimation",
+            "3D reconstruction",
+            "Pose estimation",
+            "Scene flow"
+        ],
+        "right": [
+            "Predict pixel distances",
+            "Build 3D models",
+            "Detect body positions",
+            "3D motion between frames"
+        ]
+    },
+    {
+        "q": "What is meta-learning?",
+        "type": "mcq",
+        "o": [
+            "Learning how to learn efficiently from few examples",
+            "Learning about metadata",
+            "Meta-analysis of models",
+            "Learning from meta-tags"
+        ],
+        "correct": "Learning how to learn efficiently from few examples"
+    },
+    {
+        "q": "Meta-learning is also known as _____ learning.",
+        "type": "fill_blank",
+        "correct": "learning to learn"
+    },
+    {
+        "q": "MAML is a popular meta-learning algorithm.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "What is continual learning?",
+        "type": "mcq",
+        "o": [
+            "Learning new tasks without forgetting previous knowledge",
+            "Training models continuously",
+            "Streaming data processing",
+            "Online gradient descent"
+        ],
+        "correct": "Learning new tasks without forgetting previous knowledge"
+    },
+    {
+        "q": "Continual learning aims to overcome catastrophic _____.",
+        "type": "fill_blank",
+        "correct": "forgetting"
+    },
+    {
+        "q": "Elastic Weight Consolidation is a technique for continual learning.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "What is federated learning?",
+        "type": "mcq",
+        "o": [
+            "Training models across decentralized devices without sharing raw data",
+            "Federal government AI regulations",
+            "Training across federations",
+            "Combining multiple model types"
+        ],
+        "correct": "Training models across decentralized devices without sharing raw data"
+    },
+    {
+        "q": "Federated learning preserves data _____ by keeping data on local devices.",
+        "type": "fill_blank",
+        "correct": "privacy"
+    },
+    {
+        "q": "Federated averaging aggregates model updates from multiple clients.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Arrange the steps in federated learning:",
+        "type": "rearrange",
+        "correct": [
+            "Server distributes model to clients",
+            "Clients train on local data",
+            "Clients send model updates",
+            "Server aggregates updates",
+            "Updated model sent back to clients"
+        ]
+    },
+    {
+        "q": "What is differential privacy in deep learning?",
+        "type": "mcq",
+        "o": [
+            "Adding noise to protect individual data points during training",
+            "Computing gradients differently",
+            "Privacy through model separation",
+            "Different training protocols"
+        ],
+        "correct": "Adding noise to protect individual data points during training"
+    },
+    {
+        "q": "Differential privacy provides mathematical _____ about data protection.",
+        "type": "fill_blank",
+        "correct": "guarantees"
+    },
+    {
+        "q": "DP-SGD adds noise to gradients during training.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "What is neural network compression?",
+        "type": "mcq",
+        "o": [
+            "Reducing model size while maintaining performance",
+            "Compressing training data",
+            "Reducing GPU memory usage",
+            "Data compression using networks"
+        ],
+        "correct": "Reducing model size while maintaining performance"
+    },
+    {
+        "q": "Match the compression technique with its approach:",
+        "type": "match",
+        "left": [
+            "Pruning",
+            "Quantization",
+            "Distillation",
+            "Low-rank factorization"
+        ],
+        "right": [
+            "Remove weights",
+            "Reduce precision",
+            "Train smaller model",
+            "Decompose matrices"
+        ]
+    },
+    {
+        "q": "Structured pruning removes entire filters or neurons.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "What is lottery ticket hypothesis?",
+        "type": "mcq",
+        "o": [
+            "Sparse subnetworks can match dense network performance",
+            "Random initialization is crucial",
+            "Some models win training lottery",
+            "Networks have lucky parameters"
+        ],
+        "correct": "Sparse subnetworks can match dense network performance"
+    },
+    {
+        "q": "The lottery ticket hypothesis suggests that _____ subnetworks exist at initialization.",
+        "type": "fill_blank",
+        "correct": "winning"
+    },
+    {
+        "q": "Lottery tickets can achieve similar accuracy with fewer parameters.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "What is spiking neural network?",
+        "type": "mcq",
+        "o": [
+            "Network that processes information using discrete spikes",
+            "Network with spike-shaped activations",
+            "Network for detecting spikes in data",
+            "Network with irregular training"
+        ],
+        "correct": "Network that processes information using discrete spikes"
+    },
+    {
+        "q": "Spiking neural networks are more biologically _____ than traditional ANNs.",
+        "type": "fill_blank",
+        "correct": "plausible"
+    },
+    {
+        "q": "Spiking neural networks are energy-efficient for neuromorphic hardware.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "What is Hebbian learning?",
+        "type": "mcq",
+        "o": [
+            "Learning rule based on neurons that fire together wire together",
+            "Learning using Hebrew characters",
+            "Heavy-weight learning",
+            "Hierarchical learning"
+        ],
+        "correct": "Learning rule based on neurons that fire together wire together"
+    },
+    {
+        "q": "Hebbian learning is a form of _____ learning.",
+        "type": "fill_blank",
+        "correct": "unsupervised"
+    },
+    {
+        "q": "Hebbian learning inspired many neural network learning rules.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "What is adversarial training?",
+        "type": "mcq",
+        "o": [
+            "Training on adversarial examples to improve robustness",
+            "Training GANs",
+            "Competitive learning between models",
+            "Training against opponents"
+        ],
+        "correct": "Training on adversarial examples to improve robustness"
+    },
+    {
+        "q": "Adversarial training helps models resist _____ attacks.",
+        "type": "fill_blank",
+        "correct": "adversarial"
+    },
+    {
+        "q": "PGD adversarial training is a common robustness technique.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "What are adversarial examples?",
+        "type": "mcq",
+        "o": [
+            "Inputs with small perturbations that cause model misclassification",
+            "Examples from competing models",
+            "Difficult training examples",
+            "Outlier data points"
+        ],
+        "correct": "Inputs with small perturbations that cause model misclassification"
+    },
+    {
+        "q": "FGSM creates adversarial examples using the sign of the _____.",
+        "type": "fill_blank",
+        "correct": "gradient"
+    },
+    {
+        "q": "Adversarial perturbations are often imperceptible to humans.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Match the adversarial attack with its characteristic:",
+        "type": "match",
+        "left": [
+            "FGSM",
+            "PGD",
+            "C&W",
+            "AutoAttack"
+        ],
+        "right": [
+            "Single-step gradient",
+            "Multi-step iterative",
+            "Optimization-based",
+            "Ensemble of attacks"
+        ]
+    },
+    {
+        "q": "What is model interpretability?",
+        "type": "mcq",
+        "o": [
+            "Understanding why models make specific predictions",
+            "Reading model weights",
+            "Translating model outputs",
+            "Converting models between formats"
+        ],
+        "correct": "Understanding why models make specific predictions"
+    },
+    {
+        "q": "SHAP values explain predictions using _____ game theory.",
+        "type": "fill_blank",
+        "correct": "cooperative"
+    },
+    {
+        "q": "Attention visualization helps interpret transformer predictions.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "What is LIME in explainable AI?",
+        "type": "mcq",
+        "o": [
+            "Local Interpretable Model-agnostic Explanations",
+            "Linear Model Evaluation",
+            "Layered Image Model Explanation",
+            "Learning Interpretable Machine Explanations"
+        ],
+        "correct": "Local Interpretable Model-agnostic Explanations"
+    },
+    {
+        "q": "LIME explains predictions by fitting _____ models locally.",
+        "type": "fill_blank",
+        "correct": "interpretable"
+    },
+    {
+        "q": "LIME is model-agnostic and works with any classifier.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "What is Grad-CAM?",
+        "type": "mcq",
+        "o": [
+            "Gradient-weighted Class Activation Mapping for visual explanations",
+            "Gradient camera for models",
+            "Gradual classification mapping",
+            "Grade computation algorithm"
+        ],
+        "correct": "Gradient-weighted Class Activation Mapping for visual explanations"
+    },
+    {
+        "q": "Grad-CAM highlights regions important for _____ predictions.",
+        "type": "fill_blank",
+        "correct": "class"
+    },
+    {
+        "q": "Grad-CAM uses gradients flowing into the final convolutional layer.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Arrange the steps in Grad-CAM visualization:",
+        "type": "rearrange",
+        "correct": [
+            "Forward pass through CNN",
+            "Compute gradients for target class",
+            "Pool gradients to get weights",
+            "Compute weighted sum of activations",
+            "Apply ReLU to get heatmap"
+        ]
+    },
+    {
+        "q": "What is concept bottleneck in neural networks?",
+        "type": "mcq",
+        "o": [
+            "Architecture where intermediate representations are human-interpretable concepts",
+            "Limitation in concept learning",
+            "Bottleneck layer with concepts",
+            "Network constrained by concepts"
+        ],
+        "correct": "Architecture where intermediate representations are human-interpretable concepts"
+    },
+    {
+        "q": "Concept bottleneck models improve _____ by using interpretable concepts.",
+        "type": "fill_blank",
+        "correct": "transparency"
+    },
+    {
+        "q": "Concept bottleneck models allow intervention on predicted concepts.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "What is curriculum learning?",
+        "type": "mcq",
+        "o": [
+            "Training on easier examples before harder ones",
+            "Learning educational curricula",
+            "Sequential course learning",
+            "Structured homework learning"
+        ],
+        "correct": "Training on easier examples before harder ones"
+    },
+    {
+        "q": "Curriculum learning mimics human learning by starting with _____ examples.",
+        "type": "fill_blank",
+        "correct": "simpler"
+    },
+    {
+        "q": "Curriculum learning can speed up convergence and improve final performance.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "What is self-training?",
+        "type": "mcq",
+        "o": [
+            "Using model predictions as pseudo-labels for unlabeled data",
+            "Training on self-portraits",
+            "Automated training pipelines",
+            "Self-supervised pretraining"
+        ],
+        "correct": "Using model predictions as pseudo-labels for unlabeled data"
+    },
+    {
+        "q": "Self-training iteratively adds _____ with pseudo-labels.",
+        "type": "fill_blank",
+        "correct": "unlabeled data"
+    },
+    {
+        "q": "Noisy student training is a form of self-training.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "What is label smoothing?",
+        "type": "mcq",
+        "o": [
+            "Using soft labels instead of hard one-hot targets",
+            "Smoothing training data",
+            "Reducing label noise",
+            "Interpolating between labels"
+        ],
+        "correct": "Using soft labels instead of hard one-hot targets"
+    },
+    {
+        "q": "Label smoothing prevents the model from becoming too _____.",
+        "type": "fill_blank",
+        "correct": "confident"
+    },
+    {
+        "q": "Label smoothing acts as a form of regularization.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "What is Mixup data augmentation?",
+        "type": "mcq",
+        "o": [
+            "Creating training examples by interpolating between pairs",
+            "Mixing different datasets",
+            "Combining model architectures",
+            "Shuffling training batches"
+        ],
+        "correct": "Creating training examples by interpolating between pairs"
+    },
+    {
+        "q": "Mixup creates virtual examples by _____ interpolation of inputs and labels.",
+        "type": "fill_blank",
+        "correct": "convex"
+    },
+    {
+        "q": "CutMix combines Mixup with random region masking.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Match the augmentation technique with its approach:",
+        "type": "match",
+        "left": [
+            "Mixup",
+            "CutMix",
+            "Cutout",
+            "AutoAugment"
+        ],
+        "right": [
+            "Interpolate pairs",
+            "Cut and paste regions",
+            "Random rectangular dropout",
+            "Learned augmentation policy"
+        ]
+    },
+    {
+        "q": "What is test-time augmentation?",
+        "type": "mcq",
+        "o": [
+            "Applying augmentations at inference and averaging predictions",
+            "Augmenting test datasets",
+            "Training with test data",
+            "Validation augmentation"
+        ],
+        "correct": "Applying augmentations at inference and averaging predictions"
+    },
+    {
+        "q": "Test-time augmentation improves prediction _____ at the cost of compute.",
+        "type": "fill_blank",
+        "correct": "robustness"
+    },
+    {
+        "q": "TTA typically uses horizontal flips and multi-scale inputs.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "What is neural network calibration?",
+        "type": "mcq",
+        "o": [
+            "Aligning predicted probabilities with true likelihoods",
+            "Calibrating hyperparameters",
+            "Adjusting network weights",
+            "Measuring network performance"
+        ],
+        "correct": "Aligning predicted probabilities with true likelihoods"
+    },
+    {
+        "q": "Temperature _____ is a simple post-hoc calibration method.",
+        "type": "fill_blank",
+        "correct": "scaling"
+    },
+    {
+        "q": "Modern neural networks tend to be overconfident in predictions.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "What is Bayesian deep learning?",
+        "type": "mcq",
+        "o": [
+            "Modeling uncertainty in neural network weights and predictions",
+            "Using Bayesian statistics only",
+            "Deep learning for Bayesian inference",
+            "Probabilistic programming"
+        ],
+        "correct": "Modeling uncertainty in neural network weights and predictions"
+    },
+    {
+        "q": "Bayesian neural networks maintain distributions over _____.",
+        "type": "fill_blank",
+        "correct": "weights"
+    },
+    {
+        "q": "Monte Carlo dropout can approximate Bayesian inference.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Arrange the types of uncertainty:",
+        "type": "rearrange",
+        "correct": [
+            "Aleatoric uncertainty from data noise",
+            "Epistemic uncertainty from model",
+            "Total uncertainty is their combination",
+            "Epistemic reduces with more data",
+            "Aleatoric is irreducible"
+        ]
+    },
+    {
+        "q": "What is ensemble deep learning?",
+        "type": "mcq",
+        "o": [
+            "Combining predictions from multiple models",
+            "Training one large model",
+            "Sequential model training",
+            "Model architecture search"
+        ],
+        "correct": "Combining predictions from multiple models"
+    },
+    {
+        "q": "Deep ensembles combine models with different _____ initializations.",
+        "type": "fill_blank",
+        "correct": "random"
+    },
+    {
+        "q": "Ensembles typically improve both accuracy and uncertainty estimation.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "What is neural tangent kernel?",
+        "type": "mcq",
+        "o": [
+            "Kernel describing infinite-width neural network behavior",
+            "Activation function variants",
+            "Neural network kernel methods",
+            "Tangent space of networks"
+        ],
+        "correct": "Kernel describing infinite-width neural network behavior"
+    },
+    {
+        "q": "Neural tangent kernel theory analyzes networks in the _____ width limit.",
+        "type": "fill_blank",
+        "correct": "infinite"
+    },
+    {
+        "q": "In the NTK regime, neural network training is approximately linear.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "What is the double descent phenomenon?",
+        "type": "mcq",
+        "o": [
+            "Test error decreasing again after the interpolation threshold",
+            "Training loss going down twice",
+            "Two-phase learning rate decay",
+            "Gradient descent variations"
+        ],
+        "correct": "Test error decreasing again after the interpolation threshold"
+    },
+    {
+        "q": "Double descent challenges the classical _____ tradeoff view.",
+        "type": "fill_blank",
+        "correct": "bias-variance"
+    },
+    {
+        "q": "Overparameterized models can generalize well despite memorizing training data.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "What is implicit regularization?",
+        "type": "mcq",
+        "o": [
+            "Regularization effects from optimizer and architecture choices",
+            "Explicit L2 regularization",
+            "Dropout regularization",
+            "Batch normalization"
+        ],
+        "correct": "Regularization effects from optimizer and architecture choices"
+    },
+    {
+        "q": "SGD has an implicit bias toward _____ margin solutions.",
+        "type": "fill_blank",
+        "correct": "maximum"
+    },
+    {
+        "q": "Gradient descent implicitly regularizes neural networks.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "What is sharpness-aware minimization (SAM)?",
+        "type": "mcq",
+        "o": [
+            "Optimizer that seeks flat minima for better generalization",
+            "Sharp gradient descent",
+            "Minimal sharpness training",
+            "Awareness training method"
+        ],
+        "correct": "Optimizer that seeks flat minima for better generalization"
+    },
+    {
+        "q": "SAM minimizes both loss and loss _____ in the parameter neighborhood.",
+        "type": "fill_blank",
+        "correct": "sharpness"
+    },
+    {
+        "q": "Flat minima are believed to generalize better than sharp ones.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Match the optimizer with its innovation:",
+        "type": "match",
+        "left": [
             "SGD",
-            "Nadam"
+            "Adam",
+            "AdaGrad",
+            "RMSprop"
+        ],
+        "right": [
+            "Momentum updates",
+            "Adaptive moments",
+            "Accumulated gradients",
+            "Moving average squares"
         ]
     },
     {
-        "q": "What is the primary goal of unsupervised learning?",
-        "c": null,
+        "q": "What is LAMB optimizer?",
+        "type": "mcq",
         "o": [
-            "Find patterns in data",
-            "Predict labels",
-            "Classify data",
-            "Minimize loss function"
+            "Layer-wise Adaptive Moments optimizer for large batch training",
+            "Lambda-based optimizer",
+            "Low-amplitude momentum",
+            "Learning with adaptive bounds"
+        ],
+        "correct": "Layer-wise Adaptive Moments optimizer for large batch training"
+    },
+    {
+        "q": "LAMB enables training with very large _____ sizes.",
+        "type": "fill_blank",
+        "correct": "batch"
+    },
+    {
+        "q": "LAMB was used to train BERT in record time.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "What is cosine annealing?",
+        "type": "mcq",
+        "o": [
+            "Learning rate schedule following a cosine curve",
+            "Cosine activation function",
+            "Annealing with cosine loss",
+            "Periodic learning"
+        ],
+        "correct": "Learning rate schedule following a cosine curve"
+    },
+    {
+        "q": "Cosine annealing smoothly decreases the learning rate to _____.",
+        "type": "fill_blank",
+        "correct": "zero"
+    },
+    {
+        "q": "Warm restarts can be combined with cosine annealing.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Arrange the components of the OneCycle learning rate policy:",
+        "type": "rearrange",
+        "correct": [
+            "Start with low learning rate",
+            "Increase to maximum over epochs",
+            "Decrease back to minimum",
+            "Anneal to very small value",
+            "Complete training"
         ]
     },
     {
-        "q": "What does the term 'epoch' refer to in deep learning?",
-        "c": null,
+        "q": "What is layer freezing in transfer learning?",
+        "type": "mcq",
         "o": [
-            "One complete pass through the training dataset",
-            "A single training step",
-            "A set of neurons",
-            "A specific optimizer"
+            "Keeping pretrained layer weights fixed during fine-tuning",
+            "Cooling layers during training",
+            "Stopping layer updates randomly",
+            "Removing frozen layers"
+        ],
+        "correct": "Keeping pretrained layer weights fixed during fine-tuning"
+    },
+    {
+        "q": "Earlier layers learn _____ features that transfer well.",
+        "type": "fill_blank",
+        "correct": "generic"
+    },
+    {
+        "q": "Gradual unfreezing can improve fine-tuning stability.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "What is domain adaptation?",
+        "type": "mcq",
+        "o": [
+            "Adapting models trained on one domain to work on another",
+            "Registering domain names",
+            "Adapting to new websites",
+            "Domain-specific training"
+        ],
+        "correct": "Adapting models trained on one domain to work on another"
+    },
+    {
+        "q": "Domain adaptation addresses the _____ shift between source and target domains.",
+        "type": "fill_blank",
+        "correct": "distribution"
+    },
+    {
+        "q": "Unsupervised domain adaptation uses no labels from the target domain.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Match the domain adaptation approach with its method:",
+        "type": "match",
+        "left": [
+            "Adversarial DA",
+            "MMD-based DA",
+            "Self-training DA",
+            "Normalization DA"
+        ],
+        "right": [
+            "Domain discriminator",
+            "Moment matching",
+            "Pseudo-labels",
+            "Batch norm adaptation"
         ]
     },
     {
-        "q": "Which of the following problems is addressed by using dropout?",
-        "c": null,
+        "q": "What is neural architecture distillation?",
+        "type": "mcq",
         "o": [
-            "Overfitting",
-            "Underfitting",
-            "Vanishing gradients",
-            "Exploding gradients"
+            "Transferring architecture knowledge to design new networks",
+            "Standard knowledge distillation",
+            "Removing network components",
+            "Architecture compression"
+        ],
+        "correct": "Transferring architecture knowledge to design new networks"
+    },
+    {
+        "q": "Architecture distillation helps design _____ architectures.",
+        "type": "fill_blank",
+        "correct": "efficient"
+    },
+    {
+        "q": "Once-for-all networks enable architecture search from a single training run.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "What is network morphism?",
+        "type": "mcq",
+        "o": [
+            "Transforming network architecture while preserving function",
+            "Network shape changes",
+            "Morphological operations on networks",
+            "Layer shape modifications"
+        ],
+        "correct": "Transforming network architecture while preserving function"
+    },
+    {
+        "q": "Network morphism enables _____ network growth during training.",
+        "type": "fill_blank",
+        "correct": "smooth"
+    },
+    {
+        "q": "Net2Net uses function-preserving transformations.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "What is progressive training?",
+        "type": "mcq",
+        "o": [
+            "Gradually increasing model or data complexity during training",
+            "Training without stopping",
+            "Progressive web apps training",
+            "Sequential epoch training"
+        ],
+        "correct": "Gradually increasing model or data complexity during training"
+    },
+    {
+        "q": "ProGAN uses progressive _____ for high-resolution image generation.",
+        "type": "fill_blank",
+        "correct": "growing"
+    },
+    {
+        "q": "Progressive training can stabilize GAN training.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Arrange the steps in progressive GAN training:",
+        "type": "rearrange",
+        "correct": [
+            "Train at lowest resolution",
+            "Add new layers for higher resolution",
+            "Fade in new layers smoothly",
+            "Train at new resolution",
+            "Repeat until target resolution"
         ]
     },
     {
-        "q": "Which deep learning architecture is used for machine translation tasks?",
-        "c": null,
+        "q": "What is weight space analysis?",
+        "type": "mcq",
         "o": [
-            "Seq2Seq",
-            "CNN",
-            "VGG",
-            "Autoencoder"
+            "Studying the geometry and properties of neural network weight spaces",
+            "Analyzing disk space for weights",
+            "Weight storage optimization",
+            "Memory analysis of networks"
+        ],
+        "correct": "Studying the geometry and properties of neural network weight spaces"
+    },
+    {
+        "q": "Mode connectivity suggests that good solutions are connected by low-loss _____.",
+        "type": "fill_blank",
+        "correct": "paths"
+    },
+    {
+        "q": "Loss landscape visualization helps understand training dynamics.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "What is weight averaging?",
+        "type": "mcq",
+        "o": [
+            "Averaging model weights over training iterations",
+            "Computing average weight values",
+            "Balanced weight initialization",
+            "Weight normalization"
+        ],
+        "correct": "Averaging model weights over training iterations"
+    },
+    {
+        "q": "Stochastic weight averaging improves generalization by averaging _____ checkpoints.",
+        "type": "fill_blank",
+        "correct": "SGD"
+    },
+    {
+        "q": "Exponential moving average of weights is used in many modern architectures.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "What is contrastive representation learning?",
+        "type": "mcq",
+        "o": [
+            "Learning representations by contrasting positive and negative pairs",
+            "Learning contrasting concepts",
+            "Comparative analysis",
+            "Contrast enhancement"
+        ],
+        "correct": "Learning representations by contrasting positive and negative pairs"
+    },
+    {
+        "q": "Contrastive learning pulls positive pairs _____ and pushes negatives apart.",
+        "type": "fill_blank",
+        "correct": "together"
+    },
+    {
+        "q": "InfoNCE is a common contrastive loss function.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Match the self-supervised method with its approach:",
+        "type": "match",
+        "left": [
+            "Contrastive",
+            "Masked prediction",
+            "Rotation prediction",
+            "Clustering-based"
+        ],
+        "right": [
+            "Positive/negative pairs",
+            "Reconstruct masked parts",
+            "Predict transformation",
+            "Assign pseudo-labels"
         ]
     },
     {
-        "q": "Which deep learning method is used to detect anomalies in data?",
-        "c": null,
+        "q": "What is representation disentanglement?",
+        "type": "mcq",
         "o": [
-            "Autoencoder",
-            "GAN",
-            "RNN",
-            "LSTM"
+            "Learning representations where each dimension captures independent factors",
+            "Separating tangled representations",
+            "Network layer separation",
+            "Feature extraction"
+        ],
+        "correct": "Learning representations where each dimension captures independent factors"
+    },
+    {
+        "q": "Beta-VAE encourages disentanglement through a _____ on the KL divergence.",
+        "type": "fill_blank",
+        "correct": "penalty"
+    },
+    {
+        "q": "Disentangled representations improve interpretability and generalization.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "What is a denoising autoencoder?",
+        "type": "mcq",
+        "o": [
+            "Autoencoder trained to reconstruct clean inputs from corrupted ones",
+            "Removing autoencoder noise",
+            "Audio denoising network",
+            "Noise reduction filter"
+        ],
+        "correct": "Autoencoder trained to reconstruct clean inputs from corrupted ones"
+    },
+    {
+        "q": "Denoising autoencoders learn robust _____ by reconstructing corrupted inputs.",
+        "type": "fill_blank",
+        "correct": "representations"
+    },
+    {
+        "q": "Denoising is a form of self-supervised pretext task.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Arrange the evolution of generative models:",
+        "type": "rearrange",
+        "correct": [
+            "Boltzmann Machines",
+            "Variational Autoencoders",
+            "Generative Adversarial Networks",
+            "Flow-based models",
+            "Diffusion models"
         ]
     },
     {
-        "q": "Which neural network technique improves training speed by adjusting inputs?",
-        "c": null,
+        "q": "What is score matching in generative models?",
+        "type": "mcq",
         "o": [
-            "Batch normalization",
-            "Dropout",
-            "Max pooling",
-            "Backpropagation"
-        ]
+            "Learning gradients of the log probability density function",
+            "Matching model scores",
+            "Evaluating generation quality",
+            "Scoring functions for ranking"
+        ],
+        "correct": "Learning gradients of the log probability density function"
     },
     {
-        "q": "What type of data is typically fed into a convolutional neural network?",
-        "c": null,
-        "o": [
-            "Image data",
-            "Text data",
-            "Time-series data",
-            "Graph data"
-        ]
+        "q": "Score-based models learn the _____ function of the data distribution.",
+        "type": "fill_blank",
+        "correct": "score"
     },
     {
-        "q": "What is a vanishing gradient problem caused by?",
-        "c": null,
-        "o": [
-            "Small gradients in deep networks",
-            "Too large gradients",
-            "Insufficient data",
-            "Overfitting"
-        ]
+        "q": "Score matching avoids computing intractable normalizing constants.",
+        "type": "true_false",
+        "correct": "True"
     },
     {
-        "q": "What is the purpose of a recurrent neural network (RNN)?",
-        "c": null,
+        "q": "What is classifier-free guidance?",
+        "type": "mcq",
         "o": [
-            "Process sequential data",
-            "Reduce image size",
-            "Classify static images",
-            "Cluster data points"
-        ]
+            "Blending conditional and unconditional model outputs for better generation",
+            "Generation without classifiers",
+            "Guiding without labels",
+            "Free-form classification"
+        ],
+        "correct": "Blending conditional and unconditional model outputs for better generation"
     },
     {
-        "q": "In reinforcement learning, what does an agent receive after each action?",
-        "c": null,
-        "o": [
-            "Reward",
-            "Label",
-            "Gradient",
-            "Error signal"
-        ]
+        "q": "Classifier-free guidance improves sample _____ in diffusion models.",
+        "type": "fill_blank",
+        "correct": "quality"
     },
     {
-        "q": "What is a distinguishing feature of LSTM networks?",
-        "c": null,
-        "o": [
-            "Memory cells",
-            "Convolutional layers",
-            "Activation functions",
-            "Pooling layers"
-        ]
+        "q": "Higher guidance scale produces outputs more aligned with conditioning.",
+        "type": "true_false",
+        "correct": "True"
     },
     {
-        "q": "Which technique helps models generalize better to unseen data?",
-        "c": null,
+        "q": "What is latent diffusion?",
+        "type": "mcq",
         "o": [
-            "Regularization",
-            "Gradient clipping",
-            "Batch normalization",
-            "Hyperparameter tuning"
-        ]
+            "Diffusion models operating in compressed latent space",
+            "Hidden diffusion processes",
+            "Slow diffusion training",
+            "Diffusion analysis"
+        ],
+        "correct": "Diffusion models operating in compressed latent space"
     },
     {
-        "q": "Which deep learning model is typically used for image classification?",
-        "c": null,
-        "o": [
-            "CNN",
-            "RNN",
-            "LSTM",
-            "Autoencoder"
-        ]
+        "q": "Latent diffusion reduces computational cost by diffusing in _____ dimensions.",
+        "type": "fill_blank",
+        "correct": "lower"
     },
     {
-        "q": "What does GAN stand for?",
-        "c": null,
-        "o": [
-            "Generative Adversarial Network",
-            "Generalized Adaptive Network",
-            "Graph Attention Network",
-            "Gaussian Autoencoder Network"
-        ]
-    },
-    {
-        "q": "What role does the discriminator play in a GAN?",
-        "c": null,
-        "o": [
-            "Classifies real vs. generated data",
-            "Generates synthetic data",
-            "Preprocesses input data",
-            "Classifies multi-label data"
-        ]
-    },
-    {
-        "q": "What is one of the main benefits of transfer learning?",
-        "c": null,
-        "o": [
-            "Reduces training time",
-            "Increases model complexity",
-            "Increases overfitting",
-            "Requires more data"
-        ]
-    },
-    {
-        "q": "Which algorithm helps find the minimum of a function in deep learning?",
-        "c": null,
-        "o": [
-            "Gradient descent",
-            "AdaBoost",
-            "K-means",
-            "PCA"
-        ]
-    },
-    {
-        "q": "What does the term 'deep' in deep learning refer to?",
-        "c": null,
-        "o": [
-            "Multiple layers in the network",
-            "Complexity of data",
-            "Size of the dataset",
-            "Amount of training time"
-        ]
-    },
-    {
-        "q": "Which neural network model is good at handling long-term dependencies?",
-        "c": null,
-        "o": [
-            "LSTM",
-            "CNN",
-            "DQN",
-            "VGG"
-        ]
-    },
-    {
-        "q": "What is the main difference between RNN and LSTM?",
-        "c": null,
-        "o": [
-            "LSTM can remember long-term dependencies",
-            "RNN is faster than LSTM",
-            "RNN uses memory cells",
-            "LSTM does not require training"
-        ]
-    },
-    {
-        "q": "What is the purpose of the ReLU activation function?",
-        "c": null,
-        "o": [
-            "Introduce non-linearity",
-            "Reduce dimensions",
-            "Prevent overfitting",
-            "Classify data"
-        ]
-    },
-    {
-        "q": "What is backpropagation mainly used for in deep learning?",
-        "c": null,
-        "o": [
-            "Update weights",
-            "Preprocess data",
-            "Regularize model",
-            "Reduce loss"
-        ]
+        "q": "Stable Diffusion uses latent diffusion for efficient image generation.",
+        "type": "true_false",
+        "correct": "True"
     }
 ]

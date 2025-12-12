@@ -1,722 +1,6434 @@
 [
     {
-        "q": "What is the main goal of clustering?",
-        "c": null,
+        "q": "What is unsupervised learning?",
+        "type": "mcq",
         "o": [
-            "Group similar items together",
-            "Predict future outcomes",
-            "Classify data",
-            "Reduce features"
+            "Machine learning without labeled target data",
+            "Supervised learning",
+            "Learning with labels",
+            "Reinforcement learning"
         ]
     },
     {
-        "q": "Which algorithm is most commonly used for clustering?",
-        "c": null,
-        "o": [
-            "k-means",
-            "Linear Regression",
-            "Decision Tree",
-            "Random Forest"
+        "q": "Unsupervised learning finds _____ in data without labels.",
+        "type": "fill_blank",
+        "answers": [
+            "patterns"
+        ],
+        "other_options": [
+            "labels",
+            "targets",
+            "classes"
         ]
     },
     {
-        "q": "What is an example of an unsupervised learning algorithm?",
-        "c": null,
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "# Unsupervised learning types\ntypes = ['clustering', 'dimensionality_reduction', 'anomaly_detection']\nprint(len(types))",
         "o": [
-            "k-means",
-            "Logistic Regression",
-            "SVM",
-            "Naive Bayes"
+            "3",
+            "2",
+            "4",
+            "1"
         ]
     },
     {
-        "q": "Which method can reduce the number of features in a dataset?",
-        "c": null,
+        "q": "Unsupervised learning uses labeled training data.",
+        "type": "true_false",
+        "correct": "False"
+    },
+    {
+        "q": "Rearrange unsupervised learning tasks:",
+        "type": "rearrange",
+        "words": [
+            "Clustering",
+            "Dimensionality Reduction",
+            "Anomaly Detection",
+            "Association Rules"
+        ]
+    },
+    {
+        "q": "What is clustering in machine learning?",
+        "type": "mcq",
         "o": [
-            "PCA",
-            "k-means",
+            "Grouping similar data points together",
+            "Classification",
+            "Regression",
+            "Supervised grouping"
+        ]
+    },
+    {
+        "q": "Clustering groups data based on _____ between points.",
+        "type": "fill_blank",
+        "answers": [
+            "similarity"
+        ],
+        "other_options": [
+            "labels",
+            "targets",
+            "classes"
+        ]
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "# Clustering algorithms\nalgorithms = ['kmeans', 'hierarchical', 'dbscan', 'gaussian_mixture']\nprint(len(algorithms))",
+        "o": [
+            "4",
+            "3",
+            "5",
+            "2"
+        ]
+    },
+    {
+        "q": "Match the clustering type with its description:",
+        "type": "match",
+        "left": [
+            "K-Means",
+            "Hierarchical",
             "DBSCAN",
+            "GMM"
+        ],
+        "right": [
+            "Centroid-based",
+            "Tree structure",
+            "Density-based",
+            "Probability-based"
+        ]
+    },
+    {
+        "q": "Clustering requires predefined class labels.",
+        "type": "true_false",
+        "correct": "False"
+    },
+    {
+        "q": "What is K-Means clustering?",
+        "type": "mcq",
+        "o": [
+            "Algorithm partitioning data into K clusters using centroids",
+            "Classification algorithm",
+            "Regression method",
+            "Neural network"
+        ]
+    },
+    {
+        "q": "K-Means iteratively updates _____ positions.",
+        "type": "fill_blank",
+        "answers": [
+            "centroid"
+        ],
+        "other_options": [
+            "cluster",
+            "data",
+            "feature"
+        ]
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "from sklearn.cluster import KMeans\nimport numpy as np\nX = np.random.rand(100, 2)\nkmeans = KMeans(n_clusters=3, random_state=42)\nkmeans.fit(X)\nprint(len(kmeans.cluster_centers_))",
+        "o": [
+            "3",
+            "100",
+            "2",
+            "1"
+        ]
+    },
+    {
+        "q": "K-Means requires specifying the number of clusters beforehand.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Rearrange K-Means steps:",
+        "type": "rearrange",
+        "words": [
+            "Initialize Centroids",
+            "Assign Points",
+            "Update Centroids",
+            "Repeat Until Convergence"
+        ]
+    },
+    {
+        "q": "What is the elbow method?",
+        "type": "mcq",
+        "o": [
+            "Technique to find optimal number of clusters",
+            "Clustering algorithm",
+            "Elbow joint analysis",
+            "Regression method"
+        ]
+    },
+    {
+        "q": "The elbow method plots _____ vs number of clusters.",
+        "type": "fill_blank",
+        "answers": [
+            "inertia"
+        ],
+        "other_options": [
+            "accuracy",
+            "precision",
+            "recall"
+        ]
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "from sklearn.cluster import KMeans\nimport numpy as np\nX = np.random.rand(100, 2)\nkmeans = KMeans(n_clusters=3, random_state=42)\nkmeans.fit(X)\nprint(type(kmeans.inertia_).__name__)",
+        "o": [
+            "float64",
+            "int",
+            "list",
+            "array"
+        ]
+    },
+    {
+        "q": "Match the cluster evaluation method with its purpose:",
+        "type": "match",
+        "left": [
+            "Elbow",
+            "Silhouette",
+            "Calinski-Harabasz",
+            "Davies-Bouldin"
+        ],
+        "right": [
+            "Inertia plot",
+            "Cluster separation",
+            "Variance ratio",
+            "Cluster similarity"
+        ]
+    },
+    {
+        "q": "Lower inertia always means better clustering.",
+        "type": "true_false",
+        "correct": "False"
+    },
+    {
+        "q": "What is silhouette score?",
+        "type": "mcq",
+        "o": [
+            "Metric measuring how similar points are to their own cluster vs other clusters",
+            "Shadow score",
+            "Outline metric",
+            "Shape score"
+        ]
+    },
+    {
+        "q": "Silhouette score ranges from _____ to 1.",
+        "type": "fill_blank",
+        "answers": [
+            "-1"
+        ],
+        "other_options": [
+            "0",
+            "-2",
+            "-0.5"
+        ]
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "from sklearn.metrics import silhouette_score\nimport numpy as np\nX = np.random.rand(100, 2)\nlabels = np.random.randint(0, 3, 100)\nscore = silhouette_score(X, labels)\nprint(type(score).__name__)",
+        "o": [
+            "float64",
+            "int",
+            "list",
+            "array"
+        ]
+    },
+    {
+        "q": "Silhouette score of 1 indicates perfect clustering.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Rearrange silhouette score interpretation:",
+        "type": "rearrange",
+        "words": [
+            "-1 (wrong cluster)",
+            "0 (on boundary)",
+            "0.5 (reasonable)",
+            "1 (well matched)"
+        ]
+    },
+    {
+        "q": "What is K-Means++ initialization?",
+        "type": "mcq",
+        "o": [
+            "Smart centroid initialization spreading initial centers apart",
+            "Standard K-Means",
+            "Random initialization",
+            "Final clustering"
+        ]
+    },
+    {
+        "q": "K-Means++ improves convergence by better _____ selection.",
+        "type": "fill_blank",
+        "answers": [
+            "centroid"
+        ],
+        "other_options": [
+            "cluster",
+            "data",
+            "feature"
+        ]
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "from sklearn.cluster import KMeans\nkmeans = KMeans(n_clusters=3, init='k-means++')\nprint(kmeans.init)",
+        "o": [
+            "k-means++",
+            "random",
+            "kmeans",
+            "None"
+        ]
+    },
+    {
+        "q": "K-Means++ is the default initialization in sklearn.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Match the initialization with its method:",
+        "type": "match",
+        "left": [
+            "K-Means++",
+            "Random",
+            "K-Means||",
+            "Manual"
+        ],
+        "right": [
+            "Probability-based",
+            "Uniform random",
+            "Parallel initialization",
+            "User-specified"
+        ]
+    },
+    {
+        "q": "What is Mini-Batch K-Means?",
+        "type": "mcq",
+        "o": [
+            "K-Means variant using random subsets for faster processing",
+            "Small K-Means",
+            "Batch processing only",
+            "Mini clustering"
+        ]
+    },
+    {
+        "q": "Mini-Batch K-Means trades some _____ for speed.",
+        "type": "fill_blank",
+        "answers": [
+            "accuracy"
+        ],
+        "other_options": [
+            "speed",
+            "memory",
+            "data"
+        ]
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "from sklearn.cluster import MiniBatchKMeans\nmb = MiniBatchKMeans(n_clusters=3, batch_size=100)\nprint(mb.batch_size)",
+        "o": [
+            "100",
+            "3",
+            "50",
+            "256"
+        ]
+    },
+    {
+        "q": "Mini-Batch K-Means is suitable for large datasets.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Rearrange K-Means variants by speed:",
+        "type": "rearrange",
+        "words": [
+            "Standard K-Means (slow)",
+            "Mini-Batch K-Means",
+            "Online K-Means",
+            "Parallel K-Means (fast)"
+        ]
+    },
+    {
+        "q": "What is hierarchical clustering?",
+        "type": "mcq",
+        "o": [
+            "Clustering that creates tree-like hierarchy of clusters",
+            "Flat clustering",
+            "K-Means variant",
+            "Level clustering"
+        ]
+    },
+    {
+        "q": "Hierarchical clustering produces a tree structure called _____.",
+        "type": "fill_blank",
+        "answers": [
+            "dendrogram"
+        ],
+        "other_options": [
+            "histogram",
+            "graph",
+            "chart"
+        ]
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "from sklearn.cluster import AgglomerativeClustering\nimport numpy as np\nX = np.random.rand(100, 2)\nag = AgglomerativeClustering(n_clusters=3)\nag.fit(X)\nprint(len(ag.labels_))",
+        "o": [
+            "100",
+            "3",
+            "2",
+            "1"
+        ]
+    },
+    {
+        "q": "Match the hierarchical type with its approach:",
+        "type": "match",
+        "left": [
+            "Agglomerative",
+            "Divisive",
+            "BIRCH",
+            "CURE"
+        ],
+        "right": [
+            "Bottom-up",
+            "Top-down",
+            "Incremental",
+            "Representative points"
+        ]
+    },
+    {
+        "q": "Agglomerative clustering starts with each point as its own cluster.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "What is linkage in hierarchical clustering?",
+        "type": "mcq",
+        "o": [
+            "Method to measure distance between clusters",
+            "Link clustering",
+            "Connection method",
+            "Joining technique"
+        ]
+    },
+    {
+        "q": "Ward linkage minimizes _____ within clusters.",
+        "type": "fill_blank",
+        "answers": [
+            "variance"
+        ],
+        "other_options": [
+            "distance",
+            "size",
+            "count"
+        ]
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "from sklearn.cluster import AgglomerativeClustering\nag = AgglomerativeClustering(n_clusters=3, linkage='ward')\nprint(ag.linkage)",
+        "o": [
+            "ward",
+            "complete",
+            "average",
+            "single"
+        ]
+    },
+    {
+        "q": "Single linkage can create chain-like elongated clusters.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Rearrange linkage methods by cluster shape:",
+        "type": "rearrange",
+        "words": [
+            "Single (elongated)",
+            "Complete (compact)",
+            "Average (balanced)",
+            "Ward (spherical)"
+        ]
+    },
+    {
+        "q": "What is DBSCAN clustering?",
+        "type": "mcq",
+        "o": [
+            "Density-Based Spatial Clustering of Applications with Noise",
+            "Database scanning",
+            "Data base clustering",
+            "Dense clustering"
+        ]
+    },
+    {
+        "q": "DBSCAN identifies clusters based on _____ of points.",
+        "type": "fill_blank",
+        "answers": [
+            "density"
+        ],
+        "other_options": [
+            "distance",
+            "similarity",
+            "count"
+        ]
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "from sklearn.cluster import DBSCAN\nimport numpy as np\nX = np.random.rand(100, 2)\ndb = DBSCAN(eps=0.3, min_samples=5)\ndb.fit(X)\nprint(db.eps)",
+        "o": [
+            "0.3",
+            "5",
+            "100",
+            "2"
+        ]
+    },
+    {
+        "q": "Match the DBSCAN point type with its definition:",
+        "type": "match",
+        "left": [
+            "Core",
+            "Border",
+            "Noise",
+            "Density Reachable"
+        ],
+        "right": [
+            "Many neighbors",
+            "Few neighbors",
+            "Isolated",
+            "Connected to core"
+        ]
+    },
+    {
+        "q": "DBSCAN does not require specifying number of clusters.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "What is eps parameter in DBSCAN?",
+        "type": "mcq",
+        "o": [
+            "Maximum distance between points to be considered neighbors",
+            "Number of clusters",
+            "Epsilon error",
+            "Estimation parameter"
+        ]
+    },
+    {
+        "q": "min_samples defines minimum points to form a _____ point.",
+        "type": "fill_blank",
+        "answers": [
+            "core"
+        ],
+        "other_options": [
+            "border",
+            "noise",
+            "cluster"
+        ]
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "from sklearn.cluster import DBSCAN\nimport numpy as np\nX = np.random.rand(100, 2)\ndb = DBSCAN(eps=0.3, min_samples=5).fit(X)\nlabels = db.labels_\nnoise = (labels == -1).sum()\nprint(type(noise).__name__)",
+        "o": [
+            "int64",
+            "float64",
+            "list",
+            "array"
+        ]
+    },
+    {
+        "q": "DBSCAN labels noise points as -1.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Rearrange DBSCAN steps:",
+        "type": "rearrange",
+        "words": [
+            "Find Core Points",
+            "Build Clusters",
+            "Assign Border Points",
+            "Mark Noise"
+        ]
+    },
+    {
+        "q": "What is HDBSCAN?",
+        "type": "mcq",
+        "o": [
+            "Hierarchical DBSCAN with automatic cluster selection",
+            "High DBSCAN",
+            "Hard DBSCAN",
+            "Heavy DBSCAN"
+        ]
+    },
+    {
+        "q": "HDBSCAN does not require _____ parameter like DBSCAN.",
+        "type": "fill_blank",
+        "answers": [
+            "eps"
+        ],
+        "other_options": [
+            "min_samples",
+            "metric",
+            "algorithm"
+        ]
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "# HDBSCAN concept\nadvantages = ['no_eps', 'varying_density', 'hierarchical', 'soft_clustering']\nprint(len(advantages))",
+        "o": [
+            "4",
+            "3",
+            "5",
+            "2"
+        ]
+    },
+    {
+        "q": "HDBSCAN handles clusters with varying densities better than DBSCAN.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Match the clustering algorithm with its main parameter:",
+        "type": "match",
+        "left": [
+            "K-Means",
+            "DBSCAN",
+            "HDBSCAN",
+            "GMM"
+        ],
+        "right": [
+            "n_clusters",
+            "eps",
+            "min_cluster_size",
+            "n_components"
+        ]
+    },
+    {
+        "q": "What is Gaussian Mixture Model (GMM)?",
+        "type": "mcq",
+        "o": [
+            "Probabilistic model assuming data from mixture of Gaussian distributions",
+            "Gaussian clustering",
+            "Mixed Gaussians only",
+            "Normal distribution"
+        ]
+    },
+    {
+        "q": "GMM provides soft _____ probabilities for each cluster.",
+        "type": "fill_blank",
+        "answers": [
+            "membership"
+        ],
+        "other_options": [
+            "hard",
+            "assignment",
+            "class"
+        ]
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "from sklearn.mixture import GaussianMixture\nimport numpy as np\nX = np.random.rand(100, 2)\ngmm = GaussianMixture(n_components=3, random_state=42)\ngmm.fit(X)\nprint(len(gmm.means_))",
+        "o": [
+            "3",
+            "100",
+            "2",
+            "1"
+        ]
+    },
+    {
+        "q": "GMM uses EM algorithm for parameter estimation.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Rearrange GMM components:",
+        "type": "rearrange",
+        "words": [
+            "Means",
+            "Covariances",
+            "Weights",
+            "Responsibilities"
+        ]
+    },
+    {
+        "q": "What is the EM algorithm in GMM?",
+        "type": "mcq",
+        "o": [
+            "Expectation-Maximization iteratively estimating parameters",
+            "Error Minimization",
+            "Extreme Method",
+            "Easy Maximum"
+        ]
+    },
+    {
+        "q": "E-step computes cluster _____ for each point.",
+        "type": "fill_blank",
+        "answers": [
+            "probabilities"
+        ],
+        "other_options": [
+            "assignments",
+            "labels",
+            "distances"
+        ]
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "from sklearn.mixture import GaussianMixture\nimport numpy as np\nX = np.random.rand(100, 2)\ngmm = GaussianMixture(n_components=3)\ngmm.fit(X)\nprobs = gmm.predict_proba(X[:1])\nprint(probs.shape)",
+        "o": [
+            "(1, 3)",
+            "(3, 1)",
+            "(1, 100)",
+            "(100, 3)"
+        ]
+    },
+    {
+        "q": "Match the EM step with its operation:",
+        "type": "match",
+        "left": [
+            "E-step",
+            "M-step",
+            "Initialization",
+            "Convergence"
+        ],
+        "right": [
+            "Compute responsibilities",
+            "Update parameters",
+            "Set initial values",
+            "Check stopping"
+        ]
+    },
+    {
+        "q": "M-step updates model parameters using expected assignments.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "What is dimensionality reduction?",
+        "type": "mcq",
+        "o": [
+            "Reducing number of features while preserving important information",
+            "Adding dimensions",
+            "Feature creation",
+            "Data expansion"
+        ]
+    },
+    {
+        "q": "Dimensionality reduction helps combat the curse of _____.",
+        "type": "fill_blank",
+        "answers": [
+            "dimensionality"
+        ],
+        "other_options": [
+            "size",
+            "data",
+            "features"
+        ]
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "# Dimensionality reduction methods\nmethods = ['PCA', 't-SNE', 'UMAP', 'LDA', 'Autoencoders']\nprint(len(methods))",
+        "o": [
+            "5",
+            "4",
+            "3",
+            "6"
+        ]
+    },
+    {
+        "q": "Dimensionality reduction always loses some information.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Rearrange dimensionality reduction benefits:",
+        "type": "rearrange",
+        "words": [
+            "Reduce Noise",
+            "Speed Up Training",
+            "Enable Visualization",
+            "Avoid Overfitting"
+        ]
+    },
+    {
+        "q": "What is PCA (Principal Component Analysis)?",
+        "type": "mcq",
+        "o": [
+            "Linear technique finding directions of maximum variance",
+            "Probability analysis",
+            "Polynomial analysis",
+            "Pattern analysis"
+        ]
+    },
+    {
+        "q": "PCA transforms data to _____ components.",
+        "type": "fill_blank",
+        "answers": [
+            "principal"
+        ],
+        "other_options": [
+            "random",
+            "primary",
+            "main"
+        ]
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "from sklearn.decomposition import PCA\nimport numpy as np\nX = np.random.rand(100, 10)\npca = PCA(n_components=3)\nX_pca = pca.fit_transform(X)\nprint(X_pca.shape[1])",
+        "o": [
+            "3",
+            "10",
+            "100",
+            "1"
+        ]
+    },
+    {
+        "q": "Match the PCA attribute with its meaning:",
+        "type": "match",
+        "left": [
+            "components_",
+            "explained_variance_",
+            "mean_",
+            "n_components_"
+        ],
+        "right": [
+            "Principal axes",
+            "Variance per component",
+            "Feature means",
+            "Number of components"
+        ]
+    },
+    {
+        "q": "PCA first component captures most variance.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "What is explained variance ratio in PCA?",
+        "type": "mcq",
+        "o": [
+            "Proportion of variance explained by each component",
+            "Total variance",
+            "Unexplained variance",
+            "Ratio of components"
+        ]
+    },
+    {
+        "q": "Sum of all explained variance ratios equals _____.",
+        "type": "fill_blank",
+        "answers": [
+            "1"
+        ],
+        "other_options": [
+            "0",
+            "100",
+            "n_components"
+        ]
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "from sklearn.decomposition import PCA\nimport numpy as np\nX = np.random.rand(100, 10)\npca = PCA(n_components=3)\npca.fit(X)\nprint(len(pca.explained_variance_ratio_))",
+        "o": [
+            "3",
+            "10",
+            "100",
+            "1"
+        ]
+    },
+    {
+        "q": "95% explained variance is a common threshold for choosing components.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Rearrange PCA steps:",
+        "type": "rearrange",
+        "words": [
+            "Standardize Data",
+            "Compute Covariance",
+            "Find Eigenvectors",
+            "Project Data"
+        ]
+    },
+    {
+        "q": "What is kernel PCA?",
+        "type": "mcq",
+        "o": [
+            "PCA using kernel trick for non-linear dimensionality reduction",
+            "Standard PCA",
+            "Kernel processing",
+            "Core PCA"
+        ]
+    },
+    {
+        "q": "Kernel PCA can capture _____ relationships in data.",
+        "type": "fill_blank",
+        "answers": [
+            "non-linear"
+        ],
+        "other_options": [
+            "linear",
+            "random",
+            "constant"
+        ]
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "from sklearn.decomposition import KernelPCA\nkpca = KernelPCA(n_components=3, kernel='rbf')\nprint(kpca.kernel)",
+        "o": [
+            "rbf",
+            "linear",
+            "poly",
+            "sigmoid"
+        ]
+    },
+    {
+        "q": "Match the PCA type with its capability:",
+        "type": "match",
+        "left": [
+            "Standard PCA",
+            "Kernel PCA",
+            "Sparse PCA",
+            "Incremental PCA"
+        ],
+        "right": [
+            "Linear only",
+            "Non-linear",
+            "Interpretable",
+            "Large datasets"
+        ]
+    },
+    {
+        "q": "Kernel PCA uses the kernel trick to work in high-dimensional space.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "What is t-SNE?",
+        "type": "mcq",
+        "o": [
+            "t-Distributed Stochastic Neighbor Embedding for visualization",
+            "Type SNE",
+            "Test SNE",
+            "Total SNE"
+        ]
+    },
+    {
+        "q": "t-SNE is primarily used for data _____.",
+        "type": "fill_blank",
+        "answers": [
+            "visualization"
+        ],
+        "other_options": [
+            "classification",
+            "regression",
+            "prediction"
+        ]
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "from sklearn.manifold import TSNE\nimport numpy as np\nX = np.random.rand(100, 10)\ntsne = TSNE(n_components=2, perplexity=30)\nX_tsne = tsne.fit_transform(X)\nprint(X_tsne.shape[1])",
+        "o": [
+            "2",
+            "10",
+            "100",
+            "30"
+        ]
+    },
+    {
+        "q": "t-SNE is deterministic and gives same results every time.",
+        "type": "true_false",
+        "correct": "False"
+    },
+    {
+        "q": "Rearrange t-SNE characteristics:",
+        "type": "rearrange",
+        "words": [
+            "Non-linear",
+            "Preserves Local Structure",
+            "Visualization Focus",
+            "Non-deterministic"
+        ]
+    },
+    {
+        "q": "What is perplexity in t-SNE?",
+        "type": "mcq",
+        "o": [
+            "Parameter balancing attention between local and global aspects",
+            "Confusion metric",
+            "Error measure",
+            "Distance parameter"
+        ]
+    },
+    {
+        "q": "Typical perplexity values range from 5 to _____.",
+        "type": "fill_blank",
+        "answers": [
+            "50"
+        ],
+        "other_options": [
+            "100",
+            "10",
+            "1000"
+        ]
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "from sklearn.manifold import TSNE\ntsne = TSNE(n_components=2, perplexity=30)\nprint(tsne.perplexity)",
+        "o": [
+            "30",
+            "2",
+            "50",
+            "5"
+        ]
+    },
+    {
+        "q": "Match the t-SNE parameter with its effect:",
+        "type": "match",
+        "left": [
+            "perplexity",
+            "n_iter",
+            "learning_rate",
+            "early_exaggeration"
+        ],
+        "right": [
+            "Local/global balance",
+            "Iterations",
+            "Step size",
+            "Initial spacing"
+        ]
+    },
+    {
+        "q": "Higher perplexity focuses more on global structure.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "What is UMAP?",
+        "type": "mcq",
+        "o": [
+            "Uniform Manifold Approximation and Projection for dimension reduction",
+            "Universal Mapping",
+            "Unified Model",
+            "User Map"
+        ]
+    },
+    {
+        "q": "UMAP preserves both _____ and global structure.",
+        "type": "fill_blank",
+        "answers": [
+            "local"
+        ],
+        "other_options": [
+            "random",
+            "distant",
+            "specific"
+        ]
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "# UMAP advantages\nadvantages = ['faster', 'preserves_global', 'scalable', 'general_purpose']\nprint(len(advantages))",
+        "o": [
+            "4",
+            "3",
+            "5",
+            "2"
+        ]
+    },
+    {
+        "q": "UMAP is generally faster than t-SNE for large datasets.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Rearrange dimensionality reduction methods by speed:",
+        "type": "rearrange",
+        "words": [
+            "PCA (fastest)",
+            "UMAP",
+            "t-SNE",
+            "Isomap (slowest)"
+        ]
+    },
+    {
+        "q": "What is LDA (Linear Discriminant Analysis)?",
+        "type": "mcq",
+        "o": [
+            "Supervised dimensionality reduction maximizing class separation",
+            "Linear data analysis",
+            "Latent Dirichlet Allocation",
+            "Dimension analysis"
+        ]
+    },
+    {
+        "q": "LDA finds directions that maximize _____ between classes.",
+        "type": "fill_blank",
+        "answers": [
+            "separation"
+        ],
+        "other_options": [
+            "similarity",
+            "overlap",
+            "mixing"
+        ]
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "from sklearn.discriminant_analysis import LinearDiscriminantAnalysis\nimport numpy as np\nX = np.random.rand(100, 10)\ny = np.random.randint(0, 3, 100)\nlda = LinearDiscriminantAnalysis(n_components=2)\nX_lda = lda.fit_transform(X, y)\nprint(X_lda.shape[1])",
+        "o": [
+            "2",
+            "10",
+            "3",
+            "100"
+        ]
+    },
+    {
+        "q": "Match the reduction method with its supervision:",
+        "type": "match",
+        "left": [
+            "PCA",
+            "LDA",
+            "t-SNE",
+            "UMAP"
+        ],
+        "right": [
+            "Unsupervised",
+            "Supervised",
+            "Unsupervised",
+            "Both"
+        ]
+    },
+    {
+        "q": "LDA can have at most n_classes - 1 components.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "What is anomaly detection?",
+        "type": "mcq",
+        "o": [
+            "Identifying rare items or events that differ from the majority",
+            "Normal detection",
+            "Anomaly removal",
+            "Error detection"
+        ]
+    },
+    {
+        "q": "Anomaly detection identifies data points that are _____.",
+        "type": "fill_blank",
+        "answers": [
+            "outliers"
+        ],
+        "other_options": [
+            "normal",
+            "common",
+            "average"
+        ]
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "# Anomaly detection applications\napps = ['fraud_detection', 'intrusion_detection', 'fault_detection', 'medical_diagnosis']\nprint(len(apps))",
+        "o": [
+            "4",
+            "3",
+            "5",
+            "2"
+        ]
+    },
+    {
+        "q": "Anomaly detection assumes most data is normal.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Rearrange anomaly detection types:",
+        "type": "rearrange",
+        "words": [
+            "Point Anomaly",
+            "Contextual Anomaly",
+            "Collective Anomaly",
+            "Temporal Anomaly"
+        ]
+    },
+    {
+        "q": "What is Isolation Forest?",
+        "type": "mcq",
+        "o": [
+            "Anomaly detection by isolating observations using random trees",
+            "Forest isolation",
+            "Tree forest",
+            "Random isolation"
+        ]
+    },
+    {
+        "q": "Isolation Forest isolates anomalies using _____ path lengths.",
+        "type": "fill_blank",
+        "answers": [
+            "shorter"
+        ],
+        "other_options": [
+            "longer",
+            "equal",
+            "random"
+        ]
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "from sklearn.ensemble import IsolationForest\nimport numpy as np\nX = np.random.rand(100, 2)\niso = IsolationForest(contamination=0.1, random_state=42)\niso.fit(X)\nprint(iso.contamination)",
+        "o": [
+            "0.1",
+            "0.5",
+            "0.01",
+            "1.0"
+        ]
+    },
+    {
+        "q": "Match the anomaly method with its approach:",
+        "type": "match",
+        "left": [
+            "Isolation Forest",
+            "One-Class SVM",
+            "LOF",
+            "Autoencoder"
+        ],
+        "right": [
+            "Random partitioning",
+            "Boundary learning",
+            "Density estimation",
+            "Reconstruction error"
+        ]
+    },
+    {
+        "q": "Isolation Forest is efficient for high-dimensional data.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "What is Local Outlier Factor (LOF)?",
+        "type": "mcq",
+        "o": [
+            "Density-based anomaly detection comparing local density to neighbors",
+            "Local factor",
+            "Outlier finding",
+            "Factor analysis"
+        ]
+    },
+    {
+        "q": "LOF compares local _____ to detect outliers.",
+        "type": "fill_blank",
+        "answers": [
+            "density"
+        ],
+        "other_options": [
+            "distance",
+            "similarity",
+            "count"
+        ]
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "from sklearn.neighbors import LocalOutlierFactor\nimport numpy as np\nX = np.random.rand(100, 2)\nlof = LocalOutlierFactor(n_neighbors=20, contamination=0.1)\npreds = lof.fit_predict(X)\nprint(lof.n_neighbors)",
+        "o": [
+            "20",
+            "100",
+            "2",
+            "0.1"
+        ]
+    },
+    {
+        "q": "LOF score greater than 1 indicates an outlier.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Rearrange anomaly detection methods by approach:",
+        "type": "rearrange",
+        "words": [
+            "Statistical",
+            "Distance-based",
+            "Density-based",
+            "Model-based"
+        ]
+    },
+    {
+        "q": "What is One-Class SVM?",
+        "type": "mcq",
+        "o": [
+            "SVM learning boundary around normal data",
+            "Single class classifier",
+            "One output SVM",
+            "Unary classification"
+        ]
+    },
+    {
+        "q": "One-Class SVM learns to separate data from the _____.",
+        "type": "fill_blank",
+        "answers": [
+            "origin"
+        ],
+        "other_options": [
+            "center",
+            "mean",
+            "median"
+        ]
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "from sklearn.svm import OneClassSVM\nimport numpy as np\nX = np.random.rand(100, 2)\nocsvm = OneClassSVM(nu=0.1, kernel='rbf')\nocsvm.fit(X)\nprint(ocsvm.nu)",
+        "o": [
+            "0.1",
+            "0.5",
+            "1.0",
+            "0.01"
+        ]
+    },
+    {
+        "q": "Match the anomaly parameter with its method:",
+        "type": "match",
+        "left": [
+            "contamination",
+            "nu",
+            "n_neighbors",
+            "threshold"
+        ],
+        "right": [
+            "Isolation Forest",
+            "One-Class SVM",
+            "LOF",
+            "Statistical"
+        ]
+    },
+    {
+        "q": "One-Class SVM uses kernel trick for non-linear boundaries.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "What is elliptic envelope for anomaly detection?",
+        "type": "mcq",
+        "o": [
+            "Fitting ellipse to data assuming Gaussian distribution",
+            "Ellipse drawing",
+            "Envelope detection",
+            "Gaussian envelope"
+        ]
+    },
+    {
+        "q": "Elliptic envelope assumes data follows _____ distribution.",
+        "type": "fill_blank",
+        "answers": [
+            "Gaussian"
+        ],
+        "other_options": [
+            "uniform",
+            "exponential",
+            "Poisson"
+        ]
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "from sklearn.covariance import EllipticEnvelope\nimport numpy as np\nX = np.random.rand(100, 2)\nee = EllipticEnvelope(contamination=0.1)\nee.fit(X)\nprint(ee.contamination)",
+        "o": [
+            "0.1",
+            "0.5",
+            "0.01",
+            "1.0"
+        ]
+    },
+    {
+        "q": "Elliptic envelope works best for multivariate Gaussian data.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Rearrange contamination parameter effects:",
+        "type": "rearrange",
+        "words": [
+            "0.01 (few outliers)",
+            "0.1 (moderate)",
+            "0.2 (many)",
+            "0.5 (half data)"
+        ]
+    },
+    {
+        "q": "What are autoencoders for unsupervised learning?",
+        "type": "mcq",
+        "o": [
+            "Neural networks learning compressed representations of data",
+            "Auto coding",
+            "Encoder only",
+            "Automatic programming"
+        ]
+    },
+    {
+        "q": "Autoencoders learn by minimizing _____ error.",
+        "type": "fill_blank",
+        "answers": [
+            "reconstruction"
+        ],
+        "other_options": [
+            "classification",
+            "prediction",
+            "segmentation"
+        ]
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "# Autoencoder components\ncomponents = ['encoder', 'latent_space', 'decoder', 'reconstruction_loss']\nprint(len(components))",
+        "o": [
+            "4",
+            "3",
+            "5",
+            "2"
+        ]
+    },
+    {
+        "q": "Match the autoencoder type with its characteristic:",
+        "type": "match",
+        "left": [
+            "Vanilla",
+            "Variational",
+            "Sparse",
+            "Denoising"
+        ],
+        "right": [
+            "Basic",
+            "Probabilistic",
+            "Regularized",
+            "Noise-robust"
+        ]
+    },
+    {
+        "q": "Autoencoders can be used for anomaly detection via high reconstruction error.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "What is the latent space in autoencoders?",
+        "type": "mcq",
+        "o": [
+            "Compressed representation in the bottleneck layer",
+            "Input space",
+            "Output space",
+            "Hidden layer"
+        ]
+    },
+    {
+        "q": "Smaller latent space forces more _____ in representation.",
+        "type": "fill_blank",
+        "answers": [
+            "compression"
+        ],
+        "other_options": [
+            "expansion",
+            "detail",
+            "noise"
+        ]
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "# Latent space dimensions\ninput_dim = 100\nencoder_dim = 50\nlatent_dim = 10\ndecoder_dim = 50\nprint(f'Compression: {input_dim}x to {latent_dim}x')",
+        "o": [
+            "Compression: 100x to 10x",
+            "Compression: 50x to 10x",
+            "Compression: 10x to 100x",
+            "Compression: 100x to 50x"
+        ]
+    },
+    {
+        "q": "Latent space represents learned features of the data.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Rearrange autoencoder layers:",
+        "type": "rearrange",
+        "words": [
+            "Input Layer",
+            "Encoder Layers",
+            "Bottleneck",
+            "Decoder Layers"
+        ]
+    },
+    {
+        "q": "What is VAE (Variational Autoencoder)?",
+        "type": "mcq",
+        "o": [
+            "Autoencoder learning probabilistic latent space",
+            "Variable autoencoder",
+            "Varying encoder",
+            "Validation encoder"
+        ]
+    },
+    {
+        "q": "VAE learns _____ distributions in latent space.",
+        "type": "fill_blank",
+        "answers": [
+            "probability"
+        ],
+        "other_options": [
+            "fixed",
+            "random",
+            "discrete"
+        ]
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "# VAE loss components\nloss_components = ['reconstruction_loss', 'kl_divergence']\nprint(len(loss_components))",
+        "o": [
+            "2",
+            "3",
+            "1",
+            "4"
+        ]
+    },
+    {
+        "q": "Match the VAE component with its purpose:",
+        "type": "match",
+        "left": [
+            "Encoder",
+            "Reparameterization",
+            "Decoder",
+            "KL Divergence"
+        ],
+        "right": [
+            "Learn distribution",
+            "Sample latent",
+            "Reconstruct",
+            "Regularize"
+        ]
+    },
+    {
+        "q": "VAE can generate new samples by sampling from latent space.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "What is association rule mining?",
+        "type": "mcq",
+        "o": [
+            "Discovering interesting relationships between variables in databases",
+            "Rule creation",
+            "Association testing",
+            "Rule learning"
+        ]
+    },
+    {
+        "q": "Association rules find patterns like 'if A then _____'.",
+        "type": "fill_blank",
+        "answers": [
+            "B"
+        ],
+        "other_options": [
+            "A",
+            "not A",
+            "always"
+        ]
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "# Association rule metrics\nmetrics = ['support', 'confidence', 'lift', 'conviction']\nprint(len(metrics))",
+        "o": [
+            "4",
+            "3",
+            "5",
+            "2"
+        ]
+    },
+    {
+        "q": "Market basket analysis is a common application of association rules.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Rearrange association rule metrics:",
+        "type": "rearrange",
+        "words": [
+            "Support (frequency)",
+            "Confidence (if-then)",
+            "Lift (independence)",
+            "Conviction (implication)"
+        ]
+    },
+    {
+        "q": "What is support in association rules?",
+        "type": "mcq",
+        "o": [
+            "Frequency of an itemset in the dataset",
+            "Confidence measure",
+            "Lift calculation",
+            "Rule strength"
+        ]
+    },
+    {
+        "q": "Support measures how _____ an itemset appears.",
+        "type": "fill_blank",
+        "answers": [
+            "often"
+        ],
+        "other_options": [
+            "rarely",
+            "never",
+            "randomly"
+        ]
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "# Support calculation\ntransactions = 100\nitemset_count = 30\nsupport = itemset_count / transactions\nprint(support)",
+        "o": [
+            "0.3",
+            "3.0",
+            "30",
+            "0.03"
+        ]
+    },
+    {
+        "q": "Match the association metric with its formula:",
+        "type": "match",
+        "left": [
+            "Support",
+            "Confidence",
+            "Lift",
+            "Conviction"
+        ],
+        "right": [
+            "P(A and B)",
+            "P(B|A)",
+            "P(B|A)/P(B)",
+            "(1-P(B))/(1-Conf)"
+        ]
+    },
+    {
+        "q": "Minimum support threshold filters infrequent itemsets.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "What is the Apriori algorithm?",
+        "type": "mcq",
+        "o": [
+            "Algorithm finding frequent itemsets using anti-monotone property",
+            "Prior algorithm",
+            "Before method",
+            "Early algorithm"
+        ]
+    },
+    {
+        "q": "Apriori uses the property that subsets of frequent sets are _____.",
+        "type": "fill_blank",
+        "answers": [
+            "frequent"
+        ],
+        "other_options": [
+            "infrequent",
+            "rare",
+            "random"
+        ]
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "# Apriori property\nitemset = {'A', 'B', 'C'}\nsubsets_count = 2**len(itemset) - 1\nprint(subsets_count)",
+        "o": [
+            "7",
+            "8",
+            "3",
+            "6"
+        ]
+    },
+    {
+        "q": "Apriori prunes candidates using anti-monotone property.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Rearrange Apriori steps:",
+        "type": "rearrange",
+        "words": [
+            "Generate Candidates",
+            "Calculate Support",
+            "Prune Infrequent",
+            "Form Itemsets"
+        ]
+    },
+    {
+        "q": "What is FP-Growth algorithm?",
+        "type": "mcq",
+        "o": [
+            "Frequent Pattern Growth without candidate generation",
+            "Fast pattern",
+            "Forward processing",
+            "Feature pattern"
+        ]
+    },
+    {
+        "q": "FP-Growth uses _____ tree structure for efficiency.",
+        "type": "fill_blank",
+        "answers": [
+            "FP"
+        ],
+        "other_options": [
+            "binary",
+            "decision",
+            "random"
+        ]
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "# FP-Growth advantages\nadvantages = ['no_candidate_gen', 'tree_structure', 'divide_conquer', 'efficient']\nprint(len(advantages))",
+        "o": [
+            "4",
+            "3",
+            "5",
+            "2"
+        ]
+    },
+    {
+        "q": "Match the association algorithm with its characteristic:",
+        "type": "match",
+        "left": [
+            "Apriori",
+            "FP-Growth",
+            "Eclat",
+            "SPMF"
+        ],
+        "right": [
+            "Candidate generation",
+            "Tree-based",
+            "Set intersection",
+            "Sequential patterns"
+        ]
+    },
+    {
+        "q": "FP-Growth is generally faster than Apriori for large datasets.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "What is spectral clustering?",
+        "type": "mcq",
+        "o": [
+            "Clustering using eigenvalues of similarity matrix",
+            "Spectrum analysis",
+            "Color clustering",
+            "Light-based clustering"
+        ]
+    },
+    {
+        "q": "Spectral clustering uses _____ of the graph Laplacian.",
+        "type": "fill_blank",
+        "answers": [
+            "eigenvectors"
+        ],
+        "other_options": [
+            "eigenvalues",
+            "matrices",
+            "graphs"
+        ]
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "from sklearn.cluster import SpectralClustering\nimport numpy as np\nX = np.random.rand(100, 2)\nsc = SpectralClustering(n_clusters=3, affinity='rbf')\nsc.fit(X)\nprint(sc.affinity)",
+        "o": [
+            "rbf",
+            "nearest_neighbors",
+            "precomputed",
+            "linear"
+        ]
+    },
+    {
+        "q": "Spectral clustering can find non-convex clusters.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Rearrange spectral clustering steps:",
+        "type": "rearrange",
+        "words": [
+            "Build Affinity Matrix",
+            "Compute Laplacian",
+            "Find Eigenvectors",
+            "Apply K-Means"
+        ]
+    },
+    {
+        "q": "What is mean shift clustering?",
+        "type": "mcq",
+        "o": [
+            "Mode-seeking algorithm sliding points toward density peaks",
+            "Average clustering",
+            "Shift method",
+            "Mean calculation"
+        ]
+    },
+    {
+        "q": "Mean shift finds cluster centers at density _____ points.",
+        "type": "fill_blank",
+        "answers": [
+            "maxima"
+        ],
+        "other_options": [
+            "minima",
+            "average",
+            "random"
+        ]
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "from sklearn.cluster import MeanShift\nimport numpy as np\nX = np.random.rand(100, 2)\nms = MeanShift(bandwidth=0.5)\nms.fit(X)\nprint(ms.bandwidth)",
+        "o": [
+            "0.5",
+            "1.0",
+            "0.1",
+            "2.0"
+        ]
+    },
+    {
+        "q": "Match the clustering method with number of clusters:",
+        "type": "match",
+        "left": [
+            "K-Means",
+            "DBSCAN",
+            "Mean Shift",
+            "Hierarchical"
+        ],
+        "right": [
+            "Fixed k",
+            "Automatic",
+            "Automatic",
+            "Flexible"
+        ]
+    },
+    {
+        "q": "Mean shift does not require specifying number of clusters.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "What is affinity propagation?",
+        "type": "mcq",
+        "o": [
+            "Clustering by message passing between data points",
+            "Affinity method",
+            "Propagation network",
+            "Message clustering"
+        ]
+    },
+    {
+        "q": "Affinity propagation passes _____ between points.",
+        "type": "fill_blank",
+        "answers": [
+            "messages"
+        ],
+        "other_options": [
+            "data",
+            "clusters",
+            "labels"
+        ]
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "from sklearn.cluster import AffinityPropagation\nimport numpy as np\nX = np.random.rand(100, 2)\nap = AffinityPropagation(damping=0.9)\nap.fit(X)\nprint(ap.damping)",
+        "o": [
+            "0.9",
+            "0.5",
+            "1.0",
+            "0.1"
+        ]
+    },
+    {
+        "q": "Affinity propagation selects exemplars from the data.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Rearrange clustering methods by scalability:",
+        "type": "rearrange",
+        "words": [
+            "Mini-Batch K-Means (best)",
+            "BIRCH",
+            "DBSCAN",
+            "Affinity Propagation (worst)"
+        ]
+    },
+    {
+        "q": "What is BIRCH clustering?",
+        "type": "mcq",
+        "o": [
+            "Balanced Iterative Reducing and Clustering using Hierarchies",
+            "Branch clustering",
+            "Binary hierarchical",
+            "Basic iterative"
+        ]
+    },
+    {
+        "q": "BIRCH builds CF (_____ Feature) tree for scalability.",
+        "type": "fill_blank",
+        "answers": [
+            "Clustering"
+        ],
+        "other_options": [
+            "Complete",
+            "Core",
+            "Central"
+        ]
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "from sklearn.cluster import Birch\nimport numpy as np\nX = np.random.rand(1000, 2)\nbirch = Birch(n_clusters=5, threshold=0.5)\nbirch.fit(X)\nprint(birch.threshold)",
+        "o": [
+            "0.5",
+            "5",
+            "1.0",
+            "0.1"
+        ]
+    },
+    {
+        "q": "Match the BIRCH parameter with its meaning:",
+        "type": "match",
+        "left": [
+            "threshold",
+            "branching_factor",
+            "n_clusters",
+            "copy"
+        ],
+        "right": [
+            "Subcluster radius",
+            "Max children",
+            "Final clusters",
+            "Data copy"
+        ]
+    },
+    {
+        "q": "BIRCH is suitable for large datasets with limited memory.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "What is incremental PCA?",
+        "type": "mcq",
+        "o": [
+            "PCA processing data in batches for large datasets",
+            "Increasing PCA",
+            "Growing analysis",
+            "Additive PCA"
+        ]
+    },
+    {
+        "q": "Incremental PCA processes data in _____ to save memory.",
+        "type": "fill_blank",
+        "answers": [
+            "batches"
+        ],
+        "other_options": [
+            "full",
+            "random",
+            "sequential"
+        ]
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "from sklearn.decomposition import IncrementalPCA\nimport numpy as np\nipca = IncrementalPCA(n_components=3, batch_size=100)\nprint(ipca.batch_size)",
+        "o": [
+            "100",
+            "3",
+            "50",
+            "200"
+        ]
+    },
+    {
+        "q": "Incremental PCA gives same results as standard PCA for same data.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Rearrange PCA types by memory usage:",
+        "type": "rearrange",
+        "words": [
+            "Standard PCA (high)",
+            "Incremental PCA",
+            "Sparse PCA",
+            "TruncatedSVD (low)"
+        ]
+    },
+    {
+        "q": "What is TruncatedSVD?",
+        "type": "mcq",
+        "o": [
+            "SVD computing only top k singular values for dimensionality reduction",
+            "Full SVD",
+            "Truncated data",
+            "Short decomposition"
+        ]
+    },
+    {
+        "q": "TruncatedSVD works directly on _____ matrices.",
+        "type": "fill_blank",
+        "answers": [
+            "sparse"
+        ],
+        "other_options": [
+            "dense",
+            "small",
+            "large"
+        ]
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "from sklearn.decomposition import TruncatedSVD\nimport numpy as np\nfrom scipy.sparse import random\nX = random(100, 50, density=0.1)\nsvd = TruncatedSVD(n_components=3)\nX_svd = svd.fit_transform(X)\nprint(X_svd.shape[1])",
+        "o": [
+            "3",
+            "50",
+            "100",
+            "1"
+        ]
+    },
+    {
+        "q": "Match the decomposition with its best use case:",
+        "type": "match",
+        "left": [
+            "PCA",
+            "TruncatedSVD",
+            "NMF",
+            "Sparse PCA"
+        ],
+        "right": [
+            "Dense centered",
+            "Sparse data",
+            "Non-negative",
+            "Interpretable"
+        ]
+    },
+    {
+        "q": "TruncatedSVD is also called Latent Semantic Analysis (LSA) in NLP.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "What is Non-negative Matrix Factorization (NMF)?",
+        "type": "mcq",
+        "o": [
+            "Factorization requiring all values to be non-negative",
+            "Normal matrix",
+            "Negative factorization",
+            "Number matrix"
+        ]
+    },
+    {
+        "q": "NMF produces _____ components, useful for interpretability.",
+        "type": "fill_blank",
+        "answers": [
+            "additive"
+        ],
+        "other_options": [
+            "subtractive",
+            "mixed",
+            "random"
+        ]
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "from sklearn.decomposition import NMF\nimport numpy as np\nX = np.abs(np.random.rand(100, 20))\nnmf = NMF(n_components=5, init='nndsvd')\nW = nmf.fit_transform(X)\nprint(W.min() >= 0)",
+        "o": [
+            "True",
+            "False",
+            "Error",
+            "None"
+        ]
+    },
+    {
+        "q": "NMF is commonly used for topic modeling and image processing.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Rearrange factorization methods by constraint:",
+        "type": "rearrange",
+        "words": [
+            "PCA (none)",
+            "Sparse PCA",
+            "NMF (non-negative)",
+            "Dictionary Learning"
+        ]
+    },
+    {
+        "q": "What is Factor Analysis?",
+        "type": "mcq",
+        "o": [
+            "Statistical method modeling observed variables via latent factors",
+            "Factor finding",
+            "Analysis method",
+            "Variable analysis"
+        ]
+    },
+    {
+        "q": "Factor Analysis assumes observed variables are linear combinations of _____ factors.",
+        "type": "fill_blank",
+        "answers": [
+            "latent"
+        ],
+        "other_options": [
+            "observed",
+            "random",
+            "fixed"
+        ]
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "from sklearn.decomposition import FactorAnalysis\nimport numpy as np\nX = np.random.rand(100, 10)\nfa = FactorAnalysis(n_components=3)\nfa.fit(X)\nprint(len(fa.noise_variance_))",
+        "o": [
+            "10",
+            "3",
+            "100",
+            "1"
+        ]
+    },
+    {
+        "q": "Match the latent variable model with its assumption:",
+        "type": "match",
+        "left": [
+            "PCA",
+            "Factor Analysis",
+            "ICA",
+            "NMF"
+        ],
+        "right": [
+            "Max variance",
+            "Latent factors",
+            "Independence",
+            "Non-negativity"
+        ]
+    },
+    {
+        "q": "Factor Analysis explicitly models noise in observations.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "What is ICA (Independent Component Analysis)?",
+        "type": "mcq",
+        "o": [
+            "Finding statistically independent components in data",
+            "Integrated analysis",
+            "Initial component",
+            "Internal analysis"
+        ]
+    },
+    {
+        "q": "ICA separates mixed signals into _____ sources.",
+        "type": "fill_blank",
+        "answers": [
+            "independent"
+        ],
+        "other_options": [
+            "dependent",
+            "correlated",
+            "similar"
+        ]
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "from sklearn.decomposition import FastICA\nimport numpy as np\nX = np.random.rand(100, 5)\nica = FastICA(n_components=3)\nS = ica.fit_transform(X)\nprint(S.shape[1])",
+        "o": [
+            "3",
+            "5",
+            "100",
+            "1"
+        ]
+    },
+    {
+        "q": "Cocktail party problem is a classic ICA application.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Rearrange component analysis methods:",
+        "type": "rearrange",
+        "words": [
+            "PCA (uncorrelated)",
+            "ICA (independent)",
+            "Factor Analysis (latent)",
+            "Sparse Coding"
+        ]
+    },
+    {
+        "q": "What is manifold learning?",
+        "type": "mcq",
+        "o": [
+            "Learning low-dimensional structure embedded in high-dimensional space",
+            "Multiple learning",
+            "Many folds",
+            "Surface learning"
+        ]
+    },
+    {
+        "q": "Manifold learning assumes data lies on a lower-dimensional _____.",
+        "type": "fill_blank",
+        "answers": [
+            "manifold"
+        ],
+        "other_options": [
+            "plane",
+            "line",
+            "point"
+        ]
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "# Manifold learning methods\nmethods = ['Isomap', 'LLE', 'LTSA', 'MDS', 'Spectral Embedding']\nprint(len(methods))",
+        "o": [
+            "5",
+            "4",
+            "3",
+            "6"
+        ]
+    },
+    {
+        "q": "Match the manifold method with its approach:",
+        "type": "match",
+        "left": [
+            "Isomap",
+            "LLE",
+            "MDS",
+            "t-SNE"
+        ],
+        "right": [
+            "Geodesic distances",
+            "Local linear",
+            "Distance preservation",
+            "Probability-based"
+        ]
+    },
+    {
+        "q": "Manifold learning can unfold swiss roll data.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "What is Isomap?",
+        "type": "mcq",
+        "o": [
+            "Isometric Mapping preserving geodesic distances",
+            "Iso mapping",
+            "Equal distance",
+            "Isometric method"
+        ]
+    },
+    {
+        "q": "Isomap uses _____ neighbor graph to estimate geodesic distances.",
+        "type": "fill_blank",
+        "answers": [
+            "nearest"
+        ],
+        "other_options": [
+            "random",
+            "furthest",
+            "all"
+        ]
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "from sklearn.manifold import Isomap\nimport numpy as np\nX = np.random.rand(100, 10)\nisomap = Isomap(n_components=2, n_neighbors=5)\nX_iso = isomap.fit_transform(X)\nprint(X_iso.shape[1])",
+        "o": [
+            "2",
+            "10",
+            "5",
+            "100"
+        ]
+    },
+    {
+        "q": "Isomap preserves geodesic distances rather than Euclidean.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Rearrange manifold methods by computation:",
+        "type": "rearrange",
+        "words": [
+            "PCA (fastest)",
+            "MDS",
+            "Isomap",
+            "t-SNE (slowest)"
+        ]
+    },
+    {
+        "q": "What is LLE (Locally Linear Embedding)?",
+        "type": "mcq",
+        "o": [
+            "Preserving local linear relationships in lower dimensions",
+            "Local learning",
+            "Linear embedding only",
+            "Low-level embedding"
+        ]
+    },
+    {
+        "q": "LLE preserves _____ neighbor relationships.",
+        "type": "fill_blank",
+        "answers": [
+            "local"
+        ],
+        "other_options": [
+            "global",
+            "random",
+            "all"
+        ]
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "from sklearn.manifold import LocallyLinearEmbedding\nimport numpy as np\nX = np.random.rand(100, 10)\nlle = LocallyLinearEmbedding(n_components=2, n_neighbors=10)\nX_lle = lle.fit_transform(X)\nprint(lle.n_neighbors)",
+        "o": [
+            "10",
+            "2",
+            "100",
+            "5"
+        ]
+    },
+    {
+        "q": "Match the LLE variant with its modification:",
+        "type": "match",
+        "left": [
+            "Standard LLE",
+            "Modified LLE",
+            "Hessian LLE",
+            "LTSA"
+        ],
+        "right": [
+            "Basic",
+            "Multiple weights",
+            "Hessian matrix",
+            "Local tangent"
+        ]
+    },
+    {
+        "q": "LLE works well for manifolds with uniform sampling.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "What is MDS (Multidimensional Scaling)?",
+        "type": "mcq",
+        "o": [
+            "Dimensionality reduction preserving pairwise distances",
+            "Multi-dimensional",
+            "Matrix scaling",
+            "Metric dimension"
+        ]
+    },
+    {
+        "q": "MDS minimizes _____ between original and embedded distances.",
+        "type": "fill_blank",
+        "answers": [
+            "stress"
+        ],
+        "other_options": [
+            "error",
+            "gap",
+            "difference"
+        ]
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "from sklearn.manifold import MDS\nimport numpy as np\nX = np.random.rand(50, 10)\nmds = MDS(n_components=2, metric=True)\nX_mds = mds.fit_transform(X)\nprint(mds.metric)",
+        "o": [
+            "True",
+            "False",
+            "None",
+            "auto"
+        ]
+    },
+    {
+        "q": "Metric MDS preserves actual distances; non-metric preserves ranks.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Rearrange distance preservation methods:",
+        "type": "rearrange",
+        "words": [
+            "MDS (global)",
+            "Isomap (geodesic)",
+            "LLE (local)",
+            "t-SNE (probabilistic)"
+        ]
+    },
+    {
+        "q": "What is self-organizing maps (SOM)?",
+        "type": "mcq",
+        "o": [
+            "Neural network for clustering and visualization using competitive learning",
+            "Self maps",
+            "Organizing algorithm",
+            "Map creation"
+        ]
+    },
+    {
+        "q": "SOM preserves _____ relationships in a low-dimensional grid.",
+        "type": "fill_blank",
+        "answers": [
+            "topological"
+        ],
+        "other_options": [
+            "random",
+            "linear",
+            "exact"
+        ]
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "# SOM properties\nproperties = ['competitive_learning', 'topological_mapping', 'visualization', 'clustering']\nprint(len(properties))",
+        "o": [
+            "4",
+            "3",
+            "5",
+            "2"
+        ]
+    },
+    {
+        "q": "Match the SOM component with its description:",
+        "type": "match",
+        "left": [
+            "BMU",
+            "Neighborhood",
+            "Learning Rate",
+            "Grid"
+        ],
+        "right": [
+            "Best Matching Unit",
+            "Update radius",
+            "Step size",
+            "Output neurons"
+        ]
+    },
+    {
+        "q": "SOM neurons compete to represent input patterns.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "What is OPTICS clustering?",
+        "type": "mcq",
+        "o": [
+            "Ordering Points To Identify the Clustering Structure",
+            "Optical clustering",
+            "Optimal points",
+            "Option clustering"
+        ]
+    },
+    {
+        "q": "OPTICS creates cluster _____ plot for determining structure.",
+        "type": "fill_blank",
+        "answers": [
+            "reachability"
+        ],
+        "other_options": [
+            "distance",
+            "density",
+            "order"
+        ]
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "from sklearn.cluster import OPTICS\nimport numpy as np\nX = np.random.rand(100, 2)\noptics = OPTICS(min_samples=5)\noptics.fit(X)\nprint(optics.min_samples)",
+        "o": [
+            "5",
+            "100",
+            "2",
+            "10"
+        ]
+    },
+    {
+        "q": "OPTICS is like DBSCAN without fixed eps parameter.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Rearrange density-based clustering methods:",
+        "type": "rearrange",
+        "words": [
+            "DBSCAN (fixed eps)",
+            "HDBSCAN (hierarchical)",
+            "OPTICS (ordering)",
+            "Mean Shift (mode)"
+        ]
+    },
+    {
+        "q": "What is cluster stability?",
+        "type": "mcq",
+        "o": [
+            "Measuring how consistent clusters are across data variations",
+            "Stable clustering",
+            "Fixed clusters",
+            "Cluster strength"
+        ]
+    },
+    {
+        "q": "Stable clusters should be _____ to small data perturbations.",
+        "type": "fill_blank",
+        "answers": [
+            "robust"
+        ],
+        "other_options": [
+            "sensitive",
+            "variable",
+            "responsive"
+        ]
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "# Cluster stability methods\nmethods = ['bootstrap', 'subsampling', 'jackknife', 'cross_validation']\nprint(len(methods))",
+        "o": [
+            "4",
+            "3",
+            "5",
+            "2"
+        ]
+    },
+    {
+        "q": "Match the validation type with its data requirement:",
+        "type": "match",
+        "left": [
+            "Internal",
+            "External",
+            "Relative",
+            "Stability"
+        ],
+        "right": [
+            "No labels",
+            "Ground truth",
+            "Comparison",
+            "Multiple runs"
+        ]
+    },
+    {
+        "q": "High cluster stability indicates reliable clustering results.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "What is the Davies-Bouldin Index?",
+        "type": "mcq",
+        "o": [
+            "Internal validation measuring average similarity between clusters",
+            "Davis Bouldin",
+            "Distance index",
+            "Density measure"
+        ]
+    },
+    {
+        "q": "Lower Davies-Bouldin Index indicates _____ clustering.",
+        "type": "fill_blank",
+        "answers": [
+            "better"
+        ],
+        "other_options": [
+            "worse",
+            "larger",
+            "denser"
+        ]
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "from sklearn.metrics import davies_bouldin_score\nimport numpy as np\nX = np.random.rand(100, 2)\nlabels = np.random.randint(0, 3, 100)\ndb = davies_bouldin_score(X, labels)\nprint(type(db).__name__)",
+        "o": [
+            "float64",
+            "int",
+            "list",
+            "array"
+        ]
+    },
+    {
+        "q": "Davies-Bouldin Index of 0 is the perfect score.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Rearrange internal validation metrics by ideal value:",
+        "type": "rearrange",
+        "words": [
+            "Silhouette (max 1)",
+            "Davies-Bouldin (min 0)",
+            "Calinski-Harabasz (high)",
+            "Inertia (low)"
+        ]
+    },
+    {
+        "q": "What is Calinski-Harabasz Index?",
+        "type": "mcq",
+        "o": [
+            "Ratio of between-cluster to within-cluster variance",
+            "Variance index",
+            "Cluster ratio",
+            "CH metric"
+        ]
+    },
+    {
+        "q": "Higher Calinski-Harabasz Index indicates _____ dense clusters.",
+        "type": "fill_blank",
+        "answers": [
+            "more"
+        ],
+        "other_options": [
+            "less",
+            "equally",
+            "randomly"
+        ]
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "from sklearn.metrics import calinski_harabasz_score\nimport numpy as np\nX = np.random.rand(100, 2)\nlabels = np.random.randint(0, 3, 100)\nch = calinski_harabasz_score(X, labels)\nprint(ch > 0)",
+        "o": [
+            "True",
+            "False",
+            "Error",
+            "None"
+        ]
+    },
+    {
+        "q": "Match the metric with its computation:",
+        "type": "match",
+        "left": [
+            "Silhouette",
+            "Davies-Bouldin",
+            "Calinski-Harabasz",
+            "Inertia"
+        ],
+        "right": [
+            "Point-wise distance",
+            "Cluster similarity",
+            "Variance ratio",
+            "Sum of squares"
+        ]
+    },
+    {
+        "q": "Calinski-Harabasz Index penalizes more clusters.",
+        "type": "true_false",
+        "correct": "False"
+    },
+    {
+        "q": "What is Adjusted Rand Index (ARI)?",
+        "type": "mcq",
+        "o": [
+            "External metric comparing clustering to ground truth labels",
+            "Random index",
+            "Adjusted clustering",
+            "Rand measure"
+        ]
+    },
+    {
+        "q": "ARI ranges from -1 to _____ with 1 being perfect agreement.",
+        "type": "fill_blank",
+        "answers": [
+            "1"
+        ],
+        "other_options": [
+            "0",
+            "100",
+            "infinity"
+        ]
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "from sklearn.metrics import adjusted_rand_score\nimport numpy as np\nlabels_true = np.array([0, 0, 1, 1, 2, 2])\nlabels_pred = np.array([0, 0, 1, 1, 2, 2])\nari = adjusted_rand_score(labels_true, labels_pred)\nprint(ari)",
+        "o": [
+            "1.0",
+            "0.0",
+            "-1.0",
+            "0.5"
+        ]
+    },
+    {
+        "q": "ARI is adjusted for chance - random clustering scores near 0.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Rearrange external validation metrics:",
+        "type": "rearrange",
+        "words": [
+            "Rand Index",
+            "Adjusted Rand Index",
+            "Normalized Mutual Info",
+            "Fowlkes-Mallows"
+        ]
+    },
+    {
+        "q": "What is Normalized Mutual Information (NMI)?",
+        "type": "mcq",
+        "o": [
+            "Metric measuring shared information between clustering and truth",
+            "Normal info",
+            "Mutual metric",
+            "Information normal"
+        ]
+    },
+    {
+        "q": "NMI is normalized to range from 0 to _____.",
+        "type": "fill_blank",
+        "answers": [
+            "1"
+        ],
+        "other_options": [
+            "100",
+            "infinity",
+            "0.5"
+        ]
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "from sklearn.metrics import normalized_mutual_info_score\nimport numpy as np\nlabels_true = np.array([0, 0, 1, 1, 2, 2])\nlabels_pred = np.array([0, 0, 1, 1, 2, 2])\nnmi = normalized_mutual_info_score(labels_true, labels_pred)\nprint(nmi)",
+        "o": [
+            "1.0",
+            "0.0",
+            "0.5",
+            "-1.0"
+        ]
+    },
+    {
+        "q": "Match the metric with its property:",
+        "type": "match",
+        "left": [
+            "ARI",
+            "NMI",
+            "Homogeneity",
+            "Completeness"
+        ],
+        "right": [
+            "Chance-adjusted",
+            "Information-based",
+            "Cluster purity",
+            "Class coverage"
+        ]
+    },
+    {
+        "q": "NMI of 1 indicates perfect clustering agreement with ground truth.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "What is dictionary learning?",
+        "type": "mcq",
+        "o": [
+            "Learning sparse representations using learned basis vectors",
+            "Vocabulary learning",
+            "Dictionary creation",
+            "Word learning"
+        ]
+    },
+    {
+        "q": "Dictionary learning represents data as _____ combination of atoms.",
+        "type": "fill_blank",
+        "answers": [
+            "sparse"
+        ],
+        "other_options": [
+            "dense",
+            "full",
+            "complete"
+        ]
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "from sklearn.decomposition import DictionaryLearning\nimport numpy as np\nX = np.random.rand(100, 20)\ndl = DictionaryLearning(n_components=10, alpha=1)\ndl.fit(X)\nprint(dl.n_components)",
+        "o": [
+            "10",
+            "100",
+            "20",
+            "1"
+        ]
+    },
+    {
+        "q": "Dictionary learning is useful for signal processing and image denoising.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Rearrange sparse representation methods:",
+        "type": "rearrange",
+        "words": [
+            "Sparse PCA",
+            "Dictionary Learning",
+            "Sparse Coding",
+            "K-SVD"
+        ]
+    },
+    {
+        "q": "What is the gap statistic?",
+        "type": "mcq",
+        "o": [
+            "Method comparing within-cluster dispersion to reference distribution",
+            "Gap method",
+            "Distance gap",
+            "Cluster gap"
+        ]
+    },
+    {
+        "q": "Gap statistic compares actual clustering to _____ reference data.",
+        "type": "fill_blank",
+        "answers": [
+            "uniform"
+        ],
+        "other_options": [
+            "normal",
+            "random",
+            "clustered"
+        ]
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "# Gap statistic concept\nimport numpy as np\nWk = 100  # Within-cluster sum of squares\nE_Wk = 150  # Expected under null\ngap = np.log(E_Wk) - np.log(Wk)\nprint(round(gap, 2))",
+        "o": [
+            "0.41",
+            "-0.41",
+            "0.5",
+            "1.0"
+        ]
+    },
+    {
+        "q": "Match the cluster number selection method:",
+        "type": "match",
+        "left": [
+            "Elbow",
+            "Silhouette",
+            "Gap Statistic",
+            "Cross-validation"
+        ],
+        "right": [
+            "Inertia curve",
+            "Max score",
+            "Reference comparison",
+            "Prediction error"
+        ]
+    },
+    {
+        "q": "Larger gap statistic indicates better clustering.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "What is cophenetic correlation?",
+        "type": "mcq",
+        "o": [
+            "Correlation between original distances and dendrogram distances",
+            "Copy correlation",
+            "Phenotype metric",
+            "Distance correlation"
+        ]
+    },
+    {
+        "q": "High cophenetic correlation indicates dendrogram _____ represents data.",
+        "type": "fill_blank",
+        "answers": [
+            "well"
+        ],
+        "other_options": [
+            "poorly",
+            "randomly",
+            "approximately"
+        ]
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "from scipy.cluster.hierarchy import cophenet, linkage\nfrom scipy.spatial.distance import pdist\nimport numpy as np\nX = np.random.rand(50, 3)\nZ = linkage(X, 'ward')\nc, _ = cophenet(Z, pdist(X))\nprint(0 <= c <= 1)",
+        "o": [
+            "True",
+            "False",
+            "Error",
+            "None"
+        ]
+    },
+    {
+        "q": "Cophenetic correlation ranges from 0 to 1.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Rearrange hierarchical clustering evaluation:",
+        "type": "rearrange",
+        "words": [
+            "Cophenetic Correlation",
+            "Dendrogram Height",
+            "Silhouette",
+            "Inconsistency Coefficient"
+        ]
+    },
+    {
+        "q": "What is constrained clustering?",
+        "type": "mcq",
+        "o": [
+            "Clustering with background knowledge as must-link or cannot-link constraints",
+            "Limited clustering",
+            "Constraint satisfaction",
+            "Bounded method"
+        ]
+    },
+    {
+        "q": "Must-link constraints require points to be in _____ cluster.",
+        "type": "fill_blank",
+        "answers": [
+            "same"
+        ],
+        "other_options": [
+            "different",
+            "nearby",
+            "separate"
+        ]
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "# Constraint types\nconstraint_types = ['must_link', 'cannot_link', 'soft_constraint', 'spatial']\nprint(len(constraint_types))",
+        "o": [
+            "4",
+            "3",
+            "5",
+            "2"
+        ]
+    },
+    {
+        "q": "Match the constraint type with its enforcement:",
+        "type": "match",
+        "left": [
+            "Must-link",
+            "Cannot-link",
+            "Soft",
+            "Prior"
+        ],
+        "right": [
+            "Same cluster",
+            "Different clusters",
+            "Penalty-based",
+            "Distribution-based"
+        ]
+    },
+    {
+        "q": "Constrained clustering is a form of semi-supervised learning.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "What is fuzzy c-means clustering?",
+        "type": "mcq",
+        "o": [
+            "Soft clustering assigning membership degrees to each cluster",
+            "Fuzzy logic",
+            "C-means method",
+            "Soft K-Means"
+        ]
+    },
+    {
+        "q": "Fuzzy c-means allows points to belong to _____ clusters.",
+        "type": "fill_blank",
+        "answers": [
+            "multiple"
+        ],
+        "other_options": [
+            "single",
+            "two",
+            "no"
+        ]
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "# Fuzzy membership\nimport numpy as np\nmemberships = np.array([[0.7, 0.3], [0.2, 0.8], [0.5, 0.5]])\nprint(memberships.sum(axis=1)[0])",
+        "o": [
+            "1.0",
+            "0.7",
+            "0.3",
+            "2.0"
+        ]
+    },
+    {
+        "q": "Fuzzy membership values for each point sum to 1.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Rearrange clustering methods by assignment type:",
+        "type": "rearrange",
+        "words": [
+            "K-Means (hard)",
+            "Fuzzy C-Means (soft)",
+            "GMM (probabilistic)",
+            "Ensemble (multiple)"
+        ]
+    },
+    {
+        "q": "What is ensemble clustering?",
+        "type": "mcq",
+        "o": [
+            "Combining multiple clustering solutions for robust results",
+            "Ensemble method",
+            "Multiple means",
+            "Cluster voting"
+        ]
+    },
+    {
+        "q": "Ensemble clustering combines _____ from different runs.",
+        "type": "fill_blank",
+        "answers": [
+            "partitions"
+        ],
+        "other_options": [
+            "features",
+            "models",
+            "data"
+        ]
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "# Ensemble clustering strategies\nstrategies = ['consensus', 'co_association', 'voting', 'hierarchical_merge']\nprint(len(strategies))",
+        "o": [
+            "4",
+            "3",
+            "5",
+            "2"
+        ]
+    },
+    {
+        "q": "Match the ensemble method with its combination strategy:",
+        "type": "match",
+        "left": [
+            "Consensus",
+            "Co-association",
+            "Evidence Accumulation",
+            "Graph-based"
+        ],
+        "right": [
+            "Common assignment",
+            "Pairwise frequency",
+            "Matrix similarity",
+            "Connectivity"
+        ]
+    },
+    {
+        "q": "Ensemble clustering can improve stability and accuracy.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "What is biclustering?",
+        "type": "mcq",
+        "o": [
+            "Simultaneously clustering rows and columns of data matrix",
+            "Binary clustering",
+            "Two-phase clustering",
+            "Bidirectional method"
+        ]
+    },
+    {
+        "q": "Biclustering finds _____ clusters in rows and columns.",
+        "type": "fill_blank",
+        "answers": [
+            "local"
+        ],
+        "other_options": [
+            "global",
+            "random",
+            "fixed"
+        ]
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "from sklearn.cluster import SpectralBiclustering\nimport numpy as np\nX = np.random.rand(100, 50)\nmodel = SpectralBiclustering(n_clusters=5)\nmodel.fit(X)\nprint(model.n_clusters)",
+        "o": [
+            "5",
+            "100",
+            "50",
+            "10"
+        ]
+    },
+    {
+        "q": "Biclustering is useful for gene expression data analysis.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Rearrange clustering by what is clustered:",
+        "type": "rearrange",
+        "words": [
+            "Row Clustering",
+            "Column Clustering",
+            "Biclustering (both)",
+            "Tensor Clustering (3D)"
+        ]
+    },
+    {
+        "q": "What is subspace clustering?",
+        "type": "mcq",
+        "o": [
+            "Finding clusters in different feature subspaces",
+            "Subset clustering",
+            "Space clustering",
+            "Sub-dimensional"
+        ]
+    },
+    {
+        "q": "Subspace clustering discovers clusters hidden in _____ subspaces.",
+        "type": "fill_blank",
+        "answers": [
+            "different"
+        ],
+        "other_options": [
+            "same",
+            "fixed",
+            "full"
+        ]
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "# Subspace clustering algorithms\nalgorithms = ['CLIQUE', 'SUBCLU', 'PROCLUS', 'ORCLUS']\nprint(len(algorithms))",
+        "o": [
+            "4",
+            "3",
+            "5",
+            "2"
+        ]
+    },
+    {
+        "q": "Match the subspace method with its approach:",
+        "type": "match",
+        "left": [
+            "CLIQUE",
+            "SUBCLU",
+            "PROCLUS",
+            "DOC"
+        ],
+        "right": [
+            "Grid-based",
+            "Density-based",
+            "Medoid-based",
+            "Random subspace"
+        ]
+    },
+    {
+        "q": "Subspace clustering addresses curse of dimensionality.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "What is graph-based clustering?",
+        "type": "mcq",
+        "o": [
+            "Clustering using graph representation of data similarities",
+            "Graph drawing",
+            "Network clustering",
+            "Edge clustering"
+        ]
+    },
+    {
+        "q": "Graph clustering partitions nodes to minimize _____ between clusters.",
+        "type": "fill_blank",
+        "answers": [
+            "edges"
+        ],
+        "other_options": [
+            "nodes",
+            "weights",
+            "paths"
+        ]
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "# Graph clustering algorithms\nalgorithms = ['Louvain', 'Girvan_Newman', 'Label_Propagation', 'Spectral']\nprint(len(algorithms))",
+        "o": [
+            "4",
+            "3",
+            "5",
+            "2"
+        ]
+    },
+    {
+        "q": "Louvain algorithm optimizes modularity for community detection.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Rearrange graph clustering methods:",
+        "type": "rearrange",
+        "words": [
+            "Modularity Optimization",
+            "Spectral",
+            "Label Propagation",
+            "Random Walks"
+        ]
+    },
+    {
+        "q": "What is modularity in graph clustering?",
+        "type": "mcq",
+        "o": [
+            "Measure of how well network is divided into communities",
+            "Module creation",
+            "Graph division",
+            "Network measure"
+        ]
+    },
+    {
+        "q": "Higher modularity indicates _____ community structure.",
+        "type": "fill_blank",
+        "answers": [
+            "stronger"
+        ],
+        "other_options": [
+            "weaker",
+            "random",
+            "uniform"
+        ]
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "# Modularity range\nmodularity_range = (-0.5, 1.0)\nprint(modularity_range[1])",
+        "o": [
+            "1.0",
+            "-0.5",
+            "0.5",
+            "0.0"
+        ]
+    },
+    {
+        "q": "Match the graph metric with its meaning:",
+        "type": "match",
+        "left": [
+            "Modularity",
+            "Conductance",
+            "Normalized Cut",
+            "Ratio Cut"
+        ],
+        "right": [
+            "Community quality",
+            "Flow out",
+            "Balanced min-cut",
+            "Size-based cut"
+        ]
+    },
+    {
+        "q": "Modularity can have negative values for poor partitions.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "What is the embedding quality measure?",
+        "type": "mcq",
+        "o": [
+            "Metrics evaluating how well low-dimensional embedding preserves structure",
+            "Embed score",
+            "Quality metric",
+            "Dimension score"
+        ]
+    },
+    {
+        "q": "Trustworthiness measures whether _____ neighbors are preserved.",
+        "type": "fill_blank",
+        "answers": [
+            "true"
+        ],
+        "other_options": [
+            "false",
+            "random",
+            "all"
+        ]
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "from sklearn.manifold import trustworthiness\nimport numpy as np\nX = np.random.rand(100, 10)\nX_embedded = np.random.rand(100, 2)\ntw = trustworthiness(X, X_embedded, n_neighbors=5)\nprint(0 <= tw <= 1)",
+        "o": [
+            "True",
+            "False",
+            "Error",
+            "None"
+        ]
+    },
+    {
+        "q": "Match the embedding metric with its focus:",
+        "type": "match",
+        "left": [
+            "Trustworthiness",
+            "Continuity",
+            "Stress",
+            "Correlation"
+        ],
+        "right": [
+            "Neighbor preservation",
+            "Mapping smoothness",
+            "Distance distortion",
+            "Rank agreement"
+        ]
+    },
+    {
+        "q": "Trustworthiness of 1.0 means perfect neighbor preservation.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "What is contrastive learning for unsupervised learning?",
+        "type": "mcq",
+        "o": [
+            "Learning representations by contrasting positive and negative pairs",
+            "Contrast method",
+            "Comparison learning",
+            "Pair learning"
+        ]
+    },
+    {
+        "q": "Contrastive learning creates positive pairs using data _____.",
+        "type": "fill_blank",
+        "answers": [
+            "augmentation"
+        ],
+        "other_options": [
+            "sampling",
+            "copying",
+            "deletion"
+        ]
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "# Contrastive learning methods\nmethods = ['SimCLR', 'MoCo', 'BYOL', 'SwAV', 'DINO']\nprint(len(methods))",
+        "o": [
+            "5",
+            "4",
+            "6",
+            "3"
+        ]
+    },
+    {
+        "q": "BYOL learns without negative pairs using teacher-student network.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Rearrange self-supervised methods:",
+        "type": "rearrange",
+        "words": [
+            "Contrastive",
+            "Generative",
+            "Predictive",
+            "Clustering-based"
+        ]
+    },
+    {
+        "q": "What is density estimation?",
+        "type": "mcq",
+        "o": [
+            "Estimating probability density function from data samples",
+            "Dense learning",
+            "Estimation method",
+            "Density calculation"
+        ]
+    },
+    {
+        "q": "Kernel density estimation uses _____ functions at each data point.",
+        "type": "fill_blank",
+        "answers": [
+            "kernel"
+        ],
+        "other_options": [
+            "linear",
+            "polynomial",
+            "constant"
+        ]
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "from sklearn.neighbors import KernelDensity\nimport numpy as np\nX = np.random.rand(100, 1)\nkde = KernelDensity(kernel='gaussian', bandwidth=0.5)\nkde.fit(X)\nprint(kde.bandwidth)",
+        "o": [
+            "0.5",
+            "1.0",
+            "0.1",
+            "gaussian"
+        ]
+    },
+    {
+        "q": "Match the density estimator with its property:",
+        "type": "match",
+        "left": [
+            "Histogram",
+            "KDE",
+            "Gaussian Mixture",
+            "Normalizing Flow"
+        ],
+        "right": [
+            "Discrete bins",
+            "Smooth estimate",
+            "Parametric",
+            "Deep learning"
+        ]
+    },
+    {
+        "q": "Larger bandwidth in KDE produces smoother density estimates.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "What is latent Dirichlet allocation (LDA)?",
+        "type": "mcq",
+        "o": [
+            "Probabilistic topic model for document collections",
+            "Latent analysis",
+            "Document modeling",
+            "Dirichlet method"
+        ]
+    },
+    {
+        "q": "LDA discovers _____ topics from document collection.",
+        "type": "fill_blank",
+        "answers": [
+            "latent"
+        ],
+        "other_options": [
+            "random",
+            "fixed",
+            "known"
+        ]
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "from sklearn.decomposition import LatentDirichletAllocation\nimport numpy as np\nX = np.random.randint(0, 100, (50, 100))\nlda = LatentDirichletAllocation(n_components=10)\nlda.fit(X)\nprint(lda.n_components)",
+        "o": [
+            "10",
+            "50",
+            "100",
+            "5"
+        ]
+    },
+    {
+        "q": "LDA assumes each document is mixture of topics.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Rearrange topic modeling methods:",
+        "type": "rearrange",
+        "words": [
+            "LSA (linear)",
+            "LDA (probabilistic)",
+            "NMF (non-negative)",
+            "Neural Topic Models"
+        ]
+    },
+    {
+        "q": "What is t-distributed neighborhood embedding?",
+        "type": "mcq",
+        "o": [
+            "Preserving local neighborhood structure using t-distribution",
+            "T-distribution",
+            "Neighborhood method",
+            "Distribution embedding"
+        ]
+    },
+    {
+        "q": "t-SNE uses heavy-tailed t-distribution in _____ space.",
+        "type": "fill_blank",
+        "answers": [
+            "low-dimensional"
+        ],
+        "other_options": [
+            "high-dimensional",
+            "original",
+            "feature"
+        ]
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "from sklearn.manifold import TSNE\ntsne = TSNE(n_components=2, init='random', learning_rate='auto')\nprint(tsne.n_components)",
+        "o": [
+            "2",
+            "3",
+            "1",
+            "4"
+        ]
+    },
+    {
+        "q": "Match the t-SNE perplexity with data size:",
+        "type": "match",
+        "left": [
+            "5-10",
+            "30-50",
+            "50-100",
+            "100+"
+        ],
+        "right": [
+            "Small dataset",
+            "Medium dataset",
+            "Large dataset",
+            "Very large"
+        ]
+    },
+    {
+        "q": "t-SNE can only reduce to 2 or 3 dimensions effectively.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "What is random projection?",
+        "type": "mcq",
+        "o": [
+            "Dimensionality reduction using random linear projection",
+            "Random sampling",
+            "Projection method",
+            "Stochastic reduction"
+        ]
+    },
+    {
+        "q": "Random projection preserves _____ between points approximately.",
+        "type": "fill_blank",
+        "answers": [
+            "distances"
+        ],
+        "other_options": [
+            "clusters",
+            "structure",
+            "features"
+        ]
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "from sklearn.random_projection import GaussianRandomProjection\nimport numpy as np\nX = np.random.rand(100, 50)\nrp = GaussianRandomProjection(n_components=10)\nX_rp = rp.fit_transform(X)\nprint(X_rp.shape[1])",
+        "o": [
+            "10",
+            "50",
+            "100",
+            "5"
+        ]
+    },
+    {
+        "q": "Johnson-Lindenstrauss lemma guarantees random projection quality.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Rearrange projection methods by complexity:",
+        "type": "rearrange",
+        "words": [
+            "Random Projection (fastest)",
+            "PCA",
+            "Kernel PCA",
+            "t-SNE (slowest)"
+        ]
+    },
+    {
+        "q": "What is feature agglomeration?",
+        "type": "mcq",
+        "o": [
+            "Hierarchical clustering to reduce number of features",
+            "Feature adding",
+            "Agglomeration method",
+            "Feature grouping"
+        ]
+    },
+    {
+        "q": "Feature agglomeration groups _____ features together.",
+        "type": "fill_blank",
+        "answers": [
+            "similar"
+        ],
+        "other_options": [
+            "random",
+            "different",
+            "important"
+        ]
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "from sklearn.cluster import FeatureAgglomeration\nimport numpy as np\nX = np.random.rand(100, 50)\nfa = FeatureAgglomeration(n_clusters=10)\nX_fa = fa.fit_transform(X)\nprint(X_fa.shape[1])",
+        "o": [
+            "10",
+            "50",
+            "100",
+            "5"
+        ]
+    },
+    {
+        "q": "Match the feature reduction with its approach:",
+        "type": "match",
+        "left": [
+            "PCA",
+            "Feature Selection",
+            "Feature Agglomeration",
+            "Random Projection"
+        ],
+        "right": [
+            "Linear combination",
+            "Subset selection",
+            "Feature clustering",
+            "Random mapping"
+        ]
+    },
+    {
+        "q": "Feature agglomeration can preserve interpretable feature groups.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "What is multi-view clustering?",
+        "type": "mcq",
+        "o": [
+            "Clustering using multiple representations or views of data",
+            "Multiple clusters",
+            "View-based method",
+            "Multi-modal clustering"
+        ]
+    },
+    {
+        "q": "Multi-view clustering integrates information from _____ data sources.",
+        "type": "fill_blank",
+        "answers": [
+            "multiple"
+        ],
+        "other_options": [
+            "single",
+            "random",
+            "similar"
+        ]
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "# Multi-view clustering strategies\nstrategies = ['early_fusion', 'late_fusion', 'co_training', 'spectral_multi_view']\nprint(len(strategies))",
+        "o": [
+            "4",
+            "3",
+            "5",
+            "2"
+        ]
+    },
+    {
+        "q": "Multi-view clustering can improve results over single-view.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Rearrange multi-view fusion strategies:",
+        "type": "rearrange",
+        "words": [
+            "Early Fusion (before)",
+            "Intermediate Fusion",
+            "Late Fusion (after)",
+            "Joint Learning"
+        ]
+    },
+    {
+        "q": "What is deep clustering?",
+        "type": "mcq",
+        "o": [
+            "Combining deep learning and clustering for representation learning",
+            "Deep analysis",
+            "Deep grouping",
+            "Neural clustering only"
+        ]
+    },
+    {
+        "q": "Deep clustering learns _____ and cluster assignments jointly.",
+        "type": "fill_blank",
+        "answers": [
+            "representations"
+        ],
+        "other_options": [
+            "features",
+            "labels",
+            "data"
+        ]
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "# Deep clustering methods\nmethods = ['DEC', 'DCN', 'IDEC', 'VaDE', 'ClusterGAN']\nprint(len(methods))",
+        "o": [
+            "5",
+            "4",
+            "6",
+            "3"
+        ]
+    },
+    {
+        "q": "Match the deep clustering method with its base:",
+        "type": "match",
+        "left": [
+            "DEC",
+            "DCN",
+            "VaDE",
+            "ClusterGAN"
+        ],
+        "right": [
+            "Autoencoder",
+            "k-means layer",
+            "VAE",
+            "GAN"
+        ]
+    },
+    {
+        "q": "Deep clustering can outperform traditional methods on complex data.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "What is Gaussian Process Latent Variable Model (GPLVM)?",
+        "type": "mcq",
+        "o": [
+            "Probabilistic dimensionality reduction using Gaussian processes",
+            "GP learning",
+            "Latent process",
+            "Variable model"
+        ]
+    },
+    {
+        "q": "GPLVM learns a _____ mapping from latent to observed space.",
+        "type": "fill_blank",
+        "answers": [
+            "non-linear"
+        ],
+        "other_options": [
+            "linear",
+            "random",
+            "fixed"
+        ]
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "# GPLVM properties\nproperties = ['probabilistic', 'non_parametric', 'flexible', 'bayesian']\nprint(len(properties))",
+        "o": [
+            "4",
+            "3",
+            "5",
+            "2"
+        ]
+    },
+    {
+        "q": "GPLVM provides uncertainty estimates in the embedding.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Rearrange latent variable models by flexibility:",
+        "type": "rearrange",
+        "words": [
+            "PCA (linear)",
+            "PPCA",
+            "Factor Analysis",
+            "GPLVM (most flexible)"
+        ]
+    },
+    {
+        "q": "What is neural network clustering layer?",
+        "type": "mcq",
+        "o": [
+            "Differentiable clustering layer for end-to-end learning",
+            "Neural layer",
+            "Network clustering",
+            "Layer method"
+        ]
+    },
+    {
+        "q": "Differentiable clustering allows _____ propagation through assignments.",
+        "type": "fill_blank",
+        "answers": [
+            "gradient"
+        ],
+        "other_options": [
+            "data",
+            "label",
+            "cluster"
+        ]
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "# Differentiable clustering approaches\napproaches = ['soft_assignments', 'gumbel_softmax', 'attention_based', 'optimal_transport']\nprint(len(approaches))",
+        "o": [
+            "4",
+            "3",
+            "5",
+            "2"
+        ]
+    },
+    {
+        "q": "Match the differentiable method with its approach:",
+        "type": "match",
+        "left": [
+            "Soft K-Means",
+            "Gumbel-Softmax",
+            "Attention",
+            "Sinkhorn"
+        ],
+        "right": [
+            "Distance-based",
+            "Sampling",
+            "Query-key",
+            "Optimal transport"
+        ]
+    },
+    {
+        "q": "Soft assignments enable gradient-based optimization of cluster centers.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "What is X-means clustering?",
+        "type": "mcq",
+        "o": [
+            "Extension of K-Means that automatically determines number of clusters",
+            "Extended means",
+            "X-factor clustering",
+            "eXtra means"
+        ]
+    },
+    {
+        "q": "X-means uses _____ to decide whether to split clusters.",
+        "type": "fill_blank",
+        "answers": [
+            "BIC"
+        ],
+        "other_options": [
+            "AIC",
+            "SSE",
+            "silhouette"
+        ]
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "# Auto-k clustering methods\nmethods = ['X-means', 'G-means', 'DIANA', 'Bisecting K-means']\nprint(len(methods))",
+        "o": [
+            "4",
+            "3",
+            "5",
+            "2"
+        ]
+    },
+    {
+        "q": "X-means starts with few clusters and splits as needed.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Rearrange K-means extensions:",
+        "type": "rearrange",
+        "words": [
+            "Standard K-Means",
+            "K-Means++",
+            "Mini-Batch",
+            "X-Means (auto-k)"
+        ]
+    },
+    {
+        "q": "What is G-means clustering?",
+        "type": "mcq",
+        "o": [
+            "Extension testing if clusters follow Gaussian distribution",
+            "Gaussian means",
+            "G-factor clustering",
+            "General means"
+        ]
+    },
+    {
+        "q": "G-means uses _____ test to check cluster normality.",
+        "type": "fill_blank",
+        "answers": [
+            "statistical"
+        ],
+        "other_options": [
+            "visual",
+            "manual",
+            "random"
+        ]
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "# G-means concept\nfrom scipy import stats\ndata = [1, 2, 3, 4, 5]\n_, p_value = stats.normaltest(data)\nprint(p_value > 0.05)",
+        "o": [
+            "True",
+            "False",
+            "Error",
+            "None"
+        ]
+    },
+    {
+        "q": "Match the auto-k method with its criterion:",
+        "type": "match",
+        "left": [
+            "X-means",
+            "G-means",
+            "Elbow",
+            "Silhouette"
+        ],
+        "right": [
+            "BIC",
+            "Normality test",
+            "Inertia drop",
+            "Score optimization"
+        ]
+    },
+    {
+        "q": "G-means splits clusters failing Gaussian test.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "What is streaming clustering?",
+        "type": "mcq",
+        "o": [
+            "Clustering data arriving in continuous stream with limited memory",
+            "Stream processing",
+            "Flow clustering",
+            "Online method"
+        ]
+    },
+    {
+        "q": "Streaming algorithms process data in _____ passes.",
+        "type": "fill_blank",
+        "answers": [
+            "one"
+        ],
+        "other_options": [
+            "multiple",
+            "many",
+            "random"
+        ]
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "# Streaming clustering algorithms\nalgorithms = ['STREAM', 'CluStream', 'DenStream', 'StreamKM++']\nprint(len(algorithms))",
+        "o": [
+            "4",
+            "3",
+            "5",
+            "2"
+        ]
+    },
+    {
+        "q": "Streaming clustering cannot revisit past data points.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Rearrange algorithms by memory requirements:",
+        "type": "rearrange",
+        "words": [
+            "Full K-Means (high)",
+            "Mini-Batch",
+            "BIRCH",
+            "StreamKM++ (low)"
+        ]
+    },
+    {
+        "q": "What is micro-cluster in streaming?",
+        "type": "mcq",
+        "o": [
+            "Summary statistics representing groups of nearby points",
+            "Small cluster",
+            "Micro analysis",
+            "Tiny grouping"
+        ]
+    },
+    {
+        "q": "Micro-clusters store sufficient _____ instead of individual points.",
+        "type": "fill_blank",
+        "answers": [
+            "statistics"
+        ],
+        "other_options": [
+            "points",
+            "data",
+            "features"
+        ]
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "# Micro-cluster statistics\nstats_stored = ['count', 'linear_sum', 'squared_sum', 'timestamp']\nprint(len(stats_stored))",
+        "o": [
+            "4",
+            "3",
+            "5",
+            "2"
+        ]
+    },
+    {
+        "q": "Match the streaming component with its purpose:",
+        "type": "match",
+        "left": [
+            "Micro-cluster",
+            "Macro-cluster",
+            "Fading function",
+            "Outlier buffer"
+        ],
+        "right": [
+            "Online summary",
+            "Offline clustering",
+            "Time decay",
+            "Temporary storage"
+        ]
+    },
+    {
+        "q": "Micro-clusters enable efficient cluster updates without storing all data.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "What is cluster explanation?",
+        "type": "mcq",
+        "o": [
+            "Describing what makes each cluster distinct in interpretable terms",
+            "Cluster description",
+            "Explanation method",
+            "Describe clusters"
+        ]
+    },
+    {
+        "q": "Cluster explanation identifies _____ features for each cluster.",
+        "type": "fill_blank",
+        "answers": [
+            "distinguishing"
+        ],
+        "other_options": [
+            "random",
+            "all",
+            "similar"
+        ]
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "# Cluster explanation methods\nmethods = ['decision_trees', 'rule_extraction', 'prototype', 'contrastive']\nprint(len(methods))",
+        "o": [
+            "4",
+            "3",
+            "5",
+            "2"
+        ]
+    },
+    {
+        "q": "Decision trees can explain clusters as interpretable rules.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Rearrange explanation approaches by interpretability:",
+        "type": "rearrange",
+        "words": [
+            "Prototype",
+            "Rules",
+            "Decision Trees",
+            "Feature Importance"
+        ]
+    },
+    {
+        "q": "What is prototype-based explanation?",
+        "type": "mcq",
+        "o": [
+            "Explaining clusters using representative examples",
+            "Proto method",
+            "Example-based",
+            "Type explanation"
+        ]
+    },
+    {
+        "q": "Prototypes are _____ points that represent their cluster.",
+        "type": "fill_blank",
+        "answers": [
+            "exemplar"
+        ],
+        "other_options": [
+            "random",
+            "edge",
+            "outlier"
+        ]
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "# Prototype selection\nimport numpy as np\ncluster = np.random.rand(50, 2)\ncentroid = cluster.mean(axis=0)\ndistances = np.linalg.norm(cluster - centroid, axis=1)\nprototype_idx = distances.argmin()\nprint(prototype_idx >= 0)",
+        "o": [
+            "True",
+            "False",
+            "Error",
+            "None"
+        ]
+    },
+    {
+        "q": "Match the explanation type with its method:",
+        "type": "match",
+        "left": [
+            "Prototype",
+            "Criticisms",
+            "Feature attribution",
+            "Rules"
+        ],
+        "right": [
+            "Typical examples",
+            "Boundary cases",
+            "Important features",
+            "If-then logic"
+        ]
+    },
+    {
+        "q": "Medoids are actual data points used as prototypes.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "What is cluster tendency assessment?",
+        "type": "mcq",
+        "o": [
+            "Evaluating whether data has inherent clustering structure",
+            "Tendency analysis",
+            "Cluster testing",
+            "Structure assessment"
+        ]
+    },
+    {
+        "q": "Hopkins statistic tests for clustering _____ in data.",
+        "type": "fill_blank",
+        "answers": [
+            "tendency"
+        ],
+        "other_options": [
+            "quality",
+            "number",
+            "type"
+        ]
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "# Hopkins statistic interpretation\nimport numpy as np\nnp.random.seed(42)\nh = 0.7  # Hopkins value\nprint('clusterable' if h > 0.5 else 'random')",
+        "o": [
+            "clusterable",
+            "random",
+            "uniform",
+            "error"
+        ]
+    },
+    {
+        "q": "Hopkins statistic near 0.5 indicates random data without clusters.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Rearrange Hopkins statistic interpretation:",
+        "type": "rearrange",
+        "words": [
+            "0.0 (uniform)",
+            "0.5 (random)",
+            "0.7 (clusterable)",
+            "1.0 (highly clustered)"
+        ]
+    },
+    {
+        "q": "What is visual assessment of clustering tendency (VAT)?",
+        "type": "mcq",
+        "o": [
+            "Visual method reordering distance matrix to reveal cluster structure",
+            "Visual testing",
+            "Assessment method",
+            "Tendency plot"
+        ]
+    },
+    {
+        "q": "VAT reorders distance matrix to create _____ blocks for clusters.",
+        "type": "fill_blank",
+        "answers": [
+            "diagonal"
+        ],
+        "other_options": [
+            "random",
+            "sparse",
+            "full"
+        ]
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "# VAT requires\nimport numpy as np\nX = np.random.rand(50, 2)\nfrom scipy.spatial.distance import pdist, squareform\ndist_matrix = squareform(pdist(X))\nprint(dist_matrix.shape)",
+        "o": [
+            "(50, 50)",
+            "(50, 2)",
+            "(2, 50)",
+            "(100, 100)"
+        ]
+    },
+    {
+        "q": "Match the tendency method with its output:",
+        "type": "match",
+        "left": [
+            "Hopkins",
+            "VAT",
+            "iVAT",
+            "Dip Test"
+        ],
+        "right": [
+            "Numeric score",
+            "Heat map",
+            "Enhanced VAT",
+            "Unimodality test"
+        ]
+    },
+    {
+        "q": "Clear diagonal blocks in VAT indicate strong cluster structure.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "What is the curse of dimensionality in clustering?",
+        "type": "mcq",
+        "o": [
+            "Distance measures become less meaningful in high dimensions",
+            "Dimension curse",
+            "High-dimensional problem",
+            "Curse of data"
+        ]
+    },
+    {
+        "q": "In high dimensions, all points become approximately _____ distant.",
+        "type": "fill_blank",
+        "answers": [
+            "equally"
+        ],
+        "other_options": [
+            "differently",
+            "randomly",
+            "closely"
+        ]
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "import numpy as np\nnp.random.seed(42)\npoints = np.random.rand(100, 1000)\ndists = np.linalg.norm(points[0] - points[1:])\nprint(dists.std() < dists.mean())",
+        "o": [
+            "True",
+            "False",
+            "Error",
+            "None"
+        ]
+    },
+    {
+        "q": "Dimensionality reduction can mitigate curse of dimensionality.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Rearrange solutions to curse of dimensionality:",
+        "type": "rearrange",
+        "words": [
+            "Feature Selection",
+            "PCA",
+            "Subspace Clustering",
+            "Metric Learning"
+        ]
+    },
+    {
+        "q": "What is label propagation for semi-supervised clustering?",
+        "type": "mcq",
+        "o": [
+            "Spreading labels from labeled to unlabeled points through similarity graph",
+            "Label spreading",
+            "Propagation method",
+            "Label transfer"
+        ]
+    },
+    {
+        "q": "Label propagation assumes nearby points have _____ labels.",
+        "type": "fill_blank",
+        "answers": [
+            "similar"
+        ],
+        "other_options": [
+            "different",
+            "random",
+            "opposite"
+        ]
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "from sklearn.semi_supervised import LabelPropagation\nimport numpy as np\nX = np.random.rand(100, 2)\ny = np.array([-1]*80 + [0]*10 + [1]*10)\nlp = LabelPropagation()\nlp.fit(X, y)\nprint(sum(y == -1))",
+        "o": [
+            "80",
+            "100",
+            "20",
+            "10"
+        ]
+    },
+    {
+        "q": "Match the semi-supervised method with its approach:",
+        "type": "match",
+        "left": [
+            "Label Propagation",
+            "Label Spreading",
+            "Self-training",
+            "Co-training"
+        ],
+        "right": [
+            "Graph-based",
+            "Normalized graph",
+            "Pseudo-labels",
+            "Multiple views"
+        ]
+    },
+    {
+        "q": "Label propagation uses -1 to indicate unlabeled samples in sklearn.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "What is prototype learning?",
+        "type": "mcq",
+        "o": [
+            "Learning representative examples for classification or retrieval",
+            "Proto method",
+            "Example learning",
+            "Type learning"
+        ]
+    },
+    {
+        "q": "Prototype networks use _____ to class prototypes for few-shot learning.",
+        "type": "fill_blank",
+        "answers": [
+            "distance"
+        ],
+        "other_options": [
+            "similarity",
+            "probability",
+            "count"
+        ]
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "# Prototype learning concept\nimport numpy as np\nclass_1 = np.random.rand(10, 5)\nprototype_1 = class_1.mean(axis=0)\nprint(prototype_1.shape)",
+        "o": [
+            "(5,)",
+            "(10, 5)",
+            "(10,)",
+            "(5, 10)"
+        ]
+    },
+    {
+        "q": "Prototypical networks classify by nearest prototype.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Rearrange few-shot learning methods:",
+        "type": "rearrange",
+        "words": [
+            "Prototypical Networks",
+            "Matching Networks",
+            "MAML",
+            "Siamese Networks"
+        ]
+    },
+    {
+        "q": "What is denoising autoencoder?",
+        "type": "mcq",
+        "o": [
+            "Autoencoder trained to reconstruct clean input from corrupted version",
+            "Noise removal",
+            "Denoise method",
+            "Clean autoencoder"
+        ]
+    },
+    {
+        "q": "Denoising autoencoder adds _____ to input during training.",
+        "type": "fill_blank",
+        "answers": [
+            "noise"
+        ],
+        "other_options": [
+            "data",
+            "features",
+            "labels"
+        ]
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "# Denoising concept\nimport numpy as np\nnp.random.seed(42)\nx_clean = np.array([1.0, 2.0, 3.0])\nnoise = np.random.normal(0, 0.1, 3)\nx_noisy = x_clean + noise\nprint(round(x_noisy[0], 2))",
+        "o": [
+            "1.05",
+            "1.0",
+            "2.0",
+            "0.95"
+        ]
+    },
+    {
+        "q": "Match the autoencoder type with its training objective:",
+        "type": "match",
+        "left": [
+            "Vanilla",
+            "Denoising",
+            "Contractive",
+            "Masked"
+        ],
+        "right": [
+            "Reconstruction",
+            "Noise removal",
+            "Jacobian penalty",
+            "Predict masked"
+        ]
+    },
+    {
+        "q": "Denoising autoencoders learn more robust representations.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "What is sparse coding?",
+        "type": "mcq",
+        "o": [
+            "Representing data as sparse linear combination of basis vectors",
+            "Sparse learning",
+            "Coding method",
+            "Minimal coding"
+        ]
+    },
+    {
+        "q": "Sparse coding enforces _____ activations in representations.",
+        "type": "fill_blank",
+        "answers": [
+            "few"
+        ],
+        "other_options": [
+            "many",
+            "all",
+            "no"
+        ]
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "from sklearn.decomposition import SparseCoder\nimport numpy as np\ndictionary = np.random.rand(10, 5)\ncoder = SparseCoder(dictionary=dictionary, transform_algorithm='lasso_lars')\nprint(coder.transform_algorithm)",
+        "o": [
+            "lasso_lars",
+            "omp",
+            "threshold",
+            "lars"
+        ]
+    },
+    {
+        "q": "Sparse coding aids interpretability by using few active components.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Rearrange sparsity-inducing methods:",
+        "type": "rearrange",
+        "words": [
+            "L1 Regularization",
+            "OMP",
+            "LASSO",
+            "Elastic Net"
+        ]
+    },
+    {
+        "q": "What is the reconstruction probability for anomaly detection?",
+        "type": "mcq",
+        "o": [
+            "Using probabilistic reconstruction to score anomalies",
+            "Rebuild probability",
+            "Reconstruction score",
+            "Probability method"
+        ]
+    },
+    {
+        "q": "Low reconstruction probability indicates potential _____.",
+        "type": "fill_blank",
+        "answers": [
+            "anomaly"
+        ],
+        "other_options": [
+            "normal",
+            "pattern",
+            "cluster"
+        ]
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "# VAE anomaly detection\nimport numpy as np\nnp.random.seed(42)\nreconstruction_probs = np.random.rand(100)\nthreshold = np.percentile(reconstruction_probs, 5)\nanomalies = reconstruction_probs < threshold\nprint(sum(anomalies))",
+        "o": [
+            "5",
+            "10",
+            "1",
+            "95"
+        ]
+    },
+    {
+        "q": "Match the anomaly score with its source:",
+        "type": "match",
+        "left": [
+            "Reconstruction Error",
+            "Density",
+            "Isolation",
+            "Distance"
+        ],
+        "right": [
+            "Autoencoder",
+            "LOF",
+            "Isolation Forest",
             "k-NN"
         ]
     },
     {
-        "q": "What does PCA stand for?",
-        "c": null,
+        "q": "VAE can provide principled anomaly scores via likelihood.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "What is the information bottleneck principle?",
+        "type": "mcq",
         "o": [
-            "Principal Component Analysis",
-            "Primary Clustering Algorithm",
-            "Predictive Cluster Analysis",
-            "Probability Clustering Algorithm"
+            "Compressing representations while preserving task-relevant information",
+            "Information limit",
+            "Bottleneck method",
+            "Data compression"
         ]
     },
     {
-        "q": "What does k in k-means represent?",
-        "c": null,
-        "o": [
-            "Number of clusters",
-            "Number of features",
-            "Number of data points",
-            "Number of dimensions"
+        "q": "Information bottleneck balances _____ and relevance.",
+        "type": "fill_blank",
+        "answers": [
+            "compression"
+        ],
+        "other_options": [
+            "expansion",
+            "detail",
+            "noise"
         ]
     },
     {
-        "q": "Which algorithm uses 'centroids' to define clusters?",
-        "c": null,
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "# Information bottleneck objective\nobjective = 'min I(X;Z) - beta * I(Z;Y)'\nprint('compress' in objective.lower())",
         "o": [
-            "k-means",
-            "DBSCAN",
+            "False",
+            "True",
+            "Error",
+            "None"
+        ]
+    },
+    {
+        "q": "Information bottleneck is related to VAE objective.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Rearrange representation learning objectives:",
+        "type": "rearrange",
+        "words": [
+            "Reconstruction",
+            "Contrastive",
+            "Information Bottleneck",
+            "Mutual Information"
+        ]
+    },
+    {
+        "q": "What is optimal transport in clustering?",
+        "type": "mcq",
+        "o": [
+            "Measuring distance between distributions for clustering",
+            "Transport method",
+            "Optimal clustering",
+            "Transport distance"
+        ]
+    },
+    {
+        "q": "Wasserstein distance measures _____ to transform one distribution to another.",
+        "type": "fill_blank",
+        "answers": [
+            "cost"
+        ],
+        "other_options": [
+            "time",
+            "distance",
+            "probability"
+        ]
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "# Optimal transport concept\nimport numpy as np\nfrom scipy.stats import wasserstein_distance\na = np.array([1, 2, 3])\nb = np.array([4, 5, 6])\nw = wasserstein_distance(a, b)\nprint(w)",
+        "o": [
+            "3.0",
+            "0.0",
+            "1.0",
+            "6.0"
+        ]
+    },
+    {
+        "q": "Match the distance with its property:",
+        "type": "match",
+        "left": [
+            "Euclidean",
+            "KL Divergence",
+            "Wasserstein",
+            "Total Variation"
+        ],
+        "right": [
+            "Point-wise",
+            "Asymmetric",
+            "Transport cost",
+            "Max difference"
+        ]
+    },
+    {
+        "q": "Optimal transport provides geometrically meaningful cluster comparisons.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "What is the Sinkhorn algorithm?",
+        "type": "mcq",
+        "o": [
+            "Efficient algorithm for regularized optimal transport",
+            "Sink method",
+            "Horn algorithm",
+            "Sink-horn"
+        ]
+    },
+    {
+        "q": "Sinkhorn algorithm uses entropic _____ for efficiency.",
+        "type": "fill_blank",
+        "answers": [
+            "regularization"
+        ],
+        "other_options": [
+            "penalty",
+            "constraint",
+            "norm"
+        ]
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "# Sinkhorn iterations\nimport numpy as np\niterations = 100\nreg = 0.01  # Regularization\nprint(f'Sinkhorn with {iterations} iters, reg={reg}')",
+        "o": [
+            "Sinkhorn with 100 iters, reg=0.01",
+            "Sinkhorn 100",
+            "100 iterations",
+            "Error"
+        ]
+    },
+    {
+        "q": "Sinkhorn is differentiable and can be used in neural networks.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Rearrange optimal transport algorithms by speed:",
+        "type": "rearrange",
+        "words": [
+            "Exact OT (slow)",
+            "Sinkhorn",
+            "Sliced OT",
+            "Approximate (fast)"
+        ]
+    },
+    {
+        "q": "What is negative sampling in contrastive learning?",
+        "type": "mcq",
+        "o": [
+            "Selecting dissimilar samples to contrast against positive pairs",
+            "Negative data",
+            "Sample removal",
+            "Negative selection"
+        ]
+    },
+    {
+        "q": "Hard negatives are samples that are _____ to distinguish from positives.",
+        "type": "fill_blank",
+        "answers": [
+            "difficult"
+        ],
+        "other_options": [
+            "easy",
+            "random",
+            "simple"
+        ]
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "# Negative sampling strategies\nstrategies = ['random', 'hard', 'semi_hard', 'in_batch']\nprint(len(strategies))",
+        "o": [
+            "4",
+            "3",
+            "5",
+            "2"
+        ]
+    },
+    {
+        "q": "Match the negative type with its difficulty:",
+        "type": "match",
+        "left": [
+            "Random",
+            "Easy",
+            "Semi-hard",
+            "Hard"
+        ],
+        "right": [
+            "Any sample",
+            "Far away",
+            "Near margin",
+            "Very close"
+        ]
+    },
+    {
+        "q": "In-batch negatives use other samples in same batch as negatives.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "What is momentum contrast (MoCo)?",
+        "type": "mcq",
+        "o": [
+            "Contrastive learning with momentum-updated key encoder",
+            "Momentum method",
+            "Contrast momentum",
+            "MoCo learning"
+        ]
+    },
+    {
+        "q": "MoCo maintains a _____ of encoded keys for negative samples.",
+        "type": "fill_blank",
+        "answers": [
+            "queue"
+        ],
+        "other_options": [
+            "stack",
+            "list",
+            "array"
+        ]
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "# MoCo parameters\nqueue_size = 65536\nmomentum = 0.999\ntemperature = 0.07\nprint(f'Queue: {queue_size}')",
+        "o": [
+            "Queue: 65536",
+            "65536",
+            "Queue size",
+            "Error"
+        ]
+    },
+    {
+        "q": "MoCo uses slowly-moving average of query encoder as key encoder.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Rearrange contrastive methods by negative sample source:",
+        "type": "rearrange",
+        "words": [
+            "SimCLR (in-batch)",
+            "MoCo (queue)",
+            "BYOL (none)",
+            "SwAV (prototypes)"
+        ]
+    },
+    {
+        "q": "What is SwAV clustering approach?",
+        "type": "mcq",
+        "o": [
+            "Swapping assignments between views for contrastive clustering",
+            "Swap method",
+            "SwAV learning",
+            "Swapping views"
+        ]
+    },
+    {
+        "q": "SwAV uses online _____ to group representations.",
+        "type": "fill_blank",
+        "answers": [
+            "clustering"
+        ],
+        "other_options": [
+            "learning",
+            "updating",
+            "swapping"
+        ]
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "# SwAV prototypes\nnum_prototypes = 3000\nepsilon = 0.05  # Sinkhorn reg\nprint(f'Prototypes: {num_prototypes}')",
+        "o": [
+            "Prototypes: 3000",
+            "3000",
+            "Prototypes",
+            "Error"
+        ]
+    },
+    {
+        "q": "Match the SSL method with its key feature:",
+        "type": "match",
+        "left": [
+            "SimCLR",
+            "MoCo",
+            "BYOL",
+            "SwAV"
+        ],
+        "right": [
+            "Large batch",
+            "Queue",
+            "No negatives",
+            "Prototypes"
+        ]
+    },
+    {
+        "q": "SwAV does not require comparing against all negative samples.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "What is DINO self-supervised learning?",
+        "type": "mcq",
+        "o": [
+            "Self-distillation with no labels using vision transformers",
+            "Dinosaur learning",
+            "DINO method",
+            "Distill learning"
+        ]
+    },
+    {
+        "q": "DINO learns by matching predictions between _____ and teacher networks.",
+        "type": "fill_blank",
+        "answers": [
+            "student"
+        ],
+        "other_options": [
+            "encoder",
+            "decoder",
+            "model"
+        ]
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "# DINO concept\nteacher_momentum = 0.996\nstudent_temp = 0.1\nteacher_temp = 0.04\nprint(teacher_temp < student_temp)",
+        "o": [
+            "True",
+            "False",
+            "Error",
+            "None"
+        ]
+    },
+    {
+        "q": "DINO shows emergent segmentation properties without labels.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Rearrange vision SSL methods:",
+        "type": "rearrange",
+        "words": [
+            "SimCLR (2020)",
+            "MoCo (2020)",
+            "BYOL (2020)",
+            "DINO (2021)"
+        ]
+    },
+    {
+        "q": "What is masked autoencoding?",
+        "type": "mcq",
+        "o": [
+            "Pretraining by reconstructing masked portions of input",
+            "Mask learning",
+            "Block prediction",
+            "Hidden autoencoder"
+        ]
+    },
+    {
+        "q": "Masked autoencoders predict _____ patches from visible ones.",
+        "type": "fill_blank",
+        "answers": [
+            "masked"
+        ],
+        "other_options": [
+            "visible",
+            "all",
+            "random"
+        ]
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "# MAE masking ratio\nmask_ratio = 0.75\nvisible_ratio = 1 - mask_ratio\nprint(visible_ratio)",
+        "o": [
+            "0.25",
+            "0.75",
+            "0.5",
+            "1.0"
+        ]
+    },
+    {
+        "q": "Match the masked learning with its domain:",
+        "type": "match",
+        "left": [
+            "BERT",
+            "MAE",
+            "AudioMAE",
+            "BEiT"
+        ],
+        "right": [
+            "Text",
+            "Images",
+            "Audio",
+            "Discrete tokens"
+        ]
+    },
+    {
+        "q": "MAE typically masks a high percentage (75%) of input patches.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "What is k-medoids clustering?",
+        "type": "mcq",
+        "o": [
+            "Variant of K-means using actual data points as cluster centers",
+            "K-means variant",
+            "Median clustering",
+            "Medoid method"
+        ]
+    },
+    {
+        "q": "K-medoids is more _____ to outliers than K-means.",
+        "type": "fill_blank",
+        "answers": [
+            "robust"
+        ],
+        "other_options": [
+            "sensitive",
+            "similar",
+            "weak"
+        ]
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "# K-medoids algorithms\nalgorithms = ['PAM', 'CLARA', 'CLARANS', 'FastPAM']\nprint(len(algorithms))",
+        "o": [
+            "4",
+            "3",
+            "5",
+            "2"
+        ]
+    },
+    {
+        "q": "PAM stands for Partitioning Around Medoids.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Rearrange k-medoids algorithms by scalability:",
+        "type": "rearrange",
+        "words": [
+            "PAM (slow)",
+            "FastPAM",
+            "CLARA",
+            "CLARANS (fastest)"
+        ]
+    },
+    {
+        "q": "What is agglomerative clustering?",
+        "type": "mcq",
+        "o": [
+            "Bottom-up hierarchical clustering merging clusters iteratively",
+            "Aggregation method",
+            "Top-down clustering",
+            "Merge clustering"
+        ]
+    },
+    {
+        "q": "Agglomerative starts with _____ clusters containing single points.",
+        "type": "fill_blank",
+        "answers": [
+            "n"
+        ],
+        "other_options": [
+            "k",
+            "1",
+            "2"
+        ]
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "from sklearn.cluster import AgglomerativeClustering\nimport numpy as np\nX = np.random.rand(100, 2)\nagg = AgglomerativeClustering(n_clusters=5, linkage='complete')\nagg.fit(X)\nprint(len(set(agg.labels_)))",
+        "o": [
+            "5",
+            "100",
+            "2",
+            "1"
+        ]
+    },
+    {
+        "q": "Match the linkage with its distance calculation:",
+        "type": "match",
+        "left": [
+            "Single",
+            "Complete",
+            "Average",
+            "Ward"
+        ],
+        "right": [
+            "Min distance",
+            "Max distance",
+            "Mean distance",
+            "Variance increase"
+        ]
+    },
+    {
+        "q": "Complete linkage produces more compact clusters than single linkage.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "What is divisive clustering?",
+        "type": "mcq",
+        "o": [
+            "Top-down hierarchical clustering recursively splitting clusters",
+            "Division method",
+            "Bottom-up clustering",
+            "Split method"
+        ]
+    },
+    {
+        "q": "Divisive clustering starts with _____ cluster containing all points.",
+        "type": "fill_blank",
+        "answers": [
+            "one"
+        ],
+        "other_options": [
+            "n",
+            "k",
+            "two"
+        ]
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "# Divisive clustering concept\nalgorithms = ['DIANA', 'Bisecting K-means', 'Top-down K-means']\nprint(len(algorithms))",
+        "o": [
+            "3",
+            "4",
+            "2",
+            "5"
+        ]
+    },
+    {
+        "q": "Divisive clustering is computationally more expensive than agglomerative.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Rearrange hierarchical methods:",
+        "type": "rearrange",
+        "words": [
+            "Agglomerative (bottom-up)",
+            "Divisive (top-down)",
+            "BIRCH",
+            "Single-link"
+        ]
+    },
+    {
+        "q": "What is probabilistic PCA?",
+        "type": "mcq",
+        "o": [
+            "Probabilistic formulation of PCA with noise model",
+            "Probable analysis",
+            "Probability PCA",
+            "Prob-PCA"
+        ]
+    },
+    {
+        "q": "PPCA models data as linear transformation plus _____ noise.",
+        "type": "fill_blank",
+        "answers": [
+            "Gaussian"
+        ],
+        "other_options": [
+            "uniform",
+            "random",
+            "fixed"
+        ]
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "# PPCA components\ncomponents = ['latent_variables', 'loading_matrix', 'noise_variance', 'log_likelihood']\nprint(len(components))",
+        "o": [
+            "4",
+            "3",
+            "5",
+            "2"
+        ]
+    },
+    {
+        "q": "Match the decomposition with its noise model:",
+        "type": "match",
+        "left": [
             "PCA",
-            "Hierarchical"
+            "PPCA",
+            "Factor Analysis",
+            "ICA"
+        ],
+        "right": [
+            "None",
+            "Isotropic",
+            "Diagonal",
+            "Non-Gaussian"
         ]
     },
     {
-        "q": "In PCA, what are principal components?",
-        "c": null,
+        "q": "PPCA can handle missing data through EM algorithm.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "What is spectral embedding?",
+        "type": "mcq",
         "o": [
-            "New features created from original data",
-            "Clusters of data points",
-            "Outliers detected",
-            "Errors in the model"
+            "Embedding using eigenvectors of graph Laplacian",
+            "Spectrum analysis",
+            "Wave embedding",
+            "Light embedding"
         ]
     },
     {
-        "q": "Which of the following is a density-based clustering algorithm?",
-        "c": null,
-        "o": [
-            "DBSCAN",
-            "k-means",
-            "PCA",
-            "KNN"
+        "q": "Spectral embedding constructs _____ graph from data.",
+        "type": "fill_blank",
+        "answers": [
+            "affinity"
+        ],
+        "other_options": [
+            "distance",
+            "random",
+            "full"
         ]
     },
     {
-        "q": "Which method reduces the dimensions of data?",
-        "c": null,
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "from sklearn.manifold import SpectralEmbedding\nimport numpy as np\nX = np.random.rand(100, 10)\nse = SpectralEmbedding(n_components=2, affinity='nearest_neighbors')\nX_se = se.fit_transform(X)\nprint(X_se.shape)",
         "o": [
-            "PCA",
-            "k-means",
-            "DBSCAN",
-            "Hierarchical"
+            "(100, 2)",
+            "(100, 10)",
+            "(2, 100)",
+            "(10, 2)"
         ]
     },
     {
-        "q": "What does DBSCAN stand for?",
-        "c": null,
-        "o": [
-            "Density-Based Spatial Clustering of Applications with Noise",
-            "Data-Based Statistical Clustering Algorithm",
-            "Dimension-Based Spatial Clustering Analysis",
-            "Distance-Based Statistical Clustering Network"
+        "q": "Spectral embedding and spectral clustering share the same theory.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Rearrange spectral methods:",
+        "type": "rearrange",
+        "words": [
+            "Affinity Matrix",
+            "Graph Laplacian",
+            "Eigenvectors",
+            "K-Means on Embedding"
         ]
     },
     {
-        "q": "Which clustering algorithm can detect outliers?",
-        "c": null,
+        "q": "What is OPTICS reachability plot?",
+        "type": "mcq",
         "o": [
-            "DBSCAN",
-            "k-means",
-            "PCA",
-            "Hierarchical clustering"
+            "Visualization showing cluster structure through reachability distances",
+            "Optics display",
+            "Reach plot",
+            "Distance graph"
         ]
     },
     {
-        "q": "What is the main feature of DBSCAN?",
-        "c": null,
-        "o": [
-            "It can find clusters of different shapes",
-            "It always forms spherical clusters",
-            "It does not need labeled data",
-            "It uses centroids for clustering"
+        "q": "Valleys in reachability plot indicate _____ clusters.",
+        "type": "fill_blank",
+        "answers": [
+            "dense"
+        ],
+        "other_options": [
+            "sparse",
+            "random",
+            "large"
         ]
     },
     {
-        "q": "In k-means, how is each data point assigned to a cluster?",
-        "c": null,
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "from sklearn.cluster import OPTICS\nimport numpy as np\nX = np.random.rand(100, 2)\noptics = OPTICS(min_samples=5, max_eps=np.inf)\noptics.fit(X)\nprint(len(optics.reachability_))",
         "o": [
-            "Based on the closest centroid",
-            "Randomly",
-            "Based on density",
-            "Using principal components"
+            "100",
+            "5",
+            "2",
+            "1"
         ]
     },
     {
-        "q": "What is the main use of PCA in unsupervised learning?",
-        "c": null,
-        "o": [
-            "Reducing the number of features",
-            "Classifying data",
-            "Predicting labels",
-            "Grouping similar items"
+        "q": "Match the OPTICS output with its meaning:",
+        "type": "match",
+        "left": [
+            "reachability_",
+            "ordering_",
+            "core_distances_",
+            "predecessor_"
+        ],
+        "right": [
+            "Reachability distance",
+            "Cluster order",
+            "Core distance",
+            "Parent point"
         ]
     },
     {
-        "q": "Which method does not require the number of clusters to be predefined?",
-        "c": null,
+        "q": "High reachability values indicate noise or cluster boundaries.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "What is online learning for clustering?",
+        "type": "mcq",
         "o": [
-            "DBSCAN",
-            "k-means",
-            "PCA",
-            "Linear Regression"
+            "Updating cluster model incrementally as new data arrives",
+            "Internet learning",
+            "Web clustering",
+            "Online method"
         ]
     },
     {
-        "q": "What does the elbow method help determine in k-means?",
-        "c": null,
-        "o": [
-            "The optimal number of clusters",
-            "The distance between centroids",
-            "The type of clusters",
-            "The dimension of data"
+        "q": "Online clustering updates model without storing all _____.",
+        "type": "fill_blank",
+        "answers": [
+            "data"
+        ],
+        "other_options": [
+            "clusters",
+            "models",
+            "features"
         ]
     },
     {
-        "q": "Which of these is NOT an unsupervised learning algorithm?",
-        "c": null,
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "from sklearn.cluster import MiniBatchKMeans\nimport numpy as np\nX = np.random.rand(100, 2)\nkmeans = MiniBatchKMeans(n_clusters=3, batch_size=10)\nkmeans.partial_fit(X[:50])\nkmeans.partial_fit(X[50:])\nprint(len(kmeans.cluster_centers_))",
         "o": [
-            "Decision Tree",
-            "k-means",
-            "DBSCAN",
-            "PCA"
+            "3",
+            "100",
+            "2",
+            "50"
         ]
     },
     {
-        "q": "What is a dendrogram used for?",
-        "c": null,
-        "o": [
-            "Visualizing hierarchical clustering",
-            "Visualizing k-means results",
-            "Reducing data dimensions",
-            "Detecting outliers"
+        "q": "partial_fit allows incremental learning in sklearn.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Rearrange learning modes:",
+        "type": "rearrange",
+        "words": [
+            "Batch (all data)",
+            "Mini-batch",
+            "Online (one at time)",
+            "Streaming"
         ]
     },
     {
-        "q": "In DBSCAN, what are 'core points'?",
-        "c": null,
+        "q": "What is consensus clustering?",
+        "type": "mcq",
         "o": [
-            "Points that have enough neighboring points",
-            "Points far from the cluster",
-            "Points at the edge of a cluster",
-            "Centroids of the cluster"
+            "Combining multiple clustering results into robust final clustering",
+            "Agreement clustering",
+            "Consensus method",
+            "Common clustering"
         ]
     },
     {
-        "q": "Which clustering algorithm builds clusters by merging or splitting?",
-        "c": null,
-        "o": [
-            "Hierarchical",
-            "k-means",
-            "DBSCAN",
-            "PCA"
+        "q": "Consensus matrix stores pairwise _____ frequencies.",
+        "type": "fill_blank",
+        "answers": [
+            "co-occurrence"
+        ],
+        "other_options": [
+            "distance",
+            "similarity",
+            "cluster"
         ]
     },
     {
-        "q": "What is a limitation of k-means clustering?",
-        "c": null,
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "# Consensus clustering\nimport numpy as np\nn_runs = 100\nn_points = 50\nconsensus = np.zeros((n_points, n_points))\nprint(consensus.shape)",
         "o": [
-            "It requires the number of clusters in advance",
-            "It cannot detect noise",
-            "It is too slow for large data",
-            "It only works for 2D data"
+            "(50, 50)",
+            "(100, 50)",
+            "(50, 100)",
+            "(100, 100)"
         ]
     },
     {
-        "q": "Which clustering algorithm is best for detecting noise or outliers?",
-        "c": null,
-        "o": [
-            "DBSCAN",
-            "k-means",
-            "PCA",
-            "Hierarchical clustering"
+        "q": "Match the consensus method with its approach:",
+        "type": "match",
+        "left": [
+            "Co-association",
+            "Voting",
+            "Median partition",
+            "Graph-based"
+        ],
+        "right": [
+            "Pairwise matrix",
+            "Label agreement",
+            "Reference partition",
+            "Connected components"
         ]
     },
     {
-        "q": "What is a common distance metric used in k-means?",
-        "c": null,
+        "q": "Consensus clustering reduces sensitivity to initialization.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "What is cluster labeling in unsupervised learning?",
+        "type": "mcq",
         "o": [
-            "Euclidean distance",
-            "Cosine similarity",
-            "Jaccard distance",
-            "Manhattan distance"
+            "Assigning meaningful names or descriptions to discovered clusters",
+            "Label creation",
+            "Cluster naming",
+            "Auto-labeling"
         ]
     },
     {
-        "q": "What is the main purpose of unsupervised learning?",
-        "c": null,
-        "o": [
-            "Find patterns or groups in data",
-            "Predict future values",
-            "Classify labeled data",
-            "Perform regression analysis"
+        "q": "Cluster labeling identifies _____ features for each cluster.",
+        "type": "fill_blank",
+        "answers": [
+            "characteristic"
+        ],
+        "other_options": [
+            "random",
+            "all",
+            "few"
         ]
     },
     {
-        "q": "In PCA, what is reduced?",
-        "c": null,
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "# Feature importance per cluster\nimport numpy as np\ncluster_mean = np.array([0.9, 0.1, 0.5])\nglobal_mean = np.array([0.5, 0.5, 0.5])\nimportance = np.abs(cluster_mean - global_mean)\nprint(importance.argmax())",
         "o": [
-            "Number of features",
-            "Number of samples",
-            "Number of clusters",
-            "Number of labels"
-        ]
-    },
-    {
-        "q": "Which of these is a benefit of using PCA?",
-        "c": null,
-        "o": [
-            "Dimensionality reduction",
-            "Improved clustering",
-            "Reduced noise",
-            "Faster predictions"
-        ]
-    },
-    {
-        "q": "What is a common drawback of PCA?",
-        "c": null,
-        "o": [
-            "It can lose interpretability",
-            "It cannot handle large datasets",
-            "It requires labeled data",
-            "It forms clusters"
-        ]
-    },
-    {
-        "q": "Which method can handle non-linear data structures in clustering?",
-        "c": null,
-        "o": [
-            "DBSCAN",
-            "k-means",
-            "Hierarchical",
-            "PCA"
-        ]
-    },
-    {
-        "q": "What does clustering aim to find?",
-        "c": null,
-        "o": [
-            "Groups of similar data points",
-            "The correct labels",
-            "Outliers in the data",
-            "The number of features"
-        ]
-    },
-    {
-        "q": "Which algorithm works well with clusters of different shapes and sizes?",
-        "c": null,
-        "o": [
-            "DBSCAN",
-            "k-means",
-            "PCA",
-            "Linear Regression"
-        ]
-    },
-    {
-        "q": "In k-means, what is the stopping criteria for clustering?",
-        "c": null,
-        "o": [
-            "Centroids do not change",
-            "Clusters overlap",
-            "Too many clusters form",
-            "Clusters are circular"
-        ]
-    },
-    {
-        "q": "Which type of learning does clustering fall under?",
-        "c": null,
-        "o": [
-            "Unsupervised",
-            "Supervised",
-            "Semi-supervised",
-            "Reinforcement"
-        ]
-    },
-    {
-        "q": "Which clustering algorithm uses centroids to form clusters?",
-        "c": null,
-        "o": [
-            "k-means",
-            "DBSCAN",
-            "Agglomerative",
-            "PCA"
-        ]
-    },
-    {
-        "q": "Which of the following is true about hierarchical clustering?",
-        "c": null,
-        "o": [
-            "It does not require the number of clusters in advance",
-            "It requires the number of clusters in advance",
-            "It cannot be visualized",
-            "It only works for small datasets"
-        ]
-    },
-    {
-        "q": "What is the primary drawback of k-means clustering?",
-        "c": null,
-        "o": [
-            "Requires specifying k in advance",
-            "Cannot handle large datasets",
-            "Always results in spherical clusters",
-            "Sensitive to noise"
-        ]
-    },
-    {
-        "q": "Which type of clustering produces a dendrogram?",
-        "c": null,
-        "o": [
-            "Hierarchical",
-            "k-means",
-            "DBSCAN",
-            "Gaussian Mixture"
-        ]
-    },
-    {
-        "q": "What is the minimum number of clusters that can be formed in agglomerative clustering?",
-        "c": null,
-        "o": [
+            "0",
             "1",
             "2",
-            "k",
-            "Depends on the dataset"
+            "3"
         ]
     },
     {
-        "q": "In DBSCAN, what are points within a certain distance of a core point called?",
-        "c": null,
-        "o": [
-            "Border points",
-            "Noise points",
-            "Centroids",
-            "Outliers"
+        "q": "Cluster labels help interpret and communicate clustering results.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Rearrange cluster interpretation steps:",
+        "type": "rearrange",
+        "words": [
+            "Cluster Data",
+            "Analyze Features",
+            "Identify Patterns",
+            "Assign Labels"
         ]
     },
     {
-        "q": "Which algorithm is effective in detecting clusters of varying shapes and sizes?",
-        "c": null,
+        "q": "What is feature bagging in clustering?",
+        "type": "mcq",
         "o": [
-            "DBSCAN",
-            "k-means",
-            "Agglomerative",
-            "PCA"
+            "Creating diverse clusterings using random feature subsets",
+            "Feature selection",
+            "Bagging method",
+            "Feature bags"
         ]
     },
     {
-        "q": "Which unsupervised learning method reduces data dimensions while preserving variance?",
-        "c": null,
-        "o": [
-            "PCA",
-            "k-means",
-            "DBSCAN",
-            "Agglomerative clustering"
+        "q": "Feature bagging creates _____ by varying feature subsets.",
+        "type": "fill_blank",
+        "answers": [
+            "diversity"
+        ],
+        "other_options": [
+            "similarity",
+            "consistency",
+            "randomness"
         ]
     },
     {
-        "q": "Which of the following can handle non-spherical clusters?",
-        "c": null,
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "# Feature bagging concept\nimport numpy as np\nn_features = 10\nsubset_size = 5\nsubset = np.random.choice(n_features, subset_size, replace=False)\nprint(len(subset))",
         "o": [
-            "DBSCAN",
-            "k-means",
-            "Agglomerative",
-            "KNN"
+            "5",
+            "10",
+            "2",
+            "1"
         ]
     },
     {
-        "q": "Which metric is commonly used to measure similarity in clustering?",
-        "c": null,
-        "o": [
-            "Euclidean distance",
-            "Cosine similarity",
-            "Hamming distance",
-            "Manhattan distance"
+        "q": "Match the ensemble strategy with its variation:",
+        "type": "match",
+        "left": [
+            "Data bagging",
+            "Feature bagging",
+            "Algorithm diversity",
+            "Parameter diversity"
+        ],
+        "right": [
+            "Sample subsets",
+            "Feature subsets",
+            "Different methods",
+            "Different settings"
         ]
     },
     {
-        "q": "Which clustering technique does not require the number of clusters to be predefined?",
-        "c": null,
+        "q": "Feature bagging can improve clustering robustness.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "What is the Rand Index?",
+        "type": "mcq",
         "o": [
-            "DBSCAN",
-            "k-means",
-            "PCA",
-            "KNN"
+            "Metric measuring similarity between two clusterings",
+            "Random index",
+            "R index",
+            "Rand measure"
         ]
     },
     {
-        "q": "What is the role of eigenvectors in PCA?",
-        "c": null,
-        "o": [
-            "Define principal components",
-            "Define clusters",
-            "Reduce noise",
-            "Create centroids"
+        "q": "Rand Index counts pairs in _____ and disagreement.",
+        "type": "fill_blank",
+        "answers": [
+            "agreement"
+        ],
+        "other_options": [
+            "clusters",
+            "partitions",
+            "random"
         ]
     },
     {
-        "q": "Which of the following is NOT a feature of PCA?",
-        "c": null,
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "from sklearn.metrics import rand_score\nimport numpy as np\nlabels_true = np.array([0, 0, 1, 1, 2, 2])\nlabels_pred = np.array([0, 0, 1, 1, 2, 2])\nri = rand_score(labels_true, labels_pred)\nprint(ri)",
         "o": [
-            "Cluster creation",
-            "Dimensionality reduction",
-            "Variance preservation",
-            "Feature extraction"
+            "1.0",
+            "0.0",
+            "0.5",
+            "-1.0"
         ]
     },
     {
-        "q": "Which clustering algorithm is most sensitive to outliers?",
-        "c": null,
-        "o": [
-            "k-means",
-            "DBSCAN",
-            "Agglomerative",
-            "PCA"
+        "q": "Rand Index is not adjusted for chance.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Rearrange clustering similarity metrics:",
+        "type": "rearrange",
+        "words": [
+            "Rand Index",
+            "Adjusted Rand",
+            "Jaccard",
+            "Fowlkes-Mallows"
         ]
     },
     {
-        "q": "Which term describes the sum of squared distances between data points and centroids?",
-        "c": null,
+        "q": "What is homogeneity in clustering?",
+        "type": "mcq",
         "o": [
-            "Within-cluster sum of squares",
-            "Between-cluster sum of squares",
-            "Euclidean distance",
-            "Silhouette score"
+            "Measure ensuring each cluster contains only members of single class",
+            "Same clustering",
+            "Uniform method",
+            "Homogeneous measure"
         ]
     },
     {
-        "q": "In DBSCAN, what is the minimum number of points required to form a dense region?",
-        "c": null,
-        "o": [
-            "MinPts",
-            "Epsilon",
-            "Core distance",
-            "Cluster radius"
+        "q": "A cluster is homogeneous if all points share the same _____.",
+        "type": "fill_blank",
+        "answers": [
+            "class"
+        ],
+        "other_options": [
+            "cluster",
+            "feature",
+            "distance"
         ]
     },
     {
-        "q": "Which unsupervised learning method is primarily used for market basket analysis?",
-        "c": null,
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "from sklearn.metrics import homogeneity_score\nimport numpy as np\nlabels_true = np.array([0, 0, 1, 1, 2, 2])\nlabels_pred = np.array([0, 0, 0, 1, 1, 1])\nh = homogeneity_score(labels_true, labels_pred)\nprint(h < 1.0)",
         "o": [
-            "Apriori",
-            "PCA",
-            "DBSCAN",
-            "k-means"
+            "True",
+            "False",
+            "Error",
+            "None"
         ]
     },
     {
-        "q": "What does the epsilon parameter in DBSCAN represent?",
-        "c": null,
-        "o": [
-            "Maximum distance for neighborhood",
-            "Number of clusters",
-            "Minimum points for a core",
-            "Radius of clusters"
+        "q": "Match the metric with its focus:",
+        "type": "match",
+        "left": [
+            "Homogeneity",
+            "Completeness",
+            "V-measure",
+            "NMI"
+        ],
+        "right": [
+            "Cluster purity",
+            "Class coverage",
+            "Harmonic mean",
+            "Mutual information"
         ]
     },
     {
-        "q": "Which of the following is NOT a type of clustering algorithm?",
-        "c": null,
+        "q": "V-measure is harmonic mean of homogeneity and completeness.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "What is completeness in clustering?",
+        "type": "mcq",
         "o": [
-            "Linear Regression",
-            "Hierarchical",
-            "DBSCAN",
-            "k-means"
+            "Measure ensuring all members of given class are assigned to same cluster",
+            "Complete measure",
+            "Full clustering",
+            "Total metric"
         ]
     },
     {
-        "q": "Which algorithm divides data into a predefined number of clusters?",
-        "c": null,
-        "o": [
-            "k-means",
-            "DBSCAN",
-            "Hierarchical",
-            "PCA"
+        "q": "A clustering is complete if all class members are in _____ cluster.",
+        "type": "fill_blank",
+        "answers": [
+            "same"
+        ],
+        "other_options": [
+            "different",
+            "nearby",
+            "multiple"
         ]
     },
     {
-        "q": "Which algorithm is suitable for large datasets?",
-        "c": null,
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "from sklearn.metrics import completeness_score\nimport numpy as np\nlabels_true = np.array([0, 0, 1, 1, 2, 2])\nlabels_pred = np.array([0, 0, 1, 1, 2, 2])\nc = completeness_score(labels_true, labels_pred)\nprint(c)",
         "o": [
-            "k-means",
-            "Agglomerative",
-            "DBSCAN",
-            "PCA"
+            "1.0",
+            "0.0",
+            "0.5",
+            "-1.0"
         ]
     },
     {
-        "q": "Which method uses the 'elbow method' to find the optimal number of clusters?",
-        "c": null,
-        "o": [
-            "k-means",
-            "PCA",
-            "DBSCAN",
-            "Agglomerative clustering"
+        "q": "High completeness does not guarantee high homogeneity.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Rearrange from specific to general metrics:",
+        "type": "rearrange",
+        "words": [
+            "Homogeneity",
+            "Completeness",
+            "V-measure",
+            "NMI"
         ]
     },
     {
-        "q": "In PCA, which component explains the most variance in the data?",
-        "c": null,
+        "q": "What is Fowlkes-Mallows Index?",
+        "type": "mcq",
         "o": [
-            "First principal component",
-            "Second principal component",
-            "Noise component",
-            "Cluster centroid"
+            "Geometric mean of precision and recall for clustering pairs",
+            "FM index",
+            "Fowlkes measure",
+            "Mallows score"
         ]
     },
     {
-        "q": "Which of the following algorithms cannot handle overlapping clusters?",
-        "c": null,
-        "o": [
-            "k-means",
-            "DBSCAN",
-            "Hierarchical",
-            "PCA"
+        "q": "Fowlkes-Mallows is sqrt of _____ times recall.",
+        "type": "fill_blank",
+        "answers": [
+            "precision"
+        ],
+        "other_options": [
+            "F1",
+            "accuracy",
+            "specificity"
         ]
     },
     {
-        "q": "What does 'density-based' clustering mean?",
-        "c": null,
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "from sklearn.metrics import fowlkes_mallows_score\nimport numpy as np\nlabels_true = np.array([0, 0, 1, 1, 2, 2])\nlabels_pred = np.array([0, 0, 1, 1, 2, 2])\nfm = fowlkes_mallows_score(labels_true, labels_pred)\nprint(fm)",
         "o": [
-            "Clusters are formed based on regions of high data point density",
-            "Clusters are formed based on distance",
-            "Clusters are formed based on feature similarity",
-            "Clusters are formed using centroids"
+            "1.0",
+            "0.0",
+            "0.5",
+            "-1.0"
         ]
     },
     {
-        "q": "Which algorithm is used for anomaly detection in high-dimensional data?",
-        "c": null,
-        "o": [
-            "DBSCAN",
-            "k-means",
-            "Agglomerative",
-            "PCA"
+        "q": "Match the external metric with its range:",
+        "type": "match",
+        "left": [
+            "ARI",
+            "NMI",
+            "FM",
+            "Rand"
+        ],
+        "right": [
+            "[-1, 1]",
+            "[0, 1]",
+            "[0, 1]",
+            "[0, 1]"
         ]
     },
     {
-        "q": "Which of the following algorithms does not require distance measures?",
-        "c": null,
+        "q": "Fowlkes-Mallows of 1 indicates perfect agreement.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "What is pairwise distance matrix?",
+        "type": "mcq",
         "o": [
-            "Apriori",
-            "k-means",
-            "Hierarchical clustering",
-            "DBSCAN"
+            "Matrix containing distances between all pairs of data points",
+            "Distance pairs",
+            "Pair matrix",
+            "Distance array"
         ]
     },
     {
-        "q": "What kind of data representation is reduced by PCA?",
-        "c": null,
-        "o": [
-            "Dimensional",
-            "Clustered",
-            "Classified",
-            "Labeled"
+        "q": "Pairwise distance matrix is _____ (A[i,j] = A[j,i]).",
+        "type": "fill_blank",
+        "answers": [
+            "symmetric"
+        ],
+        "other_options": [
+            "asymmetric",
+            "diagonal",
+            "sparse"
         ]
     },
     {
-        "q": "What does 'agglomerative' refer to in hierarchical clustering?",
-        "c": null,
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "from sklearn.metrics import pairwise_distances\nimport numpy as np\nX = np.random.rand(50, 3)\ndist = pairwise_distances(X)\nprint(dist.shape)",
         "o": [
-            "Bottom-up merging of clusters",
-            "Top-down splitting of clusters",
-            "Density-based separation",
-            "Centroid-based partitioning"
+            "(50, 50)",
+            "(50, 3)",
+            "(3, 50)",
+            "(3, 3)"
         ]
     },
     {
-        "q": "What type of algorithm is k-means clustering?",
-        "c": null,
-        "o": [
-            "Partitioning",
-            "Density-based",
-            "Hierarchical",
-            "Association"
+        "q": "Diagonal of distance matrix contains zeros (distance to self).",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Rearrange distance computations by complexity:",
+        "type": "rearrange",
+        "words": [
+            "Manhattan (fast)",
+            "Euclidean",
+            "Cosine",
+            "Dynamic Time Warping (slow)"
         ]
     },
     {
-        "q": "Which of the following is a hierarchical clustering algorithm?",
-        "c": null,
+        "q": "What is cosine distance?",
+        "type": "mcq",
         "o": [
-            "Agglomerative",
-            "k-means",
-            "DBSCAN",
-            "Apriori"
+            "Distance based on angle between vectors rather than magnitude",
+            "Angle distance",
+            "Cosine metric",
+            "Vector angle"
         ]
     },
     {
-        "q": "Which algorithm identifies clusters based on density?",
-        "c": null,
-        "o": [
-            "DBSCAN",
-            "k-means",
-            "Hierarchical",
-            "PCA"
+        "q": "Cosine distance equals 1 minus cosine _____.",
+        "type": "fill_blank",
+        "answers": [
+            "similarity"
+        ],
+        "other_options": [
+            "distance",
+            "angle",
+            "value"
         ]
     },
     {
-        "q": "What is the main goal of Principal Component Analysis (PCA)?",
-        "c": null,
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "from sklearn.metrics.pairwise import cosine_distances\nimport numpy as np\na = np.array([[1, 0]])\nb = np.array([[1, 0]])\nd = cosine_distances(a, b)\nprint(round(d[0,0], 2))",
         "o": [
-            "Dimensionality reduction",
-            "Clustering",
-            "Regression",
-            "Classification"
+            "0.0",
+            "1.0",
+            "0.5",
+            "-1.0"
         ]
     },
     {
-        "q": "In k-means, the value of k refers to the number of:",
-        "c": null,
-        "o": [
-            "Clusters",
-            "Features",
-            "Samples",
-            "Centroids"
+        "q": "Match the distance with its best use case:",
+        "type": "match",
+        "left": [
+            "Euclidean",
+            "Manhattan",
+            "Cosine",
+            "Jaccard"
+        ],
+        "right": [
+            "Continuous data",
+            "Grid-like",
+            "Text/orientation",
+            "Sets/binary"
         ]
     },
     {
-        "q": "Which of the following is true about DBSCAN?",
-        "c": null,
+        "q": "Cosine distance is useful when magnitude should be ignored.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "What is embedding clustering?",
+        "type": "mcq",
         "o": [
-            "It can detect noise points",
-            "It always requires specifying k",
-            "It does not handle outliers",
-            "It only works with small datasets"
+            "Clustering data in learned embedding space",
+            "Embed method",
+            "Space clustering",
+            "Vector clustering"
         ]
     },
     {
-        "q": "Which method reduces the number of features while preserving the data's variance?",
-        "c": null,
-        "o": [
-            "PCA",
-            "k-means",
-            "DBSCAN",
-            "Hierarchical clustering"
+        "q": "Embedding clustering often works better on _____ representations.",
+        "type": "fill_blank",
+        "answers": [
+            "learned"
+        ],
+        "other_options": [
+            "raw",
+            "original",
+            "fixed"
         ]
     },
     {
-        "q": "What is the term for points that do not belong to any cluster in DBSCAN?",
-        "c": null,
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "# Embedding then clustering pipeline\nfrom sklearn.decomposition import PCA\nfrom sklearn.cluster import KMeans\nimport numpy as np\nX = np.random.rand(100, 50)\nX_pca = PCA(n_components=10).fit_transform(X)\nkmeans = KMeans(n_clusters=5).fit(X_pca)\nprint(len(set(kmeans.labels_)))",
         "o": [
-            "Noise",
-            "Centroids",
-            "Outliers",
-            "Core points"
+            "5",
+            "100",
+            "10",
+            "50"
         ]
     },
     {
-        "q": "In hierarchical clustering, what is the process of merging clusters called?",
-        "c": null,
-        "o": [
-            "Agglomeration",
-            "Segmentation",
-            "Splitting",
-            "Association"
+        "q": "Dimensionality reduction before clustering can improve results.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Rearrange embedding-based clustering:",
+        "type": "rearrange",
+        "words": [
+            "Raw Data",
+            "Learn Embedding",
+            "Reduce Dimensions",
+            "Cluster"
         ]
     },
     {
-        "q": "Which of the following is NOT an unsupervised learning algorithm?",
-        "c": null,
+        "q": "What is the silhouette plot?",
+        "type": "mcq",
         "o": [
-            "Decision Tree",
-            "k-means",
-            "DBSCAN",
-            "PCA"
+            "Visualization showing silhouette coefficient for each sample",
+            "Shadow plot",
+            "Outline graph",
+            "Silhouette chart"
         ]
+    },
+    {
+        "q": "Silhouette plot helps identify _____ clustered samples.",
+        "type": "fill_blank",
+        "answers": [
+            "poorly"
+        ],
+        "other_options": [
+            "well",
+            "randomly",
+            "highly"
+        ]
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "from sklearn.metrics import silhouette_samples\nimport numpy as np\nX = np.random.rand(100, 2)\nlabels = np.random.randint(0, 3, 100)\nsamples = silhouette_samples(X, labels)\nprint(len(samples))",
+        "o": [
+            "100",
+            "3",
+            "2",
+            "1"
+        ]
+    },
+    {
+        "q": "Match the silhouette value with its interpretation:",
+        "type": "match",
+        "left": [
+            "-1",
+            "0",
+            "0.5",
+            "1"
+        ],
+        "right": [
+            "Wrong cluster",
+            "Boundary",
+            "Good assignment",
+            "Perfect"
+        ]
+    },
+    {
+        "q": "Negative silhouette samples may be misclustered.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "What is cluster compactness?",
+        "type": "mcq",
+        "o": [
+            "Measure of how tightly grouped points are within a cluster",
+            "Compact method",
+            "Dense measure",
+            "Tight clustering"
+        ]
+    },
+    {
+        "q": "Low within-cluster variance indicates _____ compactness.",
+        "type": "fill_blank",
+        "answers": [
+            "high"
+        ],
+        "other_options": [
+            "low",
+            "medium",
+            "variable"
+        ]
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "import numpy as np\ncluster = np.random.rand(50, 2) * 0.1 + 5\ncentroid = cluster.mean(axis=0)\ncompactness = np.sum((cluster - centroid)**2)\nprint(compactness > 0)",
+        "o": [
+            "True",
+            "False",
+            "Error",
+            "None"
+        ]
+    },
+    {
+        "q": "Cluster compactness is related to within-cluster sum of squares.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Rearrange cluster quality measures:",
+        "type": "rearrange",
+        "words": [
+            "Compactness (internal)",
+            "Separation (between)",
+            "Silhouette (both)",
+            "Stability"
+        ]
+    },
+    {
+        "q": "What is cluster separation?",
+        "type": "mcq",
+        "o": [
+            "Measure of how distinct clusters are from each other",
+            "Separate method",
+            "Distinct measure",
+            "Distance clustering"
+        ]
+    },
+    {
+        "q": "High between-cluster distance indicates good _____.",
+        "type": "fill_blank",
+        "answers": [
+            "separation"
+        ],
+        "other_options": [
+            "compactness",
+            "overlap",
+            "mixing"
+        ]
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "import numpy as np\ncentroid1 = np.array([0, 0])\ncentroid2 = np.array([10, 10])\nseparation = np.linalg.norm(centroid1 - centroid2)\nprint(round(separation, 2))",
+        "o": [
+            "14.14",
+            "10.0",
+            "20.0",
+            "5.0"
+        ]
+    },
+    {
+        "q": "Match the quality aspect with its focus:",
+        "type": "match",
+        "left": [
+            "Compactness",
+            "Separation",
+            "Dunn Index",
+            "DB Index"
+        ],
+        "right": [
+            "Within-cluster",
+            "Between-cluster",
+            "Ratio",
+            "Similarity"
+        ]
+    },
+    {
+        "q": "Good clustering has high separation and high compactness.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "What is transfer clustering?",
+        "type": "mcq",
+        "o": [
+            "Applying clustering model trained on one domain to another",
+            "Transfer method",
+            "Domain clustering",
+            "Moving clusters"
+        ]
+    },
+    {
+        "q": "Transfer clustering uses knowledge from _____ domain.",
+        "type": "fill_blank",
+        "answers": [
+            "source"
+        ],
+        "other_options": [
+            "target",
+            "new",
+            "random"
+        ]
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "# Transfer clustering concept\nfrom sklearn.cluster import KMeans\nimport numpy as np\nX_source = np.random.rand(100, 5)\nkmeans = KMeans(n_clusters=3).fit(X_source)\nX_target = np.random.rand(50, 5)\nlabels_target = kmeans.predict(X_target)\nprint(len(labels_target))",
+        "o": [
+            "50",
+            "100",
+            "3",
+            "5"
+        ]
+    },
+    {
+        "q": "Transfer clustering assumes source and target share structure.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Rearrange transfer learning types:",
+        "type": "rearrange",
+        "words": [
+            "Same Domain",
+            "Similar Domains",
+            "Domain Adaptation",
+            "Cross-Domain"
+        ]
+    },
+    {
+        "q": "What is active clustering?",
+        "type": "mcq",
+        "o": [
+            "Clustering with human feedback to improve results",
+            "Active method",
+            "Dynamic clustering",
+            "Interactive method"
+        ]
+    },
+    {
+        "q": "Active clustering queries human for _____ constraints.",
+        "type": "fill_blank",
+        "answers": [
+            "pairwise"
+        ],
+        "other_options": [
+            "cluster",
+            "feature",
+            "label"
+        ]
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "# Active clustering query\nimport numpy as np\nnp.random.seed(42)\npair = (10, 25)\nmust_link = True\nprint(f'Points {pair}: must_link={must_link}')",
+        "o": [
+            "Points (10, 25): must_link=True",
+            "10, 25, True",
+            "must_link",
+            "Error"
+        ]
+    },
+    {
+        "q": "Match the feedback type with its constraint:",
+        "type": "match",
+        "left": [
+            "Must-link",
+            "Cannot-link",
+            "Cluster label",
+            "Prototype"
+        ],
+        "right": [
+            "Same cluster",
+            "Different",
+            "Class assignment",
+            "Representative"
+        ]
+    },
+    {
+        "q": "Active clustering reduces annotation effort compared to full labeling.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "What is agglomerative information bottleneck?",
+        "type": "mcq",
+        "o": [
+            "Hierarchical clustering preserving relevant information",
+            "Information clustering",
+            "Bottleneck method",
+            "Agglom info"
+        ]
+    },
+    {
+        "q": "Information bottleneck clusters to preserve mutual _____ with target.",
+        "type": "fill_blank",
+        "answers": [
+            "information"
+        ],
+        "other_options": [
+            "distance",
+            "entropy",
+            "variance"
+        ]
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "# Information theory in clustering\nimport numpy as np\nentropy = -np.sum([0.5, 0.5] * np.log2([0.5, 0.5]))\nprint(entropy)",
+        "o": [
+            "1.0",
+            "0.0",
+            "0.5",
+            "2.0"
+        ]
+    },
+    {
+        "q": "Information bottleneck balances compression and relevance.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Rearrange clustering by information theory foundation:",
+        "type": "rearrange",
+        "words": [
+            "K-Means (distance)",
+            "GMM (likelihood)",
+            "Info Bottleneck (MI)",
+            "Rate Distortion"
+        ]
+    },
+    {
+        "q": "What is scalable clustering?",
+        "type": "mcq",
+        "o": [
+            "Clustering algorithms designed for large datasets",
+            "Scale method",
+            "Big clustering",
+            "Large method"
+        ]
+    },
+    {
+        "q": "Scalable clustering often uses _____ or approximation techniques.",
+        "type": "fill_blank",
+        "answers": [
+            "sampling"
+        ],
+        "other_options": [
+            "full",
+            "exact",
+            "complete"
+        ]
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "# Scalable K-Means\nfrom sklearn.cluster import MiniBatchKMeans\nimport numpy as np\nX = np.random.rand(10000, 10)\nkmeans = MiniBatchKMeans(n_clusters=50, batch_size=1000)\nkmeans.fit(X)\nprint(len(kmeans.cluster_centers_))",
+        "o": [
+            "50",
+            "10000",
+            "10",
+            "1000"
+        ]
+    },
+    {
+        "q": "Match the algorithm with its scalability approach:",
+        "type": "match",
+        "left": [
+            "BIRCH",
+            "Mini-Batch K-Means",
+            "CURE",
+            "STREAM"
+        ],
+        "right": [
+            "CF tree",
+            "Batching",
+            "Sampling",
+            "Streaming"
+        ]
+    },
+    {
+        "q": "Mini-Batch K-Means is faster than standard K-Means on large data.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "What is distributed clustering?",
+        "type": "mcq",
+        "o": [
+            "Clustering data across multiple machines or nodes",
+            "Spread clustering",
+            "Network method",
+            "Parallel only"
+        ]
+    },
+    {
+        "q": "Distributed clustering partitions data across multiple _____.",
+        "type": "fill_blank",
+        "answers": [
+            "nodes"
+        ],
+        "other_options": [
+            "clusters",
+            "features",
+            "samples"
+        ]
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "# Distributed concept\nnodes = 4\ndata_size = 1000000\ndata_per_node = data_size // nodes\nprint(data_per_node)",
+        "o": [
+            "250000",
+            "1000000",
+            "4",
+            "4000000"
+        ]
+    },
+    {
+        "q": "MapReduce K-Means is a distributed clustering approach.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Rearrange clustering by computational model:",
+        "type": "rearrange",
+        "words": [
+            "Sequential",
+            "Parallel",
+            "Distributed",
+            "GPU-accelerated"
+        ]
+    },
+    {
+        "q": "What is approximate nearest neighbors in clustering?",
+        "type": "mcq",
+        "o": [
+            "Fast neighbor search trading exactness for speed",
+            "Approximate method",
+            "Near search",
+            "ANN clustering"
+        ]
+    },
+    {
+        "q": "ANN speeds up clustering by using _____ data structures.",
+        "type": "fill_blank",
+        "answers": [
+            "index"
+        ],
+        "other_options": [
+            "array",
+            "list",
+            "tree"
+        ]
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "# ANN libraries\nlibraries = ['Annoy', 'FAISS', 'ScaNN', 'NMSLIB']\nprint(len(libraries))",
+        "o": [
+            "4",
+            "3",
+            "5",
+            "2"
+        ]
+    },
+    {
+        "q": "Match the ANN method with its approach:",
+        "type": "match",
+        "left": [
+            "LSH",
+            "KD-Tree",
+            "HNSW",
+            "Product Quantization"
+        ],
+        "right": [
+            "Hashing",
+            "Space partition",
+            "Graph",
+            "Compression"
+        ]
+    },
+    {
+        "q": "FAISS is a popular library for approximate nearest neighbors.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "What is CURE clustering algorithm?",
+        "type": "mcq",
+        "o": [
+            "Clustering Using Representatives with shrunk representative points",
+            "Cure method",
+            "Healing clustering",
+            "Cure algorithm"
+        ]
+    },
+    {
+        "q": "CURE uses multiple _____ points per cluster.",
+        "type": "fill_blank",
+        "answers": [
+            "representative"
+        ],
+        "other_options": [
+            "centroid",
+            "medoid",
+            "random"
+        ]
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "# CURE shrinking\nshrink_factor = 0.5\nrepresentatives = 10\nprint(f'CURE: {representatives} reps, {shrink_factor} shrink')",
+        "o": [
+            "CURE: 10 reps, 0.5 shrink",
+            "10",
+            "0.5",
+            "Error"
+        ]
+    },
+    {
+        "q": "Match the algorithm with its representative strategy:",
+        "type": "match",
+        "left": [
+            "K-Means",
+            "K-Medoids",
+            "CURE",
+            "BIRCH"
+        ],
+        "right": [
+            "Centroid",
+            "Medoid",
+            "Multiple scattered",
+            "CF tree"
+        ]
+    },
+    {
+        "q": "CURE can identify non-spherical clusters.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "What is CHAMELEON clustering?",
+        "type": "mcq",
+        "o": [
+            "Hierarchical clustering using dynamic modeling of cluster similarity",
+            "Chameleon method",
+            "Color clustering",
+            "Adaptive color"
+        ]
+    },
+    {
+        "q": "CHAMELEON considers both _____ and closeness.",
+        "type": "fill_blank",
+        "answers": [
+            "interconnectivity"
+        ],
+        "other_options": [
+            "distance",
+            "density",
+            "size"
+        ]
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "# CHAMELEON phases\nphases = ['graph_partition', 'agglomerative_merge']\nprint(len(phases))",
+        "o": [
+            "2",
+            "1",
+            "3",
+            "4"
+        ]
+    },
+    {
+        "q": "CHAMELEON can find clusters of varying shapes and sizes.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Rearrange hierarchical algorithms by complexity:",
+        "type": "rearrange",
+        "words": [
+            "Single-link (simple)",
+            "Complete-link",
+            "BIRCH",
+            "CHAMELEON (complex)"
+        ]
+    },
+    {
+        "q": "What is incremental PCA?",
+        "type": "mcq",
+        "o": [
+            "PCA that processes data in batches for large datasets",
+            "Growing PCA",
+            "Increment method",
+            "Batch PCA"
+        ]
+    },
+    {
+        "q": "Incremental PCA does not require all data in _____.",
+        "type": "fill_blank",
+        "answers": [
+            "memory"
+        ],
+        "other_options": [
+            "disk",
+            "cache",
+            "storage"
+        ]
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "from sklearn.decomposition import IncrementalPCA\nimport numpy as np\nipca = IncrementalPCA(n_components=5, batch_size=100)\nfor batch in np.array_split(np.random.rand(500, 20), 5):\n    ipca.partial_fit(batch)\nprint(len(ipca.components_))",
+        "o": [
+            "5",
+            "20",
+            "100",
+            "500"
+        ]
+    },
+    {
+        "q": "Match the PCA variant with its advantage:",
+        "type": "match",
+        "left": [
+            "Standard PCA",
+            "Incremental PCA",
+            "Sparse PCA",
+            "Kernel PCA"
+        ],
+        "right": [
+            "Fast batch",
+            "Large data",
+            "Interpretable",
+            "Non-linear"
+        ]
+    },
+    {
+        "q": "Incremental PCA is useful for out-of-core computation.",
+        "type": "true_false",
+        "correct": "True"
     }
 ]

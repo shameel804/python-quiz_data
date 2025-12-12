@@ -1,682 +1,4824 @@
 [
     {
-        "q": "What is the full form of NLP in Machine Learning?",
-        "c": null, 
+        "q": "What does NLP stand for?",
+        "type": "mcq",
         "o": [
             "Natural Language Processing",
-            "Natural Logic Programming",
             "Neural Language Programming",
-            "Natural Latent Parsing"
-        ]
+            "Network Language Protocol",
+            "Numerical Language Processing"
+        ],
+        "correct": "Natural Language Processing"
     },
     {
-        "q": "Which NLP technique is used to extract the root form of words?",
-        "c": null, 
+        "q": "NLP enables computers to understand human _____.",
+        "type": "fill_blank",
+        "correct": "language"
+    },
+    {
+        "q": "NLP is a subfield of artificial intelligence.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "What is text preprocessing?",
+        "type": "mcq",
         "o": [
-            "Lemmatization",
-            "Stemming",
+            "Cleaning and preparing text data for analysis",
+            "Writing text documents",
+            "Storing text files",
+            "Printing text output"
+        ],
+        "correct": "Cleaning and preparing text data for analysis"
+    },
+    {
+        "q": "Text preprocessing is the _____ step in NLP pipelines.",
+        "type": "fill_blank",
+        "correct": "first"
+    },
+    {
+        "q": "Raw text data often needs cleaning before analysis.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "What is tokenization?",
+        "type": "mcq",
+        "o": [
+            "Splitting text into smaller units like words",
+            "Encrypting text",
+            "Translating text",
+            "Compressing text"
+        ],
+        "correct": "Splitting text into smaller units like words"
+    },
+    {
+        "q": "Tokenization breaks text into _____.",
+        "type": "fill_blank",
+        "correct": "tokens"
+    },
+    {
+        "q": "A token can be a word, subword, or character.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "What is lowercasing in text preprocessing?",
+        "type": "mcq",
+        "o": [
+            "Converting all text to lowercase letters",
+            "Making text smaller",
+            "Removing capital letters",
+            "Changing font"
+        ],
+        "correct": "Converting all text to lowercase letters"
+    },
+    {
+        "q": "Lowercasing helps treat 'Apple' and 'apple' as the _____ word.",
+        "type": "fill_blank",
+        "correct": "same"
+    },
+    {
+        "q": "Lowercasing can help reduce vocabulary size.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Match the preprocessing step with its purpose:",
+        "type": "match",
+        "left": [
             "Tokenization",
-            "POS Tagging"
-        ]
-    },
-    {
-        "q": "What is the purpose of tokenization in NLP?",
-        "c": null, 
-        "o": [
-            "Splitting text into smaller units",
-            "Classifying text into categories",
-            "Reducing words to their root forms",
-            "Counting the number of words"
-        ]
-    },
-    {
-        "q": "Which of the following is a common approach for sentiment analysis?",
-        "c": null, 
-        "o": [
-            "Lexicon-based",
-            "Dependency parsing",
-            "Named entity recognition",
-            "Bag of words"
-        ]
-    },
-    {
-        "q": "Which algorithm is commonly used for topic modeling in NLP?",
-        "c": null, 
-        "o": [
-            "LDA",
-            "Naive Bayes",
-            "SVM",
-            "KNN"
-        ]
-    },
-    {
-        "q": "What does 'TF' stand for in TF-IDF?",
-        "c": null, 
-        "o": [
-            "Term Frequency",
-            "Total Frequency",
-            "Text Format",
-            "Term Formula"
-        ]
-    },
-    {
-        "q": "Which NLP task involves assigning syntactic categories like noun or verb to words?",
-        "c": null, 
-        "o": [
-            "POS Tagging",
-            "Dependency Parsing",
-            "Lemmatization",
-            "Tokenization"
-        ]
-    },
-    {
-        "q": "In NLP, which method converts words into vector representations?",
-        "c": null, 
-        "o": [
-            "Word Embedding",
-            "Tokenization",
-            "Named Entity Recognition",
-            "Stemming"
-        ]
-    },
-    {
-        "q": "What is the role of stop words in NLP?",
-        "c": null, 
-        "o": [
-            "Words that are removed from text",
-            "Words that are analyzed for sentiment",
-            "Words that determine syntax",
-            "Words that indicate polarity"
-        ]
-    },
-    {
-        "q": "Which model is commonly used in NLP for machine translation?",
-        "c": null, 
-        "o": [
-            "Seq2Seq",
-            "BERT",
-            "RNN",
-            "Word2Vec"
-        ]
-    },
-    {
-        "q": "What is the process of breaking down text into words or smaller units in NLP?",
-        "c": null, 
-        "o": [
-            "Tokenization",
-            "Lemmatization",
-            "Stemming",
-            "Parsing"
-        ]
-    },
-    {
-        "q": "Which technique is used to reduce words to their root form in NLP?",
-        "c": null, 
-        "o": [
-            "Stemming",
-            "Tokenization",
-            "POS Tagging",
-            "Parsing"
-        ]
-    },
-    {
-        "q": "Which is an unsupervised machine learning method for extracting topics from a collection of documents?",
-        "c": null, 
-        "o": [
-            "LDA",
-            "Naive Bayes",
-            "BERT",
-            "SVM"
-        ]
-    },
-    {
-        "q": "What is the common use of Named Entity Recognition (NER) in NLP?",
-        "c": null, 
-        "o": [
-            "Identify entities such as people, organizations, and locations",
-            "Assign part of speech to words",
-            "Classify the sentiment of a sentence",
-            "Remove stop words from a document"
-        ]
-    },
-    {
-        "q": "Which approach is commonly used for sentiment analysis?",
-        "c": null, 
-        "o": [
-            "Lexicon-based",
-            "LDA",
-            "NER",
-            "Stemming"
-        ]
-    },
-    {
-        "q": "Which technique assigns syntactic roles such as noun, verb, or adjective to words?",
-        "c": null, 
-        "o": [
-            "POS Tagging",
-            "Tokenization",
-            "Stemming",
-            "NER"
-        ]
-    },
-    {
-        "q": "What does the 'IDF' in TF-IDF stand for?",
-        "c": null, 
-        "o": [
-            "Inverse Document Frequency",
-            "Information Document Frequency",
-            "Inverse Data Function",
-            "Indexed Document Factor"
-        ]
-    },
-    {
-        "q": "Which model is commonly used for generating word embeddings in NLP?",
-        "c": null, 
-        "o": [
-            "Word2Vec",
-            "Seq2Seq",
-            "SVM",
-            "Naive Bayes"
-        ]
-    },
-    {
-        "q": "Which algorithm is widely used for machine translation?",
-        "c": null, 
-        "o": [
-            "Seq2Seq",
-            "Naive Bayes",
-            "Word2Vec",
-            "TF-IDF"
-        ]
-    },
-    {
-        "q": "Which pre-trained model is often used for transfer learning in NLP tasks?",
-        "c": null, 
-        "o": [
-            "BERT",
-            "LDA",
-            "SVM",
-            "Naive Bayes"
-        ]
-    },
-    {
-        "q": "What is the process of converting text into numerical features for NLP?",
-        "c": null, 
-        "o": [
-            "Text Vectorization",
-            "Parsing",
-            "Stemming",
-            "POS Tagging"
-        ]
-    },
-    {
-        "q": "Which of the following are considered stop words in NLP?",
-        "c": null, 
-        "o": [
-            "Words like 'the', 'is', 'and'",
-            "Words like 'important', 'quick'",
-            "Words like 'person', 'place'",
-            "Words like 'programming', 'technology'"
-        ]
-    },
-    {
-        "q": "Which NLP task involves identifying the grammatical structure of a sentence?",
-        "c": null, 
-        "o": [
-            "Parsing",
-            "Tokenization",
-            "POS Tagging",
-            "Stemming"
-        ]
-    },
-    {
-        "q": "Which model architecture is widely used for text generation?",
-        "c": null, 
-        "o": [
-            "Transformer",
-            "Naive Bayes",
-            "SVM",
-            "Word2Vec"
-        ]
-    },
-    {
-        "q": "In word embeddings, which model is trained to predict a word based on its context?",
-        "c": null, 
-        "o": [
-            "Skip-gram",
-            "CBOW",
-            "BERT",
-            "TF-IDF"
-        ]
-    },
-    {
-        "q": "Which of the following methods is used to group similar documents?",
-        "c": null, 
-        "o": [
-            "Clustering",
-            "Sentiment Analysis",
-            "Tokenization",
-            "POS Tagging"
-        ]
-    },
-    {
-        "q": "What is the task of classifying text into predefined categories?",
-        "c": null, 
-        "o": [
-            "Text Classification",
-            "Named Entity Recognition",
-            "Dependency Parsing",
-            "POS Tagging"
-        ]
-    },
-    {
-        "q": "Which metric measures how often a term appears in a document?",
-        "c": null, 
-        "o": [
-            "Term Frequency",
-            "IDF",
-            "Sentiment Score",
-            "Word Count"
-        ]
-    },
-    {
-        "q": "What is the process of automatically identifying the language of a given text?",
-        "c": null, 
-        "o": [
-            "Language Detection",
-            "Stemming",
-            "Lemmatization",
-            "Parsing"
-        ]
-    },
-    {
-        "q": "Which technique in NLP is used for identifying relationships between words in a sentence?",
-        "c": null, 
-        "o": [
-            "Dependency Parsing",
-            "Word Embedding",
-            "POS Tagging",
-            "Tokenization"
-        ]
-    },
-    {
-        "q": "Which NLP task is commonly used to determine whether a text is positive, negative, or neutral?",
-        "c": null, 
-        "o": [
-            "Sentiment Analysis",
-            "Topic Modeling",
-            "POS Tagging",
-            "Dependency Parsing"
-        ]
-    },
-    {
-        "q": "Which word embedding technique uses the context of surrounding words to predict a target word?",
-        "c": null, 
-        "o": [
-            "CBOW",
-            "TF-IDF",
-            "BERT",
-            "LDA"
-        ]
-    },
-    {
-        "q": "Which method identifies named entities like 'Person', 'Location', or 'Organization' in text?",
-        "c": null, 
-        "o": [
-            "NER",
-            "POS Tagging",
-            "Parsing",
-            "Text Classification"
-        ]
-    },
-    {
-        "q": "What does 'TF' stand for in TF-IDF?",
-        "c": null, 
-        "o": [
-            "Term Frequency",
-            "Total Frequency",
-            "Token Frequency",
-            "Text Factor"
-        ]
-    },
-    {
-        "q": "Which of the following is a sequence-to-sequence model used in NLP?",
-        "c": null, 
-        "o": [
-            "Seq2Seq",
-            "Word2Vec",
-            "Naive Bayes",
-            "SVM"
-        ]
-    },
-    {
-        "q": "Which model is known for its effectiveness in language understanding tasks?",
-        "c": null, 
-        "o": [
-            "BERT",
-            "Naive Bayes",
-            "LDA",
-            "CBOW"
-        ]
-    },
-    {
-        "q": "Which task involves converting speech into text?",
-        "c": null, 
-        "o": [
-            "Speech Recognition",
-            "Text Classification",
-            "Named Entity Recognition",
-            "Dependency Parsing"
-        ]
-    },
-    {
-        "q": "Which method is used for summarizing text?",
-        "c": null, 
-        "o": [
-            "Text Summarization",
-            "Sentiment Analysis",
-            "Tokenization",
-            "POS Tagging"
-        ]
-    },
-    {
-        "q": "Which technique is used to measure the similarity between two texts?",
-        "c": null, 
-        "o": [
-            "Cosine Similarity",
-            "Lemmatization",
-            "Tokenization",
-            "POS Tagging"
-        ]
-    },
-    {
-        "q": "Which type of neural network is commonly used in NLP tasks?",
-        "c": null, 
-        "o": [
-            "RNN",
-            "CNN",
-            "SVM",
-            "KNN"
-        ]
-    },
-    {
-        "q": "What does the term 'corpus' refer to in NLP?",
-        "c": null, 
-        "o": [
-            "A large collection of texts",
-            "A type of model",
-            "A programming language",
-            "A specific algorithm"
-        ]
-    },
-    {
-        "q": "What is 'Word2Vec' primarily used for?",
-        "c": null, 
-        "o": [
-            "Creating word embeddings",
-            "Text classification",
-            "Sentiment analysis",
-            "Named entity recognition"
-        ]
-    },
-    {
-        "q": "What technique is used to assess the quality of a machine translation system?",
-        "c": null, 
-        "o": [
-            "BLEU score",
-            "TF-IDF",
-            "LDA",
-            "POS Tagging"
-        ]
-    },
-    {
-        "q": "Which model is designed to understand the context of a word in a sentence?",
-        "c": null, 
-        "o": [
-            "BERT",
-            "Naive Bayes",
-            "LDA",
-            "Word2Vec"
-        ]
-    },
-    {
-        "q": "What is a common use case for chatbots in NLP?",
-        "c": null, 
-        "o": [
-            "Conversational agents",
-            "Text summarization",
-            "Data cleaning",
-            "Speech recognition"
-        ]
-    },
-    {
-        "q": "Which of the following represents a type of language model?",
-        "c": null, 
-        "o": [
-            "n-gram model",
-            "K-means clustering",
-            "Linear regression",
-            "Support vector machine"
-        ]
-    },
-    {
-        "q": "What does the term 'embedding' refer to in NLP?",
-        "c": null, 
-        "o": [
-            "Mapping words to vectors",
-            "Creating n-grams",
-            "Identifying parts of speech",
-            "Performing sentiment analysis"
-        ]
-    },
-    {
-        "q": "What does 'SOTA' stand for in the context of NLP?",
-        "c": null, 
-        "o": [
-            "State of the Art",
-            "Standard Output and Text Analysis",
-            "Syntactic Operations and Textual Analysis",
-            "Structured Output and Tokenization Algorithm"
-        ]
-    },
-    {
-        "q": "What is the main goal of summarization in NLP?",
-        "c": null, 
-        "o": [
-            "Reduce the text while preserving meaning",
-            "Classify the text into categories",
-            "Extract named entities",
-            "Identify the sentiment of the text"
-        ]
-    },
-    {
-        "q": "Which algorithm is effective for document classification?",
-        "c": null, 
-        "o": [
-            "Naive Bayes",
-            "Word2Vec",
-            "LDA",
-            "TF-IDF"
-        ]
-    },
-    {
-        "q": "What does 'contextual embedding' mean in NLP?",
-        "c": null, 
-        "o": [
-            "Embeddings that change based on context",
-            "Static word representations",
-            "Fixed-length representations",
-            "Document classification"
-        ]
-    },
-    {
-        "q": "Which preprocessing step helps to normalize text data?",
-        "c": null, 
-        "o": [
             "Lowercasing",
-            "Tokenization",
-            "Stemming",
-            "POS Tagging"
+            "Stopword removal",
+            "Stemming"
+        ],
+        "right": [
+            "Split into tokens",
+            "Normalize case",
+            "Remove common words",
+            "Reduce to root form"
         ]
     },
     {
-        "q": "Which of the following can be considered a structured representation of text?",
-        "c": null, 
+        "q": "What are stopwords?",
+        "type": "mcq",
         "o": [
-            "Parse Tree",
-            "Corpus",
+            "Common words that add little meaning",
+            "Error words",
+            "Important keywords",
+            "Punctuation marks"
+        ],
+        "correct": "Common words that add little meaning"
+    },
+    {
+        "q": "Examples of stopwords include 'the', 'is', and '_____'.",
+        "type": "fill_blank",
+        "correct": "and"
+    },
+    {
+        "q": "Removing stopwords can improve NLP model efficiency.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "What is stemming?",
+        "type": "mcq",
+        "o": [
+            "Reducing words to their root form",
+            "Adding prefixes to words",
+            "Translating words",
+            "Counting words"
+        ],
+        "correct": "Reducing words to their root form"
+    },
+    {
+        "q": "Stemming converts 'running' to '_____'.",
+        "type": "fill_blank",
+        "correct": "run"
+    },
+    {
+        "q": "Stemming may produce words that are not valid dictionary words.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "What is lemmatization?",
+        "type": "mcq",
+        "o": [
+            "Reducing words to their dictionary base form",
+            "Same as stemming",
+            "Adding suffixes",
+            "Removing words"
+        ],
+        "correct": "Reducing words to their dictionary base form"
+    },
+    {
+        "q": "Lemmatization converts 'better' to '_____'.",
+        "type": "fill_blank",
+        "correct": "good"
+    },
+    {
+        "q": "Lemmatization produces valid dictionary words.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Arrange text preprocessing steps in typical order:",
+        "type": "rearrange",
+        "correct": [
+            "Load text data",
+            "Lowercase",
+            "Tokenize",
+            "Remove stopwords",
+            "Stem or lemmatize"
+        ]
+    },
+    {
+        "q": "What is a corpus in NLP?",
+        "type": "mcq",
+        "o": [
+            "A collection of text documents",
+            "A single word",
+            "A grammar rule",
+            "A parsing algorithm"
+        ],
+        "correct": "A collection of text documents"
+    },
+    {
+        "q": "A corpus contains multiple text _____.",
+        "type": "fill_blank",
+        "correct": "documents"
+    },
+    {
+        "q": "Corpora is the plural of corpus.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "What is a vocabulary in NLP?",
+        "type": "mcq",
+        "o": [
+            "Set of unique words in a corpus",
+            "Grammar rules",
+            "Sentence structure",
+            "Document count"
+        ],
+        "correct": "Set of unique words in a corpus"
+    },
+    {
+        "q": "Vocabulary size is the number of _____ words.",
+        "type": "fill_blank",
+        "correct": "unique"
+    },
+    {
+        "q": "Larger vocabularies require more memory.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "What is Bag of Words (BoW)?",
+        "type": "mcq",
+        "o": [
+            "Text representation counting word occurrences",
+            "Storing words in a container",
+            "Removing words",
+            "Translating words"
+        ],
+        "correct": "Text representation counting word occurrences"
+    },
+    {
+        "q": "Bag of Words ignores word _____.",
+        "type": "fill_blank",
+        "correct": "order"
+    },
+    {
+        "q": "Bag of Words creates sparse vectors.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Match the vectorization method with its characteristic:",
+        "type": "match",
+        "left": [
             "Bag of Words",
-            "Tokenization"
+            "TF-IDF",
+            "Word2Vec",
+            "One-hot encoding"
+        ],
+        "right": [
+            "Word counts",
+            "Weighted term frequency",
+            "Dense word vectors",
+            "Binary representation"
         ]
     },
     {
-        "q": "What is a key application of topic modeling?",
-        "c": null, 
+        "q": "What does TF-IDF stand for?",
+        "type": "mcq",
         "o": [
-            "Discovering hidden topics in text data",
-            "Identifying named entities",
-            "Performing sentiment analysis",
-            "Classifying documents"
+            "Term Frequency-Inverse Document Frequency",
+            "Text Format-Input Data Format",
+            "Token Frequency-Internal Data File",
+            "Term Filter-Index Document Function"
+        ],
+        "correct": "Term Frequency-Inverse Document Frequency"
+    },
+    {
+        "q": "TF-IDF gives lower weight to _____ occurring words.",
+        "type": "fill_blank",
+        "correct": "commonly"
+    },
+    {
+        "q": "TF-IDF helps identify important words in documents.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "What is Term Frequency (TF)?",
+        "type": "mcq",
+        "o": [
+            "How often a word appears in a document",
+            "Total words in corpus",
+            "Number of documents",
+            "Vocabulary size"
+        ],
+        "correct": "How often a word appears in a document"
+    },
+    {
+        "q": "Higher TF means the word appears more _____ in the document.",
+        "type": "fill_blank",
+        "correct": "frequently"
+    },
+    {
+        "q": "TF is calculated per document.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "What is Inverse Document Frequency (IDF)?",
+        "type": "mcq",
+        "o": [
+            "Measure of how rare a word is across documents",
+            "Word count per document",
+            "Total documents",
+            "Average word length"
+        ],
+        "correct": "Measure of how rare a word is across documents"
+    },
+    {
+        "q": "Rare words have _____ IDF values.",
+        "type": "fill_blank",
+        "correct": "higher"
+    },
+    {
+        "q": "Common words like 'the' have low IDF values.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Arrange the steps to compute TF-IDF:",
+        "type": "rearrange",
+        "correct": [
+            "Count word frequency (TF)",
+            "Count document frequency",
+            "Calculate IDF",
+            "Multiply TF by IDF",
+            "Create TF-IDF vector"
         ]
     },
     {
-        "q": "What is a primary characteristic of RNNs in NLP?",
-        "c": null, 
+        "q": "What is one-hot encoding for words?",
+        "type": "mcq",
         "o": [
-            "Handling sequential data",
-            "Performing classification",
-            "Generating random text",
-            "Tokenizing sentences"
+            "Binary vector with 1 at word index",
+            "Word frequency vector",
+            "Dense embedding",
+            "Probability distribution"
+        ],
+        "correct": "Binary vector with 1 at word index"
+    },
+    {
+        "q": "One-hot vectors have size equal to _____ size.",
+        "type": "fill_blank",
+        "correct": "vocabulary"
+    },
+    {
+        "q": "One-hot encoding cannot capture word similarity.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "What is word embedding?",
+        "type": "mcq",
+        "o": [
+            "Dense vector representation of words",
+            "Sparse word count",
+            "One-hot vector",
+            "Document count"
+        ],
+        "correct": "Dense vector representation of words"
+    },
+    {
+        "q": "Word embeddings capture _____ relationships between words.",
+        "type": "fill_blank",
+        "correct": "semantic"
+    },
+    {
+        "q": "Similar words have similar embeddings.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "What is Word2Vec?",
+        "type": "mcq",
+        "o": [
+            "Neural network method for learning word embeddings",
+            "Word counting algorithm",
+            "Stemming method",
+            "Tokenization library"
+        ],
+        "correct": "Neural network method for learning word embeddings"
+    },
+    {
+        "q": "Word2Vec was developed by researchers at _____.",
+        "type": "fill_blank",
+        "correct": "Google"
+    },
+    {
+        "q": "Word2Vec can capture analogies like king - man + woman = queen.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Match the Word2Vec architecture with its approach:",
+        "type": "match",
+        "left": [
+            "CBOW",
+            "Skip-gram",
+            "Negative sampling",
+            "Hierarchical softmax"
+        ],
+        "right": [
+            "Predict word from context",
+            "Predict context from word",
+            "Training optimization",
+            "Efficient probability computation"
         ]
     },
     {
-        "q": "Which of the following is a common dataset for training NLP models?",
-        "c": null, 
+        "q": "What is CBOW in Word2Vec?",
+        "type": "mcq",
         "o": [
-            "Wikipedia",
-            "ImageNet",
-            "CIFAR-10",
-            "MNIST"
+            "Continuous Bag of Words - predicts word from context",
+            "Counting Binary Ordered Words",
+            "Complete Bag of Words",
+            "Contextual Binary Output Words"
+        ],
+        "correct": "Continuous Bag of Words - predicts word from context"
+    },
+    {
+        "q": "CBOW predicts the _____ word from surrounding words.",
+        "type": "fill_blank",
+        "correct": "center"
+    },
+    {
+        "q": "CBOW is faster to train than Skip-gram.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "What is Skip-gram in Word2Vec?",
+        "type": "mcq",
+        "o": [
+            "Predicts context words from the center word",
+            "Skips common words",
+            "Same as CBOW",
+            "Removes n-grams"
+        ],
+        "correct": "Predicts context words from the center word"
+    },
+    {
+        "q": "Skip-gram works better for _____ words.",
+        "type": "fill_blank",
+        "correct": "rare"
+    },
+    {
+        "q": "Skip-gram is the opposite of CBOW.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "What is GloVe?",
+        "type": "mcq",
+        "o": [
+            "Global Vectors for Word Representation",
+            "Grammar Level Vectors",
+            "General Language Vectors",
+            "Global Vocabulary Embeddings"
+        ],
+        "correct": "Global Vectors for Word Representation"
+    },
+    {
+        "q": "GloVe learns from word co-occurrence _____.",
+        "type": "fill_blank",
+        "correct": "statistics"
+    },
+    {
+        "q": "GloVe was developed at Stanford.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Arrange word embedding methods by their introduction:",
+        "type": "rearrange",
+        "correct": [
+            "One-hot encoding",
+            "Word2Vec",
+            "GloVe",
+            "FastText",
+            "Contextual embeddings"
         ]
     },
     {
-        "q": "What does 'language modeling' involve?",
-        "c": null, 
+        "q": "What is FastText?",
+        "type": "mcq",
         "o": [
-            "Predicting the next word in a sequence",
-            "Classifying text",
-            "Identifying named entities",
+            "Word embedding using subword information",
+            "Faster Word2Vec",
+            "Quick text classification",
+            "Speed-optimized tokenization"
+        ],
+        "correct": "Word embedding using subword information"
+    },
+    {
+        "q": "FastText can handle _____ words by using subwords.",
+        "type": "fill_blank",
+        "correct": "out-of-vocabulary"
+    },
+    {
+        "q": "FastText was developed by Facebook.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "What is sentiment analysis?",
+        "type": "mcq",
+        "o": [
+            "Determining emotional tone of text",
+            "Counting words",
+            "Translating text",
             "Summarizing documents"
-        ]
+        ],
+        "correct": "Determining emotional tone of text"
     },
     {
-        "q": "Which task involves generating a response based on a given prompt?",
-        "c": null, 
-        "o": [
-            "Text Generation",
-            "Named Entity Recognition",
-            "Tokenization",
-            "POS Tagging"
-        ]
+        "q": "Sentiment analysis classifies text as positive, negative, or _____.",
+        "type": "fill_blank",
+        "correct": "neutral"
     },
     {
-        "q": "What is the main benefit of using pre-trained models in NLP?",
-        "c": null, 
-        "o": [
-            "Reduced training time and improved performance",
-            "Higher computational cost",
-            "Less data required",
-            "Increased model complexity"
-        ]
+        "q": "Sentiment analysis is used to analyze customer reviews.",
+        "type": "true_false",
+        "correct": "True"
     },
     {
-        "q": "What does 'semantic analysis' focus on?",
-        "c": null, 
+        "q": "What is Named Entity Recognition (NER)?",
+        "type": "mcq",
         "o": [
-            "Understanding meaning in text",
-            "Identifying grammatical structure",
-            "Counting word frequencies",
-            "Tokenizing sentences"
-        ]
+            "Identifying and classifying named entities in text",
+            "Naming text files",
+            "Recognizing grammar",
+            "Entity creation"
+        ],
+        "correct": "Identifying and classifying named entities in text"
     },
     {
-        "q": "Which model is particularly good at handling long-range dependencies in text?",
-        "c": null, 
-        "o": [
-            "Transformer",
-            "Naive Bayes",
-            "KNN",
-            "LDA"
-        ]
+        "q": "NER identifies entities like person, organization, and _____.",
+        "type": "fill_blank",
+        "correct": "location"
     },
     {
-        "q": "Which of the following is a popular Python library for NLP tasks?",
-        "c": null, 
-        "o": [
-            "NLTK",
-            "Pandas",
-            "NumPy",
-            "Matplotlib"
-        ]
+        "q": "NER can extract company names from news articles.",
+        "type": "true_false",
+        "correct": "True"
     },
     {
-        "q": "What is the purpose of using a lemmatizer?",
-        "c": null, 
-        "o": [
-            "Reducing words to their base form",
-            "Removing stop words",
-            "Classifying text",
-            "Tokenizing sentences"
-        ]
-    },
-    {
-        "q": "Which technique is often used to identify sentiment in social media posts?",
-        "c": null, 
-        "o": [
-            "Sentiment Analysis",
-            "Topic Modeling",
+        "q": "Match the NLP task with its description:",
+        "type": "match",
+        "left": [
+            "Sentiment analysis",
             "NER",
-            "Summarization"
+            "POS tagging",
+            "Text classification"
+        ],
+        "right": [
+            "Emotion detection",
+            "Entity extraction",
+            "Grammar labeling",
+            "Category assignment"
         ]
     },
     {
-        "q": "What does 'NLP pipeline' refer to?",
-        "c": null, 
+        "q": "What is Part-of-Speech (POS) tagging?",
+        "type": "mcq",
         "o": [
-            "A series of processing steps in NLP",
-            "A database of words",
-            "A visualization tool",
-            "A model for text generation"
+            "Labeling words with grammatical categories",
+            "Removing parts of speech",
+            "Counting nouns",
+            "Adding punctuation"
+        ],
+        "correct": "Labeling words with grammatical categories"
+    },
+    {
+        "q": "POS tagging labels words as nouns, verbs, adjectives, and _____.",
+        "type": "fill_blank",
+        "correct": "adverbs"
+    },
+    {
+        "q": "POS tagging is useful for understanding sentence structure.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "What is text classification?",
+        "type": "mcq",
+        "o": [
+            "Assigning text to predefined categories",
+            "Sorting text alphabetically",
+            "Counting text length",
+            "Translating text"
+        ],
+        "correct": "Assigning text to predefined categories"
+    },
+    {
+        "q": "Spam filtering is an example of text _____.",
+        "type": "fill_blank",
+        "correct": "classification"
+    },
+    {
+        "q": "Text classification can be binary or multi-class.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "What is machine translation?",
+        "type": "mcq",
+        "o": [
+            "Automatically translating text between languages",
+            "Manual translation",
+            "Language detection",
+            "Grammar correction"
+        ],
+        "correct": "Automatically translating text between languages"
+    },
+    {
+        "q": "Google Translate uses _____ translation.",
+        "type": "fill_blank",
+        "correct": "machine"
+    },
+    {
+        "q": "Neural machine translation has improved translation quality significantly.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Arrange NLP complexity levels:",
+        "type": "rearrange",
+        "correct": [
+            "Tokenization",
+            "POS tagging",
+            "Named entity recognition",
+            "Sentiment analysis",
+            "Machine translation"
         ]
     },
     {
-        "q": "Which feature is commonly used in text classification tasks?",
-        "c": null, 
+        "q": "What is text summarization?",
+        "type": "mcq",
         "o": [
+            "Creating short version of longer text",
+            "Expanding short text",
+            "Translating text",
+            "Classifying text"
+        ],
+        "correct": "Creating short version of longer text"
+    },
+    {
+        "q": "Extractive summarization selects _____ sentences from the original.",
+        "type": "fill_blank",
+        "correct": "existing"
+    },
+    {
+        "q": "Abstractive summarization can generate new sentences.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "What is question answering (QA)?",
+        "type": "mcq",
+        "o": [
+            "System that answers questions based on text",
+            "Generating questions",
+            "Quiz creation",
+            "Grammar checking"
+        ],
+        "correct": "System that answers questions based on text"
+    },
+    {
+        "q": "Reading comprehension QA finds answers within given _____.",
+        "type": "fill_blank",
+        "correct": "passages"
+    },
+    {
+        "q": "Chatbots often use question answering systems.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "What is an n-gram?",
+        "type": "mcq",
+        "o": [
+            "Sequence of n consecutive words",
+            "n number of documents",
+            "n sentences",
+            "n paragraphs"
+        ],
+        "correct": "Sequence of n consecutive words"
+    },
+    {
+        "q": "A bigram is an n-gram where n equals _____.",
+        "type": "fill_blank",
+        "correct": "2"
+    },
+    {
+        "q": "Trigrams contain three consecutive words.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Match the n-gram with its n value:",
+        "type": "match",
+        "left": [
+            "Unigram",
+            "Bigram",
+            "Trigram",
+            "4-gram"
+        ],
+        "right": [
+            "n=1",
+            "n=2",
+            "n=3",
+            "n=4"
+        ]
+    },
+    {
+        "q": "What is a language model?",
+        "type": "mcq",
+        "o": [
+            "Model that predicts probability of word sequences",
+            "Grammar checker",
+            "Translation model only",
+            "Word counter"
+        ],
+        "correct": "Model that predicts probability of word sequences"
+    },
+    {
+        "q": "Language models can predict the next _____ in a sequence.",
+        "type": "fill_blank",
+        "correct": "word"
+    },
+    {
+        "q": "Language models are used for text generation.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "What is perplexity in language modeling?",
+        "type": "mcq",
+        "o": [
+            "Measure of how well model predicts text",
+            "Model complexity",
+            "Vocabulary size",
+            "Training time"
+        ],
+        "correct": "Measure of how well model predicts text"
+    },
+    {
+        "q": "Lower perplexity indicates _____ model performance.",
+        "type": "fill_blank",
+        "correct": "better"
+    },
+    {
+        "q": "Perplexity can be used to compare language models.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "What is spaCy?",
+        "type": "mcq",
+        "o": [
+            "Industrial-strength NLP library",
+            "Web scraping tool",
+            "Database system",
+            "Image processing library"
+        ],
+        "correct": "Industrial-strength NLP library"
+    },
+    {
+        "q": "spaCy is known for being fast and _____.",
+        "type": "fill_blank",
+        "correct": "efficient"
+    },
+    {
+        "q": "spaCy is written in Python and Cython.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "What is NLTK?",
+        "type": "mcq",
+        "o": [
+            "Natural Language Toolkit for Python",
+            "Neural Language Training Kit",
+            "NLP Testing Kit",
+            "Network Language Tool"
+        ],
+        "correct": "Natural Language Toolkit for Python"
+    },
+    {
+        "q": "NLTK provides many corpora and _____ resources.",
+        "type": "fill_blank",
+        "correct": "lexical"
+    },
+    {
+        "q": "NLTK is widely used for teaching and research.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Arrange NLP libraries by typical use case complexity:",
+        "type": "rearrange",
+        "correct": [
+            "NLTK for learning",
+            "spaCy for production",
+            "Gensim for topic modeling",
+            "Hugging Face for transformers",
+            "Custom deep learning"
+        ]
+    },
+    {
+        "q": "What is RNN in NLP?",
+        "type": "mcq",
+        "o": [
+            "Recurrent Neural Network for sequential data",
+            "Random Neural Network",
+            "Recursive Neural Network",
+            "Regularized Neural Network"
+        ],
+        "correct": "Recurrent Neural Network for sequential data"
+    },
+    {
+        "q": "RNNs process sequences by maintaining _____ state.",
+        "type": "fill_blank",
+        "correct": "hidden"
+    },
+    {
+        "q": "RNNs can handle variable-length input sequences.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "What is the vanishing gradient problem in RNNs?",
+        "type": "mcq",
+        "o": [
+            "Gradients becoming very small over long sequences",
+            "Gradients disappearing completely",
+            "Zero learning rate",
+            "Missing gradients"
+        ],
+        "correct": "Gradients becoming very small over long sequences"
+    },
+    {
+        "q": "Vanishing gradients make it hard to learn _____ dependencies.",
+        "type": "fill_blank",
+        "correct": "long-range"
+    },
+    {
+        "q": "The vanishing gradient problem limits RNN memory.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "What is LSTM?",
+        "type": "mcq",
+        "o": [
+            "Long Short-Term Memory network",
+            "Long Sequence Training Model",
+            "Large Scale Text Mining",
+            "Linear Sequential Text Model"
+        ],
+        "correct": "Long Short-Term Memory network"
+    },
+    {
+        "q": "LSTM uses _____ gates to control information flow.",
+        "type": "fill_blank",
+        "correct": "three"
+    },
+    {
+        "q": "LSTM helps solve the vanishing gradient problem.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Match the LSTM gate with its function:",
+        "type": "match",
+        "left": [
+            "Forget gate",
+            "Input gate",
+            "Output gate",
+            "Cell state"
+        ],
+        "right": [
+            "What to discard",
+            "What to add",
+            "What to output",
+            "Long-term memory"
+        ]
+    },
+    {
+        "q": "What is GRU?",
+        "type": "mcq",
+        "o": [
+            "Gated Recurrent Unit - simpler than LSTM",
+            "General Recurrent Unit",
+            "Global Recurrent Update",
+            "Gradient Recurrent Unit"
+        ],
+        "correct": "Gated Recurrent Unit - simpler than LSTM"
+    },
+    {
+        "q": "GRU has _____ gates compared to LSTM's three.",
+        "type": "fill_blank",
+        "correct": "two"
+    },
+    {
+        "q": "GRU is computationally faster than LSTM.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "What is bidirectional RNN?",
+        "type": "mcq",
+        "o": [
+            "RNN processing sequence in both directions",
+            "Two separate RNNs",
+            "Backward RNN only",
+            "Double-layer RNN"
+        ],
+        "correct": "RNN processing sequence in both directions"
+    },
+    {
+        "q": "Bidirectional RNNs capture both past and _____ context.",
+        "type": "fill_blank",
+        "correct": "future"
+    },
+    {
+        "q": "Bidirectional RNNs are useful for tasks needing full context.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "What is sequence-to-sequence (seq2seq) model?",
+        "type": "mcq",
+        "o": [
+            "Model that maps input sequence to output sequence",
+            "Single sequence model",
+            "Sequence classification",
+            "Word-to-word model"
+        ],
+        "correct": "Model that maps input sequence to output sequence"
+    },
+    {
+        "q": "Seq2seq consists of an encoder and a _____.",
+        "type": "fill_blank",
+        "correct": "decoder"
+    },
+    {
+        "q": "Machine translation uses seq2seq architecture.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Arrange the seq2seq processing steps:",
+        "type": "rearrange",
+        "correct": [
+            "Encode input sequence",
+            "Create context vector",
+            "Initialize decoder",
+            "Generate output tokens",
+            "Apply beam search"
+        ]
+    },
+    {
+        "q": "What is attention mechanism in NLP?",
+        "type": "mcq",
+        "o": [
+            "Allowing model to focus on relevant parts of input",
+            "Reducing attention span",
+            "Ignoring input",
+            "Random focus"
+        ],
+        "correct": "Allowing model to focus on relevant parts of input"
+    },
+    {
+        "q": "Attention computes _____ over input positions.",
+        "type": "fill_blank",
+        "correct": "weights"
+    },
+    {
+        "q": "Attention helps with long-range dependencies.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "What is self-attention?",
+        "type": "mcq",
+        "o": [
+            "Attention between positions within same sequence",
+            "Single attention head",
+            "Attention to self only",
+            "Independent attention"
+        ],
+        "correct": "Attention between positions within same sequence"
+    },
+    {
+        "q": "Self-attention computes relationships between all _____ of tokens.",
+        "type": "fill_blank",
+        "correct": "pairs"
+    },
+    {
+        "q": "Self-attention is key to Transformer architecture.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "What is the Transformer architecture?",
+        "type": "mcq",
+        "o": [
+            "Neural network based entirely on attention mechanisms",
+            "RNN with attention",
+            "CNN for text",
+            "Hybrid model"
+        ],
+        "correct": "Neural network based entirely on attention mechanisms"
+    },
+    {
+        "q": "The Transformer paper is titled 'Attention is All You _____'.",
+        "type": "fill_blank",
+        "correct": "Need"
+    },
+    {
+        "q": "Transformers can process sequences in parallel.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Match the Transformer component with its purpose:",
+        "type": "match",
+        "left": [
+            "Multi-head attention",
+            "Positional encoding",
+            "Layer normalization",
+            "Feed-forward network"
+        ],
+        "right": [
+            "Multiple attention patterns",
+            "Sequence position info",
+            "Training stability",
+            "Non-linear transformation"
+        ]
+    },
+    {
+        "q": "What is positional encoding in Transformers?",
+        "type": "mcq",
+        "o": [
+            "Adding position information to embeddings",
+            "Encoding text position",
+            "Ordering tokens",
+            "Indexing words"
+        ],
+        "correct": "Adding position information to embeddings"
+    },
+    {
+        "q": "Positional encoding uses _____ functions in the original Transformer.",
+        "type": "fill_blank",
+        "correct": "sinusoidal"
+    },
+    {
+        "q": "Without positional encoding, Transformers cannot distinguish word order.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "What is multi-head attention?",
+        "type": "mcq",
+        "o": [
+            "Running multiple attention operations in parallel",
+            "Single attention with multiple outputs",
+            "Sequential attention",
+            "Stacked attention"
+        ],
+        "correct": "Running multiple attention operations in parallel"
+    },
+    {
+        "q": "Multi-head attention allows learning different _____ patterns.",
+        "type": "fill_blank",
+        "correct": "relationship"
+    },
+    {
+        "q": "BERT base uses 12 attention heads.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "What is BERT?",
+        "type": "mcq",
+        "o": [
+            "Bidirectional Encoder Representations from Transformers",
+            "Better Encoding for Real Text",
+            "Basic Embedding Representation Tool",
+            "Binary Encoder Reader Transformer"
+        ],
+        "correct": "Bidirectional Encoder Representations from Transformers"
+    },
+    {
+        "q": "BERT was developed by _____.",
+        "type": "fill_blank",
+        "correct": "Google"
+    },
+    {
+        "q": "BERT is pre-trained on large amounts of text.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Arrange BERT training objectives:",
+        "type": "rearrange",
+        "correct": [
+            "Mask some tokens",
+            "Predict masked tokens",
+            "Next sentence prediction",
+            "Pre-train on large corpus",
+            "Fine-tune on task"
+        ]
+    },
+    {
+        "q": "What is masked language modeling (MLM)?",
+        "type": "mcq",
+        "o": [
+            "Predicting randomly masked tokens in text",
+            "Hiding the model",
+            "Masking output",
+            "Removing words permanently"
+        ],
+        "correct": "Predicting randomly masked tokens in text"
+    },
+    {
+        "q": "BERT masks about _____% of tokens during pre-training.",
+        "type": "fill_blank",
+        "correct": "15"
+    },
+    {
+        "q": "MLM allows BERT to learn bidirectional context.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "What is GPT?",
+        "type": "mcq",
+        "o": [
+            "Generative Pre-trained Transformer",
+            "General Purpose Transformer",
+            "Generated Paragraph Text",
+            "Global Processing Tool"
+        ],
+        "correct": "Generative Pre-trained Transformer"
+    },
+    {
+        "q": "GPT was developed by _____.",
+        "type": "fill_blank",
+        "correct": "OpenAI"
+    },
+    {
+        "q": "GPT uses autoregressive language modeling.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "What is the difference between BERT and GPT?",
+        "type": "mcq",
+        "o": [
+            "BERT is bidirectional, GPT is unidirectional",
+            "They are identical",
+            "GPT is bidirectional, BERT is unidirectional",
+            "BERT generates text, GPT classifies"
+        ],
+        "correct": "BERT is bidirectional, GPT is unidirectional"
+    },
+    {
+        "q": "GPT predicts the _____ token given previous tokens.",
+        "type": "fill_blank",
+        "correct": "next"
+    },
+    {
+        "q": "GPT is better suited for text generation than BERT.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Match the model with its training objective:",
+        "type": "match",
+        "left": [
+            "BERT",
+            "GPT",
+            "T5",
+            "BART"
+        ],
+        "right": [
+            "Masked LM",
+            "Causal LM",
+            "Text-to-text",
+            "Denoising autoencoder"
+        ]
+    },
+    {
+        "q": "What is fine-tuning in NLP?",
+        "type": "mcq",
+        "o": [
+            "Adapting pre-trained model to specific task",
+            "Training from scratch",
+            "Hyperparameter tuning only",
+            "Model compression"
+        ],
+        "correct": "Adapting pre-trained model to specific task"
+    },
+    {
+        "q": "Fine-tuning requires _____ data than training from scratch.",
+        "type": "fill_blank",
+        "correct": "less"
+    },
+    {
+        "q": "Pre-trained models can be fine-tuned for various downstream tasks.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "What is tokenization in modern NLP?",
+        "type": "mcq",
+        "o": [
+            "Breaking text into subword units for models",
+            "Word splitting only",
+            "Character splitting",
+            "Sentence splitting"
+        ],
+        "correct": "Breaking text into subword units for models"
+    },
+    {
+        "q": "Subword tokenization handles _____ words by breaking them up.",
+        "type": "fill_blank",
+        "correct": "unknown"
+    },
+    {
+        "q": "BPE and WordPiece are subword tokenization methods.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "What is Byte Pair Encoding (BPE)?",
+        "type": "mcq",
+        "o": [
+            "Subword tokenization merging frequent character pairs",
+            "Byte-level encoding",
+            "Binary encoding",
+            "Character encoding standard"
+        ],
+        "correct": "Subword tokenization merging frequent character pairs"
+    },
+    {
+        "q": "BPE iteratively merges the most _____ pair of tokens.",
+        "type": "fill_blank",
+        "correct": "frequent"
+    },
+    {
+        "q": "BPE is used by GPT models.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Arrange subword tokenization methods by complexity:",
+        "type": "rearrange",
+        "correct": [
+            "Character tokenization",
+            "BPE",
+            "WordPiece",
+            "Unigram",
+            "SentencePiece"
+        ]
+    },
+    {
+        "q": "What is WordPiece tokenization?",
+        "type": "mcq",
+        "o": [
+            "Subword tokenization used by BERT",
+            "Word-level tokenization",
+            "Piece-by-piece splitting",
+            "Character tokenization"
+        ],
+        "correct": "Subword tokenization used by BERT"
+    },
+    {
+        "q": "WordPiece uses ## prefix for _____ pieces.",
+        "type": "fill_blank",
+        "correct": "continuation"
+    },
+    {
+        "q": "WordPiece balances vocabulary size and coverage.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "What is Hugging Face?",
+        "type": "mcq",
+        "o": [
+            "Platform and library for Transformer models",
+            "Emoji company",
+            "Social media platform",
+            "Image recognition tool"
+        ],
+        "correct": "Platform and library for Transformer models"
+    },
+    {
+        "q": "Hugging Face's main library is called _____.",
+        "type": "fill_blank",
+        "correct": "transformers"
+    },
+    {
+        "q": "Hugging Face Hub hosts thousands of pre-trained models.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "What is the [CLS] token in BERT?",
+        "type": "mcq",
+        "o": [
+            "Special token for classification tasks",
+            "Class label",
+            "Closing token",
+            "Cluster token"
+        ],
+        "correct": "Special token for classification tasks"
+    },
+    {
+        "q": "[CLS] token is placed at the _____ of input.",
+        "type": "fill_blank",
+        "correct": "beginning"
+    },
+    {
+        "q": "[CLS] token's output is used for sentence-level tasks.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "What is the [SEP] token in BERT?",
+        "type": "mcq",
+        "o": [
+            "Separator token between sentences",
+            "End of sequence",
+            "Special embedding",
+            "Section marker"
+        ],
+        "correct": "Separator token between sentences"
+    },
+    {
+        "q": "[SEP] separates sentences in _____ sentence tasks.",
+        "type": "fill_blank",
+        "correct": "two"
+    },
+    {
+        "q": "[SEP] is also placed at the end of input.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Match the special token with its use:",
+        "type": "match",
+        "left": [
+            "[CLS]",
+            "[SEP]",
+            "[MASK]",
+            "[PAD]"
+        ],
+        "right": [
+            "Classification",
+            "Sentence boundary",
+            "Masked prediction",
+            "Sequence padding"
+        ]
+    },
+    {
+        "q": "What is contextual word embedding?",
+        "type": "mcq",
+        "o": [
+            "Embedding that changes based on surrounding context",
+            "Static word embedding",
+            "Context-free embedding",
+            "One-hot encoding"
+        ],
+        "correct": "Embedding that changes based on surrounding context"
+    },
+    {
+        "q": "Contextual embeddings can represent _____ meanings of words.",
+        "type": "fill_blank",
+        "correct": "different"
+    },
+    {
+        "q": "ELMo was one of the first contextual embedding methods.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "What is ELMo?",
+        "type": "mcq",
+        "o": [
+            "Embeddings from Language Models",
+            "Electronic Language Model",
+            "Efficient Language Model",
+            "Extended Language Mapping"
+        ],
+        "correct": "Embeddings from Language Models"
+    },
+    {
+        "q": "ELMo uses _____ LSTMs for context.",
+        "type": "fill_blank",
+        "correct": "bidirectional"
+    },
+    {
+        "q": "ELMo paved the way for BERT and other pre-trained models.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "What is transfer learning in NLP?",
+        "type": "mcq",
+        "o": [
+            "Using knowledge from one task for another",
+            "Data transfer",
+            "Model copying",
+            "Direct training"
+        ],
+        "correct": "Using knowledge from one task for another"
+    },
+    {
+        "q": "Transfer learning reduces the need for _____ data.",
+        "type": "fill_blank",
+        "correct": "labeled"
+    },
+    {
+        "q": "Pre-training on large corpora enables effective transfer learning.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Arrange the NLP model evolution:",
+        "type": "rearrange",
+        "correct": [
             "Bag of Words",
-            "Image Pixels",
-            "Audio Samples",
-            "Graph Edges"
+            "Word2Vec",
+            "LSTM",
+            "ELMo",
+            "BERT and Transformers"
         ]
     },
     {
-        "q": "What is 'semantic similarity' in NLP?",
-        "c": null, 
+        "q": "What is RoBERTa?",
+        "type": "mcq",
         "o": [
-            "Measure of how similar two texts are in meaning",
-            "Comparison of word lengths",
-            "Count of common words",
-            "Number of sentences in a text"
+            "Robustly optimized BERT approach",
+            "Robot BERT",
+            "Reduced BERT",
+            "Recursive BERT"
+        ],
+        "correct": "Robustly optimized BERT approach"
+    },
+    {
+        "q": "RoBERTa removes the _____ prediction task from BERT.",
+        "type": "fill_blank",
+        "correct": "next sentence"
+    },
+    {
+        "q": "RoBERTa trains longer with more data than original BERT.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "What is ALBERT?",
+        "type": "mcq",
+        "o": [
+            "A Lite BERT with parameter reduction",
+            "Advanced BERT",
+            "Alternative BERT",
+            "Augmented BERT"
+        ],
+        "correct": "A Lite BERT with parameter reduction"
+    },
+    {
+        "q": "ALBERT uses _____ sharing to reduce parameters.",
+        "type": "fill_blank",
+        "correct": "weight"
+    },
+    {
+        "q": "ALBERT is more memory-efficient than BERT.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "What is DistilBERT?",
+        "type": "mcq",
+        "o": [
+            "Smaller BERT trained via knowledge distillation",
+            "Distributed BERT",
+            "Distinct BERT",
+            "Distance-based BERT"
+        ],
+        "correct": "Smaller BERT trained via knowledge distillation"
+    },
+    {
+        "q": "DistilBERT is about _____% smaller than BERT base.",
+        "type": "fill_blank",
+        "correct": "40"
+    },
+    {
+        "q": "DistilBERT is faster while retaining most of BERT's accuracy.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Match the BERT variant with its optimization:",
+        "type": "match",
+        "left": [
+            "RoBERTa",
+            "ALBERT",
+            "DistilBERT",
+            "TinyBERT"
+        ],
+        "right": [
+            "Better training",
+            "Parameter sharing",
+            "Knowledge distillation",
+            "Even smaller distillation"
         ]
     },
     {
-        "q": "What is the primary role of a chatbot in NLP?",
-        "c": null, 
+        "q": "What is T5?",
+        "type": "mcq",
         "o": [
-            "Engage in conversation with users",
-            "Generate text summaries",
-            "Identify grammatical errors",
-            "Classify user emotions"
+            "Text-to-Text Transfer Transformer",
+            "Type 5 Transformer",
+            "Text Translation Transformer",
+            "Token-to-Token Transformer"
+        ],
+        "correct": "Text-to-Text Transfer Transformer"
+    },
+    {
+        "q": "T5 frames all NLP tasks as _____-to-text.",
+        "type": "fill_blank",
+        "correct": "text"
+    },
+    {
+        "q": "T5 can perform translation, summarization, and QA with same architecture.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "What is BART?",
+        "type": "mcq",
+        "o": [
+            "Bidirectional and Auto-Regressive Transformers",
+            "Basic Auto-Regressive Transformer",
+            "Binary Attention Recurrent Transformer",
+            "Bidirectional Attention Representation"
+        ],
+        "correct": "Bidirectional and Auto-Regressive Transformers"
+    },
+    {
+        "q": "BART uses _____ as a pre-training strategy.",
+        "type": "fill_blank",
+        "correct": "denoising"
+    },
+    {
+        "q": "BART is particularly good at text generation tasks.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "What is XLNet?",
+        "type": "mcq",
+        "o": [
+            "Generalized autoregressive pre-training",
+            "Extended Language Network",
+            "External Learning Network",
+            "XML Network"
+        ],
+        "correct": "Generalized autoregressive pre-training"
+    },
+    {
+        "q": "XLNet uses _____ language modeling.",
+        "type": "fill_blank",
+        "correct": "permutation"
+    },
+    {
+        "q": "XLNet captures bidirectional context without masking.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Arrange GPT versions by scale:",
+        "type": "rearrange",
+        "correct": [
+            "GPT (117M)",
+            "GPT-2 (1.5B)",
+            "GPT-3 (175B)",
+            "GPT-4",
+            "Future larger models"
         ]
+    },
+    {
+        "q": "What is zero-shot learning in NLP?",
+        "type": "mcq",
+        "o": [
+            "Performing tasks without task-specific training",
+            "Training with zero data",
+            "Zero accuracy",
+            "No learning"
+        ],
+        "correct": "Performing tasks without task-specific training"
+    },
+    {
+        "q": "GPT-3 can perform many tasks in _____ mode.",
+        "type": "fill_blank",
+        "correct": "zero-shot"
+    },
+    {
+        "q": "Large language models show emergent zero-shot capabilities.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "What is few-shot learning in NLP?",
+        "type": "mcq",
+        "o": [
+            "Learning from very few examples",
+            "Standard training",
+            "No example training",
+            "Large dataset training"
+        ],
+        "correct": "Learning from very few examples"
+    },
+    {
+        "q": "Few-shot prompts include _____ examples before the task.",
+        "type": "fill_blank",
+        "correct": "few"
+    },
+    {
+        "q": "In-context learning uses examples in the prompt.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "What is prompt engineering?",
+        "type": "mcq",
+        "o": [
+            "Designing effective prompts for language models",
+            "Programming prompts",
+            "Engineering text",
+            "Building prompt systems"
+        ],
+        "correct": "Designing effective prompts for language models"
+    },
+    {
+        "q": "Good prompts significantly affect model _____.",
+        "type": "fill_blank",
+        "correct": "output"
+    },
+    {
+        "q": "Prompt engineering is crucial for large language models.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Match the prompting technique with its approach:",
+        "type": "match",
+        "left": [
+            "Zero-shot",
+            "Few-shot",
+            "Chain of thought",
+            "Role prompting"
+        ],
+        "right": [
+            "No examples",
+            "Few examples",
+            "Step-by-step reasoning",
+            "Persona assignment"
+        ]
+    },
+    {
+        "q": "What is chain-of-thought prompting?",
+        "type": "mcq",
+        "o": [
+            "Prompting model to show reasoning steps",
+            "Chaining multiple models",
+            "Sequential prompts",
+            "Thought translation"
+        ],
+        "correct": "Prompting model to show reasoning steps"
+    },
+    {
+        "q": "Chain-of-thought improves performance on _____ tasks.",
+        "type": "fill_blank",
+        "correct": "reasoning"
+    },
+    {
+        "q": "Chain-of-thought prompting helps with math problems.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "What is text generation decoding?",
+        "type": "mcq",
+        "o": [
+            "Strategy for selecting tokens during generation",
+            "Encoding text",
+            "Text compression",
+            "Language detection"
+        ],
+        "correct": "Strategy for selecting tokens during generation"
+    },
+    {
+        "q": "Greedy decoding always picks the _____ probability token.",
+        "type": "fill_blank",
+        "correct": "highest"
+    },
+    {
+        "q": "Beam search explores multiple generation paths.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "What is temperature in text generation?",
+        "type": "mcq",
+        "o": [
+            "Parameter controlling randomness of output",
+            "Model heat",
+            "Training speed",
+            "Data temperature"
+        ],
+        "correct": "Parameter controlling randomness of output"
+    },
+    {
+        "q": "Higher temperature produces more _____ output.",
+        "type": "fill_blank",
+        "correct": "random"
+    },
+    {
+        "q": "Temperature of 0 gives deterministic output.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Arrange decoding methods by diversity:",
+        "type": "rearrange",
+        "correct": [
+            "Greedy decoding",
+            "Beam search",
+            "Top-k sampling",
+            "Top-p (nucleus) sampling",
+            "Temperature sampling"
+        ]
+    },
+    {
+        "q": "What is top-k sampling?",
+        "type": "mcq",
+        "o": [
+            "Sampling from top k most likely tokens",
+            "Selecting k tokens",
+            "k iterations",
+            "k-means sampling"
+        ],
+        "correct": "Sampling from top k most likely tokens"
+    },
+    {
+        "q": "Top-k sampling limits choices to _____ tokens.",
+        "type": "fill_blank",
+        "correct": "k"
+    },
+    {
+        "q": "Top-k sampling reduces low-probability noise.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "What is nucleus (top-p) sampling?",
+        "type": "mcq",
+        "o": [
+            "Sampling from smallest set covering probability p",
+            "Nuclear model sampling",
+            "p-value sampling",
+            "Top priority sampling"
+        ],
+        "correct": "Sampling from smallest set covering probability p"
+    },
+    {
+        "q": "Top-p sampling dynamically adjusts the number of _____.",
+        "type": "fill_blank",
+        "correct": "candidates"
+    },
+    {
+        "q": "Nucleus sampling is often preferred over fixed top-k.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "What is BLEU score?",
+        "type": "mcq",
+        "o": [
+            "Metric for evaluating machine translation",
+            "Blue color detection",
+            "Binary Language Evaluation Unit",
+            "Basic Learning Evaluation"
+        ],
+        "correct": "Metric for evaluating machine translation"
+    },
+    {
+        "q": "BLEU measures _____ overlap between output and reference.",
+        "type": "fill_blank",
+        "correct": "n-gram"
+    },
+    {
+        "q": "Higher BLEU score indicates better translation quality.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "What is ROUGE score?",
+        "type": "mcq",
+        "o": [
+            "Recall-oriented metric for summarization",
+            "Red color metric",
+            "Random Output Gauge",
+            "Real-time Output Utility"
+        ],
+        "correct": "Recall-oriented metric for summarization"
+    },
+    {
+        "q": "ROUGE-L measures _____ common subsequence.",
+        "type": "fill_blank",
+        "correct": "longest"
+    },
+    {
+        "q": "ROUGE is commonly used for text summarization evaluation.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Match the NLP metric with its task:",
+        "type": "match",
+        "left": [
+            "BLEU",
+            "ROUGE",
+            "Perplexity",
+            "F1"
+        ],
+        "right": [
+            "Translation",
+            "Summarization",
+            "Language modeling",
+            "Classification"
+        ]
+    },
+    {
+        "q": "What is coreference resolution?",
+        "type": "mcq",
+        "o": [
+            "Identifying expressions referring to same entity",
+            "Reference counting",
+            "Citation detection",
+            "Core extraction"
+        ],
+        "correct": "Identifying expressions referring to same entity"
+    },
+    {
+        "q": "Coreference links pronouns to their _____.",
+        "type": "fill_blank",
+        "correct": "antecedents"
+    },
+    {
+        "q": "Coreference resolution helps understand who 'he' or 'she' refers to.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "What is dependency parsing?",
+        "type": "mcq",
+        "o": [
+            "Analyzing grammatical relationships between words",
+            "Splitting dependencies",
+            "Code parsing",
+            "Data dependency"
+        ],
+        "correct": "Analyzing grammatical relationships between words"
+    },
+    {
+        "q": "Dependency parsing creates a _____ of word relationships.",
+        "type": "fill_blank",
+        "correct": "tree"
+    },
+    {
+        "q": "Dependency parsing identifies subject-verb-object relationships.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "What is constituency parsing?",
+        "type": "mcq",
+        "o": [
+            "Breaking sentence into nested phrase structure",
+            "Same as dependency parsing",
+            "Word counting",
+            "Sentence splitting"
+        ],
+        "correct": "Breaking sentence into nested phrase structure"
+    },
+    {
+        "q": "Constituency parsing identifies noun phrases and verb _____.",
+        "type": "fill_blank",
+        "correct": "phrases"
+    },
+    {
+        "q": "Penn Treebank is a famous constituency-parsed corpus.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Arrange NLP understanding levels:",
+        "type": "rearrange",
+        "correct": [
+            "Tokenization",
+            "POS tagging",
+            "Named entity recognition",
+            "Dependency parsing",
+            "Semantic role labeling"
+        ]
+    },
+    {
+        "q": "What is semantic role labeling (SRL)?",
+        "type": "mcq",
+        "o": [
+            "Identifying who did what to whom in a sentence",
+            "Role definition",
+            "Label creation",
+            "Semantic embedding"
+        ],
+        "correct": "Identifying who did what to whom in a sentence"
+    },
+    {
+        "q": "SRL identifies arguments like agent, patient, and _____.",
+        "type": "fill_blank",
+        "correct": "instrument"
+    },
+    {
+        "q": "SRL provides deeper understanding than POS tagging.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "What is word sense disambiguation?",
+        "type": "mcq",
+        "o": [
+            "Determining correct meaning of ambiguous words",
+            "Word translation",
+            "Sense creation",
+            "Ambiguity creation"
+        ],
+        "correct": "Determining correct meaning of ambiguous words"
+    },
+    {
+        "q": "Bank can mean financial institution or river _____.",
+        "type": "fill_blank",
+        "correct": "edge"
+    },
+    {
+        "q": "Context helps determine word sense.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "What is relation extraction?",
+        "type": "mcq",
+        "o": [
+            "Identifying relationships between entities in text",
+            "Entity extraction only",
+            "Relation creation",
+            "Data extraction"
+        ],
+        "correct": "Identifying relationships between entities in text"
+    },
+    {
+        "q": "Relation extraction finds connections like 'works for' or 'born in' _____.",
+        "type": "fill_blank",
+        "correct": "between entities"
+    },
+    {
+        "q": "Knowledge graphs can be built from relation extraction.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Match the NLP task with its output:",
+        "type": "match",
+        "left": [
+            "NER",
+            "Relation extraction",
+            "Coreference",
+            "SRL"
+        ],
+        "right": [
+            "Entity spans",
+            "Entity pairs with relations",
+            "Mention clusters",
+            "Predicate-argument structure"
+        ]
+    },
+    {
+        "q": "What is information extraction (IE)?",
+        "type": "mcq",
+        "o": [
+            "Extracting structured information from unstructured text",
+            "Information retrieval",
+            "Data storage",
+            "Text compression"
+        ],
+        "correct": "Extracting structured information from unstructured text"
+    },
+    {
+        "q": "IE systems can extract events, entities, and _____.",
+        "type": "fill_blank",
+        "correct": "relations"
+    },
+    {
+        "q": "Information extraction converts text to structured data.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "What is event extraction?",
+        "type": "mcq",
+        "o": [
+            "Identifying and classifying events in text",
+            "Creating events",
+            "Event planning",
+            "Calendar extraction"
+        ],
+        "correct": "Identifying and classifying events in text"
+    },
+    {
+        "q": "Event extraction identifies when, where, and _____ something happened.",
+        "type": "fill_blank",
+        "correct": "who"
+    },
+    {
+        "q": "News articles are common sources for event extraction.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "What is open information extraction?",
+        "type": "mcq",
+        "o": [
+            "Extracting relations without predefined schema",
+            "Fixed schema extraction",
+            "Open source tools",
+            "Public data extraction"
+        ],
+        "correct": "Extracting relations without predefined schema"
+    },
+    {
+        "q": "Open IE discovers relations as _____ rather than predefined types.",
+        "type": "fill_blank",
+        "correct": "tuples"
+    },
+    {
+        "q": "Open IE is more flexible than closed IE.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Match the IE approach with its characteristic:",
+        "type": "match",
+        "left": [
+            "Closed IE",
+            "Open IE",
+            "Rule-based IE",
+            "Neural IE"
+        ],
+        "right": [
+            "Predefined schema",
+            "Schema-free",
+            "Pattern matching",
+            "Deep learning"
+        ]
+    },
+    {
+        "q": "What is knowledge graph construction?",
+        "type": "mcq",
+        "o": [
+            "Building structured knowledge from text",
+            "Drawing graphs",
+            "Graph databases only",
+            "Network visualization"
+        ],
+        "correct": "Building structured knowledge from text"
+    },
+    {
+        "q": "Knowledge graphs store entities and their _____.",
+        "type": "fill_blank",
+        "correct": "relationships"
+    },
+    {
+        "q": "Google Knowledge Graph powers featured snippets.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "What is dialogue system?",
+        "type": "mcq",
+        "o": [
+            "System that converses with users",
+            "Dialogue writing tool",
+            "Script generator",
+            "Speech recognition only"
+        ],
+        "correct": "System that converses with users"
+    },
+    {
+        "q": "Dialogue systems can be task-oriented or _____.",
+        "type": "fill_blank",
+        "correct": "open-domain"
+    },
+    {
+        "q": "Chatbots are examples of dialogue systems.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "What is task-oriented dialogue?",
+        "type": "mcq",
+        "o": [
+            "Dialogue system for completing specific tasks",
+            "General conversation",
+            "Task management",
+            "Work dialogue"
+        ],
+        "correct": "Dialogue system for completing specific tasks"
+    },
+    {
+        "q": "Virtual assistants like Siri are _____ dialogue systems.",
+        "type": "fill_blank",
+        "correct": "task-oriented"
+    },
+    {
+        "q": "Task-oriented dialogue often involves slot filling.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Arrange the dialogue system components:",
+        "type": "rearrange",
+        "correct": [
+            "Natural language understanding",
+            "State tracking",
+            "Policy decision",
+            "Natural language generation",
+            "Response delivery"
+        ]
+    },
+    {
+        "q": "What is dialogue state tracking?",
+        "type": "mcq",
+        "o": [
+            "Maintaining context across conversation turns",
+            "State machine",
+            "Tracking user location",
+            "Recording dialogue"
+        ],
+        "correct": "Maintaining context across conversation turns"
+    },
+    {
+        "q": "Dialogue state tracks user goals and filled _____.",
+        "type": "fill_blank",
+        "correct": "slots"
+    },
+    {
+        "q": "State tracking is essential for multi-turn conversations.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "What is slot filling?",
+        "type": "mcq",
+        "o": [
+            "Extracting values for predefined categories",
+            "Filling time slots",
+            "Memory allocation",
+            "Form completion"
+        ],
+        "correct": "Extracting values for predefined categories"
+    },
+    {
+        "q": "Booking systems use slots for date, time, and _____.",
+        "type": "fill_blank",
+        "correct": "location"
+    },
+    {
+        "q": "Slot filling is similar to named entity recognition.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "What is intent detection?",
+        "type": "mcq",
+        "o": [
+            "Classifying user's goal in an utterance",
+            "Detecting intentions in general",
+            "Intent creation",
+            "Goal setting"
+        ],
+        "correct": "Classifying user's goal in an utterance"
+    },
+    {
+        "q": "Common intents include book, cancel, and _____.",
+        "type": "fill_blank",
+        "correct": "query"
+    },
+    {
+        "q": "Intent detection is typically a classification task.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Match the dialogue component with its function:",
+        "type": "match",
+        "left": [
+            "NLU",
+            "DM",
+            "NLG",
+            "TTS"
+        ],
+        "right": [
+            "Understanding input",
+            "Deciding action",
+            "Generating response",
+            "Speech synthesis"
+        ]
+    },
+    {
+        "q": "What is natural language generation (NLG)?",
+        "type": "mcq",
+        "o": [
+            "Producing text from structured data or intent",
+            "Language learning",
+            "Natural conversation",
+            "Grammar generation"
+        ],
+        "correct": "Producing text from structured data or intent"
+    },
+    {
+        "q": "NLG systems produce _____ from data or plans.",
+        "type": "fill_blank",
+        "correct": "text"
+    },
+    {
+        "q": "Weather reports can be automatically generated by NLG.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "What is retrieval-augmented generation (RAG)?",
+        "type": "mcq",
+        "o": [
+            "Combining retrieval with generation for better responses",
+            "Retrieval only",
+            "Generation only",
+            "Random augmentation"
+        ],
+        "correct": "Combining retrieval with generation for better responses"
+    },
+    {
+        "q": "RAG retrieves relevant documents before _____.",
+        "type": "fill_blank",
+        "correct": "generating"
+    },
+    {
+        "q": "RAG helps reduce hallucinations in language models.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Arrange RAG pipeline steps:",
+        "type": "rearrange",
+        "correct": [
+            "Receive query",
+            "Retrieve relevant documents",
+            "Combine with context",
+            "Generate response",
+            "Return answer"
+        ]
+    },
+    {
+        "q": "What is document retrieval?",
+        "type": "mcq",
+        "o": [
+            "Finding relevant documents for a query",
+            "Document creation",
+            "Document storage",
+            "Document deletion"
+        ],
+        "correct": "Finding relevant documents for a query"
+    },
+    {
+        "q": "Search engines use document _____ systems.",
+        "type": "fill_blank",
+        "correct": "retrieval"
+    },
+    {
+        "q": "BM25 is a classic retrieval algorithm.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "What is dense retrieval?",
+        "type": "mcq",
+        "o": [
+            "Using dense embeddings for retrieval",
+            "Sparse retrieval",
+            "Dense storage",
+            "Compression"
+        ],
+        "correct": "Using dense embeddings for retrieval"
+    },
+    {
+        "q": "Dense retrieval uses vector _____ to find matches.",
+        "type": "fill_blank",
+        "correct": "similarity"
+    },
+    {
+        "q": "Dense retrievers can capture semantic meaning.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "What is semantic search?",
+        "type": "mcq",
+        "o": [
+            "Search based on meaning rather than keywords",
+            "Keyword search",
+            "Boolean search",
+            "Exact match search"
+        ],
+        "correct": "Search based on meaning rather than keywords"
+    },
+    {
+        "q": "Semantic search uses _____ to understand queries.",
+        "type": "fill_blank",
+        "correct": "embeddings"
+    },
+    {
+        "q": "Semantic search can find related results without exact keyword matches.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Match the retrieval method with its approach:",
+        "type": "match",
+        "left": [
+            "TF-IDF",
+            "BM25",
+            "Dense retrieval",
+            "Hybrid"
+        ],
+        "right": [
+            "Term weighting",
+            "Probabilistic matching",
+            "Neural embeddings",
+            "Combine sparse and dense"
+        ]
+    },
+    {
+        "q": "What is text-to-SQL?",
+        "type": "mcq",
+        "o": [
+            "Converting natural language to SQL queries",
+            "SQL to text",
+            "Text database",
+            "SQL generation only"
+        ],
+        "correct": "Converting natural language to SQL queries"
+    },
+    {
+        "q": "Text-to-SQL enables querying databases with _____.",
+        "type": "fill_blank",
+        "correct": "natural language"
+    },
+    {
+        "q": "Spider is a famous text-to-SQL benchmark.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "What is code generation in NLP?",
+        "type": "mcq",
+        "o": [
+            "Generating programming code from descriptions",
+            "Code compilation",
+            "Code review",
+            "Code storage"
+        ],
+        "correct": "Generating programming code from descriptions"
+    },
+    {
+        "q": "GitHub Copilot is an example of _____ generation.",
+        "type": "fill_blank",
+        "correct": "code"
+    },
+    {
+        "q": "Large language models can generate functional code.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "What is instruction tuning?",
+        "type": "mcq",
+        "o": [
+            "Fine-tuning models to follow instructions",
+            "Creating instructions",
+            "Instruction manual",
+            "Teaching basics"
+        ],
+        "correct": "Fine-tuning models to follow instructions"
+    },
+    {
+        "q": "Instruction tuning improves model _____.",
+        "type": "fill_blank",
+        "correct": "alignment"
+    },
+    {
+        "q": "InstructGPT is an instruction-tuned model.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Arrange LLM training stages:",
+        "type": "rearrange",
+        "correct": [
+            "Pre-training on corpus",
+            "Instruction tuning",
+            "RLHF",
+            "Deployment",
+            "Continuous improvement"
+        ]
+    },
+    {
+        "q": "What is RLHF?",
+        "type": "mcq",
+        "o": [
+            "Reinforcement Learning from Human Feedback",
+            "Random Learning Human Feedback",
+            "Recursive Learning Hybrid Framework",
+            "Reinforced Language Human Format"
+        ],
+        "correct": "Reinforcement Learning from Human Feedback"
+    },
+    {
+        "q": "RLHF uses human _____ to guide model training.",
+        "type": "fill_blank",
+        "correct": "preferences"
+    },
+    {
+        "q": "ChatGPT was trained using RLHF.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "What is Constitutional AI?",
+        "type": "mcq",
+        "o": [
+            "Training AI with explicit principles",
+            "Government AI",
+            "Legal AI",
+            "Constitution writing"
+        ],
+        "correct": "Training AI with explicit principles"
+    },
+    {
+        "q": "Constitutional AI uses a set of _____ for self-improvement.",
+        "type": "fill_blank",
+        "correct": "principles"
+    },
+    {
+        "q": "Constitutional AI reduces harmful outputs.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "What is hallucination in LLMs?",
+        "type": "mcq",
+        "o": [
+            "Generating false or fabricated information",
+            "Visual hallucination",
+            "Audio distortion",
+            "Model dreaming"
+        ],
+        "correct": "Generating false or fabricated information"
+    },
+    {
+        "q": "Hallucinations produce plausible but _____ content.",
+        "type": "fill_blank",
+        "correct": "incorrect"
+    },
+    {
+        "q": "Reducing hallucinations is a key challenge for LLMs.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Match the LLM challenge with its solution:",
+        "type": "match",
+        "left": [
+            "Hallucination",
+            "Outdated knowledge",
+            "Long context",
+            "Slow inference"
+        ],
+        "right": [
+            "RAG and grounding",
+            "Retrieval augmentation",
+            "Context extension",
+            "Quantization"
+        ]
+    },
+    {
+        "q": "What is grounding in NLP?",
+        "type": "mcq",
+        "o": [
+            "Connecting language to real-world references",
+            "Electrical grounding",
+            "Base training",
+            "Initial setup"
+        ],
+        "correct": "Connecting language to real-world references"
+    },
+    {
+        "q": "Grounding helps verify factual _____.",
+        "type": "fill_blank",
+        "correct": "accuracy"
+    },
+    {
+        "q": "Grounding can reduce language model hallucinations.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "What is document understanding?",
+        "type": "mcq",
+        "o": [
+            "Extracting information from document layouts",
+            "Reading documents",
+            "Document storage",
+            "File management"
+        ],
+        "correct": "Extracting information from document layouts"
+    },
+    {
+        "q": "Document understanding combines vision and _____.",
+        "type": "fill_blank",
+        "correct": "language"
+    },
+    {
+        "q": "Invoices and forms require document understanding.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "What is OCR?",
+        "type": "mcq",
+        "o": [
+            "Optical Character Recognition",
+            "Online Character Reader",
+            "Optical Code Recognition",
+            "Original Character Retrieval"
+        ],
+        "correct": "Optical Character Recognition"
+    },
+    {
+        "q": "OCR converts images of text to _____ text.",
+        "type": "fill_blank",
+        "correct": "digital"
+    },
+    {
+        "q": "Modern OCR uses deep learning.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Arrange document processing steps:",
+        "type": "rearrange",
+        "correct": [
+            "Document scanning",
+            "OCR",
+            "Layout analysis",
+            "Entity extraction",
+            "Structured output"
+        ]
+    },
+    {
+        "q": "What is LayoutLM?",
+        "type": "mcq",
+        "o": [
+            "Model combining text, layout, and image for documents",
+            "Layout detection tool",
+            "Document manager",
+            "Layout designer"
+        ],
+        "correct": "Model combining text, layout, and image for documents"
+    },
+    {
+        "q": "LayoutLM uses _____ embeddings for document position.",
+        "type": "fill_blank",
+        "correct": "2D"
+    },
+    {
+        "q": "LayoutLM improves document understanding tasks.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "What is multilingual NLP?",
+        "type": "mcq",
+        "o": [
+            "NLP for multiple languages",
+            "Translation only",
+            "English NLP",
+            "Single language processing"
+        ],
+        "correct": "NLP for multiple languages"
+    },
+    {
+        "q": "Multilingual models can process _____ languages.",
+        "type": "fill_blank",
+        "correct": "many"
+    },
+    {
+        "q": "mBERT is a multilingual BERT model.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "What is cross-lingual transfer?",
+        "type": "mcq",
+        "o": [
+            "Transferring knowledge between languages",
+            "Translation",
+            "Language detection",
+            "Code switching"
+        ],
+        "correct": "Transferring knowledge between languages"
+    },
+    {
+        "q": "Models trained on English can generalize to other _____.",
+        "type": "fill_blank",
+        "correct": "languages"
+    },
+    {
+        "q": "Zero-shot cross-lingual transfer works surprisingly well.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Match the multilingual model with its capability:",
+        "type": "match",
+        "left": [
+            "mBERT",
+            "XLM-R",
+            "mT5",
+            "BLOOM"
+        ],
+        "right": [
+            "104 languages",
+            "100 languages",
+            "101 languages",
+            "46 languages"
+        ]
+    },
+    {
+        "q": "What is low-resource NLP?",
+        "type": "mcq",
+        "o": [
+            "NLP for languages with limited data",
+            "Using less compute",
+            "Simple NLP",
+            "Budget processing"
+        ],
+        "correct": "NLP for languages with limited data"
+    },
+    {
+        "q": "Many world languages have _____ digital resources.",
+        "type": "fill_blank",
+        "correct": "limited"
+    },
+    {
+        "q": "Transfer learning helps low-resource languages.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "What is sentiment intensity?",
+        "type": "mcq",
+        "o": [
+            "Strength of sentiment expressed",
+            "Sentiment type",
+            "Number of sentiments",
+            "Sentiment speed"
+        ],
+        "correct": "Strength of sentiment expressed"
+    },
+    {
+        "q": "Sentiment intensity ranges from weak to _____.",
+        "type": "fill_blank",
+        "correct": "strong"
+    },
+    {
+        "q": "VADER calculates sentiment intensity for social media.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "What is aspect-based sentiment analysis?",
+        "type": "mcq",
+        "o": [
+            "Sentiment for specific aspects of a topic",
+            "General sentiment only",
+            "Aspect detection",
+            "Topic modeling"
+        ],
+        "correct": "Sentiment for specific aspects of a topic"
+    },
+    {
+        "q": "Reviews might have different sentiments for different _____.",
+        "type": "fill_blank",
+        "correct": "aspects"
+    },
+    {
+        "q": "Product reviews often have mixed aspect sentiments.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Arrange sentiment analysis complexity:",
+        "type": "rearrange",
+        "correct": [
+            "Binary sentiment",
+            "Three-class sentiment",
+            "Fine-grained sentiment",
+            "Aspect-based sentiment",
+            "Comparative sentiment"
+        ]
+    },
+    {
+        "q": "What is opinion mining?",
+        "type": "mcq",
+        "o": [
+            "Extracting opinions from text systematically",
+            "Creating opinions",
+            "Survey analysis only",
+            "Opinion writing"
+        ],
+        "correct": "Extracting opinions from text systematically"
+    },
+    {
+        "q": "Opinion mining identifies opinion holders and _____.",
+        "type": "fill_blank",
+        "correct": "targets"
+    },
+    {
+        "q": "Opinion mining is used for brand monitoring.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "What is stance detection?",
+        "type": "mcq",
+        "o": [
+            "Determining position towards a target",
+            "Body posture detection",
+            "Standing detection",
+            "Position tracking"
+        ],
+        "correct": "Determining position towards a target"
+    },
+    {
+        "q": "Stance detection classifies as favor, against, or _____.",
+        "type": "fill_blank",
+        "correct": "neutral"
+    },
+    {
+        "q": "Stance detection is useful for analyzing debates.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "What is hate speech detection?",
+        "type": "mcq",
+        "o": [
+            "Identifying harmful content targeting groups",
+            "Speech recognition",
+            "Emotion detection",
+            "Language detection"
+        ],
+        "correct": "Identifying harmful content targeting groups"
+    },
+    {
+        "q": "Hate speech detection helps with content _____.",
+        "type": "fill_blank",
+        "correct": "moderation"
+    },
+    {
+        "q": "Context is important for hate speech detection.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Match the content analysis task with its goal:",
+        "type": "match",
+        "left": [
+            "Hate speech detection",
+            "Toxicity detection",
+            "Misinformation detection",
+            "Spam detection"
+        ],
+        "right": [
+            "Targeted hate",
+            "Harmful content",
+            "False information",
+            "Unwanted messages"
+        ]
+    },
+    {
+        "q": "What is fact verification?",
+        "type": "mcq",
+        "o": [
+            "Checking if claims are true",
+            "Creating facts",
+            "Fact storage",
+            "Data validation"
+        ],
+        "correct": "Checking if claims are true"
+    },
+    {
+        "q": "Fact verification systems label claims as supported, refuted, or _____.",
+        "type": "fill_blank",
+        "correct": "not enough info"
+    },
+    {
+        "q": "Fact verification combats misinformation.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "What is abstractive summarization?",
+        "type": "mcq",
+        "o": [
+            "Generating new sentences for summaries",
+            "Copying sentences",
+            "Abstract writing",
+            "Summary extraction"
+        ],
+        "correct": "Generating new sentences for summaries"
+    },
+    {
+        "q": "Abstractive summarization can _____ information.",
+        "type": "fill_blank",
+        "correct": "paraphrase"
+    },
+    {
+        "q": "Abstractive summarization requires language generation capabilities.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "What is multi-document summarization?",
+        "type": "mcq",
+        "o": [
+            "Summarizing multiple documents together",
+            "Document copying",
+            "Single document summary",
+            "Document comparison"
+        ],
+        "correct": "Summarizing multiple documents together"
+    },
+    {
+        "q": "Multi-document summarization handles _____ and contradictions.",
+        "type": "fill_blank",
+        "correct": "redundancy"
+    },
+    {
+        "q": "News clusters often require multi-document summarization.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Arrange summarization methods by abstraction level:",
+        "type": "rearrange",
+        "correct": [
+            "Sentence extraction",
+            "Sentence compression",
+            "Sentence fusion",
+            "Abstractive rewriting",
+            "Fully generative"
+        ]
+    },
+    {
+        "q": "What is query-focused summarization?",
+        "type": "mcq",
+        "o": [
+            "Summarization based on specific query",
+            "General summarization",
+            "Query answering",
+            "Keyword extraction"
+        ],
+        "correct": "Summarization based on specific query"
+    },
+    {
+        "q": "Query-focused summarization emphasizes _____ information.",
+        "type": "fill_blank",
+        "correct": "relevant"
+    },
+    {
+        "q": "Search result snippets are query-focused summaries.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "What is paraphrase generation?",
+        "type": "mcq",
+        "o": [
+            "Generating text with same meaning in different words",
+            "Translation",
+            "Summarization",
+            "Text copying"
+        ],
+        "correct": "Generating text with same meaning in different words"
+    },
+    {
+        "q": "Paraphrasing preserves _____ while changing form.",
+        "type": "fill_blank",
+        "correct": "meaning"
+    },
+    {
+        "q": "Data augmentation can use paraphrase generation.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "What is grammatical error correction (GEC)?",
+        "type": "mcq",
+        "o": [
+            "Automatically fixing grammar mistakes",
+            "Grammar teaching",
+            "Spell checking only",
+            "Grammar analysis"
+        ],
+        "correct": "Automatically fixing grammar mistakes"
+    },
+    {
+        "q": "GEC systems correct spelling, grammar, and _____.",
+        "type": "fill_blank",
+        "correct": "punctuation"
+    },
+    {
+        "q": "Grammarly uses NLP for error correction.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Match the text correction task with its scope:",
+        "type": "match",
+        "left": [
+            "Spell check",
+            "Grammar check",
+            "GEC",
+            "Style transfer"
+        ],
+        "right": [
+            "Word-level",
+            "Sentence structure",
+            "Comprehensive",
+            "Writing style"
+        ]
+    },
+    {
+        "q": "What is style transfer in NLP?",
+        "type": "mcq",
+        "o": [
+            "Changing writing style while preserving content",
+            "Format transfer",
+            "Font changing",
+            "Layout transfer"
+        ],
+        "correct": "Changing writing style while preserving content"
+    },
+    {
+        "q": "Style transfer can change formal text to _____.",
+        "type": "fill_blank",
+        "correct": "informal"
+    },
+    {
+        "q": "Sentiment transfer is a type of style transfer.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "What is text simplification?",
+        "type": "mcq",
+        "o": [
+            "Making text easier to understand",
+            "Text compression",
+            "Summarization",
+            "Text shortening"
+        ],
+        "correct": "Making text easier to understand"
+    },
+    {
+        "q": "Simplification helps users with reading _____.",
+        "type": "fill_blank",
+        "correct": "difficulties"
+    },
+    {
+        "q": "Wikipedia Simple English uses text simplification principles.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "What is controllable generation?",
+        "type": "mcq",
+        "o": [
+            "Generating text with specific attributes",
+            "Random generation",
+            "Control systems",
+            "Generation limits"
+        ],
+        "correct": "Generating text with specific attributes"
+    },
+    {
+        "q": "Controllable generation can specify topic, style, or _____.",
+        "type": "fill_blank",
+        "correct": "length"
+    },
+    {
+        "q": "Prefix tuning is one method for controllable generation.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Arrange text generation control methods:",
+        "type": "rearrange",
+        "correct": [
+            "Prompting",
+            "Prefix tuning",
+            "Control codes",
+            "Gradient-based control",
+            "Fine-tuning"
+        ]
+    },
+    {
+        "q": "What is LoRA?",
+        "type": "mcq",
+        "o": [
+            "Low-Rank Adaptation for efficient fine-tuning",
+            "Low Resource Adaptation",
+            "Learning Rate Adjustment",
+            "Long Range Attention"
+        ],
+        "correct": "Low-Rank Adaptation for efficient fine-tuning"
+    },
+    {
+        "q": "LoRA adds trainable low-rank _____ to pretrained weights.",
+        "type": "fill_blank",
+        "correct": "matrices"
+    },
+    {
+        "q": "LoRA significantly reduces the number of trainable parameters.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "What is PEFT?",
+        "type": "mcq",
+        "o": [
+            "Parameter-Efficient Fine-Tuning",
+            "Pre-trained Efficient Tuning",
+            "Parallel Efficient Fine Training",
+            "Partial Embedding Fine-Tuning"
+        ],
+        "correct": "Parameter-Efficient Fine-Tuning"
+    },
+    {
+        "q": "PEFT methods train fewer _____ than full fine-tuning.",
+        "type": "fill_blank",
+        "correct": "parameters"
+    },
+    {
+        "q": "Adapter layers are a PEFT technique.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "What is QLoRA?",
+        "type": "mcq",
+        "o": [
+            "Quantized LoRA for memory-efficient tuning",
+            "Quick LoRA",
+            "Quality LoRA",
+            "Quantitative LoRA"
+        ],
+        "correct": "Quantized LoRA for memory-efficient tuning"
+    },
+    {
+        "q": "QLoRA enables fine-tuning on _____ GPUs.",
+        "type": "fill_blank",
+        "correct": "consumer"
+    },
+    {
+        "q": "QLoRA combines 4-bit quantization with LoRA.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Match the PEFT method with its approach:",
+        "type": "match",
+        "left": [
+            "LoRA",
+            "Prefix tuning",
+            "Prompt tuning",
+            "Adapter"
+        ],
+        "right": [
+            "Low-rank matrices",
+            "Virtual tokens",
+            "Soft prompts",
+            "Bottleneck layers"
+        ]
+    },
+    {
+        "q": "What is model context length?",
+        "type": "mcq",
+        "o": [
+            "Maximum input tokens model can process",
+            "Context meaning",
+            "Model size",
+            "Output length"
+        ],
+        "correct": "Maximum input tokens model can process"
+    },
+    {
+        "q": "GPT-4 Turbo supports _____ tokens context.",
+        "type": "fill_blank",
+        "correct": "128k"
+    },
+    {
+        "q": "Longer context enables processing entire documents.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "What is positional interpolation?",
+        "type": "mcq",
+        "o": [
+            "Extending model context by interpolating positions",
+            "Token interpolation",
+            "Data interpolation",
+            "Weight interpolation"
+        ],
+        "correct": "Extending model context by interpolating positions"
+    },
+    {
+        "q": "RoPE can be extended using position _____.",
+        "type": "fill_blank",
+        "correct": "interpolation"
+    },
+    {
+        "q": "Context extension allows models to handle longer inputs.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Arrange LLM capability tiers:",
+        "type": "rearrange",
+        "correct": [
+            "Text completion",
+            "Following instructions",
+            "Few-shot learning",
+            "Complex reasoning",
+            "Tool use and agents"
+        ]
+    },
+    {
+        "q": "What is tool use in LLMs?",
+        "type": "mcq",
+        "o": [
+            "LLMs calling external tools and APIs",
+            "Model training tools",
+            "Evaluation tools",
+            "Developer tools"
+        ],
+        "correct": "LLMs calling external tools and APIs"
+    },
+    {
+        "q": "Tool use enables LLMs to access _____ information.",
+        "type": "fill_blank",
+        "correct": "real-time"
+    },
+    {
+        "q": "Function calling enables structured tool use.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "What is an LLM agent?",
+        "type": "mcq",
+        "o": [
+            "LLM that can plan and execute multi-step tasks",
+            "Simple chatbot",
+            "LLM developer",
+            "API client"
+        ],
+        "correct": "LLM that can plan and execute multi-step tasks"
+    },
+    {
+        "q": "LLM agents combine reasoning with _____.",
+        "type": "fill_blank",
+        "correct": "action"
+    },
+    {
+        "q": "ReAct combines reasoning and acting for agents.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "What is ReAct framework?",
+        "type": "mcq",
+        "o": [
+            "Reasoning and Acting interleaved prompting",
+            "React JavaScript",
+            "Reactive programming",
+            "Reaction detection"
+        ],
+        "correct": "Reasoning and Acting interleaved prompting"
+    },
+    {
+        "q": "ReAct interleaves thought, action, and _____.",
+        "type": "fill_blank",
+        "correct": "observation"
+    },
+    {
+        "q": "ReAct improves LLM task completion.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Match the agent component with its function:",
+        "type": "match",
+        "left": [
+            "Planner",
+            "Memory",
+            "Tools",
+            "Executor"
+        ],
+        "right": [
+            "Task decomposition",
+            "Context retention",
+            "External capabilities",
+            "Action execution"
+        ]
+    },
+    {
+        "q": "What is speech recognition?",
+        "type": "mcq",
+        "o": [
+            "Converting spoken audio to text",
+            "Voice synthesis",
+            "Speech generation",
+            "Audio editing"
+        ],
+        "correct": "Converting spoken audio to text"
+    },
+    {
+        "q": "Speech recognition is also called speech-to-_____.",
+        "type": "fill_blank",
+        "correct": "text"
+    },
+    {
+        "q": "Whisper is OpenAI's speech recognition model.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "What is text-to-speech (TTS)?",
+        "type": "mcq",
+        "o": [
+            "Converting text to spoken audio",
+            "Speech recognition",
+            "Voice recording",
+            "Audio compression"
+        ],
+        "correct": "Converting text to spoken audio"
+    },
+    {
+        "q": "Modern TTS produces natural-sounding _____.",
+        "type": "fill_blank",
+        "correct": "speech"
+    },
+    {
+        "q": "Neural TTS has significantly improved voice quality.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Arrange the voice assistant pipeline:",
+        "type": "rearrange",
+        "correct": [
+            "Wake word detection",
+            "Speech recognition",
+            "Natural language understanding",
+            "Response generation",
+            "Text-to-speech"
+        ]
+    },
+    {
+        "q": "What is topic modeling?",
+        "type": "mcq",
+        "o": [
+            "Discovering abstract topics in document collections",
+            "Model training",
+            "Topic creation",
+            "Category labeling"
+        ],
+        "correct": "Discovering abstract topics in document collections"
+    },
+    {
+        "q": "LDA stands for Latent Dirichlet _____.",
+        "type": "fill_blank",
+        "correct": "Allocation"
+    },
+    {
+        "q": "Topic modeling is an unsupervised technique.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "What is LDA?",
+        "type": "mcq",
+        "o": [
+            "Probabilistic topic model",
+            "Linear Discriminant Analysis",
+            "Language Data Analysis",
+            "Latent Data Analyzer"
+        ],
+        "correct": "Probabilistic topic model"
+    },
+    {
+        "q": "LDA assumes documents are mixtures of _____.",
+        "type": "fill_blank",
+        "correct": "topics"
+    },
+    {
+        "q": "Topics in LDA are distributions over words.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Match the topic modeling method with its characteristic:",
+        "type": "match",
+        "left": [
+            "LDA",
+            "NMF",
+            "LSA",
+            "Neural topic models"
+        ],
+        "right": [
+            "Probabilistic",
+            "Matrix factorization",
+            "SVD-based",
+            "Deep learning"
+        ]
+    },
+    {
+        "q": "What is text clustering?",
+        "type": "mcq",
+        "o": [
+            "Grouping similar documents",
+            "Topic modeling only",
+            "Classification",
+            "Document sorting"
+        ],
+        "correct": "Grouping similar documents"
+    },
+    {
+        "q": "K-means can be used for text _____ with embeddings.",
+        "type": "fill_blank",
+        "correct": "clustering"
+    },
+    {
+        "q": "Text clustering can organize large document collections.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "What is document similarity?",
+        "type": "mcq",
+        "o": [
+            "Measuring how alike two documents are",
+            "Document copying",
+            "Similarity creation",
+            "Document comparison only"
+        ],
+        "correct": "Measuring how alike two documents are"
+    },
+    {
+        "q": "Cosine similarity is commonly used for _____ similarity.",
+        "type": "fill_blank",
+        "correct": "document"
+    },
+    {
+        "q": "Document similarity helps with plagiarism detection.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "What is sentence embedding?",
+        "type": "mcq",
+        "o": [
+            "Fixed-length vector for entire sentence",
+            "Word embedding",
+            "Character embedding",
+            "Token average"
+        ],
+        "correct": "Fixed-length vector for entire sentence"
+    },
+    {
+        "q": "Sentence-BERT produces _____ embeddings.",
+        "type": "fill_blank",
+        "correct": "sentence"
+    },
+    {
+        "q": "Sentence embeddings enable efficient semantic search.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Arrange embedding granularity levels:",
+        "type": "rearrange",
+        "correct": [
+            "Character embedding",
+            "Subword embedding",
+            "Word embedding",
+            "Sentence embedding",
+            "Document embedding"
+        ]
+    },
+    {
+        "q": "What is GLUE benchmark?",
+        "type": "mcq",
+        "o": [
+            "General Language Understanding Evaluation",
+            "Grammar Level Unit Evaluation",
+            "General Learning Unit Exam",
+            "Graph Language Understanding"
+        ],
+        "correct": "General Language Understanding Evaluation"
+    },
+    {
+        "q": "GLUE consists of _____ NLU tasks.",
+        "type": "fill_blank",
+        "correct": "nine"
+    },
+    {
+        "q": "SuperGLUE is a harder version of GLUE.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "What is SQuAD?",
+        "type": "mcq",
+        "o": [
+            "Stanford Question Answering Dataset",
+            "Standard Query Answer Database",
+            "Semantic Question Answer Data",
+            "Standard QA Dataset"
+        ],
+        "correct": "Stanford Question Answering Dataset"
+    },
+    {
+        "q": "SQuAD tests reading _____ ability.",
+        "type": "fill_blank",
+        "correct": "comprehension"
+    },
+    {
+        "q": "SQuAD 2.0 includes unanswerable questions.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Match the benchmark with its focus:",
+        "type": "match",
+        "left": [
+            "GLUE",
+            "SQuAD",
+            "WMT",
+            "MMLU"
+        ],
+        "right": [
+            "Language understanding",
+            "Reading comprehension",
+            "Machine translation",
+            "Multi-task knowledge"
+        ]
+    },
+    {
+        "q": "What is MMLU?",
+        "type": "mcq",
+        "o": [
+            "Massive Multitask Language Understanding",
+            "Multiple Model Language Unit",
+            "Multi Modal Language Understanding",
+            "Massive Model Learning Unit"
+        ],
+        "correct": "Massive Multitask Language Understanding"
+    },
+    {
+        "q": "MMLU tests knowledge across _____ subjects.",
+        "type": "fill_blank",
+        "correct": "57"
+    },
+    {
+        "q": "MMLU is used to evaluate large language models.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "What is HumanEval?",
+        "type": "mcq",
+        "o": [
+            "Code generation benchmark",
+            "Human evaluation only",
+            "Human labeling",
+            "Human annotation"
+        ],
+        "correct": "Code generation benchmark"
+    },
+    {
+        "q": "HumanEval tests _____ synthesis from docstrings.",
+        "type": "fill_blank",
+        "correct": "code"
+    },
+    {
+        "q": "Pass@k measures code generation success rate.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "What is bias in NLP?",
+        "type": "mcq",
+        "o": [
+            "Systematic unfairness in model outputs",
+            "Model preferences",
+            "Data imbalance only",
+            "Training bias"
+        ],
+        "correct": "Systematic unfairness in model outputs"
+    },
+    {
+        "q": "Word embeddings can encode societal _____.",
+        "type": "fill_blank",
+        "correct": "biases"
+    },
+    {
+        "q": "Debiasing techniques aim to reduce unfair biases.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Arrange bias mitigation stages:",
+        "type": "rearrange",
+        "correct": [
+            "Identify bias",
+            "Measure bias",
+            "Mitigate in data",
+            "Mitigate in training",
+            "Evaluate reduction"
+        ]
+    },
+    {
+        "q": "What is fairness in NLP?",
+        "type": "mcq",
+        "o": [
+            "Equal treatment across demographic groups",
+            "Accuracy only",
+            "Model performance",
+            "Data quality"
+        ],
+        "correct": "Equal treatment across demographic groups"
+    },
+    {
+        "q": "Fairness metrics measure _____ across groups.",
+        "type": "fill_blank",
+        "correct": "disparities"
+    },
+    {
+        "q": "Toxicity detection should work fairly across dialects.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "What is explainability in NLP?",
+        "type": "mcq",
+        "o": [
+            "Understanding why model made a prediction",
+            "Explaining language",
+            "Model description",
+            "Documentation"
+        ],
+        "correct": "Understanding why model made a prediction"
+    },
+    {
+        "q": "Attention weights can provide _____ for predictions.",
+        "type": "fill_blank",
+        "correct": "explanations"
+    },
+    {
+        "q": "LIME can explain NLP model predictions.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Match the explainability method with its approach:",
+        "type": "match",
+        "left": [
+            "Attention visualization",
+            "LIME",
+            "SHAP",
+            "Integrated gradients"
+        ],
+        "right": [
+            "Attention weights",
+            "Local perturbation",
+            "Game theory values",
+            "Gradient accumulation"
+        ]
+    },
+    {
+        "q": "What is model card?",
+        "type": "mcq",
+        "o": [
+            "Documentation of model details and limitations",
+            "Model ID",
+            "Credit card for models",
+            "Model certificate"
+        ],
+        "correct": "Documentation of model details and limitations"
+    },
+    {
+        "q": "Model cards describe intended use and _____.",
+        "type": "fill_blank",
+        "correct": "limitations"
+    },
+    {
+        "q": "Model cards improve transparency and responsible use.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "What is data statement?",
+        "type": "mcq",
+        "o": [
+            "Documentation of dataset characteristics",
+            "Data description only",
+            "Statement in code",
+            "Data variable"
+        ],
+        "correct": "Documentation of dataset characteristics"
+    },
+    {
+        "q": "Data statements help understand dataset _____.",
+        "type": "fill_blank",
+        "correct": "limitations"
+    },
+    {
+        "q": "Well-documented datasets enable responsible AI.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "What is data augmentation for text?",
+        "type": "mcq",
+        "o": [
+            "Creating variations of training data",
+            "Data storage increase",
+            "File duplication",
+            "Database augmentation"
+        ],
+        "correct": "Creating variations of training data"
+    },
+    {
+        "q": "Back-translation is a text augmentation _____.",
+        "type": "fill_blank",
+        "correct": "technique"
+    },
+    {
+        "q": "Synonym replacement is a simple augmentation method.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Arrange text augmentation complexity:",
+        "type": "rearrange",
+        "correct": [
+            "Synonym replacement",
+            "Random insertion",
+            "Back-translation",
+            "Paraphrase generation",
+            "LLM rewriting"
+        ]
+    },
+    {
+        "q": "What is active learning for NLP?",
+        "type": "mcq",
+        "o": [
+            "Selectively labeling most informative examples",
+            "Learning actively",
+            "Online learning",
+            "Interactive learning"
+        ],
+        "correct": "Selectively labeling most informative examples"
+    },
+    {
+        "q": "Active learning reduces _____ costs.",
+        "type": "fill_blank",
+        "correct": "annotation"
+    },
+    {
+        "q": "Uncertainty sampling is an active learning strategy.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "What is weak supervision?",
+        "type": "mcq",
+        "o": [
+            "Using noisy or programmatic labels for training",
+            "Weak models",
+            "Minimal supervision",
+            "Weak performance"
+        ],
+        "correct": "Using noisy or programmatic labels for training"
+    },
+    {
+        "q": "Snorkel uses _____ functions for weak supervision.",
+        "type": "fill_blank",
+        "correct": "labeling"
+    },
+    {
+        "q": "Weak supervision can scale data labeling efficiently.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "What is self-training in NLP?",
+        "type": "mcq",
+        "o": [
+            "Using model predictions as labels for more training",
+            "Human training",
+            "Standard training",
+            "Online learning"
+        ],
+        "correct": "Using model predictions as labels for more training"
+    },
+    {
+        "q": "Self-training uses _____ on unlabeled data.",
+        "type": "fill_blank",
+        "correct": "pseudo-labels"
+    },
+    {
+        "q": "Self-training is a semi-supervised technique.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Match the supervision paradigm with its data requirement:",
+        "type": "match",
+        "left": [
+            "Supervised",
+            "Unsupervised",
+            "Semi-supervised",
+            "Self-supervised"
+        ],
+        "right": [
+            "Labeled data",
+            "Unlabeled data",
+            "Mixed labels",
+            "Pretext tasks"
+        ]
+    },
+    {
+        "q": "What is contrastive learning for NLP?",
+        "type": "mcq",
+        "o": [
+            "Learning by comparing similar and dissimilar examples",
+            "Comparison only",
+            "Contrast detection",
+            "Visual comparison"
+        ],
+        "correct": "Learning by comparing similar and dissimilar examples"
+    },
+    {
+        "q": "SimCSE uses _____ learning for sentence embeddings.",
+        "type": "fill_blank",
+        "correct": "contrastive"
+    },
+    {
+        "q": "Contrastive learning produces good representations.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "What is knowledge distillation in NLP?",
+        "type": "mcq",
+        "o": [
+            "Transferring knowledge from large to small model",
+            "Knowledge extraction",
+            "Information distillation",
+            "Data compression"
+        ],
+        "correct": "Transferring knowledge from large to small model"
+    },
+    {
+        "q": "The large model in distillation is called the _____.",
+        "type": "fill_blank",
+        "correct": "teacher"
+    },
+    {
+        "q": "DistilBERT is created through knowledge distillation.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Arrange model efficiency techniques:",
+        "type": "rearrange",
+        "correct": [
+            "Pruning",
+            "Quantization",
+            "Knowledge distillation",
+            "Low-rank factorization",
+            "Architecture search"
+        ]
+    },
+    {
+        "q": "What is model quantization for NLP?",
+        "type": "mcq",
+        "o": [
+            "Reducing precision of model weights",
+            "Model counting",
+            "Weight increase",
+            "Precision improvement"
+        ],
+        "correct": "Reducing precision of model weights"
+    },
+    {
+        "q": "8-bit quantization reduces model _____ significantly.",
+        "type": "fill_blank",
+        "correct": "size"
+    },
+    {
+        "q": "4-bit quantization enables running large models on consumer hardware.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "What is model pruning?",
+        "type": "mcq",
+        "o": [
+            "Removing unimportant weights or neurons",
+            "Adding weights",
+            "Model growth",
+            "Training extension"
+        ],
+        "correct": "Removing unimportant weights or neurons"
+    },
+    {
+        "q": "Pruning can significantly reduce model _____ with minimal accuracy loss.",
+        "type": "fill_blank",
+        "correct": "parameters"
+    },
+    {
+        "q": "Structured pruning removes entire layers or channels.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "What is speculative decoding?",
+        "type": "mcq",
+        "o": [
+            "Using smaller model to draft and larger to verify",
+            "Random decoding",
+            "Speculative generation",
+            "Guess decoding"
+        ],
+        "correct": "Using smaller model to draft and larger to verify"
+    },
+    {
+        "q": "Speculative decoding can _____ inference speed.",
+        "type": "fill_blank",
+        "correct": "improve"
+    },
+    {
+        "q": "Speculative decoding maintains output quality.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Match the inference optimization with its benefit:",
+        "type": "match",
+        "left": [
+            "Quantization",
+            "Batching",
+            "KV caching",
+            "Speculative decoding"
+        ],
+        "right": [
+            "Smaller memory",
+            "Higher throughput",
+            "Avoid recomputation",
+            "Faster generation"
+        ]
+    },
+    {
+        "q": "What is KV cache in Transformers?",
+        "type": "mcq",
+        "o": [
+            "Caching key-value pairs for efficient generation",
+            "Key validation",
+            "Knowledge verification",
+            "Kernel validation"
+        ],
+        "correct": "Caching key-value pairs for efficient generation"
+    },
+    {
+        "q": "KV cache avoids recomputing _____ for previous tokens.",
+        "type": "fill_blank",
+        "correct": "attention"
+    },
+    {
+        "q": "KV caching speeds up autoregressive generation.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "What is sliding window attention?",
+        "type": "mcq",
+        "o": [
+            "Attention limited to local window of tokens",
+            "Global attention",
+            "Window detection",
+            "Sliding average"
+        ],
+        "correct": "Attention limited to local window of tokens"
+    },
+    {
+        "q": "Sliding window attention reduces _____ complexity.",
+        "type": "fill_blank",
+        "correct": "computational"
+    },
+    {
+        "q": "Longformer uses sliding window attention.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "What is sparse attention?",
+        "type": "mcq",
+        "o": [
+            "Attending to only subset of positions",
+            "Less attention",
+            "Weak attention",
+            "Minimal attention"
+        ],
+        "correct": "Attending to only subset of positions"
+    },
+    {
+        "q": "Sparse attention reduces memory from O(n^2) to _____.",
+        "type": "fill_blank",
+        "correct": "O(n)"
+    },
+    {
+        "q": "BigBird uses sparse attention patterns.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Arrange attention mechanisms by efficiency:",
+        "type": "rearrange",
+        "correct": [
+            "Full attention",
+            "Sliding window",
+            "Sparse patterns",
+            "Linear attention",
+            "Flash attention"
+        ]
+    },
+    {
+        "q": "What is Flash Attention?",
+        "type": "mcq",
+        "o": [
+            "IO-aware efficient attention implementation",
+            "Fast attention",
+            "Light attention",
+            "Quick attention"
+        ],
+        "correct": "IO-aware efficient attention implementation"
+    },
+    {
+        "q": "Flash Attention reduces memory _____ in attention.",
+        "type": "fill_blank",
+        "correct": "usage"
+    },
+    {
+        "q": "Flash Attention enables training longer sequences.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "What is mixture of experts (MoE)?",
+        "type": "mcq",
+        "o": [
+            "Sparse model with different expert networks",
+            "Expert panel",
+            "Multiple models",
+            "Expert voting"
+        ],
+        "correct": "Sparse model with different expert networks"
+    },
+    {
+        "q": "MoE uses a _____ to select experts.",
+        "type": "fill_blank",
+        "correct": "router"
+    },
+    {
+        "q": "Mixtral is a mixture of experts model.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "What is neural machine translation (NMT)?",
+        "type": "mcq",
+        "o": [
+            "Translation using neural networks",
+            "Manual translation",
+            "Rule-based translation",
+            "Statistical MT"
+        ],
+        "correct": "Translation using neural networks"
+    },
+    {
+        "q": "Modern NMT uses _____ architecture.",
+        "type": "fill_blank",
+        "correct": "Transformer"
+    },
+    {
+        "q": "NMT has largely replaced statistical machine translation.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Match the translation paradigm with its era:",
+        "type": "match",
+        "left": [
+            "Rule-based MT",
+            "Statistical MT",
+            "Neural MT",
+            "LLM-based MT"
+        ],
+        "right": [
+            "1970s-1990s",
+            "1990s-2010s",
+            "2014-present",
+            "2020s-present"
+        ]
+    },
+    {
+        "q": "What is back-translation?",
+        "type": "mcq",
+        "o": [
+            "Translating target language back to source for data augmentation",
+            "Reverse translation",
+            "Backward generation",
+            "Translation reversal"
+        ],
+        "correct": "Translating target language back to source for data augmentation"
+    },
+    {
+        "q": "Back-translation creates synthetic _____ data.",
+        "type": "fill_blank",
+        "correct": "parallel"
+    },
+    {
+        "q": "Back-translation improves low-resource translation.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "What is cross-attention in Transformers?",
+        "type": "mcq",
+        "o": [
+            "Attention between encoder and decoder",
+            "Self-attention",
+            "Cross-validation",
+            "Multi-head attention"
+        ],
+        "correct": "Attention between encoder and decoder"
+    },
+    {
+        "q": "Cross-attention allows decoder to attend to _____ outputs.",
+        "type": "fill_blank",
+        "correct": "encoder"
+    },
+    {
+        "q": "Encoder-decoder models use cross-attention.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "What is language identification?",
+        "type": "mcq",
+        "o": [
+            "Detecting what language text is written in",
+            "Language learning",
+            "ID creation",
+            "Language tagging"
+        ],
+        "correct": "Detecting what language text is written in"
+    },
+    {
+        "q": "Language identification is the first step in multilingual _____.",
+        "type": "fill_blank",
+        "correct": "pipelines"
+    },
+    {
+        "q": "Character n-grams are effective for language identification.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Arrange multilingual NLP complexity:",
+        "type": "rearrange",
+        "correct": [
+            "Language identification",
+            "Monolingual processing",
+            "Cross-lingual transfer",
+            "Multilingual modeling",
+            "Code-switching handling"
+        ]
+    },
+    {
+        "q": "What is code-switching in NLP?",
+        "type": "mcq",
+        "o": [
+            "Mixing multiple languages in text",
+            "Programming",
+            "Code switching",
+            "Language change"
+        ],
+        "correct": "Mixing multiple languages in text"
+    },
+    {
+        "q": "Code-switching is common in _____ communication.",
+        "type": "fill_blank",
+        "correct": "bilingual"
+    },
+    {
+        "q": "Code-switching presents challenges for NLP systems.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "What is neural text detection?",
+        "type": "mcq",
+        "o": [
+            "Detecting AI-generated text",
+            "Neural detection",
+            "Text finding",
+            "Content detection"
+        ],
+        "correct": "Detecting AI-generated text"
+    },
+    {
+        "q": "AI text detectors analyze statistical _____ of text.",
+        "type": "fill_blank",
+        "correct": "patterns"
+    },
+    {
+        "q": "Perfect AI text detection remains challenging.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "What is watermarking for LLMs?",
+        "type": "mcq",
+        "o": [
+            "Embedding detectable patterns in generated text",
+            "Adding watermarks to images",
+            "Model protection",
+            "Copyright marking"
+        ],
+        "correct": "Embedding detectable patterns in generated text"
+    },
+    {
+        "q": "LLM watermarks slightly bias token _____.",
+        "type": "fill_blank",
+        "correct": "selection"
+    },
+    {
+        "q": "Watermarking helps trace AI-generated content.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Match the AI safety concern with its mitigation:",
+        "type": "match",
+        "left": [
+            "Misinformation",
+            "Harmful content",
+            "Bias",
+            "Provenance"
+        ],
+        "right": [
+            "Fact checking",
+            "Content filters",
+            "Debiasing",
+            "Watermarking"
+        ]
+    },
+    {
+        "q": "What is alignment in LLMs?",
+        "type": "mcq",
+        "o": [
+            "Making models behave according to human values",
+            "Text alignment",
+            "Policy alignment",
+            "Model positioning"
+        ],
+        "correct": "Making models behave according to human values"
+    },
+    {
+        "q": "RLHF is a technique for model _____.",
+        "type": "fill_blank",
+        "correct": "alignment"
+    },
+    {
+        "q": "Alignment research is crucial for safe AI.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "What is red teaming for LLMs?",
+        "type": "mcq",
+        "o": [
+            "Adversarial testing to find model vulnerabilities",
+            "Team formation",
+            "Color coding",
+            "Sports teams"
+        ],
+        "correct": "Adversarial testing to find model vulnerabilities"
+    },
+    {
+        "q": "Red teaming helps identify _____ in models.",
+        "type": "fill_blank",
+        "correct": "weaknesses"
+    },
+    {
+        "q": "Red teaming is important for responsible AI deployment.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "What is jailbreaking in LLMs?",
+        "type": "mcq",
+        "o": [
+            "Circumventing model safety guardrails",
+            "Breaking encryption",
+            "Model escape",
+            "System bypass"
+        ],
+        "correct": "Circumventing model safety guardrails"
+    },
+    {
+        "q": "Jailbreak attempts try to elicit _____ content.",
+        "type": "fill_blank",
+        "correct": "harmful"
+    },
+    {
+        "q": "Defending against jailbreaks is an ongoing challenge.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Arrange LLM safety layers:",
+        "type": "rearrange",
+        "correct": [
+            "Pre-training filtering",
+            "RLHF alignment",
+            "System prompts",
+            "Output filtering",
+            "Monitoring"
+        ]
+    },
+    {
+        "q": "What is prompt injection?",
+        "type": "mcq",
+        "o": [
+            "Malicious inputs that override system instructions",
+            "Prompt writing",
+            "Injection attack",
+            "Code injection"
+        ],
+        "correct": "Malicious inputs that override system instructions"
+    },
+    {
+        "q": "Prompt injection exploits the way LLMs process _____.",
+        "type": "fill_blank",
+        "correct": "instructions"
+    },
+    {
+        "q": "Prompt injection is a security concern for LLM applications.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "What is the future of NLP?",
+        "type": "mcq",
+        "o": [
+            "Multimodal, agentic, and more capable systems",
+            "Text only processing",
+            "Rule-based systems",
+            "Statistical methods"
+        ],
+        "correct": "Multimodal, agentic, and more capable systems"
+    },
+    {
+        "q": "Future NLP will integrate text, images, audio, and _____.",
+        "type": "fill_blank",
+        "correct": "video"
+    },
+    {
+        "q": "NLP continues to rapidly advance each year.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "What is entity linking?",
+        "type": "mcq",
+        "o": [
+            "Connecting entity mentions to knowledge base entries",
+            "Linking text",
+            "Entity creation",
+            "Database linking"
+        ],
+        "correct": "Connecting entity mentions to knowledge base entries"
+    },
+    {
+        "q": "Entity linking maps 'Apple' to either the _____ or fruit.",
+        "type": "fill_blank",
+        "correct": "company"
+    },
+    {
+        "q": "Wikidata is commonly used for entity linking.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "What is document classification?",
+        "type": "mcq",
+        "o": [
+            "Categorizing documents into predefined classes",
+            "Document sorting",
+            "File organization",
+            "Folder creation"
+        ],
+        "correct": "Categorizing documents into predefined classes"
+    },
+    {
+        "q": "News articles can be classified into _____ like sports or politics.",
+        "type": "fill_blank",
+        "correct": "categories"
+    },
+    {
+        "q": "Document classification is a common NLP application.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Match the classification granularity with its scope:",
+        "type": "match",
+        "left": [
+            "Document classification",
+            "Sentence classification",
+            "Token classification",
+            "Span classification"
+        ],
+        "right": [
+            "Entire document",
+            "Single sentence",
+            "Individual tokens",
+            "Text spans"
+        ]
+    },
+    {
+        "q": "What is keyword extraction?",
+        "type": "mcq",
+        "o": [
+            "Identifying important words in a document",
+            "Keyword creation",
+            "Search optimization",
+            "Word counting"
+        ],
+        "correct": "Identifying important words in a document"
+    },
+    {
+        "q": "KeyBERT uses _____ for keyword extraction.",
+        "type": "fill_blank",
+        "correct": "embeddings"
+    },
+    {
+        "q": "Keywords help with document indexing.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "What is keyphrase extraction?",
+        "type": "mcq",
+        "o": [
+            "Extracting multi-word key phrases",
+            "Single word extraction",
+            "Phrase creation",
+            "Sentence extraction"
+        ],
+        "correct": "Extracting multi-word key phrases"
+    },
+    {
+        "q": "Keyphrases can be more descriptive than single _____.",
+        "type": "fill_blank",
+        "correct": "keywords"
+    },
+    {
+        "q": "RAKE is a keyphrase extraction algorithm.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "What is text segmentation?",
+        "type": "mcq",
+        "o": [
+            "Dividing text into meaningful units",
+            "Text division only",
+            "Segment creation",
+            "File splitting"
+        ],
+        "correct": "Dividing text into meaningful units"
+    },
+    {
+        "q": "Topic segmentation divides documents into _____ sections.",
+        "type": "fill_blank",
+        "correct": "topical"
+    },
+    {
+        "q": "Sentence segmentation is crucial for many NLP tasks.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Arrange text segmentation granularities:",
+        "type": "rearrange",
+        "correct": [
+            "Character",
+            "Word",
+            "Sentence",
+            "Paragraph",
+            "Document"
+        ]
+    },
+    {
+        "q": "What is text normalization?",
+        "type": "mcq",
+        "o": [
+            "Standardizing text variations",
+            "Making text normal",
+            "Text formatting",
+            "Font standardization"
+        ],
+        "correct": "Standardizing text variations"
+    },
+    {
+        "q": "Text normalization converts 'dont' to 'do not' or '_____'.",
+        "type": "fill_blank",
+        "correct": "don't"
+    },
+    {
+        "q": "Normalization helps reduce vocabulary variation.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "What is language modeling objective?",
+        "type": "mcq",
+        "o": [
+            "Predicting probability of word sequences",
+            "Language creation",
+            "Model training",
+            "Objective setting"
+        ],
+        "correct": "Predicting probability of word sequences"
+    },
+    {
+        "q": "Language models learn to predict the _____ word.",
+        "type": "fill_blank",
+        "correct": "next"
+    },
+    {
+        "q": "Modern LLMs use massive language modeling objective.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "What is semantic similarity?",
+        "type": "mcq",
+        "o": [
+            "Measuring meaning similarity between texts",
+            "Lexical matching",
+            "Syntax similarity",
+            "Character matching"
+        ],
+        "correct": "Measuring meaning similarity between texts"
+    },
+    {
+        "q": "Semantic similarity captures _____ rather than surface forms.",
+        "type": "fill_blank",
+        "correct": "meaning"
+    },
+    {
+        "q": "Cosine similarity on embeddings measures semantic similarity.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Match the similarity type with its measure:",
+        "type": "match",
+        "left": [
+            "Edit distance",
+            "Jaccard",
+            "Cosine",
+            "BM25"
+        ],
+        "right": [
+            "Character operations",
+            "Set overlap",
+            "Vector angle",
+            "Term matching"
+        ]
+    },
+    {
+        "q": "What is text matching?",
+        "type": "mcq",
+        "o": [
+            "Finding similar or related text pairs",
+            "Exact matching only",
+            "Pattern matching",
+            "Template matching"
+        ],
+        "correct": "Finding similar or related text pairs"
+    },
+    {
+        "q": "Duplicate detection uses text _____ techniques.",
+        "type": "fill_blank",
+        "correct": "matching"
+    },
+    {
+        "q": "Text matching is used in search and QA systems.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "What is natural language inference (NLI)?",
+        "type": "mcq",
+        "o": [
+            "Determining if hypothesis follows from premise",
+            "Language generation",
+            "Inference engine",
+            "Logic programming"
+        ],
+        "correct": "Determining if hypothesis follows from premise"
+    },
+    {
+        "q": "NLI labels include entailment, contradiction, and _____.",
+        "type": "fill_blank",
+        "correct": "neutral"
+    },
+    {
+        "q": "SNLI is a large natural language inference dataset.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "What is textual entailment?",
+        "type": "mcq",
+        "o": [
+            "One text implying another",
+            "Text creation",
+            "Entry point",
+            "Text linking"
+        ],
+        "correct": "One text implying another"
+    },
+    {
+        "q": "Entailment means the hypothesis is _____ by the premise.",
+        "type": "fill_blank",
+        "correct": "implied"
+    },
+    {
+        "q": "Textual entailment is key for reading comprehension.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Arrange NLI relationship strength:",
+        "type": "rearrange",
+        "correct": [
+            "Contradiction",
+            "Neutral",
+            "Paraphrase",
+            "Entailment",
+            "Equivalence"
+        ]
+    },
+    {
+        "q": "What is machine reading comprehension?",
+        "type": "mcq",
+        "o": [
+            "Model answering questions about a passage",
+            "Speed reading",
+            "Text scanning",
+            "Document reading"
+        ],
+        "correct": "Model answering questions about a passage"
+    },
+    {
+        "q": "Reading comprehension requires understanding the _____.",
+        "type": "fill_blank",
+        "correct": "passage"
+    },
+    {
+        "q": "Extractive QA finds answer spans in the passage.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "What is open-domain QA?",
+        "type": "mcq",
+        "o": [
+            "Answering questions from any topic",
+            "Closed questions",
+            "Single domain",
+            "Limited QA"
+        ],
+        "correct": "Answering questions from any topic"
+    },
+    {
+        "q": "Open-domain QA often uses _____ then read approaches.",
+        "type": "fill_blank",
+        "correct": "retrieve"
+    },
+    {
+        "q": "Wikipedia is commonly used as a knowledge source for open-domain QA.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "What is conversational QA?",
+        "type": "mcq",
+        "o": [
+            "QA with follow-up questions maintaining context",
+            "Single-turn QA",
+            "Chat only",
+            "FAQ"
+        ],
+        "correct": "QA with follow-up questions maintaining context"
+    },
+    {
+        "q": "Conversational QA tracks _____ across turns.",
+        "type": "fill_blank",
+        "correct": "context"
+    },
+    {
+        "q": "QuAC is a conversational question answering dataset.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Match the QA type with its characteristic:",
+        "type": "match",
+        "left": [
+            "Extractive QA",
+            "Generative QA",
+            "Multiple choice QA",
+            "Boolean QA"
+        ],
+        "right": [
+            "Span extraction",
+            "Free-form answer",
+            "Select from options",
+            "Yes/No answer"
+        ]
+    },
+    {
+        "q": "What is visual question answering (VQA)?",
+        "type": "mcq",
+        "o": [
+            "Answering questions about images",
+            "Visual display",
+            "Image QA only",
+            "Vision testing"
+        ],
+        "correct": "Answering questions about images"
+    },
+    {
+        "q": "VQA requires both vision and _____ understanding.",
+        "type": "fill_blank",
+        "correct": "language"
+    },
+    {
+        "q": "VQA is a multimodal NLP task.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "What is image captioning?",
+        "type": "mcq",
+        "o": [
+            "Generating text descriptions of images",
+            "Caption editing",
+            "Image labeling",
+            "Photo naming"
+        ],
+        "correct": "Generating text descriptions of images"
+    },
+    {
+        "q": "Image captioning generates _____ from visual content.",
+        "type": "fill_blank",
+        "correct": "descriptions"
+    },
+    {
+        "q": "CLIP connects images and text in a shared embedding space.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Arrange multimodal AI complexity:",
+        "type": "rearrange",
+        "correct": [
+            "Image classification",
+            "Image captioning",
+            "Visual QA",
+            "Video understanding",
+            "Embodied AI"
+        ]
+    },
+    {
+        "q": "What is multimodal learning?",
+        "type": "mcq",
+        "o": [
+            "Learning from multiple data types together",
+            "Single modality",
+            "Multi-task learning",
+            "Mode switching"
+        ],
+        "correct": "Learning from multiple data types together"
+    },
+    {
+        "q": "GPT-4V processes text and _____.",
+        "type": "fill_blank",
+        "correct": "images"
+    },
+    {
+        "q": "Multimodal models are becoming increasingly important.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "What is speech-to-text?",
+        "type": "mcq",
+        "o": [
+            "Converting spoken words to written text",
+            "Text reading",
+            "Speech generation",
+            "Voice recording"
+        ],
+        "correct": "Converting spoken words to written text"
+    },
+    {
+        "q": "Whisper can transcribe audio in _____ languages.",
+        "type": "fill_blank",
+        "correct": "many"
+    },
+    {
+        "q": "Speech-to-text enables voice assistants.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "What is the Turing test for NLP?",
+        "type": "mcq",
+        "o": [
+            "Whether AI can fool humans into thinking it's human",
+            "Speed testing",
+            "Accuracy testing",
+            "Memory testing"
+        ],
+        "correct": "Whether AI can fool humans into thinking it's human"
+    },
+    {
+        "q": "The Turing test was proposed by Alan _____.",
+        "type": "fill_blank",
+        "correct": "Turing"
+    },
+    {
+        "q": "Modern chatbots can pass limited Turing tests.",
+        "type": "true_false",
+        "correct": "True"
     }
 ]

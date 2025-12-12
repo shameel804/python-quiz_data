@@ -1,462 +1,6434 @@
 [
     {
-        "q": "What is the primary goal of supervised learning?",
-        "c": null,
+        "q": "What is supervised learning?",
+        "type": "mcq",
         "o": [
-            "Predict outcomes based on input data",
-            "Cluster data into groups",
-            "Reduce the dimensionality of data",
-            "Generate new data points"
+            "Learning from labeled data with known inputs and outputs",
+            "Learning without any guidance",
+            "Learning from unlabeled data only",
+            "Random data processing"
         ]
     },
     {
-        "q": "Which of the following is an example of a supervised learning algorithm?",
-        "c": null,
-        "o": [
-            "Linear Regression",
-            "K-Means Clustering",
-            "PCA",
-            "Autoencoders"
+        "q": "Supervised learning requires _____ data for training.",
+        "type": "fill_blank",
+        "answers": [
+            "labeled"
+        ],
+        "other_options": [
+            "unlabeled",
+            "random",
+            "synthetic"
         ]
     },
     {
-        "q": "Which algorithm is suitable for a binary classification problem?",
-        "c": null,
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "X = [[1, 2], [3, 4], [5, 6]]\ny = [0, 1, 0]\nprint(f'Samples: {len(X)}, Labels: {len(y)}')",
         "o": [
-            "Logistic Regression",
-            "K-Means",
-            "DBSCAN",
-            "KNN"
+            "Samples: 3, Labels: 3",
+            "Samples: 2, Labels: 3",
+            "Samples: 6, Labels: 3",
+            "Error"
         ]
     },
     {
-        "q": "What is the loss function used in linear regression?",
-        "c": null,
-        "o": [
-            "Mean Squared Error",
-            "Cross Entropy",
-            "Hinge Loss",
-            "Gini Index"
+        "q": "Match the learning type with its description:",
+        "type": "match",
+        "left": [
+            "Supervised",
+            "Unsupervised",
+            "Semi-supervised",
+            "Reinforcement"
+        ],
+        "right": [
+            "Uses labeled data",
+            "Finds patterns without labels",
+            "Uses partial labels",
+            "Learns from rewards"
         ]
     },
     {
-        "q": "Which of the following is a supervised learning algorithm for classification?",
-        "c": null,
+        "q": "Classification and regression are both types of supervised learning.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "What is regression in machine learning?",
+        "type": "mcq",
         "o": [
-            "Decision Trees",
-            "PCA",
-            "t-SNE",
-            "Random Search"
+            "Predicting continuous numerical values",
+            "Predicting categories",
+            "Clustering data points",
+            "Reducing dimensions"
         ]
     },
     {
-        "q": "Which algorithm is best suited for predicting continuous values?",
-        "c": null,
-        "o": [
-            "Linear Regression",
-            "Logistic Regression",
-            "Decision Trees (Classification)",
-            "Naive Bayes"
+        "q": "Regression predicts _____ output values.",
+        "type": "fill_blank",
+        "answers": [
+            "continuous"
+        ],
+        "other_options": [
+            "discrete",
+            "categorical",
+            "binary"
         ]
     },
     {
-        "q": "What is the output of a classification problem?",
-        "c": null,
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "# Regression target example\ny = [25.5, 30.0, 18.7, 42.3]\nprint(type(y[0]).__name__)",
         "o": [
-            "Discrete labels",
-            "Continuous values",
-            "Clusters",
-            "Principal components"
+            "float",
+            "int",
+            "str",
+            "list"
         ]
     },
     {
-        "q": "Which algorithm is used for both regression and classification?",
-        "c": null,
-        "o": [
-            "Decision Trees",
-            "K-Means",
-            "PCA",
-            "Random Forest"
+        "q": "House price prediction is a regression problem.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Rearrange regression workflow steps:",
+        "type": "rearrange",
+        "words": [
+            "Prepare Data",
+            "Train Model",
+            "Make Predictions",
+            "Evaluate Error"
         ]
     },
     {
-        "q": "Which one of these is a characteristic of supervised learning?",
-        "c": null,
+        "q": "What is classification in machine learning?",
+        "type": "mcq",
         "o": [
-            "Labeled data",
-            "Unlabeled data",
-            "Data clustering",
-            "Dimensionality reduction"
+            "Predicting discrete categories or classes",
+            "Predicting continuous values",
+            "Finding clusters",
+            "Reducing features"
         ]
     },
     {
-        "q": "In Logistic Regression, what is the range of the output probability?",
-        "c": null,
-        "o": [
-            "0 to 1",
-            "-1 to 1",
-            "Any real number",
-            "0 to infinity"
+        "q": "Classification predicts _____ class labels.",
+        "type": "fill_blank",
+        "answers": [
+            "discrete"
+        ],
+        "other_options": [
+            "continuous",
+            "floating",
+            "random"
         ]
     },
     {
-        "q": "Which metric is commonly used to evaluate classification models?",
-        "c": null,
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "# Classification target example\ny = ['cat', 'dog', 'cat', 'bird']\nprint(len(set(y)))",
         "o": [
-            "Accuracy",
-            "Sum of Squared Errors",
-            "Variance",
-            "Adjusted R-Squared"
+            "3",
+            "4",
+            "2",
+            "1"
         ]
     },
     {
-        "q": "Which of the following algorithms uses 'gini index' as a measure of split?",
-        "c": null,
-        "o": [
-            "Decision Tree",
-            "Logistic Regression",
-            "KNN",
-            "PCA"
-        ]
-    },
-    {
-        "q": "Which of the following is true about K-Nearest Neighbors (KNN)?",
-        "c": null,
-        "o": [
-            "It is a non-parametric algorithm",
-            "It requires model training",
-            "It performs dimensionality reduction",
-            "It uses backpropagation"
-        ]
-    },
-    {
-        "q": "Which of the following algorithms is prone to overfitting?",
-        "c": null,
-        "o": [
-            "Decision Trees",
-            "Linear Regression",
-            "Logistic Regression",
-            "SVM"
-        ]
-    },
-    {
-        "q": "In support vector machines (SVM), the hyperplane is chosen to:",
-        "c": null,
-        "o": [
-            "Maximize the margin between classes",
-            "Minimize the number of misclassified points",
-            "Minimize the margin between classes",
-            "Maximize the distance to the origin"
-        ]
-    },
-    {
-        "q": "Which of the following algorithms works well with imbalanced datasets?",
-        "c": null,
-        "o": [
-            "Random Forest",
-            "K-Means",
-            "DBSCAN",
-            "PCA"
-        ]
-    },
-    {
-        "q": "Which of the following can be used to prevent overfitting in decision trees?",
-        "c": null,
-        "o": [
-            "Pruning",
-            "Increasing tree depth",
-            "Using more features",
-            "None of the above"
-        ]
-    },
-    {
-        "q": "In Random Forests, what does each tree base its decision on?",
-        "c": null,
-        "o": [
-            "Random subset of features and data",
-            "All available features",
-            "A single feature",
-            "Fixed subset of data"
-        ]
-    },
-    {
-        "q": "Which of the following algorithms cannot be used for regression?",
-        "c": null,
-        "o": [
-            "K-Means",
-            "Linear Regression",
-            "Decision Trees",
-            "Support Vector Machines (SVM)"
-        ]
-    },
-    {
-        "q": "Which of the following is true for ensemble methods like Random Forest?",
-        "c": null,
-        "o": [
-            "They combine multiple models to improve performance",
-            "They use only one model for training",
-            "They focus on increasing bias",
-            "They reduce bias at the cost of higher variance"
-        ]
-    },
-    {
-        "q": "Which algorithm uses a kernel trick to handle non-linearly separable data?",
-        "c": null,
-        "o": [
-            "Support Vector Machine (SVM)",
-            "K-Nearest Neighbors (KNN)",
-            "Linear Regression",
-            "Naive Bayes"
-        ]
-    },
-    {
-        "q": "What is the purpose of regularization in linear models?",
-        "c": null,
-        "o": [
-            "Prevent overfitting",
-            "Improve model complexity",
-            "Increase variance",
-            "Reduce bias"
-        ]
-    },
-    {
-        "q": "Which algorithm is based on Bayes’ theorem?",
-        "c": null,
-        "o": [
-            "Naive Bayes",
-            "Random Forest",
-            "SVM",
-            "K-Means"
-        ]
-    },
-    {
-        "q": "Which of the following regularization techniques penalizes the sum of absolute coefficients?",
-        "c": null,
-        "o": [
-            "Lasso Regression",
-            "Ridge Regression",
-            "Elastic Net",
-            "Dropout"
-        ]
-    },
-    {
-        "q": "In Ridge regression, which term is added to the loss function?",
-        "c": null,
-        "o": [
-            "L2 norm of coefficients",
-            "L1 norm of coefficients",
-            "Gini impurity",
-            "Cross entropy"
-        ]
-    },
-    {
-        "q": "What is the output of a regression algorithm?",
-        "c": null,
-        "o": [
-            "Continuous values",
-            "Discrete labels",
-            "Clusters",
-            "Principal components"
-        ]
-    },
-    {
-        "q": "Which of the following is a supervised learning task?",
-        "c": null,
-        "o": [
+        "q": "Match the problem with its type:",
+        "type": "match",
+        "left": [
+            "Spam detection",
+            "Stock price",
+            "Customer churn",
+            "Temperature forecast"
+        ],
+        "right": [
+            "Classification",
             "Regression",
-            "Clustering",
-            "Dimensionality Reduction",
-            "Association Rule Learning"
+            "Classification",
+            "Regression"
         ]
     },
     {
-        "q": "Which algorithm is commonly used for predicting binary outcomes?",
-        "c": null,
+        "q": "Email spam detection is a classification problem.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "What is linear regression?",
+        "type": "mcq",
         "o": [
-            "Logistic Regression",
-            "Linear Regression",
-            "K-Means",
-            "PCA"
+            "Modeling linear relationship between features and target",
+            "Creating linear features",
+            "Linear time complexity",
+            "Sorting data linearly"
         ]
     },
     {
-        "q": "Which algorithm works by constructing multiple decision trees during training?",
-        "c": null,
-        "o": [
-            "Random Forest",
-            "SVM",
-            "Linear Regression",
-            "KNN"
+        "q": "Linear regression finds the best _____ line through data points.",
+        "type": "fill_blank",
+        "answers": [
+            "fit"
+        ],
+        "other_options": [
+            "curved",
+            "random",
+            "vertical"
         ]
     },
     {
-        "q": "Which of the following models is most likely to be used for text classification?",
-        "c": null,
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "from sklearn.linear_model import LinearRegression\nmodel = LinearRegression()\nprint(type(model).__name__)",
         "o": [
-            "Naive Bayes",
-            "Random Forest",
-            "PCA",
-            "K-Means"
+            "LinearRegression",
+            "Regression",
+            "LinearModel",
+            "Model"
         ]
     },
     {
-        "q": "In K-Nearest Neighbors (KNN), what determines the class label?",
-        "c": null,
-        "o": [
-            "The majority vote of the nearest neighbors",
-            "The distance to the nearest cluster center",
-            "The average of the predicted values",
-            "The output of the decision function"
+        "q": "Linear regression assumes a linear relationship between variables.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Rearrange linear regression steps:",
+        "type": "rearrange",
+        "words": [
+            "Prepare Features",
+            "Fit Model",
+            "Calculate Coefficients",
+            "Predict Values"
         ]
     },
     {
-        "q": "What does the hyperparameter 'k' in KNN represent?",
-        "c": null,
+        "q": "What is the slope in linear regression?",
+        "type": "mcq",
         "o": [
-            "Number of neighbors considered",
-            "Number of clusters",
-            "Number of trees in the forest",
-            "Regularization strength"
+            "The coefficient showing rate of change between feature and target",
+            "The angle of the data",
+            "The error value",
+            "The intercept point"
         ]
     },
     {
-        "q": "Which of the following is a linear model?",
-        "c": null,
-        "o": [
-            "Linear Regression",
-            "KNN",
-            "Random Forest",
-            "DBSCAN"
+        "q": "The slope coefficient represents the _____ of change in y per unit change in x.",
+        "type": "fill_blank",
+        "answers": [
+            "rate"
+        ],
+        "other_options": [
+            "direction",
+            "type",
+            "amount"
         ]
     },
     {
-        "q": "Which of the following is NOT a classification algorithm?",
-        "c": null,
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "from sklearn.linear_model import LinearRegression\nimport numpy as np\nX = np.array([[1], [2], [3]])\ny = np.array([2, 4, 6])\nmodel = LinearRegression().fit(X, y)\nprint(round(model.coef_[0], 1))",
         "o": [
-            "K-Means",
-            "SVM",
-            "Decision Trees",
-            "Logistic Regression"
+            "2.0",
+            "1.0",
+            "3.0",
+            "0.0"
         ]
     },
     {
-        "q": "In SVM, what is a support vector?",
-        "c": null,
-        "o": [
-            "A data point closest to the hyperplane",
-            "The center of the data distribution",
-            "A point farthest from the margin",
-            "The weight of the model"
+        "q": "Match the linear regression term with its meaning:",
+        "type": "match",
+        "left": [
+            "Slope",
+            "Intercept",
+            "Coefficient",
+            "Residual"
+        ],
+        "right": [
+            "Rate of change",
+            "Y-axis crossing",
+            "Feature weight",
+            "Prediction error"
         ]
     },
     {
-        "q": "Which of the following measures is used in logistic regression to make predictions?",
-        "c": null,
+        "q": "The intercept is where the regression line crosses the y-axis.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "What is logistic regression?",
+        "type": "mcq",
         "o": [
-            "Sigmoid function",
-            "Sum of squares",
-            "Euclidean distance",
-            "Gini index"
+            "A classification algorithm despite its name",
+            "A type of linear regression",
+            "Logarithmic data transformation",
+            "Logging data operations"
         ]
     },
     {
-        "q": "Which evaluation metric is more appropriate for imbalanced datasets?",
-        "c": null,
+        "q": "Logistic regression outputs _____ between 0 and 1.",
+        "type": "fill_blank",
+        "answers": [
+            "probabilities"
+        ],
+        "other_options": [
+            "integers",
+            "strings",
+            "categories"
+        ]
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "from sklearn.linear_model import LogisticRegression\nimport numpy as np\nX = np.array([[1], [2], [3], [4]])\ny = np.array([0, 0, 1, 1])\nmodel = LogisticRegression().fit(X, y)\nprint(len(model.classes_))",
         "o": [
-            "F1 Score",
+            "2",
+            "4",
+            "1",
+            "3"
+        ]
+    },
+    {
+        "q": "Logistic regression uses the sigmoid function.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Rearrange logistic regression prediction flow:",
+        "type": "rearrange",
+        "words": [
+            "Input Features",
+            "Compute Weighted Sum",
+            "Apply Sigmoid",
+            "Output Probability"
+        ]
+    },
+    {
+        "q": "What is binary classification?",
+        "type": "mcq",
+        "o": [
+            "Classification with exactly two classes",
+            "Binary number classification",
+            "Two-step classification",
+            "Dual model classification"
+        ]
+    },
+    {
+        "q": "Binary classification predicts one of _____ possible outcomes.",
+        "type": "fill_blank",
+        "answers": [
+            "two"
+        ],
+        "other_options": [
+            "three",
+            "many",
+            "unlimited"
+        ]
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "y = [0, 1, 0, 1, 0, 1, 1, 0]\nunique_classes = set(y)\nprint(f'Binary: {len(unique_classes) == 2}')",
+        "o": [
+            "Binary: True",
+            "Binary: False",
+            "Binary: 2",
+            "Error"
+        ]
+    },
+    {
+        "q": "Match the classification type with its number of classes:",
+        "type": "match",
+        "left": [
+            "Binary",
+            "Multi-class",
+            "Multi-label",
+            "Hierarchical"
+        ],
+        "right": [
+            "2 classes",
+            "3+ exclusive classes",
+            "Multiple per sample",
+            "Tree structure"
+        ]
+    },
+    {
+        "q": "Yes/No prediction is an example of binary classification.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "What is multi-class classification?",
+        "type": "mcq",
+        "o": [
+            "Classification with more than two mutually exclusive classes",
+            "Multiple binary classifiers",
+            "Class multiplication",
+            "Repeated classification"
+        ]
+    },
+    {
+        "q": "Multi-class classification assigns each sample to exactly _____ class.",
+        "type": "fill_blank",
+        "answers": [
+            "one"
+        ],
+        "other_options": [
+            "two",
+            "many",
+            "zero"
+        ]
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "y = ['cat', 'dog', 'bird', 'cat', 'fish']\nnum_classes = len(set(y))\nprint(f'Multi-class: {num_classes > 2}')",
+        "o": [
+            "Multi-class: True",
+            "Multi-class: False",
+            "Multi-class: 4",
+            "Error"
+        ]
+    },
+    {
+        "q": "Image classification with 10 object categories is multi-class.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Rearrange multi-class strategies:",
+        "type": "rearrange",
+        "words": [
+            "One-vs-Rest",
+            "One-vs-One",
+            "Multinomial",
+            "Softmax Output"
+        ]
+    },
+    {
+        "q": "What is k-Nearest Neighbors (KNN)?",
+        "type": "mcq",
+        "o": [
+            "Classification based on k closest training examples",
+            "K random neighbors",
+            "Kernel method",
+            "K-means variant"
+        ]
+    },
+    {
+        "q": "KNN is a _____ learning algorithm.",
+        "type": "fill_blank",
+        "answers": [
+            "lazy"
+        ],
+        "other_options": [
+            "eager",
+            "active",
+            "fast"
+        ]
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "from sklearn.neighbors import KNeighborsClassifier\nknn = KNeighborsClassifier(n_neighbors=5)\nprint(knn.n_neighbors)",
+        "o": [
+            "5",
+            "1",
+            "3",
+            "10"
+        ]
+    },
+    {
+        "q": "Match the KNN parameter with its effect:",
+        "type": "match",
+        "left": [
+            "k=1",
+            "k=large",
+            "Distance metric",
+            "Weights"
+        ],
+        "right": [
+            "Overfitting risk",
+            "Underfitting risk",
+            "Similarity measure",
+            "Neighbor importance"
+        ]
+    },
+    {
+        "q": "KNN stores all training data for prediction.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "What is a decision tree?",
+        "type": "mcq",
+        "o": [
+            "Model that makes decisions using tree-structured rules",
+            "Tree data structure",
+            "Decision flowchart only",
+            "Binary tree algorithm"
+        ]
+    },
+    {
+        "q": "Decision trees split data based on feature _____ at each node.",
+        "type": "fill_blank",
+        "answers": [
+            "values"
+        ],
+        "other_options": [
+            "names",
+            "types",
+            "counts"
+        ]
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "from sklearn.tree import DecisionTreeClassifier\ntree = DecisionTreeClassifier(max_depth=3)\nprint(tree.max_depth)",
+        "o": [
+            "3",
+            "None",
+            "1",
+            "10"
+        ]
+    },
+    {
+        "q": "Decision trees are interpretable models.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Rearrange decision tree building steps:",
+        "type": "rearrange",
+        "words": [
+            "Select Best Split",
+            "Divide Data",
+            "Create Child Nodes",
+            "Stop at Leaf"
+        ]
+    },
+    {
+        "q": "What is information gain in decision trees?",
+        "type": "mcq",
+        "o": [
+            "Reduction in entropy after a split",
+            "Adding more information",
+            "Data collection method",
+            "Feature addition"
+        ]
+    },
+    {
+        "q": "Higher information gain means _____ separation of classes.",
+        "type": "fill_blank",
+        "answers": [
+            "better"
+        ],
+        "other_options": [
+            "worse",
+            "no",
+            "random"
+        ]
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "import math\n# Entropy calculation for balanced binary split\np = 0.5\nentropy = -p * math.log2(p) - (1-p) * math.log2(1-p)\nprint(round(entropy, 1))",
+        "o": [
+            "1.0",
+            "0.0",
+            "0.5",
+            "2.0"
+        ]
+    },
+    {
+        "q": "Match the tree metric with its purpose:",
+        "type": "match",
+        "left": [
+            "Entropy",
+            "Gini Impurity",
+            "Information Gain",
+            "Gain Ratio"
+        ],
+        "right": [
+            "Measure disorder",
+            "Measure impurity",
+            "Choose splits",
+            "Normalize gain"
+        ]
+    },
+    {
+        "q": "Lower entropy indicates purer nodes in a decision tree.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "What is Gini impurity?",
+        "type": "mcq",
+        "o": [
+            "Probability of incorrect classification if randomly labeled",
+            "Data cleaning metric",
+            "Italian classification method",
+            "Feature importance"
+        ]
+    },
+    {
+        "q": "Gini impurity ranges from 0 to _____ for binary classification.",
+        "type": "fill_blank",
+        "answers": [
+            "0.5"
+        ],
+        "other_options": [
+            "1.0",
+            "2.0",
+            "infinity"
+        ]
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "# Gini for pure node\np = 1.0  # All same class\ngini = 1 - p**2 - (1-p)**2\nprint(gini)",
+        "o": [
+            "0.0",
+            "1.0",
+            "0.5",
+            "0.25"
+        ]
+    },
+    {
+        "q": "Gini impurity of 0 indicates a pure node.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Rearrange impurity measures by computational cost:",
+        "type": "rearrange",
+        "words": [
+            "Gini (fastest)",
+            "Entropy",
+            "Classification Error",
+            "Custom Metrics"
+        ]
+    },
+    {
+        "q": "What is pruning in decision trees?",
+        "type": "mcq",
+        "o": [
+            "Removing branches to reduce overfitting",
+            "Adding more branches",
+            "Planting trees",
+            "Increasing tree depth"
+        ]
+    },
+    {
+        "q": "Pruning helps prevent _____ in decision trees.",
+        "type": "fill_blank",
+        "answers": [
+            "overfitting"
+        ],
+        "other_options": [
+            "underfitting",
+            "training",
+            "splitting"
+        ]
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "from sklearn.tree import DecisionTreeClassifier\ntree = DecisionTreeClassifier(max_depth=None, min_samples_split=10)\nprint(tree.min_samples_split)",
+        "o": [
+            "10",
+            "None",
+            "2",
+            "1"
+        ]
+    },
+    {
+        "q": "Match the pruning type with its approach:",
+        "type": "match",
+        "left": [
+            "Pre-pruning",
+            "Post-pruning",
+            "Cost-complexity",
+            "Reduced error"
+        ],
+        "right": [
+            "Limit during growth",
+            "Remove after growth",
+            "Alpha parameter",
+            "Validation-based"
+        ]
+    },
+    {
+        "q": "max_depth is a pre-pruning parameter.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "What is a Support Vector Machine (SVM)?",
+        "type": "mcq",
+        "o": [
+            "Algorithm that finds optimal hyperplane to separate classes",
+            "Vector database",
+            "Support system",
+            "Machine maintenance"
+        ]
+    },
+    {
+        "q": "SVM maximizes the _____ between classes.",
+        "type": "fill_blank",
+        "answers": [
+            "margin"
+        ],
+        "other_options": [
+            "distance",
+            "overlap",
+            "error"
+        ]
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "from sklearn.svm import SVC\nsvm = SVC(kernel='linear')\nprint(svm.kernel)",
+        "o": [
+            "linear",
+            "rbf",
+            "poly",
+            "sigmoid"
+        ]
+    },
+    {
+        "q": "SVM support vectors are the data points closest to the decision boundary.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Rearrange SVM concepts by importance:",
+        "type": "rearrange",
+        "words": [
+            "Hyperplane",
+            "Margin",
+            "Support Vectors",
+            "Kernel Trick"
+        ]
+    },
+    {
+        "q": "What is the kernel trick in SVM?",
+        "type": "mcq",
+        "o": [
+            "Mapping data to higher dimensions without explicit transformation",
+            "Corn processing",
+            "Kernel density estimation",
+            "Operating system kernels"
+        ]
+    },
+    {
+        "q": "The RBF kernel maps data to _____ dimensional space.",
+        "type": "fill_blank",
+        "answers": [
+            "infinite"
+        ],
+        "other_options": [
+            "two",
+            "three",
+            "ten"
+        ]
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "from sklearn.svm import SVC\nkernels = ['linear', 'rbf', 'poly', 'sigmoid']\nprint(len(kernels))",
+        "o": [
+            "4",
+            "3",
+            "2",
+            "1"
+        ]
+    },
+    {
+        "q": "Match the kernel with its use case:",
+        "type": "match",
+        "left": [
+            "Linear",
+            "RBF",
+            "Polynomial",
+            "Sigmoid"
+        ],
+        "right": [
+            "Linearly separable",
+            "Non-linear general",
+            "Non-linear structured",
+            "Neural network-like"
+        ]
+    },
+    {
+        "q": "The RBF kernel is the default in scikit-learn's SVC.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "What is Naive Bayes?",
+        "type": "mcq",
+        "o": [
+            "Probabilistic classifier assuming feature independence",
+            "Simple algorithm only",
+            "Bayesian network",
+            "Data preprocessing"
+        ]
+    },
+    {
+        "q": "Naive Bayes assumes features are _____ of each other.",
+        "type": "fill_blank",
+        "answers": [
+            "independent"
+        ],
+        "other_options": [
+            "dependent",
+            "copies",
+            "subsets"
+        ]
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "from sklearn.naive_bayes import GaussianNB\nnb = GaussianNB()\nprint(type(nb).__name__)",
+        "o": [
+            "GaussianNB",
+            "NaiveBayes",
+            "Bayes",
+            "Gaussian"
+        ]
+    },
+    {
+        "q": "Naive Bayes is fast and works well for text classification.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Match the Naive Bayes variant with its assumption:",
+        "type": "match",
+        "left": [
+            "Gaussian",
+            "Multinomial",
+            "Bernoulli",
+            "Complement"
+        ],
+        "right": [
+            "Normal distribution",
+            "Count features",
+            "Binary features",
+            "Imbalanced classes"
+        ]
+    },
+    {
+        "q": "What is ensemble learning?",
+        "type": "mcq",
+        "o": [
+            "Combining multiple models for better predictions",
+            "Single model learning",
+            "Music ensemble",
+            "Team learning"
+        ]
+    },
+    {
+        "q": "Ensemble methods combine _____ models to improve performance.",
+        "type": "fill_blank",
+        "answers": [
+            "multiple"
+        ],
+        "other_options": [
+            "single",
+            "no",
+            "random"
+        ]
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "from sklearn.ensemble import RandomForestClassifier\nrf = RandomForestClassifier(n_estimators=100)\nprint(rf.n_estimators)",
+        "o": [
+            "100",
+            "10",
+            "1",
+            "50"
+        ]
+    },
+    {
+        "q": "Ensemble methods often outperform single models.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Rearrange ensemble types by model combination approach:",
+        "type": "rearrange",
+        "words": [
+            "Bagging",
+            "Boosting",
+            "Stacking",
+            "Voting"
+        ]
+    },
+    {
+        "q": "What is Random Forest?",
+        "type": "mcq",
+        "o": [
+            "Ensemble of decision trees using bagging and feature randomness",
+            "Forest simulation",
+            "Random algorithm",
+            "Single deep tree"
+        ]
+    },
+    {
+        "q": "Random Forest uses _____ to train each tree on different data samples.",
+        "type": "fill_blank",
+        "answers": [
+            "bagging"
+        ],
+        "other_options": [
+            "boosting",
+            "stacking",
+            "voting"
+        ]
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "from sklearn.ensemble import RandomForestClassifier\nimport numpy as np\nX = np.array([[1, 2], [3, 4], [5, 6], [7, 8]])\ny = np.array([0, 0, 1, 1])\nrf = RandomForestClassifier(n_estimators=10, random_state=42)\nrf.fit(X, y)\nprint(len(rf.estimators_))",
+        "o": [
+            "10",
+            "4",
+            "2",
+            "1"
+        ]
+    },
+    {
+        "q": "Random Forest reduces overfitting compared to single decision trees.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Match the Random Forest parameter with its effect:",
+        "type": "match",
+        "left": [
+            "n_estimators",
+            "max_depth",
+            "max_features",
+            "min_samples_split"
+        ],
+        "right": [
+            "Number of trees",
+            "Tree depth limit",
+            "Features per split",
+            "Samples to split"
+        ]
+    },
+    {
+        "q": "What is bagging?",
+        "type": "mcq",
+        "o": [
+            "Bootstrap Aggregating - training models on random data subsets",
+            "Putting models in bags",
+            "Data packaging",
+            "Feature bagging only"
+        ]
+    },
+    {
+        "q": "Bagging samples data _____ replacement.",
+        "type": "fill_blank",
+        "answers": [
+            "with"
+        ],
+        "other_options": [
+            "without",
+            "before",
+            "after"
+        ]
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "from sklearn.ensemble import BaggingClassifier\nfrom sklearn.tree import DecisionTreeClassifier\nbag = BaggingClassifier(estimator=DecisionTreeClassifier(), n_estimators=10)\nprint(bag.n_estimators)",
+        "o": [
+            "10",
+            "1",
+            "100",
+            "5"
+        ]
+    },
+    {
+        "q": "Bagging reduces variance in model predictions.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Rearrange bagging process steps:",
+        "type": "rearrange",
+        "words": [
+            "Create Bootstrap Samples",
+            "Train Base Models",
+            "Aggregate Predictions",
+            "Output Final Result"
+        ]
+    },
+    {
+        "q": "What is boosting?",
+        "type": "mcq",
+        "o": [
+            "Sequential ensemble method that focuses on misclassified samples",
+            "Speed optimization",
+            "Power boosting",
+            "Random model selection"
+        ]
+    },
+    {
+        "q": "Boosting trains weak learners _____ to focus on errors.",
+        "type": "fill_blank",
+        "answers": [
+            "sequentially"
+        ],
+        "other_options": [
+            "randomly",
+            "parallel",
+            "backwards"
+        ]
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "from sklearn.ensemble import AdaBoostClassifier\nada = AdaBoostClassifier(n_estimators=50)\nprint(ada.n_estimators)",
+        "o": [
+            "50",
+            "100",
+            "10",
+            "1"
+        ]
+    },
+    {
+        "q": "Boosting reduces bias in model predictions.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Match the ensemble method with its training approach:",
+        "type": "match",
+        "left": [
+            "Bagging",
+            "Boosting",
+            "Stacking",
+            "Voting"
+        ],
+        "right": [
+            "Parallel independent",
+            "Sequential weighted",
+            "Meta-learner",
+            "Aggregated predictions"
+        ]
+    },
+    {
+        "q": "What is AdaBoost?",
+        "type": "mcq",
+        "o": [
+            "Adaptive Boosting algorithm that adjusts weights for misclassified samples",
+            "Adding models",
+            "Adaptive database",
+            "Advanced booster"
+        ]
+    },
+    {
+        "q": "AdaBoost assigns higher weights to _____ samples.",
+        "type": "fill_blank",
+        "answers": [
+            "misclassified"
+        ],
+        "other_options": [
+            "correct",
+            "random",
+            "first"
+        ]
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "from sklearn.ensemble import AdaBoostClassifier\nfrom sklearn.tree import DecisionTreeClassifier\nbase = DecisionTreeClassifier(max_depth=1)\nada = AdaBoostClassifier(estimator=base, n_estimators=10)\nprint(base.max_depth)",
+        "o": [
+            "1",
+            "10",
+            "None",
+            "3"
+        ]
+    },
+    {
+        "q": "AdaBoost typically uses decision stumps as weak learners.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Rearrange AdaBoost training steps:",
+        "type": "rearrange",
+        "words": [
+            "Initialize Weights",
+            "Train Weak Learner",
+            "Update Sample Weights",
+            "Combine Learners"
+        ]
+    },
+    {
+        "q": "What is Gradient Boosting?",
+        "type": "mcq",
+        "o": [
+            "Boosting method that optimizes a loss function using gradient descent",
+            "Color gradient application",
+            "Gradient calculation only",
+            "Slope boosting"
+        ]
+    },
+    {
+        "q": "Gradient Boosting fits new models to the _____ of previous predictions.",
+        "type": "fill_blank",
+        "answers": [
+            "residuals"
+        ],
+        "other_options": [
+            "outputs",
+            "inputs",
+            "weights"
+        ]
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "from sklearn.ensemble import GradientBoostingClassifier\ngb = GradientBoostingClassifier(n_estimators=100, learning_rate=0.1)\nprint(gb.learning_rate)",
+        "o": [
+            "0.1",
+            "1.0",
+            "0.01",
+            "100"
+        ]
+    },
+    {
+        "q": "Match the gradient boosting parameter with its effect:",
+        "type": "match",
+        "left": [
+            "n_estimators",
+            "learning_rate",
+            "max_depth",
+            "subsample"
+        ],
+        "right": [
+            "Number of stages",
+            "Step size",
+            "Tree complexity",
+            "Row sampling"
+        ]
+    },
+    {
+        "q": "Lower learning rate requires more estimators for good performance.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "What is XGBoost?",
+        "type": "mcq",
+        "o": [
+            "Extreme Gradient Boosting - optimized gradient boosting library",
+            "Extra gradient",
+            "X-ray gradient",
+            "Extended boosting"
+        ]
+    },
+    {
+        "q": "XGBoost uses _____ regularization to prevent overfitting.",
+        "type": "fill_blank",
+        "answers": [
+            "L1 and L2"
+        ],
+        "other_options": [
+            "L0",
+            "L3",
+            "no"
+        ]
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "# XGBoost concept check\nxgb_params = ['n_estimators', 'learning_rate', 'max_depth', 'reg_alpha', 'reg_lambda']\nprint(len(xgb_params))",
+        "o": [
+            "5",
+            "3",
+            "4",
+            "6"
+        ]
+    },
+    {
+        "q": "XGBoost is known for winning many Kaggle competitions.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Rearrange gradient boosting libraries by release order:",
+        "type": "rearrange",
+        "words": [
+            "Scikit-learn GB",
+            "XGBoost",
+            "LightGBM",
+            "CatBoost"
+        ]
+    },
+    {
+        "q": "What is LightGBM?",
+        "type": "mcq",
+        "o": [
+            "Light Gradient Boosting Machine using leaf-wise tree growth",
+            "Lightweight game",
+            "Light beam model",
+            "Simple gradient"
+        ]
+    },
+    {
+        "q": "LightGBM uses _____ tree growth for faster training.",
+        "type": "fill_blank",
+        "answers": [
+            "leaf-wise"
+        ],
+        "other_options": [
+            "level-wise",
+            "random",
+            "depth-first"
+        ]
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "# LightGBM concept\nfeatures = ['histogram-based', 'leaf-wise', 'GPU support', 'categorical support']\nprint(len(features))",
+        "o": [
+            "4",
+            "3",
+            "5",
+            "2"
+        ]
+    },
+    {
+        "q": "Match the boosting library with its feature:",
+        "type": "match",
+        "left": [
+            "XGBoost",
+            "LightGBM",
+            "CatBoost",
+            "Scikit-learn"
+        ],
+        "right": [
+            "Sparsity awareness",
+            "Histogram binning",
+            "Categorical handling",
+            "Simple API"
+        ]
+    },
+    {
+        "q": "LightGBM is typically faster than XGBoost for large datasets.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "What is stacking?",
+        "type": "mcq",
+        "o": [
+            "Ensemble method using a meta-model to combine base model predictions",
+            "Stacking dishes",
+            "Layer stacking",
+            "Data stacking"
+        ]
+    },
+    {
+        "q": "Stacking uses a _____ to learn how to best combine base predictions.",
+        "type": "fill_blank",
+        "answers": [
+            "meta-learner"
+        ],
+        "other_options": [
+            "average",
+            "vote",
+            "random"
+        ]
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "from sklearn.ensemble import StackingClassifier\nfrom sklearn.linear_model import LogisticRegression\nfrom sklearn.tree import DecisionTreeClassifier\nfrom sklearn.svm import SVC\nestimators = [('dt', DecisionTreeClassifier()), ('svc', SVC())]\nstack = StackingClassifier(estimators=estimators, final_estimator=LogisticRegression())\nprint(len(stack.estimators))",
+        "o": [
+            "2",
+            "3",
+            "1",
+            "4"
+        ]
+    },
+    {
+        "q": "Stacking often uses cross-validation to generate training data for the meta-learner.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Rearrange stacking ensemble steps:",
+        "type": "rearrange",
+        "words": [
+            "Train Base Models",
+            "Generate Predictions",
+            "Train Meta-Learner",
+            "Make Final Prediction"
+        ]
+    },
+    {
+        "q": "What is voting classifier?",
+        "type": "mcq",
+        "o": [
+            "Ensemble that combines predictions through voting",
+            "Election classifier",
+            "Vote counting",
+            "Democratic model"
+        ]
+    },
+    {
+        "q": "Hard voting uses the _____ predicted class from base classifiers.",
+        "type": "fill_blank",
+        "answers": [
+            "majority"
+        ],
+        "other_options": [
+            "minority",
+            "first",
+            "random"
+        ]
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "from sklearn.ensemble import VotingClassifier\nfrom sklearn.linear_model import LogisticRegression\nfrom sklearn.tree import DecisionTreeClassifier\nestimators = [('lr', LogisticRegression()), ('dt', DecisionTreeClassifier())]\nvote = VotingClassifier(estimators=estimators, voting='hard')\nprint(vote.voting)",
+        "o": [
+            "hard",
+            "soft",
+            "average",
+            "majority"
+        ]
+    },
+    {
+        "q": "Match the voting type with its approach:",
+        "type": "match",
+        "left": [
+            "Hard Voting",
+            "Soft Voting",
+            "Weighted Voting",
+            "Plurality"
+        ],
+        "right": [
+            "Majority class",
+            "Average probabilities",
+            "Importance-based",
+            "Most votes wins"
+        ]
+    },
+    {
+        "q": "Soft voting requires classifiers that can output probabilities.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "What is accuracy in classification?",
+        "type": "mcq",
+        "o": [
+            "Ratio of correct predictions to total predictions",
+            "Speed of prediction",
+            "Model complexity",
+            "Training time"
+        ]
+    },
+    {
+        "q": "Accuracy equals correct predictions divided by _____ predictions.",
+        "type": "fill_blank",
+        "answers": [
+            "total"
+        ],
+        "other_options": [
+            "wrong",
+            "first",
+            "last"
+        ]
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "from sklearn.metrics import accuracy_score\ny_true = [0, 1, 1, 0, 1]\ny_pred = [0, 1, 0, 0, 1]\naccuracy = accuracy_score(y_true, y_pred)\nprint(accuracy)",
+        "o": [
+            "0.8",
+            "0.6",
+            "1.0",
+            "0.4"
+        ]
+    },
+    {
+        "q": "Accuracy is a good metric for imbalanced datasets.",
+        "type": "true_false",
+        "correct": "False"
+    },
+    {
+        "q": "Rearrange evaluation metric priority for imbalanced data:",
+        "type": "rearrange",
+        "words": [
+            "Precision/Recall",
+            "F1-Score",
+            "AUC-ROC",
+            "Accuracy (last)"
+        ]
+    },
+    {
+        "q": "What is precision?",
+        "type": "mcq",
+        "o": [
+            "Ratio of true positives to predicted positives",
+            "Overall accuracy",
+            "Speed metric",
+            "Model size"
+        ]
+    },
+    {
+        "q": "Precision measures: Of all _____ predictions, how many were correct?",
+        "type": "fill_blank",
+        "answers": [
+            "positive"
+        ],
+        "other_options": [
+            "negative",
+            "total",
+            "random"
+        ]
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "from sklearn.metrics import precision_score\ny_true = [0, 1, 1, 0, 1, 1]\ny_pred = [1, 1, 1, 0, 0, 1]\nprecision = precision_score(y_true, y_pred)\nprint(round(precision, 2))",
+        "o": [
+            "0.75",
+            "0.67",
+            "1.0",
+            "0.5"
+        ]
+    },
+    {
+        "q": "Match the metric with its formula:",
+        "type": "match",
+        "left": [
+            "Precision",
+            "Recall",
             "Accuracy",
+            "F1-Score"
+        ],
+        "right": [
+            "TP/(TP+FP)",
+            "TP/(TP+FN)",
+            "(TP+TN)/Total",
+            "2*Prec*Rec/(Prec+Rec)"
+        ]
+    },
+    {
+        "q": "High precision means few false positives.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "What is recall?",
+        "type": "mcq",
+        "o": [
+            "Ratio of true positives to actual positives",
+            "Memory recall",
+            "Data retrieval",
+            "Model summary"
+        ]
+    },
+    {
+        "q": "Recall measures: Of all _____ samples, how many were predicted correctly?",
+        "type": "fill_blank",
+        "answers": [
+            "actual positive"
+        ],
+        "other_options": [
+            "predicted",
+            "negative",
+            "total"
+        ]
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "from sklearn.metrics import recall_score\ny_true = [0, 1, 1, 0, 1, 1]\ny_pred = [1, 1, 1, 0, 0, 1]\nrecall = recall_score(y_true, y_pred)\nprint(round(recall, 2))",
+        "o": [
+            "0.75",
+            "1.0",
+            "0.5",
+            "0.67"
+        ]
+    },
+    {
+        "q": "Recall is also called sensitivity or true positive rate.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Rearrange metrics by importance for fraud detection:",
+        "type": "rearrange",
+        "words": [
+            "Recall (catch frauds)",
+            "Precision (reduce false alarms)",
+            "F1-Score",
+            "Accuracy"
+        ]
+    },
+    {
+        "q": "What is F1-Score?",
+        "type": "mcq",
+        "o": [
+            "Harmonic mean of precision and recall",
+            "First formula",
+            "Feature 1 score",
+            "Simple average"
+        ]
+    },
+    {
+        "q": "F1-Score balances the trade-off between precision and _____.",
+        "type": "fill_blank",
+        "answers": [
+            "recall"
+        ],
+        "other_options": [
+            "accuracy",
+            "speed",
+            "size"
+        ]
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "from sklearn.metrics import f1_score\ny_true = [0, 1, 1, 0, 1]\ny_pred = [0, 1, 0, 0, 1]\nf1 = f1_score(y_true, y_pred)\nprint(round(f1, 2))",
+        "o": [
+            "0.8",
+            "0.67",
+            "1.0",
+            "0.5"
+        ]
+    },
+    {
+        "q": "Match the F1-Score characteristic with its description:",
+        "type": "match",
+        "left": [
+            "F1=1",
+            "F1=0",
+            "High F1",
+            "Low F1"
+        ],
+        "right": [
+            "Perfect",
+            "Worst",
+            "Good balance",
+            "Imbalanced metrics"
+        ]
+    },
+    {
+        "q": "F1-Score is undefined when both precision and recall are zero.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "What is a confusion matrix?",
+        "type": "mcq",
+        "o": [
+            "Table showing prediction outcomes vs actual labels",
+            "Confusing data visualization",
+            "Error matrix only",
+            "Training data summary"
+        ]
+    },
+    {
+        "q": "A confusion matrix has _____ quadrants for binary classification.",
+        "type": "fill_blank",
+        "answers": [
+            "four"
+        ],
+        "other_options": [
+            "two",
+            "three",
+            "eight"
+        ]
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "from sklearn.metrics import confusion_matrix\ny_true = [0, 1, 1, 0, 1]\ny_pred = [0, 1, 0, 0, 1]\ncm = confusion_matrix(y_true, y_pred)\nprint(cm.shape)",
+        "o": [
+            "(2, 2)",
+            "(3, 3)",
+            "(1, 4)",
+            "(4, 1)"
+        ]
+    },
+    {
+        "q": "Confusion matrix diagonal elements represent correct predictions.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Rearrange confusion matrix elements (binary):",
+        "type": "rearrange",
+        "words": [
+            "True Negative",
+            "False Positive",
+            "False Negative",
+            "True Positive"
+        ]
+    },
+    {
+        "q": "What is ROC curve?",
+        "type": "mcq",
+        "o": [
+            "Receiver Operating Characteristic curve plotting TPR vs FPR",
+            "Rate of change curve",
+            "Random output curve",
+            "Regression output curve"
+        ]
+    },
+    {
+        "q": "ROC curve plots true positive rate against _____ positive rate.",
+        "type": "fill_blank",
+        "answers": [
+            "false"
+        ],
+        "other_options": [
+            "true",
+            "total",
+            "average"
+        ]
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "from sklearn.metrics import roc_auc_score\nimport numpy as np\ny_true = np.array([0, 0, 1, 1])\ny_scores = np.array([0.1, 0.4, 0.35, 0.8])\nauc = roc_auc_score(y_true, y_scores)\nprint(round(auc, 2))",
+        "o": [
+            "0.75",
+            "1.0",
+            "0.5",
+            "0.0"
+        ]
+    },
+    {
+        "q": "Match the AUC value with its interpretation:",
+        "type": "match",
+        "left": [
+            "AUC=1.0",
+            "AUC=0.5",
+            "AUC>0.9",
+            "AUC<0.5"
+        ],
+        "right": [
+            "Perfect classifier",
+            "Random classifier",
+            "Excellent",
+            "Worse than random"
+        ]
+    },
+    {
+        "q": "AUC-ROC measures ranking ability of a classifier.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "What is Mean Squared Error (MSE)?",
+        "type": "mcq",
+        "o": [
+            "Average of squared differences between predictions and actual values",
+            "Mean simple error",
+            "Model size estimate",
+            "Maximum squared error"
+        ]
+    },
+    {
+        "q": "MSE penalizes _____ errors more heavily.",
+        "type": "fill_blank",
+        "answers": [
+            "larger"
+        ],
+        "other_options": [
+            "smaller",
+            "equal",
+            "first"
+        ]
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "from sklearn.metrics import mean_squared_error\ny_true = [3, 5, 2, 7]\ny_pred = [2.5, 5, 2.5, 8]\nmse = mean_squared_error(y_true, y_pred)\nprint(round(mse, 2))",
+        "o": [
+            "0.38",
+            "1.0",
+            "0.0",
+            "2.0"
+        ]
+    },
+    {
+        "q": "Lower MSE indicates better regression performance.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Rearrange error metrics by sensitivity to outliers:",
+        "type": "rearrange",
+        "words": [
+            "MAE (least sensitive)",
+            "RMSE",
             "MSE",
-            "R-Squared"
+            "Max Error (most sensitive)"
         ]
     },
     {
-        "q": "Which of the following is a key assumption of linear regression?",
-        "c": null,
+        "q": "What is R-squared (R2)?",
+        "type": "mcq",
         "o": [
-            "The relationship between input and output is linear",
-            "Data points are clustered",
-            "All features are categorical",
-            "There is multicollinearity"
+            "Proportion of variance in target explained by features",
+            "Residual squared",
+            "Rate squared",
+            "Random squared"
         ]
     },
     {
-        "q": "What is the main drawback of KNN when applied to large datasets?",
-        "c": null,
-        "o": [
-            "Computational inefficiency",
-            "Overfitting",
-            "Low accuracy",
-            "Lack of flexibility"
+        "q": "R2 value of 1.0 indicates _____ predictions.",
+        "type": "fill_blank",
+        "answers": [
+            "perfect"
+        ],
+        "other_options": [
+            "worst",
+            "average",
+            "random"
         ]
     },
     {
-        "q": "What is a hyperplane in SVM?",
-        "c": null,
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "from sklearn.metrics import r2_score\ny_true = [3, 5, 2, 7]\ny_pred = [3, 5, 2, 7]\nr2 = r2_score(y_true, y_pred)\nprint(r2)",
         "o": [
-            "A decision boundary that separates classes",
-            "A cluster center",
-            "The output of a decision tree",
-            "A point of minimum loss"
+            "1.0",
+            "0.0",
+            "0.5",
+            "-1.0"
         ]
     },
     {
-        "q": "Which of the following methods can be used to handle categorical variables in supervised learning?",
-        "c": null,
-        "o": [
-            "One-Hot Encoding",
-            "Normalization",
-            "Gradient Boosting",
-            "Dimensionality Reduction"
+        "q": "Match the R2 value with its interpretation:",
+        "type": "match",
+        "left": [
+            "R2=1.0",
+            "R2=0.0",
+            "R2<0",
+            "R2=0.8"
+        ],
+        "right": [
+            "Perfect fit",
+            "No better than mean",
+            "Worse than mean",
+            "Good fit"
         ]
     },
     {
-        "q": "What is the goal of cross-validation?",
-        "c": null,
+        "q": "R-squared can be negative if model performs worse than simply predicting mean.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "What is cross-validation?",
+        "type": "mcq",
         "o": [
-            "To assess model performance",
-            "To increase model complexity",
-            "To reduce variance",
-            "To improve accuracy on the training data"
+            "Technique to evaluate model on multiple data splits",
+            "Crossing data",
+            "Validation crossing",
+            "Single split evaluation"
         ]
     },
     {
-        "q": "Which supervised learning algorithm uses conditional probabilities?",
-        "c": null,
-        "o": [
-            "Naive Bayes",
-            "Linear Regression",
-            "KNN",
-            "Random Forest"
+        "q": "K-fold cross-validation divides data into _____ equal parts.",
+        "type": "fill_blank",
+        "answers": [
+            "k"
+        ],
+        "other_options": [
+            "two",
+            "random",
+            "unequal"
         ]
     },
     {
-        "q": "Which model tends to overfit more: Random Forest or Decision Tree?",
-        "c": null,
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "from sklearn.model_selection import cross_val_score\nfrom sklearn.linear_model import LogisticRegression\nimport numpy as np\nX = np.array([[1], [2], [3], [4], [5]])\ny = np.array([0, 0, 1, 1, 1])\nscores = cross_val_score(LogisticRegression(), X, y, cv=5)\nprint(len(scores))",
         "o": [
-            "Decision Tree",
-            "Random Forest",
-            "Both equally",
+            "5",
+            "1",
+            "3",
+            "10"
+        ]
+    },
+    {
+        "q": "Cross-validation provides more robust performance estimates than single split.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Rearrange cross-validation types by complexity:",
+        "type": "rearrange",
+        "words": [
+            "Holdout (simplest)",
+            "K-Fold",
+            "Stratified K-Fold",
+            "Leave-One-Out"
+        ]
+    },
+    {
+        "q": "What is stratified k-fold cross-validation?",
+        "type": "mcq",
+        "o": [
+            "K-fold that preserves class distribution in each fold",
+            "Random k-fold",
+            "Layered validation",
+            "Stratified sampling only"
+        ]
+    },
+    {
+        "q": "Stratified k-fold is important for _____ datasets.",
+        "type": "fill_blank",
+        "answers": [
+            "imbalanced"
+        ],
+        "other_options": [
+            "large",
+            "small",
+            "simple"
+        ]
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "from sklearn.model_selection import StratifiedKFold\nskf = StratifiedKFold(n_splits=5)\nprint(skf.n_splits)",
+        "o": [
+            "5",
+            "10",
+            "3",
+            "2"
+        ]
+    },
+    {
+        "q": "Match the cross-validation type with its use case:",
+        "type": "match",
+        "left": [
+            "K-Fold",
+            "Stratified",
+            "Time Series",
+            "Leave-One-Out"
+        ],
+        "right": [
+            "General purpose",
+            "Imbalanced classes",
+            "Temporal data",
+            "Small datasets"
+        ]
+    },
+    {
+        "q": "Stratified sampling ensures each fold has similar class proportions.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "What is overfitting?",
+        "type": "mcq",
+        "o": [
+            "Model learns noise and performs poorly on unseen data",
+            "Model fits well",
+            "Overweight model",
+            "Large model size"
+        ]
+    },
+    {
+        "q": "Overfitting means high training accuracy but low _____ accuracy.",
+        "type": "fill_blank",
+        "answers": [
+            "test"
+        ],
+        "other_options": [
+            "training",
+            "model",
+            "data"
+        ]
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "train_acc = 0.99\ntest_acc = 0.65\noverfit_gap = train_acc - test_acc\nprint(f'Gap: {overfit_gap}')",
+        "o": [
+            "Gap: 0.34",
+            "Gap: 1.64",
+            "Gap: 0.0",
+            "Gap: 0.99"
+        ]
+    },
+    {
+        "q": "More complex models are more likely to overfit.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Rearrange overfitting solutions:",
+        "type": "rearrange",
+        "words": [
+            "Add More Data",
+            "Reduce Complexity",
+            "Add Regularization",
+            "Use Dropout"
+        ]
+    },
+    {
+        "q": "What is underfitting?",
+        "type": "mcq",
+        "o": [
+            "Model is too simple to capture patterns in data",
+            "Model fits well",
+            "Small dataset",
+            "Fast training"
+        ]
+    },
+    {
+        "q": "Underfitting results in high _____ on both training and test sets.",
+        "type": "fill_blank",
+        "answers": [
+            "error"
+        ],
+        "other_options": [
+            "accuracy",
+            "speed",
+            "complexity"
+        ]
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "train_acc = 0.65\ntest_acc = 0.63\nunderfit = train_acc < 0.8 and test_acc < 0.8\nprint(f'Underfitting: {underfit}')",
+        "o": [
+            "Underfitting: True",
+            "Underfitting: False",
+            "Error",
             "None"
         ]
     },
     {
-        "q": "In decision trees, what is the purpose of 'pruning'?",
-        "c": null,
-        "o": [
-            "To reduce overfitting",
-            "To increase tree depth",
-            "To handle missing data",
-            "To improve training time"
+        "q": "Match the model state with its characteristics:",
+        "type": "match",
+        "left": [
+            "Overfitting",
+            "Underfitting",
+            "Good Fit",
+            "High Variance"
+        ],
+        "right": [
+            "High train, low test",
+            "Low both",
+            "Balanced performance",
+            "Sensitive to data"
         ]
     },
     {
-        "q": "Which of the following can be used for multi-class classification?",
-        "c": null,
+        "q": "Using a linear model for highly non-linear data causes underfitting.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "What is regularization?",
+        "type": "mcq",
         "o": [
-            "Softmax Regression",
+            "Technique to prevent overfitting by penalizing model complexity",
+            "Making models regular",
+            "Data normalization",
+            "Feature standardization"
+        ]
+    },
+    {
+        "q": "L2 regularization is also called _____ regression.",
+        "type": "fill_blank",
+        "answers": [
+            "Ridge"
+        ],
+        "other_options": [
+            "Lasso",
+            "Elastic",
+            "Linear"
+        ]
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "from sklearn.linear_model import Ridge\nridge = Ridge(alpha=1.0)\nprint(ridge.alpha)",
+        "o": [
+            "1.0",
+            "0.0",
+            "0.5",
+            "2.0"
+        ]
+    },
+    {
+        "q": "Match the regularization type with its penalty:",
+        "type": "match",
+        "left": [
+            "L1 (Lasso)",
+            "L2 (Ridge)",
+            "Elastic Net",
+            "No regularization"
+        ],
+        "right": [
+            "Sum of absolute weights",
+            "Sum of squared weights",
+            "Both L1 and L2",
+            "No penalty"
+        ]
+    },
+    {
+        "q": "L1 regularization can produce sparse models with zero coefficients.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "What is hyperparameter tuning?",
+        "type": "mcq",
+        "o": [
+            "Finding optimal model configuration settings",
+            "Parameter learning",
+            "Weight adjustment",
+            "Training the model"
+        ]
+    },
+    {
+        "q": "Hyperparameters are set _____ training, not learned during training.",
+        "type": "fill_blank",
+        "answers": [
+            "before"
+        ],
+        "other_options": [
+            "during",
+            "after",
+            "while"
+        ]
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "from sklearn.model_selection import GridSearchCV\nfrom sklearn.tree import DecisionTreeClassifier\nparams = {'max_depth': [1, 2, 3, 4, 5]}\ngrid = GridSearchCV(DecisionTreeClassifier(), params, cv=3)\nprint(len(params['max_depth']))",
+        "o": [
+            "5",
+            "3",
+            "1",
+            "15"
+        ]
+    },
+    {
+        "q": "Grid search exhaustively tries all hyperparameter combinations.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Rearrange tuning methods by search thoroughness:",
+        "type": "rearrange",
+        "words": [
+            "Random Search",
+            "Grid Search",
+            "Bayesian Optimization",
+            "Exhaustive Search"
+        ]
+    },
+    {
+        "q": "What is random search for hyperparameter tuning?",
+        "type": "mcq",
+        "o": [
+            "Sampling hyperparameter combinations randomly from distributions",
+            "Random model selection",
+            "Randomly training models",
+            "Random data selection"
+        ]
+    },
+    {
+        "q": "Random search is often more _____ than grid search for large parameter spaces.",
+        "type": "fill_blank",
+        "answers": [
+            "efficient"
+        ],
+        "other_options": [
+            "slow",
+            "thorough",
+            "complex"
+        ]
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "from sklearn.model_selection import RandomizedSearchCV\nfrom sklearn.tree import DecisionTreeClassifier\nfrom scipy.stats import randint\nparams = {'max_depth': randint(1, 10)}\nrandom = RandomizedSearchCV(DecisionTreeClassifier(), params, n_iter=5, cv=3)\nprint(random.n_iter)",
+        "o": [
+            "5",
+            "10",
+            "3",
+            "1"
+        ]
+    },
+    {
+        "q": "Random search can explore more hyperparameter values with fewer iterations.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Match the tuning method with its characteristic:",
+        "type": "match",
+        "left": [
+            "Grid Search",
+            "Random Search",
+            "Bayesian",
+            "Hyperband"
+        ],
+        "right": [
+            "Exhaustive",
+            "Probabilistic sampling",
+            "Informed search",
+            "Early stopping"
+        ]
+    },
+    {
+        "q": "What is polynomial regression?",
+        "type": "mcq",
+        "o": [
+            "Linear regression with polynomial features",
+            "Matrix multiplication",
+            "Polynomial data type",
+            "Multiple linear regression"
+        ]
+    },
+    {
+        "q": "Polynomial features allow linear models to fit _____ relationships.",
+        "type": "fill_blank",
+        "answers": [
+            "non-linear"
+        ],
+        "other_options": [
+            "linear",
+            "random",
+            "constant"
+        ]
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "from sklearn.preprocessing import PolynomialFeatures\nimport numpy as np\nX = np.array([[2], [3]])\npoly = PolynomialFeatures(degree=2, include_bias=False)\nX_poly = poly.fit_transform(X)\nprint(X_poly.shape[1])",
+        "o": [
+            "2",
+            "1",
+            "3",
+            "4"
+        ]
+    },
+    {
+        "q": "Higher polynomial degrees can lead to overfitting.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Rearrange polynomial feature engineering steps:",
+        "type": "rearrange",
+        "words": [
+            "Original Features",
+            "Create Polynomial Terms",
+            "Include Interactions",
+            "Fit Linear Model"
+        ]
+    },
+    {
+        "q": "What is elastic net regularization?",
+        "type": "mcq",
+        "o": [
+            "Combination of L1 and L2 regularization",
+            "Elastic data processing",
+            "Network regularization",
+            "Stretching features"
+        ]
+    },
+    {
+        "q": "Elastic net uses ratio parameter to balance L1 and _____.",
+        "type": "fill_blank",
+        "answers": [
+            "L2"
+        ],
+        "other_options": [
+            "L0",
+            "L3",
+            "regularization"
+        ]
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "from sklearn.linear_model import ElasticNet\nen = ElasticNet(alpha=1.0, l1_ratio=0.5)\nprint(en.l1_ratio)",
+        "o": [
+            "0.5",
+            "1.0",
+            "0.0",
+            "0.25"
+        ]
+    },
+    {
+        "q": "Match the regularization ratio with its behavior:",
+        "type": "match",
+        "left": [
+            "l1_ratio=0",
+            "l1_ratio=1",
+            "l1_ratio=0.5",
+            "alpha=0"
+        ],
+        "right": [
+            "Pure L2 (Ridge)",
+            "Pure L1 (Lasso)",
+            "Equal mix",
+            "No regularization"
+        ]
+    },
+    {
+        "q": "Elastic net is useful when there are correlated features.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "What is feature importance in tree models?",
+        "type": "mcq",
+        "o": [
+            "Measure of how much each feature contributes to predictions",
+            "Feature ordering",
+            "Important data",
+            "Feature count"
+        ]
+    },
+    {
+        "q": "Random Forest computes feature importance based on mean _____ decrease.",
+        "type": "fill_blank",
+        "answers": [
+            "impurity"
+        ],
+        "other_options": [
+            "accuracy",
+            "error",
+            "depth"
+        ]
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "from sklearn.ensemble import RandomForestClassifier\nimport numpy as np\nX = np.random.rand(100, 5)\ny = np.random.randint(0, 2, 100)\nrf = RandomForestClassifier(n_estimators=10, random_state=42)\nrf.fit(X, y)\nprint(len(rf.feature_importances_))",
+        "o": [
+            "5",
+            "10",
+            "100",
+            "2"
+        ]
+    },
+    {
+        "q": "Feature importances from tree models sum to 1.0.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Rearrange feature importance methods by reliability:",
+        "type": "rearrange",
+        "words": [
+            "Permutation Importance (best)",
+            "SHAP Values",
+            "Mean Decrease Impurity",
+            "Coefficient Magnitude"
+        ]
+    },
+    {
+        "q": "What is permutation importance?",
+        "type": "mcq",
+        "o": [
+            "Measuring importance by shuffling feature values and observing score drop",
+            "Permuting data",
+            "Feature permutation only",
+            "Random shuffling"
+        ]
+    },
+    {
+        "q": "Permutation importance is model-_____ and works with any estimator.",
+        "type": "fill_blank",
+        "answers": [
+            "agnostic"
+        ],
+        "other_options": [
+            "specific",
+            "dependent",
+            "limited"
+        ]
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "from sklearn.inspection import permutation_importance\nfrom sklearn.ensemble import RandomForestClassifier\nimport numpy as np\nnp.random.seed(42)\nX = np.random.rand(100, 3)\ny = np.random.randint(0, 2, 100)\nrf = RandomForestClassifier(n_estimators=10, random_state=42).fit(X, y)\nresult = permutation_importance(rf, X, y, n_repeats=5)\nprint(result.importances_mean.shape)",
+        "o": [
+            "(3,)",
+            "(5,)",
+            "(100,)",
+            "(10,)"
+        ]
+    },
+    {
+        "q": "Match the importance method with its advantage:",
+        "type": "match",
+        "left": [
+            "Permutation",
+            "SHAP",
+            "Mean Decrease Impurity",
+            "Coefficient"
+        ],
+        "right": [
+            "Model agnostic",
+            "Local explanations",
+            "Fast computation",
+            "Linear models only"
+        ]
+    },
+    {
+        "q": "Permutation importance can be computed on validation data.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "What is learning curve analysis?",
+        "type": "mcq",
+        "o": [
+            "Plotting model performance vs training set size",
+            "Learning speed curve",
+            "Time analysis",
+            "Curve fitting"
+        ]
+    },
+    {
+        "q": "Learning curves help diagnose overfitting and _____.",
+        "type": "fill_blank",
+        "answers": [
+            "underfitting"
+        ],
+        "other_options": [
+            "training",
+            "testing",
+            "validation"
+        ]
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "from sklearn.model_selection import learning_curve\nfrom sklearn.linear_model import LogisticRegression\nimport numpy as np\nX = np.random.rand(100, 5)\ny = np.random.randint(0, 2, 100)\ntrain_sizes, train_scores, test_scores = learning_curve(LogisticRegression(), X, y, cv=3, train_sizes=[0.5, 1.0])\nprint(len(train_sizes))",
+        "o": [
+            "2",
+            "3",
+            "5",
+            "100"
+        ]
+    },
+    {
+        "q": "Converging training and validation curves indicate good fit.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Rearrange learning curve patterns:",
+        "type": "rearrange",
+        "words": [
+            "High Bias (underfitting)",
+            "Good Fit",
+            "High Variance (overfitting)",
+            "Perfect Fit"
+        ]
+    },
+    {
+        "q": "What is calibration in classification?",
+        "type": "mcq",
+        "o": [
+            "Adjusting predicted probabilities to match true frequencies",
+            "Model weight adjustment",
+            "Feature calibration",
+            "Parameter tuning"
+        ]
+    },
+    {
+        "q": "Well-calibrated classifiers have predicted probabilities close to true _____.",
+        "type": "fill_blank",
+        "answers": [
+            "frequencies"
+        ],
+        "other_options": [
+            "classes",
+            "labels",
+            "outputs"
+        ]
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "from sklearn.calibration import CalibratedClassifierCV\nfrom sklearn.svm import SVC\ncalibrated = CalibratedClassifierCV(SVC(), method='sigmoid', cv=3)\nprint(calibrated.method)",
+        "o": [
+            "sigmoid",
+            "isotonic",
+            "platt",
+            "linear"
+        ]
+    },
+    {
+        "q": "Match the calibration method with its approach:",
+        "type": "match",
+        "left": [
+            "Platt Scaling",
+            "Isotonic",
+            "Temperature",
+            "Beta"
+        ],
+        "right": [
+            "Sigmoid function",
+            "Non-parametric",
+            "Single parameter",
+            "Distribution-based"
+        ]
+    },
+    {
+        "q": "SVMs often need calibration because they output decision functions, not probabilities.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "What is multi-output regression?",
+        "type": "mcq",
+        "o": [
+            "Predicting multiple continuous target variables simultaneously",
+            "Multiple inputs",
+            "Multi-class classification",
+            "Output multiplication"
+        ]
+    },
+    {
+        "q": "MultiOutputRegressor trains a separate model for each _____.",
+        "type": "fill_blank",
+        "answers": [
+            "target"
+        ],
+        "other_options": [
+            "feature",
+            "sample",
+            "row"
+        ]
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "from sklearn.multioutput import MultiOutputRegressor\nfrom sklearn.linear_model import Ridge\nimport numpy as np\nX = np.random.rand(100, 5)\ny = np.random.rand(100, 3)  # 3 targets\nmor = MultiOutputRegressor(Ridge()).fit(X, y)\nprint(len(mor.estimators_))",
+        "o": [
+            "3",
+            "5",
+            "100",
+            "1"
+        ]
+    },
+    {
+        "q": "Some algorithms like Random Forest natively support multi-output.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Rearrange multi-output approaches by sophistication:",
+        "type": "rearrange",
+        "words": [
+            "Independent Models",
+            "Chain Models",
+            "Shared Representation",
+            "Joint Prediction"
+        ]
+    },
+    {
+        "q": "What is multi-label classification?",
+        "type": "mcq",
+        "o": [
+            "Classification where samples can belong to multiple classes",
+            "Multi-class classification",
+            "Label multiplication",
+            "Multiple datasets"
+        ]
+    },
+    {
+        "q": "Multi-label classification assigns _____ or more labels per sample.",
+        "type": "fill_blank",
+        "answers": [
+            "zero"
+        ],
+        "other_options": [
+            "one",
+            "two",
+            "three"
+        ]
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "from sklearn.multioutput import MultiOutputClassifier\nfrom sklearn.linear_model import LogisticRegression\nimport numpy as np\nX = np.random.rand(100, 5)\ny = np.random.randint(0, 2, (100, 4))  # 4 labels\nmoc = MultiOutputClassifier(LogisticRegression()).fit(X, y)\nprint(len(moc.estimators_))",
+        "o": [
+            "4",
+            "5",
+            "100",
+            "2"
+        ]
+    },
+    {
+        "q": "Match the multi-label strategy with its approach:",
+        "type": "match",
+        "left": [
+            "Binary Relevance",
+            "Classifier Chain",
+            "Label Powerset",
+            "Adapted Algorithms"
+        ],
+        "right": [
+            "Independent classifiers",
+            "Sequential with dependencies",
+            "All combinations",
+            "Native multi-label"
+        ]
+    },
+    {
+        "q": "Hamming loss is a common metric for multi-label classification.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "What is class weight in classification?",
+        "type": "mcq",
+        "o": [
+            "Assigning higher weights to underrepresented classes",
+            "Model weight",
+            "Feature importance",
+            "Sample weight"
+        ]
+    },
+    {
+        "q": "Class weights help handle _____ datasets.",
+        "type": "fill_blank",
+        "answers": [
+            "imbalanced"
+        ],
+        "other_options": [
+            "large",
+            "small",
+            "balanced"
+        ]
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "from sklearn.linear_model import LogisticRegression\nlr = LogisticRegression(class_weight='balanced')\nprint(lr.class_weight)",
+        "o": [
+            "balanced",
+            "None",
+            "auto",
+            "equal"
+        ]
+    },
+    {
+        "q": "Class weights inversely proportional to class frequency help balance training.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Rearrange imbalanced data techniques:",
+        "type": "rearrange",
+        "words": [
+            "Class Weights",
+            "Oversampling (SMOTE)",
+            "Undersampling",
+            "Ensemble Methods"
+        ]
+    },
+    {
+        "q": "What is early stopping?",
+        "type": "mcq",
+        "o": [
+            "Stopping training when validation performance stops improving",
+            "Quick training",
+            "Early termination",
+            "Fast convergence"
+        ]
+    },
+    {
+        "q": "Early stopping prevents _____ by monitoring validation loss.",
+        "type": "fill_blank",
+        "answers": [
+            "overfitting"
+        ],
+        "other_options": [
+            "underfitting",
+            "training",
+            "convergence"
+        ]
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "from sklearn.ensemble import GradientBoostingClassifier\ngb = GradientBoostingClassifier(n_estimators=1000, validation_fraction=0.1, n_iter_no_change=10)\nprint(gb.n_iter_no_change)",
+        "o": [
+            "10",
+            "1000",
+            "0.1",
+            "None"
+        ]
+    },
+    {
+        "q": "Match the early stopping parameter with its meaning:",
+        "type": "match",
+        "left": [
+            "patience",
+            "validation_fraction",
+            "tol",
+            "restore_best"
+        ],
+        "right": [
+            "Iterations to wait",
+            "Validation set size",
+            "Minimum improvement",
+            "Return best model"
+        ]
+    },
+    {
+        "q": "Early stopping requires a validation set to monitor progress.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "What is model selection?",
+        "type": "mcq",
+        "o": [
+            "Choosing the best model from multiple candidates",
+            "Selecting data",
+            "Feature selection",
+            "Random selection"
+        ]
+    },
+    {
+        "q": "Model selection typically uses _____ performance to compare models.",
+        "type": "fill_blank",
+        "answers": [
+            "validation"
+        ],
+        "other_options": [
+            "training",
+            "random",
+            "test"
+        ]
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "from sklearn.model_selection import cross_val_score\nfrom sklearn.tree import DecisionTreeClassifier\nfrom sklearn.linear_model import LogisticRegression\nimport numpy as np\nX = np.random.rand(100, 5)\ny = np.random.randint(0, 2, 100)\ndt_score = cross_val_score(DecisionTreeClassifier(), X, y, cv=5).mean()\nlr_score = cross_val_score(LogisticRegression(), X, y, cv=5).mean()\nprint(type(dt_score).__name__)",
+        "o": [
+            "float64",
+            "int",
+            "list",
+            "array"
+        ]
+    },
+    {
+        "q": "Cross-validation helps prevent overfitting during model selection.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Rearrange model selection criteria:",
+        "type": "rearrange",
+        "words": [
+            "Cross-Validation Score",
+            "Interpretability",
+            "Training Time",
+            "Inference Speed"
+        ]
+    },
+    {
+        "q": "What is CatBoost?",
+        "type": "mcq",
+        "o": [
+            "Gradient boosting library with native categorical feature support",
+            "Cat classification",
+            "Categorical booster only",
+            "Category database"
+        ]
+    },
+    {
+        "q": "CatBoost handles categorical features without explicit _____.",
+        "type": "fill_blank",
+        "answers": [
+            "encoding"
+        ],
+        "other_options": [
+            "training",
+            "splitting",
+            "loading"
+        ]
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "# CatBoost feature\nfeatures = ['ordered boosting', 'categorical encoding', 'GPU training', 'symmetric trees']\nprint(len(features))",
+        "o": [
+            "4",
+            "3",
+            "5",
+            "2"
+        ]
+    },
+    {
+        "q": "Match the boosting library with its main advantage:",
+        "type": "match",
+        "left": [
+            "XGBoost",
+            "LightGBM",
+            "CatBoost",
+            "sklearn GB"
+        ],
+        "right": [
+            "Regularization",
+            "Speed",
+            "Categorical handling",
+            "Simplicity"
+        ]
+    },
+    {
+        "q": "CatBoost uses ordered target statistics to prevent target leakage.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "What is One-vs-Rest (OvR) classification?",
+        "type": "mcq",
+        "o": [
+            "Training one classifier per class vs all others",
+            "One versus one",
+            "Single classifier",
+            "Rest vs one"
+        ]
+    },
+    {
+        "q": "OvR creates _____ binary classifiers for n classes.",
+        "type": "fill_blank",
+        "answers": [
+            "n"
+        ],
+        "other_options": [
+            "n-1",
+            "n*(n-1)/2",
+            "1"
+        ]
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "from sklearn.multiclass import OneVsRestClassifier\nfrom sklearn.svm import SVC\nimport numpy as np\nX = np.random.rand(100, 5)\ny = np.random.randint(0, 3, 100)  # 3 classes\novr = OneVsRestClassifier(SVC()).fit(X, y)\nprint(len(ovr.estimators_))",
+        "o": [
+            "3",
+            "2",
+            "6",
+            "1"
+        ]
+    },
+    {
+        "q": "OvR is the default multi-class strategy for many sklearn classifiers.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Rearrange multi-class strategies by number of classifiers (3 classes):",
+        "type": "rearrange",
+        "words": [
+            "Native (1)",
+            "OvR (3)",
+            "OvO (3)",
+            "Error Correcting"
+        ]
+    },
+    {
+        "q": "What is One-vs-One (OvO) classification?",
+        "type": "mcq",
+        "o": [
+            "Training a classifier for each pair of classes",
+            "One vs rest",
+            "Single classifier",
+            "Pairwise regression"
+        ]
+    },
+    {
+        "q": "OvO creates n*(n-1)/2 classifiers for _____ classes.",
+        "type": "fill_blank",
+        "answers": [
+            "n"
+        ],
+        "other_options": [
+            "2",
+            "n-1",
+            "n+1"
+        ]
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "from sklearn.multiclass import OneVsOneClassifier\nfrom sklearn.svm import SVC\nimport numpy as np\nX = np.random.rand(100, 5)\ny = np.random.randint(0, 4, 100)  # 4 classes\novo = OneVsOneClassifier(SVC()).fit(X, y)\nprint(len(ovo.estimators_))",
+        "o": [
+            "6",
+            "4",
+            "3",
+            "12"
+        ]
+    },
+    {
+        "q": "Match the multi-class strategy with its classifier count formula:",
+        "type": "match",
+        "left": [
+            "One-vs-Rest",
+            "One-vs-One",
+            "Native",
+            "Error Correcting"
+        ],
+        "right": [
+            "n classifiers",
+            "n(n-1)/2 classifiers",
+            "1 classifier",
+            "k classifiers"
+        ]
+    },
+    {
+        "q": "OvO can be more accurate but slower than OvR for many classes.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "What is threshold tuning in classification?",
+        "type": "mcq",
+        "o": [
+            "Adjusting decision threshold to optimize specific metric",
+            "Feature threshold",
+            "Model threshold",
+            "Data threshold"
+        ]
+    },
+    {
+        "q": "Default classification threshold is _____ for binary problems.",
+        "type": "fill_blank",
+        "answers": [
+            "0.5"
+        ],
+        "other_options": [
+            "0.0",
+            "1.0",
+            "0.75"
+        ]
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "probabilities = [0.3, 0.6, 0.45, 0.8]\nthreshold = 0.5\npredictions = [1 if p >= threshold else 0 for p in probabilities]\nprint(sum(predictions))",
+        "o": [
+            "2",
+            "3",
+            "4",
+            "1"
+        ]
+    },
+    {
+        "q": "Lowering threshold increases recall but may decrease precision.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Rearrange threshold effects:",
+        "type": "rearrange",
+        "words": [
+            "Lower Threshold (more positives)",
+            "0.5 (balanced)",
+            "Higher Threshold (fewer positives)",
+            "Optimal (task-specific)"
+        ]
+    },
+    {
+        "q": "What is partial dependence plot?",
+        "type": "mcq",
+        "o": [
+            "Visualization showing marginal effect of features on predictions",
+            "Partial data plot",
+            "Dependency graph",
+            "Feature correlation"
+        ]
+    },
+    {
+        "q": "Partial dependence plots show how predictions change as feature values _____.",
+        "type": "fill_blank",
+        "answers": [
+            "vary"
+        ],
+        "other_options": [
+            "stay constant",
+            "disappear",
+            "multiply"
+        ]
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "from sklearn.inspection import PartialDependenceDisplay\nfrom sklearn.ensemble import RandomForestClassifier\nimport numpy as np\nX = np.random.rand(100, 3)\ny = np.random.randint(0, 2, 100)\nrf = RandomForestClassifier(n_estimators=10).fit(X, y)\nprint(X.shape[1])",
+        "o": [
+            "3",
+            "100",
+            "2",
+            "10"
+        ]
+    },
+    {
+        "q": "Match the interpretation method with its scope:",
+        "type": "match",
+        "left": [
+            "PDP",
+            "ICE",
+            "SHAP",
+            "LIME"
+        ],
+        "right": [
+            "Global average",
+            "Individual curves",
+            "Both global/local",
+            "Local only"
+        ]
+    },
+    {
+        "q": "PDP assumes features are independent when computing marginal effects.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "What is SHAP (SHapley Additive exPlanations)?",
+        "type": "mcq",
+        "o": [
+            "Game theory-based method for explaining predictions",
+            "Shape detection",
+            "Model shaping",
+            "Data shaping"
+        ]
+    },
+    {
+        "q": "SHAP values show each features _____ to a specific prediction.",
+        "type": "fill_blank",
+        "answers": [
+            "contribution"
+        ],
+        "other_options": [
+            "importance",
+            "correlation",
+            "distribution"
+        ]
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "# SHAP concept\nexplainer_types = ['TreeExplainer', 'KernelExplainer', 'DeepExplainer', 'LinearExplainer']\nprint(len(explainer_types))",
+        "o": [
+            "4",
+            "3",
+            "5",
+            "2"
+        ]
+    },
+    {
+        "q": "SHAP values satisfy local accuracy, missingness, and consistency properties.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Rearrange SHAP advantages:",
+        "type": "rearrange",
+        "words": [
+            "Theoretical Foundation",
+            "Local Explanations",
+            "Global Aggregation",
+            "Feature Interactions"
+        ]
+    },
+    {
+        "q": "What is LIME (Local Interpretable Model-agnostic Explanations)?",
+        "type": "mcq",
+        "o": [
+            "Explaining predictions by fitting local interpretable model",
+            "Citrus classification",
+            "Linear model",
+            "Local interpretation"
+        ]
+    },
+    {
+        "q": "LIME creates _____ samples around the instance to explain.",
+        "type": "fill_blank",
+        "answers": [
+            "perturbed"
+        ],
+        "other_options": [
+            "random",
+            "original",
+            "distant"
+        ]
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "# LIME concept\nlime_supports = ['tabular', 'text', 'image']\nprint(len(lime_supports))",
+        "o": [
+            "3",
+            "2",
+            "4",
+            "1"
+        ]
+    },
+    {
+        "q": "Match the explanation method with its characteristic:",
+        "type": "match",
+        "left": [
+            "LIME",
+            "SHAP",
+            "Anchors",
+            "Counterfactual"
+        ],
+        "right": [
+            "Local surrogate",
+            "Game theory",
+            "Rule-based",
+            "What-if analysis"
+        ]
+    },
+    {
+        "q": "LIME is model-agnostic and works with any black-box model.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "What is cost-sensitive learning?",
+        "type": "mcq",
+        "o": [
+            "Learning that considers different costs for different types of errors",
+            "Cheap learning",
+            "Cost calculation",
+            "Budget learning"
+        ]
+    },
+    {
+        "q": "Cost-sensitive learning assigns higher penalties to more _____ errors.",
+        "type": "fill_blank",
+        "answers": [
+            "costly"
+        ],
+        "other_options": [
+            "frequent",
+            "rare",
+            "small"
+        ]
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "# Cost matrix concept\ncost_matrix = [[0, 1], [5, 0]]  # FN costs 5x more than FP\nprint(cost_matrix[1][0])",
+        "o": [
+            "5",
+            "1",
+            "0",
+            "2"
+        ]
+    },
+    {
+        "q": "In fraud detection, missing fraud (FN) is typically more costly than false alarm (FP).",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Rearrange cost-sensitive approaches:",
+        "type": "rearrange",
+        "words": [
+            "Class Weights",
+            "Threshold Adjustment",
+            "Cost Matrix",
+            "Specialized Algorithms"
+        ]
+    },
+    {
+        "q": "What is Precision-Recall curve?",
+        "type": "mcq",
+        "o": [
+            "Plot of precision vs recall at different thresholds",
+            "Accuracy curve",
+            "Learning curve",
+            "ROC curve variant"
+        ]
+    },
+    {
+        "q": "PR curve is preferred over ROC when classes are highly _____.",
+        "type": "fill_blank",
+        "answers": [
+            "imbalanced"
+        ],
+        "other_options": [
+            "balanced",
+            "similar",
+            "equal"
+        ]
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "from sklearn.metrics import precision_recall_curve\nimport numpy as np\ny_true = np.array([0, 0, 1, 1])\ny_scores = np.array([0.1, 0.4, 0.35, 0.8])\nprecisions, recalls, thresholds = precision_recall_curve(y_true, y_scores)\nprint(len(precisions) > len(thresholds))",
+        "o": [
+            "True",
+            "False",
+            "Error",
+            "None"
+        ]
+    },
+    {
+        "q": "Match the curve with its best use case:",
+        "type": "match",
+        "left": [
+            "ROC",
+            "PR",
+            "Learning",
+            "Calibration"
+        ],
+        "right": [
+            "Balanced classes",
+            "Imbalanced classes",
+            "Model diagnosis",
+            "Probability quality"
+        ]
+    },
+    {
+        "q": "Average Precision (AP) summarizes the PR curve into a single number.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "What is out-of-bag (OOB) score in Random Forest?",
+        "type": "mcq",
+        "o": [
+            "Validation score using samples not used in each tree training",
+            "Bagging score",
+            "External validation",
+            "Test set score"
+        ]
+    },
+    {
+        "q": "OOB samples are those not selected during _____ sampling.",
+        "type": "fill_blank",
+        "answers": [
+            "bootstrap"
+        ],
+        "other_options": [
+            "random",
+            "stratified",
+            "cross-validation"
+        ]
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "from sklearn.ensemble import RandomForestClassifier\nimport numpy as np\nX = np.random.rand(100, 5)\ny = np.random.randint(0, 2, 100)\nrf = RandomForestClassifier(n_estimators=100, oob_score=True, random_state=42)\nrf.fit(X, y)\nprint(type(rf.oob_score_).__name__)",
+        "o": [
+            "float64",
+            "int",
+            "bool",
+            "array"
+        ]
+    },
+    {
+        "q": "OOB score provides free validation without separate holdout set.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Rearrange validation methods by data efficiency:",
+        "type": "rearrange",
+        "words": [
+            "OOB (uses all data)",
+            "K-Fold CV",
+            "Holdout",
+            "Train-only (no validation)"
+        ]
+    },
+    {
+        "q": "What is warm starting in sklearn?",
+        "type": "mcq",
+        "o": [
+            "Reusing previous model state when training with more estimators",
+            "Pre-heating model",
+            "Temperature setting",
+            "Warm data"
+        ]
+    },
+    {
+        "q": "Warm start is useful for _____ training with ensemble methods.",
+        "type": "fill_blank",
+        "answers": [
+            "incremental"
+        ],
+        "other_options": [
+            "initial",
+            "random",
+            "batch"
+        ]
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "from sklearn.ensemble import RandomForestClassifier\nimport numpy as np\nX = np.random.rand(100, 5)\ny = np.random.randint(0, 2, 100)\nrf = RandomForestClassifier(n_estimators=10, warm_start=True, random_state=42)\nrf.fit(X, y)\nrf.n_estimators = 20\nrf.fit(X, y)\nprint(len(rf.estimators_))",
+        "o": [
+            "20",
+            "10",
+            "30",
+            "100"
+        ]
+    },
+    {
+        "q": "Warm start allows adding more trees without retraining existing ones.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Match the training technique with its benefit:",
+        "type": "match",
+        "left": [
+            "Warm Start",
+            "Early Stopping",
+            "Checkpointing",
+            "Resume Training"
+        ],
+        "right": [
+            "Add estimators",
+            "Prevent overfitting",
+            "Save progress",
+            "Continue from saved"
+        ]
+    },
+    {
+        "q": "What is isotonic regression?",
+        "type": "mcq",
+        "o": [
+            "Non-parametric regression that fits monotonically increasing function",
+            "Isometric regression",
+            "Linear regression variant",
+            "Random fitting"
+        ]
+    },
+    {
+        "q": "Isotonic regression maintains _____ order in predictions.",
+        "type": "fill_blank",
+        "answers": [
+            "monotonic"
+        ],
+        "other_options": [
+            "random",
+            "decreasing",
+            "cyclic"
+        ]
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "from sklearn.isotonic import IsotonicRegression\nimport numpy as np\nX = np.array([1, 2, 3, 4, 5])\ny = np.array([1, 0, 2, 1, 3])\niso = IsotonicRegression().fit(X, y)\nprint(iso.increasing)",
+        "o": [
+            "True",
+            "False",
+            "None",
+            "auto"
+        ]
+    },
+    {
+        "q": "Isotonic regression is used for probability calibration.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Rearrange regression types by flexibility:",
+        "type": "rearrange",
+        "words": [
+            "Linear (least)",
+            "Polynomial",
+            "Isotonic",
+            "Non-parametric (most)"
+        ]
+    },
+    {
+        "q": "What is Platt scaling?",
+        "type": "mcq",
+        "o": [
+            "Sigmoid calibration fitting logistic regression to classifier outputs",
+            "Weight scaling",
+            "Feature scaling",
+            "Model scaling"
+        ]
+    },
+    {
+        "q": "Platt scaling fits a _____ function to convert scores to probabilities.",
+        "type": "fill_blank",
+        "answers": [
+            "sigmoid"
+        ],
+        "other_options": [
+            "linear",
+            "polynomial",
+            "step"
+        ]
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "from sklearn.calibration import CalibratedClassifierCV\nfrom sklearn.svm import SVC\ncalibrated = CalibratedClassifierCV(SVC(), cv=5, method='sigmoid')\nprint(calibrated.cv)",
+        "o": [
+            "5",
+            "3",
+            "10",
+            "None"
+        ]
+    },
+    {
+        "q": "Match the calibration scenario with preferred method:",
+        "type": "match",
+        "left": [
+            "Small dataset",
+            "Large dataset",
+            "Need monotonicity",
+            "Fast calibration"
+        ],
+        "right": [
+            "Platt (sigmoid)",
+            "Isotonic",
+            "Isotonic",
+            "Platt"
+        ]
+    },
+    {
+        "q": "Platt scaling has fewer parameters than isotonic calibration.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "What is SMOTE for imbalanced learning?",
+        "type": "mcq",
+        "o": [
+            "Synthetic Minority Over-sampling Technique creating new minority samples",
+            "Simple model technique",
+            "Smooth optimization",
+            "Sample modification"
+        ]
+    },
+    {
+        "q": "SMOTE creates synthetic samples by interpolating between _____ neighbors.",
+        "type": "fill_blank",
+        "answers": [
+            "nearest"
+        ],
+        "other_options": [
+            "random",
+            "distant",
+            "all"
+        ]
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "# SMOTE concept\noriginal_minority = 50\nsampling_ratio = 2.0\nafter_smote = int(original_minority * sampling_ratio)\nprint(f'After SMOTE: {after_smote}')",
+        "o": [
+            "After SMOTE: 100",
+            "After SMOTE: 50",
+            "After SMOTE: 25",
+            "After SMOTE: 200"
+        ]
+    },
+    {
+        "q": "SMOTE should only be applied to training data, not test data.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Rearrange oversampling techniques by sophistication:",
+        "type": "rearrange",
+        "words": [
+            "Random Oversampling",
+            "SMOTE",
+            "Borderline-SMOTE",
+            "ADASYN"
+        ]
+    },
+    {
+        "q": "What is undersampling in imbalanced learning?",
+        "type": "mcq",
+        "o": [
+            "Reducing majority class samples to balance dataset",
+            "Under-training",
+            "Reducing features",
+            "Sample reduction only"
+        ]
+    },
+    {
+        "q": "Undersampling removes samples from the _____ class.",
+        "type": "fill_blank",
+        "answers": [
+            "majority"
+        ],
+        "other_options": [
+            "minority",
+            "both",
+            "random"
+        ]
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "# Undersampling concept\nmajority = 1000\nminority = 100\nafter_undersample = minority  # Match minority size\nremoved = majority - after_undersample\nprint(f'Removed: {removed}')",
+        "o": [
+            "Removed: 900",
+            "Removed: 100",
+            "Removed: 1000",
+            "Removed: 0"
+        ]
+    },
+    {
+        "q": "Match the sampling technique with its approach:",
+        "type": "match",
+        "left": [
+            "Random Under",
+            "Tomek Links",
+            "ENN",
+            "NCR"
+        ],
+        "right": [
+            "Random removal",
+            "Remove borderline",
+            "Edit nearest neighbor",
+            "Neighborhood cleaning"
+        ]
+    },
+    {
+        "q": "Undersampling may lose important information from majority class.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "What is ordinal regression?",
+        "type": "mcq",
+        "o": [
+            "Regression for ordered categorical outcomes",
+            "Normal regression",
+            "Ordered features",
+            "Ranking regression"
+        ]
+    },
+    {
+        "q": "Ordinal regression is used when target has natural _____ but not numeric scale.",
+        "type": "fill_blank",
+        "answers": [
+            "ordering"
+        ],
+        "other_options": [
+            "distance",
+            "randomness",
+            "equality"
+        ]
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "# Ordinal target example\nratings = ['poor', 'fair', 'good', 'excellent']\nprint(len(ratings))",
+        "o": [
+            "4",
+            "3",
+            "5",
+            "2"
+        ]
+    },
+    {
+        "q": "Movie ratings (1-5 stars) are an ordinal classification problem.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Rearrange target types by structure:",
+        "type": "rearrange",
+        "words": [
+            "Binary",
+            "Nominal Multi-class",
+            "Ordinal",
+            "Continuous"
+        ]
+    },
+    {
+        "q": "What is quantile regression?",
+        "type": "mcq",
+        "o": [
+            "Regression predicting specific quantiles of the target distribution",
+            "Quantity prediction",
+            "Mean prediction only",
+            "Quartile analysis"
+        ]
+    },
+    {
+        "q": "Quantile regression at 0.5 predicts the _____.",
+        "type": "fill_blank",
+        "answers": [
+            "median"
+        ],
+        "other_options": [
+            "mean",
+            "mode",
+            "maximum"
+        ]
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "from sklearn.ensemble import GradientBoostingRegressor\ngb = GradientBoostingRegressor(loss='quantile', alpha=0.9)\nprint(gb.alpha)",
+        "o": [
+            "0.9",
+            "0.5",
+            "0.1",
+            "1.0"
+        ]
+    },
+    {
+        "q": "Match the quantile with its interpretation:",
+        "type": "match",
+        "left": [
+            "0.1",
+            "0.5",
+            "0.9",
+            "0.95"
+        ],
+        "right": [
+            "10th percentile",
+            "Median",
+            "90th percentile",
+            "Upper bound"
+        ]
+    },
+    {
+        "q": "Quantile regression is useful for prediction intervals.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "What is Huber regression?",
+        "type": "mcq",
+        "o": [
+            "Robust regression less sensitive to outliers than OLS",
+            "Hub regression",
+            "Hub and spoke model",
+            "Heavy regression"
+        ]
+    },
+    {
+        "q": "Huber loss is quadratic for small errors and _____ for large errors.",
+        "type": "fill_blank",
+        "answers": [
+            "linear"
+        ],
+        "other_options": [
+            "quadratic",
+            "exponential",
+            "constant"
+        ]
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "from sklearn.linear_model import HuberRegressor\nhuber = HuberRegressor(epsilon=1.35)\nprint(huber.epsilon)",
+        "o": [
+            "1.35",
+            "1.0",
+            "0.5",
+            "2.0"
+        ]
+    },
+    {
+        "q": "Huber regression balances sensitivity to outliers and efficiency.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Rearrange regression methods by robustness to outliers:",
+        "type": "rearrange",
+        "words": [
+            "OLS (least robust)",
+            "Huber",
+            "Quantile",
+            "RANSAC (most robust)"
+        ]
+    },
+    {
+        "q": "What is RANSAC regression?",
+        "type": "mcq",
+        "o": [
+            "Random Sample Consensus - iteratively fitting to inliers",
+            "Random sampling",
+            "Consensus building only",
+            "Sample averaging"
+        ]
+    },
+    {
+        "q": "RANSAC separates data into inliers and _____.",
+        "type": "fill_blank",
+        "answers": [
+            "outliers"
+        ],
+        "other_options": [
+            "groups",
+            "clusters",
+            "classes"
+        ]
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "from sklearn.linear_model import RANSACRegressor\nfrom sklearn.linear_model import LinearRegression\nransac = RANSACRegressor(estimator=LinearRegression())\nprint(type(ransac.estimator).__name__)",
+        "o": [
+            "LinearRegression",
+            "RANSACRegressor",
+            "Regressor",
+            "None"
+        ]
+    },
+    {
+        "q": "Match the robust regression with its approach:",
+        "type": "match",
+        "left": [
+            "RANSAC",
+            "Huber",
+            "Theil-Sen",
+            "LMedS"
+        ],
+        "right": [
+            "Random sampling",
+            "Modified loss",
+            "Median slopes",
+            "Least median"
+        ]
+    },
+    {
+        "q": "RANSAC works well when outliers are a significant portion of data.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "What is Bayesian Ridge regression?",
+        "type": "mcq",
+        "o": [
+            "Ridge regression with Bayesian inference for hyperparameters",
+            "Bayesian network",
+            "Ridge analysis",
+            "Probability regression"
+        ]
+    },
+    {
+        "q": "Bayesian Ridge automatically determines _____ through type-II maximum likelihood.",
+        "type": "fill_blank",
+        "answers": [
+            "regularization"
+        ],
+        "other_options": [
+            "features",
+            "samples",
+            "targets"
+        ]
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "from sklearn.linear_model import BayesianRidge\nbr = BayesianRidge()\nprint(hasattr(br, 'alpha_') == False)",
+        "o": [
+            "True",
+            "False",
+            "Error",
+            "None"
+        ]
+    },
+    {
+        "q": "Bayesian Ridge provides uncertainty estimates for predictions.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Rearrange linear models by complexity:",
+        "type": "rearrange",
+        "words": [
             "Linear Regression",
-            "K-Means",
-            "DBSCAN"
+            "Ridge",
+            "Bayesian Ridge",
+            "Gaussian Process"
+        ]
+    },
+    {
+        "q": "What is Gaussian Process Regression?",
+        "type": "mcq",
+        "o": [
+            "Non-parametric Bayesian regression with uncertainty quantification",
+            "Gaussian distribution",
+            "Normal regression",
+            "Process analysis"
+        ]
+    },
+    {
+        "q": "GP regression provides mean prediction and _____ estimate.",
+        "type": "fill_blank",
+        "answers": [
+            "uncertainty"
+        ],
+        "other_options": [
+            "feature",
+            "sample",
+            "class"
+        ]
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "from sklearn.gaussian_process import GaussianProcessRegressor\nfrom sklearn.gaussian_process.kernels import RBF\ngp = GaussianProcessRegressor(kernel=RBF())\nprint(type(gp.kernel).__name__)",
+        "o": [
+            "RBF",
+            "GaussianProcessRegressor",
+            "Kernel",
+            "None"
+        ]
+    },
+    {
+        "q": "Match the GP kernel with its property:",
+        "type": "match",
+        "left": [
+            "RBF",
+            "Matern",
+            "Linear",
+            "Periodic"
+        ],
+        "right": [
+            "Smooth functions",
+            "Less smooth",
+            "Linear trends",
+            "Repeating patterns"
+        ]
+    },
+    {
+        "q": "GP regression scales cubically with number of samples.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "What is survival analysis in ML?",
+        "type": "mcq",
+        "o": [
+            "Predicting time to event occurrence with censored data",
+            "Survival of models",
+            "Algorithm survival",
+            "Data survival"
+        ]
+    },
+    {
+        "q": "Survival analysis handles _____ data where events havent occurred yet.",
+        "type": "fill_blank",
+        "answers": [
+            "censored"
+        ],
+        "other_options": [
+            "missing",
+            "complete",
+            "binary"
+        ]
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "# Survival analysis concept\nevents = [1, 0, 1, 1, 0]  # 1=event, 0=censored\ntimes = [10, 15, 8, 12, 20]\nprint(sum(events))",
+        "o": [
+            "3",
+            "5",
+            "2",
+            "0"
+        ]
+    },
+    {
+        "q": "Cox proportional hazards is a common survival analysis model.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Rearrange survival analysis concepts:",
+        "type": "rearrange",
+        "words": [
+            "Survival Function",
+            "Hazard Function",
+            "Censoring",
+            "Time to Event"
+        ]
+    },
+    {
+        "q": "What is online learning?",
+        "type": "mcq",
+        "o": [
+            "Incremental learning from data streams",
+            "Internet learning",
+            "Web-based ML",
+            "Cloud training"
+        ]
+    },
+    {
+        "q": "Online learning processes data in a _____ manner.",
+        "type": "fill_blank",
+        "answers": [
+            "streaming"
+        ],
+        "other_options": [
+            "batch",
+            "offline",
+            "static"
+        ]
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "from sklearn.linear_model import SGDClassifier\nsgd = SGDClassifier()\nprint(hasattr(sgd, 'partial_fit'))",
+        "o": [
+            "True",
+            "False",
+            "Error",
+            "None"
+        ]
+    },
+    {
+        "q": "Match the learning paradigm with its data access:",
+        "type": "match",
+        "left": [
+            "Batch",
+            "Online",
+            "Mini-batch",
+            "Incremental"
+        ],
+        "right": [
+            "All at once",
+            "One at a time",
+            "Small batches",
+            "Growing dataset"
+        ]
+    },
+    {
+        "q": "partial_fit allows incremental training in sklearn.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "What is active learning?",
+        "type": "mcq",
+        "o": [
+            "Selecting most informative samples for labeling",
+            "Active model",
+            "Dynamic training",
+            "Automatic learning"
+        ]
+    },
+    {
+        "q": "Active learning reduces _____ annotation cost by smart sampling.",
+        "type": "fill_blank",
+        "answers": [
+            "labeling"
+        ],
+        "other_options": [
+            "training",
+            "testing",
+            "validation"
+        ]
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "# Active learning concept\nstrategies = ['uncertainty', 'diversity', 'expected_model_change', 'query_by_committee']\nprint(len(strategies))",
+        "o": [
+            "4",
+            "3",
+            "5",
+            "2"
+        ]
+    },
+    {
+        "q": "Uncertainty sampling queries samples where model is least confident.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Rearrange active learning query strategies:",
+        "type": "rearrange",
+        "words": [
+            "Random (baseline)",
+            "Uncertainty",
+            "Diversity",
+            "Expected Error Reduction"
+        ]
+    },
+    {
+        "q": "What is semi-supervised learning?",
+        "type": "mcq",
+        "o": [
+            "Learning from both labeled and unlabeled data",
+            "Half supervised",
+            "Partial learning",
+            "Reduced supervision"
+        ]
+    },
+    {
+        "q": "Semi-supervised learning leverages abundant _____ data.",
+        "type": "fill_blank",
+        "answers": [
+            "unlabeled"
+        ],
+        "other_options": [
+            "labeled",
+            "test",
+            "validation"
+        ]
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "from sklearn.semi_supervised import SelfTrainingClassifier\nfrom sklearn.svm import SVC\nst = SelfTrainingClassifier(SVC(probability=True))\nprint(type(st).__name__)",
+        "o": [
+            "SelfTrainingClassifier",
+            "SVC",
+            "Classifier",
+            "None"
+        ]
+    },
+    {
+        "q": "Match the semi-supervised method with its approach:",
+        "type": "match",
+        "left": [
+            "Self-training",
+            "Co-training",
+            "Label Propagation",
+            "Pseudo-labeling"
+        ],
+        "right": [
+            "Model labels itself",
+            "Multiple views",
+            "Graph-based",
+            "High confidence labels"
+        ]
+    },
+    {
+        "q": "Semi-supervised learning assumes unlabeled data follows similar distribution as labeled.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "What is label propagation?",
+        "type": "mcq",
+        "o": [
+            "Semi-supervised method spreading labels through similarity graph",
+            "Label spreading manually",
+            "Propagation network",
+            "Label distribution"
+        ]
+    },
+    {
+        "q": "Label propagation uses _____ similarity to spread labels.",
+        "type": "fill_blank",
+        "answers": [
+            "graph"
+        ],
+        "other_options": [
+            "random",
+            "feature",
+            "class"
+        ]
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "from sklearn.semi_supervised import LabelPropagation\nlp = LabelPropagation(kernel='rbf')\nprint(lp.kernel)",
+        "o": [
+            "rbf",
+            "knn",
+            "linear",
+            "poly"
+        ]
+    },
+    {
+        "q": "Label propagation works by iteratively updating labels until convergence.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Rearrange semi-supervised methods by complexity:",
+        "type": "rearrange",
+        "words": [
+            "Self-training (simple)",
+            "Label Propagation",
+            "MixMatch",
+            "FixMatch"
+        ]
+    },
+    {
+        "q": "What is model compression for deployment?",
+        "type": "mcq",
+        "o": [
+            "Reducing model size while maintaining performance",
+            "File compression",
+            "Data compression",
+            "Training compression"
+        ]
+    },
+    {
+        "q": "Pruning removes less important _____ from models.",
+        "type": "fill_blank",
+        "answers": [
+            "weights"
+        ],
+        "other_options": [
+            "features",
+            "samples",
+            "layers"
+        ]
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "# Compression techniques\ntechniques = ['pruning', 'quantization', 'distillation', 'low-rank']\nprint(len(techniques))",
+        "o": [
+            "4",
+            "3",
+            "5",
+            "2"
+        ]
+    },
+    {
+        "q": "Match the compression technique with its approach:",
+        "type": "match",
+        "left": [
+            "Pruning",
+            "Quantization",
+            "Distillation",
+            "Low-rank"
+        ],
+        "right": [
+            "Remove weights",
+            "Reduce precision",
+            "Teacher-student",
+            "Matrix factorization"
+        ]
+    },
+    {
+        "q": "Quantization can reduce model size by converting to lower precision.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "What is knowledge distillation?",
+        "type": "mcq",
+        "o": [
+            "Training smaller student model from larger teacher model",
+            "Knowledge extraction",
+            "Information distillation",
+            "Model copying"
+        ]
+    },
+    {
+        "q": "Distillation uses soft labels (_____ outputs) from teacher model.",
+        "type": "fill_blank",
+        "answers": [
+            "probability"
+        ],
+        "other_options": [
+            "hard",
+            "binary",
+            "random"
+        ]
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "# Distillation concept\nteacher_output = [0.9, 0.05, 0.05]  # Soft labels\nhard_label = [1, 0, 0]  # Hard labels\nprint(sum(teacher_output) == 1.0)",
+        "o": [
+            "True",
+            "False",
+            "Error",
+            "None"
+        ]
+    },
+    {
+        "q": "Temperature parameter controls softness of teacher outputs.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Rearrange distillation components:",
+        "type": "rearrange",
+        "words": [
+            "Teacher Model",
+            "Soft Labels",
+            "Student Model",
+            "Combined Loss"
+        ]
+    },
+    {
+        "q": "What is model interpretability vs explainability?",
+        "type": "mcq",
+        "o": [
+            "Interpretability is inherent; explainability uses post-hoc methods",
+            "Same concept",
+            "Explainability is inherent",
+            "No difference"
+        ]
+    },
+    {
+        "q": "Linear models are inherently _____ due to transparent coefficients.",
+        "type": "fill_blank",
+        "answers": [
+            "interpretable"
+        ],
+        "other_options": [
+            "complex",
+            "opaque",
+            "random"
+        ]
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "# Interpretability spectrum\nmodels = ['linear_regression', 'decision_tree', 'random_forest', 'neural_network']\ninterpretability = ['high', 'high', 'medium', 'low']\nprint(interpretability[0])",
+        "o": [
+            "high",
+            "low",
+            "medium",
+            "None"
+        ]
+    },
+    {
+        "q": "Match the model with its interpretability level:",
+        "type": "match",
+        "left": [
+            "Linear",
+            "Decision Tree",
+            "Random Forest",
+            "Deep Neural Net"
+        ],
+        "right": [
+            "High",
+            "High",
+            "Medium",
+            "Low"
+        ]
+    },
+    {
+        "q": "Explainability methods like SHAP can explain any black-box model.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "What is fairness in machine learning?",
+        "type": "mcq",
+        "o": [
+            "Ensuring model predictions dont discriminate based on protected attributes",
+            "Equal training",
+            "Fair data collection",
+            "Model equality"
+        ]
+    },
+    {
+        "q": "Demographic parity requires equal positive rates across _____ groups.",
+        "type": "fill_blank",
+        "answers": [
+            "protected"
+        ],
+        "other_options": [
+            "all",
+            "random",
+            "training"
+        ]
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "# Fairness metrics\nmetrics = ['demographic_parity', 'equalized_odds', 'calibration', 'individual_fairness']\nprint(len(metrics))",
+        "o": [
+            "4",
+            "3",
+            "5",
+            "2"
+        ]
+    },
+    {
+        "q": "Different fairness metrics can conflict with each other.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Rearrange fairness intervention stages:",
+        "type": "rearrange",
+        "words": [
+            "Pre-processing",
+            "In-processing",
+            "Post-processing",
+            "Monitoring"
+        ]
+    },
+    {
+        "q": "What is adversarial robustness?",
+        "type": "mcq",
+        "o": [
+            "Model resilience to intentionally crafted malicious inputs",
+            "Robust training",
+            "Strong models",
+            "Adversarial training only"
+        ]
+    },
+    {
+        "q": "Adversarial examples can cause misclassification with _____ perturbations.",
+        "type": "fill_blank",
+        "answers": [
+            "imperceptible"
+        ],
+        "other_options": [
+            "large",
+            "random",
+            "obvious"
+        ]
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "# Adversarial attack types\nattacks = ['FGSM', 'PGD', 'C&W', 'DeepFool']\nprint(len(attacks))",
+        "o": [
+            "4",
+            "3",
+            "5",
+            "2"
+        ]
+    },
+    {
+        "q": "Match the defense method with its approach:",
+        "type": "match",
+        "left": [
+            "Adversarial Training",
+            "Defensive Distillation",
+            "Input Transformation",
+            "Certified Defense"
+        ],
+        "right": [
+            "Train on attacks",
+            "Smooth predictions",
+            "Clean inputs",
+            "Provable bounds"
+        ]
+    },
+    {
+        "q": "Adversarial training improves robustness but may reduce clean accuracy.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "What is model monitoring in production?",
+        "type": "mcq",
+        "o": [
+            "Tracking model performance and data quality over time",
+            "Watching models",
+            "Model surveillance",
+            "Training monitoring"
+        ]
+    },
+    {
+        "q": "Data drift occurs when input _____ changes over time.",
+        "type": "fill_blank",
+        "answers": [
+            "distribution"
+        ],
+        "other_options": [
+            "size",
+            "format",
+            "location"
+        ]
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "# Monitoring metrics\nmetrics = ['accuracy', 'latency', 'data_drift', 'feature_drift', 'prediction_drift']\nprint(len(metrics))",
+        "o": [
+            "5",
+            "4",
+            "3",
+            "6"
+        ]
+    },
+    {
+        "q": "Concept drift means the relationship between features and target changes.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Rearrange drift detection workflow:",
+        "type": "rearrange",
+        "words": [
+            "Collect Production Data",
+            "Compute Statistics",
+            "Compare to Baseline",
+            "Alert if Drifted"
+        ]
+    },
+    {
+        "q": "What is automated machine learning (AutoML)?",
+        "type": "mcq",
+        "o": [
+            "Automating model selection, hyperparameter tuning, and feature engineering",
+            "Automatic data",
+            "Auto training only",
+            "Automated testing"
+        ]
+    },
+    {
+        "q": "AutoML reduces the need for _____ ML expertise.",
+        "type": "fill_blank",
+        "answers": [
+            "manual"
+        ],
+        "other_options": [
+            "automated",
+            "basic",
+            "advanced"
+        ]
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "# AutoML tools\ntools = ['Auto-sklearn', 'TPOT', 'H2O AutoML', 'AutoGluon', 'Google AutoML']\nprint(len(tools))",
+        "o": [
+            "5",
+            "4",
+            "3",
+            "6"
+        ]
+    },
+    {
+        "q": "Match the AutoML component with its automation:",
+        "type": "match",
+        "left": [
+            "NAS",
+            "HPO",
+            "Feature Selection",
+            "Model Selection"
+        ],
+        "right": [
+            "Architecture search",
+            "Parameter tuning",
+            "Best features",
+            "Best algorithm"
+        ]
+    },
+    {
+        "q": "AutoML can achieve competitive results with less human intervention.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "What is neural architecture search (NAS)?",
+        "type": "mcq",
+        "o": [
+            "Automatically discovering optimal neural network architecture",
+            "Network searching",
+            "Architecture database",
+            "Manual design"
+        ]
+    },
+    {
+        "q": "NAS searches over the space of possible _____ configurations.",
+        "type": "fill_blank",
+        "answers": [
+            "architecture"
+        ],
+        "other_options": [
+            "data",
+            "hyperparameter",
+            "feature"
+        ]
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "# NAS search strategies\nstrategies = ['random_search', 'evolutionary', 'reinforcement_learning', 'gradient_based']\nprint(len(strategies))",
+        "o": [
+            "4",
+            "3",
+            "5",
+            "2"
+        ]
+    },
+    {
+        "q": "NAS discovered architectures can outperform hand-designed ones.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Rearrange NAS efficiency methods:",
+        "type": "rearrange",
+        "words": [
+            "Full Training (slow)",
+            "Weight Sharing",
+            "Differentiable NAS",
+            "Zero-cost Proxies (fast)"
+        ]
+    },
+    {
+        "q": "What is Bayesian optimization for tuning?",
+        "type": "mcq",
+        "o": [
+            "Sequential model-based optimization using probabilistic surrogate",
+            "Bayesian inference only",
+            "Random optimization",
+            "Grid search variant"
+        ]
+    },
+    {
+        "q": "Bayesian optimization builds a _____ model of the objective function.",
+        "type": "fill_blank",
+        "answers": [
+            "surrogate"
+        ],
+        "other_options": [
+            "exact",
+            "random",
+            "linear"
+        ]
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "# Bayesian optimization components\ncomponents = ['surrogate_model', 'acquisition_function', 'sample_selection', 'update_model']\nprint(len(components))",
+        "o": [
+            "4",
+            "3",
+            "5",
+            "2"
+        ]
+    },
+    {
+        "q": "Match the acquisition function with its strategy:",
+        "type": "match",
+        "left": [
+            "EI",
+            "UCB",
+            "PI",
+            "Thompson"
+        ],
+        "right": [
+            "Expected Improvement",
+            "Upper Confidence Bound",
+            "Probability of Improvement",
+            "Sampling-based"
+        ]
+    },
+    {
+        "q": "Bayesian optimization is more sample-efficient than random search.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "What is Optuna for hyperparameter tuning?",
+        "type": "mcq",
+        "o": [
+            "Automatic hyperparameter optimization framework with pruning",
+            "Optical tuning",
+            "Optimal network",
+            "Option selector"
+        ]
+    },
+    {
+        "q": "Optuna uses _____ based sampling for efficient search.",
+        "type": "fill_blank",
+        "answers": [
+            "tree-structured"
+        ],
+        "other_options": [
+            "random",
+            "grid",
+            "linear"
+        ]
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "# Optuna concept\nfeatures = ['define_by_run', 'pruning', 'parallel', 'distributed']\nprint(len(features))",
+        "o": [
+            "4",
+            "3",
+            "5",
+            "2"
+        ]
+    },
+    {
+        "q": "Optuna can prune unpromising trials early to save computation.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Rearrange HPO frameworks by popularity:",
+        "type": "rearrange",
+        "words": [
+            "Optuna",
+            "Hyperopt",
+            "Ray Tune",
+            "Ax"
+        ]
+    },
+    {
+        "q": "What is transfer learning in supervised context?",
+        "type": "mcq",
+        "o": [
+            "Using pretrained model knowledge for new related task",
+            "Data transfer",
+            "Model copying",
+            "Weight transfer only"
+        ]
+    },
+    {
+        "q": "Transfer learning is effective when source and target domains are _____.",
+        "type": "fill_blank",
+        "answers": [
+            "related"
+        ],
+        "other_options": [
+            "identical",
+            "different",
+            "random"
+        ]
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "# Transfer learning approaches\napproaches = ['feature_extraction', 'fine_tuning', 'domain_adaptation', 'multi_task']\nprint(len(approaches))",
+        "o": [
+            "4",
+            "3",
+            "5",
+            "2"
+        ]
+    },
+    {
+        "q": "Match the transfer strategy with its modification:",
+        "type": "match",
+        "left": [
+            "Feature Extraction",
+            "Fine-tuning",
+            "Full Training",
+            "Adapter"
+        ],
+        "right": [
+            "Freeze backbone",
+            "Train all layers",
+            "No pretraining",
+            "Small added layers"
+        ]
+    },
+    {
+        "q": "Fine-tuning typically uses smaller learning rate than training from scratch.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "What is multi-task learning?",
+        "type": "mcq",
+        "o": [
+            "Jointly learning multiple related tasks to improve generalization",
+            "Multiple models",
+            "Task multiplication",
+            "Sequential tasks"
+        ]
+    },
+    {
+        "q": "Multi-task learning shares _____ between related tasks.",
+        "type": "fill_blank",
+        "answers": [
+            "representations"
+        ],
+        "other_options": [
+            "data",
+            "labels",
+            "outputs"
+        ]
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "# Multi-task benefits\nbenefits = ['shared_features', 'regularization', 'data_efficiency', 'auxiliary_learning']\nprint(len(benefits))",
+        "o": [
+            "4",
+            "3",
+            "5",
+            "2"
+        ]
+    },
+    {
+        "q": "Hard parameter sharing uses common hidden layers for all tasks.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Rearrange multi-task architectures:",
+        "type": "rearrange",
+        "words": [
+            "Hard Sharing",
+            "Soft Sharing",
+            "Cross-stitch",
+            "Progressive Networks"
+        ]
+    },
+    {
+        "q": "What is meta-learning?",
+        "type": "mcq",
+        "o": [
+            "Learning to learn - acquiring knowledge that transfers across tasks",
+            "Meta data learning",
+            "Metadata processing",
+            "Super learning"
+        ]
+    },
+    {
+        "q": "Meta-learning aims to learn from many _____ to generalize to new ones.",
+        "type": "fill_blank",
+        "answers": [
+            "tasks"
+        ],
+        "other_options": [
+            "samples",
+            "features",
+            "labels"
+        ]
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "# Meta-learning approaches\napproaches = ['MAML', 'Prototypical', 'Matching', 'Relation']\nprint(len(approaches))",
+        "o": [
+            "4",
+            "3",
+            "5",
+            "2"
+        ]
+    },
+    {
+        "q": "Match the meta-learning method with its approach:",
+        "type": "match",
+        "left": [
+            "MAML",
+            "Prototypical Nets",
+            "Matching Nets",
+            "Reptile"
+        ],
+        "right": [
+            "Optimization-based",
+            "Metric-based",
+            "Attention-based",
+            "First-order MAML"
+        ]
+    },
+    {
+        "q": "Few-shot learning is a common application of meta-learning.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "What is domain adaptation?",
+        "type": "mcq",
+        "o": [
+            "Adapting model trained on source domain to perform on target domain",
+            "Domain registration",
+            "Data adaptation only",
+            "Feature adaptation"
+        ]
+    },
+    {
+        "q": "Domain adaptation addresses distribution _____ between training and test data.",
+        "type": "fill_blank",
+        "answers": [
+            "shift"
+        ],
+        "other_options": [
+            "similarity",
+            "identity",
+            "overlap"
+        ]
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "# Domain adaptation types\ntypes = ['supervised', 'semi_supervised', 'unsupervised', 'zero_shot']\nprint(len(types))",
+        "o": [
+            "4",
+            "3",
+            "5",
+            "2"
+        ]
+    },
+    {
+        "q": "Unsupervised domain adaptation uses no labeled target data.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Rearrange domain adaptation methods:",
+        "type": "rearrange",
+        "words": [
+            "Feature Alignment",
+            "Instance Reweighting",
+            "Adversarial",
+            "Self-training"
+        ]
+    },
+    {
+        "q": "What is label smoothing?",
+        "type": "mcq",
+        "o": [
+            "Replacing hard labels with soft probability distributions",
+            "Smooth training",
+            "Label averaging",
+            "Soft data"
+        ]
+    },
+    {
+        "q": "Label smoothing prevents model from becoming too _____ about predictions.",
+        "type": "fill_blank",
+        "answers": [
+            "confident"
+        ],
+        "other_options": [
+            "uncertain",
+            "slow",
+            "fast"
+        ]
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "# Label smoothing example\nepsilon = 0.1\nhard_label = 1.0\nsmooth_label = hard_label * (1 - epsilon)\nprint(smooth_label)",
+        "o": [
+            "0.9",
+            "0.1",
+            "1.0",
+            "0.5"
+        ]
+    },
+    {
+        "q": "Match the smoothing scenario with its effect:",
+        "type": "match",
+        "left": [
+            "epsilon=0",
+            "epsilon=0.1",
+            "epsilon=0.5",
+            "epsilon=1"
+        ],
+        "right": [
+            "No smoothing",
+            "Light smoothing",
+            "Heavy smoothing",
+            "Uniform labels"
+        ]
+    },
+    {
+        "q": "Label smoothing can improve calibration of neural networks.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "What is mixup data augmentation?",
+        "type": "mcq",
+        "o": [
+            "Creating training examples by linearly interpolating pairs",
+            "Mixing data",
+            "Data shuffling",
+            "Feature mixing"
+        ]
+    },
+    {
+        "q": "Mixup combines samples as x_mix = lambda * x1 + (1-lambda) * _____.",
+        "type": "fill_blank",
+        "answers": [
+            "x2"
+        ],
+        "other_options": [
+            "x1",
+            "0",
+            "1"
+        ]
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "import numpy as np\nnp.random.seed(42)\nlam = np.random.beta(0.4, 0.4)\nprint(round(lam, 2))",
+        "o": [
+            "0.37",
+            "0.5",
+            "0.0",
+            "1.0"
+        ]
+    },
+    {
+        "q": "Mixup interpolates both features and labels.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Rearrange augmentation techniques by complexity:",
+        "type": "rearrange",
+        "words": [
+            "Basic Transforms",
+            "Mixup",
+            "CutMix",
+            "AutoAugment"
+        ]
+    },
+    {
+        "q": "What is focal loss?",
+        "type": "mcq",
+        "o": [
+            "Loss function that down-weights well-classified examples",
+            "Focus training",
+            "Focal point loss",
+            "Camera loss"
+        ]
+    },
+    {
+        "q": "Focal loss adds modulating factor to address class _____.",
+        "type": "fill_blank",
+        "answers": [
+            "imbalance"
+        ],
+        "other_options": [
+            "balance",
+            "similarity",
+            "overlap"
+        ]
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "# Focal loss concept\ngamma = 2.0  # Focusing parameter\np = 0.9  # High confidence\nmodulating = (1 - p) ** gamma\nprint(round(modulating, 3))",
+        "o": [
+            "0.01",
+            "0.9",
+            "0.1",
+            "1.0"
+        ]
+    },
+    {
+        "q": "Match the loss function with its use case:",
+        "type": "match",
+        "left": [
+            "Cross-Entropy",
+            "Focal Loss",
+            "Dice Loss",
+            "IoU Loss"
+        ],
+        "right": [
+            "Standard classification",
+            "Imbalanced classes",
+            "Segmentation",
+            "Bounding boxes"
+        ]
+    },
+    {
+        "q": "Higher gamma in focal loss increases focus on hard examples.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "What is contrastive loss?",
+        "type": "mcq",
+        "o": [
+            "Loss that pulls similar pairs together and pushes dissimilar apart",
+            "Comparing losses",
+            "Contrast enhancement",
+            "Image contrast"
+        ]
+    },
+    {
+        "q": "Contrastive loss operates on _____ of samples.",
+        "type": "fill_blank",
+        "answers": [
+            "pairs"
+        ],
+        "other_options": [
+            "singles",
+            "batches",
+            "epochs"
+        ]
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "# Contrastive learning types\ntypes = ['SimCLR', 'MoCo', 'BYOL', 'SwAV']\nprint(len(types))",
+        "o": [
+            "4",
+            "3",
+            "5",
+            "2"
+        ]
+    },
+    {
+        "q": "Triplet loss uses anchor, positive, and negative samples.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Rearrange contrastive learning components:",
+        "type": "rearrange",
+        "words": [
+            "Data Augmentation",
+            "Encoder Network",
+            "Projection Head",
+            "Contrastive Loss"
+        ]
+    },
+    {
+        "q": "What is ensembling at inference?",
+        "type": "mcq",
+        "o": [
+            "Combining predictions from multiple models during prediction",
+            "Training ensemble",
+            "Model training",
+            "Prediction only"
+        ]
+    },
+    {
+        "q": "Inference ensembling combines model _____ without retraining.",
+        "type": "fill_blank",
+        "answers": [
+            "predictions"
+        ],
+        "other_options": [
+            "weights",
+            "features",
+            "data"
+        ]
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "# Ensemble predictions\npred1 = [0.6, 0.3, 0.1]\npred2 = [0.4, 0.4, 0.2]\nensemble = [(p1 + p2) / 2 for p1, p2 in zip(pred1, pred2)]\nprint(ensemble[0])",
+        "o": [
+            "0.5",
+            "0.6",
+            "0.4",
+            "1.0"
+        ]
+    },
+    {
+        "q": "Match the ensemble strategy with its computation:",
+        "type": "match",
+        "left": [
+            "Mean",
+            "Weighted Mean",
+            "Max",
+            "Voting"
+        ],
+        "right": [
+            "Simple average",
+            "Importance-weighted",
+            "Maximum per class",
+            "Majority class"
+        ]
+    },
+    {
+        "q": "Test-time augmentation (TTA) can be viewed as self-ensembling.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "What is test-time augmentation (TTA)?",
+        "type": "mcq",
+        "o": [
+            "Applying augmentations at inference and averaging predictions",
+            "Test data augmentation",
+            "Training augmentation",
+            "Testing phase"
+        ]
+    },
+    {
+        "q": "TTA creates multiple _____ of test inputs and averages predictions.",
+        "type": "fill_blank",
+        "answers": [
+            "versions"
+        ],
+        "other_options": [
+            "copies",
+            "models",
+            "outputs"
+        ]
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "# TTA example\noriginal_pred = 0.6\nflipped_pred = 0.8\ntta_pred = (original_pred + flipped_pred) / 2\nprint(tta_pred)",
+        "o": [
+            "0.7",
+            "0.6",
+            "0.8",
+            "1.4"
+        ]
+    },
+    {
+        "q": "TTA increases inference time but often improves accuracy.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Rearrange TTA augmentations by common usage:",
+        "type": "rearrange",
+        "words": [
+            "Horizontal Flip",
+            "Rotation",
+            "Scale",
+            "Color Jitter"
+        ]
+    },
+    {
+        "q": "What is model stacking with cross-validation?",
+        "type": "mcq",
+        "o": [
+            "Generating out-of-fold predictions for meta-learner training",
+            "Stacking layers",
+            "Cross training",
+            "Validation stacking"
+        ]
+    },
+    {
+        "q": "Cross-validated stacking prevents _____ from using training predictions.",
+        "type": "fill_blank",
+        "answers": [
+            "overfitting"
+        ],
+        "other_options": [
+            "underfitting",
+            "training",
+            "testing"
+        ]
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "# Stacking with CV\nfolds = 5\nmodels = 3\noof_predictions_shape = (100, models)  # 100 samples, 3 models\nprint(oof_predictions_shape)",
+        "o": [
+            "(100, 3)",
+            "(5, 3)",
+            "(100, 5)",
+            "(3, 100)"
+        ]
+    },
+    {
+        "q": "Out-of-fold predictions are used as features for the meta-model.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Match the stacking level with its models:",
+        "type": "match",
+        "left": [
+            "Level 0",
+            "Level 1",
+            "Level 2",
+            "Blending"
+        ],
+        "right": [
+            "Base models",
+            "First meta-model",
+            "Second meta-model",
+            "Holdout-based"
+        ]
+    },
+    {
+        "q": "What is model blending?",
+        "type": "mcq",
+        "o": [
+            "Simplified stacking using holdout set for meta-model training",
+            "Model mixing",
+            "Blend training",
+            "Combined models"
+        ]
+    },
+    {
+        "q": "Blending uses a separate _____ set instead of cross-validation.",
+        "type": "fill_blank",
+        "answers": [
+            "holdout"
+        ],
+        "other_options": [
+            "training",
+            "test",
+            "validation"
+        ]
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "# Blending vs stacking\nblending = 'holdout_based'\nstacking = 'cv_based'\nprint(blending != stacking)",
+        "o": [
+            "True",
+            "False",
+            "Error",
+            "None"
+        ]
+    },
+    {
+        "q": "Blending is faster but may waste data compared to stacking.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Rearrange ensemble methods by data efficiency:",
+        "type": "rearrange",
+        "words": [
+            "Stacking (most)",
+            "Blending",
+            "Simple Averaging",
+            "Single Model (none)"
+        ]
+    },
+    {
+        "q": "What is negative sampling?",
+        "type": "mcq",
+        "o": [
+            "Sampling negative examples for contrastive or metric learning",
+            "Removing samples",
+            "Negative data",
+            "Bad sampling"
+        ]
+    },
+    {
+        "q": "Hard negative mining selects the most _____ negative samples.",
+        "type": "fill_blank",
+        "answers": [
+            "difficult"
+        ],
+        "other_options": [
+            "easy",
+            "random",
+            "similar"
+        ]
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "# Negative sampling strategies\nstrategies = ['random', 'hard', 'semi_hard', 'in_batch']\nprint(len(strategies))",
+        "o": [
+            "4",
+            "3",
+            "5",
+            "2"
+        ]
+    },
+    {
+        "q": "Hard negatives are samples with high similarity but different labels.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Match the sampling strategy with its difficulty:",
+        "type": "match",
+        "left": [
+            "Random",
+            "Easy",
+            "Semi-hard",
+            "Hard"
+        ],
+        "right": [
+            "Any negative",
+            "Far from anchor",
+            "Between margin",
+            "Closest wrong"
+        ]
+    },
+    {
+        "q": "What is curriculum learning?",
+        "type": "mcq",
+        "o": [
+            "Training from easy to hard examples progressively",
+            "Course learning",
+            "Scheduled training",
+            "Educational ML"
+        ]
+    },
+    {
+        "q": "Curriculum learning starts with _____ samples and increases difficulty.",
+        "type": "fill_blank",
+        "answers": [
+            "easy"
+        ],
+        "other_options": [
+            "hard",
+            "random",
+            "medium"
+        ]
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "# Curriculum learning schedule\ndifficulty = ['easy', 'medium', 'hard', 'expert']\nprint(difficulty[0])",
+        "o": [
+            "easy",
+            "hard",
+            "medium",
+            "expert"
+        ]
+    },
+    {
+        "q": "Self-paced learning lets the model choose its own curriculum.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Rearrange curriculum learning stages:",
+        "type": "rearrange",
+        "words": [
+            "Measure Difficulty",
+            "Sort Samples",
+            "Train Easy First",
+            "Increase Difficulty"
+        ]
+    },
+    {
+        "q": "What is noisy label learning?",
+        "type": "mcq",
+        "o": [
+            "Training when labels contain errors or inconsistencies",
+            "Loud training",
+            "Label noise only",
+            "Sound data"
+        ]
+    },
+    {
+        "q": "Label noise can be symmetric or _____-dependent.",
+        "type": "fill_blank",
+        "answers": [
+            "instance"
+        ],
+        "other_options": [
+            "class",
+            "feature",
+            "model"
+        ]
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "# Noisy label strategies\nstrategies = ['sample_reweighting', 'label_correction', 'robust_loss', 'co_teaching']\nprint(len(strategies))",
+        "o": [
+            "4",
+            "3",
+            "5",
+            "2"
+        ]
+    },
+    {
+        "q": "Match the noise handling method with its approach:",
+        "type": "match",
+        "left": [
+            "Reweighting",
+            "Correction",
+            "Robust Loss",
+            "Clean Selection"
+        ],
+        "right": [
+            "Down-weight noisy",
+            "Fix wrong labels",
+            "Tolerate noise",
+            "Identify clean"
+        ]
+    },
+    {
+        "q": "Symmetric noise flips labels uniformly across all classes.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "What is weighted loss for imbalanced classes?",
+        "type": "mcq",
+        "o": [
+            "Assigning different loss weights based on class frequency",
+            "Heavy loss",
+            "Loss weighting",
+            "Weight loss"
+        ]
+    },
+    {
+        "q": "Class weights are typically inversely proportional to class _____.",
+        "type": "fill_blank",
+        "answers": [
+            "frequency"
+        ],
+        "other_options": [
+            "importance",
+            "size",
+            "difficulty"
+        ]
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "# Class weight example\nclass_counts = [100, 10]\ntotal = sum(class_counts)\nweights = [total / (len(class_counts) * c) for c in class_counts]\nprint(round(weights[1], 1))",
+        "o": [
+            "5.5",
+            "1.0",
+            "10.0",
+            "0.1"
+        ]
+    },
+    {
+        "q": "Balanced class weights ensure equal total contribution from each class.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Rearrange class imbalance solutions:",
+        "type": "rearrange",
+        "words": [
+            "Class Weights (simplest)",
+            "Oversampling",
+            "Undersampling",
+            "Hybrid Methods"
+        ]
+    },
+    {
+        "q": "What is sample weights in training?",
+        "type": "mcq",
+        "o": [
+            "Individual importance weights for each training sample",
+            "Data size",
+            "Feature weights",
+            "Model weights"
+        ]
+    },
+    {
+        "q": "Sample weights can give higher importance to more _____ examples.",
+        "type": "fill_blank",
+        "answers": [
+            "reliable"
+        ],
+        "other_options": [
+            "random",
+            "simple",
+            "noisy"
+        ]
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "from sklearn.tree import DecisionTreeClassifier\nimport numpy as np\nX = np.array([[1], [2], [3], [4]])\ny = np.array([0, 0, 1, 1])\nsample_weight = np.array([1, 1, 2, 2])\ntree = DecisionTreeClassifier()\ntree.fit(X, y, sample_weight=sample_weight)\nprint(sum(sample_weight))",
+        "o": [
+            "6",
+            "4",
+            "2",
+            "8"
+        ]
+    },
+    {
+        "q": "Many sklearn algorithms support sample_weight parameter.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Match the weight source with its use case:",
+        "type": "match",
+        "left": [
+            "Class-based",
+            "Confidence-based",
+            "Time-based",
+            "Importance"
+        ],
+        "right": [
+            "Imbalanced data",
+            "Noisy labels",
+            "Recent data",
+            "Domain shift"
+        ]
+    },
+    {
+        "q": "What is monotonic constraints in trees?",
+        "type": "mcq",
+        "o": [
+            "Forcing predictions to increase or decrease with feature values",
+            "Monotone data",
+            "Constraint satisfaction",
+            "Tree constraints"
+        ]
+    },
+    {
+        "q": "Monotonic constraints ensure predictions have _____ relationship with features.",
+        "type": "fill_blank",
+        "answers": [
+            "consistent"
+        ],
+        "other_options": [
+            "random",
+            "changing",
+            "inverse"
+        ]
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "# Monotonic constraint example for XGBoost\nconstraints = [1, 0, -1]  # Increasing, No constraint, Decreasing\nprint(constraints[0])",
+        "o": [
+            "1",
+            "0",
+            "-1",
+            "2"
+        ]
+    },
+    {
+        "q": "Monotonic constraints help when domain knowledge suggests relationships.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Rearrange constraint types by strictness:",
+        "type": "rearrange",
+        "words": [
+            "No Constraint",
+            "Monotonic",
+            "Convex",
+            "Linear"
+        ]
+    },
+    {
+        "q": "What is feature interaction in ensemble models?",
+        "type": "mcq",
+        "o": [
+            "Combined effects of multiple features on predictions",
+            "Feature combination",
+            "Interaction testing",
+            "Feature product"
+        ]
+    },
+    {
+        "q": "H-statistic measures the strength of feature _____ in models.",
+        "type": "fill_blank",
+        "answers": [
+            "interactions"
+        ],
+        "other_options": [
+            "importance",
+            "correlation",
+            "variance"
+        ]
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "# Feature interaction types\ntwo_way = ('feature1', 'feature2')\nthree_way = ('feature1', 'feature2', 'feature3')\nprint(len(three_way))",
+        "o": [
+            "3",
+            "2",
+            "1",
+            "6"
+        ]
+    },
+    {
+        "q": "Tree-based models naturally capture feature interactions through splits.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Match the interaction detection with its method:",
+        "type": "match",
+        "left": [
+            "ICE-based",
+            "SHAP",
+            "Statistical",
+            "Tree-based"
+        ],
+        "right": [
+            "Curve variation",
+            "Interaction values",
+            "Regression terms",
+            "Split patterns"
+        ]
+    },
+    {
+        "q": "What is feature hashing?",
+        "type": "mcq",
+        "o": [
+            "Mapping features to fixed-size vectors using hash functions",
+            "Feature encoding",
+            "Hash table",
+            "Feature storage"
+        ]
+    },
+    {
+        "q": "Feature hashing reduces dimensionality without explicit _____ building.",
+        "type": "fill_blank",
+        "answers": [
+            "vocabulary"
+        ],
+        "other_options": [
+            "model",
+            "feature",
+            "hash"
+        ]
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "from sklearn.feature_extraction import FeatureHasher\nhasher = FeatureHasher(n_features=10, input_type='dict')\nprint(hasher.n_features)",
+        "o": [
+            "10",
+            "100",
+            "1000",
+            "1"
+        ]
+    },
+    {
+        "q": "Feature hashing may cause collisions between different features.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Rearrange encoding methods by vocabulary requirement:",
+        "type": "rearrange",
+        "words": [
+            "Hashing (none)",
+            "Count-based",
+            "TF-IDF",
+            "Embedding (pre-built)"
+        ]
+    },
+    {
+        "q": "What is iterative stratification for multi-label?",
+        "type": "mcq",
+        "o": [
+            "Stratified sampling preserving label co-occurrence patterns",
+            "Simple splitting",
+            "Iteration sampling",
+            "Strategic labeling"
+        ]
+    },
+    {
+        "q": "Iterative stratification maintains label _____ across splits.",
+        "type": "fill_blank",
+        "answers": [
+            "distribution"
+        ],
+        "other_options": [
+            "count",
+            "order",
+            "type"
+        ]
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "# Multi-label splitting challenges\nlabels = [[1, 0, 1], [0, 1, 1], [1, 1, 0]]\nlabel_count = sum(sum(row) for row in labels)\nprint(label_count)",
+        "o": [
+            "6",
+            "3",
+            "9",
+            "4"
+        ]
+    },
+    {
+        "q": "Standard stratification doesnt work well for multi-label classification.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Match the splitting method with its target type:",
+        "type": "match",
+        "left": [
+            "Train/Test Split",
+            "Stratified",
+            "Iterative Stratified",
+            "Time Series"
+        ],
+        "right": [
+            "Random",
+            "Single-label balance",
+            "Multi-label balance",
+            "Temporal order"
+        ]
+    },
+    {
+        "q": "What is time series cross-validation?",
+        "type": "mcq",
+        "o": [
+            "Cross-validation respecting temporal ordering of data",
+            "Time-based testing",
+            "Serial validation",
+            "Clock validation"
+        ]
+    },
+    {
+        "q": "Time series CV ensures training data is always _____ test data.",
+        "type": "fill_blank",
+        "answers": [
+            "before"
+        ],
+        "other_options": [
+            "after",
+            "mixed with",
+            "equal to"
+        ]
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "from sklearn.model_selection import TimeSeriesSplit\ntscv = TimeSeriesSplit(n_splits=5)\nprint(tscv.n_splits)",
+        "o": [
+            "5",
+            "3",
+            "10",
+            "2"
+        ]
+    },
+    {
+        "q": "Rolling window CV uses fixed-size training windows.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Rearrange time series CV types:",
+        "type": "rearrange",
+        "words": [
+            "Expanding Window",
+            "Rolling Window",
+            "Blocked",
+            "Nested"
+        ]
+    },
+    {
+        "q": "What is group cross-validation?",
+        "type": "mcq",
+        "o": [
+            "CV ensuring related samples stay in same fold",
+            "Group training",
+            "Cluster validation",
+            "Sample grouping"
+        ]
+    },
+    {
+        "q": "GroupKFold prevents _____ between train and test folds.",
+        "type": "fill_blank",
+        "answers": [
+            "leakage"
+        ],
+        "other_options": [
+            "overlap",
+            "mixing",
+            "sharing"
+        ]
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "from sklearn.model_selection import GroupKFold\ngkf = GroupKFold(n_splits=3)\nprint(gkf.n_splits)",
+        "o": [
+            "3",
+            "5",
+            "10",
+            "1"
+        ]
+    },
+    {
+        "q": "Match the CV type with its use case:",
+        "type": "match",
+        "left": [
+            "KFold",
+            "GroupKFold",
+            "StratifiedGroup",
+            "LeaveOneGroup"
+        ],
+        "right": [
+            "Standard",
+            "Grouped data",
+            "Stratified groups",
+            "All from one group"
+        ]
+    },
+    {
+        "q": "GroupKFold is useful when samples from same subject should not be split.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "What is nested cross-validation?",
+        "type": "mcq",
+        "o": [
+            "Two-level CV for unbiased model selection and evaluation",
+            "Nested loops",
+            "Deep validation",
+            "Inner validation only"
+        ]
+    },
+    {
+        "q": "Nested CV uses _____ CV loop for hyperparameter tuning.",
+        "type": "fill_blank",
+        "answers": [
+            "inner"
+        ],
+        "other_options": [
+            "outer",
+            "single",
+            "double"
+        ]
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "# Nested CV concept\nouter_splits = 5\ninner_splits = 3\ntotal_fits = outer_splits * inner_splits\nprint(total_fits)",
+        "o": [
+            "15",
+            "5",
+            "3",
+            "8"
+        ]
+    },
+    {
+        "q": "Nested CV provides unbiased estimate of model generalization.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Rearrange model evaluation methods by reliability:",
+        "type": "rearrange",
+        "words": [
+            "Single Split",
+            "K-Fold",
+            "Repeated K-Fold",
+            "Nested CV (best)"
+        ]
+    },
+    {
+        "q": "What is target encoding?",
+        "type": "mcq",
+        "o": [
+            "Encoding categories using target variable statistics",
+            "Target transformation",
+            "Label encoding",
+            "Output encoding"
+        ]
+    },
+    {
+        "q": "Target encoding can cause _____ if not done carefully.",
+        "type": "fill_blank",
+        "answers": [
+            "overfitting"
+        ],
+        "other_options": [
+            "underfitting",
+            "errors",
+            "warnings"
+        ]
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "# Target encoding concept\ncategory_means = {'A': 0.8, 'B': 0.3, 'C': 0.5}\nencoded = [category_means[c] for c in ['A', 'B', 'A']]\nprint(encoded[0])",
+        "o": [
+            "0.8",
+            "0.3",
+            "0.5",
+            "1.0"
+        ]
+    },
+    {
+        "q": "Match the encoding with its leakage risk:",
+        "type": "match",
+        "left": [
+            "One-Hot",
+            "Label",
+            "Target",
+            "Leave-One-Out Target"
+        ],
+        "right": [
+            "None",
+            "None",
+            "High",
+            "Lower"
+        ]
+    },
+    {
+        "q": "Leave-one-out target encoding reduces overfitting risk.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "What is WOE encoding?",
+        "type": "mcq",
+        "o": [
+            "Weight of Evidence encoding for binary classification",
+            "Weighted encoding",
+            "Word encoding",
+            "Wide encoding"
+        ]
+    },
+    {
+        "q": "WOE measures the predictive power of _____ variables.",
+        "type": "fill_blank",
+        "answers": [
+            "categorical"
+        ],
+        "other_options": [
+            "numerical",
+            "binary",
+            "target"
+        ]
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "import math\n# WOE calculation\ngood_rate = 0.8\nbad_rate = 0.2\nwoe = math.log(good_rate / bad_rate)\nprint(round(woe, 2))",
+        "o": [
+            "1.39",
+            "0.0",
+            "1.0",
+            "0.6"
+        ]
+    },
+    {
+        "q": "WOE is commonly used in credit scoring models.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Rearrange encoding methods by information content:",
+        "type": "rearrange",
+        "words": [
+            "Binary (least)",
+            "One-Hot",
+            "Target Mean",
+            "WOE (most)"
+        ]
+    },
+    {
+        "q": "What is spline regression?",
+        "type": "mcq",
+        "o": [
+            "Regression using piecewise polynomial functions",
+            "Spine fitting",
+            "Linear splines only",
+            "Smooth regression"
+        ]
+    },
+    {
+        "q": "Splines join polynomial pieces at points called _____.",
+        "type": "fill_blank",
+        "answers": [
+            "knots"
+        ],
+        "other_options": [
+            "joints",
+            "nodes",
+            "vertices"
+        ]
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "from sklearn.preprocessing import SplineTransformer\nspline = SplineTransformer(n_knots=4, degree=3)\nprint(spline.degree)",
+        "o": [
+            "3",
+            "4",
+            "1",
+            "2"
+        ]
+    },
+    {
+        "q": "Match the spline type with its property:",
+        "type": "match",
+        "left": [
+            "Linear",
+            "Cubic",
+            "Natural",
+            "Smoothing"
+        ],
+        "right": [
+            "Degree 1",
+            "Degree 3",
+            "Linear at ends",
+            "Penalty-based"
+        ]
+    },
+    {
+        "q": "Cubic splines are smooth with continuous first and second derivatives.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "What is GAM (Generalized Additive Model)?",
+        "type": "mcq",
+        "o": [
+            "Model with sum of smooth functions of each predictor",
+            "Gaming model",
+            "General model",
+            "Additive only"
+        ]
+    },
+    {
+        "q": "GAMs maintain _____ while modeling non-linear relationships.",
+        "type": "fill_blank",
+        "answers": [
+            "interpretability"
+        ],
+        "other_options": [
+            "complexity",
+            "speed",
+            "size"
+        ]
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "# GAM concept\nfeatures = ['f1', 'f2', 'f3']\nsmooth_terms = [f's({f})' for f in features]\nprint(len(smooth_terms))",
+        "o": [
+            "3",
+            "1",
+            "6",
+            "9"
+        ]
+    },
+    {
+        "q": "GAMs can show partial dependence plots for each smooth term.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Rearrange model types by interpretability:",
+        "type": "rearrange",
+        "words": [
+            "Linear (most)",
+            "GAM",
+            "Trees",
+            "Neural Networks (least)"
+        ]
+    },
+    {
+        "q": "What is confidence vs prediction intervals?",
+        "type": "mcq",
+        "o": [
+            "Confidence is for mean prediction; prediction is for individual outcomes",
+            "Same thing",
+            "Prediction is narrower",
+            "Confidence is wider"
+        ]
+    },
+    {
+        "q": "Prediction intervals are _____ than confidence intervals.",
+        "type": "fill_blank",
+        "answers": [
+            "wider"
+        ],
+        "other_options": [
+            "narrower",
+            "equal",
+            "same"
+        ]
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "# Interval types\nconfidence = 'mean_prediction'\nprediction = 'individual_outcome'\nprint(confidence != prediction)",
+        "o": [
+            "True",
+            "False",
+            "Error",
+            "None"
+        ]
+    },
+    {
+        "q": "Prediction intervals account for both model uncertainty and noise.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Match the interval with its purpose:",
+        "type": "match",
+        "left": [
+            "Confidence",
+            "Prediction",
+            "Credible",
+            "Tolerance"
+        ],
+        "right": [
+            "Mean uncertainty",
+            "Individual uncertainty",
+            "Bayesian belief",
+            "Proportion captured"
+        ]
+    },
+    {
+        "q": "What is conformal prediction?",
+        "type": "mcq",
+        "o": [
+            "Method providing valid prediction intervals with coverage guarantees",
+            "Conforming model",
+            "Shape prediction",
+            "Format prediction"
+        ]
+    },
+    {
+        "q": "Conformal prediction guarantees specified _____ rate.",
+        "type": "fill_blank",
+        "answers": [
+            "coverage"
+        ],
+        "other_options": [
+            "accuracy",
+            "precision",
+            "recall"
+        ]
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "# Conformal prediction concept\nalpha = 0.1  # Miscoverage rate\ncoverage = 1 - alpha\nprint(coverage)",
+        "o": [
+            "0.9",
+            "0.1",
+            "1.0",
+            "0.5"
+        ]
+    },
+    {
+        "q": "Conformal prediction works with any underlying model.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Rearrange uncertainty methods by guarantees:",
+        "type": "rearrange",
+        "words": [
+            "Point Prediction",
+            "Ensemble Variance",
+            "Quantile Regression",
+            "Conformal (strongest)"
+        ]
+    },
+    {
+        "q": "What is out-of-distribution detection?",
+        "type": "mcq",
+        "o": [
+            "Identifying inputs different from training distribution",
+            "Output detection",
+            "Distribution analysis",
+            "Data detection"
+        ]
+    },
+    {
+        "q": "OOD detection helps identify when model predictions may be _____.",
+        "type": "fill_blank",
+        "answers": [
+            "unreliable"
+        ],
+        "other_options": [
+            "accurate",
+            "fast",
+            "slow"
+        ]
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "# OOD detection methods\nmethods = ['softmax_threshold', 'energy_score', 'mahalanobis', 'ensemble']\nprint(len(methods))",
+        "o": [
+            "4",
+            "3",
+            "5",
+            "2"
+        ]
+    },
+    {
+        "q": "Match the OOD method with its approach:",
+        "type": "match",
+        "left": [
+            "Softmax",
+            "Energy",
+            "Mahalanobis",
+            "Autoencoder"
+        ],
+        "right": [
+            "Maximum probability",
+            "Log-sum-exp",
+            "Feature distance",
+            "Reconstruction error"
+        ]
+    },
+    {
+        "q": "High softmax confidence doesnt guarantee in-distribution.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "What is selective prediction?",
+        "type": "mcq",
+        "o": [
+            "Abstaining from predictions when confidence is low",
+            "Selected model",
+            "Prediction selection",
+            "Choice prediction"
+        ]
+    },
+    {
+        "q": "Selective prediction trades coverage for higher _____.",
+        "type": "fill_blank",
+        "answers": [
+            "accuracy"
+        ],
+        "other_options": [
+            "speed",
+            "size",
+            "complexity"
+        ]
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "# Selective prediction concept\nconfidence_threshold = 0.8\nconfidences = [0.9, 0.6, 0.95, 0.7]\nselected = [c >= confidence_threshold for c in confidences]\nprint(sum(selected))",
+        "o": [
+            "2",
+            "4",
+            "1",
+            "3"
+        ]
+    },
+    {
+        "q": "Risk-coverage curves show trade-off in selective prediction.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Rearrange selective prediction metrics:",
+        "type": "rearrange",
+        "words": [
+            "Coverage Rate",
+            "Selective Accuracy",
+            "Risk-Coverage AUC",
+            "Rejection Rate"
+        ]
+    },
+    {
+        "q": "What is model calibration check?",
+        "type": "mcq",
+        "o": [
+            "Assessing if predicted probabilities match actual frequencies",
+            "Model checking",
+            "Calibration setup",
+            "Accuracy check"
+        ]
+    },
+    {
+        "q": "Expected Calibration Error measures average gap between confidence and _____.",
+        "type": "fill_blank",
+        "answers": [
+            "accuracy"
+        ],
+        "other_options": [
+            "precision",
+            "recall",
+            "loss"
+        ]
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "# Calibration check concept\npredicted_prob = 0.8\nactual_accuracy = 0.75\ncalibration_error = abs(predicted_prob - actual_accuracy)\nprint(calibration_error)",
+        "o": [
+            "0.05",
+            "0.8",
+            "0.75",
+            "1.55"
+        ]
+    },
+    {
+        "q": "Match the calibration metric with its formula:",
+        "type": "match",
+        "left": [
+            "ECE",
+            "MCE",
+            "Brier Score",
+            "Log Loss"
+        ],
+        "right": [
+            "Weighted avg error",
+            "Max bin error",
+            "Squared prob error",
+            "Log probability"
+        ]
+    },
+    {
+        "q": "Reliability diagrams visualize model calibration.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "What is model agnostic feature importance?",
+        "type": "mcq",
+        "o": [
+            "Feature importance methods that work with any model",
+            "Model importance",
+            "Agnostic features",
+            "General importance"
+        ]
+    },
+    {
+        "q": "Permutation importance works by _____ feature values and measuring impact.",
+        "type": "fill_blank",
+        "answers": [
+            "shuffling"
+        ],
+        "other_options": [
+            "removing",
+            "adding",
+            "scaling"
+        ]
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "# Model agnostic methods\nmethods = ['permutation_importance', 'SHAP', 'LIME', 'PDP']\nprint(len(methods))",
+        "o": [
+            "4",
+            "3",
+            "5",
+            "2"
+        ]
+    },
+    {
+        "q": "Model agnostic methods treat the model as a black box.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Rearrange importance methods by computation cost:",
+        "type": "rearrange",
+        "words": [
+            "Coefficient (fastest)",
+            "Permutation",
+            "LIME",
+            "SHAP (slowest)"
+        ]
+    },
+    {
+        "q": "What is model ensembling with diversity?",
+        "type": "mcq",
+        "o": [
+            "Combining diverse models that make different errors",
+            "Diverse data",
+            "Model variety",
+            "Ensemble only"
+        ]
+    },
+    {
+        "q": "Diverse ensembles perform better because errors are _____.",
+        "type": "fill_blank",
+        "answers": [
+            "uncorrelated"
+        ],
+        "other_options": [
+            "correlated",
+            "similar",
+            "identical"
+        ]
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "# Diversity sources\nsources = ['different_algorithms', 'different_features', 'different_samples', 'different_hyperparams']\nprint(len(sources))",
+        "o": [
+            "4",
+            "3",
+            "5",
+            "2"
+        ]
+    },
+    {
+        "q": "Ensemble diversity can be measured using correlation between predictions.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Match the diversity source with its method:",
+        "type": "match",
+        "left": [
+            "Algorithm",
+            "Features",
+            "Samples",
+            "Parameters"
+        ],
+        "right": [
+            "Different model types",
+            "Random subsets",
+            "Bootstrap",
+            "Grid search"
+        ]
+    },
+    {
+        "q": "What is bootstrap aggregating (bagging)?",
+        "type": "mcq",
+        "o": [
+            "Training models on random bootstrap samples and combining predictions",
+            "Simple averaging",
+            "Bag counting",
+            "Data packaging"
+        ]
+    },
+    {
+        "q": "Bagging reduces model _____ through averaging.",
+        "type": "fill_blank",
+        "answers": [
+            "variance"
+        ],
+        "other_options": [
+            "bias",
+            "error",
+            "size"
+        ]
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "from sklearn.ensemble import BaggingClassifier\nfrom sklearn.tree import DecisionTreeClassifier\nbag = BaggingClassifier(estimator=DecisionTreeClassifier(), n_estimators=10)\nprint(bag.n_estimators)",
+        "o": [
+            "10",
+            "5",
+            "100",
+            "1"
+        ]
+    },
+    {
+        "q": "Bagging works best with high-variance base models.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Rearrange ensemble benefits:",
+        "type": "rearrange",
+        "words": [
+            "Reduced Variance",
+            "Better Generalization",
+            "Robustness",
+            "Higher Accuracy"
+        ]
+    },
+    {
+        "q": "What is voting classifier?",
+        "type": "mcq",
+        "o": [
+            "Combining predictions from multiple models using voting",
+            "Single voting",
+            "Vote counting",
+            "Election classifier"
+        ]
+    },
+    {
+        "q": "Hard voting uses predicted _____ for final decision.",
+        "type": "fill_blank",
+        "answers": [
+            "labels"
+        ],
+        "other_options": [
+            "probabilities",
+            "weights",
+            "features"
+        ]
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "from sklearn.ensemble import VotingClassifier\nfrom sklearn.tree import DecisionTreeClassifier\nfrom sklearn.linear_model import LogisticRegression\nvc = VotingClassifier([('dt', DecisionTreeClassifier()), ('lr', LogisticRegression())], voting='soft')\nprint(vc.voting)",
+        "o": [
+            "soft",
+            "hard",
+            "None",
+            "auto"
+        ]
+    },
+    {
+        "q": "Match the voting type with its aggregation:",
+        "type": "match",
+        "left": [
+            "Hard",
+            "Soft",
+            "Weighted Hard",
+            "Weighted Soft"
+        ],
+        "right": [
+            "Majority class",
+            "Average probabilities",
+            "Weighted majority",
+            "Weighted avg prob"
+        ]
+    },
+    {
+        "q": "Soft voting requires models that output class probabilities.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "What is the extra-trees algorithm?",
+        "type": "mcq",
+        "o": [
+            "Extremely randomized trees with random split points",
+            "Extra large trees",
+            "Extended trees",
+            "External trees"
+        ]
+    },
+    {
+        "q": "Extra-trees uses _____ split thresholds instead of best splits.",
+        "type": "fill_blank",
+        "answers": [
+            "random"
+        ],
+        "other_options": [
+            "optimal",
+            "calculated",
+            "fixed"
+        ]
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "from sklearn.ensemble import ExtraTreesClassifier\net = ExtraTreesClassifier(n_estimators=100, random_state=42)\nprint(et.n_estimators)",
+        "o": [
+            "100",
+            "10",
+            "50",
+            "200"
+        ]
+    },
+    {
+        "q": "Extra-trees is faster to train than Random Forest due to random splits.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Rearrange tree ensemble methods by randomness:",
+        "type": "rearrange",
+        "words": [
+            "Single Tree (least)",
+            "Bagging",
+            "Random Forest",
+            "Extra-Trees (most)"
         ]
     }
 ]
