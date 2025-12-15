@@ -1,0 +1,6725 @@
+[
+    {
+        "q": "What is the primary purpose of BeautifulSoup?",
+        "type": "mcq",
+        "o": [
+            "Parsing HTML/XML",
+            "Web Scraping (HTTP)",
+            "Data Analysis",
+            "Machine Learning"
+        ]
+    },
+    {
+        "q": "Which library is commonly used with BeautifulSoup for fetching pages?",
+        "type": "mcq",
+        "o": [
+            "requests",
+            "pandas",
+            "numpy",
+            "matplotlib"
+        ]
+    },
+    {
+        "q": "How do you import BeautifulSoup?",
+        "type": "mcq",
+        "c": "from bs4 import BeautifulSoup",
+        "o": [
+            "from bs4 import BeautifulSoup",
+            "import BeautifulSoup",
+            "from BeautifulSoup import bs4",
+            "import bs"
+        ]
+    },
+    {
+        "q": "Which parser is included with Python's standard library?",
+        "type": "mcq",
+        "o": [
+            "html.parser",
+            "lxml",
+            "html5lib",
+            "xml"
+        ]
+    },
+    {
+        "q": "What object represents parsed HTML document?",
+        "type": "mcq",
+        "o": [
+            "BeautifulSoup",
+            "Tag",
+            "NavigableString",
+            "Comment"
+        ]
+    },
+    {
+        "q": "The _____ argument specifies the parser to use.",
+        "type": "fill_blank",
+        "answers": [
+            "features"
+        ],
+        "other_options": [
+            "parser",
+            "type",
+            "engine"
+        ]
+    },
+    {
+        "q": "BeautifulSoup can parse XML documents.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Match parser with feature:",
+        "type": "match",
+        "left": [
+            "html.parser",
+            "lxml",
+            "html5lib",
+            "xml"
+        ],
+        "right": [
+            "Standard Lib",
+            "Fast/C-based",
+            "Browser-like",
+            "XML support"
+        ]
+    },
+    {
+        "q": "Rearrange basic usage:",
+        "type": "rearrange",
+        "words": [
+            "Import BeautifulSoup",
+            "Get HTML string",
+            "Create Soup object",
+            "Find elements"
+        ]
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "from bs4 import BeautifulSoup\nsoup = BeautifulSoup('<p>Hello</p>', 'html.parser')\nprint(soup.p.string)",
+        "o": [
+            "Hello",
+            "<p>Hello</p>",
+            "p",
+            "None"
+        ]
+    },
+    {
+        "q": "Which method finds the first occurrence of a tag?",
+        "type": "mcq",
+        "o": [
+            "find()",
+            "find_all()",
+            "select()",
+            "search()"
+        ]
+    },
+    {
+        "q": "The _____ attribute accesses the first tag of that name.",
+        "type": "fill_blank",
+        "answers": [
+            "tag_name"
+        ],
+        "other_options": [
+            "find",
+            "get",
+            "first"
+        ]
+    },
+    {
+        "q": "soup.title returns the text of the title.",
+        "type": "true_false",
+        "correct": "False"
+    },
+    {
+        "q": "Match method with result:",
+        "type": "match",
+        "left": [
+            "find()",
+            "find_all()",
+            "select()",
+            "select_one()"
+        ],
+        "right": [
+            "Single Tag",
+            "ResultSet (List)",
+            "List (CSS)",
+            "Single Tag (CSS)"
+        ]
+    },
+    {
+        "q": "Rearrange finding by id:",
+        "type": "rearrange",
+        "words": [
+            "soup",
+            ".find",
+            "(id='my_id')",
+            "access content"
+        ]
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "from bs4 import BeautifulSoup\nsoup = BeautifulSoup('<div class=\"cls\"></div>', 'html.parser')\nprint(soup.div['class'])",
+        "o": [
+            "['cls']",
+            "cls",
+            "None",
+            "Error"
+        ]
+    },
+    {
+        "q": "How do you access tag attributes like a dictionary?",
+        "type": "mcq",
+        "o": [
+            "tag['attr']",
+            "tag.attr",
+            "tag.get('attr')",
+            "tag.attrs"
+        ]
+    },
+    {
+        "q": "The _____ attribute returns a dictionary of attributes.",
+        "type": "fill_blank",
+        "answers": [
+            "attrs"
+        ],
+        "other_options": [
+            "attributes",
+            "prop",
+            "meta"
+        ]
+    },
+    {
+        "q": "Class attribute is returned as a list by default.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Match attribute access:",
+        "type": "match",
+        "left": [
+            "tag['id']",
+            "tag.attrs",
+            "tag.get('id')",
+            "tag.has_attr('id')"
+        ],
+        "right": [
+            "Value (or Error)",
+            "Dict of all",
+            "Value (or None)",
+            "Boolean check"
+        ]
+    },
+    {
+        "q": "Rearrange accessing class:",
+        "type": "rearrange",
+        "words": [
+            "Select tag",
+            "Access .attrs",
+            "Get 'class'",
+            "Iterate list"
+        ]
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "from bs4 import BeautifulSoup\nsoup = BeautifulSoup('<a>Link</a>', 'html.parser')\nprint(soup.a.text)",
+        "o": [
+            "Link",
+            "<a>Link</a>",
+            "None",
+            "a"
+        ]
+    },
+    {
+        "q": "Which property gets all text content of a tag?",
+        "type": "mcq",
+        "o": [
+            "text",
+            "string",
+            "contents",
+            "innerHtml"
+        ]
+    },
+    {
+        "q": "The _____ method is equivalent to text property.",
+        "type": "fill_blank",
+        "answers": [
+            "get_text"
+        ],
+        "other_options": [
+            "content",
+            "string",
+            "value"
+        ]
+    },
+    {
+        "q": ".string returns None if tag has child tags.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Match text property with behavior:",
+        "type": "match",
+        "left": [
+            ".string",
+            ".text",
+            ".get_text()",
+            ".stripped_strings"
+        ],
+        "right": [
+            "Direct text only",
+            "All descendant text",
+            "Configurable text",
+            "Generator w/o whitespace"
+        ]
+    },
+    {
+        "q": "Rearrange extracting stripped text:",
+        "type": "rearrange",
+        "words": [
+            "soup.get_text()",
+            "strip=True",
+            "separator=' '",
+            "Print result"
+        ]
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "from bs4 import BeautifulSoup\nsoup = BeautifulSoup('<ul><li>1</li><li>2</li></ul>', 'html.parser')\nprint(len(soup.find_all('li')))",
+        "o": [
+            "2",
+            "1",
+            "0",
+            "None"
+        ]
+    },
+    {
+        "q": "Which method searches by CSS selector?",
+        "type": "mcq",
+        "o": [
+            "select()",
+            "find()",
+            "search()",
+            "css()"
+        ]
+    },
+    {
+        "q": "The _____ argument limits the number of find_all results.",
+        "type": "fill_blank",
+        "answers": [
+            "limit"
+        ],
+        "other_options": [
+            "max",
+            "count",
+            "num"
+        ]
+    },
+    {
+        "q": "find_all(recursive=False) searches only direct children.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Match selector with syntax:",
+        "type": "match",
+        "left": [
+            "Tag",
+            "Class",
+            "ID",
+            "Descendant"
+        ],
+        "right": [
+            "div",
+            ".classname",
+            "#idname",
+            "div p"
+        ]
+    },
+    {
+        "q": "Rearrange finding all links:",
+        "type": "rearrange",
+        "words": [
+            "soup",
+            ".find_all",
+            "('a')",
+            "Loop results"
+        ]
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "from bs4 import BeautifulSoup\nsoup = BeautifulSoup('<b><!-- Comment --></b>', 'html.parser')\nfrom bs4 import Comment\nprint(type(soup.b.string))",
+        "o": [
+            "<class 'bs4.element.Comment'>",
+            "<class 'str'>",
+            "None",
+            "Error"
+        ]
+    },
+    {
+        "q": "Which class represents HTML comments?",
+        "type": "mcq",
+        "o": [
+            "Comment",
+            "NavigableString",
+            "Tag",
+            "BeautifulSoup"
+        ]
+    },
+    {
+        "q": "NavigableString represents text within a _____.",
+        "type": "fill_blank",
+        "answers": [
+            "tag"
+        ],
+        "other_options": [
+            "doc",
+            "body",
+            "soup"
+        ]
+    },
+    {
+        "q": "Comments are a type of NavigableString.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Match object type:",
+        "type": "match",
+        "left": [
+            "Tag",
+            "NavigableString",
+            "BeautifulSoup",
+            "Comment"
+        ],
+        "right": [
+            "HTML Element",
+            "Text Content",
+            "Document Root",
+            "HTML Comment"
+        ]
+    },
+    {
+        "q": "Rearrange accessing comment:",
+        "type": "rearrange",
+        "words": [
+            "Find tag",
+            "Access .string",
+            "Check isinstance",
+            "Comment class"
+        ]
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "from bs4 import BeautifulSoup\nsoup = BeautifulSoup('<div><p>A</p><p>B</p></div>', 'html.parser')\nprint(soup.div.contents[0].name)",
+        "o": [
+            "p",
+            "div",
+            "None",
+            "Error"
+        ]
+    },
+    {
+        "q": "Which attribute returns a list of direct children?",
+        "type": "mcq",
+        "o": [
+            "contents",
+            "children",
+            "descendants",
+            "parent"
+        ]
+    },
+    {
+        "q": "The _____ attribute is a generator of direct children.",
+        "type": "fill_blank",
+        "answers": [
+            "children"
+        ],
+        "other_options": [
+            "contents",
+            "iter",
+            "list"
+        ]
+    },
+    {
+        "q": ".contents includes NavigableStrings (whitespace).",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Match navigation attribute:",
+        "type": "match",
+        "left": [
+            "contents",
+            "children",
+            "descendants",
+            "parent"
+        ],
+        "right": [
+            "List of kids",
+            "Iterator of kids",
+            "Iterator of all recursive",
+            "Direct container"
+        ]
+    },
+    {
+        "q": "Rearrange iterating children:",
+        "type": "rearrange",
+        "words": [
+            "For child",
+            "in",
+            "soup.body.children",
+            "Print child"
+        ]
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "from bs4 import BeautifulSoup\nsoup = BeautifulSoup('<p>1</p><p>2</p>', 'html.parser')\nprint(soup.p.next_sibling.name)",
+        "o": [
+            "p",
+            "None",
+            "Error",
+            "1"
+        ]
+    },
+    {
+        "q": "Which attribute gets the next element at the same level?",
+        "type": "mcq",
+        "o": [
+            "next_sibling",
+            "next_element",
+            "parent",
+            "contents"
+        ]
+    },
+    {
+        "q": "The _____ attribute goes to the previous sibling.",
+        "type": "fill_blank",
+        "answers": [
+            "previous_sibling"
+        ],
+        "other_options": [
+            "prev",
+            "back",
+            "before"
+        ]
+    },
+    {
+        "q": "Siblings can be NavigableString (newlines).",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Match sibling attribute:",
+        "type": "match",
+        "left": [
+            "next_sibling",
+            "previous_sibling",
+            "next_siblings",
+            "previous_siblings"
+        ],
+        "right": [
+            "Immediate next",
+            "Immediate prev",
+            "Iterator forward",
+            "Iterator backward"
+        ]
+    },
+    {
+        "q": "Rearrange Finding siblings:",
+        "type": "rearrange",
+        "words": [
+            "Find element",
+            "Check .next_sibling",
+            "Skip whitespace",
+            "Get tag"
+        ]
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "from bs4 import BeautifulSoup\nsoup = BeautifulSoup('<div><p></p></div>', 'html.parser')\nprint(soup.p.parent.name)",
+        "o": [
+            "div",
+            "body",
+            "html",
+            "None"
+        ]
+    },
+    {
+        "q": "Which attribute gets the parent tag?",
+        "type": "mcq",
+        "o": [
+            "parent",
+            "parents",
+            "container",
+            "root"
+        ]
+    },
+    {
+        "q": "The _____ attribute yields all ancestors.",
+        "type": "fill_blank",
+        "answers": [
+            "parents"
+        ],
+        "other_options": [
+            "ancestors",
+            "chain",
+            "root"
+        ]
+    },
+    {
+        "q": "The parent of the top-level tag is BeautifulSoup object.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Match parent concept:",
+        "type": "match",
+        "left": [
+            "parent",
+            "parents",
+            "find_parent",
+            "find_parents"
+        ],
+        "right": [
+            "Direct parent",
+            "All ancestors",
+            "Search up",
+            "Search all up"
+        ]
+    },
+    {
+        "q": "Rearrange climbing up:",
+        "type": "rearrange",
+        "words": [
+            "Find element",
+            "Loop parent",
+            "in .parents",
+            "Print name"
+        ]
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "from bs4 import BeautifulSoup\nsoup = BeautifulSoup('<a href=\"x\"></a>', 'html.parser')\nprint(soup.find(href='x').name)",
+        "o": [
+            "a",
+            "None",
+            "Error",
+            "x"
+        ]
+    },
+    {
+        "q": "You can search by attribute using keyword arguments in _____.",
+        "type": "mcq",
+        "o": [
+            "find_all()",
+            "select()",
+            "get()",
+            "attr()"
+        ]
+    },
+    {
+        "q": "Use _____ to search for 'class' attribute (reserved keyword).",
+        "type": "fill_blank",
+        "answers": [
+            "class_"
+        ],
+        "other_options": [
+            "cls",
+            "classname",
+            "class"
+        ]
+    },
+    {
+        "q": "find_all(id='x') finds all tags with id 'x'.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Match find arguments:",
+        "type": "match",
+        "left": [
+            "name",
+            "attrs",
+            "recursive",
+            "string"
+        ],
+        "right": [
+            "Tag name",
+            "Dict of attrs",
+            "Depth control",
+            "Text content"
+        ]
+    },
+    {
+        "q": "Rearrange attribute search:",
+        "type": "rearrange",
+        "words": [
+            "soup.find_all",
+            "name='div'",
+            "class_='container'",
+            "limit=1"
+        ]
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "from bs4 import BeautifulSoup\nsoup = BeautifulSoup('<a>1</a><a>2</a>', 'html.parser')\nprint(soup.find_all(['a', 'b']))",
+        "o": [
+            "[<a>1</a>, <a>2</a>]",
+            "[]",
+            "None",
+            "Error"
+        ]
+    },
+    {
+        "q": "You can pass a _____ to search for multiple tag names.",
+        "type": "mcq",
+        "o": [
+            "list",
+            "tuple",
+            "dict",
+            "string"
+        ]
+    },
+    {
+        "q": "Passing _____ matches all tags.",
+        "type": "fill_blank",
+        "answers": [
+            "True"
+        ],
+        "other_options": [
+            "False",
+            "None",
+            "*"
+        ]
+    },
+    {
+        "q": "You can pass a function to find_all filters.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Match filter types:",
+        "type": "match",
+        "left": [
+            "string",
+            "list",
+            "True",
+            "function"
+        ],
+        "right": [
+            "Exact match",
+            "Any in list",
+            "Everything",
+            "Custom logic"
+        ]
+    },
+    {
+        "q": "Rearrange advanced search:",
+        "type": "rearrange",
+        "words": [
+            "Define filter func",
+            "Return True/False",
+            "Pass to find_all",
+            "Iterate matches"
+        ]
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "from bs4 import BeautifulSoup\nimport re\nsoup = BeautifulSoup('<p>Hello</p>', 'html.parser')\nprint(soup.find(string=re.compile('He')))",
+        "o": [
+            "Hello",
+            "<p>Hello</p>",
+            "None",
+            "Error"
+        ]
+    },
+    {
+        "q": "Which module allows regex searches in BeautifulSoup?",
+        "type": "mcq",
+        "o": [
+            "re",
+            "regex",
+            "match",
+            "pattern"
+        ]
+    },
+    {
+        "q": "Regex can be used for tag names and _____.",
+        "type": "fill_blank",
+        "answers": [
+            "attributes"
+        ],
+        "other_options": [
+            "files",
+            "urls",
+            "parsers"
+        ]
+    },
+    {
+        "q": "Searching by string finds NavigableStrings, not Tags.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Match regex use case:",
+        "type": "match",
+        "left": [
+            "re.compile('^b')",
+            "re.compile('t')",
+            "string=re.compile",
+            "href=re.compile"
+        ],
+        "right": [
+            "Starts with b",
+            "Contains t",
+            "Match text",
+            "Match URL"
+        ]
+    },
+    {
+        "q": "Rearrange regex search:",
+        "type": "rearrange",
+        "words": [
+            "Import re",
+            "Compile pattern",
+            "soup.find_all",
+            "(href=pattern)"
+        ]
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "from bs4 import BeautifulSoup\nsoup = BeautifulSoup('<p class=\"a b\"></p>', 'html.parser')\nprint(soup.select('.a.b')[0].name)",
+        "o": [
+            "p",
+            "None",
+            "Error",
+            "div"
+        ]
+    },
+    {
+        "q": "Which method supports CSS selectors extensively?",
+        "type": "mcq",
+        "o": [
+            "select()",
+            "find()",
+            "css()",
+            "query()"
+        ]
+    },
+    {
+        "q": "The selector 'div > p' matches _____ children.",
+        "type": "fill_blank",
+        "answers": [
+            "direct"
+        ],
+        "other_options": [
+            "all",
+            "indirect",
+            "recursive"
+        ]
+    },
+    {
+        "q": "select() always returns a list.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Match content selector:",
+        "type": "match",
+        "left": [
+            "div p",
+            "div > p",
+            "div + p",
+            "div ~ p"
+        ],
+        "right": [
+            "Descendant",
+            "Direct Child",
+            "Next Sibling",
+            "Subsequent Sibling"
+        ]
+    },
+    {
+        "q": "Rearrange CSS search:",
+        "type": "rearrange",
+        "words": [
+            "soup",
+            ".select",
+            "('div.content a')",
+            "Get iter"
+        ]
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "from bs4 import BeautifulSoup\nsoup = BeautifulSoup('<b></b>', 'html.parser')\nsoup.b.string = 'New'\nprint(soup.b)",
+        "o": [
+            "<b>New</b>",
+            "New",
+            "None",
+            "Error"
+        ]
+    },
+    {
+        "q": "Which attribute allows modifying the tag string?",
+        "type": "mcq",
+        "o": [
+            "string",
+            "text",
+            "content",
+            "inner"
+        ]
+    },
+    {
+        "q": "You can replace a whole tag using _____.",
+        "type": "fill_blank",
+        "answers": [
+            "replace_with"
+        ],
+        "other_options": [
+            "replace",
+            "swap",
+            "change"
+        ]
+    },
+    {
+        "q": "Modifying .string replaces all child elements.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Match modification method:",
+        "type": "match",
+        "left": [
+            "append()",
+            "extend()",
+            "insert()",
+            "extract()"
+        ],
+        "right": [
+            "Add to end",
+            "Add list",
+            "Add at index",
+            "Remove and return"
+        ]
+    },
+    {
+        "q": "Rearrange replacing text:",
+        "type": "rearrange",
+        "words": [
+            "Find tag",
+            "Assign .string",
+            "=",
+            "'New value'",
+            "Print tag"
+        ]
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "from bs4 import BeautifulSoup\nsoup = BeautifulSoup('<p>Old</p>', 'html.parser')\nnew_tag = soup.new_tag('a', href='x')\nsoup.p.append(new_tag)\nprint(len(soup.p.contents))",
+        "o": [
+            "2",
+            "1",
+            "0",
+            "3"
+        ]
+    },
+    {
+        "q": "Which method creates a new Tag object?",
+        "type": "mcq",
+        "o": [
+            "new_tag()",
+            "create_tag()",
+            "Tag()",
+            "new()"
+        ]
+    },
+    {
+        "q": "The _____ argument specifies attributes for new_tag.",
+        "type": "fill_blank",
+        "answers": [
+            "attrs"
+        ],
+        "other_options": [
+            "attributes",
+            "props",
+            "kwargs"
+        ]
+    },
+    {
+        "q": "new_tag creates a tag associated with the soup object.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Match creation method:",
+        "type": "match",
+        "left": [
+            "new_tag()",
+            "new_string()",
+            "BeautifulSoup()",
+            "clear()"
+        ],
+        "right": [
+            "Create Tag",
+            "Create Text",
+            "Create Soup",
+            "Remove content"
+        ]
+    },
+    {
+        "q": "Rearrange creating element:",
+        "type": "rearrange",
+        "words": [
+            "soup.new_tag('b')",
+            "tag.string = 'Bold'",
+            "soup.body.append(tag)",
+            "Print soup"
+        ]
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "from bs4 import BeautifulSoup\nsoup = BeautifulSoup('<a><b>Text</b></a>', 'html.parser')\nsoup.b.unwrap()\nprint(soup.a)",
+        "o": [
+            "<a>Text</a>",
+            "<a><b>Text</b></a>",
+            "Text",
+            "None"
+        ]
+    },
+    {
+        "q": "Which method removes a tag but keeps its contents?",
+        "type": "mcq",
+        "o": [
+            "unwrap()",
+            "details()",
+            "strip_tags()",
+            "decompose()"
+        ]
+    },
+    {
+        "q": "The _____ method recursively destroys the tag and content.",
+        "type": "fill_blank",
+        "answers": [
+            "decompose"
+        ],
+        "other_options": [
+            "destroy",
+            "delete",
+            "remove"
+        ]
+    },
+    {
+        "q": "unwrap returns the tag that was replaced.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Match removal method:",
+        "type": "match",
+        "left": [
+            "extract()",
+            "decompose()",
+            "unwrap()",
+            "clear()"
+        ],
+        "right": [
+            "Return removed",
+            "Destroy completely",
+            "Replace with content",
+            "Empty contents"
+        ]
+    },
+    {
+        "q": "Rearrange removing tag:",
+        "type": "rearrange",
+        "words": [
+            "Find tag",
+            "tag.decompose()",
+            "Check parent",
+            "Tag is gone"
+        ]
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "from bs4 import BeautifulSoup\nsoup = BeautifulSoup('<p>A</p>', 'html.parser')\nprint(soup.prettify().startswith('<html>'))",
+        "o": [
+            "False",
+            "True",
+            "Unknown",
+            "Error"
+        ]
+    },
+    {
+        "q": "Which method outputs formatted Unicode string?",
+        "type": "mcq",
+        "o": [
+            "prettify()",
+            "format()",
+            "unicode()",
+            "str()"
+        ]
+    },
+    {
+        "q": "prettify adds meaningful _____.",
+        "type": "fill_blank",
+        "answers": [
+            "newlines"
+        ],
+        "other_options": [
+            "spaces",
+            "tabs",
+            "indentation"
+        ]
+    },
+    {
+        "q": "str(soup) returns a UTF-8 encoded byte string.",
+        "type": "true_false",
+        "correct": "False"
+    },
+    {
+        "q": "Match output method:",
+        "type": "match",
+        "left": [
+            "str()",
+            "prettify()",
+            "encode()",
+            "decode()"
+        ],
+        "right": [
+            "Unformatted string",
+            "Formatted string",
+            "Byte string",
+            "To Unicode"
+        ]
+    },
+    {
+        "q": "Rearrange pretty printing:",
+        "type": "rearrange",
+        "words": [
+            "soup = BeautifulSoup",
+            "Do modifications",
+            "print(",
+            "soup.prettify()",
+            ")"
+        ]
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "from bs4 import BeautifulSoup\nsoup = BeautifulSoup('<br>', 'html.parser')\nprint(soup.br.is_empty_element)",
+        "o": [
+            "True",
+            "False",
+            "None",
+            "Error"
+        ]
+    },
+    {
+        "q": "Which property checks if a tag is a void element?",
+        "type": "mcq",
+        "o": [
+            "is_empty_element",
+            "is_void",
+            "void",
+            "empty"
+        ]
+    },
+    {
+        "q": "HTML parsers handle void tags like _____ automatically.",
+        "type": "fill_blank",
+        "answers": [
+            "br"
+        ],
+        "other_options": [
+            "div",
+            "p",
+            "span"
+        ]
+    },
+    {
+        "q": "Accessing .string on a self-closing tag returns empty string.",
+        "type": "true_false",
+        "correct": "False"
+    },
+    {
+        "q": "Match void element:",
+        "type": "match",
+        "left": [
+            "br",
+            "img",
+            "hr",
+            "input"
+        ],
+        "right": [
+            "Break",
+            "Image",
+            "Rule",
+            "Input"
+        ]
+    },
+    {
+        "q": "Rearrange parsing void:",
+        "type": "rearrange",
+        "words": [
+            "Parse <br>",
+            "Check contents",
+            "It is empty",
+            "Check is_empty_element"
+        ]
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "from bs4 import BeautifulSoup\nsoup = BeautifulSoup('<a>Link</a>', 'html.parser')\nprint(soup.get_text('|'))",
+        "o": [
+            "Link",
+            "|Link",
+            "Link|",
+            "L|i|n|k"
+        ]
+    },
+    {
+        "q": "How do you specify a separator in get_text()?",
+        "type": "mcq",
+        "o": [
+            "separator arg",
+            "sep arg",
+            "delimiter arg",
+            "join arg"
+        ]
+    },
+    {
+        "q": "The _____ argument strips whitespace in get_text().",
+        "type": "fill_blank",
+        "answers": [
+            "strip"
+        ],
+        "other_options": [
+            "clean",
+            "trim",
+            "whitespace"
+        ]
+    },
+    {
+        "q": "get_text() gathers text from all descendants.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Match text method:",
+        "type": "match",
+        "left": [
+            "get_text()",
+            "strings",
+            "stripped_strings",
+            "string"
+        ],
+        "right": [
+            "Joined string",
+            "Generator",
+            "Generator w/o space",
+            "Single string"
+        ]
+    },
+    {
+        "q": "Rearrange text extraction:",
+        "type": "rearrange",
+        "words": [
+            "soup",
+            ".get_text",
+            "(strip=True, separator=' ')",
+            "Result"
+        ]
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "from bs4 import BeautifulSoup, SoupStrainer\nonly_a = SoupStrainer('a')\nsoup = BeautifulSoup('<a>1</a><b>2</b>', 'html.parser', parse_only=only_a)\nprint(soup.b)",
+        "o": [
+            "None",
+            "<b>2</b>",
+            "2",
+            "Error"
+        ]
+    },
+    {
+        "q": "Which class allows parsing only specific parts of a document?",
+        "type": "mcq",
+        "o": [
+            "SoupStrainer",
+            "TagStrainer",
+            "Filter",
+            "ParseFilter"
+        ]
+    },
+    {
+        "q": "Pass SoupStrainer to the _____ argument of BeautifulSoup.",
+        "type": "fill_blank",
+        "answers": [
+            "parse_only"
+        ],
+        "other_options": [
+            "filter",
+            "strainer",
+            "only"
+        ]
+    },
+    {
+        "q": "SoupStrainer speeds up parsing significantly.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Match SoupStrainer arg:",
+        "type": "match",
+        "left": [
+            "name",
+            "attrs",
+            "text",
+            "limit"
+        ],
+        "right": [
+            "Tag name",
+            "Attributes",
+            "String content",
+            "Not used"
+        ]
+    },
+    {
+        "q": "Rearrange partial parsing:",
+        "type": "rearrange",
+        "words": [
+            "Define strainer",
+            "Call BeautifulSoup",
+            "Pass parse_only",
+            "Parse specific tags"
+        ]
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "from bs4 import BeautifulSoup\nsoup = BeautifulSoup('<h1>A</h1>', 'html.parser')\nprint(soup.h1['id'])",
+        "o": [
+            "Error",
+            "None",
+            "",
+            "A"
+        ]
+    },
+    {
+        "q": "Accessing a non-existent attribute raises _____.",
+        "type": "mcq",
+        "o": [
+            "KeyError",
+            "AttributeError",
+            "ValueError",
+            "None"
+        ]
+    },
+    {
+        "q": "Use the _____ method to safely get an attribute.",
+        "type": "fill_blank",
+        "answers": [
+            "get"
+        ],
+        "other_options": [
+            "find",
+            "attr",
+            "access"
+        ]
+    },
+    {
+        "q": "Multi-valued attributes like 'class' return a list.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Match attribute type:",
+        "type": "match",
+        "left": [
+            "id",
+            "class",
+            "href",
+            "style"
+        ],
+        "right": [
+            "Unique ID",
+            "List of classes",
+            "URL",
+            "CSS string"
+        ]
+    },
+    {
+        "q": "Rearrange safe access:",
+        "type": "rearrange",
+        "words": [
+            "tag",
+            ".get('attr',",
+            "default_value)",
+            "Check result"
+        ]
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "from bs4 import BeautifulSoup\nsoup = BeautifulSoup('<p>Hello</p>', 'html.parser')\nprint(soup.original_encoding)",
+        "o": [
+            "None",
+            "utf-8",
+            "ascii",
+            "windows-1252"
+        ]
+    },
+    {
+        "q": "Which attribute holds the detected encoding?",
+        "type": "mcq",
+        "o": [
+            "original_encoding",
+            "encoding",
+            "charset",
+            "code"
+        ]
+    },
+    {
+        "q": "You can pass _____ to BeautifulSoup constructor to force encoding.",
+        "type": "fill_blank",
+        "answers": [
+            "from_encoding"
+        ],
+        "other_options": [
+            "encoding",
+            "charset",
+            "code"
+        ]
+    },
+    {
+        "q": "BeautifulSoup uses UnicodeDammit library for encoding detection.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Match encoding lib:",
+        "type": "match",
+        "left": [
+            "UnicodeDammit",
+            "chardet",
+            "cchardet",
+            "html.parser"
+        ],
+        "right": [
+            "BS4 internal",
+            "External detect",
+            "Fast external",
+            "Parser"
+        ]
+    },
+    {
+        "q": "Rearrange encoding detection:",
+        "type": "rearrange",
+        "words": [
+            "Read bytes",
+            "Pass to BS4",
+            "Detect encoding",
+            "Decode to unicode"
+        ]
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "from bs4 import BeautifulSoup\nsoup = BeautifulSoup('<doc><tag/></doc>', 'xml')\nprint(soup.is_xml)",
+        "o": [
+            "True",
+            "False",
+            "None",
+            "Error"
+        ]
+    },
+    {
+        "q": "Which parser strictly parses XML?",
+        "type": "mcq",
+        "o": [
+            "xml",
+            "html.parser",
+            "lxml-xml",
+            "html5lib"
+        ]
+    },
+    {
+        "q": "The _____ parser handles broken HTML best.",
+        "type": "fill_blank",
+        "answers": [
+            "html5lib"
+        ],
+        "other_options": [
+            "lxml",
+            "html.parser",
+            "xml"
+        ]
+    },
+    {
+        "q": "lxml is usually the fastest parser.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Match parser with benefit:",
+        "type": "match",
+        "left": [
+            "lxml",
+            "html5lib",
+            "html.parser",
+            "xml"
+        ],
+        "right": [
+            "Speed",
+            "Lenient/Valid",
+            "Built-in",
+            "XML files"
+        ]
+    },
+    {
+        "q": "Rearrange parsing XML:",
+        "type": "rearrange",
+        "words": [
+            "Install lxml",
+            "BeautifulSoup(xml, 'xml')",
+            "Parse tree",
+            "Find tags"
+        ]
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "from bs4 import BeautifulSoup\nsoup = BeautifulSoup('<a><b><c></c></b></a>', 'html.parser')\nprint(len(list(soup.a.descendants)))",
+        "o": [
+            "2",
+            "1",
+            "3",
+            "4"
+        ]
+    },
+    {
+        "q": "Which iterator goes through all children recursively?",
+        "type": "mcq",
+        "o": [
+            "descendants",
+            "children",
+            "parents",
+            "siblings"
+        ]
+    },
+    {
+        "q": "The _____ iterator yields direct children.",
+        "type": "fill_blank",
+        "answers": [
+            "children"
+        ],
+        "other_options": [
+            "contents",
+            "list",
+            "iter"
+        ]
+    },
+    {
+        "q": "Descendants include text nodes/NavigableStrings.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Match traversal:",
+        "type": "match",
+        "left": [
+            "children",
+            "descendants",
+            "parents",
+            "next_elements"
+        ],
+        "right": [
+            "Direct down",
+            "Recursive down",
+            "Recursive up",
+            "Parse order forward"
+        ]
+    },
+    {
+        "q": "Rearrange recursive loop:",
+        "type": "rearrange",
+        "words": [
+            "for element",
+            "in tag.descendants:",
+            "check type",
+            "process"
+        ]
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "from bs4 import BeautifulSoup\nsoup = BeautifulSoup('<p class=\"body strikeout\"></p>', 'html.parser')\nprint(soup.p['class'])",
+        "o": [
+            "['body', 'strikeout']",
+            "body strikeout",
+            "body",
+            "Error"
+        ]
+    },
+    {
+        "q": "BeautifulSoup treats 'class' as a _____.",
+        "type": "mcq",
+        "o": [
+            "multi-valued attribute",
+            "string",
+            "single attribute",
+            "set"
+        ]
+    },
+    {
+        "q": "The _____ attribute holds the raw class string if needed.",
+        "type": "fill_blank",
+        "answers": [
+            "class_"
+        ],
+        "other_options": [
+            "raw_class",
+            "classes",
+            "css"
+        ]
+    },
+    {
+        "q": "You can disable multi-valued attributes in constructor.",
+        "type": "true_false",
+        "correct": "False"
+    },
+    {
+        "q": "Match attribute behavior:",
+        "type": "match",
+        "left": [
+            "class",
+            "id",
+            "rel",
+            "href"
+        ],
+        "right": [
+            "List",
+            "String",
+            "List (Rev/Rel)",
+            "String"
+        ]
+    },
+    {
+        "q": "Rearrange class access:",
+        "type": "rearrange",
+        "words": [
+            "Parse HTML",
+            "Access .attrs",
+            "Get 'class'",
+            "Receive List"
+        ]
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "from bs4 import BeautifulSoup\nsoup = BeautifulSoup('<tag></tag>', 'html.parser')\nsoup.tag.name = 'new'\nprint(soup)",
+        "o": [
+            "<new></new>",
+            "<tag></tag>",
+            "None",
+            "Error"
+        ]
+    },
+    {
+        "q": "You can rename a tag by setting its _____ attribute.",
+        "type": "mcq",
+        "o": [
+            "name",
+            "rename",
+            "tag",
+            "type"
+        ]
+    },
+    {
+        "q": "Setting .name changes both start and _____ tags.",
+        "type": "fill_blank",
+        "answers": [
+            "end"
+        ],
+        "other_options": [
+            "close",
+            "stop",
+            "finish"
+        ]
+    },
+    {
+        "q": "Renaming a tag affects its children.",
+        "type": "true_false",
+        "correct": "False"
+    },
+    {
+        "q": "Match attribute modification:",
+        "type": "match",
+        "left": [
+            ".name",
+            ".string",
+            "['attr']",
+            "del ['attr']"
+        ],
+        "right": [
+            "Rename tag",
+            "Change text",
+            "Set attribute",
+            "Remove attribute"
+        ]
+    },
+    {
+        "q": "Rearrange renaming:",
+        "type": "rearrange",
+        "words": [
+            "Find tag",
+            "tag.name",
+            "=",
+            "'h1'"
+        ]
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "from bs4 import BeautifulSoup\nsoup = BeautifulSoup('<p>A</p><p>B</p>', 'html.parser')\nprint(soup.find_all('p', limit=1))",
+        "o": [
+            "[<p>A</p>]",
+            "<p>A</p>",
+            "A",
+            "None"
+        ]
+    },
+    {
+        "q": "Which argument limits result count in find_all?",
+        "type": "mcq",
+        "o": [
+            "limit",
+            "max",
+            "count",
+            "n"
+        ]
+    },
+    {
+        "q": "find() is just find_all() with limit=_____.",
+        "type": "fill_blank",
+        "answers": [
+            "1"
+        ],
+        "other_options": [
+            "0",
+            "None",
+            "True"
+        ]
+    },
+    {
+        "q": "limit=1 returns a list, find() returns a Tag.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Match limit usage:",
+        "type": "match",
+        "left": [
+            "find_all(limit=1)",
+            "find()",
+            "find_all(limit=2)",
+            "find_all(limit=None)"
+        ],
+        "right": [
+            "List of 1",
+            "Single Tag",
+            "List of 2",
+            "All matches"
+        ]
+    },
+    {
+        "q": "Rearrange limited search:",
+        "type": "rearrange",
+        "words": [
+            "soup",
+            ".find_all",
+            "(name='div',",
+            "limit=5)"
+        ]
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "from bs4 import BeautifulSoup\nsoup = BeautifulSoup('<a>Link</a>', 'html.parser')\nprint(soup.a.has_attr('href'))",
+        "o": [
+            "False",
+            "True",
+            "None",
+            "Error"
+        ]
+    },
+    {
+        "q": "Which method checks if an attribute exists?",
+        "type": "mcq",
+        "o": [
+            "has_attr()",
+            "contains()",
+            "in keys()",
+            "is_set()"
+        ]
+    },
+    {
+        "q": "Tag attributes behave like a Python _____.",
+        "type": "fill_blank",
+        "answers": [
+            "dictionary"
+        ],
+        "other_options": [
+            "list",
+            "tuple",
+            "object"
+        ]
+    },
+    {
+        "q": "You can use 'in' operator on tag.attrs.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Match attribute check:",
+        "type": "match",
+        "left": [
+            "has_attr('id')",
+            "'id' in tag.attrs",
+            "tag.get('id')",
+            "tag['id']"
+        ],
+        "right": [
+            "Boolean method",
+            "Boolean check",
+            "Value/None",
+            "Value/Error"
+        ]
+    },
+    {
+        "q": "Rearrange checking attr:",
+        "type": "rearrange",
+        "words": [
+            "Select tag",
+            "If tag.has_attr('src'):",
+            "Print src",
+            "Else: pass"
+        ]
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "from bs4 import BeautifulSoup\nsoup = BeautifulSoup('<div>Text</div>', 'html.parser')\nsoup.div.insert(0, 'Start')\nprint(soup.div.text)",
+        "o": [
+            "StartText",
+            "TextStart",
+            "Start",
+            "Text"
+        ]
+    },
+    {
+        "q": "Which method inserts an element at a specific position?",
+        "type": "mcq",
+        "o": [
+            "insert()",
+            "append()",
+            "extend()",
+            "add()"
+        ]
+    },
+    {
+        "q": "The first argument to insert is the _____.",
+        "type": "fill_blank",
+        "answers": [
+            "index"
+        ],
+        "other_options": [
+            "tag",
+            "text",
+            "position"
+        ]
+    },
+    {
+        "q": "insert(0, ...) puts content at the beginning.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Match insertion index:",
+        "type": "match",
+        "left": [
+            "0",
+            "len(contents)",
+            "1",
+            "-1"
+        ],
+        "right": [
+            "Beginning",
+            "End",
+            "After first",
+            "Before last"
+        ]
+    },
+    {
+        "q": "Rearrange inserting:",
+        "type": "rearrange",
+        "words": [
+            "Create new tag",
+            "Find parent",
+            "parent.insert(0, tag)",
+            "It is first"
+        ]
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "from bs4 import BeautifulSoup\nsoup = BeautifulSoup('<div></div>', 'html.parser')\nsoup.div['class'] = ['a', 'b']\nprint(soup.div)",
+        "o": [
+            "<div class=\"a b\"></div>",
+            "<div></div>",
+            "Error",
+            "None"
+        ]
+    },
+    {
+        "q": "How do you set a multi-valued attribute?",
+        "type": "mcq",
+        "o": [
+            "Assign a list",
+            "Assign a string",
+            "Assign a tuple",
+            "Assign a dict"
+        ]
+    },
+    {
+        "q": "BS4 joins the list with spaces when converting to _____.",
+        "type": "fill_blank",
+        "answers": [
+            "string"
+        ],
+        "other_options": [
+            "html",
+            "text",
+            "bytes"
+        ]
+    },
+    {
+        "q": "Assigning a string to 'class' splits it automatically.",
+        "type": "true_false",
+        "correct": "False"
+    },
+    {
+        "q": "Match assignment:",
+        "type": "match",
+        "left": [
+            "tag['class']=['a']",
+            "tag['id']='x'",
+            "tag['href']='y'",
+            "del tag['class']"
+        ],
+        "right": [
+            "Set class list",
+            "Set ID",
+            "Set URL",
+            "Remove class"
+        ]
+    },
+    {
+        "q": "Rearrange setting class:",
+        "type": "rearrange",
+        "words": [
+            "Find tag",
+            "tag['class']",
+            "=",
+            "['btn', 'btn-primary']"
+        ]
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "from bs4 import BeautifulSoup\ndoc = '<a>1</a><a>2</a>'\nsoup = BeautifulSoup(doc, 'html.parser')\nprint(soup.find_all('a')[1].find_previous('a').text)",
+        "o": [
+            "1",
+            "2",
+            "None",
+            "Error"
+        ]
+    },
+    {
+        "q": "Which method searches backwards in the document?",
+        "type": "mcq",
+        "o": [
+            "find_previous()",
+            "find_next()",
+            "prev()",
+            "back()"
+        ]
+    },
+    {
+        "q": "find_all_previous() returns a _____ of matches.",
+        "type": "fill_blank",
+        "answers": [
+            "list"
+        ],
+        "other_options": [
+            "generator",
+            "tag",
+            "set"
+        ]
+    },
+    {
+        "q": "find_next finds the next tag in parse order.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Match directional search:",
+        "type": "match",
+        "left": [
+            "find_next",
+            "find_previous",
+            "find_all_next",
+            "find_all_previous"
+        ],
+        "right": [
+            "Next tag",
+            "Previous tag",
+            "All following",
+            "All preceding"
+        ]
+    },
+    {
+        "q": "Rearrange backward search:",
+        "type": "rearrange",
+        "words": [
+            "Select element",
+            "Call .find_previous",
+            "('h1')",
+            "Return header"
+        ]
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "from bs4 import BeautifulSoup\nsoup = BeautifulSoup('<tag>Te<!-- C -->xt</tag>', 'html.parser')\nprint(len(list(soup.tag.strings)))",
+        "o": [
+            "2",
+            "1",
+            "3",
+            "0"
+        ]
+    },
+    {
+        "q": "Which property yields all strings in descendants?",
+        "type": "mcq",
+        "o": [
+            "strings",
+            "text",
+            "stripped_strings",
+            "contents"
+        ]
+    },
+    {
+        "q": "The _____ generator removes separate whitespace strings.",
+        "type": "fill_blank",
+        "answers": [
+            "stripped_strings"
+        ],
+        "other_options": [
+            "strings",
+            "text",
+            "clean"
+        ]
+    },
+    {
+        "q": ".strings yields comments as well.",
+        "type": "true_false",
+        "correct": "False"
+    },
+    {
+        "q": "Match string generator:",
+        "type": "match",
+        "left": [
+            ".strings",
+            ".stripped_strings",
+            ".text",
+            ".string"
+        ],
+        "right": [
+            "All text nodes",
+            "Non-whitespace",
+            "Concatenated",
+            "Single node"
+        ]
+    },
+    {
+        "q": "Rearrange iterating strings:",
+        "type": "rearrange",
+        "words": [
+            "For s in",
+            "soup.stripped_strings:",
+            "print(s)",
+            "Done"
+        ]
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "from bs4 import BeautifulSoup\nsoup = BeautifulSoup('<div></div>', 'html.parser')\nsoup.div.append('Text')\nprint(soup.div)",
+        "o": [
+            "<div>Text</div>",
+            "<div></div>",
+            "Text",
+            "Error"
+        ]
+    },
+    {
+        "q": "Which method adds a string or tag to the end of contents?",
+        "type": "mcq",
+        "o": [
+            "append()",
+            "add()",
+            "push()",
+            "insert()"
+        ]
+    },
+    {
+        "q": "You can append a _____ directly.",
+        "type": "fill_blank",
+        "answers": [
+            "string"
+        ],
+        "other_options": [
+            "list",
+            "tuple",
+            "attr"
+        ]
+    },
+    {
+        "q": "Appending a tag moves it from its previous location.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Match string appending:",
+        "type": "match",
+        "left": [
+            "append('str')",
+            "append(tag)",
+            "extend(['a'])",
+            "insert(0, 'a')"
+        ],
+        "right": [
+            "Add text",
+            "Move/Add tag",
+            "Add multiple",
+            "Add at start"
+        ]
+    },
+    {
+        "q": "Rearrange appending text:",
+        "type": "rearrange",
+        "words": [
+            "Find element",
+            "element.append",
+            "(' new text')",
+            "Element updated"
+        ]
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "from bs4 import BeautifulSoup\nsoup = BeautifulSoup('<a>1</a>', 'html.parser')\nwrap = soup.new_tag('div')\nsoup.a.wrap(wrap)\nprint(soup)",
+        "o": [
+            "<div><a>1</a></div>",
+            "<a>1</a>",
+            "<div></div>",
+            "Error"
+        ]
+    },
+    {
+        "q": "Which method wraps an element in another tag?",
+        "type": "mcq",
+        "o": [
+            "wrap()",
+            "surround()",
+            "enclosing()",
+            "container()"
+        ]
+    },
+    {
+        "q": "wrap() returns the _____ tag.",
+        "type": "fill_blank",
+        "answers": [
+            "wrapper"
+        ],
+        "other_options": [
+            "inner",
+            "new",
+            "parent"
+        ]
+    },
+    {
+        "q": "You can wrap a string directly.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Match modification:",
+        "type": "match",
+        "left": [
+            "wrap()",
+            "unwrap()",
+            "extract()",
+            "decompose()"
+        ],
+        "right": [
+            "Add parent",
+            "Remove parent",
+            "Remove from tree",
+            "Destroy"
+        ]
+    },
+    {
+        "q": "Rearrange wrapping:",
+        "type": "rearrange",
+        "words": [
+            "Make wrapper tag",
+            "Select target",
+            "target.wrap(wrapper)",
+            "Return wrapper"
+        ]
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "from bs4 import BeautifulSoup\nsoup = BeautifulSoup('<a>1</a><b>2</b>', 'html.parser')\nsoup.smooth()\nprint(len(list(soup.children)))",
+        "o": [
+            "2",
+            "1",
+            "0",
+            "4"
+        ]
+    },
+    {
+        "q": "Which method consolidates adjacent strings?",
+        "type": "mcq",
+        "o": [
+            "smooth()",
+            "clean()",
+            "consolidate()",
+            "merge()"
+        ]
+    },
+    {
+        "q": "BeautifulSoup automatically smoothes the tree after _____.",
+        "type": "fill_blank",
+        "answers": [
+            "parsing"
+        ],
+        "other_options": [
+            "init",
+            "load",
+            "read"
+        ]
+    },
+    {
+        "q": "Manually modifying the tree can leave adjacent strings.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Match cleanup method:",
+        "type": "match",
+        "left": [
+            "smooth()",
+            "prettify()",
+            "decode()",
+            "encode()"
+        ],
+        "right": [
+            "Merge strings",
+            "Format indent",
+            "To Unicode",
+            "To Bytes"
+        ]
+    },
+    {
+        "q": "Rearrange smoothing:",
+        "type": "rearrange",
+        "words": [
+            "Modify strings",
+            "Adjacent nodes exist",
+            "Call soup.smooth()",
+            "Single node exists"
+        ]
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "from bs4 import BeautifulSoup\nsoup = BeautifulSoup('<div>A</div>', 'html.parser')\nsoup.div.clear()\nprint(soup.div)",
+        "o": [
+            "<div></div>",
+            "<div>A</div>",
+            "None",
+            "Error"
+        ]
+    },
+    {
+        "q": "Which method removes all children of a tag?",
+        "type": "mcq",
+        "o": [
+            "clear()",
+            "empty()",
+            "remove_all()",
+            "delete()"
+        ]
+    },
+    {
+        "q": "clear() is equivalent to calling extract() on all _____.",
+        "type": "fill_blank",
+        "answers": [
+            "contents"
+        ],
+        "other_options": [
+            "children",
+            "descendants",
+            "items"
+        ]
+    },
+    {
+        "q": "clear() destroys the tag itself.",
+        "type": "true_false",
+        "correct": "False"
+    },
+    {
+        "q": "Match clearing:",
+        "type": "match",
+        "left": [
+            "tag.clear()",
+            "tag.decompose()",
+            "tag.contents = []",
+            "tag.extract()"
+        ],
+        "right": [
+            "Empty content",
+            "Destroy tag",
+            "Empty content (alt)",
+            "Remove tag"
+        ]
+    },
+    {
+        "q": "Rearrange clearing content:",
+        "type": "rearrange",
+        "words": [
+            "Select tag",
+            "Call tag.clear()",
+            "Check contents",
+            "Check len is 0"
+        ]
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "from bs4 import BeautifulSoup\nsoup = BeautifulSoup('&lt;', 'html.parser')\nprint(soup.string)",
+        "o": [
+            "<",
+            "&lt;",
+            "None",
+            "Error"
+        ]
+    },
+    {
+        "q": "BeautifulSoup converts HTML entities to _____ by default.",
+        "type": "mcq",
+        "o": [
+            "Unicode characters",
+            "ASCII",
+            "Bytes",
+            "Nothing"
+        ]
+    },
+    {
+        "q": "The _____ parser uses standard library's entity handling.",
+        "type": "fill_blank",
+        "answers": [
+            "html.parser"
+        ],
+        "other_options": [
+            "lxml",
+            "xml",
+            "html5lib"
+        ]
+    },
+    {
+        "q": "You can disable entity conversion on output.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Match entity:",
+        "type": "match",
+        "left": [
+            "&lt;",
+            "&gt;",
+            "&amp;",
+            "&quot;"
+        ],
+        "right": [
+            "<",
+            ">",
+            "&",
+            "\""
+        ]
+    },
+    {
+        "q": "Rearrange entity decoding:",
+        "type": "rearrange",
+        "words": [
+            "Read HTML",
+            "Parse entities",
+            "Convert to Unicode",
+            "Store in string"
+        ]
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "from bs4 import BeautifulSoup\nsoup = BeautifulSoup('<a>1</a>', 'html.parser')\nprint(type(soup.encode('utf-8')))",
+        "o": [
+            "<class 'bytes'>",
+            "<class 'str'>",
+            "None",
+            "Error"
+        ]
+    },
+    {
+        "q": "Which method returns a byte string representation?",
+        "type": "mcq",
+        "o": [
+            "encode()",
+            "decode()",
+            "str()",
+            "prettify()"
+        ]
+    },
+    {
+        "q": "The default output encoding is _____.",
+        "type": "fill_blank",
+        "answers": [
+            "utf-8"
+        ],
+        "other_options": [
+            "ascii",
+            "latin-1",
+            "unicode"
+        ]
+    },
+    {
+        "q": "encode() accepts a 'errors' argument.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Match encoding method:",
+        "type": "match",
+        "left": [
+            "encode('utf-8')",
+            "decode('utf-8')",
+            "prettify()",
+            "str()"
+        ],
+        "right": [
+            "Bytes",
+            "String",
+            "Formatted Str",
+            "String"
+        ]
+    },
+    {
+        "q": "Rearrange encoding bytes:",
+        "type": "rearrange",
+        "words": [
+            "Get tag",
+            "Call .encode()",
+            "Specify 'latin-1'",
+            "Receive bytes"
+        ]
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "from bs4 import BeautifulSoup, Comment\nc = Comment('foo')\nprint(c.output_ready())",
+        "o": [
+            "<!--foo-->",
+            "foo",
+            "<!-- foo -->",
+            "Error"
+        ]
+    },
+    {
+        "q": "Which internal method prepares string for output?",
+        "type": "mcq",
+        "o": [
+            "output_ready()",
+            "format()",
+            "prepare()",
+            "render()"
+        ]
+    },
+    {
+        "q": "Comment objects automatically add _____ syntax.",
+        "type": "fill_blank",
+        "answers": [
+            "comment"
+        ],
+        "other_options": [
+            "xml",
+            "html",
+            "tag"
+        ]
+    },
+    {
+        "q": "NavigableString.output_ready() escapes special characters.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Match wrapper class:",
+        "type": "match",
+        "left": [
+            "Comment",
+            "CData",
+            "Doctype",
+            "Declaration"
+        ],
+        "right": [
+            "<!-- -->",
+            "<![CDATA[ ]]>",
+            "<!DOCTYPE >",
+            "<? ?>"
+        ]
+    },
+    {
+        "q": "Rearrange comment output:",
+        "type": "rearrange",
+        "words": [
+            "Create Comment",
+            "String content",
+            "Format with <!--",
+            "Return string"
+        ]
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "from bs4 import BeautifulSoup, Doctype\nd = Doctype('html')\nprint(d)",
+        "o": [
+            "<!DOCTYPE html>",
+            "<!DOCTYPE>",
+            "html",
+            "Error"
+        ]
+    },
+    {
+        "q": "Which class represents the document type declaration?",
+        "type": "mcq",
+        "o": [
+            "Doctype",
+            "Declaration",
+            "Type",
+            "Header"
+        ]
+    },
+    {
+        "q": "Doctype is a subclass of _____.",
+        "type": "fill_blank",
+        "answers": [
+            "NavigableString"
+        ],
+        "other_options": [
+            "Tag",
+            "Comment",
+            "Page"
+        ]
+    },
+    {
+        "q": "Doctype is treated as a Tag by some parsers.",
+        "type": "true_false",
+        "correct": "False"
+    },
+    {
+        "q": "Match special strings:",
+        "type": "match",
+        "left": [
+            "Doctype",
+            "Comment",
+            "NavigableString",
+            "Stylesheet"
+        ],
+        "right": [
+            "Document Type",
+            "Note",
+            "Text",
+            "Not a class"
+        ]
+    },
+    {
+        "q": "Rearrange creating doctype:",
+        "type": "rearrange",
+        "words": [
+            "Import Doctype",
+            "Init with 'html'",
+            "Insert into soup",
+            "Print soup"
+        ]
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "from bs4 import BeautifulSoup\nsoup = BeautifulSoup('<a>1</a>', 'html.parser')\nsoup2 = soup.__copy__()\nprint(soup == soup2)",
+        "o": [
+            "True",
+            "False",
+            "None",
+            "Error"
+        ]
+    },
+    {
+        "q": "Which method creates a shallow copy?",
+        "type": "mcq",
+        "o": [
+            "__copy__()",
+            "copy()",
+            "clone()",
+            "duplicate()"
+        ]
+    },
+    {
+        "q": "Use _____ module to create a deep copy.",
+        "type": "fill_blank",
+        "answers": [
+            "copy"
+        ],
+        "other_options": [
+            "deep",
+            "clone",
+            "obj"
+        ]
+    },
+    {
+        "q": "Copying a tag allows inserting it elsewhere without moving.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Match copy type:",
+        "type": "match",
+        "left": [
+            "copy.copy()",
+            "copy.deepcopy()",
+            "__copy__",
+            "__deepcopy__"
+        ],
+        "right": [
+            "Shallow",
+            "Deep",
+            "Shallow impl",
+            "Deep impl"
+        ]
+    },
+    {
+        "q": "Rearrange deep copy:",
+        "type": "rearrange",
+        "words": [
+            "Import copy",
+            "copy.deepcopy(soup)",
+            "Modify copy",
+            "Original unchanged"
+        ]
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "from bs4 import BeautifulSoup\nsoup = BeautifulSoup('<a href=\"x\"></a>', 'html.parser')\nprint(soup.a['href'])",
+        "o": [
+            "x",
+            "None",
+            "Error",
+            "a"
+        ]
+    },
+    {
+        "q": "Shorthand access to attributes uses _____ syntax.",
+        "type": "mcq",
+        "o": [
+            "dictionary",
+            "attribute",
+            "method",
+            "list"
+        ]
+    },
+    {
+        "q": "Trying to access missing attribute raises _____.",
+        "type": "fill_blank",
+        "answers": [
+            "KeyError"
+        ],
+        "other_options": [
+            "AttributeError",
+            "ValueError",
+            "None"
+        ]
+    },
+    {
+        "q": "You can iterate over tag.attrs.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Match attribute op:",
+        "type": "match",
+        "left": [
+            "tag['a']='b'",
+            "tag['a']",
+            "del tag['a']",
+            "list(tag.attrs)"
+        ],
+        "right": [
+            "Set",
+            "Get",
+            "Delete",
+            "List keys"
+        ]
+    },
+    {
+        "q": "Rearrange dict access:",
+        "type": "rearrange",
+        "words": [
+            "soup.a",
+            "['href']",
+            "returns value",
+            "or KeyError"
+        ]
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "from bs4 import BeautifulSoup\nsoup = BeautifulSoup('<p class=\"a\"></p>', 'html.parser')\nprint(soup.find(class_='a').name)",
+        "o": [
+            "p",
+            "None",
+            "Error",
+            "a"
+        ]
+    },
+    {
+        "q": "The class_ argument matches the _____ attribute.",
+        "type": "mcq",
+        "o": [
+            "class",
+            "cls",
+            "classname",
+            "style"
+        ]
+    },
+    {
+        "q": "You cannot use 'class' as keyword arg because it is _____.",
+        "type": "fill_blank",
+        "answers": [
+            "reserved"
+        ],
+        "other_options": [
+            "keyword",
+            "private",
+            "special"
+        ]
+    },
+    {
+        "q": "find(attrs={'class': 'a'}) is equivalent to find(class_='a').",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Match search arg:",
+        "type": "match",
+        "left": [
+            "class_",
+            "id",
+            "href",
+            "attrs"
+        ],
+        "right": [
+            "Class",
+            "ID",
+            "URL",
+            "Dict of any"
+        ]
+    },
+    {
+        "q": "Rearrange finding class:",
+        "type": "rearrange",
+        "words": [
+            "soup.find_all",
+            "(class_=",
+            "'my-class')",
+            "Return list"
+        ]
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "from bs4 import BeautifulSoup\nsoup = BeautifulSoup('<p>A</p>', 'html.parser')\nprint(soup.p.find_all_next('p'))",
+        "o": [
+            "[]",
+            "None",
+            "Error",
+            "<p>A</p>"
+        ]
+    },
+    {
+        "q": "Which searches all tags explicitly following the current element?",
+        "type": "mcq",
+        "o": [
+            "find_all_next()",
+            "find_next()",
+            "next_elements",
+            "find_all()"
+        ]
+    },
+    {
+        "q": "This method iterates over _____ generator.",
+        "type": "fill_blank",
+        "answers": [
+            "next_elements"
+        ],
+        "other_options": [
+            "siblings",
+            "descendants",
+            "children"
+        ]
+    },
+    {
+        "q": "find_all_next includes children of the current element.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Match scope:",
+        "type": "match",
+        "left": [
+            "find_all",
+            "find_all_next",
+            "find_all_previous",
+            "contents"
+        ],
+        "right": [
+            "Descendants",
+            "Successors",
+            "Predecessors",
+            "Direct children"
+        ]
+    },
+    {
+        "q": "Rearrange next elements:",
+        "type": "rearrange",
+        "words": [
+            "Current tag",
+            "Iterate next_elements",
+            "Check match",
+            "Yield tag"
+        ]
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "from bs4 import BeautifulSoup\nimport re\nsoup = BeautifulSoup('<p>Abc</p>', 'html.parser')\nprint(soup.find(text=re.compile('match')))",
+        "o": [
+            "None",
+            "Abc",
+            "Error",
+            "match"
+        ]
+    },
+    {
+        "q": "Regex search on text returns _____.",
+        "type": "mcq",
+        "o": [
+            "NavigableString",
+            "Tag",
+            "BeautifulSoup",
+            "List"
+        ]
+    },
+    {
+        "q": "To find parent of matched text, use _____.",
+        "type": "fill_blank",
+        "answers": [
+            "parent"
+        ],
+        "other_options": [
+            "find_parent",
+            "tag",
+            "container"
+        ]
+    },
+    {
+        "q": "text= argument is deprecated in favor of string=.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Match deprecation:",
+        "type": "match",
+        "left": [
+            "text=",
+            "string=",
+            "findAll",
+            "find_all"
+        ],
+        "right": [
+            "Deprecated arg",
+            "New arg",
+            "CamelCase old",
+            "Snake_case new"
+        ]
+    },
+    {
+        "q": "Rearrange regex text search:",
+        "type": "rearrange",
+        "words": [
+            "Compile regex",
+            "soup.find",
+            "(string=regex)",
+            "Get parent tag"
+        ]
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "from bs4 import BeautifulSoup\nsoup = BeautifulSoup('<a>1</a><a>2</a>', 'html.parser')\nprint(soup.select('a:nth-of-type(1)')[0].text)",
+        "o": [
+            "1",
+            "2",
+            "None",
+            "Error"
+        ]
+    },
+    {
+        "q": "Which pseudo-class selects elements by position among siblings?",
+        "type": "mcq",
+        "o": [
+            ":nth-of-type",
+            ":first-child",
+            ":last-child",
+            ":only-child"
+        ]
+    },
+    {
+        "q": "BeautifulSoup supports partial _____ selectors.",
+        "type": "fill_blank",
+        "answers": [
+            "css"
+        ],
+        "other_options": [
+            "xpath",
+            "json",
+            "regex"
+        ]
+    },
+    {
+        "q": ":nth-child() is strictly supported by SoupSieve.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Match pseudo-class:",
+        "type": "match",
+        "left": [
+            ":first-of-type",
+            ":last-of-type",
+            ":nth-of-type(n)",
+            ":not(s)"
+        ],
+        "right": [
+            "First sibling",
+            "Last sibling",
+            "Nth sibling",
+            "Negation"
+        ]
+    },
+    {
+        "q": "Rearrange nth select:",
+        "type": "rearrange",
+        "words": [
+            "soup.select",
+            "('p:nth-of-type(2)')",
+            "Find 2nd p",
+            "Return list"
+        ]
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "from bs4 import BeautifulSoup\nsoup = BeautifulSoup('<p id=\"x\"></p>', 'html.parser')\nprint(soup.select('#x')[0].name)",
+        "o": [
+            "p",
+            "None",
+            "Error",
+            "x"
+        ]
+    },
+    {
+        "q": "Which symbol prefixes an ID selector?",
+        "type": "mcq",
+        "o": [
+            "#",
+            ".",
+            ":",
+            "@"
+        ]
+    },
+    {
+        "q": "The symbol _____ prefixes a class selector.",
+        "type": "fill_blank",
+        "answers": [
+            "."
+        ],
+        "other_options": [
+            "#",
+            ":",
+            "_"
+        ]
+    },
+    {
+        "q": "ID selectors must be unique in valid HTML.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Match CSS symbol:",
+        "type": "match",
+        "left": [
+            "#",
+            ".",
+            ">",
+            "+"
+        ],
+        "right": [
+            "ID",
+            "Class",
+            "Direct Child",
+            "Next Sibling"
+        ]
+    },
+    {
+        "q": "Rearrange ID select:",
+        "type": "rearrange",
+        "words": [
+            "soup.select",
+            "('#my-id')",
+            "Returns list",
+            "Get first item"
+        ]
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "from bs4 import BeautifulSoup\nsoup = BeautifulSoup('<p><a href=\"x\"></a></p>', 'html.parser')\nprint(soup.select('p a')[0]['href'])",
+        "o": [
+            "x",
+            "a",
+            "p",
+            "Error"
+        ]
+    },
+    {
+        "q": "A space in CSS selector implies _____.",
+        "type": "mcq",
+        "o": [
+            "descendant",
+            "child",
+            "sibling",
+            "parent"
+        ]
+    },
+    {
+        "q": "Use _____ for immediate children only.",
+        "type": "fill_blank",
+        "answers": [
+            ">"
+        ],
+        "other_options": [
+            "+",
+            "~",
+            " "
+        ]
+    },
+    {
+        "q": "soup.select('div a') finds nested and direct links.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Match combination:",
+        "type": "match",
+        "left": [
+            "A B",
+            "A > B",
+            "A + B",
+            "A ~ B"
+        ],
+        "right": [
+            "Descendant",
+            "Direct Child",
+            "Next Sibling",
+            "Any Sibling"
+        ]
+    },
+    {
+        "q": "Rearrange hierarchy select:",
+        "type": "rearrange",
+        "words": [
+            "soup.select",
+            "('div.container p')",
+            "Find p in container",
+            "Return all p"
+        ]
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "from bs4 import BeautifulSoup\nsoup = BeautifulSoup('<div foo=\"bar\"></div>', 'html.parser')\nprint(soup.select('[foo]')[0].name)",
+        "o": [
+            "div",
+            "foo",
+            "bar",
+            "None"
+        ]
+    },
+    {
+        "q": "Which selector matches existence of an attribute?",
+        "type": "mcq",
+        "o": [
+            "[attr]",
+            "#attr",
+            ".attr",
+            ":attr"
+        ]
+    },
+    {
+        "q": "You can check values using [attr_____value].",
+        "type": "fill_blank",
+        "answers": [
+            "="
+        ],
+        "other_options": [
+            "eq",
+            "is",
+            "=="
+        ]
+    },
+    {
+        "q": "[href^='http'] matches values starting with http.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Match attribute operator:",
+        "type": "match",
+        "left": [
+            "=",
+            "^=",
+            "$=",
+            "*="
+        ],
+        "right": [
+            "Exact",
+            "Starts with",
+            "Ends with",
+            "Contains"
+        ]
+    },
+    {
+        "q": "Rearrange attribute select:",
+        "type": "rearrange",
+        "words": [
+            "soup.select",
+            "('input[type=\"text\"]')",
+            "Find text inputs",
+            "Return list"
+        ]
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "from bs4 import BeautifulSoup\nsoup = BeautifulSoup('<a>1</a>', 'html.parser')\ntag = soup.a\ntag.attrs['id'] = 'link'\nprint(soup)",
+        "o": [
+            "<a id=\"link\">1</a>",
+            "<a>1</a>",
+            "Error",
+            "None"
+        ]
+    },
+    {
+        "q": "Modifying tag.attrs directly updates the _____.",
+        "type": "fill_blank",
+        "answers": [
+            "html"
+        ],
+        "other_options": [
+            "text",
+            "name",
+            "soup"
+        ]
+    },
+    {
+        "q": "You can delete attributes using the del statement.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Match attribute action:",
+        "type": "match",
+        "left": [
+            "tag['k']='v'",
+            "tag.attrs['k']='v'",
+            "del tag['k']",
+            "tag.get('k')"
+        ],
+        "right": [
+            "Set direct",
+            "Set via dict",
+            "Remove",
+            "Read safer"
+        ]
+    },
+    {
+        "q": "Rearrange adding attr:",
+        "type": "rearrange",
+        "words": [
+            "Select tag",
+            "tag['new_attr']",
+            "=",
+            "'value'",
+            "Attribute added"
+        ]
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "from bs4 import BeautifulSoup\nsoup = BeautifulSoup('<p>A</p>', 'html.parser')\nsoup.p.insert_after('B')\nprint(soup)",
+        "o": [
+            "<p>A</p>B",
+            "<p>AB</p>",
+            "AB",
+            "Error"
+        ]
+    },
+    {
+        "q": "Which method inserts a tag/string immediately after the current tag?",
+        "type": "mcq",
+        "o": [
+            "insert_after()",
+            "insert_before()",
+            "append()",
+            "next()"
+        ]
+    },
+    {
+        "q": "The _____ method inserts content immediately before the tag.",
+        "type": "fill_blank",
+        "answers": [
+            "insert_before"
+        ],
+        "other_options": [
+            "prepend",
+            "before",
+            "prev"
+        ]
+    },
+    {
+        "q": "insert_after operates on the parent's content list.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Match processing order:",
+        "type": "match",
+        "left": [
+            "insert_before",
+            "insert_after",
+            "append",
+            "extend"
+        ],
+        "right": [
+            "Precede",
+            "Follow",
+            "End of child",
+            "End of child (list)"
+        ]
+    },
+    {
+        "q": "Rearrange insertion:",
+        "type": "rearrange",
+        "words": [
+            "Find element",
+            "element.insert_after",
+            "('<span>X</span>')",
+            "Structure changes"
+        ]
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "from bs4 import BeautifulSoup\nsoup = BeautifulSoup('<p>A <b>B</b></p>', 'html.parser')\nprint(soup.p.text)",
+        "o": [
+            "A B",
+            "AB",
+            "A",
+            "B"
+        ]
+    },
+    {
+        "q": "Standard .text access concatenates all _____ text nodes.",
+        "type": "mcq",
+        "o": [
+            "descendant",
+            "child",
+            "sibling",
+            "parent"
+        ]
+    },
+    {
+        "q": "Use _____ to exclude specific tags from text extraction.",
+        "type": "fill_blank",
+        "answers": [
+            "decompose"
+        ],
+        "other_options": [
+            "extract",
+            "remove",
+            "clear"
+        ]
+    },
+    {
+        "q": ".text is a read-only property.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Match text retrieval:",
+        "type": "match",
+        "left": [
+            "text",
+            "get_text()",
+            "string",
+            "strings"
+        ],
+        "right": [
+            "Prop all text",
+            "Method all text",
+            "Single string/None",
+            "Generator"
+        ]
+    },
+    {
+        "q": "Rearrange getting text:",
+        "type": "rearrange",
+        "words": [
+            "soup.find('div')",
+            ".get_text",
+            "(separator='-')",
+            "Return 'A-B'"
+        ]
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "from bs4 import BeautifulSoup\nsoup = BeautifulSoup('<a>Link</a>', 'html.parser')\nprint(soup.new_string('Text'))",
+        "o": [
+            "Text",
+            "<a>Text</a>",
+            "None",
+            "Error"
+        ]
+    },
+    {
+        "q": "Which method wraps a string in a NavigableString?",
+        "type": "mcq",
+        "o": [
+            "new_string()",
+            "string()",
+            "text()",
+            "wrap()"
+        ]
+    },
+    {
+        "q": "new_string creates a string associated with the _____.",
+        "type": "fill_blank",
+        "answers": [
+            "soup"
+        ],
+        "other_options": [
+            "tag",
+            "doc",
+            "html"
+        ]
+    },
+    {
+        "q": "You must use new_string to add text to a tag.",
+        "type": "true_false",
+        "correct": "False"
+    },
+    {
+        "q": "Match constructor:",
+        "type": "match",
+        "left": [
+            "new_tag",
+            "new_string",
+            "BeautifulSoup",
+            "Tag"
+        ],
+        "right": [
+            "Element",
+            "Text Node",
+            "Root",
+            "Element Class"
+        ]
+    },
+    {
+        "q": "Rearrange creating text:",
+        "type": "rearrange",
+        "words": [
+            "s = soup.new_string",
+            "('content')",
+            "tag.append(s)",
+            "Tag has text"
+        ]
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "from bs4 import BeautifulSoup\nsoup = BeautifulSoup('<root><child>1</child></root>', 'xml')\nprint(soup.child.prefix)",
+        "o": [
+            "None",
+            "root",
+            "child",
+            "xml"
+        ]
+    },
+    {
+        "q": "Which attribute holds the namespace prefix if present?",
+        "type": "mcq",
+        "o": [
+            "prefix",
+            "namespace",
+            "ns",
+            "pre"
+        ]
+    },
+    {
+        "q": "In '<foo:bar>', the prefix is _____.",
+        "type": "fill_blank",
+        "answers": [
+            "foo"
+        ],
+        "other_options": [
+            "bar",
+            "foobar",
+            ":"
+        ]
+    },
+    {
+        "q": "Prefixes are preserved when parsing XML.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Match XML part:",
+        "type": "match",
+        "left": [
+            "prefix",
+            "name",
+            "namespace",
+            "attrs"
+        ],
+        "right": [
+            "foo",
+            "bar",
+            "URI",
+            "Key-Value"
+        ]
+    },
+    {
+        "q": "Rearrange namespace access:",
+        "type": "rearrange",
+        "words": [
+            "Parse XML",
+            "Access tag",
+            "Check .prefix",
+            "Return prefix string"
+        ]
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "from bs4 import BeautifulSoup\nsoup = BeautifulSoup('<b></b>', 'html.parser')\ntag = soup.b\ntag.string = 'B'\ntag.string.replace_with('C')\nprint(soup)",
+        "o": [
+            "<b>C</b>",
+            "<b>B</b>",
+            "C",
+            "Error"
+        ]
+    },
+    {
+        "q": "You can maintain referencing a tag after calling _____.",
+        "type": "mcq",
+        "o": [
+            "replace_with()",
+            "decompose()",
+            "extract()",
+            "unwrap()"
+        ]
+    },
+    {
+        "q": "replace_with returns the _____ object.",
+        "type": "fill_blank",
+        "answers": [
+            "replaced"
+        ],
+        "other_options": [
+            "new",
+            "parent",
+            "soup"
+        ]
+    },
+    {
+        "q": "replace_with accepts a string or a tag.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Match replace outcome:",
+        "type": "match",
+        "left": [
+            "tag.replace_with(new)",
+            "string.replace_with(new)",
+            "tag.replace_with('')",
+            "tag.unwrap()"
+        ],
+        "right": [
+            "Swap tag",
+            "Swap text",
+            "Delete tag",
+            "Remove wrapper"
+        ]
+    },
+    {
+        "q": "Rearrange swapping:",
+        "type": "rearrange",
+        "words": [
+            "Create replacement",
+            "Find target",
+            "target.replace_with(replacement)",
+            "Target is gone"
+        ]
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "from bs4 import BeautifulSoup\nsoup = BeautifulSoup('<a></a>', 'html.parser')\nprint(isinstance(soup, BeautifulSoup))",
+        "o": [
+            "True",
+            "False",
+            "None",
+            "Error"
+        ]
+    },
+    {
+        "q": "The BeautifulSoup object represents the entire _____.",
+        "type": "mcq",
+        "o": [
+            "document",
+            "tag",
+            "body",
+            "string"
+        ]
+    },
+    {
+        "q": "BeautifulSoup object corresponds to the _____ of the tree.",
+        "type": "fill_blank",
+        "answers": [
+            "root"
+        ],
+        "other_options": [
+            "branch",
+            "leaf",
+            "start"
+        ]
+    },
+    {
+        "q": "BeautifulSoup object supports find_all().",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Match root type:",
+        "type": "match",
+        "left": [
+            "BeautifulSoup",
+            "Tag",
+            "NavigableString",
+            "Comment"
+        ],
+        "right": [
+            "Top Level",
+            "Node",
+            "Leaf",
+            "Leaf (Comment)"
+        ]
+    },
+    {
+        "q": "Rearrange root check:",
+        "type": "rearrange",
+        "words": [
+            "Instantiate soup",
+            "Check type",
+            "is BeautifulSoup",
+            "True"
+        ]
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "from bs4 import BeautifulSoup\nsoup = BeautifulSoup('<a>1</a>', 'html.parser')\nprint(soup.name)",
+        "o": [
+            "[document]",
+            "document",
+            "root",
+            "Unknown"
+        ]
+    },
+    {
+        "q": "Which special name is assigned to the BeautifulSoup object?",
+        "type": "mcq",
+        "o": [
+            "[document]",
+            "root",
+            "html",
+            "None"
+        ]
+    },
+    {
+        "q": "Every Tag object has a _____ attribute.",
+        "type": "fill_blank",
+        "answers": [
+            "name"
+        ],
+        "other_options": [
+            "title",
+            "id",
+            "tag"
+        ]
+    },
+    {
+        "q": "Changing soup.name changes the document name.",
+        "type": "true_false",
+        "correct": "False"
+    },
+    {
+        "q": "Match special name:",
+        "type": "match",
+        "left": [
+            "[document]",
+            "None",
+            "Tag Name",
+            "xml"
+        ],
+        "right": [
+            "Soup Object",
+            "NavigableString",
+            "Tag",
+            "Processing Instr"
+        ]
+    },
+    {
+        "q": "Rearrange names:",
+        "type": "rearrange",
+        "words": [
+            "Check tag.name",
+            "Check soup.name",
+            "Note difference",
+            "Print values"
+        ]
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "from bs4 import BeautifulSoup\nsoup = BeautifulSoup('<div>A</div>', 'html.parser')\nprint(soup.div['class'])",
+        "o": [
+            "KeyError",
+            "None",
+            "[]",
+            "Error"
+        ]
+    },
+    {
+        "q": "Which error is raised when a key is missing in attributes?",
+        "type": "mcq",
+        "o": [
+            "KeyError",
+            "AttributeError",
+            "ValueError",
+            "IndexError"
+        ]
+    },
+    {
+        "q": "Use .get() to return _____ for missing attributes.",
+        "type": "fill_blank",
+        "answers": [
+            "None"
+        ],
+        "other_options": [
+            "False",
+            "Error",
+            "Empty"
+        ]
+    },
+    {
+        "q": "Attributes order is preserved in Python 3.7+.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Match dictionary method:",
+        "type": "match",
+        "left": [
+            "get()",
+            "keys()",
+            "values()",
+            "items()"
+        ],
+        "right": [
+            "Safe access",
+            "Attr names",
+            "Attr values",
+            "Pairs"
+        ]
+    },
+    {
+        "q": "Rearrange safe get:",
+        "type": "rearrange",
+        "words": [
+            "tag.get('href')",
+            "Check if None",
+            "If not None",
+            "Use URL"
+        ]
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "from bs4 import BeautifulSoup\nsoup = BeautifulSoup('<p>A</p>', 'html.parser')\nprint(soup.select_one('p').text)",
+        "o": [
+            "A",
+            "p",
+            "None",
+            "Error"
+        ]
+    },
+    {
+        "q": "Which method returns only the first match of a generic CSS selector?",
+        "type": "mcq",
+        "o": [
+            "select_one",
+            "select_first",
+            "find_one",
+            "css_one"
+        ]
+    },
+    {
+        "q": "select_one() is equivalent to select(..., limit=_____)[0].",
+        "type": "fill_blank",
+        "answers": [
+            "1"
+        ],
+        "other_options": [
+            "0",
+            "None",
+            "True"
+        ]
+    },
+    {
+        "q": "select_one returns None if no match is found.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Match selector limit:",
+        "type": "match",
+        "left": [
+            "select_one",
+            "select",
+            "find",
+            "find_all"
+        ],
+        "right": [
+            "Single CSS",
+            "List CSS",
+            "Single Tag",
+            "List Tag"
+        ]
+    },
+    {
+        "q": "Rearrange select one:",
+        "type": "rearrange",
+        "words": [
+            "soup.select_one",
+            "('.class')",
+            "Returns Tag",
+            "Or None"
+        ]
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "from bs4 import BeautifulSoup\nsoup = BeautifulSoup('<b>1</b><b>2</b>', 'html.parser')\nprint(soup.find_all('b', limit=10))",
+        "o": [
+            "List of 2 items",
+            "List of 10 items",
+            "Error",
+            "None"
+        ]
+    },
+    {
+        "q": "If limit is greater than matches, find_all returns _____.",
+        "type": "mcq",
+        "o": [
+            "all matches found",
+            "Error",
+            "None",
+            "padded list"
+        ]
+    },
+    {
+        "q": "The limit argument optimization stops search _____.",
+        "type": "fill_blank",
+        "answers": [
+            "early"
+        ],
+        "other_options": [
+            "late",
+            "never",
+            "always"
+        ]
+    },
+    {
+        "q": "find_all limit affects recursive search depth.",
+        "type": "true_false",
+        "correct": "False"
+    },
+    {
+        "q": "Match search param:",
+        "type": "match",
+        "left": [
+            "limit",
+            "recursive",
+            "string",
+            "attrs"
+        ],
+        "right": [
+            "Max count",
+            "Depth",
+            "Text content",
+            "Attributes"
+        ]
+    },
+    {
+        "q": "Rearrange unlimited search:",
+        "type": "rearrange",
+        "words": [
+            "soup.find_all",
+            "No limit arg",
+            "Finds every instance",
+            "Returns big list"
+        ]
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "from bs4 import BeautifulSoup\nsoup = BeautifulSoup('<a href=\"L\">T</a>', 'html.parser')\nprint(soup.find(href=True).name)",
+        "o": [
+            "a",
+            "L",
+            "T",
+            "None"
+        ]
+    },
+    {
+        "q": "Passing True as attribute value matches _____ value.",
+        "type": "mcq",
+        "o": [
+            "any",
+            "True",
+            "False",
+            "None"
+        ]
+    },
+    {
+        "q": "find(id=True) finds all tags with an _____.",
+        "type": "fill_blank",
+        "answers": [
+            "id"
+        ],
+        "other_options": [
+            "class",
+            "name",
+            "attr"
+        ]
+    },
+    {
+        "q": "You can use True for the name argument to match all tags.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Match boolean filter:",
+        "type": "match",
+        "left": [
+            "True",
+            "False",
+            "None",
+            "String"
+        ],
+        "right": [
+            "Exists",
+            "Not used",
+            "Not used",
+            "Specific value"
+        ]
+    },
+    {
+        "q": "Rearrange existence check:",
+        "type": "rearrange",
+        "words": [
+            "find_all",
+            "(class_=True)",
+            "Matches any class",
+            "Ignores no class"
+        ]
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "from bs4 import BeautifulSoup\nsoup = BeautifulSoup('<a><b><c></c></b></a>', 'html.parser')\nprint(len(list(soup.c.parents)))",
+        "o": [
+            "3",
+            "2",
+            "1",
+            "4"
+        ]
+    },
+    {
+        "q": "The parents iterator includes the _____ object.",
+        "type": "mcq",
+        "o": [
+            "BeautifulSoup",
+            "None",
+            "False",
+            "Error"
+        ]
+    },
+    {
+        "q": "Iterating parents goes from direct parent to _____.",
+        "type": "fill_blank",
+        "answers": [
+            "root"
+        ],
+        "other_options": [
+            "child",
+            "sibling",
+            "start"
+        ]
+    },
+    {
+        "q": "Tag.parent is always a Tag or BeautifulSoup object.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Match ancestor:",
+        "type": "match",
+        "left": [
+            "parent",
+            "parents",
+            "find_parents",
+            "html"
+        ],
+        "right": [
+            "One up",
+            "Iter up",
+            "Search up",
+            "Root tag"
+        ]
+    },
+    {
+        "q": "Rearrange parent chain:",
+        "type": "rearrange",
+        "words": [
+            "Tag c",
+            "Parent b",
+            "Parent a",
+            "Parent soup"
+        ]
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "from bs4 import BeautifulSoup\nsoup = BeautifulSoup('A<b>B</b>C', 'html.parser')\nprint(soup.b.next_sibling)",
+        "o": [
+            "C",
+            "A",
+            "None",
+            "Error"
+        ]
+    },
+    {
+        "q": "Siblings are elements at the _____ level of the tree.",
+        "type": "mcq",
+        "o": [
+            "same",
+            "lower",
+            "higher",
+            "root"
+        ]
+    },
+    {
+        "q": "NavigableStrings can be _____.",
+        "type": "fill_blank",
+        "answers": [
+            "siblings"
+        ],
+        "other_options": [
+            "parents",
+            "attributes",
+            "roots"
+        ]
+    },
+    {
+        "q": "next_sibling returns None for the last element.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Match sibling nav:",
+        "type": "match",
+        "left": [
+            "next_sibling",
+            "previous_sibling",
+            "next_elements",
+            "previous_elements"
+        ],
+        "right": [
+            "Sibling fwd",
+            "Sibling back",
+            "Parse fwd",
+            "Parse back"
+        ]
+    },
+    {
+        "q": "Rearrange sibling check:",
+        "type": "rearrange",
+        "words": [
+            "Find tag",
+            "Get next_sibling",
+            "If string",
+            "It is text"
+        ]
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "from bs4 import BeautifulSoup\nsoup = BeautifulSoup('<a>1</a>', 'html.parser')\ntag = soup.a\ntag.extract()\nprint(tag.parent)",
+        "o": [
+            "None",
+            "soup",
+            "body",
+            "Error"
+        ]
+    },
+    {
+        "q": "After extracting a tag, its parent becomes _____.",
+        "type": "mcq",
+        "o": [
+            "None",
+            "BeautifulSoup",
+            "Deleted",
+            "Empty"
+        ]
+    },
+    {
+        "q": "You can insert the extracted tag into another _____.",
+        "type": "fill_blank",
+        "answers": [
+            "tree"
+        ],
+        "other_options": [
+            "file",
+            "soup",
+            "list"
+        ]
+    },
+    {
+        "q": "extract() returns the extracted tag.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Match extract usage:",
+        "type": "match",
+        "left": [
+            "extract()",
+            "decompose()",
+            "clear()",
+            "replace_with()"
+        ],
+        "right": [
+            "Move/Remove",
+            "Delete",
+            "Empty",
+            "Swap"
+        ]
+    },
+    {
+        "q": "Rearrange extraction:",
+        "type": "rearrange",
+        "words": [
+            "Select tag",
+            "Call extract()",
+            "Tag removed from soup",
+            "Tag object persists"
+        ]
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "from bs4 import BeautifulSoup\nsoup = BeautifulSoup('<script>alert(1)</script>', 'html.parser')\nprint(soup.get_text())",
+        "o": [
+            "alert(1)",
+            "",
+            "None",
+            "alert"
+        ]
+    },
+    {
+        "q": "get_text() includes content from _____ tags by default.",
+        "type": "mcq",
+        "o": [
+            "script",
+            "none",
+            "hidden",
+            "meta"
+        ]
+    },
+    {
+        "q": "To strip script content, you must _____ the script tags first.",
+        "type": "fill_blank",
+        "answers": [
+            "extract"
+        ],
+        "other_options": [
+            "hide",
+            "ignore",
+            "skip"
+        ]
+    },
+    {
+        "q": "You can pass strip=True to get_text to remove whitespace.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Match text content:",
+        "type": "match",
+        "left": [
+            "script",
+            "style",
+            "p",
+            "br"
+        ],
+        "right": [
+            "Code",
+            "CSS",
+            "Text",
+            "None"
+        ]
+    },
+    {
+        "q": "Rearrange stripping script:",
+        "type": "rearrange",
+        "words": [
+            "Find all scripts",
+            "Loop scripts",
+            "script.extract()",
+            "Get text"
+        ]
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "from bs4 import BeautifulSoup\nsoup = BeautifulSoup('&amp;', 'html.parser')\nprint(len(soup.text))",
+        "o": [
+            "1",
+            "5",
+            "0",
+            "None"
+        ]
+    },
+    {
+        "q": "HTML entities are decoded to a _____ character.",
+        "type": "mcq",
+        "o": [
+            "single",
+            "five",
+            "zero",
+            "double"
+        ]
+    },
+    {
+        "q": "The decoded character is a _____ string.",
+        "type": "fill_blank",
+        "answers": [
+            "unicode"
+        ],
+        "other_options": [
+            "byte",
+            "raw",
+            "hex"
+        ]
+    },
+    {
+        "q": "BeautifulSoup normally converts entities to unicode on input.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Match entity decoding:",
+        "type": "match",
+        "left": [
+            "&amp;",
+            "&lt;",
+            "&gt;",
+            "&quot;"
+        ],
+        "right": [
+            "&",
+            "<",
+            ">",
+            "\""
+        ]
+    },
+    {
+        "q": "Rearrange entity length:",
+        "type": "rearrange",
+        "words": [
+            "Input &amp;",
+            "Parser decodes",
+            "Becomes &",
+            "Length is 1"
+        ]
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "from bs4 import BeautifulSoup\nsoup = BeautifulSoup('<!-- C -->', 'html.parser')\nprint(soup.text)",
+        "o": [
+            "",
+            "C",
+            "<!-- C -->",
+            "None"
+        ]
+    },
+    {
+        "q": ".text property ignores _____ by default.",
+        "type": "mcq",
+        "o": [
+            "comments",
+            "scripts",
+            "styles",
+            "tags"
+        ]
+    },
+    {
+        "q": "To get comment text, find them and access ._____.",
+        "type": "fill_blank",
+        "answers": [
+            "string"
+        ],
+        "other_options": [
+            "text",
+            "content",
+            "value"
+        ]
+    },
+    {
+        "q": "Comments are NavigableStrings but stripped from .text.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Match ignored content:",
+        "type": "match",
+        "left": [
+            "Comment",
+            "Declaration",
+            "CData",
+            "ProcessingInstruction"
+        ],
+        "right": [
+            "Ignored by .text",
+            "Ignored",
+            "Ignored",
+            "Ignored"
+        ]
+    },
+    {
+        "q": "Rearrange comment text:",
+        "type": "rearrange",
+        "words": [
+            "Find string",
+            "Check isinstance Comment",
+            "Print string",
+            "Skip .text"
+        ]
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "from bs4 import BeautifulSoup\nsoup = BeautifulSoup('<a>1</a>', 'html.parser')\nsoup.a['href'] = None\nprint(soup.a)",
+        "o": [
+            "<a>1</a>",
+            "<a href=\"None\">1</a>",
+            "<a href>1</a>",
+            "Error"
+        ]
+    },
+    {
+        "q": "Setting an attribute to None _____ it.",
+        "type": "mcq",
+        "o": [
+            "removes",
+            "sets empty",
+            "sets null",
+            "errors"
+        ]
+    },
+    {
+        "q": "This is equivalent to using the _____ statement.",
+        "type": "fill_blank",
+        "answers": [
+            "del"
+        ],
+        "other_options": [
+            "remove",
+            "pop",
+            "clear"
+        ]
+    },
+    {
+        "q": "Attributes with None value are rendered as 'attr=\"None\"'.",
+        "type": "true_false",
+        "correct": "False"
+    },
+    {
+        "q": "Match assignment effect:",
+        "type": "match",
+        "left": [
+            "= 'val'",
+            "= None",
+            "= ['a', 'b']",
+            "= True"
+        ],
+        "right": [
+            "Set string",
+            "Remove",
+            "Set list",
+            "Set boolean"
+        ]
+    },
+    {
+        "q": "Rearrange removing attr:",
+        "type": "rearrange",
+        "words": [
+            "Select tag",
+            "tag['class']",
+            "=",
+            "None"
+        ]
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "from bs4 import BeautifulSoup\nsoup = BeautifulSoup('<a href=\"x\"></a>', 'html.parser')\nprint(soup.select('a[href]')[0].name)",
+        "o": [
+            "a",
+            "None",
+            "Error",
+            "x"
+        ]
+    },
+    {
+        "q": "CSS selector [attr] matches elements with the _____ attribute.",
+        "type": "mcq",
+        "o": [
+            "defined",
+            "undefined",
+            "true",
+            "false"
+        ]
+    },
+    {
+        "q": "To select by attribute value, use [key_____value].",
+        "type": "fill_blank",
+        "answers": [
+            "="
+        ],
+        "other_options": [
+            "==",
+            "eq",
+            "is"
+        ]
+    },
+    {
+        "q": "[id] selects all elements with an ID.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Match attribute query:",
+        "type": "match",
+        "left": [
+            "[title]",
+            "[title=x]",
+            "a[title]",
+            "div [title]"
+        ],
+        "right": [
+            "Has title",
+            "Title is x",
+            "Link w/ title",
+            "Descendant w/ title"
+        ]
+    },
+    {
+        "q": "Rearrange attribute existence:",
+        "type": "rearrange",
+        "words": [
+            "soup.select",
+            "('[required]')",
+            "Find inputs",
+            "Return list"
+        ]
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "from bs4 import BeautifulSoup\nsoup = BeautifulSoup('<a>1</a>', 'html.parser')\nprint(soup.find_all(True))",
+        "o": [
+            "[<html><body><a>1</a></body></html>, <body><a>1</a></body>, <a>1</a>]",
+            "[<a>1</a>]",
+            "<a>1</a>",
+            "None"
+        ]
+    },
+    {
+        "q": "Searching with True matches _____ tag.",
+        "type": "mcq",
+        "o": [
+            "every",
+            "root",
+            "first",
+            "text"
+        ]
+    },
+    {
+        "q": "The result includes html and _____ tags if parser adds them.",
+        "type": "fill_blank",
+        "answers": [
+            "body"
+        ],
+        "other_options": [
+            "head",
+            "div",
+            "root"
+        ]
+    },
+    {
+        "q": "find_all(True) is useful for iterating all tags.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Match recursive results:",
+        "type": "match",
+        "left": [
+            "html.parser",
+            "lxml",
+            "xml",
+            "html5lib"
+        ],
+        "right": [
+            "Adds html/body",
+            "Adds html/body",
+            "No extra tags",
+            "Adds html/body"
+        ]
+    },
+    {
+        "q": "Rearrange all tags:",
+        "type": "rearrange",
+        "words": [
+            "soup.find_all(True)",
+            "Iterate list",
+            "Process names",
+            "Skip NavigableString"
+        ]
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "from bs4 import BeautifulSoup\nsoup = BeautifulSoup('<a>1</a>', 'html.parser')\nsoup.a.string.replace_with('2')\nprint(soup)",
+        "o": [
+            "<a>2</a>",
+            "2",
+            "<a>1</a>",
+            "Error"
+        ]
+    },
+    {
+        "q": "You can modify content by replacing the _____ object.",
+        "type": "mcq",
+        "o": [
+            ".string",
+            ".text",
+            ".content",
+            ".inner"
+        ]
+    },
+    {
+        "q": "NavigableString objects support _____ like tags.",
+        "type": "fill_blank",
+        "answers": [
+            "replace_with"
+        ],
+        "other_options": [
+            "swap",
+            "change",
+            "set"
+        ]
+    },
+    {
+        "q": "Replacing a string with a tag is allowed.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Match modification target:",
+        "type": "match",
+        "left": [
+            "tag.replace_with",
+            "string.replace_with",
+            "tag.clear",
+            "tag.append"
+        ],
+        "right": [
+            "Helper node",
+            "Text node",
+            "Contents",
+            "Children"
+        ]
+    },
+    {
+        "q": "Rearrange string swap:",
+        "type": "rearrange",
+        "words": [
+            "Get .string",
+            "Call replace_with",
+            "Pass new string",
+            "Tree updates"
+        ]
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "from bs4 import BeautifulSoup\nsoup = BeautifulSoup('<a>  </a>', 'html.parser')\nprint(soup.a.string)",
+        "o": [
+            "  ",
+            "None",
+            "Empty",
+            "Error"
+        ]
+    },
+    {
+        "q": "Whitespace is considered a _____ node in BeautifulSoup.",
+        "type": "mcq",
+        "o": [
+            "text",
+            "null",
+            "space",
+            "void"
+        ]
+    },
+    {
+        "q": "Use stripped_strings to ignore _____ strings.",
+        "type": "fill_blank",
+        "answers": [
+            "whitespace"
+        ],
+        "other_options": [
+            "empty",
+            "null",
+            "blank"
+        ]
+    },
+    {
+        "q": "Parsing '<a> </a>' results in a NavigableString of spaces.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Match whitespace:",
+        "type": "match",
+        "left": [
+            "' '",
+            "'\\n'",
+            "'  \\n  '",
+            "''"
+        ],
+        "right": [
+            "Space",
+            "Newline",
+            "Mixed",
+            "Empty"
+        ]
+    },
+    {
+        "q": "Rearrange processing space:",
+        "type": "rearrange",
+        "words": [
+            "Check string",
+            "If isspace()",
+            "Skip",
+            "Else process"
+        ]
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "from bs4 import BeautifulSoup\nsoup = BeautifulSoup('<a>1</a><a>2</a>', 'html.parser')\nprint(soup.find_all('a', limit=1)[0].text)",
+        "o": [
+            "1",
+            "2",
+            "12",
+            "None"
+        ]
+    },
+    {
+        "q": "Using limit=1 improves _____ when looking for one item.",
+        "type": "mcq",
+        "o": [
+            "performance",
+            "memory",
+            "accuracy",
+            "syntax"
+        ]
+    },
+    {
+        "q": "find() is a shorthand for find_all(limit=_____).",
+        "type": "fill_blank",
+        "answers": [
+            "1"
+        ],
+        "other_options": [
+            "0",
+            "None",
+            "True"
+        ]
+    },
+    {
+        "q": "limit=1 returns a single Tag object directly.",
+        "type": "true_false",
+        "correct": "False"
+    },
+    {
+        "q": "Match result type:",
+        "type": "match",
+        "left": [
+            "find_all(limit=1)",
+            "find()",
+            "select_one()",
+            "select()"
+        ],
+        "right": [
+            "List",
+            "Tag",
+            "Tag",
+            "List"
+        ]
+    },
+    {
+        "q": "Rearrange fast find:",
+        "type": "rearrange",
+        "words": [
+            "soup.find_all",
+            "('tag')",
+            "limit=1",
+            "Take 0th element"
+        ]
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "from bs4 import BeautifulSoup\nsoup = BeautifulSoup('<a>1</a>', 'html.parser')\nprint(len(soup.contents))",
+        "o": [
+            "1",
+            "2",
+            "3",
+            "0"
+        ]
+    },
+    {
+        "q": "The BeautifulSoup object itself has _____.",
+        "type": "mcq",
+        "o": [
+            "contents",
+            "parent",
+            "name",
+            "attributes"
+        ]
+    },
+    {
+        "q": "The parent of BeautifulSoup object is _____.",
+        "type": "fill_blank",
+        "answers": [
+            "None"
+        ],
+        "other_options": [
+            "Object",
+            "Root",
+            "Self"
+        ]
+    },
+    {
+        "q": "You can modify BeautifulSoup.contents.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Match document structure:",
+        "type": "match",
+        "left": [
+            "soup",
+            "soup.contents",
+            "soup.parent",
+            "soup.name"
+        ],
+        "right": [
+            "Root",
+            "Top tags",
+            "None",
+            "[document]"
+        ]
+    },
+    {
+        "q": "Rearrange soup init:",
+        "type": "rearrange",
+        "words": [
+            "Create soup",
+            "Parse HTML",
+            "Populate contents",
+            "Ready"
+        ]
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "from bs4 import BeautifulSoup\nsoup = BeautifulSoup('<a>1</a>', 'html.parser')\nprint(soup.a == soup.find('a'))",
+        "o": [
+            "True",
+            "False",
+            "None",
+            "Error"
+        ]
+    },
+    {
+        "q": "Two Tag objects are equal if they represent the _____ HTML tag.",
+        "type": "mcq",
+        "o": [
+            "same",
+            "different",
+            "similar",
+            "parent"
+        ]
+    },
+    {
+        "q": "Equality check compares the identity of the python object (is).",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Use _____ to check if two variables point to the exact same object.",
+        "type": "fill_blank",
+        "answers": [
+            "is"
+        ],
+        "other_options": [
+            "==",
+            "eq",
+            "same"
+        ]
+    },
+    {
+        "q": "Match comparison:",
+        "type": "match",
+        "left": [
+            "a is b",
+            "a == b",
+            "a != b",
+            "id(a)==id(b)"
+        ],
+        "right": [
+            "Same Object",
+            "Same content",
+            "Different",
+            "Same Object (alt)"
+        ]
+    },
+    {
+        "q": "Rearrange identity check:",
+        "type": "rearrange",
+        "words": [
+            "Get tag1",
+            "Get tag2",
+            "Check tag1 is tag2",
+            "Result boolean"
+        ]
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "from bs4 import BeautifulSoup\nsoup = BeautifulSoup('<p class=\"1 2\"></p>', 'html.parser')\nprint(soup.p['class'])",
+        "o": [
+            "['1', '2']",
+            "1 2",
+            "1",
+            "Error"
+        ]
+    },
+    {
+        "q": "Class attribute values are split by _____.",
+        "type": "mcq",
+        "o": [
+            "whitespace",
+            "comma",
+            "dash",
+            "underscore"
+        ]
+    },
+    {
+        "q": "To preserve duplicate class names, use a custom _____.",
+        "type": "fill_blank",
+        "answers": [
+            "TreeBuilder"
+        ],
+        "other_options": [
+            "parser",
+            "filter",
+            "strainer"
+        ]
+    },
+    {
+        "q": "BeautifulSoup sorts class names alphabetically on output.",
+        "type": "true_false",
+        "correct": "False"
+    },
+    {
+        "q": "Match multi-value:",
+        "type": "match",
+        "left": [
+            "class",
+            "rel",
+            "rev",
+            "id"
+        ],
+        "right": [
+            "List",
+            "List",
+            "List",
+            "String"
+        ]
+    },
+    {
+        "q": "Rearrange class list:",
+        "type": "rearrange",
+        "words": [
+            "Parse attr",
+            "Split space",
+            "Store list",
+            "Return list"
+        ]
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "from bs4 import BeautifulSoup\nsoup = BeautifulSoup('<a>&lt;</a>', 'html.parser')\nprint(soup.a.string)",
+        "o": [
+            "<",
+            "&lt;",
+            "None",
+            "Error"
+        ]
+    },
+    {
+        "q": "Which parser converts entities to Unicode characters?",
+        "type": "mcq",
+        "o": [
+            "All of them",
+            "Only html.parser",
+            "Only lxml",
+            "None"
+        ]
+    },
+    {
+        "q": "Use _____ argument in constructor to disable entity conversion (if supported).",
+        "type": "fill_blank",
+        "answers": [
+            "convert_charrefs"
+        ],
+        "other_options": [
+            "entities",
+            "decode",
+            "unicode"
+        ]
+    },
+    {
+        "q": "Outputting HTML creates entities for special characters like <.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Match charref:",
+        "type": "match",
+        "left": [
+            "&lt;",
+            "&#60;",
+            "&gt;",
+            "&amp;"
+        ],
+        "right": [
+            "Named",
+            "Numeric",
+            "Named >",
+            "Named &"
+        ]
+    },
+    {
+        "q": "Rearrange entity output:",
+        "type": "rearrange",
+        "words": [
+            "Convert <",
+            "To &lt;",
+            "Save string",
+            "Print"
+        ]
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "from bs4 import BeautifulSoup\nsoup = BeautifulSoup('<p>Test</p>', 'html.parser')\nprint(soup.p.encode('ascii'))",
+        "o": [
+            "b'<p>Test</p>'",
+            "'<p>Test</p>'",
+            "Test",
+            "Error"
+        ]
+    },
+    {
+        "q": "Encoding 'ascii' replaces non-ascii characters with _____.",
+        "type": "mcq",
+        "o": [
+            "XML entities",
+            "?",
+            "Error",
+            "Spaces"
+        ]
+    },
+    {
+        "q": "The default error handling for encode is _____.",
+        "type": "fill_blank",
+        "answers": [
+            "xmlcharrefreplace"
+        ],
+        "other_options": [
+            "strict",
+            "ignore",
+            "replace"
+        ]
+    },
+    {
+        "q": "You can use 'strict' error handling to raise exception.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Match encode error:",
+        "type": "match",
+        "left": [
+            "strict",
+            "ignore",
+            "replace",
+            "xmlcharrefreplace"
+        ],
+        "right": [
+            "Raise Error",
+            "Skip",
+            "Use ?",
+            "Use Entity"
+        ]
+    },
+    {
+        "q": "Rearrange ascii encode:",
+        "type": "rearrange",
+        "words": [
+            "soup.encode",
+            "('ascii')",
+            "Convert chars",
+            "Return bytes"
+        ]
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "from bs4 import BeautifulSoup\nsoup = BeautifulSoup('<a href=\"u\">t</a>', 'html.parser')\nprint(soup.a.decode())",
+        "o": [
+            "<a href=\"u\">t</a>",
+            "t",
+            "None",
+            "Error"
+        ]
+    },
+    {
+        "q": "Which method is an alias for prettify() or __str__() (unicode)?",
+        "type": "mcq",
+        "o": [
+            "decode()",
+            "encode()",
+            "string()",
+            "render()"
+        ]
+    },
+    {
+        "q": "decode() returns a python _____ string.",
+        "type": "fill_blank",
+        "answers": [
+            "unicode"
+        ],
+        "other_options": [
+            "byte",
+            "raw",
+            "ascii"
+        ]
+    },
+    {
+        "q": "decode(pretty_print=True) is same as prettify().",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Match output format:",
+        "type": "match",
+        "left": [
+            "decode()",
+            "encode()",
+            "prettify()",
+            "get_text()"
+        ],
+        "right": [
+            "String HTML",
+            "Bytes HTML",
+            "Indented HTML",
+            "Content only"
+        ]
+    },
+    {
+        "q": "Rearrange decode usage:",
+        "type": "rearrange",
+        "words": [
+            "Get tag",
+            "Call decode()",
+            "With pretty_print",
+            "Return string"
+        ]
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "from bs4 import BeautifulSoup, CData\nc = CData('data')\nprint(c)",
+        "o": [
+            "<![CDATA[data]]>",
+            "data",
+            "<![CDATA[ data ]]>",
+            "Error"
+        ]
+    },
+    {
+        "q": "CData blocks prevent the parser from parsing the _____.",
+        "type": "mcq",
+        "o": [
+            "contents",
+            "tag",
+            "attributes",
+            "html"
+        ]
+    },
+    {
+        "q": "CData objects output the standard _____ wrappers.",
+        "type": "fill_blank",
+        "answers": [
+            "CDATA"
+        ],
+        "other_options": [
+            "XML",
+            "HTML",
+            "Comment"
+        ]
+    },
+    {
+        "q": "CData is frequently used in XML parsing.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Match standard:",
+        "type": "match",
+        "left": [
+            "CDATA",
+            "HTML",
+            "XML",
+            "SGML"
+        ],
+        "right": [
+            "Unparsed",
+            "Web",
+            "Strict",
+            "Parent"
+        ]
+    },
+    {
+        "q": "Rearrange CData creation:",
+        "type": "rearrange",
+        "words": [
+            "Import CData",
+            "Create object",
+            "Add to soup",
+            "Print soup"
+        ]
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "from bs4 import BeautifulSoup\nsoup = BeautifulSoup('<p></p>', 'html.parser')\nprint(soup.p.next_element)",
+        "o": [
+            "None",
+            "p",
+            "soup",
+            "Error"
+        ]
+    },
+    {
+        "q": "If a tag is empty, what is its next_element?",
+        "type": "mcq",
+        "o": [
+            "next tag/string in doc",
+            "None",
+            "parent",
+            "self"
+        ]
+    },
+    {
+        "q": "next_element follows the _____ order.",
+        "type": "fill_blank",
+        "answers": [
+            "parse"
+        ],
+        "other_options": [
+            "tree",
+            "logic",
+            "sibling"
+        ]
+    },
+    {
+        "q": "next_element of a parent is usually its first child.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Match navigation:",
+        "type": "match",
+        "left": [
+            "next_element",
+            "next_sibling",
+            "parent",
+            "child"
+        ],
+        "right": [
+            "Next parsed",
+            "Next peer",
+            "Container",
+            "Contained"
+        ]
+    },
+    {
+        "q": "Rearrange parsing order:",
+        "type": "rearrange",
+        "words": [
+            "Open Tag",
+            "Next is contents",
+            "Next is End Tag",
+            "Next is Sibling"
+        ]
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "from bs4 import BeautifulSoup\nsoup = BeautifulSoup('<a> b </a>', 'html.parser')\nprint(repr(soup.a.string))",
+        "o": [
+            "' b '",
+            "'b'",
+            "None",
+            "Error"
+        ]
+    },
+    {
+        "q": "Does .string normalize whitespace?",
+        "type": "mcq",
+        "o": [
+            "No",
+            "Yes",
+            "Sometimes",
+            "Depends on parser"
+        ]
+    },
+    {
+        "q": "Using .get_text(strip=True) removes leading/trailing _____.",
+        "type": "fill_blank",
+        "answers": [
+            "whitespace"
+        ],
+        "other_options": [
+            "tags",
+            "attributes",
+            "chars"
+        ]
+    },
+    {
+        "q": "NavigableStrings preserve the original whitespace.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Match whitespace handling:",
+        "type": "match",
+        "left": [
+            ".string",
+            ".get_text(strip=True)",
+            ".stripped_strings",
+            "normal output"
+        ],
+        "right": [
+            "Exact",
+            "Trimmed",
+            "Trimmed Gen",
+            "Exact"
+        ]
+    },
+    {
+        "q": "Rearrange whitespace check:",
+        "type": "rearrange",
+        "words": [
+            "soup.a.string",
+            "Check spaces",
+            "Use strip()",
+            "Clean string"
+        ]
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "from bs4 import BeautifulSoup\nsoup = BeautifulSoup('<a></a>', 'html.parser')\nsoup.a['href'] = 'u'\nprint(soup.a.attrs['href'])",
+        "o": [
+            "u",
+            "None",
+            "Error",
+            "a"
+        ]
+    },
+    {
+        "q": "Tag.attrs is a standard Python _____.",
+        "type": "mcq",
+        "o": [
+            "dictionary",
+            "list",
+            "set",
+            "tuple"
+        ]
+    },
+    {
+        "q": "Modifying Tag.attrs modifies the _____.",
+        "type": "fill_blank",
+        "answers": [
+            "tag"
+        ],
+        "other_options": [
+            "soup",
+            "doc",
+            "html"
+        ]
+    },
+    {
+        "q": "Dictionary methods like update() work on tag.attrs.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Match dict op:",
+        "type": "match",
+        "left": [
+            "update()",
+            "clear()",
+            "pop()",
+            "setdefault()"
+        ],
+        "right": [
+            "Merge",
+            "Remove all",
+            "Remove key",
+            "Get/Set"
+        ]
+    },
+    {
+        "q": "Rearrange attributes update:",
+        "type": "rearrange",
+        "words": [
+            "tag.attrs",
+            ".update",
+            "({'key': 'val'})",
+            "Check tag"
+        ]
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "from bs4 import BeautifulSoup\nsoup = BeautifulSoup('document', 'html.parser')\nprint(soup.text)",
+        "o": [
+            "document",
+            "",
+            "None",
+            "Error"
+        ]
+    },
+    {
+        "q": "BeautifulSoup can parse plain strings as _____.",
+        "type": "mcq",
+        "o": [
+            "text",
+            "files",
+            "xml",
+            "json"
+        ]
+    },
+    {
+        "q": "If input has no tags, soup becomes a single _____.",
+        "type": "fill_blank",
+        "answers": [
+            "NavigableString"
+        ],
+        "other_options": [
+            "Tag",
+            "Comment",
+            "Doc"
+        ]
+    },
+    {
+        "q": "BeautifulSoup requires valid HTML tags to work.",
+        "type": "true_false",
+        "correct": "False"
+    },
+    {
+        "q": "Match input type:",
+        "type": "match",
+        "left": [
+            "Plain string",
+            "HTML fragment",
+            "Full HTML",
+            "URL"
+        ],
+        "right": [
+            "Text node",
+            "Fragment",
+            "Document",
+            "Not supported"
+        ]
+    },
+    {
+        "q": "Rearrange plain text:",
+        "type": "rearrange",
+        "words": [
+            "soup = BeautifulSoup",
+            "('Just text')",
+            "soup.text",
+            "Is 'Just text'"
+        ]
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "from bs4 import BeautifulSoup\ns = '<a><b></b></a>'\nsoup = BeautifulSoup(s, 'html.parser')\nprint(soup.a.b.previous_element.name)",
+        "o": [
+            "a",
+            "b",
+            "None",
+            "Error"
+        ]
+    },
+    {
+        "q": "Which element comes immediately before 'b' in parse order?",
+        "type": "mcq",
+        "o": [
+            "a (start tag)",
+            "soup",
+            "string",
+            "None"
+        ]
+    },
+    {
+        "q": "previous_element traverses the parse tree _____.",
+        "type": "fill_blank",
+        "answers": [
+            "backwards"
+        ],
+        "other_options": [
+            "forwards",
+            "up",
+            "down"
+        ]
+    },
+    {
+        "q": "previous_element is always the parent.",
+        "type": "true_false",
+        "correct": "False"
+    },
+    {
+        "q": "Match prev element:",
+        "type": "match",
+        "left": [
+            "Open Tag",
+            "First Child",
+            "Parent",
+            "Sibling"
+        ],
+        "right": [
+            "Prev of Child",
+            "Next of Parent",
+            "Prev of Sibling",
+            "Prev of Next"
+        ]
+    },
+    {
+        "q": "Rearrange back step:",
+        "type": "rearrange",
+        "words": [
+            "Current Tag",
+            "Get previous_element",
+            "Might be string",
+            "Or tag"
+        ]
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "from bs4 import BeautifulSoup\nsoup = BeautifulSoup('<a>1</a>', 'html.parser')\nprint(soup.find('b'))",
+        "o": [
+            "None",
+            "Error",
+            "<b></b>",
+            "[]"
+        ]
+    },
+    {
+        "q": "When find() fails to match, it returns _____.",
+        "type": "mcq",
+        "o": [
+            "None",
+            "empty list",
+            "Error",
+            "False"
+        ]
+    },
+    {
+        "q": "When find_all() fails to match, it returns _____.",
+        "type": "fill_blank",
+        "answers": [
+            "empty list"
+        ],
+        "other_options": [
+            "None",
+            "Error",
+            "False"
+        ]
+    },
+    {
+        "q": "You should check for None before accessing attributes of find() result.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Match failure return:",
+        "type": "match",
+        "left": [
+            "find()",
+            "find_all()",
+            "select_one()",
+            "select()"
+        ],
+        "right": [
+            "None",
+            "[]",
+            "None",
+            "[]"
+        ]
+    },
+    {
+        "q": "Rearrange safe check:",
+        "type": "rearrange",
+        "words": [
+            "res = soup.find()",
+            "if res:",
+            "process res",
+            "else: handle"
+        ]
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "from bs4 import BeautifulSoup\nsoup = BeautifulSoup('<a></a>', 'html.parser')\nprint(soup.a.contents)",
+        "o": [
+            "[]",
+            "None",
+            "Error",
+            "0"
+        ]
+    },
+    {
+        "q": "An empty tag has an empty _____ list.",
+        "type": "mcq",
+        "o": [
+            "contents",
+            "children",
+            "descendants",
+            "text"
+        ]
+    },
+    {
+        "q": "NavigableString objects have _____ contents.",
+        "type": "fill_blank",
+        "answers": [
+            "no"
+        ],
+        "other_options": [
+            "empty",
+            "list",
+            "text"
+        ]
+    },
+    {
+        "q": "Accessing .contents on a string raises AttributeError.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Match content type:",
+        "type": "match",
+        "left": [
+            "Tag",
+            "NavigableString",
+            "Comment",
+            "Soup"
+        ],
+        "right": [
+            "List",
+            "Error",
+            "Error",
+            "List"
+        ]
+    },
+    {
+        "q": "Rearrange content check:",
+        "type": "rearrange",
+        "words": [
+            "Check type",
+            "If Tag",
+            "Use contents",
+            "Else skip"
+        ]
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "from bs4 import BeautifulSoup\nsoup = BeautifulSoup('<a>1</a>', 'html.parser')\nfor x in soup.a.descendants: print(x)",
+        "o": [
+            "1",
+            "a",
+            "None",
+            "Error"
+        ]
+    },
+    {
+        "q": "The descendants iterator visits children, grandchildren, etc.",
+        "type": "mcq",
+        "o": [
+            "depth-first",
+            "breadth-first",
+            "random",
+            "reverse"
+        ]
+    },
+    {
+        "q": "There are always _____ descendants than children (if deep).",
+        "type": "fill_blank",
+        "answers": [
+            "more"
+        ],
+        "other_options": [
+            "less",
+            "equal",
+            "fewer"
+        ]
+    },
+    {
+        "q": "descendants includes the tag itself.",
+        "type": "true_false",
+        "correct": "False"
+    },
+    {
+        "q": "Match tree walk:",
+        "type": "match",
+        "left": [
+            "descendants",
+            "children",
+            "next_elements",
+            "parents"
+        ],
+        "right": [
+            "Subtree",
+            "Level 1",
+            "Linear Doc",
+            "Root path"
+        ]
+    },
+    {
+        "q": "Rearrange recursive walk:",
+        "type": "rearrange",
+        "words": [
+            "soup.descendants",
+            "Visit A",
+            "Visit A's child",
+            "Visit A's grandchild"
+        ]
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "from bs4 import BeautifulSoup\nsoup = BeautifulSoup('<p class=\"MyClass\"></p>', 'html.parser')\nprint(soup.select('.myclass'))",
+        "o": [
+            "[]",
+            "[<p...>]",
+            "None",
+            "Error"
+        ]
+    },
+    {
+        "q": "CSS classes are case-_____ in standard HTML parsing.",
+        "type": "mcq",
+        "o": [
+            "sensitive",
+            "insensitive",
+            "ignored",
+            "coerced"
+        ]
+    },
+    {
+        "q": "Some parsers/configs might normalize case.",
+        "type": "fill_blank",
+        "answers": [
+            "True"
+        ],
+        "other_options": [
+            "False",
+            "None",
+            "Error"
+        ]
+    },
+    {
+        "q": "SoupSieve handles CSS selectors in BeautifulSoup.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Match case sensitivity:",
+        "type": "match",
+        "left": [
+            "Tag Name",
+            "Attribute Name",
+            "Attribute Value",
+            "Class"
+        ],
+        "right": [
+            "Insensitive (usually)",
+            "Insensitive",
+            "Sensitive",
+            "Sensitive"
+        ]
+    },
+    {
+        "q": "Rearrange class case:",
+        "type": "rearrange",
+        "words": [
+            "HTML has MyClass",
+            "Select .myclass",
+            "No match",
+            "Select .MyClass"
+        ]
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "from bs4 import BeautifulSoup\nsoup = BeautifulSoup('<a>1</a>', 'html.parser')\nprint(soup.select('a:first-child')[0].text)",
+        "o": [
+            "1",
+            "None",
+            "Error",
+            "a"
+        ]
+    },
+    {
+        "q": ":first-child selects elements that are the first child of their _____.",
+        "type": "mcq",
+        "o": [
+            "parent",
+            "sibling",
+            "root",
+            "type"
+        ]
+    },
+    {
+        "q": ":first-of-type considers only tags of the _____ name.",
+        "type": "fill_blank",
+        "answers": [
+            "same"
+        ],
+        "other_options": [
+            "different",
+            "any",
+            "parent"
+        ]
+    },
+    {
+        "q": ":nth-child indices are 1-based.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Match pseudo select:",
+        "type": "match",
+        "left": [
+            ":first-child",
+            ":last-child",
+            ":only-child",
+            ":empty"
+        ],
+        "right": [
+            "Index 1",
+            "Last index",
+            "Single child",
+            "No content"
+        ]
+    },
+    {
+        "q": "Rearrange nth select:",
+        "type": "rearrange",
+        "words": [
+            "soup.select",
+            "('li:nth-child(2)')",
+            "Find 2nd item",
+            "Return list"
+        ]
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "from bs4 import BeautifulSoup\nsoup = BeautifulSoup('<p><!-- c --></p>', 'html.parser')\nprint(type(soup.p.string))",
+        "o": [
+            "<class 'bs4.element.Comment'>",
+            "str",
+            "None",
+            "NavigableString"
+        ]
+    },
+    {
+        "q": "If a tag contains only a comment, .string returns the _____.",
+        "type": "mcq",
+        "o": [
+            "Comment",
+            "None",
+            "Empty string",
+            "Error"
+        ]
+    },
+    {
+        "q": "To avoid getting comments as text, check the _____ of .string.",
+        "type": "fill_blank",
+        "answers": [
+            "type"
+        ],
+        "other_options": [
+            "value",
+            "len",
+            "content"
+        ]
+    },
+    {
+        "q": "Comment inherits from NavigableString.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Match string type:",
+        "type": "match",
+        "left": [
+            "NavigableString",
+            "Comment",
+            "Declaration",
+            "CData"
+        ],
+        "right": [
+            "Text",
+            "Comment",
+            "Decl",
+            "CDATA"
+        ]
+    },
+    {
+        "q": "Rearrange comment check:",
+        "type": "rearrange",
+        "words": [
+            "s = tag.string",
+            "isinstance(s, Comment)",
+            "If True",
+            "It is proper comment"
+        ]
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "from bs4 import BeautifulSoup\nsoup = BeautifulSoup('<a>1</a><b>2</b>', 'html.parser')\nprint(soup.find_all(['a', 'b']))",
+        "o": [
+            "[<a>1</a>, <b>2</b>]",
+            "[<a>1</a>]",
+            "[<b>2</b>]",
+            "[]"
+        ]
+    },
+    {
+        "q": "Passing a list to find_all matches any tag in the _____.",
+        "type": "mcq",
+        "o": [
+            "list",
+            "document",
+            "soup",
+            "string"
+        ]
+    },
+    {
+        "q": "The order of results follows the _____ order, not list order.",
+        "type": "fill_blank",
+        "answers": [
+            "document"
+        ],
+        "other_options": [
+            "list",
+            "alpha",
+            "random"
+        ]
+    },
+    {
+        "q": "find_all(['a', 'b']) returns a and b tags mixed.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Match list filter:",
+        "type": "match",
+        "left": [
+            "['a', 'b']",
+            "['div']",
+            "['p', 'span']",
+            "[]"
+        ],
+        "right": [
+            "A or B",
+            "Div only",
+            "P or Span",
+            "Nothing"
+        ]
+    },
+    {
+        "q": "Rearrange list search:",
+        "type": "rearrange",
+        "words": [
+            "Define list",
+            "['h1', 'h2']",
+            "find_all(list)",
+            "Get headers"
+        ]
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "from bs4 import BeautifulSoup\nsoup = BeautifulSoup('<a>1</a>', 'html.parser')\nprint(soup.find_all(string='1')[0].parent.name)",
+        "o": [
+            "a",
+            "None",
+            "1",
+            "Error"
+        ]
+    },
+    {
+        "q": "Searching for strings returns NavigableString objects.",
+        "type": "mcq",
+        "o": [
+            "True",
+            "False",
+            "None",
+            "Error"
+        ]
+    },
+    {
+        "q": "To get the tag containing the string, access ._____.",
+        "type": "fill_blank",
+        "answers": [
+            "parent"
+        ],
+        "other_options": [
+            "tag",
+            "container",
+            "root"
+        ]
+    },
+    {
+        "q": "find_all(string='x') returns a list of strings.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Match string search:",
+        "type": "match",
+        "left": [
+            "string='x'",
+            "text='x'",
+            "string=re.compile",
+            "string=True"
+        ],
+        "right": [
+            "Exact",
+            "Deprecated",
+            "Regex",
+            "All strings"
+        ]
+    },
+    {
+        "q": "Rearrange parent of text:",
+        "type": "rearrange",
+        "words": [
+            "Find string",
+            "Get string object",
+            "Access .parent",
+            "Get Tag"
+        ]
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "from bs4 import BeautifulSoup\nsoup = BeautifulSoup('<foo:bar>1</foo:bar>', 'xml')\nprint(soup.find('foo:bar').name)",
+        "o": [
+            "foo:bar",
+            "bar",
+            "foo",
+            "None"
+        ]
+    },
+    {
+        "q": "In XML parsing, tag names include the _____.",
+        "type": "mcq",
+        "o": [
+            "prefix",
+            "namespace",
+            "attr",
+            "value"
+        ]
+    },
+    {
+        "q": "The prefix and name are separated by a _____.",
+        "type": "fill_blank",
+        "answers": [
+            "colon"
+        ],
+        "other_options": [
+            "space",
+            "dash",
+            "dot"
+        ]
+    },
+    {
+        "q": "lxml-xml parser handles namespaces correctly.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Match XML tag:",
+        "type": "match",
+        "left": [
+            "foo:bar",
+            "bar",
+            "foo",
+            "xmlns"
+        ],
+        "right": [
+            "Full name",
+            "Local name",
+            "Prefix",
+            "Namespace def"
+        ]
+    },
+    {
+        "q": "Rearrange XML find:",
+        "type": "rearrange",
+        "words": [
+            "Parse XML",
+            "find('prefix:name')",
+            "Matches tag",
+            "Returns object"
+        ]
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "from bs4 import BeautifulSoup\nsoup = BeautifulSoup('<a></a>', 'html.parser')\nprint(soup.find('b'))",
+        "o": [
+            "None",
+            "Error",
+            "[]",
+            "False"
+        ]
+    },
+    {
+        "q": "Which method should you use if you expect exactly one result or None?",
+        "type": "mcq",
+        "o": [
+            "find()",
+            "find_all()",
+            "select()",
+            "contents"
+        ]
+    },
+    {
+        "q": "Checking if result is _____ handles missing tags.",
+        "type": "fill_blank",
+        "answers": [
+            "None"
+        ],
+        "other_options": [
+            "False",
+            "True",
+            "Empty"
+        ]
+    },
+    {
+        "q": "Chaining .find().find() without checks can raise AttributeError.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Match safety:",
+        "type": "match",
+        "left": [
+            "if tag:",
+            "try/except",
+            "tag.get()",
+            "find_all() loops"
+        ],
+        "right": [
+            "Check Exists",
+            "Catch Error",
+            "Default val",
+            "Safe Iter"
+        ]
+    },
+    {
+        "q": "Rearrange safe chain:",
+        "type": "rearrange",
+        "words": [
+            "t = find()",
+            "if t:",
+            "t.find()",
+            "else: None"
+        ]
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "from bs4 import BeautifulSoup\nsoup = BeautifulSoup('<a>1</a>', 'html.parser')\nsoup.a.extract()\nprint(len(soup.contents))",
+        "o": [
+            "0",
+            "1",
+            "2",
+            "None"
+        ]
+    },
+    {
+        "q": "extract() removes the tag from the tree but keeps it in _____.",
+        "type": "mcq",
+        "o": [
+            "memory",
+            "disk",
+            "void",
+            "cache"
+        ]
+    },
+    {
+        "q": "You can re-insert an extracted tag elsewhere.",
+        "type": "fill_blank",
+        "answers": [
+            "True"
+        ],
+        "other_options": [
+            "False",
+            "None",
+            "Error"
+        ]
+    },
+    {
+        "q": "decompose() destroys the tag and frees memory.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Match removal:",
+        "type": "match",
+        "left": [
+            "extract",
+            "decompose",
+            "clear",
+            "prune"
+        ],
+        "right": [
+            "Keep obj",
+            "Destroy obj",
+            "Keep tag empty",
+            "Not method"
+        ]
+    },
+    {
+        "q": "Rearrange moving tag:",
+        "type": "rearrange",
+        "words": [
+            "tag.extract()",
+            "target.append(tag)",
+            "Tag moved",
+            "Tree updated"
+        ]
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "from bs4 import BeautifulSoup\nsoup = BeautifulSoup('<tag></tag>', 'html.parser')\nsoup.tag.attrs['id'] = 1\nprint(soup.tag['id'])",
+        "o": [
+            "1",
+            "'1'",
+            "None",
+            "Error"
+        ]
+    },
+    {
+        "q": "Attribute values are stored as they are _____.",
+        "type": "mcq",
+        "o": [
+            "assigned",
+            "parsed",
+            "read",
+            "written"
+        ]
+    },
+    {
+        "q": "On output, non-string values are converted to _____.",
+        "type": "fill_blank",
+        "answers": [
+            "strings"
+        ],
+        "other_options": [
+            "bytes",
+            "ints",
+            "HTML"
+        ]
+    },
+    {
+        "q": "You can store arbitrary Python objects in attributes.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Match attr value:",
+        "type": "match",
+        "left": [
+            "'s'",
+            "1",
+            "True",
+            "None"
+        ],
+        "right": [
+            "String",
+            "Int",
+            "Bool",
+            "No output"
+        ]
+    },
+    {
+        "q": "Rearrange int attr:",
+        "type": "rearrange",
+        "words": [
+            "tag['id'] = 123",
+            "print tag",
+            "id=\"123\"",
+            "Value is int"
+        ]
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "from bs4 import BeautifulSoup\nsoup = BeautifulSoup('<a><b>1</b><c>2</c></a>', 'html.parser')\nprint(len(soup.find_all(recursive=False)))",
+        "o": [
+            "1",
+            "2",
+            "3",
+            "0"
+        ]
+    },
+    {
+        "q": "recursive=False limits search to direct _____.",
+        "type": "mcq",
+        "o": [
+            "children",
+            "descendants",
+            "siblings",
+            "parents"
+        ]
+    },
+    {
+        "q": "This is equivalent to iterating over ._____.",
+        "type": "fill_blank",
+        "answers": [
+            "contents"
+        ],
+        "other_options": [
+            "descendants",
+            "parent",
+            "next"
+        ]
+    },
+    {
+        "q": "find_all(recursive=False) is faster than full search.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Match recursion:",
+        "type": "match",
+        "left": [
+            "recursive=True",
+            "recursive=False",
+            "find_all",
+            "children"
+        ],
+        "right": [
+            "Deep",
+            "Shallow",
+            "Deep Method",
+            "Shallow Prop"
+        ]
+    },
+    {
+        "q": "Rearrange shallow find:",
+        "type": "rearrange",
+        "words": [
+            "soup.find_all",
+            "('b')",
+            "recursive=False",
+            "Direct kids only"
+        ]
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "from bs4 import BeautifulSoup\nsoup = BeautifulSoup('<a>1</a>', 'html.parser')\nprint(soup.a['class'])",
+        "o": [
+            "KeyError",
+            "None",
+            "[]",
+            "Error"
+        ]
+    },
+    {
+        "q": "Accessing a missing attribute via bracket notation raises _____.",
+        "type": "mcq",
+        "o": [
+            "KeyError",
+            "AttributeError",
+            "ValueError",
+            "None"
+        ]
+    },
+    {
+        "q": "This strict access mimics Python _____ behavior.",
+        "type": "fill_blank",
+        "answers": [
+            "dictionary"
+        ],
+        "other_options": [
+            "list",
+            "set",
+            "tuple"
+        ]
+    },
+    {
+        "q": "Using .get() prevents KeyErrors.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Match key access:",
+        "type": "match",
+        "left": [
+            "tag['x']",
+            "tag.get('x')",
+            "tag.attrs['x']",
+            "'x' in tag.attrs"
+        ],
+        "right": [
+            "Strict",
+            "Safe",
+            "Strict (alt)",
+            "Check"
+        ]
+    },
+    {
+        "q": "Rearrange key error:",
+        "type": "rearrange",
+        "words": [
+            "Try tag['bad']",
+            "Except KeyError",
+            "Handle missing",
+            "Print default"
+        ]
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "from bs4 import BeautifulSoup\nsoup = BeautifulSoup('<a>1</a>', 'html.parser')\nprint(soup.a.get('class', []))",
+        "o": [
+            "[]",
+            "None",
+            "Error",
+            "1"
+        ]
+    },
+    {
+        "q": "You can provide a _____ value to .get().",
+        "type": "mcq",
+        "o": [
+            "default",
+            "key",
+            "attr",
+            "type"
+        ]
+    },
+    {
+        "q": "Common default for list attributes is an empty _____.",
+        "type": "fill_blank",
+        "answers": [
+            "list"
+        ],
+        "other_options": [
+            "dict",
+            "set",
+            "string"
+        ]
+    },
+    {
+        "q": "tag.get('href') returns None if missing.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Match default:",
+        "type": "match",
+        "left": [
+            "get('k')",
+            "get('k', 'd')",
+            "get('k', [])",
+            "['k']"
+        ],
+        "right": [
+            "None",
+            "d",
+            "Empty List",
+            "Error"
+        ]
+    },
+    {
+        "q": "Rearrange default get:",
+        "type": "rearrange",
+        "words": [
+            "classes =",
+            "tag.get",
+            "('class', [])",
+            "Iterate classes"
+        ]
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "from bs4 import BeautifulSoup\nsoup = BeautifulSoup('<a></a>', 'html.parser')\nprint(soup.a.attrs)",
+        "o": [
+            "{}",
+            "None",
+            "[]",
+            "Error"
+        ]
+    },
+    {
+        "q": "Tags with no attributes have an _____ dictionary.",
+        "type": "mcq",
+        "o": [
+            "empty",
+            "full",
+            "null",
+            "none"
+        ]
+    },
+    {
+        "q": "You can clear attributes by clearing the _____.",
+        "type": "fill_blank",
+        "answers": [
+            "dictionary"
+        ],
+        "other_options": [
+            "list",
+            "tag",
+            "soup"
+        ]
+    },
+    {
+        "q": "tag.attrs = {} removes all attributes.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Match dict state:",
+        "type": "match",
+        "left": [
+            "{}",
+            "{'a':1}",
+            "None",
+            "{'a':None}"
+        ],
+        "right": [
+            "Empty",
+            "One attr",
+            "Not a dict",
+            "One attr (null)"
+        ]
+    },
+    {
+        "q": "Rearrange clear attrs:",
+        "type": "rearrange",
+        "words": [
+            "tag.attrs",
+            "=",
+            "{}",
+            "Attributes gone"
+        ]
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "from bs4 import BeautifulSoup\nsoup = BeautifulSoup('<a>1</a>', 'html.parser')\nsoup.a.string.replace_with('<b>2</b>')\nprint(soup)",
+        "o": [
+            "<a>&lt;b&gt;2&lt;/b&gt;</a>",
+            "<a><b>2</b></a>",
+            "<b>2</b>",
+            "Error"
+        ]
+    },
+    {
+        "q": "Replacing a string with a string containing tags _____ it.",
+        "type": "mcq",
+        "o": [
+            "escapes",
+            "parses",
+            "executes",
+            "ignores"
+        ]
+    },
+    {
+        "q": "To insert HTML structure, create a _____ object first.",
+        "type": "fill_blank",
+        "answers": [
+            "tag"
+        ],
+        "other_options": [
+            "string",
+            "soup",
+            "doc"
+        ]
+    },
+    {
+        "q": "BeautifulSoup parses string arguments to replace_with.",
+        "type": "true_false",
+        "correct": "False"
+    },
+    {
+        "q": "Match replacement:",
+        "type": "match",
+        "left": [
+            "replace_with('<s>')",
+            "replace_with(Tag)",
+            "replace_with(soup)",
+            "replace_with('')"
+        ],
+        "right": [
+            "Escaped text",
+            "HTML Structure",
+            "Doc fragment",
+            "Delete"
+        ]
+    },
+    {
+        "q": "Rearrange escaping:",
+        "type": "rearrange",
+        "words": [
+            "String <p>",
+            "Inserted as text",
+            "Becomes &lt;p&gt;",
+            "Not a tag"
+        ]
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "from bs4 import BeautifulSoup\nsoup = BeautifulSoup('<a>1</a>', 'html.parser')\nprint(soup.new_tag('b').parent)",
+        "o": [
+            "None",
+            "soup",
+            "doc",
+            "Error"
+        ]
+    },
+    {
+        "q": "A newly created tag has _____ parent until inserted.",
+        "type": "fill_blank",
+        "answers": [
+            "no"
+        ],
+        "other_options": [
+            "soup",
+            "doc",
+            "root"
+        ]
+    },
+    {
+        "q": "You can use insert_before on a tag with no parent.",
+        "type": "true_false",
+        "correct": "False"
+    },
+    {
+        "q": "Match insertion pos:",
+        "type": "match",
+        "left": [
+            "insert_before",
+            "insert_after",
+            "append",
+            "extend"
+        ],
+        "right": [
+            "Prev sibling",
+            "Next sibling",
+            "Last child",
+            "Last children"
+        ]
+    },
+    {
+        "q": "Rearrange insert list:",
+        "type": "rearrange",
+        "words": [
+            "Create list",
+            "soup.new_tag",
+            "tag.extend(list)",
+            "Children added"
+        ]
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "from bs4 import BeautifulSoup\nsoup = BeautifulSoup('<a href=\"\">1</a>', 'html.parser')\nprint(soup.a['href'])",
+        "o": [
+            "",
+            "None",
+            "Error",
+            "1"
+        ]
+    },
+    {
+        "q": "An empty string attribute value is parsed as _____.",
+        "type": "mcq",
+        "o": [
+            "empty string",
+            "None",
+            "True",
+            "False"
+        ]
+    },
+    {
+        "q": "To remove an attribute, delete it from the _____ dictionary.",
+        "type": "fill_blank",
+        "answers": [
+            "attrs"
+        ],
+        "other_options": [
+            "tag",
+            "soup",
+            "html"
+        ]
+    },
+    {
+        "q": "del tag['attr'] raises KeyError if attr missing.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Match attr removal:",
+        "type": "match",
+        "left": [
+            "del tag['a']",
+            "tag.attrs.pop('a')",
+            "tag['a'] = None",
+            "tag.clear()"
+        ],
+        "right": [
+            "Standard",
+            "Safe return",
+            "Older style",
+            "Remove content"
+        ]
+    },
+    {
+        "q": "Rearrange safe removal:",
+        "type": "rearrange",
+        "words": [
+            "if 'class' in tag.attrs:",
+            "del tag['class']",
+            "else:",
+            "pass"
+        ]
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "from bs4 import BeautifulSoup\nsoup = BeautifulSoup('<a>1</a>', 'html.parser')\nprint(soup.select('a, b'))",
+        "o": [
+            "[<a>1</a>]",
+            "[]",
+            "Error",
+            "None"
+        ]
+    },
+    {
+        "q": "You can combine CSS selectors with _____.",
+        "type": "mcq",
+        "o": [
+            "commas",
+            "spaces",
+            "dots",
+            "colons"
+        ]
+    },
+    {
+        "q": "The comma combinator selects elements matching _____ selector.",
+        "type": "fill_blank",
+        "answers": [
+            "either"
+        ],
+        "other_options": [
+            "both",
+            "all",
+            "none"
+        ]
+    },
+    {
+        "q": "SoupSieve supports :not() pseudo-class.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Match css grouping:",
+        "type": "match",
+        "left": [
+            "a, b",
+            "a b",
+            "a > b",
+            "a + b"
+        ],
+        "right": [
+            "Union",
+            "Descendant",
+            "Child",
+            "Next Sibling"
+        ]
+    }
+]

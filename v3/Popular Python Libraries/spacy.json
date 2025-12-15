@@ -1,0 +1,7053 @@
+[
+    {
+        "q": "What is the primary purpose of spaCy?",
+        "type": "mcq",
+        "o": [
+            "Industrial-strength NLP",
+            "Web Development",
+            "Game Development",
+            "Database Management"
+        ]
+    },
+    {
+        "q": "Which command is used to install spaCy?",
+        "type": "mcq",
+        "o": [
+            "pip install spacy",
+            "npm install spacy",
+            "gem install spacy",
+            "brew install spacy"
+        ]
+    },
+    {
+        "q": "spaCy requires a separate _____ to be downloaded for language support.",
+        "type": "fill_blank",
+        "answers": [
+            "model"
+        ],
+        "other_options": [
+            "driver",
+            "plugin",
+            "server"
+        ]
+    },
+    {
+        "q": "spaCy models can be downloaded using `python -m spacy download <model_name>`.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Match the spaCy model size suffix:",
+        "type": "match",
+        "left": [
+            "sm",
+            "md",
+            "lg",
+            "trf"
+        ],
+        "right": [
+            "Small",
+            "Medium",
+            "Large",
+            "Transformer"
+        ]
+    },
+    {
+        "q": "Rearrange the basic spaCy pipeline:",
+        "type": "rearrange",
+        "words": [
+            "Import spacy",
+            "Load model",
+            "Process text",
+            "Get Doc object"
+        ]
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "import spacy\nnlp = spacy.blank('en')\ndoc = nlp('Hello world')\nprint(len(doc))",
+        "o": [
+            "2",
+            "1",
+            "11",
+            "Error"
+        ]
+    },
+    {
+        "q": "The main data structure in spaCy that holds a processed text is the _____.",
+        "type": "mcq",
+        "o": [
+            "Doc",
+            "Vocab",
+            "Text",
+            "String"
+        ]
+    },
+    {
+        "q": "A `Doc` object is a sequence of _____ objects.",
+        "type": "fill_blank",
+        "answers": [
+            "Token"
+        ],
+        "other_options": [
+            "String",
+            "Word",
+            "Char"
+        ]
+    },
+    {
+        "q": "Tokens in a `Doc` usually correspond to words and punctuation.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Match spaCy Container:",
+        "type": "match",
+        "left": [
+            "Doc",
+            "Token",
+            "Span",
+            "Lexeme"
+        ],
+        "right": [
+            "Container for text",
+            "Single word",
+            "Slice of Doc",
+            "Word type"
+        ]
+    },
+    {
+        "q": "Rearrange to access the first token:",
+        "type": "rearrange",
+        "words": [
+            "nlp = spacy.load()",
+            "doc = nlp(text)",
+            "token = doc[0]",
+            "print(token.text)"
+        ]
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "import spacy\nnlp = spacy.blank('en')\ndoc = nlp('I like cats.')\nprint(doc[2].text)",
+        "o": [
+            "cats",
+            "like",
+            ".",
+            "I"
+        ]
+    },
+    {
+        "q": "Which attribute gives the text content of a token?",
+        "type": "mcq",
+        "o": [
+            ".text",
+            ".content",
+            ".string",
+            ".val"
+        ]
+    },
+    {
+        "q": "The `.i` attribute of a Token returns its _____ index.",
+        "type": "fill_blank",
+        "answers": [
+            "index"
+        ],
+        "other_options": [
+            "char",
+            "byte",
+            "vocab"
+        ]
+    },
+    {
+        "q": "Slicing a `Doc` object returns a `Span` object.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Match token attribute:",
+        "type": "match",
+        "left": [
+            ".is_alpha",
+            ".is_punct",
+            ".is_digit",
+            ".is_space"
+        ],
+        "right": [
+            "Alphabetic?",
+            "Punctuation?",
+            "Number?",
+            "Whitespace?"
+        ]
+    },
+    {
+        "q": "Rearrange creating a Span:",
+        "type": "rearrange",
+        "words": [
+            "Process text",
+            "Get Doc",
+            "span = doc[start:end]",
+            "Use Span"
+        ]
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "import spacy\nnlp = spacy.blank('en')\ndoc = nlp('Apple Pie')\nprint(doc[0:2].text)",
+        "o": [
+            "Apple Pie",
+            "Apple",
+            "Pie",
+            "Error"
+        ]
+    },
+    {
+        "q": "Which pipeline component is responsible for assigning Part-of-Speech tags?",
+        "type": "mcq",
+        "o": [
+            "tagger",
+            "parser",
+            "ner",
+            "lemmatizer"
+        ]
+    },
+    {
+        "q": "The attribute for the coarse-grained POS tag is _____.",
+        "type": "fill_blank",
+        "answers": [
+            ".pos_"
+        ],
+        "other_options": [
+            ".tag_",
+            ".dep_",
+            ".morph"
+        ]
+    },
+    {
+        "q": "Attributes ending with an underscore (like `.pos_`) return the string representation.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Match POS tag:",
+        "type": "match",
+        "left": [
+            "NOUN",
+            "VERB",
+            "ADJ",
+            "ADV"
+        ],
+        "right": [
+            "Noun",
+            "Verb",
+            "Adjective",
+            "Adverb"
+        ]
+    },
+    {
+        "q": "Rearrange POS tagging steps:",
+        "type": "rearrange",
+        "words": [
+            "Load pipeline",
+            "Process text",
+            "Iterate tokens",
+            "Print token.pos_"
+        ]
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "import spacy\n# Assuming small English model\n# nlp = spacy.load('en_core_web_sm')\n# doc = nlp('She runs.')\n# print(doc[1].pos_)",
+        "o": [
+            "VERB",
+            "NOUN",
+            "ADJ",
+            "ADV"
+        ]
+    },
+    {
+        "q": "Which component handles dependency parsing?",
+        "type": "mcq",
+        "o": [
+            "parser",
+            "tagger",
+            "ner",
+            "tokenizer"
+        ]
+    },
+    {
+        "q": "The syntactic dependency label is stored in the _____ attribute.",
+        "type": "fill_blank",
+        "answers": [
+            ".dep_"
+        ],
+        "other_options": [
+            ".pos_",
+            ".tag_",
+            ".head"
+        ]
+    },
+    {
+        "q": "The token.head attribute points to the syntactic parent/governor.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Match dependency:",
+        "type": "match",
+        "left": [
+            "nsubj",
+            "dobj",
+            "ROOT",
+            "prep"
+        ],
+        "right": [
+            "Nominal Subject",
+            "Direct Object",
+            "Root Verb",
+            "Preposition"
+        ]
+    },
+    {
+        "q": "Rearrange finding root:",
+        "type": "rearrange",
+        "words": [
+            "Iterate tokens",
+            "Check dep_",
+            "If ROOT",
+            "Found main verb"
+        ]
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "# Text: 'Dogs bark.'\n# token 1 is 'bark' (VERB)\n# token 0 is 'Dogs'\n# print(token[0].head.text)",
+        "o": [
+            "bark",
+            "Dogs",
+            ".",
+            "None"
+        ]
+    },
+    {
+        "q": "Which component identifies Named Entities?",
+        "type": "mcq",
+        "o": [
+            "ner",
+            "parser",
+            "tagger",
+            "matcher"
+        ]
+    },
+    {
+        "q": "Named entities are available via the `doc._____` property.",
+        "type": "fill_blank",
+        "answers": [
+            "ents"
+        ],
+        "other_options": [
+            "entities",
+            "ner",
+            "spans"
+        ]
+    },
+    {
+        "q": "`doc.ents` returns a tuple of Span objects representing entities.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Match entity type:",
+        "type": "match",
+        "left": [
+            "PERSON",
+            "ORG",
+            "GPE",
+            "DATE"
+        ],
+        "right": [
+            "People",
+            "Organizations",
+            "Countries/Cities",
+            "Dates/Times"
+        ]
+    },
+    {
+        "q": "Rearrange printing entities:",
+        "type": "rearrange",
+        "words": [
+            "Process Doc",
+            "For ent in doc.ents",
+            "Print ent.text",
+            "Print ent.label_"
+        ]
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "# Text: 'Apple builds iPhone'\n# print(doc.ents[0].label_)",
+        "o": [
+            "ORG",
+            "PERSON",
+            "GPE",
+            "PRODUCT"
+        ]
+    },
+    {
+        "q": "How do you check for stop words in spaCy?",
+        "type": "mcq",
+        "o": [
+            ".is_stop",
+            ".stop",
+            ".is_ignored",
+            ".common"
+        ]
+    },
+    {
+        "q": "Lemmatization converts a word to its _____ form.",
+        "type": "fill_blank",
+        "answers": [
+            "base"
+        ],
+        "other_options": [
+            "root",
+            "stem",
+            "original"
+        ]
+    },
+    {
+        "q": "The attribute `.lemma_` stores the lemma string.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Match word form:",
+        "type": "match",
+        "left": [
+            "running",
+            "ran",
+            "runs",
+            "am"
+        ],
+        "right": [
+            "lemma: run",
+            "lemma: run",
+            "lemma: run",
+            "lemma: be"
+        ]
+    },
+    {
+        "q": "Rearrange fetching lemma:",
+        "type": "rearrange",
+        "words": [
+            "Process token",
+            "Access .lemma_",
+            "Get base form",
+            "Use it"
+        ]
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "# token = 'better'\n# print(token.lemma_)",
+        "o": [
+            "good",
+            "better",
+            "bet",
+            "best"
+        ]
+    },
+    {
+        "q": "How do you detect sentence boundaries in spaCy?",
+        "type": "mcq",
+        "o": [
+            "doc.sents",
+            "doc.sentences",
+            "doc.lines",
+            "doc.split('.')"
+        ]
+    },
+    {
+        "q": "`doc.sents` is a _____ that yields Span objects.",
+        "type": "fill_blank",
+        "answers": [
+            "generator"
+        ],
+        "other_options": [
+            "list",
+            "tuple",
+            "set"
+        ]
+    },
+    {
+        "q": "Sentence segmentation requires a parser or sentencizer component.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Match boundary:",
+        "type": "match",
+        "left": [
+            "doc.sents",
+            "sent.text",
+            "sent.start",
+            "sent.end"
+        ],
+        "right": [
+            "Iterator",
+            "String content",
+            "Start index",
+            "End index"
+        ]
+    },
+    {
+        "q": "Rearrange sentence split:",
+        "type": "rearrange",
+        "words": [
+            "Process doc",
+            "For sent in doc.sents",
+            "Print sent",
+            "Iterate sentences"
+        ]
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "doc = nlp('One. Two.')\nprint(len(list(doc.sents)))",
+        "o": [
+            "2",
+            "1",
+            "3",
+            "Error"
+        ]
+    },
+    {
+        "q": "The `spacy.explain()` function provides descriptions for _____.",
+        "type": "mcq",
+        "o": [
+            "Tags/Labels",
+            "Functions",
+            "Errors",
+            "Modules"
+        ]
+    },
+    {
+        "q": "spaCy's default Tokenizer splits text on _____.",
+        "type": "fill_blank",
+        "answers": [
+            "whitespace"
+        ],
+        "other_options": [
+            "commas",
+            "periods",
+            "newlines"
+        ]
+    },
+    {
+        "q": "spaCy stores all shared vocabulary strings in a `StringStore`.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Match vocab storage:",
+        "type": "match",
+        "left": [
+            "nlp.vocab.strings",
+            "doc.vocab",
+            "token.orth",
+            "token.orth_"
+        ],
+        "right": [
+            "Lookup table",
+            "Shared vocab",
+            "Hash ID",
+            "String value"
+        ]
+    },
+    {
+        "q": "Rearrange hash lookup:",
+        "type": "rearrange",
+        "words": [
+            "Get hash ID",
+            "vocab.strings[hash]",
+            "Returns String",
+            "Get string"
+        ]
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "# hash = nlp.vocab.strings['apple']\n# print(type(hash))",
+        "o": [
+            "int",
+            "str",
+            "float",
+            "token"
+        ]
+    },
+    {
+        "q": "Which tool is used for rule-based matching in spaCy?",
+        "type": "mcq",
+        "o": [
+            "Matcher",
+            "Finder",
+            "Searcher",
+            "Regex"
+        ]
+    },
+    {
+        "q": "Matcher patterns are lists of _____ describing tokens.",
+        "type": "fill_blank",
+        "answers": [
+            "dictionaries"
+        ],
+        "other_options": [
+            "strings",
+            "tuples",
+            "integers"
+        ]
+    },
+    {
+        "q": "The Matcher returns a list of (match_id, start, end) tuples.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Match pattern key:",
+        "type": "match",
+        "left": [
+            "LOWER",
+            "TEXT",
+            "IS_PUNCT",
+            "LIKE_NUM"
+        ],
+        "right": [
+            "Lowercase form",
+            "Exact text",
+            "Punctuation?",
+            "Looks like number?"
+        ]
+    },
+    {
+        "q": "Rearrange Matcher usage:",
+        "type": "rearrange",
+        "words": [
+            "Init Matcher",
+            "Add pattern",
+            "Call matcher(doc)",
+            "Get matches"
+        ]
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "# pattern = [{'LOWER': 'hello'}, {'IS_PUNCT': True}]\n# Matches 'Hello!'?",
+        "o": [
+            "Yes",
+            "No",
+            "Error",
+            "Depends"
+        ]
+    },
+    {
+        "q": "To enable valid vector calculations, you need a model ending in _____ or lg.",
+        "type": "mcq",
+        "o": [
+            "md",
+            "sm",
+            "xs",
+            "xxs"
+        ]
+    },
+    {
+        "q": "The `.vector` attribute returns a dense _____ array.",
+        "type": "fill_blank",
+        "answers": [
+            "numpy"
+        ],
+        "other_options": [
+            "list",
+            "pandas",
+            "tensor"
+        ]
+    },
+    {
+        "q": "Small models (sm) usually contain context vectors, not true word vectors.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Match vector similarity:",
+        "type": "match",
+        "left": [
+            "doc1.similarity(doc2)",
+            "token1.similarity(token2)",
+            "span.vector",
+            "Similarity range"
+        ],
+        "right": [
+            "Compare Docs",
+            "Compare Tokens",
+            "Average vector",
+            "0.0 to 1.0"
+        ]
+    },
+    {
+        "q": "Rearrange similarity check:",
+        "type": "rearrange",
+        "words": [
+            "Load md model",
+            "Process two texts",
+            "doc1.similarity(doc2)",
+            "Print score"
+        ]
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "nlp = spacy.blank('en') # No vectors\nprint(nlp('cat').vector.size)",
+        "o": [
+            "0",
+            "300",
+            "96",
+            "Error"
+        ]
+    },
+    {
+        "q": "Which data structure handles efficient string-to-hash mapping?",
+        "type": "mcq",
+        "o": [
+            "StringStore",
+            "HashMap",
+            "Dict",
+            "VocabList"
+        ]
+    },
+    {
+        "q": "A `Lexeme` is an entry in the vocabulary, context-_____.",
+        "type": "fill_blank",
+        "answers": [
+            "independent"
+        ],
+        "other_options": [
+            "dependent",
+            "sensitive",
+            "aware"
+        ]
+    },
+    {
+        "q": "Lexemes do not have POS tags because tags depend on context.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Match object relationship:",
+        "type": "match",
+        "left": [
+            "Doc",
+            "Span",
+            "Token",
+            "Lexeme"
+        ],
+        "right": [
+            "Processed text",
+            "Slice of Doc",
+            "Word in context",
+            "Word type (vocab)"
+        ]
+    },
+    {
+        "q": "Rearrange retrieving lexem:",
+        "type": "rearrange",
+        "words": [
+            "nlp.vocab",
+            "['word']",
+            "Get Lexeme",
+            "Check attributes"
+        ]
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "# nlp.vocab['the'].is_stop",
+        "o": [
+            "True",
+            "False",
+            "None",
+            "Error"
+        ]
+    },
+    {
+        "q": "How do you disable pipeline components when loading a model?",
+        "type": "mcq",
+        "o": [
+            "disable=['tagger']",
+            "remove=['tagger']",
+            "skip=['tagger']",
+            "exclude=['tagger']"
+        ]
+    },
+    {
+        "q": "Use `nlp.pipe()` to process texts as a _____ for efficiency.",
+        "type": "fill_blank",
+        "answers": [
+            "stream"
+        ],
+        "other_options": [
+            "list",
+            "batch",
+            "loop"
+        ]
+    },
+    {
+        "q": "Processing texts one by one in a loop is faster than nlp.pipe().",
+        "type": "true_false",
+        "correct": "False"
+    },
+    {
+        "q": "Match optimization:",
+        "type": "match",
+        "left": [
+            "nlp.pipe()",
+            "disable=[]",
+            "n_process",
+            "batch_size"
+        ],
+        "right": [
+            "Batch processing",
+            "Turn off comps",
+            "Parallelism",
+            "Buffer size"
+        ]
+    },
+    {
+        "q": "Rearrange batch processing:",
+        "type": "rearrange",
+        "words": [
+            "List of texts",
+            "nlp.pipe(texts)",
+            "Iterate docs",
+            "Process results"
+        ]
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "texts = ['Hello', 'Hi']\nprint(type(nlp.pipe(texts)))",
+        "o": [
+            "generator",
+            "list",
+            "tuple",
+            "doc"
+        ]
+    },
+    {
+        "q": "Custom pipeline components are Python _____.",
+        "type": "mcq",
+        "o": [
+            "functions",
+            "strings",
+            "files",
+            "lists"
+        ]
+    },
+    {
+        "q": "Use `nlp.add_pipe` to add a component to the _____.",
+        "type": "fill_blank",
+        "answers": [
+            "pipeline"
+        ],
+        "other_options": [
+            "vocab",
+            "model",
+            "tokenizer"
+        ]
+    },
+    {
+        "q": "A pipeline component function must accept a Doc and return a Doc.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Match pipe args:",
+        "type": "match",
+        "left": [
+            "first=True",
+            "last=True",
+            "before='ner'",
+            "after='tagger'"
+        ],
+        "right": [
+            "Start of pipe",
+            "End of pipe",
+            "Precede NER",
+            "Follow Tagger"
+        ]
+    },
+    {
+        "q": "Rearrange adding component:",
+        "type": "rearrange",
+        "words": [
+            "Define function",
+            "Takes/Returns doc",
+            "nlp.add_pipe",
+            "Component active"
+        ]
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "print(nlp.pipe_names)",
+        "o": [
+            "List of component names",
+            "List of Objects",
+            "None",
+            "Error"
+        ]
+    },
+    {
+        "q": "Which method is used to save a trained/modified pipeline?",
+        "type": "mcq",
+        "o": [
+            "nlp.to_disk()",
+            "nlp.save()",
+            "nlp.export()",
+            "nlp.write()"
+        ]
+    },
+    {
+        "q": "You can visualize dependency trees using `spacy._____`.",
+        "type": "fill_blank",
+        "answers": [
+            "displacy"
+        ],
+        "other_options": [
+            "viz",
+            "graph",
+            "plot"
+        ]
+    },
+    {
+        "q": "displaCy can serve visualizations in a browser or return SVG markup.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Match displacy styles:",
+        "type": "match",
+        "left": [
+            "style='dep'",
+            "style='ent'",
+            "serve()",
+            "render()"
+        ],
+        "right": [
+            "Dependency tree",
+            "Entity highlighter",
+            "Run server",
+            "Generate markup"
+        ]
+    },
+    {
+        "q": "Rearrange visualization:",
+        "type": "rearrange",
+        "words": [
+            "Process text",
+            "Import displacy",
+            "displacy.serve",
+            "View in browser"
+        ]
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "from spacy import displacy\n# displacy.render(doc, style='dep') returns:",
+        "o": [
+            "SVG/HTML string",
+            "Image file",
+            "None",
+            "Graph object"
+        ]
+    },
+    {
+        "q": "What is the primary function of `nlp.make_doc()`?",
+        "type": "mcq",
+        "c": "doc = nlp.make_doc('Hello world')",
+        "o": [
+            "Create Doc from text (only tokenization)",
+            "Run entire pipeline",
+            "Create empty Doc",
+            "Raise Error"
+        ]
+    },
+    {
+        "q": "A `Doc` object tracks the original text content.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Match attributes:",
+        "type": "match",
+        "left": [
+            "doc.text",
+            "token.idx",
+            "token.lemma_",
+            "span.label_"
+        ],
+        "right": [
+            "Original text",
+            "Char offset",
+            "Root form",
+            "Entity/Span label"
+        ]
+    },
+    {
+        "q": "Rearrange custom tokenizer:",
+        "type": "rearrange",
+        "words": [
+            "Define tokenizer",
+            "nlp.tokenizer =",
+            "my_tokenizer",
+            "Process text"
+        ]
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "import spacy\nfrom spacy.tokens import Doc\n# vocab = nlp.vocab\n# doc = Doc(vocab, words=['Hi', '!'], spaces=[False, False])\nprint(doc.text)",
+        "o": [
+            "Hi!",
+            "Hi !",
+            "Hi! ",
+            "Error"
+        ]
+    },
+    {
+        "q": "You can manually construct a Doc by providing _____ and spaces lists.",
+        "type": "fill_blank",
+        "answers": [
+            "words"
+        ],
+        "other_options": [
+            "tokens",
+            "chars",
+            "strings"
+        ]
+    },
+    {
+        "q": "Manually created Docs automatically run the tagger and parser.",
+        "type": "true_false",
+        "correct": "False"
+    },
+    {
+        "q": "Match extension types:",
+        "type": "match",
+        "left": [
+            "Doc extension",
+            "Token extension",
+            "Span extension",
+            "Getter"
+        ],
+        "right": [
+            "Doc property",
+            "Token property",
+            "Span property",
+            "Computed value"
+        ]
+    },
+    {
+        "q": "Rearrange set extension:",
+        "type": "rearrange",
+        "words": [
+            "Doc.set_extension",
+            "('my_prop',",
+            "default=None)",
+            "doc._.my_prop = 1"
+        ]
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "from spacy.tokens import Token\nToken.set_extension('is_cool', default=False)\ntoken = nlp('wow')[0]\ntoken._.is_cool = True\nprint(token._.is_cool)",
+        "o": [
+            "True",
+            "False",
+            "None",
+            "Error"
+        ]
+    },
+    {
+        "q": "Custom extensions are accessed via the _____ attribute.",
+        "type": "mcq",
+        "o": [
+            "._",
+            ".ext",
+            ".custom",
+            ".user"
+        ]
+    },
+    {
+        "q": "To make an extension read-only, only provide a _____ function.",
+        "type": "fill_blank",
+        "answers": [
+            "getter"
+        ],
+        "other_options": [
+            "setter",
+            "method",
+            "class"
+        ]
+    },
+    {
+        "q": "Extensions can be registered with `force=True` to overwrite existing ones.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Match extension methods:",
+        "type": "match",
+        "left": [
+            "getter",
+            "setter",
+            "method",
+            "default"
+        ],
+        "right": [
+            "Read value",
+            "Write value",
+            "Callable",
+            "Static value"
+        ]
+    },
+    {
+        "q": "Rearrange extension method:",
+        "type": "rearrange",
+        "words": [
+            "Define func(doc)",
+            "Doc.set_extension",
+            "('method_name',",
+            "method=func)"
+        ]
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "doc1 = nlp('Apple')\ndoc2 = nlp('Apple')\nprint(doc1.vocab == doc2.vocab)",
+        "o": [
+            "True",
+            "False",
+            "None",
+            "Error"
+        ]
+    },
+    {
+        "q": "spaCy ensures efficient memory use by sharing the _____ object.",
+        "type": "mcq",
+        "o": [
+            "Vocab",
+            "Doc",
+            "Token",
+            "Span"
+        ]
+    },
+    {
+        "q": "Vocab stores strings and _____ tables.",
+        "type": "fill_blank",
+        "answers": [
+            "lexical"
+        ],
+        "other_options": [
+            "parse",
+            "tag",
+            "dep"
+        ]
+    },
+    {
+        "q": "Strings created in one nlp object are available in another if they share the same Vocab.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Match vocab components:",
+        "type": "match",
+        "left": [
+            "vocab.strings",
+            "vocab.vectors",
+            "vocab.morphology",
+            "vocab['word']"
+        ],
+        "right": [
+            "StringStore",
+            "Vectors table",
+            "Morph rules",
+            "Lexeme"
+        ]
+    },
+    {
+        "q": "Rearrange vocab sharing:",
+        "type": "rearrange",
+        "words": [
+            "nlp1 = spacy.load()",
+            "nlp2 = spacy.load()",
+            "# Distinct vocabs",
+            "# Unless shared explicitly"
+        ]
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "import spacy\nfrom spacy.matcher import Matcher\nnlp = spacy.blank('en')\nmatcher = Matcher(nlp.vocab)\nprint(len(matcher))",
+        "o": [
+            "0",
+            "1",
+            "None",
+            "Error"
+        ]
+    },
+    {
+        "q": "The Matcher requires the shared _____ to initialize.",
+        "type": "mcq",
+        "o": [
+            "vocab",
+            "doc",
+            "nlp",
+            "pipeline"
+        ]
+    },
+    {
+        "q": "Matcher callbacks allow you to execute a _____ when a pattern is found.",
+        "type": "fill_blank",
+        "answers": [
+            "function"
+        ],
+        "other_options": [
+            "string",
+            "list",
+            "loop"
+        ]
+    },
+    {
+        "q": "Matcher patterns can include Regex for token text.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Match pattern operators:",
+        "type": "match",
+        "left": [
+            "'OP': '?'",
+            "'OP': '*'",
+            "'OP': '+'",
+            "'OP': '!'"
+        ],
+        "right": [
+            "0 or 1",
+            "0 or more",
+            "1 or more",
+            "Negation"
+        ]
+    },
+    {
+        "q": "Rearrange pattern op:",
+        "type": "rearrange",
+        "words": [
+            "{'TEXT': 'Go',",
+            "'OP': '+'}",
+            "Matches 'Go'",
+            "Matches 'Go Go'"
+        ]
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "# Pattern: [{'LOWER': 'a'}, {'LOWER': 'b', 'OP': '?'}]\n# Text: 'a c'\n# Matches 'a'?",
+        "o": [
+            "True",
+            "False",
+            "Error",
+            "None"
+        ]
+    },
+    {
+        "q": "To remove stop words during processing, you can use `token._____`.",
+        "type": "mcq",
+        "o": [
+            "is_stop",
+            "remove_stop",
+            "stop()",
+            "filter()"
+        ]
+    },
+    {
+        "q": "You can customize the stop word list by modifying `nlp.Defaults._____`.",
+        "type": "fill_blank",
+        "answers": [
+            "stop_words"
+        ],
+        "other_options": [
+            "words",
+            "vocab",
+            "list"
+        ]
+    },
+    {
+        "q": "Adding a word to `stop_words` set automatically updates `is_stop` for existing lexemes.",
+        "type": "true_false",
+        "correct": "False"
+    },
+    {
+        "q": "Match preprocessing:",
+        "type": "match",
+        "left": [
+            "Lowercasing",
+            "Stop word removal",
+            "Lemmatization",
+            "Tokenization"
+        ],
+        "right": [
+            "Standardize case",
+            "Remove noise",
+            "Base form",
+            "Split text"
+        ]
+    },
+    {
+        "q": "Rearrange stop word add:",
+        "type": "rearrange",
+        "words": [
+            "nlp.Defaults",
+            ".stop_words",
+            ".add('newword')",
+            "nlp.vocab['newword'].is_stop = True"
+        ]
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "# nlp.vocab['the'].is_stop = False\n# print(nlp('the')[0].is_stop)",
+        "o": [
+            "False",
+            "True",
+            "None",
+            "Error"
+        ]
+    },
+    {
+        "q": "PhraseMatcher is more efficient for matching large lists of _____.",
+        "type": "mcq",
+        "o": [
+            "phrases",
+            "patterns",
+            "dicts",
+            "regex"
+        ]
+    },
+    {
+        "q": "PhraseMatcher accepts _____ objects as patterns.",
+        "type": "fill_blank",
+        "answers": [
+            "Doc"
+        ],
+        "other_options": [
+            "String",
+            "List",
+            "Dict"
+        ]
+    },
+    {
+        "q": "PhraseMatcher supports all the complex token attributes like POS tags.",
+        "type": "true_false",
+        "correct": "False"
+    },
+    {
+        "q": "Match matcher type:",
+        "type": "match",
+        "left": [
+            "Matcher",
+            "PhraseMatcher",
+            "DependencyMatcher",
+            "EntityRuler"
+        ],
+        "right": [
+            "Token patterns",
+            "Exact phrases",
+            "Dep tree patterns",
+            "Named entities"
+        ]
+    },
+    {
+        "q": "Rearrange PhraseMatcher:",
+        "type": "rearrange",
+        "words": [
+            "Init PhraseMatcher",
+            "Make Docs patterns",
+            "matcher.add",
+            "Find matches"
+        ]
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "doc = nlp('Apple fan')\n# span = doc[0:1] (Apple)\nprint(span.label_)",
+        "o": [
+            "",
+            "ORG",
+            "None",
+            "Error"
+        ]
+    },
+    {
+        "q": "Spans create views of the Doc and do not _____ data.",
+        "type": "mcq",
+        "o": [
+            "copy",
+            "reference",
+            "own",
+            "read"
+        ]
+    },
+    {
+        "q": "To get a span with a label, usually from NER, access `doc._____`.",
+        "type": "fill_blank",
+        "answers": [
+            "ents"
+        ],
+        "other_options": [
+            "spans",
+            "tokens",
+            "labels"
+        ]
+    },
+    {
+        "q": "You can manually set `doc.ents` with a list of Span objects.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Match span attr:",
+        "type": "match",
+        "left": [
+            "span.start",
+            "span.end",
+            "span.text",
+            "span.root"
+        ],
+        "right": [
+            "Start token idx",
+            "End token idx",
+            "Content string",
+            "Root token"
+        ]
+    },
+    {
+        "q": "Rearrange named entity set:",
+        "type": "rearrange",
+        "words": [
+            "span = Span(doc, 0, 1, 'ORG')",
+            "doc.ents",
+            "=",
+            "[span]"
+        ]
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "import spacy\nnlp = spacy.blank('en')\nwith nlp.select_pipes(enable='tokenizer'): pass\nprint('Done')",
+        "o": [
+            "Done",
+            "Error",
+            "None",
+            "False"
+        ]
+    },
+    {
+        "q": "`nlp.select_pipes` is a context manager to temporarily _____ components.",
+        "type": "mcq",
+        "o": [
+            "enable/disable",
+            "add/remove",
+            "train",
+            "save"
+        ]
+    },
+    {
+        "q": "Parsing only dependencies without NER makes the pipeline _____.",
+        "type": "fill_blank",
+        "answers": [
+            "faster"
+        ],
+        "other_options": [
+            "slower",
+            "better",
+            "accurate"
+        ]
+    },
+    {
+        "q": "You can use `disable` in `nlp()` call as well.",
+        "type": "true_false",
+        "correct": "False"
+    },
+    {
+        "q": "Match context manager:",
+        "type": "match",
+        "left": [
+            "select_pipes",
+            "use_params",
+            "rehearse",
+            "evaluate"
+        ],
+        "right": [
+            "Filter pipeline",
+            "Temp params",
+            "Training loop",
+            "Scoring"
+        ]
+    },
+    {
+        "q": "Rearrange selective processing:",
+        "type": "rearrange",
+        "words": [
+            "with nlp.select_pipes",
+            "(disable=['ner']):",
+            "doc = nlp(text)",
+            "Only tag/parse run"
+        ]
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "print(spacy.attrs.ORTH)",
+        "o": [
+            "Int ID",
+            "String",
+            "None",
+            "Error"
+        ]
+    },
+    {
+        "q": "spaCy encodes annotation types like ORTH, POS, ENT_TYPE as _____.",
+        "type": "mcq",
+        "o": [
+            "integers",
+            "strings",
+            "floats",
+            "objects"
+        ]
+    },
+    {
+        "q": "Refactoring data to numpy arrays using `.to_array` requires a list of _____ IDs.",
+        "type": "fill_blank",
+        "answers": [
+            "attribute"
+        ],
+        "other_options": [
+            "token",
+            "doc",
+            "word"
+        ]
+    },
+    {
+        "q": "doc.to_array() is faster than iterating python objects.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Match array attrs:",
+        "type": "match",
+        "left": [
+            "ORTH",
+            "LEMMA",
+            "POS",
+            "TAG"
+        ],
+        "right": [
+            "Verbatim text",
+            "Base form",
+            "UD POS",
+            "Fine-grained POS"
+        ]
+    },
+    {
+        "q": "Rearrange numpy export:",
+        "type": "rearrange",
+        "words": [
+            "Import attrs",
+            "ids = [attrs.LOWER]",
+            "doc.to_array(ids)",
+            "Get 2D array"
+        ]
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "from spacy.language import Language\n@Language.component('my_comp')\ndef my_comp(doc): return doc\nnlp.add_pipe('my_comp')",
+        "o": [
+            "Component added",
+            "Error",
+            "None",
+            "False"
+        ]
+    },
+    {
+        "q": "Constructors and factories for components are registered using the _____ decorator.",
+        "type": "mcq",
+        "o": [
+            "@Language.component",
+            "@spacy.component",
+            "@Component",
+            "@Registry"
+        ]
+    },
+    {
+        "q": "For class-based components, use the _____ decorator.",
+        "type": "fill_blank",
+        "answers": [
+            "@Language.factory"
+        ],
+        "other_options": [
+            "@Language.class",
+            "@Language.obj",
+            "@Factory"
+        ]
+    },
+    {
+        "q": "Registered components can be referred to by string name.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Match registry:",
+        "type": "match",
+        "left": [
+            "@Language.component",
+            "@Language.factory",
+            "nlp.add_pipe('name')",
+            "name in nlp.pipe_names"
+        ],
+        "right": [
+            "Stateless func",
+            "Stateful class",
+            "Instantiate",
+            "Check existence"
+        ]
+    },
+    {
+        "q": "Rearrange component registry:",
+        "type": "rearrange",
+        "words": [
+            "@Language.component('name')",
+            "def func(doc):",
+            "return doc",
+            "nlp.add_pipe('name')"
+        ]
+    },
+    {
+        "q": "Which data directory does spaCy use for models by default?",
+        "type": "mcq",
+        "o": [
+            "spacy/data",
+            "site-packages",
+            "user/models",
+            "tmp"
+        ]
+    },
+    {
+        "q": "Models are Python _____ that can be installed via pip.",
+        "type": "fill_blank",
+        "answers": [
+            "packages"
+        ],
+        "other_options": [
+            "scripts",
+            "files",
+            "lists"
+        ]
+    },
+    {
+        "q": "You can load a model by providing the absolute path string.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Match loading:",
+        "type": "match",
+        "left": [
+            "load('en_core_web_sm')",
+            "load('/path/to/model')",
+            "blank('en')",
+            "import en_core_web_sm"
+        ],
+        "right": [
+            "Package name",
+            "Path",
+            "Empty lang",
+            "Module import"
+        ]
+    },
+    {
+        "q": "Rearrange model load:",
+        "type": "rearrange",
+        "words": [
+            "import spacy",
+            "nlp = spacy.load",
+            "('en_core_web_sm')",
+            "Model ready"
+        ]
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "doc = nlp('I like it.')\nprint(doc[1].is_ancestor(doc[2]))",
+        "o": [
+            "False",
+            "True",
+            "Error",
+            "None"
+        ]
+    },
+    {
+        "q": "The syntactic parent of a token is called its _____.",
+        "type": "mcq",
+        "o": [
+            "head",
+            "root",
+            "parent",
+            "leader"
+        ]
+    },
+    {
+        "q": "The `.children` attribute yields immediate syntactic _____.",
+        "type": "fill_blank",
+        "answers": [
+            "dependents"
+        ],
+        "other_options": [
+            "parents",
+            "ancestors",
+            "roots"
+        ]
+    },
+    {
+        "q": "Ancestors include the head, the head's head, and so on.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Match syntactic relatives:",
+        "type": "match",
+        "left": [
+            "children",
+            "ancestors",
+            "subtree",
+            "head"
+        ],
+        "right": [
+            "Direct dependents",
+            "Heads chain",
+            "Full phrase",
+            "Direct parent"
+        ]
+    },
+    {
+        "q": "Rearrange tree traversal:",
+        "type": "rearrange",
+        "words": [
+            "token.head",
+            "token.children",
+            "token.subtree",
+            "Navigate tree"
+        ]
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "doc = nlp('Apple is red')\nprint(doc[0].has_vector)",
+        "o": [
+            "Depends on model",
+            "True",
+            "False",
+            "Error"
+        ]
+    },
+    {
+        "q": "Vectors capture semantic _____ between words.",
+        "type": "mcq",
+        "o": [
+            "similarity",
+            "grammar",
+            "spelling",
+            "order"
+        ]
+    },
+    {
+        "q": "OOV (Out of Vocabulary) words typically have a _____ vector.",
+        "type": "fill_blank",
+        "answers": [
+            "zero"
+        ],
+        "other_options": [
+            "random",
+            "one",
+            "nan"
+        ]
+    },
+    {
+        "q": "Word vectors are often trained using algorithms like GloVe or Word2Vec.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Match embedding:",
+        "type": "match",
+        "left": [
+            "Vector size",
+            "Similarity",
+            "Has Vector",
+            "Norm"
+        ],
+        "right": [
+            "Dimensions",
+            "Distance metric",
+            "Boolean",
+            "Magnitude"
+        ]
+    },
+    {
+        "q": "Rearrange OOV check:",
+        "type": "rearrange",
+        "words": [
+            "token = doc[0]",
+            "if not token.has_vector:",
+            "print('OOV')",
+            "else: use vector"
+        ]
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "doc = nlp('This is a sentence.')\nprint(doc.has_annotation('DEP'))",
+        "o": [
+            "True/False",
+            "None",
+            "Error",
+            "DEP"
+        ]
+    },
+    {
+        "q": "Method `doc.has_annotation` checks if the doc has been processed by _____.",
+        "type": "mcq",
+        "o": [
+            "pipeline components",
+            "tokenizer",
+            "user",
+            "file"
+        ]
+    },
+    {
+        "q": "If Parser has not run, `doc.has_annotation('DEP')` returns _____.",
+        "type": "fill_blank",
+        "answers": [
+            "False"
+        ],
+        "other_options": [
+            "True",
+            "None",
+            "Error"
+        ]
+    },
+    {
+        "q": "Dependencies (DEP) require the Parser.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Match annotations:",
+        "type": "match",
+        "left": [
+            "TAG",
+            "DEP",
+            "ENT_IOB",
+            "SENT_START"
+        ],
+        "right": [
+            "POS Tags",
+            "Dependencies",
+            "Entities",
+            "Sentence Boundaries"
+        ]
+    },
+    {
+        "q": "Rearrange annotation check:",
+        "type": "rearrange",
+        "words": [
+            "Run nlp(text)",
+            "doc.has_annotation",
+            "('TAG')",
+            "Check if tagged"
+        ]
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "doc = nlp('Apple')\nprint(doc[0].ent_iob_)",
+        "o": [
+            "B",
+            "I",
+            "O",
+            "Error"
+        ]
+    },
+    {
+        "q": "The `ent_iob_` attribute uses the _____ tagging scheme.",
+        "type": "mcq",
+        "o": [
+            "BIO",
+            "BILUO",
+            "IOB",
+            "BMES"
+        ]
+    },
+    {
+        "q": "A tag of 'O' means the token is _____ an entity.",
+        "type": "fill_blank",
+        "answers": [
+            "outside"
+        ],
+        "other_options": [
+            "inside",
+            "beginning",
+            "part"
+        ]
+    },
+    {
+        "q": "In BILUO scheme, 'U' stands for Unit (single-token entity).",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Match IOB tags:",
+        "type": "match",
+        "left": [
+            "B",
+            "I",
+            "O",
+            "L"
+        ],
+        "right": [
+            "Begin",
+            "Inside",
+            "Outside",
+            "Last"
+        ]
+    },
+    {
+        "q": "Rearrange entity check:",
+        "type": "rearrange",
+        "words": [
+            "token = doc[i]",
+            "if token.ent_iob_ == 'B':",
+            "New entity starts",
+            "else: continue"
+        ]
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "doc = nlp('Hello world')\nspan = doc.char_span(0, 5)\nprint(span.text)",
+        "o": [
+            "Hello",
+            "Hello ",
+            "H",
+            "None"
+        ]
+    },
+    {
+        "q": "`doc.char_span` creates a Span from character _____.",
+        "type": "mcq",
+        "o": [
+            "offsets",
+            "tokens",
+            "indices",
+            "bytes"
+        ]
+    },
+    {
+        "q": "If the character indices do not align with token boundaries, `char_span` returns _____.",
+        "type": "fill_blank",
+        "answers": [
+            "None"
+        ],
+        "other_options": [
+            "Error",
+            "Empty Span",
+            "Partial Span"
+        ]
+    },
+    {
+        "q": "`doc.char_span` is strict about token alignment by default.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Match span creation:",
+        "type": "match",
+        "left": [
+            "doc[start:end]",
+            "doc.char_span(s, e)",
+            "Span(doc, s, e)",
+            "doc.ents"
+        ],
+        "right": [
+            "Token slice",
+            "Char slice",
+            "Manual constr",
+            "Pre-computed"
+        ]
+    },
+    {
+        "q": "Rearrange char span:",
+        "type": "rearrange",
+        "words": [
+            "Identify char indices",
+            "Call doc.char_span",
+            "Check for None",
+            "Use span"
+        ]
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "print(spacy.util.get_lang_class('en'))",
+        "o": [
+            "<class 'spacy.lang.en.English'>",
+            "en",
+            "None",
+            "Error"
+        ]
+    },
+    {
+        "q": "Language classes (like English, German) contain language-specific _____.",
+        "type": "mcq",
+        "o": [
+            "data/rules",
+            "models",
+            "pipelines",
+            "vectors"
+        ]
+    },
+    {
+        "q": "To support a new language, subclass `spacy.language._____`.",
+        "type": "fill_blank",
+        "answers": [
+            "Language"
+        ],
+        "other_options": [
+            "Base",
+            "Model",
+            "Vocab"
+        ]
+    },
+    {
+        "q": "Language classes handle lexical attributes like `is_stop`.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Match lang data:",
+        "type": "match",
+        "left": [
+            "stop_words",
+            "tokenizer_exceptions",
+            "compounds",
+            "lemma_rules"
+        ],
+        "right": [
+            "Common words",
+            "Special tokens",
+            "Compound words",
+            "Morphology"
+        ]
+    },
+    {
+        "q": "Rearrange lang lookup:",
+        "type": "rearrange",
+        "words": [
+            "Import util",
+            "util.get_lang_class",
+            "('de')",
+            "Returns German class"
+        ]
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "doc = nlp('Runs.')\nprint(doc[0].morph.get('Tense'))",
+        "o": [
+            "['Pres']",
+            "Pres",
+            "None",
+            "[]"
+        ]
+    },
+    {
+        "q": "Morphological features are stored in the `token._____` attribute.",
+        "type": "mcq",
+        "o": [
+            "morph",
+            "pos",
+            "tag",
+            "feat"
+        ]
+    },
+    {
+        "q": "`token.morph` returns a _____ object usually printed as 'Key=Val|Key=Val'.",
+        "type": "fill_blank",
+        "answers": [
+            "MorphAnalysis"
+        ],
+        "other_options": [
+            "Dict",
+            "List",
+            "String"
+        ]
+    },
+    {
+        "q": "Morphological features depend on the POS tagger/Morphologizer.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Match morph feature:",
+        "type": "match",
+        "left": [
+            "Tense",
+            "Number",
+            "Person",
+            "Gender"
+        ],
+        "right": [
+            "Time ref",
+            "Sing/Plur",
+            "1st/2nd/3rd",
+            "Masc/Fem/Neut"
+        ]
+    },
+    {
+        "q": "Rearrange morph check:",
+        "type": "rearrange",
+        "words": [
+            "Get token",
+            "token.morph",
+            ".get('Number')",
+            "Returns list"
+        ]
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "import spacy\nfrom spacy.training import Example\n# Used in training loop\n# example = Example.from_dict(doc, {'entities': []})\nprint(type(example))",
+        "o": [
+            "spacy.training.example.Example",
+            "Dict",
+            "Doc",
+            "Tuple"
+        ]
+    },
+    {
+        "q": "The `Example` class holds a predicted Doc and a _____ Doc.",
+        "type": "mcq",
+        "o": [
+            "reference/gold",
+            "raw",
+            "text",
+            "vocab"
+        ]
+    },
+    {
+        "q": "During training, spaCy updates the model to minimize the difference between predicted and _____.",
+        "type": "fill_blank",
+        "answers": [
+            "reference"
+        ],
+        "other_options": [
+            "input",
+            "vocab",
+            "vectors"
+        ]
+    },
+    {
+        "q": "GoldParse was the old name for Example in earlier spaCy versions.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Match training pairs:",
+        "type": "match",
+        "left": [
+            "Predicted Doc",
+            "Reference Doc",
+            "Loss",
+            "Optimizer"
+        ],
+        "right": [
+            "Model Output",
+            "Ground Truth",
+            "Error Metric",
+            "Update Rule"
+        ]
+    },
+    {
+        "q": "Rearrange training step:",
+        "type": "rearrange",
+        "words": [
+            "Create Example",
+            "nlp.update",
+            "([example])",
+            "Model learns"
+        ]
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "print(spacy.prefer_gpu())",
+        "o": [
+            "True/False",
+            "None",
+            "Error",
+            "GPU"
+        ]
+    },
+    {
+        "q": "To use a GPU, you must install `spacy[_____]`.",
+        "type": "mcq",
+        "o": [
+            "cuda",
+            "gpu",
+            "nvidia",
+            "fast"
+        ]
+    },
+    {
+        "q": "Call `spacy.require_gpu()` _____ loading the model.",
+        "type": "fill_blank",
+        "answers": [
+            "before"
+        ],
+        "other_options": [
+            "after",
+            "while",
+            "instead"
+        ]
+    },
+    {
+        "q": "spaCy relies on Thinc and CuPy for GPU support.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Match hardware:",
+        "type": "match",
+        "left": [
+            "require_gpu()",
+            "prefer_gpu()",
+            "require_cpu()",
+            "use_pytorch"
+        ],
+        "right": [
+            "Force GPU",
+            "Try GPU",
+            "Force CPU",
+            "Ext Framework"
+        ]
+    },
+    {
+        "q": "Rearrange GPU setup:",
+        "type": "rearrange",
+        "words": [
+            "import spacy",
+            "spacy.require_gpu()",
+            "nlp = spacy.load()",
+            "Processing on GPU"
+        ]
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "doc = nlp('I like cats')\nprint(doc.count_by(spacy.attrs.POS))",
+        "o": [
+            "{POS_ID: count...}",
+            "List",
+            "None",
+            "Error"
+        ]
+    },
+    {
+        "q": "`doc.count_by` returns a frequency count of the given _____.",
+        "type": "mcq",
+        "o": [
+            "attribute ID",
+            "token",
+            "string",
+            "span"
+        ]
+    },
+    {
+        "q": "The result keys are integers (hash IDs), so you need _____ to look up strings.",
+        "type": "fill_blank",
+        "answers": [
+            "vocab"
+        ],
+        "other_options": [
+            "doc",
+            "nlp",
+            "map"
+        ]
+    },
+    {
+        "q": "count_by is useful for quick statistics like POS distribution.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Match grouping:",
+        "type": "match",
+        "left": [
+            "count_by POS",
+            "count_by ORTH",
+            "count_by LEMMA",
+            "count_by DEP"
+        ],
+        "right": [
+            "Grammar stats",
+            "Word freq",
+            "Root freq",
+            "Syntactic role freq"
+        ]
+    },
+    {
+        "q": "Rearrange counting stats:",
+        "type": "rearrange",
+        "words": [
+            "counts = doc.count_by(POS)",
+            "for id, n in counts:",
+            "label = vocab[id].text",
+            "print(label, n)"
+        ]
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "from spacy.tokens import Span\ndoc = nlp('I like NY')\nent = Span(doc, 2, 3, label='GPE')\ndoc.ents = [ent]\nprint(doc.ents[0].text)",
+        "o": [
+            "NY",
+            "like",
+            "I",
+            "Error"
+        ]
+    },
+    {
+        "q": "When setting `doc.ents`, any overlapping entities are _____.",
+        "type": "mcq",
+        "o": [
+            "invalid (error)",
+            "merged",
+            "split",
+            "ignored"
+        ]
+    },
+    {
+        "q": "Entities in `doc.ents` must not _____.",
+        "type": "fill_blank",
+        "answers": [
+            "overlap"
+        ],
+        "other_options": [
+            "touch",
+            "nest",
+            "repeat"
+        ]
+    },
+    {
+        "q": "`spacy.util.filter_spans` helps resolve overlapping spans.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Match span utility:",
+        "type": "match",
+        "left": [
+            "filter_spans",
+            "get_leaves",
+            "as_doc",
+            "sent"
+        ],
+        "right": [
+            "Dedup",
+            "Subtree leaves",
+            "Span to Doc",
+            "Sentence"
+        ]
+    },
+    {
+        "q": "Rearrange span filtering:",
+        "type": "rearrange",
+        "words": [
+            "Collect candidates",
+            "spacy.util.filter_spans",
+            "(candidates)",
+            "Assign to doc.ents"
+        ]
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "doc = nlp('Hello')\nprint(doc.has_extension('my_ext'))",
+        "o": [
+            "True/False",
+            "None",
+            "Error",
+            "Extension"
+        ]
+    },
+    {
+        "q": "Extensions are registered globally on the _____ class.",
+        "type": "mcq",
+        "o": [
+            "Doc/Token/Span",
+            "NLP",
+            "Vocab",
+            "Language"
+        ]
+    },
+    {
+        "q": "Removing an extension uses `remove_extension` on the _____ class.",
+        "type": "fill_blank",
+        "answers": [
+            "same"
+        ],
+        "other_options": [
+            "nlp",
+            "vocab",
+            "different"
+        ]
+    },
+    {
+        "q": "Extensions persist across different nlp instances in the same process.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Match extension scope:",
+        "type": "match",
+        "left": [
+            "Doc extension",
+            "Global registry",
+            "user_data",
+            "serialization"
+        ],
+        "right": [
+            "Attribute",
+            "Class-level",
+            "Dict storage",
+            "Saving ext"
+        ]
+    },
+    {
+        "q": "Rearrange cleanup extension:",
+        "type": "rearrange",
+        "words": [
+            "if Doc.has_extension('x'):",
+            "Doc.remove_extension('x')",
+            "Clean state",
+            "Re-register"
+        ]
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "doc = nlp('Dr. Smith')\nprint(doc[0].check_flag(spacy.attrs.IS_TITLE))",
+        "o": [
+            "True (likely)",
+            "False",
+            "None",
+            "Error"
+        ]
+    },
+    {
+        "q": "Lexemes store flags like IS_ALPHA as packed _____.",
+        "type": "mcq",
+        "o": [
+            "bit flags",
+            "strings",
+            "lists",
+            "tuples"
+        ]
+    },
+    {
+        "q": "`check_flag` is a fast method to check boolean _____.",
+        "type": "fill_blank",
+        "answers": [
+            "attributes"
+        ],
+        "other_options": [
+            "values",
+            "tokens",
+            "phrases"
+        ]
+    },
+    {
+        "q": "You can combine flags using bitwise operators for queries.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Match lexical flags:",
+        "type": "match",
+        "left": [
+            "IS_UPPER",
+            "IS_PUNCT",
+            "LIKE_URL",
+            "LIKE_EMAIL"
+        ],
+        "right": [
+            "Uppercase",
+            "Punctuation",
+            "URL",
+            "Email address"
+        ]
+    },
+    {
+        "q": "Rearrange flag check:",
+        "type": "rearrange",
+        "words": [
+            "import attrs",
+            "token.check_flag",
+            "(attrs.IS_digit)",
+            "Returns BOOL"
+        ]
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "nlp.add_pipe('sentencizer', before='parser')\nprint('sentencizer' in nlp.pipe_names)",
+        "o": [
+            "True",
+            "False",
+            "Error",
+            "None"
+        ]
+    },
+    {
+        "q": "The `sentencizer` is a simple rule-based component for splitting _____.",
+        "type": "mcq",
+        "o": [
+            "sentences",
+            "tokens",
+            "entities",
+            "tags"
+        ]
+    },
+    {
+        "q": "It sets the `is_sent_start` attribute on _____.",
+        "type": "fill_blank",
+        "answers": [
+            "tokens"
+        ],
+        "other_options": [
+            "docs",
+            "spans",
+            "chars"
+        ]
+    },
+    {
+        "q": "Sentencizer requires a statistical model to work.",
+        "type": "true_false",
+        "correct": "False"
+    },
+    {
+        "q": "Match segmentation:",
+        "type": "match",
+        "left": [
+            "Sentencizer",
+            "DependencyParser",
+            "User Rule",
+            "TextSplitter"
+        ],
+        "right": [
+            "Punctuation based",
+            "Syntax based",
+            "Custom logic",
+            "Not a comp"
+        ]
+    },
+    {
+        "q": "Rearrange parsing setup:",
+        "type": "rearrange",
+        "words": [
+            "nlp = spacy.blank('en')",
+            "nlp.add_pipe",
+            "('sentencizer')",
+            "doc.sents works"
+        ]
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "doc = nlp('Hello')\nprint(doc.to_json())",
+        "o": [
+            "{'text': 'Hello', ...}",
+            "String",
+            "Binary",
+            "None"
+        ]
+    },
+    {
+        "q": "`doc.to_json()` exports the Doc data in a standardized _____ format.",
+        "type": "mcq",
+        "o": [
+            "JSON",
+            "XML",
+            "CSV",
+            "YAML"
+        ]
+    },
+    {
+        "q": "This format is useful for interop with other _____ tools.",
+        "type": "fill_blank",
+        "answers": [
+            "annotation"
+        ],
+        "other_options": [
+            "training",
+            "visual",
+            "web"
+        ]
+    },
+    {
+        "q": "You can control which fields (ents, sents) are included in to_json.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Match serialization:",
+        "type": "match",
+        "left": [
+            "to_bytes",
+            "to_disk",
+            "to_json",
+            "pickle"
+        ],
+        "right": [
+            "Binary string",
+            "File save",
+            "JSON Dict",
+            "Python serialization"
+        ]
+    },
+    {
+        "q": "Rearrange data export:",
+        "type": "rearrange",
+        "words": [
+            "Process textual data",
+            "doc.to_json()",
+            "Save to file",
+            "Upload API"
+        ]
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "print(spacy.about.__version__)",
+        "o": [
+            "Version string",
+            "None",
+            "Error",
+            "Date"
+        ]
+    },
+    {
+        "q": "Which command-line tool helps debug your environment setup?",
+        "type": "mcq",
+        "o": [
+            "python -m spacy info",
+            "spacy debug",
+            "spacy validate",
+            "spacy check"
+        ]
+    },
+    {
+        "q": "`spacy validate` checks if installed models are _____ with spaCy version.",
+        "type": "fill_blank",
+        "answers": [
+            "compatible"
+        ],
+        "other_options": [
+            "present",
+            "downloaded",
+            "loaded"
+        ]
+    },
+    {
+        "q": "spaCy follows Semantic Versioning (Major.Minor.Patch).",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Match CLI tools:",
+        "type": "match",
+        "left": [
+            "download",
+            "train",
+            "project",
+            "info"
+        ],
+        "right": [
+            "Get models",
+            "Train pipeline",
+            "Manage workflow",
+            "Sys details"
+        ]
+    },
+    {
+        "q": "Rearrange compatibility check:",
+        "type": "rearrange",
+        "words": [
+            "Run terminal",
+            "python -m spacy validate",
+            "Check output",
+            "Upgrade if needed"
+        ]
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "doc = nlp('Apple is a company')\nprint(doc[0].ent_type_)",
+        "o": [
+            "ORG",
+            "PERSON",
+            "GPE",
+            "None"
+        ]
+    },
+    {
+        "q": "The `ent_type_` attribute returns the label of the entity the token belongs to.",
+        "type": "mcq",
+        "o": [
+            "True",
+            "False",
+            "None",
+            "Error"
+        ]
+    },
+    {
+        "q": "If a token is not part of an entity, `ent_type_` returns an _____ string.",
+        "type": "fill_blank",
+        "answers": [
+            "empty"
+        ],
+        "other_options": [
+            "null",
+            "none",
+            "O"
+        ]
+    },
+    {
+        "q": "ent_type (without underscore) returns the integer hash.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Match entity attributes:",
+        "type": "match",
+        "left": [
+            "ent_type_",
+            "ent_iob_",
+            "is_ent",
+            "ent_id"
+        ],
+        "right": [
+            "Label String",
+            "BIO Tag",
+            "Is in entity?",
+            "Knowledge Base ID"
+        ]
+    },
+    {
+        "q": "Rearrange entity token check:",
+        "type": "rearrange",
+        "words": [
+            "if token.ent_type:",
+            "It is an entity",
+            "Print label",
+            "else: Not entity"
+        ]
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "doc = nlp('I like cats')\nprint(doc[2].is_alpha)",
+        "o": [
+            "True",
+            "False",
+            "None",
+            "Error"
+        ]
+    },
+    {
+        "q": "Which attribute checks if a token contains only whitespace?",
+        "type": "mcq",
+        "o": [
+            "is_space",
+            "is_punct",
+            "is_alpha",
+            "is_digit"
+        ]
+    },
+    {
+        "q": "`like_num` checks if a token looks like a number (e.g., 'ten', '10').",
+        "type": "fill_blank",
+        "answers": [
+            "True"
+        ],
+        "other_options": [
+            "False",
+            "None",
+            "Maybe"
+        ]
+    },
+    {
+        "q": "`is_title` checks if the token is in Title Case.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Match lexical shape:",
+        "type": "match",
+        "left": [
+            "shape_",
+            "is_lower",
+            "is_currency",
+            "is_bracket"
+        ],
+        "right": [
+            "Word shape (Xxxx)",
+            "Lowercase?",
+            "Currency symbol?",
+            "Bracket?"
+        ]
+    },
+    {
+        "q": "Rearrange lex check:",
+        "type": "rearrange",
+        "words": [
+            "token string",
+            "check attributes",
+            "Use boolean",
+            "Filter token"
+        ]
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "import spacy\nregistry = spacy.registry\nprint(type(registry))",
+        "o": [
+            "Module/Object",
+            "List",
+            "Dict",
+            "None"
+        ]
+    },
+    {
+        "q": "`spacy.registry` allows you to register custom _____ for config files.",
+        "type": "mcq",
+        "o": [
+            "functions/classes",
+            "strings",
+            "numbers",
+            "lists"
+        ]
+    },
+    {
+        "q": "Config files in spaCy usually use the _____ format.",
+        "type": "fill_blank",
+        "answers": [
+            "cfg/ini"
+        ],
+        "other_options": [
+            "json",
+            "xml",
+            "yaml"
+        ]
+    },
+    {
+        "q": "Registries connect the configuration file system to Python code.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Match registry sections:",
+        "type": "match",
+        "left": [
+            "optimizers",
+            "architectures",
+            "losses",
+            "callbacks"
+        ],
+        "right": [
+            "Update algo",
+            "Neural Nets",
+            "Cost funcs",
+            "Training events"
+        ]
+    },
+    {
+        "q": "Rearrange config system:",
+        "type": "rearrange",
+        "words": [
+            "Define config.cfg",
+            "Reference registered func",
+            "spacy.train",
+            "Loads code"
+        ]
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "doc = nlp('Cat')\nprint(doc[0].norm_)",
+        "o": [
+            "cat",
+            "Cat",
+            "CAT",
+            "None"
+        ]
+    },
+    {
+        "q": "The `norm_` attribute provides a normalized version of the token (e.g., lowercased).",
+        "type": "mcq",
+        "o": [
+            "True",
+            "False",
+            "None",
+            "Error"
+        ]
+    },
+    {
+        "q": "The spell-checker correction might be stored in the _____ attribute.",
+        "type": "fill_blank",
+        "answers": [
+            "norm"
+        ],
+        "other_options": [
+            "lemma",
+            "text",
+            "shape"
+        ]
+    },
+    {
+        "q": "Changing `norm_` affects the vector representation lookup in some models.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Match normalization:",
+        "type": "match",
+        "left": [
+            "text",
+            "lower_",
+            "norm_",
+            "prefix_"
+        ],
+        "right": [
+            "Verbatim",
+            "Lowercased",
+            "Normalized",
+            "First char"
+        ]
+    },
+    {
+        "q": "Rearrange normalization usage:",
+        "type": "rearrange",
+        "words": [
+            "Get token",
+            "Check .norm_",
+            "Compare normalized",
+            "Ignore case/style"
+        ]
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "doc = nlp('Apple is red')\nprint(doc.ents)",
+        "o": [
+            "(Apple,)",
+            "()",
+            "None",
+            "Error"
+        ]
+    },
+    {
+        "q": "To enable NER, the pipeline must include the _____ component.",
+        "type": "mcq",
+        "o": [
+            "ner",
+            "tagger",
+            "parser",
+            "senter"
+        ]
+    },
+    {
+        "q": "You can add new entity labels to the NER model using `ner.add_label()`.",
+        "type": "fill_blank",
+        "answers": [
+            "True"
+        ],
+        "other_options": [
+            "False",
+            "None",
+            "Error"
+        ]
+    },
+    {
+        "q": "EntityRuler is a rule-based alternative/complement to statistical NER.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Match NER types:",
+        "type": "match",
+        "left": [
+            "Statistical NER",
+            "EntityRuler",
+            "SpanCategorizer",
+            "Regex"
+        ],
+        "right": [
+            "Predicted",
+            "Rule-based",
+            "Overlapping spans",
+            "Pattern match"
+        ]
+    },
+    {
+        "q": "Rearrange EntityRuler:",
+        "type": "rearrange",
+        "words": [
+            "ruler = nlp.add_pipe",
+            "('entity_ruler')",
+            "ruler.add_patterns",
+            "Patterns active"
+        ]
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "doc = nlp('Hello world')\nprint(doc.vocab.strings['Hello'])",
+        "o": [
+            "Int Hash ID",
+            "Hello",
+            "None",
+            "Error"
+        ]
+    },
+    {
+        "q": "`vocab.strings` acts as a lookup table between strings and _____.",
+        "type": "mcq",
+        "o": [
+            "64-bit hashes",
+            "integers",
+            "objects",
+            "pointers"
+        ]
+    },
+    {
+        "q": "String lookups are reversible if the string is in the store.",
+        "type": "fill_blank",
+        "answers": [
+            "True"
+        ],
+        "other_options": [
+            "False",
+            "None",
+            "Error"
+        ]
+    },
+    {
+        "q": "Hashes are consistent across restarts of the application.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Match string store:",
+        "type": "match",
+        "left": [
+            "strings['word']",
+            "strings[123]",
+            "__contains__",
+            "add()"
+        ],
+        "right": [
+            "Get Hash",
+            "Get String",
+            "Check presence",
+            "Add string"
+        ]
+    },
+    {
+        "q": "Rearrange string storage:",
+        "type": "rearrange",
+        "words": [
+            "vocab.strings",
+            "Add 'NewWord'",
+            "Get ID",
+            "Retrieve 'NewWord'"
+        ]
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "from spacy.tokens import Doc\nprint(Doc.object2json({'a': 1}))",
+        "o": [
+            "Error/NotMethod",
+            "JSON",
+            "Dict",
+            "None"
+        ]
+    },
+    {
+        "q": "The `Doc` class is optimized C-level structure (Cython).",
+        "type": "mcq",
+        "o": [
+            "True",
+            "False",
+            "None",
+            "Error"
+        ]
+    },
+    {
+        "q": "It implements the sequence protocol, so you can iterate over it.",
+        "type": "fill_blank",
+        "answers": [
+            "True"
+        ],
+        "other_options": [
+            "False",
+            "None",
+            "Error"
+        ]
+    },
+    {
+        "q": "Doc objects are mutable in terms of their token text content.",
+        "type": "true_false",
+        "correct": "False"
+    },
+    {
+        "q": "Match doc props:",
+        "type": "match",
+        "left": [
+            "Immutable",
+            "Iterable",
+            "Slicable",
+            "Hashable"
+        ],
+        "right": [
+            "Text content",
+            "Yields tokens",
+            "Yields Spans",
+            "No"
+        ]
+    },
+    {
+        "q": "Rearrange doc property:",
+        "type": "rearrange",
+        "words": [
+            "doc is sequence",
+            "len(doc)",
+            "doc[i]",
+            "for token in doc"
+        ]
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "import spacy\nfrom spacy.tokens import Doc\nDoc.set_extension('has_ent', getter=lambda doc: len(doc.ents) > 0)\ndoc = nlp('Apple')\nprint(doc._.has_ent)",
+        "o": [
+            "True",
+            "False",
+            "Error",
+            "None"
+        ]
+    },
+    {
+        "q": "Getters in extensions can access the object they are attached to (e.g., Doc, Token).",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Using `Setter` in extensions allows storing values back to `doc._____`.",
+        "type": "fill_blank",
+        "answers": [
+            "user_data"
+        ],
+        "other_options": [
+            "vocab",
+            "meta",
+            "store"
+        ]
+    },
+    {
+        "q": "Extensions are the primary way to integrate custom models or data into spaCy objects.",
+        "type": "mcq",
+        "o": [
+            "True",
+            "False",
+            "Maybe",
+            "Error"
+        ]
+    },
+    {
+        "q": "Match extension types:",
+        "type": "match",
+        "left": [
+            "Property ext",
+            "Method ext",
+            "Getter ext",
+            "Setter ext"
+        ],
+        "right": [
+            "Static value",
+            "Function call",
+            "Dynamic read",
+            "Dynamic write"
+        ]
+    },
+    {
+        "q": "Rearrange extension chain:",
+        "type": "rearrange",
+        "words": [
+            "Define getter",
+            "Register ext",
+            "Access attr",
+            "Run logic"
+        ]
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "from spacy.language import Language\n@Language.factory('my_fact')\nclass MyComp:\n def __init__(self, nlp, name): pass\n def __call__(self, doc): return doc",
+        "o": [
+            "Valid Component",
+            "Error",
+            "None",
+            "False"
+        ]
+    },
+    {
+        "q": "The factory implementation must accept `nlp` and `_____` arguments.",
+        "type": "fill_blank",
+        "answers": [
+            "name"
+        ],
+        "other_options": [
+            "doc",
+            "config",
+            "path"
+        ]
+    },
+    {
+        "q": "Class-based components must implement the `__call__` method.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Match factory attributes:",
+        "type": "match",
+        "left": [
+            "nlp argument",
+            "name argument",
+            "__call__",
+            "to_disk"
+        ],
+        "right": [
+            "NLP instance",
+            "Pipe name",
+            "Processing",
+            "Saving"
+        ]
+    },
+    {
+        "q": "Rearrange class component:",
+        "type": "rearrange",
+        "words": [
+            "class MyPipe",
+            "def __init__",
+            "def __call__",
+            "return doc"
+        ]
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "doc = nlp.make_doc('Hi')\ndoc.user_data['key'] = 'val'\nprint(doc.user_data['key'])",
+        "o": [
+            "val",
+            "None",
+            "Error",
+            "Hi"
+        ]
+    },
+    {
+        "q": "`doc.user_data` is a dictionary for arbitrary _____ storage.",
+        "type": "mcq",
+        "o": [
+            "user",
+            "system",
+            "model",
+            "vector"
+        ]
+    },
+    {
+        "q": "Data in `user_data` is serialized when pickling the Doc.",
+        "type": "fill_blank",
+        "answers": [
+            "True"
+        ],
+        "other_options": [
+            "False",
+            "None",
+            "Error"
+        ]
+    },
+    {
+        "q": "Standard extensions store their data (for simple types) in user_data by default.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Match storage:",
+        "type": "match",
+        "left": [
+            "user_data",
+            "vocab",
+            "vectors",
+            "tensor"
+        ],
+        "right": [
+            "Doc-level dict",
+            "Shared strings",
+            "Word embeddings",
+            "Model output"
+        ]
+    },
+    {
+        "q": "Rearrange user data:",
+        "type": "rearrange",
+        "words": [
+            "doc.user_data",
+            "Assign key",
+            "Read key",
+            "Persists"
+        ]
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "import spacy\ncfg = {'section': {'val': 1}}\nprint(spacy.util.registry.callbacks)",
+        "o": [
+            "Registry Object",
+            "Dict",
+            "List",
+            "None"
+        ]
+    },
+    {
+        "q": "spaCy's configuration system uses the `thinc` library's _____ format.",
+        "type": "mcq",
+        "o": [
+            "Config",
+            "JSON",
+            "XML",
+            "Protobuf"
+        ]
+    },
+    {
+        "q": "The `[nlp]` section of config.cfg defines the pipeline and _____.",
+        "type": "fill_blank",
+        "answers": [
+            "tokenizer"
+        ],
+        "other_options": [
+            "vocab",
+            "data",
+            "eval"
+        ]
+    },
+    {
+        "q": "Configuration files check for type safety and argument validity.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Match config parts:",
+        "type": "match",
+        "left": [
+            "system",
+            "nlp",
+            "components",
+            "training"
+        ],
+        "right": [
+            "Seed/GPU",
+            "Lang/Pipe",
+            "Pipe Settings",
+            "Train loop"
+        ]
+    },
+    {
+        "q": "Rearrange config load:",
+        "type": "rearrange",
+        "words": [
+            "nlp = spacy.load",
+            "('model',",
+            "config=cfg)",
+            "Overrides"
+        ]
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "nlp = spacy.blank('en')\nnlp.add_pipe('ner')\nprint(nlp.pipe_names)",
+        "o": [
+            "['ner']",
+            "[]",
+            "None",
+            "Error"
+        ]
+    },
+    {
+        "q": "Adding a component creates a new instance from the _____.",
+        "type": "mcq",
+        "o": [
+            "registry/factory",
+            "file",
+            "network",
+            "user"
+        ]
+    },
+    {
+        "q": "Pipeline components can be ‘frozen’ during training so they don't _____.",
+        "type": "fill_blank",
+        "answers": [
+            "update"
+        ],
+        "other_options": [
+            "run",
+            "slow",
+            "error"
+        ]
+    },
+    {
+        "q": "You can source components from other loaded pipelines using `source` argument.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Match pipe manipulation:",
+        "type": "match",
+        "left": [
+            "add_pipe",
+            "replace_pipe",
+            "remove_pipe",
+            "rename_pipe"
+        ],
+        "right": [
+            "Insert",
+            "Swap",
+            "Delete",
+            "Change ID"
+        ]
+    },
+    {
+        "q": "Rearrange sourcing pipe:",
+        "type": "rearrange",
+        "words": [
+            "nlp.add_pipe",
+            "('ner',",
+            "source=other_nlp)",
+            "Copy component"
+        ]
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "from spacy.training import Alignment\na = Alignment.from_strings(['I', 'am'], ['I', 'am'])\nprint(len(a))",
+        "o": [
+            "2",
+            "1",
+            "0",
+            "Error"
+        ]
+    },
+    {
+        "q": "Alignment objects map indices between two _____ sequences.",
+        "type": "mcq",
+        "o": [
+            "token",
+            "char",
+            "byte",
+            "line"
+        ]
+    },
+    {
+        "q": "Useful when aligning raw text tokens with tokens from a _____ tokenizer (e.g. BERT).",
+        "type": "fill_blank",
+        "answers": [
+            "subword"
+        ],
+        "other_options": [
+            "word",
+            "char",
+            "sentence"
+        ]
+    },
+    {
+        "q": "Alignment handles many-to-one and one-to-many mappings.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Match alignment:",
+        "type": "match",
+        "left": [
+            "x2y",
+            "y2x",
+            "lengths",
+            "data"
+        ],
+        "right": [
+            "Index map X->Y",
+            "Index map Y->X",
+            "Seq sizes",
+            "Mapping array"
+        ]
+    },
+    {
+        "q": "Rearrange aligning:",
+        "type": "rearrange",
+        "words": [
+            "Tokenize A",
+            "Tokenize B",
+            "Calculate Align",
+            "Map indices"
+        ]
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "doc = nlp('Hello')\nprint(doc.vocab.vectors.name)",
+        "o": [
+            "Name of vectors",
+            "None",
+            "Error",
+            "Int"
+        ]
+    },
+    {
+        "q": "Vectors help in finding _____ similar words.",
+        "type": "mcq",
+        "o": [
+            "semantically",
+            "syntactically",
+            "phonetically",
+            "visually"
+        ]
+    },
+    {
+        "q": "Calculating similarity on models without vectors creates a _____ warning.",
+        "type": "fill_blank",
+        "answers": [
+            "UserWarning"
+        ],
+        "other_options": [
+            "Error",
+            "Exception",
+            "Log"
+        ]
+    },
+    {
+        "q": "Large vectors are loaded on demand by default.",
+        "type": "true_false",
+        "correct": "False"
+    },
+    {
+        "q": "Match vector modes:",
+        "type": "match",
+        "left": [
+            "Static vectors",
+            "Context vectors",
+            "Transformers",
+            "Random"
+        ],
+        "right": [
+            "Fixed (GloVe)",
+            "Dynamic (HMM)",
+            "Dynamic (BERT)",
+            "No meaning"
+        ]
+    },
+    {
+        "q": "Rearrange similarity calc:",
+        "type": "rearrange",
+        "words": [
+            "v1 = token1.vector",
+            "v2 = token2.vector",
+            "Cosine sim",
+            "Result"
+        ]
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "nlp.to_disk('/tmp/model')\nprint('Saved')",
+        "o": [
+            "Saved",
+            "Error",
+            "None",
+            "False"
+        ]
+    },
+    {
+        "q": "`nlp.to_disk` saves the vocab, pipeline configuration, and component _____.",
+        "type": "mcq",
+        "o": [
+            "weights/data",
+            "source code",
+            "logs",
+            "inputs"
+        ]
+    },
+    {
+        "q": "To load a saved model, use `spacy._____`.",
+        "type": "fill_blank",
+        "answers": [
+            "load"
+        ],
+        "other_options": [
+            "read",
+            "open",
+            "import"
+        ]
+    },
+    {
+        "q": "You can pass specific component names to exclude from saving.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Match save layout:",
+        "type": "match",
+        "left": [
+            "config.cfg",
+            "vocab/",
+            "tokenizer",
+            "ner/"
+        ],
+        "right": [
+            "Settings",
+            "Strings/Vecs",
+            "Rules",
+            "NER data"
+        ]
+    },
+    {
+        "q": "Rearrange model saving:",
+        "type": "rearrange",
+        "words": [
+            "Train/Mod model",
+            "nlp.to_disk",
+            "('path')",
+            "Directory created"
+        ]
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "from spacy.kb import KnowledgeBase\nprint(type(KnowledgeBase))",
+        "o": [
+            "type",
+            "class",
+            "KB",
+            "Error"
+        ]
+    },
+    {
+        "q": "A KnowledgeBase (KB) is used for _____ Linking.",
+        "type": "mcq",
+        "o": [
+            "Entity",
+            "Token",
+            "Doc",
+            "Span"
+        ]
+    },
+    {
+        "q": "It stores unique entity identifiers and associated _____ embeddings.",
+        "type": "fill_blank",
+        "answers": [
+            "vector"
+        ],
+        "other_options": [
+            "image",
+            "text",
+            "audio"
+        ]
+    },
+    {
+        "q": "Entity Linking resolves ambiguous mentions (e.g., 'Paris' -> City vs Person).",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Match EL terms:",
+        "type": "match",
+        "left": [
+            "Mention",
+            "Candidate",
+            "Alias",
+            "QID"
+        ],
+        "right": [
+            "Text span",
+            "Potential match",
+            "Alternative name",
+            "KB ID"
+        ]
+    },
+    {
+        "q": "Rearrange KB setup:",
+        "type": "rearrange",
+        "words": [
+            "Create KB",
+            "Add entities",
+            "Add aliases",
+            "Train linker"
+        ]
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "print(spacy.glossary.GLOSSARY['LOC'])",
+        "o": [
+            "Definition of LOC",
+            "LOC",
+            "None",
+            "Error"
+        ]
+    },
+    {
+        "q": "`spacy.glossary` explains common tags and labels.",
+        "type": "mcq",
+        "o": [
+            "True",
+            "False",
+            "None",
+            "Error"
+        ]
+    },
+    {
+        "q": "This is the data source for `spacy._____`.",
+        "type": "fill_blank",
+        "answers": [
+            "explain"
+        ],
+        "other_options": [
+            "info",
+            "help",
+            "doc"
+        ]
+    },
+    {
+        "q": "Glossary contains inconsistent definitions.",
+        "type": "true_false",
+        "correct": "False"
+    },
+    {
+        "q": "Match acronyms:",
+        "type": "match",
+        "left": [
+            "NLP",
+            "POS",
+            "NER",
+            "DEP"
+        ],
+        "right": [
+            "Natural Lang Proc",
+            "Part of Speech",
+            "Named Entity Rec",
+            "Dependency"
+        ]
+    },
+    {
+        "q": "Rearrange explain call:",
+        "type": "rearrange",
+        "words": [
+            "spacy.explain",
+            "('NORP')",
+            "Lookup def",
+            "Return string"
+        ]
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "doc = nlp('A B')\nprint(doc[0].nbor())",
+        "o": [
+            "B",
+            "A",
+            "None",
+            "Error"
+        ]
+    },
+    {
+        "q": "`token.nbor()` returns the neighboring token at offset _____ by default.",
+        "type": "mcq",
+        "o": [
+            "1",
+            "-1",
+            "0",
+            "2"
+        ]
+    },
+    {
+        "q": "nbor() raises an _____ if the index is out of bounds.",
+        "type": "fill_blank",
+        "answers": [
+            "IndexError"
+        ],
+        "other_options": [
+            "AttributeError",
+            "ValueError",
+            "None"
+        ]
+    },
+    {
+        "q": "`doc[i+1]` is safer than `token.nbor(1)`.",
+        "type": "true_false",
+        "correct": "False"
+    },
+    {
+        "q": "Match neighbor:",
+        "type": "match",
+        "left": [
+            "nbor(1)",
+            "nbor(-1)",
+            "nbor(2)",
+            "nbor(0)"
+        ],
+        "right": [
+            "Right 1",
+            "Left 1",
+            "Right 2",
+            "Self"
+        ]
+    },
+    {
+        "q": "Rearrange neighbor check:",
+        "type": "rearrange",
+        "words": [
+            "try:",
+            "token.nbor()",
+            "except IndexError:",
+            "Handle edge"
+        ]
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "doc = nlp('I like it.')\nprint(doc[1].conjuncts)",
+        "o": [
+            "Tuple of conjuncts",
+            "None",
+            "Error",
+            "List"
+        ]
+    },
+    {
+        "q": "Conjuncts are tokens connected by coordinating _____.",
+        "type": "mcq",
+        "o": [
+            "conjunctions",
+            "prepositions",
+            "verbs",
+            "nouns"
+        ]
+    },
+    {
+        "q": "Example: 'Apples and **Oranges**'. Oranges is a conjunct of _____.",
+        "type": "fill_blank",
+        "answers": [
+            "Apples"
+        ],
+        "other_options": [
+            "and",
+            "is",
+            "root"
+        ]
+    },
+    {
+        "q": "spaCy's dependency parser identifies conjuncts.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Match coord:",
+        "type": "match",
+        "left": [
+            "conjunction",
+            "conjunct",
+            "cc",
+            "cconj"
+        ],
+        "right": [
+            "Connector (and)",
+            "Connected item",
+            "Dep Label",
+            "POS tag"
+        ]
+    },
+    {
+        "q": "Rearrange conjunct find:",
+        "type": "rearrange",
+        "words": [
+            "Parse text",
+            "Find token",
+            "Access .conjuncts",
+            "Tuple returned"
+        ]
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "doc = nlp('Hello')\nprint(doc.lang_)",
+        "o": [
+            "en (or lang code)",
+            "Hello",
+            "None",
+            "Error"
+        ]
+    },
+    {
+        "q": "`doc.lang_` stores the _____ code of the Language object.",
+        "type": "mcq",
+        "o": [
+            "ISO",
+            "ASCII",
+            "Unicode",
+            "Binary"
+        ]
+    },
+    {
+        "q": "It is set when the Doc is _____.",
+        "type": "fill_blank",
+        "answers": [
+            "created"
+        ],
+        "other_options": [
+            "saved",
+            "printed",
+            "modified"
+        ]
+    },
+    {
+        "q": "You can efficiently check doc.lang (hash) vs doc.lang_.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Match lang codes:",
+        "type": "match",
+        "left": [
+            "en",
+            "de",
+            "fr",
+            "es"
+        ],
+        "right": [
+            "English",
+            "German",
+            "French",
+            "Spanish"
+        ]
+    },
+    {
+        "q": "Rearrange lang check:",
+        "type": "rearrange",
+        "words": [
+            "nlp = spacy.blank('fr')",
+            "doc = nlp('')",
+            "print(doc.lang_)",
+            "fr"
+        ]
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "import spacy\nspacy.prefer_gpu()\nprint('Tried')",
+        "o": [
+            "Tried",
+            "Error",
+            "None",
+            "False"
+        ]
+    },
+    {
+        "q": "Calling `prefer_gpu` returns `True` if a GPU was successfully _____.",
+        "type": "mcq",
+        "o": [
+            "activated",
+            "found",
+            "ignored",
+            "simulated"
+        ]
+    },
+    {
+        "q": "If no GPU is available, it falls back to _____.",
+        "type": "fill_blank",
+        "answers": [
+            "cpu"
+        ],
+        "other_options": [
+            "error",
+            "stop",
+            "ram"
+        ]
+    },
+    {
+        "q": "Mixing GPU and CPU tensors usually causes errors.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Match hardware ops:",
+        "type": "match",
+        "left": [
+            "CupY",
+            "NumPy",
+            "Tensor",
+            "Array"
+        ],
+        "right": [
+            "GPU Array",
+            "CPU Array",
+            "N-dim matrix",
+            "Data structure"
+        ]
+    },
+    {
+        "q": "Rearrange gpu init:",
+        "type": "rearrange",
+        "words": [
+            "is_gpu =",
+            "spacy.prefer_gpu()",
+            "if is_gpu:",
+            "print('GPU')"
+        ]
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "doc = nlp('This is a test')\nprint(doc[0].is_sent_start)",
+        "o": [
+            "True",
+            "False",
+            "None",
+            "Error"
+        ]
+    },
+    {
+        "q": "`is_sent_start` can be True, False, or _____.",
+        "type": "mcq",
+        "o": [
+            "None",
+            "0",
+            "1",
+            "Error"
+        ]
+    },
+    {
+        "q": "None indicates that the boundary is not explicit/_____.",
+        "type": "fill_blank",
+        "answers": [
+            "determined"
+        ],
+        "other_options": [
+            "set",
+            "known",
+            "valid"
+        ]
+    },
+    {
+        "q": "You can manually set `is_sent_start` to force sentence boundaries.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Match sent start:",
+        "type": "match",
+        "left": [
+            "True",
+            "False",
+            "None",
+            "sents iterator"
+        ],
+        "right": [
+            "Start",
+            "Not Start",
+            "Unknown",
+            "Uses valid starts"
+        ]
+    },
+    {
+        "q": "Rearrange manual sent:",
+        "type": "rearrange",
+        "words": [
+            "token.is_sent_start",
+            "=",
+            "True",
+            "New sentence"
+        ]
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "pattern = [{'LEMMA': 'run'}]\n# Matches 'ran'?",
+        "o": [
+            "True",
+            "False",
+            "Error",
+            "None"
+        ]
+    },
+    {
+        "q": "Using LEMMA in Matcher allows matching all forms of a word.",
+        "type": "mcq",
+        "o": [
+            "True",
+            "False",
+            "Depends",
+            "Error"
+        ]
+    },
+    {
+        "q": "This requires the pipeline to have a _____ component.",
+        "type": "fill_blank",
+        "answers": [
+            "lemmatizer"
+        ],
+        "other_options": [
+            "parser",
+            "ner",
+            "tagger"
+        ]
+    },
+    {
+        "q": "LEMMA matching works on the .lemma_ attribute.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Match attribute matching:",
+        "type": "match",
+        "left": [
+            "LEMMA",
+            "LOWER",
+            "TEXT",
+            "LENGTH"
+        ],
+        "right": [
+            "Root form",
+            "Case-insensitive",
+            "Exact text",
+            "Char count"
+        ]
+    },
+    {
+        "q": "Rearrange lemma match:",
+        "type": "rearrange",
+        "words": [
+            "Pattern {'LEMMA': 'be'}",
+            "Text 'I am'",
+            "'am' has lemma 'be'",
+            "Match found"
+        ]
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "doc = nlp('Apple')\nprint(doc.similarity(doc))",
+        "o": [
+            "1.0",
+            "0.0",
+            "0.5",
+            "Error"
+        ]
+    },
+    {
+        "q": "The similarity of an object to itself is always _____.",
+        "type": "mcq",
+        "o": [
+            "1.0",
+            "0.0",
+            "-1.0",
+            "None"
+        ]
+    },
+    {
+        "q": "Cosine similarity measures the _____ between two vectors.",
+        "type": "fill_blank",
+        "answers": [
+            "angle"
+        ],
+        "other_options": [
+            "distance",
+            "magnitude",
+            "length"
+        ]
+    },
+    {
+        "q": "Similarity results are typically between 0 and 1 (though can be -1).",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Match sim values:",
+        "type": "match",
+        "left": [
+            "1.0",
+            "0.0",
+            "High sim",
+            "Low sim"
+        ],
+        "right": [
+            "Identical",
+            "Orthogonal",
+            "Related",
+            "Unrelated"
+        ]
+    },
+    {
+        "q": "Rearrange self sim:",
+        "type": "rearrange",
+        "words": [
+            "doc.similarity",
+            "(doc)",
+            "Compare vectors",
+            "Return 1.0"
+        ]
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "doc = nlp.make_doc('  ')\nprint(len(doc))",
+        "o": [
+            "1",
+            "0",
+            "2",
+            "Error"
+        ]
+    },
+    {
+        "q": "spaCy's tokenizer preserves whitespace as tokens if needed.",
+        "type": "mcq",
+        "o": [
+            "True",
+            "False",
+            "None",
+            "Error"
+        ]
+    },
+    {
+        "q": "Tokens consisting only of spaces have `is_space` set to _____.",
+        "type": "fill_blank",
+        "answers": [
+            "True"
+        ],
+        "other_options": [
+            "False",
+            "None",
+            "1"
+        ]
+    },
+    {
+        "q": "Usually, `is_space` tokens are ignored in dependency parsing.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Match space tokens:",
+        "type": "match",
+        "left": [
+            "' '",
+            "'\\n'",
+            "'\\t'",
+            "'a b'"
+        ],
+        "right": [
+            "Space",
+            "Newline",
+            "Tab",
+            "3 tokens"
+        ]
+    },
+    {
+        "q": "Rearrange space check:",
+        "type": "rearrange",
+        "words": [
+            "if token.is_space:",
+            "Skip processing",
+            "else:",
+            "Analyze token"
+        ]
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "from spacy.tokens import Doc\nprint(Doc.set_extension('x', default=1))",
+        "o": [
+            "None",
+            "True",
+            "False",
+            "Error"
+        ]
+    },
+    {
+        "q": "`set_extension` is a class method and returns None.",
+        "type": "mcq",
+        "o": [
+            "True",
+            "False",
+            "Object",
+            "Error"
+        ]
+    },
+    {
+        "q": "It stores the extension definition in the class's _____ registry.",
+        "type": "fill_blank",
+        "answers": [
+            "extension"
+        ],
+        "other_options": [
+            "data",
+            "dict",
+            "list"
+        ]
+    },
+    {
+        "q": "You can define extensions on Doc, Token, and Span classes independently.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Match extensions:",
+        "type": "match",
+        "left": [
+            "Doc.set",
+            "Token.set",
+            "Span.set",
+            "has_ext"
+        ],
+        "right": [
+            "Doc level",
+            "Token level",
+            "Span level",
+            "Check exists"
+        ]
+    },
+    {
+        "q": "Rearrange reg extension:",
+        "type": "rearrange",
+        "words": [
+            "Token.set_extension",
+            "('my_tag', default=0)",
+            "nlp Process",
+            "token._.my_tag"
+        ]
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "print(spacy.util.is_package('spacy'))",
+        "o": [
+            "True",
+            "False",
+            "None",
+            "Error"
+        ]
+    },
+    {
+        "q": "`spacy.util.is_package` checks if a name is an installed Python _____.",
+        "type": "mcq",
+        "o": [
+            "package",
+            "file",
+            "script",
+            "env"
+        ]
+    },
+    {
+        "q": "It is useful to check if a _____ is installed before loading.",
+        "type": "fill_blank",
+        "answers": [
+            "model"
+        ],
+        "other_options": [
+            "library",
+            "tool",
+            "pip"
+        ]
+    },
+    {
+        "q": "Model packages are just standard Python packages.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Match util functions:",
+        "type": "match",
+        "left": [
+            "is_package",
+            "get_package_path",
+            "run_command",
+            "ensure_path"
+        ],
+        "right": [
+            "Check install",
+            "Find location",
+            "Exec cmd",
+            "Resolv path"
+        ]
+    },
+    {
+        "q": "Rearrange package check:",
+        "type": "rearrange",
+        "words": [
+            "if is_package('en_core_web_sm'):",
+            "load model",
+            "else:",
+            "download model"
+        ]
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "doc = nlp('Go!')\nprint(doc[1].is_punct)",
+        "o": [
+            "True",
+            "False",
+            "None",
+            "Error"
+        ]
+    },
+    {
+        "q": "`is_punct` returns True for tokens that are punctuation marks.",
+        "type": "mcq",
+        "o": [
+            "True",
+            "False",
+            "None",
+            "Error"
+        ]
+    },
+    {
+        "q": "This is based on the token's unicode _____.",
+        "type": "fill_blank",
+        "answers": [
+            "category/property"
+        ],
+        "other_options": [
+            "value",
+            "hash",
+            "string"
+        ]
+    },
+    {
+        "q": "It depends on the POS tagger.",
+        "type": "true_false",
+        "correct": "False"
+    },
+    {
+        "q": "Match punctuation:",
+        "type": "match",
+        "left": [
+            ".",
+            ",",
+            "!",
+            "a"
+        ],
+        "right": [
+            "Punct",
+            "Punct",
+            "Punct",
+            "Not Punct"
+        ]
+    },
+    {
+        "q": "Rearrange punct filter:",
+        "type": "rearrange",
+        "words": [
+            "token in doc",
+            "if not token.is_punct:",
+            "Keep word",
+            "Discard punct"
+        ]
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "from spacy.ml.models import build_Tok2Vec_model\nprint(type(build_Tok2Vec_model))",
+        "o": [
+            "Function",
+            "Class",
+            "Model",
+            "None"
+        ]
+    },
+    {
+        "q": "spaCy's ML models are defined in `spacy._____`.",
+        "type": "fill_blank",
+        "answers": [
+            "ml"
+        ],
+        "other_options": [
+            "models",
+            "nn",
+            "layers"
+        ]
+    },
+    {
+        "q": "Tok2Vec is a common embedding layer used in taggers and parsers.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Match architecture:",
+        "type": "match",
+        "left": [
+            "Tok2Vec",
+            "Tagger",
+            "Parser",
+            "NER"
+        ],
+        "right": [
+            "Embeddings",
+            "HMM/Softmax",
+            "TransitionBased",
+            "TransitionBased"
+        ]
+    },
+    {
+        "q": "Rearrange model build:",
+        "type": "rearrange",
+        "words": [
+            "Define config",
+            "registry.architectures",
+            "build model",
+            "Initialize weights"
+        ]
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "from spacy.util import minibatch\nitems = [1, 2, 3, 4]\nbatches = list(minibatch(items, size=2))\nprint(batches)",
+        "o": [
+            "[[1, 2], [3, 4]]",
+            "[1, 2, 3, 4]",
+            "4",
+            "Error"
+        ]
+    },
+    {
+        "q": "`minibatch` utility yields chunks of items for _____ processing.",
+        "type": "mcq",
+        "o": [
+            "batch",
+            "single",
+            "stream",
+            "all"
+        ]
+    },
+    {
+        "q": "When training, it's common to shuffle training data before creating batches.",
+        "type": "fill_blank",
+        "answers": [
+            "True"
+        ],
+        "other_options": [
+            "False",
+            "None",
+            "Error"
+        ]
+    },
+    {
+        "q": "minibatch can verify variable batch sizes (compounding).",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Match batching:",
+        "type": "match",
+        "left": [
+            "minibatch(size=8)",
+            "compounding(start=1, stop=8)",
+            "train loop",
+            "shuffle"
+        ],
+        "right": [
+            "Fixed size",
+            "Growing size",
+            "Iterate batches",
+            "Randomize"
+        ]
+    },
+    {
+        "q": "Rearrange training loop:",
+        "type": "rearrange",
+        "words": [
+            "for epoch in range(10):",
+            "shuffle(train_data)",
+            "for batch in minibatch:",
+            "nlp.update(batch)"
+        ]
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "from spacy.scorer import Scorer\nprint(type(Scorer))",
+        "o": [
+            "type/class",
+            "function",
+            "module",
+            "None"
+        ]
+    },
+    {
+        "q": "The `Scorer` class computes evaluation metrics like _____.",
+        "type": "mcq",
+        "o": [
+            "Precision/Recall",
+            "Loss",
+            "Accuracy",
+            "Speed"
+        ]
+    },
+    {
+        "q": "Using `nlp.evaluate(examples)` returns a dictionary of scores.",
+        "type": "fill_blank",
+        "answers": [
+            "True"
+        ],
+        "other_options": [
+            "False",
+            "None",
+            "Error"
+        ]
+    },
+    {
+        "q": "Scorer methods can be called directly with Example objects.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Match metrics:",
+        "type": "match",
+        "left": [
+            "ents_p",
+            "ents_r",
+            "ents_f",
+            "token_acc"
+        ],
+        "right": [
+            "Precision",
+            "Recall",
+            "F-Score",
+            "Token Accuracy"
+        ]
+    },
+    {
+        "q": "Rearrange scoring:",
+        "type": "rearrange",
+        "words": [
+            "scorer = Scorer()",
+            "scores = scorer.score",
+            "(examples)",
+            "Print scores"
+        ]
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "print(spacy.training.offsets_to_biluo_tags(doc, [(0, 1, 'ORG')]))",
+        "o": [
+            "['U-ORG', 'O', ...]",
+            "['B-ORG', ...]",
+            "Error",
+            "None"
+        ]
+    },
+    {
+        "q": "`offsets_to_biluo_tags` converts character offsets to _____ tags.",
+        "type": "mcq",
+        "o": [
+            "BILUO",
+            "BIO",
+            "IOB",
+            "Token"
+        ]
+    },
+    {
+        "q": "This is helpful for preparing training data from span annotations.",
+        "type": "fill_blank",
+        "answers": [
+            "True"
+        ],
+        "other_options": [
+            "False",
+            "None",
+            "Error"
+        ]
+    },
+    {
+        "q": "If offsets don't align with tokens, it logs a warning/returns sparse tags.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Match tag conversion:",
+        "type": "match",
+        "left": [
+            "offsets_to_biluo",
+            "biluo_to_iob",
+            "iob_to_biluo",
+            "tags_to_spans"
+        ],
+        "right": [
+            "Char to Tag",
+            "Scheme conv",
+            "Scheme conv",
+            "Tag to Span"
+        ]
+    },
+    {
+        "q": "Rearrange tag prep:",
+        "type": "rearrange",
+        "words": [
+            "Get offsets",
+            "doc = nlp.make_doc(text)",
+            "tags = offsets_to_biluo",
+            "Save tags"
+        ]
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "nlp.begin_training()\nprint('Inited')",
+        "o": [
+            "Inited",
+            "Error",
+            "None",
+            "False"
+        ]
+    },
+    {
+        "q": "`begin_training` initializes the model weights and returns an _____.",
+        "type": "mcq",
+        "o": [
+            "Optimizer",
+            "Model",
+            "Pipeline",
+            "Loss"
+        ]
+    },
+    {
+        "q": "It requires a function/lambda that returns training examples to initialize _____.",
+        "type": "fill_blank",
+        "answers": [
+            "labels"
+        ],
+        "other_options": [
+            "weights",
+            "vectors",
+            "vocab"
+        ]
+    },
+    {
+        "q": "Calling `begin_training` resets any existing model weights.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Match init args:",
+        "type": "match",
+        "left": [
+            "get_examples",
+            "pipeline",
+            "sg",
+            "component_cfg"
+        ],
+        "right": [
+            "Data provider",
+            "Pipe list",
+            "SGD Param",
+            "Config dict"
+        ]
+    },
+    {
+        "q": "Rearrange init training:",
+        "type": "rearrange",
+        "words": [
+            "nlp = spacy.blank('en')",
+            "optimizer =",
+            "nlp.begin_training",
+            "(lambda: train_data)"
+        ]
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "print(spacy.util.registry.languages)",
+        "o": [
+            "Registry of Langs",
+            "None",
+            "Error",
+            "List"
+        ]
+    },
+    {
+        "q": "You can register a new language by decorating a subclass of `Language` with _____.",
+        "type": "mcq",
+        "o": [
+            "@spacy.registry.languages",
+            "@Language.register",
+            "@Language.factory",
+            "None"
+        ]
+    },
+    {
+        "q": "This allows the language to be used in config files via `lang = 'custom'`.",
+        "type": "fill_blank",
+        "answers": [
+            "True"
+        ],
+        "other_options": [
+            "False",
+            "None",
+            "Error"
+        ]
+    },
+    {
+        "q": "Custom languages often define custom stop words and tokenizers.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Match custom lang:",
+        "type": "match",
+        "left": [
+            "@registry.languages",
+            "defaults",
+            "lang_code",
+            "Writing system"
+        ],
+        "right": [
+            "Registration",
+            "Vocab/Syntax",
+            "ISO code",
+            "RTL/LTR"
+        ]
+    },
+    {
+        "q": "Rearrange new lang:",
+        "type": "rearrange",
+        "words": [
+            "class MyLang(Language):",
+            "lang = 'my'",
+            "@spacy.registry.languages('my')",
+            "nlp = spacy.blank('my')"
+        ]
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "from spacy.lookups import Lookups\nl = Lookups()\nprint(len(l))",
+        "o": [
+            "0",
+            "1",
+            "None",
+            "Error"
+        ]
+    },
+    {
+        "q": "`Lookups` container holds tables like lemmatization rules or normalization maps.",
+        "type": "mcq",
+        "o": [
+            "True",
+            "False",
+            "None",
+            "Error"
+        ]
+    },
+    {
+        "q": "It is attached to the `vocab._____` attribute.",
+        "type": "fill_blank",
+        "answers": [
+            "lookups"
+        ],
+        "other_options": [
+            "data",
+            "tables",
+            "maps"
+        ]
+    },
+    {
+        "q": "Lookups support generic Bloom Filter storage.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Match lookup tables:",
+        "type": "match",
+        "left": [
+            "lemma_lookup",
+            "lexeme_norm",
+            "tables",
+            "add_table"
+        ],
+        "right": [
+            "Lemmatizer map",
+            "Norm map",
+            "List of tables",
+            "Insert table"
+        ]
+    },
+    {
+        "q": "Rearrange lookups usage:",
+        "type": "rearrange",
+        "words": [
+            "vocab.lookups",
+            ".add_table('name')",
+            "table['key'] = 'val'",
+            "Get 'val'"
+        ]
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "doc = nlp('Apple')\nprint(doc.has_annotation('ENT_IOB'))",
+        "o": [
+            "True/False",
+            "None",
+            "Error",
+            "IOB"
+        ]
+    },
+    {
+        "q": "Missing annotations usually assume default values (e.g., O for entities).",
+        "type": "mcq",
+        "o": [
+            "True",
+            "False",
+            "None",
+            "Error"
+        ]
+    },
+    {
+        "q": "Checking `has_annotation` helps avoid using uninitialized data in custom _____.",
+        "type": "fill_blank",
+        "answers": [
+            "components"
+        ],
+        "other_options": [
+            "vectors",
+            "strings",
+            "files"
+        ]
+    },
+    {
+        "q": "Doc objects created with `nlp.make_doc` have no annotations.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Match annotators:",
+        "type": "match",
+        "left": [
+            "NER",
+            "Tagger",
+            "Parser",
+            "Senter"
+        ],
+        "right": [
+            "Sets ENT_IOB",
+            "Sets TAG",
+            "Sets DEP",
+            "Sets SENT_START"
+        ]
+    },
+    {
+        "q": "Rearrange dependency check:",
+        "type": "rearrange",
+        "words": [
+            "if doc.has_annotation('DEP'):",
+            "Iterate deps",
+            "else:",
+            "Warn user"
+        ]
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "from spacy.tokens import DocBin\ndb = DocBin()\nprint(len(db))",
+        "o": [
+            "0",
+            "1",
+            "None",
+            "Error"
+        ]
+    },
+    {
+        "q": "`DocBin` is used for efficient binary serialization of a collection of _____.",
+        "type": "mcq",
+        "o": [
+            "Docs",
+            "Tokens",
+            "Models",
+            "Vecs"
+        ]
+    },
+    {
+        "q": "It is the standard format (`.spacy`) for training data.",
+        "type": "fill_blank",
+        "answers": [
+            "True"
+        ],
+        "other_options": [
+            "False",
+            "None",
+            "Error"
+        ]
+    },
+    {
+        "q": "DocBin stores pointers to the Vocab to save space.",
+        "type": "true_false",
+        "correct": "False"
+    },
+    {
+        "q": "Match docbin methods:",
+        "type": "match",
+        "left": [
+            "add(doc)",
+            "to_disk(path)",
+            "from_disk(path)",
+            "get_docs(vocab)"
+        ],
+        "right": [
+            "Store doc",
+            "Save file",
+            "Load file",
+            "Yield docs"
+        ]
+    },
+    {
+        "q": "Rearrange docbin usage:",
+        "type": "rearrange",
+        "words": [
+            "Create DocBin",
+            "db.add(doc)",
+            "db.to_disk('train.spacy')",
+            "Ready for CLI"
+        ]
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "import spacy\n# Assuming CLI usage\n# !python -m spacy train config.cfg ...\nprint('Command')",
+        "o": [
+            "Command",
+            "Error",
+            "None",
+            "False"
+        ]
+    },
+    {
+        "q": "The `spacy train` command takes a config file and output directory.",
+        "type": "mcq",
+        "o": [
+            "True",
+            "False",
+            "Maybe",
+            "Error"
+        ]
+    },
+    {
+        "q": "It automatically saves the best model based on the _____ score.",
+        "type": "fill_blank",
+        "answers": [
+            "evaluation"
+        ],
+        "other_options": [
+            "training",
+            "loss",
+            "speed"
+        ]
+    },
+    {
+        "q": "You can verify data before training using `spacy debug data`.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Match training CLI:",
+        "type": "match",
+        "left": [
+            "--paths.train",
+            "--paths.dev",
+            "--output",
+            "--code"
+        ],
+        "right": [
+            "Train data",
+            "Dev data",
+            "Model dir",
+            "Custom code"
+        ]
+    },
+    {
+        "q": "Rearrange training cmd:",
+        "type": "rearrange",
+        "words": [
+            "python -m spacy train",
+            "config.cfg",
+            "--output ./output",
+            "--paths.train ./data"
+        ]
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "print(spacy.errors.Errors.E001)",
+        "o": [
+            "Error Message String",
+            "None",
+            "False",
+            "Error"
+        ]
+    },
+    {
+        "q": "spaCy defines unique error codes (e.g., E101) for easier debugging.",
+        "type": "mcq",
+        "o": [
+            "True",
+            "False",
+            "None",
+            "Error"
+        ]
+    },
+    {
+        "q": "You can look up error codes on the spaCy _____.",
+        "type": "fill_blank",
+        "answers": [
+            "website/docs"
+        ],
+        "other_options": [
+            "cli",
+            "terminal",
+            "code"
+        ]
+    },
+    {
+        "q": "Warnings are also categorized with W codes.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Match error types:",
+        "type": "match",
+        "left": [
+            "ValueError",
+            "KeyError",
+            "IndexError",
+            "NotImplementedError"
+        ],
+        "right": [
+            "Invalid arg",
+            "Missing key",
+            "Out of bounds",
+            "Missing feature"
+        ]
+    },
+    {
+        "q": "Rearrange error handling:",
+        "type": "rearrange",
+        "words": [
+            "try:",
+            "nlp(text)",
+            "except KeyError:",
+            "Handle unknown"
+        ]
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "doc = nlp('Apple')\nprint(doc._.has('my_ext'))",
+        "o": [
+            "True/False",
+            "None",
+            "Error",
+            "Attribute"
+        ]
+    },
+    {
+        "q": "The `._` attribute is an `Underscore` object that manages custom attribute access.",
+        "type": "mcq",
+        "o": [
+            "True",
+            "False",
+            "None",
+            "Error"
+        ]
+    },
+    {
+        "q": "To avoid name collisions, use specific _____ for extensions.",
+        "type": "fill_blank",
+        "answers": [
+            "prefixes/namespaces"
+        ],
+        "other_options": [
+            "characters",
+            "numbers",
+            "symbols"
+        ]
+    },
+    {
+        "q": "You can iterate over all set extensions on a doc.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Match accessors:",
+        "type": "match",
+        "left": [
+            "._",
+            "get()",
+            "set()",
+            "has()"
+        ],
+        "right": [
+            "Proxy",
+            "Retrieve",
+            "Assign",
+            "Check"
+        ]
+    },
+    {
+        "q": "Rearrange extension usage:",
+        "type": "rearrange",
+        "words": [
+            "Import Token",
+            "Token.set_extension",
+            "token._.ext",
+            "Use value"
+        ]
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "from spacy.vectors import Mode\nprint(Mode.DEFAULT)",
+        "o": [
+            "Int/Enum",
+            "String",
+            "None",
+            "Error"
+        ]
+    },
+    {
+        "q": "The `Vectors` class stores word vectors and manages keys/hashes.",
+        "type": "mcq",
+        "o": [
+            "True",
+            "False",
+            "None",
+            "Error"
+        ]
+    },
+    {
+        "q": "Vectors are shared across the entire _____.",
+        "type": "fill_blank",
+        "answers": [
+            "vocab"
+        ],
+        "other_options": [
+            "doc",
+            "pipeline",
+            "batch"
+        ]
+    },
+    {
+        "q": "You can resize the vectors table dynamically.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Match vector props:",
+        "type": "match",
+        "left": [
+            "shape",
+            "data",
+            "keys",
+            "name"
+        ],
+        "right": [
+            "(rows, cols)",
+            "Numpy matrix",
+            "Hash keys",
+            "Dataset ID"
+        ]
+    },
+    {
+        "q": "Rearrange vector access:",
+        "type": "rearrange",
+        "words": [
+            "vocab.vectors",
+            "Find row",
+            "Get slice",
+            "Return array"
+        ]
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "nlp.add_pipe('ner', name='my_ner')\nprint(nlp.pipe_names)",
+        "o": [
+            "['..., 'my_ner']",
+            "['ner']",
+            "Error",
+            "None"
+        ]
+    },
+    {
+        "q": "You can give pipeline components custom names using the `name` argument.",
+        "type": "mcq",
+        "o": [
+            "True",
+            "False",
+            "None",
+            "Error"
+        ]
+    },
+    {
+        "q": "Component names must be unique within the pipeline.",
+        "type": "fill_blank",
+        "answers": [
+            "True"
+        ],
+        "other_options": [
+            "False",
+            "Maybe",
+            "Error"
+        ]
+    },
+    {
+        "q": "Config strings use the component name to configure it.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Match pipe ID:",
+        "type": "match",
+        "left": [
+            "Factory name",
+            "Component name",
+            "variable",
+            "pipe_factories"
+        ],
+        "right": [
+            "Type (ner)",
+            "Instance ID",
+            "Python obj",
+            "Registry map"
+        ]
+    },
+    {
+        "q": "Rearrange rename pipe:",
+        "type": "rearrange",
+        "words": [
+            "nlp.rename_pipe",
+            "('old_name',",
+            "'new_name')",
+            "Pipeline updated"
+        ]
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "doc = nlp.make_doc('Hello')\nprint(doc.is_nered)",
+        "o": [
+            "False",
+            "True",
+            "AttributeError",
+            "None"
+        ]
+    },
+    {
+        "q": "There is no built-in `is_nered` attribute; use `has_annotation`.",
+        "type": "mcq",
+        "o": [
+            "True",
+            "False",
+            "None",
+            "Error"
+        ]
+    },
+    {
+        "q": "Custom attributes cannot overwrite built-in properties.",
+        "type": "fill_blank",
+        "answers": [
+            "True"
+        ],
+        "other_options": [
+            "False",
+            "Maybe",
+            "Error"
+        ]
+    },
+    {
+        "q": "You can delete a custom extension with `remove_extension`.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Match safety:",
+        "type": "match",
+        "left": [
+            "Overwrite built-in",
+            "Force extension",
+            "Missing attr",
+            "Wrong type"
+        ],
+        "right": [
+            "Error",
+            "Allowed",
+            "AttributeError",
+            "TypeError"
+        ]
+    },
+    {
+        "q": "Rearrange remove ext:",
+        "type": "rearrange",
+        "words": [
+            "Token.remove_extension",
+            "('name')",
+            "Attr gone",
+            "Clean up"
+        ]
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "import spacy\nfrom spacy.language import Language\n@Language.component('my_comp')\ndef my_comp(doc):\n return doc\nnlp = spacy.blank('en')\nnlp.add_pipe('my_comp')\nprint(nlp.pipe_names)",
+        "o": [
+            "['my_comp']",
+            "[]",
+            "Error",
+            "None"
+        ]
+    },
+    {
+        "q": "The `@Language.component` decorator registers a simple _____ component.",
+        "type": "mcq",
+        "o": [
+            "function",
+            "class",
+            "model",
+            "variable"
+        ]
+    },
+    {
+        "q": "It is simpler than `@Language.factory` but ignores the defined _____.",
+        "type": "fill_blank",
+        "answers": [
+            "config"
+        ],
+        "other_options": [
+            "input",
+            "output",
+            "name"
+        ]
+    },
+    {
+        "q": "Function components can be pickled/serialized automatically.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Match registration:",
+        "type": "match",
+        "left": [
+            "@Language.component",
+            "@Language.factory",
+            "nlp.add_pipe(func)",
+            "nlp.add_pipe(name)"
+        ],
+        "right": [
+            "Stateless func",
+            "Class factory",
+            "Direct add",
+            "Registry lookup"
+        ]
+    },
+    {
+        "q": "Rearrange func pipe:",
+        "type": "rearrange",
+        "words": [
+            "@Language.component('x')",
+            "def x(doc):",
+            "return doc",
+            "nlp.add_pipe('x')"
+        ]
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "doc = nlp('Hello')\nprint(doc._.get('my_ext'))",
+        "o": [
+            "Value/None",
+            "Error",
+            "True",
+            "False"
+        ]
+    },
+    {
+        "q": "If an extension has no default and hasn't been set, accessing it raises an AttributeError.",
+        "type": "mcq",
+        "o": [
+            "True",
+            "False",
+            "None",
+            "Error"
+        ]
+    },
+    {
+        "q": "Using `doc._.get('name')` returns _____ if the extension is not set.",
+        "type": "fill_blank",
+        "answers": [
+            "None"
+        ],
+        "other_options": [
+            "Error",
+            "False",
+            "Empty"
+        ]
+    },
+    {
+        "q": "This safe access is similar to dictionary `.get()`.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Match underscore methods:",
+        "type": "match",
+        "left": [
+            "set",
+            "get",
+            "has",
+            "values"
+        ],
+        "right": [
+            "Write",
+            "Safe Read",
+            "Check",
+            "All vals (private)"
+        ]
+    },
+    {
+        "q": "Rearrange safe get:",
+        "type": "rearrange",
+        "words": [
+            "val = doc._.get('ext')",
+            "if val is None:",
+            "Set default",
+            "proceed"
+        ]
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "matcher = spacy.matcher.Matcher(nlp.vocab)\npattern = [{'TEXT': {'REGEX': '^a'}}]\n# Matches 'apple'?",
+        "o": [
+            "True",
+            "False",
+            "Error",
+            "None"
+        ]
+    },
+    {
+        "q": "The REGEX operator in Matcher allows matching tokens using _____ expressions.",
+        "type": "mcq",
+        "o": [
+            "regular",
+            "math",
+            "logical",
+            "binary"
+        ]
+    },
+    {
+        "q": "It is strictly for matching the token's _____ attribute.",
+        "type": "fill_blank",
+        "answers": [
+            "text"
+        ],
+        "other_options": [
+            "pos",
+            "tag",
+            "dep"
+        ]
+    },
+    {
+        "q": "Regex matching is generally slower than exact string matching.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Match regex:",
+        "type": "match",
+        "left": [
+            "^",
+            "$",
+            "\\d",
+            ".*"
+        ],
+        "right": [
+            "Start",
+            "End",
+            "Digit",
+            "Any char"
+        ]
+    },
+    {
+        "q": "Rearrange regex match:",
+        "type": "rearrange",
+        "words": [
+            "{'TEXT':",
+            "{'REGEX':",
+            "'^[0-9]+$'}",
+            "Match digits"
+        ]
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "from spacy.tokens import Span\nspan = Span(doc, 0, 1)\nprint(span.root.text)",
+        "o": [
+            "Root Token",
+            "None",
+            "Error",
+            "Start"
+        ]
+    },
+    {
+        "q": "The `root` of a Span is the token with the highest _____ in the parse tree.",
+        "type": "mcq",
+        "o": [
+            "head/rank",
+            "index",
+            "length",
+            "vector"
+        ]
+    },
+    {
+        "q": "It is determined by the dependency parser.",
+        "type": "fill_blank",
+        "answers": [
+            "True"
+        ],
+        "other_options": [
+            "False",
+            "None",
+            "Error"
+        ]
+    },
+    {
+        "q": "If no parser is run, the root defaults to the first token.",
+        "type": "true_false",
+        "correct": "False"
+    },
+    {
+        "q": "Match syntactic heads:",
+        "type": "match",
+        "left": [
+            "Span.root",
+            "Token.head",
+            "Doc.sents",
+            "Doc.noun_chunks"
+        ],
+        "right": [
+            "Main word",
+            "Parent",
+            "Root-based split",
+            "Root noun"
+        ]
+    },
+    {
+        "q": "Rearrange root finding:",
+        "type": "rearrange",
+        "words": [
+            "Get span",
+            "Access .root",
+            "Check .dep_",
+            "Analyze role"
+        ]
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "doc = nlp('Apple')\nprint(doc.vector_norm)",
+        "o": [
+            "Float",
+            "None",
+            "Error",
+            "Int"
+        ]
+    },
+    {
+        "q": "`vector_norm` is the L2 norm (Euclidean length) of the document's _____.",
+        "type": "mcq",
+        "o": [
+            "vector",
+            "text",
+            "tokens",
+            "vocab"
+        ]
+    },
+    {
+        "q": "A zero vector has a norm of _____.",
+        "type": "fill_blank",
+        "answers": [
+            "0"
+        ],
+        "other_options": [
+            "1",
+            "-1",
+            "None"
+        ]
+    },
+    {
+        "q": "Normalized vectors (unit length) simplify cosine similarity to a dot product.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Match vector math:",
+        "type": "match",
+        "left": [
+            "L2 norm",
+            "Dot product",
+            "Cosine sim",
+            "Mean vector"
+        ],
+        "right": [
+            "Length",
+            "Projection",
+            "Angle match",
+            "Average"
+        ]
+    },
+    {
+        "q": "Rearrange norm usage:",
+        "type": "rearrange",
+        "words": [
+            "v = doc.vector",
+            "n = doc.vector_norm",
+            "v_unit = v / n",
+            "Use v_unit"
+        ]
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "import spacy\n# print(spacy.info())",
+        "o": [
+            "System Info",
+            "None",
+            "Error",
+            "False"
+        ]
+    },
+    {
+        "q": "`spacy.info()` prints details about the spaCy version, platform, and installed _____.",
+        "type": "mcq",
+        "o": [
+            "models",
+            "drivers",
+            "pip",
+            "git"
+        ]
+    },
+    {
+        "q": "You can call it with a specific model name to get its meta data.",
+        "type": "fill_blank",
+        "answers": [
+            "True"
+        ],
+        "other_options": [
+            "False",
+            "None",
+            "Error"
+        ]
+    },
+    {
+        "q": "It outputs Markdown formatted text by default.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Match meta info:",
+        "type": "match",
+        "left": [
+            "lang",
+            "name",
+            "version",
+            "pipeline"
+        ],
+        "right": [
+            "code",
+            "model name",
+            "x.y.z",
+            "components"
+        ]
+    },
+    {
+        "q": "Rearrange info check:",
+        "type": "rearrange",
+        "words": [
+            "spacy.info",
+            "('en_core_web_sm')",
+            "Check sources",
+            "Verify version"
+        ]
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "matcher.add('KEY', [[{'TEXT': 'a'}]])\nmatcher.remove('KEY')\nprint(matcher.has_key('KEY'))",
+        "o": [
+            "False",
+            "True",
+            "Error",
+            "None"
+        ]
+    },
+    {
+        "q": "The `remove` method deletes a rule from the Matcher by its _____.",
+        "type": "mcq",
+        "o": [
+            "key/id",
+            "pattern",
+            "index",
+            "callback"
+        ]
+    },
+    {
+        "q": "Removing a non-existent key raises a _____.",
+        "type": "fill_blank",
+        "answers": [
+            "ValueError"
+        ],
+        "other_options": [
+            "KeyError",
+            "IndexError",
+            "None"
+        ]
+    },
+    {
+        "q": "Matcher rules are processed in the order they were added.",
+        "type": "true_false",
+        "correct": "False"
+    },
+    {
+        "q": "Match matcher ops:",
+        "type": "match",
+        "left": [
+            "add",
+            "remove",
+            "has_key",
+            "get"
+        ],
+        "right": [
+            "Insert rule",
+            "Delete rule",
+            "Check exists",
+            "Retrieve rule"
+        ]
+    },
+    {
+        "q": "Rearrange matcher cleanup:",
+        "type": "rearrange",
+        "words": [
+            "if matcher.has_key('X'):",
+            "matcher.remove('X')",
+            "Define new 'X'",
+            "Add 'X'"
+        ]
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "doc = nlp('I am')\nprint(doc[0].prob)",
+        "o": [
+            "Log Probability",
+            "None",
+            "Error",
+            "1.0"
+        ]
+    },
+    {
+        "q": "The `prob` attribute on a token returns the unigram probability.",
+        "type": "mcq",
+        "o": [
+            "True",
+            "False",
+            "None",
+            "Error"
+        ]
+    },
+    {
+        "q": "This feature requires the _____ table to be loaded in the vocab.",
+        "type": "fill_blank",
+        "answers": [
+            "lookups/prob"
+        ],
+        "other_options": [
+            "vectors",
+            "ner",
+            "tagger"
+        ]
+    },
+    {
+        "q": "Values are typically log-probabilities (negative floats).",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Match probability:",
+        "type": "match",
+        "left": [
+            "prob",
+            "cluster",
+            "sentiment",
+            "is_oov"
+        ],
+        "right": [
+            "Word freq",
+            "Brown cluster",
+            "Positive/Neg",
+            "Unknown word"
+        ]
+    },
+    {
+        "q": "Rearrange prob access:",
+        "type": "rearrange",
+        "words": [
+            "token = doc[0]",
+            "p = token.prob",
+            "if p < -20:",
+            "Rare word"
+        ]
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "doc = nlp('Hello')\nprint(hash(doc))",
+        "o": [
+            "Error/TypeError",
+            "Int",
+            "None",
+            "Address"
+        ]
+    },
+    {
+        "q": "Doc objects are _____ and therefore not hashable.",
+        "type": "mcq",
+        "o": [
+            "mutable",
+            "immutable",
+            "static",
+            "frozen"
+        ]
+    },
+    {
+        "q": "To use a Doc as a dictionary key, use its text or serialization.",
+        "type": "fill_blank",
+        "answers": [
+            "True"
+        ],
+        "other_options": [
+            "False",
+            "None",
+            "Error"
+        ]
+    },
+    {
+        "q": "Tokens and Spans are also unhashable.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Match data types:",
+        "type": "match",
+        "left": [
+            "Doc",
+            "Vocab",
+            "String",
+            "Lexeme"
+        ],
+        "right": [
+            "Mutable (list-like)",
+            "Container",
+            "Immutable",
+            "Struct"
+        ]
+    },
+    {
+        "q": "Rearrange dict key:",
+        "type": "rearrange",
+        "words": [
+            "d = {}",
+            "d[doc.text] = 1",
+            "d[doc] -> Error",
+            "Use string key"
+        ]
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "pipe = nlp.create_pipe('ner')\nprint(type(pipe))",
+        "o": [
+            "EntityRecognizer",
+            "None",
+            "Error",
+            "String"
+        ]
+    },
+    {
+        "q": "`create_pipe` instantiates a component without adding it to the pipeline.",
+        "type": "mcq",
+        "o": [
+            "True",
+            "False",
+            "None",
+            "Error"
+        ]
+    },
+    {
+        "q": "It looks up the component factory in the _____.",
+        "type": "fill_blank",
+        "answers": [
+            "registry"
+        ],
+        "other_options": [
+            "vocab",
+            "config",
+            "path"
+        ]
+    },
+    {
+        "q": "You must manually add it to `nlp.pipeline` or use `add_pipe`.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Match creation:",
+        "type": "match",
+        "left": [
+            "create_pipe",
+            "add_pipe",
+            "get_pipe",
+            "has_pipe"
+        ],
+        "right": [
+            "Make instance",
+            "Make & Add",
+            "Retrieve",
+            "Check"
+        ]
+    },
+    {
+        "q": "Rearrange manual pipe:",
+        "type": "rearrange",
+        "words": [
+            "ner = nlp.create_pipe('ner')",
+            "ner.add_label('X')",
+            "nlp.add_pipe(ner)",
+            "Process docs"
+        ]
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "doc = nlp('A')\nprint(doc.has_vector)",
+        "o": [
+            "True/False",
+            "None",
+            "Error",
+            "Vector"
+        ]
+    },
+    {
+        "q": "`has_vector` checks if the document (or its tokens) has an associated vector.",
+        "type": "mcq",
+        "o": [
+            "True",
+            "False",
+            "None",
+            "Error"
+        ]
+    },
+    {
+        "q": "It returns False if the vector is all _____.",
+        "type": "fill_blank",
+        "answers": [
+            "zeros"
+        ],
+        "other_options": [
+            "ones",
+            "nans",
+            "empty"
+        ]
+    },
+    {
+        "q": "Models ending in `_sm` typically have no word vectors (has_vector=False) except for context tensors.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Match model suffix:",
+        "type": "match",
+        "left": [
+            "_sm",
+            "_md",
+            "_lg",
+            "_trf"
+        ],
+        "right": [
+            "Small (No Vec)",
+            "Medium (Vec)",
+            "Large (Vec)",
+            "Transformer"
+        ]
+    },
+    {
+        "q": "Rearrange vector check:",
+        "type": "rearrange",
+        "words": [
+            "if not doc.has_vector:",
+            "Skip similarity",
+            "else:",
+            "Compute"
+        ]
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "doc = nlp('Apple')\nprint(doc.cats)",
+        "o": [
+            "Dict",
+            "List",
+            "None",
+            "Error"
+        ]
+    },
+    {
+        "q": "The `cats` attribute stores probabilities for text _____ tasks.",
+        "type": "mcq",
+        "o": [
+            "classification",
+            "clustering",
+            "parsing",
+            "splitting"
+        ]
+    },
+    {
+        "q": "It maps labels to score (float between 0 and 1).",
+        "type": "fill_blank",
+        "answers": [
+            "True"
+        ],
+        "other_options": [
+            "False",
+            "None",
+            "Error"
+        ]
+    },
+    {
+        "q": "The TextCategorizer component populates `doc.cats`.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Match textcat:",
+        "type": "match",
+        "left": [
+            "cats",
+            "exclusive_classes",
+            "multi_label",
+            "threshold"
+        ],
+        "right": [
+            "Scores",
+            "One hot",
+            "Many hot",
+            "Cutoff"
+        ]
+    },
+    {
+        "q": "Rearrange classification:",
+        "type": "rearrange",
+        "words": [
+            "Process text",
+            "score = doc.cats['SPAM']",
+            "if score > 0.5:",
+            "Mark SPAM"
+        ]
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "import networkx\n# spaCy doesn't include networkx\nprint('External')",
+        "o": [
+            "External",
+            "Error",
+            "None",
+            "Graph"
+        ]
+    },
+    {
+        "q": "To interact with network libraries like NetworkX, use the _____ edges.",
+        "type": "mcq",
+        "o": [
+            "dependency",
+            "entity",
+            "token",
+            "vector"
+        ]
+    },
+    {
+        "q": "You can convert a Doc to a graph where tokens are nodes.",
+        "type": "fill_blank",
+        "answers": [
+            "True"
+        ],
+        "other_options": [
+            "False",
+            "None",
+            "Error"
+        ]
+    },
+    {
+        "q": "Dependency trees are DAGs (Directed Acyclic Graphs).",
+        "type": "true_false",
+        "correct": "False"
+    },
+    {
+        "q": "Match graph terms:",
+        "type": "match",
+        "left": [
+            "Root",
+            "Child",
+            "Head",
+            "Cycle"
+        ],
+        "right": [
+            "Top node",
+            "Dependent",
+            "Parent",
+            "Loop (Error)"
+        ]
+    },
+    {
+        "q": "Rearrange graph build:",
+        "type": "rearrange",
+        "words": [
+            "Iterate tokens",
+            "Add node",
+            "Add edge (child, head)",
+            "Draw graph"
+        ]
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "from spacy.tokens import Doc\nDoc.set_extension('x', force=True, default=0)",
+        "o": [
+            "None",
+            "Error",
+            "True",
+            "False"
+        ]
+    },
+    {
+        "q": "The `force=True` argument allows overwriting an _____ extension.",
+        "type": "mcq",
+        "o": [
+            "existing",
+            "missing",
+            "broken",
+            "new"
+        ]
+    },
+    {
+        "q": "Without `force=True`, registering a duplicate name raises a _____.",
+        "type": "fill_blank",
+        "answers": [
+            "ValueError"
+        ],
+        "other_options": [
+            "KeyError",
+            "IndexError",
+            "Warning"
+        ]
+    },
+    {
+        "q": "It is good practice to use force=True in notebooks to allow cell re-execution.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Match extension args:",
+        "type": "match",
+        "left": [
+            "name",
+            "default",
+            "getter",
+            "force"
+        ],
+        "right": [
+            "ID",
+            "Value",
+            "Function",
+            "Overwrite"
+        ]
+    },
+    {
+        "q": "Rearrange overwrite:",
+        "type": "rearrange",
+        "words": [
+            "Doc.set_extension",
+            "('tag',",
+            "force=True)",
+            "Updated logic"
+        ]
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "nlp.max_length = 50\ndoc = nlp('a' * 100)",
+        "o": [
+            "ValueError",
+            "Doc",
+            "None",
+            "clipped"
+        ]
+    },
+    {
+        "q": "`nlp.max_length` prevents memory errors on extremely _____ documents.",
+        "type": "mcq",
+        "o": [
+            "long",
+            "short",
+            "complex",
+            "empty"
+        ]
+    },
+    {
+        "q": "You can increase this limit if you have enough RAM.",
+        "type": "fill_blank",
+        "answers": [
+            "True"
+        ],
+        "other_options": [
+            "False",
+            "None",
+            "Error"
+        ]
+    },
+    {
+        "q": "The default max_length is 1,000,000 characters.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Match limits:",
+        "type": "match",
+        "left": [
+            "max_length",
+            "batch_size",
+            "gpu_limit",
+            "timeout"
+        ],
+        "right": [
+            "Char count",
+            "Docs per batch",
+            "Memory",
+            "Network"
+        ]
+    },
+    {
+        "q": "Rearrange length check:",
+        "type": "rearrange",
+        "words": [
+            "nlp.max_length = X",
+            "Check len(text)",
+            "if len > X:",
+            "Chunk text"
+        ]
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "import spacy.displacy as displacy\n# displacy.serve(doc)\nprint('Server')",
+        "o": [
+            "Server",
+            "HTML",
+            "Error",
+            "None"
+        ]
+    },
+    {
+        "q": "`displacy.serve` starts a simple _____ server to view visualisations.",
+        "type": "mcq",
+        "o": [
+            "web/http",
+            "tcp",
+            "ftp",
+            "sql"
+        ]
+    },
+    {
+        "q": "To return the HTML string instead of serving, use `style='dep', page=True` or `displacy._____`.",
+        "type": "fill_blank",
+        "answers": [
+            "render"
+        ],
+        "other_options": [
+            "show",
+            "view",
+            "print"
+        ]
+    },
+    {
+        "q": "displacy supports 'dep' and 'ent' styles.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Match displacy options:",
+        "type": "match",
+        "left": [
+            "style",
+            "minify",
+            "jupyter",
+            "options"
+        ],
+        "right": [
+            "Visual type",
+            "Compact HTML",
+            "Notebook mode",
+            "Colors/Config"
+        ]
+    },
+    {
+        "q": "Rearrange visualize:",
+        "type": "rearrange",
+        "words": [
+            "doc = nlp(text)",
+            "displacy.render",
+            "(doc, style='ent')",
+            "Display HTML"
+        ]
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "doc = nlp('Apple')\nprint(doc[0].check_flag(12345))",
+        "o": [
+            "True/False",
+            "Error",
+            "None",
+            "Int"
+        ]
+    },
+    {
+        "q": "`check_flag` allows checking arbitrary integer flags (from Vocabulary).",
+        "type": "mcq",
+        "o": [
+            "True",
+            "False",
+            "None",
+            "Error"
+        ]
+    },
+    {
+        "q": "This is used internally for `is_stop`, `is_alpha`, etc.",
+        "type": "fill_blank",
+        "answers": [
+            "True"
+        ],
+        "other_options": [
+            "False",
+            "None",
+            "Error"
+        ]
+    },
+    {
+        "q": "Flags are stored in the `lex.flags` bitfield.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Match bitwise:",
+        "type": "match",
+        "left": [
+            "&",
+            "|",
+            "^",
+            "~"
+        ],
+        "right": [
+            "AND",
+            "OR",
+            "XOR",
+            "NOT"
+        ]
+    },
+    {
+        "q": "Rearrange flag usage:",
+        "type": "rearrange",
+        "words": [
+            "flag_id = vocab.add_flag",
+            "(func)",
+            "token.check_flag",
+            "(flag_id)"
+        ]
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "print(spacy.training.io.disk_writers)",
+        "o": [
+            "Module/Object",
+            "List",
+            "None",
+            "Error"
+        ]
+    },
+    {
+        "q": "spaCy's training IO system handles saving and loading of training data.",
+        "type": "mcq",
+        "o": [
+            "True",
+            "False",
+            "None",
+            "Error"
+        ]
+    },
+    {
+        "q": "It abstracts away format details (JSON, DocBin, etc.).",
+        "type": "fill_blank",
+        "answers": [
+            "True"
+        ],
+        "other_options": [
+            "False",
+            "None",
+            "Error"
+        ]
+    },
+    {
+        "q": "Custom readers/writers can be registered.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Match io roles:",
+        "type": "match",
+        "left": [
+            "Corpus",
+            "Example",
+            "Reader",
+            "Writer"
+        ],
+        "right": [
+            "Data Stream",
+            "Data Pair",
+            "Load File",
+            "Save File"
+        ]
+    },
+    {
+        "q": "Rearrange io flow:",
+        "type": "rearrange",
+        "words": [
+            "Register reader",
+            "Config references it",
+            "train command calls it",
+            "Data flows"
+        ]
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "from spacy.lang.en import English\nnlp = English()\nprint(nlp.lang)",
+        "o": [
+            "en",
+            "English",
+            "None",
+            "Error"
+        ]
+    },
+    {
+        "q": "Instantiating `English()` directly creates an empty pipeline for that language.",
+        "type": "mcq",
+        "o": [
+            "True",
+            "False",
+            "None",
+            "Error"
+        ]
+    },
+    {
+        "q": "This is equivalent to `spacy.blank('_____')`.",
+        "type": "fill_blank",
+        "answers": [
+            "en"
+        ],
+        "other_options": [
+            "English",
+            "eng",
+            "US"
+        ]
+    },
+    {
+        "q": "Direct instantiation is faster than loading a model.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Match creation methods:",
+        "type": "match",
+        "left": [
+            "spacy.load",
+            "spacy.blank",
+            "English()",
+            "Language()"
+        ],
+        "right": [
+            "Load Model",
+            "Empty Pipeline",
+            "Specific Lang",
+            "Base Class"
+        ]
+    },
+    {
+        "q": "Rearrange instantiation:",
+        "type": "rearrange",
+        "words": [
+            "from spacy.lang.de",
+            "import German",
+            "nlp = German()",
+            "Ready to tokenize"
+        ]
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "doc = nlp('Rate of 5%')\nprint(doc[2].like_num)",
+        "o": [
+            "True",
+            "False",
+            "None",
+            "Error"
+        ]
+    },
+    {
+        "q": "`like_num` handles digits, word-nums, and sometimes fractions.",
+        "type": "mcq",
+        "o": [
+            "True",
+            "False",
+            "None",
+            "Error"
+        ]
+    },
+    {
+        "q": "It does not usually include the percent sign itself as part of the number token.",
+        "type": "fill_blank",
+        "answers": [
+            "True"
+        ],
+        "other_options": [
+            "False",
+            "None",
+            "Error"
+        ]
+    },
+    {
+        "q": "Tokenization splits '5%' into '5' and '%' (usually).",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Match numeric types:",
+        "type": "match",
+        "left": [
+            "100",
+            "one",
+            "half",
+            "10.5"
+        ],
+        "right": [
+            "Digit",
+            "Word",
+            "Fraction",
+            "Float"
+        ]
+    },
+    {
+        "q": "Rearrange number extract:",
+        "type": "rearrange",
+        "words": [
+            "for token in doc",
+            "if token.like_num:",
+            "Parse number",
+            "Store value"
+        ]
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "doc = nlp('Hi ')\nprint(doc[1].is_space)",
+        "o": [
+            "True",
+            "False",
+            "None",
+            "Error"
+        ]
+    },
+    {
+        "q": "Trailing whitespace is tokenized as a space token in spaCy.",
+        "type": "mcq",
+        "o": [
+            "True",
+            "False",
+            "None",
+            "Error"
+        ]
+    },
+    {
+        "q": "Most models are trained to ignore `is_space` tokens during analysis.",
+        "type": "fill_blank",
+        "answers": [
+            "True"
+        ],
+        "other_options": [
+            "False",
+            "None",
+            "Error"
+        ]
+    },
+    {
+        "q": "Stripping whitespace changes the character offsets.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Match whitespace handling:",
+        "type": "match",
+        "left": [
+            "strip()",
+            "is_space",
+            "text_with_ws",
+            "trim"
+        ],
+        "right": [
+            "Remove ws",
+            "Check ws",
+            "Original text",
+            "Cut ends"
+        ]
+    },
+    {
+        "q": "Rearrange cleaning:",
+        "type": "rearrange",
+        "words": [
+            "text.strip()",
+            "nlp(text)",
+            "Analyze",
+            "Offsets changed"
+        ]
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "print(spacy.attrs.IDS['ORTH'])",
+        "o": [
+            "Int Value",
+            "None",
+            "Error",
+            "ORTH"
+        ]
+    },
+    {
+        "q": "The `IDS` map converts string attribute names (like 'ORTH') to their integer constants.",
+        "type": "mcq",
+        "o": [
+            "True",
+            "False",
+            "None",
+            "Error"
+        ]
+    },
+    {
+        "q": "This is used for efficient low-level access to the `_____` array.",
+        "type": "fill_blank",
+        "answers": [
+            "doc/token"
+        ],
+        "other_options": [
+            "vocab",
+            "string",
+            "hash"
+        ]
+    },
+    {
+        "q": "You should generally use `token.orth` instead of the ID directly.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Match attributes:",
+        "type": "match",
+        "left": [
+            "ORTH",
+            "TAG",
+            "HEAD",
+            "DEP"
+        ],
+        "right": [
+            "Text ID",
+            "POS ID",
+            "Head Index",
+            "Dep ID"
+        ]
+    },
+    {
+        "q": "Rearrange low level:",
+        "type": "rearrange",
+        "words": [
+            "import attrs",
+            "Get array",
+            "array[:, attrs.ORTH]",
+            "Process integers"
+        ]
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "print(spacy.__version__)",
+        "o": [
+            "Version String",
+            "None",
+            "Error",
+            "Int"
+        ]
+    },
+    {
+        "q": "Always check `spacy.__version__` when reporting bugs.",
+        "type": "mcq",
+        "o": [
+            "True",
+            "False",
+            "None",
+            "Error"
+        ]
+    },
+    {
+        "q": "Semver guarantees no breaking changes in _____ updates.",
+        "type": "fill_blank",
+        "answers": [
+            "minor/patch"
+        ],
+        "other_options": [
+            "major",
+            "all",
+            "beta"
+        ]
+    },
+    {
+        "q": "Pipelines are versioned separately from the library.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Match version parts:",
+        "type": "match",
+        "left": [
+            "3.0",
+            "3.1",
+            "3.1.1",
+            "4.0"
+        ],
+        "right": [
+            "Major",
+            "Minor",
+            "Patch",
+            "Future"
+        ]
+    },
+    {
+        "q": "Rearrange version check:",
+        "type": "rearrange",
+        "words": [
+            "import spacy",
+            "v = spacy.__version__",
+            "if v < '3.0':",
+            "Update"
+        ]
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "nlp.add_pipe('merge_entities')\ndoc = nlp('New York is big')\nprint(len(doc))",
+        "o": [
+            "3 (merged NY)",
+            "4",
+            "Error",
+            "None"
+        ]
+    },
+    {
+        "q": "`merge_entities` is a component that merges entity spans into single _____.",
+        "type": "mcq",
+        "o": [
+            "tokens",
+            "sentences",
+            "docs",
+            "chars"
+        ]
+    },
+    {
+        "q": "This simplifies downstream processing if you treat entities as units.",
+        "type": "fill_blank",
+        "answers": [
+            "True"
+        ],
+        "other_options": [
+            "False",
+            "None",
+            "Error"
+        ]
+    },
+    {
+        "q": "Merging tokens modifies the `doc` in-place and invalidates existing indices.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Match merge pipes:",
+        "type": "match",
+        "left": [
+            "merge_entities",
+            "merge_noun_chunks",
+            "merge_subtokens",
+            "retokenizing"
+        ],
+        "right": [
+            "Ents to tokens",
+            "Chunks to tokens",
+            "Subs to words",
+            "Manual merge"
+        ]
+    },
+    {
+        "q": "Rearrange retokenization:",
+        "type": "rearrange",
+        "words": [
+            "Run NER",
+            "merge_entities",
+            "Analyze tokens",
+            "Indices shifted"
+        ]
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "import spacy\nprint(spacy.vocab.Vocab().vectors_length)",
+        "o": [
+            "0",
+            "300",
+            "None",
+            "Error"
+        ]
+    },
+    {
+        "q": "`vectors_length` indicates the dimensionality of the word vectors (e.g., 300).",
+        "type": "mcq",
+        "o": [
+            "True",
+            "False",
+            "None",
+            "Error"
+        ]
+    },
+    {
+        "q": "If no vectors are loaded, it is _____.",
+        "type": "fill_blank",
+        "answers": [
+            "0"
+        ],
+        "other_options": [
+            "1",
+            "-1",
+            "None"
+        ]
+    },
+    {
+        "q": "All vectors in a Vocab must have the same dimension.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Match dim:",
+        "type": "match",
+        "left": [
+            "en_core_web_md",
+            "en_core_web_sm",
+            "custom_vecs",
+            "empty"
+        ],
+        "right": [
+            "300 (usually)",
+            "0",
+            "Any",
+            "0"
+        ]
+    },
+    {
+        "q": "Rearrange dim check:",
+        "type": "rearrange",
+        "words": [
+            "dim = nlp.vocab.vectors_length",
+            "if dim == 0:",
+            "No vectors",
+            "else: Use vec"
+        ]
+    }
+]

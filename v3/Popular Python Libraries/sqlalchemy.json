@@ -1,0 +1,5616 @@
+[
+    {
+        "q": "What is SQLAlchemy?",
+        "type": "mcq",
+        "o": [
+            "Python SQL Toolkit and ORM",
+            "Java Database",
+            "Web Framework",
+            "Game Engine"
+        ]
+    },
+    {
+        "q": "ORM stands for Object _____ Mapper.",
+        "type": "fill_blank",
+        "answers": [
+            "Relational"
+        ],
+        "other_options": [
+            "Recursive",
+            "Random",
+            "Role"
+        ]
+    },
+    {
+        "q": "SQLAlchemy allows writing SQL queries using Python objects.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Match components:",
+        "type": "match",
+        "left": [
+            "Core",
+            "ORM",
+            "Engine",
+            "Dialect"
+        ],
+        "right": [
+            "SQL Expression Language",
+            "Object Mapping",
+            "DB Connectivity",
+            "DB Specifics"
+        ]
+    },
+    {
+        "q": "Rearrange setup:",
+        "type": "rearrange",
+        "words": [
+            "from sqlalchemy import create_engine",
+            "engine = create_engine('sqlite:///:memory:')",
+            "connection = engine.connect()",
+            "result = connection.execute(...)"
+        ]
+    },
+    {
+        "q": "What function creates a database engine?",
+        "type": "mcq",
+        "o": [
+            "create_engine()",
+            "make_db()",
+            "start_sql()",
+            "init_engine()"
+        ]
+    },
+    {
+        "q": "The connection string for SQLite in memory is 'sqlite:///_____'.",
+        "type": "fill_blank",
+        "answers": [
+            ":memory:"
+        ],
+        "other_options": [
+            "ram",
+            "temp",
+            "null"
+        ]
+    },
+    {
+        "q": "`echo=True` as an argument to `create_engine` enables logging of generated SQL.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Match DB prefixes:",
+        "type": "match",
+        "left": [
+            "sqlite",
+            "postgresql",
+            "mysql",
+            "oracle"
+        ],
+        "right": [
+            "SQLite",
+            "PostgreSQL",
+            "MySQL",
+            "Oracle"
+        ]
+    },
+    {
+        "q": "Rearrange echo:",
+        "type": "rearrange",
+        "words": [
+            "engine =",
+            "create_engine",
+            "('sqlite:///test.db',",
+            "echo=True)"
+        ]
+    },
+    {
+        "q": "What is the declarative system used for?",
+        "type": "mcq",
+        "o": [
+            "Defining ORM models",
+            "Writing raw SQL",
+            "Deleting tables",
+            "Creating views"
+        ]
+    },
+    {
+        "q": "Classes mapped using the Declarative system must inherit from a _____ class.",
+        "type": "fill_blank",
+        "answers": [
+            "Base"
+        ],
+        "other_options": [
+            "Root",
+            "Parent",
+            "Core"
+        ]
+    },
+    {
+        "q": "Use `declarative_base()` to create the Base class.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Match declarative:",
+        "type": "match",
+        "left": [
+            "Base",
+            "__tablename__",
+            "Column",
+            "Integer"
+        ],
+        "right": [
+            "Parent class",
+            "Table name",
+            "Field def",
+            "Data type"
+        ]
+    },
+    {
+        "q": "Rearrange model def:",
+        "type": "rearrange",
+        "words": [
+            "class User(Base):",
+            "__tablename__ = 'users'",
+            "id = Column(Integer, primary_key=True)",
+            "name = Column(String)"
+        ]
+    },
+    {
+        "q": "Which class represents a column in a table?",
+        "type": "mcq",
+        "o": [
+            "Column",
+            "Field",
+            "Row",
+            "Key"
+        ]
+    },
+    {
+        "q": "The first argument to `Column` is usually the _____.",
+        "type": "fill_blank",
+        "answers": [
+            "type/datatype"
+        ],
+        "other_options": [
+            "name",
+            "value",
+            "table"
+        ]
+    },
+    {
+        "q": "`primary_key=True` marks a column as the primary key.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Match types:",
+        "type": "match",
+        "left": [
+            "Integer",
+            "String",
+            "Float",
+            "Boolean"
+        ],
+        "right": [
+            "Whole num",
+            "Text",
+            "Decimal",
+            "True/False"
+        ]
+    },
+    {
+        "q": "Rearrange column:",
+        "type": "rearrange",
+        "words": [
+            "id =",
+            "Column(Integer,",
+            "primary_key=True,",
+            "autoincrement=True)"
+        ]
+    },
+    {
+        "q": "How do you create the tables defined by Base models?",
+        "type": "mcq",
+        "o": [
+            "Base.metadata.create_all(engine)",
+            "engine.create_tables()",
+            "Base.create()",
+            "db.init()"
+        ]
+    },
+    {
+        "q": "It emits `CREATE TABLE` statements for all tables that don't _____ yet.",
+        "type": "fill_blank",
+        "answers": [
+            "exist"
+        ],
+        "other_options": [
+            "work",
+            "match",
+            "pass"
+        ]
+    },
+    {
+        "q": "`create_all` drops tables if they already exist.",
+        "type": "true_false",
+        "correct": "False"
+    },
+    {
+        "q": "Match metadata:",
+        "type": "match",
+        "left": [
+            "MetaData",
+            "create_all",
+            "drop_all",
+            "topological sort"
+        ],
+        "right": [
+            "Schema info",
+            "Make tables",
+            "Delete tables",
+            "Order by dependency"
+        ]
+    },
+    {
+        "q": "Rearrange create all:",
+        "type": "rearrange",
+        "words": [
+            "from sqlalchemy.orm import declarative_base",
+            "Base = declarative_base()",
+            "... define models ...",
+            "Base.metadata.create_all(engine)"
+        ]
+    },
+    {
+        "q": "What handles the conversation with the database in ORM?",
+        "type": "mcq",
+        "o": [
+            "Session",
+            "Engine",
+            "Base",
+            "Table"
+        ]
+    },
+    {
+        "q": "Use `sessionmaker(bind=engine)` to create a _____ factory.",
+        "type": "fill_blank",
+        "answers": [
+            "Session"
+        ],
+        "other_options": [
+            "Connection",
+            "Query",
+            "Table"
+        ]
+    },
+    {
+        "q": "A Session establishes all conversations with the database.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Match session states:",
+        "type": "match",
+        "left": [
+            "Transient",
+            "Pending",
+            "Persistent",
+            "Detached"
+        ],
+        "right": [
+            "New, not added",
+            "Added, not flushed",
+            "In session & DB",
+            "Removed from session"
+        ]
+    },
+    {
+        "q": "Rearrange session start:",
+        "type": "rearrange",
+        "words": [
+            "Session = sessionmaker(bind=engine)",
+            "session = Session()",
+            "... work ...",
+            "session.close()"
+        ]
+    },
+    {
+        "q": "How do you add a new object to the session?",
+        "type": "mcq",
+        "o": [
+            "session.add(obj)",
+            "session.save(obj)",
+            "obj.save()",
+            "db.insert(obj)"
+        ]
+    },
+    {
+        "q": "`session.add_all([obj1, obj2])` adds _____ objects.",
+        "type": "fill_blank",
+        "answers": [
+            "multiple/many"
+        ],
+        "other_options": [
+            "one",
+            "zero",
+            "all"
+        ]
+    },
+    {
+        "q": "Newly added objects are in the 'Pending' state.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Match methods:",
+        "type": "match",
+        "left": [
+            "add",
+            "add_all",
+            "delete",
+            "rollback"
+        ],
+        "right": [
+            "One obj",
+            "List of objs",
+            "Remove obj",
+            "Undo changes"
+        ]
+    },
+    {
+        "q": "Rearrange add user:",
+        "type": "rearrange",
+        "words": [
+            "user = User(name='John')",
+            "session.add(user)",
+            "session.commit()",
+            "print(user.id)"
+        ]
+    },
+    {
+        "q": "What pushes changes from the session to the database?",
+        "type": "mcq",
+        "o": [
+            "session.commit()",
+            "session.push()",
+            "session.flush()",
+            "session.save()"
+        ]
+    },
+    {
+        "q": "`session.flush()` sends SQL to the DB but does not _____ the transaction.",
+        "type": "fill_blank",
+        "answers": [
+            "commit"
+        ],
+        "other_options": [
+            "start",
+            "end",
+            "close"
+        ]
+    },
+    {
+        "q": "Commit makes the changes permanent.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Match commit phases:",
+        "type": "match",
+        "left": [
+            "flush",
+            "commit",
+            "rollback",
+            "close"
+        ],
+        "right": [
+            "SQL emit",
+            "Finalize Trans",
+            "Revert Trans",
+            "Release Conn"
+        ]
+    },
+    {
+        "q": "Rearrange commit:",
+        "type": "rearrange",
+        "words": [
+            "try:",
+            "session.commit()",
+            "except:",
+            "session.rollback()"
+        ]
+    },
+    {
+        "q": "How do you start a query in ORM?",
+        "type": "mcq",
+        "o": [
+            "session.query(Model)",
+            "db.select(Model)",
+            "Model.query()",
+            "engine.query(Model)"
+        ]
+    },
+    {
+        "q": "`session.query(User).all()` returns _____ User objects.",
+        "type": "fill_blank",
+        "answers": [
+            "all/list"
+        ],
+        "other_options": [
+            "one",
+            "none",
+            "first"
+        ]
+    },
+    {
+        "q": "The `query` object is iterable.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Match query results:",
+        "type": "match",
+        "left": [
+            "all()",
+            "first()",
+            "one()",
+            "scalar()"
+        ],
+        "right": [
+            "List",
+            "First or None",
+            "Exactly one",
+            "First val of first row"
+        ]
+    },
+    {
+        "q": "Rearrange query:",
+        "type": "rearrange",
+        "words": [
+            "users =",
+            "session.query(User)",
+            ".filter_by(name='John')",
+            ".all()"
+        ]
+    },
+    {
+        "q": "What method filters query results?",
+        "type": "mcq",
+        "o": [
+            "filter()",
+            "where()",
+            "limit()",
+            "find()"
+        ]
+    },
+    {
+        "q": "`filter_by` uses keyword arguments for _____ filtering.",
+        "type": "fill_blank",
+        "answers": [
+            "simple/equality"
+        ],
+        "other_options": [
+            "complex",
+            "inequality",
+            "range"
+        ]
+    },
+    {
+        "q": "`filter(User.name == 'John')` uses Python expressions.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Match filter ops:",
+        "type": "match",
+        "left": [
+            "==",
+            "!=",
+            ">",
+            "in_"
+        ],
+        "right": [
+            "Equal",
+            "Not Equal",
+            "Greater",
+            "In List"
+        ]
+    },
+    {
+        "q": "Rearrange complex filter:",
+        "type": "rearrange",
+        "words": [
+            "query =",
+            "session.query(User)",
+            ".filter(User.age > 18)",
+            ".filter(User.name == 'Bob')"
+        ]
+    },
+    {
+        "q": "How do you access attributes of a mapped object?",
+        "type": "mcq",
+        "o": [
+            "obj.attribute",
+            "obj['attribute']",
+            "obj.get('attribute')",
+            "attribute(obj)"
+        ]
+    },
+    {
+        "q": "SQLAlchemy instruments the attributes to track _____.",
+        "type": "fill_blank",
+        "answers": [
+            "changes/history"
+        ],
+        "other_options": [
+            "types",
+            "names",
+            "sizes"
+        ]
+    },
+    {
+        "q": "Updating an attribute automatically marks the object as dirty.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Match states:",
+        "type": "match",
+        "left": [
+            "Clean",
+            "Dirty",
+            "New",
+            "Deleted"
+        ],
+        "right": [
+            "No changes",
+            "Changed attr",
+            "Just added",
+            "Marked delete"
+        ]
+    },
+    {
+        "q": "Rearrange update:",
+        "type": "rearrange",
+        "words": [
+            "user = session.query(User).first()",
+            "user.name = 'New Name'",
+            "session.commit()",
+            "# Auto update"
+        ]
+    },
+    {
+        "q": "What method deletes an object?",
+        "type": "mcq",
+        "o": [
+            "session.delete(obj)",
+            "obj.delete()",
+            "session.remove(obj)",
+            "Base.delete(obj)"
+        ]
+    },
+    {
+        "q": "The object must be inside the _____ to be deleted.",
+        "type": "fill_blank",
+        "answers": [
+            "session"
+        ],
+        "other_options": [
+            "database",
+            "list",
+            "engine"
+        ]
+    },
+    {
+        "q": "Deleting sends a `DELETE` SQL statement upon flush.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Match delete steps:",
+        "type": "match",
+        "left": [
+            "Query",
+            "Delete",
+            "Commit",
+            "Rollback"
+        ],
+        "right": [
+            "Find obj",
+            "Mark removal",
+            "Execute",
+            "Cancel"
+        ]
+    },
+    {
+        "q": "Rearrange delete:",
+        "type": "rearrange",
+        "words": [
+            "to_del = session.query(User).get(1)",
+            "session.delete(to_del)",
+            "session.commit()",
+            "# Gone"
+        ]
+    },
+    {
+        "q": "What keyword argument creates an auto-incrementing integer key?",
+        "type": "mcq",
+        "o": [
+            "primary_key=True",
+            "auto=True",
+            "key=True",
+            "serial=True"
+        ]
+    },
+    {
+        "q": "In most DBs, defining an Integer Primary Key implies _____.",
+        "type": "fill_blank",
+        "answers": [
+            "autoincrement"
+        ],
+        "other_options": [
+            "random",
+            "unique",
+            "index"
+        ]
+    },
+    {
+        "q": "`nullable=False` means the column cannot store None/Null.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Match column args:",
+        "type": "match",
+        "left": [
+            "primary_key",
+            "nullable",
+            "default",
+            "unique"
+        ],
+        "right": [
+            "ID",
+            "Allow Null",
+            "Initial value",
+            "No duplicates"
+        ]
+    },
+    {
+        "q": "Rearrange col opts:",
+        "type": "rearrange",
+        "words": [
+            "email = Column(String,",
+            "unique=True,",
+            "nullable=False,",
+            "index=True)"
+        ]
+    },
+    {
+        "q": "What creates a relationship between two models?",
+        "type": "mcq",
+        "o": [
+            "relationship()",
+            "link()",
+            "join()",
+            "connect()"
+        ]
+    },
+    {
+        "q": "`ForeignKey` constrains a column to reference another table's _____ key.",
+        "type": "fill_blank",
+        "answers": [
+            "primary"
+        ],
+        "other_options": [
+            "secondary",
+            "foreign",
+            "index"
+        ]
+    },
+    {
+        "q": "`relationship` is a Python-side construct, not SQL.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Match rel terms:",
+        "type": "match",
+        "left": [
+            "ForeignKey",
+            "relationship",
+            "back_populates",
+            "uselist=False"
+        ],
+        "right": [
+            "SQL Constraint",
+            "ORM Link",
+            "Bi-directional",
+            "One-to-One"
+        ]
+    },
+    {
+        "q": "Rearrange relationship:",
+        "type": "rearrange",
+        "words": [
+            "users = relationship('User',",
+            "back_populates='addresses')",
+            "user_id = Column(Integer, ForeignKey('users.id'))",
+            "address class"
+        ]
+    },
+    {
+        "q": "What is `lazy='select'` in relationships?",
+        "type": "mcq",
+        "o": [
+            "Load when accessed",
+            "Load immediately",
+            "Never load",
+            "Load random"
+        ]
+    },
+    {
+        "q": "Joined loading (`lazy='joined'`) loads related items in the _____ query using a JOIN.",
+        "type": "fill_blank",
+        "answers": [
+            "same/single"
+        ],
+        "other_options": [
+            "next",
+            "previous",
+            "separate"
+        ]
+    },
+    {
+        "q": "Dynamic loading returns a Query object instead of a list.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Match load strategies:",
+        "type": "match",
+        "left": [
+            "select",
+            "joined",
+            "subquery",
+            "dynamic"
+        ],
+        "right": [
+            "Separate SELECT",
+            "SQL JOIN",
+            "Subquery",
+            "Returns Query"
+        ]
+    },
+    {
+        "q": "Rearrange access rel:",
+        "type": "rearrange",
+        "words": [
+            "user = session.query(User).first()",
+            "# Lazy load happens here:",
+            "print(user.addresses)",
+            "Iterate"
+        ]
+    },
+    {
+        "q": "What is the `Target` when creating a session?",
+        "type": "mcq",
+        "o": [
+            "The bound Engine",
+            "The model",
+            "The user",
+            "The file"
+        ]
+    },
+    {
+        "q": "Session lifecycle usually matches the separate _____ (unit of work).",
+        "type": "fill_blank",
+        "answers": [
+            "transaction"
+        ],
+        "other_options": [
+            "query",
+            "row",
+            "table"
+        ]
+    },
+    {
+        "q": "You should generally use one session per application.",
+        "type": "true_false",
+        "correct": "False"
+    },
+    {
+        "q": "Match scopes:",
+        "type": "match",
+        "left": [
+            "Web Request",
+            "Background Job",
+            "Desktop App",
+            "Global"
+        ],
+        "right": [
+            "One session per req",
+            "One per task",
+            "One per window/view",
+            "Bad practice"
+        ]
+    },
+    {
+        "q": "Rearrange context mgr:",
+        "type": "rearrange",
+        "words": [
+            "with Session() as session:",
+            "session.add(obj)",
+            "session.commit()",
+            "# Auto close"
+        ]
+    },
+    {
+        "q": "What does `func.count()` do?",
+        "type": "mcq",
+        "o": [
+            "Counts rows",
+            "Counts tables",
+            "Counts time",
+            "Errors"
+        ]
+    },
+    {
+        "q": "Use `sqlalchemy.func` to access SQL _____.",
+        "type": "fill_blank",
+        "answers": [
+            "functions"
+        ],
+        "other_options": [
+            "commands",
+            "tables",
+            "views"
+        ]
+    },
+    {
+        "q": "`session.query(func.count(User.id))` returns a count.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Match func examples:",
+        "type": "match",
+        "left": [
+            "count",
+            "sum",
+            "max",
+            "now"
+        ],
+        "right": [
+            "Number of items",
+            "Total",
+            "Highest",
+            "Current Time"
+        ]
+    },
+    {
+        "q": "Rearrange count query:",
+        "type": "rearrange",
+        "words": [
+            "total = session.query(",
+            "func.count(User.id)",
+            ").scalar()",
+            "print(total)"
+        ]
+    },
+    {
+        "q": "How do you order query results?",
+        "type": "mcq",
+        "o": [
+            "order_by()",
+            "sort()",
+            "arrange()",
+            "group()"
+        ]
+    },
+    {
+        "q": "Use `desc()` for _____ order.",
+        "type": "fill_blank",
+        "answers": [
+            "descending"
+        ],
+        "other_options": [
+            "ascending",
+            "random",
+            "new"
+        ]
+    },
+    {
+        "q": "`order_by(User.name)` sorts alphabetically by name.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Match sort terms:",
+        "type": "match",
+        "left": [
+            "asc()",
+            "desc()",
+            "order_by",
+            "limit"
+        ],
+        "right": [
+            "A-Z",
+            "Z-A",
+            "Sort clause",
+            "Restrict count"
+        ]
+    },
+    {
+        "q": "Rearrange ordering:",
+        "type": "rearrange",
+        "words": [
+            "q = session.query(User)",
+            ".order_by(User.age.desc())",
+            ".all()",
+            "Oldest first"
+        ]
+    },
+    {
+        "q": "What is `limit()` used for?",
+        "type": "mcq",
+        "o": [
+            "Restrict number of rows",
+            "Restrict memory",
+            "Restrict users",
+            "Restrict time"
+        ]
+    },
+    {
+        "q": "`offset(n)` skips the first _____ rows.",
+        "type": "fill_blank",
+        "answers": [
+            "n"
+        ],
+        "other_options": [
+            "all",
+            "last",
+            "random"
+        ]
+    },
+    {
+        "q": "Limit and Offset are used for pagination.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Match slices:",
+        "type": "match",
+        "left": [
+            "[:]",
+            "[1:3]",
+            "first()",
+            "limit(5)"
+        ],
+        "right": [
+            "All",
+            "Slice",
+            "Limit 1",
+            "Limit 5"
+        ]
+    },
+    {
+        "q": "Rearrange pagination:",
+        "type": "rearrange",
+        "words": [
+            "page_size = 10",
+            "offset = (page-1)*page_size",
+            "query.limit(page_size)",
+            ".offset(offset)"
+        ]
+    },
+    {
+        "q": "What is `get()` used for?",
+        "type": "mcq",
+        "o": [
+            "Retrieve by Primary Key",
+            "Retrieve by Name",
+            "Get all",
+            "Get random"
+        ]
+    },
+    {
+        "q": "`session.query(User).get(5)` returns None if ID 5 _____.",
+        "type": "fill_blank",
+        "answers": [
+            "doesn't exist/missing"
+        ],
+        "other_options": [
+            "exists",
+            "is 0",
+            "is string"
+        ]
+    },
+    {
+        "q": "`get` queries the local identity map before hitting the database.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Match fetch methods:",
+        "type": "match",
+        "left": [
+            "get",
+            "filter_by",
+            "filter",
+            "add"
+        ],
+        "right": [
+            "By PK",
+            "By Keywords",
+            "By Expression",
+            "Insert"
+        ]
+    },
+    {
+        "q": "Rearrange get:",
+        "type": "rearrange",
+        "words": [
+            "u = session.query(User)",
+            ".get(user_id)",
+            "if u:",
+            "print(u.name)"
+        ]
+    },
+    {
+        "q": "What exception is raised if `one()` finds multiple rows?",
+        "type": "mcq",
+        "o": [
+            "MultipleResultsFound",
+            "NoResultFound",
+            "IndexError",
+            "ValueError"
+        ]
+    },
+    {
+        "q": "`one()` raises `NoResultFound` if the query returns _____ rows.",
+        "type": "fill_blank",
+        "answers": [
+            "zero/0"
+        ],
+        "other_options": [
+            "one",
+            "many",
+            "two"
+        ]
+    },
+    {
+        "q": "`scalar()` is equivalent to `one()[0]`.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Match exceptions:",
+        "type": "match",
+        "left": [
+            "MultipleResultsFound",
+            "NoResultFound",
+            "IntegrityError",
+            "OperationalError"
+        ],
+        "right": [
+            "Too many",
+            "Zero",
+            "Constraint fail",
+            "DB Connection fail"
+        ]
+    },
+    {
+        "q": "Rearrange error handling:",
+        "type": "rearrange",
+        "words": [
+            "try:",
+            "user = q.one()",
+            "except MultipleResultsFound:",
+            "print('Duplicate')"
+        ]
+    },
+    {
+        "q": "What is `Text` type used for?",
+        "type": "mcq",
+        "o": [
+            "Unbounded strings",
+            "Small strings",
+            "Numbers",
+            "Binary"
+        ]
+    },
+    {
+        "q": "`String(50)` limits the column to _____ characters.",
+        "type": "fill_blank",
+        "answers": [
+            "50"
+        ],
+        "other_options": [
+            "unlimited",
+            "255",
+            "10"
+        ]
+    },
+    {
+        "q": "`Boolean` type maps to TINYINT on MySQL.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Match data types:",
+        "type": "match",
+        "left": [
+            "Date",
+            "DateTime",
+            "Time",
+            "Interval"
+        ],
+        "right": [
+            "Day only",
+            "Day + Time",
+            "Time only",
+            "Duration"
+        ]
+    },
+    {
+        "q": "Rearrange timestamp:",
+        "type": "rearrange",
+        "words": [
+            "created_at =",
+            "Column(DateTime,",
+            "default=datetime.datetime.now)",
+            "Auto time"
+        ]
+    },
+    {
+        "q": "How do you perform a JOIN in SQLAlchemy ORM?",
+        "type": "mcq",
+        "o": [
+            "query.join(Target)",
+            "query.merge(Target)",
+            "query.link(Target)",
+            "query.union(Target)"
+        ]
+    },
+    {
+        "q": "`session.query(User).join(Address)` creates an _____ join by default.",
+        "type": "fill_blank",
+        "answers": [
+            "inner"
+        ],
+        "other_options": [
+            "outer",
+            "left",
+            "right"
+        ]
+    },
+    {
+        "q": "You can join on a relationship attribute (e.g. `User.addresses`).",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Match join types:",
+        "type": "match",
+        "left": [
+            "join",
+            "outerjoin",
+            "isouter=True",
+            "full=True"
+        ],
+        "right": [
+            "Inner Join",
+            "Left Outer Join",
+            "Outer flag",
+            "Full Outer Join"
+        ]
+    },
+    {
+        "q": "Rearrange join query:",
+        "type": "rearrange",
+        "words": [
+            "q =",
+            "session.query(User)",
+            ".join(Address)",
+            ".filter(Address.email=='a@b.com')"
+        ]
+    },
+    {
+        "q": "What is `outerjoin()` used for?",
+        "type": "mcq",
+        "o": [
+            "Left Outer Join",
+            "Right Join",
+            "Inner Join",
+            "Cross Join"
+        ]
+    },
+    {
+        "q": "Left Outer Join returns all rows from the _____ table even if no match found.",
+        "type": "fill_blank",
+        "answers": [
+            "left/first"
+        ],
+        "other_options": [
+            "right",
+            "second",
+            "center"
+        ]
+    },
+    {
+        "q": "`query(User).outerjoin(Address)` includes Users without addresses.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Match sql equivalents:",
+        "type": "match",
+        "left": [
+            "join",
+            "outerjoin",
+            "union",
+            "except"
+        ],
+        "right": [
+            "JOIN",
+            "LEFT OUTER JOIN",
+            "UNION",
+            "EXCEPT"
+        ]
+    },
+    {
+        "q": "Rearrange outer join:",
+        "type": "rearrange",
+        "words": [
+            "results =",
+            "session.query(User, Address)",
+            ".outerjoin(Address)",
+            ".all()"
+        ]
+    },
+    {
+        "q": "How do you group results?",
+        "type": "mcq",
+        "o": [
+            "group_by()",
+            "order_by()",
+            "cluster()",
+            "aggregate()"
+        ]
+    },
+    {
+        "q": "`group_by` is often used with _____ functions like COUNT or SUM.",
+        "type": "fill_blank",
+        "answers": [
+            "aggregate"
+        ],
+        "other_options": [
+            "sorting",
+            "filtering",
+            "mapping"
+        ]
+    },
+    {
+        "q": "You can group by multiple columns.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Match clauses:",
+        "type": "match",
+        "left": [
+            "SELECT",
+            "FROM",
+            "WHERE",
+            "GROUP BY"
+        ],
+        "right": [
+            "Cols",
+            "Tables",
+            "Filter",
+            "Aggregation"
+        ]
+    },
+    {
+        "q": "Rearrange group by:",
+        "type": "rearrange",
+        "words": [
+            "session.query(User.age, func.count(User.id))",
+            ".group_by(User.age)",
+            ".all()",
+            "Count by age"
+        ]
+    },
+    {
+        "q": "What filters grouped results?",
+        "type": "mcq",
+        "o": [
+            "having()",
+            "where()",
+            "filter()",
+            "limit()"
+        ]
+    },
+    {
+        "q": "`having` is like `where` but applies to _____ data.",
+        "type": "fill_blank",
+        "answers": [
+            "aggregated/grouped"
+        ],
+        "other_options": [
+            "raw",
+            "new",
+            "old"
+        ]
+    },
+    {
+        "q": "`having` comes after `group_by`.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Match aggregation:",
+        "type": "match",
+        "left": [
+            "COUNT",
+            "SUM",
+            "AVG",
+            "MIN"
+        ],
+        "right": [
+            "Count items",
+            "Total val",
+            "Average",
+            "Smallest"
+        ]
+    },
+    {
+        "q": "Rearrange having:",
+        "type": "rearrange",
+        "words": [
+            "query.group_by(User.age)",
+            ".having(",
+            "func.count(User.id) > 5",
+            ")"
+        ]
+    },
+    {
+        "q": "What allows creating an alias for a table/entity?",
+        "type": "mcq",
+        "o": [
+            "aliased()",
+            "name()",
+            "copy()",
+            "ref()"
+        ]
+    },
+    {
+        "q": "Aliases are useful for self-joins or joining the same table _____.",
+        "type": "fill_blank",
+        "answers": [
+            "twice/multiple"
+        ],
+        "other_options": [
+            "once",
+            "never",
+            "only"
+        ]
+    },
+    {
+        "q": "You import `aliased` from `sqlalchemy.orm`.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Match usage:",
+        "type": "match",
+        "left": [
+            "aliased(User)",
+            "u1.name",
+            "u2.name",
+            "join(u2, ...)"
+        ],
+        "right": [
+            "Create alias",
+            "Alias 1 attr",
+            "Alias 2 attr",
+            "Join alias"
+        ]
+    },
+    {
+        "q": "Rearrange self join:",
+        "type": "rearrange",
+        "words": [
+            "Boss = aliased(Employee)",
+            "q = session.query(Employee.name, Boss.name)",
+            ".join(Boss, Employee.boss_id==Boss.id)",
+            ".all()"
+        ]
+    },
+    {
+        "q": "What represents a raw SQL snippet?",
+        "type": "mcq",
+        "o": [
+            "text()",
+            "sql()",
+            "raw()",
+            "code()"
+        ]
+    },
+    {
+        "q": "You can pass parameters to `text` using colon syntax (e.g. `:value`).",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Use _____ to execute text SQL directly.",
+        "type": "fill_blank",
+        "answers": [
+            "connection.execute/session.execute"
+        ],
+        "other_options": [
+            "run",
+            "do",
+            "make"
+        ]
+    },
+    {
+        "q": "Match execution:",
+        "type": "match",
+        "left": [
+            "session.execute",
+            "text",
+            "params",
+            "result"
+        ],
+        "right": [
+            "Run SQL",
+            "SQL String",
+            "Bind vars",
+            "Output"
+        ]
+    },
+    {
+        "q": "Rearrange text sql:",
+        "type": "rearrange",
+        "words": [
+            "stmt = text('SELECT * FROM users WHERE id=:id')",
+            "session.execute(stmt, {'id': 1})",
+            "result.fetchall()",
+            "Raw SQL"
+        ]
+    },
+    {
+        "q": "What is `func.sum()`?",
+        "type": "mcq",
+        "o": [
+            "Calculates sum",
+            "Calculates count",
+            "Calculates avg",
+            "Calculates max"
+        ]
+    },
+    {
+        "q": "It is a generic function that generates SQL `SUM()`.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "`func` creates a function call in the generated _____.",
+        "type": "fill_blank",
+        "answers": [
+            "SQL/query"
+        ],
+        "other_options": [
+            "Python",
+            "HTML",
+            "JSON"
+        ]
+    },
+    {
+        "q": "Match math funcs:",
+        "type": "match",
+        "left": [
+            "abs",
+            "sqrt",
+            "mod",
+            "random"
+        ],
+        "right": [
+            "Absolute",
+            "Square Root",
+            "Modulo",
+            "Random val"
+        ]
+    },
+    {
+        "q": "Rearrange sum:",
+        "type": "rearrange",
+        "words": [
+            "total_salary =",
+            "session.query(func.sum(User.salary))",
+            ".scalar()",
+            "Print total"
+        ]
+    },
+    {
+        "q": "How can you count rows without `func.count()` in legacy query?",
+        "type": "mcq",
+        "o": [
+            "query.count()",
+            "query.length()",
+            "len(query)",
+            "query.size()"
+        ]
+    },
+    {
+        "q": "`query.count()` executes a SELECT COUNT(*) query.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "It is often more efficient to use `func.count` directly in the query.",
+        "type": "mcq",
+        "o": [
+            "True",
+            "False",
+            "None",
+            "Error"
+        ]
+    },
+    {
+        "q": "Match count methods:",
+        "type": "match",
+        "left": [
+            "func.count(*)",
+            "query.count()",
+            "len(query.all())",
+            "scalar()"
+        ],
+        "right": [
+            "SQL Count",
+            "ORM Method",
+            "Python Len",
+            "Single Value"
+        ]
+    },
+    {
+        "q": "Rearrange count legacy:",
+        "type": "rearrange",
+        "words": [
+            "cnt = session.query(User)",
+            ".filter_by(active=True)",
+            ".count()",
+            "Returns int"
+        ]
+    },
+    {
+        "q": "What is `distinct()` used for?",
+        "type": "mcq",
+        "o": [
+            "Remove duplicates",
+            "Sort results",
+            "Filter nulls",
+            "Limit rows"
+        ]
+    },
+    {
+        "q": "`query.distinct()` generates `SELECT DISTINCT`.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "It ensures unique _____ in the result set.",
+        "type": "fill_blank",
+        "answers": [
+            "rows/values"
+        ],
+        "other_options": [
+            "tables",
+            "columns",
+            "errors"
+        ]
+    },
+    {
+        "q": "Match keywords:",
+        "type": "match",
+        "left": [
+            "DISTINCT",
+            "LIMIT",
+            "OFFSET",
+            "ALL"
+        ],
+        "right": [
+            "Unique",
+            "Max rows",
+            "Skip rows",
+            "Everything"
+        ]
+    },
+    {
+        "q": "Rearrange distinct:",
+        "type": "rearrange",
+        "words": [
+            "names = session.query(User.name)",
+            ".distinct()",
+            ".all()",
+            "Unique names"
+        ]
+    },
+    {
+        "q": "What is `cast()` used for?",
+        "type": "mcq",
+        "o": [
+            "Type conversion",
+            "Actor selection",
+            "Throwing",
+            "Magic"
+        ]
+    },
+    {
+        "q": "It casts a column expression to a specific _____ type in SQL.",
+        "type": "fill_blank",
+        "answers": [
+            "data/SQL"
+        ],
+        "other_options": [
+            "Python",
+            "file",
+            "web"
+        ]
+    },
+    {
+        "q": "`cast(User.age, String)` converts age to string.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Match conversions:",
+        "type": "match",
+        "left": [
+            "cast",
+            "extract",
+            "label",
+            "concat"
+        ],
+        "right": [
+            "Convert Type",
+            "Get date part",
+            "Rename col",
+            "Join strings"
+        ]
+    },
+    {
+        "q": "Rearrange cast:",
+        "type": "rearrange",
+        "words": [
+            "from sqlalchemy import cast, String",
+            "q = session.query(cast(User.age, String))",
+            ".all()",
+            "Strings"
+        ]
+    },
+    {
+        "q": "What allows renaming a column in the result set?",
+        "type": "mcq",
+        "o": [
+            "label()",
+            "name()",
+            "alias()",
+            "tag()"
+        ]
+    },
+    {
+        "q": "`User.name.label('username')` allows accessing the result as `row.username`.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "This corresponds to the SQL `AS` keyword.",
+        "type": "mcq",
+        "o": [
+            "True",
+            "False",
+            "None",
+            "Error"
+        ]
+    },
+    {
+        "q": "Match naming:",
+        "type": "match",
+        "left": [
+            "label()",
+            "alias()",
+            "key",
+            "as_"
+        ],
+        "right": [
+            "Column alias",
+            "Table alias",
+            "Dict key",
+            "Python keyword"
+        ]
+    },
+    {
+        "q": "Rearrange labeling:",
+        "type": "rearrange",
+        "words": [
+            "q = session.query(User.name.label('u'))",
+            "row = q.first()",
+            "print(row.u)",
+            "Access alias"
+        ]
+    },
+    {
+        "q": "What is a Constraint?",
+        "type": "mcq",
+        "o": [
+            "Rule for data integrity",
+            "Speed limit",
+            "Memory limit",
+            "Software bug"
+        ]
+    },
+    {
+        "q": "`CheckConstraint` allows validating data at the _____ level.",
+        "type": "fill_blank",
+        "answers": [
+            "database/row"
+        ],
+        "other_options": [
+            "app",
+            "user",
+            "file"
+        ]
+    },
+    {
+        "q": "Foreign Key is a type of constraint.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Match constraints:",
+        "type": "match",
+        "left": [
+            "PrimaryKey",
+            "ForeignKey",
+            "UniqueConstraint",
+            "CheckConstraint"
+        ],
+        "right": [
+            "Identity",
+            "Relationship",
+            "No Duplicates",
+            "Condition"
+        ]
+    },
+    {
+        "q": "Rearrange check:",
+        "type": "rearrange",
+        "words": [
+            "__table_args__ =",
+            "(CheckConstraint('age > 0'),)",
+            "Ensure positive age",
+            "In model Class"
+        ]
+    },
+    {
+        "q": "What is `index=True` in `Column`?",
+        "type": "mcq",
+        "o": [
+            "Creates an index",
+            "Creates valid HTML",
+            "Creates list",
+            "Creates file"
+        ]
+    },
+    {
+        "q": "Indexes improve lookup _____.",
+        "type": "fill_blank",
+        "answers": [
+            "speed/performance"
+        ],
+        "other_options": [
+            "space",
+            "color",
+            "names"
+        ]
+    },
+    {
+        "q": "Primary Keys are automatically indexed.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Match indexing:",
+        "type": "match",
+        "left": [
+            "B-Tree",
+            "Hash",
+            "Index()",
+            "unique=True"
+        ],
+        "right": [
+            "Structure",
+            "Structure",
+            "Explicit Index",
+            "Unique Index"
+        ]
+    },
+    {
+        "q": "Rearrange index def:",
+        "type": "rearrange",
+        "words": [
+            "name = Column(String,",
+            "index=True)",
+            "Faster search",
+            "on name"
+        ]
+    },
+    {
+        "q": "What does `session.rollback()` do?",
+        "type": "mcq",
+        "o": [
+            "Discards pending changes",
+            "Saves changes",
+            "Deletes database",
+            "Restarts PC"
+        ]
+    },
+    {
+        "q": "It reverts the session to the state of the last _____ (or start).",
+        "type": "fill_blank",
+        "answers": [
+            "commit/begin"
+        ],
+        "other_options": [
+            "flush",
+            "add",
+            "query"
+        ]
+    },
+    {
+        "q": "Rollback ends the current transaction.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Match transaction ops:",
+        "type": "match",
+        "left": [
+            "begin",
+            "commit",
+            "rollback",
+            "savepoint"
+        ],
+        "right": [
+            "Start",
+            "Save",
+            "Undo",
+            "Partial Save"
+        ]
+    },
+    {
+        "q": "Rearrange rollback:",
+        "type": "rearrange",
+        "words": [
+            "try:",
+            "algo()",
+            "except:",
+            "session.rollback()"
+        ]
+    },
+    {
+        "q": "What is `session.expunge(obj)`?",
+        "type": "mcq",
+        "o": [
+            "Removes obj from session",
+            "Deletes obj from DB",
+            "Updates obj",
+            "Adds obj"
+        ]
+    },
+    {
+        "q": "The object becomes _____ (detached).",
+        "type": "fill_blank",
+        "answers": [
+            "transient/detached"
+        ],
+        "other_options": [
+            "persistent",
+            "deleted",
+            "expired"
+        ]
+    },
+    {
+        "q": "`expunge_all()` removes all objects from the session.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Match session cleanup:",
+        "type": "match",
+        "left": [
+            "expunge",
+            "close",
+            "refresh",
+            "expire"
+        ],
+        "right": [
+            "Detach obj",
+            "End session",
+            "Reload obj",
+            "Invalidate obj"
+        ]
+    },
+    {
+        "q": "Rearrange expunge:",
+        "type": "rearrange",
+        "words": [
+            "session.add(obj)",
+            "session.flush()",
+            "session.expunge(obj)",
+            "Obj is detached"
+        ]
+    },
+    {
+        "q": "What is `session.merge(obj)`?",
+        "type": "mcq",
+        "o": [
+            "Attaches detached object",
+            "Merges two objects",
+            "Merges tables",
+            "Deletes object"
+        ]
+    },
+    {
+        "q": "It copies the state of the given object into the session, returning a _____ instance.",
+        "type": "fill_blank",
+        "answers": [
+            "persistent/managed"
+        ],
+        "other_options": [
+            "transient",
+            "new",
+            "fake"
+        ]
+    },
+    {
+        "q": "This is useful for 'upsert' operations.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Match merge outcome:",
+        "type": "match",
+        "left": [
+            "If PK exists",
+            "If PK missing",
+            "Input obj state",
+            "Result obj state"
+        ],
+        "right": [
+            "Update",
+            "Insert",
+            "Detached",
+            "Persistent"
+        ]
+    },
+    {
+        "q": "Rearrange merge:",
+        "type": "rearrange",
+        "words": [
+            "new_obj = session.merge(detached_obj)",
+            "session.commit()",
+            "detached_obj remains detached",
+            "new_obj is persistent"
+        ]
+    },
+    {
+        "q": "What is `update()` query method?",
+        "type": "mcq",
+        "o": [
+            "Bulk update",
+            "Single update",
+            "Insert",
+            "Delete"
+        ]
+    },
+    {
+        "q": "`query.filter(...).update({User.age: 20})` updates _____ matching rows.",
+        "type": "fill_blank",
+        "answers": [
+            "all/multiple"
+        ],
+        "other_options": [
+            "one",
+            "no",
+            "random"
+        ]
+    },
+    {
+        "q": "This bypasses individual object history tracking (no Python-side events by default).",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Match bulk ops:",
+        "type": "match",
+        "left": [
+            "update()",
+            "delete()",
+            "synchronize_session",
+            "efficiency"
+        ],
+        "right": [
+            "Bulk Modify",
+            "Bulk Remove",
+            "Update session",
+            "High"
+        ]
+    },
+    {
+        "q": "Rearrange bulk update:",
+        "type": "rearrange",
+        "words": [
+            "session.query(User)",
+            ".filter(User.age < 18)",
+            ".update({User.active: False})",
+            "session.commit()"
+        ]
+    },
+    {
+        "q": "What is a composite primary key?",
+        "type": "mcq",
+        "o": [
+            "PK made of multiple columns",
+            "PK made of list",
+            "PK made of file",
+            "No PK"
+        ]
+    },
+    {
+        "q": "You define multiple columns with `_____=True`.",
+        "type": "fill_blank",
+        "answers": [
+            "primary_key"
+        ],
+        "other_options": [
+            "index",
+            "unique",
+            "null"
+        ]
+    },
+    {
+        "q": "The combination of columns must be unique.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Match keys:",
+        "type": "match",
+        "left": [
+            "Simple PK",
+            "Composite PK",
+            "Surrogate Key",
+            "Natural Key"
+        ],
+        "right": [
+            "1 column",
+            "2+ columns",
+            "Auto ID",
+            "Real attributes"
+        ]
+    },
+    {
+        "q": "Rearrange composite:",
+        "type": "rearrange",
+        "words": [
+            "id1 = Column(Integer, primary_key=True)",
+            "id2 = Column(Integer, primary_key=True)",
+            "Two columns",
+            "Identify row"
+        ]
+    },
+    {
+        "q": "What is `Enum` type used for?",
+        "type": "mcq",
+        "o": [
+            "Fixed set of values",
+            "Numbers",
+            "Dates",
+            "Files"
+        ]
+    },
+    {
+        "q": "It maps Python Enums or a list of strings to DB ENUM or _____.",
+        "type": "fill_blank",
+        "answers": [
+            "VARCHAR/String"
+        ],
+        "other_options": [
+            "Integer",
+            "Blob",
+            "Date"
+        ]
+    },
+    {
+        "q": "SQLite doesn't support native ENUM, so it uses VARCHAR + CheckConstraint by default.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Match enum usage:",
+        "type": "match",
+        "left": [
+            "Enum('A', 'B')",
+            "native_enum=False",
+            "create_type=False",
+            "python enum"
+        ],
+        "right": [
+            "String list",
+            "Use VARCHAR",
+            "No CREATE TYPE",
+            "Class maps"
+        ]
+    },
+    {
+        "q": "Rearrange enum col:",
+        "type": "rearrange",
+        "words": [
+            "status = Column(Enum('active', 'inactive'),",
+            "default='active')",
+            "Restrict values",
+            "to list"
+        ]
+    },
+    {
+        "q": "How do you define a Many-to-Many relationship?",
+        "type": "mcq",
+        "o": [
+            "Using an association table",
+            "Using two ForeignKeys",
+            "Using a list",
+            "Using shared PK"
+        ]
+    },
+    {
+        "q": "You must specify the `_____` argument in `relationship()` pointing to the intermediate table.",
+        "type": "fill_blank",
+        "answers": [
+            "secondary"
+        ],
+        "other_options": [
+            "primary",
+            "target",
+            "table"
+        ]
+    },
+    {
+        "q": "The association table normally contains two Foreign Keys.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Match attributes:",
+        "type": "match",
+        "left": [
+            "secondary",
+            "backref",
+            "uselist=True",
+            "viewonly=True"
+        ],
+        "right": [
+            "Assoc Table",
+            "Two-way link",
+            "Collection",
+            "Read-only"
+        ]
+    },
+    {
+        "q": "Rearrange m2m:",
+        "type": "rearrange",
+        "words": [
+            "rel = relationship('Tag',",
+            "secondary=post_tag_table,",
+            "back_populates='posts')",
+            "Many-to-Many"
+        ]
+    },
+    {
+        "q": "What is `cascade='all, delete-orphan'`?",
+        "type": "mcq",
+        "o": [
+            "Deletes child when parent is deleted/removed",
+            "Deletes database",
+            "Deletes table",
+            "Deletes nothing"
+        ]
+    },
+    {
+        "q": "It ensures that if a child is removed from the parent's collection, it is _____.",
+        "type": "fill_blank",
+        "answers": [
+            "deleted/removed"
+        ],
+        "other_options": [
+            "saved",
+            "copied",
+            "hidden"
+        ]
+    },
+    {
+        "q": "Default cascade is usually just 'save-update, merge'.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Match cascades:",
+        "type": "match",
+        "left": [
+            "save-update",
+            "delete",
+            "delete-orphan",
+            "merge"
+        ],
+        "right": [
+            "Add to session",
+            "Del w/ parent",
+            "Del if removed",
+            "Copy state"
+        ]
+    },
+    {
+        "q": "Rearrange orphan:",
+        "type": "rearrange",
+        "words": [
+            "items = relationship('Item',",
+            "cascade='all, delete-orphan')",
+            "parent.items.remove(item)",
+            "# Item deleted"
+        ]
+    },
+    {
+        "q": "What is `joinedload()` used for?",
+        "type": "mcq",
+        "o": [
+            "Eager loading via JOIN",
+            "Lazy loading",
+            "Deleting",
+            "Inserting"
+        ]
+    },
+    {
+        "q": "It reduces the N+1 query problem by fetching related data in a _____ query.",
+        "type": "fill_blank",
+        "answers": [
+            "single/one"
+        ],
+        "other_options": [
+            "double",
+            "sub",
+            "loop"
+        ]
+    },
+    {
+        "q": "`joinedload` is an option passed to the query.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Match loading options:",
+        "type": "match",
+        "left": [
+            "joinedload",
+            "subqueryload",
+            "lazyload",
+            "contains_eager"
+        ],
+        "right": [
+            "JOIN",
+            "Separate Query",
+            "On Access",
+            "Filtered Join"
+        ]
+    },
+    {
+        "q": "Rearrange optimization:",
+        "type": "rearrange",
+        "words": [
+            "q = session.query(User)",
+            ".options(joinedload(User.addresses))",
+            ".all()",
+            "One SELECT"
+        ]
+    },
+    {
+        "q": "What is `subqueryload()`?",
+        "type": "mcq",
+        "o": [
+            "Eager load via second SELECT",
+            "JOIN load",
+            "No load",
+            "Error"
+        ]
+    },
+    {
+        "q": "It emits a second SELECT statement specifically for the _____ collection.",
+        "type": "fill_blank",
+        "answers": [
+            "related/child"
+        ],
+        "other_options": [
+            "parent",
+            "root",
+            "none"
+        ]
+    },
+    {
+        "q": "Subqueryload is often preferred for One-to-Many collections.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Match eagerness:",
+        "type": "match",
+        "left": [
+            "Many-to-One",
+            "One-to-Many",
+            "Huge collection",
+            "Small table"
+        ],
+        "right": [
+            "joinedload",
+            "subqueryload",
+            "lazy='dynamic'",
+            "joinedload"
+        ]
+    },
+    {
+        "q": "Rearrange subquery:",
+        "type": "rearrange",
+        "words": [
+            "query(User)",
+            ".options(subqueryload(User.posts))",
+            ".all()",
+            "Two queries"
+        ]
+    },
+    {
+        "q": "What is a Hybrid Property?",
+        "type": "mcq",
+        "o": [
+            "Property usable in Python & SQL",
+            "Only Python",
+            "Only SQL",
+            "Neither"
+        ]
+    },
+    {
+        "q": "It allows defining an attribute that works on instances and in _____ expressions.",
+        "type": "fill_blank",
+        "answers": [
+            "query/SQL"
+        ],
+        "other_options": [
+            "file",
+            "print",
+            "loop"
+        ]
+    },
+    {
+        "q": "You use the `@hybrid_property` decorator.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Match decorators:",
+        "type": "match",
+        "left": [
+            "@property",
+            "@hybrid_property",
+            "@attr.expression",
+            "@attr.setter"
+        ],
+        "right": [
+            "Python only",
+            "SQL+Python",
+            "SQL logic",
+            "Python set"
+        ]
+    },
+    {
+        "q": "Rearrange hybrid:",
+        "type": "rearrange",
+        "words": [
+            "@hybrid_property",
+            "def balance(self):",
+            "return self.income - self.expense",
+            "# Use in query"
+        ]
+    },
+    {
+        "q": "What implements inheritance in SQLAlchemy?",
+        "type": "mcq",
+        "o": [
+            "Polymorphism",
+            "Cascades",
+            "Joins",
+            "Sessions"
+        ]
+    },
+    {
+        "q": "For Single Table Inheritance, you need a _____ column to distinguish types.",
+        "type": "fill_blank",
+        "answers": [
+            "discriminator/type"
+        ],
+        "other_options": [
+            "id",
+            "date",
+            "name"
+        ]
+    },
+    {
+        "q": "Joined Inheritance uses separate tables for each subclass joined by PK.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Match inheritance:",
+        "type": "match",
+        "left": [
+            "Single Table",
+            "Joined",
+            "Concrete",
+            "polymorphic_on"
+        ],
+        "right": [
+            "Fast/Sparse",
+            "Normalized",
+            "No generic queries",
+            "Type Col"
+        ]
+    },
+    {
+        "q": "Rearrange poly:",
+        "type": "rearrange",
+        "words": [
+            "__mapper_args__ = {",
+            "'polymorphic_identity': 'employee',",
+            "'polymorphic_on': type",
+            "}"
+        ]
+    },
+    {
+        "q": "What is `deferred()`?",
+        "type": "mcq",
+        "o": [
+            "Delays loading a column",
+            "Deletes column",
+            "Defines column",
+            "Updates column"
+        ]
+    },
+    {
+        "q": "It is useful for large columns like BLOBs or large _____.",
+        "type": "fill_blank",
+        "answers": [
+            "text/strings"
+        ],
+        "other_options": [
+            "integers",
+            "booleans",
+            "keys"
+        ]
+    },
+    {
+        "q": "The column is loaded only when accessed.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Match loading strategies:",
+        "type": "match",
+        "left": [
+            "deferred",
+            "undefer",
+            "load_only",
+            "immediateload"
+        ],
+        "right": [
+            "Delay",
+            "Force Load",
+            "Only specific",
+            "Now"
+        ]
+    },
+    {
+        "q": "Rearrange defer:",
+        "type": "rearrange",
+        "words": [
+            "description = Column(String)",
+            "query.options(defer('description'))",
+            ".all()",
+            "Skip large col"
+        ]
+    },
+    {
+        "q": "How do you validate data in ORM?",
+        "type": "mcq",
+        "o": [
+            "@validates decorator",
+            "check_constraint",
+            "validate() method",
+            "assert()"
+        ]
+    },
+    {
+        "q": "The validator function receives the key and the _____.",
+        "type": "fill_blank",
+        "answers": [
+            "value"
+        ],
+        "other_options": [
+            "type",
+            "table",
+            "session"
+        ]
+    },
+    {
+        "q": "Validation occurs when the attribute is set, before commit.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Match validation:",
+        "type": "match",
+        "left": [
+            "@validates",
+            "include_backrefs",
+            "return value",
+            "Event"
+        ],
+        "right": [
+            "Decorator",
+            "Check loop",
+            "Modified data",
+            "Attribute Event"
+        ]
+    },
+    {
+        "q": "Rearrange validate:",
+        "type": "rearrange",
+        "words": [
+            "@validates('email')",
+            "def validate_email(self, key, address):",
+            "assert '@' in address",
+            "return address"
+        ]
+    },
+    {
+        "q": "What is `association_proxy`?",
+        "type": "mcq",
+        "o": [
+            "Shortcut to access related attr",
+            "Proxy server",
+            "VPN",
+            "Table"
+        ]
+    },
+    {
+        "q": "It allows accessing items from a related table as a simple _____.",
+        "type": "fill_blank",
+        "answers": [
+            "collection/list"
+        ],
+        "other_options": [
+            "query",
+            "file",
+            "text"
+        ]
+    },
+    {
+        "q": "You need `from sqlalchemy.ext.associationproxy import association_proxy`.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Match proxy:",
+        "type": "match",
+        "left": [
+            "Shortcut",
+            "Creator",
+            "Read",
+            "Write"
+        ],
+        "right": [
+            "Direct Access",
+            "Auto create",
+            "Get values",
+            "Set values"
+        ]
+    },
+    {
+        "q": "Rearrange proxy:",
+        "type": "rearrange",
+        "words": [
+            "tags = association_proxy('post_tags', 'tag')",
+            "p = Post()",
+            "p.tags.append('news')",
+            "Auto creates assoc"
+        ]
+    },
+    {
+        "q": "What is an `Inspector` object used for?",
+        "type": "mcq",
+        "o": [
+            "Introspect DB schema",
+            "Debug code",
+            "Inspect memory",
+            "View HTML"
+        ]
+    },
+    {
+        "q": "`inspect(engine)` returns an inspector to call methods like `get_table_names`.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "It works with the _____ layer, not ORM.",
+        "type": "fill_blank",
+        "answers": [
+            "Core/SQL"
+        ],
+        "other_options": [
+            "Session",
+            "Model",
+            "View"
+        ]
+    },
+    {
+        "q": "Match introspection:",
+        "type": "match",
+        "left": [
+            "get_table_names",
+            "get_columns",
+            "get_pk_constraint",
+            "get_indexes"
+        ],
+        "right": [
+            "List tables",
+            "List cols",
+            "Find PK",
+            "List indices"
+        ]
+    },
+    {
+        "q": "Rearrange inspect:",
+        "type": "rearrange",
+        "words": [
+            "insp = inspect(engine)",
+            "print(insp.get_table_names())",
+            "cols = insp.get_columns('users')",
+            "Check schema"
+        ]
+    },
+    {
+        "q": "What event allows intercepting ORM operations?",
+        "type": "mcq",
+        "o": [
+            "SQLAlchemy Events",
+            "Python Signals",
+            "Hooks",
+            "Listeners"
+        ]
+    },
+    {
+        "q": "Common events include `before_insert`, `after_commit`, and `_____`.",
+        "type": "fill_blank",
+        "answers": [
+            "load"
+        ],
+        "other_options": [
+            "delete",
+            "start",
+            "stop"
+        ]
+    },
+    {
+        "q": "Use `event.listen(Target, 'event_name', callback)`.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Match events:",
+        "type": "match",
+        "left": [
+            "before_insert",
+            "after_update",
+            "load",
+            "commit"
+        ],
+        "right": [
+            "Pre-Save",
+            "Post-Save",
+            "On instantiation",
+            "On transaction"
+        ]
+    },
+    {
+        "q": "Rearrange event:",
+        "type": "rearrange",
+        "words": [
+            "@event.listens_for(User, 'before_insert')",
+            "def receive_before_insert(mapper, conn, target):",
+            "target.slug = slugify(target.name)",
+            "Auto slug"
+        ]
+    },
+    {
+        "q": "What is `MutableList` or `MutableDict` for?",
+        "type": "mcq",
+        "o": [
+            "Tracking changes in JSON/Arrays",
+            "Immutable data",
+            "New types",
+            "Speed"
+        ]
+    },
+    {
+        "q": "Without it, updating a nested dictionary might not mark the object as _____.",
+        "type": "fill_blank",
+        "answers": [
+            "dirty/modified"
+        ],
+        "other_options": [
+            "clean",
+            "new",
+            "old"
+        ]
+    },
+    {
+        "q": "It is part of `sqlalchemy.ext.mutable`.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Match mutable:",
+        "type": "match",
+        "left": [
+            "JSON",
+            "Array",
+            "MutableDict.as_mutable",
+            "Detection"
+        ],
+        "right": [
+            "Dict storage",
+            "List storage",
+            "Enable tracking",
+            "In-place API"
+        ]
+    },
+    {
+        "q": "Rearrange json track:",
+        "type": "rearrange",
+        "words": [
+            "data = Column(MutableDict.as_mutable(JSON))",
+            "obj.data['key'] = 'val'",
+            "session.commit()",
+            "Changes saved"
+        ]
+    },
+    {
+        "q": "What is `reconstructor` hook?",
+        "type": "mcq",
+        "o": [
+            "Called after object loads from DB",
+            "Called on init",
+            "Called on delete",
+            "Called on save"
+        ]
+    },
+    {
+        "q": "`@orm.reconstructor` decorates a method to run after instance _____.",
+        "type": "fill_blank",
+        "answers": [
+            "loading/reconstruction"
+        ],
+        "other_options": [
+            "creation",
+            "deletion",
+            "error"
+        ]
+    },
+    {
+        "q": "`__init__` is not called when loading from DB.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Match hooks:",
+        "type": "match",
+        "left": [
+            "__init__",
+            "reconstructor",
+            "load event",
+            "refresh"
+        ],
+        "right": [
+            "New instance",
+            "Existing instance",
+            "Via event",
+            "Reload state"
+        ]
+    },
+    {
+        "q": "Rearrange reconstruct:",
+        "type": "rearrange",
+        "words": [
+            "@orm.reconstructor",
+            "def init_on_load(self):",
+            "self.temp_val = 0",
+            "Reset transient"
+        ]
+    },
+    {
+        "q": "What does `session.bind` attribute do?",
+        "type": "mcq",
+        "o": [
+            "Associated generic engine",
+            "Binds two sessions",
+            "Binds variables",
+            "Nothing"
+        ]
+    },
+    {
+        "q": "You can bind a specific engine to a specific class using `binds={User: engine_b}` in sessionmaker.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "This is used for _____ routing (sharding).",
+        "type": "fill_blank",
+        "answers": [
+            "vertical/horizontal"
+        ],
+        "other_options": [
+            "color",
+            "text",
+            "file"
+        ]
+    },
+    {
+        "q": "Match binding:",
+        "type": "match",
+        "left": [
+            "bind=engine",
+            "binds={}",
+            "get_bind()",
+            "connection"
+        ],
+        "right": [
+            "Global",
+            "Per base/class",
+            "Find engine",
+            "Active conn"
+        ]
+    },
+    {
+        "q": "Rearrange bind:",
+        "type": "rearrange",
+        "words": [
+            "Session = sessionmaker()",
+            "Session.configure(bind=engine)",
+            "s = Session()",
+            "Ready"
+        ]
+    },
+    {
+        "q": "What is `contains_eager`?",
+        "type": "mcq",
+        "o": [
+            "Populate attributes from manually joined cols",
+            "Eager load",
+            "Lazy load",
+            "Filter"
+        ]
+    },
+    {
+        "q": "It tells the ORM that we have already joined the table in the query.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "This helps when you want to filter on the joined table and _____ it simultaneously.",
+        "type": "fill_blank",
+        "answers": [
+            "load/fetch"
+        ],
+        "other_options": [
+            "delete",
+            "drop",
+            "hide"
+        ]
+    },
+    {
+        "q": "Match eager trick:",
+        "type": "match",
+        "left": [
+            "join(Address)",
+            "filter(Address.city=='NY')",
+            "options(contains_eager(..))",
+            "Goal"
+        ],
+        "right": [
+            "Manual Join",
+            "Filter condition",
+            "Tell ORM",
+            "One query + Filter"
+        ]
+    },
+    {
+        "q": "Rearrange contains eager:",
+        "type": "rearrange",
+        "words": [
+            "q = session.query(User)",
+            ".join(User.addresses)",
+            ".options(contains_eager(User.addresses))",
+            ".filter(Address.city == 'X')"
+        ]
+    },
+    {
+        "q": "What is `KeyedTuple`?",
+        "type": "mcq",
+        "o": [
+            "Result row-like object",
+            "Tuple with keys",
+            "Key generator",
+            "Cryptic tuple"
+        ]
+    },
+    {
+        "q": "Queries returning multiple entities return KeyedTuples (named tuples).",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "You can access values by index or by _____.",
+        "type": "fill_blank",
+        "answers": [
+            "key/name"
+        ],
+        "other_options": [
+            "color",
+            "size",
+            "time"
+        ]
+    },
+    {
+        "q": "Match access:",
+        "type": "match",
+        "left": [
+            "row[0]",
+            "row.User",
+            "row.keys()",
+            "row._asdict()"
+        ],
+        "right": [
+            "Index",
+            "Attribute",
+            "Column names",
+            "Dictionary"
+        ]
+    },
+    {
+        "q": "Rearrange result access:",
+        "type": "rearrange",
+        "words": [
+            "for row in query:",
+            "user = row.User",
+            "addr = row.Address",
+            "Process pair"
+        ]
+    },
+    {
+        "q": "What is `query.exists()`?",
+        "type": "mcq",
+        "o": [
+            "Checks if any row exists",
+            "Checks if file exists",
+            "Checks if table exists",
+            "Checks connection"
+        ]
+    },
+    {
+        "q": "`session.query(User.query.filter(User.id==1).exists()).scalar()` returns True if found.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "It generates an SQL _____ clause.",
+        "type": "fill_blank",
+        "answers": [
+            "EXISTS"
+        ],
+        "other_options": [
+            "WHERE",
+            "IF",
+            "CHECK"
+        ]
+    },
+    {
+        "q": "Match check methods:",
+        "type": "match",
+        "left": [
+            "exists()",
+            "any()",
+            "has()",
+            "contains()"
+        ],
+        "right": [
+            "Subquery check",
+            "Collection check",
+            "Scalar check",
+            "Expression check"
+        ]
+    },
+    {
+        "q": "Rearrange existence:",
+        "type": "rearrange",
+        "words": [
+            "stmt = exists().where(User.id==1)",
+            "q = session.query(stmt)",
+            "found = q.scalar()",
+            "True/False"
+        ]
+    },
+    {
+        "q": "What does `any()` do on a relationship?",
+        "type": "mcq",
+        "o": [
+            "Filters if any element matches",
+            "Returns any row",
+            "Random row",
+            "Count rows"
+        ]
+    },
+    {
+        "q": "It works on _____ relationships.",
+        "type": "fill_blank",
+        "answers": [
+            "collection/One-to-Many"
+        ],
+        "other_options": [
+            "scalar",
+            "Many-to-One",
+            "single"
+        ]
+    },
+    {
+        "q": "`User.addresses.any(Address.city == 'NYC')` check if User has *any* NYC address.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Match relationship filters:",
+        "type": "match",
+        "left": [
+            "any()",
+            "has()",
+            "contains()",
+            "overlap()"
+        ],
+        "right": [
+            "Collection filter",
+            "Scalar filter",
+            "Has item",
+            "Intersect"
+        ]
+    },
+    {
+        "q": "Rearrange any check:",
+        "type": "rearrange",
+        "words": [
+            "q = session.query(User)",
+            ".filter(User.addresses.any(city='A'))",
+            ".all()",
+            "Users with City A"
+        ]
+    },
+    {
+        "q": "What is `one_or_none()`?",
+        "type": "mcq",
+        "o": [
+            "Returns result or None",
+            "Raises error on None",
+            "Always returns One",
+            "Returns List"
+        ]
+    },
+    {
+        "q": "It raises `MultipleResultsFound` if more than _____ result is found.",
+        "type": "fill_blank",
+        "answers": [
+            "one/1"
+        ],
+        "other_options": [
+            "zero",
+            "two",
+            "ten"
+        ]
+    },
+    {
+        "q": "It is safer than `one()` when result might be missing.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Match fetch types:",
+        "type": "match",
+        "left": [
+            "one()",
+            "one_or_none()",
+            "first()",
+            "all()"
+        ],
+        "right": [
+            "Exact 1",
+            "1 or None",
+            "First or None",
+            "List"
+        ]
+    },
+    {
+        "q": "Rearrange fetch safe:",
+        "type": "rearrange",
+        "words": [
+            "user = session.query(User)",
+            ".filter_by(id=999)",
+            ".one_or_none()",
+            "if user: ..."
+        ]
+    },
+    {
+        "q": "What is `session.expire_on_commit`?",
+        "type": "mcq",
+        "o": [
+            "Invalidate objects after commit",
+            "Delete objects",
+            "Save objects",
+            "Clean cache"
+        ]
+    },
+    {
+        "q": "By default it is True, meaning objects are expired and refreshed on next _____.",
+        "type": "fill_blank",
+        "answers": [
+            "access/load"
+        ],
+        "other_options": [
+            "save",
+            "delete",
+            "flush"
+        ]
+    },
+    {
+        "q": "Setting it to False allows accessing object attributes after commit without DB query.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Match session flags:",
+        "type": "match",
+        "left": [
+            "expire_on_commit",
+            "autoflush",
+            "autocommit",
+            "info"
+        ],
+        "right": [
+            "Reload after commit",
+            "Flush before query",
+            "Legacy mode",
+            "Session dict"
+        ]
+    },
+    {
+        "q": "Rearrange no expire:",
+        "type": "rearrange",
+        "words": [
+            "session = Session(expire_on_commit=False)",
+            "u = session.query(User).first()",
+            "session.commit()",
+            "print(u.name) # No SQL"
+        ]
+    },
+    {
+        "q": "Core: What builds an Insert statement?",
+        "type": "mcq",
+        "o": [
+            "insert(Table)",
+            "Table.insert()",
+            "func.insert()",
+            "add(Table)"
+        ]
+    },
+    {
+        "q": "You execute Core constructs using `connection.execute(stmt)` or `session.execute(stmt)`.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "`stmt.values(name='a')` specifies the _____ to insert.",
+        "type": "fill_blank",
+        "answers": [
+            "values/data"
+        ],
+        "other_options": [
+            "columns",
+            "tables",
+            "types"
+        ]
+    },
+    {
+        "q": "Match core statements:",
+        "type": "match",
+        "left": [
+            "insert()",
+            "select()",
+            "update()",
+            "delete()"
+        ],
+        "right": [
+            "Add row",
+            "Find rows",
+            "Modify rows",
+            "Remove rows"
+        ]
+    },
+    {
+        "q": "Rearrange core insert:",
+        "type": "rearrange",
+        "words": [
+            "stmt = insert(users_table)",
+            ".values(name='Ed', fullname='Ed Jones')",
+            "conn.execute(stmt)",
+            "Insert Ed"
+        ]
+    },
+    {
+        "q": "How do you chain logical conditions?",
+        "type": "mcq",
+        "o": [
+            "and_(), or_(), not_()",
+            "&&, ||, !",
+            "&, |, ~",
+            "AND, OR, NOT"
+        ]
+    },
+    {
+        "q": "`and_()` matches only if _____ conditions are True.",
+        "type": "fill_blank",
+        "answers": [
+            "all/both"
+        ],
+        "other_options": [
+            "one",
+            "none",
+            "any"
+        ]
+    },
+    {
+        "q": "You import them from `sqlalchemy`.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Match logic:",
+        "type": "match",
+        "left": [
+            "and_",
+            "or_",
+            "not_",
+            "in_"
+        ],
+        "right": [
+            "Intersection",
+            "Union",
+            "Negation",
+            "Membership"
+        ]
+    },
+    {
+        "q": "Rearrange logical filter:",
+        "type": "rearrange",
+        "words": [
+            "q = session.query(User)",
+            ".filter(or_(User.age < 18, User.age > 65))",
+            ".all()",
+            "Find extremes"
+        ]
+    },
+    {
+        "q": "What is `func.coalesce()`?",
+        "type": "mcq",
+        "o": [
+            "Return first non-null",
+            "Merge strings",
+            "Sum values",
+            "Count nulls"
+        ]
+    },
+    {
+        "q": "It is equivalent to SQL _____ function.",
+        "type": "fill_blank",
+        "answers": [
+            "COALESCE"
+        ],
+        "other_options": [
+            "IFNULL",
+            "ISNULL",
+            "NVL"
+        ]
+    },
+    {
+        "q": "It takes multiple arguments.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Match null handling:",
+        "type": "match",
+        "left": [
+            "coalesce",
+            "nullif",
+            "is_",
+            "is_not"
+        ],
+        "right": [
+            "First val",
+            "Null if equal",
+            "Check Null",
+            "Check Not Null"
+        ]
+    },
+    {
+        "q": "Rearrange coalesce:",
+        "type": "rearrange",
+        "words": [
+            "q = session.query(",
+            "func.coalesce(User.nickname, User.name)",
+            ")",
+            "Show name"
+        ]
+    },
+    {
+        "q": "What is `column_property()`?",
+        "type": "mcq",
+        "o": [
+            "Map SQL expression as attribute",
+            "Define column",
+            "Index column",
+            "Constraints"
+        ]
+    },
+    {
+        "q": "It puts a read-only computed attribute on the _____.",
+        "type": "fill_blank",
+        "answers": [
+            "model/class"
+        ],
+        "other_options": [
+            "table",
+            "database",
+            "session"
+        ]
+    },
+    {
+        "q": "It is loaded immediately with the object query.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Match property types:",
+        "type": "match",
+        "left": [
+            "column_property",
+            "hybrid_property",
+            "synonym",
+            "composite"
+        ],
+        "right": [
+            "SQL Expression",
+            "Py+SQL",
+            "Alias",
+            "Grouped Cols"
+        ]
+    },
+    {
+        "q": "Rearrange col prop:",
+        "type": "rearrange",
+        "words": [
+            "fullname = column_property(",
+            "firstname + ' ' + lastname",
+            ")",
+            "Computed in SQL"
+        ]
+    },
+    {
+        "q": "How do you customize a relationship collection type?",
+        "type": "mcq",
+        "o": [
+            "collection_class=set",
+            "type=set",
+            "class=set",
+            "list=False"
+        ]
+    },
+    {
+        "q": "Using `set` ensures uniqueness of items in the collection.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "By default, One-to-Many collections are Python _____.",
+        "type": "fill_blank",
+        "answers": [
+            "lists"
+        ],
+        "other_options": [
+            "dicts",
+            "sets",
+            "tuples"
+        ]
+    },
+    {
+        "q": "Match collections:",
+        "type": "match",
+        "left": [
+            "list",
+            "set",
+            "dict",
+            "ordering_list"
+        ],
+        "right": [
+            "Ordered, Dups",
+            "Unordered, Unique",
+            "Keyed access",
+            "Maintains order"
+        ]
+    },
+    {
+        "q": "Rearrange set coll:",
+        "type": "rearrange",
+        "words": [
+            "posts = relationship('Post',",
+            "collection_class=set)",
+            "user.posts.add(p)",
+            "No duplicates"
+        ]
+    },
+    {
+        "q": "What does `lazy='raise'` do?",
+        "type": "mcq",
+        "o": [
+            "Raises error on lazy load",
+            "Loads immediately",
+            "Delays loading",
+            "Ignores loading"
+        ]
+    },
+    {
+        "q": "It prevents accidental N+1 queries by forcing explicit eager loading.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "If you access the attribute without eager loading, it raises `_____Error`.",
+        "type": "fill_blank",
+        "answers": [
+            "InvalidRequest/DetachedInstance"
+        ],
+        "other_options": [
+            "Value",
+            "Type",
+            "Key"
+        ]
+    },
+    {
+        "q": "Match lazy modes:",
+        "type": "match",
+        "left": [
+            "select",
+            "joined",
+            "subquery",
+            "raise"
+        ],
+        "right": [
+            "Default",
+            "Join",
+            "Subquery",
+            "No implicit load"
+        ]
+    },
+    {
+        "q": "Rearrange raise lazy:",
+        "type": "rearrange",
+        "words": [
+            "rel = relationship(..., lazy='raise')",
+            "u = q.options(joinedload(rel)).first()",
+            "u.rel # OK",
+            "u = q.first(); u.rel # Error"
+        ]
+    },
+    {
+        "q": "What is a Partial Index?",
+        "type": "mcq",
+        "o": [
+            "Index on subset of rows",
+            "Index on half column",
+            "Weak index",
+            "Temp index"
+        ]
+    },
+    {
+        "q": "In SQLAlchemy, use `postgresql_where` or `sqlite_where` options in `Index()`.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "It indexes only rows matching the _____ condition.",
+        "type": "fill_blank",
+        "answers": [
+            "where/filter"
+        ],
+        "other_options": [
+            "join",
+            "group",
+            "sort"
+        ]
+    },
+    {
+        "q": "Match index options:",
+        "type": "match",
+        "left": [
+            "unique=True",
+            "postgresql_using='gin'",
+            "postgresql_where",
+            "mysql_length"
+        ],
+        "right": [
+            "Constraint",
+            "Index Type",
+            "Partial",
+            "Prefix length"
+        ]
+    },
+    {
+        "q": "Rearrange partial index:",
+        "type": "rearrange",
+        "words": [
+            "Index('idx_active', User.name,",
+            "postgresql_where=(User.active==True))",
+            "Only active users",
+            "indexed"
+        ]
+    },
+    {
+        "q": "What is `automap_base`?",
+        "type": "mcq",
+        "o": [
+            "Auto-reflect tables to classes",
+            "Map auto",
+            "Base class",
+            "Car map"
+        ]
+    },
+    {
+        "q": "It reflects the database schema and produces mapped classes automatically.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "You must call `Base.prepare(engine, reflect=True)` to start _____.",
+        "type": "fill_blank",
+        "answers": [
+            "reflection"
+        ],
+        "other_options": [
+            "deletion",
+            "creation",
+            "insertion"
+        ]
+    },
+    {
+        "q": "Match automap:",
+        "type": "match",
+        "left": [
+            "automap_base",
+            "prepare",
+            "classes",
+            "metadata"
+        ],
+        "right": [
+            "Factory",
+            "Run Reflection",
+            "Result classes",
+            "Schema holder"
+        ]
+    },
+    {
+        "q": "Rearrange automap:",
+        "type": "rearrange",
+        "words": [
+            "Base = automap_base()",
+            "Base.prepare(engine, reflect=True)",
+            "User = Base.classes.users",
+            "session.query(User)..."
+        ]
+    },
+    {
+        "q": "What handles database migration in SQLAlchemy ecosystem?",
+        "type": "mcq",
+        "o": [
+            "Alembic",
+            "MigrateSQL",
+            "Turbo",
+            "Flask-Migrate"
+        ]
+    },
+    {
+        "q": "Alembic provides a way to create versioned _____ scripts.",
+        "type": "fill_blank",
+        "answers": [
+            "migration"
+        ],
+        "other_options": [
+            "python",
+            "sql",
+            "text"
+        ]
+    },
+    {
+        "q": "`alembic revision --autogenerate` compares model metadata with DB.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Match alembic cmds:",
+        "type": "match",
+        "left": [
+            "init",
+            "revision",
+            "upgrade head",
+            "downgrade"
+        ],
+        "right": [
+            "Setup env",
+            "New script",
+            "Apply all",
+            "Revert"
+        ]
+    },
+    {
+        "q": "Rearrange migration:",
+        "type": "rearrange",
+        "words": [
+            "alembic revision",
+            "--autogenerate",
+            "-m 'Added user table'",
+            "alembic upgrade head"
+        ]
+    },
+    {
+        "q": "What is `sqlalchemy.ext.baked`?",
+        "type": "mcq",
+        "o": [
+            "Cached query construction",
+            "Cookie storage",
+            "Baked data",
+            "Static files"
+        ]
+    },
+    {
+        "q": "It caches the construction of the Query object to reduce Python overhead.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "It is useful for high-performance applications executing the _____ query often.",
+        "type": "fill_blank",
+        "answers": [
+            "same"
+        ],
+        "other_options": [
+            "different",
+            "slow",
+            "wrong"
+        ]
+    },
+    {
+        "q": "Match baked terms:",
+        "type": "match",
+        "left": [
+            "bakery",
+            "bake()",
+            "spoil()",
+            "Result"
+        ],
+        "right": [
+            "Cache store",
+            "Add step",
+            "Invalidate",
+            "Query object"
+        ]
+    },
+    {
+        "q": "Rearrange baked query:",
+        "type": "rearrange",
+        "words": [
+            "bakery = baked.bakery()",
+            "q = bakery(lambda s: s.query(User))",
+            "q += lambda q: q.filter(User.id == bindparam('id'))",
+            "result = q(session).params(id=1).all()"
+        ]
+    },
+    {
+        "q": "How do you listen for an 'append' event on a relationship?",
+        "type": "mcq",
+        "o": [
+            "@event.listens_for(target, 'append')",
+            "append_hook",
+            "on_add",
+            "hook.add"
+        ]
+    },
+    {
+        "q": "Collection events include `append`, `remove`, and `_____`.",
+        "type": "fill_blank",
+        "answers": [
+            "set/bulk_replace"
+        ],
+        "other_options": [
+            "get",
+            "delete",
+            "copy"
+        ]
+    },
+    {
+        "q": "These are Attribute Events.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Match attribute events:",
+        "type": "match",
+        "left": [
+            "append",
+            "remove",
+            "set",
+            "init_scalar"
+        ],
+        "right": [
+            "Add item",
+            "Del item",
+            "Set value",
+            "Init value"
+        ]
+    },
+    {
+        "q": "Rearrange append listener:",
+        "type": "rearrange",
+        "words": [
+            "@event.listens_for(User.addresses, 'append')",
+            "def append_address(target, value, initiator):",
+            "print('Adding', value)",
+            "Log it"
+        ]
+    },
+    {
+        "q": "What is `bulk_insert_mappings`?",
+        "type": "mcq",
+        "o": [
+            "Fast insert of list of dicts",
+            "Insert map",
+            "Map bulk",
+            "Slow insert"
+        ]
+    },
+    {
+        "q": "It bypasses the Session's unit of work for _____ performance.",
+        "type": "fill_blank",
+        "answers": [
+            "speed/high"
+        ],
+        "other_options": [
+            "slow",
+            "low",
+            "bad"
+        ]
+    },
+    {
+        "q": "It does not retrieve generated primary keys by default.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Match bulk methods:",
+        "type": "match",
+        "left": [
+            "bulk_save_objects",
+            "bulk_insert_mappings",
+            "bulk_update_mappings",
+            "add_all"
+        ],
+        "right": [
+            "Keep objects",
+            "Fastest Insert",
+            "Fastest Update",
+            "Standard insert"
+        ]
+    },
+    {
+        "q": "Rearrange bulk insert:",
+        "type": "rearrange",
+        "words": [
+            "session.bulk_insert_mappings(User,",
+            "[{'name': 'A'}, {'name': 'B'}]",
+            ")",
+            "session.commit()"
+        ]
+    },
+    {
+        "q": "What is `create_async_engine()` used for?",
+        "type": "mcq",
+        "o": [
+            "Creating async DB engine",
+            "Creating async web server",
+            "Creating thread pool",
+            "Creating process"
+        ]
+    },
+    {
+        "q": "It requires an async DB driver like `asyncpg` or `_____`.",
+        "type": "fill_blank",
+        "answers": [
+            "aiosqlite"
+        ],
+        "other_options": [
+            "psycopg2",
+            "sqlite3",
+            "mysqlclient"
+        ]
+    },
+    {
+        "q": "It returns an `AsyncEngine` instance.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Match drivers:",
+        "type": "match",
+        "left": [
+            "asyncpg",
+            "aiosqlite",
+            "aiomysql",
+            "psycopg2"
+        ],
+        "right": [
+            "Postgres Async",
+            "SQLite Async",
+            "MySQL Async",
+            "Postgres Sync"
+        ]
+    },
+    {
+        "q": "Rearrange async setup:",
+        "type": "rearrange",
+        "words": [
+            "engine =",
+            "create_async_engine(",
+            "'sqlite+aiosqlite:///:memory:',",
+            "echo=True)"
+        ]
+    },
+    {
+        "q": "What is `AsyncSession`?",
+        "type": "mcq",
+        "o": [
+            "Session for async operations",
+            "Session for threads",
+            "Session for processes",
+            "Fast session"
+        ]
+    },
+    {
+        "q": "You typically use it with the `_____` context manager.",
+        "type": "fill_blank",
+        "answers": [
+            "async with"
+        ],
+        "other_options": [
+            "with",
+            "try",
+            "def"
+        ]
+    },
+    {
+        "q": "`await session.execute(stmt)` runs the statement asynchronously.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Match async methods:",
+        "type": "match",
+        "left": [
+            "await session.commit()",
+            "await session.rollback()",
+            "await session.close()",
+            "session.begin()"
+        ],
+        "right": [
+            "Async Save",
+            "Async Undo",
+            "Async End",
+            "Ctx Manager"
+        ]
+    },
+    {
+        "q": "Rearrange async query:",
+        "type": "rearrange",
+        "words": [
+            "async with AsyncSession(engine) as session:",
+            "result = await session.execute(select(User))",
+            "users = result.scalars().all()",
+            "Print users"
+        ]
+    },
+    {
+        "q": "What does `run_sync()` do in AsyncEngine?",
+        "type": "mcq",
+        "o": [
+            "Runs sync function in thread pool",
+            "Runs async function",
+            "Stops engine",
+            "Deletes DB"
+        ]
+    },
+    {
+        "q": "It is commonly used to run `Base.metadata.create_all` which is _____.",
+        "type": "fill_blank",
+        "answers": [
+            "synchronous/sync"
+        ],
+        "other_options": [
+            "async",
+            "fast",
+            "slow"
+        ]
+    },
+    {
+        "q": "Metadata operations in SQLAlchemy are typically synchronous.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Match sync ops:",
+        "type": "match",
+        "left": [
+            "run_sync",
+            "create_all",
+            "drop_all",
+            "reflect"
+        ],
+        "right": [
+            "Bridge to Sync",
+            "Create Schema",
+            "Drop Schema",
+            "Read Schema"
+        ]
+    },
+    {
+        "q": "Rearrange run sync:",
+        "type": "rearrange",
+        "words": [
+            "async with engine.begin() as conn:",
+            "await conn.run_sync(",
+            "Base.metadata.create_all",
+            ")"
+        ]
+    },
+    {
+        "q": "What is the 2.0 style `select()` construct?",
+        "type": "mcq",
+        "o": [
+            "Core select used in ORM",
+            "Legacy query",
+            "Raw SQL",
+            "New language"
+        ]
+    },
+    {
+        "q": "`select(User).where(User.id == 5)` replaces `session.query(_____).filter(...)`.",
+        "type": "fill_blank",
+        "answers": [
+            "User"
+        ],
+        "other_options": [
+            "select",
+            "table",
+            "id"
+        ]
+    },
+    {
+        "q": "The 2.0 style unifies Core and ORM usage.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Match select styles:",
+        "type": "match",
+        "left": [
+            "select(User)",
+            "session.query(User)",
+            "execute(select)",
+            "query.all()"
+        ],
+        "right": [
+            "2.0 Construct",
+            "1.x Legacy",
+            "2.0 Execute",
+            "1.x Execute"
+        ]
+    },
+    {
+        "q": "Rearrange select 2.0:",
+        "type": "rearrange",
+        "words": [
+            "stmt = select(User).where(User.name == 'ed')",
+            "result = session.execute(stmt)",
+            "user = result.scalar_one()",
+            "Get result"
+        ]
+    },
+    {
+        "q": "What is `scalars()` used for in result processing?",
+        "type": "mcq",
+        "o": [
+            "Extracting single column/entity",
+            "Counting scalars",
+            "Scaling image",
+            "Measuring weight"
+        ]
+    },
+    {
+        "q": "`result.scalars().all()` returns a list of _____ (e.g., User objects).",
+        "type": "fill_blank",
+        "answers": [
+            "instances/objects"
+        ],
+        "other_options": [
+            "tuples",
+            "rows",
+            "dicts"
+        ]
+    },
+    {
+        "q": "Without `scalars()`, `execute()` returns a list of Row objects (tuples).",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Match result methods:",
+        "type": "match",
+        "left": [
+            "scalars()",
+            "mappings()",
+            "first()",
+            "all()"
+        ],
+        "right": [
+            "Unpack objects",
+            "Dict-like access",
+            "First row",
+            "List rows"
+        ]
+    },
+    {
+        "q": "Rearrange scalars:",
+        "type": "rearrange",
+        "words": [
+            "res = session.execute(select(User))",
+            "users = res.scalars().all()",
+            "for u in users:",
+            "print(u.name)"
+        ]
+    },
+    {
+        "q": "What is `returning()` used for?",
+        "type": "mcq",
+        "o": [
+            "Return values after Insert/Update",
+            "Return function",
+            "Return home",
+            "Loop"
+        ]
+    },
+    {
+        "q": "It allows fetching generated columns (like ID) in the _____ round-trip.",
+        "type": "fill_blank",
+        "answers": [
+            "same/single"
+        ],
+        "other_options": [
+            "next",
+            "second",
+            "last"
+        ]
+    },
+    {
+        "q": "Supported by PostgreSQL, MSSQL, and Oracle.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Match returning:",
+        "type": "match",
+        "left": [
+            "insert().returning()",
+            "update().returning()",
+            "delete().returning()",
+            "Backend"
+        ],
+        "right": [
+            "Get new ID",
+            "Get old/new val",
+            "Get deleted val",
+            "Postgres/others"
+        ]
+    },
+    {
+        "q": "Rearrange returning:",
+        "type": "rearrange",
+        "words": [
+            "stmt = insert(User).values(name='x')",
+            ".returning(User.id)",
+            "id = session.execute(stmt).scalar()",
+            "Get ID fast"
+        ]
+    },
+    {
+        "q": "What is `QueuePool`?",
+        "type": "mcq",
+        "o": [
+            "Default connection pool",
+            "Queue data structure",
+            "Swimming pool",
+            "Slow pool"
+        ]
+    },
+    {
+        "q": "It maintains a fixed number of connections to avoid connection _____ overhead.",
+        "type": "fill_blank",
+        "answers": [
+            "creation/handshake"
+        ],
+        "other_options": [
+            "loss",
+            "speed",
+            "error"
+        ]
+    },
+    {
+        "q": "`pool_size=5` creates 5 connections initially (or on demand) and keeps them open.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Match pool params:",
+        "type": "match",
+        "left": [
+            "pool_size",
+            "max_overflow",
+            "pool_timeout",
+            "pool_recycle"
+        ],
+        "right": [
+            "Baseline conns",
+            "Burst conns",
+            "Wait time",
+            "Reconnect age"
+        ]
+    },
+    {
+        "q": "Rearrange pool config:",
+        "type": "rearrange",
+        "words": [
+            "create_engine(url,",
+            "pool_size=10,",
+            "max_overflow=20,",
+            "pool_recycle=3600)"
+        ]
+    },
+    {
+        "q": "What is `NullPool`?",
+        "type": "mcq",
+        "o": [
+            "Disables pooling",
+            "Empty pool",
+            "Broken pool",
+            "Fast pool"
+        ]
+    },
+    {
+        "q": "It creates a new connection for every request and _____ it immediately after use.",
+        "type": "fill_blank",
+        "answers": [
+            "closes"
+        ],
+        "other_options": [
+            "saves",
+            "caches",
+            "reuses"
+        ]
+    },
+    {
+        "q": "Useful for transactional drivers like PgBouncer in transaction mode.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Match pool types:",
+        "type": "match",
+        "left": [
+            "QueuePool",
+            "NullPool",
+            "StaticPool",
+            "SingletonThreadPool"
+        ],
+        "right": [
+            "Standard",
+            "No Pooling",
+            "One Conn (SQLite)",
+            "One per thread"
+        ]
+    },
+    {
+        "q": "Rearrange nullpool:",
+        "type": "rearrange",
+        "words": [
+            "from sqlalchemy.pool import NullPool",
+            "engine = create_engine(",
+            "url, poolclass=NullPool",
+            ")"
+        ]
+    },
+    {
+        "q": "What is `on_conflict_do_nothing`?",
+        "type": "mcq",
+        "o": [
+            "Upsert clause (PostgreSQL/SQLite)",
+            "Error handling",
+            "Conflict resolution strategy",
+            "Python command"
+        ]
+    },
+    {
+        "q": "It generates `ON CONFLICT DO NOTHING` to ignore _____ key violations.",
+        "type": "fill_blank",
+        "answers": [
+            "unique/primary"
+        ],
+        "other_options": [
+            "foreign",
+            "check",
+            "null"
+        ]
+    },
+    {
+        "q": "You access it via `dialects.postgresql.insert`.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Match conflict handling:",
+        "type": "match",
+        "left": [
+            "do_nothing",
+            "do_update",
+            "index_elements",
+            "constraint"
+        ],
+        "right": [
+            "Ignore",
+            "Upsert",
+            "Conflict cols",
+            "Conflict constr"
+        ]
+    },
+    {
+        "q": "Rearrange upsert:",
+        "type": "rearrange",
+        "words": [
+            "stmt = insert(table).values(...)",
+            "stmt.on_conflict_do_update(",
+            "index_elements=['id'],",
+            "set_=dict(name='new'))"
+        ]
+    },
+    {
+        "q": "How do you achieve horizontal sharding?",
+        "type": "mcq",
+        "o": [
+            "Using multiple engines/binds",
+            "Using big server",
+            "Using shard()",
+            "Using split()"
+        ]
+    },
+    {
+        "q": "You can use the `Session`'s `binds` argument to map Classes to different _____.",
+        "type": "fill_blank",
+        "answers": [
+            "engines/databases"
+        ],
+        "other_options": [
+            "tables",
+            "columns",
+            "files"
+        ]
+    },
+    {
+        "q": "For more complex sharding (data-dependent), use a custom Session subclass (ShardedSession).",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Match sharding:",
+        "type": "match",
+        "left": [
+            "Vertical",
+            "Horizontal",
+            "ShardedSession",
+            "shard_chooser"
+        ],
+        "right": [
+            "Col split",
+            "Row split",
+            "Custom Session",
+            "Routing Func"
+        ]
+    },
+    {
+        "q": "Rearrange sharding:",
+        "type": "rearrange",
+        "words": [
+            "shard_lookup = lambda m,c,i: 'db1'",
+            "session = ShardedSession(",
+            "shards={'db1': eng1},",
+            "shard_chooser=shard_lookup)"
+        ]
+    },
+    {
+        "q": "What is `SessionEvents.after_transaction_end`?",
+        "type": "mcq",
+        "o": [
+            "Event fired after commit/rollback",
+            "Event fired before",
+            "Event during",
+            "Error event"
+        ]
+    },
+    {
+        "q": "It allows executing code after the transaction is fully _____.",
+        "type": "fill_blank",
+        "answers": [
+            "closed/finished"
+        ],
+        "other_options": [
+            "opened",
+            "started",
+            "failed"
+        ]
+    },
+    {
+        "q": "Matches `request_finished` signals in web frameworks.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Match session events:",
+        "type": "match",
+        "left": [
+            "after_transaction_end",
+            "before_commit",
+            "after_commit",
+            "after_rollback"
+        ],
+        "right": [
+            "Final cleanup",
+            "Validation",
+            "Confirm log",
+            "Error log"
+        ]
+    },
+    {
+        "q": "Rearrange session hook:",
+        "type": "rearrange",
+        "words": [
+            "@event.listens_for(Session, 'after_commit')",
+            "def my_after_commit(session):",
+            "print('Committed!')",
+            "Log success"
+        ]
+    },
+    {
+        "q": "What is `MapperEvents.before_update`?",
+        "type": "mcq",
+        "o": [
+            "Pre-update hook for model",
+            "Pre-insert",
+            "Post-update",
+            "Pre-delete"
+        ]
+    },
+    {
+        "q": "It receives the mapper, connection, and the _____ (instance).",
+        "type": "fill_blank",
+        "answers": [
+            "target"
+        ],
+        "other_options": [
+            "session",
+            "engine",
+            "row"
+        ]
+    },
+    {
+        "q": "You can modify the instance attributes in this event.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Match mapper hooks:",
+        "type": "match",
+        "left": [
+            "before_insert",
+            "before_update",
+            "before_delete",
+            "instrument_class"
+        ],
+        "right": [
+            "New row",
+            "Mod row",
+            "Del row",
+            "Class setup"
+        ]
+    },
+    {
+        "q": "Rearrange timestamp update:",
+        "type": "rearrange",
+        "words": [
+            "@event.listens_for(User, 'before_update')",
+            "def on_update(mapper, conn, target):",
+            "target.updated_at = func.now()",
+            "Auto time"
+        ]
+    },
+    {
+        "q": "What is `join_from` in 2.0 select?",
+        "type": "mcq",
+        "o": [
+            "Explicit start of join",
+            "Join type",
+            "From clause",
+            "Join tool"
+        ]
+    },
+    {
+        "q": "`select(User).join_from(Address, User)` controls the join _____ explicitly.",
+        "type": "fill_blank",
+        "answers": [
+            "order/direction"
+        ],
+        "other_options": [
+            "type",
+            "speed",
+            "name"
+        ]
+    },
+    {
+        "q": "It's useful when the left side of the join isn't the first selected entity.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Match join args:",
+        "type": "match",
+        "left": [
+            "join(Target)",
+            "join_from(Left, Right)",
+            "isouter=True",
+            "onclause"
+        ],
+        "right": [
+            "Implicit Left",
+            "Explicit Left",
+            "Left Join",
+            "Condition"
+        ]
+    },
+    {
+        "q": "Rearrange join from:",
+        "type": "rearrange",
+        "words": [
+            "stmt = select(User)",
+            ".join_from(Address, User)",
+            ".where(Address.city == 'X')",
+            "Start from Address"
+        ]
+    },
+    {
+        "q": "What is `session.get_bind()`?",
+        "type": "mcq",
+        "o": [
+            "Returns engine/connection",
+            "Binds session",
+            "Gets binder",
+            "Gets usage"
+        ]
+    },
+    {
+        "q": "It returns the `Engine` or `Connection` to which this session is _____.",
+        "type": "fill_blank",
+        "answers": [
+            "bound"
+        ],
+        "other_options": [
+            "connected",
+            "listening",
+            "writing"
+        ]
+    },
+    {
+        "q": "You pass the mapper/clause to find the specific bind for that object.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Match binding inspection:",
+        "type": "match",
+        "left": [
+            "session.get_bind(User)",
+            "session.bind",
+            "engine.url",
+            "connection.engine"
+        ],
+        "right": [
+            "User's engine",
+            "Default engine",
+            "DB String",
+            "Source engine"
+        ]
+    },
+    {
+        "q": "Rearrange get bind:",
+        "type": "rearrange",
+        "words": [
+            "engine = session.get_bind(User)",
+            "print(engine.url)",
+            "Check DB",
+            "routing"
+        ]
+    },
+    {
+        "q": "What is Optimistic Locking?",
+        "type": "mcq",
+        "o": [
+            "Detects changes via version column",
+            "Locks table",
+            "Locks row",
+            "Ignores conflicts"
+        ]
+    },
+    {
+        "q": "You enable it by adding a column with `_____(Integer)` and passing it to mapper.",
+        "type": "fill_blank",
+        "answers": [
+            "version_id_col/version_id"
+        ],
+        "other_options": [
+            "id",
+            "lock",
+            "key"
+        ]
+    },
+    {
+        "q": "It raises `StaleDataError` if the DB version doesn't match loaded version on update.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Match locks:",
+        "type": "match",
+        "left": [
+            "Optimistic",
+            "Pessimistic",
+            "Shared",
+            "Exclusive"
+        ],
+        "right": [
+            "Version check",
+            "DB Lock",
+            "Read lock",
+            "Write lock"
+        ]
+    },
+    {
+        "q": "Rearrange optimistic:",
+        "type": "rearrange",
+        "words": [
+            "__mapper_args__ = {",
+            "'version_id_col': version_id",
+            "}",
+            "Col definition"
+        ]
+    },
+    {
+        "q": "What does `with_lockmode('update')` do?",
+        "type": "mcq",
+        "o": [
+            "Pessimistic lock (SELECT FOR UPDATE)",
+            "Optimistic lock",
+            "Read only",
+            "No lock"
+        ]
+    },
+    {
+        "q": "It generates `SELECT ... FOR UPDATE` in SQL.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "This prevents other transactions from modifying the rows until you _____.",
+        "type": "fill_blank",
+        "answers": [
+            "commit/rollback"
+        ],
+        "other_options": [
+            "select",
+            "update",
+            "delete"
+        ]
+    },
+    {
+        "q": "Match lock modes:",
+        "type": "match",
+        "left": [
+            "update",
+            "read",
+            "nowait",
+            "skip_locked"
+        ],
+        "right": [
+            "FOR UPDATE",
+            "FOR SHARE",
+            "Error if busy",
+            "Skip busy rows"
+        ]
+    },
+    {
+        "q": "Rearrange pessimist:",
+        "type": "rearrange",
+        "words": [
+            "q = session.query(User)",
+            ".with_lockmode('update')",
+            ".filter(User.id == 1)",
+            ".one()"
+        ]
+    },
+    {
+        "q": "What is `yield_per()`?",
+        "type": "mcq",
+        "o": [
+            "Batches result fetching",
+            "Yields thread",
+            "Waits",
+            "Stops query"
+        ]
+    },
+    {
+        "q": "It uses unbuffered cursor to stream results in chunks of size `_____`.",
+        "type": "fill_blank",
+        "answers": [
+            "count/n"
+        ],
+        "other_options": [
+            "all",
+            "one",
+            "none"
+        ]
+    },
+    {
+        "q": "It disables eager loading by join (joinedload) automatically.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Match streaming:",
+        "type": "match",
+        "left": [
+            "yield_per(100)",
+            "stream_results",
+            "execution_options",
+            "cursor"
+        ],
+        "right": [
+            "Batch fetch",
+            "Server stream",
+            "Config",
+            "DB Pointer"
+        ]
+    },
+    {
+        "q": "Rearrange yield:",
+        "type": "rearrange",
+        "words": [
+            "for user in session.query(User)",
+            ".yield_per(100):",
+            "process(user)",
+            "Low memory"
+        ]
+    },
+    {
+        "q": "What is `session.begin_nested()`?",
+        "type": "mcq",
+        "o": [
+            "Starts a SAVEPOINT",
+            "Starts new transaction",
+            "Starts thread",
+            "Resets DB"
+        ]
+    },
+    {
+        "q": "It allows rolling back a portion of the transaction without rolling back the _____ one.",
+        "type": "fill_blank",
+        "answers": [
+            "main/outer"
+        ],
+        "other_options": [
+            "inner",
+            "next",
+            "last"
+        ]
+    },
+    {
+        "q": "It works identically to `session.begin()` but inside an existing transaction.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Match transaction scopes:",
+        "type": "match",
+        "left": [
+            "begin()",
+            "begin_nested()",
+            "commit()",
+            "rollback()"
+        ],
+        "right": [
+            "Transaction",
+            "Savepoint",
+            "Persist",
+            "Undo"
+        ]
+    },
+    {
+        "q": "Rearrange nested:",
+        "type": "rearrange",
+        "words": [
+            "with session.begin_nested():",
+            "session.add(u)",
+            "raise Error()",
+            "# Rolls back only inner"
+        ]
+    },
+    {
+        "q": "What is `TypeDecorator`?",
+        "type": "mcq",
+        "o": [
+            "Class to create custom types",
+            "Decorator for functions",
+            "UI pattern",
+            "Type check"
+        ]
+    },
+    {
+        "q": "It allows augmenting an existing type to transform data on `_____` and `process_result_value`.",
+        "type": "fill_blank",
+        "answers": [
+            "process_bind_param"
+        ],
+        "other_options": [
+            "init",
+            "call",
+            "del"
+        ]
+    },
+    {
+        "q": "You can use it to encrypt/decrypt data transparently.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Match methods:",
+        "type": "match",
+        "left": [
+            "process_bind_param",
+            "process_result_value",
+            "load_dialect_impl",
+            "impl"
+        ],
+        "right": [
+            "To DB",
+            "From DB",
+            "Dialect specific",
+            "Base Type"
+        ]
+    },
+    {
+        "q": "Rearrange custom type:",
+        "type": "rearrange",
+        "words": [
+            "class MyType(TypeDecorator):",
+            "impl = String",
+            "def process_bind_param(self, value, dialect):",
+            "return 'PREFIX_' + value"
+        ]
+    },
+    {
+        "q": "What is `declared_attr` used for?",
+        "type": "mcq",
+        "o": [
+            "Define attributes on Mixins/Abstract Base",
+            "Declare var",
+            "Attr check",
+            "Type check"
+        ]
+    },
+    {
+        "q": "It is required for `__tablename__`, `__mapper_args__` and relationships in _____ classes.",
+        "type": "fill_blank",
+        "answers": [
+            "mixin/abstract"
+        ],
+        "other_options": [
+            "concrete",
+            "final",
+            "meta"
+        ]
+    },
+    {
+        "q": "It wraps a class method that returns the attribute value.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Match mixins:",
+        "type": "match",
+        "left": [
+            "TimestampMixin",
+            "declared_attr",
+            "Mixin.columns",
+            "Model(Mixin, Base)"
+        ],
+        "right": [
+            "Reuse code",
+            "Defer eval",
+            "Shared cols",
+            "Inheritance"
+        ]
+    },
+    {
+        "q": "Rearrange mixin:",
+        "type": "rearrange",
+        "words": [
+            "class MyMixin:",
+            "@declared_attr",
+            "def __tablename__(cls):",
+            "return cls.__name__.lower()"
+        ]
+    },
+    {
+        "q": "What is `populate_existing()`?",
+        "type": "mcq",
+        "o": [
+            "Refresh loaded instances",
+            "Populate DB",
+            "Insert dummy data",
+            "Delete data"
+        ]
+    },
+    {
+        "q": "It forces the query to refresh attributes of objects already in the _____.",
+        "type": "fill_blank",
+        "answers": [
+            "session/identity_map"
+        ],
+        "other_options": [
+            "db",
+            "cache",
+            "file"
+        ]
+    },
+    {
+        "q": "Useful when you know the DB has changed and want to update current objects.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Match load options:",
+        "type": "match",
+        "left": [
+            "populate_existing",
+            "autoflush",
+            "expire",
+            "refresh"
+        ],
+        "right": [
+            "Force Update",
+            "Save pending",
+            "Invalidate",
+            "Reload now"
+        ]
+    },
+    {
+        "q": "Rearrange populate:",
+        "type": "rearrange",
+        "words": [
+            "session.query(User)",
+            ".populate_existing()",
+            ".all()",
+            "Refreshes all objects"
+        ]
+    },
+    {
+        "q": "What is `comparator_factory`?",
+        "type": "mcq",
+        "o": [
+            "Custom SQL operator generation",
+            "Factory pattern",
+            "Compare strings",
+            "Sort list"
+        ]
+    },
+    {
+        "q": "It allows defining custom behavior for operators like `==`, `!=`, `in_` for a _____ type.",
+        "type": "fill_blank",
+        "answers": [
+            "custom/UserDefined"
+        ],
+        "other_options": [
+            "string",
+            "int",
+            "bool"
+        ]
+    },
+    {
+        "q": "You typically implement a `Comparator` subclass.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Match comparisons:",
+        "type": "match",
+        "left": [
+            "__eq__",
+            "__ne__",
+            "operate()",
+            "Comparator"
+        ],
+        "right": [
+            "Build SQL =",
+            "Build SQL !=",
+            "Generic Op",
+            "Base Class"
+        ]
+    },
+    {
+        "q": "Rearrange comparator:",
+        "type": "rearrange",
+        "words": [
+            "class MyProp(Comparator):",
+            "def __eq__(self, other):",
+            "return func.my_eq(self.expr, other)",
+            "Custom logic"
+        ]
+    },
+    {
+        "q": "What is `AbstractConcreteBase`?",
+        "type": "mcq",
+        "o": [
+            "Helper for Concrete Table Inheritance",
+            "Concrete mix",
+            "Abstract class",
+            "Base logic"
+        ]
+    },
+    {
+        "q": "It helps configure polymorphic loading for concrete inheritance where tables are _____.",
+        "type": "fill_blank",
+        "answers": [
+            "separate/disjoint"
+        ],
+        "other_options": [
+            "merged",
+            "same",
+            "joined"
+        ]
+    },
+    {
+        "q": "You don't need a discriminator column for concrete inheritance usually, but this helper adds it.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Match table strategies:",
+        "type": "match",
+        "left": [
+            "Single Table",
+            "Joined",
+            "Concrete",
+            "AbstractConcreteBase"
+        ],
+        "right": [
+            "One table",
+            "FK joins",
+            "Indep tables",
+            "Poly helper"
+        ]
+    },
+    {
+        "q": "Rearrange concrete:",
+        "type": "rearrange",
+        "words": [
+            "class Employee(AbstractConcreteBase, Base):",
+            "pass",
+            "class Manager(Employee):",
+            "__tablename__ = 'managers'"
+        ]
+    },
+    {
+        "q": "What is `execution_options` on a Connection/Engine?",
+        "type": "mcq",
+        "o": [
+            "Runtime flags for DBAPI/SA",
+            "Exec speed",
+            "Plan",
+            "Config file"
+        ]
+    },
+    {
+        "q": "Common options include `isolation_level`, `stream_results`, and `_____`.",
+        "type": "fill_blank",
+        "answers": [
+            "schema_translate_map"
+        ],
+        "other_options": [
+            "echo",
+            "debug",
+            "trace"
+        ]
+    },
+    {
+        "q": "You can set them per-query using `query.execution_options(...)`.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Match options:",
+        "type": "match",
+        "left": [
+            "isolation_level",
+            "stream_results",
+            "schema_translate_map",
+            "autocommit"
+        ],
+        "right": [
+            "Tx Scope",
+            "Unbuffered",
+            "Tenant switching",
+            "Legacy mode"
+        ]
+    },
+    {
+        "q": "Rearrange exec opt:",
+        "type": "rearrange",
+        "words": [
+            "conn = engine.connect()",
+            ".execution_options(",
+            "isolation_level='SERIALIZABLE'",
+            ")"
+        ]
+    },
+    {
+        "q": "What is `with_hint()`?",
+        "type": "mcq",
+        "o": [
+            "Adds SQL optimizer hints",
+            "Adds tooltip",
+            "Adds note",
+            "Documentation"
+        ]
+    },
+    {
+        "q": "It appends text after the table name in the _____ clause.",
+        "type": "fill_blank",
+        "answers": [
+            "FROM"
+        ],
+        "other_options": [
+            "SELECT",
+            "WHERE",
+            "ORDER"
+        ]
+    },
+    {
+        "q": "`query.with_hint(User, 'USE INDEX(idx_name)')` is valid for MySQL.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Match hints:",
+        "type": "match",
+        "left": [
+            "MySQL Hint",
+            "MSSQL Hint",
+            "Postgres Hint",
+            "with_hint"
+        ],
+        "right": [
+            "USE INDEX",
+            "WITH (NOLOCK)",
+            "PgHintPlan",
+            "Method"
+        ]
+    },
+    {
+        "q": "Rearrange hint:",
+        "type": "rearrange",
+        "words": [
+            "q = session.query(User)",
+            ".with_hint(User,",
+            "'WITH (NOLOCK)',",
+            "'mssql')"
+        ]
+    },
+    {
+        "q": "What is `slice()` used for in Query?",
+        "type": "mcq",
+        "o": [
+            "Limit/Offset via array slice",
+            "Cut string",
+            "Cut array",
+            "Delete"
+        ]
+    },
+    {
+        "q": "`query.slice(1, 3)` applies a LIMIT/OFFSET of _____.",
+        "type": "fill_blank",
+        "answers": [
+            "offset 1 limit 2"
+        ],
+        "other_options": [
+            "1 to 3",
+            "2 to 4",
+            "0 to 2"
+        ]
+    },
+    {
+        "q": "It returns a new Query object with limit/offset applied.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Match slice args:",
+        "type": "match",
+        "left": [
+            "start",
+            "stop",
+            "step",
+            "slice(1, 4)"
+        ],
+        "right": [
+            "OFFSET",
+            "LIMIT calc",
+            "Not supported",
+            "OFFSET 1 LIMIT 3"
+        ]
+    },
+    {
+        "q": "Rearrange slicing:",
+        "type": "rearrange",
+        "words": [
+            "results = session.query(User)",
+            "[5:10]",
+            "# Offset 5",
+            "# Limit 5"
+        ]
+    },
+    {
+        "q": "What is the `IdentityMap`?",
+        "type": "mcq",
+        "o": [
+            "Store of loaded objects by PK",
+            "User map",
+            "ID generator",
+            "Hash map"
+        ]
+    },
+    {
+        "q": "It ensures that only _____ instance of an object with a given PK exists in the session.",
+        "type": "fill_blank",
+        "answers": [
+            "one/unique"
+        ],
+        "other_options": [
+            "two",
+            "zero",
+            "many"
+        ]
+    },
+    {
+        "q": "It uses `weakref` to allow objects to be garbage collected if not referenced elsewhere.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Match session state:",
+        "type": "match",
+        "left": [
+            "IdentityMap",
+            "new",
+            "dirty",
+            "deleted"
+        ],
+        "right": [
+            "PK Cache",
+            "Pending Insert",
+            "Pending Update",
+            "Pending Delete"
+        ]
+    },
+    {
+        "q": "Rearrange identity check:",
+        "type": "rearrange",
+        "words": [
+            "u1 = session.query(User).get(1)",
+            "u2 = session.query(User).get(1)",
+            "assert u1 is u2",
+            "Same object"
+        ]
+    },
+    {
+        "q": "How do you implement a Two-Phase Commit (2PC)?",
+        "type": "mcq",
+        "o": [
+            "session.commit(twophase=True)",
+            "session.2pc()",
+            "TwoPhase=True",
+            "Not supported"
+        ]
+    },
+    {
+        "q": "Requires DB support (e.g. Postgres, MySQL) and `session.prepare()` before _____.",
+        "type": "fill_blank",
+        "answers": [
+            "commit"
+        ],
+        "other_options": [
+            "rollback",
+            "flush",
+            "close"
+        ]
+    },
+    {
+        "q": "It is used for distributed transactions across multiple databases.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Match 2pc steps:",
+        "type": "match",
+        "left": [
+            "begin_twophase",
+            "prepare",
+            "commit",
+            "rollback"
+        ],
+        "right": [
+            "Start 2PC",
+            "Vote/Lock",
+            "Finalize",
+            "Abort"
+        ]
+    },
+    {
+        "q": "Rearrange 2pc:",
+        "type": "rearrange",
+        "words": [
+            "txn = conn.begin_twophase()",
+            "do_work()",
+            "txn.prepare()",
+            "txn.commit()"
+        ]
+    },
+    {
+        "q": "What is `literal_column`?",
+        "type": "mcq",
+        "o": [
+            "Inserts raw SQL fragment as column",
+            "Text column",
+            "Literal string",
+            "Constant"
+        ]
+    },
+    {
+        "q": "It allows using a raw SQL string in the columns clause of a _____.",
+        "type": "fill_blank",
+        "answers": [
+            "select/query"
+        ],
+        "other_options": [
+            "insert",
+            "update",
+            "delete"
+        ]
+    },
+    {
+        "q": "Use `literal()` for bound generic values, `literal_column()` for SQL expressions.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Match literals:",
+        "type": "match",
+        "left": [
+            "literal('s')",
+            "literal_column('s')",
+            "bindparam('s')",
+            "text('s')"
+        ],
+        "right": [
+            "Param value",
+            "Raw SQL Col",
+            "Named Param",
+            "Raw SQL Stmt"
+        ]
+    },
+    {
+        "q": "Rearrange literal usage:",
+        "type": "rearrange",
+        "words": [
+            "q = select(construct)",
+            ", literal_column('now()')",
+            ")",
+            "Selects DB time"
+        ]
+    },
+    {
+        "q": "What is `compiles` extension?",
+        "type": "mcq",
+        "o": [
+            "Decorator for custom SQL generation",
+            "Compiler",
+            "Python compiler",
+            "Code check"
+        ]
+    },
+    {
+        "q": "It allows defining how a specific construct renders SQL for a specific _____.",
+        "type": "fill_blank",
+        "answers": [
+            "dialect/database"
+        ],
+        "other_options": [
+            "os",
+            "user",
+            "table"
+        ]
+    },
+    {
+        "q": "You can override existing elements or define new ones.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Match compilation:",
+        "type": "match",
+        "left": [
+            "@compiles(MyClause)",
+            "visit_my_clause",
+            "element",
+            "compiler"
+        ],
+        "right": [
+            "Register",
+            "Visitor Method",
+            "Object",
+            "SQL Builder"
+        ]
+    },
+    {
+        "q": "Rearrange custom compile:",
+        "type": "rearrange",
+        "words": [
+            "@compiles(MyFunc, 'postgresql')",
+            "def pg_my_func(element, compiler, **kw):",
+            "return 'PG_FUNC(%s)' % compiler.process(element.clauses)",
+            "PG specific"
+        ]
+    },
+    {
+        "q": "What is `partition_by` in window functions?",
+        "type": "mcq",
+        "o": [
+            "Divides rows for aggregation",
+            "Splits table",
+            "Disk partition",
+            "Network partition"
+        ]
+    },
+    {
+        "q": "`func.rank().over(partition_by=User.dept_id)` ranks users within their _____.",
+        "type": "fill_blank",
+        "answers": [
+            "department/group"
+        ],
+        "other_options": [
+            "table",
+            "city",
+            "age"
+        ]
+    },
+    {
+        "q": "Window functions usually require an `order_by` clause inside `over()`.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Match window components:",
+        "type": "match",
+        "left": [
+            "over()",
+            "partition_by",
+            "order_by",
+            "rows"
+        ],
+        "right": [
+            "Window Def",
+            "Grouping",
+            "Sort in group",
+            "Frame def"
+        ]
+    },
+    {
+        "q": "Rearrange window func:",
+        "type": "rearrange",
+        "words": [
+            "stmt = select(User,",
+            "func.row_number().over(",
+            "order_by=User.name)",
+            ")"
+        ]
+    },
+    {
+        "q": "What is `sqlalchemy.ext.automap`?",
+        "type": "mcq",
+        "o": [
+            "Auto-reflect tables to classes",
+            "Map auto",
+            "Base class",
+            "Car map"
+        ]
+    },
+    {
+        "q": "It uses reflection to generate mapped classes from existing _____ tables.",
+        "type": "fill_blank",
+        "answers": [
+            "database"
+        ],
+        "other_options": [
+            "memory",
+            "file",
+            "cloud"
+        ]
+    },
+    {
+        "q": "It handles relationships based on Foreign Keys automatically.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Match reflection:",
+        "type": "match",
+        "left": [
+            "automap_base()",
+            "prepare()",
+            "Base.classes",
+            "engine"
+        ],
+        "right": [
+            "Constructor",
+            "Execution",
+            "Access Mapped",
+            "Source"
+        ]
+    },
+    {
+        "q": "Rearrange reflection:",
+        "type": "rearrange",
+        "words": [
+            "Base = automap_base()",
+            "Base.prepare(engine, reflect=True)",
+            "User = Base.classes.user",
+            "Ready to query"
+        ]
+    },
+    {
+        "q": "What is `bindparam(..., callable_=func)`?",
+        "type": "mcq",
+        "o": [
+            "Late-evaluated parameter",
+            "Function param",
+            "Bound method",
+            "Static param"
+        ]
+    },
+    {
+        "q": "The callable is invoked at execution time to determine the _____.",
+        "type": "fill_blank",
+        "answers": [
+            "value"
+        ],
+        "other_options": [
+            "type",
+            "name",
+            "key"
+        ]
+    },
+    {
+        "q": "Useful for generating values like timestamps or user IDs at query time.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Match param types:",
+        "type": "match",
+        "left": [
+            "bindparam('x')",
+            "bindparam('x', 1)",
+            "bindparam('x', callable_=f)",
+            "expanding=True"
+        ],
+        "right": [
+            "Named",
+            "Default",
+            "Lazy Eval",
+            "List checks"
+        ]
+    },
+    {
+        "q": "Rearrange lazy param:",
+        "type": "rearrange",
+        "words": [
+            "stmt = select(User)",
+            ".where(User.id == bindparam('uid', callable_=get_uid))",
+            "conn.execute(stmt)",
+            "Dynamic ID"
+        ]
+    }
+]

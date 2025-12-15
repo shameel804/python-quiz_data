@@ -1,0 +1,6291 @@
+[
+    {
+        "q": "How does pytest identify test files by default?",
+        "type": "mcq",
+        "o": [
+            "Files starting with test_ or ending with _test.py",
+            "Files with .test extension",
+            "Files in tests/ folder",
+            "All python files"
+        ]
+    },
+    {
+        "q": "Pytest functions must typically start with _____.",
+        "type": "fill_blank",
+        "answers": [
+            "test_"
+        ],
+        "other_options": [
+            "check_",
+            "verify_",
+            "spec_"
+        ]
+    },
+    {
+        "q": "You can use standard Python `assert` statements in pytest.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Match assert ops:",
+        "type": "match",
+        "left": [
+            "assert x == y",
+            "assert x != y",
+            "assert x in y",
+            "assert x"
+        ],
+        "right": [
+            "Equal",
+            "Not Equal",
+            "Member",
+            "Truthy"
+        ]
+    },
+    {
+        "q": "Rearrange basic test:",
+        "type": "rearrange",
+        "words": [
+            "def test_example():",
+            "x = 1",
+            "y = 1",
+            "assert x == y"
+        ]
+    },
+    {
+        "q": "Which command runs all tests in the current directory?",
+        "type": "mcq",
+        "o": [
+            "pytest",
+            "py.test",
+            "python -m pytest",
+            "All of the above"
+        ]
+    },
+    {
+        "q": "The `-v` flag stands for _____.",
+        "type": "fill_blank",
+        "answers": [
+            "verbose"
+        ],
+        "other_options": [
+            "verify",
+            "version",
+            "view"
+        ]
+    },
+    {
+        "q": "Pytest fails immediately on the first assertion error by default.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Match flags:",
+        "type": "match",
+        "left": [
+            "-v",
+            "-s",
+            "-k",
+            "-x"
+        ],
+        "right": [
+            "Verbose",
+            "Show Output",
+            "Filter by name",
+            "Exit on fail"
+        ]
+    },
+    {
+        "q": "Rearrange run cmd:",
+        "type": "rearrange",
+        "words": [
+            "pytest",
+            "-v",
+            "tests/",
+            "# Run verbose"
+        ]
+    },
+    {
+        "q": "How do you check for raised exceptions?",
+        "type": "mcq",
+        "o": [
+            "pytest.raises()",
+            "try/except",
+            "assert error",
+            "expect_error"
+        ]
+    },
+    {
+        "q": "You use `pytest.raises(Error)` as a _____ manager.",
+        "type": "fill_blank",
+        "answers": [
+            "context"
+        ],
+        "other_options": [
+            "function",
+            "decorator",
+            "class"
+        ]
+    },
+    {
+        "q": "The test passes if the code inside raises the expected exception.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Match exception handling:",
+        "type": "match",
+        "left": [
+            "pytest.raises",
+            "match='regex'",
+            "excinfo",
+            "with"
+        ],
+        "right": [
+            "Catch errors",
+            "Check message",
+            "Exception info",
+            "Context keyword"
+        ]
+    },
+    {
+        "q": "Rearrange exception check:",
+        "type": "rearrange",
+        "words": [
+            "with pytest.raises(ValueError):",
+            "int('invalid')",
+            "# Expects error",
+            "pass"
+        ]
+    },
+    {
+        "q": "What is a fixture?",
+        "type": "mcq",
+        "o": [
+            "Setup/Teardown helper",
+            "A bug",
+            "A test function",
+            "A database"
+        ]
+    },
+    {
+        "q": "You define a fixture using the `@pytest._____` decorator.",
+        "type": "fill_blank",
+        "answers": [
+            "fixture"
+        ],
+        "other_options": [
+            "setup",
+            "teardown",
+            "hook"
+        ]
+    },
+    {
+        "q": "Fixtures are passed to test functions as arguments.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Match fixture concepts:",
+        "type": "match",
+        "left": [
+            "Dependency Injection",
+            "Scope",
+            "yield",
+            "autouse"
+        ],
+        "right": [
+            "Pass args",
+            "Lifetime",
+            "Teardown",
+            "Auto run"
+        ]
+    },
+    {
+        "q": "Rearrange fixture:",
+        "type": "rearrange",
+        "words": [
+            "@pytest.fixture",
+            "def data():",
+            "return [1, 2, 3]",
+            "def test_data(data):"
+        ]
+    },
+    {
+        "q": "How do you run tests matching a specific keyword?",
+        "type": "mcq",
+        "o": [
+            "-k 'keyword'",
+            "-s 'keyword'",
+            "-f 'keyword'",
+            "-m 'keyword'"
+        ]
+    },
+    {
+        "q": "The `-k` flag allows filtering by test function/class _____.",
+        "type": "fill_blank",
+        "answers": [
+            "names/ids"
+        ],
+        "other_options": [
+            "files",
+            "tags",
+            "errors"
+        ]
+    },
+    {
+        "q": "You can use logical operators (and, or, not) with `-k`.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Match filter types:",
+        "type": "match",
+        "left": [
+            "-k 'test_login'",
+            "-k 'not slow'",
+            "-m 'slow'",
+            "test_file.py::test_func"
+        ],
+        "right": [
+            "Name match",
+            "Name exclude",
+            "Marker match",
+            "Node ID"
+        ]
+    },
+    {
+        "q": "Rearrange filter cmd:",
+        "type": "rearrange",
+        "words": [
+            "pytest",
+            "-k",
+            "'login or auth'",
+            "# Run specific"
+        ]
+    },
+    {
+        "q": "What does `@pytest.mark.skip` do?",
+        "type": "mcq",
+        "o": [
+            "Skips the test",
+            "Fails the test",
+            "Passes the test",
+            "Runs twice"
+        ]
+    },
+    {
+        "q": "Skipped tests appear in the output with status _____ (yellow usually).",
+        "type": "fill_blank",
+        "answers": [
+            "s/SKIP"
+        ],
+        "other_options": [
+            "f/FAIL",
+            "x/XFAIL",
+            "e/ERROR"
+        ]
+    },
+    {
+        "q": "You can skip conditionally using `skipif`.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Match usage:",
+        "type": "match",
+        "left": [
+            "@mark.skip",
+            "@mark.skipif",
+            "@mark.xfail",
+            "@mark.usefixtures"
+        ],
+        "right": [
+            "Always Skip",
+            "Cond Skip",
+            "Expect Fail",
+            "Apply Fixture"
+        ]
+    },
+    {
+        "q": "Rearrange skip:",
+        "type": "rearrange",
+        "words": [
+            "@pytest.mark.skip(reason='WIP')",
+            "def test_feature():",
+            "assert False",
+            "# Not run"
+        ]
+    },
+    {
+        "q": "What is `conftest.py`?",
+        "type": "mcq",
+        "o": [
+            "Local plugin/config file",
+            "Test file",
+            "Config validation",
+            "Main app"
+        ]
+    },
+    {
+        "q": "Fixtures defined in `conftest.py` are automatically discoverable by tests in subdirectories.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "You can have _____ `conftest.py` files in a project.",
+        "type": "fill_blank",
+        "answers": [
+            "multiple/many"
+        ],
+        "other_options": [
+            "one",
+            "zero",
+            "two"
+        ]
+    },
+    {
+        "q": "Match scope:",
+        "type": "match",
+        "left": [
+            "Root conftest",
+            "Subdir conftest",
+            "Local plugin",
+            "Hooks"
+        ],
+        "right": [
+            "Global fixtures",
+            "Scoped fixtures",
+            "Project specific",
+            "Customizing behavior"
+        ]
+    },
+    {
+        "q": "Rearrange conftest:",
+        "type": "rearrange",
+        "words": [
+            "# conftest.py content",
+            "@pytest.fixture",
+            "def shared_db():",
+            "return DB()"
+        ]
+    },
+    {
+        "q": "How do you parameterize a test function?",
+        "type": "mcq",
+        "o": [
+            "@pytest.mark.parametrize",
+            "@loop",
+            "@repeat",
+            "for loop"
+        ]
+    },
+    {
+        "q": "It allows running the _____ test function with different inputs.",
+        "type": "fill_blank",
+        "answers": [
+            "same/single"
+        ],
+        "other_options": [
+            "new",
+            "random",
+            "mock"
+        ]
+    },
+    {
+        "q": "Each set of parameters counts as a separate test case.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Match param args:",
+        "type": "match",
+        "left": [
+            "argnames",
+            "argvalues",
+            "ids",
+            "indirect"
+        ],
+        "right": [
+            "Variable names",
+            "Input list",
+            "Test IDs",
+            "Pass to fixture"
+        ]
+    },
+    {
+        "q": "Rearrange parameterize:",
+        "type": "rearrange",
+        "words": [
+            "@pytest.mark.parametrize('x', [1, 2])",
+            "def test_nums(x):",
+            "assert x > 0",
+            "Runs twice"
+        ]
+    },
+    {
+        "q": "What does `-s` flag do?",
+        "type": "mcq",
+        "o": [
+            "Shows stdout/stderr output",
+            "Silences output",
+            "Skips tests",
+            "Selects tests"
+        ]
+    },
+    {
+        "q": "By default, pytest _____ stdout/stderr during test execution.",
+        "type": "fill_blank",
+        "answers": [
+            "captures/hides"
+        ],
+        "other_options": [
+            "shows",
+            "prints",
+            "deletes"
+        ]
+    },
+    {
+        "q": "Using `-s` is equivalent to `--capture=no`.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Match output flags:",
+        "type": "match",
+        "left": [
+            "-s",
+            "--capture=fd",
+            "--capture=sys",
+            "-rP"
+        ],
+        "right": [
+            "No capture",
+            "File descriptor",
+            "Sys.stdout",
+            "Show passed out"
+        ]
+    },
+    {
+        "q": "Rearrange debug print:",
+        "type": "rearrange",
+        "words": [
+            "pytest",
+            "-s",
+            "tests.py",
+            "# Verify prints"
+        ]
+    },
+    {
+        "q": "What is `xfail`?",
+        "type": "mcq",
+        "o": [
+            "Expected failure",
+            "Extreme failure",
+            "External failure",
+            "Exit fail"
+        ]
+    },
+    {
+        "q": "If an xfail test fails, the overall test suite result is _____.",
+        "type": "fill_blank",
+        "answers": [
+            "passed/green/success"
+        ],
+        "other_options": [
+            "failed",
+            "succeeded",
+            "error"
+        ]
+    },
+    {
+        "q": "If an xfail test PASSES, it is marked as XPASS (which can be configured to fail suite).",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Match outcomes:",
+        "type": "match",
+        "left": [
+            "PASS",
+            "FAIL",
+            "XFAIL",
+            "XPASS"
+        ],
+        "right": [
+            "OK",
+            "Bug",
+            "Known Bug",
+            "Unexpected Fix"
+        ]
+    },
+    {
+        "q": "Rearrange xfail:",
+        "type": "rearrange",
+        "words": [
+            "@pytest.mark.xfail",
+            "def test_bug():",
+            "raise BugError()",
+            "# Result: xfail"
+        ]
+    },
+    {
+        "q": "What is the default scope of a fixture?",
+        "type": "mcq",
+        "o": [
+            "function",
+            "class",
+            "module",
+            "session"
+        ]
+    },
+    {
+        "q": "A function-scoped fixture is computed _____ for every test function.",
+        "type": "fill_blank",
+        "answers": [
+            "once/fresh"
+        ],
+        "other_options": [
+            "twice",
+            "never",
+            "forever"
+        ]
+    },
+    {
+        "q": "Use `scope='session'` for expensive setup like DB connections.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Match scopes:",
+        "type": "match",
+        "left": [
+            "function",
+            "class",
+            "module",
+            "session"
+        ],
+        "right": [
+            "Per test",
+            "Per class",
+            "Per file",
+            "Per run"
+        ]
+    },
+    {
+        "q": "Rearrange scope:",
+        "type": "rearrange",
+        "words": [
+            "@pytest.fixture(scope='module')",
+            "def setup_mod():",
+            "print('Init')",
+            "Runs once/file"
+        ]
+    },
+    {
+        "q": "What is `capysys` fixture?",
+        "type": "mcq",
+        "o": [
+            "Captures stdout/stderr",
+            "Captures system info",
+            "Captures screen",
+            "Captures keyboard"
+        ]
+    },
+    {
+        "q": "You use `setup_method` and `teardown_method` in _____ based tests.",
+        "type": "fill_blank",
+        "answers": [
+            "class"
+        ],
+        "other_options": [
+            "function",
+            "module",
+            "file"
+        ]
+    },
+    {
+        "q": "Pytest supports unittest.TestCase style classes.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Match setup types:",
+        "type": "match",
+        "left": [
+            "fixture yield",
+            "setup_module",
+            "setup_function",
+            "setUp"
+        ],
+        "right": [
+            "Modern",
+            "Legacy module",
+            "Legacy func",
+            "Unittest style"
+        ]
+    },
+    {
+        "q": "Rearrange xunit setup:",
+        "type": "rearrange",
+        "words": [
+            "def setup_module():",
+            "db.connect()",
+            "def teardown_module():",
+            "db.close()"
+        ]
+    },
+    {
+        "q": "How do you assert equality of floats?",
+        "type": "mcq",
+        "o": [
+            "pytest.approx()",
+            "==",
+            "equals()",
+            "near()"
+        ]
+    },
+    {
+        "q": "`assert 0.1 + 0.2 == pytest.approx(0.3)` handles failing due to _____ point arithmetic.",
+        "type": "fill_blank",
+        "answers": [
+            "floating/float"
+        ],
+        "other_options": [
+            "integer",
+            "decimal",
+            "binary"
+        ]
+    },
+    {
+        "q": "It supports relative and absolute tolerances.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Match approx:",
+        "type": "match",
+        "left": [
+            "approx(0.1)",
+            "approx([0.1, 0.2])",
+            "rel=1e-3",
+            "abs=1e-5"
+        ],
+        "right": [
+            "One value",
+            "List values",
+            "Relative err",
+            "Absolute err"
+        ]
+    },
+    {
+        "q": "Rearrange float check:",
+        "type": "rearrange",
+        "words": [
+            "val = 1.0 / 3.0",
+            "assert val ==",
+            "pytest.approx(0.333333)",
+            "True"
+        ]
+    },
+    {
+        "q": "What is `tmp_path` fixture?",
+        "type": "mcq",
+        "o": [
+            "Temporary directory path (pathlib)",
+            "Temporary file",
+            "Temp env var",
+            "Temp DB"
+        ]
+    },
+    {
+        "q": "It provides a unique temporary directory for each _____ execution.",
+        "type": "fill_blank",
+        "answers": [
+            "test/function"
+        ],
+        "other_options": [
+            "module",
+            "run",
+            "user"
+        ]
+    },
+    {
+        "q": "Pytest cleans up these temporary directories automatically.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Match temp fixtures:",
+        "type": "match",
+        "left": [
+            "tmp_path",
+            "tmpdir",
+            "tmp_path_factory",
+            "cache"
+        ],
+        "right": [
+            "Pathlib",
+            "Legacy py.path",
+            "Session scoped",
+            "Cache data"
+        ]
+    },
+    {
+        "q": "Rearrange temp file:",
+        "type": "rearrange",
+        "words": [
+            "def test_file(tmp_path):",
+            "f = tmp_path / 'test.txt'",
+            "f.write_text('hi')",
+            "assert f.exists()"
+        ]
+    },
+    {
+        "q": "How do you group tests in a class?",
+        "type": "mcq",
+        "o": [
+            "class TestName:",
+            "group TestName:",
+            "def class_Test:",
+            "suite Test:"
+        ]
+    },
+    {
+        "q": "The class name must typically start with `_____`.",
+        "type": "fill_blank",
+        "answers": [
+            "Test"
+        ],
+        "other_options": [
+            "Suite",
+            "Check",
+            "Group"
+        ]
+    },
+    {
+        "q": "Classes cannot have an `__init__` method in pytest.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Match class structure:",
+        "type": "match",
+        "left": [
+            "class TestAuth:",
+            "def test_login(self):",
+            "self",
+            "Instance"
+        ],
+        "right": [
+            "Container",
+            "Method",
+            "Context",
+            "Separate per test"
+        ]
+    },
+    {
+        "q": "Rearrange class test:",
+        "type": "rearrange",
+        "words": [
+            "class TestMath:",
+            "def test_add(self):",
+            "assert 1+1==2",
+            "Grouped"
+        ]
+    },
+    {
+        "q": "What does `-m 'not slow'` do?",
+        "type": "mcq",
+        "o": [
+            "Runs tests NOT marked slow",
+            "Runs slow tests",
+            "Runs all tests",
+            "Errors"
+        ]
+    },
+    {
+        "q": "You must register markers in `_____.ini` to avoid warnings.",
+        "type": "fill_blank",
+        "answers": [
+            "pytest"
+        ],
+        "other_options": [
+            "setup",
+            "config",
+            "tox"
+        ]
+    },
+    {
+        "q": "Markers are applied using decorators.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Match marker usage:",
+        "type": "match",
+        "left": [
+            "mark.slow",
+            "mark.webtest",
+            "-m",
+            "ini markers"
+        ],
+        "right": [
+            "Tag slow",
+            "Tag web",
+            "CLI Select",
+            "Registration"
+        ]
+    },
+    {
+        "q": "Rearrange marker config:",
+        "type": "rearrange",
+        "words": [
+            "[pytest]",
+            "markers =",
+            "slow: marks tests as slow",
+            "# In pytest.ini"
+        ]
+    },
+    {
+        "q": "What is `pytest.fail()`?",
+        "type": "mcq",
+        "o": [
+            "Explicitly fails a test",
+            "Crashes pytest",
+            "Fails suite",
+            "Asserts false"
+        ]
+    },
+    {
+        "q": "You can provide a _____ argument to explain why it failed.",
+        "type": "fill_blank",
+        "answers": [
+            "message/reason"
+        ],
+        "other_options": [
+            "code",
+            "signal",
+            "flag"
+        ]
+    },
+    {
+        "q": "It raises `Failed` exception internally.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Match explicit outcomes:",
+        "type": "match",
+        "left": [
+            "pytest.fail()",
+            "pytest.skip()",
+            "pytest.xfail()",
+            "pytest.importorskip()"
+        ],
+        "right": [
+            "Force Fail",
+            "Force Skip",
+            "Force XFail",
+            "Skip if missing"
+        ]
+    },
+    {
+        "q": "Rearrange explicit fail:",
+        "type": "rearrange",
+        "words": [
+            "if not valid_config():",
+            "pytest.fail('Config invalid')",
+            "# Stops test",
+            "immediately"
+        ]
+    },
+    {
+        "q": "How to run doctests in modules?",
+        "type": "mcq",
+        "o": [
+            "--doctest-modules",
+            "--doctest",
+            "--test-doc",
+            "--run-doc"
+        ]
+    },
+    {
+        "q": "It extracts and runs checked examples from _____ strings.",
+        "type": "fill_blank",
+        "answers": [
+            "doc/docstrings"
+        ],
+        "other_options": [
+            "code",
+            "comment",
+            "file"
+        ]
+    },
+    {
+        "q": "It looks for `>>>` prompt patterns.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Match doctest syntax:",
+        "type": "match",
+        "left": [
+            ">>>",
+            "...",
+            "Expected output",
+            "Blank line"
+        ],
+        "right": [
+            "Input",
+            "Continuation",
+            "Result",
+            "End snippet"
+        ]
+    },
+    {
+        "q": "Rearrange doctest run:",
+        "type": "rearrange",
+        "words": [
+            "pytest",
+            "--doctest-modules",
+            "my_lib/",
+            "# Verify docs"
+        ]
+    },
+    {
+        "q": "What is `request` fixture?",
+        "type": "mcq",
+        "o": [
+            "Context of executing test",
+            "Web request",
+            "HTTP request",
+            "Database request"
+        ]
+    },
+    {
+        "q": "It allows access to the test function name, module, and _____ config.",
+        "type": "fill_blank",
+        "answers": [
+            "fixture/marker"
+        ],
+        "other_options": [
+            "system",
+            "os",
+            "network"
+        ]
+    },
+    {
+        "q": "`request.param` is used in indirect parametrization.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Match request attrs:",
+        "type": "match",
+        "left": [
+            "request.node.name",
+            "request.module",
+            "request.param",
+            "request.config"
+        ],
+        "right": [
+            "Test Name",
+            "Module object",
+            "Current param",
+            "Global config"
+        ]
+    },
+    {
+        "q": "Rearrange request usage:",
+        "type": "rearrange",
+        "words": [
+            "def test_inspect(request):",
+            "print(request.node.name)",
+            "assert True",
+            "Log Name"
+        ]
+    },
+    {
+        "q": "What identifies a plugin in pytest?",
+        "type": "mcq",
+        "o": [
+            "pytest- prefix usually",
+            "plugin- prefix",
+            "test- prefix",
+            "mod- prefix"
+        ]
+    },
+    {
+        "q": "You install plugins via _____.",
+        "type": "fill_blank",
+        "answers": [
+            "pip"
+        ],
+        "other_options": [
+            "pytest",
+            "apt",
+            "npm"
+        ]
+    },
+    {
+        "q": "Plugins can add new CLI flags and fixtures.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Match popular plugins:",
+        "type": "match",
+        "left": [
+            "pytest-cov",
+            "pytest-xdist",
+            "pytest-django",
+            "pytest-asyncio"
+        ],
+        "right": [
+            "Coverage",
+            "Parallel exec",
+            "Django support",
+            "Async support"
+        ]
+    },
+    {
+        "q": "Rearrange plugin install:",
+        "type": "rearrange",
+        "words": [
+            "pip install pytest-cov",
+            "pytest",
+            "--cov=my_app",
+            "Check coverage"
+        ]
+    },
+    {
+        "q": "What is `autouse=True` in a fixture?",
+        "type": "mcq",
+        "o": [
+            "Runs fixture automatically without requesting",
+            "Prevents fixture usage",
+            "Auto-deletes fixture",
+            "Auto-names fixture"
+        ]
+    },
+    {
+        "q": "It runs for every test within its defined `_____`.",
+        "type": "fill_blank",
+        "answers": [
+            "scope"
+        ],
+        "other_options": [
+            "file",
+            "class",
+            "run"
+        ]
+    },
+    {
+        "q": "You don't need to put the fixture name in the test function arguments.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Match fixture modes:",
+        "type": "match",
+        "left": [
+            "Manual",
+            "Autouse",
+            "Indirect",
+            "Lazy"
+        ],
+        "right": [
+            "Pass as arg",
+            "Run automatic",
+            "Pass param",
+            "Wait to run"
+        ]
+    },
+    {
+        "q": "Rearrange autouse:",
+        "type": "rearrange",
+        "words": [
+            "@pytest.fixture(autouse=True)",
+            "def setup_env():",
+            "os.environ['TEST'] = '1'",
+            "# Runs explicitly"
+        ]
+    },
+    {
+        "q": "What is `monkeypatch` fixture?",
+        "type": "mcq",
+        "o": [
+            "Modifies/mocks objects/classes",
+            "Patches pytest",
+            "Fixes bugs",
+            "Runs python"
+        ]
+    },
+    {
+        "q": "It allows setting attributes, env vars, or dict items safely for the _____ of the test.",
+        "type": "fill_blank",
+        "answers": [
+            "duration/scope"
+        ],
+        "other_options": [
+            "start",
+            "end",
+            "forever"
+        ]
+    },
+    {
+        "q": "Monkeypatch attributes are automatically undone after the test finishes.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Match monkeypatch methods:",
+        "type": "match",
+        "left": [
+            "setattr",
+            "setenv",
+            "setitem",
+            "syspath_prepend"
+        ],
+        "right": [
+            "Change attr",
+            "Change ENV",
+            "Change Dict",
+            "Add to path"
+        ]
+    },
+    {
+        "q": "Rearrange mocking:",
+        "type": "rearrange",
+        "words": [
+            "def test_api(monkeypatch):",
+            "monkeypatch.setattr(requests, 'get', mock_get)",
+            "result = my_func()",
+            "Verify mock"
+        ]
+    },
+    {
+        "q": "What does parametrizing with multiple arguments look like?",
+        "type": "mcq",
+        "o": [
+            "parametrize('x,y', [(1,2)])",
+            "parametrize(x, y)",
+            "parametrize([x, y])",
+            "parametrize(x=1, y=2)"
+        ]
+    },
+    {
+        "q": "You pass the argument names as a _____ string or list.",
+        "type": "fill_blank",
+        "answers": [
+            "comma-separated/single"
+        ],
+        "other_options": [
+            "tuple",
+            "json",
+            "dict"
+        ]
+    },
+    {
+        "q": "If you stack two `parametrize` decorators, it generates the Cartesian product.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Match param stacking:",
+        "type": "match",
+        "left": [
+            "@param('x', [1,2])",
+            "@param('y', ['a','b'])",
+            "Cartesian",
+            "Total tests"
+        ],
+        "right": [
+            "2 cases",
+            "2 cases",
+            "2x2 = 4",
+            "4 cases"
+        ]
+    },
+    {
+        "q": "Rearrange stack:",
+        "type": "rearrange",
+        "words": [
+            "@parametrize('x', [1, 2])",
+            "@parametrize('y', [3, 4])",
+            "def test_cross(x, y):",
+            "# Runs 4 times"
+        ]
+    },
+    {
+        "q": "What is `pytest.warns()` used for?",
+        "type": "mcq",
+        "o": [
+            "Asserting code emits a warning",
+            "Emitting warning",
+            "Stopping warning",
+            "Log warning"
+        ]
+    },
+    {
+        "q": "It works similarly to `pytest.raises` but for _____.",
+        "type": "fill_blank",
+        "answers": [
+            "warnings"
+        ],
+        "other_options": [
+            "errors",
+            "logs",
+            "prints"
+        ]
+    },
+    {
+        "q": "You can check for specific warning types (e.g. DeprecationWarning).",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Match warning tools:",
+        "type": "match",
+        "left": [
+            "warns(UserWarning)",
+            "recwarn fixture",
+            "filterwarnings",
+            "-W error"
+        ],
+        "right": [
+            "Context Check",
+            "Record all",
+            "Config filter",
+            "Warnings as Errors"
+        ]
+    },
+    {
+        "q": "Rearrange warning check:",
+        "type": "rearrange",
+        "words": [
+            "with pytest.warns(RuntimeWarning):",
+            "warnings.warn('oops', RuntimeWarning)",
+            "# Pass if warned",
+            "else Fail"
+        ]
+    },
+    {
+        "q": "What does `--durations=N` do?",
+        "type": "mcq",
+        "o": [
+            "Shows N slowest tests",
+            "Sets timeout to N",
+            "Runs for N seconds",
+            "Repeats N times"
+        ]
+    },
+    {
+        "q": "It helps verify which tests are _____ optimizations.",
+        "type": "fill_blank",
+        "answers": [
+            "slowing/bottlenecking"
+        ],
+        "other_options": [
+            "speeding",
+            "passing",
+            "failing"
+        ]
+    },
+    {
+        "q": "Use `--durations=0` to show durations for all tests.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Match timing:",
+        "type": "match",
+        "left": [
+            "--durations=5",
+            "--durations=0",
+            "setup/call/teardown",
+            "slowest first"
+        ],
+        "right": [
+            "Top 5 slow",
+            "All times",
+            "Phases",
+            "Output order"
+        ]
+    },
+    {
+        "q": "Rearrange duration check:",
+        "type": "rearrange",
+        "words": [
+            "pytest",
+            "--durations=10",
+            "tests/",
+            "# Find slow tests"
+        ]
+    },
+    {
+        "q": "How to clear `capsys` buffer mid-test?",
+        "type": "mcq",
+        "o": [
+            "capsys.readouterr()",
+            "capsys.clear()",
+            "capsys.flush()",
+            "capsys.reset()"
+        ]
+    },
+    {
+        "q": "Calling `readouterr()` returns the text and _____ the internal buffer.",
+        "type": "fill_blank",
+        "answers": [
+            "clears/empties"
+        ],
+        "other_options": [
+            "saves",
+            "prints",
+            "logs"
+        ]
+    },
+    {
+        "q": "This is useful if setup code prints things you don't want to assert on.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Match capsys result:",
+        "type": "match",
+        "left": [
+            "out",
+            "err",
+            "readouterr()",
+            "binary"
+        ],
+        "right": [
+            "Stdout text",
+            "Stderr text",
+            "Fetch & Clear",
+            "capsysbinary"
+        ]
+    },
+    {
+        "q": "Rearrange capture clean:",
+        "type": "rearrange",
+        "words": [
+            "print('noise')",
+            "capsys.readouterr()",
+            "print('important')",
+            "assert 'important' in capsys.readouterr().out"
+        ]
+    },
+    {
+        "q": "What is `testpaths` in `pytest.ini`?",
+        "type": "mcq",
+        "o": [
+            "List of directories to search",
+            "List of allowed tests",
+            "Path to python",
+            "Path to plugins"
+        ]
+    },
+    {
+        "q": "It restricts test discovery to specific _____ to speed it up.",
+        "type": "fill_blank",
+        "answers": [
+            "folders/directories"
+        ],
+        "other_options": [
+            "files",
+            "names",
+            "servers"
+        ]
+    },
+    {
+        "q": "Default is current directory.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Match ini options:",
+        "type": "match",
+        "left": [
+            "testpaths",
+            "addopts",
+            "minversion",
+            "norecursedirs"
+        ],
+        "right": [
+            "Search Dirs",
+            "Default CLI args",
+            "PytestVer",
+            "Ignore Dirs"
+        ]
+    },
+    {
+        "q": "Rearrange ini config:",
+        "type": "rearrange",
+        "words": [
+            "[pytest]",
+            "testpaths = tests integration",
+            "addopts = -ra -q",
+            "# Config"
+        ]
+    },
+    {
+        "q": "What is `-r` flag for?",
+        "type": "mcq",
+        "o": [
+            "Showing extra summary info",
+            "Reverse",
+            "Random",
+            "Repeat"
+        ]
+    },
+    {
+        "q": "`-ra` shows summary for all tests except _____ ones.",
+        "type": "fill_blank",
+        "answers": [
+            "passed"
+        ],
+        "other_options": [
+            "failed",
+            "skipped",
+            "error"
+        ]
+    },
+    {
+        "q": "Useful to see why tests were skipped or xfailed.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Match summary chars:",
+        "type": "match",
+        "left": [
+            "f",
+            "E",
+            "s",
+            "x"
+        ],
+        "right": [
+            "Failed",
+            "Error",
+            "Skipped",
+            "XFailed"
+        ]
+    },
+    {
+        "q": "Rearrange summary:",
+        "type": "rearrange",
+        "words": [
+            "pytest",
+            "-ra",
+            "# Show reason",
+            "for skips"
+        ]
+    },
+    {
+        "q": "What is `indirect=True` in parametrization?",
+        "type": "mcq",
+        "o": [
+            "Passes params to fixture not test",
+            "Indirect call",
+            "Reverse param",
+            "Hidden param"
+        ]
+    },
+    {
+        "q": "The fixture function receives the parameter via `_____`.",
+        "type": "fill_blank",
+        "answers": [
+            "request.param"
+        ],
+        "other_options": [
+            "param",
+            "arg",
+            "ctx"
+        ]
+    },
+    {
+        "q": "It allows deciding fixture setup based on test input.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Match indirect:",
+        "type": "match",
+        "left": [
+            "indirect=['db']",
+            "Db Fixture",
+            "Test Func",
+            "Param Value"
+        ],
+        "right": [
+            "Enable Indirect",
+            "Uses request.param",
+            "Uses Fixture Result",
+            "Sent to Fixture"
+        ]
+    },
+    {
+        "q": "Rearrange indirect:",
+        "type": "rearrange",
+        "words": [
+            "@pytest.mark.parametrize('db', ['pg', 'mysql'],",
+            "indirect=True)",
+            "def test_db(db):",
+            "# db is connection"
+        ]
+    },
+    {
+        "q": "What is `pytest_collection_modifyitems`?",
+        "type": "mcq",
+        "o": [
+            "Hook to filter/reorder collected tests",
+            "Collection type",
+            "Modify fixture",
+            "Modify config"
+        ]
+    },
+    {
+        "q": "It receives a list of `items` which you can sort or filter in-place.",
+        "type": "fill_blank",
+        "answers": [
+            "items/tests"
+        ],
+        "other_options": [
+            "files",
+            "names",
+            "markers"
+        ]
+    },
+    {
+        "q": "You define this hook in `conftest.py`.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Match hook args:",
+        "type": "match",
+        "left": [
+            "session",
+            "config",
+            "items",
+            "Hook"
+        ],
+        "right": [
+            "Session Obj",
+            "Config Obj",
+            "List of Tests",
+            "Collection Phase"
+        ]
+    },
+    {
+        "q": "Rearrange hook:",
+        "type": "rearrange",
+        "words": [
+            "def pytest_collection_modifyitems(items):",
+            "for item in items:",
+            "if 'slow' in item.keywords:",
+            "item.add_marker(skip_slow)"
+        ]
+    },
+    {
+        "q": "What is `pytest-xdist` used for?",
+        "type": "mcq",
+        "o": [
+            "Parallel test execution",
+            "Distribution",
+            "Distance check",
+            "XML output"
+        ]
+    },
+    {
+        "q": "Use `-n auto` to run tests on all available _____.",
+        "type": "fill_blank",
+        "answers": [
+            "CPUs/cores"
+        ],
+        "other_options": [
+            "disks",
+            "servers",
+            "ports"
+        ]
+    },
+    {
+        "q": "Each worker process is isolated and has its own environment.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Match xdist options:",
+        "type": "match",
+        "left": [
+            "-n 4",
+            "-n auto",
+            "--dist=loadscope",
+            "--dist=loadfile"
+        ],
+        "right": [
+            "4 workers",
+            "All cores",
+            "Group by scope",
+            "Group by file"
+        ]
+    },
+    {
+        "q": "Rearrange parallel:",
+        "type": "rearrange",
+        "words": [
+            "pytest",
+            "-n auto",
+            "tests/",
+            "# Speed up"
+        ]
+    },
+    {
+        "q": "What is `pytest-cov`?",
+        "type": "mcq",
+        "o": [
+            "Coverage reporting",
+            "Covariance",
+            "Cover letter",
+            "Convention"
+        ]
+    },
+    {
+        "q": "It uses `_____` under the hood to measure code coverage.",
+        "type": "fill_blank",
+        "answers": [
+            "coverage.py"
+        ],
+        "other_options": [
+            "profile",
+            "trace",
+            "inspect"
+        ]
+    },
+    {
+        "q": "It can fail the build if coverage is below a threshold.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Match coverage args:",
+        "type": "match",
+        "left": [
+            "--cov=src",
+            "--cov-report=html",
+            "--cov-fail-under=90",
+            ".coveragerc"
+        ],
+        "right": [
+            "Source Dir",
+            "HTML Output",
+            "Fail Threshold",
+            "Config File"
+        ]
+    },
+    {
+        "q": "Rearrange cov run:",
+        "type": "rearrange",
+        "words": [
+            "pytest",
+            "--cov=myapp",
+            "--cov-report=term-missing",
+            "# Check missing lines"
+        ]
+    },
+    {
+        "q": "How to check if two variables refer to the same object?",
+        "type": "mcq",
+        "o": [
+            "assert x is y",
+            "assert x == y",
+            "assert x same y",
+            "assert x.id == y.id"
+        ]
+    },
+    {
+        "q": "`is` checks identity, `==` checks _____.",
+        "type": "fill_blank",
+        "answers": [
+            "equality/value"
+        ],
+        "other_options": [
+            "type",
+            "hash",
+            "size"
+        ]
+    },
+    {
+        "q": "Pytest asserts provide detailed introspection for both identity and equality failures.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Match comparison:",
+        "type": "match",
+        "left": [
+            "is",
+            "is not",
+            "==",
+            "!="
+        ],
+        "right": [
+            "Identity",
+            "Not Identity",
+            "Equality",
+            "Inequality"
+        ]
+    },
+    {
+        "q": "Rearrange identity:",
+        "type": "rearrange",
+        "words": [
+            "a = [1]",
+            "b = a",
+            "assert a is b",
+            "# Same list"
+        ]
+    },
+    {
+        "q": "What is `record_property` fixture?",
+        "type": "mcq",
+        "o": [
+            "Log extra info to XML report",
+            "Record audio",
+            "Property check",
+            "Record screen"
+        ]
+    },
+    {
+        "q": "It adds a custom property to the `testcase` element in the JUnit _____ output.",
+        "type": "fill_blank",
+        "answers": [
+            "XML"
+        ],
+        "other_options": [
+            "JSON",
+            "Text",
+            "HTML"
+        ]
+    },
+    {
+        "q": "Useful for CI/CD integration to track metadata like build numbers.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Match xml attrs:",
+        "type": "match",
+        "left": [
+            "record_property('key', 'val')",
+            "--junitxml=path",
+            "Testsuite",
+            "Testcase"
+        ],
+        "right": [
+            "Add Data",
+            "Enable XML",
+            "Root Element",
+            "Test Element"
+        ]
+    },
+    {
+        "q": "Rearrange record:",
+        "type": "rearrange",
+        "words": [
+            "def test_meta(record_property):",
+            "record_property('user', 'admin')",
+            "assert True",
+            "Saved in XML"
+        ]
+    },
+    {
+        "q": "What is `cache` fixture?",
+        "type": "mcq",
+        "o": [
+            "Store data between test runs",
+            "CPU cache",
+            "Browser cache",
+            "Clear cache"
+        ]
+    },
+    {
+        "q": "You can use `config.cache` to store state like last _____ tests.",
+        "type": "fill_blank",
+        "answers": [
+            "failed/run"
+        ],
+        "other_options": [
+            "passed",
+            "skipped",
+            "new"
+        ]
+    },
+    {
+        "q": "Flags like `--lf` (last-failed) rely on this cache.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Match cache options:",
+        "type": "match",
+        "left": [
+            "--lf",
+            "--ff",
+            "--cache-show",
+            "--cache-clear"
+        ],
+        "right": [
+            "Last Failed",
+            "Failed First",
+            "View Cache",
+            "Clear Cache"
+        ]
+    },
+    {
+        "q": "Rearrange cache use:",
+        "type": "rearrange",
+        "words": [
+            "pytest",
+            "--lf",
+            "# Run only",
+            "failures"
+        ]
+    },
+    {
+        "q": "How do you mock a context manager?",
+        "type": "mcq",
+        "o": [
+            "mock_obj.__enter__.return_value = val",
+            "mock.enter(val)",
+            "mock.context(val)",
+            "No support"
+        ]
+    },
+    {
+        "q": "You must mock `__enter__` and `_____` methods.",
+        "type": "fill_blank",
+        "answers": [
+            "__exit__"
+        ],
+        "other_options": [
+            "__close__",
+            "__end__",
+            "__leave__"
+        ]
+    },
+    {
+        "q": "Using `MagicMock` handles `__enter__` enabling basic usage automatically.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Match context mock:",
+        "type": "match",
+        "left": [
+            "m = MagicMock()",
+            "m.__enter__.return_value",
+            "with m as x:",
+            "x"
+        ],
+        "right": [
+            "Mock Obj",
+            "Result of with",
+            "Usage",
+            "Is return_value"
+        ]
+    },
+    {
+        "q": "Rearrange context mock:",
+        "type": "rearrange",
+        "words": [
+            "m = MagicMock()",
+            "with m as ctx:",
+            "m.__enter__.assert_called()",
+            "Verify entry"
+        ]
+    },
+    {
+        "q": "What is `doctest_namespace` fixture?",
+        "type": "mcq",
+        "o": [
+            "Injects items into doctest scope",
+            "Names doctests",
+            "Spaces output",
+            "Doc reader"
+        ]
+    },
+    {
+        "q": "It is a dictionary-like object to prepopulate variables for _____.",
+        "type": "fill_blank",
+        "answers": [
+            "doctests"
+        ],
+        "other_options": [
+            "unit tests",
+            "integration",
+            "ui"
+        ]
+    },
+    {
+        "q": "Use `autouse` fixture to set it globally.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Match doctest helpers:",
+        "type": "match",
+        "left": [
+            "doctest_namespace['np'] = numpy",
+            "ELLIPSIS",
+            "NORMALIZE_WHITESPACE",
+            "SKIP"
+        ],
+        "right": [
+            "Inject var",
+            "Match any",
+            "Ignore space",
+            "Skip example"
+        ]
+    },
+    {
+        "q": "Rearrange doc namespace:",
+        "type": "rearrange",
+        "words": [
+            "@pytest.fixture(autouse=True)",
+            "def add_np(doctest_namespace):",
+            "doctest_namespace['np'] = numpy",
+            "Available in docs"
+        ]
+    },
+    {
+        "q": "What is `caplog` fixture?",
+        "type": "mcq",
+        "o": [
+            "Captures log records",
+            "Captures login",
+            "Captures logic",
+            "Captures locks"
+        ]
+    },
+    {
+        "q": "It captures logging records from the standard _____ module.",
+        "type": "fill_blank",
+        "answers": [
+            "logging"
+        ],
+        "other_options": [
+            "sys",
+            "os",
+            "print"
+        ]
+    },
+    {
+        "q": "You can check `caplog.records` or `caplog.text` for log messages.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Match log Levels:",
+        "type": "match",
+        "left": [
+            "DEBUG",
+            "INFO",
+            "WARNING",
+            "ERROR"
+        ],
+        "right": [
+            "Low detail",
+            "General info",
+            "Concern",
+            "Failure"
+        ]
+    },
+    {
+        "q": "Rearrange log check:",
+        "type": "rearrange",
+        "words": [
+            "def test_log(caplog):",
+            "logger.info('hi')",
+            "assert 'hi' in caplog.text",
+            "Verify log"
+        ]
+    },
+    {
+        "q": "What is `pytest_generate_tests`?",
+        "type": "mcq",
+        "o": [
+            "Hook for custom parametrization",
+            "Generates tests files",
+            "Generates fixtures",
+            "Run tests"
+        ]
+    },
+    {
+        "q": "It is called during test _____ to generate calls based on metafunc.",
+        "type": "fill_blank",
+        "answers": [
+            "collection/generation"
+        ],
+        "other_options": [
+            "execution",
+            "teardown",
+            "setup"
+        ]
+    },
+    {
+        "q": "Allows fully dynamic test case generation.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Match dynamic param:",
+        "type": "match",
+        "left": [
+            "metafunc.parametrize",
+            "pytest_generate_tests",
+            "scenarios",
+            "indirect"
+        ],
+        "right": [
+            "Add calls",
+            "The Hook",
+            "Data Source",
+            "Fixture mode"
+        ]
+    },
+    {
+        "q": "Rearrange hook dynamic:",
+        "type": "rearrange",
+        "words": [
+            "def pytest_generate_tests(metafunc):",
+            "if 'arg' in metafunc.fixturenames:",
+            "metafunc.parametrize('arg', [1,2])",
+            "Dynamic setup"
+        ]
+    },
+    {
+        "q": "How to add a custom CLI option to pytest?",
+        "type": "mcq",
+        "o": [
+            "pytest_addoption hook",
+            "addopts = ...",
+            "cli match",
+            "config add"
+        ]
+    },
+    {
+        "q": "You define `pytest_addoption(parser)` in `_____`.",
+        "type": "fill_blank",
+        "answers": [
+            "conftest.py"
+        ],
+        "other_options": [
+            "pytest.ini",
+            "main.py",
+            "tox.ini"
+        ]
+    },
+    {
+        "q": "You can access the value via `request.config.getoption('--name')`.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Match hook usage:",
+        "type": "match",
+        "left": [
+            "pytest_addoption",
+            "pytest_configure",
+            "pytest_sessionstart",
+            "pytest_runtest_setup"
+        ],
+        "right": [
+            "Add CLI arg",
+            "Validate config",
+            "Start session",
+            "Before test"
+        ]
+    },
+    {
+        "q": "Rearrange add option:",
+        "type": "rearrange",
+        "words": [
+            "def pytest_addoption(parser):",
+            "parser.addoption('--env', action='store')",
+            "request.config.getoption('--env')",
+            "Use arg"
+        ]
+    },
+    {
+        "q": "What is the difference between `yield` and `return` in a fixture?",
+        "type": "mcq",
+        "o": [
+            "yield runs teardown code after test",
+            "return runs code after",
+            "No difference",
+            "yield is async"
+        ]
+    },
+    {
+        "q": "Code placed after `yield` is executed _____ the test finishes.",
+        "type": "fill_blank",
+        "answers": [
+            "after"
+        ],
+        "other_options": [
+            "before",
+            "during",
+            "never"
+        ]
+    },
+    {
+        "q": "`addfinalizer` is an alternative way to register teardown code.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Match visual:",
+        "type": "match",
+        "left": [
+            "Code before yield",
+            "yield val",
+            "Code after yield",
+            "return val"
+        ],
+        "right": [
+            "Setup",
+            "Pass to test",
+            "Teardown",
+            "Setup only"
+        ]
+    },
+    {
+        "q": "Rearrange yield teardown:",
+        "type": "rearrange",
+        "words": [
+            "@pytest.fixture",
+            "def resource():",
+            "setup()",
+            "yield obj",
+            "teardown()"
+        ]
+    },
+    {
+        "q": "Where does pytest look for configuration by default?",
+        "type": "mcq",
+        "o": [
+            "pytest.ini, pyproject.toml, tox.ini",
+            "config.json",
+            "setup.cfg only",
+            ".pytestrc"
+        ]
+    },
+    {
+        "q": "Modern projects often prefer `_____.toml` for configuration.",
+        "type": "fill_blank",
+        "answers": [
+            "pyproject"
+        ],
+        "other_options": [
+            "package",
+            "pytest",
+            "cargo"
+        ]
+    },
+    {
+        "q": "Configuration files are searched recursively upwards from the test directory.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Match config files:",
+        "type": "match",
+        "left": [
+            "pytest.ini",
+            "pyproject.toml",
+            "tox.ini",
+            "setup.cfg"
+        ],
+        "right": [
+            "Pytest Specific",
+            "Standard PEP 518",
+            "Task Automation",
+            "Setuptools"
+        ]
+    },
+    {
+        "q": "Rearrange toml config:",
+        "type": "rearrange",
+        "words": [
+            "[tool.pytest.ini_options]",
+            "minversion = '6.0'",
+            "addopts = '-ra -q'",
+            "# In pyproject.toml"
+        ]
+    },
+    {
+        "q": "What is `request.addfinalizer()`?",
+        "type": "mcq",
+        "o": [
+            "Registers a teardown function",
+            "Ends test",
+            "Adds final test",
+            "Finalizes class"
+        ]
+    },
+    {
+        "q": "It is useful when you need multiple finalizers or conditionally register them.",
+        "type": "fill_blank",
+        "answers": [
+            "True"
+        ],
+        "other_options": [
+            "False",
+            "None",
+            "Error"
+        ]
+    },
+    {
+        "q": "Finalizers are called locally, unlike `yield` which pauses execution.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Match cleanup:",
+        "type": "match",
+        "left": [
+            "addfinalizer(f)",
+            "yield",
+            "Last Registered",
+            "First Registered"
+        ],
+        "right": [
+            "Callback style",
+            "Generator style",
+            "First Executed",
+            "Last Executed"
+        ]
+    },
+    {
+        "q": "Rearrange finalizer:",
+        "type": "rearrange",
+        "words": [
+            "def test_mkfile(request):",
+            "f = open('t.txt', 'w')",
+            "request.addfinalizer(f.close)",
+            "Use f"
+        ]
+    },
+    {
+        "q": "How can you programmatically skip tests during collection?",
+        "type": "mcq",
+        "o": [
+            "Raise Skip exception",
+            "pytest.skip()",
+            "pytest.exit()",
+            "return"
+        ]
+    },
+    {
+        "q": "Raising `pytest.skip('reason')` inside a test setup or fixture skips the test.",
+        "type": "fill_blank",
+        "answers": [
+            "True"
+        ],
+        "other_options": [
+            "False"
+        ]
+    },
+    {
+        "q": "Use `pytest.importorskip('mod')` to skip if a library is missing.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Match skip methods:",
+        "type": "match",
+        "left": [
+            "@mark.skip",
+            "pytest.skip()",
+            "importorskip()",
+            "skipif"
+        ],
+        "right": [
+            "Decorator",
+            "Imperative",
+            "Missing dep",
+            "Conditional"
+        ]
+    },
+    {
+        "q": "Rearrange import skip:",
+        "type": "rearrange",
+        "words": [
+            "np = pytest.importorskip('numpy')",
+            "def test_np():",
+            "assert np.array([1])",
+            "# Runs if installed"
+        ]
+    },
+    {
+        "q": "What is `recwarn` fixture?",
+        "type": "mcq",
+        "o": [
+            "Records warnings",
+            "Records audio",
+            "Recovers warning",
+            "Requires warning"
+        ]
+    },
+    {
+        "q": "It allows asserting on triggered warnings after the test block finishes.",
+        "type": "fill_blank",
+        "answers": [
+            "warnings"
+        ],
+        "other_options": [
+            "logs",
+            "errors",
+            "prints"
+        ]
+    },
+    {
+        "q": "`warnings.catch_warnings(record=True)` is the manual python equivalent.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Match warn check:",
+        "type": "match",
+        "left": [
+            "recwarn.pop()",
+            "recwarn.list",
+            "len(recwarn)",
+            "warnings.warn"
+        ],
+        "right": [
+            "Get last",
+            "All warnings",
+            "Count",
+            "Trigger"
+        ]
+    },
+    {
+        "q": "Rearrange recwarn:",
+        "type": "rearrange",
+        "words": [
+            "def test_w(recwarn):",
+            "warnings.warn('hi')",
+            "w = recwarn.pop()",
+            "assert 'hi' in str(w.message)"
+        ]
+    },
+    {
+        "q": "What happens if a fixture fails?",
+        "type": "mcq",
+        "o": [
+            "Test is marked Error",
+            "Test is Failed",
+            "Test is Skipped",
+            "Test is Passed"
+        ]
+    },
+    {
+        "q": "Fixture failure results in an _____ status for the test.",
+        "type": "fill_blank",
+        "answers": [
+            "error/E"
+        ],
+        "other_options": [
+            "fail/F",
+            "pass/.",
+            "skip/s"
+        ]
+    },
+    {
+        "q": "Assertion failure in the test body results in 'Failure'.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Match statuses:",
+        "type": "match",
+        "left": [
+            "AssertionError",
+            "Exception in Setup",
+            "pytest.skip()",
+            "pytest.fail()"
+        ],
+        "right": [
+            "FAIL",
+            "ERROR",
+            "SKIP",
+            "FAIL"
+        ]
+    },
+    {
+        "q": "Rearrange failure:",
+        "type": "rearrange",
+        "words": [
+            "@pytest.fixture",
+            "def broken():",
+            "raise Exception()",
+            "# Causes ERROR"
+        ]
+    },
+    {
+        "q": "What is `pytest.mark.usefixtures`?",
+        "type": "mcq",
+        "o": [
+            "Apply fixture without using return value",
+            "Use fixture value",
+            "Import fixture",
+            "Define fixture"
+        ]
+    },
+    {
+        "q": "Useful for fixtures that perform implementation checking or side effects.",
+        "type": "fill_blank",
+        "answers": [
+            "setup/side-effects"
+        ],
+        "other_options": [
+            "math",
+            "logic",
+            "gui"
+        ]
+    },
+    {
+        "q": "You can apply it to a class to use the fixture for every method.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Match usefixtures:",
+        "type": "match",
+        "left": [
+            "@usefixtures('db')",
+            "def test(db)",
+            "Class decorator",
+            "Module level"
+        ],
+        "right": [
+            "No return val",
+            "Has return val",
+            "All methods",
+            "pytestmark"
+        ]
+    },
+    {
+        "q": "Rearrange usefixtures:",
+        "type": "rearrange",
+        "words": [
+            "@pytest.mark.usefixtures('clean_db')",
+            "class TestModel:",
+            "def test_save(self):",
+            "assert True"
+        ]
+    },
+    {
+        "q": "How do you specify the root directory for pytest?",
+        "type": "mcq",
+        "o": [
+            "rootdir is auto-detected",
+            "--root arg",
+            "config file location",
+            "All above"
+        ]
+    },
+    {
+        "q": "Pytest determines `rootdir` by looking for configuration files or specific markers.",
+        "type": "fill_blank",
+        "answers": [
+            "True"
+        ],
+        "other_options": [
+            "False"
+        ]
+    },
+    {
+        "q": "You can force it with passing a directory argument.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Match path concepts:",
+        "type": "match",
+        "left": [
+            "rootdir",
+            "inifile",
+            "cwd",
+            "testpaths"
+        ],
+        "right": [
+            "Project Root",
+            "Selected Config",
+            "Working Dir",
+            "Search scope"
+        ]
+    },
+    {
+        "q": "Rearrange root find:",
+        "type": "rearrange",
+        "words": [
+            "# pytest looks for",
+            "pytest.ini",
+            "tox.ini",
+            "or setup.cfg"
+        ]
+    },
+    {
+        "q": "What is the `cache` directory name?",
+        "type": "mcq",
+        "o": [
+            ".pytest_cache",
+            "__pycache__",
+            ".cache",
+            "tmp"
+        ]
+    },
+    {
+        "q": "It stores data from the `cache` fixture across runs.",
+        "type": "fill_blank",
+        "answers": [
+            "True"
+        ],
+        "other_options": [
+            "False"
+        ]
+    },
+    {
+        "q": "You should add `.pytest_cache` to `.gitignore`.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Match directories:",
+        "type": "match",
+        "left": [
+            ".pytest_cache",
+            "__pycache__",
+            ".tox",
+            "venv"
+        ],
+        "right": [
+            "Pytest data",
+            "Compiled bytecode",
+            "Tox envs",
+            "Virtual Env"
+        ]
+    },
+    {
+        "q": "Rearrange gitignore:",
+        "type": "rearrange",
+        "words": [
+            ".pytest_cache/",
+            "__pycache__/",
+            "coverage.xml",
+            "# Ignore these"
+        ]
+    },
+    {
+        "q": "What is `tmpdir_factory`?",
+        "type": "mcq",
+        "o": [
+            "Session-scoped temporary directory factory",
+            "Module factory",
+            "File factory",
+            "Class factory"
+        ]
+    },
+    {
+        "q": "Use it to create temp directories in _____ scoped fixtures.",
+        "type": "fill_blank",
+        "answers": [
+            "session/module"
+        ],
+        "other_options": [
+            "function",
+            "method",
+            "test"
+        ]
+    },
+    {
+        "q": "`tmp_path_factory` is the pathlib equivalent.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Match factories:",
+        "type": "match",
+        "left": [
+            "tmpdir_factory",
+            "tmp_path_factory",
+            "mktemp('data')",
+            "getbasetemp()"
+        ],
+        "right": [
+            "py.path factory",
+            "pathlib factory",
+            "Make subfolder",
+            "Root temp"
+        ]
+    },
+    {
+        "q": "Rearrange session temp:",
+        "type": "rearrange",
+        "words": [
+            "@pytest.fixture(scope='session')",
+            "def img_dir(tmp_path_factory):",
+            "return tmp_path_factory.mktemp('imgs')",
+            "Shared dir"
+        ]
+    },
+    {
+        "q": "What is the `fullname` of a test node?",
+        "type": "mcq",
+        "o": [
+            "test_file.py::test_func",
+            "test_func",
+            "test_file.test_func",
+            "id"
+        ]
+    },
+    {
+        "q": "It acts as a unique ID for selecting the test.",
+        "type": "fill_blank",
+        "answers": [
+            "True"
+        ],
+        "other_options": [
+            "False"
+        ]
+    },
+    {
+        "q": "You can run it directly: `pytest test_file.py::test_func`.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Match node parts:",
+        "type": "match",
+        "left": [
+            "File",
+            "Class",
+            "Method",
+            "Param"
+        ],
+        "right": [
+            "test_mod.py",
+            "TestClass",
+            "test_method",
+            "[param1]"
+        ]
+    },
+    {
+        "q": "Rearrange node select:",
+        "type": "rearrange",
+        "words": [
+            "pytest",
+            "tests/ui/test_login.py",
+            "::",
+            "test_failure"
+        ]
+    },
+    {
+        "q": "How do you assert that a warning is *not* issued?",
+        "type": "mcq",
+        "o": [
+            "recwarn assertions or warnings.check",
+            "assert not warned",
+            "warns(None)",
+            "clean_warn"
+        ]
+    },
+    {
+        "q": "Using `warnings.simplefilter('error')` turns warnings into _____.",
+        "type": "fill_blank",
+        "answers": [
+            "errors/exceptions"
+        ],
+        "other_options": [
+            "logs",
+            "prints",
+            "files"
+        ]
+    },
+    {
+        "q": "Then `pytest.raises` can catch them.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Match warning handling:",
+        "type": "match",
+        "left": [
+            "ignore",
+            "always",
+            "error",
+            "once"
+        ],
+        "right": [
+            "Suppres",
+            "Emit every time",
+            "Raise Exception",
+            "Emit first time"
+        ]
+    },
+    {
+        "q": "Rearrange no warn:",
+        "type": "rearrange",
+        "words": [
+            "with warnings.catch_warnings(record=True) as w:",
+            "do_something()",
+            "assert len(w) == 0",
+            "Ensure silence"
+        ]
+    },
+    {
+        "q": "What is `conftest.py` loading order?",
+        "type": "mcq",
+        "o": [
+            "Root -> Subdirs",
+            "Subdirs -> Root",
+            "Random",
+            "Parallel"
+        ]
+    },
+    {
+        "q": "Fixtures in deeper conftests override or extend root fixtures.",
+        "type": "fill_blank",
+        "answers": [
+            "True"
+        ],
+        "other_options": [
+            "False"
+        ]
+    },
+    {
+        "q": "Pytest loads conftest modules initially at startup.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Match hierarchy:",
+        "type": "match",
+        "left": [
+            "tests/conftest.py",
+            "tests/ui/conftest.py",
+            "tests/ui/test_ui.py",
+            "Scope"
+        ],
+        "right": [
+            "Level 1",
+            "Level 2",
+            "Uses Level 2",
+            "Inheritance"
+        ]
+    },
+    {
+        "q": "Rearrange override:",
+        "type": "rearrange",
+        "words": [
+            "# root conftest: user=admin",
+            "# sub conftest: user=guest",
+            "def test_me(user):",
+            "assert user == 'guest'"
+        ]
+    },
+    {
+        "q": "What is `assert_outcomes` helper?",
+        "type": "mcq",
+        "o": [
+            "pytester (testdir) helper to check results",
+            "Assert result",
+            "Check output",
+            "Result obj"
+        ]
+    },
+    {
+        "q": "Used when writing plugins to verify the plugin behaves correctly.",
+        "type": "fill_blank",
+        "answers": [
+            "True"
+        ],
+        "other_options": [
+            "False"
+        ]
+    },
+    {
+        "q": "It checks counts of passed/failed/skipped tests.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Match outcome keys:",
+        "type": "match",
+        "left": [
+            "passed",
+            "failed",
+            "skipped",
+            "xpassed"
+        ],
+        "right": [
+            "Green",
+            "Red",
+            "Yellow",
+            "Surprise Green"
+        ]
+    },
+    {
+        "q": "Rearrange pytester:",
+        "type": "rearrange",
+        "words": [
+            "result = pytester.runpytest()",
+            "result.assert_outcomes(",
+            "passed=1,",
+            "failed=0)"
+        ]
+    },
+    {
+        "q": "How to debug hanging tests?",
+        "type": "mcq",
+        "o": [
+            "pytest-timeout or faulthandler",
+            "Ctrl+C",
+            "Wait",
+            "Print"
+        ]
+    },
+    {
+        "q": "The built-in `faulthandler` can accept signals to dump tracebacks.",
+        "type": "fill_blank",
+        "answers": [
+            "True"
+        ],
+        "other_options": [
+            "False"
+        ]
+    },
+    {
+        "q": "Setting `timeout=N` via plugin kills the test after N seconds.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Match debugging:",
+        "type": "match",
+        "left": [
+            "--pdb",
+            "--trace",
+            "--lf",
+            "-vv"
+        ],
+        "right": [
+            "Debugger on fail",
+            "Step debugger",
+            "Last Failed",
+            "Verbose diff"
+        ]
+    },
+    {
+        "q": "Rearrange pdb:",
+        "type": "rearrange",
+        "words": [
+            "pytest",
+            "--pdb",
+            "# Drops into",
+            "pdb on error"
+        ]
+    },
+    {
+        "q": "What is `pytest.approx` comparison type?",
+        "type": "mcq",
+        "o": [
+            "Fuzzy equality",
+            "Exact",
+            "String match",
+            "Regex"
+        ]
+    },
+    {
+        "q": "It works for numbers, lists, tuples, and _____ (dictionaries).",
+        "type": "fill_blank",
+        "answers": [
+            "dicts/mappings"
+        ],
+        "other_options": [
+            "files",
+            "classes",
+            "sets"
+        ]
+    },
+    {
+        "q": "It recurses into data structures.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Match approx structure:",
+        "type": "match",
+        "left": [
+            "approx(5)",
+            "approx([1.0, 2.0])",
+            "approx({'a': 1.0})",
+            "Structure"
+        ],
+        "right": [
+            "Scalar",
+            "Sequence",
+            "Mapping",
+            "Recursive"
+        ]
+    },
+    {
+        "q": "Rearrange approx dict:",
+        "type": "rearrange",
+        "words": [
+            "d1 = {'val': 0.1 + 0.2}",
+            "assert d1 ==",
+            "pytest.approx({'val': 0.3})",
+            "Matches"
+        ]
+    },
+    {
+        "q": "What is `pytest_runtest_setup`?",
+        "type": "mcq",
+        "o": [
+            "Hook called before setup of a test item",
+            "Hook after setup",
+            "Hook during setup",
+            "Run test"
+        ]
+    },
+    {
+        "q": "You can use it to implement custom checking or skipping logic per item.",
+        "type": "fill_blank",
+        "answers": [
+            "test/item"
+        ],
+        "other_options": [
+            "file",
+            "mod",
+            "suite"
+        ]
+    },
+    {
+        "q": "If it fails, the test reports Error.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Match runtest phases:",
+        "type": "match",
+        "left": [
+            "setup",
+            "call",
+            "teardown",
+            "hook"
+        ],
+        "right": [
+            "Prepare",
+            "Execute",
+            "Clean",
+            "pytest_runtest_protocol"
+        ]
+    },
+    {
+        "q": "Rearrange protocol:",
+        "type": "rearrange",
+        "words": [
+            "def pytest_runtest_setup(item):",
+            "if 'sanity' in item.keywords:",
+            "check_env()",
+            "Pre-test check"
+        ]
+    },
+    {
+        "q": "What is `pytest.param` used for in parametrization?",
+        "type": "mcq",
+        "o": [
+            "Wrapping a value to add metadata",
+            "Defining param name",
+            "Type hint",
+            "No use"
+        ]
+    },
+    {
+        "q": "It allows adding `id` or `marks` (like skip/xfail) to a single _____ case.",
+        "type": "fill_blank",
+        "answers": [
+            "parameter/test"
+        ],
+        "other_options": [
+            "fixture",
+            "hook",
+            "file"
+        ]
+    },
+    {
+        "q": "`pytest.param(1, marks=pytest.mark.skip)` skips just that one input.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Match param attributes:",
+        "type": "match",
+        "left": [
+            "id='case1'",
+            "marks=skip",
+            "values",
+            "param object"
+        ],
+        "right": [
+            "Custom Name",
+            "Apply Marker",
+            "Data",
+            "Wrapper"
+        ]
+    },
+    {
+        "q": "Rearrange pytest.param:",
+        "type": "rearrange",
+        "words": [
+            "@parametrize('x', [",
+            "pytest.param(1, id='one'),",
+            "2])",
+            "def test_p(x):"
+        ]
+    },
+    {
+        "q": "What is `metafunc` in `pytest_generate_tests`?",
+        "type": "mcq",
+        "o": [
+            "Object to inspect test function and parametrize",
+            "Metadata function",
+            "Metaclass",
+            "Fixture"
+        ]
+    },
+    {
+        "q": "It provides access to requested `_____` names (fixtures) of the test function.",
+        "type": "fill_blank",
+        "answers": [
+            "fixture/arg"
+        ],
+        "other_options": [
+            "module",
+            "class",
+            "package"
+        ]
+    },
+    {
+        "q": "You call `metafunc.parametrize` to generate new test calls.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Match metafunc attrs:",
+        "type": "match",
+        "left": [
+            "fixturenames",
+            "function",
+            "cls",
+            "parametrize"
+        ],
+        "right": [
+            "Args list",
+            "Test Func",
+            "Test Class",
+            "Generator Method"
+        ]
+    },
+    {
+        "q": "Rearrange metafunc logic:",
+        "type": "rearrange",
+        "words": [
+            "if 'db' in metafunc.fixturenames:",
+            "metafunc.parametrize('db',",
+            "['sqlite', 'pg'])",
+            "# Auto-param"
+        ]
+    },
+    {
+        "q": "What is `pytest-mock` plugin?",
+        "type": "mcq",
+        "o": [
+            "Wrapper around unittest.mock",
+            "Mock datagen",
+            "Mock server",
+            "Mock browser"
+        ]
+    },
+    {
+        "q": "It provides the `_____` fixture which is a thin wrapper around `unittest.mock`.",
+        "type": "fill_blank",
+        "answers": [
+            "mocker"
+        ],
+        "other_options": [
+            "mock",
+            "patch",
+            "magic"
+        ]
+    },
+    {
+        "q": "It automatically undoes patches after the test ends.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Match mocker methods:",
+        "type": "match",
+        "left": [
+            "mocker.patch",
+            "mocker.spy",
+            "mocker.stub",
+            "mocker.resetall"
+        ],
+        "right": [
+            "Replace",
+            "Wrap/Monitor",
+            "Create Mock",
+            "Reset calls"
+        ]
+    },
+    {
+        "q": "Rearrange mocker usage:",
+        "type": "rearrange",
+        "words": [
+            "def test_foo(mocker):",
+            "m = mocker.patch('time.sleep')",
+            "m.assert_called_once()",
+            "Standard mock"
+        ]
+    },
+    {
+        "q": "What is `pytest_sessionstart`?",
+        "type": "mcq",
+        "o": [
+            "Hook called before Session object is created",
+            "Hook after session creation, before collection",
+            "Start of each test",
+            "Start of app"
+        ]
+    },
+    {
+        "q": "It is useful for global initialization code that runs _____.",
+        "type": "fill_blank",
+        "answers": [
+            "once"
+        ],
+        "other_options": [
+            "twice",
+            "often",
+            "never"
+        ]
+    },
+    {
+        "q": "The counterpart is `pytest_sessionfinish`.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Match session hooks:",
+        "type": "match",
+        "left": [
+            "sessionstart",
+            "sessionfinish",
+            "collection",
+            "runtestloop"
+        ],
+        "right": [
+            "Init",
+            "Cleanup",
+            "Discovery",
+            "Execution"
+        ]
+    },
+    {
+        "q": "Rearrange session start:",
+        "type": "rearrange",
+        "words": [
+            "def pytest_sessionstart(session):",
+            "print('Starting Global')",
+            "init_db()",
+            "Run once"
+        ]
+    },
+    {
+        "q": "How do you control the order of tests?",
+        "type": "mcq",
+        "o": [
+            "pytest-order plugin",
+            "Alphabetical only",
+            "Random only",
+            "No control"
+        ]
+    },
+    {
+        "q": "Plugins like `pytest-order` or `pytest-randomly` hook into `_____` to sort items.",
+        "type": "fill_blank",
+        "answers": [
+            "pytest_collection_modifyitems/collection"
+        ],
+        "other_options": [
+            "runtest",
+            "setup",
+            "teardown"
+        ]
+    },
+    {
+        "q": "By default, pytest runs tests in the order they are defined in the file.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Match ordering:",
+        "type": "match",
+        "left": [
+            "@mark.order(1)",
+            "@mark.order('last')",
+            "pytest-randomly",
+            "default"
+        ],
+        "right": [
+            "First",
+            "Last",
+            "Shuffle",
+            "Definition order"
+        ]
+    },
+    {
+        "q": "Rearrange ordering:",
+        "type": "rearrange",
+        "words": [
+            "@pytest.mark.order(2)",
+            "def test_second():",
+            "pass",
+            "def test_first(): pass"
+        ]
+    },
+    {
+        "q": "What is `caplog.set_level`?",
+        "type": "mcq",
+        "o": [
+            "Set logging capture level",
+            "Set volume",
+            "Set brightness",
+            "Set priority"
+        ]
+    },
+    {
+        "q": "It allows changing the captured log level for the _____ of the test.",
+        "type": "fill_blank",
+        "answers": [
+            "duration/scope"
+        ],
+        "other_options": [
+            "file",
+            "module",
+            "forever"
+        ]
+    },
+    {
+        "q": "It overrides the root logger level temporarily.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Match caplog methods:",
+        "type": "match",
+        "left": [
+            "set_level(INFO)",
+            "clear()",
+            "text",
+            "records"
+        ],
+        "right": [
+            "Change Level",
+            "Empty buffer",
+            "String output",
+            "LogRecord objects"
+        ]
+    },
+    {
+        "q": "Rearrange caplog level:",
+        "type": "rearrange",
+        "words": [
+            "import logging",
+            "caplog.set_level(logging.DEBUG)",
+            "logger.debug('msg')",
+            "assert 'msg' in caplog.text"
+        ]
+    },
+    {
+        "q": "How do you add a custom configuration variable to `pytest.ini`?",
+        "type": "mcq",
+        "o": [
+            "parser.addini in hook",
+            "addoption",
+            "config.ini",
+            "params"
+        ]
+    },
+    {
+        "q": "Use `parser.addini('name', 'help')` in `pytest_addoption` hook to register it.",
+        "type": "fill_blank",
+        "answers": [
+            "True"
+        ],
+        "other_options": [
+            "False"
+        ]
+    },
+    {
+        "q": "You execute this in `conftest.py`.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Match ini parsing:",
+        "type": "match",
+        "left": [
+            "parser.addini",
+            "config.getini",
+            "type='bool'",
+            "default"
+        ],
+        "right": [
+            "Register",
+            "Read",
+            "Validation",
+            "Fallback"
+        ]
+    },
+    {
+        "q": "Rearrange add ini:",
+        "type": "rearrange",
+        "words": [
+            "def pytest_addoption(parser):",
+            "parser.addini('my_url', 'Base URL')",
+            "val = config.getini('my_url')",
+            "Custom config"
+        ]
+    },
+    {
+        "q": "What is `pytest_terminal_summary`?",
+        "type": "mcq",
+        "o": [
+            "Hook to add info to final terminal output",
+            "Summary report",
+            "Terminal color",
+            "End hook"
+        ]
+    },
+    {
+        "q": "It allows plugins to print a section at the very _____ of the run.",
+        "type": "fill_blank",
+        "answers": [
+            "end/summary"
+        ],
+        "other_options": [
+            "start",
+            "middle",
+            "failure"
+        ]
+    },
+    {
+        "q": "You can use `terminalreporter.section` to output custom tables.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Match terminal reporters:",
+        "type": "match",
+        "left": [
+            "terminalreporter",
+            "write_sep",
+            "write_line",
+            "section"
+        ],
+        "right": [
+            "Reporter Obj",
+            "Separator",
+            "Text Line",
+            "Block"
+        ]
+    },
+    {
+        "q": "Rearrange summary hook:",
+        "type": "rearrange",
+        "words": [
+            "def pytest_terminal_summary(terminalreporter):",
+            "terminalreporter.write('Done')",
+            "custom logic",
+            "Final output"
+        ]
+    },
+    {
+        "q": "What is `pytest-bdd`?",
+        "type": "mcq",
+        "o": [
+            "Behavior Driven Development plugin",
+            "Database plugin",
+            "Bug detector",
+            "Binary check"
+        ]
+    },
+    {
+        "q": "It allows writing tests using Gherkin syntax (Given, When, _____) feature files.",
+        "type": "fill_blank",
+        "answers": [
+            "Then"
+        ],
+        "other_options": [
+            "And",
+            "But",
+            "If"
+        ]
+    },
+    {
+        "q": "It maps step definitions to python functions.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Match BDD terms:",
+        "type": "match",
+        "left": [
+            "Feature",
+            "Scenario",
+            "Step",
+            "@given"
+        ],
+        "right": [
+            "File .feature",
+            "Test Case",
+            "Action",
+            "Step implementation"
+        ]
+    },
+    {
+        "q": "Rearrange BDD step:",
+        "type": "rearrange",
+        "words": [
+            "@given('I am logged in')",
+            "def login_step():",
+            "auth.login()",
+            "Setup state"
+        ]
+    },
+    {
+        "q": "What is `scope='package'` for fixtures?",
+        "type": "mcq",
+        "o": [
+            "Fixture shared across package (folder)",
+            "Package manager",
+            "Global scope",
+            "Module scope"
+        ]
+    },
+    {
+        "q": "It was introduced in newer pytest versions to allow setup once per _____.",
+        "type": "fill_blank",
+        "answers": [
+            "package/directory"
+        ],
+        "other_options": [
+            "file",
+            "disk",
+            "user"
+        ]
+    },
+    {
+        "q": "You define it in `__init__.py` or `conftest.py` in that directory.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Match new scopes:",
+        "type": "match",
+        "left": [
+            "package",
+            "session",
+            "module",
+            "class"
+        ],
+        "right": [
+            "Directory (New)",
+            "Global",
+            "File",
+            "Class"
+        ]
+    },
+    {
+        "q": "Rearrange package scope:",
+        "type": "rearrange",
+        "words": [
+            "@pytest.fixture(scope='package')",
+            "def db_cluster():",
+            "start_cluster()",
+            "Runs once/folder"
+        ]
+    },
+    {
+        "q": "What are 'parametrization ids'?",
+        "type": "mcq",
+        "o": [
+            "Labels for each parameter set",
+            "Test IDs",
+            "User IDs",
+            "UUIDs"
+        ]
+    },
+    {
+        "q": "They appear in the verbose output and node IDs (e.g. `test_func[case-1]`).",
+        "type": "fill_blank",
+        "answers": [
+            "True"
+        ],
+        "other_options": [
+            "False"
+        ]
+    },
+    {
+        "q": "You can provide a list of strings or a function to generate them.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Match id generation:",
+        "type": "match",
+        "left": [
+            "ids=['a','b']",
+            "ids=str",
+            "ids=func",
+            "No ids"
+        ],
+        "right": [
+            "Explicit List",
+            "Stringify",
+            "Custom Func",
+            "Auto-generated"
+        ]
+    },
+    {
+        "q": "Rearrange param ids:",
+        "type": "rearrange",
+        "words": [
+            "@parametrize('val', [1,2],",
+            "ids=['one', 'two'])",
+            "def test_val(val):",
+            "Shows [one]"
+        ]
+    },
+    {
+        "q": "What is `pytest_ignore_collect`?",
+        "type": "mcq",
+        "o": [
+            "Hook to skip collecting a path",
+            "Ignore warnings",
+            "Ignore errors",
+            "Ignore logs"
+        ]
+    },
+    {
+        "q": "Return `True` to prevent pytest from collecting the given _____.",
+        "type": "fill_blank",
+        "answers": [
+            "path/file"
+        ],
+        "other_options": [
+            "test",
+            "param",
+            "fixture"
+        ]
+    },
+    {
+        "q": "Useful for excluding specific directories dynamically.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Match collection hooks:",
+        "type": "match",
+        "left": [
+            "ignore_collect",
+            "collect_file",
+            "collect_directory",
+            "make_collect_report"
+        ],
+        "right": [
+            "Skip Path",
+            "Custom File",
+            "Custom Dir",
+            "Report Result"
+        ]
+    },
+    {
+        "q": "Rearrange ignore hook:",
+        "type": "rearrange",
+        "words": [
+            "def pytest_ignore_collect(path, config):",
+            "if 'legacy' in str(path):",
+            "return True",
+            "Skip legacy"
+        ]
+    },
+    {
+        "q": "What is `pytest_exception_interact`?",
+        "type": "mcq",
+        "o": [
+            "Hook called when an exception occurs interactively",
+            "Catch all errors",
+            "Interact with user",
+            "Debug hook"
+        ]
+    },
+    {
+        "q": "It is called when an exception is raised which can be handled (e.g. during _____ mode).",
+        "type": "fill_blank",
+        "answers": [
+            "interactive/debug"
+        ],
+        "other_options": [
+            "batch",
+            "ci",
+            "run"
+        ]
+    },
+    {
+        "q": "Plugins like `pytest-debugger` use this.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Match interaction hooks:",
+        "type": "match",
+        "left": [
+            "exception_interact",
+            "enter_pdb",
+            "leave_pdb",
+            "internalerror"
+        ],
+        "right": [
+            "On Crash",
+            "On Debug Start",
+            "On Debug End",
+            "Internal Bug"
+        ]
+    },
+    {
+        "q": "Rearrange exception interact:",
+        "type": "rearrange",
+        "words": [
+            "def pytest_exception_interact(node, call, report):",
+            "if report.failed:",
+            "notify_user()",
+            "Custom handler"
+        ]
+    },
+    {
+        "q": "What is `pytest-instafail`?",
+        "type": "mcq",
+        "o": [
+            "Plugin to show failures immediately",
+            "Fail instantly",
+            "Instagram plugin",
+            "Fast fail"
+        ]
+    },
+    {
+        "q": "By default, pytest waits until _____ tests are done to show error details.",
+        "type": "fill_blank",
+        "answers": [
+            "all/the end"
+        ],
+        "other_options": [
+            "some",
+            "half",
+            "failed"
+        ]
+    },
+    {
+        "q": "Instafail prints the traceback as soon as the failure occurs.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Match output plugins:",
+        "type": "match",
+        "left": [
+            "instafail",
+            "sugar",
+            "html",
+            "emoji"
+        ],
+        "right": [
+            "Instant Errors",
+            "Progress Bar",
+            "HTML Report",
+            "Emoji Status"
+        ]
+    },
+    {
+        "q": "Rearrange instafail:",
+        "type": "rearrange",
+        "words": [
+            "pytest",
+            "--instafail",
+            "# See errors",
+            "immediately"
+        ]
+    },
+    {
+        "q": "What is `pytest_assertrepr_compare`?",
+        "type": "mcq",
+        "o": [
+            "Hook to customize assertion error messages",
+            "Compare objects",
+            "Assert equality",
+            "Repr string"
+        ]
+    },
+    {
+        "q": "It allows providing a custom explanation for failed asserts of custom _____.",
+        "type": "fill_blank",
+        "answers": [
+            "types/objects"
+        ],
+        "other_options": [
+            "integers",
+            "strings",
+            "floats"
+        ]
+    },
+    {
+        "q": "It returns a list of strings to display.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Match assert hooks:",
+        "type": "match",
+        "left": [
+            "assertrepr_compare",
+            "assertion_pass",
+            "format_explanation",
+            "Difference"
+        ],
+        "right": [
+            "Custom Msg",
+            "Success Hook",
+            "Formatter",
+            "Output"
+        ]
+    },
+    {
+        "q": "Rearrange custom assert:",
+        "type": "rearrange",
+        "words": [
+            "def pytest_assertrepr_compare(op, left, right):",
+            "if isinstance(left, Foo):",
+            "return ['Foo mismatch']",
+            "Better error"
+        ]
+    },
+    {
+        "q": "How do you pass arguments to a fixture from a marker?",
+        "type": "mcq",
+        "o": [
+            "request.node.get_closest_marker",
+            "fixture arg",
+            "pass param",
+            "global var"
+        ]
+    },
+    {
+        "q": "The fixture can inspect `request.node` to find markers applied to the _____.",
+        "type": "fill_blank",
+        "answers": [
+            "test/function"
+        ],
+        "other_options": [
+            "module",
+            "class",
+            "file"
+        ]
+    },
+    {
+        "q": "This allows data-driven fixture behavior via decorators.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Match marker data:",
+        "type": "match",
+        "left": [
+            "@mark.data(1)",
+            "request.node",
+            "get_closest_marker",
+            "marker.args"
+        ],
+        "right": [
+            "Marker with arg",
+            "Test context",
+            "Find marker",
+            "Access data"
+        ]
+    },
+    {
+        "q": "Rearrange marker fixture:",
+        "type": "rearrange",
+        "words": [
+            "@pytest.fixture",
+            "def setup(request):",
+            "m = request.node.get_closest_marker('data')",
+            "val = m.args[0]"
+        ]
+    },
+    {
+        "q": "What is `unittest.mock.DEBUG`?",
+        "type": "mcq",
+        "o": [
+            "Not a standard flag, but debuggable via properties",
+            "Flag",
+            "Env var",
+            "Constant"
+        ]
+    },
+    {
+        "q": "In pytest, you inspect mocks using `call_args` or `_____` property.",
+        "type": "fill_blank",
+        "answers": [
+            "call_args_list"
+        ],
+        "other_options": [
+            "called_list",
+            "calls",
+            "history"
+        ]
+    },
+    {
+        "q": "`m.assert_called_with()` fails if the arguments don't match exactly.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Match mock assertions:",
+        "type": "match",
+        "left": [
+            "assert_called_once",
+            "assert_called_with",
+            "assert_any_call",
+            "assert_not_called"
+        ],
+        "right": [
+            "Count=1",
+            "Specific Args",
+            "One of many",
+            "Count=0"
+        ]
+    },
+    {
+        "q": "Rearrange mock check:",
+        "type": "rearrange",
+        "words": [
+            "m = mocker.Mock()",
+            "m(1)",
+            "m.assert_called_once_with(1)",
+            "Verified call"
+        ]
+    },
+    {
+        "q": "What is `pytest-datadir`?",
+        "type": "mcq",
+        "o": [
+            "Plugin for handling test data files",
+            "Data factory",
+            "Dir check",
+            "Database"
+        ]
+    },
+    {
+        "q": "It provides fixtures to access files in a `data` directory relative to the _____.",
+        "type": "fill_blank",
+        "answers": [
+            "test/file"
+        ],
+        "other_options": [
+            "root",
+            "home",
+            "tmp"
+        ]
+    },
+    {
+        "q": "Commonly used to load static JSON or CSV for tests.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Match data plugins:",
+        "type": "match",
+        "left": [
+            "datadir",
+            "original_datadir",
+            "shared_datadir",
+            "datafile"
+        ],
+        "right": [
+            "Copy per test",
+            "Read only source",
+            "Global data",
+            "Single file"
+        ]
+    },
+    {
+        "q": "Rearrange datadir:",
+        "type": "rearrange",
+        "words": [
+            "def test_read(datadir):",
+            "txt = (datadir / 'f.txt').read_text()",
+            "assert 'hi' in txt",
+            "Load content"
+        ]
+    },
+    {
+        "q": "What is `pytest_configure` used for typically?",
+        "type": "mcq",
+        "o": [
+            "Register markers, configure plugin",
+            "Run tests",
+            "Configure params",
+            "CLI parsing"
+        ]
+    },
+    {
+        "q": "You use `config.addinivalue_line('markers', ...)` to programmatically register _____.",
+        "type": "fill_blank",
+        "answers": [
+            "markers"
+        ],
+        "other_options": [
+            "tests",
+            "fixtures",
+            "hooks"
+        ]
+    },
+    {
+        "q": "It runs after command line parsing but before collection.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Match configure tasks:",
+        "type": "match",
+        "left": [
+            "Register Marker",
+            "Initialize Plugin",
+            "Check Deps",
+            "Set Options"
+        ],
+        "right": [
+            "Avoid Warning",
+            "Setup State",
+            "Abort if missing",
+            "Defaults"
+        ]
+    },
+    {
+        "q": "Rearrange configure:",
+        "type": "rearrange",
+        "words": [
+            "def pytest_configure(config):",
+            "config.addinivalue_line(",
+            "'markers', 'slow: slow test'",
+            ")"
+        ]
+    },
+    {
+        "q": "What is `f-string` support in pytest?",
+        "type": "mcq",
+        "o": [
+            "Native Python support",
+            "Plugin",
+            "Error",
+            "Not supported"
+        ]
+    },
+    {
+        "q": "Pytest supports standard Python f-strings in asserts for clearer _____ messages.",
+        "type": "fill_blank",
+        "answers": [
+            "error/failure"
+        ],
+        "other_options": [
+            "success",
+            "log",
+            "skip"
+        ]
+    },
+    {
+        "q": "`assert x == y, f'Expected {x} to be {y}'` is valid.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Match assert msg:",
+        "type": "match",
+        "left": [
+            "assert False, 'msg'",
+            "f-string",
+            "pytest output",
+            "Verbose"
+        ],
+        "right": [
+            "Custom Msg",
+            "Dynamic Msg",
+            "Auto Diff",
+            "Full Diff"
+        ]
+    },
+    {
+        "q": "Rearrange fstring assert:",
+        "type": "rearrange",
+        "words": [
+            "val = 10",
+            "assert val > 20,",
+            "f'Value {val} is too small'",
+            "# Fails with msg"
+        ]
+    },
+    {
+        "q": "What is `pytest.register_assert_rewrite(module_name)`?",
+        "type": "mcq",
+        "o": [
+            "Enables assertion introspection for helper modules",
+            "Rewrites module code",
+            "Disabled assertions",
+            "Registers plugins"
+        ]
+    },
+    {
+        "q": "It tells pytest dependencies to rewrite `_____` statements in the given module for better error messages.",
+        "type": "fill_blank",
+        "answers": [
+            "assert"
+        ],
+        "other_options": [
+            "print",
+            "log",
+            "raise"
+        ]
+    },
+    {
+        "q": "You must call this in your `conftest.py` *before* importing the module.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Match rewrite concepts:",
+        "type": "match",
+        "left": [
+            "register_assert_rewrite",
+            "AST rewriting",
+            "AssertionError",
+            "Helper Func"
+        ],
+        "right": [
+            "Enable Introspection",
+            "Mechanism",
+            "Resulting Error",
+            "Target Module"
+        ]
+    },
+    {
+        "q": "Rearrange rewrite:",
+        "type": "rearrange",
+        "words": [
+            "pytest.register_assert_rewrite('my_helpers')",
+            "import my_helpers",
+            "def test_h():",
+            "my_helpers.check()"
+        ]
+    },
+    {
+        "q": "What is `pytest_runtest_protocol`?",
+        "type": "mcq",
+        "o": [
+            "Main hook to implement the test execution protocol",
+            "Protocol check",
+            "Network protocol",
+            "Run test"
+        ]
+    },
+    {
+        "q": "It allows replacing the entire setup-call-teardown phase for a _____ item.",
+        "type": "fill_blank",
+        "answers": [
+            "test/item"
+        ],
+        "other_options": [
+            "file",
+            "session",
+            "class"
+        ]
+    },
+    {
+        "q": "If you return `True`, the standard protocol is skipped.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Match protocol parts:",
+        "type": "match",
+        "left": [
+            "runtest_protocol",
+            "runtest_setup",
+            "runtest_call",
+            "runtest_teardown"
+        ],
+        "right": [
+            "Orchestrator",
+            "Phase 1",
+            "Phase 2",
+            "Phase 3"
+        ]
+    },
+    {
+        "q": "Rearrange protocol hook:",
+        "type": "rearrange",
+        "words": [
+            "def pytest_runtest_protocol(item, nextitem):",
+            "run_my_way(item)",
+            "return True",
+            "# Skip standard"
+        ]
+    },
+    {
+        "q": "How does `pytest-xdist` load scope work?",
+        "type": "mcq",
+        "o": [
+            "Groups tests to run on same worker",
+            "Groups by load",
+            "Groups by scope",
+            "Random"
+        ]
+    },
+    {
+        "q": "`--dist=loadscope` ensures tests in the same _____ (class or module) run on the same worker.",
+        "type": "fill_blank",
+        "answers": [
+            "group/file/class"
+        ],
+        "other_options": [
+            "function",
+            "session",
+            "folder"
+        ]
+    },
+    {
+        "q": "This prevents race conditions if tests share state within a class.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Match distribution:",
+        "type": "match",
+        "left": [
+            "loadscope",
+            "loadfile",
+            "each",
+            "no"
+        ],
+        "right": [
+            "By Class/Mod",
+            "By File",
+            "Run on all",
+            "Sequential"
+        ]
+    },
+    {
+        "q": "Rearrange xdist scope:",
+        "type": "rearrange",
+        "words": [
+            "pytest",
+            "-n 2",
+            "--dist=loadscope",
+            "# Keep classes",
+            "together"
+        ]
+    },
+    {
+        "q": "What is `request.instance`?",
+        "type": "mcq",
+        "o": [
+            "Access to test class instance",
+            "Fixture instance",
+            "Request instance",
+            "Global instance"
+        ]
+    },
+    {
+        "q": "It returns `None` if the test is not part of a _____.",
+        "type": "fill_blank",
+        "answers": [
+            "class"
+        ],
+        "other_options": [
+            "module",
+            "package",
+            "suite"
+        ]
+    },
+    {
+        "q": "It allows a fixture to inspect or modify the binding object.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Match instance access:",
+        "type": "match",
+        "left": [
+            "request.instance",
+            "request.module",
+            "request.function",
+            "request.cls"
+        ],
+        "right": [
+            "self object",
+            "module object",
+            "func object",
+            "class object"
+        ]
+    },
+    {
+        "q": "Rearrange instance fixture:",
+        "type": "rearrange",
+        "words": [
+            "@pytest.fixture",
+            "def args(request):",
+            "return getattr(request.instance, 'args', [])",
+            "Get attr"
+        ]
+    },
+    {
+        "q": "What is `ExceptionGroup` handling in pytest?",
+        "type": "mcq",
+        "o": [
+            "Support for PEP 654 exception groups",
+            "Group errors",
+            "Batch fail",
+            "Ignore"
+        ]
+    },
+    {
+        "q": "Pytest displays exception groups with a detailed _____ structure.",
+        "type": "fill_blank",
+        "answers": [
+            "tree/nested"
+        ],
+        "other_options": [
+            "list",
+            "flat",
+            "graph"
+        ]
+    },
+    {
+        "q": "You can use `pytest.raises(ExceptionGroup)` to test them.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Match exception group:",
+        "type": "match",
+        "left": [
+            "ExceptionGroup",
+            "except*",
+            "pytest.raises(EG)",
+            "Traceback"
+        ],
+        "right": [
+            "Container",
+            "Catch syntax",
+            "Assert group",
+            "Tree view"
+        ]
+    },
+    {
+        "q": "Rearrange group raises:",
+        "type": "rearrange",
+        "words": [
+            "with pytest.raises(ExceptionGroup) as exc:",
+            "raise ExceptionGroup('msg', [ValueError()])",
+            "assert exc.value.exceptions",
+            "Check list"
+        ]
+    },
+    {
+        "q": "What is `pytest_pyfunc_call` hook?",
+        "type": "mcq",
+        "o": [
+            "Executes the python test function",
+            "Calls pytest",
+            "Calls plugin",
+            "Calls fixture"
+        ]
+    },
+    {
+        "q": "It allows customizing how the actual test _____ is invoked.",
+        "type": "fill_blank",
+        "answers": [
+            "function/callable"
+        ],
+        "other_options": [
+            "file",
+            "module",
+            "class"
+        ]
+    },
+    {
+        "q": "Returning `True` stops other implementations from running.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Match call execution:",
+        "type": "match",
+        "left": [
+            "pyfunc_call",
+            "runtest_call",
+            "sys.settrace",
+            "profiling"
+        ],
+        "right": [
+            "Code execution",
+            "Wrapper phase",
+            "Trace hook",
+            "Use Case"
+        ]
+    },
+    {
+        "q": "Rearrange custom call:",
+        "type": "rearrange",
+        "words": [
+            "def pytest_pyfunc_call(pyfuncitem):",
+            "entry_point(pyfuncitem.obj)",
+            "return True",
+            "Intercept execution"
+        ]
+    },
+    {
+        "q": "What is `pytest_ignore_collect` used for?",
+        "type": "mcq",
+        "o": [
+            "Ignoring paths during collection",
+            "Ignorning errors",
+            "Ignoring output",
+            "Stopping"
+        ]
+    },
+    {
+        "q": "It returns `True` to prevent collecting the directory or _____.",
+        "type": "fill_blank",
+        "answers": [
+            "file"
+        ],
+        "other_options": [
+            "item",
+            "test",
+            "class"
+        ]
+    },
+    {
+        "q": "It is a hook, not a CLI flag.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Match ignore logic:",
+        "type": "match",
+        "left": [
+            "ignore_collect",
+            "norecursedirs",
+            "testpaths",
+            "collect_ignore"
+        ],
+        "right": [
+            "Hook",
+            "Config Option",
+            "Whitelist",
+            "Conftest list"
+        ]
+    },
+    {
+        "q": "Rearrange clean ignore:",
+        "type": "rearrange",
+        "words": [
+            "collect_ignore = ['setup.py']",
+            "# In conftest.py",
+            "# Skips setup.py",
+            "during collection"
+        ]
+    },
+    {
+        "q": "What is `pytest-randomly`?",
+        "type": "mcq",
+        "o": [
+            "Randomizes test order",
+            "Random data",
+            "Random fail",
+            "Fuzzing"
+        ]
+    },
+    {
+        "q": "It resets the random _____ at the start of each test context.",
+        "type": "fill_blank",
+        "answers": [
+            "seed"
+        ],
+        "other_options": [
+            "state",
+            "memory",
+            "cache"
+        ]
+    },
+    {
+        "q": "It helps detect test dependencies (tests unrelated to each other).",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Match random effects:",
+        "type": "match",
+        "left": [
+            "Shuffle order",
+            "Reset seed",
+            "Find interference",
+            "--randomly-seed=123"
+        ],
+        "right": [
+            "Feature 1",
+            "Feature 2",
+            "Goal",
+            "Reproduce"
+        ]
+    },
+    {
+        "q": "Rearrange random run:",
+        "type": "rearrange",
+        "words": [
+            "pytest",
+            "--randomly-seed=100",
+            "# Reproduce",
+            "order"
+        ]
+    },
+    {
+        "q": "What is `capfd` fixture?",
+        "type": "mcq",
+        "o": [
+            "Captures stdout/stderr even from C extensions",
+            "File descriptor capture",
+            "Failure debug",
+            "Capsys variant"
+        ]
+    },
+    {
+        "q": "It captures at the _____ descriptor level (fd 1 and 2).",
+        "type": "fill_blank",
+        "answers": [
+            "file/OS"
+        ],
+        "other_options": [
+            "python",
+            "sys",
+            "stream"
+        ]
+    },
+    {
+        "q": "`capsys` only captures python-level `sys.stdout` writes.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Match usage:",
+        "type": "match",
+        "left": [
+            "capsys",
+            "capfd",
+            "call subprocess",
+            "print()"
+        ],
+        "right": [
+            "Python level",
+            "OS level",
+            "Needs capfd",
+            "Caught by both"
+        ]
+    },
+    {
+        "q": "Rearrange capfd:",
+        "type": "rearrange",
+        "words": [
+            "os.system('echo hi')",
+            "out, err = capfd.readouterr()",
+            "assert 'hi' in out",
+            "Checks OS out"
+        ]
+    },
+    {
+        "q": "What is `pytest_report_header` hook?",
+        "type": "mcq",
+        "o": [
+            "Adds text to start of console output",
+            "Report header",
+            "Headline",
+            "Title"
+        ]
+    },
+    {
+        "q": "It returns a string or list of strings to be displayed in the console _____.",
+        "type": "fill_blank",
+        "answers": [
+            "header/start"
+        ],
+        "other_options": [
+            "footer",
+            "summary",
+            "body"
+        ]
+    },
+    {
+        "q": "Useful for displaying environment info (DB URL, OS version).",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Match header info:",
+        "type": "match",
+        "left": [
+            "platform info",
+            "plugins",
+            "rootdir",
+            "custom header"
+        ],
+        "right": [
+            "Standard",
+            "Standard",
+            "Standard",
+            "From Hook"
+        ]
+    },
+    {
+        "q": "Rearrange header:",
+        "type": "rearrange",
+        "words": [
+            "def pytest_report_header(config):",
+            "return 'Project v1.0'",
+            "# Shows at start",
+            "CLI"
+        ]
+    },
+    {
+        "q": "What is `pytest_enter_pdb`?",
+        "type": "mcq",
+        "o": [
+            "Hook called upon entering debugger",
+            "Enter PDB command",
+            "Breakpoint",
+            "Debug start"
+        ]
+    },
+    {
+        "q": "Plugins can use it to disable capturing logic before _____ starts.",
+        "type": "fill_blank",
+        "answers": [
+            "pdb/debugger"
+        ],
+        "other_options": [
+            "test",
+            "setup",
+            "run"
+        ]
+    },
+    {
+        "q": "It allows smooth interaction with the debugger console.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Match debug events:",
+        "type": "match",
+        "left": [
+            "enter_pdb",
+            "set_trace()",
+            "--pdb",
+            "post_mortem"
+        ],
+        "right": [
+            "Hook",
+            "Manual Break",
+            "Auto Break",
+            "After crash"
+        ]
+    },
+    {
+        "q": "Rearrange debug hook:",
+        "type": "rearrange",
+        "words": [
+            "def pytest_enter_pdb(config):",
+            "stop_background_threads()",
+            "# Clean context",
+            "for debugging"
+        ]
+    },
+    {
+        "q": "What is `pytest_make_parametrize_id`?",
+        "type": "mcq",
+        "o": [
+            "Hook to generate custom IDs for param values",
+            "ID maker",
+            "Param maker",
+            "Test generator"
+        ]
+    },
+    {
+        "q": "It can define a friendly string representation for objects used in _____.",
+        "type": "fill_blank",
+        "answers": [
+            "parametrization"
+        ],
+        "other_options": [
+            "fixture",
+            "assertion",
+            "logging"
+        ]
+    },
+    {
+        "q": "It avoids getting messy IDs like `object at 0x...`.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Match id hooks:",
+        "type": "match",
+        "left": [
+            "make_parametrize_id",
+            "ids=func",
+            "param(id='')",
+            "__repr__"
+        ],
+        "right": [
+            "Global Hook",
+            "Local Func",
+            "Specific Item",
+            "Fallback"
+        ]
+    },
+    {
+        "q": "Rearrange id hook:",
+        "type": "rearrange",
+        "words": [
+            "def pytest_make_parametrize_id(val):",
+            "if isinstance(val, User):",
+            "return val.name",
+            "Friendly ID"
+        ]
+    },
+    {
+        "q": "What is `pytest-deadfixtures`?",
+        "type": "mcq",
+        "o": [
+            "Plugin to find unused fixtures",
+            "Dead code",
+            "Fixture killer",
+            "Cleanup"
+        ]
+    },
+    {
+        "q": "It analyzes the code to report fixtures that are defined but _____ used.",
+        "type": "fill_blank",
+        "answers": [
+            "never/not"
+        ],
+        "other_options": [
+            "always",
+            "sometimes",
+            "rarely"
+        ]
+    },
+    {
+        "q": "Helps clean up technical debt in test suites.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Match clean plugins:",
+        "type": "match",
+        "left": [
+            "deadfixtures",
+            "cov",
+            "flake8",
+            "black"
+        ],
+        "right": [
+            "Unused Setup",
+            "Uncovered Code",
+            "Style Style",
+            "Format"
+        ]
+    },
+    {
+        "q": "Rearrange dead fix:",
+        "type": "rearrange",
+        "words": [
+            "pytest",
+            "--deadfixtures",
+            "reports fixtures",
+            "not in use"
+        ]
+    },
+    {
+        "q": "What is `pytest_itemcollected` hook?",
+        "type": "mcq",
+        "o": [
+            "Called when a test item is collected",
+            "Item collector",
+            "Test found",
+            "Count tests"
+        ]
+    },
+    {
+        "q": "Allows tracking or modifying items as they are _____.",
+        "type": "fill_blank",
+        "answers": [
+            "discovered/collected"
+        ],
+        "other_options": [
+            "run",
+            "skipped",
+            "failed"
+        ]
+    },
+    {
+        "q": "It is executed thousands of times for large suites (performance sensitive).",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Match collection events:",
+        "type": "match",
+        "left": [
+            "collect_file",
+            "pycollect_makeitem",
+            "itemcollected",
+            "collection_finish"
+        ],
+        "right": [
+            "Start file",
+            "Create obj",
+            "Item ready",
+            "Done all"
+        ]
+    },
+    {
+        "q": "Rearrange collection monitor:",
+        "type": "rearrange",
+        "words": [
+            "def pytest_itemcollected(item):",
+            "print('Found:', item.nodeid)",
+            "# Trace",
+            "discovery"
+        ]
+    },
+    {
+        "q": "What is `pytest-timeout` method?",
+        "type": "mcq",
+        "o": [
+            "Signal or Thread",
+            "Timer or Clock",
+            "Sleep or Wait",
+            "Async or Sync"
+        ]
+    },
+    {
+        "q": "On Unix, it uses `_____` (signal.SIGALRM), on Windows it uses a thread.",
+        "type": "fill_blank",
+        "answers": [
+            "signal"
+        ],
+        "other_options": [
+            "thread",
+            "process",
+            "lock"
+        ]
+    },
+    {
+        "q": "Thread method allows debugging but is slower/less reliable for blocking calls.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Match timeout types:",
+        "type": "match",
+        "left": [
+            "signal",
+            "thread",
+            "timeout=X",
+            "--timeout-method"
+        ],
+        "right": [
+            "Unix Default",
+            "Windows/Opt",
+            "Per test",
+            "Global Config"
+        ]
+    },
+    {
+        "q": "Rearrange timeout config:",
+        "type": "rearrange",
+        "words": [
+            "pytest",
+            "--timeout=5",
+            "--timeout-method=thread",
+            "# Use threads"
+        ]
+    },
+    {
+        "q": "What is `pytest_cmdline_main` hook?",
+        "type": "mcq",
+        "o": [
+            "Hook to intercept the main command line entry",
+            "Main function",
+            "CLI args",
+            "Run main"
+        ]
+    },
+    {
+        "q": "It allows wrapping the entire pytest execution or preventing _____.",
+        "type": "fill_blank",
+        "answers": [
+            "execution/running"
+        ],
+        "other_options": [
+            "collection",
+            "import",
+            "reporting"
+        ]
+    },
+    {
+        "q": "Returning a value from this hook becomes the exit code.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Match main hooks:",
+        "type": "match",
+        "left": [
+            "cmdline_main",
+            "cmdline_parse",
+            "sessionstart",
+            "runtestloop"
+        ],
+        "right": [
+            "Top Level",
+            "Parsing",
+            "Session Init",
+            "Testing"
+        ]
+    },
+    {
+        "q": "Rearrange main wrap:",
+        "type": "rearrange",
+        "words": [
+            "def pytest_cmdline_main(config):",
+            "if no_perms():",
+            "return 1",
+            "# Exit early"
+        ]
+    },
+    {
+        "q": "What is `pytest-benchmark`?",
+        "type": "mcq",
+        "o": [
+            "Plugin for performance benchmarking",
+            "Bench press",
+            "Speed test",
+            "Load test"
+        ]
+    },
+    {
+        "q": "It provides a `benchmark` fixture to calibrate and run functions _____ times.",
+        "type": "fill_blank",
+        "answers": [
+            "many/multiple"
+        ],
+        "other_options": [
+            "once",
+            "zero",
+            "infinite"
+        ]
+    },
+    {
+        "q": "It tracks statistics like min, max, mean, stddev.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Match benchmark metrics:",
+        "type": "match",
+        "left": [
+            "Min",
+            "Max",
+            "Mean",
+            "StdDev"
+        ],
+        "right": [
+            "Fastest",
+            "Slowest",
+            "Average",
+            "Variation"
+        ]
+    },
+    {
+        "q": "Rearrange bench run:",
+        "type": "rearrange",
+        "words": [
+            "def test_perf(benchmark):",
+            "benchmark(my_func)",
+            "# Auto runs",
+            "stats report"
+        ]
+    },
+    {
+        "q": "What is `pytest.exit(msg)`?",
+        "type": "mcq",
+        "o": [
+            "Exits the test run immediately",
+            "Exits test",
+            "Exits python",
+            "Exits fixture"
+        ]
+    },
+    {
+        "q": "It aborts the session with a specific _____ message.",
+        "type": "fill_blank",
+        "answers": [
+            "reason/exit"
+        ],
+        "other_options": [
+            "error",
+            "log",
+            "debug"
+        ]
+    },
+    {
+        "q": "Useful if a critical resource (like DB) is unavailable.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Match exit types:",
+        "type": "match",
+        "left": [
+            "pytest.exit('msg')",
+            "sys.exit(1)",
+            "KeyboardInterrupt",
+            "session.shouldstop"
+        ],
+        "right": [
+            "Graceful Abort",
+            "Hard Exit",
+            "User Abort",
+            "Flag"
+        ]
+    },
+    {
+        "q": "Rearrange exit call:",
+        "type": "rearrange",
+        "words": [
+            "if not db_up:",
+            "pytest.exit('DB Down')",
+            "# Stop all",
+            "tests"
+        ]
+    },
+    {
+        "q": "What is `pytest-subtests`?",
+        "type": "mcq",
+        "o": [
+            "Plugin for dynamic sub-tests inside a function",
+            "Sub module",
+            "Sub class",
+            "Smaller tests"
+        ]
+    },
+    {
+        "q": "It allows a single test function to emit _____ outcomes.",
+        "type": "fill_blank",
+        "answers": [
+            "multiple"
+        ],
+        "other_options": [
+            "single",
+            "zero",
+            "none"
+        ]
+    },
+    {
+        "q": "It is conceptually similar to `soft_assertions`.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Match subtest parts:",
+        "type": "match",
+        "left": [
+            "subtests.test()",
+            "context manager",
+            "outcome",
+            "params"
+        ],
+        "right": [
+            "Run block",
+            "with subtests:",
+            "Pass/Fail",
+            "Args"
+        ]
+    },
+    {
+        "q": "Rearrange subtests:",
+        "type": "rearrange",
+        "words": [
+            "def test_many(subtests):",
+            "for smile in smiles:",
+            "with subtests.test(msg=smile):",
+            "check(smile)"
+        ]
+    },
+    {
+        "q": "What is `pytest.freeze_includes`?",
+        "type": "mcq",
+        "o": [
+            "Function used by PyInstaller/freezers",
+            "Freeze list",
+            "Include list",
+            "Frozen tests"
+        ]
+    },
+    {
+        "q": "It returns a list of module names that pytest needs to _____.",
+        "type": "fill_blank",
+        "answers": [
+            "run/include"
+        ],
+        "other_options": [
+            "skip",
+            "delete",
+            "mock"
+        ]
+    },
+    {
+        "q": "Useful when packaging a pytest runner into binary executable.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Match freeze:",
+        "type": "match",
+        "left": [
+            "PyInstaller",
+            "freeze_includes()",
+            "Hidden Imports",
+            "Binary"
+        ],
+        "right": [
+            "Packager",
+            "Helper",
+            "Dynamic Deps",
+            "EXE"
+        ]
+    },
+    {
+        "q": "Rearrange freeze usage:",
+        "type": "rearrange",
+        "words": [
+            "# In spec file",
+            "hiddenimports +=",
+            "pytest.freeze_includes()",
+            "Include internals"
+        ]
+    },
+    {
+        "q": "What is `python_files` configuration?",
+        "type": "mcq",
+        "o": [
+            "Glob pattern for test file discovery",
+            "Python path",
+            "File list",
+            "Include list"
+        ]
+    },
+    {
+        "q": "Defaults to `['test_*.py', '*_test.py']`. You can change it in `_____.ini`.",
+        "type": "fill_blank",
+        "answers": [
+            "pytest"
+        ],
+        "other_options": [
+            "tox",
+            "setup",
+            "env"
+        ]
+    },
+    {
+        "q": "Adding `check_*.py` allows running files starting with check_ as tests.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Match discovery config:",
+        "type": "match",
+        "left": [
+            "python_files",
+            "python_classes",
+            "python_functions",
+            "norecursedirs"
+        ],
+        "right": [
+            "File Pattern",
+            "Class Pattern",
+            "Func Pattern",
+            "Skip Dirs"
+        ]
+    },
+    {
+        "q": "Rearrange discovery:",
+        "type": "rearrange",
+        "words": [
+            "[pytest]",
+            "python_files = check_*.py",
+            "python_functions = verify_*",
+            "# Custom naming"
+        ]
+    },
+    {
+        "q": "What is `pytest.stash` (introduced in 7.0)?",
+        "type": "mcq",
+        "o": [
+            "Type-safe storage on Node/Config objects",
+            "Hidden cache",
+            "Stash git",
+            "Secret storage"
+        ]
+    },
+    {
+        "q": "It replaces previous usage of private `_store` or arbitrary attributes for storing _____ data.",
+        "type": "fill_blank",
+        "answers": [
+            "plugin/custom"
+        ],
+        "other_options": [
+            "core",
+            "user",
+            "file"
+        ]
+    },
+    {
+        "q": "It requires defining a StashKey for type safety.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Match stash usage:",
+        "type": "match",
+        "left": [
+            "StashKey()",
+            "node.stash[key] = val",
+            "node.stash.get(key)",
+            "Type Safety"
+        ],
+        "right": [
+            "Key Definition",
+            "Set Value",
+            "Get Value",
+            "Goal"
+        ]
+    },
+    {
+        "q": "Rearrange stash:",
+        "type": "rearrange",
+        "words": [
+            "key = pytest.StashKey[str]()",
+            "config.stash[key] = 'data'",
+            "val = config.stash[key]",
+            "Safe storage"
+        ]
+    },
+    {
+        "q": "What is `pytest_deselected` hook?",
+        "type": "mcq",
+        "o": [
+            "Called when tests are deselected (e.g. by -k)",
+            "Deselect test",
+            "Skip hook",
+            "Delete hook"
+        ]
+    },
+    {
+        "q": "Plugins utilize this to report how many items were filtered _____.",
+        "type": "fill_blank",
+        "answers": [
+            "out/deselected"
+        ],
+        "other_options": [
+            "in",
+            "run",
+            "failed"
+        ]
+    },
+    {
+        "q": "It allows modifying the list of deselected items if needed.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Match filtering:",
+        "type": "match",
+        "left": [
+            "-k expr",
+            "-m mark",
+            "deselect",
+            "collect"
+        ],
+        "right": [
+            "Filter Name",
+            "Filter Mark",
+            "Remove",
+            "Gather"
+        ]
+    },
+    {
+        "q": "Rearrange deselect report:",
+        "type": "rearrange",
+        "words": [
+            "def pytest_deselected(items):",
+            "print(f'Ignored {len(items)} tests')",
+            "# Hook log",
+            "items"
+        ]
+    },
+    {
+        "q": "How to make a valid local plugin in `conftest.py`?",
+        "type": "mcq",
+        "o": [
+            "Just define hooks in conftest.py",
+            "Register via entry points",
+            "Import plugin",
+            "Inherit Plugin"
+        ]
+    },
+    {
+        "q": "`conftest.py` files are automatically loaded as _____ plugins.",
+        "type": "fill_blank",
+        "answers": [
+            "local"
+        ],
+        "other_options": [
+            "global",
+            "system",
+            "remote"
+        ]
+    },
+    {
+        "q": "You can implement any hook in conftest.py without registration.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Match plugin types:",
+        "type": "match",
+        "left": [
+            "conftest.py",
+            "pip install ...",
+            "setuptools entry_point",
+            "-p myplugin"
+        ],
+        "right": [
+            "Local",
+            "Distributed",
+            "Registration",
+            "CLI Load"
+        ]
+    },
+    {
+        "q": "Rearrange local plugin:",
+        "type": "rearrange",
+        "words": [
+            "# conftest.py",
+            "def pytest_sessionstart(session):",
+            "print('I am a plugin')",
+            "Auto loaded"
+        ]
+    },
+    {
+        "q": "What is `pytest_testnodedown` in xdist?",
+        "type": "mcq",
+        "o": [
+            "Hook called when a worker node goes down",
+            "Test failed",
+            "Node crash",
+            "Network down"
+        ]
+    },
+    {
+        "q": "It allows the controller to handle worker _____/crashes gracefully.",
+        "type": "fill_blank",
+        "answers": [
+            "exit/death"
+        ],
+        "other_options": [
+            "start",
+            "busy",
+            "idle"
+        ]
+    },
+    {
+        "q": "It provides the node object and error info.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Match xdist hooks:",
+        "type": "match",
+        "left": [
+            "testnodedown",
+            "testnodeready",
+            "configure_node",
+            "worker input"
+        ],
+        "right": [
+            "Worker Crash",
+            "Worker Ready",
+            "Worker Setup",
+            "Data transfer"
+        ]
+    },
+    {
+        "q": "Rearrange node crash:",
+        "type": "rearrange",
+        "words": [
+            "def pytest_testnodedown(node, error):",
+            "log.error(f'Node {node} died')",
+            "# Handle",
+            "unexpectedly"
+        ]
+    },
+    {
+        "q": "What is `pytest.Item`?",
+        "type": "mcq",
+        "o": [
+            "Base class for individual test cases",
+            "List of tests",
+            "Config item",
+            "Runner"
+        ]
+    },
+    {
+        "q": "Subclasses include `Function` (for python functions) and `_____` (rarely used directly).",
+        "type": "fill_blank",
+        "answers": [
+            "File/DoctestItem"
+        ],
+        "other_options": [
+            "Class",
+            "Module",
+            "Session"
+        ]
+    },
+    {
+        "q": "An Item is collected by a Collector (like Module or Class).",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Match hierarchy:",
+        "type": "match",
+        "left": [
+            "Session",
+            "Package/Module",
+            "Class",
+            "Item/Function"
+        ],
+        "right": [
+            "Root",
+            "File Collector",
+            "Class Collector",
+            "Leaf Test"
+        ]
+    },
+    {
+        "q": "Rearrange item attr:",
+        "type": "rearrange",
+        "words": [
+            "def test_func(request):",
+            "item = request.node",
+            "assert isinstance(item, pytest.Item)",
+            "Introspection"
+        ]
+    },
+    {
+        "q": "What is `pytest_internalerror` hook?",
+        "type": "mcq",
+        "o": [
+            "Called on internal pytest error/crash",
+            "Assertion error",
+            "Test failure",
+            "Timeout"
+        ]
+    },
+    {
+        "q": "It allows reporting internal bugs in pytest or _____.",
+        "type": "fill_blank",
+        "answers": [
+            "plugins"
+        ],
+        "other_options": [
+            "tests",
+            "python",
+            "os"
+        ]
+    },
+    {
+        "q": "Returning `True` inhibits default printing of the traceback.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Match error types:",
+        "type": "match",
+        "left": [
+            "internalerror",
+            "keyboardinterrupt",
+            "usageerror",
+            "failed"
+        ],
+        "right": [
+            "Bug in Tool",
+            "User Stop",
+            "Bad CLI args",
+            "Test Bug"
+        ]
+    },
+    {
+        "q": "Rearrange crash handling:",
+        "type": "rearrange",
+        "words": [
+            "def pytest_internalerror(excrepr):",
+            "sentry.capture(excrepr)",
+            "# Report tool bug",
+            "remotely"
+        ]
+    },
+    {
+        "q": "What is `Item.add_report_section`?",
+        "type": "mcq",
+        "o": [
+            "Adds content to the terminal report for an item",
+            "Adds test step",
+            "Adds log",
+            "Adds file"
+        ]
+    },
+    {
+        "q": "Used to verify captured stdout/stderr or custom sections like 'Captured _____'.",
+        "type": "fill_blank",
+        "answers": [
+            "log"
+        ],
+        "other_options": [
+            "data",
+            "time",
+            "video"
+        ]
+    },
+    {
+        "q": "Sections appear when the test fails or with `-r`.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Match report sections:",
+        "type": "match",
+        "left": [
+            "Captured stdout",
+            "Captured stderr",
+            "Captured log",
+            "Custom"
+        ],
+        "right": [
+            "System Out",
+            "System Err",
+            "Logging",
+            "Plugin Data"
+        ]
+    },
+    {
+        "q": "Rearrange section:",
+        "type": "rearrange",
+        "words": [
+            "item.add_report_section(",
+            "'call',",
+            "'MyData',",
+            "'content')"
+        ]
+    },
+    {
+        "q": "How to run only the last failed tests?",
+        "type": "mcq",
+        "o": [
+            "--lf",
+            "--failed",
+            "--last",
+            "--retry"
+        ]
+    },
+    {
+        "q": "Common workflow: `pytest --lf` -> fix -> `pytest --____` (failed first).",
+        "type": "fill_blank",
+        "answers": [
+            "ff"
+        ],
+        "other_options": [
+            "all",
+            "run",
+            "do"
+        ]
+    },
+    {
+        "q": "`--nf` runs new tests first, then the rest.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Match loop options:",
+        "type": "match",
+        "left": [
+            "--lf",
+            "--ff",
+            "--nf",
+            "--sw"
+        ],
+        "right": [
+            "Last Failed",
+            "Failed First",
+            "New First",
+            "Stepwise (Stop on fail)"
+        ]
+    },
+    {
+        "q": "Rearrange stepwise:",
+        "type": "rearrange",
+        "words": [
+            "pytest",
+            "--sw",
+            "# Stop on fail,",
+            "resume next time"
+        ]
+    },
+    {
+        "q": "What is `pytest.Collector`?",
+        "type": "mcq",
+        "o": [
+            "Base class for nodes that collect items",
+            "Garbage collector",
+            "List collector",
+            "Data collector"
+        ]
+    },
+    {
+        "q": "Collectors (Session, Dir, Module) form a _____ of nodes.",
+        "type": "fill_blank",
+        "answers": [
+            "tree/hierarchy"
+        ],
+        "other_options": [
+            "list",
+            "graph",
+            "map"
+        ]
+    },
+    {
+        "q": "A Collector does not run tests itself, it yields Items.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Match nodes:",
+        "type": "match",
+        "left": [
+            "Collector",
+            "Item",
+            "FSCollector",
+            "File"
+        ],
+        "right": [
+            "Container",
+            "Runnable",
+            "FileSystem Node",
+            "Specific FSCollector"
+        ]
+    },
+    {
+        "q": "Rearrange collect tree:",
+        "type": "rearrange",
+        "words": [
+            "Session",
+            "-> Dir",
+            "-> Module",
+            "-> Function (Item)"
+        ]
+    },
+    {
+        "q": "What is `pytest_ignore_collect(path)` precedence?",
+        "type": "mcq",
+        "o": [
+            "Overrides standard ignore logic",
+            "Low priority",
+            "Ignored",
+            "Depreciated"
+        ]
+    },
+    {
+        "q": "If it returns `None`, pytest falls back to defaults like `_____`.",
+        "type": "fill_blank",
+        "answers": [
+            "norecursedirs"
+        ],
+        "other_options": [
+            "testpaths",
+            "rootdir",
+            "env"
+        ]
+    },
+    {
+        "q": "It allows extremely granular control per file path.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Match ignoring:",
+        "type": "match",
+        "left": [
+            "norecursedirs",
+            "ignore_collect hook",
+            "--ignore CLI",
+            "__init__.py"
+        ],
+        "right": [
+            "Pattern Based",
+            "Logic Based",
+            "Manual",
+            "No effect"
+        ]
+    },
+    {
+        "q": "Rearrange ignore path:",
+        "type": "rearrange",
+        "words": [
+            "def pytest_ignore_collect(path):",
+            "if 'venv' in str(path):",
+            "return True",
+            "Ignore ENV"
+        ]
+    },
+    {
+        "q": "What is `pytest_configure_node(node)` in xdist?",
+        "type": "mcq",
+        "o": [
+            "Hook to configure a worker node",
+            "Node config",
+            "Cluster setup",
+            "Server config"
+        ]
+    },
+    {
+        "q": "You can use this to sync configuration or plugins to the _____ process.",
+        "type": "fill_blank",
+        "answers": [
+            "worker/child"
+        ],
+        "other_options": [
+            "master",
+            "parent",
+            "server"
+        ]
+    },
+    {
+        "q": "The `node` object has a `gateway` to send data.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Match node setup:",
+        "type": "match",
+        "left": [
+            "node.gateway",
+            "node.slaveinput",
+            "workeroutput",
+            "channel"
+        ],
+        "right": [
+            "Connection",
+            "Input Dict",
+            "Result Dict",
+            "Comms"
+        ]
+    },
+    {
+        "q": "Rearrange node config:",
+        "type": "rearrange",
+        "words": [
+            "def pytest_configure_node(node):",
+            "node.slaveinput['my_key'] = 'data'",
+            "# Send data",
+            "to worker"
+        ]
+    },
+    {
+        "q": "What is `pytest_unconfigure`?",
+        "type": "mcq",
+        "o": [
+            "Hook called before exit",
+            "Undo config",
+            "Delete config",
+            "Reset"
+        ]
+    },
+    {
+        "q": "It is the teardown counterpart to `_____`.",
+        "type": "fill_blank",
+        "answers": [
+            "pytest_configure/configure"
+        ],
+        "other_options": [
+            "start",
+            "init",
+            "setup"
+        ]
+    },
+    {
+        "q": "Used to clean up global resources created in `configure`.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Match cleanup hooks:",
+        "type": "match",
+        "left": [
+            "unconfigure",
+            "sessionfinish",
+            "fixture teardown",
+            "atexit"
+        ],
+        "right": [
+            "App Cleanup",
+            "Session Cleanup",
+            "Test Cleanup",
+            "Process Cleanup"
+        ]
+    },
+    {
+        "q": "Rearrange unconfigure:",
+        "type": "rearrange",
+        "words": [
+            "def pytest_unconfigure(config):",
+            "stop_services()",
+            "# Final",
+            "Shutdown"
+        ]
+    },
+    {
+        "q": "What is `pytest.fail(pytrace=False)`?",
+        "type": "mcq",
+        "o": [
+            "Fail without showing traceback",
+            "Fail with trace",
+            "Debug fail",
+            "Silent fail"
+        ]
+    },
+    {
+        "q": "Setting `pytrace=False` hides the python stack trace, showing only the _____ message.",
+        "type": "fill_blank",
+        "answers": [
+            "error/failure"
+        ],
+        "other_options": [
+            "log",
+            "debug",
+            "success"
+        ]
+    },
+    {
+        "q": "Useful for custom checks where the stack trace is irrelevant detail.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Match fail args:",
+        "type": "match",
+        "left": [
+            "msg",
+            "pytrace=False",
+            "pytrace=True",
+            "fail() call"
+        ],
+        "right": [
+            "Reason",
+            "Hide Trace",
+            "Show Trace",
+            "Raises Failed"
+        ]
+    },
+    {
+        "q": "Rearrange clean fail:",
+        "type": "rearrange",
+        "words": [
+            "if invalid:",
+            "pytest.fail('Bad data',",
+            "pytrace=False)",
+            "# No traceback report"
+        ]
+    },
+    {
+        "q": "How to test for warnings using `recwarn` like a list?",
+        "type": "mcq",
+        "o": [
+            "Loop over recwarn",
+            "recwarn.all",
+            "recwarn[:] ",
+            "list(recwarn)"
+        ]
+    },
+    {
+        "q": "`recwarn` is iterable, yielding `_____` objects.",
+        "type": "fill_blank",
+        "answers": [
+            "WarningMessage/warning"
+        ],
+        "other_options": [
+            "String",
+            "Error",
+            "Log"
+        ]
+    },
+    {
+        "q": "Each object has `.message`, `.category`, `.filename`, `.lineno`.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Match warning attrs:",
+        "type": "match",
+        "left": [
+            "w.message",
+            "w.category",
+            "w.filename",
+            "w.source"
+        ],
+        "right": [
+            "Text",
+            "Type",
+            "File",
+            "Line content"
+        ]
+    },
+    {
+        "q": "Rearrange warn iter:",
+        "type": "rearrange",
+        "words": [
+            "warnings.warn('1'); warnings.warn('2')",
+            "assert len(recwarn) == 2",
+            "w = recwarn.pop()",
+            "Check last"
+        ]
+    },
+    {
+        "q": "What is `pytest_runtest_makereport`?",
+        "type": "mcq",
+        "o": [
+            "Hook to create a TestReport object",
+            "Make PDF",
+            "Make HTML",
+            "Log report"
+        ]
+    },
+    {
+        "q": "It is called after setup, call, and _____ phases to generate a report.",
+        "type": "fill_blank",
+        "answers": [
+            "teardown"
+        ],
+        "other_options": [
+            "start",
+            "init",
+            "collect"
+        ]
+    },
+    {
+        "q": "Plugins modify this to add extra info to reports (like screenshots).",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Match report hook:",
+        "type": "match",
+        "left": [
+            "item",
+            "call",
+            "report",
+            "when"
+        ],
+        "right": [
+            "Test Item",
+            "Execution Info",
+            "Result Object",
+            "Phase Name"
+        ]
+    },
+    {
+        "q": "Rearrange report hook:",
+        "type": "rearrange",
+        "words": [
+            "@pytest.hookimpl(hookwrapper=True)",
+            "def pytest_runtest_makereport(item):",
+            "outcome = yield",
+            "rep = outcome.get_result()"
+        ]
+    },
+    {
+        "q": "What is `pytest_plugin_registered`?",
+        "type": "mcq",
+        "o": [
+            "Hook called when a plugin is registered",
+            "Register plugin",
+            "Plugin check",
+            "Load plugin"
+        ]
+    },
+    {
+        "q": "Useful to detect presence of other _____ and coordinate behavior.",
+        "type": "fill_blank",
+        "answers": [
+            "plugins"
+        ],
+        "other_options": [
+            "tests",
+            "files",
+            "users"
+        ]
+    },
+    {
+        "q": "It receives the `plugin` object and `manager`.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Match manipulation:",
+        "type": "match",
+        "left": [
+            "plugin_registered",
+            "get_plugin",
+            "is_registered",
+            "unregister"
+        ],
+        "right": [
+            "Event",
+            "Access",
+            "Check",
+            "Remove"
+        ]
+    },
+    {
+        "q": "Rearrange plugin detect:",
+        "type": "rearrange",
+        "words": [
+            "def pytest_plugin_registered(plugin, manager):",
+            "if manager.get_plugin('xdist'):",
+            "enable_parallel_features()",
+            "Coop"
+        ]
+    },
+    {
+        "q": "What is `pytest-forked`?",
+        "type": "mcq",
+        "o": [
+            "Runs each test in a forked subprocess",
+            "Git fork",
+            "Fork bomb",
+            "Repo fork"
+        ]
+    },
+    {
+        "q": "Use `--forked` to ensure a crashing test (segfault) doesn't kill the _____ runner.",
+        "type": "fill_blank",
+        "answers": [
+            "main/test"
+        ],
+        "other_options": [
+            "OS",
+            "worker",
+            "db"
+        ]
+    },
+    {
+        "q": "It creates a fresh process for every single test (high overhead).",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Match isolation:",
+        "type": "match",
+        "left": [
+            "--forked",
+            "xdist",
+            "venv",
+            "docker"
+        ],
+        "right": [
+            "Process per test",
+            "Worker Pool",
+            "Env isolation",
+            "Container"
+        ]
+    },
+    {
+        "q": "Rearrange fork:",
+        "type": "rearrange",
+        "words": [
+            "pytest",
+            "--forked",
+            "tests/risky.py",
+            "# Safety from crash"
+        ]
+    },
+    {
+        "q": "What is `pytest.Cache.set(key, value)`?",
+        "type": "mcq",
+        "o": [
+            "Saves value to cache",
+            "Sets config",
+            "Sets env",
+            "Sets fixture"
+        ]
+    },
+    {
+        "q": "The key should effectively be namespaced (e.g. `myplugin/key`) to avoid _____.",
+        "type": "fill_blank",
+        "answers": [
+            "collisions/conflicts"
+        ],
+        "other_options": [
+            "errors",
+            "losses",
+            "bugs"
+        ]
+    },
+    {
+        "q": "Values must be JSON-serializable.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Match cache API:",
+        "type": "match",
+        "left": [
+            "get(key, default)",
+            "set(key, val)",
+            "makedir(name)",
+            ".pytest_cache/v/cache/..."
+        ],
+        "right": [
+            "Retrieve",
+            "Store",
+            "Create Dir",
+            "Storage Location"
+        ]
+    },
+    {
+        "q": "Rearrange cache write:",
+        "type": "rearrange",
+        "words": [
+            "def test_c(cache):",
+            "cache.set('run/count', 1)",
+            "val = cache.get('run/count', 0)",
+            "Persist"
+        ]
+    },
+    {
+        "q": "What is `pytest_runtest_logreport`?",
+        "type": "mcq",
+        "o": [
+            "Hook receiving reports for logging",
+            "Log file",
+            "Report generator",
+            "Final summary"
+        ]
+    },
+    {
+        "q": "It is called immediately after `runtest_makereport` to process/log the _____.",
+        "type": "fill_blank",
+        "answers": [
+            "report"
+        ],
+        "other_options": [
+            "test",
+            "error",
+            "file"
+        ]
+    },
+    {
+        "q": "Used by terminal reporters to print status dots (., F, E).",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Match log flow:",
+        "type": "match",
+        "left": [
+            "makereport",
+            "logreport",
+            "terminalreporter",
+            "junitxml"
+        ],
+        "right": [
+            "Create",
+            "Process/Broadcast",
+            "Print to Screen",
+            "Write to File"
+        ]
+    },
+    {
+        "q": "Rearrange log report:",
+        "type": "rearrange",
+        "words": [
+            "def pytest_runtest_logreport(report):",
+            "if report.failed:",
+            "send_alert(report.nodeid)",
+            "Realtime"
+        ]
+    },
+    {
+        "q": "What is `pytest.File`?",
+        "type": "mcq",
+        "o": [
+            "Base class for file collectors",
+            "File object",
+            "Path object",
+            "Config file"
+        ]
+    },
+    {
+        "q": "It is a subclass of `_____` usually used to collect items within a file.",
+        "type": "fill_blank",
+        "answers": [
+            "Collector/FSCollector"
+        ],
+        "other_options": [
+            "Item",
+            "Session",
+            "Config"
+        ]
+    },
+    {
+        "q": "PythonFile (Module) inherits from it.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Match collector items:",
+        "type": "match",
+        "left": [
+            "Directory",
+            "File",
+            "Module",
+            "Package"
+        ],
+        "right": [
+            "Folder",
+            "Generic File",
+            "Python File",
+            "Folder with init"
+        ]
+    },
+    {
+        "q": "Rearrange file collect:",
+        "type": "rearrange",
+        "words": [
+            "class MyYaml(pytest.File):",
+            "def collect(self):",
+            "yield MyItem.from_parent(self)",
+            "Custom Loader"
+        ]
+    },
+    {
+        "q": "What is `ci` fixture (from plugins)?",
+        "type": "mcq",
+        "o": [
+            "Detects CI environment",
+            "Continuous Integration",
+            "Check In",
+            "Command Interface"
+        ]
+    },
+    {
+        "q": "It usually checks environment variables like `CI`, `GITHUB_ACTIONS`, etc.",
+        "type": "fill_blank",
+        "answers": [
+            "True"
+        ],
+        "other_options": [
+            "False"
+        ]
+    },
+    {
+        "q": "Often provided by `pytest-ci` or implemented manually.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Match CI vars:",
+        "type": "match",
+        "left": [
+            "CI=true",
+            "TRAVIS",
+            "JENKINS_URL",
+            "GITHUB_ACTIONS"
+        ],
+        "right": [
+            "Generic",
+            "Travis",
+            "Jenkins",
+            "GitHub"
+        ]
+    },
+    {
+        "q": "Rearrange env check:",
+        "type": "rearrange",
+        "words": [
+            "skip_ci = pytest.mark.skipif(",
+            "os.environ.get('CI'),",
+            "reason='Skip on CI')",
+            "Local only"
+        ]
+    }
+]
