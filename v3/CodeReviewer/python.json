@@ -1,0 +1,68 @@
+[
+    {
+        "id": "py_err_1",
+        "title": "Indentation/Syntax",
+        "description": "Find the line with the syntax error.",
+        "codeSnippet": "def greet(name):\n    if name:\n    print(\"Hello, \" + name)\n    else:\n        print(\"Hello, Guest\")",
+        "type": "errorSpotting",
+        "language": "python",
+        "errorLineIndex": 2,
+        "explanation": "The body of the \"if\" statement must be indented.",
+        "difficultyLevel": 1
+    },
+    {
+        "id": "py_tf_1",
+        "title": "Syntax Check",
+        "description": "Is this code snippet correct?",
+        "codeSnippet": "my_list = [1, 2, 3]\nprint(my_list[3])",
+        "type": "trueOrFalse",
+        "language": "python",
+        "isCodeCorrect": false,
+        "explanation": "This code will raise an IndexError because the index 3 is out of range for a list of size 3.",
+        "difficultyLevel": 1
+    },
+    {
+        "id": "py_err_2",
+        "title": "Syntax Error",
+        "description": "Spot the missing syntax.",
+        "codeSnippet": "x = 10\nif x > 5\n    print(\"Greater\")",
+        "type": "errorSpotting",
+        "language": "python",
+        "errorLineIndex": 1,
+        "explanation": "The \"if\" statement is missing a colon (:) at the end.",
+        "difficultyLevel": 1
+    },
+    {
+        "id": "py_tf_2",
+        "title": "Logic Check",
+        "description": "Will this code print \"Even\"?",
+        "codeSnippet": "num = 4\nif num % 2 == 0:\n    print(\"Even\")",
+        "type": "trueOrFalse",
+        "language": "python",
+        "isCodeCorrect": true,
+        "explanation": "Yes, the modulo operator (%) correctly checks the remainder. 4 % 2 is 0.",
+        "difficultyLevel": 1
+    },
+    {
+        "id": "py_err_3",
+        "title": "Naming Convention",
+        "description": "Find the line violating standard Python naming conventions.",
+        "codeSnippet": "def calculate_total(price, tax):\n    TotalAmount = price + tax\n    return TotalAmount",
+        "type": "errorSpotting",
+        "language": "python",
+        "errorLineIndex": 1,
+        "explanation": "Variable names in Python should be snake_case (e.g., total_amount), not PascalCase.",
+        "difficultyLevel": 1
+    },
+    {
+        "id": "py_tf_3",
+        "title": "List Appending",
+        "description": "Does this code correctly add an element to the list?",
+        "codeSnippet": "my_list = [1, 2]\nmy_list.add(3)",
+        "type": "trueOrFalse",
+        "language": "python",
+        "isCodeCorrect": false,
+        "explanation": "Lists in Python use .append(), not .add(). Sets use .add().",
+        "difficultyLevel": 1
+    }
+]
