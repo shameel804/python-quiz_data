@@ -1,0 +1,32 @@
+[
+    {
+        "title": "Parsing HTML 🍜",
+        "ques": "Parse a string of HTML `html_doc` using **Beautiful Soup**.",
+        "answer": {
+            "type": "code",
+            "lang": "python",
+            "content": "from bs4 import BeautifulSoup\n\nsoup = BeautifulSoup(html_doc, 'html.parser')"
+        },
+        "explanation": "**BeautifulSoup** constructs a Python object (tree) from the HTML document for easy navigation."
+    },
+    {
+        "title": "Finding Elements 🔎",
+        "ques": "How do you find the **first** `<a>` tag in the parsed `soup` object?",
+        "answer": {
+            "type": "code",
+            "lang": "python",
+            "content": "tag = soup.find('a')"
+        },
+        "explanation": "**`find()`** returns the first match. Use `find_all()` to get a list of all matches."
+    },
+    {
+        "title": "CSS Selectors 🎯",
+        "ques": "Use a **CSS selector** to find all elements with class `story`.",
+        "answer": {
+            "type": "code",
+            "lang": "python",
+            "content": "stories = soup.select('.story')"
+        },
+        "explanation": "**`select()`** allows you to use CSS-style selectors (e.g., `#id`, `.class`, `tag`) to find elements."
+    }
+]

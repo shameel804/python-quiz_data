@@ -1,0 +1,41 @@
+[
+    {
+        "title": "Defining a Model 🏛️",
+        "ques": "Define a Django **Model** named `Post` with two fields:\n1.  **`title`** (CharField, max_length=100)\n2.  **`content`** (TextField)",
+        "answer": {
+            "type": "code",
+            "lang": "python",
+            "content": "from django.db import models\n\nclass Post(models.Model):\n    title = models.CharField(max_length=100)\n    content = models.TextField()"
+        },
+        "explanation": "Models are Python classes that subclass `django.db.models.Model`. Each attribute represents a database field."
+    },
+    {
+        "title": "Migrations 🚚",
+        "ques": "Explain the difference between the commands **`makemigrations`** and **`migrate`**.",
+        "answer": {
+            "type": "text",
+            "content": "*   **`makemigrations`**: Scans your models for changes and creates new migration files (scripts) based on those changes.\n*   **`migrate`**: Applies those migration files to the actual database, creating or updating tables."
+        },
+        "explanation": "`makemigrations` prepares the changes, while `migrate` executes them on the database."
+    },
+    {
+        "title": "Relationships: ForeignKey 🔗",
+        "ques": "Add a field named `author` to the `Post` model that creates a **Many-to-One** relationship with Django's built-in `User` model. When the user is deleted, the post should also be deleted.",
+        "answer": {
+            "type": "code",
+            "lang": "python",
+            "content": "from django.contrib.auth.models import User\n\nclass Post(models.Model):\n    # ... other fields ...\n    author = models.ForeignKey(User, on_delete=models.CASCADE)"
+        },
+        "explanation": "**`ForeignKey`** defines a many-to-one relationship. `on_delete=models.CASCADE` ensures that if the referenced object (User) is deleted, the objects referencing it (Posts) are also deleted."
+    },
+    {
+        "title": "Querying Data 🔍",
+        "ques": "Write a query using the Django ORM to **retrieve all** `Post` objects where the `title` contains the word \"Django\".",
+        "answer": {
+            "type": "code",
+            "lang": "python",
+            "content": "posts = Post.objects.filter(title__contains='Django')"
+        },
+        "explanation": "To retrieve objects matching a specific condition, use **`Post.objects.filter()`**. The `__contains` lookup is used for case-sensitive containment tests."
+    }
+]

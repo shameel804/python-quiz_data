@@ -1,0 +1,31 @@
+[
+    {
+        "title": "Building a Neural Network 🧠",
+        "ques": "Using Keras, create a **Sequential** model and add a **Dense** layer with 64 units and ReLU activation.",
+        "answer": {
+            "type": "code",
+            "lang": "python",
+            "content": "from tensorflow.keras.models import Sequential\nfrom tensorflow.keras.layers import Dense\n\nmodel = Sequential()\nmodel.add(Dense(64, activation='relu'))"
+        },
+        "explanation": "The **Sequential** model is a linear stack of layers. **Dense** is a standard fully connected layer."
+    },
+    {
+        "title": "Activation Functions ⚡",
+        "ques": "Why is an **Activation Function** (like ReLU or Sigmoid) necessary in a neural network?",
+        "answer": {
+            "type": "text",
+            "content": "To introduce **non-linearity** into the network. Without them, a neural network, no matter how many layers it has, would behave just like a single-layer linear model."
+        },
+        "explanation": "Non-linearity allows the network to learn complex patterns."
+    },
+    {
+        "title": "Compiling the Model 🔧",
+        "ques": "Compile the model using the `'adam'` optimizer and `'binary_crossentropy'` loss function.",
+        "answer": {
+            "type": "code",
+            "lang": "python",
+            "content": "model.compile(optimizer='adam',\n              loss='binary_crossentropy',\n              metrics=['accuracy'])"
+        },
+        "explanation": "Compilation configures the model for training. The **optimizer** controls learning, and **loss** measures error."
+    }
+]

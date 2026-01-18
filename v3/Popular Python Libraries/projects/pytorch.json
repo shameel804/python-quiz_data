@@ -1,0 +1,31 @@
+[
+    {
+        "title": "Creating Tensors 🏗️",
+        "ques": "Create a PyTorch **tensor** from a Python list `[1, 2, 3]`.",
+        "answer": {
+            "type": "code",
+            "lang": "python",
+            "content": "import torch\n\nx = torch.tensor([1, 2, 3])"
+        },
+        "explanation": "**`torch.tensor()`** creates a tensor. Similar to NumPy, but ready for GPU acceleration."
+    },
+    {
+        "title": "Autograd 📉",
+        "ques": "What is the purpose of **`autograd`** in PyTorch?",
+        "answer": {
+            "type": "text",
+            "content": "It provides **automatic differentiation** for all operations on Tensors. It records a graph of operations to automatically calculate gradients during backpropagation."
+        },
+        "explanation": "Setting `requires_grad=True` on a tensor tracks all operations on it."
+    },
+    {
+        "title": "Defining Modules 🧩",
+        "ques": "Define a custom neural network class by subclassing **`nn.Module`**.",
+        "answer": {
+            "type": "code",
+            "lang": "python",
+            "content": "import torch.nn as nn\n\nclass Net(nn.Module):\n    def __init__(self):\n        super(Net, self).__init__()\n        self.fc = nn.Linear(10, 1)\n\n    def forward(self, x):\n        return self.fc(x)"
+        },
+        "explanation": "Custom models should inherit from **`nn.Module`** and implement the `__init__` (layers) and `forward` (inference) methods."
+    }
+]

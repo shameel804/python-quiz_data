@@ -1,0 +1,32 @@
+[
+    {
+        "title": "Basic Route 🛣️",
+        "ques": "Create a simple **Flask** application with a route `/` that returns \"Hello World\".",
+        "answer": {
+            "type": "code",
+            "lang": "python",
+            "content": "from flask import Flask\n\napp = Flask(__name__)\n\n@app.route(\"/\")\ndef hello():\n    return \"Hello World\""
+        },
+        "explanation": "The **`@app.route()`** decorator binds a function to a URL."
+    },
+    {
+        "title": "Rendering Templates 📄",
+        "ques": "Which function is used to **render an HTML template** in Flask?",
+        "answer": {
+            "type": "code",
+            "lang": "python",
+            "content": "from flask import render_template\n\nreturn render_template('index.html', name='User')"
+        },
+        "explanation": "**`render_template()`** looks for the file in the `templates` folder and renders it with the given context."
+    },
+    {
+        "title": "Handling Methods 📥",
+        "ques": "Modify a route `/login` to accept both **GET** and **POST** requests.",
+        "answer": {
+            "type": "code",
+            "lang": "python",
+            "content": "@app.route('/login', methods=['GET', 'POST'])\ndef login():\n    if request.method == 'POST':\n        pass"
+        },
+        "explanation": "By default, routes only answer to GET. Use the **`methods`** argument to allow other HTTP methods."
+    }
+]

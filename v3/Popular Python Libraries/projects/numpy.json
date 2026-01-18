@@ -1,0 +1,32 @@
+[
+    {
+        "title": "Creating Arrays 🔢",
+        "ques": "Create a 1D NumPy array containing the numbers 1, 2, 3, 4, 5.",
+        "answer": {
+            "type": "code",
+            "lang": "python",
+            "content": "import numpy as np\n\narr = np.array([1, 2, 3, 4, 5])"
+        },
+        "explanation": "**`np.array()`** is the primary way to create an array from a Python list."
+    },
+    {
+        "title": "Reshaping ⏹️",
+        "ques": "Reshape a 1D array of 12 elements into a **3 rows x 4 columns** matrix.",
+        "answer": {
+            "type": "code",
+            "lang": "python",
+            "content": "arr_2d = arr.reshape(3, 4)"
+        },
+        "explanation": "**`reshape()`** changes the shape of an array without changing its data, provided the total number of elements remains the same."
+    },
+    {
+        "title": "Vectorized Operations ⚡",
+        "ques": "Given an array `arr`, how do you **multiply every element by 2** without using a loop?",
+        "answer": {
+            "type": "code",
+            "lang": "python",
+            "content": "result = arr * 2"
+        },
+        "explanation": "NumPy supports **vectorization**, allowing you to perform operations on entire arrays at once, which is much faster than loops."
+    }
+]

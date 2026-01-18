@@ -1,0 +1,32 @@
+[
+    {
+        "title": "Loading Models 🧠",
+        "ques": "Load the small English model `en_core_web_sm` in **spaCy**.",
+        "answer": {
+            "type": "code",
+            "lang": "python",
+            "content": "import spacy\n\nnlp = spacy.load(\"en_core_web_sm\")"
+        },
+        "explanation": "spaCy relies on pre-trained **models** which must be loaded before processing text."
+    },
+    {
+        "title": "Processing Text ✍️",
+        "ques": "Process the text \"Apple is looking at buying U.K. startup for $1 billion\" to create a **Doc** object.",
+        "answer": {
+            "type": "code",
+            "lang": "python",
+            "content": "doc = nlp(\"Apple is looking at buying U.K. startup for $1 billion\")"
+        },
+        "explanation": "Calling the `nlp` object on text runs the entire pipeline (tokenization, tagging, parsing, NER) and returns a **Doc**."
+    },
+    {
+        "title": "Named Entities 🏷️",
+        "ques": "How do you access the **named entities** found in the `doc`?",
+        "answer": {
+            "type": "code",
+            "lang": "python",
+            "content": "for ent in doc.ents:\n    print(ent.text, ent.label_)"
+        },
+        "explanation": "The **`ents`** property of a Doc contains a tuple of recognized entities (e.g., organizations, money, dates)."
+    }
+]

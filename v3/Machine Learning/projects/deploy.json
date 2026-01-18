@@ -1,0 +1,31 @@
+[
+    {
+        "title": "Serializing a Model 📦",
+        "ques": "Save a trained model `clf` to a file named `model.pkl` using the **`pickle`** module.",
+        "answer": {
+            "type": "code",
+            "lang": "python",
+            "content": "import pickle\n\nwith open('model.pkl', 'wb') as f:\n    pickle.dump(clf, f)"
+        },
+        "explanation": "**Serialization** (pickling) allows you to save your trained model to disk so it can be loaded later without retraining."
+    },
+    {
+        "title": "Serving with Flask 🌐",
+        "ques": "Write a simple Flask route `/predict` that accepts a POST request with JSON data and returns a prediction.",
+        "answer": {
+            "type": "code",
+            "lang": "python",
+            "content": "@app.route('/predict', methods=['POST'])\ndef predict():\n    data = request.get_json()\n    prediction = model.predict([data['features']])\n    return jsonify({'prediction': prediction.tolist()})"
+        },
+        "explanation": "Wrapping a model in an API (like Flask or FastAPI) allows other applications to consume your ML model."
+    },
+    {
+        "title": "Containerization 🐳",
+        "ques": "What file is used to define a **Docker** image for your application?",
+        "answer": {
+            "type": "text",
+            "content": "**Dockerfile**"
+        },
+        "explanation": "A **Dockerfile** is a text document that contains all the commands a user could call on the command line to assemble an image."
+    }
+]

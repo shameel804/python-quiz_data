@@ -1,0 +1,31 @@
+[
+    {
+        "title": "Confusion Matrix 😵",
+        "ques": "Generate a **Confusion Matrix** for the true labels `y_true` and predicted labels `y_pred`.",
+        "answer": {
+            "type": "code",
+            "lang": "python",
+            "content": "from sklearn.metrics import confusion_matrix\n\ncm = confusion_matrix(y_true, y_pred)"
+        },
+        "explanation": "A **Confusion Matrix** visualizes the performance of an algorithm, showing True Positives, True Negatives, False Positives, and False Negatives."
+    },
+    {
+        "title": "Cross-Validation 🔁",
+        "ques": "Perform 5-fold **Cross-Validation** on a model `clf` using data `X` and `y`.",
+        "answer": {
+            "type": "code",
+            "lang": "python",
+            "content": "from sklearn.model_selection import cross_val_score\n\nscores = cross_val_score(clf, X, y, cv=5)"
+        },
+        "explanation": "**Cross-validation** splits the data into *k* subsets and trains/tests *k* times to get a more reliable estimate of model performance."
+    },
+    {
+        "title": "Overfitting vs Underfitting ⚖️",
+        "ques": "Briefly explain the difference between **Overfitting** and **Underfitting**.",
+        "answer": {
+            "type": "text",
+            "content": "*   **Overfitting**: The model learns the training data *too* well, capturing noise and details that don't generalize to new data (High Variance).\n*   **Underfitting**: The model is too simple to capture the underlying structure of the data (High Bias)."
+        },
+        "explanation": "The goal is to find the sweet spot between bias and variance."
+    }
+]

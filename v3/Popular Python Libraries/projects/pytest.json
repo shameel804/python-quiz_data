@@ -1,0 +1,32 @@
+[
+    {
+        "title": "Writing Tests 🧪",
+        "ques": "Write a simple **pytest** function to test that `sum([1, 2, 3])` equals 6.",
+        "answer": {
+            "type": "code",
+            "lang": "python",
+            "content": "def test_sum():\n    assert sum([1, 2, 3]) == 6"
+        },
+        "explanation": "Pytest uses standard Python **assert** statements for verifying expectations."
+    },
+    {
+        "title": "Fixtures 🔦",
+        "ques": "Define a **fixture** named `sample_data` that returns a dictionary `{'key': 'value'}`.",
+        "answer": {
+            "type": "code",
+            "lang": "python",
+            "content": "import pytest\n\n@pytest.fixture\ndef sample_data():\n    return {'key': 'value'}"
+        },
+        "explanation": "**Fixtures** are functions run by pytest before (and sometimes after) the actual test functions to provide data or state."
+    },
+    {
+        "title": "Parametrization 🔢",
+        "ques": "Use **`@pytest.mark.parametrize`** to run a test `test_add` with inputs (1, 2, 3) and (4, 5, 9).",
+        "answer": {
+            "type": "code",
+            "lang": "python",
+            "content": "@pytest.mark.parametrize(\"a,b,expected\", [(1, 2, 3), (4, 5, 9)])\ndef test_add(a, b, expected):\n    assert a + b == expected"
+        },
+        "explanation": "**Parametrization** allows you to run the same test function multiple times with different input arguments."
+    }
+]

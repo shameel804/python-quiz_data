@@ -1,0 +1,31 @@
+[
+    {
+        "title": "Pipelines 🚀",
+        "ques": "Use the high-level **`pipeline`** API to create a sentiment analysis classifier.",
+        "answer": {
+            "type": "code",
+            "lang": "python",
+            "content": "from transformers import pipeline\n\nclassifier = pipeline('sentiment-analysis')\nresult = classifier('I love using Hugging Face!')"
+        },
+        "explanation": "**Pipelines** abstract away the complex code for tokenization, model inference, and decoding."
+    },
+    {
+        "title": "Tokenizers 🔠",
+        "ques": "Load a pre-trained **BERT tokenizer**.",
+        "answer": {
+            "type": "code",
+            "lang": "python",
+            "content": "from transformers import BertTokenizer\n\ntokenizer = BertTokenizer.from_pretrained('bert-base-uncased')"
+        },
+        "explanation": "Tokenizers prepare text for the model by converting strings into numerical IDs matching the pre-training data."
+    },
+    {
+        "title": "Model Hub 🌐",
+        "ques": "What is the **Hugging Face Hub**?",
+        "answer": {
+            "type": "text",
+            "content": "It is a central platform (like GitHub for ML) where the community shares and discovers thousands of pre-trained models, datasets, and demos."
+        },
+        "explanation": "You can download any model from the Hub using its identifier string."
+    }
+]

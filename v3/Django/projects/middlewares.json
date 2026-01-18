@@ -1,0 +1,39 @@
+[
+    {
+        "title": "Middleware Concept 🛡️",
+        "ques": "Explain what **Middleware** is in the context of Django's request/response cycle.",
+        "answer": {
+            "type": "text",
+            "content": "Middleware is a framework of hooks into Django's request/response processing. It is a light, low-level \"plugin\" system that globally alters Django's input (Request) or output (Response). Each middleware component is responsible for doing some specific function."
+        },
+        "explanation": "Middleware allows you to process requests before they reach the view and responses before they leave the server (e.g., authentication, session management)."
+    },
+    {
+        "title": "Configuration ⚙️",
+        "ques": "Where do you **register** custom middleware in a Django project?",
+        "answer": {
+            "type": "text",
+            "content": "You register middleware by adding the dotted Python path of the middleware class to the **`MIDDLEWARE`** list in the project's **`settings.py`** file."
+        },
+        "explanation": "The order of middleware in the **`MIDDLEWARE`** list matters because they are applied in order during the request phase and in reverse order during the response phase."
+    },
+    {
+        "title": "Custom Middleware Structure 🏗️",
+        "ques": "Write the basic structure of a function-based **custom middleware**.",
+        "answer": {
+            "type": "code",
+            "lang": "python",
+            "content": "def simple_middleware(get_response):\n    # One-time configuration and initialization.\n\n    def middleware(request):\n        # Code to be executed for each request before\n        # the view (and later middleware) are called.\n\n        response = get_response(request)\n\n        # Code to be executed for each request/response after\n        # the view is called.\n\n        return response\n\n    return middleware"
+        },
+        "explanation": "A middleware factory is a callable that takes `get_response` and returns a middleware callable that takes `request` and returns `response`."
+    },
+    {
+        "title": "Common Uses 🛠️",
+        "ques": "List two common **built-in middleware** classes used in most Django projects.",
+        "answer": {
+            "type": "text",
+            "content": "1.  **`AuthenticationMiddleware`**: Associates users with requests using sessions.\n2.  **`CsrfViewMiddleware`**: Adds protection against Cross-Site Request Forgeries."
+        },
+        "explanation": "Others include `SessionMiddleware` for managing sessions and `SecurityMiddleware` for security enhancements."
+    }
+]

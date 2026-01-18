@@ -1,0 +1,32 @@
+[
+    {
+        "title": "Styling 🎨",
+        "ques": "Set the default Seaborn **theme** to \"darkgrid\" for better aesthetics.",
+        "answer": {
+            "type": "code",
+            "lang": "python",
+            "content": "import seaborn as sns\n\nsns.set_theme(style=\"darkgrid\")"
+        },
+        "explanation": "**`set_theme()`** applies global parameters to control the style of all plots."
+    },
+    {
+        "title": "Scatter Plot 🌌",
+        "ques": "Create a **scatter plot** of `total_bill` vs `tip` from the `tips` dataset, coloring points by `sex`.",
+        "answer": {
+            "type": "code",
+            "lang": "python",
+            "content": "sns.scatterplot(data=tips, x=\"total_bill\", y=\"tip\", hue=\"sex\")"
+        },
+        "explanation": "**`scatterplot`** shows the relationship between two variables. The `hue` parameter handles color-coding by category."
+    },
+    {
+        "title": "Heatmap 🔥",
+        "ques": "Visualize the correlation matrix of a dataframe `df` using a **heatmap**.",
+        "answer": {
+            "type": "code",
+            "lang": "python",
+            "content": "sns.heatmap(df.corr(), annot=True)"
+        },
+        "explanation": "**Heatmaps** are excellent for visualizing matrix-like data, such as correlation values, with color intensity."
+    }
+]
