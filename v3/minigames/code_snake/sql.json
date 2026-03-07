@@ -1,0 +1,1249 @@
+[
+  {
+    "tokens": [
+      "SELECT",
+      "*",
+      "FROM",
+      "users"
+    ]
+  },
+  {
+    "tokens": [
+      "SELECT",
+      "name",
+      "FROM",
+      "users"
+    ]
+  },
+  {
+    "tokens": [
+      "SELECT",
+      "id",
+      ",",
+      "name",
+      "FROM",
+      "users"
+    ]
+  },
+  {
+    "tokens": [
+      "SELECT",
+      "DISTINCT",
+      "city",
+      "FROM",
+      "users"
+    ]
+  },
+  {
+    "tokens": [
+      "SELECT",
+      "COUNT",
+      "(",
+      "*",
+      ")",
+      "FROM"
+    ]
+  },
+  {
+    "tokens": [
+      "SELECT",
+      "AVG",
+      "(",
+      "price",
+      ")",
+      "FROM"
+    ]
+  },
+  {
+    "tokens": [
+      "SELECT",
+      "SUM",
+      "(",
+      "amount",
+      ")",
+      "FROM"
+    ]
+  },
+  {
+    "tokens": [
+      "SELECT",
+      "MIN",
+      "(",
+      "age",
+      ")",
+      "FROM"
+    ]
+  },
+  {
+    "tokens": [
+      "SELECT",
+      "MAX",
+      "(",
+      "salary",
+      ")",
+      "FROM"
+    ]
+  },
+  {
+    "tokens": [
+      "WHERE",
+      "age",
+      ">",
+      "18"
+    ]
+  },
+  {
+    "tokens": [
+      "WHERE",
+      "name",
+      "=",
+      "'Alice'"
+    ]
+  },
+  {
+    "tokens": [
+      "WHERE",
+      "id",
+      "IN",
+      "(",
+      "1",
+      ",",
+      "2",
+      ")"
+    ]
+  },
+  {
+    "tokens": [
+      "WHERE",
+      "age",
+      "BETWEEN",
+      "18",
+      "AND",
+      "30"
+    ]
+  },
+  {
+    "tokens": [
+      "WHERE",
+      "name",
+      "LIKE",
+      "'A%'"
+    ]
+  },
+  {
+    "tokens": [
+      "WHERE",
+      "name",
+      "LIKE",
+      "'%son'"
+    ]
+  },
+  {
+    "tokens": [
+      "WHERE",
+      "email",
+      "IS",
+      "NULL"
+    ]
+  },
+  {
+    "tokens": [
+      "WHERE",
+      "email",
+      "IS",
+      "NOT",
+      "NULL"
+    ]
+  },
+  {
+    "tokens": [
+      "WHERE",
+      "age",
+      ">",
+      "18",
+      "AND",
+      "active"
+    ]
+  },
+  {
+    "tokens": [
+      "WHERE",
+      "role",
+      "=",
+      "'admin'",
+      "OR"
+    ]
+  },
+  {
+    "tokens": [
+      "WHERE",
+      "NOT",
+      "active"
+    ]
+  },
+  {
+    "tokens": [
+      "ORDER",
+      "BY",
+      "name",
+      "ASC"
+    ]
+  },
+  {
+    "tokens": [
+      "ORDER",
+      "BY",
+      "created",
+      "DESC"
+    ]
+  },
+  {
+    "tokens": [
+      "ORDER",
+      "BY",
+      "name",
+      ",",
+      "age"
+    ]
+  },
+  {
+    "tokens": [
+      "LIMIT",
+      "10"
+    ]
+  },
+  {
+    "tokens": [
+      "LIMIT",
+      "10",
+      "OFFSET",
+      "20"
+    ]
+  },
+  {
+    "tokens": [
+      "GROUP",
+      "BY",
+      "city"
+    ]
+  },
+  {
+    "tokens": [
+      "GROUP",
+      "BY",
+      "dept",
+      "HAVING"
+    ]
+  },
+  {
+    "tokens": [
+      "HAVING",
+      "COUNT",
+      "(",
+      "*",
+      ")",
+      ">",
+      "5"
+    ]
+  },
+  {
+    "tokens": [
+      "INSERT",
+      "INTO",
+      "users",
+      "VALUES"
+    ]
+  },
+  {
+    "tokens": [
+      "(",
+      "1",
+      ",",
+      "'Alice'",
+      ",",
+      "25",
+      ")"
+    ]
+  },
+  {
+    "tokens": [
+      "INSERT",
+      "INTO",
+      "users",
+      "(",
+      "name",
+      ")"
+    ]
+  },
+  {
+    "tokens": [
+      "VALUES",
+      "(",
+      "'Bob'",
+      ")"
+    ]
+  },
+  {
+    "tokens": [
+      "UPDATE",
+      "users",
+      "SET",
+      "name",
+      "="
+    ]
+  },
+  {
+    "tokens": [
+      "UPDATE",
+      "users",
+      "SET",
+      "age",
+      "=",
+      "30"
+    ]
+  },
+  {
+    "tokens": [
+      "WHERE",
+      "id",
+      "=",
+      "1"
+    ]
+  },
+  {
+    "tokens": [
+      "DELETE",
+      "FROM",
+      "users"
+    ]
+  },
+  {
+    "tokens": [
+      "DELETE",
+      "FROM",
+      "users",
+      "WHERE"
+    ]
+  },
+  {
+    "tokens": [
+      "CREATE",
+      "TABLE",
+      "users",
+      "("
+    ]
+  },
+  {
+    "tokens": [
+      "id",
+      "INT",
+      "PRIMARY",
+      "KEY"
+    ]
+  },
+  {
+    "tokens": [
+      "name",
+      "VARCHAR",
+      "(",
+      "100",
+      ")"
+    ]
+  },
+  {
+    "tokens": [
+      "age",
+      "INT",
+      "NOT",
+      "NULL"
+    ]
+  },
+  {
+    "tokens": [
+      "email",
+      "VARCHAR",
+      "(",
+      "255",
+      ")"
+    ]
+  },
+  {
+    "tokens": [
+      "created",
+      "TIMESTAMP",
+      "DEFAULT"
+    ]
+  },
+  {
+    "tokens": [
+      "active",
+      "BOOLEAN",
+      "DEFAULT",
+      "TRUE"
+    ]
+  },
+  {
+    "tokens": [
+      "price",
+      "DECIMAL",
+      "(",
+      "10",
+      ",",
+      "2",
+      ")"
+    ]
+  },
+  {
+    "tokens": [
+      "bio",
+      "TEXT"
+    ]
+  },
+  {
+    "tokens": [
+      ")",
+      ";"
+    ]
+  },
+  {
+    "tokens": [
+      "DROP",
+      "TABLE",
+      "users"
+    ]
+  },
+  {
+    "tokens": [
+      "DROP",
+      "TABLE",
+      "IF",
+      "EXISTS",
+      "users"
+    ]
+  },
+  {
+    "tokens": [
+      "ALTER",
+      "TABLE",
+      "users",
+      "ADD"
+    ]
+  },
+  {
+    "tokens": [
+      "ALTER",
+      "TABLE",
+      "users",
+      "DROP"
+    ]
+  },
+  {
+    "tokens": [
+      "ALTER",
+      "TABLE",
+      "users",
+      "RENAME"
+    ]
+  },
+  {
+    "tokens": [
+      "ADD",
+      "COLUMN",
+      "phone",
+      "VARCHAR"
+    ]
+  },
+  {
+    "tokens": [
+      "DROP",
+      "COLUMN",
+      "email"
+    ]
+  },
+  {
+    "tokens": [
+      "RENAME",
+      "TO",
+      "members"
+    ]
+  },
+  {
+    "tokens": [
+      "INNER",
+      "JOIN",
+      "orders",
+      "ON"
+    ]
+  },
+  {
+    "tokens": [
+      "LEFT",
+      "JOIN",
+      "orders",
+      "ON"
+    ]
+  },
+  {
+    "tokens": [
+      "RIGHT",
+      "JOIN",
+      "orders",
+      "ON"
+    ]
+  },
+  {
+    "tokens": [
+      "FULL",
+      "OUTER",
+      "JOIN",
+      "orders"
+    ]
+  },
+  {
+    "tokens": [
+      "CROSS",
+      "JOIN",
+      "products"
+    ]
+  },
+  {
+    "tokens": [
+      "users",
+      ".",
+      "id",
+      "=",
+      "orders",
+      ".",
+      "uid"
+    ]
+  },
+  {
+    "tokens": [
+      "ON",
+      "a",
+      ".",
+      "id",
+      "=",
+      "b",
+      ".",
+      "aid"
+    ]
+  },
+  {
+    "tokens": [
+      "AS",
+      "total_count"
+    ]
+  },
+  {
+    "tokens": [
+      "SELECT",
+      "u",
+      ".",
+      "name",
+      ",",
+      "o",
+      ".",
+      "id"
+    ]
+  },
+  {
+    "tokens": [
+      "FROM",
+      "users",
+      "AS",
+      "u"
+    ]
+  },
+  {
+    "tokens": [
+      "JOIN",
+      "orders",
+      "AS",
+      "o",
+      "ON"
+    ]
+  },
+  {
+    "tokens": [
+      "SELECT",
+      "name",
+      ",",
+      "COUNT",
+      "(",
+      "*)"
+    ]
+  },
+  {
+    "tokens": [
+      "FROM",
+      "orders",
+      "GROUP",
+      "BY",
+      "name"
+    ]
+  },
+  {
+    "tokens": [
+      "UNION",
+      "SELECT",
+      "name",
+      "FROM"
+    ]
+  },
+  {
+    "tokens": [
+      "UNION",
+      "ALL",
+      "SELECT",
+      "name"
+    ]
+  },
+  {
+    "tokens": [
+      "EXCEPT",
+      "SELECT",
+      "name",
+      "FROM"
+    ]
+  },
+  {
+    "tokens": [
+      "INTERSECT",
+      "SELECT",
+      "name",
+      "FROM"
+    ]
+  },
+  {
+    "tokens": [
+      "SELECT",
+      "*",
+      "FROM",
+      "users",
+      "WHERE"
+    ]
+  },
+  {
+    "tokens": [
+      "id",
+      "IN",
+      "(",
+      "SELECT",
+      "uid",
+      "FROM"
+    ]
+  },
+  {
+    "tokens": [
+      "EXISTS",
+      "(",
+      "SELECT",
+      "1",
+      "FROM",
+      ")"
+    ]
+  },
+  {
+    "tokens": [
+      "CREATE",
+      "INDEX",
+      "idx_name",
+      "ON"
+    ]
+  },
+  {
+    "tokens": [
+      "DROP",
+      "INDEX",
+      "idx_name"
+    ]
+  },
+  {
+    "tokens": [
+      "CREATE",
+      "UNIQUE",
+      "INDEX",
+      "ON"
+    ]
+  },
+  {
+    "tokens": [
+      "UNIQUE",
+      "(",
+      "email",
+      ")"
+    ]
+  },
+  {
+    "tokens": [
+      "FOREIGN",
+      "KEY",
+      "(",
+      "uid",
+      ")"
+    ]
+  },
+  {
+    "tokens": [
+      "REFERENCES",
+      "users",
+      "(",
+      "id",
+      ")"
+    ]
+  },
+  {
+    "tokens": [
+      "ON",
+      "DELETE",
+      "CASCADE"
+    ]
+  },
+  {
+    "tokens": [
+      "ON",
+      "UPDATE",
+      "SET",
+      "NULL"
+    ]
+  },
+  {
+    "tokens": [
+      "CONSTRAINT",
+      "pk_id",
+      "PRIMARY"
+    ]
+  },
+  {
+    "tokens": [
+      "CHECK",
+      "(",
+      "age",
+      ">=",
+      "0",
+      ")"
+    ]
+  },
+  {
+    "tokens": [
+      "DEFAULT",
+      "0"
+    ]
+  },
+  {
+    "tokens": [
+      "AUTO_INCREMENT"
+    ]
+  },
+  {
+    "tokens": [
+      "SERIAL",
+      "PRIMARY",
+      "KEY"
+    ]
+  },
+  {
+    "tokens": [
+      "CREATE",
+      "VIEW",
+      "active_users"
+    ]
+  },
+  {
+    "tokens": [
+      "AS",
+      "SELECT",
+      "*",
+      "FROM",
+      "users"
+    ]
+  },
+  {
+    "tokens": [
+      "WHERE",
+      "active",
+      "=",
+      "TRUE"
+    ]
+  },
+  {
+    "tokens": [
+      "DROP",
+      "VIEW",
+      "active_users"
+    ]
+  },
+  {
+    "tokens": [
+      "BEGIN",
+      "TRANSACTION"
+    ]
+  },
+  {
+    "tokens": [
+      "COMMIT"
+    ]
+  },
+  {
+    "tokens": [
+      "ROLLBACK"
+    ]
+  },
+  {
+    "tokens": [
+      "SAVEPOINT",
+      "sp1"
+    ]
+  },
+  {
+    "tokens": [
+      "COALESCE",
+      "(",
+      "name",
+      ",",
+      "'N/A'",
+      ")"
+    ]
+  },
+  {
+    "tokens": [
+      "IFNULL",
+      "(",
+      "name",
+      ",",
+      "'N/A'",
+      ")"
+    ]
+  },
+  {
+    "tokens": [
+      "NULLIF",
+      "(",
+      "a",
+      ",",
+      "b",
+      ")"
+    ]
+  },
+  {
+    "tokens": [
+      "CASE",
+      "WHEN",
+      "age",
+      ">",
+      "18"
+    ]
+  },
+  {
+    "tokens": [
+      "THEN",
+      "'Adult'"
+    ]
+  },
+  {
+    "tokens": [
+      "ELSE",
+      "'Minor'",
+      "END"
+    ]
+  },
+  {
+    "tokens": [
+      "CAST",
+      "(",
+      "age",
+      "AS",
+      "VARCHAR",
+      ")"
+    ]
+  },
+  {
+    "tokens": [
+      "CONVERT",
+      "(",
+      "price",
+      ",",
+      "INT",
+      ")"
+    ]
+  },
+  {
+    "tokens": [
+      "UPPER",
+      "(",
+      "name",
+      ")"
+    ]
+  },
+  {
+    "tokens": [
+      "LOWER",
+      "(",
+      "name",
+      ")"
+    ]
+  },
+  {
+    "tokens": [
+      "LENGTH",
+      "(",
+      "name",
+      ")"
+    ]
+  },
+  {
+    "tokens": [
+      "TRIM",
+      "(",
+      "name",
+      ")"
+    ]
+  },
+  {
+    "tokens": [
+      "CONCAT",
+      "(",
+      "first",
+      ",",
+      "last",
+      ")"
+    ]
+  },
+  {
+    "tokens": [
+      "SUBSTRING",
+      "(",
+      "name",
+      ",",
+      "1",
+      ",",
+      "3"
+    ]
+  },
+  {
+    "tokens": [
+      "REPLACE",
+      "(",
+      "name",
+      ",",
+      "'a'",
+      ",",
+      ")"
+    ]
+  },
+  {
+    "tokens": [
+      "ROUND",
+      "(",
+      "price",
+      ",",
+      "2",
+      ")"
+    ]
+  },
+  {
+    "tokens": [
+      "CEIL",
+      "(",
+      "price",
+      ")"
+    ]
+  },
+  {
+    "tokens": [
+      "FLOOR",
+      "(",
+      "price",
+      ")"
+    ]
+  },
+  {
+    "tokens": [
+      "ABS",
+      "(",
+      "value",
+      ")"
+    ]
+  },
+  {
+    "tokens": [
+      "NOW",
+      "(",
+      ")"
+    ]
+  },
+  {
+    "tokens": [
+      "CURDATE",
+      "(",
+      ")"
+    ]
+  },
+  {
+    "tokens": [
+      "YEAR",
+      "(",
+      "created",
+      ")"
+    ]
+  },
+  {
+    "tokens": [
+      "MONTH",
+      "(",
+      "created",
+      ")"
+    ]
+  },
+  {
+    "tokens": [
+      "DAY",
+      "(",
+      "created",
+      ")"
+    ]
+  },
+  {
+    "tokens": [
+      "DATE_ADD",
+      "(",
+      "dt",
+      ",",
+      "INTERVAL"
+    ]
+  },
+  {
+    "tokens": [
+      "DATEDIFF",
+      "(",
+      "d1",
+      ",",
+      "d2",
+      ")"
+    ]
+  },
+  {
+    "tokens": [
+      "GRANT",
+      "SELECT",
+      "ON",
+      "users"
+    ]
+  },
+  {
+    "tokens": [
+      "TO",
+      "'admin'"
+    ]
+  },
+  {
+    "tokens": [
+      "REVOKE",
+      "INSERT",
+      "ON",
+      "users"
+    ]
+  },
+  {
+    "tokens": [
+      "FROM",
+      "'admin'"
+    ]
+  },
+  {
+    "tokens": [
+      "GRANT",
+      "ALL",
+      "ON",
+      "users"
+    ]
+  },
+  {
+    "tokens": [
+      "TRUNCATE",
+      "TABLE",
+      "users"
+    ]
+  },
+  {
+    "tokens": [
+      "WITH",
+      "cte",
+      "AS",
+      "("
+    ]
+  },
+  {
+    "tokens": [
+      "SELECT",
+      "*",
+      "FROM",
+      "cte"
+    ]
+  },
+  {
+    "tokens": [
+      "ROW_NUMBER",
+      "(",
+      ")",
+      "OVER",
+      "("
+    ]
+  },
+  {
+    "tokens": [
+      "PARTITION",
+      "BY",
+      "dept"
+    ]
+  },
+  {
+    "tokens": [
+      "ORDER",
+      "BY",
+      "salary",
+      "DESC",
+      ")"
+    ]
+  },
+  {
+    "tokens": [
+      "RANK",
+      "(",
+      ")",
+      "OVER",
+      "(",
+      ")"
+    ]
+  },
+  {
+    "tokens": [
+      "DENSE_RANK",
+      "(",
+      ")",
+      "OVER",
+      "("
+    ]
+  },
+  {
+    "tokens": [
+      "LAG",
+      "(",
+      "price",
+      ")",
+      "OVER",
+      "("
+    ]
+  },
+  {
+    "tokens": [
+      "LEAD",
+      "(",
+      "price",
+      ")",
+      "OVER",
+      "("
+    ]
+  },
+  {
+    "tokens": [
+      "SELECT",
+      "GROUP_CONCAT",
+      "(",
+      "name"
+    ]
+  },
+  {
+    "tokens": [
+      "SEPARATOR",
+      "','"
+    ]
+  },
+  {
+    "tokens": [
+      "LIKE",
+      "'%test%'"
+    ]
+  },
+  {
+    "tokens": [
+      "NOT",
+      "LIKE",
+      "'%test%'"
+    ]
+  },
+  {
+    "tokens": [
+      "IN",
+      "(",
+      "'a'",
+      ",",
+      "'b'",
+      ",",
+      "'c'"
+    ]
+  },
+  {
+    "tokens": [
+      "NOT",
+      "IN",
+      "(",
+      "1",
+      ",",
+      "2",
+      ",",
+      "3"
+    ]
+  },
+  {
+    "tokens": [
+      "SET",
+      "AUTOCOMMIT",
+      "=",
+      "0"
+    ]
+  },
+  {
+    "tokens": [
+      "SHOW",
+      "TABLES"
+    ]
+  },
+  {
+    "tokens": [
+      "DESCRIBE",
+      "users"
+    ]
+  },
+  {
+    "tokens": [
+      "EXPLAIN",
+      "SELECT",
+      "*",
+      "FROM"
+    ]
+  },
+  {
+    "tokens": [
+      "SELECT",
+      "1",
+      "+",
+      "1",
+      "AS",
+      "result"
+    ]
+  },
+  {
+    "tokens": [
+      "SELECT",
+      "@@version"
+    ]
+  },
+  {
+    "tokens": [
+      "SELECT",
+      "CURRENT_USER"
+    ]
+  }
+]

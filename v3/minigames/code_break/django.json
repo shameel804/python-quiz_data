@@ -1,0 +1,1338 @@
+[
+    {
+        "word": "MODEL",
+        "hint": "Database table representation class"
+    },
+    {
+        "word": "VIEW",
+        "hint": "Function handling HTTP request logic"
+    },
+    {
+        "word": "TEMPLATE",
+        "hint": "HTML file with dynamic content"
+    },
+    {
+        "word": "URLCONF",
+        "hint": "URL routing configuration module"
+    },
+    {
+        "word": "MIGRATE",
+        "hint": "Apply database schema changes"
+    },
+    {
+        "word": "ADMIN",
+        "hint": "Built-in management interface"
+    },
+    {
+        "word": "QUERYSET",
+        "hint": "Lazy database query collection"
+    },
+    {
+        "word": "MANAGER",
+        "hint": "Interface for database query ops"
+    },
+    {
+        "word": "FIELD",
+        "hint": "Column definition in a model"
+    },
+    {
+        "word": "CHARFIELD",
+        "hint": "Short text string model field"
+    },
+    {
+        "word": "TEXTFIELD",
+        "hint": "Long text model field"
+    },
+    {
+        "word": "INTEGER",
+        "hint": "Whole number model field type"
+    },
+    {
+        "word": "BOOLEAN",
+        "hint": "True or false model field"
+    },
+    {
+        "word": "DATEFIELD",
+        "hint": "Date value model field"
+    },
+    {
+        "word": "DATETIME",
+        "hint": "Date and time model field"
+    },
+    {
+        "word": "DECIMAL",
+        "hint": "Fixed precision number field"
+    },
+    {
+        "word": "FILEFIELD",
+        "hint": "File upload model field"
+    },
+    {
+        "word": "IMAGEFIELD",
+        "hint": "Image upload model field"
+    },
+    {
+        "word": "SLUGFIELD",
+        "hint": "URL-friendly text identifier field"
+    },
+    {
+        "word": "URLFIELD",
+        "hint": "URL validation model field"
+    },
+    {
+        "word": "EMAILFIELD",
+        "hint": "Email validation model field"
+    },
+    {
+        "word": "JSONFIELD",
+        "hint": "Stores JSON data in model"
+    },
+    {
+        "word": "UUIDFIELD",
+        "hint": "Universal unique identifier field"
+    },
+    {
+        "word": "FOREIGNKEY",
+        "hint": "Many-to-one relationship field"
+    },
+    {
+        "word": "MANYTOMANY",
+        "hint": "Many-to-many relationship field"
+    },
+    {
+        "word": "ONETOONE",
+        "hint": "One-to-one relationship field"
+    },
+    {
+        "word": "CASCADE",
+        "hint": "Delete related objects on removal"
+    },
+    {
+        "word": "PROTECT",
+        "hint": "Prevent deletion if related exists"
+    },
+    {
+        "word": "SETNULL",
+        "hint": "Set reference to null on delete"
+    },
+    {
+        "word": "RELATED",
+        "hint": "Reverse relationship accessor name"
+    },
+    {
+        "word": "FILTER",
+        "hint": "Narrow queryset by conditions"
+    },
+    {
+        "word": "EXCLUDE",
+        "hint": "Remove matching from queryset"
+    },
+    {
+        "word": "ANNOTATE",
+        "hint": "Add computed fields to queryset"
+    },
+    {
+        "word": "AGGREGATE",
+        "hint": "Compute summary from queryset"
+    },
+    {
+        "word": "VALUES",
+        "hint": "Return dicts instead of objects"
+    },
+    {
+        "word": "DISTINCT",
+        "hint": "Remove duplicate results"
+    },
+    {
+        "word": "ORDERBY",
+        "hint": "Sort queryset results"
+    },
+    {
+        "word": "REVERSE",
+        "hint": "Flip queryset ordering direction"
+    },
+    {
+        "word": "COUNT",
+        "hint": "Return number of matching records"
+    },
+    {
+        "word": "EXISTS",
+        "hint": "Check if any records match"
+    },
+    {
+        "word": "FIRST",
+        "hint": "Get first object or None"
+    },
+    {
+        "word": "LAST",
+        "hint": "Get last object or None"
+    },
+    {
+        "word": "CREATE",
+        "hint": "Make and save a new object"
+    },
+    {
+        "word": "BULK",
+        "hint": "Create multiple objects at once"
+    },
+    {
+        "word": "UPDATE",
+        "hint": "Modify existing database records"
+    },
+    {
+        "word": "DELETE",
+        "hint": "Remove objects from database"
+    },
+    {
+        "word": "SAVE",
+        "hint": "Persist object changes to database"
+    },
+    {
+        "word": "REFRESH",
+        "hint": "Reload object data from database"
+    },
+    {
+        "word": "PREFETCH",
+        "hint": "Optimize related object loading"
+    },
+    {
+        "word": "SELECT",
+        "hint": "Join related objects in query"
+    },
+    {
+        "word": "DEFER",
+        "hint": "Delay loading of specific fields"
+    },
+    {
+        "word": "ONLY",
+        "hint": "Load only specified fields"
+    },
+    {
+        "word": "RAW",
+        "hint": "Execute raw SQL query directly"
+    },
+    {
+        "word": "LOOKUP",
+        "hint": "Field condition expression type"
+    },
+    {
+        "word": "QOBJECT",
+        "hint": "Complex query filter combinator"
+    },
+    {
+        "word": "FOBJECT",
+        "hint": "Reference field in expression"
+    },
+    {
+        "word": "SUBQUERY",
+        "hint": "Nested query inside outer query"
+    },
+    {
+        "word": "CASE",
+        "hint": "Conditional SQL expression builder"
+    },
+    {
+        "word": "WHEN",
+        "hint": "Condition clause in Case expression"
+    },
+    {
+        "word": "COALESCE",
+        "hint": "Return first non-null value"
+    },
+    {
+        "word": "CONCAT",
+        "hint": "Join strings in database query"
+    },
+    {
+        "word": "LOWER",
+        "hint": "Convert to lowercase in query"
+    },
+    {
+        "word": "UPPER",
+        "hint": "Convert to uppercase in query"
+    },
+    {
+        "word": "LENGTH",
+        "hint": "Get string length in query"
+    },
+    {
+        "word": "SUBSTR",
+        "hint": "Extract substring in query"
+    },
+    {
+        "word": "TRIM",
+        "hint": "Remove whitespace in query"
+    },
+    {
+        "word": "SUM",
+        "hint": "Total of numeric field values"
+    },
+    {
+        "word": "AVG",
+        "hint": "Average of numeric field values"
+    },
+    {
+        "word": "MAX",
+        "hint": "Maximum value in a field"
+    },
+    {
+        "word": "MIN",
+        "hint": "Minimum value in a field"
+    },
+    {
+        "word": "FORM",
+        "hint": "HTML form handling class"
+    },
+    {
+        "word": "MODELFORM",
+        "hint": "Form auto-generated from model"
+    },
+    {
+        "word": "FORMSET",
+        "hint": "Manage multiple forms together"
+    },
+    {
+        "word": "WIDGET",
+        "hint": "HTML input element renderer"
+    },
+    {
+        "word": "VALIDATE",
+        "hint": "Check form data correctness"
+    },
+    {
+        "word": "CLEAN",
+        "hint": "Custom field validation method"
+    },
+    {
+        "word": "ISVALID",
+        "hint": "Check if form passes validation"
+    },
+    {
+        "word": "ERRORS",
+        "hint": "Dictionary of validation failures"
+    },
+    {
+        "word": "BOUND",
+        "hint": "Form with submitted data attached"
+    },
+    {
+        "word": "UNBOUND",
+        "hint": "Form without submitted data"
+    },
+    {
+        "word": "INITIAL",
+        "hint": "Default values for form fields"
+    },
+    {
+        "word": "PREFIX",
+        "hint": "Namespace to avoid field conflicts"
+    },
+    {
+        "word": "MEDIA",
+        "hint": "CSS and JS assets for widgets"
+    },
+    {
+        "word": "HIDDEN",
+        "hint": "Non-visible form input field"
+    },
+    {
+        "word": "CHOICE",
+        "hint": "Dropdown select field type"
+    },
+    {
+        "word": "MULTIPLE",
+        "hint": "Multi-select choice field"
+    },
+    {
+        "word": "CHECKBOX",
+        "hint": "Boolean toggle input widget"
+    },
+    {
+        "word": "RADIO",
+        "hint": "Single selection button group"
+    },
+    {
+        "word": "TEXTAREA",
+        "hint": "Multi-line text input widget"
+    },
+    {
+        "word": "PASSWORD",
+        "hint": "Masked text input widget"
+    },
+    {
+        "word": "RESPONSE",
+        "hint": "Basic HTTP response object"
+    },
+    {
+        "word": "JSONRESPONSE",
+        "hint": "Return JSON formatted data"
+    },
+    {
+        "word": "REDIRECT",
+        "hint": "Send user to different URL"
+    },
+    {
+        "word": "RENDER",
+        "hint": "Return template with context data"
+    },
+    {
+        "word": "REQUEST",
+        "hint": "Incoming HTTP request object"
+    },
+    {
+        "word": "STATUS",
+        "hint": "HTTP response status code"
+    },
+    {
+        "word": "HEADER",
+        "hint": "HTTP response metadata field"
+    },
+    {
+        "word": "COOKIE",
+        "hint": "Small data stored in browser"
+    },
+    {
+        "word": "SESSION",
+        "hint": "Server-side user data storage"
+    },
+    {
+        "word": "CSRF",
+        "hint": "Cross-site request forgery token"
+    },
+    {
+        "word": "MIDDLEWARE",
+        "hint": "Request response processing hook"
+    },
+    {
+        "word": "SECURITY",
+        "hint": "Middleware for security headers"
+    },
+    {
+        "word": "GZIP",
+        "hint": "Middleware for response compression"
+    },
+    {
+        "word": "LOCALE",
+        "hint": "Middleware for language detection"
+    },
+    {
+        "word": "CORS",
+        "hint": "Cross-origin resource sharing"
+    },
+    {
+        "word": "SIGNAL",
+        "hint": "Event notification mechanism"
+    },
+    {
+        "word": "PRESAVE",
+        "hint": "Signal fired before model save"
+    },
+    {
+        "word": "POSTSAVE",
+        "hint": "Signal fired after model save"
+    },
+    {
+        "word": "PREDELETE",
+        "hint": "Signal fired before model delete"
+    },
+    {
+        "word": "POSTDELETE",
+        "hint": "Signal fired after model delete"
+    },
+    {
+        "word": "RECEIVER",
+        "hint": "Decorator to connect signal handler"
+    },
+    {
+        "word": "SENDER",
+        "hint": "Model class that emits signal"
+    },
+    {
+        "word": "DISPATCH",
+        "hint": "Send signal to all receivers"
+    },
+    {
+        "word": "CONNECT",
+        "hint": "Attach handler to a signal"
+    },
+    {
+        "word": "GENERIC",
+        "hint": "Pre-built class-based view type"
+    },
+    {
+        "word": "LISTVIEW",
+        "hint": "Display list of objects view"
+    },
+    {
+        "word": "DETAILVIEW",
+        "hint": "Display single object view"
+    },
+    {
+        "word": "CREATEVIEW",
+        "hint": "Form to create new object view"
+    },
+    {
+        "word": "UPDATEVIEW",
+        "hint": "Form to edit existing object view"
+    },
+    {
+        "word": "DELETEVIEW",
+        "hint": "Confirm and delete object view"
+    },
+    {
+        "word": "FORMVIEW",
+        "hint": "View for displaying a form"
+    },
+    {
+        "word": "MIXIN",
+        "hint": "Reusable view behavior class"
+    },
+    {
+        "word": "PAGINATION",
+        "hint": "Split results across pages"
+    },
+    {
+        "word": "PAGINATOR",
+        "hint": "Class that manages page splitting"
+    },
+    {
+        "word": "CONTEXT",
+        "hint": "Data dictionary passed to template"
+    },
+    {
+        "word": "BLOCK",
+        "hint": "Overridable template section"
+    },
+    {
+        "word": "EXTENDS",
+        "hint": "Inherit from a parent template"
+    },
+    {
+        "word": "INCLUDE",
+        "hint": "Insert another template inline"
+    },
+    {
+        "word": "FORLOOP",
+        "hint": "Template tag for iteration"
+    },
+    {
+        "word": "IFELSE",
+        "hint": "Template conditional logic tag"
+    },
+    {
+        "word": "LOAD",
+        "hint": "Import template tag library"
+    },
+    {
+        "word": "STATIC",
+        "hint": "Reference static file in template"
+    },
+    {
+        "word": "CYCLE",
+        "hint": "Alternate values in template loop"
+    },
+    {
+        "word": "AUTOESCAPE",
+        "hint": "Control HTML escaping behavior"
+    },
+    {
+        "word": "SAFE",
+        "hint": "Mark string as safe HTML"
+    },
+    {
+        "word": "ESCAPE",
+        "hint": "HTML-encode special characters"
+    },
+    {
+        "word": "TRUNCATE",
+        "hint": "Shorten text to character limit"
+    },
+    {
+        "word": "SLUGIFY",
+        "hint": "Convert string to URL safe format"
+    },
+    {
+        "word": "STRIPTAGS",
+        "hint": "Remove all HTML tags from text"
+    },
+    {
+        "word": "TIMESINCE",
+        "hint": "Human-readable time difference"
+    },
+    {
+        "word": "PLURALIZE",
+        "hint": "Add plural suffix dynamically"
+    },
+    {
+        "word": "DEFAULT",
+        "hint": "Fallback value if variable empty"
+    },
+    {
+        "word": "YESNO",
+        "hint": "Map boolean to custom strings"
+    },
+    {
+        "word": "CAPFIRST",
+        "hint": "Capitalize first character filter"
+    },
+    {
+        "word": "URLENCODE",
+        "hint": "Encode string for URL usage"
+    },
+    {
+        "word": "REGISTER",
+        "hint": "Add model to admin interface"
+    },
+    {
+        "word": "MODELADMIN",
+        "hint": "Customize admin model display"
+    },
+    {
+        "word": "LISTDISPLAY",
+        "hint": "Admin columns to show in list"
+    },
+    {
+        "word": "LISTFILTER",
+        "hint": "Admin sidebar filter options"
+    },
+    {
+        "word": "SEARCH",
+        "hint": "Admin searchable field config"
+    },
+    {
+        "word": "ORDERING",
+        "hint": "Default sort order in admin"
+    },
+    {
+        "word": "READONLY",
+        "hint": "Non-editable admin form fields"
+    },
+    {
+        "word": "FIELDSETS",
+        "hint": "Group admin form fields together"
+    },
+    {
+        "word": "INLINE",
+        "hint": "Edit related objects in admin"
+    },
+    {
+        "word": "TABULAR",
+        "hint": "Table layout inline admin edit"
+    },
+    {
+        "word": "STACKED",
+        "hint": "Vertical layout inline admin edit"
+    },
+    {
+        "word": "ACTION",
+        "hint": "Custom bulk operation in admin"
+    },
+    {
+        "word": "SITE",
+        "hint": "Admin site customization class"
+    },
+    {
+        "word": "AUTH",
+        "hint": "Built-in authentication system"
+    },
+    {
+        "word": "USER",
+        "hint": "Built-in user account model"
+    },
+    {
+        "word": "GROUP",
+        "hint": "Collection of user permissions"
+    },
+    {
+        "word": "PERMISSION",
+        "hint": "Specific access right for user"
+    },
+    {
+        "word": "LOGIN",
+        "hint": "Authenticate user credentials"
+    },
+    {
+        "word": "LOGOUT",
+        "hint": "End user authentication session"
+    },
+    {
+        "word": "BACKEND",
+        "hint": "Authentication strategy class"
+    },
+    {
+        "word": "SUPERUSER",
+        "hint": "User with all permissions"
+    },
+    {
+        "word": "STAFF",
+        "hint": "User with admin panel access"
+    },
+    {
+        "word": "ABSTRACT",
+        "hint": "Non-instantiable base model class"
+    },
+    {
+        "word": "PROXY",
+        "hint": "Model same table new behavior"
+    },
+    {
+        "word": "META",
+        "hint": "Model configuration inner class"
+    },
+    {
+        "word": "VERBOSE",
+        "hint": "Human-readable model name config"
+    },
+    {
+        "word": "UNIQUE",
+        "hint": "Enforce unique field combination"
+    },
+    {
+        "word": "INDEX",
+        "hint": "Database index for faster lookup"
+    },
+    {
+        "word": "CONSTRAINT",
+        "hint": "Database-level validation rule"
+    },
+    {
+        "word": "APPCONFIG",
+        "hint": "Application configuration class"
+    },
+    {
+        "word": "READY",
+        "hint": "App initialization hook method"
+    },
+    {
+        "word": "INSTALLED",
+        "hint": "List of active applications"
+    },
+    {
+        "word": "SETTINGS",
+        "hint": "Project configuration module"
+    },
+    {
+        "word": "DEBUG",
+        "hint": "Enable development debug mode"
+    },
+    {
+        "word": "ALLOWED",
+        "hint": "List of valid host domains"
+    },
+    {
+        "word": "DATABASE",
+        "hint": "Database connection config dict"
+    },
+    {
+        "word": "ENGINE",
+        "hint": "Database backend driver setting"
+    },
+    {
+        "word": "STATICURL",
+        "hint": "URL prefix for static files"
+    },
+    {
+        "word": "MEDIAURL",
+        "hint": "URL prefix for user uploads"
+    },
+    {
+        "word": "MEDIAROOT",
+        "hint": "Filesystem path for uploads"
+    },
+    {
+        "word": "STATICROOT",
+        "hint": "Collected static files directory"
+    },
+    {
+        "word": "SECRET",
+        "hint": "Cryptographic signing key"
+    },
+    {
+        "word": "TIMEZONE",
+        "hint": "Default time zone setting"
+    },
+    {
+        "word": "LANGUAGE",
+        "hint": "Default language code setting"
+    },
+    {
+        "word": "CACHE",
+        "hint": "Data caching configuration"
+    },
+    {
+        "word": "MEMCACHED",
+        "hint": "Memory-based cache backend"
+    },
+    {
+        "word": "REDIS",
+        "hint": "Key-value store cache backend"
+    },
+    {
+        "word": "CACHEKEY",
+        "hint": "Unique identifier for cached data"
+    },
+    {
+        "word": "TIMEOUT",
+        "hint": "Cache expiration duration"
+    },
+    {
+        "word": "INVALIDATE",
+        "hint": "Remove stale cached data"
+    },
+    {
+        "word": "VIEWCACHE",
+        "hint": "Cache entire view response"
+    },
+    {
+        "word": "FRAGMENT",
+        "hint": "Cache portion of a template"
+    },
+    {
+        "word": "VARY",
+        "hint": "Cache based on request headers"
+    },
+    {
+        "word": "MANAGE",
+        "hint": "Command-line management utility"
+    },
+    {
+        "word": "RUNSERVER",
+        "hint": "Start development web server"
+    },
+    {
+        "word": "FLUSH",
+        "hint": "Delete all data from database"
+    },
+    {
+        "word": "LOADDATA",
+        "hint": "Import data from fixture file"
+    },
+    {
+        "word": "DUMPDATA",
+        "hint": "Export data to fixture file"
+    },
+    {
+        "word": "SHELL",
+        "hint": "Interactive console command"
+    },
+    {
+        "word": "DBSHELL",
+        "hint": "Open database client console"
+    },
+    {
+        "word": "TEST",
+        "hint": "Run project test suite"
+    },
+    {
+        "word": "CHECK",
+        "hint": "Validate project configuration"
+    },
+    {
+        "word": "STARTAPP",
+        "hint": "Create a new application module"
+    },
+    {
+        "word": "COMMAND",
+        "hint": "Custom management command class"
+    },
+    {
+        "word": "BASECOMMAND",
+        "hint": "Base class for manage commands"
+    },
+    {
+        "word": "FIXTURE",
+        "hint": "Initial data for database loading"
+    },
+    {
+        "word": "SERIALIZER",
+        "hint": "Convert objects to other formats"
+    },
+    {
+        "word": "TESTCLIENT",
+        "hint": "Simulate HTTP requests in tests"
+    },
+    {
+        "word": "TESTCASE",
+        "hint": "Base class for test methods"
+    },
+    {
+        "word": "LIVESERVER",
+        "hint": "Test with real running server"
+    },
+    {
+        "word": "TRANSACT",
+        "hint": "Test with database transactions"
+    },
+    {
+        "word": "OVERRIDE",
+        "hint": "Temporarily change settings"
+    },
+    {
+        "word": "WSGI",
+        "hint": "Web server gateway interface"
+    },
+    {
+        "word": "ASGI",
+        "hint": "Async server gateway interface"
+    },
+    {
+        "word": "CHANNEL",
+        "hint": "Real-time async communication"
+    },
+    {
+        "word": "CONSUMER",
+        "hint": "WebSocket event handler class"
+    },
+    {
+        "word": "WEBSOCKET",
+        "hint": "Persistent two-way connection"
+    },
+    {
+        "word": "CELERY",
+        "hint": "Distributed task queue framework"
+    },
+    {
+        "word": "PERIODIC",
+        "hint": "Scheduled recurring task execution"
+    },
+    {
+        "word": "BROKER",
+        "hint": "Message transport for async tasks"
+    },
+    {
+        "word": "WORKER",
+        "hint": "Process that executes queued tasks"
+    },
+    {
+        "word": "VIEWSET",
+        "hint": "Group of related API views"
+    },
+    {
+        "word": "ROUTER",
+        "hint": "Auto-generate API URL patterns"
+    },
+    {
+        "word": "THROTTLE",
+        "hint": "Rate limiting for API requests"
+    },
+    {
+        "word": "TOKEN",
+        "hint": "Authentication credential string"
+    },
+    {
+        "word": "PARSER",
+        "hint": "Request data format handler"
+    },
+    {
+        "word": "RENDERER",
+        "hint": "Response data format handler"
+    },
+    {
+        "word": "CONTENTYPE",
+        "hint": "Track model types generically"
+    },
+    {
+        "word": "SITEMAP",
+        "hint": "XML page listing for search engines"
+    },
+    {
+        "word": "FEED",
+        "hint": "RSS or Atom syndication output"
+    },
+    {
+        "word": "FLATPAGE",
+        "hint": "Simple static content page"
+    },
+    {
+        "word": "HUMANIZE",
+        "hint": "Human-friendly value formatting"
+    },
+    {
+        "word": "MESSAGE",
+        "hint": "One-time notification to user"
+    },
+    {
+        "word": "STORAGE",
+        "hint": "File storage backend interface"
+    },
+    {
+        "word": "SENDMAIL",
+        "hint": "Function to dispatch email"
+    },
+    {
+        "word": "ATTACHMENT",
+        "hint": "File added to email message"
+    },
+    {
+        "word": "VALIDATOR",
+        "hint": "Reusable data validation function"
+    },
+    {
+        "word": "REGEX",
+        "hint": "Regular expression validator"
+    },
+    {
+        "word": "MINVALUE",
+        "hint": "Minimum allowed value validator"
+    },
+    {
+        "word": "MAXVALUE",
+        "hint": "Maximum allowed value validator"
+    },
+    {
+        "word": "MINLENGTH",
+        "hint": "Minimum string length validator"
+    },
+    {
+        "word": "MAXLENGTH",
+        "hint": "Maximum string length validator"
+    },
+    {
+        "word": "LOGGING",
+        "hint": "Event recording configuration"
+    },
+    {
+        "word": "HANDLER",
+        "hint": "Log output destination config"
+    },
+    {
+        "word": "FORMATTER",
+        "hint": "Log message format definition"
+    },
+    {
+        "word": "LOGGER",
+        "hint": "Named logging channel instance"
+    },
+    {
+        "word": "DEPLOY",
+        "hint": "Publish app to production server"
+    },
+    {
+        "word": "GUNICORN",
+        "hint": "Production WSGI HTTP server"
+    },
+    {
+        "word": "UVICORN",
+        "hint": "Production ASGI HTTP server"
+    },
+    {
+        "word": "WHITENOISE",
+        "hint": "Serve static files in production"
+    },
+    {
+        "word": "ENVIRON",
+        "hint": "Environment variable access"
+    },
+    {
+        "word": "DOTENV",
+        "hint": "Load settings from env file"
+    },
+    {
+        "word": "MIGRATION",
+        "hint": "Database schema version change"
+    },
+    {
+        "word": "OPERATION",
+        "hint": "Single step in a migration file"
+    },
+    {
+        "word": "DEPENDENCY",
+        "hint": "Migration ordering requirement"
+    },
+    {
+        "word": "ADDFIELD",
+        "hint": "Migration to add new column"
+    },
+    {
+        "word": "ALTERFIELD",
+        "hint": "Migration to change field type"
+    },
+    {
+        "word": "TRANSACTION",
+        "hint": "Atomic database operation group"
+    },
+    {
+        "word": "ATOMIC",
+        "hint": "Ensure all-or-nothing operations"
+    },
+    {
+        "word": "SAVEPOINT",
+        "hint": "Partial transaction rollback point"
+    },
+    {
+        "word": "ROLLBACK",
+        "hint": "Undo database transaction changes"
+    },
+    {
+        "word": "CONNECTION",
+        "hint": "Active database link object"
+    },
+    {
+        "word": "SETDEFAULT",
+        "hint": "Set reference to default on delete"
+    },
+    {
+        "word": "STDEV",
+        "hint": "Standard deviation aggregate"
+    },
+    {
+        "word": "VARIANCE",
+        "hint": "Statistical variance aggregate"
+    },
+    {
+        "word": "GREATEST",
+        "hint": "Return largest among given values"
+    },
+    {
+        "word": "LEAST",
+        "hint": "Return smallest among given values"
+    },
+    {
+        "word": "COMMENT",
+        "hint": "Non-rendered template note block"
+    },
+    {
+        "word": "SPACELESS",
+        "hint": "Remove whitespace between tags"
+    },
+    {
+        "word": "LINEBREAKS",
+        "hint": "Convert newlines to HTML breaks"
+    },
+    {
+        "word": "DICTSORT",
+        "hint": "Sort list of dicts by key"
+    },
+    {
+        "word": "DATEFORMAT",
+        "hint": "Format date for display"
+    },
+    {
+        "word": "WORDCOUNT",
+        "hint": "Count number of words filter"
+    },
+    {
+        "word": "AUTODISCOVR",
+        "hint": "Auto-find admin in each app"
+    },
+    {
+        "word": "APPLABEL",
+        "hint": "Short name identifier for app"
+    },
+    {
+        "word": "TABLENAME",
+        "hint": "Custom database table name"
+    },
+    {
+        "word": "SQUASH",
+        "hint": "Combine migrations into one"
+    },
+    {
+        "word": "COLLECTSTATIC",
+        "hint": "Gather static files for deploy"
+    },
+    {
+        "word": "DATAFORWARD",
+        "hint": "Migration with custom data logic"
+    },
+    {
+        "word": "REMOVEFIELD",
+        "hint": "Migration to drop a column"
+    },
+    {
+        "word": "RENAMEMODEL",
+        "hint": "Migration to rename a table"
+    },
+    {
+        "word": "FLOATFIELD",
+        "hint": "Floating point number field"
+    },
+    {
+        "word": "AUTOFIELD",
+        "hint": "Auto-incrementing primary key"
+    },
+    {
+        "word": "BIGINTEGER",
+        "hint": "Large whole number field type"
+    },
+    {
+        "word": "POSINTEGER",
+        "hint": "Positive integer only field"
+    },
+    {
+        "word": "BINARY",
+        "hint": "Raw binary data model field"
+    },
+    {
+        "word": "DURATION",
+        "hint": "Time span model field type"
+    },
+    {
+        "word": "IPADDRESS",
+        "hint": "IP address model field"
+    },
+    {
+        "word": "FILEPATH",
+        "hint": "File system path selector field"
+    },
+    {
+        "word": "GENERICFK",
+        "hint": "Polymorphic relationship field"
+    },
+    {
+        "word": "THROUGH",
+        "hint": "Custom many-to-many join table"
+    },
+    {
+        "word": "ONDELETE",
+        "hint": "Foreign key deletion behavior"
+    },
+    {
+        "word": "RELATED",
+        "hint": "Custom reverse relation name"
+    },
+    {
+        "word": "DBINDEX",
+        "hint": "Add index on a model field"
+    },
+    {
+        "word": "NULL",
+        "hint": "Allow null values in database"
+    },
+    {
+        "word": "BLANK",
+        "hint": "Allow empty form submissions"
+    },
+    {
+        "word": "HELPTEXT",
+        "hint": "Form field description text"
+    },
+    {
+        "word": "CHOICES",
+        "hint": "Predefined value options for field"
+    },
+    {
+        "word": "EDITABLE",
+        "hint": "Control field form visibility"
+    },
+    {
+        "word": "PRIMARY",
+        "hint": "Explicit primary key field"
+    },
+    {
+        "word": "VERBOSE",
+        "hint": "Human-readable field name label"
+    },
+    {
+        "word": "INJECT",
+        "hint": "Add dependencies into context"
+    },
+    {
+        "word": "PATH",
+        "hint": "URL pattern using path converter"
+    },
+    {
+        "word": "REPATH",
+        "hint": "URL pattern with regex matching"
+    },
+    {
+        "word": "NAMESPACE",
+        "hint": "URL name scope for app routing"
+    },
+    {
+        "word": "APPNAME",
+        "hint": "URL namespace for include config"
+    },
+    {
+        "word": "URLPATTERN",
+        "hint": "List of URL route definitions"
+    },
+    {
+        "word": "RESOLVE",
+        "hint": "Match URL to view function"
+    },
+    {
+        "word": "CONVERTER",
+        "hint": "URL path type transformer"
+    },
+    {
+        "word": "SLUG",
+        "hint": "URL path slug type converter"
+    },
+    {
+        "word": "TEMPLATE",
+        "hint": "Template tag custom processor"
+    },
+    {
+        "word": "SIMPLETAG",
+        "hint": "Decorator for simple template tag"
+    },
+    {
+        "word": "FILTERTAG",
+        "hint": "Custom template filter function"
+    },
+    {
+        "word": "TAGLIBRARY",
+        "hint": "Collection of custom tags"
+    },
+    {
+        "word": "INCLUSION",
+        "hint": "Template tag rendering partial"
+    },
+    {
+        "word": "ASSIGNTAG",
+        "hint": "Store tag result in variable"
+    },
+    {
+        "word": "GETOBJECT",
+        "hint": "Retrieve single object or raise"
+    },
+    {
+        "word": "GETLIST",
+        "hint": "Retrieve filtered object list"
+    },
+    {
+        "word": "LOGINMIXIN",
+        "hint": "Restrict class view to logged in"
+    },
+    {
+        "word": "DISPATCH",
+        "hint": "Route request to correct method"
+    },
+    {
+        "word": "GETCONTEXT",
+        "hint": "Build template context data dict"
+    },
+    {
+        "word": "GETFORM",
+        "hint": "Return form instance for view"
+    },
+    {
+        "word": "FORMVALID",
+        "hint": "Handle successful form submission"
+    },
+    {
+        "word": "SUCCESSURL",
+        "hint": "Redirect URL after form success"
+    },
+    {
+        "word": "MODELFIELD",
+        "hint": "Form fields from model definition"
+    },
+    {
+        "word": "CRISPY",
+        "hint": "Third-party form rendering helper"
+    },
+    {
+        "word": "DJANGO",
+        "hint": "High-level Python web framework"
+    },
+    {
+        "word": "ORMQUERY",
+        "hint": "Object-relational mapping query"
+    },
+    {
+        "word": "RAWSQL",
+        "hint": "Direct database query execution"
+    }
+]

@@ -1,0 +1,2447 @@
+[
+    {
+        "tags": [
+            "def",
+            "greet()",
+            ":",
+            "print()",
+            "return"
+        ],
+        "description": "Basic Function Definition"
+    },
+    {
+        "tags": [
+            "for",
+            "i",
+            "in",
+            "range()",
+            ":",
+            "print(i)"
+        ],
+        "description": "For Loop With Range"
+    },
+    {
+        "tags": [
+            "if",
+            "x > 0",
+            ":",
+            "print()",
+            "elif",
+            ":",
+            "else",
+            ":"
+        ],
+        "description": "If-Elif-Else Chain"
+    },
+    {
+        "tags": [
+            "while",
+            "True",
+            ":",
+            "break"
+        ],
+        "description": "While Loop With Break"
+    },
+    {
+        "tags": [
+            "class",
+            "Dog",
+            ":",
+            "def",
+            "__init__",
+            "(self)",
+            ":"
+        ],
+        "description": "Class With Constructor"
+    },
+    {
+        "tags": [
+            "try",
+            ":",
+            "except",
+            "Exception",
+            ":",
+            "finally",
+            ":"
+        ],
+        "description": "Try-Except-Finally Block"
+    },
+    {
+        "tags": [
+            "import",
+            "os",
+            "os.path",
+            ".join()"
+        ],
+        "description": "Import And Use Module"
+    },
+    {
+        "tags": [
+            "with",
+            "open()",
+            "as",
+            "f",
+            ":",
+            "f.read()"
+        ],
+        "description": "File Context Manager"
+    },
+    {
+        "tags": [
+            "list",
+            "=",
+            "[]",
+            ".append()",
+            ".pop()"
+        ],
+        "description": "List Operations"
+    },
+    {
+        "tags": [
+            "dict",
+            "=",
+            "{}",
+            "[key]",
+            "=",
+            "value"
+        ],
+        "description": "Dictionary Assignment"
+    },
+    {
+        "tags": [
+            "lambda",
+            "x",
+            ":",
+            "x * 2"
+        ],
+        "description": "Lambda Expression"
+    },
+    {
+        "tags": [
+            "[x",
+            "for",
+            "x",
+            "in",
+            "range()",
+            "if",
+            "x > 0]"
+        ],
+        "description": "List Comprehension Filter"
+    },
+    {
+        "tags": [
+            "def",
+            "gen()",
+            ":",
+            "yield",
+            "value"
+        ],
+        "description": "Generator Function"
+    },
+    {
+        "tags": [
+            "@decorator",
+            "def",
+            "func()",
+            ":",
+            "pass"
+        ],
+        "description": "Decorated Function"
+    },
+    {
+        "tags": [
+            "class",
+            "Cat(Animal)",
+            ":",
+            "def",
+            "speak()",
+            ":"
+        ],
+        "description": "Class Inheritance"
+    },
+    {
+        "tags": [
+            "from",
+            "math",
+            "import",
+            "sqrt",
+            "sqrt(16)"
+        ],
+        "description": "Selective Import Usage"
+    },
+    {
+        "tags": [
+            "set()",
+            ".add()",
+            ".remove()",
+            ".union()"
+        ],
+        "description": "Set Operations"
+    },
+    {
+        "tags": [
+            "tuple",
+            "=",
+            "(1,",
+            "2,",
+            "3)",
+            "a, b, c",
+            "="
+        ],
+        "description": "Tuple Unpacking"
+    },
+    {
+        "tags": [
+            "str",
+            ".split()",
+            ".join()",
+            ".strip()"
+        ],
+        "description": "String Methods Chain"
+    },
+    {
+        "tags": [
+            "map()",
+            "lambda",
+            "x:",
+            "x+1",
+            "list()"
+        ],
+        "description": "Map With Lambda"
+    },
+    {
+        "tags": [
+            "filter()",
+            "lambda",
+            "x:",
+            "x>0",
+            "list()"
+        ],
+        "description": "Filter With Lambda"
+    },
+    {
+        "tags": [
+            "sorted()",
+            "key=",
+            "lambda",
+            "x:",
+            "x[1]"
+        ],
+        "description": "Custom Sort Key"
+    },
+    {
+        "tags": [
+            "enumerate()",
+            "for",
+            "i, val",
+            "in",
+            ":"
+        ],
+        "description": "Enumerate Loop"
+    },
+    {
+        "tags": [
+            "zip()",
+            "list1",
+            "list2",
+            "for",
+            "a, b",
+            "in"
+        ],
+        "description": "Zip Two Lists"
+    },
+    {
+        "tags": [
+            "*args",
+            "**kwargs",
+            "def",
+            "func()",
+            ":"
+        ],
+        "description": "Variable Arguments Function"
+    },
+    {
+        "tags": [
+            "global",
+            "x",
+            "def",
+            "modify()",
+            ":",
+            "x = 10"
+        ],
+        "description": "Global Variable Modify"
+    },
+    {
+        "tags": [
+            "assert",
+            "x > 0",
+            ",",
+            "\"Error msg\""
+        ],
+        "description": "Assert Statement"
+    },
+    {
+        "tags": [
+            "raise",
+            "ValueError()",
+            "try",
+            ":",
+            "except",
+            ":"
+        ],
+        "description": "Raise Custom Exception"
+    },
+    {
+        "tags": [
+            "is",
+            "not",
+            "None",
+            "if",
+            "x",
+            ":"
+        ],
+        "description": "None Identity Check"
+    },
+    {
+        "tags": [
+            "print()",
+            "f\"Hello",
+            "{name}\""
+        ],
+        "description": "F-String Formatting"
+    },
+    {
+        "tags": [
+            "open()",
+            "\"w\"",
+            ".write()",
+            ".close()"
+        ],
+        "description": "Write To File"
+    },
+    {
+        "tags": [
+            "input()",
+            "int()",
+            "variable",
+            "="
+        ],
+        "description": "Read User Input"
+    },
+    {
+        "tags": [
+            "len()",
+            "max()",
+            "min()",
+            "sum()"
+        ],
+        "description": "Built-in Numeric Functions"
+    },
+    {
+        "tags": [
+            "type()",
+            "isinstance()",
+            "int",
+            "True"
+        ],
+        "description": "Type Checking"
+    },
+    {
+        "tags": [
+            "del",
+            "list[0]",
+            "dict[key]",
+            "variable"
+        ],
+        "description": "Delete Operations"
+    },
+    {
+        "tags": [
+            "if",
+            "__name__",
+            "==",
+            "\"__main__\"",
+            ":"
+        ],
+        "description": "Main Guard Block"
+    },
+    {
+        "tags": [
+            "import",
+            "json",
+            ".loads()",
+            ".dumps()"
+        ],
+        "description": "JSON Parse And Stringify"
+    },
+    {
+        "tags": [
+            "import",
+            "re",
+            "re.match()",
+            "pattern"
+        ],
+        "description": "Regex Pattern Match"
+    },
+    {
+        "tags": [
+            "import",
+            "sys",
+            "sys.argv",
+            "sys.exit()"
+        ],
+        "description": "System Arguments Access"
+    },
+    {
+        "tags": [
+            "import",
+            "random",
+            ".randint()",
+            ".choice()"
+        ],
+        "description": "Random Number Generation"
+    },
+    {
+        "tags": [
+            "import",
+            "datetime",
+            ".now()",
+            ".strftime()"
+        ],
+        "description": "Date Time Formatting"
+    },
+    {
+        "tags": [
+            "async",
+            "def",
+            "fetch()",
+            ":",
+            "await"
+        ],
+        "description": "Async Function Definition"
+    },
+    {
+        "tags": [
+            "asyncio",
+            ".run()",
+            "async",
+            "def",
+            "main()"
+        ],
+        "description": "Asyncio Run Main"
+    },
+    {
+        "tags": [
+            "class",
+            "Meta",
+            ":",
+            "abstract",
+            "= True"
+        ],
+        "description": "Abstract Meta Class"
+    },
+    {
+        "tags": [
+            "@property",
+            "def",
+            "name(self)",
+            ":",
+            "return"
+        ],
+        "description": "Property Decorator"
+    },
+    {
+        "tags": [
+            "@staticmethod",
+            "def",
+            "helper()",
+            ":",
+            "return"
+        ],
+        "description": "Static Method"
+    },
+    {
+        "tags": [
+            "@classmethod",
+            "def",
+            "create(cls)",
+            ":",
+            "return"
+        ],
+        "description": "Class Method"
+    },
+    {
+        "tags": [
+            "super()",
+            ".__init__()",
+            "self",
+            "class"
+        ],
+        "description": "Super Constructor Call"
+    },
+    {
+        "tags": [
+            "__str__",
+            "def",
+            "(self)",
+            ":",
+            "return",
+            "str"
+        ],
+        "description": "String Representation"
+    },
+    {
+        "tags": [
+            "__len__",
+            "def",
+            "(self)",
+            ":",
+            "return",
+            "int"
+        ],
+        "description": "Length Dunder Method"
+    },
+    {
+        "tags": [
+            "__eq__",
+            "def",
+            "(self, other)",
+            ":",
+            "return"
+        ],
+        "description": "Equality Comparison Override"
+    },
+    {
+        "tags": [
+            "__getitem__",
+            "def",
+            "(self, key)",
+            ":",
+            "return"
+        ],
+        "description": "Index Access Override"
+    },
+    {
+        "tags": [
+            "__iter__",
+            "def",
+            "(self)",
+            ":",
+            "yield"
+        ],
+        "description": "Iterator Dunder Method"
+    },
+    {
+        "tags": [
+            "__enter__",
+            "__exit__",
+            "def",
+            "with",
+            ":"
+        ],
+        "description": "Context Manager Protocol"
+    },
+    {
+        "tags": [
+            "dataclass",
+            "@",
+            "class",
+            "Point",
+            ":",
+            "x: int"
+        ],
+        "description": "Dataclass Definition"
+    },
+    {
+        "tags": [
+            "typing",
+            "List",
+            "[int]",
+            "Dict",
+            "[str, int]"
+        ],
+        "description": "Type Hints Imports"
+    },
+    {
+        "tags": [
+            "Optional",
+            "[str]",
+            "Union",
+            "[int, str]"
+        ],
+        "description": "Optional Type Hint"
+    },
+    {
+        "tags": [
+            "collections",
+            "Counter()",
+            ".most_common()"
+        ],
+        "description": "Counter Most Common"
+    },
+    {
+        "tags": [
+            "collections",
+            "defaultdict()",
+            "int",
+            "dict[key]"
+        ],
+        "description": "Default Dictionary"
+    },
+    {
+        "tags": [
+            "collections",
+            "namedtuple()",
+            "Point",
+            "x",
+            "y"
+        ],
+        "description": "Named Tuple Creation"
+    },
+    {
+        "tags": [
+            "itertools",
+            "chain()",
+            "list1",
+            "list2"
+        ],
+        "description": "Chain Iterables Together"
+    },
+    {
+        "tags": [
+            "itertools",
+            "product()",
+            "A",
+            "B",
+            "pairs"
+        ],
+        "description": "Cartesian Product"
+    },
+    {
+        "tags": [
+            "functools",
+            "reduce()",
+            "lambda",
+            "a, b:",
+            "a+b"
+        ],
+        "description": "Reduce To Sum"
+    },
+    {
+        "tags": [
+            "functools",
+            "lru_cache",
+            "@",
+            "def",
+            "fib(n)"
+        ],
+        "description": "Memoized Fibonacci"
+    },
+    {
+        "tags": [
+            "os.path",
+            ".exists()",
+            ".isfile()",
+            ".isdir()"
+        ],
+        "description": "Path Existence Checks"
+    },
+    {
+        "tags": [
+            "os",
+            ".listdir()",
+            ".mkdir()",
+            ".remove()"
+        ],
+        "description": "Directory File Operations"
+    },
+    {
+        "tags": [
+            "pathlib",
+            "Path()",
+            ".resolve()",
+            ".stem"
+        ],
+        "description": "Pathlib Path Object"
+    },
+    {
+        "tags": [
+            "subprocess",
+            ".run()",
+            "capture_output",
+            "=True"
+        ],
+        "description": "Run Shell Command"
+    },
+    {
+        "tags": [
+            "logging",
+            ".getLogger()",
+            ".info()",
+            ".error()"
+        ],
+        "description": "Logging Setup"
+    },
+    {
+        "tags": [
+            "unittest",
+            "class",
+            "Test()",
+            "def",
+            "test_"
+        ],
+        "description": "Unit Test Case"
+    },
+    {
+        "tags": [
+            "pytest",
+            "def",
+            "test_func()",
+            "assert",
+            "=="
+        ],
+        "description": "Pytest Test Function"
+    },
+    {
+        "tags": [
+            "pip",
+            "install",
+            "import",
+            "package",
+            "use"
+        ],
+        "description": "Install And Import Package"
+    },
+    {
+        "tags": [
+            "venv",
+            "activate",
+            "pip",
+            "install",
+            "run"
+        ],
+        "description": "Virtual Environment Setup"
+    },
+    {
+        "tags": [
+            "dict",
+            ".keys()",
+            ".values()",
+            ".items()"
+        ],
+        "description": "Dictionary View Methods"
+    },
+    {
+        "tags": [
+            "dict",
+            ".get()",
+            "key",
+            "default",
+            "value"
+        ],
+        "description": "Safe Dictionary Access"
+    },
+    {
+        "tags": [
+            "dict",
+            ".update()",
+            "{}",
+            "**kwargs"
+        ],
+        "description": "Dictionary Merge"
+    },
+    {
+        "tags": [
+            "{k:",
+            "v",
+            "for",
+            "k,v",
+            "in",
+            ".items()}"
+        ],
+        "description": "Dictionary Comprehension"
+    },
+    {
+        "tags": [
+            "{x",
+            "for",
+            "x",
+            "in",
+            "range()",
+            "}"
+        ],
+        "description": "Set Comprehension"
+    },
+    {
+        "tags": [
+            "(x",
+            "for",
+            "x",
+            "in",
+            "range())",
+            "gen"
+        ],
+        "description": "Generator Expression"
+    },
+    {
+        "tags": [
+            "str",
+            ".format()",
+            "{}",
+            "name",
+            "age"
+        ],
+        "description": "String Format Method"
+    },
+    {
+        "tags": [
+            "str",
+            ".replace()",
+            "old",
+            "new",
+            "count"
+        ],
+        "description": "String Replace"
+    },
+    {
+        "tags": [
+            "str",
+            ".startswith()",
+            ".endswith()",
+            "bool"
+        ],
+        "description": "String Prefix Suffix Check"
+    },
+    {
+        "tags": [
+            "str",
+            ".upper()",
+            ".lower()",
+            ".title()"
+        ],
+        "description": "String Case Methods"
+    },
+    {
+        "tags": [
+            "str",
+            ".find()",
+            ".index()",
+            ".count()"
+        ],
+        "description": "String Search Methods"
+    },
+    {
+        "tags": [
+            "list",
+            ".sort()",
+            "key=",
+            "reverse=True"
+        ],
+        "description": "In-Place List Sort"
+    },
+    {
+        "tags": [
+            "list",
+            ".extend()",
+            "list2",
+            "+="
+        ],
+        "description": "Extend List"
+    },
+    {
+        "tags": [
+            "list",
+            ".insert()",
+            "index",
+            "value"
+        ],
+        "description": "Insert At Index"
+    },
+    {
+        "tags": [
+            "list",
+            "[start",
+            ":",
+            "stop",
+            ":",
+            "step]"
+        ],
+        "description": "List Slicing"
+    },
+    {
+        "tags": [
+            "list",
+            "[::-1]",
+            "reversed()",
+            "reverse()"
+        ],
+        "description": "Reverse A List"
+    },
+    {
+        "tags": [
+            "any()",
+            "iterable",
+            "True",
+            "if",
+            "match"
+        ],
+        "description": "Any Truthiness Check"
+    },
+    {
+        "tags": [
+            "all()",
+            "iterable",
+            "True",
+            "if",
+            "every"
+        ],
+        "description": "All Truthiness Check"
+    },
+    {
+        "tags": [
+            "abs()",
+            "round()",
+            "pow()",
+            "divmod()"
+        ],
+        "description": "Math Built-in Functions"
+    },
+    {
+        "tags": [
+            "int()",
+            "float()",
+            "str()",
+            "bool()"
+        ],
+        "description": "Type Conversion Functions"
+    },
+    {
+        "tags": [
+            "chr()",
+            "ord()",
+            "65",
+            "'A'"
+        ],
+        "description": "Character Code Conversion"
+    },
+    {
+        "tags": [
+            "bin()",
+            "hex()",
+            "oct()",
+            "int()"
+        ],
+        "description": "Number Base Conversion"
+    },
+    {
+        "tags": [
+            "id()",
+            "hash()",
+            "object",
+            "memory"
+        ],
+        "description": "Object Identity Hash"
+    },
+    {
+        "tags": [
+            "dir()",
+            "help()",
+            "object",
+            "methods"
+        ],
+        "description": "Inspect Object Attributes"
+    },
+    {
+        "tags": [
+            "exec()",
+            "eval()",
+            "\"code\"",
+            "result"
+        ],
+        "description": "Dynamic Code Execution"
+    },
+    {
+        "tags": [
+            "vars()",
+            "locals()",
+            "globals()",
+            "dict"
+        ],
+        "description": "Variable Scope Inspection"
+    },
+    {
+        "tags": [
+            "for",
+            "else",
+            ":",
+            "break",
+            "print()"
+        ],
+        "description": "For-Else Pattern"
+    },
+    {
+        "tags": [
+            "while",
+            "else",
+            ":",
+            "condition",
+            "print()"
+        ],
+        "description": "While-Else Pattern"
+    },
+    {
+        "tags": [
+            "match",
+            "value",
+            ":",
+            "case",
+            "1",
+            ":",
+            "case",
+            "_"
+        ],
+        "description": "Structural Pattern Matching"
+    },
+    {
+        "tags": [
+            "x",
+            "if",
+            "cond",
+            "else",
+            "y"
+        ],
+        "description": "Ternary Expression"
+    },
+    {
+        "tags": [
+            "not",
+            "and",
+            "or",
+            "True",
+            "False"
+        ],
+        "description": "Boolean Operators"
+    },
+    {
+        "tags": [
+            "in",
+            "not in",
+            "list",
+            "if",
+            "item"
+        ],
+        "description": "Membership Test"
+    },
+    {
+        "tags": [
+            "is",
+            "is not",
+            "None",
+            "True"
+        ],
+        "description": "Identity Operators"
+    },
+    {
+        "tags": [
+            "//",
+            "%",
+            "**",
+            "+",
+            "-",
+            "*"
+        ],
+        "description": "Arithmetic Operators"
+    },
+    {
+        "tags": [
+            "+=",
+            "-=",
+            "*=",
+            "//=",
+            "**="
+        ],
+        "description": "Augmented Assignment"
+    },
+    {
+        "tags": [
+            "&",
+            "|",
+            "^",
+            "~",
+            "<<",
+            ">>"
+        ],
+        "description": "Bitwise Operators"
+    },
+    {
+        "tags": [
+            "==",
+            "!=",
+            "<",
+            ">",
+            "<=",
+            ">="
+        ],
+        "description": "Comparison Operators"
+    },
+    {
+        "tags": [
+            "try",
+            ":",
+            "except",
+            "as",
+            "e",
+            ":",
+            "str(e)"
+        ],
+        "description": "Catch Exception Message"
+    },
+    {
+        "tags": [
+            "class",
+            "MyError",
+            "(Exception)",
+            ":",
+            "pass"
+        ],
+        "description": "Custom Exception Class"
+    },
+    {
+        "tags": [
+            "raise",
+            "from",
+            "original",
+            "exception"
+        ],
+        "description": "Exception Chaining"
+    },
+    {
+        "tags": [
+            "contextlib",
+            "@contextmanager",
+            "yield",
+            "try"
+        ],
+        "description": "Context Manager Decorator"
+    },
+    {
+        "tags": [
+            "abc",
+            "ABC",
+            "@abstractmethod",
+            "def"
+        ],
+        "description": "Abstract Base Class"
+    },
+    {
+        "tags": [
+            "__slots__",
+            "=",
+            "['x', 'y']",
+            "class"
+        ],
+        "description": "Slots Memory Optimization"
+    },
+    {
+        "tags": [
+            "__call__",
+            "def",
+            "(self)",
+            ":",
+            "instance()"
+        ],
+        "description": "Callable Object"
+    },
+    {
+        "tags": [
+            "__add__",
+            "def",
+            "(self, other)",
+            ":",
+            "+"
+        ],
+        "description": "Operator Overloading Add"
+    },
+    {
+        "tags": [
+            "__repr__",
+            "def",
+            "(self)",
+            ":",
+            "return"
+        ],
+        "description": "Repr Dunder Method"
+    },
+    {
+        "tags": [
+            "__contains__",
+            "def",
+            "(self, item)",
+            ":",
+            "in"
+        ],
+        "description": "Contains Dunder Method"
+    },
+    {
+        "tags": [
+            "__bool__",
+            "def",
+            "(self)",
+            ":",
+            "return"
+        ],
+        "description": "Bool Dunder Method"
+    },
+    {
+        "tags": [
+            "@wraps",
+            "functools",
+            "def",
+            "wrapper()",
+            ":"
+        ],
+        "description": "Preserve Function Metadata"
+    },
+    {
+        "tags": [
+            "partial()",
+            "functools",
+            "func",
+            "arg1"
+        ],
+        "description": "Partial Function Application"
+    },
+    {
+        "tags": [
+            "heapq",
+            ".heappush()",
+            ".heappop()",
+            "heap"
+        ],
+        "description": "Heap Queue Operations"
+    },
+    {
+        "tags": [
+            "deque()",
+            "collections",
+            ".appendleft()",
+            ".pop()"
+        ],
+        "description": "Double-Ended Queue"
+    },
+    {
+        "tags": [
+            "OrderedDict()",
+            "collections",
+            "ordered",
+            "keys"
+        ],
+        "description": "Ordered Dictionary"
+    },
+    {
+        "tags": [
+            "ChainMap()",
+            "collections",
+            "dict1",
+            "dict2"
+        ],
+        "description": "Chain Map Merge"
+    },
+    {
+        "tags": [
+            "bisect",
+            ".insort()",
+            ".bisect_left()",
+            "list"
+        ],
+        "description": "Binary Search Insert"
+    },
+    {
+        "tags": [
+            "copy",
+            ".copy()",
+            ".deepcopy()",
+            "object"
+        ],
+        "description": "Shallow Deep Copy"
+    },
+    {
+        "tags": [
+            "weakref",
+            ".ref()",
+            "object",
+            "callback"
+        ],
+        "description": "Weak Reference"
+    },
+    {
+        "tags": [
+            "struct",
+            ".pack()",
+            ".unpack()",
+            "format"
+        ],
+        "description": "Binary Data Packing"
+    },
+    {
+        "tags": [
+            "pickle",
+            ".dump()",
+            ".load()",
+            "file"
+        ],
+        "description": "Object Serialization"
+    },
+    {
+        "tags": [
+            "csv",
+            ".reader()",
+            ".writer()",
+            "file"
+        ],
+        "description": "CSV Read Write"
+    },
+    {
+        "tags": [
+            "io",
+            "StringIO()",
+            ".write()",
+            ".getvalue()"
+        ],
+        "description": "In-Memory String Stream"
+    },
+    {
+        "tags": [
+            "tempfile",
+            ".NamedTemporaryFile()",
+            ".name"
+        ],
+        "description": "Temporary File Creation"
+    },
+    {
+        "tags": [
+            "shutil",
+            ".copy()",
+            ".move()",
+            ".rmtree()"
+        ],
+        "description": "File Copy Move Delete"
+    },
+    {
+        "tags": [
+            "glob",
+            ".glob()",
+            "*.txt",
+            "pattern"
+        ],
+        "description": "Glob File Pattern"
+    },
+    {
+        "tags": [
+            "threading",
+            "Thread()",
+            ".start()",
+            ".join()"
+        ],
+        "description": "Thread Start Join"
+    },
+    {
+        "tags": [
+            "threading",
+            "Lock()",
+            ".acquire()",
+            ".release()"
+        ],
+        "description": "Thread Lock Mechanism"
+    },
+    {
+        "tags": [
+            "multiprocessing",
+            "Process()",
+            ".start()",
+            ".join()"
+        ],
+        "description": "Multiprocessing Start Join"
+    },
+    {
+        "tags": [
+            "queue",
+            "Queue()",
+            ".put()",
+            ".get()"
+        ],
+        "description": "Thread Safe Queue"
+    },
+    {
+        "tags": [
+            "socket",
+            ".socket()",
+            ".bind()",
+            ".listen()"
+        ],
+        "description": "Socket Server Setup"
+    },
+    {
+        "tags": [
+            "socket",
+            ".connect()",
+            ".send()",
+            ".recv()"
+        ],
+        "description": "Socket Client Connect"
+    },
+    {
+        "tags": [
+            "http.server",
+            "HTTPServer",
+            "Handler",
+            ".serve_forever()"
+        ],
+        "description": "Simple HTTP Server"
+    },
+    {
+        "tags": [
+            "urllib",
+            ".request",
+            ".urlopen()",
+            ".read()"
+        ],
+        "description": "URL Request Read"
+    },
+    {
+        "tags": [
+            "json",
+            ".load()",
+            "file",
+            "dict",
+            "data"
+        ],
+        "description": "Load JSON From File"
+    },
+    {
+        "tags": [
+            "json",
+            ".dump()",
+            "data",
+            "file",
+            "indent"
+        ],
+        "description": "Dump JSON To File"
+    },
+    {
+        "tags": [
+            "xml",
+            "ElementTree",
+            ".parse()",
+            ".getroot()"
+        ],
+        "description": "XML Parse Tree"
+    },
+    {
+        "tags": [
+            "sqlite3",
+            ".connect()",
+            ".cursor()",
+            ".execute()"
+        ],
+        "description": "SQLite Database Query"
+    },
+    {
+        "tags": [
+            "sqlite3",
+            "CREATE TABLE",
+            "INSERT",
+            "SELECT"
+        ],
+        "description": "SQLite CRUD Operations"
+    },
+    {
+        "tags": [
+            "hashlib",
+            ".sha256()",
+            ".hexdigest()",
+            "hash"
+        ],
+        "description": "SHA256 Hash Generation"
+    },
+    {
+        "tags": [
+            "secrets",
+            ".token_hex()",
+            ".token_urlsafe()"
+        ],
+        "description": "Secure Token Generation"
+    },
+    {
+        "tags": [
+            "base64",
+            ".b64encode()",
+            ".b64decode()",
+            "bytes"
+        ],
+        "description": "Base64 Encode Decode"
+    },
+    {
+        "tags": [
+            "math",
+            ".ceil()",
+            ".floor()",
+            ".log()"
+        ],
+        "description": "Math Rounding Logarithm"
+    },
+    {
+        "tags": [
+            "math",
+            ".pi",
+            ".e",
+            ".sqrt()",
+            ".factorial()"
+        ],
+        "description": "Math Constants Functions"
+    },
+    {
+        "tags": [
+            "statistics",
+            ".mean()",
+            ".median()",
+            ".stdev()"
+        ],
+        "description": "Statistics Calculations"
+    },
+    {
+        "tags": [
+            "decimal",
+            "Decimal()",
+            "getcontext()",
+            ".prec"
+        ],
+        "description": "Decimal Precision Control"
+    },
+    {
+        "tags": [
+            "fractions",
+            "Fraction()",
+            "1",
+            "3",
+            ".limit_denominator()"
+        ],
+        "description": "Fraction Arithmetic"
+    },
+    {
+        "tags": [
+            "string",
+            ".ascii_letters",
+            ".digits",
+            ".punctuation"
+        ],
+        "description": "String Constants"
+    },
+    {
+        "tags": [
+            "textwrap",
+            ".wrap()",
+            ".dedent()",
+            "width"
+        ],
+        "description": "Text Wrapping"
+    },
+    {
+        "tags": [
+            "re",
+            ".search()",
+            ".group()",
+            "pattern"
+        ],
+        "description": "Regex Search Group"
+    },
+    {
+        "tags": [
+            "re",
+            ".findall()",
+            "pattern",
+            "string",
+            "list"
+        ],
+        "description": "Regex Find All"
+    },
+    {
+        "tags": [
+            "re",
+            ".sub()",
+            "pattern",
+            "repl",
+            "string"
+        ],
+        "description": "Regex Substitution"
+    },
+    {
+        "tags": [
+            "re",
+            ".compile()",
+            "pattern",
+            ".match()"
+        ],
+        "description": "Compiled Regex Pattern"
+    },
+    {
+        "tags": [
+            "argparse",
+            "ArgumentParser()",
+            ".add_argument()",
+            ".parse_args()"
+        ],
+        "description": "Command Line Arguments"
+    },
+    {
+        "tags": [
+            "configparser",
+            "ConfigParser()",
+            ".read()",
+            ".get()"
+        ],
+        "description": "Config File Parser"
+    },
+    {
+        "tags": [
+            "time",
+            ".time()",
+            ".sleep()",
+            "seconds"
+        ],
+        "description": "Time Sleep Measure"
+    },
+    {
+        "tags": [
+            "time",
+            ".perf_counter()",
+            "start",
+            "end",
+            "elapsed"
+        ],
+        "description": "Performance Timer"
+    },
+    {
+        "tags": [
+            "datetime",
+            ".date()",
+            ".today()",
+            ".year"
+        ],
+        "description": "Date Object Access"
+    },
+    {
+        "tags": [
+            "datetime",
+            ".timedelta()",
+            "days=",
+            "+",
+            "date"
+        ],
+        "description": "Date Arithmetic"
+    },
+    {
+        "tags": [
+            "calendar",
+            ".month()",
+            "year",
+            "month"
+        ],
+        "description": "Calendar Month Display"
+    },
+    {
+        "tags": [
+            "pprint",
+            "pprint()",
+            "data",
+            "indent=2"
+        ],
+        "description": "Pretty Print Data"
+    },
+    {
+        "tags": [
+            "traceback",
+            ".format_exc()",
+            "except",
+            "log"
+        ],
+        "description": "Format Exception Traceback"
+    },
+    {
+        "tags": [
+            "warnings",
+            ".warn()",
+            "message",
+            "category"
+        ],
+        "description": "Issue Runtime Warning"
+    },
+    {
+        "tags": [
+            "atexit",
+            ".register()",
+            "cleanup()",
+            "exit"
+        ],
+        "description": "Exit Cleanup Handler"
+    },
+    {
+        "tags": [
+            "signal",
+            ".signal()",
+            "SIGINT",
+            "handler"
+        ],
+        "description": "Signal Handler Setup"
+    },
+    {
+        "tags": [
+            "platform",
+            ".system()",
+            ".python_version()"
+        ],
+        "description": "Platform System Info"
+    },
+    {
+        "tags": [
+            "sys",
+            ".stdin",
+            ".stdout",
+            ".stderr"
+        ],
+        "description": "Standard IO Streams"
+    },
+    {
+        "tags": [
+            "sys",
+            ".path",
+            ".append()",
+            "module_dir"
+        ],
+        "description": "Modify Module Path"
+    },
+    {
+        "tags": [
+            "os",
+            ".environ",
+            ".get()",
+            "KEY",
+            "default"
+        ],
+        "description": "Environment Variable Access"
+    },
+    {
+        "tags": [
+            "os",
+            ".getcwd()",
+            ".chdir()",
+            "path"
+        ],
+        "description": "Working Directory Change"
+    },
+    {
+        "tags": [
+            "os",
+            ".walk()",
+            "root",
+            "dirs",
+            "files"
+        ],
+        "description": "Walk Directory Tree"
+    },
+    {
+        "tags": [
+            "zipfile",
+            "ZipFile()",
+            ".write()",
+            ".extractall()"
+        ],
+        "description": "Zip Archive Operations"
+    },
+    {
+        "tags": [
+            "tarfile",
+            ".open()",
+            ".add()",
+            ".extractall()"
+        ],
+        "description": "Tar Archive Operations"
+    },
+    {
+        "tags": [
+            "gzip",
+            ".open()",
+            ".write()",
+            "compress"
+        ],
+        "description": "Gzip Compression"
+    },
+    {
+        "tags": [
+            "enum",
+            "class",
+            "Color(Enum)",
+            ":",
+            "RED = 1"
+        ],
+        "description": "Enum Definition"
+    },
+    {
+        "tags": [
+            "typing",
+            "Callable",
+            "[[int]",
+            ",",
+            "str]"
+        ],
+        "description": "Callable Type Hint"
+    },
+    {
+        "tags": [
+            "typing",
+            "TypeVar",
+            "T",
+            "Generic",
+            "[T]"
+        ],
+        "description": "Generic Type Variable"
+    },
+    {
+        "tags": [
+            "Protocol",
+            "class",
+            "Drawable",
+            ":",
+            "def draw()"
+        ],
+        "description": "Protocol Structural Typing"
+    },
+    {
+        "tags": [
+            "final",
+            "@",
+            "class",
+            ":",
+            "no inherit"
+        ],
+        "description": "Final Class Decorator"
+    },
+    {
+        "tags": [
+            "overload",
+            "@",
+            "def",
+            "process()",
+            ":"
+        ],
+        "description": "Function Overload Hint"
+    },
+    {
+        "tags": [
+            "TypedDict",
+            "class",
+            "Movie",
+            ":",
+            "name: str"
+        ],
+        "description": "Typed Dictionary"
+    },
+    {
+        "tags": [
+            "Literal",
+            "['a'",
+            "'b'",
+            "'c']",
+            "type"
+        ],
+        "description": "Literal Type Hint"
+    },
+    {
+        "tags": [
+            "walrus",
+            ":=",
+            "if",
+            "(n := len(a))",
+            "> 10"
+        ],
+        "description": "Walrus Operator"
+    },
+    {
+        "tags": [
+            "yield",
+            "from",
+            "iterable",
+            "def",
+            "gen()"
+        ],
+        "description": "Yield From Subgenerator"
+    },
+    {
+        "tags": [
+            "next()",
+            "iter()",
+            "StopIteration",
+            "default"
+        ],
+        "description": "Manual Iterator Protocol"
+    },
+    {
+        "tags": [
+            "reversed()",
+            "list",
+            "for",
+            "item",
+            "in"
+        ],
+        "description": "Reverse Iteration"
+    },
+    {
+        "tags": [
+            "while",
+            "stack",
+            ":",
+            "node",
+            "=",
+            ".pop()"
+        ],
+        "description": "Stack Processing Loop"
+    },
+    {
+        "tags": [
+            "if",
+            "not",
+            "list",
+            ":",
+            "empty",
+            "check"
+        ],
+        "description": "Empty Collection Check"
+    },
+    {
+        "tags": [
+            "try",
+            ":",
+            "return",
+            "finally",
+            ":",
+            "cleanup()"
+        ],
+        "description": "Return With Cleanup"
+    },
+    {
+        "tags": [
+            "nonlocal",
+            "x",
+            "def",
+            "inner()",
+            ":",
+            "x += 1"
+        ],
+        "description": "Nonlocal Variable Access"
+    },
+    {
+        "tags": [
+            "def",
+            "outer()",
+            ":",
+            "def",
+            "inner()",
+            ":",
+            "return"
+        ],
+        "description": "Nested Function Closure"
+    },
+    {
+        "tags": [
+            "class",
+            "Singleton",
+            ":",
+            "_instance",
+            "= None"
+        ],
+        "description": "Singleton Pattern"
+    },
+    {
+        "tags": [
+            "__new__",
+            "def",
+            "(cls)",
+            ":",
+            "return",
+            "super()"
+        ],
+        "description": "Custom Object Creation"
+    },
+    {
+        "tags": [
+            "__del__",
+            "def",
+            "(self)",
+            ":",
+            "cleanup"
+        ],
+        "description": "Destructor Method"
+    },
+    {
+        "tags": [
+            "__hash__",
+            "def",
+            "(self)",
+            ":",
+            "return",
+            "hash()"
+        ],
+        "description": "Custom Hash Method"
+    },
+    {
+        "tags": [
+            "__lt__",
+            "def",
+            "(self, other)",
+            ":",
+            "<"
+        ],
+        "description": "Less Than Comparison"
+    },
+    {
+        "tags": [
+            "@total_ordering",
+            "class",
+            "__eq__",
+            "__lt__"
+        ],
+        "description": "Total Ordering Decorator"
+    },
+    {
+        "tags": [
+            "metaclass",
+            "type",
+            "class",
+            "Meta",
+            ":",
+            "__new__"
+        ],
+        "description": "Metaclass Definition"
+    },
+    {
+        "tags": [
+            "descriptor",
+            "__get__",
+            "__set__",
+            "owner"
+        ],
+        "description": "Descriptor Protocol"
+    },
+    {
+        "tags": [
+            "mixin",
+            "class",
+            "LogMixin",
+            ":",
+            "def log()"
+        ],
+        "description": "Mixin Class Pattern"
+    },
+    {
+        "tags": [
+            "MRO",
+            "class",
+            "C(A, B)",
+            ":",
+            "super()"
+        ],
+        "description": "Method Resolution Order"
+    },
+    {
+        "tags": [
+            "asyncio",
+            ".gather()",
+            "task1",
+            "task2",
+            "await"
+        ],
+        "description": "Concurrent Async Tasks"
+    },
+    {
+        "tags": [
+            "asyncio",
+            ".create_task()",
+            "coro",
+            "await"
+        ],
+        "description": "Create Async Task"
+    },
+    {
+        "tags": [
+            "asyncio",
+            "Queue()",
+            ".put()",
+            ".get()",
+            "await"
+        ],
+        "description": "Async Queue Operations"
+    },
+    {
+        "tags": [
+            "asyncio",
+            ".sleep()",
+            "await",
+            "seconds"
+        ],
+        "description": "Async Sleep Delay"
+    },
+    {
+        "tags": [
+            "async",
+            "for",
+            "item",
+            "in",
+            "aiter",
+            ":"
+        ],
+        "description": "Async For Loop"
+    },
+    {
+        "tags": [
+            "async",
+            "with",
+            "lock",
+            ":",
+            "await"
+        ],
+        "description": "Async Context Manager"
+    },
+    {
+        "tags": [
+            "aiohttp",
+            "session",
+            ".get()",
+            "await",
+            "resp"
+        ],
+        "description": "Async HTTP Request"
+    },
+    {
+        "tags": [
+            "concurrent",
+            "futures",
+            "ThreadPoolExecutor",
+            ".submit()"
+        ],
+        "description": "Thread Pool Executor"
+    },
+    {
+        "tags": [
+            "concurrent",
+            "futures",
+            "ProcessPoolExecutor",
+            ".map()"
+        ],
+        "description": "Process Pool Map"
+    },
+    {
+        "tags": [
+            "Future",
+            ".result()",
+            ".done()",
+            "timeout"
+        ],
+        "description": "Future Result Access"
+    },
+    {
+        "tags": [
+            "multiprocessing",
+            "Pool()",
+            ".map()",
+            ".close()"
+        ],
+        "description": "Multiprocessing Pool Map"
+    },
+    {
+        "tags": [
+            "multiprocessing",
+            "Value()",
+            "Lock()",
+            "shared"
+        ],
+        "description": "Shared Memory Value"
+    },
+    {
+        "tags": [
+            "threading",
+            "Event()",
+            ".set()",
+            ".wait()"
+        ],
+        "description": "Thread Event Signal"
+    },
+    {
+        "tags": [
+            "threading",
+            "Semaphore()",
+            ".acquire()",
+            ".release()"
+        ],
+        "description": "Semaphore Concurrency Control"
+    },
+    {
+        "tags": [
+            "threading",
+            "Timer()",
+            "delay",
+            ".start()"
+        ],
+        "description": "Delayed Thread Execution"
+    },
+    {
+        "tags": [
+            "GIL",
+            "threading",
+            "CPU-bound",
+            "multiprocessing"
+        ],
+        "description": "GIL Limitation Workaround"
+    },
+    {
+        "tags": [
+            "__import__()",
+            "module_name",
+            "fromlist",
+            "attr"
+        ],
+        "description": "Dynamic Module Import"
+    },
+    {
+        "tags": [
+            "importlib",
+            ".import_module()",
+            "name",
+            "attr"
+        ],
+        "description": "Importlib Dynamic Load"
+    },
+    {
+        "tags": [
+            "inspect",
+            ".signature()",
+            ".getmembers()",
+            "func"
+        ],
+        "description": "Inspect Function Signature"
+    },
+    {
+        "tags": [
+            "inspect",
+            ".getsource()",
+            "func",
+            "source_code"
+        ],
+        "description": "Get Function Source"
+    },
+    {
+        "tags": [
+            "gc",
+            ".collect()",
+            ".get_objects()",
+            "memory"
+        ],
+        "description": "Garbage Collection Control"
+    },
+    {
+        "tags": [
+            "sys",
+            ".getsizeof()",
+            "object",
+            "bytes"
+        ],
+        "description": "Object Memory Size"
+    },
+    {
+        "tags": [
+            "__debug__",
+            "assert",
+            "optimize",
+            "-O"
+        ],
+        "description": "Debug Mode Flag"
+    },
+    {
+        "tags": [
+            "dis",
+            ".dis()",
+            "func",
+            "bytecode"
+        ],
+        "description": "Disassemble Bytecode"
+    },
+    {
+        "tags": [
+            "cProfile",
+            ".run()",
+            "func()",
+            "stats"
+        ],
+        "description": "Profile Code Performance"
+    },
+    {
+        "tags": [
+            "timeit",
+            ".timeit()",
+            "stmt",
+            "number"
+        ],
+        "description": "Benchmark Code Timing"
+    },
+    {
+        "tags": [
+            "pdb",
+            ".set_trace()",
+            "breakpoint()",
+            "debug"
+        ],
+        "description": "Debugger Breakpoint"
+    },
+    {
+        "tags": [
+            "breakpoint()",
+            "n",
+            "s",
+            "c",
+            "p",
+            "variable"
+        ],
+        "description": "Debugger Commands"
+    },
+    {
+        "tags": [
+            "doctest",
+            "\"\"\"",
+            ">>>",
+            "func(1)",
+            "result"
+        ],
+        "description": "Doctest Example"
+    },
+    {
+        "tags": [
+            "unittest",
+            ".mock",
+            "patch()",
+            "MagicMock()"
+        ],
+        "description": "Mock Object Testing"
+    },
+    {
+        "tags": [
+            "unittest",
+            "setUp()",
+            "tearDown()",
+            "test_"
+        ],
+        "description": "Test Setup Teardown"
+    },
+    {
+        "tags": [
+            "pytest",
+            "@fixture",
+            "def",
+            "setup()",
+            "yield"
+        ],
+        "description": "Pytest Fixture"
+    },
+    {
+        "tags": [
+            "pytest",
+            "@mark.parametrize",
+            "params",
+            "test"
+        ],
+        "description": "Parametrized Test Cases"
+    },
+    {
+        "tags": [
+            "pytest",
+            "raises()",
+            "Exception",
+            "with"
+        ],
+        "description": "Test Exception Raised"
+    },
+    {
+        "tags": [
+            "coverage",
+            "run",
+            "report",
+            "html",
+            "percent"
+        ],
+        "description": "Test Coverage Report"
+    },
+    {
+        "tags": [
+            "hypothesis",
+            "@given",
+            "st.integers()",
+            "test"
+        ],
+        "description": "Property Based Testing"
+    },
+    {
+        "tags": [
+            "setuptools",
+            "setup()",
+            "name=",
+            "version="
+        ],
+        "description": "Package Setup Script"
+    },
+    {
+        "tags": [
+            "pyproject.toml",
+            "[project]",
+            "name",
+            "version"
+        ],
+        "description": "Project Configuration"
+    },
+    {
+        "tags": [
+            "__init__.py",
+            "from",
+            ".",
+            "import",
+            "module"
+        ],
+        "description": "Package Init Module"
+    },
+    {
+        "tags": [
+            "__all__",
+            "=",
+            "['func1'",
+            "'func2']"
+        ],
+        "description": "Public API Exports"
+    },
+    {
+        "tags": [
+            "relative",
+            "from",
+            ".",
+            "import",
+            "sibling"
+        ],
+        "description": "Relative Import"
+    },
+    {
+        "tags": [
+            "absolute",
+            "from",
+            "package",
+            "import",
+            "module"
+        ],
+        "description": "Absolute Import"
+    }
+]

@@ -1,0 +1,1280 @@
+[
+  {
+    "tokens": [
+      "from",
+      "django",
+      ".",
+      "db",
+      "import",
+      "models"
+    ]
+  },
+  {
+    "tokens": [
+      "class",
+      "Post",
+      "(",
+      "models.Model",
+      ")",
+      ":"
+    ]
+  },
+  {
+    "tokens": [
+      "title",
+      "=",
+      "models",
+      ".",
+      "CharField",
+      "()"
+    ]
+  },
+  {
+    "tokens": [
+      "max_length",
+      "=",
+      "200"
+    ]
+  },
+  {
+    "tokens": [
+      "body",
+      "=",
+      "models",
+      ".",
+      "TextField",
+      "(",
+      ")"
+    ]
+  },
+  {
+    "tokens": [
+      "created",
+      "=",
+      "models",
+      ".",
+      "DateField",
+      "()"
+    ]
+  },
+  {
+    "tokens": [
+      "auto_now_add",
+      "=",
+      "True"
+    ]
+  },
+  {
+    "tokens": [
+      "is_active",
+      "=",
+      "models",
+      ".",
+      "BooleanField"
+    ]
+  },
+  {
+    "tokens": [
+      "price",
+      "=",
+      "models",
+      ".",
+      "DecimalField"
+    ]
+  },
+  {
+    "tokens": [
+      "author",
+      "=",
+      "models",
+      ".",
+      "ForeignKey"
+    ]
+  },
+  {
+    "tokens": [
+      "on_delete",
+      "=",
+      "models",
+      ".",
+      "CASCADE"
+    ]
+  },
+  {
+    "tokens": [
+      "tags",
+      "=",
+      "models",
+      ".",
+      "ManyToMany"
+    ]
+  },
+  {
+    "tokens": [
+      "image",
+      "=",
+      "models",
+      ".",
+      "ImageField",
+      "()"
+    ]
+  },
+  {
+    "tokens": [
+      "email",
+      "=",
+      "models",
+      ".",
+      "EmailField",
+      "()"
+    ]
+  },
+  {
+    "tokens": [
+      "slug",
+      "=",
+      "models",
+      ".",
+      "SlugField",
+      "(",
+      ")"
+    ]
+  },
+  {
+    "tokens": [
+      "url",
+      "=",
+      "models",
+      ".",
+      "URLField",
+      "(",
+      ")"
+    ]
+  },
+  {
+    "tokens": [
+      "count",
+      "=",
+      "models",
+      ".",
+      "IntegerField"
+    ]
+  },
+  {
+    "tokens": [
+      "def",
+      "__str__",
+      "(",
+      "self",
+      ")",
+      ":"
+    ]
+  },
+  {
+    "tokens": [
+      "return",
+      "self",
+      ".",
+      "title"
+    ]
+  },
+  {
+    "tokens": [
+      "class",
+      "Meta",
+      ":"
+    ]
+  },
+  {
+    "tokens": [
+      "ordering",
+      "=",
+      "[",
+      "\"-created\"",
+      "]"
+    ]
+  },
+  {
+    "tokens": [
+      "verbose_name",
+      "=",
+      "\"Post\""
+    ]
+  },
+  {
+    "tokens": [
+      "db_table",
+      "=",
+      "\"posts\""
+    ]
+  },
+  {
+    "tokens": [
+      "from",
+      "django",
+      ".",
+      "urls",
+      "import",
+      "path"
+    ]
+  },
+  {
+    "tokens": [
+      "path",
+      "(",
+      "\"home/\"",
+      ",",
+      "views",
+      ".",
+      "home"
+    ]
+  },
+  {
+    "tokens": [
+      "path",
+      "(",
+      "\"about/\"",
+      ",",
+      "views",
+      ".",
+      "about"
+    ]
+  },
+  {
+    "tokens": [
+      "path",
+      "(",
+      "\"\"",
+      ",",
+      "include",
+      "(",
+      "urls",
+      ")"
+    ]
+  },
+  {
+    "tokens": [
+      "urlpatterns",
+      "=",
+      "[",
+      "]"
+    ]
+  },
+  {
+    "tokens": [
+      "from",
+      "django",
+      ".",
+      "shortcuts",
+      "import"
+    ]
+  },
+  {
+    "tokens": [
+      "render",
+      ",",
+      "redirect"
+    ]
+  },
+  {
+    "tokens": [
+      "def",
+      "home",
+      "(",
+      "request",
+      ")",
+      ":"
+    ]
+  },
+  {
+    "tokens": [
+      "return",
+      "render",
+      "(",
+      "request",
+      ",",
+      "tmpl"
+    ]
+  },
+  {
+    "tokens": [
+      "return",
+      "redirect",
+      "(",
+      "\"/home\"",
+      ")"
+    ]
+  },
+  {
+    "tokens": [
+      "from",
+      "django.http",
+      "import"
+    ]
+  },
+  {
+    "tokens": [
+      "HttpResponse"
+    ]
+  },
+  {
+    "tokens": [
+      "JsonResponse"
+    ]
+  },
+  {
+    "tokens": [
+      "return",
+      "HttpResponse",
+      "(",
+      "\"OK\"",
+      ")"
+    ]
+  },
+  {
+    "tokens": [
+      "return",
+      "JsonResponse",
+      "(",
+      "data",
+      ")"
+    ]
+  },
+  {
+    "tokens": [
+      "Post",
+      ".",
+      "objects",
+      ".",
+      "all",
+      "(",
+      ")"
+    ]
+  },
+  {
+    "tokens": [
+      "Post",
+      ".",
+      "objects",
+      ".",
+      "filter",
+      "(",
+      ")"
+    ]
+  },
+  {
+    "tokens": [
+      "Post",
+      ".",
+      "objects",
+      ".",
+      "get",
+      "(",
+      "id=1",
+      ")"
+    ]
+  },
+  {
+    "tokens": [
+      "Post",
+      ".",
+      "objects",
+      ".",
+      "create",
+      "(",
+      ")"
+    ]
+  },
+  {
+    "tokens": [
+      "Post",
+      ".",
+      "objects",
+      ".",
+      "exclude",
+      "(",
+      ")"
+    ]
+  },
+  {
+    "tokens": [
+      "post",
+      ".",
+      "save",
+      "(",
+      ")"
+    ]
+  },
+  {
+    "tokens": [
+      "post",
+      ".",
+      "delete",
+      "(",
+      ")"
+    ]
+  },
+  {
+    "tokens": [
+      "qs",
+      ".",
+      "order_by",
+      "(",
+      "\"title\"",
+      ")"
+    ]
+  },
+  {
+    "tokens": [
+      "qs",
+      ".",
+      "count",
+      "(",
+      ")"
+    ]
+  },
+  {
+    "tokens": [
+      "qs",
+      ".",
+      "exists",
+      "(",
+      ")"
+    ]
+  },
+  {
+    "tokens": [
+      "qs",
+      ".",
+      "first",
+      "(",
+      ")"
+    ]
+  },
+  {
+    "tokens": [
+      "qs",
+      ".",
+      "last",
+      "(",
+      ")"
+    ]
+  },
+  {
+    "tokens": [
+      "qs",
+      ".",
+      "values",
+      "(",
+      "\"name\"",
+      ")"
+    ]
+  },
+  {
+    "tokens": [
+      "qs",
+      ".",
+      "distinct",
+      "(",
+      ")"
+    ]
+  },
+  {
+    "tokens": [
+      "title__contains",
+      "=",
+      "\"django\""
+    ]
+  },
+  {
+    "tokens": [
+      "icontains",
+      "=",
+      "\"test\""
+    ]
+  },
+  {
+    "tokens": [
+      "price__gt",
+      "=",
+      "10"
+    ]
+  },
+  {
+    "tokens": [
+      "price__lte",
+      "=",
+      "100"
+    ]
+  },
+  {
+    "tokens": [
+      "created__year",
+      "=",
+      "2024"
+    ]
+  },
+  {
+    "tokens": [
+      "from",
+      "django.views",
+      "import",
+      "View"
+    ]
+  },
+  {
+    "tokens": [
+      "class",
+      "HomeView",
+      "(",
+      "View",
+      ")",
+      ":"
+    ]
+  },
+  {
+    "tokens": [
+      "def",
+      "get",
+      "(",
+      "self",
+      ",",
+      "request",
+      ")"
+    ]
+  },
+  {
+    "tokens": [
+      "def",
+      "post",
+      "(",
+      "self",
+      ",",
+      "request",
+      ")"
+    ]
+  },
+  {
+    "tokens": [
+      "from",
+      "django",
+      ".",
+      "views",
+      ".",
+      "generic"
+    ]
+  },
+  {
+    "tokens": [
+      "ListView"
+    ]
+  },
+  {
+    "tokens": [
+      "DetailView"
+    ]
+  },
+  {
+    "tokens": [
+      "CreateView"
+    ]
+  },
+  {
+    "tokens": [
+      "UpdateView"
+    ]
+  },
+  {
+    "tokens": [
+      "DeleteView"
+    ]
+  },
+  {
+    "tokens": [
+      "model",
+      "=",
+      "Post"
+    ]
+  },
+  {
+    "tokens": [
+      "template_name",
+      "=",
+      "\"list.html\""
+    ]
+  },
+  {
+    "tokens": [
+      "context_name",
+      "=",
+      "\"posts\""
+    ]
+  },
+  {
+    "tokens": [
+      "fields",
+      "=",
+      "[",
+      "\"title\"",
+      "]"
+    ]
+  },
+  {
+    "tokens": [
+      "success_url",
+      "=",
+      "\"/posts/\""
+    ]
+  },
+  {
+    "tokens": [
+      "from",
+      "django",
+      "import",
+      "forms"
+    ]
+  },
+  {
+    "tokens": [
+      "class",
+      "PostForm",
+      "(",
+      "forms.Form",
+      ")",
+      ":"
+    ]
+  },
+  {
+    "tokens": [
+      "title",
+      "=",
+      "forms",
+      ".",
+      "CharField",
+      "()"
+    ]
+  },
+  {
+    "tokens": [
+      "email",
+      "=",
+      "forms",
+      ".",
+      "EmailField",
+      "()"
+    ]
+  },
+  {
+    "tokens": [
+      "form",
+      ".",
+      "is_valid",
+      "(",
+      ")"
+    ]
+  },
+  {
+    "tokens": [
+      "form",
+      ".",
+      "cleaned_data"
+    ]
+  },
+  {
+    "tokens": [
+      "form",
+      ".",
+      "save",
+      "(",
+      ")"
+    ]
+  },
+  {
+    "tokens": [
+      "class",
+      "Meta",
+      ":"
+    ]
+  },
+  {
+    "tokens": [
+      "model",
+      "=",
+      "Post"
+    ]
+  },
+  {
+    "tokens": [
+      "fields",
+      "=",
+      "\"__all__\""
+    ]
+  },
+  {
+    "tokens": [
+      "exclude",
+      "=",
+      "[",
+      "\"slug\"",
+      "]"
+    ]
+  },
+  {
+    "tokens": [
+      "from",
+      "django.contrib",
+      "import",
+      "admin"
+    ]
+  },
+  {
+    "tokens": [
+      "admin",
+      ".",
+      "site",
+      ".",
+      "register",
+      "(",
+      "Post"
+    ]
+  },
+  {
+    "tokens": [
+      "class",
+      "PostAdmin",
+      "(",
+      "ModelAdmin",
+      ")"
+    ]
+  },
+  {
+    "tokens": [
+      "list_display",
+      "=",
+      "[",
+      "\"title\"",
+      "]"
+    ]
+  },
+  {
+    "tokens": [
+      "search_fields",
+      "=",
+      "[",
+      "\"title\"",
+      "]"
+    ]
+  },
+  {
+    "tokens": [
+      "list_filter",
+      "=",
+      "[",
+      "\"status\"",
+      "]"
+    ]
+  },
+  {
+    "tokens": [
+      "readonly_fields",
+      "=",
+      "[",
+      "\"slug\"",
+      "]"
+    ]
+  },
+  {
+    "tokens": [
+      "{%",
+      "extends",
+      "\"base.html\"",
+      "%}"
+    ]
+  },
+  {
+    "tokens": [
+      "{%",
+      "block",
+      "content",
+      "%}"
+    ]
+  },
+  {
+    "tokens": [
+      "{%",
+      "endblock",
+      "%}"
+    ]
+  },
+  {
+    "tokens": [
+      "{%",
+      "for",
+      "p",
+      "in",
+      "posts",
+      "%}"
+    ]
+  },
+  {
+    "tokens": [
+      "{%",
+      "endfor",
+      "%}"
+    ]
+  },
+  {
+    "tokens": [
+      "{%",
+      "if",
+      "user",
+      ".",
+      "is_auth",
+      "%}"
+    ]
+  },
+  {
+    "tokens": [
+      "{%",
+      "endif",
+      "%}"
+    ]
+  },
+  {
+    "tokens": [
+      "{%",
+      "include",
+      "\"nav.html\"",
+      "%}"
+    ]
+  },
+  {
+    "tokens": [
+      "{%",
+      "load",
+      "static",
+      "%}"
+    ]
+  },
+  {
+    "tokens": [
+      "{%",
+      "url",
+      "\"home\"",
+      "%}"
+    ]
+  },
+  {
+    "tokens": [
+      "{%",
+      "csrf_token",
+      "%}"
+    ]
+  },
+  {
+    "tokens": [
+      "{{",
+      "post.title",
+      "}}"
+    ]
+  },
+  {
+    "tokens": [
+      "{{",
+      "post.body",
+      "|",
+      "truncate",
+      "}}"
+    ]
+  },
+  {
+    "tokens": [
+      "{{",
+      "form.as_p",
+      "}}"
+    ]
+  },
+  {
+    "tokens": [
+      "{%",
+      "static",
+      "\"style.css\"",
+      "%}"
+    ]
+  },
+  {
+    "tokens": [
+      "INSTALLED_APPS",
+      "=",
+      "[",
+      "]"
+    ]
+  },
+  {
+    "tokens": [
+      "\"django.contrib",
+      ".admin\""
+    ]
+  },
+  {
+    "tokens": [
+      "\"django.contrib",
+      ".auth\""
+    ]
+  },
+  {
+    "tokens": [
+      "DATABASES",
+      "=",
+      "{",
+      "}"
+    ]
+  },
+  {
+    "tokens": [
+      "STATIC_URL",
+      "=",
+      "\"/static/\""
+    ]
+  },
+  {
+    "tokens": [
+      "MEDIA_URL",
+      "=",
+      "\"/media/\""
+    ]
+  },
+  {
+    "tokens": [
+      "DEBUG",
+      "=",
+      "True"
+    ]
+  },
+  {
+    "tokens": [
+      "ALLOWED_HOSTS",
+      "=",
+      "[",
+      "]"
+    ]
+  },
+  {
+    "tokens": [
+      "ROOT_URLCONF",
+      "=",
+      "\"app.urls\""
+    ]
+  },
+  {
+    "tokens": [
+      "LANGUAGE_CODE",
+      "=",
+      "\"en-us\""
+    ]
+  },
+  {
+    "tokens": [
+      "TIME_ZONE",
+      "=",
+      "\"UTC\""
+    ]
+  },
+  {
+    "tokens": [
+      "from",
+      "django.test",
+      "import",
+      "TestCase"
+    ]
+  },
+  {
+    "tokens": [
+      "class",
+      "PostTest",
+      "(",
+      "TestCase",
+      ")",
+      ":"
+    ]
+  },
+  {
+    "tokens": [
+      "def",
+      "test_create",
+      "(",
+      "self",
+      ")",
+      ":"
+    ]
+  },
+  {
+    "tokens": [
+      "self",
+      ".",
+      "assertEqual",
+      "(",
+      "a",
+      ",",
+      "b"
+    ]
+  },
+  {
+    "tokens": [
+      "self",
+      ".",
+      "assertTrue",
+      "(",
+      "result",
+      ")"
+    ]
+  },
+  {
+    "tokens": [
+      "self",
+      ".",
+      "assertFalse",
+      "(",
+      "val",
+      ")"
+    ]
+  },
+  {
+    "tokens": [
+      "self",
+      ".",
+      "client",
+      ".",
+      "get",
+      "(",
+      "\"/\"",
+      ")"
+    ]
+  },
+  {
+    "tokens": [
+      "self",
+      ".",
+      "client",
+      ".",
+      "post",
+      "(",
+      "url"
+    ]
+  },
+  {
+    "tokens": [
+      "response",
+      ".",
+      "status_code"
+    ]
+  },
+  {
+    "tokens": [
+      "self",
+      ".",
+      "assertEqual",
+      "(",
+      "200",
+      ")"
+    ]
+  },
+  {
+    "tokens": [
+      "python",
+      "manage.py",
+      "migrate"
+    ]
+  },
+  {
+    "tokens": [
+      "python",
+      "manage.py",
+      "makemig"
+    ]
+  },
+  {
+    "tokens": [
+      "python",
+      "manage.py",
+      "runserver"
+    ]
+  },
+  {
+    "tokens": [
+      "python",
+      "manage.py",
+      "shell"
+    ]
+  },
+  {
+    "tokens": [
+      "python",
+      "manage.py",
+      "test"
+    ]
+  },
+  {
+    "tokens": [
+      "python",
+      "manage.py",
+      "create"
+    ]
+  },
+  {
+    "tokens": [
+      "from",
+      "rest_framework",
+      "import"
+    ]
+  },
+  {
+    "tokens": [
+      "serializers"
+    ]
+  },
+  {
+    "tokens": [
+      "class",
+      "PostSerializer",
+      "(",
+      "Serializer"
+    ]
+  },
+  {
+    "tokens": [
+      "model",
+      "=",
+      "Post"
+    ]
+  },
+  {
+    "tokens": [
+      "fields",
+      "=",
+      "[",
+      "\"id\"",
+      ",",
+      "\"title\""
+    ]
+  },
+  {
+    "tokens": [
+      "from",
+      "django.contrib",
+      ".",
+      "auth"
+    ]
+  },
+  {
+    "tokens": [
+      "from",
+      "django.contrib",
+      ".",
+      "auth"
+    ]
+  },
+  {
+    "tokens": [
+      "login",
+      "(",
+      "request",
+      ",",
+      "user",
+      ")"
+    ]
+  },
+  {
+    "tokens": [
+      "logout",
+      "(",
+      "request",
+      ")"
+    ]
+  },
+  {
+    "tokens": [
+      "@login_required"
+    ]
+  },
+  {
+    "tokens": [
+      "request",
+      ".",
+      "user"
+    ]
+  },
+  {
+    "tokens": [
+      "request",
+      ".",
+      "method",
+      "==",
+      "\"POST\""
+    ]
+  },
+  {
+    "tokens": [
+      "request",
+      ".",
+      "GET",
+      ".",
+      "get",
+      "(",
+      "\"q\"",
+      ")"
+    ]
+  },
+  {
+    "tokens": [
+      "request",
+      ".",
+      "POST",
+      "[",
+      "\"name\"",
+      "]"
+    ]
+  },
+  {
+    "tokens": [
+      "from",
+      "django.db",
+      ".",
+      "models",
+      "import",
+      "Q"
+    ]
+  },
+  {
+    "tokens": [
+      "Q",
+      "(",
+      "title__contains",
+      "=",
+      "\"x\"",
+      ")"
+    ]
+  },
+  {
+    "tokens": [
+      "qs",
+      ".",
+      "aggregate",
+      "(",
+      "Sum",
+      "(",
+      "\"p\""
+    ]
+  },
+  {
+    "tokens": [
+      "qs",
+      ".",
+      "annotate",
+      "(",
+      "Count",
+      "(",
+      "\"id\""
+    ]
+  }
+]

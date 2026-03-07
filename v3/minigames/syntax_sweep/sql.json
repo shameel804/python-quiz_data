@@ -1,0 +1,1252 @@
+[
+  {
+    "token": "ISNULL(a, b)",
+    "isValid": true,
+    "reason": "Valid null check (SQL Server)"
+  },
+  {
+    "token": "SORT BY name",
+    "isValid": false,
+    "reason": "SQL uses ORDER BY"
+  },
+  {
+    "token": "SKIP 5",
+    "isValid": false,
+    "reason": "SQL uses OFFSET, not SKIP"
+  },
+  {
+    "token": "UNDO",
+    "isValid": false,
+    "reason": "SQL uses ROLLBACK"
+  },
+  {
+    "token": "REPLACE(s,'a','b')",
+    "isValid": true,
+    "reason": "Valid string replace"
+  },
+  {
+    "token": "COLLECT(col)",
+    "isValid": false,
+    "reason": "Not a standard SQL function"
+  },
+  {
+    "token": "CAST(x AS INT)",
+    "isValid": true,
+    "reason": "Valid type conversion"
+  },
+  {
+    "token": "ADD COLUMN col",
+    "isValid": true,
+    "reason": "Valid add column clause"
+  },
+  {
+    "token": "ADD INDEX",
+    "isValid": false,
+    "reason": "Use CREATE INDEX"
+  },
+  {
+    "token": "TIGHT_RANK()",
+    "isValid": false,
+    "reason": "SQL uses DENSE_RANK()"
+  },
+  {
+    "token": "DATE",
+    "isValid": true,
+    "reason": "Valid date data type"
+  },
+  {
+    "token": "ROUND(3.14, 1)",
+    "isValid": true,
+    "reason": "Valid rounding function"
+  },
+  {
+    "token": "MERGE t2 ON",
+    "isValid": false,
+    "reason": "MERGE is different from JOIN"
+  },
+  {
+    "token": "COUNT(*)",
+    "isValid": true,
+    "reason": "Valid count function"
+  },
+  {
+    "token": "CONTAINS (1,2,3)",
+    "isValid": false,
+    "reason": "SQL uses IN for sets"
+  },
+  {
+    "token": "MAX(price)",
+    "isValid": true,
+    "reason": "Valid maximum function"
+  },
+  {
+    "token": "ROUNDDOWN(3.8)",
+    "isValid": false,
+    "reason": "SQL uses FLOOR"
+  },
+  {
+    "token": "ADDDAYS(d, 1)",
+    "isValid": false,
+    "reason": "Not standard SQL function"
+  },
+  {
+    "token": "TODAY()",
+    "isValid": false,
+    "reason": "Not standard SQL function"
+  },
+  {
+    "token": "IF NOT EXISTS",
+    "isValid": true,
+    "reason": "Valid non-existence check"
+  },
+  {
+    "token": "OPEN TRANSACTION",
+    "isValid": false,
+    "reason": "SQL uses BEGIN TRANSACTION"
+  },
+  {
+    "token": "CONVERT_TO(x,INT)",
+    "isValid": false,
+    "reason": "Use CAST or CONVERT"
+  },
+  {
+    "token": "&&",
+    "isValid": false,
+    "reason": "SQL uses AND, not &&"
+  },
+  {
+    "token": "FETCH NEXT 5 ROWS",
+    "isValid": true,
+    "reason": "Valid row fetch clause"
+  },
+  {
+    "token": "SET x = 1",
+    "isValid": true,
+    "reason": "Valid SET clause in UPDATE"
+  },
+  {
+    "token": "CURDATE()",
+    "isValid": true,
+    "reason": "Valid current date (MySQL)"
+  },
+  {
+    "token": "ROW_NUMBER()",
+    "isValid": true,
+    "reason": "Valid window function"
+  },
+  {
+    "token": "ROW_INDEX()",
+    "isValid": false,
+    "reason": "SQL uses ROW_NUMBER()"
+  },
+  {
+    "token": "CONCAT(a, b)",
+    "isValid": true,
+    "reason": "Valid string concatenation"
+  },
+  {
+    "token": "ANALYZE SELECT",
+    "isValid": false,
+    "reason": "Use EXPLAIN for query plans"
+  },
+  {
+    "token": "INT",
+    "isValid": true,
+    "reason": "Valid integer data type"
+  },
+  {
+    "token": "||",
+    "isValid": false,
+    "reason": "|| is concat in SQL, not OR"
+  },
+  {
+    "token": "!== 5",
+    "isValid": false,
+    "reason": "JS operator, not SQL"
+  },
+  {
+    "token": "CHANGE COLUMN a b",
+    "isValid": false,
+    "reason": "Standard SQL uses RENAME"
+  },
+  {
+    "token": "WHERE MATCHES",
+    "isValid": false,
+    "reason": "SQL uses LIKE, not MATCHES"
+  },
+  {
+    "token": "COALESCE(a, b)",
+    "isValid": true,
+    "reason": "Valid null fallback function"
+  },
+  {
+    "token": "UNLESS EXISTS",
+    "isValid": false,
+    "reason": "SQL uses IF NOT EXISTS"
+  },
+  {
+    "token": "END",
+    "isValid": true,
+    "reason": "Valid CASE terminator"
+  },
+  {
+    "token": "LIKE '%test%'",
+    "isValid": true,
+    "reason": "Valid pattern matching"
+  },
+  {
+    "token": "DATETIME",
+    "isValid": true,
+    "reason": "Valid datetime type"
+  },
+  {
+    "token": "DOWNCASE('HI')",
+    "isValid": false,
+    "reason": "SQL uses LOWER"
+  },
+  {
+    "token": "AUTONUMBER",
+    "isValid": false,
+    "reason": "Access term, not standard SQL"
+  },
+  {
+    "token": "SELECT * FROM t",
+    "isValid": true,
+    "reason": "Valid select all statement"
+  },
+  {
+    "token": "STRIP(' hi ')",
+    "isValid": false,
+    "reason": "SQL uses TRIM, not STRIP"
+  },
+  {
+    "token": "EXCEPT",
+    "isValid": true,
+    "reason": "Valid set difference"
+  },
+  {
+    "token": "ADD INTO t",
+    "isValid": false,
+    "reason": "SQL uses INSERT INTO"
+  },
+  {
+    "token": "NOT",
+    "isValid": true,
+    "reason": "Valid logical NOT operator"
+  },
+  {
+    "token": "CLUSTER BY type",
+    "isValid": false,
+    "reason": "SQL uses GROUP BY"
+  },
+  {
+    "token": "NEXT(col, 1)",
+    "isValid": false,
+    "reason": "SQL uses LEAD"
+  },
+  {
+    "token": "FLOOR(3.8)",
+    "isValid": true,
+    "reason": "Valid floor function"
+  },
+  {
+    "token": "COMPLETE JOIN",
+    "isValid": false,
+    "reason": "Not a valid SQL join type"
+  },
+  {
+    "token": "LOWER('HELLO')",
+    "isValid": true,
+    "reason": "Valid lowercase function"
+  },
+  {
+    "token": "WHERE COUNT>5",
+    "isValid": false,
+    "reason": "Use HAVING with GROUP BY"
+  },
+  {
+    "token": "ORD('A')",
+    "isValid": false,
+    "reason": "Python function, not standard SQL"
+  },
+  {
+    "token": "ROLLBACK",
+    "isValid": true,
+    "reason": "Valid transaction rollback"
+  },
+  {
+    "token": "DROP TABLE t",
+    "isValid": true,
+    "reason": "Valid table deletion"
+  },
+  {
+    "token": "ALTER TABLE t",
+    "isValid": true,
+    "reason": "Valid table modification"
+  },
+  {
+    "token": "WITHIN (GROUP)",
+    "isValid": false,
+    "reason": "SQL uses OVER for windows"
+  },
+  {
+    "token": "RIGHT MERGE",
+    "isValid": false,
+    "reason": "Not valid SQL syntax"
+  },
+  {
+    "token": "DELETE COLUMN col",
+    "isValid": false,
+    "reason": "SQL uses DROP COLUMN"
+  },
+  {
+    "token": "COMBINE",
+    "isValid": false,
+    "reason": "SQL uses UNION, not COMBINE"
+  },
+  {
+    "token": "REFERENCE KEY",
+    "isValid": false,
+    "reason": "SQL uses FOREIGN KEY"
+  },
+  {
+    "token": "AS alias_name",
+    "isValid": true,
+    "reason": "Valid alias keyword"
+  },
+  {
+    "token": "ROUNDUP(3.14)",
+    "isValid": false,
+    "reason": "Not a standard SQL function"
+  },
+  {
+    "token": "IF FOUND",
+    "isValid": false,
+    "reason": "SQL uses IF EXISTS"
+  },
+  {
+    "token": "SQUAREROOT(16)",
+    "isValid": false,
+    "reason": "SQL uses SQRT"
+  },
+  {
+    "token": "IFNULL(a, b)",
+    "isValid": true,
+    "reason": "Valid null check (MySQL)"
+  },
+  {
+    "token": "START TRANSACTION",
+    "isValid": true,
+    "reason": "Valid transaction start"
+  },
+  {
+    "token": "MAKE TABLE t",
+    "isValid": false,
+    "reason": "SQL uses CREATE TABLE"
+  },
+  {
+    "token": "ORDER BY name",
+    "isValid": true,
+    "reason": "Valid ordering clause"
+  },
+  {
+    "token": "REFERENCES t(id)",
+    "isValid": true,
+    "reason": "Valid foreign key reference"
+  },
+  {
+    "token": "RENAME COLUMN a TO b",
+    "isValid": true,
+    "reason": "Valid column rename"
+  },
+  {
+    "token": "UPDATE TO NULL",
+    "isValid": false,
+    "reason": "Use ON UPDATE SET NULL"
+  },
+  {
+    "token": "ASSIGN x = 1",
+    "isValid": false,
+    "reason": "SQL uses SET"
+  },
+  {
+    "token": "PADLEFT('5',3,'0')",
+    "isValid": false,
+    "reason": "SQL uses LPAD"
+  },
+  {
+    "token": "ORDERBY name",
+    "isValid": false,
+    "reason": "Must be ORDER BY (two words)"
+  },
+  {
+    "token": "CREATE INDEX",
+    "isValid": true,
+    "reason": "Valid index creation"
+  },
+  {
+    "token": "ABS(-5)",
+    "isValid": true,
+    "reason": "Valid absolute value function"
+  },
+  {
+    "token": "SLICE(s, 1, 3)",
+    "isValid": false,
+    "reason": "SQL uses SUBSTRING"
+  },
+  {
+    "token": "BOOL",
+    "isValid": true,
+    "reason": "Valid boolean type alias"
+  },
+  {
+    "token": "NEW COLUMN col",
+    "isValid": false,
+    "reason": "SQL uses ADD COLUMN"
+  },
+  {
+    "token": "LOOP",
+    "isValid": false,
+    "reason": "SQL uses RECURSIVE for CTEs"
+  },
+  {
+    "token": "CEIL(3.2)",
+    "isValid": true,
+    "reason": "Valid ceiling function"
+  },
+  {
+    "token": "BOOLEAN",
+    "isValid": true,
+    "reason": "Valid boolean type"
+  },
+  {
+    "token": "TIMESTAMP",
+    "isValid": true,
+    "reason": "Valid timestamp type"
+  },
+  {
+    "token": "VERIFY (age > 0)",
+    "isValid": false,
+    "reason": "SQL uses CHECK"
+  },
+  {
+    "token": "UPDATE t SET x=1",
+    "isValid": true,
+    "reason": "Valid update statement"
+  },
+  {
+    "token": "RIGHTSTR('hi',2)",
+    "isValid": false,
+    "reason": "SQL uses RIGHT"
+  },
+  {
+    "token": "UPPER('hello')",
+    "isValid": true,
+    "reason": "Valid uppercase function"
+  },
+  {
+    "token": "EXACT JOIN",
+    "isValid": false,
+    "reason": "Not a valid SQL join type"
+  },
+  {
+    "token": "ENDCASE",
+    "isValid": false,
+    "reason": "SQL uses END, not ENDCASE"
+  },
+  {
+    "token": "DATE_MINUS(d1,d2)",
+    "isValid": false,
+    "reason": "SQL uses DATEDIFF"
+  },
+  {
+    "token": "IN (1, 2, 3)",
+    "isValid": true,
+    "reason": "Valid set membership test"
+  },
+  {
+    "token": "COMMIT",
+    "isValid": true,
+    "reason": "Valid transaction commit"
+  },
+  {
+    "token": "VALUES (1, 'a')",
+    "isValid": true,
+    "reason": "Valid values clause"
+  },
+  {
+    "token": "POSITION()",
+    "isValid": false,
+    "reason": "POSITION is for strings"
+  },
+  {
+    "token": "LIMIT 10",
+    "isValid": true,
+    "reason": "Valid row limit clause"
+  },
+  {
+    "token": "FETCH * FROM t",
+    "isValid": false,
+    "reason": "SQL uses SELECT, not FETCH"
+  },
+  {
+    "token": "UNION",
+    "isValid": true,
+    "reason": "Valid result set combination"
+  },
+  {
+    "token": "WITH cte AS ()",
+    "isValid": true,
+    "reason": "Valid CTE definition"
+  },
+  {
+    "token": "MODULO(10, 3)",
+    "isValid": false,
+    "reason": "SQL uses MOD"
+  },
+  {
+    "token": "CASE x WHEN 1",
+    "isValid": true,
+    "reason": "Valid simple case expression"
+  },
+  {
+    "token": "MAIN KEY",
+    "isValid": false,
+    "reason": "SQL uses PRIMARY KEY"
+  },
+  {
+    "token": "REVOKE SELECT ON",
+    "isValid": true,
+    "reason": "Valid permission revoke"
+  },
+  {
+    "token": "PRINT @variable",
+    "isValid": false,
+    "reason": "T-SQL specific, not standard SQL"
+  },
+  {
+    "token": "SERIAL",
+    "isValid": true,
+    "reason": "Valid auto-increment (PostgreSQL)"
+  },
+  {
+    "token": "AVG(score)",
+    "isValid": true,
+    "reason": "Valid average function"
+  },
+  {
+    "token": "INITIAL 0",
+    "isValid": false,
+    "reason": "SQL uses DEFAULT"
+  },
+  {
+    "token": "OVER (PARTITION)",
+    "isValid": true,
+    "reason": "Valid window function"
+  },
+  {
+    "token": "CREATE TABLE t",
+    "isValid": true,
+    "reason": "Valid table creation"
+  },
+  {
+    "token": "!= NULL",
+    "isValid": false,
+    "reason": "Must use IS NOT NULL"
+  },
+  {
+    "token": "ALLOW SELECT ON",
+    "isValid": false,
+    "reason": "SQL uses GRANT"
+  },
+  {
+    "token": "TOP 10",
+    "isValid": true,
+    "reason": "Valid row limit (SQL Server)"
+  },
+  {
+    "token": "POW(2, 3)",
+    "isValid": false,
+    "reason": "Standard SQL uses POWER"
+  },
+  {
+    "token": "DENSE_RANK()",
+    "isValid": true,
+    "reason": "Valid dense ranking function"
+  },
+  {
+    "token": "CASE WHEN x THEN",
+    "isValid": true,
+    "reason": "Valid conditional expression"
+  },
+  {
+    "token": "DEFAULT 0",
+    "isValid": true,
+    "reason": "Valid default value"
+  },
+  {
+    "token": "BEGIN TRANSACTION",
+    "isValid": true,
+    "reason": "Valid transaction start"
+  },
+  {
+    "token": "SAVE",
+    "isValid": false,
+    "reason": "SQL uses COMMIT"
+  },
+  {
+    "token": "NOT NULL",
+    "isValid": true,
+    "reason": "Valid non-null constraint"
+  },
+  {
+    "token": "LEFT JOIN",
+    "isValid": true,
+    "reason": "Valid left outer join"
+  },
+  {
+    "token": "TRUNCATE TABLE t",
+    "isValid": true,
+    "reason": "Valid table truncation"
+  },
+  {
+    "token": "HAVING COUNT>5",
+    "isValid": true,
+    "reason": "Valid group filter clause"
+  },
+  {
+    "token": "TOTAL(amount)",
+    "isValid": false,
+    "reason": "SQL uses SUM, not TOTAL"
+  },
+  {
+    "token": "POINTS_TO t(id)",
+    "isValid": false,
+    "reason": "SQL uses REFERENCES"
+  },
+  {
+    "token": "MATCH '%test%'",
+    "isValid": false,
+    "reason": "SQL uses LIKE for patterns"
+  },
+  {
+    "token": "CHECK (age > 0)",
+    "isValid": true,
+    "reason": "Valid check constraint"
+  },
+  {
+    "token": "SIZE('hello')",
+    "isValid": false,
+    "reason": "SQL uses LENGTH or LEN"
+  },
+  {
+    "token": "RIGHT JOIN",
+    "isValid": true,
+    "reason": "Valid right outer join"
+  },
+  {
+    "token": "OFFSET 5",
+    "isValid": true,
+    "reason": "Valid row offset clause"
+  },
+  {
+    "token": "= NULL",
+    "isValid": false,
+    "reason": "Must use IS NULL, not = NULL"
+  },
+  {
+    "token": "MODIFY t SET x=1",
+    "isValid": false,
+    "reason": "SQL uses UPDATE, not MODIFY"
+  },
+  {
+    "token": "REMOVE INDEX idx",
+    "isValid": false,
+    "reason": "SQL uses DROP INDEX"
+  },
+  {
+    "token": "BETWEEN 1 AND 10",
+    "isValid": true,
+    "reason": "Valid range condition"
+  },
+  {
+    "token": "ASC",
+    "isValid": true,
+    "reason": "Valid ascending order"
+  },
+  {
+    "token": "OR",
+    "isValid": true,
+    "reason": "Valid logical OR operator"
+  },
+  {
+    "token": "BLOB",
+    "isValid": true,
+    "reason": "Valid binary data type"
+  },
+  {
+    "token": "TRIM(' hi ')",
+    "isValid": true,
+    "reason": "Valid whitespace trim"
+  },
+  {
+    "token": "DESTROY TABLE t",
+    "isValid": false,
+    "reason": "SQL uses DROP, not DESTROY"
+  },
+  {
+    "token": "GROUP_CONCAT(col)",
+    "isValid": true,
+    "reason": "Valid string aggregation (MySQL)"
+  },
+  {
+    "token": "FLOAT",
+    "isValid": true,
+    "reason": "Valid float data type"
+  },
+  {
+    "token": "DATE_ADD(d, 1)",
+    "isValid": true,
+    "reason": "Valid date addition (MySQL)"
+  },
+  {
+    "token": "FULL OUTER JOIN",
+    "isValid": true,
+    "reason": "Valid full outer join"
+  },
+  {
+    "token": "DROP COLUMN col",
+    "isValid": true,
+    "reason": "Valid drop column clause"
+  },
+  {
+    "token": "TIMESTAMP()",
+    "isValid": false,
+    "reason": "Use NOW() or GETDATE()"
+  },
+  {
+    "token": "EXISTS (SELECT 1)",
+    "isValid": true,
+    "reason": "Valid existence subquery"
+  },
+  {
+    "token": "FLIP('hello')",
+    "isValid": false,
+    "reason": "SQL uses REVERSE"
+  },
+  {
+    "token": "UNION DISTINCT",
+    "isValid": false,
+    "reason": "UNION is distinct by default"
+  },
+  {
+    "token": "LAG(col, 1)",
+    "isValid": true,
+    "reason": "Valid lag window function"
+  },
+  {
+    "token": "DATA (1, 'a')",
+    "isValid": false,
+    "reason": "SQL uses VALUES"
+  },
+  {
+    "token": "SUBSTRING(s,1,3)",
+    "isValid": true,
+    "reason": "Valid substring extraction"
+  },
+  {
+    "token": "DELETE CASCADE",
+    "isValid": false,
+    "reason": "Must use ON DELETE CASCADE"
+  },
+  {
+    "token": "COMMON",
+    "isValid": false,
+    "reason": "SQL uses INTERSECT"
+  },
+  {
+    "token": "GETDATE()",
+    "isValid": true,
+    "reason": "Valid current date (SQL Server)"
+  },
+  {
+    "token": "LIKE 'A*'",
+    "isValid": false,
+    "reason": "SQL uses %, not * for wildcard"
+  },
+  {
+    "token": "MONEY(10,2)",
+    "isValid": false,
+    "reason": "MONEY has no precision args"
+  },
+  {
+    "token": "FOREACH row IN t",
+    "isValid": false,
+    "reason": "Not valid SQL syntax"
+  },
+  {
+    "token": "SWITCH x CASE 1",
+    "isValid": false,
+    "reason": "SQL uses CASE, not SWITCH"
+  },
+  {
+    "token": "IS NULL",
+    "isValid": true,
+    "reason": "Valid null check"
+  },
+  {
+    "token": "INNER JOIN",
+    "isValid": true,
+    "reason": "Valid inner join type"
+  },
+  {
+    "token": "STRING(255)",
+    "isValid": false,
+    "reason": "SQL uses VARCHAR"
+  },
+  {
+    "token": "DESC",
+    "isValid": true,
+    "reason": "Valid descending order"
+  },
+  {
+    "token": "CHANGE TABLE t",
+    "isValid": false,
+    "reason": "SQL uses ALTER TABLE"
+  },
+  {
+    "token": "DEFINE cte AS ()",
+    "isValid": false,
+    "reason": "SQL uses WITH for CTEs"
+  },
+  {
+    "token": "GRANT SELECT ON",
+    "isValid": true,
+    "reason": "Valid permission grant"
+  },
+  {
+    "token": "GROUP BY type",
+    "isValid": true,
+    "reason": "Valid grouping clause"
+  },
+  {
+    "token": "CURRENTDATE()",
+    "isValid": false,
+    "reason": "Use CURDATE() in MySQL"
+  },
+  {
+    "token": "NONULL(a, b)",
+    "isValid": false,
+    "reason": "Not a valid SQL function"
+  },
+  {
+    "token": "REMOVE FROM t",
+    "isValid": false,
+    "reason": "SQL uses DELETE, not REMOVE"
+  },
+  {
+    "token": "BYTES",
+    "isValid": false,
+    "reason": "SQL uses BLOB, not BYTES"
+  },
+  {
+    "token": "JOIN_STRING(col)",
+    "isValid": false,
+    "reason": "SQL uses STRING_AGG"
+  },
+  {
+    "token": "LOCK ROWS",
+    "isValid": false,
+    "reason": "SQL uses FOR UPDATE"
+  },
+  {
+    "token": "NOW()",
+    "isValid": true,
+    "reason": "Valid current timestamp"
+  },
+  {
+    "token": "CREATE VIEW v AS",
+    "isValid": true,
+    "reason": "Valid view creation"
+  },
+  {
+    "token": "INTEGER",
+    "isValid": true,
+    "reason": "Valid integer data type"
+  },
+  {
+    "token": "ON DELETE CASCADE",
+    "isValid": true,
+    "reason": "Valid referential action"
+  },
+  {
+    "token": "IDENTITY",
+    "isValid": true,
+    "reason": "Valid auto-increment (SQL Server)"
+  },
+  {
+    "token": "UNION ALL",
+    "isValid": true,
+    "reason": "Valid union with duplicates"
+  },
+  {
+    "token": "IF EXISTS",
+    "isValid": true,
+    "reason": "Valid existence check in DDL"
+  },
+  {
+    "token": "SPLIT BY col",
+    "isValid": false,
+    "reason": "SQL uses PARTITION BY"
+  },
+  {
+    "token": "LEFT CONNECT",
+    "isValid": false,
+    "reason": "Not valid SQL syntax"
+  },
+  {
+    "token": "PARTITION BY col",
+    "isValid": true,
+    "reason": "Valid window partitioning"
+  },
+  {
+    "token": "DROP INDEX idx",
+    "isValid": true,
+    "reason": "Valid index deletion"
+  },
+  {
+    "token": "NVL(a, b)",
+    "isValid": true,
+    "reason": "Valid null check (Oracle)"
+  },
+  {
+    "token": "MIN(price)",
+    "isValid": true,
+    "reason": "Valid minimum function"
+  },
+  {
+    "token": "TEXT",
+    "isValid": true,
+    "reason": "Valid text data type"
+  },
+  {
+    "token": "EXCLUDES (1,2)",
+    "isValid": false,
+    "reason": "SQL uses NOT IN"
+  },
+  {
+    "token": "PADRIGHT('5',3)",
+    "isValid": false,
+    "reason": "SQL uses RPAD"
+  },
+  {
+    "token": "DATEDIFF(d1, d2)",
+    "isValid": true,
+    "reason": "Valid date difference"
+  },
+  {
+    "token": "CEILING(3.2)",
+    "isValid": true,
+    "reason": "Valid ceiling function (alias)"
+  },
+  {
+    "token": "ELSE 'default'",
+    "isValid": true,
+    "reason": "Valid CASE else clause"
+  },
+  {
+    "token": "REQUIRED",
+    "isValid": false,
+    "reason": "SQL uses NOT NULL"
+  },
+  {
+    "token": "DEFINE VIEW v AS",
+    "isValid": false,
+    "reason": "SQL uses CREATE VIEW"
+  },
+  {
+    "token": "LONGTEXT",
+    "isValid": true,
+    "reason": "Valid MySQL text type"
+  },
+  {
+    "token": "WHERE x = 1",
+    "isValid": true,
+    "reason": "Valid condition clause"
+  },
+  {
+    "token": "DECIMAL(10,2)",
+    "isValid": true,
+    "reason": "Valid decimal type"
+  },
+  {
+    "token": "MEAN(score)",
+    "isValid": false,
+    "reason": "SQL uses AVG, not MEAN"
+  },
+  {
+    "token": "SUBTRACT",
+    "isValid": false,
+    "reason": "SQL uses EXCEPT"
+  },
+  {
+    "token": "NOT IN (1,2)",
+    "isValid": true,
+    "reason": "Valid negated set check"
+  },
+  {
+    "token": "ALIAS alias_name",
+    "isValid": false,
+    "reason": "SQL uses AS for aliases"
+  },
+  {
+    "token": "AUTOINCREMENT",
+    "isValid": false,
+    "reason": "MySQL uses AUTO_INCREMENT"
+  },
+  {
+    "token": "LEAST(price)",
+    "isValid": false,
+    "reason": "LEAST compares values, not aggregate"
+  },
+  {
+    "token": "LIKE '?a%'",
+    "isValid": false,
+    "reason": "SQL uses _, not ? for single char"
+  },
+  {
+    "token": "CROSS JOIN",
+    "isValid": true,
+    "reason": "Valid cross join"
+  },
+  {
+    "token": "RECURSIVE",
+    "isValid": true,
+    "reason": "Valid recursive CTE keyword"
+  },
+  {
+    "token": "IF x THEN",
+    "isValid": false,
+    "reason": "Use CASE WHEN in SELECT"
+  },
+  {
+    "token": "=/= 5",
+    "isValid": false,
+    "reason": "Not a valid SQL operator"
+  },
+  {
+    "token": "ABSOLUTE(-5)",
+    "isValid": false,
+    "reason": "SQL uses ABS"
+  },
+  {
+    "token": "GREATEST(price)",
+    "isValid": false,
+    "reason": "GREATEST compares values, not aggregate"
+  },
+  {
+    "token": "UNIQUE",
+    "isValid": false,
+    "reason": "UNIQUE is a constraint, not SELECT"
+  },
+  {
+    "token": "INSERT INTO t",
+    "isValid": true,
+    "reason": "Valid insert statement"
+  },
+  {
+    "token": "TAKE 5 ROWS",
+    "isValid": false,
+    "reason": "SQL uses FETCH NEXT"
+  },
+  {
+    "token": "RANK()",
+    "isValid": true,
+    "reason": "Valid ranking function"
+  },
+  {
+    "token": "!",
+    "isValid": false,
+    "reason": "SQL uses NOT, not !"
+  },
+  {
+    "token": "LENGTH('hello')",
+    "isValid": true,
+    "reason": "Valid string length"
+  },
+  {
+    "token": "STRING_AGG(col)",
+    "isValid": true,
+    "reason": "Valid string aggregation (PG)"
+  },
+  {
+    "token": "DEFAULT 'value'",
+    "isValid": false,
+    "reason": "Use ELSE in CASE expression"
+  },
+  {
+    "token": "DISTINCT",
+    "isValid": true,
+    "reason": "Valid unique results keyword"
+  },
+  {
+    "token": "WHEN x = 1",
+    "isValid": false,
+    "reason": "WHEN is for CASE, not filtering"
+  },
+  {
+    "token": "SUM(amount)",
+    "isValid": true,
+    "reason": "Valid sum function"
+  },
+  {
+    "token": "VARCHAR(255)",
+    "isValid": true,
+    "reason": "Valid variable-length string"
+  },
+  {
+    "token": "INTERSECT",
+    "isValid": true,
+    "reason": "Valid set intersection"
+  },
+  {
+    "token": "IS NOT NULL",
+    "isValid": true,
+    "reason": "Valid non-null check"
+  },
+  {
+    "token": "FOR UPDATE",
+    "isValid": true,
+    "reason": "Valid row locking clause"
+  },
+  {
+    "token": "SWAP(s, 'a', 'b')",
+    "isValid": false,
+    "reason": "SQL uses REPLACE"
+  },
+  {
+    "token": "FROM t GET col",
+    "isValid": false,
+    "reason": "Not valid SQL syntax"
+  },
+  {
+    "token": "NULLIF(a, b)",
+    "isValid": true,
+    "reason": "Valid null-if-equal function"
+  },
+  {
+    "token": "LEFTSTR('hello',2)",
+    "isValid": false,
+    "reason": "SQL uses LEFT"
+  },
+  {
+    "token": "LEN(*)",
+    "isValid": false,
+    "reason": "Use COUNT for row counting"
+  },
+  {
+    "token": "DELETE FROM t",
+    "isValid": true,
+    "reason": "Valid delete statement"
+  },
+  {
+    "token": "ON UPDATE SET NULL",
+    "isValid": true,
+    "reason": "Valid referential action"
+  },
+  {
+    "token": "CLEAR TABLE t",
+    "isValid": false,
+    "reason": "SQL uses TRUNCATE TABLE"
+  },
+  {
+    "token": "SEQUENCE",
+    "isValid": false,
+    "reason": "SEQUENCE is separate from column type"
+  },
+  {
+    "token": "APPEND(a, b)",
+    "isValid": false,
+    "reason": "SQL uses CONCAT"
+  },
+  {
+    "token": "ASCENDING",
+    "isValid": false,
+    "reason": "SQL uses ASC"
+  },
+  {
+    "token": "PRIMARY KEY",
+    "isValid": true,
+    "reason": "Valid primary key constraint"
+  },
+  {
+    "token": "HAS (SELECT 1)",
+    "isValid": false,
+    "reason": "SQL uses EXISTS"
+  },
+  {
+    "token": "RANGE 1 TO 10",
+    "isValid": false,
+    "reason": "SQL uses BETWEEN...AND"
+  },
+  {
+    "token": "SELECT INTO @var",
+    "isValid": false,
+    "reason": "Wrong syntax for variable assignment"
+  },
+  {
+    "token": "JOIN t2 ON",
+    "isValid": true,
+    "reason": "Valid join clause"
+  },
+  {
+    "token": "DOUBLE",
+    "isValid": true,
+    "reason": "Valid float type alias"
+  },
+  {
+    "token": "FOREIGN KEY",
+    "isValid": true,
+    "reason": "Valid foreign key constraint"
+  },
+  {
+    "token": "UPCASE('hello')",
+    "isValid": false,
+    "reason": "SQL uses UPPER"
+  },
+  {
+    "token": "AUTO_INCREMENT",
+    "isValid": true,
+    "reason": "Valid auto-increment (MySQL)"
+  },
+  {
+    "token": "AND",
+    "isValid": true,
+    "reason": "Valid logical AND operator"
+  },
+  {
+    "token": "CARTESIAN JOIN",
+    "isValid": false,
+    "reason": "Not valid, use CROSS JOIN"
+  },
+  {
+    "token": "PREVIOUS(col, 1)",
+    "isValid": false,
+    "reason": "SQL uses LAG"
+  },
+  {
+    "token": "DENY SELECT ON",
+    "isValid": false,
+    "reason": "SQL uses REVOKE (standard)"
+  },
+  {
+    "token": "DESCENDING",
+    "isValid": false,
+    "reason": "SQL uses DESC"
+  },
+  {
+    "token": "LEAD(col, 1)",
+    "isValid": true,
+    "reason": "Valid lead window function"
+  }
+]

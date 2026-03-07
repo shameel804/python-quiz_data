@@ -1,0 +1,1398 @@
+[
+    {
+        "word": "SELECT",
+        "hint": "Retrieve data from a table"
+    },
+    {
+        "word": "INSERT",
+        "hint": "Add new rows to a table"
+    },
+    {
+        "word": "UPDATE",
+        "hint": "Modify existing table data"
+    },
+    {
+        "word": "DELETE",
+        "hint": "Remove rows from a table"
+    },
+    {
+        "word": "CREATE",
+        "hint": "Define a new database object"
+    },
+    {
+        "word": "ALTER",
+        "hint": "Modify existing table structure"
+    },
+    {
+        "word": "DROP",
+        "hint": "Remove database object entirely"
+    },
+    {
+        "word": "TRUNCATE",
+        "hint": "Remove all rows keeping structure"
+    },
+    {
+        "word": "WHERE",
+        "hint": "Filter rows by condition"
+    },
+    {
+        "word": "FROM",
+        "hint": "Specify source table for query"
+    },
+    {
+        "word": "JOIN",
+        "hint": "Combine rows from two tables"
+    },
+    {
+        "word": "INNER",
+        "hint": "Return only matching rows"
+    },
+    {
+        "word": "LEFT",
+        "hint": "Include all rows from left table"
+    },
+    {
+        "word": "RIGHT",
+        "hint": "Include all rows from right table"
+    },
+    {
+        "word": "FULL",
+        "hint": "Include all rows from both tables"
+    },
+    {
+        "word": "CROSS",
+        "hint": "Cartesian product of two tables"
+    },
+    {
+        "word": "SELF",
+        "hint": "Join a table with itself"
+    },
+    {
+        "word": "NATURAL",
+        "hint": "Join on matching column names"
+    },
+    {
+        "word": "USING",
+        "hint": "Specify join column explicitly"
+    },
+    {
+        "word": "UNION",
+        "hint": "Combine results of two queries"
+    },
+    {
+        "word": "INTERSECT",
+        "hint": "Return common rows from queries"
+    },
+    {
+        "word": "EXCEPT",
+        "hint": "Return rows in first not second"
+    },
+    {
+        "word": "GROUPBY",
+        "hint": "Group rows sharing column values"
+    },
+    {
+        "word": "HAVING",
+        "hint": "Filter grouped result sets"
+    },
+    {
+        "word": "ORDERBY",
+        "hint": "Sort result set by columns"
+    },
+    {
+        "word": "LIMIT",
+        "hint": "Restrict number of returned rows"
+    },
+    {
+        "word": "OFFSET",
+        "hint": "Skip rows before returning results"
+    },
+    {
+        "word": "FETCH",
+        "hint": "Retrieve specific number of rows"
+    },
+    {
+        "word": "DISTINCT",
+        "hint": "Return only unique values"
+    },
+    {
+        "word": "LIKE",
+        "hint": "Pattern match with wildcards"
+    },
+    {
+        "word": "ILIKE",
+        "hint": "Case-insensitive pattern matching"
+    },
+    {
+        "word": "BETWEEN",
+        "hint": "Filter within a value range"
+    },
+    {
+        "word": "EXIST",
+        "hint": "Check if subquery returns rows"
+    },
+    {
+        "word": "NULL",
+        "hint": "Represents missing or unknown value"
+    },
+    {
+        "word": "ISNULL",
+        "hint": "Test for null value condition"
+    },
+    {
+        "word": "NOTNULL",
+        "hint": "Ensure column has a value"
+    },
+    {
+        "word": "CASE",
+        "hint": "Conditional logic expression"
+    },
+    {
+        "word": "WHEN",
+        "hint": "Condition branch in CASE block"
+    },
+    {
+        "word": "THEN",
+        "hint": "Result for matched WHEN condition"
+    },
+    {
+        "word": "ELSE",
+        "hint": "Default result in CASE block"
+    },
+    {
+        "word": "COALESCE",
+        "hint": "Return first non-null value"
+    },
+    {
+        "word": "NULLIF",
+        "hint": "Return null if two values equal"
+    },
+    {
+        "word": "CAST",
+        "hint": "Convert value to different type"
+    },
+    {
+        "word": "CONVERT",
+        "hint": "Change data type of expression"
+    },
+    {
+        "word": "COUNT",
+        "hint": "Number of rows in result set"
+    },
+    {
+        "word": "SUM",
+        "hint": "Total of numeric column values"
+    },
+    {
+        "word": "AVG",
+        "hint": "Average of numeric column values"
+    },
+    {
+        "word": "MAX",
+        "hint": "Largest value in a column"
+    },
+    {
+        "word": "MIN",
+        "hint": "Smallest value in a column"
+    },
+    {
+        "word": "ROUND",
+        "hint": "Round number to specified decimals"
+    },
+    {
+        "word": "FLOOR",
+        "hint": "Round down to nearest integer"
+    },
+    {
+        "word": "CEIL",
+        "hint": "Round up to nearest integer"
+    },
+    {
+        "word": "ABS",
+        "hint": "Absolute value of a number"
+    },
+    {
+        "word": "POWER",
+        "hint": "Raise number to an exponent"
+    },
+    {
+        "word": "SQRT",
+        "hint": "Square root of a number"
+    },
+    {
+        "word": "MODULO",
+        "hint": "Remainder after division"
+    },
+    {
+        "word": "SIGN",
+        "hint": "Return sign of a number"
+    },
+    {
+        "word": "LOG",
+        "hint": "Natural logarithm of a value"
+    },
+    {
+        "word": "RANDOM",
+        "hint": "Generate a random number"
+    },
+    {
+        "word": "CONCAT",
+        "hint": "Join two strings together"
+    },
+    {
+        "word": "LENGTH",
+        "hint": "Number of characters in string"
+    },
+    {
+        "word": "UPPER",
+        "hint": "Convert string to uppercase"
+    },
+    {
+        "word": "LOWER",
+        "hint": "Convert string to lowercase"
+    },
+    {
+        "word": "TRIM",
+        "hint": "Remove leading and trailing spaces"
+    },
+    {
+        "word": "LTRIM",
+        "hint": "Remove leading whitespace"
+    },
+    {
+        "word": "RTRIM",
+        "hint": "Remove trailing whitespace"
+    },
+    {
+        "word": "SUBSTR",
+        "hint": "Extract part of a string"
+    },
+    {
+        "word": "REPLACE",
+        "hint": "Substitute string occurrences"
+    },
+    {
+        "word": "REVERSE",
+        "hint": "Flip string character order"
+    },
+    {
+        "word": "LEFT",
+        "hint": "Extract leftmost characters"
+    },
+    {
+        "word": "RIGHT",
+        "hint": "Extract rightmost characters"
+    },
+    {
+        "word": "POSITION",
+        "hint": "Find substring location in string"
+    },
+    {
+        "word": "CHARINDEX",
+        "hint": "Position of substring in string"
+    },
+    {
+        "word": "LPAD",
+        "hint": "Pad string on left side"
+    },
+    {
+        "word": "RPAD",
+        "hint": "Pad string on right side"
+    },
+    {
+        "word": "REPEAT",
+        "hint": "Repeat string specified times"
+    },
+    {
+        "word": "SPACE",
+        "hint": "Generate string of spaces"
+    },
+    {
+        "word": "ASCII",
+        "hint": "Return ASCII code of character"
+    },
+    {
+        "word": "CHAR",
+        "hint": "Return character from ASCII code"
+    },
+    {
+        "word": "SOUNDEX",
+        "hint": "Phonetic string matching code"
+    },
+    {
+        "word": "DATE",
+        "hint": "Date value data type"
+    },
+    {
+        "word": "TIME",
+        "hint": "Time of day data type"
+    },
+    {
+        "word": "TIMESTAMP",
+        "hint": "Date and time combined type"
+    },
+    {
+        "word": "INTERVAL",
+        "hint": "Duration between time points"
+    },
+    {
+        "word": "YEAR",
+        "hint": "Extract year from date value"
+    },
+    {
+        "word": "MONTH",
+        "hint": "Extract month from date value"
+    },
+    {
+        "word": "EXTRACT",
+        "hint": "Get part of a date or time"
+    },
+    {
+        "word": "DATEADD",
+        "hint": "Add interval to a date value"
+    },
+    {
+        "word": "DATEDIFF",
+        "hint": "Difference between two dates"
+    },
+    {
+        "word": "GETDATE",
+        "hint": "Return current date and time"
+    },
+    {
+        "word": "CURDATE",
+        "hint": "Return current date only"
+    },
+    {
+        "word": "CURTIME",
+        "hint": "Return current time only"
+    },
+    {
+        "word": "DAYNAME",
+        "hint": "Return name of the weekday"
+    },
+    {
+        "word": "MONTHNAME",
+        "hint": "Return name of the month"
+    },
+    {
+        "word": "DAYOFWEEK",
+        "hint": "Numeric day of the week"
+    },
+    {
+        "word": "DAYOFYEAR",
+        "hint": "Day number within the year"
+    },
+    {
+        "word": "QUARTER",
+        "hint": "Quarter of the year from date"
+    },
+    {
+        "word": "DATEPART",
+        "hint": "Return specific date component"
+    },
+    {
+        "word": "DATEFORMAT",
+        "hint": "Convert date to formatted string"
+    },
+    {
+        "word": "INTEGER",
+        "hint": "Whole number data type"
+    },
+    {
+        "word": "BIGINT",
+        "hint": "Large whole number data type"
+    },
+    {
+        "word": "SMALLINT",
+        "hint": "Small range integer type"
+    },
+    {
+        "word": "TINYINT",
+        "hint": "Very small integer type"
+    },
+    {
+        "word": "FLOAT",
+        "hint": "Approximate numeric data type"
+    },
+    {
+        "word": "REAL",
+        "hint": "Single precision floating point"
+    },
+    {
+        "word": "DECIMAL",
+        "hint": "Exact fixed-point number type"
+    },
+    {
+        "word": "NUMERIC",
+        "hint": "Exact numeric with precision"
+    },
+    {
+        "word": "MONEY",
+        "hint": "Currency value data type"
+    },
+    {
+        "word": "BOOLEAN",
+        "hint": "True or false data type"
+    },
+    {
+        "word": "VARCHAR",
+        "hint": "Variable-length character string"
+    },
+    {
+        "word": "NVARCHAR",
+        "hint": "Unicode variable-length string"
+    },
+    {
+        "word": "TEXT",
+        "hint": "Large text data type"
+    },
+    {
+        "word": "BLOB",
+        "hint": "Binary large object storage"
+    },
+    {
+        "word": "BINARY",
+        "hint": "Fixed-length binary data type"
+    },
+    {
+        "word": "VARBINARY",
+        "hint": "Variable-length binary data"
+    },
+    {
+        "word": "ENUM",
+        "hint": "Column with predefined values"
+    },
+    {
+        "word": "SERIAL",
+        "hint": "Auto-incrementing integer column"
+    },
+    {
+        "word": "UUID",
+        "hint": "Universally unique identifier type"
+    },
+    {
+        "word": "JSONTYPE",
+        "hint": "JSON data storage column type"
+    },
+    {
+        "word": "ARRAY",
+        "hint": "Store multiple values in column"
+    },
+    {
+        "word": "XML",
+        "hint": "XML data storage type"
+    },
+    {
+        "word": "PRIMARY",
+        "hint": "Unique row identifier constraint"
+    },
+    {
+        "word": "FOREIGN",
+        "hint": "Reference to another table key"
+    },
+    {
+        "word": "UNIQUE",
+        "hint": "No duplicate values allowed"
+    },
+    {
+        "word": "CHECK",
+        "hint": "Validate data against condition"
+    },
+    {
+        "word": "DEFAULT",
+        "hint": "Automatic value when not given"
+    },
+    {
+        "word": "NOTNULL",
+        "hint": "Column must contain a value"
+    },
+    {
+        "word": "INDEX",
+        "hint": "Speed up data retrieval on column"
+    },
+    {
+        "word": "CLUSTERED",
+        "hint": "Physically sorted table index"
+    },
+    {
+        "word": "COMPOSITE",
+        "hint": "Index on multiple columns"
+    },
+    {
+        "word": "COVERING",
+        "hint": "Index includes all query columns"
+    },
+    {
+        "word": "PARTIAL",
+        "hint": "Index on subset of rows only"
+    },
+    {
+        "word": "HASH",
+        "hint": "Equality-based index structure"
+    },
+    {
+        "word": "BTREE",
+        "hint": "Balanced tree index structure"
+    },
+    {
+        "word": "TABLE",
+        "hint": "Structured data storage object"
+    },
+    {
+        "word": "COLUMN",
+        "hint": "Single field in a table"
+    },
+    {
+        "word": "ROW",
+        "hint": "Single record in a table"
+    },
+    {
+        "word": "SCHEMA",
+        "hint": "Logical grouping of objects"
+    },
+    {
+        "word": "DATABASE",
+        "hint": "Collection of related schemas"
+    },
+    {
+        "word": "CATALOG",
+        "hint": "Top-level namespace container"
+    },
+    {
+        "word": "VIEW",
+        "hint": "Virtual table from saved query"
+    },
+    {
+        "word": "PROCEDURE",
+        "hint": "Stored reusable SQL block"
+    },
+    {
+        "word": "FUNCTION",
+        "hint": "Returns a value from SQL logic"
+    },
+    {
+        "word": "TRIGGER",
+        "hint": "Auto-execute on data change"
+    },
+    {
+        "word": "CURSOR",
+        "hint": "Row-by-row result traversal"
+    },
+    {
+        "word": "SEQUENCE",
+        "hint": "Auto-generate ordered numbers"
+    },
+    {
+        "word": "SYNONYM",
+        "hint": "Alias name for database object"
+    },
+    {
+        "word": "PARTITION",
+        "hint": "Split table into segments"
+    },
+    {
+        "word": "TABLESPACE",
+        "hint": "Storage location for tables"
+    },
+    {
+        "word": "TEMP",
+        "hint": "Temporary table for session"
+    },
+    {
+        "word": "GLOBAL",
+        "hint": "Visible across all sessions"
+    },
+    {
+        "word": "LOCAL",
+        "hint": "Visible only in current session"
+    },
+    {
+        "word": "SUBQUERY",
+        "hint": "Query nested inside another"
+    },
+    {
+        "word": "CORRELATED",
+        "hint": "Subquery referencing outer query"
+    },
+    {
+        "word": "SCALAR",
+        "hint": "Subquery returning single value"
+    },
+    {
+        "word": "DERIVED",
+        "hint": "Subquery used as virtual table"
+    },
+    {
+        "word": "LATERAL",
+        "hint": "Subquery referencing prior tables"
+    },
+    {
+        "word": "CTE",
+        "hint": "Common table expression block"
+    },
+    {
+        "word": "RECURSIVE",
+        "hint": "CTE that references itself"
+    },
+    {
+        "word": "WITH",
+        "hint": "Define common table expression"
+    },
+    {
+        "word": "WINDOW",
+        "hint": "Define partition for analytics"
+    },
+    {
+        "word": "OVER",
+        "hint": "Specify window for function"
+    },
+    {
+        "word": "RANK",
+        "hint": "Assign rank with gaps for ties"
+    },
+    {
+        "word": "DENSERANK",
+        "hint": "Assign rank without gaps"
+    },
+    {
+        "word": "ROWNUMBER",
+        "hint": "Sequential number for each row"
+    },
+    {
+        "word": "NTILE",
+        "hint": "Divide rows into equal buckets"
+    },
+    {
+        "word": "LEAD",
+        "hint": "Access next row value in window"
+    },
+    {
+        "word": "LAG",
+        "hint": "Access previous row value in window"
+    },
+    {
+        "word": "FIRSTVALUE",
+        "hint": "First value in window partition"
+    },
+    {
+        "word": "LASTVALUE",
+        "hint": "Last value in window partition"
+    },
+    {
+        "word": "NTHVALUE",
+        "hint": "Nth value in window partition"
+    },
+    {
+        "word": "PERCENTRANK",
+        "hint": "Relative rank as percentage"
+    },
+    {
+        "word": "CUMEDIST",
+        "hint": "Cumulative distribution value"
+    },
+    {
+        "word": "PARTITION",
+        "hint": "Divide window into groups"
+    },
+    {
+        "word": "PRECEDING",
+        "hint": "Rows before current in frame"
+    },
+    {
+        "word": "FOLLOWING",
+        "hint": "Rows after current in frame"
+    },
+    {
+        "word": "UNBOUNDED",
+        "hint": "Extend to partition boundary"
+    },
+    {
+        "word": "CURRENT",
+        "hint": "Current row in window frame"
+    },
+    {
+        "word": "ROLLUP",
+        "hint": "Hierarchical subtotals in groups"
+    },
+    {
+        "word": "CUBE",
+        "hint": "All combination subtotals"
+    },
+    {
+        "word": "GROUPING",
+        "hint": "Identify subtotal null values"
+    },
+    {
+        "word": "PIVOT",
+        "hint": "Rotate rows into columns"
+    },
+    {
+        "word": "UNPIVOT",
+        "hint": "Rotate columns into rows"
+    },
+    {
+        "word": "MERGE",
+        "hint": "Insert update or delete in one"
+    },
+    {
+        "word": "UPSERT",
+        "hint": "Insert or update if exists"
+    },
+    {
+        "word": "CONFLICT",
+        "hint": "Handle duplicate key on insert"
+    },
+    {
+        "word": "RETURNING",
+        "hint": "Return affected rows from DML"
+    },
+    {
+        "word": "OUTPUT",
+        "hint": "Access inserted or deleted rows"
+    },
+    {
+        "word": "VALUES",
+        "hint": "Specify literal row data"
+    },
+    {
+        "word": "BEGIN",
+        "hint": "Start a transaction block"
+    },
+    {
+        "word": "COMMIT",
+        "hint": "Save all transaction changes"
+    },
+    {
+        "word": "ROLLBACK",
+        "hint": "Undo all transaction changes"
+    },
+    {
+        "word": "SAVEPOINT",
+        "hint": "Mark point for partial rollback"
+    },
+    {
+        "word": "ISOLATION",
+        "hint": "Transaction concurrency level"
+    },
+    {
+        "word": "SERIALIZABLE",
+        "hint": "Strictest isolation level"
+    },
+    {
+        "word": "REPEATABLE",
+        "hint": "Consistent reads in transaction"
+    },
+    {
+        "word": "COMMITTED",
+        "hint": "Read only committed changes"
+    },
+    {
+        "word": "UNCOMMITTED",
+        "hint": "Read even uncommitted changes"
+    },
+    {
+        "word": "LOCK",
+        "hint": "Prevent concurrent data access"
+    },
+    {
+        "word": "DEADLOCK",
+        "hint": "Circular lock wait condition"
+    },
+    {
+        "word": "EXCLUSIVE",
+        "hint": "Full lock preventing all access"
+    },
+    {
+        "word": "SHARED",
+        "hint": "Lock allowing concurrent reads"
+    },
+    {
+        "word": "ADVISORY",
+        "hint": "Application-defined lock type"
+    },
+    {
+        "word": "NOWAIT",
+        "hint": "Fail immediately if lock busy"
+    },
+    {
+        "word": "GRANT",
+        "hint": "Give privileges to user or role"
+    },
+    {
+        "word": "REVOKE",
+        "hint": "Remove privileges from user"
+    },
+    {
+        "word": "DENY",
+        "hint": "Explicitly block a permission"
+    },
+    {
+        "word": "ROLE",
+        "hint": "Named set of privileges"
+    },
+    {
+        "word": "USER",
+        "hint": "Database account identity"
+    },
+    {
+        "word": "PRIVILEGE",
+        "hint": "Specific allowed operation"
+    },
+    {
+        "word": "OWNER",
+        "hint": "Creator of database object"
+    },
+    {
+        "word": "PUBLIC",
+        "hint": "Default role for all users"
+    },
+    {
+        "word": "BACKUP",
+        "hint": "Create database copy for safety"
+    },
+    {
+        "word": "RESTORE",
+        "hint": "Recover database from backup"
+    },
+    {
+        "word": "DUMP",
+        "hint": "Export database to file"
+    },
+    {
+        "word": "IMPORT",
+        "hint": "Load data from external file"
+    },
+    {
+        "word": "BULKINSERT",
+        "hint": "Load large data sets at once"
+    },
+    {
+        "word": "COPY",
+        "hint": "Fast data import export command"
+    },
+    {
+        "word": "EXPLAIN",
+        "hint": "Show query execution plan"
+    },
+    {
+        "word": "ANALYZE",
+        "hint": "Collect table statistics"
+    },
+    {
+        "word": "VACUUM",
+        "hint": "Reclaim storage from deleted rows"
+    },
+    {
+        "word": "OPTIMIZE",
+        "hint": "Rebuild table for better speed"
+    },
+    {
+        "word": "REINDEX",
+        "hint": "Rebuild corrupted indexes"
+    },
+    {
+        "word": "STATISTICS",
+        "hint": "Data distribution information"
+    },
+    {
+        "word": "PLAN",
+        "hint": "Strategy for executing a query"
+    },
+    {
+        "word": "SCAN",
+        "hint": "Read all rows sequentially"
+    },
+    {
+        "word": "SEEK",
+        "hint": "Jump directly using index"
+    },
+    {
+        "word": "NESTED",
+        "hint": "Loop join processing method"
+    },
+    {
+        "word": "SORT",
+        "hint": "Sort-merge join strategy"
+    },
+    {
+        "word": "SPOOL",
+        "hint": "Temporary result storage"
+    },
+    {
+        "word": "NORMALIZE",
+        "hint": "Reduce data redundancy"
+    },
+    {
+        "word": "DENORMALIZE",
+        "hint": "Add redundancy for read speed"
+    },
+    {
+        "word": "FIRSTNF",
+        "hint": "Atomic values in each cell"
+    },
+    {
+        "word": "SECONDNF",
+        "hint": "No partial key dependencies"
+    },
+    {
+        "word": "THIRDNF",
+        "hint": "No transitive dependencies"
+    },
+    {
+        "word": "BCNF",
+        "hint": "Every determinant is a key"
+    },
+    {
+        "word": "CARDINALITY",
+        "hint": "Number of unique values in column"
+    },
+    {
+        "word": "SELECTIVITY",
+        "hint": "Ratio of distinct to total values"
+    },
+    {
+        "word": "DEGREE",
+        "hint": "Number of columns in a table"
+    },
+    {
+        "word": "DOMAIN",
+        "hint": "Set of valid values for column"
+    },
+    {
+        "word": "RELATION",
+        "hint": "Mathematical term for a table"
+    },
+    {
+        "word": "TUPLE",
+        "hint": "Mathematical term for a row"
+    },
+    {
+        "word": "ATTRIBUTE",
+        "hint": "Mathematical term for a column"
+    },
+    {
+        "word": "PREDICATE",
+        "hint": "Condition evaluating to boolean"
+    },
+    {
+        "word": "OPERAND",
+        "hint": "Value operated on in expression"
+    },
+    {
+        "word": "WILDCARD",
+        "hint": "Match any character in pattern"
+    },
+    {
+        "word": "ALIAS",
+        "hint": "Temporary name for table or column"
+    },
+    {
+        "word": "COMMENTS",
+        "hint": "Non-executable documentation text"
+    },
+    {
+        "word": "DECLARE",
+        "hint": "Define a variable in SQL block"
+    },
+    {
+        "word": "SET",
+        "hint": "Assign value to a variable"
+    },
+    {
+        "word": "PRINT",
+        "hint": "Output message in SQL block"
+    },
+    {
+        "word": "IFCLAUSE",
+        "hint": "Conditional execution in SQL"
+    },
+    {
+        "word": "LOOP",
+        "hint": "Repeated execution of SQL block"
+    },
+    {
+        "word": "LEAVE",
+        "hint": "Exit a loop early in procedure"
+    },
+    {
+        "word": "RETURN",
+        "hint": "Send value back from function"
+    },
+    {
+        "word": "EXECUTE",
+        "hint": "Run a stored procedure"
+    },
+    {
+        "word": "CALL",
+        "hint": "Invoke a stored procedure"
+    },
+    {
+        "word": "PREPARE",
+        "hint": "Precompile SQL for reuse"
+    },
+    {
+        "word": "BIND",
+        "hint": "Attach parameter value to query"
+    },
+    {
+        "word": "HANDLE",
+        "hint": "Manage errors in SQL block"
+    },
+    {
+        "word": "RAISE",
+        "hint": "Throw custom error in procedure"
+    },
+    {
+        "word": "SIGNAL",
+        "hint": "Report error condition in SQL"
+    },
+    {
+        "word": "EXCEPTION",
+        "hint": "Named error handling block"
+    },
+    {
+        "word": "AFTER",
+        "hint": "Trigger fires after data change"
+    },
+    {
+        "word": "BEFORE",
+        "hint": "Trigger fires before data change"
+    },
+    {
+        "word": "INSTEAD",
+        "hint": "Trigger replaces original action"
+    },
+    {
+        "word": "INSERTED",
+        "hint": "Virtual table of new rows"
+    },
+    {
+        "word": "DELETED",
+        "hint": "Virtual table of old rows"
+    },
+    {
+        "word": "ENABLE",
+        "hint": "Activate a disabled trigger"
+    },
+    {
+        "word": "DISABLE",
+        "hint": "Deactivate an active trigger"
+    },
+    {
+        "word": "MATERIALIZED",
+        "hint": "View with stored result data"
+    },
+    {
+        "word": "REFRESH",
+        "hint": "Update materialized view data"
+    },
+    {
+        "word": "UPDATABLE",
+        "hint": "View allowing data modification"
+    },
+    {
+        "word": "SECURITY",
+        "hint": "Control view execution context"
+    },
+    {
+        "word": "CLUSTER",
+        "hint": "Group of database servers"
+    },
+    {
+        "word": "REPLICA",
+        "hint": "Read copy of primary database"
+    },
+    {
+        "word": "SHARD",
+        "hint": "Horizontal data partition chunk"
+    },
+    {
+        "word": "FEDERATION",
+        "hint": "Unified view of multiple dbs"
+    },
+    {
+        "word": "FAILOVER",
+        "hint": "Switch to backup on failure"
+    },
+    {
+        "word": "REPLICATION",
+        "hint": "Copy data between servers"
+    },
+    {
+        "word": "SYNCHRONOUS",
+        "hint": "Wait for replica confirmation"
+    },
+    {
+        "word": "ASYNC",
+        "hint": "No wait for replica write"
+    },
+    {
+        "word": "QUORUM",
+        "hint": "Minimum replicas for consensus"
+    },
+    {
+        "word": "BINLOG",
+        "hint": "Binary log for replication"
+    },
+    {
+        "word": "WAL",
+        "hint": "Write-ahead log for recovery"
+    },
+    {
+        "word": "CHECKPOINT",
+        "hint": "Force log data to disk"
+    },
+    {
+        "word": "RECOVERY",
+        "hint": "Restore after unexpected failure"
+    },
+    {
+        "word": "COLLATION",
+        "hint": "String comparison sort rules"
+    },
+    {
+        "word": "CHARSET",
+        "hint": "Character encoding for storage"
+    },
+    {
+        "word": "UNICODE",
+        "hint": "Universal character encoding set"
+    },
+    {
+        "word": "LOCALE",
+        "hint": "Regional formatting settings"
+    },
+    {
+        "word": "INMEMORY",
+        "hint": "Store data in RAM for speed"
+    },
+    {
+        "word": "COLUMNAR",
+        "hint": "Store data by column not row"
+    },
+    {
+        "word": "ROWSTORE",
+        "hint": "Traditional row-based storage"
+    },
+    {
+        "word": "COMPRESSED",
+        "hint": "Reduce storage size of data"
+    },
+    {
+        "word": "ENCRYPTED",
+        "hint": "Secure data with encryption"
+    },
+    {
+        "word": "AUDIT",
+        "hint": "Track database access and changes"
+    },
+    {
+        "word": "MASKING",
+        "hint": "Hide sensitive data values"
+    },
+    {
+        "word": "POLICY",
+        "hint": "Row-level security filter rule"
+    },
+    {
+        "word": "INJECTION",
+        "hint": "Malicious SQL code attack"
+    },
+    {
+        "word": "SANITIZE",
+        "hint": "Clean input to prevent attacks"
+    },
+    {
+        "word": "PARAMETERIZE",
+        "hint": "Use placeholders to prevent attacks"
+    },
+    {
+        "word": "ESCAPE",
+        "hint": "Neutralize special characters"
+    },
+    {
+        "word": "STDEV",
+        "hint": "Standard deviation aggregate"
+    },
+    {
+        "word": "VARIANCE",
+        "hint": "Statistical variance aggregate"
+    },
+    {
+        "word": "MEDIAN",
+        "hint": "Middle value in sorted data"
+    },
+    {
+        "word": "MODE",
+        "hint": "Most frequent value in data set"
+    },
+    {
+        "word": "PERCENTILE",
+        "hint": "Value at given percentage rank"
+    },
+    {
+        "word": "LISTAGG",
+        "hint": "Concatenate grouped values"
+    },
+    {
+        "word": "XMLAGG",
+        "hint": "Aggregate values as XML"
+    },
+    {
+        "word": "JSONAGG",
+        "hint": "Aggregate values as JSON array"
+    },
+    {
+        "word": "JSONOBJ",
+        "hint": "Build JSON object from values"
+    },
+    {
+        "word": "CROSSTAB",
+        "hint": "Pivot table function"
+    },
+    {
+        "word": "GENERATE",
+        "hint": "Create series of values"
+    },
+    {
+        "word": "UNNEST",
+        "hint": "Expand array into rows"
+    },
+    {
+        "word": "REGEXP",
+        "hint": "Pattern match with regex syntax"
+    },
+    {
+        "word": "SIMILAR",
+        "hint": "SQL standard regex matching"
+    },
+    {
+        "word": "GLOB",
+        "hint": "Case-sensitive pattern match"
+    },
+    {
+        "word": "ISNUMERIC",
+        "hint": "Check if value is a number"
+    },
+    {
+        "word": "ISDATE",
+        "hint": "Check if value is valid date"
+    },
+    {
+        "word": "IFNULL",
+        "hint": "Return alternative if null"
+    },
+    {
+        "word": "GREATEST",
+        "hint": "Return largest of given values"
+    },
+    {
+        "word": "LEAST",
+        "hint": "Return smallest of given values"
+    },
+    {
+        "word": "DECODE",
+        "hint": "Inline if-then-else expression"
+    },
+    {
+        "word": "ROWID",
+        "hint": "Internal unique row identifier"
+    },
+    {
+        "word": "IDENTITY",
+        "hint": "Auto-generated column value"
+    },
+    {
+        "word": "EPOCH",
+        "hint": "Seconds since reference date"
+    },
+    {
+        "word": "TIMEZONE",
+        "hint": "Time zone conversion function"
+    },
+    {
+        "word": "OVERLAP",
+        "hint": "Test if ranges intersect"
+    },
+    {
+        "word": "CONTAINS",
+        "hint": "Check if range includes value"
+    },
+    {
+        "word": "RANGE",
+        "hint": "Data type for value intervals"
+    },
+    {
+        "word": "INET",
+        "hint": "IP address data type"
+    },
+    {
+        "word": "CIDR",
+        "hint": "Network address data type"
+    },
+    {
+        "word": "MACADDR",
+        "hint": "MAC address data type"
+    },
+    {
+        "word": "TSVECTOR",
+        "hint": "Full text search document type"
+    },
+    {
+        "word": "TSQUERY",
+        "hint": "Full text search query type"
+    },
+    {
+        "word": "PLAINTO",
+        "hint": "Convert text to search query"
+    },
+    {
+        "word": "HEADLINE",
+        "hint": "Highlight search matches in text"
+    },
+    {
+        "word": "TSRANK",
+        "hint": "Score relevance of text match"
+    },
+    {
+        "word": "GIST",
+        "hint": "Generalized search tree index"
+    },
+    {
+        "word": "GIN",
+        "hint": "Generalized inverted index type"
+    },
+    {
+        "word": "BRIN",
+        "hint": "Block range index for large tables"
+    },
+    {
+        "word": "SPATIAL",
+        "hint": "Geographic data support type"
+    },
+    {
+        "word": "GEOMETRY",
+        "hint": "Geometric shape data type"
+    },
+    {
+        "word": "POINT",
+        "hint": "Coordinate pair data type"
+    },
+    {
+        "word": "POLYGON",
+        "hint": "Closed geometric shape type"
+    },
+    {
+        "word": "DISTANCE",
+        "hint": "Measure between two points"
+    },
+    {
+        "word": "WITHIN",
+        "hint": "Check if point inside geometry"
+    },
+    {
+        "word": "BUFFER",
+        "hint": "Area around geometry shape"
+    }
+]

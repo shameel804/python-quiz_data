@@ -1,0 +1,1252 @@
+[
+  {
+    "token": "range(10)",
+    "isValid": true,
+    "reason": "Valid range function"
+  },
+  {
+    "token": "dict.items()",
+    "isValid": true,
+    "reason": "Valid dictionary method"
+  },
+  {
+    "token": "parseInt('42')",
+    "isValid": false,
+    "reason": "JS function, not Python"
+  },
+  {
+    "token": "frozenset({1,2})",
+    "isValid": true,
+    "reason": "Valid frozen set creation"
+  },
+  {
+    "token": "list(range(5))",
+    "isValid": true,
+    "reason": "Valid list from range"
+  },
+  {
+    "token": "typeof(x)",
+    "isValid": false,
+    "reason": "JS syntax, not Python"
+  },
+  {
+    "token": "try:",
+    "isValid": true,
+    "reason": "Valid try block"
+  },
+  {
+    "token": "x.addAll([1,2])",
+    "isValid": false,
+    "reason": "Dart method, not Python"
+  },
+  {
+    "token": "using json as j",
+    "isValid": false,
+    "reason": "'using' is not a Python keyword"
+  },
+  {
+    "token": "__enter__",
+    "isValid": true,
+    "reason": "Valid context manager dunder"
+  },
+  {
+    "token": "lambda x: x+1",
+    "isValid": true,
+    "reason": "Valid lambda expression"
+  },
+  {
+    "token": "x.append(1)",
+    "isValid": true,
+    "reason": "Valid list append"
+  },
+  {
+    "token": "pass",
+    "isValid": true,
+    "reason": "Valid placeholder statement"
+  },
+  {
+    "token": "# comment",
+    "isValid": true,
+    "reason": "Valid single-line comment"
+  },
+  {
+    "token": "Math.round(3.7)",
+    "isValid": false,
+    "reason": "JS syntax, use round() in Python"
+  },
+  {
+    "token": "x ** 2",
+    "isValid": true,
+    "reason": "Valid exponentiation"
+  },
+  {
+    "token": "match x:",
+    "isValid": true,
+    "reason": "Valid match statement (3.10+)"
+  },
+  {
+    "token": "not x",
+    "isValid": true,
+    "reason": "Valid logical negation"
+  },
+  {
+    "token": "set.discard(x)",
+    "isValid": true,
+    "reason": "Valid set discard method"
+  },
+  {
+    "token": "__init__",
+    "isValid": true,
+    "reason": "Valid constructor method name"
+  },
+  {
+    "token": "x .= 5",
+    "isValid": false,
+    "reason": "Not a valid Python operator"
+  },
+  {
+    "token": "some([True, False])",
+    "isValid": false,
+    "reason": "JS method, Python uses any()"
+  },
+  {
+    "token": "int('42')",
+    "isValid": true,
+    "reason": "Valid string to int conversion"
+  },
+  {
+    "token": "assert x > 0",
+    "isValid": true,
+    "reason": "Valid assertion"
+  },
+  {
+    "token": "else if",
+    "isValid": false,
+    "reason": "Python uses 'elif'"
+  },
+  {
+    "token": "set.delete(x)",
+    "isValid": false,
+    "reason": "JS method, use discard()"
+  },
+  {
+    "token": "return x",
+    "isValid": true,
+    "reason": "Valid return statement"
+  },
+  {
+    "token": "enumerate(lst)",
+    "isValid": true,
+    "reason": "Valid enumerate call"
+  },
+  {
+    "token": "x.push(1)",
+    "isValid": false,
+    "reason": "JS method, use append() in Python"
+  },
+  {
+    "token": "swap(a, b)",
+    "isValid": false,
+    "reason": "No built-in swap function"
+  },
+  {
+    "token": "x in my_set",
+    "isValid": true,
+    "reason": "Valid membership test"
+  },
+  {
+    "token": "x.reverse()",
+    "isValid": true,
+    "reason": "Valid in-place list reverse"
+  },
+  {
+    "token": "open('file.txt')",
+    "isValid": true,
+    "reason": "Valid file open function"
+  },
+  {
+    "token": "#staticmethod",
+    "isValid": false,
+    "reason": "# starts a comment in Python"
+  },
+  {
+    "token": "obj.hasOwnProperty",
+    "isValid": false,
+    "reason": "JS method, use hasattr()"
+  },
+  {
+    "token": "await coro();",
+    "isValid": false,
+    "reason": "Semicolons not used in Python"
+  },
+  {
+    "token": "x = y = 0",
+    "isValid": true,
+    "reason": "Valid chained assignment"
+  },
+  {
+    "token": "x += 1",
+    "isValid": true,
+    "reason": "Valid augmented assignment"
+  },
+  {
+    "token": "raise Exception()",
+    "isValid": true,
+    "reason": "Valid exception raising"
+  },
+  {
+    "token": "import {path} from",
+    "isValid": false,
+    "reason": "JS import syntax, not Python"
+  },
+  {
+    "token": "c ? x : y",
+    "isValid": false,
+    "reason": "C-style ternary, not Python"
+  },
+  {
+    "token": "nonlocal x",
+    "isValid": true,
+    "reason": "Valid nonlocal declaration"
+  },
+  {
+    "token": "x **= 2",
+    "isValid": true,
+    "reason": "Valid power assignment"
+  },
+  {
+    "token": "dict.get('key')",
+    "isValid": true,
+    "reason": "Valid safe dictionary access"
+  },
+  {
+    "token": "switch x:",
+    "isValid": false,
+    "reason": "Python uses 'match', not 'switch'"
+  },
+  {
+    "token": "except ValueError:",
+    "isValid": true,
+    "reason": "Valid exception handler"
+  },
+  {
+    "token": "this.name",
+    "isValid": false,
+    "reason": "Python uses 'self', not 'this'"
+  },
+  {
+    "token": "any([True, False])",
+    "isValid": true,
+    "reason": "Valid any() function"
+  },
+  {
+    "token": "isinstance(x, int)",
+    "isValid": true,
+    "reason": "Valid type check"
+  },
+  {
+    "token": "my_set.has(x)",
+    "isValid": false,
+    "reason": "JS method, use 'in' operator"
+  },
+  {
+    "token": "__next__",
+    "isValid": true,
+    "reason": "Valid next dunder method"
+  },
+  {
+    "token": "if __name__ ==",
+    "isValid": true,
+    "reason": "Valid main guard start"
+  },
+  {
+    "token": "delete x",
+    "isValid": false,
+    "reason": "Python uses 'del', not 'delete'"
+  },
+  {
+    "token": "for(int i=0;i<5)",
+    "isValid": false,
+    "reason": "C-style for loop, not Python"
+  },
+  {
+    "token": "import os",
+    "isValid": true,
+    "reason": "Valid import statement"
+  },
+  {
+    "token": "x.pop()",
+    "isValid": true,
+    "reason": "Valid list pop method"
+  },
+  {
+    "token": "Byte[] b = {}",
+    "isValid": false,
+    "reason": "Java array syntax, not Python"
+  },
+  {
+    "token": "from os import path",
+    "isValid": true,
+    "reason": "Valid selective import"
+  },
+  {
+    "token": "dict.fetch('key')",
+    "isValid": false,
+    "reason": "Ruby method, not Python"
+  },
+  {
+    "token": "for i in range(5):",
+    "isValid": true,
+    "reason": "Valid for loop"
+  },
+  {
+    "token": "str.endswith('z')",
+    "isValid": true,
+    "reason": "Valid endswith method"
+  },
+  {
+    "token": "catch(Exception e)",
+    "isValid": false,
+    "reason": "Java-style catch, not Python"
+  },
+  {
+    "token": "yield return x",
+    "isValid": false,
+    "reason": "C# syntax, not Python"
+  },
+  {
+    "token": "func foo()",
+    "isValid": false,
+    "reason": "Python uses 'def', not 'func'"
+  },
+  {
+    "token": "__bracket__",
+    "isValid": false,
+    "reason": "Not a standard dunder method"
+  },
+  {
+    "token": "x = [1, 2, 3]",
+    "isValid": true,
+    "reason": "Valid list literal"
+  },
+  {
+    "token": "x \\ 2",
+    "isValid": false,
+    "reason": "Backslash is not an operator"
+  },
+  {
+    "token": "zip(a, b)",
+    "isValid": true,
+    "reason": "Valid zip function call"
+  },
+  {
+    "token": "set.insert(x)",
+    "isValid": false,
+    "reason": "Not a Python set method"
+  },
+  {
+    "token": "print('hi')",
+    "isValid": true,
+    "reason": "Valid print function call"
+  },
+  {
+    "token": "x = <1, 2, 3>",
+    "isValid": false,
+    "reason": "Not valid Python syntax"
+  },
+  {
+    "token": "[for x in l: x]",
+    "isValid": false,
+    "reason": "Wrong comprehension syntax"
+  },
+  {
+    "token": "x++",
+    "isValid": false,
+    "reason": "No increment operator in Python"
+  },
+  {
+    "token": "__str__",
+    "isValid": true,
+    "reason": "Valid string representation method"
+  },
+  {
+    "token": "let x",
+    "isValid": false,
+    "reason": "JS keyword, not Python"
+  },
+  {
+    "token": "obj.getAttribute()",
+    "isValid": false,
+    "reason": "DOM method, not Python"
+  },
+  {
+    "token": "map(fn, lst)",
+    "isValid": true,
+    "reason": "Valid map call"
+  },
+  {
+    "token": "/* comment */",
+    "isValid": false,
+    "reason": "C-style block comment, not Python"
+  },
+  {
+    "token": "a.zip(b)",
+    "isValid": false,
+    "reason": "zip() is a built-in function"
+  },
+  {
+    "token": "x := 5",
+    "isValid": true,
+    "reason": "Valid walrus operator (3.8+)"
+  },
+  {
+    "token": "x % 2",
+    "isValid": true,
+    "reason": "Valid modulo operator"
+  },
+  {
+    "token": "**kwargs",
+    "isValid": true,
+    "reason": "Valid keyword arguments"
+  },
+  {
+    "token": "x = {a: 1}",
+    "isValid": false,
+    "reason": "Dict keys need quotes for strings"
+  },
+  {
+    "token": "yield x",
+    "isValid": true,
+    "reason": "Valid generator yield"
+  },
+  {
+    "token": "int x = 0",
+    "isValid": false,
+    "reason": "Python doesn't use type prefixes"
+  },
+  {
+    "token": "case 1: break;",
+    "isValid": false,
+    "reason": "C-style case, not Python"
+  },
+  {
+    "token": "type(x)",
+    "isValid": true,
+    "reason": "Valid type checking function"
+  },
+  {
+    "token": "x = {1, 2, 3}",
+    "isValid": true,
+    "reason": "Valid set literal"
+  },
+  {
+    "token": "def foo():",
+    "isValid": true,
+    "reason": "Valid function definition"
+  },
+  {
+    "token": "str.toUpperCase()",
+    "isValid": false,
+    "reason": "JS method, use upper() in Python"
+  },
+  {
+    "token": "my_list.length",
+    "isValid": false,
+    "reason": "Use len(), not .length"
+  },
+  {
+    "token": "x--",
+    "isValid": false,
+    "reason": "No decrement operator in Python"
+  },
+  {
+    "token": "*args",
+    "isValid": true,
+    "reason": "Valid variadic positional args"
+  },
+  {
+    "token": "dict.update(d2)",
+    "isValid": true,
+    "reason": "Valid dictionary merge"
+  },
+  {
+    "token": "str.beginsWith('a')",
+    "isValid": false,
+    "reason": "Not a Python method"
+  },
+  {
+    "token": "x ^= 2",
+    "isValid": true,
+    "reason": "Valid XOR assignment"
+  },
+  {
+    "token": "[x for x in l]",
+    "isValid": true,
+    "reason": "Valid list comprehension"
+  },
+  {
+    "token": "bytes(b'hi')",
+    "isValid": true,
+    "reason": "Valid bytes literal"
+  },
+  {
+    "token": "constructor",
+    "isValid": false,
+    "reason": "JS term, Python uses __init__"
+  },
+  {
+    "token": "__display__",
+    "isValid": false,
+    "reason": "Not a standard dunder method"
+  },
+  {
+    "token": "class C(A, B):",
+    "isValid": true,
+    "reason": "Valid multiple inheritance"
+  },
+  {
+    "token": "=> x + 1",
+    "isValid": false,
+    "reason": "Arrow function is JS, not Python"
+  },
+  {
+    "token": "dict.getValues()",
+    "isValid": false,
+    "reason": "Not a Python dict method"
+  },
+  {
+    "token": "[a, b] = [1, 2];",
+    "isValid": false,
+    "reason": "JS destructuring, not Python"
+  },
+  {
+    "token": "reduce(+, [1,2,3])",
+    "isValid": false,
+    "reason": "Not valid Python syntax"
+  },
+  {
+    "token": "x = {'a': 1}",
+    "isValid": true,
+    "reason": "Valid dictionary literal"
+  },
+  {
+    "token": "while (true) {",
+    "isValid": false,
+    "reason": "C/Java-style braces, not Python"
+  },
+  {
+    "token": "lst.map(fn)",
+    "isValid": false,
+    "reason": "map() is a built-in function"
+  },
+  {
+    "token": "__getitem__",
+    "isValid": true,
+    "reason": "Valid item access dunder"
+  },
+  {
+    "token": "filter(fn, lst)",
+    "isValid": true,
+    "reason": "Valid filter call"
+  },
+  {
+    "token": "dict.remove('key')",
+    "isValid": false,
+    "reason": "Not a Python dict method"
+  },
+  {
+    "token": "!x",
+    "isValid": false,
+    "reason": "Python uses 'not', not '!'"
+  },
+  {
+    "token": "await coro()",
+    "isValid": true,
+    "reason": "Valid await expression"
+  },
+  {
+    "token": "dict.merge(d2)",
+    "isValid": false,
+    "reason": "Not a Python dict method"
+  },
+  {
+    "token": "// comment",
+    "isValid": false,
+    "reason": "C/Java comment style, not Python"
+  },
+  {
+    "token": "class C extends A:",
+    "isValid": false,
+    "reason": "JS syntax, not Python"
+  },
+  {
+    "token": "void main() {",
+    "isValid": false,
+    "reason": "C/Dart syntax, not Python"
+  },
+  {
+    "token": "noop",
+    "isValid": false,
+    "reason": "'noop' is not a Python keyword"
+  },
+  {
+    "token": "and",
+    "isValid": true,
+    "reason": "Valid logical operator"
+  },
+  {
+    "token": "contains",
+    "isValid": false,
+    "reason": "Not a Python operator keyword"
+  },
+  {
+    "token": "__iter__",
+    "isValid": true,
+    "reason": "Valid iterator dunder method"
+  },
+  {
+    "token": "toString",
+    "isValid": false,
+    "reason": "JS/Java method, use __str__"
+  },
+  {
+    "token": "x.getType()",
+    "isValid": false,
+    "reason": "Not a Python method"
+  },
+  {
+    "token": "lst.join('')",
+    "isValid": false,
+    "reason": "join() is a string method"
+  },
+  {
+    "token": "class Dog {",
+    "isValid": false,
+    "reason": "Python uses colon, not braces"
+  },
+  {
+    "token": "input('Enter: ')",
+    "isValid": true,
+    "reason": "Valid user input function"
+  },
+  {
+    "token": "Math.max(1, 2)",
+    "isValid": false,
+    "reason": "JS syntax, use max() in Python"
+  },
+  {
+    "token": "dict.getKeys()",
+    "isValid": false,
+    "reason": "Not a Python dict method"
+  },
+  {
+    "token": "str.replaceAll()",
+    "isValid": false,
+    "reason": "Not a Python string method"
+  },
+  {
+    "token": "&&",
+    "isValid": false,
+    "reason": "Python uses 'and', not '&&'"
+  },
+  {
+    "token": "__eq__",
+    "isValid": true,
+    "reason": "Valid equality dunder method"
+  },
+  {
+    "token": "catch:",
+    "isValid": false,
+    "reason": "Python uses 'except', not 'catch'"
+  },
+  {
+    "token": "float('3.14')",
+    "isValid": true,
+    "reason": "Valid float conversion"
+  },
+  {
+    "token": "const set = {1,2}",
+    "isValid": false,
+    "reason": "Python doesn't use 'const'"
+  },
+  {
+    "token": "break;",
+    "isValid": false,
+    "reason": "Semicolons not used in Python"
+  },
+  {
+    "token": "def f(x=5):",
+    "isValid": true,
+    "reason": "Valid default argument"
+  },
+  {
+    "token": "x.readLine()",
+    "isValid": false,
+    "reason": "Use readline() in Python"
+  },
+  {
+    "token": "dict.pop('key')",
+    "isValid": true,
+    "reason": "Valid dictionary pop"
+  },
+  {
+    "token": "System.out.println",
+    "isValid": false,
+    "reason": "Java syntax, not Python"
+  },
+  {
+    "token": "toString(42)",
+    "isValid": false,
+    "reason": "JS style, use str() in Python"
+  },
+  {
+    "token": "||",
+    "isValid": false,
+    "reason": "Python uses 'or', not '||'"
+  },
+  {
+    "token": "''.join(lst)",
+    "isValid": true,
+    "reason": "Valid string join"
+  },
+  {
+    "token": "None",
+    "isValid": true,
+    "reason": "Valid null equivalent"
+  },
+  {
+    "token": "def f(x:=5):",
+    "isValid": false,
+    "reason": "Walrus operator invalid here"
+  },
+  {
+    "token": "set.add(x)",
+    "isValid": true,
+    "reason": "Valid set add method"
+  },
+  {
+    "token": "x -= 1",
+    "isValid": true,
+    "reason": "Valid augmented assignment"
+  },
+  {
+    "token": "__open__",
+    "isValid": false,
+    "reason": "Not a standard dunder method"
+  },
+  {
+    "token": "x.remove_last()",
+    "isValid": false,
+    "reason": "Not a Python list method"
+  },
+  {
+    "token": "with open('f'):",
+    "isValid": true,
+    "reason": "Valid context manager"
+  },
+  {
+    "token": "x // 2",
+    "isValid": true,
+    "reason": "Valid floor division"
+  },
+  {
+    "token": "dict.entries()",
+    "isValid": false,
+    "reason": "JS method, use items() in Python"
+  },
+  {
+    "token": "true",
+    "isValid": false,
+    "reason": "Python booleans are capitalized"
+  },
+  {
+    "token": "if x > 0:",
+    "isValid": true,
+    "reason": "Valid if statement"
+  },
+  {
+    "token": "lst.enumerate()",
+    "isValid": false,
+    "reason": "enumerate() is a built-in function"
+  },
+  {
+    "token": "from abc import ABC",
+    "isValid": true,
+    "reason": "Valid abstract class import"
+  },
+  {
+    "token": "get property():",
+    "isValid": false,
+    "reason": "Not valid Python syntax"
+  },
+  {
+    "token": "every([True, True])",
+    "isValid": false,
+    "reason": "JS method, Python uses all()"
+  },
+  {
+    "token": "final:",
+    "isValid": false,
+    "reason": "'final' is not a keyword in Python"
+  },
+  {
+    "token": "len(my_list)",
+    "isValid": true,
+    "reason": "Valid length function"
+  },
+  {
+    "token": "int[] x = {1,2}",
+    "isValid": false,
+    "reason": "Java array syntax, not Python"
+  },
+  {
+    "token": "False",
+    "isValid": true,
+    "reason": "Valid boolean literal"
+  },
+  {
+    "token": "x.write('data')",
+    "isValid": true,
+    "reason": "Valid file write method"
+  },
+  {
+    "token": "x.extend([1,2])",
+    "isValid": true,
+    "reason": "Valid list extend"
+  },
+  {
+    "token": "\"\"\"docstring\"\"\"",
+    "isValid": true,
+    "reason": "Valid docstring/multiline string"
+  },
+  {
+    "token": "x[::-1]",
+    "isValid": true,
+    "reason": "Valid reverse slice"
+  },
+  {
+    "token": "super().__init__()",
+    "isValid": true,
+    "reason": "Valid super constructor call"
+  },
+  {
+    "token": "x[1:3]",
+    "isValid": true,
+    "reason": "Valid list slicing"
+  },
+  {
+    "token": "...args",
+    "isValid": false,
+    "reason": "JS spread syntax, not Python"
+  },
+  {
+    "token": "case 1:",
+    "isValid": true,
+    "reason": "Valid case in match (3.10+)"
+  },
+  {
+    "token": "x mod 2",
+    "isValid": false,
+    "reason": "Use % for modulo in Python"
+  },
+  {
+    "token": "async function foo()",
+    "isValid": false,
+    "reason": "JS syntax, not Python"
+  },
+  {
+    "token": "f'{name}'",
+    "isValid": true,
+    "reason": "Valid f-string"
+  },
+  {
+    "token": "abstract class Foo:",
+    "isValid": false,
+    "reason": "Python uses ABC mixin instead"
+  },
+  {
+    "token": "x.writeln('data')",
+    "isValid": false,
+    "reason": "Dart method, not Python"
+  },
+  {
+    "token": "import json as j",
+    "isValid": true,
+    "reason": "Valid aliased import"
+  },
+  {
+    "token": "str.replace('a','b')",
+    "isValid": true,
+    "reason": "Valid string replace"
+  },
+  {
+    "token": "1..10",
+    "isValid": false,
+    "reason": "Ruby range syntax, not Python"
+  },
+  {
+    "token": "if (x > 0) {",
+    "isValid": false,
+    "reason": "C/Java-style syntax, not Python"
+  },
+  {
+    "token": "True",
+    "isValid": true,
+    "reason": "Valid boolean literal"
+  },
+  {
+    "token": "sorted(lst)",
+    "isValid": true,
+    "reason": "Valid sorted function"
+  },
+  {
+    "token": "=== None",
+    "isValid": false,
+    "reason": "JS strict equality, not Python"
+  },
+  {
+    "token": "a, b = b, a",
+    "isValid": true,
+    "reason": "Valid variable swap"
+  },
+  {
+    "token": "x = set{1, 2}",
+    "isValid": false,
+    "reason": "Use set() or {}, not set{}"
+  },
+  {
+    "token": "map{k: v}",
+    "isValid": false,
+    "reason": "Not valid Python syntax"
+  },
+  {
+    "token": "async def foo():",
+    "isValid": true,
+    "reason": "Valid async function"
+  },
+  {
+    "token": "null",
+    "isValid": false,
+    "reason": "Python uses 'None', not 'null'"
+  },
+  {
+    "token": "or",
+    "isValid": true,
+    "reason": "Valid logical operator"
+  },
+  {
+    "token": "dict.keys()",
+    "isValid": true,
+    "reason": "Valid dictionary method"
+  },
+  {
+    "token": "x = (1, 2, 3)",
+    "isValid": true,
+    "reason": "Valid tuple literal"
+  },
+  {
+    "token": "throw Exception()",
+    "isValid": false,
+    "reason": "Python uses 'raise', not 'throw'"
+  },
+  {
+    "token": "case _:",
+    "isValid": true,
+    "reason": "Valid wildcard case (3.10+)"
+  },
+  {
+    "token": "parseFloat('3.14')",
+    "isValid": false,
+    "reason": "JS function, not Python"
+  },
+  {
+    "token": "finally:",
+    "isValid": true,
+    "reason": "Valid finally block"
+  },
+  {
+    "token": "x.read()",
+    "isValid": true,
+    "reason": "Valid file read method"
+  },
+  {
+    "token": "__size__",
+    "isValid": false,
+    "reason": "Not a standard dunder method"
+  },
+  {
+    "token": "round(3.7)",
+    "isValid": true,
+    "reason": "Valid rounding function"
+  },
+  {
+    "token": "a, b = 1, 2",
+    "isValid": true,
+    "reason": "Valid tuple unpacking"
+  },
+  {
+    "token": "x if c else y",
+    "isValid": true,
+    "reason": "Valid ternary expression"
+  },
+  {
+    "token": "dict.values()",
+    "isValid": true,
+    "reason": "Valid dictionary method"
+  },
+  {
+    "token": "__advance__",
+    "isValid": false,
+    "reason": "Not a standard dunder method"
+  },
+  {
+    "token": "new list()",
+    "isValid": false,
+    "reason": "Python doesn't use 'new'"
+  },
+  {
+    "token": "abs(-5)",
+    "isValid": true,
+    "reason": "Valid absolute value function"
+  },
+  {
+    "token": "return(x);",
+    "isValid": false,
+    "reason": "Unnecessary parens and semicolon"
+  },
+  {
+    "token": "__loop__",
+    "isValid": false,
+    "reason": "Not a standard dunder method"
+  },
+  {
+    "token": "@staticmethod",
+    "isValid": true,
+    "reason": "Valid decorator"
+  },
+  {
+    "token": "x.slice(1, 3)",
+    "isValid": false,
+    "reason": "JS method, use slicing in Python"
+  },
+  {
+    "token": "max(1, 2, 3)",
+    "isValid": true,
+    "reason": "Valid max function call"
+  },
+  {
+    "token": "__close__",
+    "isValid": false,
+    "reason": "Not a standard dunder method"
+  },
+  {
+    "token": "str.chars()",
+    "isValid": false,
+    "reason": "Not a Python string method"
+  },
+  {
+    "token": "@property",
+    "isValid": true,
+    "reason": "Valid property decorator"
+  },
+  {
+    "token": "Math.pow(x, 2)",
+    "isValid": false,
+    "reason": "JS syntax, use ** in Python"
+  },
+  {
+    "token": "next",
+    "isValid": false,
+    "reason": "Ruby keyword, not Python loop control"
+  },
+  {
+    "token": "elif",
+    "isValid": true,
+    "reason": "Valid else-if keyword"
+  },
+  {
+    "token": "Math.abs(-5)",
+    "isValid": false,
+    "reason": "JS syntax, use abs() in Python"
+  },
+  {
+    "token": "continue",
+    "isValid": true,
+    "reason": "Valid loop continue"
+  },
+  {
+    "token": "$'{name}'",
+    "isValid": false,
+    "reason": "C# interpolation, not Python"
+  },
+  {
+    "token": "__exit__",
+    "isValid": true,
+    "reason": "Valid context manager dunder"
+  },
+  {
+    "token": "str.strip()",
+    "isValid": true,
+    "reason": "Valid whitespace strip"
+  },
+  {
+    "token": "__len__",
+    "isValid": true,
+    "reason": "Valid length dunder method"
+  },
+  {
+    "token": "default:",
+    "isValid": false,
+    "reason": "Python uses 'case _:', not 'default'"
+  },
+  {
+    "token": "str.trim()",
+    "isValid": false,
+    "reason": "JS method, Python uses strip()"
+  },
+  {
+    "token": "base.__init__()",
+    "isValid": false,
+    "reason": "Python uses 'super', not 'base'"
+  },
+  {
+    "token": "str.ends_with('z')",
+    "isValid": false,
+    "reason": "Wrong method name, use endswith"
+  },
+  {
+    "token": "lst.sort()",
+    "isValid": true,
+    "reason": "Valid in-place sort method"
+  },
+  {
+    "token": "false",
+    "isValid": false,
+    "reason": "Python booleans are capitalized"
+  },
+  {
+    "token": "lst.reversed()",
+    "isValid": false,
+    "reason": "reversed() is a built-in function"
+  },
+  {
+    "token": "assert(x > 0);",
+    "isValid": false,
+    "reason": "Semicolons not used in Python"
+  },
+  {
+    "token": "#include <stdio>",
+    "isValid": false,
+    "reason": "C/C++ include, not Python"
+  },
+  {
+    "token": "str.startswith('a')",
+    "isValid": true,
+    "reason": "Valid startswith method"
+  },
+  {
+    "token": "str.split(',')",
+    "isValid": true,
+    "reason": "Valid string split"
+  },
+  {
+    "token": "in",
+    "isValid": true,
+    "reason": "Valid membership operator"
+  },
+  {
+    "token": "class Dog:",
+    "isValid": true,
+    "reason": "Valid class definition"
+  },
+  {
+    "token": "self.name",
+    "isValid": true,
+    "reason": "Valid instance attribute access"
+  },
+  {
+    "token": "__repr__",
+    "isValid": true,
+    "reason": "Valid repr dunder method"
+  },
+  {
+    "token": "var x",
+    "isValid": false,
+    "reason": "Python doesn't use 'var'"
+  },
+  {
+    "token": "is None",
+    "isValid": true,
+    "reason": "Valid identity check"
+  },
+  {
+    "token": "using(var f)",
+    "isValid": false,
+    "reason": "C# syntax, not Python"
+  },
+  {
+    "token": "__equals__",
+    "isValid": false,
+    "reason": "Not a standard dunder method"
+  },
+  {
+    "token": "Math.min(1, 2)",
+    "isValid": false,
+    "reason": "JS syntax, use min() in Python"
+  },
+  {
+    "token": "lst.filter(fn)",
+    "isValid": false,
+    "reason": "filter() is a built-in function"
+  },
+  {
+    "token": "global x",
+    "isValid": true,
+    "reason": "Valid global declaration"
+  },
+  {
+    "token": "scanf('%s')",
+    "isValid": false,
+    "reason": "C function, not Python"
+  },
+  {
+    "token": "{k: v for k,v}",
+    "isValid": true,
+    "reason": "Valid dict comprehension start"
+  },
+  {
+    "token": "str.upper()",
+    "isValid": true,
+    "reason": "Valid uppercase method"
+  },
+  {
+    "token": "str(42)",
+    "isValid": true,
+    "reason": "Valid int to string conversion"
+  },
+  {
+    "token": "break",
+    "isValid": true,
+    "reason": "Valid loop break"
+  },
+  {
+    "token": "fopen('file.txt')",
+    "isValid": false,
+    "reason": "C function, not Python"
+  },
+  {
+    "token": "while True:",
+    "isValid": true,
+    "reason": "Valid infinite loop"
+  },
+  {
+    "token": "del x",
+    "isValid": true,
+    "reason": "Valid delete statement"
+  },
+  {
+    "token": "&&kwargs",
+    "isValid": false,
+    "reason": "Not valid Python syntax"
+  }
+]

@@ -1,0 +1,3111 @@
+[
+    {
+        "tags": [
+            "SELECT",
+            "*",
+            "FROM",
+            "users",
+            ";"
+        ],
+        "description": "Select All Rows"
+    },
+    {
+        "tags": [
+            "SELECT",
+            "name",
+            ",",
+            "email",
+            "FROM",
+            "users",
+            ";"
+        ],
+        "description": "Select Specific Columns"
+    },
+    {
+        "tags": [
+            "SELECT DISTINCT",
+            "status",
+            "FROM",
+            "orders",
+            ";"
+        ],
+        "description": "Select Distinct Values"
+    },
+    {
+        "tags": [
+            "SELECT",
+            "*",
+            "FROM",
+            "users",
+            "WHERE",
+            "age > 18",
+            ";"
+        ],
+        "description": "Select With Where Clause"
+    },
+    {
+        "tags": [
+            "SELECT",
+            "*",
+            "FROM",
+            "users",
+            "WHERE",
+            "name",
+            "= 'Alice'",
+            ";"
+        ],
+        "description": "Where Equals Filter"
+    },
+    {
+        "tags": [
+            "SELECT",
+            "*",
+            "FROM",
+            "users",
+            "WHERE",
+            "age",
+            "BETWEEN",
+            "18 AND 30",
+            ";"
+        ],
+        "description": "Where Between Range"
+    },
+    {
+        "tags": [
+            "SELECT",
+            "*",
+            "FROM",
+            "users",
+            "WHERE",
+            "status",
+            "IN",
+            "('active', 'pending')",
+            ";"
+        ],
+        "description": "Where In List"
+    },
+    {
+        "tags": [
+            "SELECT",
+            "*",
+            "FROM",
+            "users",
+            "WHERE",
+            "name",
+            "LIKE",
+            "'A%'",
+            ";"
+        ],
+        "description": "Where Like Pattern"
+    },
+    {
+        "tags": [
+            "SELECT",
+            "*",
+            "FROM",
+            "users",
+            "WHERE",
+            "email",
+            "IS NULL",
+            ";"
+        ],
+        "description": "Where Is Null Check"
+    },
+    {
+        "tags": [
+            "SELECT",
+            "*",
+            "FROM",
+            "users",
+            "WHERE",
+            "email",
+            "IS NOT NULL",
+            ";"
+        ],
+        "description": "Where Is Not Null"
+    },
+    {
+        "tags": [
+            "SELECT",
+            "*",
+            "FROM",
+            "users",
+            "WHERE",
+            "age > 18",
+            "AND",
+            "status = 'active'",
+            ";"
+        ],
+        "description": "Where And Condition"
+    },
+    {
+        "tags": [
+            "SELECT",
+            "*",
+            "FROM",
+            "users",
+            "WHERE",
+            "role = 'admin'",
+            "OR",
+            "role = 'mod'",
+            ";"
+        ],
+        "description": "Where Or Condition"
+    },
+    {
+        "tags": [
+            "SELECT",
+            "*",
+            "FROM",
+            "users",
+            "WHERE",
+            "NOT",
+            "status = 'banned'",
+            ";"
+        ],
+        "description": "Where Not Condition"
+    },
+    {
+        "tags": [
+            "SELECT",
+            "*",
+            "FROM",
+            "users",
+            "ORDER BY",
+            "name",
+            "ASC",
+            ";"
+        ],
+        "description": "Order By Ascending"
+    },
+    {
+        "tags": [
+            "SELECT",
+            "*",
+            "FROM",
+            "users",
+            "ORDER BY",
+            "created",
+            "DESC",
+            ";"
+        ],
+        "description": "Order By Descending"
+    },
+    {
+        "tags": [
+            "SELECT",
+            "*",
+            "FROM",
+            "users",
+            "ORDER BY",
+            "name",
+            ",",
+            "age DESC",
+            ";"
+        ],
+        "description": "Multi Column Sort"
+    },
+    {
+        "tags": [
+            "SELECT",
+            "*",
+            "FROM",
+            "users",
+            "LIMIT",
+            "10",
+            ";"
+        ],
+        "description": "Limit Result Rows"
+    },
+    {
+        "tags": [
+            "SELECT",
+            "*",
+            "FROM",
+            "users",
+            "LIMIT",
+            "10",
+            "OFFSET",
+            "20",
+            ";"
+        ],
+        "description": "Limit With Offset"
+    },
+    {
+        "tags": [
+            "SELECT",
+            "COUNT(*)",
+            "FROM",
+            "users",
+            ";"
+        ],
+        "description": "Count All Rows"
+    },
+    {
+        "tags": [
+            "SELECT",
+            "SUM(amount)",
+            "FROM",
+            "orders",
+            ";"
+        ],
+        "description": "Sum Column Values"
+    },
+    {
+        "tags": [
+            "SELECT",
+            "AVG(price)",
+            "FROM",
+            "products",
+            ";"
+        ],
+        "description": "Average Column Value"
+    },
+    {
+        "tags": [
+            "SELECT",
+            "MAX(salary)",
+            "FROM",
+            "employees",
+            ";"
+        ],
+        "description": "Maximum Column Value"
+    },
+    {
+        "tags": [
+            "SELECT",
+            "MIN(price)",
+            "FROM",
+            "products",
+            ";"
+        ],
+        "description": "Minimum Column Value"
+    },
+    {
+        "tags": [
+            "SELECT",
+            "COUNT(DISTINCT",
+            "status)",
+            "FROM",
+            "orders",
+            ";"
+        ],
+        "description": "Count Distinct Values"
+    },
+    {
+        "tags": [
+            "SELECT",
+            "status",
+            ",",
+            "COUNT(*)",
+            "FROM",
+            "orders",
+            "GROUP BY",
+            "status",
+            ";"
+        ],
+        "description": "Group By Count"
+    },
+    {
+        "tags": [
+            "SELECT",
+            "dept",
+            ",",
+            "AVG(salary)",
+            "FROM",
+            "emp",
+            "GROUP BY",
+            "dept",
+            ";"
+        ],
+        "description": "Group By Average"
+    },
+    {
+        "tags": [
+            "SELECT",
+            "dept",
+            ",",
+            "SUM(salary)",
+            "FROM",
+            "emp",
+            "GROUP BY",
+            "dept",
+            ";"
+        ],
+        "description": "Group By Sum"
+    },
+    {
+        "tags": [
+            "SELECT",
+            "status",
+            ",",
+            "COUNT(*)",
+            "FROM",
+            "orders",
+            "GROUP BY",
+            "status",
+            "HAVING",
+            "COUNT(*) > 5",
+            ";"
+        ],
+        "description": "Group By Having Filter"
+    },
+    {
+        "tags": [
+            "SELECT",
+            "dept",
+            ",",
+            "AVG(salary)",
+            "FROM",
+            "emp",
+            "GROUP BY",
+            "dept",
+            "HAVING",
+            "AVG(salary) > 50000",
+            ";"
+        ],
+        "description": "Having Average Filter"
+    },
+    {
+        "tags": [
+            "SELECT",
+            "u.name",
+            ",",
+            "o.total",
+            "FROM",
+            "users u",
+            "INNER JOIN",
+            "orders o",
+            "ON",
+            "u.id = o.user_id",
+            ";"
+        ],
+        "description": "Inner Join Two Tables"
+    },
+    {
+        "tags": [
+            "SELECT",
+            "*",
+            "FROM",
+            "users u",
+            "LEFT JOIN",
+            "orders o",
+            "ON",
+            "u.id = o.user_id",
+            ";"
+        ],
+        "description": "Left Join Tables"
+    },
+    {
+        "tags": [
+            "SELECT",
+            "*",
+            "FROM",
+            "users u",
+            "RIGHT JOIN",
+            "orders o",
+            "ON",
+            "u.id = o.user_id",
+            ";"
+        ],
+        "description": "Right Join Tables"
+    },
+    {
+        "tags": [
+            "SELECT",
+            "*",
+            "FROM",
+            "users u",
+            "FULL OUTER JOIN",
+            "orders o",
+            "ON",
+            "u.id = o.user_id",
+            ";"
+        ],
+        "description": "Full Outer Join"
+    },
+    {
+        "tags": [
+            "SELECT",
+            "*",
+            "FROM",
+            "users",
+            "CROSS JOIN",
+            "roles",
+            ";"
+        ],
+        "description": "Cross Join Tables"
+    },
+    {
+        "tags": [
+            "SELECT",
+            "e.name",
+            ",",
+            "m.name",
+            "FROM",
+            "emp e",
+            "JOIN",
+            "emp m",
+            "ON",
+            "e.mgr_id = m.id",
+            ";"
+        ],
+        "description": "Self Join Table"
+    },
+    {
+        "tags": [
+            "SELECT",
+            "*",
+            "FROM",
+            "a",
+            "JOIN",
+            "b",
+            "ON",
+            "a.id = b.a_id",
+            "JOIN",
+            "c",
+            "ON",
+            "b.id = c.b_id",
+            ";"
+        ],
+        "description": "Triple Table Join"
+    },
+    {
+        "tags": [
+            "SELECT",
+            "*",
+            "FROM",
+            "users u",
+            "LEFT JOIN",
+            "orders o",
+            "ON",
+            "u.id = o.user_id",
+            "WHERE",
+            "o.id IS NULL",
+            ";"
+        ],
+        "description": "Left Join Find Missing"
+    },
+    {
+        "tags": [
+            "SELECT",
+            "name",
+            "FROM",
+            "users",
+            "WHERE",
+            "id",
+            "IN",
+            "(SELECT user_id FROM orders)",
+            ";"
+        ],
+        "description": "Subquery In Where"
+    },
+    {
+        "tags": [
+            "SELECT",
+            "*",
+            "FROM",
+            "users",
+            "WHERE",
+            "salary",
+            ">",
+            "(SELECT AVG(salary) FROM users)",
+            ";"
+        ],
+        "description": "Subquery Comparison"
+    },
+    {
+        "tags": [
+            "SELECT",
+            "*",
+            "FROM",
+            "users",
+            "WHERE",
+            "EXISTS",
+            "(SELECT 1 FROM orders WHERE orders.user_id = users.id)",
+            ";"
+        ],
+        "description": "Exists Subquery Check"
+    },
+    {
+        "tags": [
+            "SELECT",
+            "*",
+            "FROM",
+            "users",
+            "WHERE",
+            "NOT EXISTS",
+            "(SELECT 1 FROM orders WHERE orders.user_id = users.id)",
+            ";"
+        ],
+        "description": "Not Exists Subquery"
+    },
+    {
+        "tags": [
+            "SELECT",
+            "*",
+            "FROM",
+            "(SELECT name FROM users) AS sub",
+            ";"
+        ],
+        "description": "Subquery In From"
+    },
+    {
+        "tags": [
+            "SELECT",
+            "name",
+            ",",
+            "(SELECT COUNT(*) FROM orders WHERE user_id = u.id)",
+            "FROM",
+            "users u",
+            ";"
+        ],
+        "description": "Correlated Subquery Select"
+    },
+    {
+        "tags": [
+            "SELECT",
+            "name",
+            "FROM",
+            "users",
+            "WHERE",
+            "salary",
+            "= ANY",
+            "(SELECT salary FROM mgrs)",
+            ";"
+        ],
+        "description": "Any Subquery Operator"
+    },
+    {
+        "tags": [
+            "SELECT",
+            "name",
+            "FROM",
+            "users",
+            "WHERE",
+            "salary",
+            "> ALL",
+            "(SELECT salary FROM interns)",
+            ";"
+        ],
+        "description": "All Subquery Operator"
+    },
+    {
+        "tags": [
+            "SELECT",
+            "name",
+            "FROM",
+            "emp1",
+            "UNION",
+            "SELECT",
+            "name",
+            "FROM",
+            "emp2",
+            ";"
+        ],
+        "description": "Union Two Queries"
+    },
+    {
+        "tags": [
+            "SELECT",
+            "name",
+            "FROM",
+            "emp1",
+            "UNION ALL",
+            "SELECT",
+            "name",
+            "FROM",
+            "emp2",
+            ";"
+        ],
+        "description": "Union All With Duplicates"
+    },
+    {
+        "tags": [
+            "SELECT",
+            "name",
+            "FROM",
+            "emp1",
+            "INTERSECT",
+            "SELECT",
+            "name",
+            "FROM",
+            "emp2",
+            ";"
+        ],
+        "description": "Intersect Two Queries"
+    },
+    {
+        "tags": [
+            "SELECT",
+            "name",
+            "FROM",
+            "emp1",
+            "EXCEPT",
+            "SELECT",
+            "name",
+            "FROM",
+            "emp2",
+            ";"
+        ],
+        "description": "Except Set Difference"
+    },
+    {
+        "tags": [
+            "INSERT INTO",
+            "users",
+            "(name, email)",
+            "VALUES",
+            "('Alice', 'a@b.com')",
+            ";"
+        ],
+        "description": "Insert Single Row"
+    },
+    {
+        "tags": [
+            "INSERT INTO",
+            "users",
+            "(name, email)",
+            "VALUES",
+            "('A', 'a@b'), ('B', 'b@c')",
+            ";"
+        ],
+        "description": "Insert Multiple Rows"
+    },
+    {
+        "tags": [
+            "INSERT INTO",
+            "archive",
+            "SELECT",
+            "*",
+            "FROM",
+            "orders",
+            "WHERE",
+            "status = 'done'",
+            ";"
+        ],
+        "description": "Insert From Select"
+    },
+    {
+        "tags": [
+            "INSERT INTO",
+            "users",
+            "(name)",
+            "VALUES",
+            "('Bob')",
+            "RETURNING",
+            "id",
+            ";"
+        ],
+        "description": "Insert Returning ID"
+    },
+    {
+        "tags": [
+            "UPDATE",
+            "users",
+            "SET",
+            "status = 'active'",
+            "WHERE",
+            "id = 1",
+            ";"
+        ],
+        "description": "Update Single Row"
+    },
+    {
+        "tags": [
+            "UPDATE",
+            "users",
+            "SET",
+            "name = 'Alice'",
+            ",",
+            "email = 'a@b'",
+            "WHERE",
+            "id = 1",
+            ";"
+        ],
+        "description": "Update Multiple Columns"
+    },
+    {
+        "tags": [
+            "UPDATE",
+            "products",
+            "SET",
+            "price = price * 1.1",
+            "WHERE",
+            "category = 'food'",
+            ";"
+        ],
+        "description": "Update With Expression"
+    },
+    {
+        "tags": [
+            "UPDATE",
+            "users",
+            "SET",
+            "status = 'vip'",
+            "WHERE",
+            "id IN",
+            "(SELECT user_id FROM orders GROUP BY user_id HAVING COUNT(*) > 10)",
+            ";"
+        ],
+        "description": "Update With Subquery"
+    },
+    {
+        "tags": [
+            "DELETE FROM",
+            "orders",
+            "WHERE",
+            "status = 'cancelled'",
+            ";"
+        ],
+        "description": "Delete With Condition"
+    },
+    {
+        "tags": [
+            "DELETE FROM",
+            "logs",
+            "WHERE",
+            "created <",
+            "'2024-01-01'",
+            ";"
+        ],
+        "description": "Delete Old Records"
+    },
+    {
+        "tags": [
+            "DELETE FROM",
+            "users",
+            "WHERE",
+            "id NOT IN",
+            "(SELECT user_id FROM orders)",
+            ";"
+        ],
+        "description": "Delete With Subquery"
+    },
+    {
+        "tags": [
+            "TRUNCATE TABLE",
+            "logs",
+            ";"
+        ],
+        "description": "Truncate Entire Table"
+    },
+    {
+        "tags": [
+            "CREATE TABLE",
+            "users",
+            "(",
+            "id INT PRIMARY KEY",
+            ",",
+            "name VARCHAR(100)",
+            ")",
+            ";"
+        ],
+        "description": "Create Simple Table"
+    },
+    {
+        "tags": [
+            "CREATE TABLE",
+            "orders",
+            "(",
+            "id SERIAL",
+            "PRIMARY KEY",
+            ",",
+            "total DECIMAL(10,2)",
+            ")",
+            ";"
+        ],
+        "description": "Create Table Serial PK"
+    },
+    {
+        "tags": [
+            "CREATE TABLE",
+            "posts",
+            "(",
+            "id INT",
+            ",",
+            "title VARCHAR(200)",
+            "NOT NULL",
+            ",",
+            "body TEXT",
+            ")",
+            ";"
+        ],
+        "description": "Create Table Not Null"
+    },
+    {
+        "tags": [
+            "CREATE TABLE",
+            "users",
+            "(",
+            "id INT",
+            ",",
+            "email VARCHAR",
+            "UNIQUE",
+            ",",
+            "name VARCHAR",
+            ")",
+            ";"
+        ],
+        "description": "Create Table Unique Column"
+    },
+    {
+        "tags": [
+            "CREATE TABLE",
+            "products",
+            "(",
+            "price DECIMAL",
+            "DEFAULT",
+            "0.00",
+            ",",
+            "name VARCHAR",
+            ")",
+            ";"
+        ],
+        "description": "Create Table With Default"
+    },
+    {
+        "tags": [
+            "CREATE TABLE",
+            "orders",
+            "(",
+            "user_id INT",
+            ",",
+            "FOREIGN KEY",
+            "(user_id)",
+            "REFERENCES",
+            "users(id)",
+            ")",
+            ";"
+        ],
+        "description": "Create Table Foreign Key"
+    },
+    {
+        "tags": [
+            "CREATE TABLE",
+            "items",
+            "(",
+            "CHECK",
+            "(price > 0)",
+            ",",
+            "price DECIMAL",
+            ")",
+            ";"
+        ],
+        "description": "Create Table Check Constraint"
+    },
+    {
+        "tags": [
+            "CREATE TABLE",
+            "IF NOT EXISTS",
+            "logs",
+            "(",
+            "id SERIAL",
+            ",",
+            "msg TEXT",
+            ")",
+            ";"
+        ],
+        "description": "Create If Not Exists"
+    },
+    {
+        "tags": [
+            "CREATE TEMPORARY TABLE",
+            "temp_data",
+            "AS",
+            "SELECT",
+            "*",
+            "FROM",
+            "users",
+            ";"
+        ],
+        "description": "Create Temp Table"
+    },
+    {
+        "tags": [
+            "ALTER TABLE",
+            "users",
+            "ADD COLUMN",
+            "phone VARCHAR(20)",
+            ";"
+        ],
+        "description": "Add Column To Table"
+    },
+    {
+        "tags": [
+            "ALTER TABLE",
+            "users",
+            "DROP COLUMN",
+            "phone",
+            ";"
+        ],
+        "description": "Drop Column From Table"
+    },
+    {
+        "tags": [
+            "ALTER TABLE",
+            "users",
+            "RENAME COLUMN",
+            "name",
+            "TO",
+            "full_name",
+            ";"
+        ],
+        "description": "Rename Table Column"
+    },
+    {
+        "tags": [
+            "ALTER TABLE",
+            "users",
+            "ALTER COLUMN",
+            "name",
+            "SET",
+            "NOT NULL",
+            ";"
+        ],
+        "description": "Add Not Null Constraint"
+    },
+    {
+        "tags": [
+            "ALTER TABLE",
+            "users",
+            "ALTER COLUMN",
+            "name",
+            "TYPE",
+            "TEXT",
+            ";"
+        ],
+        "description": "Change Column Type"
+    },
+    {
+        "tags": [
+            "ALTER TABLE",
+            "users",
+            "ADD CONSTRAINT",
+            "uk_email",
+            "UNIQUE(email)",
+            ";"
+        ],
+        "description": "Add Unique Constraint"
+    },
+    {
+        "tags": [
+            "ALTER TABLE",
+            "users",
+            "DROP CONSTRAINT",
+            "uk_email",
+            ";"
+        ],
+        "description": "Drop Constraint"
+    },
+    {
+        "tags": [
+            "ALTER TABLE",
+            "users",
+            "RENAME TO",
+            "members",
+            ";"
+        ],
+        "description": "Rename Table"
+    },
+    {
+        "tags": [
+            "DROP TABLE",
+            "users",
+            ";"
+        ],
+        "description": "Drop Table"
+    },
+    {
+        "tags": [
+            "DROP TABLE",
+            "IF EXISTS",
+            "users",
+            "CASCADE",
+            ";"
+        ],
+        "description": "Drop Table Cascade"
+    },
+    {
+        "tags": [
+            "CREATE INDEX",
+            "idx_name",
+            "ON",
+            "users(name)",
+            ";"
+        ],
+        "description": "Create Simple Index"
+    },
+    {
+        "tags": [
+            "CREATE UNIQUE INDEX",
+            "idx_email",
+            "ON",
+            "users(email)",
+            ";"
+        ],
+        "description": "Create Unique Index"
+    },
+    {
+        "tags": [
+            "CREATE INDEX",
+            "idx_comp",
+            "ON",
+            "orders(user_id, date)",
+            ";"
+        ],
+        "description": "Create Composite Index"
+    },
+    {
+        "tags": [
+            "DROP INDEX",
+            "idx_name",
+            ";"
+        ],
+        "description": "Drop Index"
+    },
+    {
+        "tags": [
+            "CREATE INDEX",
+            "CONCURRENTLY",
+            "idx_name",
+            "ON",
+            "users(name)",
+            ";"
+        ],
+        "description": "Create Index Concurrently"
+    },
+    {
+        "tags": [
+            "CREATE VIEW",
+            "active_users",
+            "AS",
+            "SELECT",
+            "*",
+            "FROM",
+            "users",
+            "WHERE",
+            "status = 'active'",
+            ";"
+        ],
+        "description": "Create Simple View"
+    },
+    {
+        "tags": [
+            "CREATE OR REPLACE VIEW",
+            "v_summary",
+            "AS",
+            "SELECT",
+            "dept, COUNT(*)",
+            "FROM",
+            "emp",
+            "GROUP BY",
+            "dept",
+            ";"
+        ],
+        "description": "Create Replace View"
+    },
+    {
+        "tags": [
+            "DROP VIEW",
+            "active_users",
+            ";"
+        ],
+        "description": "Drop View"
+    },
+    {
+        "tags": [
+            "CREATE MATERIALIZED VIEW",
+            "mv_stats",
+            "AS",
+            "SELECT",
+            "COUNT(*)",
+            "FROM",
+            "orders",
+            ";"
+        ],
+        "description": "Create Materialized View"
+    },
+    {
+        "tags": [
+            "REFRESH",
+            "MATERIALIZED VIEW",
+            "mv_stats",
+            ";"
+        ],
+        "description": "Refresh Materialized View"
+    },
+    {
+        "tags": [
+            "SELECT",
+            "name",
+            ",",
+            "salary",
+            ",",
+            "RANK()",
+            "OVER",
+            "(ORDER BY salary DESC)",
+            "FROM",
+            "emp",
+            ";"
+        ],
+        "description": "Rank Window Function"
+    },
+    {
+        "tags": [
+            "SELECT",
+            "name",
+            ",",
+            "ROW_NUMBER()",
+            "OVER",
+            "(ORDER BY id)",
+            "FROM",
+            "users",
+            ";"
+        ],
+        "description": "Row Number Function"
+    },
+    {
+        "tags": [
+            "SELECT",
+            "name",
+            ",",
+            "DENSE_RANK()",
+            "OVER",
+            "(ORDER BY salary DESC)",
+            "FROM",
+            "emp",
+            ";"
+        ],
+        "description": "Dense Rank Function"
+    },
+    {
+        "tags": [
+            "SELECT",
+            "name",
+            ",",
+            "NTILE(4)",
+            "OVER",
+            "(ORDER BY salary)",
+            "FROM",
+            "emp",
+            ";"
+        ],
+        "description": "Ntile Quartile Function"
+    },
+    {
+        "tags": [
+            "SELECT",
+            "name",
+            ",",
+            "LAG(salary)",
+            "OVER",
+            "(ORDER BY id)",
+            "FROM",
+            "emp",
+            ";"
+        ],
+        "description": "Lag Window Function"
+    },
+    {
+        "tags": [
+            "SELECT",
+            "name",
+            ",",
+            "LEAD(salary)",
+            "OVER",
+            "(ORDER BY id)",
+            "FROM",
+            "emp",
+            ";"
+        ],
+        "description": "Lead Window Function"
+    },
+    {
+        "tags": [
+            "SELECT",
+            "dept",
+            ",",
+            "name",
+            ",",
+            "SUM(salary)",
+            "OVER",
+            "(PARTITION BY dept)",
+            "FROM",
+            "emp",
+            ";"
+        ],
+        "description": "Partition Sum Function"
+    },
+    {
+        "tags": [
+            "SELECT",
+            "name",
+            ",",
+            "AVG(salary)",
+            "OVER",
+            "(PARTITION BY dept ORDER BY id)",
+            "FROM",
+            "emp",
+            ";"
+        ],
+        "description": "Partition Running Average"
+    },
+    {
+        "tags": [
+            "SELECT",
+            "name",
+            ",",
+            "FIRST_VALUE(name)",
+            "OVER",
+            "(ORDER BY salary DESC)",
+            "FROM",
+            "emp",
+            ";"
+        ],
+        "description": "First Value Function"
+    },
+    {
+        "tags": [
+            "SELECT",
+            "name",
+            ",",
+            "LAST_VALUE(name)",
+            "OVER",
+            "(ORDER BY salary)",
+            "FROM",
+            "emp",
+            ";"
+        ],
+        "description": "Last Value Function"
+    },
+    {
+        "tags": [
+            "SELECT",
+            "SUM(amount)",
+            "OVER",
+            "(ORDER BY date",
+            "ROWS BETWEEN",
+            "UNBOUNDED PRECEDING",
+            "AND CURRENT ROW)",
+            ";"
+        ],
+        "description": "Running Total Window"
+    },
+    {
+        "tags": [
+            "SELECT",
+            "AVG(amount)",
+            "OVER",
+            "(ORDER BY date",
+            "ROWS BETWEEN",
+            "2 PRECEDING",
+            "AND CURRENT ROW)",
+            ";"
+        ],
+        "description": "Moving Average Window"
+    },
+    {
+        "tags": [
+            "SELECT",
+            "PERCENT_RANK()",
+            "OVER",
+            "(ORDER BY salary)",
+            "FROM",
+            "emp",
+            ";"
+        ],
+        "description": "Percent Rank Function"
+    },
+    {
+        "tags": [
+            "SELECT",
+            "CUME_DIST()",
+            "OVER",
+            "(ORDER BY salary)",
+            "FROM",
+            "emp",
+            ";"
+        ],
+        "description": "Cumulative Distribution"
+    },
+    {
+        "tags": [
+            "WITH",
+            "cte AS",
+            "(SELECT * FROM users)",
+            "SELECT",
+            "*",
+            "FROM",
+            "cte",
+            ";"
+        ],
+        "description": "Common Table Expression"
+    },
+    {
+        "tags": [
+            "WITH",
+            "ranked AS",
+            "(SELECT name, RANK() OVER(ORDER BY salary DESC) r FROM emp)",
+            "SELECT",
+            "*",
+            "FROM",
+            "ranked",
+            "WHERE",
+            "r <= 3",
+            ";"
+        ],
+        "description": "CTE With Window Function"
+    },
+    {
+        "tags": [
+            "WITH RECURSIVE",
+            "cte AS",
+            "(SELECT 1 AS n",
+            "UNION ALL",
+            "SELECT n+1 FROM cte WHERE n < 10)",
+            "SELECT",
+            "*",
+            "FROM",
+            "cte",
+            ";"
+        ],
+        "description": "Recursive CTE Series"
+    },
+    {
+        "tags": [
+            "WITH RECURSIVE",
+            "tree AS",
+            "(SELECT id, parent_id, name FROM categories WHERE parent_id IS NULL",
+            "UNION ALL",
+            "SELECT c.id, c.parent_id, c.name FROM categories c JOIN tree t ON c.parent_id = t.id)",
+            "SELECT * FROM tree",
+            ";"
+        ],
+        "description": "Recursive CTE Tree"
+    },
+    {
+        "tags": [
+            "WITH",
+            "cte1 AS (...)",
+            ",",
+            "cte2 AS (...)",
+            "SELECT",
+            "*",
+            "FROM",
+            "cte1",
+            "JOIN",
+            "cte2",
+            ";"
+        ],
+        "description": "Multiple CTEs Combined"
+    },
+    {
+        "tags": [
+            "CASE",
+            "WHEN",
+            "age < 18",
+            "THEN",
+            "'minor'",
+            "WHEN",
+            "age >= 18",
+            "THEN",
+            "'adult'",
+            "END"
+        ],
+        "description": "Case When Expression"
+    },
+    {
+        "tags": [
+            "SELECT",
+            "CASE",
+            "status",
+            "WHEN",
+            "'A'",
+            "THEN",
+            "'Active'",
+            "ELSE",
+            "'Other'",
+            "END",
+            "FROM",
+            "users",
+            ";"
+        ],
+        "description": "Simple Case Expression"
+    },
+    {
+        "tags": [
+            "SELECT",
+            "name",
+            ",",
+            "CASE",
+            "WHEN salary > 100000",
+            "THEN",
+            "'High'",
+            "ELSE",
+            "'Normal'",
+            "END",
+            "AS",
+            "band",
+            "FROM",
+            "emp",
+            ";"
+        ],
+        "description": "Case As Column Alias"
+    },
+    {
+        "tags": [
+            "UPDATE",
+            "users",
+            "SET",
+            "tier =",
+            "CASE",
+            "WHEN",
+            "points > 100",
+            "THEN",
+            "'gold'",
+            "ELSE",
+            "'silver'",
+            "END",
+            ";"
+        ],
+        "description": "Case In Update"
+    },
+    {
+        "tags": [
+            "SELECT",
+            "COALESCE(",
+            "nickname",
+            ",",
+            "name",
+            ",",
+            "'Unknown')",
+            "FROM",
+            "users",
+            ";"
+        ],
+        "description": "Coalesce Null Fallback"
+    },
+    {
+        "tags": [
+            "SELECT",
+            "NULLIF(",
+            "a",
+            ",",
+            "b",
+            ")",
+            "FROM",
+            "data",
+            ";"
+        ],
+        "description": "Nullif Comparison"
+    },
+    {
+        "tags": [
+            "SELECT",
+            "CAST(",
+            "'123'",
+            "AS",
+            "INTEGER",
+            ")",
+            ";"
+        ],
+        "description": "Cast Type Conversion"
+    },
+    {
+        "tags": [
+            "SELECT",
+            "UPPER(name)",
+            "FROM",
+            "users",
+            ";"
+        ],
+        "description": "Uppercase String Function"
+    },
+    {
+        "tags": [
+            "SELECT",
+            "LOWER(name)",
+            "FROM",
+            "users",
+            ";"
+        ],
+        "description": "Lowercase String Function"
+    },
+    {
+        "tags": [
+            "SELECT",
+            "LENGTH(name)",
+            "FROM",
+            "users",
+            ";"
+        ],
+        "description": "String Length Function"
+    },
+    {
+        "tags": [
+            "SELECT",
+            "TRIM(",
+            "name",
+            ")",
+            "FROM",
+            "users",
+            ";"
+        ],
+        "description": "Trim Whitespace Function"
+    },
+    {
+        "tags": [
+            "SELECT",
+            "SUBSTRING(",
+            "name",
+            ",",
+            "1",
+            ",",
+            "3)",
+            "FROM",
+            "users",
+            ";"
+        ],
+        "description": "Substring Extract"
+    },
+    {
+        "tags": [
+            "SELECT",
+            "REPLACE(",
+            "text",
+            ",",
+            "'old'",
+            ",",
+            "'new')",
+            "FROM",
+            "data",
+            ";"
+        ],
+        "description": "String Replace Function"
+    },
+    {
+        "tags": [
+            "SELECT",
+            "CONCAT(",
+            "first",
+            ",",
+            "' '",
+            ",",
+            "last)",
+            "FROM",
+            "users",
+            ";"
+        ],
+        "description": "Concat Strings"
+    },
+    {
+        "tags": [
+            "SELECT",
+            "LEFT(name, 3)",
+            ",",
+            "RIGHT(name, 3)",
+            "FROM",
+            "users",
+            ";"
+        ],
+        "description": "Left Right Functions"
+    },
+    {
+        "tags": [
+            "SELECT",
+            "REVERSE(name)",
+            "FROM",
+            "users",
+            ";"
+        ],
+        "description": "Reverse String Function"
+    },
+    {
+        "tags": [
+            "SELECT",
+            "POSITION(",
+            "'@'",
+            "IN",
+            "email)",
+            "FROM",
+            "users",
+            ";"
+        ],
+        "description": "Find Position In String"
+    },
+    {
+        "tags": [
+            "SELECT",
+            "LPAD(id::text",
+            ",",
+            "5",
+            ",",
+            "'0')",
+            "FROM",
+            "users",
+            ";"
+        ],
+        "description": "Left Pad String"
+    },
+    {
+        "tags": [
+            "SELECT",
+            "REPEAT('*'",
+            ",",
+            "5)",
+            ";"
+        ],
+        "description": "Repeat String Function"
+    },
+    {
+        "tags": [
+            "SELECT",
+            "NOW()",
+            ";"
+        ],
+        "description": "Current Timestamp"
+    },
+    {
+        "tags": [
+            "SELECT",
+            "CURRENT_DATE",
+            ";"
+        ],
+        "description": "Current Date Function"
+    },
+    {
+        "tags": [
+            "SELECT",
+            "CURRENT_TIME",
+            ";"
+        ],
+        "description": "Current Time Function"
+    },
+    {
+        "tags": [
+            "SELECT",
+            "EXTRACT(",
+            "YEAR",
+            "FROM",
+            "created)",
+            "FROM",
+            "orders",
+            ";"
+        ],
+        "description": "Extract Year From Date"
+    },
+    {
+        "tags": [
+            "SELECT",
+            "EXTRACT(",
+            "MONTH",
+            "FROM",
+            "created)",
+            "FROM",
+            "orders",
+            ";"
+        ],
+        "description": "Extract Month From Date"
+    },
+    {
+        "tags": [
+            "SELECT",
+            "DATE_TRUNC(",
+            "'month'",
+            ",",
+            "created)",
+            "FROM",
+            "orders",
+            ";"
+        ],
+        "description": "Truncate Date To Month"
+    },
+    {
+        "tags": [
+            "SELECT",
+            "AGE(",
+            "NOW()",
+            ",",
+            "birth_date)",
+            "FROM",
+            "users",
+            ";"
+        ],
+        "description": "Calculate Age Interval"
+    },
+    {
+        "tags": [
+            "SELECT",
+            "created",
+            "+",
+            "INTERVAL '7 days'",
+            "FROM",
+            "orders",
+            ";"
+        ],
+        "description": "Add Interval To Date"
+    },
+    {
+        "tags": [
+            "SELECT",
+            "TO_CHAR(",
+            "created",
+            ",",
+            "'YYYY-MM-DD')",
+            "FROM",
+            "orders",
+            ";"
+        ],
+        "description": "Date To String Format"
+    },
+    {
+        "tags": [
+            "SELECT",
+            "TO_DATE(",
+            "'2024-01-15'",
+            ",",
+            "'YYYY-MM-DD')",
+            ";"
+        ],
+        "description": "String To Date Parse"
+    },
+    {
+        "tags": [
+            "SELECT",
+            "created ::DATE",
+            "FROM",
+            "orders",
+            ";"
+        ],
+        "description": "Cast Timestamp To Date"
+    },
+    {
+        "tags": [
+            "SELECT",
+            "ABS(-5)",
+            ",",
+            "CEIL(4.2)",
+            ",",
+            "FLOOR(4.8)",
+            ";"
+        ],
+        "description": "Numeric Math Functions"
+    },
+    {
+        "tags": [
+            "SELECT",
+            "ROUND(",
+            "price",
+            ",",
+            "2)",
+            "FROM",
+            "products",
+            ";"
+        ],
+        "description": "Round To Decimals"
+    },
+    {
+        "tags": [
+            "SELECT",
+            "MOD(10, 3)",
+            ";"
+        ],
+        "description": "Modulo Operation"
+    },
+    {
+        "tags": [
+            "SELECT",
+            "POWER(2, 10)",
+            ";"
+        ],
+        "description": "Power Exponent Function"
+    },
+    {
+        "tags": [
+            "SELECT",
+            "SQRT(144)",
+            ";"
+        ],
+        "description": "Square Root Function"
+    },
+    {
+        "tags": [
+            "SELECT",
+            "RANDOM()",
+            ";"
+        ],
+        "description": "Random Number Function"
+    },
+    {
+        "tags": [
+            "SELECT",
+            "GREATEST(",
+            "a",
+            ",",
+            "b",
+            ",",
+            "c)",
+            "FROM",
+            "data",
+            ";"
+        ],
+        "description": "Greatest Value Function"
+    },
+    {
+        "tags": [
+            "SELECT",
+            "LEAST(",
+            "a",
+            ",",
+            "b",
+            ",",
+            "c)",
+            "FROM",
+            "data",
+            ";"
+        ],
+        "description": "Least Value Function"
+    },
+    {
+        "tags": [
+            "SELECT",
+            "name",
+            "AS",
+            "\"Full Name\"",
+            "FROM",
+            "users",
+            ";"
+        ],
+        "description": "Column Alias Quoted"
+    },
+    {
+        "tags": [
+            "SELECT",
+            "u.name",
+            "FROM",
+            "users",
+            "AS",
+            "u",
+            ";"
+        ],
+        "description": "Table Alias Query"
+    },
+    {
+        "tags": [
+            "BEGIN",
+            ";",
+            "UPDATE ...",
+            ";",
+            "COMMIT",
+            ";"
+        ],
+        "description": "Basic Transaction Block"
+    },
+    {
+        "tags": [
+            "BEGIN",
+            ";",
+            "UPDATE ...",
+            ";",
+            "ROLLBACK",
+            ";"
+        ],
+        "description": "Transaction Rollback"
+    },
+    {
+        "tags": [
+            "SAVEPOINT",
+            "sp1",
+            ";",
+            "ROLLBACK TO",
+            "sp1",
+            ";"
+        ],
+        "description": "Savepoint And Rollback"
+    },
+    {
+        "tags": [
+            "BEGIN",
+            ";",
+            "INSERT ...",
+            ";",
+            "SAVEPOINT sp",
+            ";",
+            "DELETE ...",
+            ";",
+            "COMMIT",
+            ";"
+        ],
+        "description": "Transaction With Savepoint"
+    },
+    {
+        "tags": [
+            "GRANT",
+            "SELECT",
+            "ON",
+            "users",
+            "TO",
+            "reader",
+            ";"
+        ],
+        "description": "Grant Select Permission"
+    },
+    {
+        "tags": [
+            "GRANT",
+            "INSERT, UPDATE",
+            "ON",
+            "orders",
+            "TO",
+            "writer",
+            ";"
+        ],
+        "description": "Grant Multiple Permissions"
+    },
+    {
+        "tags": [
+            "GRANT",
+            "ALL PRIVILEGES",
+            "ON",
+            "users",
+            "TO",
+            "admin",
+            ";"
+        ],
+        "description": "Grant All Privileges"
+    },
+    {
+        "tags": [
+            "REVOKE",
+            "INSERT",
+            "ON",
+            "users",
+            "FROM",
+            "writer",
+            ";"
+        ],
+        "description": "Revoke Permission"
+    },
+    {
+        "tags": [
+            "CREATE ROLE",
+            "readonly",
+            "LOGIN",
+            "PASSWORD",
+            "'pass'",
+            ";"
+        ],
+        "description": "Create Role With Login"
+    },
+    {
+        "tags": [
+            "DROP ROLE",
+            "readonly",
+            ";"
+        ],
+        "description": "Drop Role"
+    },
+    {
+        "tags": [
+            "ALTER ROLE",
+            "writer",
+            "SET",
+            "search_path",
+            "= 'app'",
+            ";"
+        ],
+        "description": "Alter Role Setting"
+    },
+    {
+        "tags": [
+            "CREATE SCHEMA",
+            "app",
+            ";"
+        ],
+        "description": "Create Schema"
+    },
+    {
+        "tags": [
+            "DROP SCHEMA",
+            "app",
+            "CASCADE",
+            ";"
+        ],
+        "description": "Drop Schema Cascade"
+    },
+    {
+        "tags": [
+            "SET",
+            "search_path",
+            "TO",
+            "'app, public'",
+            ";"
+        ],
+        "description": "Set Search Path"
+    },
+    {
+        "tags": [
+            "CREATE FUNCTION",
+            "add(a INT, b INT)",
+            "RETURNS INT",
+            "AS $$",
+            "BEGIN",
+            "RETURN a + b;",
+            "END; $$",
+            "LANGUAGE plpgsql",
+            ";"
+        ],
+        "description": "Create Simple Function"
+    },
+    {
+        "tags": [
+            "CREATE FUNCTION",
+            "greet(name TEXT)",
+            "RETURNS TEXT",
+            "AS $$",
+            "SELECT 'Hello ' || name;",
+            "$$",
+            "LANGUAGE SQL",
+            ";"
+        ],
+        "description": "SQL Language Function"
+    },
+    {
+        "tags": [
+            "DROP FUNCTION",
+            "add(INT, INT)",
+            ";"
+        ],
+        "description": "Drop Function"
+    },
+    {
+        "tags": [
+            "CREATE PROCEDURE",
+            "insert_user(n TEXT)",
+            "AS $$",
+            "BEGIN",
+            "INSERT INTO users(name) VALUES(n);",
+            "END; $$",
+            "LANGUAGE plpgsql",
+            ";"
+        ],
+        "description": "Create Stored Procedure"
+    },
+    {
+        "tags": [
+            "CALL",
+            "insert_user('Alice')",
+            ";"
+        ],
+        "description": "Call Stored Procedure"
+    },
+    {
+        "tags": [
+            "CREATE TRIGGER",
+            "trg_audit",
+            "AFTER INSERT",
+            "ON",
+            "users",
+            "FOR EACH ROW",
+            "EXECUTE FUNCTION",
+            "log_change()",
+            ";"
+        ],
+        "description": "Create After Insert Trigger"
+    },
+    {
+        "tags": [
+            "CREATE TRIGGER",
+            "trg_validate",
+            "BEFORE UPDATE",
+            "ON",
+            "orders",
+            "FOR EACH ROW",
+            "EXECUTE FUNCTION",
+            "check_valid()",
+            ";"
+        ],
+        "description": "Before Update Trigger"
+    },
+    {
+        "tags": [
+            "DROP TRIGGER",
+            "trg_audit",
+            "ON",
+            "users",
+            ";"
+        ],
+        "description": "Drop Trigger"
+    },
+    {
+        "tags": [
+            "CREATE TYPE",
+            "mood",
+            "AS ENUM",
+            "('happy'",
+            "'sad'",
+            "'neutral')",
+            ";"
+        ],
+        "description": "Create Enum Type"
+    },
+    {
+        "tags": [
+            "CREATE SEQUENCE",
+            "order_seq",
+            "START 1",
+            "INCREMENT 1",
+            ";"
+        ],
+        "description": "Create Sequence"
+    },
+    {
+        "tags": [
+            "SELECT",
+            "NEXTVAL('order_seq')",
+            ";"
+        ],
+        "description": "Get Next Sequence Value"
+    },
+    {
+        "tags": [
+            "DROP SEQUENCE",
+            "order_seq",
+            ";"
+        ],
+        "description": "Drop Sequence"
+    },
+    {
+        "tags": [
+            "INSERT INTO",
+            "users",
+            "VALUES",
+            "('Alice')",
+            "ON CONFLICT",
+            "(email)",
+            "DO NOTHING",
+            ";"
+        ],
+        "description": "Upsert Do Nothing"
+    },
+    {
+        "tags": [
+            "INSERT INTO",
+            "users",
+            "VALUES",
+            "('Alice')",
+            "ON CONFLICT",
+            "(email)",
+            "DO UPDATE SET",
+            "name = EXCLUDED.name",
+            ";"
+        ],
+        "description": "Upsert Do Update"
+    },
+    {
+        "tags": [
+            "DELETE FROM",
+            "users",
+            "RETURNING",
+            "*",
+            ";"
+        ],
+        "description": "Delete Returning Rows"
+    },
+    {
+        "tags": [
+            "UPDATE",
+            "users",
+            "SET",
+            "status = 'active'",
+            "RETURNING",
+            "id, name",
+            ";"
+        ],
+        "description": "Update Returning Columns"
+    },
+    {
+        "tags": [
+            "SELECT",
+            "STRING_AGG(",
+            "name",
+            ",",
+            "', ')",
+            "FROM",
+            "users",
+            ";"
+        ],
+        "description": "Aggregate Strings"
+    },
+    {
+        "tags": [
+            "SELECT",
+            "ARRAY_AGG(",
+            "name)",
+            "FROM",
+            "users",
+            ";"
+        ],
+        "description": "Aggregate Into Array"
+    },
+    {
+        "tags": [
+            "SELECT",
+            "JSON_AGG(",
+            "row)",
+            "FROM",
+            "users",
+            ";"
+        ],
+        "description": "Aggregate Into JSON"
+    },
+    {
+        "tags": [
+            "SELECT",
+            "JSONB_BUILD_OBJECT(",
+            "'name'",
+            ",",
+            "name)",
+            "FROM",
+            "users",
+            ";"
+        ],
+        "description": "Build JSON Object"
+    },
+    {
+        "tags": [
+            "SELECT",
+            "data->>'key'",
+            "FROM",
+            "table",
+            ";"
+        ],
+        "description": "JSON Text Extract"
+    },
+    {
+        "tags": [
+            "SELECT",
+            "data->'key'",
+            "FROM",
+            "table",
+            ";"
+        ],
+        "description": "JSON Object Extract"
+    },
+    {
+        "tags": [
+            "SELECT",
+            "*",
+            "FROM",
+            "table",
+            "WHERE",
+            "data @>",
+            "'{\"key\": \"val\"}'",
+            ";"
+        ],
+        "description": "JSONB Contains Query"
+    },
+    {
+        "tags": [
+            "SELECT",
+            "JSONB_EACH(data)",
+            "FROM",
+            "table",
+            ";"
+        ],
+        "description": "JSONB Expand Key-Value"
+    },
+    {
+        "tags": [
+            "SELECT",
+            "JSONB_ARRAY_ELEMENTS(",
+            "data->'items')",
+            "FROM",
+            "table",
+            ";"
+        ],
+        "description": "JSONB Array Elements"
+    },
+    {
+        "tags": [
+            "SELECT",
+            "JSONB_SET(",
+            "data",
+            ",",
+            "'{key}'",
+            ",",
+            "'\"val\"')",
+            ";"
+        ],
+        "description": "JSONB Set Value"
+    },
+    {
+        "tags": [
+            "SELECT",
+            "name",
+            "FROM",
+            "users",
+            "WHERE",
+            "name",
+            "~",
+            "'^[A-C]'",
+            ";"
+        ],
+        "description": "Regex Match Filter"
+    },
+    {
+        "tags": [
+            "SELECT",
+            "name",
+            "FROM",
+            "users",
+            "WHERE",
+            "name",
+            "~*",
+            "'^alice'",
+            ";"
+        ],
+        "description": "Case Insensitive Regex"
+    },
+    {
+        "tags": [
+            "SELECT",
+            "REGEXP_REPLACE(",
+            "text",
+            ",",
+            "'\\d+'",
+            ",",
+            "'#')",
+            ";"
+        ],
+        "description": "Regex Replace Function"
+    },
+    {
+        "tags": [
+            "SELECT",
+            "name",
+            "FROM",
+            "users",
+            "WHERE",
+            "name",
+            "SIMILAR TO",
+            "'A%|B%'",
+            ";"
+        ],
+        "description": "Similar To Pattern"
+    },
+    {
+        "tags": [
+            "SELECT",
+            "UNNEST(",
+            "ARRAY[1,2,3])",
+            ";"
+        ],
+        "description": "Unnest Array Function"
+    },
+    {
+        "tags": [
+            "SELECT",
+            "GENERATE_SERIES(",
+            "1",
+            ",",
+            "10)",
+            ";"
+        ],
+        "description": "Generate Number Series"
+    },
+    {
+        "tags": [
+            "SELECT",
+            "GENERATE_SERIES(",
+            "'2024-01-01'::DATE",
+            ",",
+            "'2024-12-31'::DATE",
+            ",",
+            "'1 month'::INTERVAL)",
+            ";"
+        ],
+        "description": "Generate Date Series"
+    },
+    {
+        "tags": [
+            "SELECT",
+            "name",
+            ",",
+            "dept",
+            ",",
+            "SUM(salary)",
+            "FROM",
+            "emp",
+            "GROUP BY",
+            "ROLLUP(dept, name)",
+            ";"
+        ],
+        "description": "Rollup Grouping"
+    },
+    {
+        "tags": [
+            "SELECT",
+            "name",
+            ",",
+            "dept",
+            ",",
+            "SUM(salary)",
+            "FROM",
+            "emp",
+            "GROUP BY",
+            "CUBE(dept, name)",
+            ";"
+        ],
+        "description": "Cube Grouping"
+    },
+    {
+        "tags": [
+            "SELECT",
+            "GROUPING SETS",
+            "((dept)",
+            ",",
+            "(name)",
+            ",",
+            "())",
+            "SUM(salary)",
+            "FROM",
+            "emp",
+            ";"
+        ],
+        "description": "Grouping Sets Query"
+    },
+    {
+        "tags": [
+            "SELECT",
+            "*",
+            "FROM",
+            "users",
+            "FETCH FIRST",
+            "5 ROWS ONLY",
+            ";"
+        ],
+        "description": "Fetch First N Rows"
+    },
+    {
+        "tags": [
+            "SELECT",
+            "*",
+            "FROM",
+            "users",
+            "OFFSET",
+            "10",
+            "FETCH NEXT",
+            "5 ROWS ONLY",
+            ";"
+        ],
+        "description": "Offset Fetch Pagination"
+    },
+    {
+        "tags": [
+            "SELECT",
+            "dept",
+            ",",
+            "BOOL_AND(active)",
+            "FROM",
+            "emp",
+            "GROUP BY",
+            "dept",
+            ";"
+        ],
+        "description": "Bool And Aggregate"
+    },
+    {
+        "tags": [
+            "SELECT",
+            "dept",
+            ",",
+            "BOOL_OR(remote)",
+            "FROM",
+            "emp",
+            "GROUP BY",
+            "dept",
+            ";"
+        ],
+        "description": "Bool Or Aggregate"
+    },
+    {
+        "tags": [
+            "SELECT",
+            "name",
+            ",",
+            "salary",
+            ",",
+            "SUM(salary)",
+            "OVER",
+            "(ORDER BY id",
+            "ROWS BETWEEN",
+            "1 PRECEDING AND 1 FOLLOWING)",
+            "FROM",
+            "emp",
+            ";"
+        ],
+        "description": "Sliding Window Frame"
+    },
+    {
+        "tags": [
+            "SELECT",
+            "name",
+            ",",
+            "NTH_VALUE(name, 2)",
+            "OVER",
+            "(ORDER BY salary DESC)",
+            "FROM",
+            "emp",
+            ";"
+        ],
+        "description": "Nth Value Function"
+    },
+    {
+        "tags": [
+            "EXPLAIN",
+            "SELECT",
+            "*",
+            "FROM",
+            "users",
+            "WHERE",
+            "id = 1",
+            ";"
+        ],
+        "description": "Explain Query Plan"
+    },
+    {
+        "tags": [
+            "EXPLAIN ANALYZE",
+            "SELECT",
+            "*",
+            "FROM",
+            "users",
+            "WHERE",
+            "id = 1",
+            ";"
+        ],
+        "description": "Explain Analyze Query"
+    },
+    {
+        "tags": [
+            "VACUUM",
+            "ANALYZE",
+            "users",
+            ";"
+        ],
+        "description": "Vacuum Analyze Table"
+    },
+    {
+        "tags": [
+            "REINDEX",
+            "TABLE",
+            "users",
+            ";"
+        ],
+        "description": "Reindex Table"
+    },
+    {
+        "tags": [
+            "CLUSTER",
+            "users",
+            "USING",
+            "idx_name",
+            ";"
+        ],
+        "description": "Cluster Table By Index"
+    },
+    {
+        "tags": [
+            "SELECT",
+            "pg_size_pretty(",
+            "pg_total_relation_size(",
+            "'users'))",
+            ";"
+        ],
+        "description": "Check Table Size"
+    },
+    {
+        "tags": [
+            "SELECT",
+            "*",
+            "FROM",
+            "pg_stat_user_tables",
+            "WHERE",
+            "relname = 'users'",
+            ";"
+        ],
+        "description": "Table Statistics Query"
+    },
+    {
+        "tags": [
+            "SELECT",
+            "*",
+            "FROM",
+            "pg_stat_activity",
+            "WHERE",
+            "state = 'active'",
+            ";"
+        ],
+        "description": "Active Connections Query"
+    },
+    {
+        "tags": [
+            "SELECT",
+            "pg_cancel_backend(",
+            "pid)",
+            ";"
+        ],
+        "description": "Cancel Backend Process"
+    },
+    {
+        "tags": [
+            "SELECT",
+            "pg_terminate_backend(",
+            "pid)",
+            ";"
+        ],
+        "description": "Terminate Backend Process"
+    },
+    {
+        "tags": [
+            "COPY",
+            "users",
+            "TO",
+            "'/tmp/users.csv'",
+            "CSV HEADER",
+            ";"
+        ],
+        "description": "Copy Table To CSV"
+    },
+    {
+        "tags": [
+            "COPY",
+            "users",
+            "FROM",
+            "'/tmp/users.csv'",
+            "CSV HEADER",
+            ";"
+        ],
+        "description": "Copy CSV To Table"
+    },
+    {
+        "tags": [
+            "\\dt",
+            "list",
+            "tables",
+            "psql"
+        ],
+        "description": "List Tables Command"
+    },
+    {
+        "tags": [
+            "\\d",
+            "users",
+            "describe",
+            "table"
+        ],
+        "description": "Describe Table Structure"
+    },
+    {
+        "tags": [
+            "\\di",
+            "list",
+            "indexes",
+            "psql"
+        ],
+        "description": "List Indexes Command"
+    },
+    {
+        "tags": [
+            "\\dv",
+            "list",
+            "views",
+            "psql"
+        ],
+        "description": "List Views Command"
+    },
+    {
+        "tags": [
+            "\\dn",
+            "list",
+            "schemas",
+            "psql"
+        ],
+        "description": "List Schemas Command"
+    },
+    {
+        "tags": [
+            "\\du",
+            "list",
+            "roles",
+            "psql"
+        ],
+        "description": "List Roles Command"
+    },
+    {
+        "tags": [
+            "\\l",
+            "list",
+            "databases",
+            "psql"
+        ],
+        "description": "List Databases Command"
+    },
+    {
+        "tags": [
+            "\\c",
+            "database_name",
+            "connect",
+            "switch"
+        ],
+        "description": "Connect To Database"
+    },
+    {
+        "tags": [
+            "\\i",
+            "script.sql",
+            "execute",
+            "file"
+        ],
+        "description": "Execute SQL File"
+    },
+    {
+        "tags": [
+            "\\timing",
+            "on",
+            "measure",
+            "query"
+        ],
+        "description": "Toggle Query Timing"
+    },
+    {
+        "tags": [
+            "CREATE DATABASE",
+            "mydb",
+            ";"
+        ],
+        "description": "Create Database"
+    },
+    {
+        "tags": [
+            "DROP DATABASE",
+            "mydb",
+            ";"
+        ],
+        "description": "Drop Database"
+    },
+    {
+        "tags": [
+            "ALTER DATABASE",
+            "mydb",
+            "OWNER TO",
+            "admin",
+            ";"
+        ],
+        "description": "Change Database Owner"
+    },
+    {
+        "tags": [
+            "SELECT",
+            "table_name",
+            "FROM",
+            "information_schema.tables",
+            "WHERE",
+            "table_schema = 'public'",
+            ";"
+        ],
+        "description": "List Public Tables"
+    },
+    {
+        "tags": [
+            "SELECT",
+            "column_name",
+            ",",
+            "data_type",
+            "FROM",
+            "information_schema.columns",
+            "WHERE",
+            "table_name = 'users'",
+            ";"
+        ],
+        "description": "List Table Columns"
+    },
+    {
+        "tags": [
+            "SELECT",
+            "constraint_name",
+            "FROM",
+            "information_schema.table_constraints",
+            "WHERE",
+            "table_name = 'users'",
+            ";"
+        ],
+        "description": "List Table Constraints"
+    },
+    {
+        "tags": [
+            "CREATE EXTENSION",
+            "IF NOT EXISTS",
+            "uuid-ossp",
+            ";"
+        ],
+        "description": "Create Extension"
+    },
+    {
+        "tags": [
+            "SELECT",
+            "uuid_generate_v4()",
+            ";"
+        ],
+        "description": "Generate UUID Value"
+    },
+    {
+        "tags": [
+            "SELECT",
+            "name",
+            ",",
+            "ARRAY[1,2,3]",
+            "array",
+            "FROM",
+            "data",
+            ";"
+        ],
+        "description": "Array Literal Query"
+    },
+    {
+        "tags": [
+            "SELECT",
+            "*",
+            "FROM",
+            "data",
+            "WHERE",
+            "3",
+            "= ANY(tags)",
+            ";"
+        ],
+        "description": "Array Any Match"
+    },
+    {
+        "tags": [
+            "SELECT",
+            "*",
+            "FROM",
+            "data",
+            "WHERE",
+            "tags",
+            "@>",
+            "ARRAY[1,2]",
+            ";"
+        ],
+        "description": "Array Contains Check"
+    },
+    {
+        "tags": [
+            "SELECT",
+            "ARRAY_LENGTH(",
+            "tags",
+            ",",
+            "1)",
+            "FROM",
+            "data",
+            ";"
+        ],
+        "description": "Array Length Function"
+    },
+    {
+        "tags": [
+            "SELECT",
+            "ARRAY_APPEND(",
+            "tags",
+            ",",
+            "4)",
+            "FROM",
+            "data",
+            ";"
+        ],
+        "description": "Array Append Element"
+    },
+    {
+        "tags": [
+            "SELECT",
+            "ARRAY_REMOVE(",
+            "tags",
+            ",",
+            "2)",
+            "FROM",
+            "data",
+            ";"
+        ],
+        "description": "Array Remove Element"
+    },
+    {
+        "tags": [
+            "SELECT",
+            "name",
+            "FROM",
+            "users",
+            "WHERE",
+            "to_tsvector(name)",
+            "@@",
+            "to_tsquery('alice')",
+            ";"
+        ],
+        "description": "Full Text Search"
+    },
+    {
+        "tags": [
+            "CREATE INDEX",
+            "idx_fts",
+            "ON",
+            "articles",
+            "USING GIN",
+            "(to_tsvector('english', body))",
+            ";"
+        ],
+        "description": "Full Text Search Index"
+    },
+    {
+        "tags": [
+            "SELECT",
+            "ts_rank(",
+            "to_tsvector(body)",
+            ",",
+            "to_tsquery('query'))",
+            "FROM",
+            "articles",
+            ";"
+        ],
+        "description": "Full Text Rank Score"
+    },
+    {
+        "tags": [
+            "SELECT",
+            "*",
+            "FROM",
+            "users u",
+            ",",
+            "LATERAL",
+            "(SELECT * FROM orders WHERE user_id = u.id LIMIT 3)",
+            "AS",
+            "o",
+            ";"
+        ],
+        "description": "Lateral Join Subquery"
+    },
+    {
+        "tags": [
+            "SELECT",
+            "COUNT(*)",
+            "FILTER",
+            "(WHERE status = 'active')",
+            "FROM",
+            "users",
+            ";"
+        ],
+        "description": "Count With Filter"
+    },
+    {
+        "tags": [
+            "CREATE TABLE",
+            "orders_2024",
+            "PARTITION OF",
+            "orders",
+            "FOR VALUES FROM",
+            "('2024-01-01')",
+            "TO",
+            "('2025-01-01')",
+            ";"
+        ],
+        "description": "Table Range Partition"
+    },
+    {
+        "tags": [
+            "SELECT",
+            "EXTRACT(",
+            "DOW",
+            "FROM",
+            "created)",
+            "FROM",
+            "orders",
+            ";"
+        ],
+        "description": "Extract Day Of Week"
+    },
+    {
+        "tags": [
+            "SELECT",
+            "EXTRACT(",
+            "EPOCH",
+            "FROM",
+            "interval)",
+            "FROM",
+            "data",
+            ";"
+        ],
+        "description": "Extract Epoch Seconds"
+    },
+    {
+        "tags": [
+            "SELECT",
+            "name",
+            ",",
+            "created",
+            "FROM",
+            "users",
+            "WHERE",
+            "created >=",
+            "NOW() - INTERVAL '30 days'",
+            ";"
+        ],
+        "description": "Recent Records Filter"
+    },
+    {
+        "tags": [
+            "LOCK TABLE",
+            "users",
+            "IN",
+            "ACCESS EXCLUSIVE",
+            "MODE",
+            ";"
+        ],
+        "description": "Exclusive Table Lock"
+    },
+    {
+        "tags": [
+            "SELECT",
+            "INITCAP(name)",
+            "FROM",
+            "users",
+            ";"
+        ],
+        "description": "Initial Caps Function"
+    },
+    {
+        "tags": [
+            "ALTER TABLE",
+            "orders",
+            "ADD",
+            "FOREIGN KEY",
+            "(user_id)",
+            "REFERENCES",
+            "users(id)",
+            ";"
+        ],
+        "description": "Add Foreign Key Later"
+    },
+    {
+        "tags": [
+            "SELECT",
+            "ENCODE(",
+            "digest('text'",
+            ",",
+            "'sha256')",
+            ",",
+            "'hex')",
+            ";"
+        ],
+        "description": "SHA256 Hash Digest"
+    }
+]
