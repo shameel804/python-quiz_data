@@ -1,0 +1,6165 @@
+[
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "if True:\n    print('Hello')",
+        "o": [
+            "Hello",
+            "True",
+            "False",
+            "Nothing"
+        ]
+    },
+    {
+        "q": "Which keyword is used to exit a loop prematurely in Python?",
+        "type": "short_answer",
+        "answers": [
+            "break"
+        ],
+        "isCaseSensitive": false
+    },
+    {
+        "q": "The ______ statement is used to do nothing inside a code block.",
+        "type": "fill_blank",
+        "answers": [
+            "pass"
+        ],
+        "other_options": [
+            "skip",
+            "continue",
+            "null",
+            "void"
+        ]
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "x = 5\nif x > 3:\n    print('Yes')\nelse:\n    print('No')",
+        "o": [
+            "Yes",
+            "No",
+            "True",
+            "Error"
+        ]
+    },
+    {
+        "q": "The else block in an if statement is mandatory.",
+        "type": "true_false",
+        "correct": "False"
+    },
+    {
+        "q": "Match the loop types with their typical use cases:",
+        "type": "match",
+        "left": [
+            "for loop",
+            "while loop"
+        ],
+        "right": [
+            "Iterating over a known sequence",
+            "Repeating while a condition is true"
+        ]
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "for i in range(3):\n    print(i)",
+        "o": [
+            "0 1 2",
+            "1 2 3",
+            "0 1 2 3",
+            "3"
+        ]
+    },
+    {
+        "q": "Which keyword is used to skip the current iteration of a loop?",
+        "type": "short_answer",
+        "answers": [
+            "continue"
+        ],
+        "isCaseSensitive": false
+    },
+    {
+        "q": "An if statement can be used without an else block in Python.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "x = 0\nwhile x < 3:\n    print(x)\n    x += 1",
+        "o": [
+            "0 1 2",
+            "1 2 3",
+            "0 1",
+            "Infinite loop"
+        ]
+    },
+    {
+        "q": "The ______ loop is used when you know exactly how many times you want to iterate.",
+        "type": "fill_blank",
+        "answers": [
+            "for"
+        ],
+        "other_options": [
+            "while",
+            "do",
+            "repeat",
+            "until"
+        ]
+    },
+    {
+        "q": "What does the break statement do?",
+        "type": "mcq",
+        "o": [
+            "Terminates the loop immediately",
+            "Skips the current iteration",
+            "Stops the entire program",
+            "Pauses the loop"
+        ]
+    },
+    {
+        "q": "Which symbol is used to separate conditions in an if statement for logical AND?",
+        "type": "short_answer",
+        "answers": [
+            "and"
+        ],
+        "isCaseSensitive": false
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "for i in range(5):\n    if i == 2:\n        break\n    print(i)",
+        "o": [
+            "0 1",
+            "0 1 2",
+            "1 2",
+            "0"
+        ]
+    },
+    {
+        "q": "Match the control flow keywords with their functions:",
+        "type": "match",
+        "left": [
+            "break",
+            "continue",
+            "pass",
+            "return"
+        ],
+        "right": [
+            "Exits a loop",
+            "Skips to next iteration",
+            "Does nothing",
+            "Exits a function"
+        ]
+    },
+    {
+        "q": "The pass statement does nothing and is a placeholder.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "x = 10\nif x < 5:\n    print('A')\nelif x < 15:\n    print('B')\nelse:\n    print('C')",
+        "o": [
+            "B",
+            "A",
+            "C",
+            "Error"
+        ]
+    },
+    {
+        "q": "How many times will this loop run?",
+        "type": "mcq",
+        "c": "count = 0\nwhile count < 4:\n    count += 1",
+        "o": [
+            "4",
+            "3",
+            "5",
+            "Infinite"
+        ]
+    },
+    {
+        "q": "A ______ loop will run forever if its condition never becomes false.",
+        "type": "fill_blank",
+        "answers": [
+            "while"
+        ],
+        "other_options": [
+            "for",
+            "if",
+            "break",
+            "nested"
+        ]
+    },
+    {
+        "q": "Can an if statement contain another if statement inside it?",
+        "type": "mcq",
+        "o": [
+            "Yes, this is called a nested if",
+            "No, Python does not allow this",
+            "Only with a special syntax",
+            "Only in functions"
+        ]
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "for i in range(3):\n    if i == 1:\n        continue\n    print(i)",
+        "o": [
+            "0 2",
+            "0 1 2",
+            "1 2",
+            "2"
+        ]
+    },
+    {
+        "q": "The else clause in a loop executes when the loop finishes normally without a break.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Which keyword starts an alternative condition in an if statement?",
+        "type": "short_answer",
+        "answers": [
+            "elif"
+        ],
+        "isCaseSensitive": false
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "x = 3\nprint('Hi') if x > 2 else print('Bye')",
+        "o": [
+            "Hi",
+            "Bye",
+            "True",
+            "Error"
+        ]
+    },
+    {
+        "q": "Match the operator with its meaning:",
+        "type": "match",
+        "left": [
+            "==",
+            "!=",
+            ">",
+            "<="
+        ],
+        "right": [
+            "Equal to",
+            "Not equal to",
+            "Greater than",
+            "Less than or equal to"
+        ]
+    },
+    {
+        "q": "What does the range(5) function generate?",
+        "type": "mcq",
+        "o": [
+            "0, 1, 2, 3, 4",
+            "1, 2, 3, 4, 5",
+            "0, 1, 2, 3, 4, 5",
+            "5"
+        ]
+    },
+    {
+        "q": "The ______ statement can be used to stop the current iteration and proceed to the next one.",
+        "type": "fill_blank",
+        "answers": [
+            "continue"
+        ],
+        "other_options": [
+            "break",
+            "pass",
+            "return",
+            "exit"
+        ]
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "x = 0\nwhile x < 5:\n    x += 1\n    if x == 3:\n        break\n    print(x)",
+        "o": [
+            "1 2",
+            "1 2 3",
+            "1",
+            "2 3"
+        ]
+    },
+    {
+        "q": "A for loop can iterate over a string.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "if False:\n    print('A')\nprint('B')",
+        "o": [
+            "B",
+            "A",
+            "A B",
+            "Nothing"
+        ]
+    },
+    {
+        "q": "Which function is commonly used with for loops to generate a sequence of numbers?",
+        "type": "short_answer",
+        "answers": [
+            "range"
+        ],
+        "isCaseSensitive": false
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "for char in 'ab':\n    print(char * 2)",
+        "o": [
+            "aa bb",
+            "ab ab",
+            "a b",
+            "aabb"
+        ]
+    },
+    {
+        "q": "In Python, indentation defines the body of loops and conditions.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "The ______ keyword is used to create a conditional statement in Python.",
+        "type": "fill_blank",
+        "answers": [
+            "if"
+        ],
+        "other_options": [
+            "for",
+            "while",
+            "def",
+            "class"
+        ]
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "x = 7\nif x > 10:\n    print('High')\nelif x > 5:\n    print('Medium')\nelse:\n    print('Low')",
+        "o": [
+            "Medium",
+            "High",
+            "Low",
+            "Error"
+        ]
+    },
+    {
+        "q": "How many times will 'Hello' be printed?",
+        "type": "mcq",
+        "c": "for i in range(2):\n    for j in range(2):\n        print('Hello')",
+        "o": [
+            "4",
+            "2",
+            "1",
+            "8"
+        ]
+    },
+    {
+        "q": "Match the control flow structures with their examples:",
+        "type": "match",
+        "left": [
+            "if-else",
+            "for loop",
+            "while loop",
+            "break"
+        ],
+        "right": [
+            "Conditional execution",
+            "Iterate over list",
+            "Repeat until condition false",
+            "Exit loop early"
+        ]
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "for i in range(4):\n    pass\nprint(i)",
+        "o": [
+            "3",
+            "4",
+            "0",
+            "None"
+        ]
+    },
+    {
+        "q": "The else block after a while loop will NOT execute if the loop is terminated by a break.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "What keyword do you use to end a while loop based on a condition inside the loop body?",
+        "type": "short_answer",
+        "answers": [
+            "break"
+        ],
+        "isCaseSensitive": false
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "x = 5\nif x == 5:\n    print('Five')\nelse:\n    print('Not Five')",
+        "o": [
+            "Five",
+            "Not Five",
+            "True",
+            "Error"
+        ]
+    },
+    {
+        "q": "To iterate over items and their indices, you can use the ______ function.",
+        "type": "fill_blank",
+        "answers": [
+            "enumerate"
+        ],
+        "other_options": [
+            "range",
+            "zip",
+            "index",
+            "list"
+        ]
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "x = 0\nwhile x < 3:\n    print('A')\n    x += 1\nelse:\n    print('B')",
+        "o": [
+            "A A A B",
+            "A A A",
+            "B",
+            "A B"
+        ]
+    },
+    {
+        "q": "A break statement can only be used inside loops.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "if 0:\n    print('Yes')\nelse:\n    print('No')",
+        "o": [
+            "No",
+            "Yes",
+            "0",
+            "Error"
+        ]
+    },
+    {
+        "q": "Which statement is a null operation in Python?",
+        "type": "short_answer",
+        "answers": [
+            "pass"
+        ],
+        "isCaseSensitive": false
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "for i in range(1, 4):\n    print(i, end=' ')",
+        "o": [
+            "1 2 3",
+            "1 2 3 4",
+            "0 1 2",
+            "2 3 4"
+        ]
+    },
+    {
+        "q": "A ______ is a block of code that repeats as long as a condition is true.",
+        "type": "fill_blank",
+        "answers": [
+            "while loop"
+        ],
+        "other_options": [
+            "for loop",
+            "if statement",
+            "function",
+            "class"
+        ]
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "x = 2\nif x > 1:\n    if x < 3:\n        print('OK')",
+        "o": [
+            "OK",
+            "Error",
+            "Nothing",
+            "True"
+        ]
+    },
+    {
+        "q": "Match the range function calls with their outputs:",
+        "type": "match",
+        "left": [
+            "range(3)",
+            "range(1,3)",
+            "range(1,6,2)"
+        ],
+        "right": [
+            "0,1,2",
+            "1,2",
+            "1,3,5"
+        ]
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "x = 5\nwhile x > 0:\n    x -= 1\n    if x == 2:\n        continue\n    print(x)",
+        "o": [
+            "4 3 1 0",
+            "4 3 2 1 0",
+            "4 3 1",
+            "5 4 3 1"
+        ]
+    },
+    {
+        "q": "Python uses curly braces {} to define code blocks.",
+        "type": "true_false",
+        "correct": "False"
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "name = 'Alice'\nif name == 'Alice':\n    print('Hi Alice')\nelse:\n    print('Stranger')",
+        "o": [
+            "Hi Alice",
+            "Stranger",
+            "Alice",
+            "Error"
+        ]
+    },
+    {
+        "q": "Which logical operator is used for 'or' in Python?",
+        "type": "short_answer",
+        "answers": [
+            "or"
+        ],
+        "isCaseSensitive": false
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "for i in range(3):\n    print('*' * (i+1))",
+        "o": [
+            "* ** ***",
+            "*** ** *",
+            "* * *",
+            "** ** **"
+        ]
+    },
+    {
+        "q": "The ______ statement can exit multiple nested loops if used carefully.",
+        "type": "fill_blank",
+        "answers": [
+            "break"
+        ],
+        "other_options": [
+            "continue",
+            "pass",
+            "return",
+            "exit"
+        ]
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "x = 10\nif x > 5:\n    pass\nprint('Done')",
+        "o": [
+            "Done",
+            "Nothing",
+            "Error",
+            "pass"
+        ]
+    },
+    {
+        "q": "A continue statement will skip the rest of the loop body for the current iteration.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "a = 3\nb = 5\nif a > b:\n    print('A')\nelif a < b:\n    print('B')\nelse:\n    print('C')",
+        "o": [
+            "B",
+            "A",
+            "C",
+            "Error"
+        ]
+    },
+    {
+        "q": "How many items does range(5) produce?",
+        "type": "short_answer",
+        "answers": [
+            "5",
+            "five"
+        ],
+        "isCaseSensitive": false
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "items = [10, 20, 30]\nfor item in items:\n    if item == 20:\n        break\n    print(item)",
+        "o": [
+            "10",
+            "10 20",
+            "20",
+            "30"
+        ]
+    },
+    {
+        "q": "Match the control flow terms with their descriptions:",
+        "type": "match",
+        "left": [
+            "Indentation",
+            "Colon",
+            "Condition",
+            "Body"
+        ],
+        "right": [
+            "Defines block scope",
+            "Starts a new block",
+            "Expression evaluated to True/False",
+            "Statements inside the block"
+        ]
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "x = 1\nwhile x < 4:\n    print(x)\n    x += 1",
+        "o": [
+            "1 2 3",
+            "1 2 3 4",
+            "2 3 4",
+            "1"
+        ]
+    },
+    {
+        "q": "The ______ function can be used to loop through two lists simultaneously.",
+        "type": "fill_blank",
+        "answers": [
+            "zip"
+        ],
+        "other_options": [
+            "range",
+            "enumerate",
+            "map",
+            "filter"
+        ]
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "if None:\n    print('A')\nelse:\n    print('B')",
+        "o": [
+            "B",
+            "A",
+            "None",
+            "Error"
+        ]
+    },
+    {
+        "q": "A for loop can have an else clause that runs when the loop completes normally.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "for i in range(5):\n    if i % 2 == 0:\n        continue\n    print(i)",
+        "o": [
+            "1 3",
+            "0 2 4",
+            "1 3 5",
+            "2 4"
+        ]
+    },
+    {
+        "q": "Which statement would you use to check multiple conditions in sequence?",
+        "type": "short_answer",
+        "answers": [
+            "elif"
+        ],
+        "isCaseSensitive": false
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "x = 'hello'\nfor letter in x:\n    print(letter, end=' ')",
+        "o": [
+            "h e l l o",
+            "hello",
+            "h e l l o ",
+            "Error"
+        ]
+    },
+    {
+        "q": "A while loop with a condition that is always True will result in an infinite loop.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "score = 85\nif score >= 90:\n    grade = 'A'\nelif score >= 80:\n    grade = 'B'\nelif score >= 70:\n    grade = 'C'\nelse:\n    grade = 'F'\nprint(grade)",
+        "o": [
+            "B",
+            "A",
+            "C",
+            "F"
+        ]
+    },
+    {
+        "q": "The ______ statement is used when you want to skip the rest of the loop and start the next iteration.",
+        "type": "fill_blank",
+        "answers": [
+            "continue"
+        ],
+        "other_options": [
+            "break",
+            "pass",
+            "skip",
+            "next"
+        ]
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "for i in range(2):\n    pass\n    print(i)",
+        "o": [
+            "0 1",
+            "0",
+            "1",
+            "Nothing"
+        ]
+    },
+    {
+        "q": "Match the boolean operators with their results:",
+        "type": "match",
+        "left": [
+            "True and False",
+            "True or False",
+            "not True"
+        ],
+        "right": [
+            "False",
+            "True",
+            "False"
+        ]
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "x = 0\nwhile x < 2:\n    print(x)\n    x += 1\nelse:\n    print('End')",
+        "o": [
+            "0 1 End",
+            "0 1",
+            "End",
+            "0 1 2 End"
+        ]
+    },
+    {
+        "q": "The pass statement is equivalent to an empty block in other languages.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "if 'a' in 'bat':\n    print('Yes')\nelse:\n    print('No')",
+        "o": [
+            "Yes",
+            "No",
+            "a",
+            "bat"
+        ]
+    },
+    {
+        "q": "Which keyword is used to handle the default case in an if-elif-else structure?",
+        "type": "short_answer",
+        "answers": [
+            "else"
+        ],
+        "isCaseSensitive": false
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "for i in range(3):\n    print(i * i)",
+        "o": [
+            "0 1 4",
+            "0 1 2",
+            "1 4 9",
+            "0 2 4"
+        ]
+    },
+    {
+        "q": "A ______ loop is preferred when the number of iterations is known beforehand.",
+        "type": "fill_blank",
+        "answers": [
+            "for"
+        ],
+        "other_options": [
+            "while",
+            "do while",
+            "infinite",
+            "nested"
+        ]
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "x = 3\nprint('Positive') if x > 0 else print('Negative')",
+        "o": [
+            "Positive",
+            "Negative",
+            "True",
+            "Error"
+        ]
+    },
+    {
+        "q": "The else clause in a loop is executed even if the loop is terminated with break.",
+        "type": "true_false",
+        "correct": "False"
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "fruits = ['apple', 'banana']\nfor f in fruits:\n    print(f.capitalize())",
+        "o": [
+            "Apple Banana",
+            "apple banana",
+            "APPLE BANANA",
+            "Error"
+        ]
+    },
+    {
+        "q": "Which statement is used to skip the rest of the code inside a loop for the current iteration only?",
+        "type": "short_answer",
+        "answers": [
+            "continue"
+        ],
+        "isCaseSensitive": false
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "x = 1\nwhile x <= 3:\n    print(x)\n    x += 1",
+        "o": [
+            "1 2 3",
+            "1 2 3 4",
+            "2 3 4",
+            "1 2"
+        ]
+    },
+    {
+        "q": "Match the Python keywords with their categories:",
+        "type": "match",
+        "left": [
+            "if",
+            "for",
+            "while",
+            "break"
+        ],
+        "right": [
+            "Conditional",
+            "Iteration",
+            "Iteration",
+            "Loop Control"
+        ]
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "if '' :\n    print('A')\nelse:\n    print('B')",
+        "o": [
+            "B",
+            "A",
+            "''",
+            "Error"
+        ]
+    },
+    {
+        "q": "A ______ statement can be used to create a placeholder for future code.",
+        "type": "fill_blank",
+        "answers": [
+            "pass"
+        ],
+        "other_options": [
+            "break",
+            "continue",
+            "return",
+            "placeholder"
+        ]
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "for i in range(4):\n    if i == 2:\n        pass\n    print(i, end=' ')",
+        "o": [
+            "0 1 2 3",
+            "0 1 3",
+            "2",
+            "0 1"
+        ]
+    },
+    {
+        "q": "A break statement inside a nested loop only exits the inner loop.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "x = 5\nif x != 5:\n    print('A')\nelif x == 5:\n    print('B')\nelse:\n    print('C')",
+        "o": [
+            "B",
+            "A",
+            "C",
+            "Error"
+        ]
+    },
+    {
+        "q": "How do you write a ternary conditional expression in Python?",
+        "type": "short_answer",
+        "answers": [
+            "x if condition else y"
+        ],
+        "isCaseSensitive": false
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "count = 3\nwhile count > 0:\n    print(count, end=' ')\n    count -= 1",
+        "o": [
+            "3 2 1",
+            "2 1 0",
+            "1 2 3",
+            "3 2 1 0"
+        ]
+    },
+    {
+        "q": "The ______ keyword is used to combine multiple conditions where both must be True.",
+        "type": "fill_blank",
+        "answers": [
+            "and"
+        ],
+        "other_options": [
+            "or",
+            "not",
+            "if",
+            "is"
+        ]
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "for i in range(2):\n    for j in range(2):\n        print(i, j)",
+        "o": [
+            "0 0 0 1 1 0 1 1",
+            "0 1 0 1",
+            "0 0 1 1",
+            "1 0 1 0"
+        ]
+    },
+    {
+        "q": "Match the loop with its characteristic:",
+        "type": "match",
+        "left": [
+            "for loop",
+            "while loop"
+        ],
+        "right": [
+            "Definite iteration",
+            "Indefinite iteration"
+        ]
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "if 1:\n    print('One')\nelse:\n    print('Zero')",
+        "o": [
+            "One",
+            "Zero",
+            "1",
+            "Error"
+        ]
+    },
+    {
+        "q": "The continue statement terminates the loop completely.",
+        "type": "true_false",
+        "correct": "False"
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "x = 5\nif x > 3:\n    print('High')\nelse:\n    print('Low')\nprint('Done')",
+        "o": [
+            "High Done",
+            "Low Done",
+            "High",
+            "Done"
+        ]
+    },
+    {
+        "q": "Which keyword is used to define a loop that iterates over items in a sequence?",
+        "type": "short_answer",
+        "answers": [
+            "for"
+        ],
+        "isCaseSensitive": false
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "for i in range(1, 5, 2):\n    print(i, end=' ')",
+        "o": [
+            "1 3",
+            "1 2 3 4",
+            "1 3 5",
+            "2 4"
+        ]
+    },
+    {
+        "q": "The ______ statement is used inside loops to skip remaining statements and start the next iteration.",
+        "type": "fill_blank",
+        "answers": [
+            "continue"
+        ],
+        "other_options": [
+            "break",
+            "pass",
+            "skip",
+            "next"
+        ]
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "x = 0\nwhile x < 5:\n    if x == 2:\n        break\n    print(x)\n    x += 1",
+        "o": [
+            "0 1",
+            "0 1 2",
+            "0 1 2 3",
+            "1 2"
+        ]
+    },
+    {
+        "q": "Match the logical operators with their Python keywords:",
+        "type": "match",
+        "left": [
+            "Logical AND",
+            "Logical OR",
+            "Logical NOT"
+        ],
+        "right": [
+            "and",
+            "or",
+            "not"
+        ]
+    },
+    {
+        "q": "A while loop will execute at least once even if its condition is initially False.",
+        "type": "true_false",
+        "correct": "False"
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "num = 8\nif num % 2 == 0:\n    print('Even')\nelse:\n    print('Odd')",
+        "o": [
+            "Even",
+            "Odd",
+            "8",
+            "Error"
+        ]
+    },
+    {
+        "q": "Which function returns the length of a list or string?",
+        "type": "short_answer",
+        "answers": [
+            "len"
+        ],
+        "isCaseSensitive": false
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "for letter in 'cat':\n    if letter == 'a':\n        continue\n    print(letter)",
+        "o": [
+            "c t",
+            "c a t",
+            "a",
+            "c"
+        ]
+    },
+    {
+        "q": "In a ______ loop, the condition is checked before the body is executed.",
+        "type": "fill_blank",
+        "answers": [
+            "while"
+        ],
+        "other_options": [
+            "for",
+            "do while",
+            "if",
+            "else"
+        ]
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "x = 3\nif x > 0:\n    if x < 5:\n        print('A')\n    else:\n        print('B')\nelse:\n    print('C')",
+        "o": [
+            "A",
+            "B",
+            "C",
+            "Error"
+        ]
+    },
+    {
+        "q": "The pass statement has no effect on program flow.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "total = 0\nfor i in range(3):\n    total += i\nprint(total)",
+        "o": [
+            "3",
+            "6",
+            "0",
+            "1"
+        ]
+    },
+    {
+        "q": "Match the control flow tools with their behaviors:",
+        "type": "match",
+        "left": [
+            "if",
+            "elif",
+            "else"
+        ],
+        "right": [
+            "First condition check",
+            "Alternative condition check",
+            "Default action"
+        ]
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "x = 10\nwhile x > 5:\n    print(x, end=' ')\n    x -= 2",
+        "o": [
+            "10 8 6",
+            "10 8 6 4",
+            "10 8",
+            "8 6"
+        ]
+    },
+    {
+        "q": "Which keyword allows you to exit multiple nested loops by using a flag variable?",
+        "type": "short_answer",
+        "answers": [
+            "break"
+        ],
+        "isCaseSensitive": false
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "s = 'hello'\nif len(s) > 3:\n    print('Long')\nelse:\n    print('Short')",
+        "o": [
+            "Long",
+            "Short",
+            "hello",
+            "Error"
+        ]
+    },
+    {
+        "q": "The ______ operator is used to check if a value is present in a sequence.",
+        "type": "fill_blank",
+        "answers": [
+            "in"
+        ],
+        "other_options": [
+            "is",
+            "and",
+            "or",
+            "not"
+        ]
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "for i in range(3):\n    print(i, end=' ')\nelse:\n    print('End')",
+        "o": [
+            "0 1 2 End",
+            "0 1 2",
+            "End",
+            "0 1 2 3 End"
+        ]
+    },
+    {
+        "q": "A for loop can iterate over a dictionary to access keys.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "x = 1\nresult = 'Yes' if x > 2 else 'No'\nprint(result)",
+        "o": [
+            "No",
+            "Yes",
+            "True",
+            "False"
+        ]
+    },
+    {
+        "q": "Which built-in function can generate a sequence of numbers for a loop?",
+        "type": "short_answer",
+        "answers": [
+            "range"
+        ],
+        "isCaseSensitive": false
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "for i in range(2):\n    for j in range(1, 3):\n        print(i * j, end=' ')",
+        "o": [
+            "0 0 1 2",
+            "0 1 0 2",
+            "1 2 2 4",
+            "0 0 2 4"
+        ]
+    },
+    {
+        "q": "Match the condition types with their examples:",
+        "type": "match",
+        "left": [
+            "Equality",
+            "Greater than",
+            "Less than or equal"
+        ],
+        "right": [
+            "==",
+            ">",
+            "<="
+        ]
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "x = 5\nif x > 10:\n    print('A')\nelif x > 3:\n    print('B')\nelif x > 0:\n    print('C')",
+        "o": [
+            "B",
+            "A",
+            "C",
+            "Error"
+        ]
+    },
+    {
+        "q": "The ______ loop is ideal when you need to repeat code until a user provides valid input.",
+        "type": "fill_blank",
+        "answers": [
+            "while"
+        ],
+        "other_options": [
+            "for",
+            "if",
+            "do",
+            "repeat"
+        ]
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "items = [1, 2, 3]\nfor item in items:\n    if item == 2:\n        pass\n    print(item)",
+        "o": [
+            "1 2 3",
+            "1 3",
+            "2",
+            "1"
+        ]
+    },
+    {
+        "q": "An if statement can evaluate any expression that returns a boolean value.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "x = 0\nwhile x < 3:\n    print('*', end='')\n    x += 1",
+        "o": [
+            "***",
+            "****",
+            "**",
+            "*"
+        ]
+    },
+    {
+        "q": "What symbol is used to denote the start of a code block in Python?",
+        "type": "short_answer",
+        "answers": [
+            ":"
+        ],
+        "isCaseSensitive": false
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "a = 10\nb = 5\nif a > b:\n    print(a - b)\nelse:\n    print(b - a)",
+        "o": [
+            "5",
+            "10",
+            "15",
+            "0"
+        ]
+    },
+    {
+        "q": "Match the loop actions with the correct keywords:",
+        "type": "match",
+        "left": [
+            "Stop the loop",
+            "Skip current iteration",
+            "Do nothing"
+        ],
+        "right": [
+            "break",
+            "continue",
+            "pass"
+        ]
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "for i in range(5, 0, -1):\n    print(i, end=' ')",
+        "o": [
+            "5 4 3 2 1",
+            "1 2 3 4 5",
+            "5 4 3 2 1 0",
+            "0 1 2 3 4 5"
+        ]
+    },
+    {
+        "q": "The ______ statement inside a nested loop only exits the innermost loop.",
+        "type": "fill_blank",
+        "answers": [
+            "break"
+        ],
+        "other_options": [
+            "continue",
+            "pass",
+            "return",
+            "exit"
+        ]
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "x = 7\nif x < 0:\n    print('Neg')\nelif x == 0:\n    print('Zero')\nelif x > 0:\n    print('Pos')",
+        "o": [
+            "Pos",
+            "Neg",
+            "Zero",
+            "Error"
+        ]
+    },
+    {
+        "q": "A continue statement will cause an infinite loop if placed before a variable increment.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "for i in 'ab':\n    print(i.upper())",
+        "o": [
+            "A B",
+            "a b",
+            "AB",
+            "A\nB"
+        ]
+    },
+    {
+        "q": "Which Python keyword is used for the final case in a conditional statement?",
+        "type": "short_answer",
+        "answers": [
+            "else"
+        ],
+        "isCaseSensitive": false
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "x = 0\nwhile x < 4:\n    x += 1\n    if x % 2 == 0:\n        continue\n    print(x)",
+        "o": [
+            "1 3",
+            "1 2 3 4",
+            "2 4",
+            "1 3 4"
+        ]
+    },
+    {
+        "q": "The ______ function pairs elements from multiple iterables for simultaneous iteration.",
+        "type": "fill_blank",
+        "answers": [
+            "zip"
+        ],
+        "other_options": [
+            "map",
+            "filter",
+            "enumerate",
+            "range"
+        ]
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "score = 75\nif score >= 80:\n    grade = 'A'\nelif score >= 60:\n    grade = 'B'\nelse:\n    grade = 'C'\nprint(grade)",
+        "o": [
+            "B",
+            "A",
+            "C",
+            "D"
+        ]
+    },
+    {
+        "q": "Match the data types with their truthiness in Python:",
+        "type": "match",
+        "left": [
+            "Non-empty string",
+            "Empty list",
+            "Zero integer",
+            "Non-zero integer"
+        ],
+        "right": [
+            "True",
+            "False",
+            "False",
+            "True"
+        ]
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "for i in range(4):\n    if i == 1:\n        continue\n    if i == 2:\n        break\n    print(i)",
+        "o": [
+            "0",
+            "0 1",
+            "0 1 2",
+            "1"
+        ]
+    },
+    {
+        "q": "The else block in a conditional statement is optional.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "x = 'Python'\nif 'P' in x:\n    print('Found')\nelse:\n    print('Missing')",
+        "o": [
+            "Found",
+            "Missing",
+            "P",
+            "Error"
+        ]
+    },
+    {
+        "q": "Which word is used to define an alternative condition after an if statement?",
+        "type": "short_answer",
+        "answers": [
+            "elif"
+        ],
+        "isCaseSensitive": false
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "n = 1\nwhile n < 5:\n    n *= 2\n    print(n, end=' ')",
+        "o": [
+            "2 4 8",
+            "1 2 4 8",
+            "2 4",
+            "1 2 4"
+        ]
+    },
+    {
+        "q": "In Python, ______ is used to define an empty block where code is syntactically required.",
+        "type": "fill_blank",
+        "answers": [
+            "pass"
+        ],
+        "other_options": [
+            "break",
+            "continue",
+            "None",
+            "empty"
+        ]
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "nums = [1, 2, 3]\nsum = 0\nfor n in nums:\n    sum += n\nprint(sum)",
+        "o": [
+            "6",
+            "3",
+            "0",
+            "1"
+        ]
+    },
+    {
+        "q": "A for loop can only iterate over integer sequences.",
+        "type": "true_false",
+        "correct": "False"
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "if []:\n    print('A')\nelse:\n    print('B')",
+        "o": [
+            "B",
+            "A",
+            "[]",
+            "Error"
+        ]
+    },
+    {
+        "q": "Match the range parameters with their meanings:",
+        "type": "match",
+        "left": [
+            "range(5)",
+            "range(2,5)",
+            "range(1,6,2)"
+        ],
+        "right": [
+            "Stop at 5",
+            "Start at 2, stop at 5",
+            "Start at 1, step by 2"
+        ]
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "x = 3\nwhile x > 0:\n    if x == 2:\n        x -= 1\n        continue\n    print(x)\n    x -= 1",
+        "o": [
+            "3 1",
+            "3 2 1",
+            "2 1",
+            "3"
+        ]
+    },
+    {
+        "q": "Which operator reverses the boolean value of an expression?",
+        "type": "short_answer",
+        "answers": [
+            "not"
+        ],
+        "isCaseSensitive": false
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "for i in range(1, 4):\n    print('Hello', i)",
+        "o": [
+            "Hello 1 Hello 2 Hello 3",
+            "Hello 1 2 3",
+            "1 2 3",
+            "Hello 4"
+        ]
+    },
+    {
+        "q": "The ______ expression allows compact conditional assignment in a single line.",
+        "type": "fill_blank",
+        "answers": [
+            "ternary"
+        ],
+        "other_options": [
+            "binary",
+            "lambda",
+            "conditional",
+            "assignment"
+        ]
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "x = 2\nif x > 1:\n    print('A', end='')\nif x > 0:\n    print('B', end='')\nelse:\n    print('C')",
+        "o": [
+            "AB",
+            "A",
+            "B",
+            "ABC"
+        ]
+    },
+    {
+        "q": "A while loop with a condition of True will execute forever unless break is used.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "word = 'abc'\nfor index, char in enumerate(word):\n    print(index, char)",
+        "o": [
+            "0 a 1 b 2 c",
+            "a 0 b 1 c 2",
+            "1 a 2 b 3 c",
+            "0 1 2 a b c"
+        ]
+    },
+    {
+        "q": "Which statement is used to explicitly exit a function and optionally pass back a value?",
+        "type": "short_answer",
+        "answers": [
+            "return"
+        ],
+        "isCaseSensitive": false
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "x = 5\ny = 3\nif x > 2 and y < 5:\n    print('OK')\nelse:\n    print('NO')",
+        "o": [
+            "OK",
+            "NO",
+            "True",
+            "Error"
+        ]
+    },
+    {
+        "q": "Match the loop types with their initialization requirements:",
+        "type": "match",
+        "left": [
+            "for loop",
+            "while loop"
+        ],
+        "right": [
+            "Automatically handles iteration variable",
+            "Requires manual initialization before loop"
+        ]
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "for i in range(2):\n    for j in range(i, 2):\n        print(i, j, end=' ')",
+        "o": [
+            "0 0 0 1 1 1",
+            "0 1 1 0",
+            "0 0 1 1",
+            "1 0 1 1"
+        ]
+    },
+    {
+        "q": "The ______ statement can be used to skip the entire rest of the current loop iteration.",
+        "type": "fill_blank",
+        "answers": [
+            "continue"
+        ],
+        "other_options": [
+            "break",
+            "pass",
+            "skip",
+            "next"
+        ]
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "x = 1\nif x == 1:\n    print('One')\nif x == 2:\n    print('Two')",
+        "o": [
+            "One",
+            "Two",
+            "One Two",
+            "Error"
+        ]
+    },
+    {
+        "q": "A nested loop means having one loop inside the body of another loop.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "a = [1, 2, 3]\nb = [4, 5, 6]\nfor x, y in zip(a, b):\n    print(x + y, end=' ')",
+        "o": [
+            "5 7 9",
+            "1 2 3 4 5 6",
+            "4 5 6",
+            "15"
+        ]
+    },
+    {
+        "q": "Which keyword is used to combine conditions where at least one must be True?",
+        "type": "short_answer",
+        "answers": [
+            "or"
+        ],
+        "isCaseSensitive": false
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "x = 4\nif x > 5:\n    print('A')\nelif x > 2:\n    print('B')\nelif x > 1:\n    print('C')\nelse:\n    print('D')",
+        "o": [
+            "B",
+            "A",
+            "C",
+            "D"
+        ]
+    },
+    {
+        "q": "In a for loop, the ______ variable takes each value from the sequence one by one.",
+        "type": "fill_blank",
+        "answers": [
+            "iteration"
+        ],
+        "other_options": [
+            "loop",
+            "control",
+            "index",
+            "counter"
+        ]
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "total = 1\nfor i in range(1, 4):\n    total *= i\nprint(total)",
+        "o": [
+            "6",
+            "24",
+            "0",
+            "1"
+        ]
+    },
+    {
+        "q": "Match the conditional execution patterns with their descriptions:",
+        "type": "match",
+        "left": [
+            "Simple if",
+            "if-else",
+            "if-elif-else"
+        ],
+        "right": [
+            "Single condition",
+            "Two-way branch",
+            "Multi-way branch"
+        ]
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "x = 3\nwhile x > 0:\n    print(x)\n    x -= 1\nelse:\n    print('Go')",
+        "o": [
+            "3 2 1 Go",
+            "3 2 1",
+            "Go",
+            "1 2 3 Go"
+        ]
+    },
+    {
+        "q": "The break statement causes an immediate exit from the loop.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "if 0 == False:\n    print('Yes')\nelse:\n    print('No')",
+        "o": [
+            "Yes",
+            "No",
+            "True",
+            "Error"
+        ]
+    },
+    {
+        "q": "What does the term 'iteration' mean in the context of loops?",
+        "type": "short_answer",
+        "answers": [
+            "repeating a block of code",
+            "each execution of loop body"
+        ],
+        "isCaseSensitive": false
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "for i in range(3, 0, -1):\n    print(i)",
+        "o": [
+            "3 2 1",
+            "1 2 3",
+            "3 2 1 0",
+            "0 1 2"
+        ]
+    },
+    {
+        "q": "The ______ keyword allows you to check if a value does not exist in a sequence.",
+        "type": "fill_blank",
+        "answers": [
+            "not in"
+        ],
+        "other_options": [
+            "in",
+            "is",
+            "exists",
+            "contains"
+        ]
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "x = 1\nwhile x < 10:\n    print(x)\n    x *= 3",
+        "o": [
+            "1 3 9",
+            "1 3 6 9",
+            "1 4 7",
+            "1 10"
+        ]
+    },
+    {
+        "q": "An empty sequence evaluates to False in a boolean context.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "for char in 'xyz':\n    if char == 'y':\n        pass\n    print(char, end='')",
+        "o": [
+            "xyz",
+            "xz",
+            "y",
+            "x y z"
+        ]
+    },
+    {
+        "q": "Match the truth values with the expressions:",
+        "type": "match",
+        "left": [
+            "bool(0)",
+            "bool('')",
+            "bool('Hi')",
+            "bool(1)"
+        ],
+        "right": [
+            "False",
+            "False",
+            "True",
+            "True"
+        ]
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "x = 0\ny = 5\nif x > 0 or y > 0:\n    print('OK')\nelse:\n    print('NO')",
+        "o": [
+            "OK",
+            "NO",
+            "True",
+            "Error"
+        ]
+    },
+    {
+        "q": "Which Python structure is used to handle repetitive tasks until a condition changes?",
+        "type": "short_answer",
+        "answers": [
+            "while loop",
+            "while"
+        ],
+        "isCaseSensitive": false
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "nums = [5, 10, 15]\nfor num in nums:\n    if num > 8:\n        print(num, end=' ')",
+        "o": [
+            "10 15",
+            "5 10 15",
+            "5",
+            "15"
+        ]
+    },
+    {
+        "q": "The ______ statement provides a way to write an if-else block in a single line.",
+        "type": "fill_blank",
+        "answers": [
+            "ternary"
+        ],
+        "other_options": [
+            "lambda",
+            "conditional",
+            "inline",
+            "compact"
+        ]
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "i = 0\nwhile i < 3:\n    i += 1\n    if i == 2:\n        continue\n    print(i, end=' ')",
+        "o": [
+            "1 3",
+            "1 2 3",
+            "2 3",
+            "1"
+        ]
+    },
+    {
+        "q": "Python requires proper indentation to define the scope of loops and conditions.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "x = [1, 2, 3]\ny = [4, 5, 6]\nfor a, b in zip(x, y):\n    print(a + b, end=' ')",
+        "o": [
+            "5 7 9",
+            "1 4 2 5 3 6",
+            "15",
+            "5 7 9 11"
+        ]
+    },
+    {
+        "q": "Which method is used to read a file line by line in a memory-efficient way?",
+        "type": "short_answer",
+        "answers": [
+            "readline",
+            "readlines"
+        ],
+        "isCaseSensitive": false
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "for i in range(3):\n    try:\n        if i == 1:\n            continue\n        print(i)\n    finally:\n        print('F')",
+        "o": [
+            "0 F F 2 F",
+            "0 1 2 F",
+            "0 F 1 F 2 F",
+            "F F F"
+        ]
+    },
+    {
+        "q": "The ______ statement in exception handling always executes regardless of whether an exception occurs.",
+        "type": "fill_blank",
+        "answers": [
+            "finally"
+        ],
+        "other_options": [
+            "except",
+            "try",
+            "else",
+            "raise"
+        ]
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "data = {'a': 1, 'b': 2}\nfor key, value in data.items():\n    print(key, value, sep='-')",
+        "o": [
+            "a-1 b-2",
+            "a:1 b:2",
+            "a b 1 2",
+            "Error"
+        ]
+    },
+    {
+        "q": "Match the exception handling blocks with their purposes:",
+        "type": "match",
+        "left": [
+            "try",
+            "except",
+            "else",
+            "finally"
+        ],
+        "right": [
+            "Code that might raise exception",
+            "Handles the exception",
+            "Runs if no exception",
+            "Always runs"
+        ]
+    },
+    {
+        "q": "A break statement inside a try block will skip the finally block execution.",
+        "type": "true_false",
+        "correct": "False"
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "x = [10, 20, 30]\nfor i, val in enumerate(x, start=1):\n    print(i * val, end=' ')",
+        "o": [
+            "10 40 90",
+            "1 2 3",
+            "10 20 30",
+            "0 20 60"
+        ]
+    },
+    {
+        "q": "What does the enumerate function return when used in a loop?",
+        "type": "short_answer",
+        "answers": [
+            "index and value",
+            "tuple of index and value"
+        ],
+        "isCaseSensitive": false
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "n = 5\nwhile n > 0:\n    n -= 1\n    if n == 2:\n        break\n    print(n)\nelse:\n    print('Done')",
+        "o": [
+            "4 3",
+            "4 3 2",
+            "4 3 Done",
+            "4 3 1 0"
+        ]
+    },
+    {
+        "q": "A ______ loop can be used to repeatedly prompt a user until valid input is received.",
+        "type": "fill_blank",
+        "answers": [
+            "while"
+        ],
+        "other_options": [
+            "for",
+            "do while",
+            "if",
+            "infinite"
+        ]
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "result = []\nfor i in range(4):\n    if i % 2 == 0:\n        result.append(i)\nprint(result)",
+        "o": [
+            "[0, 2]",
+            "[0, 1, 2, 3]",
+            "[1, 3]",
+            "[0, 2, 4]"
+        ]
+    },
+    {
+        "q": "The else block in exception handling runs only if an exception is raised.",
+        "type": "true_false",
+        "correct": "False"
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "def check(x):\n    if x > 0:\n        return 'Positive'\n    elif x < 0:\n        return 'Negative'\n    return 'Zero'\nprint(check(0))",
+        "o": [
+            "Zero",
+            "Positive",
+            "Negative",
+            "None"
+        ]
+    },
+    {
+        "q": "Match the control flow scenarios with appropriate structures:",
+        "type": "match",
+        "left": [
+            "Menu selection",
+            "Processing items in list",
+            "Retrying on failure",
+            "Empty placeholder function"
+        ],
+        "right": [
+            "if-elif-else",
+            "for loop",
+            "while loop",
+            "pass"
+        ]
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "for i in range(5):\n    if i < 3:\n        continue\n    if i > 3:\n        break\n    print(i)",
+        "o": [
+            "3",
+            "3 4",
+            "0 1 2",
+            "4"
+        ]
+    },
+    {
+        "q": "Which keyword is used to explicitly raise an exception in Python?",
+        "type": "short_answer",
+        "answers": [
+            "raise"
+        ],
+        "isCaseSensitive": false
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "matrix = [[1, 2], [3, 4]]\nfor row in matrix:\n    for col in row:\n        print(col, end=' ')\n    print('-', end=' ')",
+        "o": [
+            "1 2 - 3 4 -",
+            "1 2 3 4",
+            "1 3 - 2 4 -",
+            "Error"
+        ]
+    },
+    {
+        "q": "The ______ statement is used to catch specific types of exceptions in Python.",
+        "type": "fill_blank",
+        "answers": [
+            "except"
+        ],
+        "other_options": [
+            "try",
+            "catch",
+            "finally",
+            "raise"
+        ]
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "x = 1\nwhile x < 20:\n    print(x, end=' ')\n    x <<= 1",
+        "o": [
+            "1 2 4 8 16",
+            "1 2 4 8 16 32",
+            "1 3 5 7 9",
+            "1 4 16"
+        ]
+    },
+    {
+        "q": "A for loop with an else block will execute the else block if the loop is terminated by break.",
+        "type": "true_false",
+        "correct": "False"
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "nums = [1, 2, 3, 4, 5]\nfiltered = []\nfor n in nums:\n    if n % 2 != 0:\n        filtered.append(n * 2)\nprint(filtered)",
+        "o": [
+            "[2, 6, 10]",
+            "[1, 3, 5]",
+            "[2, 4, 6, 8, 10]",
+            "[4, 8]"
+        ]
+    },
+    {
+        "q": "Which built-in function can be used with a for loop to iterate over two lists in parallel?",
+        "type": "short_answer",
+        "answers": [
+            "zip"
+        ],
+        "isCaseSensitive": false
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "s = 'hello'\nfor i in range(len(s)-1, -1, -1):\n    print(s[i], end='')",
+        "o": [
+            "olleh",
+            "hello",
+            "o l l e h",
+            "Error"
+        ]
+    },
+    {
+        "q": "Match the bitwise operators with their symbols:",
+        "type": "match",
+        "left": [
+            "Left shift",
+            "Right shift",
+            "Bitwise AND",
+            "Bitwise OR"
+        ],
+        "right": [
+            "<<",
+            ">>",
+            "&",
+            "|"
+        ]
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "x = 0\ntry:\n    result = 10 / x\nexcept ZeroDivisionError:\n    result = 0\nprint(result)",
+        "o": [
+            "0",
+            "Error",
+            "10",
+            "None"
+        ]
+    },
+    {
+        "q": "The ______ block in a try-except structure runs only if no exception occurs.",
+        "type": "fill_blank",
+        "answers": [
+            "else"
+        ],
+        "other_options": [
+            "finally",
+            "except",
+            "try",
+            "raise"
+        ]
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "i = 0\nwhile True:\n    i += 1\n    if i == 3:\n        continue\n    if i == 5:\n        break\n    print(i, end=' ')",
+        "o": [
+            "1 2 4",
+            "1 2 3 4 5",
+            "1 2 4 5",
+            "1 3 4"
+        ]
+    },
+    {
+        "q": "Using a break inside a nested loop only exits the innermost loop.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "def func(x):\n    if x < 0:\n        return\n    print(x)\nfunc(5)\nfunc(-1)\nprint('End')",
+        "o": [
+            "5 End",
+            "5 -1 End",
+            "5",
+            "End"
+        ]
+    },
+    {
+        "q": "Which statement is used to stop the execution of a function and return a value?",
+        "type": "short_answer",
+        "answers": [
+            "return"
+        ],
+        "isCaseSensitive": false
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "for i in range(3):\n    for j in range(3):\n        if i == j:\n            print(i, end=' ')",
+        "o": [
+            "0 1 2",
+            "0 0 1 1 2 2",
+            "1 2 3",
+            "0 1"
+        ]
+    },
+    {
+        "q": "Match the membership operators with their descriptions:",
+        "type": "match",
+        "left": [
+            "in",
+            "not in"
+        ],
+        "right": [
+            "Returns True if value exists in sequence",
+            "Returns True if value does not exist in sequence"
+        ]
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "x = 1\nwhile x < 10:\n    if x % 2 == 0:\n        x += 1\n        continue\n    print(x, end=' ')\n    x += 1",
+        "o": [
+            "1 3 5 7 9",
+            "1 2 3 4 5 6 7 8 9",
+            "2 4 6 8",
+            "1 3 5 7"
+        ]
+    },
+    {
+        "q": "The ______ exception is raised when trying to divide a number by zero.",
+        "type": "fill_blank",
+        "answers": [
+            "ZeroDivisionError"
+        ],
+        "other_options": [
+            "ValueError",
+            "TypeError",
+            "IndexError",
+            "KeyError"
+        ]
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "a = [1, 2]\nb = [3, 4]\nfor pair in zip(a, b):\n    print(sum(pair), end=' ')",
+        "o": [
+            "4 6",
+            "1 2 3 4",
+            "3 7",
+            "10"
+        ]
+    },
+    {
+        "q": "The pass statement is useful as a placeholder during development.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "def greet(name='World'):\n    return f'Hello {name}'\nprint(greet())",
+        "o": [
+            "Hello World",
+            "Hello",
+            "World",
+            "Error"
+        ]
+    },
+    {
+        "q": "Which function can be used to filter elements from an iterable based on a condition?",
+        "type": "short_answer",
+        "answers": [
+            "filter"
+        ],
+        "isCaseSensitive": false
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "data = [0, 1, 2, 3]\nfor d in data:\n    if d:\n        print(d, end=' ')\n    else:\n        print('Z', end=' ')",
+        "o": [
+            "Z 1 2 3",
+            "0 1 2 3",
+            "1 2 3",
+            "Z"
+        ]
+    },
+    {
+        "q": "Match the string methods with their return types:",
+        "type": "match",
+        "left": [
+            "str.upper()",
+            "str.split()",
+            "str.isdigit()",
+            "str.find()"
+        ],
+        "right": [
+            "String",
+            "List",
+            "Boolean",
+            "Integer"
+        ]
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "x = [1, 2, 3, 4]\nfor i in range(len(x)):\n    if x[i] % 2 == 0:\n        x[i] *= 2\nprint(x)",
+        "o": [
+            "[1, 4, 3, 8]",
+            "[2, 4, 6, 8]",
+            "[1, 2, 3, 4]",
+            "[2, 2, 6, 4]"
+        ]
+    },
+    {
+        "q": "A ______ loop combined with a break statement can simulate a do-while loop in Python.",
+        "type": "fill_blank",
+        "answers": [
+            "while"
+        ],
+        "other_options": [
+            "for",
+            "if",
+            "infinite",
+            "nested"
+        ]
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "try:\n    x = int('abc')\nexcept ValueError:\n    print('Invalid')\nelse:\n    print('Valid')",
+        "o": [
+            "Invalid",
+            "Valid",
+            "Error",
+            "Invalid Valid"
+        ]
+    },
+    {
+        "q": "The for loop in Python can iterate over any iterable object including generators.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "for i in range(1, 6):\n    if i == 3:\n        break\n    print(i, end=' ')\nelse:\n    print('End')",
+        "o": [
+            "1 2",
+            "1 2 End",
+            "1 2 3",
+            "1 2 3 End"
+        ]
+    },
+    {
+        "q": "Which keyword is used in exception handling to specify the type of error to catch?",
+        "type": "short_answer",
+        "answers": [
+            "except"
+        ],
+        "isCaseSensitive": false
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "nums = [1, 2, 3, 4, 5]\nsum_even = 0\nfor n in nums:\n    if n % 2 != 0:\n        continue\n    sum_even += n\nprint(sum_even)",
+        "o": [
+            "6",
+            "15",
+            "9",
+            "0"
+        ]
+    },
+    {
+        "q": "Match the error types with their descriptions:",
+        "type": "match",
+        "left": [
+            "SyntaxError",
+            "NameError",
+            "TypeError",
+            "IndexError"
+        ],
+        "right": [
+            "Invalid Python syntax",
+            "Variable not defined",
+            "Incompatible data type operation",
+            "List index out of range"
+        ]
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "x = 5\nif x > 0:\n    pass\n    print('Positive')\nelse:\n    print('Negative')",
+        "o": [
+            "Positive",
+            "Negative",
+            "Nothing",
+            "Error"
+        ]
+    },
+    {
+        "q": "The ______ function applies a given function to every item of an iterable.",
+        "type": "fill_blank",
+        "answers": [
+            "map"
+        ],
+        "other_options": [
+            "filter",
+            "reduce",
+            "zip",
+            "enumerate"
+        ]
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "def is_even(n):\n    return n % 2 == 0\nnums = [1, 2, 3, 4, 5]\nresult = [n for n in nums if is_even(n)]\nprint(result)",
+        "o": [
+            "[2, 4]",
+            "[1, 3, 5]",
+            "[True, False, True, False, True]",
+            "[]"
+        ]
+    },
+    {
+        "q": "A try block can have multiple except blocks to handle different exceptions.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "i = 5\nwhile i > 0:\n    i -= 1\n    if i == 3:\n        pass\n    if i == 1:\n        break\n    print(i, end=' ')",
+        "o": [
+            "4 3 2",
+            "4 2",
+            "4 3 2 1",
+            "3 2 1"
+        ]
+    },
+    {
+        "q": "Which statement is used to deliberately raise an exception in Python code?",
+        "type": "short_answer",
+        "answers": [
+            "raise"
+        ],
+        "isCaseSensitive": false
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "word = 'Python'\nfor i, char in enumerate(word):\n    if char in 'aeiou':\n        continue\n    print(char, end='')",
+        "o": [
+            "Pythn",
+            "Python",
+            "yhn",
+            "P t h n"
+        ]
+    },
+    {
+        "q": "Match the loop patterns with their typical implementations:",
+        "type": "match",
+        "left": [
+            "Infinite loop",
+            "Counter loop",
+            "Collection loop",
+            "Conditional loop"
+        ],
+        "right": [
+            "while True:",
+            "for i in range(n):",
+            "for item in list:",
+            "while condition:"
+        ]
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "x = [1, 2]\ny = [3, 4, 5]\nfor a, b in zip(x, y):\n    print(a + b, end=' ')",
+        "o": [
+            "4 6",
+            "4 6 7",
+            "1 2 3 4 5",
+            "Error"
+        ]
+    },
+    {
+        "q": "The ______ statement allows you to skip the rest of the code in the current loop iteration.",
+        "type": "fill_blank",
+        "answers": [
+            "continue"
+        ],
+        "other_options": [
+            "break",
+            "pass",
+            "skip",
+            "return"
+        ]
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "def check_val(val):\n    if val is None:\n        print('None')\n    elif val:\n        print('Truthy')\n    else:\n        print('Falsy')\ncheck_val(0)",
+        "o": [
+            "Falsy",
+            "Truthy",
+            "None",
+            "Error"
+        ]
+    },
+    {
+        "q": "Python supports the do-while loop natively.",
+        "type": "true_false",
+        "correct": "False"
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "numbers = [10, 20, 30, 40]\nfor i, num in enumerate(numbers):\n    if i > 1:\n        print(num, end=' ')",
+        "o": [
+            "30 40",
+            "10 20 30 40",
+            "20 30 40",
+            "10 20"
+        ]
+    },
+    {
+        "q": "Which built-in function returns True if all items in an iterable are true?",
+        "type": "short_answer",
+        "answers": [
+            "all"
+        ],
+        "isCaseSensitive": false
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "flag = True\ncount = 0\nwhile flag:\n    count += 1\n    if count == 3:\n        flag = False\n    print(count, end=' ')",
+        "o": [
+            "1 2 3",
+            "1 2",
+            "1 2 3 4",
+            "3"
+        ]
+    },
+    {
+        "q": "Match the Python keywords with their use in control flow:",
+        "type": "match",
+        "left": [
+            "and",
+            "or",
+            "not",
+            "is"
+        ],
+        "right": [
+            "Logical conjunction",
+            "Logical disjunction",
+            "Logical negation",
+            "Identity comparison"
+        ]
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "try:\n    x = [1, 2, 3]\n    print(x[5])\nexcept IndexError:\n    print('Out of range')",
+        "o": [
+            "Out of range",
+            "Error",
+            "None",
+            "1 2 3"
+        ]
+    },
+    {
+        "q": "The ______ function is useful for creating a list of tuples containing index and value pairs.",
+        "type": "fill_blank",
+        "answers": [
+            "enumerate"
+        ],
+        "other_options": [
+            "zip",
+            "range",
+            "map",
+            "filter"
+        ]
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "x = 0\nwhile x < 5:\n    x += 1\n    if x == 3:\n        break\nelse:\n    print('Done')\nprint(x)",
+        "o": [
+            "3",
+            "Done 3",
+            "5",
+            "Done 5"
+        ]
+    },
+    {
+        "q": "An empty string evaluates to True in a boolean context.",
+        "type": "true_false",
+        "correct": "False"
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "def process(data):\n    for item in data:\n        if item is None:\n            continue\n        print(item, end=' ')\nprocess([1, None, 3, None, 5])",
+        "o": [
+            "1 3 5",
+            "1 None 3 None 5",
+            "1",
+            "None None"
+        ]
+    },
+    {
+        "q": "Which keyword is used to define a block of code that tests for errors?",
+        "type": "short_answer",
+        "answers": [
+            "try"
+        ],
+        "isCaseSensitive": false
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "for i in range(1, 6):\n    if i == 3:\n        continue\n    if i == 5:\n        break\n    print(i, end=' ')",
+        "o": [
+            "1 2 4",
+            "1 2 4 5",
+            "1 2 3 4",
+            "1 2"
+        ]
+    },
+    {
+        "q": "Match the sequence types with their mutability:",
+        "type": "match",
+        "left": [
+            "list",
+            "tuple",
+            "string",
+            "dictionary"
+        ],
+        "right": [
+            "Mutable",
+            "Immutable",
+            "Immutable",
+            "Mutable"
+        ]
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "x = 10\nif x > 5:\n    x -= 1\nelif x > 3:\n    x -= 2\nelse:\n    x -= 3\nprint(x)",
+        "o": [
+            "9",
+            "8",
+            "7",
+            "10"
+        ]
+    },
+    {
+        "q": "The ______ statement is used when you want to catch any exception type not explicitly handled.",
+        "type": "fill_blank",
+        "answers": [
+            "except Exception",
+            "except"
+        ],
+        "other_options": [
+            "finally",
+            "else",
+            "try",
+            "raise"
+        ]
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "result = 0\nfor i in range(10):\n    if i % 3 == 0:\n        result += i\nprint(result)",
+        "o": [
+            "18",
+            "45",
+            "0",
+            "30"
+        ]
+    },
+    {
+        "q": "A finally block will execute even if a return statement is encountered in the try block.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "def outer():\n    for i in range(2):\n        for j in range(2):\n            if i == j:\n                break\n            print(i, j)\nouter()",
+        "o": [
+            "0 1",
+            "0 0 1 1",
+            "0 1 1 0",
+            "1 0"
+        ]
+    },
+    {
+        "q": "Which loop construct is best suited for processing each character in a string?",
+        "type": "short_answer",
+        "answers": [
+            "for loop",
+            "for"
+        ],
+        "isCaseSensitive": false
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "text = 'hello world'\nvowels = 'aeiou'\ncount = 0\nfor char in text:\n    if char.lower() in vowels:\n        count += 1\nprint(count)",
+        "o": [
+            "3",
+            "5",
+            "2",
+            "0"
+        ]
+    },
+    {
+        "q": "Match the filter patterns with their implementations:",
+        "type": "match",
+        "left": [
+            "List comprehension filter",
+            "filter() function",
+            "for loop with if"
+        ],
+        "right": [
+            "[x for x in list if cond]",
+            "filter(func, list)",
+            "for x in list: if cond: process"
+        ]
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "x = 1\nwhile x < 50:\n    print(x, end=' ')\n    x *= 2",
+        "o": [
+            "1 2 4 8 16 32",
+            "1 2 4 8 16 32 64",
+            "2 4 8 16 32",
+            "1 4 16"
+        ]
+    },
+    {
+        "q": "The ______ operator tests whether two variables refer to the same object in memory.",
+        "type": "fill_blank",
+        "answers": [
+            "is"
+        ],
+        "other_options": [
+            "in",
+            "==",
+            "and",
+            "not"
+        ]
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "def gen():\n    for i in range(3):\n        yield i\nfor val in gen():\n    print(val, end=' ')",
+        "o": [
+            "0 1 2",
+            "0 1 2 3",
+            "None",
+            "Error"
+        ]
+    },
+    {
+        "q": "Which keyword is used to create a generator function in Python?",
+        "type": "short_answer",
+        "answers": [
+            "yield"
+        ],
+        "isCaseSensitive": false
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "try:\n    raise ValueError('Oops')\nexcept ValueError as e:\n    print('Caught')\nfinally:\n    print('Finally')",
+        "o": [
+            "Caught Finally",
+            "Caught",
+            "Finally",
+            "Error"
+        ]
+    },
+    {
+        "q": "The ______ statement inside a generator function pauses execution and returns a value to the caller.",
+        "type": "fill_blank",
+        "answers": [
+            "yield"
+        ],
+        "other_options": [
+            "return",
+            "break",
+            "continue",
+            "pass"
+        ]
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "nums = [1, 2, 3, 4]\nresult = [x for x in nums if x % 2 == 0]\nprint(result)",
+        "o": [
+            "[2, 4]",
+            "[1, 3]",
+            "[1, 2, 3, 4]",
+            "[]"
+        ]
+    },
+    {
+        "q": "Match the comprehension types with their syntax:",
+        "type": "match",
+        "left": [
+            "List comprehension",
+            "Dictionary comprehension",
+            "Set comprehension",
+            "Generator expression"
+        ],
+        "right": [
+            "[x for x in iter]",
+            "{k:v for k,v in iter}",
+            "{x for x in iter}",
+            "(x for x in iter)"
+        ]
+    },
+    {
+        "q": "A generator expression evaluates all values at once and stores them in memory.",
+        "type": "true_false",
+        "correct": "False"
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "def outer():\n    x = 10\n    def inner():\n        nonlocal x\n        x = 20\n    inner()\n    print(x)\nouter()",
+        "o": [
+            "20",
+            "10",
+            "None",
+            "Error"
+        ]
+    },
+    {
+        "q": "Which keyword allows modifying a variable in the nearest enclosing scope that is not global?",
+        "type": "short_answer",
+        "answers": [
+            "nonlocal"
+        ],
+        "isCaseSensitive": false
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "data = [1, 2, 3]\niterator = iter(data)\nprint(next(iterator))\nprint(next(iterator))",
+        "o": [
+            "1 2",
+            "1 2 3",
+            "2 3",
+            "Error"
+        ]
+    },
+    {
+        "q": "The ______ function returns an iterator object from an iterable.",
+        "type": "fill_blank",
+        "answers": [
+            "iter"
+        ],
+        "other_options": [
+            "next",
+            "list",
+            "range",
+            "enumerate"
+        ]
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "def func(a, b=[]):\n    b.append(a)\n    return b\nprint(func(1))\nprint(func(2))",
+        "o": [
+            "[1] [1, 2]",
+            "[1] [2]",
+            "[1, 2] [1, 2]",
+            "Error"
+        ]
+    },
+    {
+        "q": "Default mutable arguments in functions retain their state across multiple calls.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "x = [1, 2, 3]\ny = x\ny.append(4)\nprint(x)",
+        "o": [
+            "[1, 2, 3, 4]",
+            "[1, 2, 3]",
+            "[1, 2, 3, 4, 4]",
+            "Error"
+        ]
+    },
+    {
+        "q": "Match the scoping keywords with their effects:",
+        "type": "match",
+        "left": [
+            "global",
+            "nonlocal",
+            "local"
+        ],
+        "right": [
+            "Modifies module-level variable",
+            "Modifies enclosing function variable",
+            "Variable defined inside function"
+        ]
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "def apply(func, val):\n    return func(val)\nresult = apply(lambda x: x**2, 5)\nprint(result)",
+        "o": [
+            "25",
+            "5",
+            "10",
+            "Error"
+        ]
+    },
+    {
+        "q": "Which keyword is used to create small anonymous functions in Python?",
+        "type": "short_answer",
+        "answers": [
+            "lambda"
+        ],
+        "isCaseSensitive": false
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "squares = (x*x for x in range(3))\nprint(list(squares))\nprint(list(squares))",
+        "o": [
+            "[0, 1, 4] []",
+            "[0, 1, 4] [0, 1, 4]",
+            "[] [0, 1, 4]",
+            "Error"
+        ]
+    },
+    {
+        "q": "A ______ expression is a compact way to process all or part of the elements in a sequence and return a list.",
+        "type": "fill_blank",
+        "answers": [
+            "list comprehension"
+        ],
+        "other_options": [
+            "generator",
+            "lambda",
+            "map",
+            "filter"
+        ]
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "try:\n    x = 1 / 0\nexcept ZeroDivisionError:\n    print('A')\nexcept Exception:\n    print('B')\nelse:\n    print('C')",
+        "o": [
+            "A",
+            "B",
+            "C",
+            "A C"
+        ]
+    },
+    {
+        "q": "Exception is the base class for all built-in exceptions in Python.",
+        "type": "true_false",
+        "correct": "False"
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "def counter():\n    count = 0\n    def inner():\n        nonlocal count\n        count += 1\n        return count\n    return inner\nc = counter()\nprint(c(), c(), c())",
+        "o": [
+            "1 2 3",
+            "1 1 1",
+            "0 1 2",
+            "Error"
+        ]
+    },
+    {
+        "q": "Which built-in function is used to get the next item from an iterator?",
+        "type": "short_answer",
+        "answers": [
+            "next"
+        ],
+        "isCaseSensitive": false
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "data = {'a': 1, 'b': 2}\nresult = {v: k for k, v in data.items()}\nprint(result)",
+        "o": [
+            "{1: 'a', 2: 'b'}",
+            "{'a': 1, 'b': 2}",
+            "[(1, 'a'), (2, 'b')]",
+            "Error"
+        ]
+    },
+    {
+        "q": "Match the higher-order functions with their purposes:",
+        "type": "match",
+        "left": [
+            "map()",
+            "filter()",
+            "reduce()",
+            "sorted()"
+        ],
+        "right": [
+            "Apply function to every item",
+            "Select items based on condition",
+            "Cumulatively combine items",
+            "Return a sorted list"
+        ]
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "from functools import reduce\nnums = [1, 2, 3, 4]\nresult = reduce(lambda x, y: x * y, nums)\nprint(result)",
+        "o": [
+            "24",
+            "10",
+            "[1, 4, 9, 16]",
+            "Error"
+        ]
+    },
+    {
+        "q": "The ______ module provides functions like reduce() that operate on iterables.",
+        "type": "fill_blank",
+        "answers": [
+            "functools"
+        ],
+        "other_options": [
+            "itertools",
+            "collections",
+            "operator",
+            "math"
+        ]
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "def decorator(func):\n    def wrapper():\n        print('Before')\n        func()\n        print('After')\n    return wrapper\n@decorator\ndef greet():\n    print('Hello')\ngreet()",
+        "o": [
+            "Before Hello After",
+            "Hello",
+            "Before After Hello",
+            "Error"
+        ]
+    },
+    {
+        "q": "A decorator is a function that takes another function and extends its behavior.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "try:\n    raise TypeError\nexcept ValueError:\n    print('Value')\nexcept:\n    print('Other')\nelse:\n    print('Else')",
+        "o": [
+            "Other",
+            "Value",
+            "Else",
+            "Other Else"
+        ]
+    },
+    {
+        "q": "Which symbol is used to apply a decorator to a function in Python?",
+        "type": "short_answer",
+        "answers": [
+            "@"
+        ],
+        "isCaseSensitive": false
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "import itertools\nfor item in itertools.chain([1, 2], [3, 4]):\n    print(item, end=' ')",
+        "o": [
+            "1 2 3 4",
+            "[1, 2, 3, 4]",
+            "1 3 2 4",
+            "Error"
+        ]
+    },
+    {
+        "q": "Match the itertools functions with their behaviors:",
+        "type": "match",
+        "left": [
+            "chain()",
+            "cycle()",
+            "repeat()",
+            "islice()"
+        ],
+        "right": [
+            "Flatten multiple iterables",
+            "Cycle through iterable infinitely",
+            "Repeat a value",
+            "Slice an iterator"
+        ]
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "class Context:\n    def __enter__(self):\n        print('Enter')\n        return self\n    def __exit__(self, *args):\n        print('Exit')\nwith Context():\n    print('Inside')",
+        "o": [
+            "Enter Inside Exit",
+            "Inside Enter Exit",
+            "Enter Exit Inside",
+            "Error"
+        ]
+    },
+    {
+        "q": "The ______ method is called when entering a context manager using the with statement.",
+        "type": "fill_blank",
+        "answers": [
+            "__enter__"
+        ],
+        "other_options": [
+            "__exit__",
+            "__init__",
+            "__call__",
+            "__with__"
+        ]
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "def gen():\n    try:\n        yield 1\n        yield 2\n    finally:\n        yield 3\ng = gen()\nprint(next(g), next(g), next(g))",
+        "o": [
+            "1 2 3",
+            "1 2",
+            "1 2 3 3",
+            "Error"
+        ]
+    },
+    {
+        "q": "A context manager ensures that resources are properly acquired and released.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "from collections import defaultdict\nd = defaultdict(int)\nd['a'] += 1\nprint(d['a'], d['b'])",
+        "o": [
+            "1 0",
+            "1 Error",
+            "0 0",
+            "Error"
+        ]
+    },
+    {
+        "q": "Which method of a custom iterator class raises StopIteration when no more items?",
+        "type": "short_answer",
+        "answers": [
+            "__next__"
+        ],
+        "isCaseSensitive": false
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "def check(x):\n    match x:\n        case 1:\n            return 'One'\n        case _:\n            return 'Other'\nprint(check(5))",
+        "o": [
+            "Other",
+            "One",
+            "5",
+            "Error"
+        ]
+    },
+    {
+        "q": "Match the structural pattern matching cases with their meanings:",
+        "type": "match",
+        "left": [
+            "case _:",
+            "case [x, y]:",
+            "case {'key': val}:"
+        ],
+        "right": [
+            "Wildcard pattern",
+            "Sequence pattern",
+            "Mapping pattern"
+        ]
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "async def hello():\n    return 'Hello'\nimport asyncio\nresult = asyncio.run(hello())\nprint(result)",
+        "o": [
+            "Hello",
+            "Coroutine",
+            "None",
+            "Error"
+        ]
+    },
+    {
+        "q": "The ______ keyword is used to define an asynchronous function in Python.",
+        "type": "fill_blank",
+        "answers": [
+            "async"
+        ],
+        "other_options": [
+            "await",
+            "yield",
+            "async def",
+            "coroutine"
+        ]
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "import sys\ntry:\n    sys.exit(0)\nexcept SystemExit:\n    print('Caught')\nfinally:\n    print('Done')",
+        "o": [
+            "Caught Done",
+            "Caught",
+            "Done",
+            "Error"
+        ]
+    },
+    {
+        "q": "The sys.exit() function raises a SystemExit exception that can be caught.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "class MyIter:\n    def __init__(self):\n        self.n = 0\n    def __iter__(self):\n        return self\n    def __next__(self):\n        if self.n < 2:\n            self.n += 1\n            return self.n\n        raise StopIteration\nfor val in MyIter():\n    print(val, end=' ')",
+        "o": [
+            "1 2",
+            "0 1",
+            "1",
+            "0 1 2"
+        ]
+    },
+    {
+        "q": "Which exception is raised by the next() function when the iterator is exhausted?",
+        "type": "short_answer",
+        "answers": [
+            "StopIteration"
+        ],
+        "isCaseSensitive": false
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "from contextlib import contextmanager\n@contextmanager\ndef my_context():\n    print('Start')\n    yield\n    print('End')\nwith my_context():\n    print('Middle')",
+        "o": [
+            "Start Middle End",
+            "Start End Middle",
+            "Middle Start End",
+            "Error"
+        ]
+    },
+    {
+        "q": "Match the special methods with their purposes:",
+        "type": "match",
+        "left": [
+            "__iter__",
+            "__next__",
+            "__enter__",
+            "__exit__"
+        ],
+        "right": [
+            "Returns iterator",
+            "Returns next item",
+            "Enter context",
+            "Exit context"
+        ]
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "result = (lambda x: (lambda y: x + y))(3)(4)\nprint(result)",
+        "o": [
+            "7",
+            "3 4",
+            "12",
+            "Error"
+        ]
+    },
+    {
+        "q": "The ______ module provides decorators and functions for creating and managing context managers.",
+        "type": "fill_blank",
+        "answers": [
+            "contextlib"
+        ],
+        "other_options": [
+            "functools",
+            "itertools",
+            "collections",
+            "decorators"
+        ]
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "def make_multiplier(n):\n    return lambda x: x * n\ndouble = make_multiplier(2)\nprint(double(5))",
+        "o": [
+            "10",
+            "5",
+            "2",
+            "25"
+        ]
+    },
+    {
+        "q": "A lambda function can contain multiple statements and expressions.",
+        "type": "true_false",
+        "correct": "False"
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "class Suppress:\n    def __enter__(self):\n        return self\n    def __exit__(self, exc_type, exc_val, exc_tb):\n        return True\nwith Suppress():\n    raise ValueError\nprint('No crash')",
+        "o": [
+            "No crash",
+            "Error",
+            "ValueError",
+            "None"
+        ]
+    },
+    {
+        "q": "Which data structure from collections module provides default values for missing keys?",
+        "type": "short_answer",
+        "answers": [
+            "defaultdict"
+        ],
+        "isCaseSensitive": false
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "def func(*args, **kwargs):\n    print(len(args), len(kwargs))\nfunc(1, 2, a=3, b=4)",
+        "o": [
+            "2 2",
+            "4 0",
+            "0 4",
+            "2 0"
+        ]
+    },
+    {
+        "q": "Match the parameter types with their syntax:",
+        "type": "match",
+        "left": [
+            "*args",
+            "**kwargs",
+            "Positional only",
+            "Keyword only"
+        ],
+        "right": [
+            "Variable positional arguments",
+            "Variable keyword arguments",
+            "def f(x, /)",
+            "def f(*, x)"
+        ]
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "import itertools\ncounter = itertools.count(start=1, step=2)\nfor _ in range(3):\n    print(next(counter), end=' ')",
+        "o": [
+            "1 3 5",
+            "1 2 3",
+            "0 2 4",
+            "2 4 6"
+        ]
+    },
+    {
+        "q": "The ______ function from functools can be used to cache the results of expensive function calls.",
+        "type": "fill_blank",
+        "answers": [
+            "lru_cache"
+        ],
+        "other_options": [
+            "cache",
+            "memoize",
+            "reduce",
+            "partial"
+        ]
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "def check(condition):\n    return 'Yes' if condition else 'No'\nprint(check([]))",
+        "o": [
+            "No",
+            "Yes",
+            "[]",
+            "Error"
+        ]
+    },
+    {
+        "q": "In Python, empty sequences and collections evaluate to False in boolean context.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "import itertools\nfor perm in itertools.permutations('AB'):\n    print(''.join(perm), end=' ')",
+        "o": [
+            "AB BA",
+            "AA BB",
+            "AB",
+            "A B"
+        ]
+    },
+    {
+        "q": "Which itertools function returns the Cartesian product of input iterables?",
+        "type": "short_answer",
+        "answers": [
+            "product"
+        ],
+        "isCaseSensitive": false
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "from functools import partial\ndef power(base, exp):\n    return base ** exp\nsquare = partial(power, exp=2)\nprint(square(4))",
+        "o": [
+            "16",
+            "8",
+            "4",
+            "Error"
+        ]
+    },
+    {
+        "q": "Match the functools utilities with their functions:",
+        "type": "match",
+        "left": [
+            "partial()",
+            "reduce()",
+            "lru_cache()",
+            "wraps()"
+        ],
+        "right": [
+            "Fix function arguments",
+            "Cumulative computation",
+            "Memoization decorator",
+            "Preserve metadata in decorators"
+        ]
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "def wrapper(func):\n    def inner(*args):\n        return func(*args) * 2\n    return inner\n@wrapper\ndef add(a, b):\n    return a + b\nprint(add(2, 3))",
+        "o": [
+            "10",
+            "5",
+            "6",
+            "Error"
+        ]
+    },
+    {
+        "q": "The ______ decorator from functools is used to preserve the original function's metadata.",
+        "type": "fill_blank",
+        "answers": [
+            "wraps"
+        ],
+        "other_options": [
+            "partial",
+            "cache",
+            "reduce",
+            "update"
+        ]
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "def coro():\n    x = yield\n    yield x + 1\nc = coro()\nnext(c)\nprint(c.send(5))",
+        "o": [
+            "6",
+            "5",
+            "1",
+            "None"
+        ]
+    },
+    {
+        "q": "Coroutines can both send and receive values during execution.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "class MyRange:\n    def __init__(self, n):\n        self.n = n\n    def __iter__(self):\n        for i in range(self.n):\n            yield i\nfor val in MyRange(3):\n    print(val, end=' ')",
+        "o": [
+            "0 1 2",
+            "1 2 3",
+            "0 1",
+            "Error"
+        ]
+    },
+    {
+        "q": "Which method makes an object iterable by returning an iterator?",
+        "type": "short_answer",
+        "answers": [
+            "__iter__"
+        ],
+        "isCaseSensitive": false
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "import itertools\nfor item in itertools.compress('ABCD', [1, 0, 1, 0]):\n    print(item, end=' ')",
+        "o": [
+            "A C",
+            "A B C D",
+            "B D",
+            "1 1"
+        ]
+    },
+    {
+        "q": "Match the async/await concepts with their descriptions:",
+        "type": "match",
+        "left": [
+            "async def",
+            "await",
+            "asyncio.run()",
+            "asyncio.gather()"
+        ],
+        "right": [
+            "Define coroutine",
+            "Suspend until result",
+            "Run top-level coroutine",
+            "Run multiple coroutines concurrently"
+        ]
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "def gen():\n    received = yield 1\n    yield received\ng = gen()\nprint(next(g), next(g))",
+        "o": [
+            "1 None",
+            "1 1",
+            "None 1",
+            "Error"
+        ]
+    },
+    {
+        "q": "The ______ method of a generator is used to send a value into the generator function.",
+        "type": "fill_blank",
+        "answers": [
+            "send"
+        ],
+        "other_options": [
+            "next",
+            "yield",
+            "throw",
+            "close"
+        ]
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "result = all([True, True, False])\nprint(result)",
+        "o": [
+            "False",
+            "True",
+            "None",
+            "Error"
+        ]
+    },
+    {
+        "q": "The any() function returns True if at least one element in the iterable is True.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "data = [1, 2, 3, 4]\nresult = [x if x > 2 else 0 for x in data]\nprint(result)",
+        "o": [
+            "[0, 0, 3, 4]",
+            "[1, 2, 3, 4]",
+            "[3, 4]",
+            "[0, 0, 0, 0]"
+        ]
+    },
+    {
+        "q": "Which keyword is used inside a comprehension to include a conditional expression in the output?",
+        "type": "short_answer",
+        "answers": [
+            "if"
+        ],
+        "isCaseSensitive": false
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "import itertools\nfor item in itertools.takewhile(lambda x: x < 3, [1, 2, 3, 4]):\n    print(item, end=' ')",
+        "o": [
+            "1 2",
+            "1 2 3",
+            "3 4",
+            "1 2 3 4"
+        ]
+    },
+    {
+        "q": "Match the itertools functions with their descriptions:",
+        "type": "match",
+        "left": [
+            "takewhile()",
+            "dropwhile()",
+            "accumulate()",
+            "groupby()"
+        ],
+        "right": [
+            "Take items while condition true",
+            "Drop items while condition true",
+            "Running total",
+            "Group consecutive items"
+        ]
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "def outer():\n    x = 'outer'\n    def inner():\n        nonlocal x\n        x = 'inner'\n    inner()\n    return x\nprint(outer())",
+        "o": [
+            "inner",
+            "outer",
+            "None",
+            "Error"
+        ]
+    },
+    {
+        "q": "The ______ variable is accessible throughout the entire module and can be modified using the global keyword inside functions.",
+        "type": "fill_blank",
+        "answers": [
+            "global"
+        ],
+        "other_options": [
+            "nonlocal",
+            "local",
+            "free",
+            "enclosed"
+        ]
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "from operator import itemgetter\ndata = [('a', 2), ('b', 1)]\nsorted_data = sorted(data, key=itemgetter(1))\nprint(sorted_data)",
+        "o": [
+            "[('b', 1), ('a', 2)]",
+            "[('a', 2), ('b', 1)]",
+            "[(1, 'b'), (2, 'a')]",
+            "Error"
+        ]
+    },
+    {
+        "q": "A generator function can have multiple yield statements at different points in the code.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "class ManagedFile:\n    def __init__(self, name):\n        self.name = name\n    def __enter__(self):\n        self.file = open(self.name, 'w')\n        return self.file\n    def __exit__(self, *args):\n        self.file.close()\nwith ManagedFile('test.txt') as f:\n    f.write('Hello')\nprint('Written')",
+        "o": [
+            "Written",
+            "Error",
+            "Hello",
+            "None"
+        ]
+    },
+    {
+        "q": "Which exception is raised when a coroutine function is not awaited?",
+        "type": "short_answer",
+        "answers": [
+            "RuntimeWarning",
+            "RuntimeError"
+        ],
+        "isCaseSensitive": false
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "from collections import Counter\nwords = ['a', 'b', 'a', 'c', 'b', 'a']\ncounts = Counter(words)\nprint(counts.most_common(1))",
+        "o": [
+            "[('a', 3)]",
+            "[('a', 1)]",
+            "['a']",
+            "3"
+        ]
+    },
+    {
+        "q": "Match the collections module types with their uses:",
+        "type": "match",
+        "left": [
+            "Counter",
+            "defaultdict",
+            "OrderedDict",
+            "deque"
+        ],
+        "right": [
+            "Count hashable objects",
+            "Dict with default factory",
+            "Dict that remembers insertion order",
+            "Double-ended queue"
+        ]
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "def safe_divide(a, b):\n    try:\n        return a / b\n    except ZeroDivisionError:\n        return None\n    finally:\n        print('Cleanup')\nprint(safe_divide(4, 2))",
+        "o": [
+            "Cleanup 2.0",
+            "2.0 Cleanup",
+            "2.0",
+            "Cleanup"
+        ]
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "import asyncio\nasync def coro():\n    await asyncio.sleep(0)\n    return 'Done'\nresult = asyncio.run(coro())\nprint(result)",
+        "o": [
+            "Done",
+            "Coroutine",
+            "None",
+            "Error"
+        ]
+    },
+    {
+        "q": "Which method is used to run a coroutine from synchronous code in Python 3.7+?",
+        "type": "short_answer",
+        "answers": [
+            "asyncio.run"
+        ],
+        "isCaseSensitive": false
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "def gen():\n    try:\n        yield 1\n        yield 2\n    except GeneratorExit:\n        yield 3\ng = gen()\nprint(next(g))\ng.close()\nprint('End')",
+        "o": [
+            "1 End",
+            "1 3 End",
+            "1 2 End",
+            "Error"
+        ]
+    },
+    {
+        "q": "The ______ exception is raised inside a generator when it is closed via the close() method.",
+        "type": "fill_blank",
+        "answers": [
+            "GeneratorExit"
+        ],
+        "other_options": [
+            "StopIteration",
+            "SystemExit",
+            "KeyboardInterrupt",
+            "ValueError"
+        ]
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "def decorator(cls):\n    cls.decorated = True\n    return cls\n@decorator\nclass MyClass:\n    pass\nprint(MyClass.decorated)",
+        "o": [
+            "True",
+            "False",
+            "None",
+            "Error"
+        ]
+    },
+    {
+        "q": "Match the metaclass components with their roles:",
+        "type": "match",
+        "left": [
+            "type",
+            "__new__",
+            "__init__",
+            "__call__"
+        ],
+        "right": [
+            "Default metaclass",
+            "Create class object",
+            "Initialize class object",
+            "Control instance creation"
+        ]
+    },
+    {
+        "q": "A class decorator receives the class and must return a class or a callable.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "class Meta(type):\n    def __new__(cls, name, bases, dct):\n        dct['meta_attr'] = 'Added'\n        return super().__new__(cls, name, bases, dct)\nclass MyClass(metaclass=Meta):\n    pass\nprint(MyClass.meta_attr)",
+        "o": [
+            "Added",
+            "None",
+            "Error",
+            "meta_attr"
+        ]
+    },
+    {
+        "q": "Which special method is called when a class is instantiated after __new__?",
+        "type": "short_answer",
+        "answers": [
+            "__init__"
+        ],
+        "isCaseSensitive": false
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "import weakref\nclass MyClass:\n    pass\nobj = MyClass()\nref = weakref.ref(obj)\ndel obj\nprint(ref() is None)",
+        "o": [
+            "True",
+            "False",
+            "None",
+            "Error"
+        ]
+    },
+    {
+        "q": "The ______ module provides tools for creating weak references to objects.",
+        "type": "fill_blank",
+        "answers": [
+            "weakref"
+        ],
+        "other_options": [
+            "gc",
+            "sys",
+            "collections",
+            "functools"
+        ]
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "async def fetch():\n    return 'data'\nasync def main():\n    tasks = [fetch(), fetch()]\n    results = await asyncio.gather(*tasks)\n    return results\nprint(asyncio.run(main()))",
+        "o": [
+            "['data', 'data']",
+            "['data']",
+            "data data",
+            "Error"
+        ]
+    },
+    {
+        "q": "asyncio.gather() runs coroutines concurrently and returns results in the order of completion.",
+        "type": "true_false",
+        "correct": "False"
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "class Descriptor:\n    def __get__(self, obj, objtype=None):\n        return 42\nclass MyClass:\n    attr = Descriptor()\nprint(MyClass().attr)",
+        "o": [
+            "42",
+            "None",
+            "Descriptor instance",
+            "Error"
+        ]
+    },
+    {
+        "q": "Match the descriptor methods with their trigger actions:",
+        "type": "match",
+        "left": [
+            "__get__",
+            "__set__",
+            "__delete__"
+        ],
+        "right": [
+            "Attribute access",
+            "Attribute assignment",
+            "Attribute deletion"
+        ]
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "from contextlib import ExitStack\nfilenames = ['file1.txt', 'file2.txt']\nwith ExitStack() as stack:\n    files = [stack.enter_context(open(f, 'w')) for f in filenames]\n    print(len(files))",
+        "o": [
+            "2",
+            "0",
+            "1",
+            "Error"
+        ]
+    },
+    {
+        "q": "Which module provides the ExitStack utility for managing multiple context managers?",
+        "type": "short_answer",
+        "answers": [
+            "contextlib"
+        ],
+        "isCaseSensitive": false
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "import sys\ndef gen():\n    yield 1\n    yield 2\n    return\n    yield 3\ng = gen()\nprint(list(g))",
+        "o": [
+            "[1, 2]",
+            "[1, 2, 3]",
+            "[1]",
+            "[]"
+        ]
+    },
+    {
+        "q": "The ______ method of a generator can be used to inject an exception into the generator.",
+        "type": "fill_blank",
+        "answers": [
+            "throw"
+        ],
+        "other_options": [
+            "send",
+            "close",
+            "raise",
+            "next"
+        ]
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "class Singleton(type):\n    _instances = {}\n    def __call__(cls, *args, **kwargs):\n        if cls not in cls._instances:\n            cls._instances[cls] = super().__call__(*args, **kwargs)\n        return cls._instances[cls]\nclass A(metaclass=Singleton):\n    pass\nprint(A() is A())",
+        "o": [
+            "True",
+            "False",
+            "None",
+            "Error"
+        ]
+    },
+    {
+        "q": "A metaclass in Python is a class whose instances are classes.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "import asyncio\nasync def limited_task(sem, name):\n    async with sem:\n        return name\nasync def main():\n    sem = asyncio.Semaphore(1)\n    results = await asyncio.gather(limited_task(sem, 'A'), limited_task(sem, 'B'))\n    return results\nprint(asyncio.run(main()))",
+        "o": [
+            "['A', 'B']",
+            "['A']",
+            "['B']",
+            "[]"
+        ]
+    },
+    {
+        "q": "Which asyncio synchronization primitive limits concurrent access to a resource?",
+        "type": "short_answer",
+        "answers": [
+            "Semaphore"
+        ],
+        "isCaseSensitive": false
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "from functools import singledispatch\n@singledispatch\ndef process(arg):\n    return 'default'\n@process.register(int)\ndef _(arg):\n    return 'integer'\n@process.register(str)\ndef _(arg):\n    return 'string'\nprint(process(1.5))",
+        "o": [
+            "default",
+            "integer",
+            "string",
+            "Error"
+        ]
+    },
+    {
+        "q": "Match the functools decorators with their uses:",
+        "type": "match",
+        "left": [
+            "singledispatch",
+            "wraps",
+            "total_ordering",
+            "cached_property"
+        ],
+        "right": [
+            "Generic function dispatch",
+            "Preserve metadata",
+            "Complete comparison methods",
+            "Lazy computed attribute"
+        ]
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "import sys\nclass C:\n    pass\nc = C()\nprint(sys.getrefcount(c) - 1)",
+        "o": [
+            "1",
+            "2",
+            "0",
+            "3"
+        ]
+    },
+    {
+        "q": "The ______ module provides functions for interacting with the garbage collector.",
+        "type": "fill_blank",
+        "answers": [
+            "gc"
+        ],
+        "other_options": [
+            "sys",
+            "weakref",
+            "objects",
+            "memory"
+        ]
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "class A:\n    def __init_subclass__(cls, **kwargs):\n        super().__init_subclass__(**kwargs)\n        cls.registered = True\nclass B(A):\n    pass\nprint(B.registered)",
+        "o": [
+            "True",
+            "False",
+            "None",
+            "Error"
+        ]
+    },
+    {
+        "q": "The __init_subclass__ hook is called when a parent class is subclassed.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "from collections.abc import Iterable\ndef flatten(items):\n    for item in items:\n        if isinstance(item, Iterable) and not isinstance(item, (str, bytes)):\n            yield from flatten(item)\n        else:\n            yield item\nprint(list(flatten([1, [2, [3, 4], 5]])))",
+        "o": [
+            "[1, 2, 3, 4, 5]",
+            "[1, [2, [3, 4], 5]]",
+            "[1, 2, 3, 4]",
+            "Error"
+        ]
+    },
+    {
+        "q": "Which keyword delegates iteration to a sub-generator in Python?",
+        "type": "short_answer",
+        "answers": [
+            "yield from"
+        ],
+        "isCaseSensitive": false
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "import asyncio\nasync def producer(queue):\n    for i in range(3):\n        await queue.put(i)\n    await queue.put(None)\nasync def consumer(queue):\n    while True:\n        item = await queue.get()\n        if item is None:\n            break\n        print(item, end=' ')\nasync def main():\n    queue = asyncio.Queue()\n    await asyncio.gather(producer(queue), consumer(queue))\nasyncio.run(main())",
+        "o": [
+            "0 1 2",
+            "0 1",
+            "1 2",
+            "0 2"
+        ]
+    },
+    {
+        "q": "Match the asyncio primitives with their functions:",
+        "type": "match",
+        "left": [
+            "Queue",
+            "Event",
+            "Lock",
+            "Condition"
+        ],
+        "right": [
+            "FIFO task communication",
+            "Signal between coroutines",
+            "Mutual exclusion",
+            "Wait for state change"
+        ]
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "from typing import Protocol\nclass Flyable(Protocol):\n    def fly(self) -> str:\n        ...\nclass Bird:\n    def fly(self) -> str:\n        return 'Flying'\ndef make_fly(thing: Flyable) -> str:\n    return thing.fly()\nprint(make_fly(Bird()))",
+        "o": [
+            "Flying",
+            "Error",
+            "None",
+            "Protocol"
+        ]
+    },
+    {
+        "q": "The ______ module provides runtime support for type hints and protocols.",
+        "type": "fill_blank",
+        "answers": [
+            "typing"
+        ],
+        "other_options": [
+            "abc",
+            "collections",
+            "inspect",
+            "types"
+        ]
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "class ValidatedDescriptor:\n    def __set_name__(self, owner, name):\n        self.private_name = '_' + name\n    def __get__(self, obj, objtype=None):\n        return getattr(obj, self.private_name, None)\n    def __set__(self, obj, value):\n        if not isinstance(value, int):\n            raise TypeError\n        setattr(obj, self.private_name, value)\nclass MyClass:\n    attr = ValidatedDescriptor()\nobj = MyClass()\nobj.attr = 10\nprint(obj.attr)",
+        "o": [
+            "10",
+            "None",
+            "TypeError",
+            "_attr"
+        ]
+    },
+    {
+        "q": "The __set_name__ method is called automatically when a descriptor is assigned in a class body.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "import itertools\ndef gen():\n    yield from itertools.count(start=1)\ng = gen()\nfor _ in range(3):\n    print(next(g), end=' ')",
+        "o": [
+            "1 2 3",
+            "1 1 1",
+            "0 1 2",
+            "Infinite loop"
+        ]
+    },
+    {
+        "q": "Which method of a coroutine object starts its execution and advances to the first yield?",
+        "type": "short_answer",
+        "answers": [
+            "send(None)",
+            "__next__",
+            "next"
+        ],
+        "isCaseSensitive": false
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "from dataclasses import dataclass, field\n@dataclass(order=True)\nclass Person:\n    sort_index: int = field(init=False, repr=False)\n    name: str = ''\n    def __post_init__(self):\n        self.sort_index = len(self.name)\np1 = Person(name='Alice')\np2 = Person(name='Bob')\nprint(p1 > p2)",
+        "o": [
+            "True",
+            "False",
+            "None",
+            "Error"
+        ]
+    },
+    {
+        "q": "Match the dataclass parameters with their effects:",
+        "type": "match",
+        "left": [
+            "init=False",
+            "repr=False",
+            "order=True",
+            "frozen=True"
+        ],
+        "right": [
+            "Exclude from __init__",
+            "Exclude from __repr__",
+            "Generate comparison methods",
+            "Make instance immutable"
+        ]
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "import asyncio\nasync def main():\n    try:\n        await asyncio.wait_for(asyncio.sleep(1), timeout=0.1)\n    except asyncio.TimeoutError:\n        return 'Timeout'\nprint(asyncio.run(main()))",
+        "o": [
+            "Timeout",
+            "None",
+            "Error",
+            "Done"
+        ]
+    },
+    {
+        "q": "The ______ function sets a time limit on a coroutine and raises TimeoutError if exceeded.",
+        "type": "fill_blank",
+        "answers": [
+            "asyncio.wait_for"
+        ],
+        "other_options": [
+            "asyncio.gather",
+            "asyncio.create_task",
+            "asyncio.ensure_future",
+            "asyncio.run"
+        ]
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "from enum import Enum, auto\nclass Color(Enum):\n    RED = auto()\n    GREEN = auto()\n    BLUE = auto()\nprint(Color.RED.value)",
+        "o": [
+            "1",
+            "0",
+            "RED",
+            "auto"
+        ]
+    },
+    {
+        "q": "Enum members with auto() values start counting from 1 by default.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "class LazyProperty:\n    def __init__(self, func):\n        self.func = func\n    def __get__(self, obj, cls):\n        if obj is None:\n            return self\n        value = self.func(obj)\n        obj.__dict__[self.func.__name__] = value\n        return value\nclass MyClass:\n    @LazyProperty\n    def expensive(self):\n        return sum(range(100))\nobj = MyClass()\nprint(obj.expensive)\nprint(obj.expensive)",
+        "o": [
+            "4950 4950",
+            "4950 None",
+            "None 4950",
+            "Error"
+        ]
+    },
+    {
+        "q": "Which special attribute stores an instance's writable attributes in a dictionary?",
+        "type": "short_answer",
+        "answers": [
+            "__dict__"
+        ],
+        "isCaseSensitive": false
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "import types\ndef gen_func():\n    yield 1\n    yield 2\ncode_obj = gen_func.__code__\nprint(types.CodeType is type(code_obj))",
+        "o": [
+            "True",
+            "False",
+            "None",
+            "Error"
+        ]
+    },
+    {
+        "q": "Match the code object attributes with their descriptions:",
+        "type": "match",
+        "left": [
+            "co_varnames",
+            "co_argcount",
+            "co_consts",
+            "co_code"
+        ],
+        "right": [
+            "Local variable names",
+            "Number of arguments",
+            "Constants in the code",
+            "Compiled bytecode"
+        ]
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "import weakref\nimport gc\nclass C:\n    pass\nobj = C()\nref = weakref.ref(obj, lambda r: print('Collected'))\ndel obj\ngc.collect()\nprint('Done')",
+        "o": [
+            "Collected Done",
+            "Done Collected",
+            "Done",
+            "Collected"
+        ]
+    },
+    {
+        "q": "The ______ argument in weakref.ref allows specifying a callback when the object is garbage collected.",
+        "type": "fill_blank",
+        "answers": [
+            "callback"
+        ],
+        "other_options": [
+            "finalizer",
+            "destructor",
+            "cleanup",
+            "notify"
+        ]
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "import asyncio\nasync def coro():\n    task = asyncio.current_task()\n    return task.get_name()\nprint(asyncio.run(coro()))",
+        "o": [
+            "Task-1",
+            "None",
+            "coro",
+            "Error"
+        ]
+    },
+    {
+        "q": "asyncio.current_task() returns the currently running task in the event loop.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "from abc import ABC, abstractmethod\nclass Base(ABC):\n    @abstractmethod\n    def method(self):\n        pass\nclass Derived(Base):\n    def method(self):\n        return 'Implemented'\nprint(Derived().method())",
+        "o": [
+            "Implemented",
+            "Error",
+            "None",
+            "pass"
+        ]
+    },
+    {
+        "q": "Which decorator marks a method as abstract in an ABC?",
+        "type": "short_answer",
+        "answers": [
+            "@abstractmethod"
+        ],
+        "isCaseSensitive": false
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "from functools import total_ordering\n@total_ordering\nclass Number:\n    def __init__(self, val):\n        self.val = val\n    def __eq__(self, other):\n        return self.val == other.val\n    def __lt__(self, other):\n        return self.val < other.val\na = Number(3)\nb = Number(5)\nprint(a <= b)",
+        "o": [
+            "True",
+            "False",
+            "None",
+            "Error"
+        ]
+    },
+    {
+        "q": "Match the abstract base classes with their purposes:",
+        "type": "match",
+        "left": [
+            "ABC",
+            "Iterable",
+            "Sequence",
+            "Mapping"
+        ],
+        "right": [
+            "Base for all ABCs",
+            "Supports iteration",
+            "Supports indexing and len",
+            "Supports key-value access"
+        ]
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "class C:\n    __slots__ = ['x', 'y']\nc = C()\nc.x = 1\nprint(c.x)",
+        "o": [
+            "1",
+            "Error",
+            "None",
+            "[]"
+        ]
+    },
+    {
+        "q": "The ______ attribute restricts instances to a fixed set of attributes and avoids __dict__.",
+        "type": "fill_blank",
+        "answers": [
+            "__slots__"
+        ],
+        "other_options": [
+            "__dict__",
+            "__attrs__",
+            "__fields__",
+            "__properties__"
+        ]
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "import asyncio\nasync def main():\n    loop = asyncio.get_running_loop()\n    return loop.is_running()\nprint(asyncio.run(main()))",
+        "o": [
+            "True",
+            "False",
+            "None",
+            "Error"
+        ]
+    },
+    {
+        "q": "asyncio.get_running_loop() raises a RuntimeError if no event loop is running.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "from collections import ChainMap\nd1 = {'a': 1}\nd2 = {'a': 2, 'b': 3}\ncm = ChainMap(d1, d2)\nprint(cm['a'], cm['b'])",
+        "o": [
+            "1 3",
+            "2 3",
+            "1 2",
+            "Error"
+        ]
+    },
+    {
+        "q": "Which collections class groups multiple dictionaries for a single view?",
+        "type": "short_answer",
+        "answers": [
+            "ChainMap"
+        ],
+        "isCaseSensitive": false
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "import gc\ngc.set_debug(gc.DEBUG_SAVEALL)\nclass C:\n    pass\nc = C()\ndel c\ngc.collect()\nprint(len(gc.garbage))",
+        "o": [
+            "0",
+            "1",
+            "2",
+            "Error"
+        ]
+    },
+    {
+        "q": "Match the gc debug flags with their effects:",
+        "type": "match",
+        "left": [
+            "DEBUG_STATS",
+            "DEBUG_COLLECTABLE",
+            "DEBUG_UNCOLLECTABLE",
+            "DEBUG_SAVEALL"
+        ],
+        "right": [
+            "Print collection statistics",
+            "Print collectable objects",
+            "Print uncollectable objects",
+            "Save all objects to gc.garbage"
+        ]
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "class Descriptor:\n    def __init__(self):\n        self.data = {}\n    def __get__(self, obj, objtype):\n        return self.data.get(obj, 0)\n    def __set__(self, obj, val):\n        self.data[obj] = val\nclass C:\n    attr = Descriptor()\na = C()\nb = C()\na.attr = 5\nb.attr = 10\nprint(a.attr, b.attr)",
+        "o": [
+            "5 10",
+            "10 10",
+            "5 5",
+            "Error"
+        ]
+    },
+    {
+        "q": "The ______ method enables a descriptor to store per-instance data using the instance as a key.",
+        "type": "fill_blank",
+        "answers": [
+            "__get__"
+        ],
+        "other_options": [
+            "__set__",
+            "__delete__",
+            "__init__",
+            "__set_name__"
+        ]
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "import asyncio\nasync def task(name, event):\n    await event.wait()\n    return name\nasync def main():\n    event = asyncio.Event()\n    t = asyncio.create_task(task('Done', event))\n    event.set()\n    return await t\nprint(asyncio.run(main()))",
+        "o": [
+            "Done",
+            "None",
+            "Error",
+            "Event"
+        ]
+    },
+    {
+        "q": "An asyncio.Event can be set and cleared to signal between coroutines.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "from typing import TypeVar, Generic\nT = TypeVar('T')\nclass Box(Generic[T]):\n    def __init__(self, content: T):\n        self.content = content\nbox = Box[int](42)\nprint(type(box.content))",
+        "o": [
+            "<class 'int'>",
+            "<class 'str'>",
+            "<class 'NoneType'>",
+            "Error"
+        ]
+    },
+    {
+        "q": "Which typing construct defines a generic type variable?",
+        "type": "short_answer",
+        "answers": [
+            "TypeVar"
+        ],
+        "isCaseSensitive": false
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "import sys\ndef trace(frame, event, arg):\n    print(event, end=' ')\n    return trace\nsys.settrace(trace)\nx = 1 + 1\nsys.settrace(None)\nprint('End')",
+        "o": [
+            "call line return End",
+            "End call line return",
+            "call return End",
+            "End"
+        ]
+    },
+    {
+        "q": "Match the sys.settrace events with their meanings:",
+        "type": "match",
+        "left": [
+            "call",
+            "line",
+            "return",
+            "exception"
+        ],
+        "right": [
+            "Function called",
+            "New line executed",
+            "Function returning",
+            "Exception raised"
+        ]
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "from functools import partialmethod\nclass MyClass:\n    def method(self, a, b):\n        return a + b\n    add_five = partialmethod(method, 5)\nprint(MyClass().add_five(3))",
+        "o": [
+            "8",
+            "5",
+            "3",
+            "Error"
+        ]
+    },
+    {
+        "q": "The ______ function is used to create a partial method inside a class definition.",
+        "type": "fill_blank",
+        "answers": [
+            "partialmethod"
+        ],
+        "other_options": [
+            "partial",
+            "wraps",
+            "methodcaller",
+            "singledispatch"
+        ]
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "import asyncio\nasync def main():\n    loop = asyncio.get_running_loop()\n    future = loop.create_future()\n    loop.call_soon(future.set_result, 42)\n    return await future\nprint(asyncio.run(main()))",
+        "o": [
+            "42",
+            "None",
+            "Error",
+            "Future"
+        ]
+    },
+    {
+        "q": "A Future represents a result that will be available at some point in the future.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "import contextvars\nvar = contextvars.ContextVar('var', default='default')\ndef get_var():\n    return var.get()\nctx = contextvars.copy_context()\nctx.run(var.set, 'new')\nprint(get_var())",
+        "o": [
+            "default",
+            "new",
+            "None",
+            "Error"
+        ]
+    },
+    {
+        "q": "Which module provides context variables that work correctly with asynchronous code?",
+        "type": "short_answer",
+        "answers": [
+            "contextvars"
+        ],
+        "isCaseSensitive": false
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "from types import MappingProxyType\nd = {'a': 1}\nproxy = MappingProxyType(d)\nd['a'] = 2\nprint(proxy['a'])",
+        "o": [
+            "2",
+            "1",
+            "Error",
+            "None"
+        ]
+    },
+    {
+        "q": "Match the types module objects with their descriptions:",
+        "type": "match",
+        "left": [
+            "MappingProxyType",
+            "SimpleNamespace",
+            "MethodType",
+            "ModuleType"
+        ],
+        "right": [
+            "Read-only dict view",
+            "Attribute access namespace",
+            "Bound method",
+            "Module object type"
+        ]
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "class Meta(type):\n    def __instancecheck__(cls, instance):\n        return hasattr(instance, 'foo')\nclass MyABC(metaclass=Meta):\n    pass\nclass A:\n    pass\na = A()\na.foo = True\nprint(isinstance(a, MyABC))",
+        "o": [
+            "True",
+            "False",
+            "None",
+            "Error"
+        ]
+    },
+    {
+        "q": "The ______ metaclass method overrides the behavior of the isinstance() check.",
+        "type": "fill_blank",
+        "answers": [
+            "__instancecheck__"
+        ],
+        "other_options": [
+            "__subclasscheck__",
+            "__instanceof__",
+            "__check__",
+            "__verify__"
+        ]
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "import asyncio\nasync def coro():\n    await asyncio.sleep(0)\n    return 'First'\nasync def main():\n    task = asyncio.ensure_future(coro())\n    print(await task)\nasyncio.run(main())",
+        "o": [
+            "First",
+            "None",
+            "Error",
+            "Task"
+        ]
+    },
+    {
+        "q": "asyncio.ensure_future() schedules a coroutine to run as a Task on the event loop.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "import signal\nimport asyncio\nasync def main():\n    return 'Running'\ndef handler(signum, frame):\n    print('Signal')\nsignal.signal(signal.SIGINT, handler)\nprint(asyncio.run(main()))",
+        "o": [
+            "Running",
+            "Signal Running",
+            "Running Signal",
+            "Error"
+        ]
+    },
+    {
+        "q": "Which module allows setting handlers for asynchronous system events like signals?",
+        "type": "short_answer",
+        "answers": [
+            "signal"
+        ],
+        "isCaseSensitive": false
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "class Delegator:\n    def __init__(self, obj):\n        self.obj = obj\n    def __getattr__(self, name):\n        return getattr(self.obj, name)\nclass Target:\n    def greet(self):\n        return 'Hello'\nd = Delegator(Target())\nprint(d.greet())",
+        "o": [
+            "Hello",
+            "None",
+            "Error",
+            "Delegator"
+        ]
+    },
+    {
+        "q": "Match the attribute access methods with their behaviors:",
+        "type": "match",
+        "left": [
+            "__getattr__",
+            "__getattribute__",
+            "__setattr__",
+            "__delattr__"
+        ],
+        "right": [
+            "Called when attribute not found",
+            "Called for every access",
+            "Called on assignment",
+            "Called on deletion"
+        ]
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "from operator import attrgetter\nclass C:\n    def __init__(self, val):\n        self.val = val\nitems = [C(3), C(1), C(2)]\nsorted_items = sorted(items, key=attrgetter('val'))\nprint([i.val for i in sorted_items])",
+        "o": [
+            "[1, 2, 3]",
+            "[3, 1, 2]",
+            "[3, 2, 1]",
+            "[]"
+        ]
+    },
+    {
+        "q": "The ______ function from the operator module retrieves a named attribute from an object.",
+        "type": "fill_blank",
+        "answers": [
+            "attrgetter"
+        ],
+        "other_options": [
+            "itemgetter",
+            "methodcaller",
+            "property",
+            "getattr"
+        ]
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "import dis\ndef f():\n    x = 1\n    return x\ndis.dis(f)",
+        "o": [
+            "Bytecode instructions for f",
+            "1",
+            "None",
+            "Error"
+        ]
+    },
+    {
+        "q": "Which module disassembles Python bytecode into human-readable instructions?",
+        "type": "short_answer",
+        "answers": [
+            "dis"
+        ],
+        "isCaseSensitive": false
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "import sys\na = []\nb = a\nprint(sys.getrefcount(a) - 1)",
+        "o": [
+            "2",
+            "1",
+            "3",
+            "0"
+        ]
+    },
+    {
+        "q": "The ______ module provides access to frame objects and the call stack at runtime.",
+        "type": "fill_blank",
+        "answers": [
+            "inspect"
+        ],
+        "other_options": [
+            "sys",
+            "traceback",
+            "types",
+            "dis"
+        ]
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "import ctypes\nclass PyObject(ctypes.Structure):\n    _fields_ = [('ob_refcnt', ctypes.c_ssize_t),\n                 ('ob_type', ctypes.c_void_p)]\nx = 42\nprint(ctypes.cast(id(x), ctypes.POINTER(PyObject)).contents.ob_refcnt)",
+        "o": [
+            "Reference count of x",
+            "42",
+            "Memory address",
+            "Error"
+        ]
+    },
+    {
+        "q": "Match the inspect functions with what they return:",
+        "type": "match",
+        "left": [
+            "inspect.currentframe()",
+            "inspect.stack()",
+            "inspect.getmembers()",
+            "inspect.signature()"
+        ],
+        "right": [
+            "Current frame object",
+            "List of frame records",
+            "All members of an object",
+            "Function signature"
+        ]
+    },
+    {
+        "q": "The ctypes module allows calling functions in DLLs and shared libraries.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "import sys\nimport types\nmod = types.ModuleType('dynamic')\nmod.attr = 100\nsys.modules['dynamic'] = mod\nimport dynamic\nprint(dynamic.attr)",
+        "o": [
+            "100",
+            "None",
+            "Error",
+            "0"
+        ]
+    },
+    {
+        "q": "Which function dynamically creates a new module object at runtime?",
+        "type": "short_answer",
+        "answers": [
+            "types.ModuleType",
+            "ModuleType"
+        ],
+        "isCaseSensitive": false
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "import ast\ncode = 'x = 1 + 2'\ntree = ast.parse(code)\nprint(type(tree).__name__)",
+        "o": [
+            "Module",
+            "Expression",
+            "FunctionDef",
+            "Assign"
+        ]
+    },
+    {
+        "q": "The ______ module provides tools for working with Python abstract syntax trees.",
+        "type": "fill_blank",
+        "answers": [
+            "ast"
+        ],
+        "other_options": [
+            "parser",
+            "syntax",
+            "compiler",
+            "grammar"
+        ]
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "import sys\nimport gc\ndef make_cycle():\n    a = []\n    b = [a]\n    a.append(b)\ngc.collect()\nbefore = len(gc.garbage)\nmake_cycle()\ngc.collect()\nprint(len(gc.garbage) - before)",
+        "o": [
+            "0",
+            "1",
+            "2",
+            "3"
+        ]
+    },
+    {
+        "q": "Python's garbage collector can detect and collect reference cycles automatically.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "import weakref\nclass C:\n    pass\nc = C()\nw = weakref.proxy(c)\nprint(type(w).__name__)",
+        "o": [
+            "CallableProxyType",
+            "ReferenceType",
+            "proxy",
+            "C"
+        ]
+    },
+    {
+        "q": "Match the weakref types with their behaviors:",
+        "type": "match",
+        "left": [
+            "weakref.ref",
+            "weakref.proxy",
+            "weakref.WeakSet",
+            "weakref.WeakKeyDictionary"
+        ],
+        "right": [
+            "Callable reference",
+            "Transparent proxy",
+            "Set of weak references",
+            "Dict with weak keys"
+        ]
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "from contextlib import contextmanager, ExitStack\n@contextmanager\ndef cm1():\n    print('A', end='')\n    yield\n    print('B', end='')\n@contextmanager\ndef cm2():\n    print('C', end='')\n    yield\n    print('D', end='')\nwith ExitStack() as stack:\n    stack.enter_context(cm1())\n    stack.enter_context(cm2())\n    print('X', end='')",
+        "o": [
+            "ACXBD",
+            "CAXDB",
+            "AXCBD",
+            "ACBXD"
+        ]
+    },
+    {
+        "q": "Which ExitStack method adds a context manager to the stack?",
+        "type": "short_answer",
+        "answers": [
+            "enter_context"
+        ],
+        "isCaseSensitive": false
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "import asyncio\nasync def gen():\n    for i in range(3):\n        yield i\n        await asyncio.sleep(0)\nasync def main():\n    result = []\n    async for val in gen():\n        result.append(val)\n    return result\nprint(asyncio.run(main()))",
+        "o": [
+            "[0, 1, 2]",
+            "[0, 1]",
+            "[1, 2]",
+            "[]"
+        ]
+    },
+    {
+        "q": "An ______ generator allows the use of await inside the generator function body.",
+        "type": "fill_blank",
+        "answers": [
+            "asynchronous"
+        ],
+        "other_options": [
+            "iterator",
+            "coroutine",
+            "context",
+            "event"
+        ]
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "from typing import Literal, get_args\nMode = Literal['r', 'w', 'a']\nprint(get_args(Mode))",
+        "o": [
+            "('r', 'w', 'a')",
+            "['r', 'w', 'a']",
+            "('r', 'w', 'a',)",
+            "Literal"
+        ]
+    },
+    {
+        "q": "Literal types restrict values to a specific set of string or integer literals.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "from functools import cache\nimport time\n@cache\ndef slow(x):\n    time.sleep(0)\n    return x * 2\nprint(slow(5), slow(5))",
+        "o": [
+            "10 10",
+            "10 5",
+            "5 10",
+            "Error"
+        ]
+    },
+    {
+        "q": "Match the functools caching decorators with their features:",
+        "type": "match",
+        "left": [
+            "@cache",
+            "@lru_cache",
+            "@cached_property"
+        ],
+        "right": [
+            "Unbounded simple cache",
+            "Least-recently-used cache with maxsize",
+            "Compute attribute once per instance"
+        ]
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "from dataclasses import dataclass, field\nfrom typing import ClassVar\n@dataclass\nclass C:\n    count: ClassVar[int] = 0\n    name: str = ''\n    def __post_init__(self):\n        C.count += 1\nc1 = C('a')\nc2 = C('b')\nprint(C.count)",
+        "o": [
+            "2",
+            "0",
+            "1",
+            "Error"
+        ]
+    },
+    {
+        "q": "Which type annotation marks a variable as a class variable in a dataclass?",
+        "type": "short_answer",
+        "answers": [
+            "ClassVar"
+        ],
+        "isCaseSensitive": false
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "import asyncio\nasync def main():\n    loop = asyncio.get_running_loop()\n    data = await loop.run_in_executor(None, sum, range(5))\n    return data\nprint(asyncio.run(main()))",
+        "o": [
+            "10",
+            "15",
+            "0",
+            "Error"
+        ]
+    },
+    {
+        "q": "The ______ method runs a synchronous function in a thread or process pool from async code.",
+        "type": "fill_blank",
+        "answers": [
+            "loop.run_in_executor"
+        ],
+        "other_options": [
+            "asyncio.to_thread",
+            "asyncio.create_task",
+            "asyncio.ensure_future",
+            "asyncio.gather"
+        ]
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "class Meta(type):\n    def __call__(cls, *args, **kwargs):\n        instance = super().__call__(*args, **kwargs)\n        instance._created = True\n        return instance\nclass C(metaclass=Meta):\n    pass\nc = C()\nprint(c._created)",
+        "o": [
+            "True",
+            "False",
+            "None",
+            "Error"
+        ]
+    },
+    {
+        "q": "Overriding __call__ in a metaclass controls instance creation behavior.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "import sys\nimport linecache\nlinecache.cache['test.py'] = (0, None, ['line1', 'line2'], 'test.py')\nprint(linecache.getline('test.py', 2))",
+        "o": [
+            "line2",
+            "line1",
+            "None",
+            "Error"
+        ]
+    },
+    {
+        "q": "Match the linecache functions with their purposes:",
+        "type": "match",
+        "left": [
+            "linecache.getline()",
+            "linecache.clearcache()",
+            "linecache.checkcache()"
+        ],
+        "right": [
+            "Get single line from file",
+            "Clear entire cache",
+            "Remove stale entries"
+        ]
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "import tokenize\nimport io\ncode = 'x = 1'\ntokens = list(tokenize.generate_tokens(io.StringIO(code).readline))\nprint(tokens[0].type)",
+        "o": [
+            "1",
+            "NAME",
+            "ENCODING",
+            "tokenize"
+        ]
+    },
+    {
+        "q": "Which module provides a lexical scanner for Python source code?",
+        "type": "short_answer",
+        "answers": [
+            "tokenize"
+        ],
+        "isCaseSensitive": false
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "import sys\nimport traceback\ntry:\n    1/0\nexcept:\n    exc_type, exc_val, exc_tb = sys.exc_info()\n    print(type(exc_val).__name__)",
+        "o": [
+            "ZeroDivisionError",
+            "TypeError",
+            "Exception",
+            "None"
+        ]
+    },
+    {
+        "q": "The ______ function returns exception information for the currently handled exception.",
+        "type": "fill_blank",
+        "answers": [
+            "sys.exc_info"
+        ],
+        "other_options": [
+            "traceback.print_exc",
+            "sys.last_exc",
+            "sys.excepthook",
+            "sys.gettrace"
+        ]
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "class Final(type):\n    def __new__(cls, name, bases, dct):\n        for b in bases:\n            if isinstance(b, Final):\n                raise TypeError('Cannot subclass')\n        return super().__new__(cls, name, bases, dct)\nclass A(metaclass=Final):\n    pass\ntry:\n    class B(A):\n        pass\nexcept TypeError:\n    print('Blocked')",
+        "o": [
+            "Blocked",
+            "Error",
+            "None",
+            "B"
+        ]
+    },
+    {
+        "q": "A metaclass can prevent further subclassing by checking bases during __new__.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "import asyncio\nfrom asyncio import Task\nasync def main():\n    t = asyncio.current_task()\n    return isinstance(t, Task)\nprint(asyncio.run(main()))",
+        "o": [
+            "True",
+            "False",
+            "None",
+            "Error"
+        ]
+    },
+    {
+        "q": "Which class does asyncio.current_task() return an instance of?",
+        "type": "short_answer",
+        "answers": [
+            "Task",
+            "asyncio.Task"
+        ],
+        "isCaseSensitive": false
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "from collections.abc import Callable\nfrom typing import get_type_hints\ndef f(x: int) -> str:\n    return str(x)\nhints = get_type_hints(f)\nprint(hints['return'].__name__)",
+        "o": [
+            "str",
+            "int",
+            "return",
+            "None"
+        ]
+    },
+    {
+        "q": "Match the typing introspection functions with their uses:",
+        "type": "match",
+        "left": [
+            "get_type_hints()",
+            "get_args()",
+            "get_origin()",
+            "get_protocol_members()"
+        ],
+        "right": [
+            "Get function annotations",
+            "Get type arguments",
+            "Get base generic type",
+            "Get protocol member names"
+        ]
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "import pdb\nimport sys\nimport io\nstdout = io.StringIO()\nsys.stdout = stdout\npdb.set_trace()\nsys.stdout = sys.__stdout__\nprint('Restored')",
+        "o": [
+            "Restored",
+            "Error",
+            "Pdb output",
+            "None"
+        ]
+    },
+    {
+        "q": "The ______ module provides an interactive source code debugger for Python programs.",
+        "type": "fill_blank",
+        "answers": [
+            "pdb"
+        ],
+        "other_options": [
+            "debug",
+            "trace",
+            "profile",
+            "inspect"
+        ]
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "import sys\nimport types\ncode = compile('x + y', '<string>', 'eval')\nns = {'x': 10, 'y': 20}\nprint(eval(code, ns))",
+        "o": [
+            "30",
+            "10",
+            "20",
+            "Error"
+        ]
+    },
+    {
+        "q": "The compile() function compiles source code into a code object that can be executed.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "import asyncio\nasync def coro(n):\n    await asyncio.sleep(0)\n    return n\nasync def main():\n    tasks = [asyncio.create_task(coro(i)) for i in range(3)]\n    done, pending = await asyncio.wait(tasks, timeout=0)\n    return len(done), len(pending)\nprint(asyncio.run(main()))",
+        "o": [
+            "(0, 3)",
+            "(3, 0)",
+            "(1, 2)",
+            "Error"
+        ]
+    },
+    {
+        "q": "Which asyncio function waits for multiple tasks with an optional timeout?",
+        "type": "short_answer",
+        "answers": [
+            "asyncio.wait"
+        ],
+        "isCaseSensitive": false
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "from functools import wraps\ndef decorator(f):\n    @wraps(f)\n    def wrapper(*args, **kwargs):\n        return f(*args, **kwargs)\n    return wrapper\n@decorator\ndef greet():\n    'Say hello'\n    pass\nprint(greet.__name__, greet.__doc__)",
+        "o": [
+            "greet Say hello",
+            "wrapper None",
+            "greet None",
+            "wrapper Say hello"
+        ]
+    },
+    {
+        "q": "Match the introspection attributes with what they store:",
+        "type": "match",
+        "left": [
+            "__name__",
+            "__doc__",
+            "__module__",
+            "__qualname__"
+        ],
+        "right": [
+            "Function name",
+            "Documentation string",
+            "Module where defined",
+            "Qualified name with class"
+        ]
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "import sys\nimport types\nbuiltins = types.SimpleNamespace()\nbuiltins.print = print\nsys.modules['builtins'] = builtins\nimport builtins\nbuiltins.print('Test')",
+        "o": [
+            "Test",
+            "Error",
+            "None",
+            "builtins"
+        ]
+    },
+    {
+        "q": "The ______ class provides a simple way to create objects with attribute access.",
+        "type": "fill_blank",
+        "answers": [
+            "SimpleNamespace"
+        ],
+        "other_options": [
+            "namedtuple",
+            "dataclass",
+            "Namespace",
+            "struct"
+        ]
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "import asyncio\nasync def main():\n    try:\n        async with asyncio.timeout(0.1):\n            await asyncio.sleep(1)\n    except TimeoutError:\n        return 'Timeout'\nprint(asyncio.run(main()))",
+        "o": [
+            "Timeout",
+            "None",
+            "Error",
+            "Done"
+        ]
+    },
+    {
+        "q": "The asyncio.timeout() context manager cancels the enclosed coroutine if it takes too long.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "class SlotMeta(type):\n    def __new__(cls, name, bases, dct):\n        if '__slots__' not in dct:\n            dct['__slots__'] = ()\n        return super().__new__(cls, name, bases, dct)\nclass Base(metaclass=SlotMeta):\n    pass\nclass Derived(Base):\n    pass\nprint(Derived.__slots__)",
+        "o": [
+            "()",
+            "None",
+            "Error",
+            "[]"
+        ]
+    },
+    {
+        "q": "Which special attribute of a class defines the allowed instance attributes for memory optimization?",
+        "type": "short_answer",
+        "answers": [
+            "__slots__"
+        ],
+        "isCaseSensitive": false
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "import importlib\nimport sys\nspec = importlib.util.spec_from_loader('dummy', loader=None)\nmod = importlib.util.module_from_spec(spec)\nsys.modules['dummy'] = mod\nimport dummy\nprint(type(dummy).__name__)",
+        "o": [
+            "ModuleType",
+            "module",
+            "None",
+            "Error"
+        ]
+    },
+    {
+        "q": "Match the importlib functions with their purposes:",
+        "type": "match",
+        "left": [
+            "import_module()",
+            "reload()",
+            "spec_from_loader()",
+            "module_from_spec()"
+        ],
+        "right": [
+            "Import by name",
+            "Reload a module",
+            "Create module spec",
+            "Create module from spec"
+        ]
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "import sys\nimport types\nframe = sys._getframe()\nprint(type(frame).__name__)",
+        "o": [
+            "FrameType",
+            "frame",
+            "None",
+            "Error"
+        ]
+    },
+    {
+        "q": "The ______ function returns the current frame object for introspection.",
+        "type": "fill_blank",
+        "answers": [
+            "sys._getframe"
+        ],
+        "other_options": [
+            "sys.getframe",
+            "inspect.currentframe",
+            "traceback.extract_stack",
+            "sys.frame"
+        ]
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "import asyncio\nasync def producer(queue):\n    for i in range(3):\n        await queue.put(i)\nasync def consumer(queue):\n    result = []\n    while not queue.empty():\n        result.append(await queue.get())\n    return result\nasync def main():\n    q = asyncio.Queue()\n    await producer(q)\n    return await consumer(q)\nprint(asyncio.run(main()))",
+        "o": [
+            "[0, 1, 2]",
+            "[]",
+            "[0]",
+            "Error"
+        ]
+    },
+    {
+        "q": "asyncio.Queue is not thread-safe and is designed for use within a single event loop.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "import gc\ngc.set_threshold(700, 10, 10)\nprint(gc.get_threshold())",
+        "o": [
+            "(700, 10, 10)",
+            "(700, 10, 10, 0)",
+            "700 10 10",
+            "Error"
+        ]
+    },
+    {
+        "q": "Which function sets the garbage collection thresholds for generations?",
+        "type": "short_answer",
+        "answers": [
+            "gc.set_threshold"
+        ],
+        "isCaseSensitive": false
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "class Validate(type):\n    def __new__(cls, name, bases, dct):\n        for key, value in dct.items():\n            if callable(value) and not key.startswith('_'):\n                if not value.__doc__:\n                    raise TypeError(f'{key} missing docstring')\n        return super().__new__(cls, name, bases, dct)\nclass C(metaclass=Validate):\n    def method(self):\n        'Has docstring'\n        pass\nprint('OK')",
+        "o": [
+            "OK",
+            "TypeError",
+            "None",
+            "Error"
+        ]
+    },
+    {
+        "q": "Match the metaclass hooks with their trigger points:",
+        "type": "match",
+        "left": [
+            "__new__",
+            "__init__",
+            "__call__",
+            "__prepare__"
+        ],
+        "right": [
+            "Before class creation",
+            "After class creation",
+            "On instance creation",
+            "Before namespace creation"
+        ]
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "import asyncio\nasync def gen():\n    for i in range(3):\n        await asyncio.sleep(0)\n        yield i\nasync def main():\n    return [val async for val in gen()]\nprint(asyncio.run(main()))",
+        "o": [
+            "[0, 1, 2]",
+            "[]",
+            "[0]",
+            "Error"
+        ]
+    },
+    {
+        "q": "The ______ comprehension syntax allows iterating over an asynchronous generator in a list.",
+        "type": "fill_blank",
+        "answers": [
+            "async for"
+        ],
+        "other_options": [
+            "await for",
+            "async yield",
+            "async with",
+            "await list"
+        ]
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "import atexit\ndef cleanup():\n    print('Cleanup', end='')\natexit.register(cleanup)\nprint('Main', end='')",
+        "o": [
+            "MainCleanup",
+            "CleanupMain",
+            "Main",
+            "Cleanup"
+        ]
+    },
+    {
+        "q": "atexit handlers run in LIFO order when the interpreter exits normally.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "import warnings\nwarnings.filterwarnings('error')\ntry:\n    warnings.warn('Test warning')\nexcept UserWarning:\n    print('Caught')",
+        "o": [
+            "Caught",
+            "Test warning",
+            "None",
+            "Error"
+        ]
+    },
+    {
+        "q": "Which function issues a warning that can be filtered or turned into an exception?",
+        "type": "short_answer",
+        "answers": [
+            "warnings.warn"
+        ],
+        "isCaseSensitive": false
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "class SingletonMeta(type):\n    _instances = {}\n    def __call__(cls, *args, **kwargs):\n        if cls not in cls._instances:\n            cls._instances[cls] = super().__call__(*args, **kwargs)\n        return cls._instances[cls]\nclass C(metaclass=SingletonMeta):\n    def __init__(self):\n        self.val = 0\nc1 = C()\nc1.val = 42\nc2 = C()\nprint(c2.val)",
+        "o": [
+            "42",
+            "0",
+            "None",
+            "Error"
+        ]
+    },
+    {
+        "q": "Match the design patterns with their Python implementations:",
+        "type": "match",
+        "left": [
+            "Singleton",
+            "Observer",
+            "Factory",
+            "Decorator"
+        ],
+        "right": [
+            "Metaclass with __call__",
+            "Event with callbacks",
+            "Function returning class",
+            "Wrapper function"
+        ]
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "import asyncio\nasync def main():\n    loop = asyncio.get_running_loop()\n    fut = loop.create_future()\n    loop.call_later(0.1, fut.set_result, 'Delayed')\n    return await fut\nprint(asyncio.run(main()))",
+        "o": [
+            "Delayed",
+            "None",
+            "Error",
+            "0.1"
+        ]
+    },
+    {
+        "q": "The ______ method schedules a callback to be called after a specified delay in seconds.",
+        "type": "fill_blank",
+        "answers": [
+            "loop.call_later"
+        ],
+        "other_options": [
+            "loop.call_soon",
+            "loop.call_at",
+            "loop.run_in_executor",
+            "loop.create_task"
+        ]
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "import sys\nimport types\ncode_obj = compile('a, b', '<string>', 'eval')\nprint(code_obj.co_names)",
+        "o": [
+            "('a', 'b')",
+            "['a', 'b']",
+            "a b",
+            "Error"
+        ]
+    },
+    {
+        "q": "The co_names attribute of a code object contains the names used in the bytecode.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "import struct\npacked = struct.pack('i', 42)\nprint(struct.unpack('i', packed)[0])",
+        "o": [
+            "42",
+            "b'*\\x00\\x00\\x00'",
+            "4",
+            "Error"
+        ]
+    },
+    {
+        "q": "Which module performs conversions between Python values and C structs?",
+        "type": "short_answer",
+        "answers": [
+            "struct"
+        ],
+        "isCaseSensitive": false
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "import asyncio\nclass AsyncIter:\n    def __init__(self):\n        self.n = 0\n    def __aiter__(self):\n        return self\n    async def __anext__(self):\n        if self.n >= 2:\n            raise StopAsyncIteration\n        self.n += 1\n        return self.n\nasync def main():\n    return [val async for val in AsyncIter()]\nprint(asyncio.run(main()))",
+        "o": [
+            "[1, 2]",
+            "[0, 1]",
+            "[1]",
+            "[]"
+        ]
+    },
+    {
+        "q": "Match the async iteration methods with their roles:",
+        "type": "match",
+        "left": [
+            "__aiter__",
+            "__anext__",
+            "StopAsyncIteration",
+            "async for"
+        ],
+        "right": [
+            "Returns async iterator",
+            "Returns next awaitable",
+            "Signals end of iteration",
+            "Consumes async iterator"
+        ]
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "import sys\nimport ctypes\npy_obj = ctypes.py_object(42)\nprint(py_obj.value)",
+        "o": [
+            "42",
+            "py_object",
+            "None",
+            "Error"
+        ]
+    },
+    {
+        "q": "The ______ ctypes type represents a PyObject pointer for working with Python objects.",
+        "type": "fill_blank",
+        "answers": [
+            "py_object"
+        ],
+        "other_options": [
+            "c_void_p",
+            "c_char_p",
+            "POINTER",
+            "Structure"
+        ]
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "import tracemalloc\ntracemalloc.start()\nx = [1, 2, 3]\nsnapshot = tracemalloc.take_snapshot()\nstats = snapshot.statistics('lineno')\nprint(len(stats) > 0)",
+        "o": [
+            "True",
+            "False",
+            "None",
+            "Error"
+        ]
+    },
+    {
+        "q": "The tracemalloc module is used to trace memory allocations in Python programs.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "import asyncio\nasync def main():\n    loop = asyncio.get_running_loop()\n    reader, writer = await asyncio.open_connection('localhost', 8889)\n    writer.close()\n    await writer.wait_closed()\n    return 'Connected'\ntry:\n    print(asyncio.run(main()))\nexcept ConnectionRefusedError:\n    print('Refused')",
+        "o": [
+            "Refused",
+            "Connected",
+            "None",
+            "Error"
+        ]
+    },
+    {
+        "q": "Which function opens a TCP connection for streaming data in asyncio?",
+        "type": "short_answer",
+        "answers": [
+            "asyncio.open_connection"
+        ],
+        "isCaseSensitive": false
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "import threading\nlock = threading.Lock()\nprint(lock.acquire(blocking=False))\nprint(lock.acquire(timeout=0.1))",
+        "o": [
+            "True False",
+            "True True",
+            "False False",
+            "Error"
+        ]
+    },
+    {
+        "q": "Match the threading primitives with their characteristics:",
+        "type": "match",
+        "left": [
+            "Lock",
+            "RLock",
+            "Semaphore",
+            "Event"
+        ],
+        "right": [
+            "Basic mutual exclusion",
+            "Reentrant lock",
+            "Counter-based lock",
+            "Signal between threads"
+        ]
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "class AutoRepr(type):\n    def __new__(cls, name, bases, dct):\n        dct['__repr__'] = lambda self: f'{name}()'\n        return super().__new__(cls, name, bases, dct)\nclass C(metaclass=AutoRepr):\n    pass\nprint(repr(C()))",
+        "o": [
+            "C()",
+            "AutoRepr()",
+            "None",
+            "Error"
+        ]
+    },
+    {
+        "q": "The ______ special method should return a string representation of an object for debugging.",
+        "type": "fill_blank",
+        "answers": [
+            "__repr__"
+        ],
+        "other_options": [
+            "__str__",
+            "__format__",
+            "__bytes__",
+            "__fspath__"
+        ]
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "import asyncio\nasync def main():\n    task = asyncio.create_task(asyncio.sleep(1))\n    task.cancel()\n    try:\n        await task\n    except asyncio.CancelledError:\n        return 'Cancelled'\nprint(asyncio.run(main()))",
+        "o": [
+            "Cancelled",
+            "None",
+            "Error",
+            "Done"
+        ]
+    },
+    {
+        "q": "Calling task.cancel() raises CancelledError at the next await point of the coroutine.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "from typing import overload\n@overload\ndef process(x: int) -> str: ...\n@overload\ndef process(x: str) -> int: ...\ndef process(x):\n    return str(x) if isinstance(x, int) else len(x)\nprint(process(42))",
+        "o": [
+            "42",
+            "2",
+            "None",
+            "Error"
+        ]
+    },
+    {
+        "q": "Which decorator marks a function as having multiple type signatures for static checkers?",
+        "type": "short_answer",
+        "answers": [
+            "@overload"
+        ],
+        "isCaseSensitive": false
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "import sys\nimport dis\ndef func():\n    for i in range(3):\n        yield i\ngen = func()\ndis.dis(gen.gi_code)",
+        "o": [
+            "Bytecode of generator",
+            "3",
+            "None",
+            "Error"
+        ]
+    },
+    {
+        "q": "Match the generator attributes with their contents:",
+        "type": "match",
+        "left": [
+            "gi_code",
+            "gi_frame",
+            "gi_running",
+            "gi_yieldfrom"
+        ],
+        "right": [
+            "Code object",
+            "Current frame",
+            "Execution status",
+            "Sub-iterator being delegated to"
+        ]
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "import asyncio\nasync def coro():\n    await asyncio.sleep(0)\n    return 42\nasync def main():\n    t = asyncio.create_task(coro())\n    await asyncio.sleep(0.1)\n    return t.result()\nprint(asyncio.run(main()))",
+        "o": [
+            "42",
+            "None",
+            "Error",
+            "Task"
+        ]
+    },
+    {
+        "q": "The ______ method returns the result of a completed Task, raising an exception if it failed.",
+        "type": "fill_blank",
+        "answers": [
+            "task.result"
+        ],
+        "other_options": [
+            "task.done",
+            "task.exception",
+            "task.cancel",
+            "task.get"
+        ]
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "class Hooked(type):\n    def __init__(cls, name, bases, dct):\n        super().__init__(name, bases, dct)\n        original = cls.__init__\n        def new_init(self, *args, **kwargs):\n            print('Init', end='')\n            original(self, *args, **kwargs)\n        cls.__init__ = new_init\nclass C(metaclass=Hooked):\n    pass\nc = C()",
+        "o": [
+            "Init",
+            "None",
+            "Error",
+            ""
+        ]
+    },
+    {
+        "q": "A metaclass __init__ is called after the class body executes, allowing modification of class attributes.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "import pickle\nclass C:\n    def __reduce__(self):\n        return (C, ())\nimport io\nbuf = io.BytesIO()\npickle.dump(C(), buf)\nbuf.seek(0)\nprint(type(pickle.load(buf)).__name__)",
+        "o": [
+            "C",
+            "object",
+            "None",
+            "Error"
+        ]
+    },
+    {
+        "q": "Which special method controls how an object is pickled and unpickled?",
+        "type": "short_answer",
+        "answers": [
+            "__reduce__"
+        ],
+        "isCaseSensitive": false
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "import asyncio\nasync def main():\n    async with asyncio.TaskGroup() as tg:\n        t1 = tg.create_task(asyncio.sleep(0))\n        t2 = tg.create_task(asyncio.sleep(0))\n    return 'Done'\nprint(asyncio.run(main()))",
+        "o": [
+            "Done",
+            "None",
+            "Error",
+            "TaskGroup"
+        ]
+    },
+    {
+        "q": "Match the asyncio task management utilities with their functions:",
+        "type": "match",
+        "left": [
+            "TaskGroup",
+            "as_completed()",
+            "wait_for()",
+            "shield()"
+        ],
+        "right": [
+            "Manage multiple tasks as group",
+            "Yield tasks as they complete",
+            "Set timeout on coroutine",
+            "Prevent cancellation"
+        ]
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "import sys\nimport pprint\npprint.pprint(sys.meta_path)",
+        "o": [
+            "List of meta path finders",
+            "Empty list",
+            "None",
+            "Error"
+        ]
+    },
+    {
+        "q": "The ______ list contains finder objects consulted by the import system before other finders.",
+        "type": "fill_blank",
+        "answers": [
+            "sys.meta_path"
+        ],
+        "other_options": [
+            "sys.path_hooks",
+            "sys.path",
+            "sys.modules",
+            "sys.importers"
+        ]
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "import asyncio\nimport time\nasync def main():\n    t0 = time.perf_counter()\n    await asyncio.sleep(0.1)\n    t1 = time.perf_counter()\n    return t1 - t0 >= 0.1\nprint(asyncio.run(main()))",
+        "o": [
+            "True",
+            "False",
+            "None",
+            "Error"
+        ]
+    },
+    {
+        "q": "asyncio.sleep() suspends the current task for at least the specified duration.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "import abc\nimport inspect\nclass MyABC(abc.ABC):\n    @abc.abstractmethod\n    def method(self):\n        pass\nprint(inspect.isabstract(MyABC))",
+        "o": [
+            "True",
+            "False",
+            "None",
+            "Error"
+        ]
+    },
+    {
+        "q": "Which inspect function checks if a class has any abstract methods?",
+        "type": "short_answer",
+        "answers": [
+            "inspect.isabstract"
+        ],
+        "isCaseSensitive": false
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "import threading\nimport time\nresults = []\ndef worker():\n    time.sleep(0.1)\n    results.append(1)\nthread = threading.Thread(target=worker)\nthread.start()\nthread.join()\nprint(len(results))",
+        "o": [
+            "1",
+            "0",
+            "2",
+            "Error"
+        ]
+    },
+    {
+        "q": "Match the threading methods with their descriptions:",
+        "type": "match",
+        "left": [
+            "start()",
+            "join()",
+            "is_alive()",
+            "daemon"
+        ],
+        "right": [
+            "Begin thread activity",
+            "Wait for thread completion",
+            "Check if running",
+            "Background thread flag"
+        ]
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "import asyncio\nasync def gen():\n    for i in range(2):\n        await asyncio.sleep(0)\n        yield i\nasync def main():\n    result = []\n    async for val in gen():\n        if val == 0:\n            continue\n        result.append(val)\n    return result\nprint(asyncio.run(main()))",
+        "o": [
+            "[1]",
+            "[0, 1]",
+            "[0]",
+            "[]"
+        ]
+    },
+    {
+        "q": "The ______ statement can be used inside an async for loop to skip items based on a condition.",
+        "type": "fill_blank",
+        "answers": [
+            "continue"
+        ],
+        "other_options": [
+            "break",
+            "pass",
+            "skip",
+            "next"
+        ]
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "import sys\nimport types\nclosure = None\ndef make_func():\n    x = 10\n    def inner():\n        return x\n    return inner\nf = make_func()\nprint(hasattr(f, '__closure__') and f.__closure__ is not None)",
+        "o": [
+            "True",
+            "False",
+            "None",
+            "Error"
+        ]
+    },
+    {
+        "q": "A closure occurs when a nested function references variables from its enclosing scope.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "import asyncio\nasync def main():\n    data = [i async for i in asyncio.sleep(0) or range(3) if True]\n    return data\nprint(asyncio.run(main()))",
+        "o": [
+            "TypeError",
+            "[0, 1, 2]",
+            "[]",
+            "Error"
+        ]
+    },
+    {
+        "q": "Which type hint represents a coroutine that returns a specific type?",
+        "type": "short_answer",
+        "answers": [
+            "Coroutine",
+            "Awaitable"
+        ],
+        "isCaseSensitive": false
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "import sys\nimport traceback\ndef excepthook(type, value, tb):\n    print('Custom', end='')\nsys.excepthook = excepthook\nraise ValueError",
+        "o": [
+            "Custom",
+            "ValueError",
+            "None",
+            "Error"
+        ]
+    },
+    {
+        "q": "Match the sys functions with their purposes:",
+        "type": "match",
+        "left": [
+            "sys.excepthook",
+            "sys.settrace",
+            "sys.setprofile",
+            "sys.addaudithook"
+        ],
+        "right": [
+            "Handle uncaught exceptions",
+            "Set trace function",
+            "Set profile function",
+            "Add audit event hook"
+        ]
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "import weakref\nimport gc\nclass C:\n    pass\nc = C()\nw = weakref.ref(c)\ngc.collect()\nprint(w() is None)",
+        "o": [
+            "False",
+            "True",
+            "None",
+            "Error"
+        ]
+    },
+    {
+        "q": "The ______ module can create finalizers that run cleanup code when an object is garbage collected.",
+        "type": "fill_blank",
+        "answers": [
+            "weakref"
+        ],
+        "other_options": [
+            "gc",
+            "atexit",
+            "finalize",
+            "cleanup"
+        ]
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "import asyncio\nasync def main():\n    condition = asyncio.Condition()\n    async with condition:\n        condition.notify_all()\n    return 'Done'\nprint(asyncio.run(main()))",
+        "o": [
+            "Done",
+            "None",
+            "Error",
+            "Condition"
+        ]
+    },
+    {
+        "q": "asyncio.Condition allows coroutines to wait until notified by other coroutines.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "class DefaultSlots(type):\n    def __new__(cls, name, bases, dct):\n        if '__slots__' not in dct and '__dict__' not in dct:\n            dct['__slots__'] = ('__weakref__',)\n        return super().__new__(cls, name, bases, dct)\nclass C(metaclass=DefaultSlots):\n    pass\nc = C()\ntry:\n    c.new_attr = 1\nexcept AttributeError:\n    print('Blocked')",
+        "o": [
+            "Blocked",
+            "1",
+            "None",
+            "Error"
+        ]
+    },
+    {
+        "q": "Which special attribute, when present, prevents adding arbitrary attributes to instances?",
+        "type": "short_answer",
+        "answers": [
+            "__slots__"
+        ],
+        "isCaseSensitive": false
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "import asyncio\nasync def main():\n    async def nested():\n        await asyncio.sleep(0)\n        return 10\n    return await nested()\nprint(asyncio.run(main()))",
+        "o": [
+            "10",
+            "None",
+            "Error",
+            "nested"
+        ]
+    },
+    {
+        "q": "Match the coroutine lifecycle states with their descriptions:",
+        "type": "match",
+        "left": [
+            "CORO_CREATED",
+            "CORO_RUNNING",
+            "CORO_SUSPENDED",
+            "CORO_CLOSED"
+        ],
+        "right": [
+            "Just created",
+            "Currently executing",
+            "Awaiting something",
+            "Finished execution"
+        ]
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "import sys\nimport ast\ncode = 'lambda x: x + 1'\ntree = ast.parse(code, mode='eval')\nprint(type(tree.body).__name__)",
+        "o": [
+            "Lambda",
+            "Expression",
+            "Module",
+            "FunctionDef"
+        ]
+    },
+    {
+        "q": "The ______ function parses Python source code and returns an AST object.",
+        "type": "fill_blank",
+        "answers": [
+            "ast.parse"
+        ],
+        "other_options": [
+            "ast.compile",
+            "ast.eval",
+            "ast.dump",
+            "ast.walk"
+        ]
+    }
+]
