@@ -1,5 +1,13 @@
 [
     {
+        "q": "How many times will this loop run?",
+        "c": "for i in range(5):\n    print(i)",
+        "type": "slider",
+        "min": 0,
+        "max": 10,
+        "correct": 5
+    },
+    {
         "q": "What is the output of this code?",
         "type": "mcq",
         "c": "if True:\n    print('Hello')",
@@ -43,6 +51,17 @@
         ]
     },
     {
+        "q": "Which of these is NOT a flow control keyword?",
+        "type": "odd_one_out",
+        "options": [
+            "if",
+            "elif",
+            "for",
+            "def"
+        ],
+        "correct": "def"
+    },
+    {
         "q": "The else block in an if statement is mandatory.",
         "type": "true_false",
         "correct": "False"
@@ -77,6 +96,15 @@
             "continue"
         ],
         "isCaseSensitive": false
+    },
+    {
+        "q": "Match the loop control keyword to its action.",
+        "type": "memory",
+        "pairs": {
+            "break": "Exits the loop entirely",
+            "continue": "Skips to next iteration",
+            "pass": "Does nothing"
+        }
     },
     {
         "q": "An if statement can be used without an else block in Python.",
@@ -219,6 +247,18 @@
         "correct": "True"
     },
     {
+        "q": "Swipe RIGHT for loops, LEFT for conditional statements.",
+        "type": "swipe_cards",
+        "left_label": "Conditionals",
+        "right_label": "Loops",
+        "cards": {
+            "if": "left",
+            "for": "right",
+            "while": "right",
+            "elif": "left"
+        }
+    },
+    {
         "q": "Which keyword starts an alternative condition in an if statement?",
         "type": "short_answer",
         "answers": [
@@ -251,6 +291,35 @@
             "Not equal to",
             "Greater than",
             "Less than or equal to"
+        ]
+    },
+    {
+        "q": "What keyword starts an indefinite loop?",
+        "type": "word_scramble",
+        "answer": "WHILE",
+        "decoys": "ZQX"
+    },
+    {
+        "q": "Complete the basic conditional syntax:",
+        "type": "inline_dropdown",
+        "text": "[0] condition:\n    print('True')\n[1]:\n    print('False')",
+        "dropdowns": [
+            {
+                "correct": "if",
+                "options": [
+                    "if",
+                    "when",
+                    "for"
+                ]
+            },
+            {
+                "correct": "else",
+                "options": [
+                    "else",
+                    "otherwise",
+                    "then"
+                ]
+            }
         ]
     },
     {
@@ -310,6 +379,14 @@
             "range"
         ],
         "isCaseSensitive": false
+    },
+    {
+        "q": "What is the final value of x?",
+        "c": "x = 0\nwhile x < 3:\n    x += 1",
+        "type": "slider",
+        "min": 0,
+        "max": 5,
+        "correct": 3
     },
     {
         "q": "What is the output of this code?",
@@ -425,6 +502,17 @@
             "index",
             "list"
         ]
+    },
+    {
+        "q": "Which of these cannot be iterated over directly in a for loop?",
+        "type": "odd_one_out",
+        "options": [
+            "list",
+            "string",
+            "dictionary",
+            "integer"
+        ],
+        "correct": "integer"
     },
     {
         "q": "What is the output of this code?",
@@ -570,6 +658,15 @@
         ]
     },
     {
+        "q": "Match the range() syntax to its sequence length.",
+        "type": "memory",
+        "pairs": {
+            "range(5)": "5 elements",
+            "range(1, 4)": "3 elements",
+            "range(0, 10, 2)": "5 elements"
+        }
+    },
+    {
         "q": "What is the output of this code?",
         "type": "mcq",
         "c": "x = 10\nif x > 5:\n    pass\nprint('Done')",
@@ -579,6 +676,24 @@
             "Error",
             "pass"
         ]
+    },
+    {
+        "q": "Swipe RIGHT if the value evaluates to True, LEFT if False in an if statement.",
+        "type": "swipe_cards",
+        "left_label": "Falsy",
+        "right_label": "Truthy",
+        "cards": {
+            "0": "left",
+            "1": "right",
+            "''": "left",
+            "'Hello'": "right"
+        }
+    },
+    {
+        "q": "Keyword to skip the rest of the current loop iteration.",
+        "type": "word_scramble",
+        "answer": "CONTINUE",
+        "decoys": "BKM"
     },
     {
         "q": "A continue statement will skip the rest of the loop body for the current iteration.",
@@ -630,6 +745,29 @@
             "Starts a new block",
             "Expression evaluated to True/False",
             "Statements inside the block"
+        ]
+    },
+    {
+        "q": "Complete the for loop:",
+        "type": "inline_dropdown",
+        "text": "[0] item [1] my_list:\n    print(item)",
+        "dropdowns": [
+            {
+                "correct": "for",
+                "options": [
+                    "for",
+                    "loop",
+                    "iterate"
+                ]
+            },
+            {
+                "correct": "in",
+                "options": [
+                    "in",
+                    "on",
+                    "from"
+                ]
+            }
         ]
     },
     {
@@ -703,6 +841,14 @@
         ]
     },
     {
+        "q": "How many stars are printed by these nested loops?",
+        "c": "for i in range(2):\n    for j in range(3):\n        print('*')",
+        "type": "slider",
+        "min": 0,
+        "max": 10,
+        "correct": 6
+    },
+    {
         "q": "A while loop with a condition that is always True will result in an infinite loop.",
         "type": "true_false",
         "correct": "True"
@@ -717,6 +863,17 @@
             "C",
             "F"
         ]
+    },
+    {
+        "q": "Which of these is NOT a valid comparison operator for if statements?",
+        "type": "odd_one_out",
+        "options": [
+            "==",
+            ">=",
+            "<",
+            "=>"
+        ],
+        "correct": "=>"
     },
     {
         "q": "The ______ statement is used when you want to skip the rest of the loop and start the next iteration.",
@@ -768,6 +925,15 @@
         ]
     },
     {
+        "q": "Match the block name to its purpose in flow control.",
+        "type": "memory",
+        "pairs": {
+            "if block": "Runs when condition is met",
+            "else block": "Runs when all conditions fail",
+            "elif block": "Checks a secondary condition"
+        }
+    },
+    {
         "q": "The pass statement is equivalent to an empty block in other languages.",
         "type": "true_false",
         "correct": "True"
@@ -782,6 +948,24 @@
             "a",
             "bat"
         ]
+    },
+    {
+        "q": "Swipe RIGHT for valid loop constructs, LEFT for invalid.",
+        "type": "swipe_cards",
+        "left_label": "Invalid",
+        "right_label": "Valid",
+        "cards": {
+            "for i in 5:": "left",
+            "while True:": "right",
+            "for k in dict.keys():": "right",
+            "while for x:": "left"
+        }
+    },
+    {
+        "q": "What keyword does nothing and acts merely as a block placeholder?",
+        "type": "word_scramble",
+        "answer": "PASS",
+        "decoys": "LRT"
     },
     {
         "q": "Which keyword is used to handle the default case in an if-elif-else structure?",
@@ -801,6 +985,37 @@
             "1 4 9",
             "0 2 4"
         ]
+    },
+    {
+        "q": "Complete the while loop:",
+        "type": "inline_dropdown",
+        "text": "count = 0\n[0] count < 5[1]\n    count += 1",
+        "dropdowns": [
+            {
+                "correct": "while",
+                "options": [
+                    "while",
+                    "until",
+                    "for"
+                ]
+            },
+            {
+                "correct": ":",
+                "options": [
+                    ":",
+                    ";",
+                    "{"
+                ]
+            }
+        ]
+    },
+    {
+        "q": "What is the value of i after the loop finishes without breaking?",
+        "c": "for i in range(4):\n    pass",
+        "type": "slider",
+        "min": 0,
+        "max": 5,
+        "correct": 3
     },
     {
         "q": "A ______ loop is preferred when the number of iterations is known beforehand.",
@@ -832,6 +1047,26 @@
         "correct": "False"
     },
     {
+        "q": "Which of these logical operators is invalid in Python conditional statements?",
+        "type": "odd_one_out",
+        "options": [
+            "and",
+            "or",
+            "not",
+            "&&"
+        ],
+        "correct": "&&"
+    },
+    {
+        "q": "Match the iterable with its default loop element type.",
+        "type": "memory",
+        "pairs": {
+            "String": "Characters",
+            "Dictionary": "Keys",
+            "List of lists": "Lists"
+        }
+    },
+    {
         "q": "What is the output of this code?",
         "type": "mcq",
         "c": "fruits = ['apple', 'banana']\nfor f in fruits:\n    print(f.capitalize())",
@@ -849,6 +1084,17 @@
             "continue"
         ],
         "isCaseSensitive": false
+    },
+    {
+        "q": "Swipe RIGHT for block terminators, LEFT for non-terminators.",
+        "type": "swipe_cards",
+        "left_label": "Continues",
+        "right_label": "Terminates",
+        "cards": {
+            "break": "right",
+            "continue": "left",
+            "pass": "left"
+        }
     },
     {
         "q": "What is the output of this code?",
@@ -889,6 +1135,12 @@
         ]
     },
     {
+        "q": "What built-in function is often used to loop over a sequence of numbers?",
+        "type": "word_scramble",
+        "answer": "RANGE",
+        "decoys": "XYZ"
+    },
+    {
         "q": "A ______ statement can be used to create a placeholder for future code.",
         "type": "fill_blank",
         "answers": [
@@ -918,6 +1170,21 @@
         "correct": "True"
     },
     {
+        "q": "Add the keyword to check an alternative condition:",
+        "type": "inline_dropdown",
+        "text": "if x == 1:\n    pass\n[0] x == 2:\n    pass",
+        "dropdowns": [
+            {
+                "correct": "elif",
+                "options": [
+                    "else if",
+                    "elif",
+                    "elseif"
+                ]
+            }
+        ]
+    },
+    {
         "q": "What is the output of this code?",
         "type": "mcq",
         "c": "x = 5\nif x != 5:\n    print('A')\nelif x == 5:\n    print('B')\nelse:\n    print('C')",
@@ -937,6 +1204,14 @@
         "isCaseSensitive": false
     },
     {
+        "q": "What does this loop sum to?",
+        "c": "total = 0\nfor i in [1, 2, 3]:\n    total += i",
+        "type": "slider",
+        "min": 0,
+        "max": 10,
+        "correct": 6
+    },
+    {
         "q": "What is the output of this code?",
         "type": "mcq",
         "c": "count = 3\nwhile count > 0:\n    print(count, end=' ')\n    count -= 1",
@@ -946,6 +1221,17 @@
             "1 2 3",
             "3 2 1 0"
         ]
+    },
+    {
+        "q": "Which is NOT a valid way to write a boolean value for an if condition?",
+        "type": "odd_one_out",
+        "options": [
+            "True",
+            "False",
+            "true",
+            "bool(1)"
+        ],
+        "correct": "true"
     },
     {
         "q": "The ______ keyword is used to combine multiple conditions where both must be True.",
@@ -1030,6 +1316,15 @@
         ]
     },
     {
+        "q": "Match the compound condition to its evaluation logic.",
+        "type": "memory",
+        "pairs": {
+            "x and y": "True only if both are True",
+            "x or y": "True if at least one is True",
+            "not x": "Inverts the truth value"
+        }
+    },
+    {
         "q": "The ______ statement is used inside loops to skip remaining statements and start the next iteration.",
         "type": "fill_blank",
         "answers": [
@@ -1052,6 +1347,17 @@
             "0 1 2 3",
             "1 2"
         ]
+    },
+    {
+        "q": "Swipe RIGHT for loops that execute at least once, LEFT for zero times.",
+        "type": "swipe_cards",
+        "left_label": "Zero Times",
+        "right_label": "Once or more",
+        "cards": {
+            "while False:": "left",
+            "for i in []:": "left",
+            "while True:": "right"
+        }
     },
     {
         "q": "Match the logical operators with their Python keywords:",
@@ -1211,6 +1517,12 @@
         ]
     },
     {
+        "q": "Keyword used to terminate a loop entirely from within.",
+        "type": "word_scramble",
+        "answer": "BREAK",
+        "decoys": "JYW"
+    },
+    {
         "q": "A for loop can iterate over a dictionary to access keys.",
         "type": "true_false",
         "correct": "True"
@@ -1365,6 +1677,21 @@
             "pass",
             "return",
             "exit"
+        ]
+    },
+    {
+        "q": "Terminate the loop immediately if x is 5:",
+        "type": "inline_dropdown",
+        "text": "while True:\n    if x == 5:\n        [0]",
+        "dropdowns": [
+            {
+                "correct": "break",
+                "options": [
+                    "stop",
+                    "break",
+                    "exit"
+                ]
+            }
         ]
     },
     {
@@ -1524,9 +1851,28 @@
         ]
     },
     {
+        "q": "How many times does 'a' print before breaking?",
+        "c": "i = 0\nwhile i < 10:\n    if i == 2:\n        break\n    print('a')\n    i += 1",
+        "type": "slider",
+        "min": 0,
+        "max": 5,
+        "correct": 2
+    },
+    {
         "q": "A for loop can only iterate over integer sequences.",
         "type": "true_false",
         "correct": "False"
+    },
+    {
+        "q": "Which keyword cannot be followed by an 'else' block in standard Python flow?",
+        "type": "odd_one_out",
+        "options": [
+            "for",
+            "while",
+            "if",
+            "def"
+        ],
+        "correct": "def"
     },
     {
         "q": "What is the output of this code?",
@@ -1695,6 +2041,15 @@
         "correct": "True"
     },
     {
+        "q": "Match the loop structure with its behavior when encountering 'break'.",
+        "type": "memory",
+        "pairs": {
+            "for loop": "Stops iterating over the sequence",
+            "while loop": "Stops checking the condition entirely",
+            "nested loops": "Only breaks the innermost loop"
+        }
+    },
+    {
         "q": "What is the output of this code?",
         "type": "mcq",
         "c": "a = [1, 2, 3]\nb = [4, 5, 6]\nfor x, y in zip(a, b):\n    print(x + y, end=' ')",
@@ -1761,6 +2116,24 @@
             "Two-way branch",
             "Multi-way branch"
         ]
+    },
+    {
+        "q": "Swipe RIGHT for Truthy collections, LEFT for Falsy collections.",
+        "type": "swipe_cards",
+        "left_label": "Falsy",
+        "right_label": "Truthy",
+        "cards": {
+            "[1, 2]": "right",
+            "[]": "left",
+            "{'a': 1}": "right",
+            "{}": "left"
+        }
+    },
+    {
+        "q": "Keyword used to check additional conditions if the first if fails.",
+        "type": "word_scramble",
+        "answer": "ELIF",
+        "decoys": "OUP"
     },
     {
         "q": "What is the output of this code?",
@@ -1837,6 +2210,21 @@
         "q": "An empty sequence evaluates to False in a boolean context.",
         "type": "true_false",
         "correct": "True"
+    },
+    {
+        "q": "Skip the rest of the code in the current iteration but continue looping:",
+        "type": "inline_dropdown",
+        "text": "for i in range(10):\n    if i % 2 == 0:\n        [0]\n    print(i)",
+        "dropdowns": [
+            {
+                "correct": "continue",
+                "options": [
+                    "continue",
+                    "next",
+                    "pass"
+                ]
+            }
+        ]
     },
     {
         "q": "What is the output of this code?",
@@ -1921,6 +2309,14 @@
         ]
     },
     {
+        "q": "What is the evaluated result of this ternary operator?",
+        "c": "x = 10 if 5 > 2 else 0",
+        "type": "slider",
+        "min": 0,
+        "max": 15,
+        "correct": 10
+    },
+    {
         "q": "Python requires proper indentation to define the scope of loops and conditions.",
         "type": "true_false",
         "correct": "True"
@@ -1997,6 +2393,17 @@
         ]
     },
     {
+        "q": "Which data type's elements were NOT guaranteed to loop in index order historically (pre Python 3.7)?",
+        "type": "odd_one_out",
+        "options": [
+            "list",
+            "tuple",
+            "string",
+            "set"
+        ],
+        "correct": "set"
+    },
+    {
         "q": "A break statement inside a try block will skip the finally block execution.",
         "type": "true_false",
         "correct": "False"
@@ -2031,6 +2438,15 @@
             "4 3 Done",
             "4 3 1 0"
         ]
+    },
+    {
+        "q": "Match the range() parameter to its role in loop sequencing.",
+        "type": "memory",
+        "pairs": {
+            "start": "Beginning value (inclusive)",
+            "stop": "Ending value (exclusive)",
+            "step": "Difference between sequence numbers"
+        }
     },
     {
         "q": "A ______ loop can be used to repeatedly prompt a user until valid input is received.",
@@ -2089,6 +2505,18 @@
         ]
     },
     {
+        "q": "Swipe RIGHT for mutable collections (modifiable in loops), LEFT for immutable.",
+        "type": "swipe_cards",
+        "left_label": "Immutable",
+        "right_label": "Mutable",
+        "cards": {
+            "tuple": "left",
+            "list": "right",
+            "string": "left",
+            "dictionary": "right"
+        }
+    },
+    {
         "q": "What is the output of this code?",
         "type": "mcq",
         "c": "for i in range(5):\n    if i < 3:\n        continue\n    if i > 3:\n        break\n    print(i)",
@@ -2119,6 +2547,27 @@
         ]
     },
     {
+        "q": "A sequence of elements that can be looped over is called an...",
+        "type": "word_scramble",
+        "answer": "ITERABLE",
+        "decoys": "CGK"
+    },
+    {
+        "q": "Do nothing inside the conditional block to avoid syntax errors:",
+        "type": "inline_dropdown",
+        "text": "if user_not_ready:\n    [0]",
+        "dropdowns": [
+            {
+                "correct": "pass",
+                "options": [
+                    "pass",
+                    "ignore",
+                    "null"
+                ]
+            }
+        ]
+    },
+    {
         "q": "The ______ statement is used to catch specific types of exceptions in Python.",
         "type": "fill_blank",
         "answers": [
@@ -2130,6 +2579,14 @@
             "finally",
             "raise"
         ]
+    },
+    {
+        "q": "What is the length of this list generated by flow control?",
+        "c": "my_list = [x for x in range(4) if x != 2]",
+        "type": "slider",
+        "min": 0,
+        "max": 5,
+        "correct": 3
     },
     {
         "q": "What is the output of this code?",
@@ -2157,6 +2614,17 @@
             "[2, 4, 6, 8, 10]",
             "[4, 8]"
         ]
+    },
+    {
+        "q": "Which clause is NOT a valid part of a basic if statement structure?",
+        "type": "odd_one_out",
+        "options": [
+            "if",
+            "else",
+            "then",
+            "elif"
+        ],
+        "correct": "then"
     },
     {
         "q": "Which built-in function can be used with a for loop to iterate over two lists in parallel?",
@@ -2192,6 +2660,15 @@
             "&",
             "|"
         ]
+    },
+    {
+        "q": "Match the built-in function often used with loops to its description.",
+        "type": "memory",
+        "pairs": {
+            "enumerate()": "Yields pairs of index and value",
+            "zip()": "Pairs elements from multiple iterables",
+            "reversed()": "Iterates backwards"
+        }
     },
     {
         "q": "What is the output of this code?",
@@ -2243,6 +2720,18 @@
             "5",
             "End"
         ]
+    },
+    {
+        "q": "Swipe RIGHT if the construct is a loop, LEFT if conditional only.",
+        "type": "swipe_cards",
+        "left_label": "Conditional",
+        "right_label": "Loop",
+        "cards": {
+            "if x > 5:": "left",
+            "while x:": "right",
+            "for x in y:": "right",
+            "x = a if b else c": "left"
+        }
     },
     {
         "q": "Which statement is used to stop the execution of a function and return a value?",
@@ -2316,6 +2805,12 @@
         "correct": "True"
     },
     {
+        "q": "Placing one loop inside the body of another loop.",
+        "type": "word_scramble",
+        "answer": "NESTED",
+        "decoys": "WQB"
+    },
+    {
         "q": "What is the output of this code?",
         "type": "mcq",
         "c": "def greet(name='World'):\n    return f'Hello {name}'\nprint(greet())",
@@ -2343,6 +2838,21 @@
             "0 1 2 3",
             "1 2 3",
             "Z"
+        ]
+    },
+    {
+        "q": "Use an else block with a for loop:",
+        "type": "inline_dropdown",
+        "text": "for i in range(3):\n    print(i)\n[0]:\n    print('Loop finished naturally')",
+        "dropdowns": [
+            {
+                "correct": "else",
+                "options": [
+                    "else",
+                    "finally",
+                    "then"
+                ]
+            }
         ]
     },
     {
@@ -2400,6 +2910,14 @@
         "q": "The for loop in Python can iterate over any iterable object including generators.",
         "type": "true_false",
         "correct": "True"
+    },
+    {
+        "q": "How many indices are printed here?",
+        "c": "for idx, val in enumerate(['a', 'b', 'c']):",
+        "type": "slider",
+        "min": 0,
+        "max": 5,
+        "correct": 3
     },
     {
         "q": "What is the output of this code?",
@@ -2507,6 +3025,17 @@
         "isCaseSensitive": false
     },
     {
+        "q": "Which error is commonly caused by failing to space a loop block properly?",
+        "type": "odd_one_out",
+        "options": [
+            "IndentationError",
+            "SyntaxError",
+            "TypeError",
+            "ValueError"
+        ],
+        "correct": "IndentationError"
+    },
+    {
         "q": "What is the output of this code?",
         "type": "mcq",
         "c": "word = 'Python'\nfor i, char in enumerate(word):\n    if char in 'aeiou':\n        continue\n    print(char, end='')",
@@ -2532,6 +3061,15 @@
             "for item in list:",
             "while condition:"
         ]
+    },
+    {
+        "q": "Match the short-circuit condition evaluation behavior.",
+        "type": "memory",
+        "pairs": {
+            "True or x": "x is completely ignored",
+            "False and x": "x is completely ignored",
+            "False or x": "x must be evaluated"
+        }
     },
     {
         "q": "What is the output of this code?",
@@ -2660,6 +3198,17 @@
         "correct": "False"
     },
     {
+        "q": "Swipe RIGHT for correct loop syntax, LEFT for incorrect syntaxes.",
+        "type": "swipe_cards",
+        "left_label": "Incorrect",
+        "right_label": "Correct",
+        "cards": {
+            "for i in range(5)": "left",
+            "while x < 10:": "right",
+            "for i from 1 to 5:": "left"
+        }
+    },
+    {
         "q": "What is the output of this code?",
         "type": "mcq",
         "c": "def process(data):\n    for item in data:\n        if item is None:\n            continue\n        print(item, end=' ')\nprocess([1, None, 3, None, 5])",
@@ -2669,6 +3218,12 @@
             "1",
             "None None"
         ]
+    },
+    {
+        "q": "A block of code executing repeatedly.",
+        "type": "word_scramble",
+        "answer": "LOOP",
+        "decoys": "MVX"
     },
     {
         "q": "Which keyword is used to define a block of code that tests for errors?",
@@ -2731,6 +3286,21 @@
         ]
     },
     {
+        "q": "Iterate over both keys and values in a dictionary simultaneously:",
+        "type": "inline_dropdown",
+        "text": "for k, v in my_dict.[0](https://www.google.com/search?q=):\n    print(k, v)",
+        "dropdowns": [
+            {
+                "correct": "items",
+                "options": [
+                    "items",
+                    "keys",
+                    "values"
+                ]
+            }
+        ]
+    },
+    {
         "q": "What is the output of this code?",
         "type": "mcq",
         "c": "result = 0\nfor i in range(10):\n    if i % 3 == 0:\n        result += i\nprint(result)",
@@ -2745,6 +3315,14 @@
         "q": "A finally block will execute even if a return statement is encountered in the try block.",
         "type": "true_false",
         "correct": "True"
+    },
+    {
+        "q": "What integer is printed at the end of this while loop?",
+        "c": "x = 5\nwhile x > 0:\n    x -= 2",
+        "type": "slider",
+        "min": -5,
+        "max": 5,
+        "correct": -1
     },
     {
         "q": "What is the output of this code?",
@@ -2765,6 +3343,17 @@
             "for"
         ],
         "isCaseSensitive": false
+    },
+    {
+        "q": "Which integer output does NOT belong to the sequence generated by range(1, 4)?",
+        "type": "odd_one_out",
+        "options": [
+            "1",
+            "2",
+            "3",
+            "4"
+        ],
+        "correct": "4"
     },
     {
         "q": "What is the output of this code?",
@@ -2833,6 +3422,15 @@
             "yield"
         ],
         "isCaseSensitive": false
+    },
+    {
+        "q": "Match the common integer or constant to its boolean evaluation.",
+        "type": "memory",
+        "pairs": {
+            "0": "Evaluates to False",
+            "1": "Evaluates to True",
+            "None": "Evaluates to False"
+        }
     },
     {
         "q": "What is the output of this code?",
@@ -2921,6 +3519,18 @@
         ]
     },
     {
+        "q": "Swipe RIGHT for expressions evaluating to True, LEFT for False.",
+        "type": "swipe_cards",
+        "left_label": "False",
+        "right_label": "True",
+        "cards": {
+            "5 > 3": "right",
+            "10 == '10'": "left",
+            "not False": "right",
+            "True and False": "left"
+        }
+    },
+    {
         "q": "The ______ function returns an iterator object from an iterable.",
         "type": "fill_blank",
         "answers": [
@@ -2959,6 +3569,12 @@
             "[1, 2, 3, 4, 4]",
             "Error"
         ]
+    },
+    {
+        "q": "A single execution pass of a loop body is called an...",
+        "type": "word_scramble",
+        "answer": "ITERATION",
+        "decoys": "FHJ"
     },
     {
         "q": "Match the scoping keywords with their effects:",
@@ -3080,6 +3696,21 @@
         ]
     },
     {
+        "q": "Combine conditions using basic Python logical operators:",
+        "type": "inline_dropdown",
+        "text": "if x > 5 [0] x < 10:\n    print('Between 5 and 10')",
+        "dropdowns": [
+            {
+                "correct": "and",
+                "options": [
+                    "and",
+                    "&&",
+                    "or"
+                ]
+            }
+        ]
+    },
+    {
         "q": "What is the output of this code?",
         "type": "mcq",
         "c": "from functools import reduce\nnums = [1, 2, 3, 4]\nresult = reduce(lambda x, y: x * y, nums)\nprint(result)",
@@ -3148,6 +3779,15 @@
             "1 3 2 4",
             "Error"
         ]
+    },
+    {
+        "q": "Match the logical operator to its effect on control flow.",
+        "type": "memory",
+        "pairs": {
+            "and": "Flow continues if both sides are true",
+            "or": "Flow continues if either side is true",
+            "not": "Inverts the boolean outcome"
+        }
     },
     {
         "q": "Match the itertools functions with their behaviors:",
@@ -3336,6 +3976,24 @@
         ]
     },
     {
+        "q": "Swipe RIGHT for loop control statements, LEFT for common operators.",
+        "type": "swipe_cards",
+        "left_label": "Operator",
+        "right_label": "Control Flow",
+        "cards": {
+            "break": "right",
+            "+": "left",
+            "continue": "right",
+            "==": "left"
+        }
+    },
+    {
+        "q": "An expression evaluated to determine if a block should run.",
+        "type": "word_scramble",
+        "answer": "CONDITION",
+        "decoys": "WPL"
+    },
+    {
         "q": "What is the output of this code?",
         "type": "mcq",
         "c": "result = (lambda x: (lambda y: x + y))(3)(4)\nprint(result)",
@@ -3345,6 +4003,30 @@
             "12",
             "Error"
         ]
+    },
+    {
+        "q": "Check if a value does NOT exist inside a list:",
+        "type": "inline_dropdown",
+        "text": "if item [0] my_list:\n    print('Missing from list')",
+        "dropdowns": [
+            {
+                "correct": "not in",
+                "options": [
+                    "not in",
+                    "is not",
+                    "outside"
+                ]
+            }
+        ]
+    },
+    {
+        "q": "Match the if-else shorthand components: val_true if cond else val_false",
+        "type": "memory",
+        "pairs": {
+            "val_true": "Value assigned if condition is met",
+            "cond": "The boolean test expression",
+            "val_false": "Value assigned if condition fails"
+        }
     },
     {
         "q": "The ______ module provides decorators and functions for creating and managing context managers.",
@@ -3376,6 +4058,17 @@
         "correct": "False"
     },
     {
+        "q": "Swipe RIGHT for correct code indentation inside a loop body, LEFT for incorrect.",
+        "type": "swipe_cards",
+        "left_label": "No Indent",
+        "right_label": "Indented",
+        "cards": {
+            "    print(x)": "right",
+            "print(x)": "left",
+            "        print(x)": "right"
+        }
+    },
+    {
         "q": "What is the output of this code?",
         "type": "mcq",
         "c": "class Suppress:\n    def __enter__(self):\n        return self\n    def __exit__(self, exc_type, exc_val, exc_tb):\n        return True\nwith Suppress():\n    raise ValueError\nprint('No crash')",
@@ -3385,6 +4078,12 @@
             "ValueError",
             "None"
         ]
+    },
+    {
+        "q": "Block executed ONLY if the preceding 'if' condition evaluated to false.",
+        "type": "word_scramble",
+        "answer": "ELSE",
+        "decoys": "XRQ"
     },
     {
         "q": "Which data structure from collections module provides default values for missing keys?",
@@ -3433,6 +4132,21 @@
         ]
     },
     {
+        "q": "Iterate over both the indices and the items of a list simultaneously:",
+        "type": "inline_dropdown",
+        "text": "for i, val in [0](https://www.google.com/search?q=my_list):\n    print(i)",
+        "dropdowns": [
+            {
+                "correct": "enumerate",
+                "options": [
+                    "enumerate",
+                    "range",
+                    "zip"
+                ]
+            }
+        ]
+    },
+    {
         "q": "The ______ function from functools can be used to cache the results of expensive function calls.",
         "type": "fill_blank",
         "answers": [
@@ -3460,6 +4174,15 @@
         "q": "In Python, empty sequences and collections evaluate to False in boolean context.",
         "type": "true_false",
         "correct": "True"
+    },
+    {
+        "q": "Match the flow control error to its common description.",
+        "type": "memory",
+        "pairs": {
+            "Infinite Loop": "Condition never becomes false",
+            "Off-by-one": "Loops one time too many or too few",
+            "IndentationError": "Block is not properly spaced out"
+        }
     },
     {
         "q": "What is the output of this code?",
@@ -3559,6 +4282,18 @@
         ]
     },
     {
+        "q": "Swipe RIGHT for iterable objects, LEFT for non-iterable base types.",
+        "type": "swipe_cards",
+        "left_label": "Non-iterable",
+        "right_label": "Iterable",
+        "cards": {
+            "integer": "left",
+            "string": "right",
+            "boolean": "left",
+            "list": "right"
+        }
+    },
+    {
         "q": "Which method makes an object iterable by returning an iterator?",
         "type": "short_answer",
         "answers": [
@@ -3575,6 +4310,27 @@
             "A B C D",
             "B D",
             "1 1"
+        ]
+    },
+    {
+        "q": "Spacing used to define nested code blocks in Python control flow.",
+        "type": "word_scramble",
+        "answer": "INDENT",
+        "decoys": "BGF"
+    },
+    {
+        "q": "Loop over two lists in parallel, matching item to item:",
+        "type": "inline_dropdown",
+        "text": "for a, b in [0](list1, list2):\n    pass",
+        "dropdowns": [
+            {
+                "correct": "zip",
+                "options": [
+                    "zip",
+                    "combine",
+                    "concat"
+                ]
+            }
         ]
     },
     {
@@ -3653,6 +4409,15 @@
         "isCaseSensitive": false
     },
     {
+        "q": "Match the specific data value to its truthiness in an if condition.",
+        "type": "memory",
+        "pairs": {
+            "'False'": "Truthy (it's a non-empty string)",
+            "0.0": "Falsy (evaluates to numeric zero)",
+            "[0]": "Truthy (it's a non-empty list)"
+        }
+    },
+    {
         "q": "What is the output of this code?",
         "type": "mcq",
         "c": "import itertools\nfor item in itertools.takewhile(lambda x: x < 3, [1, 2, 3, 4]):\n    print(item, end=' ')",
@@ -3691,6 +4456,18 @@
         ]
     },
     {
+        "q": "Swipe RIGHT for common while loop use-cases, LEFT for for loop use-cases.",
+        "type": "swipe_cards",
+        "left_label": "For loop",
+        "right_label": "While loop",
+        "cards": {
+            "Iterating characters in string": "left",
+            "Waiting for user quit command": "right",
+            "Running a game tick engine": "right",
+            "Looping exactly 10 times": "left"
+        }
+    },
+    {
         "q": "The ______ variable is accessible throughout the entire module and can be modified using the global keyword inside functions.",
         "type": "fill_blank",
         "answers": [
@@ -3702,6 +4479,12 @@
             "free",
             "enclosed"
         ]
+    },
+    {
+        "q": "Values that naturally evaluate to True in an if statement are considered...",
+        "type": "word_scramble",
+        "answer": "TRUTHY",
+        "decoys": "QZX"
     },
     {
         "q": "What is the output of this code?",
@@ -3718,6 +4501,21 @@
         "q": "A generator function can have multiple yield statements at different points in the code.",
         "type": "true_false",
         "correct": "True"
+    },
+    {
+        "q": "Construct a loop that intentionally runs forever without breaking internally:",
+        "type": "inline_dropdown",
+        "text": "[0] True:\n    pass",
+        "dropdowns": [
+            {
+                "correct": "while",
+                "options": [
+                    "while",
+                    "for",
+                    "if"
+                ]
+            }
+        ]
     },
     {
         "q": "What is the output of this code?",
@@ -3778,6 +4576,15 @@
         ]
     },
     {
+        "q": "Match the match-case keywords (Python 3.10+) to their roles in flow.",
+        "type": "memory",
+        "pairs": {
+            "match": "Evaluates the root expression to compare",
+            "case": "Defines a specific pattern to test against",
+            "case _": "Acts as the default fallback block"
+        }
+    },
+    {
         "q": "What is the output of this code?",
         "type": "mcq",
         "c": "import asyncio\nasync def coro():\n    await asyncio.sleep(0)\n    return 'Done'\nresult = asyncio.run(coro())\nprint(result)",
@@ -3819,6 +4626,18 @@
             "KeyboardInterrupt",
             "ValueError"
         ]
+    },
+    {
+        "q": "Swipe RIGHT for logical operators, LEFT for conditional comparison operators.",
+        "type": "swipe_cards",
+        "left_label": "Comparison",
+        "right_label": "Logical",
+        "cards": {
+            "and": "right",
+            "==": "left",
+            "not": "right",
+            "<=": "left"
+        }
     },
     {
         "q": "What is the output of this code?",
@@ -3872,6 +4691,12 @@
         "isCaseSensitive": false
     },
     {
+        "q": "Values like 0, None, and empty lists are considered ________ in conditionals.",
+        "type": "word_scramble",
+        "answer": "FALSY",
+        "decoys": "MKN"
+    },
+    {
         "q": "What is the output of this code?",
         "type": "mcq",
         "c": "import weakref\nclass MyClass:\n    pass\nobj = MyClass()\nref = weakref.ref(obj)\ndel obj\nprint(ref() is None)",
@@ -3896,6 +4721,21 @@
         ]
     },
     {
+        "q": "Loop backward over a range of numbers by setting the step parameter:",
+        "type": "inline_dropdown",
+        "text": "for i in range(10, 0, [0]):\n    print(i)",
+        "dropdowns": [
+            {
+                "correct": "-1",
+                "options": [
+                    "-1",
+                    "1",
+                    "0"
+                ]
+            }
+        ]
+    },
+    {
         "q": "What is the output of this code?",
         "type": "mcq",
         "c": "async def fetch():\n    return 'data'\nasync def main():\n    tasks = [fetch(), fetch()]\n    results = await asyncio.gather(*tasks)\n    return results\nprint(asyncio.run(main()))",
@@ -3905,6 +4745,12 @@
             "data data",
             "Error"
         ]
+    },
+    {
+        "q": "Function returning a tuple of index and item on each for loop iteration.",
+        "type": "word_scramble",
+        "answer": "ENUMERATE",
+        "decoys": "JXY"
     },
     {
         "q": "asyncio.gather() runs coroutines concurrently and returns results in the order of completion.",
@@ -3980,6 +4826,21 @@
         ]
     },
     {
+        "q": "Evaluate a boolean condition before entering the loop block:",
+        "type": "inline_dropdown",
+        "text": "[0] condition_met:\n    do_work()",
+        "dropdowns": [
+            {
+                "correct": "while",
+                "options": [
+                    "while",
+                    "for",
+                    "loop"
+                ]
+            }
+        ]
+    },
+    {
         "q": "What is the output of this code?",
         "type": "mcq",
         "c": "class Singleton(type):\n    _instances = {}\n    def __call__(cls, *args, **kwargs):\n        if cls not in cls._instances:\n            cls._instances[cls] = super().__call__(*args, **kwargs)\n        return cls._instances[cls]\nclass A(metaclass=Singleton):\n    pass\nprint(A() is A())",
@@ -3994,6 +4855,12 @@
         "q": "A metaclass in Python is a class whose instances are classes.",
         "type": "true_false",
         "correct": "True"
+    },
+    {
+        "q": "A loop that runs forever due to unchanging conditions is called an ________ loop.",
+        "type": "word_scramble",
+        "answer": "INFINITE",
+        "decoys": "WQB"
     },
     {
         "q": "What is the output of this code?",
@@ -4063,6 +4930,21 @@
             "weakref",
             "objects",
             "memory"
+        ]
+    },
+    {
+        "q": "Print 'Yes' if the string evaluates to a falsy condition:",
+        "type": "inline_dropdown",
+        "text": "if [0] my_str:\n    print('Yes, it is empty')",
+        "dropdowns": [
+            {
+                "correct": "not",
+                "options": [
+                    "not",
+                    "no",
+                    "empty"
+                ]
+            }
         ]
     },
     {
@@ -4275,6 +5157,12 @@
         "isCaseSensitive": false
     },
     {
+        "q": "Function used in flow control to loop multiple iterables simultaneously.",
+        "type": "word_scramble",
+        "answer": "ZIP",
+        "decoys": "KLM"
+    },
+    {
         "q": "What is the output of this code?",
         "type": "mcq",
         "c": "import types\ndef gen_func():\n    yield 1\n    yield 2\ncode_obj = gen_func.__code__\nprint(types.CodeType is type(code_obj))",
@@ -4334,6 +5222,21 @@
             "None",
             "coro",
             "Error"
+        ]
+    },
+    {
+        "q": "Check if a dictionary explicitly contains a specific key in an if block:",
+        "type": "inline_dropdown",
+        "text": "if 'age' [0] my_dict:\n    print(my_dict['age'])",
+        "dropdowns": [
+            {
+                "correct": "in",
+                "options": [
+                    "in",
+                    "on",
+                    "has"
+                ]
+            }
         ]
     },
     {
@@ -4428,6 +5331,12 @@
         "correct": "True"
     },
     {
+        "q": "Structural pattern matching keyword introduced in Python 3.10 to replace complex elif chains.",
+        "type": "word_scramble",
+        "answer": "MATCH",
+        "decoys": "VCD"
+    },
+    {
         "q": "What is the output of this code?",
         "type": "mcq",
         "c": "from collections import ChainMap\nd1 = {'a': 1}\nd2 = {'a': 2, 'b': 3}\ncm = ChainMap(d1, d2)\nprint(cm['a'], cm['b'])",
@@ -4455,6 +5364,21 @@
             "1",
             "2",
             "Error"
+        ]
+    },
+    {
+        "q": "Use the Walrus operator to assign and check a variable within the while condition:",
+        "type": "inline_dropdown",
+        "text": "while (n [0] len(a)) > 0:\n    print(n)",
+        "dropdowns": [
+            {
+                "correct": ":=",
+                "options": [
+                    ":=",
+                    "=",
+                    "=="
+                ]
+            }
         ]
     },
     {
@@ -4512,6 +5436,12 @@
         "q": "An asyncio.Event can be set and cleared to signal between coroutines.",
         "type": "true_false",
         "correct": "True"
+    },
+    {
+        "q": "Keyword used alongside 'match' to define the specific sub-patterns being tested.",
+        "type": "word_scramble",
+        "answer": "CASE",
+        "decoys": "RTY"
     },
     {
         "q": "What is the output of this code?",
@@ -4581,6 +5511,21 @@
             "wraps",
             "methodcaller",
             "singledispatch"
+        ]
+    },
+    {
+        "q": "Execute a block of code only if the for loop finishes without hitting a break:",
+        "type": "inline_dropdown",
+        "text": "for i in range(5):\n    pass\n[0]:\n    print('Finished looping naturally!')",
+        "dropdowns": [
+            {
+                "correct": "else",
+                "options": [
+                    "else",
+                    "finally",
+                    "except"
+                ]
+            }
         ]
     },
     {
