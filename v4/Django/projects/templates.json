@@ -1,0 +1,41 @@
+[
+    {
+        "title": "Template Variables 📦",
+        "ques": "In a Django template, how do you **output the value** of a variable named `username` passed from the view?",
+        "answer": {
+            "type": "code",
+            "lang": "django",
+            "content": "<h1>Welcome, {{ username }}!</h1>"
+        },
+        "explanation": "Double curly braces **`{{ }}`** are used to print the value of a variable in Django templates."
+    },
+    {
+        "title": "Template Tags 🏷️",
+        "ques": "Write a **for loop** in Django template syntax to iterate over a list `items` and display each item in an `<li>` tag.",
+        "answer": {
+            "type": "code",
+            "lang": "django",
+            "content": "<ul>\n{% for item in items %}\n    <li>{{ item }}</li>\n{% endfor %}\n</ul>"
+        },
+        "explanation": "Template tags are surrounded by **`{% %}`**. The `for` tag facilitates looping, and it must be closed with `{% endfor %}`."
+    },
+    {
+        "title": "Template Inheritance 🧬",
+        "ques": "Explain the purpose of the **`{% block %}`** and **`{% extends %}`** tags in Django template inheritance.",
+        "answer": {
+            "type": "text",
+            "content": "*   **`{% extends \"base.html\" %}`**: Put at the top of a child template, it tells Django that this template \"extends\" a parent template (e.g., `base.html`).\n*   **`{% block name %}...{% endblock %}`**: Defines a block of content that can be overridden by child templates. The parent defines the block, and the child fills it in."
+        },
+        "explanation": "Inheritance allows you to build a base \"skeleton\" template containing all the common elements of your site and define **blocks** that child templates can override."
+    },
+    {
+        "title": "Loading Static Files 🎨",
+        "ques": "Show how to **load the static tag library** and include a CSS file named `style.css` located in the `css` folder.",
+        "answer": {
+            "type": "code",
+            "lang": "django",
+            "content": "{% load static %}\n\n<link rel=\"stylesheet\" href=\"{% static 'css/style.css' %}\">"
+        },
+        "explanation": "You must first Load the static library using **`{% load static %}`**. Then, use the `static` tag to generate the absolute URL to the file."
+    }
+]

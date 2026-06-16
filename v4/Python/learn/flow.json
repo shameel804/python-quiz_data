@@ -1,0 +1,161 @@
+{
+    "id": "learn_flow",
+    "topicId": "flow",
+    "topicTitle": "Flow Control",
+    "description": "Master control flow in Python: conditionals, loops, and flow control statements",
+    "baseKP": 85,
+    "slides": [
+        {
+            "id": "flow_1",
+            "type": "content",
+            "title": "Introduction to Flow Control",
+            "content": "# Flow Control 🚦\n\nFlow control determines **how your program executes** based on conditions and repetition.\n\n## What you'll learn:\n- **Conditional Statements** - if, elif, else\n- **Ternary Operator** - One-line conditionals\n- **For Loops** - Iterate over sequences\n- **While Loops** - Repeat while condition is true\n- **Nested Loops** - Loops inside loops\n- **Control Statements** - break, continue, pass\n- **Comprehensions** - Pythonic one-liners\n\n## Why Flow Control Matters\n\n> 💡 **Flow control is the backbone of programming logic!** Without it, programs would just run line by line with no decision-making ability.\n\n## Real-World Examples\n- 🔐 Login systems (if password correct...)\n- 🎮 Game loops (while playing...)\n- 📧 Processing emails (for each email...)\n- 🔍 Search algorithms (break when found)\n\nLet's start with conditionals!"
+        },
+        {
+            "id": "flow_2",
+            "type": "content",
+            "title": "If...Else Statements",
+            "content": "# Conditional Statements 🔀\n\nMake decisions in your code with `if`, `elif`, and `else`.\n\n## Basic If Statement\n\n```python\nage = 18\n\nif age >= 18:\n    print(\"You are an adult!\")\n```\n\n## If-Else Statement\n\n```python\ntemperature = 30\n\nif temperature > 25:\n    print(\"It's hot outside! ☀️\")\nelse:\n    print(\"It's cool outside! 🌤️\")\n```\n\n## If-Elif-Else Chain\n\n```python\nscore = 85\n\nif score >= 90:\n    grade = \"A\"\nelif score >= 80:\n    grade = \"B\"\nelif score >= 70:\n    grade = \"C\"\nelif score >= 60:\n    grade = \"D\"\nelse:\n    grade = \"F\"\n\nprint(f\"Your grade: {grade}\")  # \"B\"\n```\n\n> ⚠️ **Important:** Python uses **indentation** (4 spaces) to define code blocks! No curly braces like other languages.\n\n> 💡 **Tip:** The first matching condition wins! Once a condition is True, the rest are skipped."
+        },
+        {
+            "id": "flow_3",
+            "type": "content",
+            "title": "Comparison & Logical Operators",
+            "content": "# Operators for Conditions 🧪\n\n## Comparison Operators\n\n```python\nx = 10\ny = 5\n\nprint(x == y)   # Equal: False\nprint(x != y)   # Not equal: True\nprint(x > y)    # Greater than: True\nprint(x < y)    # Less than: False\nprint(x >= y)   # Greater or equal: True\nprint(x <= y)   # Less or equal: False\n```\n\n## Logical Operators\n\n```python\nage = 25\nhas_license = True\n\n# AND - both must be true\nif age >= 18 and has_license:\n    print(\"You can drive! 🚗\")\n\n# OR - at least one must be true\nif age < 13 or age > 65:\n    print(\"Discounted ticket!\")\n\n# NOT - inverts the condition\nif not has_license:\n    print(\"Get a license first!\")\n```\n\n## Chained Comparisons (Pythonic!)\n\n```python\n# Instead of: if age >= 18 and age < 65\nif 18 <= age < 65:\n    print(\"Working age\")\n\n# Check if value is in range\nif 0 <= score <= 100:\n    print(\"Valid score\")\n```\n\n> 🎯 **Python Magic:** Chained comparisons work just like math notation!"
+        },
+        {
+            "id": "flow_4",
+            "type": "content",
+            "title": "Ternary Operator",
+            "content": "# Ternary Operator (Conditional Expression) 📝\n\nWrite simple if-else in one line!\n\n## Syntax\n\n```python\n# value_if_true if condition else value_if_false\n\nage = 20\nstatus = \"adult\" if age >= 18 else \"minor\"\nprint(status)  # \"adult\"\n```\n\n## Common Use Cases\n\n```python\n# Assign default value\nname = user_input if user_input else \"Guest\"\n\n# Quick max/min\na, b = 10, 20\nmax_val = a if a > b else b  # 20\n\n# Conditional message\ncount = 5\nmessage = f\"{count} item\" + (\"s\" if count != 1 else \"\")\nprint(message)  # \"5 items\"\n```\n\n## Nested Ternary (Use Sparingly!)\n\n```python\nscore = 85\ngrade = \"A\" if score >= 90 else \"B\" if score >= 80 else \"C\" if score >= 70 else \"F\"\n```\n\n> ⚠️ **Warning:** Nested ternaries become hard to read. Use regular if-elif-else for complex logic!\n\n## With Functions\n\n```python\ndef absolute(n):\n    return n if n >= 0 else -n\n\nprint(absolute(-5))  # 5\n```"
+        },
+        {
+            "id": "flow_quiz_1",
+            "type": "quiz",
+            "title": "Conditionals Quiz",
+            "content": "Test your understanding of if statements!",
+            "quizQuestion": "What will this code print?\n```python\nx = 5\nif x > 3:\n    print(\"A\")\nelif x > 4:\n    print(\"B\")\nelse:\n    print(\"C\")\n```",
+            "quizOptions": [
+                "A",
+                "B",
+                "A and B",
+                "C"
+            ],
+            "correctOptionIndex": 0
+        },
+        {
+            "id": "flow_5",
+            "type": "content",
+            "title": "For Loops",
+            "content": "# For Loops 🔄\n\nIterate over sequences like lists, strings, and ranges.\n\n## Iterating Over a List\n\n```python\nfruits = [\"apple\", \"banana\", \"cherry\"]\n\nfor fruit in fruits:\n    print(f\"I love {fruit}!\")\n```\n\n## Iterating Over a String\n\n```python\nword = \"Python\"\n\nfor letter in word:\n    print(letter)\n# P, y, t, h, o, n\n```\n\n## Using range()\n\n```python\n# range(stop) - 0 to stop-1\nfor i in range(5):\n    print(i)  # 0, 1, 2, 3, 4\n\n# range(start, stop)\nfor i in range(2, 6):\n    print(i)  # 2, 3, 4, 5\n\n# range(start, stop, step)\nfor i in range(0, 10, 2):\n    print(i)  # 0, 2, 4, 6, 8\n\n# Counting backwards\nfor i in range(5, 0, -1):\n    print(i)  # 5, 4, 3, 2, 1\n```\n\n## Enumerate for Index + Value\n\n```python\ncolors = [\"red\", \"green\", \"blue\"]\n\nfor index, color in enumerate(colors):\n    print(f\"{index}: {color}\")\n# 0: red, 1: green, 2: blue\n```\n\n> 💡 **Pro Tip:** Never do `for i in range(len(list))` - use `enumerate()` instead!"
+        },
+        {
+            "id": "flow_6",
+            "type": "content",
+            "title": "Looping Techniques",
+            "content": "# Advanced Looping 🔧\n\n## zip() - Iterate Multiple Sequences\n\n```python\nnames = [\"Alice\", \"Bob\", \"Charlie\"]\nages = [25, 30, 35]\n\nfor name, age in zip(names, ages):\n    print(f\"{name} is {age}\")\n# Alice is 25, Bob is 30, Charlie is 35\n```\n\n## Iterating Over Dictionaries\n\n```python\nperson = {\"name\": \"Alice\", \"age\": 25, \"city\": \"NYC\"}\n\n# Keys only (default)\nfor key in person:\n    print(key)\n\n# Values only\nfor value in person.values():\n    print(value)\n\n# Both key and value\nfor key, value in person.items():\n    print(f\"{key}: {value}\")\n```\n\n## reversed() - Loop Backwards\n\n```python\nfor i in reversed(range(5)):\n    print(i)  # 4, 3, 2, 1, 0\n\nfor char in reversed(\"Hello\"):\n    print(char)  # o, l, l, e, H\n```\n\n## sorted() - Loop in Order\n\n```python\nnumbers = [3, 1, 4, 1, 5]\n\nfor n in sorted(numbers):\n    print(n)  # 1, 1, 3, 4, 5\n\nfor n in sorted(numbers, reverse=True):\n    print(n)  # 5, 4, 3, 1, 1\n```"
+        },
+        {
+            "id": "flow_7",
+            "type": "content",
+            "title": "While Loops",
+            "content": "# While Loops ⏳\n\nRepeat code **while a condition is true**.\n\n## Basic While Loop\n\n```python\ncount = 0\n\nwhile count < 5:\n    print(f\"Count: {count}\")\n    count += 1  # Don't forget this!\n\n# Output: 0, 1, 2, 3, 4\n```\n\n## User Input Loop\n\n```python\npassword = \"\"\n\nwhile password != \"secret123\":\n    password = input(\"Enter password: \")\n\nprint(\"Access granted! 🔓\")\n```\n\n## Infinite Loop with Break\n\n```python\nwhile True:\n    user_input = input(\"Type 'quit' to exit: \")\n    if user_input == \"quit\":\n        break  # Exit the loop\n    print(f\"You typed: {user_input}\")\n```\n\n## Common Patterns\n\n```python\n# Countdown\nn = 5\nwhile n > 0:\n    print(n)\n    n -= 1\nprint(\"Liftoff! 🚀\")\n\n# Accumulator\ntotal = 0\nwhile True:\n    num = int(input(\"Enter number (0 to stop): \"))\n    if num == 0:\n        break\n    total += num\nprint(f\"Total: {total}\")\n```\n\n> ⚠️ **Warning:** Always ensure your while loop has an **exit condition** to avoid infinite loops!"
+        },
+        {
+            "id": "flow_quiz_2",
+            "type": "quiz",
+            "title": "Loops Quiz",
+            "content": "Test your loop knowledge!",
+            "quizQuestion": "How many times will this loop execute?\n```python\nfor i in range(2, 8, 2):\n    print(i)\n```",
+            "quizOptions": [
+                "6 times",
+                "4 times",
+                "3 times",
+                "8 times"
+            ],
+            "correctOptionIndex": 2
+        },
+        {
+            "id": "flow_8",
+            "type": "content",
+            "title": "Nested Loops",
+            "content": "# Nested Loops 🔲\n\nLoops inside loops - for working with 2D data!\n\n## Basic Nested Loop\n\n```python\nfor i in range(3):\n    for j in range(3):\n        print(f\"({i}, {j})\", end=\" \")\n    print()  # New line\n\n# Output:\n# (0, 0) (0, 1) (0, 2)\n# (1, 0) (1, 1) (1, 2)\n# (2, 0) (2, 1) (2, 2)\n```\n\n## Multiplication Table\n\n```python\nfor i in range(1, 6):\n    for j in range(1, 6):\n        print(f\"{i*j:3}\", end=\" \")\n    print()\n\n# Output:\n#   1   2   3   4   5\n#   2   4   6   8  10\n#   3   6   9  12  15\n#   4   8  12  16  20\n#   5  10  15  20  25\n```\n\n## Working with 2D Lists\n\n```python\nmatrix = [\n    [1, 2, 3],\n    [4, 5, 6],\n    [7, 8, 9]\n]\n\nfor row in matrix:\n    for cell in row:\n        print(cell, end=\" \")\n    print()\n```\n\n## Pattern Printing\n\n```python\n# Triangle of stars\nfor i in range(1, 6):\n    print(\"*\" * i)\n# *\n# **\n# ***\n# ****\n# *****\n```\n\n> 💡 **Performance Note:** Nested loops multiply! 100 x 100 = 10,000 iterations. Be mindful with large data."
+        },
+        {
+            "id": "flow_9",
+            "type": "content",
+            "title": "Break Statement",
+            "content": "# Break Statement 🛑\n\n`break` **immediately exits** the loop.\n\n## Finding First Match\n\n```python\nnumbers = [1, 3, 5, 8, 9, 10]\n\nfor num in numbers:\n    if num % 2 == 0:\n        print(f\"First even: {num}\")\n        break\n    print(f\"Checking {num}...\")\n\n# Output:\n# Checking 1...\n# Checking 3...\n# Checking 5...\n# First even: 8\n```\n\n## Exiting Infinite Loop\n\n```python\nwhile True:\n    response = input(\"Continue? (yes/no): \")\n    if response == \"no\":\n        print(\"Goodbye!\")\n        break\n```\n\n## Break in Nested Loops\n\n```python\n# break only exits the INNERMOST loop!\nfor i in range(3):\n    for j in range(3):\n        if j == 1:\n            break  # Only breaks inner loop\n        print(f\"({i}, {j})\")\n\n# Output: (0, 0), (1, 0), (2, 0)\n```\n\n## Breaking Outer Loop (Using Flag)\n\n```python\nfound = False\nfor i in range(10):\n    for j in range(10):\n        if i * j == 42:\n            print(f\"Found: {i} x {j} = 42\")\n            found = True\n            break\n    if found:\n        break\n```"
+        },
+        {
+            "id": "flow_10",
+            "type": "content",
+            "title": "Continue Statement",
+            "content": "# Continue Statement ⏭️\n\n`continue` **skips** the rest of the current iteration and moves to the next.\n\n## Skip Specific Values\n\n```python\n# Print only odd numbers\nfor i in range(10):\n    if i % 2 == 0:\n        continue  # Skip even numbers\n    print(i)\n\n# Output: 1, 3, 5, 7, 9\n```\n\n## Skip Invalid Data\n\n```python\ndata = [10, -5, 20, -3, 15, 0]\n\nfor value in data:\n    if value <= 0:\n        continue  # Skip non-positive values\n    print(f\"Processing: {value}\")\n\n# Output: 10, 20, 15\n```\n\n## Break vs Continue Comparison\n\n```python\nprint(\"Break example:\")\nfor i in range(5):\n    if i == 3:\n        break\n    print(i)\n# Output: 0, 1, 2 (stops at 3)\n\nprint(\"Continue example:\")\nfor i in range(5):\n    if i == 3:\n        continue\n    print(i)\n# Output: 0, 1, 2, 4 (skips 3)\n```\n\n> 💡 **Remember:**\n> - `break` = EXIT the entire loop\n> - `continue` = SKIP current iteration only"
+        },
+        {
+            "id": "flow_quiz_3",
+            "type": "quiz",
+            "title": "Break & Continue Quiz",
+            "content": "Let's test break and continue!",
+            "quizQuestion": "What will this code output?\n```python\nfor i in range(5):\n    if i == 2:\n        continue\n    print(i, end=\" \")\n```",
+            "quizOptions": [
+                "0 1 2 3 4",
+                "0 1 3 4",
+                "0 1",
+                "2"
+            ],
+            "correctOptionIndex": 1
+        },
+        {
+            "id": "flow_11",
+            "type": "content",
+            "title": "Pass Statement",
+            "content": "# Pass Statement 💭\n\n`pass` is a **placeholder** that does nothing. It's useful when syntax requires a statement.\n\n## Empty Function Placeholder\n\n```python\ndef future_function():\n    pass  # TODO: implement later\n\n# Without pass, this would cause an error!\n```\n\n## Empty Class Placeholder\n\n```python\nclass EmptyClass:\n    pass  # Will add methods later\n```\n\n## Empty Loop or Condition\n\n```python\n# Placeholder in if statement\nif condition:\n    pass  # Handle this case later\nelse:\n    do_something()\n\n# Placeholder in exception handling\ntry:\n    risky_operation()\nexcept SomeError:\n    pass  # Silently ignore (use cautiously!)\n```\n\n## Pass vs Continue\n\n```python\nfor i in range(3):\n    if i == 1:\n        pass  # Does NOTHING, continues to print\n    print(i)\n# Output: 0, 1, 2\n\nfor i in range(3):\n    if i == 1:\n        continue  # SKIPS print for i=1\n    print(i)\n# Output: 0, 2\n```\n\n> ⚠️ **Warning:** Using `pass` in exception handling can hide bugs. Use with caution!"
+        },
+        {
+            "id": "flow_12",
+            "type": "content",
+            "title": "Loop Else Clause",
+            "content": "# Loop Else Clause 🔄➡️\n\nPython loops can have an `else` clause that runs **after the loop completes normally** (not via break).\n\n## For-Else for Search\n\n```python\nnumbers = [1, 3, 5, 7, 9]\ntarget = 4\n\nfor num in numbers:\n    if num == target:\n        print(f\"Found {target}!\")\n        break\nelse:\n    print(f\"{target} not found!\")  # Runs because no break\n\n# Output: \"4 not found!\"\n```\n\n## Practical Example: Prime Check\n\n```python\ndef is_prime(n):\n    if n < 2:\n        return False\n    for i in range(2, int(n**0.5) + 1):\n        if n % i == 0:\n            return False  # Found divisor\n    else:\n        return True  # Loop completed = prime!\n\nprint(is_prime(17))  # True\nprint(is_prime(15))  # False\n```\n\n## While-Else\n\n```python\ncount = 0\n\nwhile count < 3:\n    print(count)\n    count += 1\nelse:\n    print(\"Loop completed!\")  # Runs after while\n\n# Output: 0, 1, 2, \"Loop completed!\"\n```\n\n> 💡 **Use Case:** The `else` clause is perfect for search operations where you need to know if something was NOT found!"
+        },
+        {
+            "id": "flow_13",
+            "type": "content",
+            "title": "List Comprehensions",
+            "content": "# List Comprehensions 🚀\n\nA Pythonic way to create lists in one line!\n\n## Basic Syntax\n\n```python\n# [expression for item in iterable]\n\nsquares = [x**2 for x in range(5)]\nprint(squares)  # [0, 1, 4, 9, 16]\n\n# Equivalent to:\nsquares = []\nfor x in range(5):\n    squares.append(x**2)\n```\n\n## With Condition (Filter)\n\n```python\n# [expression for item in iterable if condition]\n\nevens = [x for x in range(10) if x % 2 == 0]\nprint(evens)  # [0, 2, 4, 6, 8]\n```\n\n## Transform + Filter\n\n```python\nwords = [\"hello\", \"WORLD\", \"Python\"]\nupper_long = [w.upper() for w in words if len(w) > 4]\nprint(upper_long)  # ['HELLO', 'WORLD', 'PYTHON']\n```\n\n## Nested Comprehension\n\n```python\n# Flatten 2D list\nmatrix = [[1, 2], [3, 4], [5, 6]]\nflat = [num for row in matrix for num in row]\nprint(flat)  # [1, 2, 3, 4, 5, 6]\n\n# 2D list creation\ngrid = [[0 for _ in range(3)] for _ in range(3)]\n# [[0, 0, 0], [0, 0, 0], [0, 0, 0]]\n```\n\n> 💡 **Pro Tip:** Use comprehensions for simple transformations. For complex logic, stick to regular loops!"
+        },
+        {
+            "id": "flow_14",
+            "type": "content",
+            "title": "Dict & Set Comprehensions",
+            "content": "# Dict & Set Comprehensions 📚\n\n## Dictionary Comprehension\n\n```python\n# {key: value for item in iterable}\n\n# Create dict from two lists\nnames = [\"Alice\", \"Bob\", \"Charlie\"]\nages = [25, 30, 35]\n\npeople = {name: age for name, age in zip(names, ages)}\nprint(people)  # {'Alice': 25, 'Bob': 30, 'Charlie': 35}\n\n# Square mapping\nsquares = {x: x**2 for x in range(1, 6)}\nprint(squares)  # {1: 1, 2: 4, 3: 9, 4: 16, 5: 25}\n\n# With condition\neven_squares = {x: x**2 for x in range(10) if x % 2 == 0}\nprint(even_squares)  # {0: 0, 2: 4, 4: 16, 6: 36, 8: 64}\n```\n\n## Set Comprehension\n\n```python\n# {expression for item in iterable}\n\nnumbers = [1, 2, 2, 3, 3, 3, 4]\nunique_squares = {x**2 for x in numbers}\nprint(unique_squares)  # {1, 4, 9, 16}\n\n# Extract unique lengths\nwords = [\"apple\", \"banana\", \"cherry\", \"date\"]\nlengths = {len(w) for w in words}\nprint(lengths)  # {4, 5, 6}\n```\n\n## Generator Expression (Bonus!)\n\n```python\n# Use () for memory-efficient generator\nsum_of_squares = sum(x**2 for x in range(1000000))\n# Doesn't create a list in memory!\n```"
+        },
+        {
+            "id": "flow_15",
+            "type": "content",
+            "title": "Match Case (Python 3.10+)",
+            "content": "# Match Case Statement 🎯\n\nPython 3.10+ introduces structural pattern matching!\n\n## Basic Matching\n\n```python\ncommand = \"start\"\n\nmatch command:\n    case \"start\":\n        print(\"Starting...\")\n    case \"stop\":\n        print(\"Stopping...\")\n    case \"pause\":\n        print(\"Pausing...\")\n    case _:  # Default case (like else)\n        print(\"Unknown command\")\n```\n\n## Matching with Values\n\n```python\nhttp_code = 404\n\nmatch http_code:\n    case 200:\n        status = \"OK\"\n    case 404:\n        status = \"Not Found\"\n    case 500:\n        status = \"Server Error\"\n    case _:\n        status = \"Unknown\"\n```\n\n## Matching Patterns\n\n```python\npoint = (1, 0)\n\nmatch point:\n    case (0, 0):\n        print(\"Origin\")\n    case (x, 0):\n        print(f\"On x-axis at {x}\")\n    case (0, y):\n        print(f\"On y-axis at {y}\")\n    case (x, y):\n        print(f\"Point at ({x}, {y})\")\n```\n\n## OR Patterns\n\n```python\nday = \"Saturday\"\n\nmatch day:\n    case \"Saturday\" | \"Sunday\":\n        print(\"Weekend! 🎉\")\n    case _:\n        print(\"Weekday\")\n```\n\n> 💡 **Note:** `match-case` is much more powerful than switch statements in other languages!"
+        },
+        {
+            "id": "flow_quiz_4",
+            "type": "quiz",
+            "title": "Comprehensions Quiz",
+            "content": "Test your comprehension knowledge!",
+            "quizQuestion": "What does `[x*2 for x in range(4) if x % 2 == 0]` return?",
+            "quizOptions": [
+                "[0, 2, 4, 6]",
+                "[0, 4]",
+                "[2, 6]",
+                "[0, 1, 2, 3]"
+            ],
+            "correctOptionIndex": 1
+        },
+        {
+            "id": "flow_16",
+            "type": "content",
+            "title": "Summary",
+            "content": "# Great Work! 🎉\n\nYou've mastered Flow Control in Python!\n\n## Conditionals\n- ✅ `if`, `elif`, `else` statements\n- ✅ Comparison operators (`==`, `!=`, `<`, `>`, `<=`, `>=`)\n- ✅ Logical operators (`and`, `or`, `not`)\n- ✅ Ternary operator for one-liners\n\n## Loops\n- ✅ `for` loops with lists, strings, and `range()`\n- ✅ `while` loops for condition-based repetition\n- ✅ `enumerate()`, `zip()`, `reversed()`, `sorted()`\n- ✅ Nested loops for 2D data\n\n## Control Statements\n- ✅ `break` - Exit loop immediately\n- ✅ `continue` - Skip to next iteration\n- ✅ `pass` - Do nothing (placeholder)\n- ✅ Loop `else` clause\n\n## Comprehensions\n- ✅ List comprehensions `[x for x in ...]`\n- ✅ Dict comprehensions `{k: v for ...}`\n- ✅ Set comprehensions `{x for x in ...}`\n\n## Bonus\n- ✅ Match-case (Python 3.10+)\n\n> 🚀 **Practice Challenge:** Write FizzBuzz using only list comprehension!"
+        }
+    ]
+}

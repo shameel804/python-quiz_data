@@ -1,0 +1,32 @@
+[
+    {
+        "title": "Reading Images 📷",
+        "ques": "Read an image file `'image.jpg'` using **OpenCV**.",
+        "answer": {
+            "type": "code",
+            "lang": "python",
+            "content": "import cv2\n\nimg = cv2.imread('image.jpg')"
+        },
+        "explanation": "**`cv2.imread()`** loads an image from the specified file. Note that OpenCV loads images in **BGR** format by default."
+    },
+    {
+        "title": "Color Conservation 🎨",
+        "ques": "Convert the loaded image `img` from **BGR to Grayscale**.",
+        "answer": {
+            "type": "code",
+            "lang": "python",
+            "content": "gray = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)"
+        },
+        "explanation": "**`cv2.cvtColor()`** converts an image from one color space to another."
+    },
+    {
+        "title": "Edge Detection 📐",
+        "ques": "Apply **Canny Edge Detection** to the grayscale image `gray`.",
+        "answer": {
+            "type": "code",
+            "lang": "python",
+            "content": "edges = cv2.Canny(gray, 100, 200)"
+        },
+        "explanation": "**`cv2.Canny()`** is a popular multi-stage algorithm to detect a wide range of edges in images."
+    }
+]

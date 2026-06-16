@@ -1,0 +1,41 @@
+{
+    "id": "learn_ds_tool",
+    "topicId": "ds_tool",
+    "topicTitle": "Python Tools",
+    "description": "Standard library superpowers for DSA",
+    "baseKP": 70,
+    "slides": [
+        {
+            "id": "ds_tool_1",
+            "type": "content",
+            "title": "Collections Module",
+            "content": "# `collections` 🧰\n\n## `deque`\nDouble-ended queue. O(1) appends/pops from both ends.\n\n## `Counter`\nCounts hashable objects.\n```python\nCounter('aabbbc') # {'b':3, 'a':2, 'c':1}\n```\n\n## `defaultdict`\nDict that never raises KeyError.\n```python\nd = defaultdict(int)\nd['a'] += 1 # Works! Starts at 0\n```\n\n## `namedtuple`\nLightweight object class.\n```python\nPoint = namedtuple('Point', ['x', 'y'])\np = Point(10, 20)\nprint(p.x)\n```"
+        },
+        {
+            "id": "ds_tool_2",
+            "type": "content",
+            "title": "Itertools",
+            "content": "# `itertools` ♾️\n\n## Combinatorics\n- `permutations(p, r)`: Order matters (ABC != CBA).\n- `combinations(p, r)`: Order doesn't matter (ABC == CBA).\n\n## Iterators\n- `chain(a, b)`: Iterate a then b.\n- `cycle(a)`: Loop infinitely.\n- `islice(a, start, end)`: Slice an iterator.\n\n```python\nlist(combinations([1,2,3], 2))\n# [(1,2), (1,3), (2,3)]\n```"
+        },
+        {
+            "id": "ds_tool_quiz_1",
+            "type": "quiz",
+            "title": "Tools Quiz",
+            "content": "Check your understanding",
+            "quizQuestion": "Which collections class is perfect for counting frequency of elements?",
+            "quizOptions": [
+                "deque",
+                "defaultdict",
+                "Counter",
+                "namedtuple"
+            ],
+            "correctOptionIndex": 2
+        },
+        {
+            "id": "ds_tool_3",
+            "type": "content",
+            "title": "Built-in Functions",
+            "content": "# Functional Tools 🔧\n\n## `map(func, iter)`\nApply function to every item.\n```python\nnums = [1, 2, 3]\nsquares = map(lambda x: x**2, nums)\n```\n\n## `filter(func, iter)`\nKeep items where func returns True.\n```python\nevens = filter(lambda x: x%2==0, nums)\n```\n\n## `zip(iter1, iter2)`\nCombine lists in parallel.\n```python\nnames = ['a', 'b']\nages = [20, 30]\npairs = list(zip(names, ages)) # [('a', 20), ('b', 30)]\n```"
+        }
+    ]
+}

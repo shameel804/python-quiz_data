@@ -1,0 +1,42 @@
+[
+    {
+        "title": "Registering Models 📝",
+        "ques": "Write the code to **register** a model named `Book` with the Django admin site so it appears in the admin interface.",
+        "answer": {
+            "type": "code",
+            "lang": "python",
+            "content": "from django.contrib import admin\nfrom .models import Book\n\nadmin.site.register(Book)"
+        },
+        "explanation": "To make a model editable in the admin interface, you must register it using **`admin.site.register()`** in the `admin.py` file."
+    },
+    {
+        "title": "Customizing the List View 📋",
+        "ques": "Create a custom `ModelAdmin` class for a `Product` model that displays the `name` and `price` fields in the **list view** of the admin panel.",
+        "answer": {
+            "type": "code",
+            "lang": "python",
+            "content": "@admin.register(Product)\nclass ProductAdmin(admin.ModelAdmin):\n    list_display = ('name', 'price')"
+        },
+        "explanation": "The **`list_display`** attribute in a `ModelAdmin` class controls which fields are displayed as columns in the admin change list page."
+    },
+    {
+        "title": "Adding Search 🔍",
+        "ques": "How do you enable a **search box** in the admin interface for the `Product` model to search by `name`?",
+        "answer": {
+            "type": "code",
+            "lang": "python",
+            "content": "class ProductAdmin(admin.ModelAdmin):\n    search_fields = ['name']"
+        },
+        "explanation": "The **`search_fields`** attribute enables a search box that will query the specified fields for matches."
+    },
+    {
+        "title": "Filters 🧹",
+        "ques": "Add a **filter sidebar** to the `Product` admin to allow filtering by the `category` field.",
+        "answer": {
+            "type": "code",
+            "lang": "python",
+            "content": "class ProductAdmin(admin.ModelAdmin):\n    list_filter = ('category',)"
+        },
+        "explanation": "The **`list_filter`** attribute activates a sidebar on the right of the change list page that allows users to filter results by specific fields."
+    }
+]

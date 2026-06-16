@@ -1,0 +1,55 @@
+{
+    "id": "learn_ml_basic",
+    "topicId": "basic",
+    "topicTitle": "Basics",
+    "description": "Understand the core concepts and workflow of Machine Learning",
+    "baseKP": 50,
+    "slides": [
+        {
+            "id": "ml_basic_1",
+            "type": "content",
+            "title": "Definition and Types",
+            "content": "# What is Machine Learning? 🤖\n\nMachine Learning (ML) is a subset of AI where computers learn from data without being explicitly programmed.\n\n## Three Main Types\n1. **Supervised Learning**: The model learns from labeled examples (Input + Correct Output).\n   - *Example*: Predicting house prices based on size.\n2. **Unsupervised Learning**: The model finds patterns in unlabeled data.\n   - *Example*: Grouping customers by purchasing behavior.\n3. **Reinforcement Learning**: An agent learns by trial and error to maximize a reward.\n   - *Example*: A robot learning to walk or play chess."
+        },
+        {
+            "id": "ml_basic_quiz_1",
+            "type": "quiz",
+            "title": "Types Quiz",
+            "content": "Check your understanding",
+            "quizQuestion": "Which type of learning involves labeled data?",
+            "quizOptions": [
+                "Unsupervised Learning",
+                "Supervised Learning",
+                "Reinforcement Learning",
+                "Deep Learning"
+            ],
+            "correctOptionIndex": 1
+        },
+        {
+            "id": "ml_basic_2",
+            "type": "content",
+            "title": "Applications and Workflow",
+            "content": "# The ML Workflow 🔄\n\nBuilding an ML model isn't just coding algorithms. It's a pipeline:\n\n1. **Data Collection**: Gathering raw data from DBs, APIs, or files.\n2. **Data Preprocessing**: Cleaning, formatting, and handling missing values.\n3. **Feature Engineering**: Creating meaningful inputs for the model.\n4. **Model Selection**: Choosing the right algorithm (e.g., Random Forest).\n5. **Training**: feeding data to the model.\n6. **Evaluation**: Testing accuracy on unseen data.\n7. **Deployment**: Putting the model into production.\n\n## Real World Applications 🌍\n- **Netflix**: Recommendation Systems\n- **Tesla**: Self-driving cars (Computer Vision)\n- **Siri/Alexa**: Natural Language Processing\n- **Banks**: Fraud Detection"
+        },
+        {
+            "id": "ml_basic_3",
+            "type": "content",
+            "title": "Key Terminology",
+            "content": "# Speak the Language 🗣️\n\n- **Dataset**: The collection of data used for ML.\n- **Features (X)**: Input variables (columns) used to make predictions.\n- **Target/Label (y)**: The output variable we want to predict.\n- **Training Set**: Subset of data to teach the model.\n- **Test Set**: Subset of data to evaluate the model (never seen during training).\n- **Model**: The mathematical engine trained on data.\n- **Overfitting**: When a model memorizes the training data but fails on new data.\n- **Underfitting**: When a model is too simple to capture patterns.\n\n> 💡 **Tip**: Think of Features as \"Questions\" and Labels as \"Answers\"."
+        },
+        {
+            "id": "ml_basic_quiz_2",
+            "type": "quiz",
+            "title": "Terminology Quiz",
+            "content": "Check your understanding",
+            "quizQuestion": "What do we call the data the model has never seen before, used for checking accuracy?",
+            "quizOptions": [
+                "Training Set",
+                "Validation Set",
+                "Test Set",
+                "Feature Set"
+            ],
+            "correctOptionIndex": 2
+        }
+    ]
+}

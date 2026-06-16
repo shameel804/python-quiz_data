@@ -1,0 +1,31 @@
+[
+    {
+        "title": "Tensors 📦",
+        "ques": "What is a **Tensor** in TensorFlow?",
+        "answer": {
+            "type": "text",
+            "content": "A **Tensor** is a multi-dimensional array similar to a NumPy array, but with the added ability to run on GPUs and support for automatic differentiation."
+        },
+        "explanation": "Tensors are the fundamental data structures used in TensorFlow."
+    },
+    {
+        "title": "Model Evaluation 📊",
+        "ques": "Evaluate a compiled Keras model on test data `X_test` and `y_test`.",
+        "answer": {
+            "type": "code",
+            "lang": "python",
+            "content": "loss, accuracy = model.evaluate(X_test, y_test)"
+        },
+        "explanation": "**`evaluate()`** computes the loss and metrics defined during compilation on the provided data."
+    },
+    {
+        "title": "Sequential API 🧱",
+        "ques": "Create a simple Neural Network with one hidden layer of 10 neurons (ReLU) and an output layer of 1 neuron (Sigmoid).",
+        "answer": {
+            "type": "code",
+            "lang": "python",
+            "content": "model = tf.keras.models.Sequential([\n    tf.keras.layers.Dense(10, activation='relu'),\n    tf.keras.layers.Dense(1, activation='sigmoid')\n])"
+        },
+        "explanation": "The **Sequential API** allows you to build models layer-by-layer."
+    }
+]

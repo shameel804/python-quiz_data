@@ -1,0 +1,32 @@
+[
+    {
+        "title": "Basic Line Plot 📉",
+        "ques": "Plot `x` versus `y` as a line chart using `pyplot`.",
+        "answer": {
+            "type": "code",
+            "lang": "python",
+            "content": "import matplotlib.pyplot as plt\n\nplt.plot(x, y)\nplt.show()"
+        },
+        "explanation": "**`plt.plot()`** is the basic function for plotting y versus x as lines and/or markers."
+    },
+    {
+        "title": "Adding Labels 🏷️",
+        "ques": "Add a title \"Sales Growth\" and label the x-axis \"Year\" and y-axis \"Revenue\".",
+        "answer": {
+            "type": "code",
+            "lang": "python",
+            "content": "plt.title(\"Sales Growth\")\nplt.xlabel(\"Year\")\nplt.ylabel(\"Revenue\")"
+        },
+        "explanation": "Clear labels are crucial for data visualization. Use `title()`, `xlabel()`, and `ylabel()`."
+    },
+    {
+        "title": "Subplots 🖼️",
+        "ques": "Create a figure with **2 subplots** side-by-side (1 row, 2 columns).",
+        "answer": {
+            "type": "code",
+            "lang": "python",
+            "content": "fig, (ax1, ax2) = plt.subplots(1, 2)"
+        },
+        "explanation": "**`plt.subplots()`** is the recommended way to create a figure and a set of subplots."
+    }
+]

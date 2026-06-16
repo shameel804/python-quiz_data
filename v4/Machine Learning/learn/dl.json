@@ -1,0 +1,41 @@
+{
+    "id": "learn_ml_dl",
+    "topicId": "dl",
+    "topicTitle": "Deep Learning",
+    "description": "Introduction to Neural Networks and modern AI",
+    "baseKP": 80,
+    "slides": [
+        {
+            "id": "ml_dl_1",
+            "type": "content",
+            "title": "Neural Networks",
+            "content": "# Neural Networks 🧠\n\nInspired by the human brain. Consists of layers of \"neurons\".\n\n## Architecture\n1. **Input Layer**: Receives raw data (pixels of image).\n2. **Hidden Layers**: The magic happens here. Neurons apply weights and biases.\n3. **Output Layer**: Final prediction (Cat or Dog).\n\n## Activation Functions\nDecide if a neuron should \"fire\".\n- **ReLU**: Most common for hidden layers.\n- **Sigmoid**: For binary output (0 or 1).\n- **Softmax**: For multi-class output (Probability distribution)."
+        },
+        {
+            "id": "ml_dl_2",
+            "type": "content",
+            "title": "CNNs and RNNs",
+            "content": "# Specialized Architectures 🏗️\n\n## CNN (Convolutional Neural Networks)\nKing of **Image Processing**.\n- Uses \"filters\" to scan images for edges, shapes, and textures.\n- **Use cases**: Face ID, Medical Imaging, Self-driving cars.\n\n## RNN (Recurrent Neural Networks)\nDesigned for **Sequential Data** (Time Series, Text).\n- Has \"memory\" of previous inputs.\n- **Evolution**: **LSTM** (Long Short Term Memory) and **GRU** fixed RNN's short-term memory problem."
+        },
+        {
+            "id": "ml_dl_quiz_1",
+            "type": "quiz",
+            "title": "Architecture Quiz",
+            "content": "Check your understanding",
+            "quizQuestion": "Which network type is best suited for image recognition tasks?",
+            "quizOptions": [
+                "RNN",
+                "CNN",
+                "ANN",
+                "GAN"
+            ],
+            "correctOptionIndex": 1
+        },
+        {
+            "id": "ml_dl_3",
+            "type": "content",
+            "title": "Training Methods",
+            "content": "# How Learning Happens 🏋️\n\n1. **Forward Propagation**: Data flows through the network to make a guess.\n2. **Loss Calculation**: Compare guess to actual answer (Calculate Error).\n3. **Backpropagation**: Go backward to find which weights contributed to error.\n4. **Optimization**: Update weights to reduce error (using **Gradient Descent**).\n\n> 💡 **Tip**: This cycle helps the model minimize the \"Loss Function\" over many \"Epochs\"."
+        }
+    ]
+}

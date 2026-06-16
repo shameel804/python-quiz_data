@@ -1,0 +1,41 @@
+{
+    "id": "learn_lib_requests",
+    "topicId": "requests",
+    "topicTitle": "Requests",
+    "description": "HTTP for Humans",
+    "baseKP": 55,
+    "slides": [
+        {
+            "id": "lib_req_1",
+            "type": "content",
+            "title": "Making Requests",
+            "content": "# HTTP Made Easy 📨\n\nForget `urllib`. Use Requests.\n\n```python\nimport requests\n\n# GET\nr = requests.get('https://api.github.com/events')\nprint(r.status_code) # 200\nprint(r.json()) # Parsed JSON\n\n# POST (Sending Data)\npayload = {'key': 'value'}\nr = requests.post('https://httpbin.org/post', data=payload)\n```"
+        },
+        {
+            "id": "lib_req_2",
+            "type": "content",
+            "title": "Headers & Auth",
+            "content": "# Customizing Calls 🔧\n\n## Headers\nPretend to be a browser or send API tokens.\n```python\nheaders = {'user-agent': 'my-app/0.0.1'}\nr = requests.get(url, headers=headers)\n```\n\n## Authentication\n```python\nfrom requests.auth import HTTPBasicAuth\nr = requests.get(url, auth=('user', 'pass'))\n```"
+        },
+        {
+            "id": "lib_req_3",
+            "type": "content",
+            "title": "Session Objects",
+            "content": "# Persistence 🍪\n\nA `Session` object persists cookies across requests (great for staying logged in).\n\n```python\ns = requests.Session()\n\n# Login sets a cookie\ns.post('http://httpbin.org/cookies/set/sessioncookie/123456789')\n\n# Next request sends the cookie automatically\nr = s.get('http://httpbin.org/cookies')\nprint(r.text)\n```"
+        },
+        {
+            "id": "lib_req_quiz_1",
+            "type": "quiz",
+            "title": "Usage Quiz",
+            "content": "Check your understanding",
+            "quizQuestion": "Which method easily converts the response body from JSON string to a Python dict?",
+            "quizOptions": [
+                "r.text()",
+                "r.content()",
+                "r.json()",
+                "r.parse()"
+            ],
+            "correctOptionIndex": 2
+        }
+    ]
+}

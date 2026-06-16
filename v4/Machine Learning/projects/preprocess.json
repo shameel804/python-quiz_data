@@ -1,0 +1,42 @@
+[
+    {
+        "title": "Handling Missing Data 🧹",
+        "ques": "Using Pandas, write the code to **fill missing values** in the `age` column of a DataFrame `df` with the **mean** of that column.",
+        "answer": {
+            "type": "code",
+            "lang": "python",
+            "content": "mean_age = df['age'].mean()\ndf['age'].fillna(mean_age, inplace=True)"
+        },
+        "explanation": "Imputing missing values with the mean is a common strategy to preserve data quantity. **`fillna()`** is the method used."
+    },
+    {
+        "title": "Encoding Categorical Data 🏷️",
+        "ques": "Use Scikit-learn's `LabelEncoder` to convert a categorical column `Gender` (Male, Female) into numerical values.",
+        "answer": {
+            "type": "code",
+            "lang": "python",
+            "content": "from sklearn.preprocessing import LabelEncoder\n\nle = LabelEncoder()\ndf['Gender'] = le.fit_transform(df['Gender'])"
+        },
+        "explanation": "ML algorithms work with numbers. **`LabelEncoder`** assigns a unique integer to each category."
+    },
+    {
+        "title": "Splitting Data ✂️",
+        "ques": "Write the code to split your features `X` and target `y` into **training** (80%) and **testing** (20%) sets using `train_test_split`.",
+        "answer": {
+            "type": "code",
+            "lang": "python",
+            "content": "from sklearn.model_selection import train_test_split\n\nX_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)"
+        },
+        "explanation": "**`train_test_split`** is essential to evaluate how well your model generalizes to unseen data."
+    },
+    {
+        "title": "Feature Scaling ⚖️",
+        "ques": "Apply **Standard Scaling** (z-score normalization) to the training data `X_train`.",
+        "answer": {
+            "type": "code",
+            "lang": "python",
+            "content": "from sklearn.preprocessing import StandardScaler\n\nscaler = StandardScaler()\nX_train_scaled = scaler.fit_transform(X_train)"
+        },
+        "explanation": "Scaling ensures that features with larger ranges don't dominate the learning process. **`StandardScaler`** scales data to have mean 0 and variance 1."
+    }
+]

@@ -1,0 +1,29 @@
+[
+    {
+        "title": "What is Machine Learning? 🤖",
+        "ques": "Briefly define **Machine Learning (ML)** and explain how it differs from traditional programming.",
+        "answer": {
+            "type": "text",
+            "content": "**Machine Learning** is a subset of AI where computers learn from data and improve their performance without being explicitly programmed for every rule. In traditional programming, you write rules to process data; in ML, the algorithm learns the rules from the data."
+        },
+        "explanation": "ML empowers systems to learn patterns from data, making it ideal for tasks where explicit rule-writing is difficult or impossible."
+    },
+    {
+        "title": "Types of ML 📊",
+        "ques": "List the three main **types of Machine Learning**.",
+        "answer": {
+            "type": "text",
+            "content": "1.  **Supervised Learning**: Training on labeled data (input-output pairs).\n2.  **Unsupervised Learning**: Finding patterns in unlabeled data.\n3.  **Reinforcement Learning**: Learning through trial and error based on rewards/punishment."
+        },
+        "explanation": "These three categories cover vast majority of ML problems, derived from how the model learns from data."
+    },
+    {
+        "title": "ML Workflow 🔄",
+        "ques": "Outline the standard **Machine Learning workflow** from data to deployment.",
+        "answer": {
+            "type": "text",
+            "content": "Data Collection -> Data Preprocessing -> Model Selection -> Training -> Evaluation -> Hyperparameter Tuning -> Deployment -> Monitoring."
+        },
+        "explanation": "This lifecycle ensures a structured approach to building robust ML models."
+    }
+]

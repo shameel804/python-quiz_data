@@ -1,0 +1,73 @@
+{
+    "id": "learn_ds_adv_ds",
+    "topicId": "ds_adv_ds",
+    "topicTitle": "Advanced Data Structures",
+    "description": "Deep dive into linear and non-linear structures",
+    "baseKP": 80,
+    "slides": [
+        {
+            "id": "ds_adv_1",
+            "type": "content",
+            "title": "Arrays & NumPy",
+            "content": "# Arrays 📦\n\nContiguous block of memory.\n- **Access**: O(1) (Instant via index).\n- **Insert/Delete**: O(n) (Need to shift elements).\n\n## Python Lists vs NumPy\n- **List**: Dynamic array of pointers. Flexible but slower.\n- **NumPy Array**: Fixed type (e.g., all int32). Contiguous in C-memory. Extremely fast for math.\n\n```python\nimport numpy as np\narr = np.array([1, 2, 3])  # Fast & Typed\n```"
+        },
+        {
+            "id": "ds_adv_2",
+            "type": "content",
+            "title": "Stacks and Queues",
+            "content": "# Stacks & Queues 📚\n\n## Stack (LIFO)\nLast In, First Out. Like a stack of plates.\n- **Ops**: `push`, `pop`.\n- **Use**: Undo buttons, Recursion call stack.\n- **Python**: Use `list.append()` and `list.pop()`.\n\n## Queue (FIFO)\nFirst In, First Out. Like a printer queue.\n- **Ops**: `enqueue`, `dequeue`.\n- **Use**: Task scheduling, BFS.\n- **Python**: Use `collections.deque` (Double-Ended Queue) for O(1) pops from both ends.\n\n```python\nfrom collections import deque\nq = deque([1, 2, 3])\nq.popleft() # O(1) - List pop(0) is O(n)!\n```"
+        },
+        {
+            "id": "ds_adv_quiz_1",
+            "type": "quiz",
+            "title": "Queue Quiz",
+            "content": "Check your understanding",
+            "quizQuestion": "Why should you use 'deque' instead of 'list' for a Queue in Python?",
+            "quizOptions": [
+                "Deque is sorted",
+                "List cannot store integers",
+                "Popping from start of List is O(n) (slow), Deque is O(1) (fast)",
+                "Deque uses less memory"
+            ],
+            "correctOptionIndex": 2
+        },
+        {
+            "id": "ds_adv_3",
+            "type": "content",
+            "title": "Linked Lists",
+            "content": "# Linked Lists 🔗\n\nNodes where each node has value and pointer to next.\n`[1] -> [2] -> [3] -> None`\n\n- **Insert at Head**: O(1) (Just change one pointer).\n- **Access**: O(n) (Must walk from head).\n\n## Doubly Linked List\nHas `next` and `prev` pointers. Allows traversal in both directions."
+        },
+        {
+            "id": "ds_adv_4",
+            "type": "content",
+            "title": "Hash Tables",
+            "content": "# Hash Tables (Dictionaries) 🔑\n\nThe most useful DS in interviews!\nMaps Keys -> Values using a **Hash Function**.\n\n## Efficiency\n- **Access/Insert/Delete**: Average **O(1)**.\n- **Collision**: When two keys hash to same slot. Handled by Chaining (Linked List) or Open Addressing.\n\n```python\nd = {'apple': 5, 'banana': 8}\nprint(d.get('apple')) # Instant!\n```"
+        },
+        {
+            "id": "ds_adv_5",
+            "type": "content",
+            "title": "Trees & Traversals",
+            "content": "# Trees 🌳\n\nHierarchical data. Root at top, leaves at bottom.\n\n## Binary Tree\nEach node has max 2 children (Left, Right).\n\n## Traversals\n1. **In-Order**: Left -> Root -> Right (Sorted in BST).\n2. **Pre-Order**: Root -> Left -> Right (Copying tree).\n3. **Post-Order**: Left -> Right -> Root (Delete tree)."
+        },
+        {
+            "id": "ds_adv_quiz_2",
+            "type": "quiz",
+            "title": "Tree Quiz",
+            "content": "Check your understanding",
+            "quizQuestion": "Which traversal visits the Root node FIRST?",
+            "quizOptions": [
+                "In-Order",
+                "Pre-Order",
+                "Post-Order",
+                "Level-Order"
+            ],
+            "correctOptionIndex": 1
+        },
+        {
+            "id": "ds_adv_6",
+            "type": "content",
+            "title": "Heaps",
+            "content": "# Heaps 🏔️\n\nA Binary Tree where parent is always smaller (Min-Heap) or larger (Max-Heap) than children.\n\n## Use Case: Priority Queue\n- **Get Min/Max**: O(1).\n- **Insert/Delete**: O(log n).\n\n## Python `heapq`\nImplements **Min-Heap** by default.\n```python\nimport heapq\nh = []\nheapq.heappush(h, 5)\nheapq.heappush(h, 1)\nprint(heapq.heappop(h)) # Prints 1\n```"
+        }
+    ]
+}

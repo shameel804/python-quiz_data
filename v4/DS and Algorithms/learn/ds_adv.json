@@ -1,0 +1,35 @@
+{
+    "id": "learn_ds_adv",
+    "topicId": "ds_adv",
+    "topicTitle": "Advanced Topics",
+    "description": "Tries, Disjoint Sets, and more",
+    "baseKP": 90,
+    "slides": [
+        {
+            "id": "ds_adv_top_1",
+            "type": "content",
+            "title": "Tries (Prefix Trees)",
+            "content": "# Tries 🌲\n\nOptimization for strings. A tree where each node is a character.\n\n## Use Case: Autocomplete\nStoring \"Cat\", \"Car\", \"Cart\" efficienty.\n`Root -> C -> A -> [T, R -> T]`\n\n- **Search**: O(L) where L is length of word (independent of N items!).\n- **Prefix Search**: Very fast."
+        },
+        {
+            "id": "ds_adv_top_2",
+            "type": "content",
+            "title": "Union-Find (DSU)",
+            "content": "# Disjoint Set Union 🖇️\n\nTracks elements partitioned into disjoint sets. \n\n## Operations\n1. **Find**: Which group is A in?\n2. **Union**: Merge group A and group B.\n\n## Optimizations\n- **Path Compression**: When finding, point node directly to root.\n- **Union by Rank**: Attach small tree to big tree.\n\nResult: Nearly **O(1)** amortized time (Inverse Ackermann function)."
+        },
+        {
+            "id": "ds_adv_top_quiz_1",
+            "type": "quiz",
+            "title": "Advanced Quiz",
+            "content": "Check your understanding",
+            "quizQuestion": "Which data structure is ideal for implementing an autocomplete system?",
+            "quizOptions": [
+                "Union-Find",
+                "Trie",
+                "Stack",
+                "Linked List"
+            ],
+            "correctOptionIndex": 1
+        }
+    ]
+}

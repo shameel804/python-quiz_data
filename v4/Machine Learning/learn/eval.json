@@ -1,0 +1,41 @@
+{
+    "id": "learn_ml_eval",
+    "topicId": "eval",
+    "topicTitle": "Model Evaluation",
+    "description": "Techniques to validate and improve model performance",
+    "baseKP": 75,
+    "slides": [
+        {
+            "id": "ml_eval_1",
+            "type": "content",
+            "title": "Cross-Validation",
+            "content": "# Cross-Validation (K-Fold) 🔄\n\nChecking accuracy on just one test set might be lucky (or unlucky).\n\n## How K-Fold Works\n1. Split data into `K` parts (folds) (e.g., 5).\n2. Train on 4 parts, test on 1 part.\n3. Repeat 5 times, rotating the test part.\n4. Average the 5 scores.\n\nGives a much more robust estimate of model performance!"
+        },
+        {
+            "id": "ml_eval_2",
+            "type": "content",
+            "title": "Hyperparameter Tuning",
+            "content": "# Tuning the Knobs 🎛️\n\nParameters methods learn (weights), Hyperparameters YOU allow (learning rate, tree depth).\n\n## Grid Search\nTry EVERY combination of settings.\n- Rate: [0.1, 0.01], Depth: [3, 5, 10]\n- **Pros**: Finds best.\n- **Cons**: Extremely slow.\n\n## Random Search\nTry random combinations for a set time.\n- **Pros**: Faster and often finds near-optimal results."
+        },
+        {
+            "id": "ml_eval_3",
+            "type": "content",
+            "title": "Overfitting vs Underfitting",
+            "content": "# The Bias-Variance Tradeoff ⚖️\n\n## Overfitting (High Variance)\n- Model learns the \"noise\" in training data.\n- **Signs**: 99% Training Accuracy, 70% Test Accuracy.\n- **Fix**: More data, simplify model, regularization, dropout.\n\n## Underfitting (High Bias)\n- Model is too simple to learn the pattern.\n- **Signs**: 60% Training, 59% Test (Both bad).\n- **Fix**: More complex model, more features."
+        },
+        {
+            "id": "ml_eval_quiz_1",
+            "type": "quiz",
+            "title": "Diagnostic Quiz",
+            "content": "Check your understanding",
+            "quizQuestion": "If your model has high training accuracy but low test accuracy, what is it suffering from?",
+            "quizOptions": [
+                "Underfitting",
+                "Overfitting",
+                "Good Generalization",
+                "High Bias"
+            ],
+            "correctOptionIndex": 1
+        }
+    ]
+}

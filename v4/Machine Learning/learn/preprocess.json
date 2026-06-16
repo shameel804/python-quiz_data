@@ -1,0 +1,41 @@
+{
+    "id": "learn_ml_preprocess",
+    "topicId": "preprocess",
+    "topicTitle": "Data Preprocessing",
+    "description": "Prepare your data for optimal model performance",
+    "baseKP": 60,
+    "slides": [
+        {
+            "id": "ml_prep_1",
+            "type": "content",
+            "title": "Data Keep It Clean",
+            "content": "# Data Cleaning 🧹\n\nReal-world data is messy. \"Garbage In, Garbage Out\" (GIGO).\n\n## Handling Missing Values\n1. **Drop them**: If dataset is huge and missing rows are few.\n   ```python\n   df.dropna()\n   ```\n2. **Imputation**: Fill with Mean, Median, or Mode.\n   ```python\n   from sklearn.impute import SimpleImputer\n   imputer = SimpleImputer(strategy='mean')\n   ```\n\n## Feature Scaling\nModels like KNN and SVM are sensitive to scale (Age: 20-60, Salary: 10000-50000). Scaling fixes this.\n- **Standardization (Z-score)**: Mean=0, Std=1.\n- **Normalization (Min-Max)**: Scales to range [0, 1]."
+        },
+        {
+            "id": "ml_prep_2",
+            "type": "content",
+            "title": "Encoding Categorical Variables",
+            "content": "# Encoding Variables 🔢\n\nComputers only understand numbers. We must convert text categories (Red, Blue) to numbers.\n\n## 1. Label Encoding\nAssigns a number to each category.\n- Red -> 0, Blue -> 1, Green -> 2\n- **Issue**: Models might think 2 > 0 implies order (Green > Red) which is wrong for colors.\n- **Use for**: Ordinal data (Low, Medium, High).\n\n## 2. One-Hot Encoding\nCreates binary columns for each category.\n- Is_Red: [1, 0], Is_Blue: [0, 1]\n- **Pros**: No false ordering.\n- **Cons**: Increases memory usage if many categories.\n- **Use for**: Nominal data (Colors, Cities)."
+        },
+        {
+            "id": "ml_prep_quiz_1",
+            "type": "quiz",
+            "title": "Encoding Quiz",
+            "content": "Check your understanding",
+            "quizQuestion": "Which encoding technique is best for 'City' names where no order exists?",
+            "quizOptions": [
+                "Label Encoding",
+                "Ordinal Encoding",
+                "One-Hot Encoding",
+                "Count Encoding"
+            ],
+            "correctOptionIndex": 2
+        },
+        {
+            "id": "ml_prep_3",
+            "type": "content",
+            "title": "Data Splitting",
+            "content": "# Train-Test Split ✂️\n\nNever test a model on the same data it learned from! (That's cheating).\n\n## The Golden Rule\nSplit your data into two (or three) parts:\n1. **Train Set (70-80%)**: Model learns from this.\n2. **Test Set (20-30%)**: Used to verify final performance.\n\n```python\nfrom sklearn.model_selection import train_test_split\n\nX_train, X_test, y_train, y_test = train_test_split(\n    X, y, test_size=0.2, random_state=42\n)\n```\n\n> 🎯 **Tip**: `random_state=42` ensures the split is reproducible every time you run the code."
+        }
+    ]
+}

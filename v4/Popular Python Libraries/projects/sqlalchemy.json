@@ -1,0 +1,32 @@
+[
+    {
+        "title": "Creating an Engine 🚂",
+        "ques": "Create an **SQLAlchemy engine** that connects to an in-memory SQLite database.",
+        "answer": {
+            "type": "code",
+            "lang": "python",
+            "content": "from sqlalchemy import create_engine\n\nengine = create_engine('sqlite:///:memory:')"
+        },
+        "explanation": "The **Engine** is the starting point for any SQLAlchemy application. It's the home base for the actual database and its DBAPI."
+    },
+    {
+        "title": "Declarative Base 🏗️",
+        "ques": "Create a **Base** class for declarative models and define a simple `User` model with an `id` and `name`.",
+        "answer": {
+            "type": "code",
+            "lang": "python",
+            "content": "from sqlalchemy.ext.declarative import declarative_base\nfrom sqlalchemy import Column, Integer, String\n\nBase = declarative_base()\n\nclass User(Base):\n    __tablename__ = 'users'\n    id = Column(Integer, primary_key=True)\n    name = Column(String)"
+        },
+        "explanation": "The **Declarative System** allows you to define classes mapped to database tables."
+    },
+    {
+        "title": "Sessions 🤝",
+        "ques": "Create a **Session** to interact with the database.",
+        "answer": {
+            "type": "code",
+            "lang": "python",
+            "content": "from sqlalchemy.orm import sessionmaker\n\nSession = sessionmaker(bind=engine)\nsession = Session()"
+        },
+        "explanation": "The **Session** establishes all conversations with the database and represents a \"holding zone\" for all the objects which you've loaded or associated with it."
+    }
+]

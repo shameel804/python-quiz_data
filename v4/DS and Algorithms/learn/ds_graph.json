@@ -1,0 +1,41 @@
+{
+    "id": "learn_ds_graph",
+    "topicId": "ds_graph",
+    "topicTitle": "Graph Algorithms",
+    "description": "Navigating networks and connections",
+    "baseKP": 80,
+    "slides": [
+        {
+            "id": "ds_graph_1",
+            "type": "content",
+            "title": "DFS & BFS",
+            "content": "# Graph Traversals 🚶\n\n## Depth-First Search (DFS)\nGo deep! Explore one branch fully before backtracking.\n- **DS**: Stack (or Recursion).\n- **Use**: Maze solving, Finding cycles, Path existence.\n\n## Breadth-First Search (BFS)\nGo wide! Explore neighbor by neighbor.\n- **DS**: Queue.\n- **Use**: Shortest path in unweighted graph, Social networking (friends of friends).\n\n```python\n# BFS\nq = deque([start])\nvisited = {start}\nwhile q:\n    curr = q.popleft()\n    for neighbor in graph[curr]:\n        if neighbor not in visited:\n            visited.add(neighbor)\n            q.append(neighbor)\n```"
+        },
+        {
+            "id": "ds_graph_2",
+            "type": "content",
+            "title": "Shortest Path",
+            "content": "# Dijkstra's Algorithm ⚡\n\nFinds shortest path in a **weighted** graph (e.g., GPS map with distances).\n\n## Logic (Greedy)\n1. Set distance to start = 0, others = ∞.\n2. Use a **Min-Heap** to pick closest unvisited node.\n3. Checking neighbors: If `dist(u) + weight(u,v) < dist(v)`, update `dist(v)`.\n4. Repeat.\n\n> 💡 **Limit**: Dijkstra fails with negative weights (Use Bellman-Ford)."
+        },
+        {
+            "id": "ds_graph_quiz_1",
+            "type": "quiz",
+            "title": "Algo Quiz",
+            "content": "Check your understanding",
+            "quizQuestion": "Which algorithm is best for finding the shortest path in a weighted map (like Google Maps)?",
+            "quizOptions": [
+                "DFS",
+                "BFS",
+                "Dijkstra's",
+                "Bubble Sort"
+            ],
+            "correctOptionIndex": 2
+        },
+        {
+            "id": "ds_graph_3",
+            "type": "content",
+            "title": "Minimum Spanning Tree",
+            "content": "# Minimum Spanning Tree (MST) 🌲\n\nConnect all nodes in a graph with minimum total edge weight, without cycles.\n\n## Applications\n- Designing network cables (connect all cities cheapest way).\n- Circuit design.\n\n## Algorithms\n1. **Prim's**: Grow tree from a starting node (Like Dijkstra).\n2. **Kruskal's**: Sort edges by weight, add edge if it doesn't form a cycle (Uses Union-Find)."
+        }
+    ]
+}

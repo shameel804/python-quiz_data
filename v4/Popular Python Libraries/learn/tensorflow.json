@@ -1,0 +1,41 @@
+{
+    "id": "learn_lib_tensorflow",
+    "topicId": "tensorflow",
+    "topicTitle": "TensorFlow",
+    "description": "Google's open-source machine learning library",
+    "baseKP": 80,
+    "slides": [
+        {
+            "id": "lib_tf_1",
+            "type": "content",
+            "title": "Tensors & Keras",
+            "content": "# The Tensor 📦\n\nA multi-dimensional array that flows through the graph.\n\n## Keras API\nTensorFlow includes **Keras**, a high-level API to build models easily.\n\n```tf\nimport tensorflow as tf\n\n# Creating a sequential model\nmodel = tf.keras.Sequential([\n    tf.keras.layers.Dense(128, activation='relu'),\n    tf.keras.layers.Dense(10, activation='softmax')\n])\n```"
+        },
+        {
+            "id": "lib_tf_2",
+            "type": "content",
+            "title": "Training",
+            "content": "# Compile & Fit 🏃\n\n1. **Compile**: Define optimizer, loss function, and metrics.\n2. **Fit**: Train the model on data.\n\n```tf\nmodel.compile(\n    optimizer='adam',\n    loss='sparse_categorical_crossentropy',\n    metrics=['accuracy']\n)\n\n# Train for 5 epochs\nmodel.fit(x_train, y_train, epochs=5)\n```"
+        },
+        {
+            "id": "lib_tf_quiz_1",
+            "type": "quiz",
+            "title": "Keras Quiz",
+            "content": "Check your understanding",
+            "quizQuestion": "Which Keras layer type is fully connected (every neuron connected to every neuron in next layer)?",
+            "quizOptions": [
+                "Conv2D",
+                "LSTM",
+                "Dense",
+                "Flatten"
+            ],
+            "correctOptionIndex": 2
+        },
+        {
+            "id": "lib_tf_3",
+            "type": "content",
+            "title": "Eager Execution",
+            "content": "# Immediate Results ⚡\n\nOlder TensorFlow required building a static graph first. Modern TensorFlow (2.0+) uses **Eager Execution** by default.\n\nOperations are evaluated immediately as they are called from Python.\n```tf\nx = [[2.]]\nm = tf.matmul(x, x)\nprint(m) # tf.Tensor([[4.]], shape=(1, 1), dtype=float32)\n```"
+        }
+    ]
+}

@@ -1,0 +1,31 @@
+[
+    {
+        "title": "Clustering with K-Means 🍇",
+        "ques": "Initialize **K-Means Clustering** with 3 clusters and fit it to the data `X`.",
+        "answer": {
+            "type": "code",
+            "lang": "python",
+            "content": "from sklearn.cluster import KMeans\n\nkmeans = KMeans(n_clusters=3)\nkmeans.fit(X)"
+        },
+        "explanation": "**K-Means** partitions observations into *k* clusters in which each observation belongs to the cluster with the nearest mean."
+    },
+    {
+        "title": "Dimensionality Reduction 📉",
+        "ques": "Use **PCA (Principal Component Analysis)** to reduce the data `X` to 2 components.",
+        "answer": {
+            "type": "code",
+            "lang": "python",
+            "content": "from sklearn.decomposition import PCA\n\npca = PCA(n_components=2)\nX_pca = pca.fit_transform(X)"
+        },
+        "explanation": "**PCA** reduces the dimensionality of large datasets, increasing interpretability but minimizing information loss."
+    },
+    {
+        "title": "Anomaly Detection 🚨",
+        "ques": "What is the primary goal of **Anomaly Detection** in Unsupervised Learning?",
+        "answer": {
+            "type": "text",
+            "content": "To identify rare items, events, or observations which raise suspicions by differing significantly from the majority of the data (e.g., fraud detection, network intrusion)."
+        },
+        "explanation": "Since anomalies are rare and often unknown, we model the \"normal\" data distribution to flag deviations."
+    }
+]

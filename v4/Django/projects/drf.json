@@ -1,0 +1,41 @@
+[
+    {
+        "title": "What is DRF? 🌐",
+        "ques": "What is the **Django REST Framework (DRF)** and what is its primary use case?",
+        "answer": {
+            "type": "text",
+            "content": "**Django REST Framework** is a powerful and flexible toolkit for building **Web APIs**. It simplifies the process of serialization, authentication, and handling HTTP requests for RESTful services."
+        },
+        "explanation": "DRF extends Django to make building APIs easier, providing tools like Serializers and ViewSets."
+    },
+    {
+        "title": "Serializers 🔄",
+        "ques": "Create a `ModelSerializer` for a `Student` model that includes all fields.",
+        "answer": {
+            "type": "code",
+            "lang": "python",
+            "content": "from rest_framework import serializers\nfrom .models import Student\n\nclass StudentSerializer(serializers.ModelSerializer):\n    class Meta:\n        model = Student\n        fields = '__all__'"
+        },
+        "explanation": "**Serializers** convert complex data types (like querysets and model instances) into native Python datatypes (like dicts) that can then be easily rendered into JSON or XML."
+    },
+    {
+        "title": "API Views 👁️",
+        "ques": "Write a simple **API View** using the `@api_view` decorator that returns a JSON response `{\"message\": \"Hello API\"}` for a GET request.",
+        "answer": {
+            "type": "code",
+            "lang": "python",
+            "content": "from rest_framework.decorators import api_view\nfrom rest_framework.response import Response\n\n@api_view(['GET'])\ndef hello_api(request):\n    return Response({\"message\": \"Hello API\"})"
+        },
+        "explanation": "The **`@api_view`** decorator wraps a function-based view to ensure it receives a DRF `Request` instance and returns a DRF `Response`."
+    },
+    {
+        "title": "Routers 🛣️",
+        "ques": "How do you quickly register a **ViewSet** with a URL router in DRF to automatically generate URLs?",
+        "answer": {
+            "type": "code",
+            "lang": "python",
+            "content": "from rest_framework.routers import DefaultRouter\nfrom .views import UserViewSet\n\nrouter = DefaultRouter()\nrouter.register(r'users', UserViewSet)\nurlpatterns = router.urls"
+        },
+        "explanation": "**Routers** automatically determine the URL conf for your API. A `DefaultRouter` creates a standard set of routes for list, create, retrieve, update, and destroy actions."
+    }
+]

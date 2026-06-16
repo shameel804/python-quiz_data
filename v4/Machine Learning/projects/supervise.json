@@ -1,0 +1,41 @@
+[
+    {
+        "title": "Linear Regression 📈",
+        "ques": "Initialize and train a **Linear Regression** model on `X_train` and `y_train`.",
+        "answer": {
+            "type": "code",
+            "lang": "python",
+            "content": "from sklearn.linear_model import LinearRegression\n\nmodel = LinearRegression()\nmodel.fit(X_train, y_train)"
+        },
+        "explanation": "**Linear Regression** predicts a continuous output. The **`fit()`** method learns the coefficients."
+    },
+    {
+        "title": "Logistic Regression 🟢🔴",
+        "ques": "Despite its name, what kind of problems is **Logistic Regression** used for?",
+        "answer": {
+            "type": "text",
+            "content": "It is used for **Classification** problems (e.g., Spam vs Not Spam), not regression. It predicts the probability that an instance belongs to a specific class."
+        },
+        "explanation": "It maps predicted values to probabilities using the sigmoid function."
+    },
+    {
+        "title": "Random Forest 🌲",
+        "ques": "Create a **Random Forest Classifier** with 100 trees and train it.",
+        "answer": {
+            "type": "code",
+            "lang": "python",
+            "content": "from sklearn.ensemble import RandomForestClassifier\n\nrf = RandomForestClassifier(n_estimators=100)\nrf.fit(X_train, y_train)"
+        },
+        "explanation": "**Random Forest** is an ensemble method that builds multiple decision trees and merges them to get a more accurate and stable prediction."
+    },
+    {
+        "title": "Prediction and Accuracy ✅",
+        "ques": "Make predictions on `X_test` and calculate the **Accuracy Score**.",
+        "answer": {
+            "type": "code",
+            "lang": "python",
+            "content": "from sklearn.metrics import accuracy_score\n\ny_pred = model.predict(X_test)\naccuracy = accuracy_score(y_test, y_pred)"
+        },
+        "explanation": "**`predict()`** generates the output, and **`accuracy_score()`** compares it to the ground truth labels."
+    }
+]

@@ -1,0 +1,41 @@
+{
+    "id": "learn_lib_numpy",
+    "topicId": "numpy",
+    "topicTitle": "NumPy",
+    "description": "Numerical Python for high-performance math",
+    "baseKP": 60,
+    "slides": [
+        {
+            "id": "lib_np_1",
+            "type": "content",
+            "title": "Why NumPy? 🧮",
+            "content": "# The Core of Data Science\n\nNumPy (Numerical Python) provides the `ndarray` object, which is up to 50x faster than traditional Python lists.\n\n## Creating Arrays\n```python\nimport numpy as np\n\n# From list\narr = np.array([1, 2, 3])\n\n# Zeros and Ones\nz = np.zeros((3, 3)) # 3x3 matrix of 0s\no = np.ones((2, 2))  # 2x2 matrix of 1s\n\n# Range\nr = np.arange(0, 10, 2) # [0, 2, 4, 6, 8]\n```"
+        },
+        {
+            "id": "lib_np_2",
+            "type": "content",
+            "title": "Array Operations",
+            "content": "# Vectorization ⚡\n\nNo loops needed! Operations apply element-wise.\n\n```python\nimport numpy as np\n\na = np.array([1, 2, 3])\nb = np.array([10, 20, 30])\n\nprint(a + b) # [11, 22, 33]\nprint(a * 2) # [2, 4, 6]\nprint(a > 2) # [False, False, True]\n```\n\n## Universal Functions (ufuncs)\nFast math functions.\n```python\nimport numpy as np\n\nnp.sqrt(a)\nnp.log(a)\nnp.mean(a)\n```"
+        },
+        {
+            "id": "lib_np_quiz_1",
+            "type": "quiz",
+            "title": "Vectorization Quiz",
+            "content": "Check your understanding",
+            "quizQuestion": "If 'a' is a numpy array [1, 2, 3], what is 'a * 2'?",
+            "quizOptions": [
+                "[1, 2, 3, 1, 2, 3] (List duplication)",
+                "[2, 4, 6] (Element-wise multiplication)",
+                "Error",
+                "[2, 2, 2]"
+            ],
+            "correctOptionIndex": 1
+        },
+        {
+            "id": "lib_np_3",
+            "type": "content",
+            "title": "Indexing and Slicing",
+            "content": "# Advanced Access 🕵️\n\n## Slicing 2D Arrays\n`arr[row, col]`\n```python\nmat = np.array([[1, 2], [3, 4]])\n\n# Get row 0\nprint(mat[0, :]) # [1, 2]\n\n# Get column 1\nprint(mat[:, 1]) # [2, 4]\n```\n\n## Boolean Indexing (Filtering)\nSelect data based on conditions.\n```python\nimport numpy as np\n\narr = np.array([10, 20, 30, 40])\nmask = arr > 25\nprint(arr[mask]) # [30, 40]\n```"
+        }
+    ]
+}

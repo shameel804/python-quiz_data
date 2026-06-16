@@ -1,0 +1,41 @@
+{
+    "id": "learn_lib_matplotlib",
+    "topicId": "matplotlib",
+    "topicTitle": "Matplotlib",
+    "description": "The grandfather of Python plotting",
+    "baseKP": 60,
+    "slides": [
+        {
+            "id": "lib_mpl_1",
+            "type": "content",
+            "title": "Basic Plotting",
+            "content": "# Hello Plot 📈\n\n`pyplot` is the main interface.\n\n```matplotlib\nimport matplotlib.pyplot as plt\n\nx = [1, 2, 3]\ny = [2, 4, 6]\n\nplt.plot(x, y) # Line plot\nplt.show()\n```\n\n## Common Types\n- `plt.bar(x, y)`: Bar Chart\n- `plt.scatter(x, y)`: Scatter Plot\n- `plt.hist(data)`: Histogram"
+        },
+        {
+            "id": "lib_mpl_2",
+            "type": "content",
+            "title": "Customization",
+            "content": "# Make it Pretty 🎨\n\nAlways label your axes!\n\n```matplotlib\nplt.plot(x, y, color='red', linestyle='--', marker='o')\nplt.title(\"Sales Growth\")\nplt.xlabel(\"Year\")\nplt.ylabel(\"Revenue ($)\")\nplt.grid(True)\n```"
+        },
+        {
+            "id": "lib_mpl_3",
+            "type": "content",
+            "title": "Subplots",
+            "content": "# Multiple Plots 🖼️\n\nUsing the Object-Oriented interface (recommended for complex plots).\n\n```matplotlib\nfig, (ax1, ax2) = plt.subplots(1, 2) # 1 row, 2 cols\n\nax1.plot(x, y)\nax1.set_title(\"Plot 1\")\n\nax2.bar(x, y)\nax2.set_title(\"Plot 2\")\n\nplt.show()\n```"
+        },
+        {
+            "id": "lib_mpl_quiz_1",
+            "type": "quiz",
+            "title": "Interface Quiz",
+            "content": "Check your understanding",
+            "quizQuestion": "Which object represents an individual plot (the axes) in the object-oriented approach?",
+            "quizOptions": [
+                "plt",
+                "fig",
+                "ax",
+                "plot"
+            ],
+            "correctOptionIndex": 2
+        }
+    ]
+}

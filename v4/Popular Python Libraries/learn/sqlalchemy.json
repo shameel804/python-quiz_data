@@ -1,0 +1,41 @@
+{
+    "id": "learn_lib_sqlalchemy",
+    "topicId": "sqlalchemy",
+    "topicTitle": "SQLAlchemy",
+    "description": "The Python SQL Toolkit and Object Relational Mapper",
+    "baseKP": 70,
+    "slides": [
+        {
+            "id": "lib_sql_1",
+            "type": "content",
+            "title": "Core vs ORM",
+            "content": "# Two Layers 🍰\n\n1. **Core**: SQL Expression Language. Pythonic way to write SQL.\n   `select([users]).where(users.c.name == 'ed')`\n2. **ORM**: High-level Object abstraction (Like Django ORM).\n\n## Establishing Connection\nThe **Engine** is the starting point.\n```alchemy\nfrom sqlalchemy import create_engine\nengine = create_engine('sqlite:///example.db')\n```"
+        },
+        {
+            "id": "lib_sql_2",
+            "type": "content",
+            "title": "Declarative Mapping",
+            "content": "# Defining Models 🏗️\n\n```alchemy\nfrom sqlalchemy.orm import declarative_base, Session\nfrom sqlalchemy import Column, Integer, String\n\nBase = declarative_base()\n\nclass User(Base):\n    __tablename__ = 'users'\n    id = Column(Integer, primary_key=True)\n    name = Column(String)\n\n# Create tables\nBase.metadata.create_all(engine)\n```"
+        },
+        {
+            "id": "lib_sql_3",
+            "type": "content",
+            "title": "Session & Queries",
+            "content": "# Interacting with DB 🤝\n\nUse a **Session** to manage transactions.\n\n```alchemy\nsession = Session(engine)\n\n# Create\ned = User(name='Ed')\nsession.add(ed)\nsession.commit()\n\n# Query\nour_user = session.query(User).filter_by(name='Ed').first()\n```"
+        },
+        {
+            "id": "lib_sql_quiz_1",
+            "type": "quiz",
+            "title": "Concept Quiz",
+            "content": "Check your understanding",
+            "quizQuestion": "What object manages the 'transaction' (adding, committing changes) in SQLAlchemy ORM?",
+            "quizOptions": [
+                "Engine",
+                "Connection",
+                "Session",
+                "Cursor"
+            ],
+            "correctOptionIndex": 2
+        }
+    ]
+}

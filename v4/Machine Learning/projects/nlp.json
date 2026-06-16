@@ -1,0 +1,30 @@
+[
+    {
+        "title": "Tokenization 🧱",
+        "ques": "In NLP, what is **Tokenization**?",
+        "answer": {
+            "type": "text",
+            "content": "It is the process of breaking down text into smaller units called **tokens** (words, characters, or subwords)."
+        },
+        "explanation": "Tokenization is the first step in turning unstructured text into a structure that can be processed."
+    },
+    {
+        "title": "TF-IDF Vectorization 🔢",
+        "ques": "Use Scikit-learn to convert a list of text documents `corpus` into a matrix of **TF-IDF features**.",
+        "answer": {
+            "type": "code",
+            "lang": "python",
+            "content": "from sklearn.feature_extraction.text import TfidfVectorizer\n\nvectorizer = TfidfVectorizer()\nX = vectorizer.fit_transform(corpus)"
+        },
+        "explanation": "**TF-IDF** (Term Frequency-Inverse Document Frequency) reflects how important a word is to a document in a collection."
+    },
+    {
+        "title": "Word Embeddings 🌌",
+        "ques": "What advantage do **Word Embeddings** (like Word2Vec or GloVe) have over Bag-of-Words?",
+        "answer": {
+            "type": "text",
+            "content": "They capture **semantic meaning** and relationships (e.g., King - Man + Woman = Queen) by representing words as dense vectors in a continuous vector space."
+        },
+        "explanation": "Bag-of-Words only counts occurrences, ignoring the context and meaning of words."
+    }
+]

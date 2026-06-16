@@ -1,0 +1,47 @@
+{
+    "id": "learn_ds_search",
+    "topicId": "ds_search",
+    "topicTitle": "Searching and Sorting Algorithms",
+    "description": "Master the fundamental algorithms for organization",
+    "baseKP": 65,
+    "slides": [
+        {
+            "id": "ds_search_1",
+            "type": "content",
+            "title": "Searching",
+            "content": "# Search Algorithms 🔍\n\n## Linear Search O(n)\nCheck one by one. Works on unsorted data.\n\n## Binary Search O(log n)\nDivide and conquer! **Requires sorted data**.\n1. Check middle.\n2. If target < mid, search left.\n3. If target > mid, search right.\n4. Repeat.\n\n> 💡 **Fun Fact**: Binary search can find a specific atom in the observable universe in just ~270 steps!"
+        },
+        {
+            "id": "ds_search_2",
+            "type": "content",
+            "title": "Basic Sorting",
+            "content": "# Quadratic Sorts O(n²) 🐢\n\nGood for teaching, bad for production.\n\n## Bubble Sort\nRepeatedly swap adjacent elements if they are in wrong order. Largest element \"bubbles\" to top.\n\n## Selection Sort\nFind minimum, swap to front. Repeat for rest.\n\n## Insertion Sort\nTake element, insert into correct position in sorted part. Very fast for **small** or **nearly sorted** arrays."
+        },
+        {
+            "id": "ds_search_3",
+            "type": "content",
+            "title": "Efficient Sorting",
+            "content": "# Log-Linear Sorts O(n log n) 🐇\n\n## Merge Sort\nDivide array in half, sort halves recursively, then **merge** sorted sorted halves. \n- **Pros**: Stable, consistent O(n log n).\n- **Cons**: Uses O(n) extra space.\n\n## Quick Sort\nPick a \"pivot\", partition array (smaller left, larger right), recurse.\n- **Pros**: Very fast in practice, in-place.\n- **Cons**: Worst case O(n²) if bad pivot."
+        },
+        {
+            "id": "ds_search_quiz_1",
+            "type": "quiz",
+            "title": "Sorting Quiz",
+            "content": "Check your understanding",
+            "quizQuestion": "Which sorting algorithm is typically fastest in practice but has a bad worst-case?",
+            "quizOptions": [
+                "Merge Sort",
+                "Quick Sort",
+                "Bubble Sort",
+                "Insertion Sort"
+            ],
+            "correctOptionIndex": 1
+        },
+        {
+            "id": "ds_search_4",
+            "type": "content",
+            "title": "Python's Sort",
+            "content": "# Timsort 🐍\n\nPython's `sorted()` and `list.sort()` use **Timsort**.\n\n- Hybrid of **Merge Sort** and **Insertion Sort**.\n- Takes advantage of existing order in real-world data.\n- **Best Case**: O(n)!\n- **Average/Worst**: O(n log n).\n- **Stable**: Preserves order of equal elements."
+        }
+    ]
+}

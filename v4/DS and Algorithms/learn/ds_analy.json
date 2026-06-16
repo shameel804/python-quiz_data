@@ -1,0 +1,41 @@
+{
+    "id": "learn_ds_analy",
+    "topicId": "ds_analy",
+    "topicTitle": "Algorithm Analysis",
+    "description": "Deep dive into performance optimization",
+    "baseKP": 75,
+    "slides": [
+        {
+            "id": "ds_analy_1",
+            "type": "content",
+            "title": "Complexity Classes",
+            "content": "# Complexity Zoo 🦁\n\n- **P (Polynomial)**: Problems solvable in O(nᵏ). (Sorting, Shortest Path).\n- **NP (Nondeterministic Polynomial)**: Problems where solution can be *verified* quickly, but finding it might be slow.\n- **NP-Complete**: Hardest problems in NP. If you solve one efficiently, you solve them all (e.g., Traveling Salesperson).\n\n## Why it matters?\nKnowing a problem is NP-Complete means \"Don't try to find a perfect solution, use an approximation/heuristic instead!\""
+        },
+        {
+            "id": "ds_analy_2",
+            "type": "content",
+            "title": "Space Complexity",
+            "content": "# Auxiliary Space 📦\n\nOften ignored but critical. \"Memory Limit Exceeded\".\n\n- **O(1)**: Only a few variables.\n- **O(n)**: Storing a copy of input or a hash map.\n- **O(log n)**: Recursion stack depth for balanced trees.\n\n## Recursion Trap\n```python\ndef recursive(n):\n    if n == 0: return\n    recursive(n-1)\n```\nThe above uses O(n) stack space! `recursive(1000)` might crash (RecursionLimit)."
+        },
+        {
+            "id": "ds_analy_3",
+            "type": "content",
+            "title": "Profiling Code",
+            "content": "# Profiling ⏱️\n\nDon't guess where code is slow. Measure it.\n\n## `cProfile`\nBuilt-in Python deterministic profiler.\n```bash\npython -m cProfile myscript.py\n```\nShows number of calls and time per function.\n\n## `timeit`\nMeasure small snippets.\n```python\nimport timeit\ntimeit.timeit(\"[i for i in range(100)]\")\n```\n\n## Optimization Strategy\n1. Make it work.\n2. Make it right.\n3. Make it fast (Optimizing the bottleneck found by profiler)."
+        },
+        {
+            "id": "ds_analy_quiz_1",
+            "type": "quiz",
+            "title": "Profile Quiz",
+            "content": "Check your understanding",
+            "quizQuestion": "What is the recommended tool for profiling an entire Python script?",
+            "quizOptions": [
+                "time.sleep()",
+                "cProfile",
+                "print() debugging",
+                "Stopwatch"
+            ],
+            "correctOptionIndex": 1
+        }
+    ]
+}

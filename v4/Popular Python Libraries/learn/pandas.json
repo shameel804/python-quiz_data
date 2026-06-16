@@ -1,0 +1,47 @@
+{
+    "id": "learn_lib_pandas",
+    "topicId": "pandas",
+    "topicTitle": "Pandas",
+    "description": "Data Analysis and Manipulation",
+    "baseKP": 65,
+    "slides": [
+        {
+            "id": "lib_pd_1",
+            "type": "content",
+            "title": "DataFrames & Series",
+            "content": "# Excel for Python 📊\n\n## Series\nA 1D labeled array (like a column).\n```python\nimport pandas as pd\n\ns = pd.Series([10, 20, 30])\n```\n\n## DataFrame\nA 2D table with rows and columns.\n```python\ndata = {\n    'Name': ['Alice', 'Bob'],\n    'Age': [25, 30]\n}\ndf = pd.DataFrame(data)\n```"
+        },
+        {
+            "id": "lib_pd_2",
+            "type": "content",
+            "title": "Reading Data",
+            "content": "# I/O Superpowers 📥\n\nPandas can read almost anything.\n\n```python\nimport pandas as pd\n\n# CSV\ndf = pd.read_csv('data.csv')\n\n# Excel\ndf = pd.read_excel('data.xlsx')\n\n# JSON\ndf = pd.read_json('data.json')\n\n# HTML Tables (scrapes web!)\ndfs = pd.read_html('https://en.wikipedia.org/...')\n```"
+        },
+        {
+            "id": "lib_pd_3",
+            "type": "content",
+            "title": "Data Inspection",
+            "content": "# Sneak Peek 👀\n\nOnce data is loaded:\n\n- `df.head(5)`: View first 5 rows.\n- `df.info()`: Check data types and missing values.\n- `df.describe()`: Statistical summary (mean, max, min) for numeric columns.\n- `df.shape`: (rows, cols) tuple."
+        },
+        {
+            "id": "lib_pd_quiz_1",
+            "type": "quiz",
+            "title": "Inspection Quiz",
+            "content": "Check your understanding",
+            "quizQuestion": "Which method gives you technical info like data types and null counts?",
+            "quizOptions": [
+                "df.head()",
+                "df.describe()",
+                "df.info()",
+                "df.show()"
+            ],
+            "correctOptionIndex": 2
+        },
+        {
+            "id": "lib_pd_4",
+            "type": "content",
+            "title": "Analysis & Cleaning",
+            "content": "# Wrangling Data 🤠\n\n## Filtering\n```python\n# People older than 25\nadults = df[df['Age'] > 25]\n```\n\n## Grouping\nLike SQL GROUP BY.\n```python\n# Average salary by Department\ndf.groupby('Dept')['Salary'].mean()\n```\n\n## Missing Data\n```python\ndf.dropna() # Drop rows with missing values\ndf.fillna(0) # Fill missing with 0\n```"
+        }
+    ]
+}

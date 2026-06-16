@@ -1,0 +1,35 @@
+{
+    "id": "learn_ds_pract",
+    "topicId": "ds_pract",
+    "topicTitle": "Practical Applications",
+    "description": "Using DSA in the Real World",
+    "baseKP": 80,
+    "slides": [
+        {
+            "id": "ds_pra_1",
+            "type": "content",
+            "title": "Choosing the Right DS",
+            "content": "# The Right Tool 🛠️\n\n- **Need to check generic existence?** -> **Set** (O(1)).\n- **Need Key-Value pairs?** -> **Dict** (O(1)).\n- **Need Min/Max constantly?** -> **Heap** (O(log n)).\n- **Need FIFO (Queue)?** -> **Deque** (O(1)).\n- **Need to check connections?** -> **Graph**.\n\n## Example: Rate Limiter\nPrevent user from spamming API.\n- Use a **Queue** of timestamps.\n- Remove timestamps older than 1 min.\n- If queue size > Limit, block."
+        },
+        {
+            "id": "ds_pra_2",
+            "type": "content",
+            "title": "Real World Use Cases",
+            "content": "# Where is this used? 🌍\n\n- **Database Indexing**: B-Trees (Balanced Trees).\n- **Google Maps**: Dijkstra / A* (Graphs).\n- **Social Feed**: Graph API (Friend Connections).\n- **Text Search (Ctrl+F)**: KMP Algorithm or Boyer-Moore.\n- **Spell Check**: Tries or Bloom Filters.\n- **DNA Sequencing**: Dynamic Programming (Edit Distance)."
+        },
+        {
+            "id": "ds_pra_quiz_1",
+            "type": "quiz",
+            "title": "Selection Quiz",
+            "content": "Check your understanding",
+            "quizQuestion": "Which Data Structure is the best conceptual fit for a Rate Limiter (First-In, First-Out)?",
+            "quizOptions": [
+                "Stack",
+                "Queue",
+                "Tree",
+                "Graph"
+            ],
+            "correctOptionIndex": 1
+        }
+    ]
+}

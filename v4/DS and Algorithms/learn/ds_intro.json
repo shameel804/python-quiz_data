@@ -1,0 +1,47 @@
+{
+    "id": "learn_ds_intro",
+    "topicId": "ds_intro",
+    "topicTitle": "Introduction",
+    "description": "Foundations of efficiency and complexity analysis",
+    "baseKP": 60,
+    "slides": [
+        {
+            "id": "ds_intro_1",
+            "type": "content",
+            "title": "Why Learn DSA? 🏗️",
+            "content": "# The Foundation\n\nData Structures and Algorithms (DSA) are the building blocks of efficient software.\n\n- **Data Structure**: A way to organize data (e.g., Array, Graph).\n- **Algorithm**: A step-by-step procedure to solve a problem (e.g., Sorting).\n\n## Importance\n1. **Performance**: Efficient code saves money (server costs) and time (user experience).\n2. **Scalability**: What works for 10 users might fail for 10 million.\n3. **Interviews**: The standard metric for assessing problem-solving skills at Google, Amazon, etc."
+        },
+        {
+            "id": "ds_intro_2",
+            "type": "content",
+            "title": "Big-O Notation",
+            "content": "# Big-O Notation 📈\n\nBig-O describes the **upper bound** of an algorithm's growth rate. How does runtime increase as input size (n) increases?\n\n| Notation | Name | Speed |\n|---|---|---|\n| **O(1)** | Constant | Instant regardless of n |\n| **O(log n)** | Logarithmic | Very fast (Binary Search) |\n| **O(n)** | Linear | Proportional to n (Loop) |\n| **O(n log n)** | Linearithmic | Good sorting (Merge Sort) |\n| **O(n²)** | Quadratic | Slow (Nested loops) |\n| **O(2ⁿ)** | Exponential | Impossible for large n |\n\n> 💡 **Tip**: Always aim for O(n) or O(n log n)!"
+        },
+        {
+            "id": "ds_intro_quiz_1",
+            "type": "quiz",
+            "title": "Complexity Quiz",
+            "content": "Check your understanding",
+            "quizQuestion": "Which complexity is worst (slowest) for large inputs?",
+            "quizOptions": [
+                "O(n)",
+                "O(log n)",
+                "O(n²)",
+                "O(1)"
+            ],
+            "correctOptionIndex": 2
+        },
+        {
+            "id": "ds_intro_3",
+            "type": "content",
+            "title": "Time vs Space",
+            "content": "# Trade-offs ⚖️\n\nSoftware engineering is about trade-offs.\n\n## Time Complexity\nHow fast does it run? CPU cycles.\n\n## Space Complexity\nHow much memory (RAM) does it use?\n\n**Example**: You can make an algorithm faster (Time ↓) by storing intermediate results in a Hash Map (Space ↑). This is the **Time-Space Trade-off**."
+        },
+        {
+            "id": "ds_intro_4",
+            "type": "content",
+            "title": "Amortized Analysis",
+            "content": "# Amortized Analysis 📊\n\nSometimes an operation is slow once, but fast most other times.\n\n**Example**: Appending to a Python list (Dynamic Array).\n- Usually **O(1)**: Just add to the end.\n- Rarely **O(n)**: The array is full, so Python creates a bigger array and copies all elements.\n\nBecause the heavy copy happens rarely, the **average** (amortized) time is still O(1)."
+        }
+    ]
+}

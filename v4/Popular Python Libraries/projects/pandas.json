@@ -1,0 +1,32 @@
+[
+    {
+        "title": "Reading Data 📖",
+        "ques": "Read a CSV file named `data.csv` into a Pandas **DataFrame**.",
+        "answer": {
+            "type": "code",
+            "lang": "python",
+            "content": "import pandas as pd\n\ndf = pd.read_csv('data.csv')"
+        },
+        "explanation": "**`pd.read_csv()`** is the standard function to load comma-separated values into a DataFrame."
+    },
+    {
+        "title": "Cleaning Data 🧹",
+        "ques": "Remove all rows from the DataFrame `df` that contain **missing values** (NaN).",
+        "answer": {
+            "type": "code",
+            "lang": "python",
+            "content": "df_clean = df.dropna()"
+        },
+        "explanation": "**`dropna()`** removes missing values. You can specify axes or thresholds for more control."
+    },
+    {
+        "title": "Grouping and Aggregation 👥",
+        "ques": "Group the DataFrame by the `Department` column and calculate the **mean** of the `Salary` column for each department.",
+        "answer": {
+            "type": "code",
+            "lang": "python",
+            "content": "avg_salary = df.groupby('Department')['Salary'].mean()"
+        },
+        "explanation": "**`groupby()`** splits the data into groups, and subsequent aggregation functions (like `mean`, `sum`) are applied to each group."
+    }
+]

@@ -1,0 +1,161 @@
+{
+    "id": "learn_function",
+    "topicId": "function",
+    "topicTitle": "Functions",
+    "description": "Master Python functions: arguments, recursion, lambdas, and variable scope",
+    "baseKP": 85,
+    "slides": [
+        {
+            "id": "func_1",
+            "type": "content",
+            "title": "Introduction to Functions",
+            "content": "# Functions in Python 🔧\n\nFunctions are **reusable blocks of code** that perform specific tasks.\n\n## What you'll learn:\n- **Defining Functions** - Create and call functions\n- **Arguments & Parameters** - Pass data to functions\n- **Return Values** - Get results from functions\n- **Recursion** - Functions that call themselves\n- **Lambda Functions** - Anonymous inline functions\n- **Scope** - Global vs local variables\n- **Decorators** - Modify function behavior\n\n## Why Use Functions?\n- ✅ **Reusability** - Write once, use many times\n- ✅ **Organization** - Keep code clean and modular\n- ✅ **Testing** - Easier to test small pieces\n- ✅ **Debugging** - Isolate problems easily\n- ✅ **Collaboration** - Teams can work on different functions\n\n> 💡 **Fun Fact:** In Python, functions are \"first-class citizens\" - they can be passed around like any other object!\n\nLet's get started!"
+        },
+        {
+            "id": "func_2",
+            "type": "content",
+            "title": "Defining Functions",
+            "content": "# Creating Functions 📝\n\nUse the `def` keyword to define a function.\n\n## Basic Function\n\n```python\ndef greet():\n    print(\"Hello, World!\")\n\n# Call the function\ngreet()  # Output: Hello, World!\n```\n\n## Function with Parameters\n\n```python\ndef greet(name):\n    print(f\"Hello, {name}!\")\n\ngreet(\"Alice\")  # Hello, Alice!\ngreet(\"Bob\")    # Hello, Bob!\n```\n\n## Function with Return Value\n\n```python\ndef add(a, b):\n    return a + b\n\nresult = add(5, 3)\nprint(result)  # 8\n```\n\n## Multiple Return Values\n\n```python\ndef get_stats(numbers):\n    minimum = min(numbers)\n    maximum = max(numbers)\n    average = sum(numbers) / len(numbers)\n    return minimum, maximum, average  # Returns tuple\n\nmin_val, max_val, avg = get_stats([1, 2, 3, 4, 5])\nprint(f\"Min: {min_val}, Max: {max_val}, Avg: {avg}\")\n```\n\n> 💡 **Note:** If no `return` statement, function returns `None` by default."
+        },
+        {
+            "id": "func_3",
+            "type": "content",
+            "title": "Docstrings",
+            "content": "# Documenting Functions 📖\n\nDocstrings describe what a function does.\n\n## Basic Docstring\n\n```python\ndef calculate_area(radius):\n    \"\"\"Calculate the area of a circle.\"\"\"\n    return 3.14159 * radius ** 2\n```\n\n## Detailed Docstring (Google Style)\n\n```python\ndef divide(dividend, divisor):\n    \"\"\"Divide two numbers.\n    \n    Args:\n        dividend: The number to be divided.\n        divisor: The number to divide by.\n        \n    Returns:\n        The quotient of dividend and divisor.\n        \n    Raises:\n        ValueError: If divisor is zero.\n    \"\"\"\n    if divisor == 0:\n        raise ValueError(\"Cannot divide by zero!\")\n    return dividend / divisor\n```\n\n## Accessing Docstrings\n\n```python\nprint(calculate_area.__doc__)\n# \"Calculate the area of a circle.\"\n\nhelp(calculate_area)  # Shows full documentation\n```\n\n> 🎯 **Best Practice:** Always write docstrings for functions that others will use. Your future self counts as \"others\"!"
+        },
+        {
+            "id": "func_4",
+            "type": "content",
+            "title": "Function Arguments",
+            "content": "# Arguments & Parameters 📨\n\n## Positional Arguments\n\n```python\ndef introduce(name, age):\n    print(f\"I'm {name}, {age} years old\")\n\nintroduce(\"Alice\", 25)  # Order matters!\n```\n\n## Keyword Arguments\n\n```python\n# Specify parameter names - order doesn't matter\nintroduce(age=30, name=\"Bob\")\n```\n\n## Default Values\n\n```python\ndef greet(name, greeting=\"Hello\"):\n    print(f\"{greeting}, {name}!\")\n\ngreet(\"Alice\")           # \"Hello, Alice!\"\ngreet(\"Bob\", \"Hi\")       # \"Hi, Bob!\"\ngreet(\"Charlie\", greeting=\"Hey\")  # \"Hey, Charlie!\"\n```\n\n## ⚠️ Mutable Default Arguments Trap!\n\n```python\n# ❌ WRONG - list is shared between calls!\ndef add_item(item, items=[]):\n    items.append(item)\n    return items\n\nprint(add_item(1))  # [1]\nprint(add_item(2))  # [1, 2] - Unexpected!\n\n# ✅ CORRECT - use None\ndef add_item(item, items=None):\n    if items is None:\n        items = []\n    items.append(item)\n    return items\n```\n\n> 💡 **Rule:** Never use mutable objects (lists, dicts) as default arguments!"
+        },
+        {
+            "id": "func_quiz_1",
+            "type": "quiz",
+            "title": "Arguments Quiz",
+            "content": "Test your understanding of function arguments!",
+            "quizQuestion": "What will this code output?\n```python\ndef greet(name=\"World\"):\n    print(f\"Hello, {name}!\")\n\ngreet()\n```",
+            "quizOptions": [
+                "Hello, !",
+                "Hello, World!",
+                "Error",
+                "Hello, name!"
+            ],
+            "correctOptionIndex": 1
+        },
+        {
+            "id": "func_5",
+            "type": "content",
+            "title": "*args and **kwargs",
+            "content": "# Variable Arguments 📦\n\n## *args - Variable Positional Arguments\n\n```python\ndef add_all(*numbers):\n    return sum(numbers)\n\nprint(add_all(1, 2, 3))        # 6\nprint(add_all(1, 2, 3, 4, 5))  # 15\nprint(add_all())               # 0\n```\n\n## **kwargs - Variable Keyword Arguments\n\n```python\ndef print_info(**data):\n    for key, value in data.items():\n        print(f\"{key}: {value}\")\n\nprint_info(name=\"Alice\", age=25, city=\"NYC\")\n# name: Alice\n# age: 25\n# city: NYC\n```\n\n## Combining All Argument Types\n\n```python\ndef func(pos1, pos2, *args, kw1=\"default\", **kwargs):\n    print(f\"pos1={pos1}, pos2={pos2}\")\n    print(f\"args={args}\")\n    print(f\"kw1={kw1}\")\n    print(f\"kwargs={kwargs}\")\n\nfunc(1, 2, 3, 4, kw1=\"custom\", extra=\"value\")\n```\n\n## Unpacking Arguments\n\n```python\nnumbers = [1, 2, 3]\nprint(add_all(*numbers))  # Unpacks list as arguments\n\ndata = {\"name\": \"Alice\", \"age\": 25}\ncreate_user(**data)  # Unpacks dict as keyword arguments\n```\n\n> 💡 **Convention:** You can use any names, but `args` and `kwargs` are standard!"
+        },
+        {
+            "id": "func_6",
+            "type": "content",
+            "title": "Type Hints",
+            "content": "# Type Hints (Annotations) 📋\n\nOptional type information for better code clarity.\n\n## Basic Type Hints\n\n```python\ndef greet(name: str) -> str:\n    return f\"Hello, {name}!\"\n\ndef add(a: int, b: int) -> int:\n    return a + b\n\ndef is_even(n: int) -> bool:\n    return n % 2 == 0\n```\n\n## Complex Types\n\n```python\nfrom typing import List, Dict, Optional, Tuple, Union\n\ndef get_names() -> List[str]:\n    return [\"Alice\", \"Bob\"]\n\ndef get_scores() -> Dict[str, int]:\n    return {\"Alice\": 95, \"Bob\": 87}\n\ndef find_user(id: int) -> Optional[str]:\n    # Returns str or None\n    return None\n\ndef get_point() -> Tuple[int, int]:\n    return (10, 20)\n\ndef process(value: Union[int, str]) -> str:\n    return str(value)\n```\n\n## Python 3.10+ Simplified Syntax\n\n```python\ndef find_user(id: int) -> str | None:\n    return None\n\ndef process(value: int | str) -> str:\n    return str(value)\n```\n\n> 💡 **Note:** Type hints don't enforce types at runtime - they're for documentation and IDE support. Use `mypy` for static type checking!"
+        },
+        {
+            "id": "func_7",
+            "type": "content",
+            "title": "Recursion",
+            "content": "# Recursion 🔄\n\nA **recursive function** calls itself to solve smaller subproblems.\n\n## Factorial Example\n\n```python\ndef factorial(n):\n    # Base case\n    if n <= 1:\n        return 1\n    # Recursive case\n    return n * factorial(n - 1)\n\nprint(factorial(5))  # 120 (5*4*3*2*1)\n```\n\n## How It Works\n\n```\nfactorial(5)\n└── 5 * factorial(4)\n    └── 4 * factorial(3)\n        └── 3 * factorial(2)\n            └── 2 * factorial(1)\n                └── 1 (base case)\n```\n\n## Fibonacci Sequence\n\n```python\ndef fibonacci(n):\n    if n <= 1:\n        return n\n    return fibonacci(n-1) + fibonacci(n-2)\n\n# 0, 1, 1, 2, 3, 5, 8, 13...\nfor i in range(8):\n    print(fibonacci(i), end=\" \")\n```\n\n## Key Components\n\n1. **Base Case** - When to stop recursing\n2. **Recursive Case** - How to break down the problem\n3. **Progress** - Each call should move toward base case\n\n> ⚠️ **Warning:** Always have a **base case** to prevent infinite recursion! Python has a recursion limit (~1000)."
+        },
+        {
+            "id": "func_8",
+            "type": "content",
+            "title": "Recursion Examples",
+            "content": "# More Recursion Examples 🌀\n\n## Sum of List\n\n```python\ndef sum_list(numbers):\n    if not numbers:  # Base case: empty list\n        return 0\n    return numbers[0] + sum_list(numbers[1:])\n\nprint(sum_list([1, 2, 3, 4, 5]))  # 15\n```\n\n## Binary Search\n\n```python\ndef binary_search(arr, target, low=0, high=None):\n    if high is None:\n        high = len(arr) - 1\n    \n    if low > high:  # Base case: not found\n        return -1\n    \n    mid = (low + high) // 2\n    \n    if arr[mid] == target:\n        return mid\n    elif arr[mid] < target:\n        return binary_search(arr, target, mid + 1, high)\n    else:\n        return binary_search(arr, target, low, mid - 1)\n```\n\n## When to Use Recursion\n\n✅ **Good for:**\n- Tree/graph traversal\n- Divide and conquer algorithms\n- Problems with recursive definitions\n\n❌ **Avoid when:**\n- Simple loops would work\n- Very deep recursion needed\n- Performance is critical (iteration is faster)\n\n> 💡 **Tip:** Every recursive solution can be rewritten iteratively, and vice versa!"
+        },
+        {
+            "id": "func_quiz_2",
+            "type": "quiz",
+            "title": "Recursion Quiz",
+            "content": "Test your recursion knowledge!",
+            "quizQuestion": "What is the BASE CASE in a recursive function?",
+            "quizOptions": [
+                "The first function call",
+                "The condition that stops recursion",
+                "The function's return type",
+                "The recursive call itself"
+            ],
+            "correctOptionIndex": 1
+        },
+        {
+            "id": "func_9",
+            "type": "content",
+            "title": "Lambda Functions",
+            "content": "# Lambda Functions λ\n\n**Lambda** functions are small, anonymous functions defined inline.\n\n## Syntax\n\n```python\n# lambda arguments: expression\n\n# Regular function\ndef add(a, b):\n    return a + b\n\n# Lambda equivalent\nadd = lambda a, b: a + b\nprint(add(3, 5))  # 8\n```\n\n## Common Use Cases\n\n### Sorting with Key\n\n```python\nstudents = [\n    {\"name\": \"Alice\", \"grade\": 85},\n    {\"name\": \"Bob\", \"grade\": 92},\n    {\"name\": \"Charlie\", \"grade\": 78}\n]\n\n# Sort by grade\nsorted_students = sorted(students, key=lambda s: s[\"grade\"])\n\n# Sort by name length\nnames = [\"Bob\", \"Alice\", \"Charlie\"]\nsorted_names = sorted(names, key=lambda x: len(x))\n```\n\n### Quick Inline Functions\n\n```python\ndouble = lambda x: x * 2\nsquare = lambda x: x ** 2\nis_even = lambda x: x % 2 == 0\n\nprint(double(5))   # 10\nprint(square(4))   # 16\nprint(is_even(7))  # False\n```\n\n> 💡 **Best Practice:** Use lambdas for simple, one-line operations. For complex logic, use regular functions!"
+        },
+        {
+            "id": "func_10",
+            "type": "content",
+            "title": "Map, Filter, Reduce",
+            "content": "# Functional Programming 🧮\n\nLambdas shine with functional programming tools!\n\n## map() - Transform Each Element\n\n```python\nnumbers = [1, 2, 3, 4, 5]\nsquared = list(map(lambda x: x**2, numbers))\nprint(squared)  # [1, 4, 9, 16, 25]\n\nnames = [\"alice\", \"bob\"]\ncapitalized = list(map(lambda x: x.title(), names))\nprint(capitalized)  # ['Alice', 'Bob']\n```\n\n## filter() - Keep Matching Elements\n\n```python\nages = [12, 18, 25, 8, 30]\nadults = list(filter(lambda x: x >= 18, ages))\nprint(adults)  # [18, 25, 30]\n\nwords = [\"hello\", \"\", \"world\", \"\"]\nnon_empty = list(filter(None, words))  # Remove falsy\nprint(non_empty)  # ['hello', 'world']\n```\n\n## reduce() - Combine All Elements\n\n```python\nfrom functools import reduce\n\nnumbers = [1, 2, 3, 4, 5]\n\nproduct = reduce(lambda a, b: a * b, numbers)\nprint(product)  # 120 (1*2*3*4*5)\n\nmax_val = reduce(lambda a, b: a if a > b else b, numbers)\nprint(max_val)  # 5\n```\n\n## List Comprehension Alternative\n\n```python\n# map + filter = list comprehension (more Pythonic!)\nsquared_evens = [x**2 for x in numbers if x % 2 == 0]\n```"
+        },
+        {
+            "id": "func_quiz_3",
+            "type": "quiz",
+            "title": "Lambda Quiz",
+            "content": "Test your lambda knowledge!",
+            "quizQuestion": "What does this lambda return for input 5?\n```python\nf = lambda x: x * 2 if x > 3 else x\nprint(f(5))\n```",
+            "quizOptions": [
+                "5",
+                "10",
+                "3",
+                "Error"
+            ],
+            "correctOptionIndex": 1
+        },
+        {
+            "id": "func_11",
+            "type": "content",
+            "title": "Variable Scope",
+            "content": "# Variable Scope 🌍\n\n**Scope** determines where variables are accessible.\n\n## Local Scope\n\n```python\ndef my_function():\n    local_var = \"I'm local\"\n    print(local_var)  # Works inside function\n\nmy_function()\n# print(local_var)  # ❌ NameError! Not accessible\n```\n\n## Global Scope\n\n```python\nglobal_var = \"I'm global\"\n\ndef my_function():\n    print(global_var)  # Can READ global variables\n\nmy_function()  # \"I'm global\"\n```\n\n## Modifying Global Variables\n\n```python\ncounter = 0\n\ndef increment():\n    global counter  # Declare as global to modify\n    counter += 1\n\nincrement()\nincrement()\nprint(counter)  # 2\n```\n\n## The LEGB Rule\n\nPython searches for variables in this order:\n1. **L**ocal - Inside current function\n2. **E**nclosing - In enclosing function (nested)\n3. **G**lobal - At module level\n4. **B**uilt-in - Python built-ins (print, len)\n\n```python\nx = \"global\"\n\ndef outer():\n    x = \"enclosing\"\n    def inner():\n        x = \"local\"\n        print(x)  # Finds \"local\" first\n    inner()\n```\n\n> 💡 **Best Practice:** Avoid globals when possible. Pass data through parameters instead!"
+        },
+        {
+            "id": "func_12",
+            "type": "content",
+            "title": "Closures",
+            "content": "# Closures 📦\n\nA **closure** is a function that remembers values from its enclosing scope.\n\n## Basic Closure\n\n```python\ndef make_multiplier(factor):\n    def multiply(number):\n        return number * factor  # Remembers 'factor'\n    return multiply\n\ndouble = make_multiplier(2)\ntriple = make_multiplier(3)\n\nprint(double(5))  # 10\nprint(triple(5))  # 15\n```\n\n## Using nonlocal\n\n```python\ndef counter():\n    count = 0\n    \n    def increment():\n        nonlocal count  # Modify enclosing variable\n        count += 1\n        return count\n    \n    return increment\n\nmy_counter = counter()\nprint(my_counter())  # 1\nprint(my_counter())  # 2\nprint(my_counter())  # 3\n\n# Each counter is independent!\nother_counter = counter()\nprint(other_counter())  # 1\n```\n\n## Practical Example: Logger\n\n```python\ndef make_logger(prefix):\n    def log(message):\n        print(f\"[{prefix}] {message}\")\n    return log\n\nerror_log = make_logger(\"ERROR\")\ninfo_log = make_logger(\"INFO\")\n\nerror_log(\"Something failed!\")  # [ERROR] Something failed!\ninfo_log(\"Started successfully\")  # [INFO] Started successfully\n```"
+        },
+        {
+            "id": "func_13",
+            "type": "content",
+            "title": "Decorators Basics",
+            "content": "# Decorators 🎀\n\n**Decorators** modify or enhance functions without changing their code.\n\n## Basic Decorator\n\n```python\ndef my_decorator(func):\n    def wrapper():\n        print(\"Before function call\")\n        func()\n        print(\"After function call\")\n    return wrapper\n\n@my_decorator\ndef say_hello():\n    print(\"Hello!\")\n\nsay_hello()\n# Before function call\n# Hello!\n# After function call\n```\n\n## @ Syntax is Syntactic Sugar\n\n```python\n# These are equivalent:\n@my_decorator\ndef say_hello():\n    pass\n\n# Same as:\ndef say_hello():\n    pass\nsay_hello = my_decorator(say_hello)\n```\n\n## Decorator with Arguments\n\n```python\ndef my_decorator(func):\n    def wrapper(*args, **kwargs):\n        print(f\"Calling: {func.__name__}\")\n        result = func(*args, **kwargs)\n        print(f\"Result: {result}\")\n        return result\n    return wrapper\n\n@my_decorator\ndef add(a, b):\n    return a + b\n\nadd(3, 5)\n# Calling: add\n# Result: 8\n```"
+        },
+        {
+            "id": "func_14",
+            "type": "content",
+            "title": "Practical Decorators",
+            "content": "# Real-World Decorators 🌟\n\n## Timer Decorator\n\n```python\nimport time\n\ndef timer(func):\n    def wrapper(*args, **kwargs):\n        start = time.time()\n        result = func(*args, **kwargs)\n        end = time.time()\n        print(f\"{func.__name__} took {end-start:.4f}s\")\n        return result\n    return wrapper\n\n@timer\ndef slow_function():\n    time.sleep(1)\n    return \"Done!\"\n\nslow_function()  # slow_function took 1.0012s\n```\n\n## Memoization (Caching)\n\n```python\ndef memoize(func):\n    cache = {}\n    def wrapper(*args):\n        if args not in cache:\n            cache[args] = func(*args)\n        return cache[args]\n    return wrapper\n\n@memoize\ndef fibonacci(n):\n    if n < 2:\n        return n\n    return fibonacci(n-1) + fibonacci(n-2)\n\nprint(fibonacci(100))  # Instant!\n```\n\n## Using functools.wraps\n\n```python\nfrom functools import wraps\n\ndef my_decorator(func):\n    @wraps(func)  # Preserves function metadata\n    def wrapper(*args, **kwargs):\n        return func(*args, **kwargs)\n    return wrapper\n```\n\n> 💡 **Built-in Decorators:** Python has useful built-in decorators like `@property`, `@staticmethod`, `@classmethod`!"
+        },
+        {
+            "id": "func_15",
+            "type": "content",
+            "title": "Built-in Decorators",
+            "content": "# Built-in Decorators 🏗️\n\n## @staticmethod\n\n```python\nclass Math:\n    @staticmethod\n    def add(a, b):\n        return a + b\n\n# No self or cls needed\nprint(Math.add(3, 5))  # 8\n```\n\n## @classmethod\n\n```python\nclass Person:\n    count = 0\n    \n    def __init__(self, name):\n        self.name = name\n        Person.count += 1\n    \n    @classmethod\n    def get_count(cls):\n        return cls.count\n    \n    @classmethod\n    def from_string(cls, data):\n        name = data.split(\",\")[0]\n        return cls(name)\n\np1 = Person(\"Alice\")\np2 = Person.from_string(\"Bob,25\")\nprint(Person.get_count())  # 2\n```\n\n## @property\n\n```python\nclass Circle:\n    def __init__(self, radius):\n        self._radius = radius\n    \n    @property\n    def radius(self):\n        return self._radius\n    \n    @radius.setter\n    def radius(self, value):\n        if value < 0:\n            raise ValueError(\"Radius can't be negative\")\n        self._radius = value\n    \n    @property\n    def area(self):\n        return 3.14159 * self._radius ** 2\n\nc = Circle(5)\nprint(c.area)   # 78.54 (computed property)\nc.radius = 10   # Uses setter\n```"
+        },
+        {
+            "id": "func_quiz_4",
+            "type": "quiz",
+            "title": "Decorators Quiz",
+            "content": "Test your decorator knowledge!",
+            "quizQuestion": "What does a decorator do?",
+            "quizOptions": [
+                "Deletes functions",
+                "Modifies function behavior without changing its code",
+                "Creates new classes",
+                "Compiles Python to machine code"
+            ],
+            "correctOptionIndex": 1
+        },
+        {
+            "id": "func_16",
+            "type": "content",
+            "title": "Summary",
+            "content": "# Excellent Work! 🎉\n\nYou've mastered Python Functions!\n\n## Defining Functions\n- ✅ `def` keyword and return values\n- ✅ Docstrings for documentation\n- ✅ Type hints for clarity\n\n## Arguments\n- ✅ Positional and keyword arguments\n- ✅ Default parameter values\n- ✅ `*args` and `**kwargs`\n- ✅ Avoid mutable default arguments!\n\n## Recursion\n- ✅ Base case and recursive case\n- ✅ Common patterns (factorial, fibonacci)\n- ✅ When to use vs iteration\n\n## Lambda Functions\n- ✅ Anonymous inline functions\n- ✅ `map()`, `filter()`, `reduce()`\n- ✅ Sorting with custom keys\n\n## Scope & Closures\n- ✅ LEGB rule for name resolution\n- ✅ `global` and `nonlocal` keywords\n- ✅ Functions that remember state\n\n## Decorators\n- ✅ `@decorator` syntax\n- ✅ Practical decorators (timer, cache)\n- ✅ Built-in decorators (`@property`, `@staticmethod`)\n\n> 🚀 **Challenge:** Create a `@retry` decorator that retries a function 3 times if it raises an exception!"
+        }
+    ]
+}

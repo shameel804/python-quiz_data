@@ -1,0 +1,53 @@
+{
+    "id": "learn_ds_techni",
+    "topicId": "ds_techni",
+    "topicTitle": "Algorithm Techniques",
+    "description": "Strategies for solving complex problems",
+    "baseKP": 85,
+    "slides": [
+        {
+            "id": "ds_tech_1",
+            "type": "content",
+            "title": "Recursion",
+            "content": "# Recursion 🪞\n\nA function that calls itself. Breaks a big problem into smaller sub-problems.\n\n## Structure\n1. **Base Case**: The stop condition (e.g., if list is empty, return 0).\n2. **Recursive Case**: Logic + calling itself with smaller input.\n\n```python\ndef factorial(n):\n    if n <= 1: return 1  # Base Case\n    return n * factorial(n - 1)  # Recursive Case\n```\n\n> ⚠️ **Warning**: Missing base case = `RecursionError` (Stack Overflow)."
+        },
+        {
+            "id": "ds_tech_2",
+            "type": "content",
+            "title": "Dynamic Programming",
+            "content": "# Dynamic Programming (DP) 💡\n\nOptimized recursion. Solves overlapping sub-problems by **remembering** answers.\n\n## Memoization (Top-Down)\nStore results in a dictionary cache.\n```python\nmemo = {}\ndef fib(n):\n    if n in memo: return memo[n]\n    if n <= 1: return n\n    memo[n] = fib(n-1) + fib(n-2)\n    return memo[n]\n```\n\n## Tabulation (Bottom-Up)\nFill a table iteratively.\n```python\ndef fib_tab(n):\n    dp = [0] * (n + 1)\n    dp[1] = 1\n    for i in range(2, n + 1):\n        dp[i] = dp[i-1] + dp[i-2]\n    return dp[n]\n```"
+        },
+        {
+            "id": "ds_tech_quiz_1",
+            "type": "quiz",
+            "title": "DP Quiz",
+            "content": "Check your understanding",
+            "quizQuestion": "What is the main difference between basic recursion and DP?",
+            "quizOptions": [
+                "DP is always slower",
+                "DP stores results to avoid re-calculation",
+                "DP cannot handle base cases",
+                "Recursion uses loops"
+            ],
+            "correctOptionIndex": 1
+        },
+        {
+            "id": "ds_tech_3",
+            "type": "content",
+            "title": "Greedy Algorithms",
+            "content": "# Greedy Algorithms 🤑\n\nMake the locally optimal choice at each step, hoping for a global optimum.\n\n## Example: Coin Change\nProblem: Make $0.67 with fewest coins.\nGreedy Strategy: Always pick biggest coin possible.\n1. Pick $0.25 (Left: $0.42)\n2. Pick $0.25 (Left: $0.17)\n3. Pick $0.10 (Left: $0.07)\n4. Pick $0.05 (Left: $0.02)\n5. Pick $0.01 (Left: $0.01)\n6. Pick $0.01 (Left: $0.00)\n\n> ⚠️ **Note**: Greedy doesn't ALWAYS work (e.g., if coins were 1, 3, 4, greedy fails for 6)."
+        },
+        {
+            "id": "ds_tech_4",
+            "type": "content",
+            "title": "Divide & Conquer",
+            "content": "# Divide and Conquer ⚔️\n\n1. **Divide**: Split problem into sub-problems.\n2. **Conquer**: Solve sub-problems recursively.\n3. **Combine**: Merge solutions.\n\n## Examples\n- **Merge Sort**: Sort left, sort right, merge.\n- **Binary Search**: Search left or search right.\n- **MapReduce**: Big Data processing."
+        },
+        {
+            "id": "ds_tech_5",
+            "type": "content",
+            "title": "Backtracking",
+            "content": "# Backtracking 🔙\n\nIncremental approach. Build a solution step-by-step. If we hit a dead end, **backtrack** and try a different path.\n\n## Use Cases\n- **Sudoku Solver**: Try a number, if it violates rules later, go back and change it.\n- **Maze Solving**: Go right; if wall, go back and try left.\n- **N-Queens Problem**: Placing N queens on chess board without attacking."
+        }
+    ]
+}

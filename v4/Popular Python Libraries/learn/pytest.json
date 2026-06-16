@@ -1,0 +1,41 @@
+{
+    "id": "learn_lib_pytest",
+    "topicId": "pytest",
+    "topicTitle": "pytest",
+    "description": "Simple, scalable testing",
+    "baseKP": 60,
+    "slides": [
+        {
+            "id": "lib_test_1",
+            "type": "content",
+            "title": "Why pytest? 🧪",
+            "content": "# No Boilerplate 🚫\n\nUnlike traditional `unittest` (which requires classes), pytest uses plain functions.\n\n## Basic Test\nCreate a file named `test_sample.py`.\n```pytest\ndef func(x):\n    return x + 1\n\ndef test_answer():\n    assert func(3) == 5\n```\nRun it with `pytest` command. It will fail (4 != 5) and show a detailed diff."
+        },
+        {
+            "id": "lib_test_2",
+            "type": "content",
+            "title": "Fixtures",
+            "content": "# Setup & Teardown 🛠️\n\n**Fixtures** provide data/objects to tests. Dependency injection at its finest.\n\n```pytest\nimport pytest\n\n@pytest.fixture\ndef sample_data():\n    return {\"a\": 1, \"b\": 2}\n\ndef test_data(sample_data):\n    assert sample_data[\"a\"] == 1\n```"
+        },
+        {
+            "id": "lib_test_3",
+            "type": "content",
+            "title": "Parametrization",
+            "content": "# DRY Testing 🔁\n\nRun the same test with different inputs.\n\n```pytest\n@pytest.mark.parametrize(\"input,expected\", [\n    (1, 2),\n    (2, 3),\n    (10, 11),\n])\ndef test_increment(input, expected):\n    assert input + 1 == expected\n```"
+        },
+        {
+            "id": "lib_test_quiz_1",
+            "type": "quiz",
+            "title": "Pytest Quiz",
+            "content": "Check your understanding",
+            "quizQuestion": "What Python keyword is primarily used in pytest to check if details are correct?",
+            "quizOptions": [
+                "check",
+                "expect",
+                "assert",
+                "verify"
+            ],
+            "correctOptionIndex": 2
+        }
+    ]
+}

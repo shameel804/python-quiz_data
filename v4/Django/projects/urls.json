@@ -1,0 +1,41 @@
+[
+    {
+        "title": "Simple URL Routing 🔗",
+        "ques": "Define a simple **URL pattern** in `urls.py` that maps the path `'hello/'` to a view function named `say_hello`.",
+        "answer": {
+            "type": "code",
+            "lang": "python",
+            "content": "from django.urls import path\nfrom . import views\n\nurlpatterns = [\n    path('hello/', views.say_hello, name='hello'),\n]"
+        },
+        "explanation": "The **`path()`** function is used to define URL patterns. It takes the route string, the view, and an optional name."
+    },
+    {
+        "title": "Function-Based View (FBV) 📝",
+        "ques": "Write a simple **Function-Based View** named `home` that returns an **HTTP response** containing the text \"Welcome to Django!\".",
+        "answer": {
+            "type": "code",
+            "lang": "python",
+            "content": "from django.http import HttpResponse\n\ndef home(request):\n    return HttpResponse(\"Welcome to Django!\")"
+        },
+        "explanation": "A view function takes a **web request** and returns a **web response**. `HttpResponse` is the most basic way to return content."
+    },
+    {
+        "title": "Path Converters 🔢",
+        "ques": "Create a URL pattern that captures an **integer** from the URL (e.g., `post/5/`) and passes it to a view named `post_detail` as a variable named `id`.",
+        "answer": {
+            "type": "code",
+            "lang": "python",
+            "content": "urlpatterns = [\n    path('post/<int:id>/', views.post_detail, name='post_detail'),\n]"
+        },
+        "explanation": "Django uses angle brackets `< >` to capture values from the URL. **`<int:id>`** captures an integer and passes it to the view as the argument `id`."
+    },
+    {
+        "title": "CBV vs FBV 🤔",
+        "ques": "Briefly explain the main difference between **Function-Based Views (FBVs)** and **Class-Based Views (CBVs)**.",
+        "answer": {
+            "type": "text",
+            "content": "*   **FBVs (Function-Based Views)**: Defined as Python functions. They are simple to write and easy to read, making them great for beginners or custom logic.\n*   **CBVs (Class-Based Views)**: Defined as Python classes. They strongly encourage code reuse and can be extended using object-oriented techniques (inheritance, mixins), which is useful for generic functionalities like 'Create', 'Update', or 'List' views."
+        },
+        "explanation": "While **FBVs** are explicit and easy to understand, **CBVs** provide powerful abstractions to reduce boilerplate code for common patterns."
+    }
+]

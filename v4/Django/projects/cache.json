@@ -1,0 +1,40 @@
+[
+    {
+        "title": "Why Cache? 🚀",
+        "ques": "What is the primary **benefit** of implementing caching in a Django application?",
+        "answer": {
+            "type": "text",
+            "content": "The primary benefit is **performance improvement**. Caching stores the result of expensive calculations or database queries so that future requests can be served faster without repeating the work."
+        },
+        "explanation": "Caching reduces server load and latency by serving pre-computed data."
+    },
+    {
+        "title": "Per-View Cache ⏱️",
+        "ques": "Which **decorator** can be used to cache the result of a specific view for 15 minutes?",
+        "answer": {
+            "type": "code",
+            "lang": "python",
+            "content": "from django.views.decorators.cache import cache_page\n\n@cache_page(60 * 15)\ndef my_view(request):\n    # ..."
+        },
+        "explanation": "**`@cache_page`** automatically caches the view's response for the specified number of seconds."
+    },
+    {
+        "title": "Low-Level Cache API 🛠️",
+        "ques": "Write code to **set** a value in the cache with the key `'my_key'` and value `'hello'` for 30 seconds, and then **get** it back.",
+        "answer": {
+            "type": "code",
+            "lang": "python",
+            "content": "from django.core.cache import cache\n\n# Set cache\ncache.set('my_key', 'hello', 30)\n\n# Get cache\nvalue = cache.get('my_key')"
+        },
+        "explanation": "The **low-level cache API** allows you to store and retrieve specific objects in the cache using keys."
+    },
+    {
+        "title": "Cache Backends 💾",
+        "ques": "Name two types of **cache backends** supported by Django.",
+        "answer": {
+            "type": "text",
+            "content": "1.  **Memcached**: A fast, memory-based cache server.\n2.  **Database caching**: Stores cache data in your database table.\n3.  **Redis**: An in-memory data structure store (often used with `django-redis`)."
+        },
+        "explanation": "Django also supports file-based caching, local-memory caching (default), and dummy caching (for development)."
+    }
+]

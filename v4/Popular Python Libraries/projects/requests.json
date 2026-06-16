@@ -1,0 +1,32 @@
+[
+    {
+        "title": "GET Request 📥",
+        "ques": "Use the **Requests** library to make a GET request to `https://api.github.com`.",
+        "answer": {
+            "type": "code",
+            "lang": "python",
+            "content": "import requests\n\nr = requests.get('https://api.github.com')"
+        },
+        "explanation": "**`requests.get()`** sends a GET request. The response object `r` contains all the data from the server."
+    },
+    {
+        "title": "JSON Response 📦",
+        "ques": "How do you extract the **JSON content** from a response object `r`?",
+        "answer": {
+            "type": "code",
+            "lang": "python",
+            "content": "data = r.json()"
+        },
+        "explanation": "The **`json()`** method decodes the JSON response into a Python dictionary or list."
+    },
+    {
+        "title": "Status Codes 🚦",
+        "ques": "Check if a request was successful (status code 200).",
+        "answer": {
+            "type": "code",
+            "lang": "python",
+            "content": "if r.status_code == 200:\n    print('Success!')"
+        },
+        "explanation": "The **`status_code`** attribute holds the HTTP status code returned by the server."
+    }
+]

@@ -1,0 +1,52 @@
+[
+  {
+    "title": "Variable Declaration and Printing",
+    "ques": "Write a Python program that declares variables of different data types (integer, float, string, and boolean) and prints each variable along with its type.",
+    "answer": {
+      "type": "code",
+      "lang": "python",
+      "content": "# Declaring variables of different data types\nage = 25                    # Integer\nheight = 5.9               # Float\nname = \"Alice\"             # String\nis_student = True          # Boolean\n\n# Printing variables and their types\nprint(\"Age:\", age, \"Type:\", type(age))\nprint(\"Height:\", height, \"Type:\", type(height))\nprint(\"Name:\", name, \"Type:\", type(name))\nprint(\"Is Student:\", is_student, \"Type:\", type(is_student))"
+    },
+    "explanation": "This exercise demonstrates how to declare variables of different basic data types in Python:\n- **Integer**: Whole numbers without decimals (`age = 25`)\n- **Float**: Numbers with decimal points (`height = 5.9`)\n- **String**: Sequence of characters enclosed in quotes (`name = \"Alice\"`)\n- **Boolean**: Logical values `True` or `False` (`is_student = True`)\n\nThe `type()` function is used to check the data type of each variable."
+  },
+  {
+    "title": "Type Conversion Practice",
+    "ques": "Create a program that performs the following type conversions:\n1. Convert an integer to a float\n2. Convert a float to an integer (note what happens to the decimal part)\n3. Convert an integer to a string\n4. Convert a string containing a number to an integer\n5. Convert a string containing a decimal to a float",
+    "answer": {
+      "type": "code",
+      "lang": "python",
+      "content": "# Type conversion examples\nnum_int = 42\nnum_float = 3.14\nstr_num = \"100\"\nstr_float = \"2.718\"\n\n# 1. Integer to float\nint_to_float = float(num_int)\nprint(f\"Integer {num_int} to float: {int_to_float}, Type: {type(int_to_float)}\")\n\n# 2. Float to integer (truncates decimal part)\nfloat_to_int = int(num_float)\nprint(f\"Float {num_float} to integer: {float_to_int}, Type: {type(float_to_int)}\")\n\n# 3. Integer to string\nint_to_str = str(num_int)\nprint(f\"Integer {num_int} to string: '{int_to_str}', Type: {type(int_to_str)}\")\n\n# 4. String to integer\nstr_to_int = int(str_num)\nprint(f\"String '{str_num}' to integer: {str_to_int}, Type: {type(str_to_int)}\")\n\n# 5. String to float\nstr_to_float = float(str_float)\nprint(f\"String '{str_float}' to float: {str_to_float}, Type: {type(str_to_float)}\")"
+    },
+    "explanation": "This exercise demonstrates type conversion (casting) in Python:\n\n- **`float()`**: Converts to floating-point number\n- **`int()`**: Converts to integer (truncates decimal part)\n- **`str()`**: Converts to string\n\n**Important Notes**:\n- Converting float to integer **truncates** (removes) the decimal part\n- Strings must contain valid numeric characters to convert to numbers\n- Using `int()` on a float string will raise an error (use `float()` first, then `int()`)"
+  },
+  {
+    "title": "Multiple Variable Assignment and Dynamic Typing",
+    "ques": "Write a program that demonstrates:\n1. Multiple variable assignment in one line\n2. Python's dynamic typing by reassigning a variable to different data types\n3. Show how the variable's type changes after each reassignment",
+    "answer": {
+      "type": "code",
+      "lang": "python",
+      "content": "# 1. Multiple variable assignment\nx, y, z = 10, \"Python\", 3.14\nprint(\"Multiple assignment:\")\nprint(f\"x = {x}, Type: {type(x)}\")\nprint(f\"y = {y}, Type: {type(y)}\")\nprint(f\"z = {z}, Type: {type(z)}\")\n\nprint(\"\\n\" + \"=\"*40 + \"\\n\")\n\n# 2. Dynamic typing demonstration\nmy_var = 100\nprint(f\"Initial: my_var = {my_var}, Type: {type(my_var)}\")\n\nmy_var = \"Now I'm a string\"\nprint(f\"After reassignment: my_var = {my_var}, Type: {type(my_var)}\")\n\nmy_var = 45.67\nprint(f\"After another reassignment: my_var = {my_var}, Type: {type(my_var)}\")\n\nmy_var = False\nprint(f\"Final reassignment: my_var = {my_var}, Type: {type(my_var)}\")"
+    },
+    "explanation": "This exercise showcases two important Python features:\n\n## Multiple Variable Assignment\n- You can assign values to multiple variables in one line: `x, y, z = 10, \"Python\", 3.14`\n- The number of variables must match the number of values\n\n## Dynamic Typing\n- Python is **dynamically typed**, meaning variable types are determined at runtime\n- A variable can be reassigned to hold different data types throughout the program\n- The `type()` of a variable can change during execution\n- This is different from statically typed languages where variable types are fixed"
+  },
+  {
+    "title": "Input and Type Conversion Challenge",
+    "ques": "Create a program that:\n1. Takes two numbers as input from the user\n2. Converts them to appropriate numeric types\n3. Performs arithmetic operations (addition, multiplication)\n4. Displays the results with their data types",
+    "answer": {
+      "type": "code",
+      "lang": "python",
+      "content": "# Getting input from user\nprint(\\\"Enter two numbers:\\\")\nnum1_input = input(\\\"First number: \\\")\nnum2_input = input(\\\"Second number: \\\")\n\n# Convert inputs to appropriate numeric types\n# Using float() to handle both integers and decimals\nnum1 = float(num1_input)\nnum2 = float(num2_input)\n\nprint(f\"\\nConverted values:\")\nprint(f\"First number: {num1}, Type: {type(num1)}\")\nprint(f\"Second number: {num2}, Type: {type(num2)}\")\n\n# Perform arithmetic operations\naddition = num1 + num2\nmultiplication = num1 * num2\n\nprint(f\"\\nResults:\")\nprint(f\"Addition: {num1} + {num2} = {addition}, Type: {type(addition)}\")\nprint(f\"Multiplication: {num1} × {num2} = {multiplication}, Type: {type(multiplication)}\")"
+    },
+    "explanation": "## Key Concepts Demonstrated:\n\n### Input Function\n- `input()` always returns a **string**, regardless of what the user types\n- You need to convert string inputs to appropriate data types for numerical operations\n\n### Type Conversion for User Input\n- Using `float()` is safer than `int()` as it can handle both integers and decimals\n- If you use `int()` and user enters a decimal, it will raise a `ValueError`\n\n### Arithmetic Operations\n- Python automatically determines the result type based on the operands\n- Operations with floats generally result in float values\n- The result type is shown using the `type()` function"
+  },
+  {
+    "title": "Mixed Operations and Implicit Conversion",
+    "ques": "Write a program that demonstrates mixed data type operations and observe how Python handles implicit type conversion (coercion) in different scenarios.",
+    "answer": {
+      "type": "code",
+      "lang": "python",
+      "content": "# Different scenarios of mixed operations\nprint(\"Mixed Operations and Type Coercion:\\n\")\n\n# Scenario 1: Integer and Float\nint_num = 5\nfloat_num = 2.5\nresult1 = int_num + float_num\nprint(f\"Integer + Float: {int_num} + {float_num} = {result1}, Type: {type(result1)}\")\n\n# Scenario 2: String and other types (using +)\nstr_text = \"The answer is: \"\nnumber = 42\n# result2 = str_text + number  # This would cause TypeError\nresult2 = str_text + str(number)  # Explicit conversion needed\nprint(f\"String + converted number: {result2}, Type: {type(result2)}\")\n\n# Scenario 3: Boolean in arithmetic\nbool_true = True\nbool_false = False\nresult3 = int_num + bool_true\nresult4 = int_num + bool_false\nprint(f\"Integer + Boolean True: {int_num} + {bool_true} = {result3}, Type: {type(result3)}\")\nprint(f\"Integer + Boolean False: {int_num} + {bool_false} = {result4}, Type: {type(result4)}\")\n\n# Scenario 4: Multiplication with strings\ntext = \"Hello\"\nrepeat = 3\nresult5 = text * repeat\nprint(f\"String * Integer: '{text}' * {repeat} = '{result5}', Type: {type(result5)}\")"
+    },
+    "explanation": "## Implicit Type Conversion (Coercion)\n\nPython automatically converts between types in certain situations:\n\n### Numeric Coercion\n- When mixing **int and float**, Python converts the int to float automatically\n- `5 + 2.5` becomes `5.0 + 2.5` = `7.5` (float)\n\n### Boolean in Arithmetic\n- **Boolean values** in arithmetic: `True` = 1, `False` = 0\n- `5 + True` = `5 + 1` = `6`\n- `5 + False` = `5 + 0` = `5`\n\n### String Operations\n- **String concatenation** only works with strings\n- You cannot directly add string + number (causes TypeError)\n- Must explicitly convert using `str()`\n- **String multiplication** repeats the string: `\"Hello\" * 3` = `\"HelloHelloHello\"`\n\n### Important Note\nPython does **NOT** automatically convert between strings and numbers - you must use explicit conversion functions like `int()`, `float()`, or `str()`."
+  }
+]

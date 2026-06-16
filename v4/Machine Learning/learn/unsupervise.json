@@ -1,0 +1,41 @@
+{
+    "id": "learn_ml_unsupervise",
+    "topicId": "unsupervise",
+    "topicTitle": "Unsupervised Learning",
+    "description": "Find hidden patterns in unlabeled data",
+    "baseKP": 65,
+    "slides": [
+        {
+            "id": "ml_unsup_1",
+            "type": "content",
+            "title": "Clustering",
+            "content": "# Clustering 🍇\n\nGrouping similar data points together. No labels provided.\n\n## K-Means Clustering\nMost popular algorithm.\n1. Choose `K` (number of groups).\n2. Randomly place `K` centroids.\n3. Assign each point to nearest centroid.\n4. Move centroid to the average of its points.\n5. Repeat until centroids stop moving.\n\n## Hierarchical Clustering\nBuilds a tree of clusters (Dendrogram). Good for visualizing hierarchy.\n\n## DBSCAN\nDensity-based. Can find weird shapes and ignores noise (outliers)."
+        },
+        {
+            "id": "ml_unsup_2",
+            "type": "content",
+            "title": "Dimensionality Reduction",
+            "content": "# Dimensionality Reduction 📉\n\nWhat if you have 1000 features? The \"Curse of Dimensionality\" makes models slow and inaccurate. reducing columns helps.\n\n## PCA (Principal Component Analysis)\nProjects data onto new axes (Principal Components) that capture the most variance. You reduce 1000 columns to 50, but keep 95% of information!\n\n## t-SNE\nMainly used for **visualization**. Compresses high-dimensional data into 2D or 3D plots so humans can see clusters."
+        },
+        {
+            "id": "ml_unsup_3",
+            "type": "content",
+            "title": "Anomaly Detection",
+            "content": "# Anomaly Detection 🚨\n\nIdentifying rare items that differ significantly from the majority.\n\n## Use Cases\n- **Fraud Detection**: Credit card transactions.\n- **IT Security**: Detecting intrusions.\n- **Manufacturing**: Finding defective parts.\n\n## Techiques\n- **Isolation Forest**: Isolates anomalies by randomly splitting data. Anomalies are easier to isolate (shorter path in tree).\n- **One-Class SVM**: Learns the boundary of \"normal\" data."
+        },
+        {
+            "id": "ml_unsup_quiz_1",
+            "type": "quiz",
+            "title": "Concepts Quiz",
+            "content": "Check your understanding",
+            "quizQuestion": "Which technique is primarily used to visualize high-dimensional data in 2D?",
+            "quizOptions": [
+                "PCA",
+                "t-SNE",
+                "K-Means",
+                "DBSCAN"
+            ],
+            "correctOptionIndex": 1
+        }
+    ]
+}

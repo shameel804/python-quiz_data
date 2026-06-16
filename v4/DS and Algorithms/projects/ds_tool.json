@@ -1,0 +1,562 @@
+[
+  {
+    "title": "Sliding Window with deque",
+    "ques": "Write a Python program that uses `collections.deque` to find the maximum element in each sliding window of size k in a given list of integers.",
+    "answer": {
+      "type": "code",
+      "lang": "python",
+      "content": "from collections import deque\n\ndef max_sliding_window(nums, k):\n    result = []\n    window = deque()\n    \n    for i, num in enumerate(nums):\n        while window and window[0] <= i - k:\n            window.popleft()\n        while window and nums[window[-1]] < num:\n            window.pop()\n        window.append(i)\n        if i >= k - 1:\n            result.append(nums[window[0]])\n    return result\n\n# Example usage\nnums = [1, 3, -1, -3, 5, 3, 6, 7]\nk = 3\nprint(max_sliding_window(nums, k))"
+    },
+    "explanation": "***Step 1:*** Initialize an empty `deque` to store indices of potential maximum elements.\n***Step 2:*** For each element in the list, remove indices from the front of the deque that are outside the current window of size `k`.\n***Step 3:*** Remove indices from the back of the deque if their corresponding values are less than the current element, maintaining a decreasing order.\n***Step 4:*** Add the current index to the deque.\n***Step 5:*** After reaching a window of size `k`, append the maximum (element at the front index) to the result.\n***Step 6:*** Return the list of maximums for each window."
+  },
+  {
+    "title": "Word Frequency with Counter",
+    "ques": "Write a Python program that uses `collections.Counter` to count the frequency of words in a given string.",
+    "answer": {
+      "type": "code",
+      "lang": "python",
+      "content": "from collections import Counter\n\ndef word_frequency(text):\n    words = text.lower().split()\n    return Counter(words)\n\n# Example usage\ntext = 'the quick brown fox jumps over the lazy dog'\nresult = word_frequency(text)\nfor word, count in result.items():\n    print(f'{word}: {count}')"
+    },
+    "explanation": "***Step 1:*** Convert the input string to lowercase and split it into words.\n***Step 2:*** Use `Counter` to count the frequency of each word.\n***Step 3:*** Iterate through the `Counter` object to print each word and its frequency."
+  },
+  {
+    "title": "Default Dictionary for Grouping",
+    "ques": "Write a Python program that uses `collections.defaultdict` to group a list of strings by their length.",
+    "answer": {
+      "type": "code",
+      "lang": "python",
+      "content": "from collections import defaultdict\n\ndef group_by_length(strings):\n    grouped = defaultdict(list)\n    for s in strings:\n        grouped[len(s)].append(s)\n    return dict(grouped)\n\n# Example usage\nstrings = ['cat', 'dog', 'rat', 'elephant', 'ant', 'giraffe']\nresult = group_by_length(strings)\nfor length, words in result.items():\n    print(f'Length {length}: {words}')"
+    },
+    "explanation": "***Step 1:*** Create a `defaultdict` with a default value of an empty list.\n***Step 2:*** Iterate through the list of strings and append each string to the list corresponding to its length in the `defaultdict`.\n***Step 3:*** Convert the `defaultdict` to a regular dictionary and return it.\n***Step 4:*** Print the grouped strings by length."
+  },
+  {
+    "title": "Namedtuple for Point Operations",
+    "ques": "Write a Python program that uses `collections.namedtuple` to represent a 2D point and calculate the distance between two points.",
+    "answer": {
+      "type": "code",
+      "lang": "python",
+      "content": "from collections import namedtuple\n\nPoint = namedtuple('Point', ['x', 'y'])\n\ndef distance(p1, p2):\n    return ((p1.x - p2.x) ** 2 + (p1.y - p2.y) ** 2) ** 0.5\n\n# Example usage\np1 = Point(1, 2)\np2 = Point(4, 6)\nresult = distance(p1, p2)\nprint(f'Distance between {p1} and {p2}: {result}')"
+    },
+    "explanation": "***Step 1:*** Define a `namedtuple` called `Point` with fields `x` and `y`.\n***Step 2:*** Create a function to calculate the Euclidean distance between two points using the formula `sqrt((x2-x1)^2 + (y2-y1)^2)`.\n***Step 3:*** Create two `Point` instances and compute their distance.\n***Step 4:*** Print the result."
+  },
+  {
+    "title": "Priority Queue with heapq",
+    "ques": "Write a Python program that uses `heapq` to implement a priority queue and process tasks based on priority.",
+    "answer": {
+      "type": "code",
+      "lang": "python",
+      "content": "import heapq\n\ndef process_tasks(tasks):\n    heap = []\n    for priority, task in tasks:\n        heapq.heappush(heap, (priority, task))\n    result = []\n    while heap:\n        priority, task = heapq.heappop(heap)\n        result.append(task)\n    return result\n\n# Example usage\ntasks = [(2, 'Write code'), (1, 'Read docs'), (3, 'Test program')]\nresult = process_tasks(tasks)\nprint('Tasks in priority order:', result)"
+    },
+    "explanation": "***Step 1:*** Initialize an empty list as a min-heap.\n***Step 2:*** Push each task with its priority onto the heap using `heapq.heappush`.\n***Step 3:*** Pop tasks from the heap in ascending order of priority using `heapq.heappop`.\n***Step 4:*** Store and return the tasks in priority order."
+  },
+  {
+    "title": "Permutations with itertools",
+    "ques": "Write a Python program that uses `itertools.permutations` to generate all permutations of a given list of characters.",
+    "answer": {
+      "type": "code",
+      "lang": "python",
+      "content": "from itertools import permutations\n\ndef get_permutations(chars):\n    return list(permutations(chars))\n\n# Example usage\nchars = ['a', 'b', 'c']\nresult = get_permutations(chars)\nfor perm in result:\n    print(''.join(perm))"
+    },
+    "explanation": "***Step 1:*** Use `itertools.permutations` to generate all possible permutations of the input list.\n***Step 2:*** Convert the permutations object to a list of tuples.\n***Step 3:*** Join each tuple of characters into a string and print it."
+  },
+  {
+    "title": "Filtering Even Numbers with filter",
+    "ques": "Write a Python program that uses the `filter` function to extract even numbers from a list.",
+    "answer": {
+      "type": "code",
+      "lang": "python",
+      "content": "def is_even(n):\n    return n % 2 == 0\n\nnumbers = [1, 2, 3, 4, 5, 6, 7, 8]\neven_numbers = list(filter(is_even, numbers))\nprint('Even numbers:', even_numbers)"
+    },
+    "explanation": "***Step 1:*** Define a function `is_even` that returns `True` if a number is even.\n***Step 2:*** Use `filter` to apply `is_even` to each element in the list.\n***Step 3:*** Convert the filter object to a list and print the even numbers."
+  },
+  {
+    "title": "Summing Squares with map and reduce",
+    "ques": "Write a Python program that uses `map` and `reduce` to compute the sum of squares of a list of numbers.",
+    "answer": {
+      "type": "code",
+      "lang": "python",
+      "content": "from functools import reduce\n\ndef square(n):\n    return n * n\n\ndef add(a, b):\n    return a + b\n\nnumbers = [1, 2, 3, 4]\nsquared = map(square, numbers)\nresult = reduce(add, squared)\nprint('Sum of squares:', result)"
+    },
+    "explanation": "***Step 1:*** Define a `square` function to compute the square of a number.\n***Step 2:*** Define an `add` function to sum two numbers.\n***Step 3:*** Use `map` to apply the `square` function to each number in the list.\n***Step 4:*** Use `reduce` to sum the squared values.\n***Step 5:*** Print the final result."
+  },
+  {
+    "title": "Circular Buffer with deque",
+    "ques": "Write a Python program that uses `collections.deque` to implement a circular buffer with a fixed size, supporting append and pop operations.",
+    "answer": {
+      "type": "code",
+      "lang": "python",
+      "content": "from collections import deque\n\nclass CircularBuffer:\n    def __init__(self, size):\n        self.buffer = deque(maxlen=size)\n\n    def append(self, item):\n        self.buffer.append(item)\n\n    def pop(self):\n        return self.buffer.popleft() if self.buffer else None\n\n    def get_items(self):\n        return list(self.buffer)\n\n# Example usage\nbuffer = CircularBuffer(3)\nbuffer.append(1)\nbuffer.append(2)\nbuffer.append(3)\nbuffer.append(4)  # Overwrites oldest item\nprint(buffer.get_items())  # [2, 3, 4]\nprint(buffer.pop())  # 2\nprint(buffer.get_items())  # [3, 4]"
+    },
+    "explanation": "***Step 1:*** Define a `CircularBuffer` class with a `deque` initialized with a fixed `maxlen`.\n***Step 2:*** Implement `append` to add items, automatically removing the oldest item if the buffer is full.\n***Step 3:*** Implement `pop` to remove and return the oldest item, or `None` if empty.\n***Step 4:*** Implement `get_items` to return the current buffer contents.\n***Step 5:*** Demonstrate usage by appending items and popping the oldest one."
+  },
+  {
+    "title": "Most Common Elements with Counter",
+    "ques": "Write a Python program that uses `collections.Counter` to find the three most common characters in a string, ignoring spaces.",
+    "answer": {
+      "type": "code",
+      "lang": "python",
+      "content": "from collections import Counter\n\ndef top_three_chars(text):\n    filtered_text = text.replace(' ', '')\n    char_counts = Counter(filtered_text)\n    return char_counts.most_common(3)\n\n# Example usage\ntext = 'hello world'\nresult = top_three_chars(text)\nfor char, count in result:\n    print(f'Character {char}: {count}')"
+    },
+    "explanation": "***Step 1:*** Remove spaces from the input string.\n***Step 2:*** Use `Counter` to count the frequency of each character.\n***Step 3:*** Use `most_common(3)` to get the three most frequent characters and their counts.\n***Step 4:*** Print each character and its count."
+  },
+  {
+    "title": "Default Dictionary for Counting Categories",
+    "ques": "Write a Python program that uses `collections.defaultdict` to count items in different categories from a list of tuples.",
+    "answer": {
+      "type": "code",
+      "lang": "python",
+      "content": "from collections import defaultdict\n\ndef count_categories(items):\n    category_counts = defaultdict(int)\n    for item, category in items:\n        category_counts[category] += 1\n    return dict(category_counts)\n\n# Example usage\nitems = [('apple', 'fruit'), ('carrot', 'vegetable'), ('banana', 'fruit'), ('potato', 'vegetable')]\nresult = count_categories(items)\nfor category, count in result.items():\n    print(f'{category}: {count}')"
+    },
+    "explanation": "***Step 1:*** Create a `defaultdict` with a default value of `0` for counting.\n***Step 2:*** Iterate through the list of tuples, incrementing the count for each category.\n***Step 3:*** Convert the `defaultdict` to a regular dictionary.\n***Step 4:*** Print each category and its item count."
+  },
+  {
+    "title": "Namedtuple for Employee Records",
+    "ques": "Write a Python program that uses `collections.namedtuple` to represent employee records and sort them by salary.",
+    "answer": {
+      "type": "code",
+      "lang": "python",
+      "content": "from collections import namedtuple\n\nEmployee = namedtuple('Employee', ['name', 'salary'])\n\ndef sort_employees(employees):\n    return sorted(employees, key=lambda x: x.salary)\n\n# Example usage\nemployees = [\n    Employee('Alice', 50000),\n    Employee('Bob', 60000),\n    Employee('Charlie', 45000)\n]\nsorted_employees = sort_employees(employees)\nfor emp in sorted_employees:\n    print(f'{emp.name}: {emp.salary}')"
+    },
+    "explanation": "***Step 1:*** Define a `namedtuple` called `Employee` with fields `name` and `salary`.\n***Step 2:*** Create a function to sort a list of employees by salary using `sorted` with a `lambda` key function.\n***Step 3:*** Create sample employee records.\n***Step 4:*** Sort and print the employees by salary."
+  },
+  {
+    "title": "Kth Smallest Element with heapq",
+    "ques": "Write a Python program that uses `heapq` to find the kth smallest element in a list of integers.",
+    "answer": {
+      "type": "code",
+      "lang": "python",
+      "content": "import heapq\n\ndef kth_smallest(nums, k):\n    return heapq.nsmallest(k, nums)[-1]\n\n# Example usage\nnums = [7, 10, 4, 3, 20, 15]\nk = 3\nresult = kth_smallest(nums, k)\nprint(f'{k}th smallest element: {result}')"
+    },
+    "explanation": "***Step 1:*** Use `heapq.nsmallest` to find the `k` smallest elements in the list.\n***Step 2:*** Select the last element from the result, which is the kth smallest.\n***Step 3:*** Print the kth smallest element."
+  },
+  {
+    "title": "Combinations with itertools",
+    "ques": "Write a Python program that uses `itertools.combinations` to generate all possible pairs of items from a list.",
+    "answer": {
+      "type": "code",
+      "lang": "python",
+      "content": "from itertools import combinations\n\ndef get_pairs(items):\n    return list(combinations(items, 2))\n\n# Example usage\nitems = ['A', 'B', 'C', 'D']\npairs = get_pairs(items)\nfor pair in pairs:\n    print(pair)"
+    },
+    "explanation": "***Step 1:*** Use `itertools.combinations` to generate all possible pairs (combinations of size 2) from the input list.\n***Step 2:*** Convert the combinations object to a list of tuples.\n***Step 3:*** Print each pair."
+  },
+  {
+    "title": "Filtering Positive Numbers with filter",
+    "ques": "Write a Python program that uses the `filter` function to extract positive numbers from a list of integers.",
+    "answer": {
+      "type": "code",
+      "lang": "python",
+      "content": "def is_positive(n):\n    return n > 0\n\nnumbers = [-2, -1, 0, 1, 2, 3]\npositive_numbers = list(filter(is_positive, numbers))\nprint('Positive numbers:', positive_numbers)"
+    },
+    "explanation": "***Step 1:*** Define a function `is_positive` that returns `True` if a number is positive.\n***Step 2:*** Use `filter` to apply `is_positive` to each element in the list.\n***Step 3:*** Convert the filter object to a list and print the positive numbers."
+  },
+  {
+    "title": "Product of Numbers with map and reduce",
+    "ques": "Write a Python program that uses `map` and `reduce` to compute the product of a list of numbers.",
+    "answer": {
+      "type": "code",
+      "lang": "python",
+      "content": "from functools import reduce\n\ndef multiply(a, b):\n    return a * b\n\nnumbers = [1, 2, 3, 4]\nresult = reduce(multiply, numbers)\nprint('Product of numbers:', result)"
+    },
+    "explanation": "***Step 1:*** Define a `multiply` function to multiply two numbers.\n***Step 2:*** Use `reduce` to apply the `multiply` function across the list to compute the product.\n***Step 3:*** Print the final product. Note: `map` is not needed here as no transformation is applied to individual elements."
+  },
+  {
+    "title": "LRU Cache with deque",
+    "ques": "Write a Python program that uses `collections.deque` to implement a Least Recently Used (LRU) cache with a fixed capacity, supporting get and put operations.",
+    "answer": {
+      "type": "code",
+      "lang": "python",
+      "content": "from collections import deque\n\nclass LRUCache:\n    def __init__(self, capacity):\n        self.cache = {}\n        self.order = deque(maxlen=capacity)\n\n    def get(self, key):\n        if key in self.cache:\n            self.order.remove(key)\n            self.order.append(key)\n            return self.cache[key]\n        return None\n\n    def put(self, key, value):\n        if key in self.cache:\n            self.order.remove(key)\n        elif len(self.order) == self.order.maxlen:\n            oldest = self.order.popleft()\n            del self.cache[oldest]\n        self.order.append(key)\n        self.cache[key] = value\n\n# Example usage\ncache = LRUCache(2)\ncache.put('A', 1)\ncache.put('B', 2)\nprint(cache.get('A'))  # 1\ncache.put('C', 3)     # Evicts 'B'\nprint(cache.get('B'))  # None\nprint(cache.get('A'))  # 1"
+    },
+    "explanation": "***Step 1:*** Initialize a `deque` with a fixed `maxlen` to track key order and a dictionary for key-value pairs.\n***Step 2:*** In `get`, if the key exists, update its position to the end of the `deque` and return its value; otherwise, return `None`.\n***Step 3:*** In `put`, if the key exists, update its value and move it to the end; if the cache is full, remove the oldest key; then add the new key-value pair.\n***Step 4:*** Demonstrate usage with put and get operations, showing eviction of the least recently used item."
+  },
+  {
+    "title": "Top N Words with Counter",
+    "ques": "Write a Python program that uses `collections.Counter` to find the top N most frequent words in a text, ignoring case and punctuation.",
+    "answer": {
+      "type": "code",
+      "lang": "python",
+      "content": "from collections import Counter\nimport re\n\ndef top_n_words(text, n):\n    words = re.findall(r'\\w+', text.lower())\n    return Counter(words).most_common(n)\n\n# Example usage\ntext = 'The quick brown fox, the quick dog! The fox runs.'\nresult = top_n_words(text, 3)\nfor word, count in result:\n    print(f'Word {word}: {count}')"
+    },
+    "explanation": "***Step 1:*** Use `re.findall` to extract words, converting the text to lowercase and ignoring punctuation.\n***Step 2:*** Use `Counter` to count word frequencies.\n***Step 3:*** Use `most_common(n)` to get the top N words and their counts.\n***Step 4:*** Print each word and its frequency."
+  },
+  {
+    "title": "Default Dictionary for Adjacency List",
+    "ques": "Write a Python program that uses `collections.defaultdict` to create an adjacency list representation of an undirected graph from a list of edges.",
+    "answer": {
+      "type": "code",
+      "lang": "python",
+      "content": "from collections import defaultdict\n\ndef create_adjacency_list(edges):\n    graph = defaultdict(list)\n    for u, v in edges:\n        graph[u].append(v)\n        graph[v].append(u)\n    return dict(graph)\n\n# Example usage\nedges = [(1, 2), (2, 3), (3, 1)]\nresult = create_adjacency_list(edges)\nfor node, neighbors in result.items():\n    print(f'Node {node}: {neighbors}')"
+    },
+    "explanation": "***Step 1:*** Create a `defaultdict` with a default value of an empty list.\n***Step 2:*** Iterate through the list of edges, adding each vertex as a neighbor to the other in the `defaultdict`.\n***Step 3:*** Convert the `defaultdict` to a regular dictionary.\n***Step 4:*** Print each node and its neighbors."
+  },
+  {
+    "title": "Namedtuple for Rectangle Operations",
+    "ques": "Write a Python program that uses `collections.namedtuple` to represent rectangles and calculate their area and perimeter.",
+    "answer": {
+      "type": "code",
+      "lang": "python",
+      "content": "from collections import namedtuple\n\nRectangle = namedtuple('Rectangle', ['width', 'height'])\n\ndef rectangle_properties(rect):\n    area = rect.width * rect.height\n    perimeter = 2 * (rect.width + rect.height)\n    return area, perimeter\n\n# Example usage\nrect = Rectangle(5, 3)\narea, perimeter = rectangle_properties(rect)\nprint(f'Rectangle {rect}: Area = {area}, Perimeter = {perimeter}')"
+    },
+    "explanation": "***Step 1:*** Define a `namedtuple` called `Rectangle` with fields `width` and `height`.\n***Step 2:*** Create a function to calculate the area (`width * height`) and perimeter (`2 * (width + height)`).\n***Step 3:*** Create a sample rectangle and compute its properties.\n***Step 4:*** Print the rectangle’s details, area, and perimeter."
+  },
+  {
+    "title": "Kth Largest Element with heapq",
+    "ques": "Write a Python program that uses `heapq` to find the kth largest element in a list of integers.",
+    "answer": {
+      "type": "code",
+      "lang": "python",
+      "content": "import heapq\n\ndef kth_largest(nums, k):\n    return heapq.nlargest(k, nums)[-1]\n\n# Example usage\nnums = [7, 10, 4, 3, 20, 15]\nk = 2\nresult = kth_largest(nums, k)\nprint(f'{k}th largest element: {result}')"
+    },
+    "explanation": "***Step 1:*** Use `heapq.nlargest` to find the `k` largest elements in the list.\n***Step 2:*** Select the last element from the result, which is the kth largest.\n***Step 3:*** Print the kth largest element."
+  },
+  {
+    "title": "Product Combinations with itertools",
+    "ques": "Write a Python program that uses `itertools.product` to generate all possible pairings of items from two lists.",
+    "answer": {
+      "type": "code",
+      "lang": "python",
+      "content": "from itertools import product\n\ndef get_cartesian_product(list1, list2):\n    return list(product(list1, list2))\n\n# Example usage\ncolors = ['red', 'blue']\nsizes = ['small', 'large']\npairs = get_cartesian_product(colors, sizes)\nfor pair in pairs:\n    print(pair)"
+    },
+    "explanation": "***Step 1:*** Use `itertools.product` to generate the Cartesian product of two lists.\n***Step 2:*** Convert the product object to a list of tuples.\n***Step 3:*** Print each pair."
+  },
+  {
+    "title": "Filtering Non-Empty Strings with filter",
+    "ques": "Write a Python program that uses the `filter` function to extract non-empty strings from a list.",
+    "answer": {
+      "type": "code",
+      "lang": "python",
+      "content": "def is_non_empty(s):\n    return len(s) > 0\n\nstrings = ['', 'hello', ' ', 'world', '']\nnon_empty = list(filter(is_non_empty, strings))\nprint('Non-empty strings:', non_empty)"
+    },
+    "explanation": "***Step 1:*** Define a function `is_non_empty` that returns `True` if a string’s length is greater than 0.\n***Step 2:*** Use `filter` to apply `is_non_empty` to each string in the list.\n***Step 3:*** Convert the filter object to a list and print the non-empty strings."
+  },
+  {
+    "title": "Max of Transformed List with map and reduce",
+    "ques": "Write a Python program that uses `map` and `reduce` to find the maximum of a list of numbers after applying a transformation (e.g., squaring).",
+    "answer": {
+      "type": "code",
+      "lang": "python",
+      "content": "from functools import reduce\n\ndef square(n):\n    return n * n\n\ndef max_value(a, b):\n    return a if a > b else b\n\nnumbers = [1, -2, 3, -4]\nsquared = map(square, numbers)\nresult = reduce(max_value, squared)\nprint('Maximum of squared numbers:', result)"
+    },
+    "explanation": "***Step 1:*** Define a `square` function to compute the square of a number.\n***Step 2:*** Define a `max_value` function to return the larger of two numbers.\n***Step 3:*** Use `map` to apply `square` to each number in the list.\n***Step 4:*** Use `reduce` to find the maximum of the squared values.\n***Step 5:*** Print the result."
+  },
+  {
+    "title": "Fixed-Size Queue with deque",
+    "ques": "Write a Python program that uses `collections.deque` to implement a fixed-size queue that supports enqueue and dequeue operations, returning None when the queue is empty.",
+    "answer": {
+      "type": "code",
+      "lang": "python",
+      "content": "from collections import deque\n\nclass FixedQueue:\n    def __init__(self, size):\n        self.queue = deque(maxlen=size)\n\n    def enqueue(self, item):\n        self.queue.append(item)\n\n    def dequeue(self):\n        return self.queue.popleft() if self.queue else None\n\n    def is_full(self):\n        return len(self.queue) == self.queue.maxlen\n\n# Example usage\nqueue = FixedQueue(3)\nqueue.enqueue('A')\nqueue.enqueue('B')\nqueue.enqueue('C')\nprint('Is full:', queue.is_full())  # True\nqueue.enqueue('D')  # Overwrites 'A'\nprint(queue.dequeue())  # 'B'\nprint(list(queue.queue))  # ['C', 'D']"
+    },
+    "explanation": "***Step 1:*** Initialize a `deque` with a fixed `maxlen` to store queue elements.\n***Step 2:*** Implement `enqueue` to add an item to the end, automatically removing the oldest item if the queue is full.\n***Step 3:*** Implement `dequeue` to remove and return the oldest item, or `None` if empty.\n***Step 4:*** Implement `is_full` to check if the queue has reached its capacity.\n***Step 5:*** Demonstrate usage with enqueue, dequeue, and checking the queue state."
+  },
+  {
+    "title": "Unique Elements Count with Counter",
+    "ques": "Write a Python program that uses `collections.Counter` to count the number of unique elements in a list and report their frequencies in descending order.",
+    "answer": {
+      "type": "code",
+      "lang": "python",
+      "content": "from collections import Counter\n\ndef unique_counts(items):\n    counter = Counter(items)\n    return sorted(counter.items(), key=lambda x: x[1], reverse=True)\n\n# Example usage\nitems = [1, 2, 2, 3, 3, 3, 4]\nresult = unique_counts(items)\nfor item, count in result:\n    print(f'Item {item}: {count}')\nprint(f'Unique elements: {len(result)}')"
+    },
+    "explanation": "***Step 1:*** Use `Counter` to count the frequency of each element in the list.\n***Step 2:*** Sort the `Counter` items by count in descending order using `sorted` with a `lambda` key.\n***Step 3:*** Print each item and its count, then print the number of unique elements."
+  },
+  {
+    "title": "Default Dictionary for Multi-Value Mapping",
+    "ques": "Write a Python program that uses `collections.defaultdict` to create a mapping where each key maps to multiple values from a list of key-value pairs.",
+    "answer": {
+      "type": "code",
+      "lang": "python",
+      "content": "from collections import defaultdict\n\ndef multi_value_map(pairs):\n    mapping = defaultdict(list)\n    for key, value in pairs:\n        mapping[key].append(value)\n    return dict(mapping)\n\n# Example usage\npairs = [('a', 1), ('b', 2), ('a', 3), ('b', 4), ('c', 5)]\nresult = multi_value_map(pairs)\nfor key, values in result.items():\n    print(f'Key {key}: {values}')"
+    },
+    "explanation": "***Step 1:*** Create a `defaultdict` with a default value of an empty list.\n***Step 2:*** Iterate through the list of key-value pairs, appending each value to the list for its key.\n***Step 3:*** Convert the `defaultdict` to a regular dictionary.\n***Step 4:*** Print each key and its list of values."
+  },
+  {
+    "title": "Namedtuple for Time Intervals",
+    "ques": "Write a Python program that uses `collections.namedtuple` to represent time intervals and calculate their duration in minutes.",
+    "answer": {
+      "type": "code",
+      "lang": "python",
+      "content": "from collections import namedtuple\n\nTimeInterval = namedtuple('TimeInterval', ['start_hour', 'start_minute', 'end_hour', 'end_minute'])\n\ndef duration_in_minutes(interval):\n    start = interval.start_hour * 60 + interval.start_minute\n    end = interval.end_hour * 60 + interval.end_minute\n    return end - start\n\n# Example usage\ninterval = TimeInterval(9, 30, 10, 45)\nduration = duration_in_minutes(interval)\nprint(f'Interval {interval}: Duration = {duration} minutes')"
+    },
+    "explanation": "***Step 1:*** Define a `namedtuple` called `TimeInterval` with fields `start_hour`, `start_minute`, `end_hour`, and `end_minute`.\n***Step 2:*** Create a function to calculate duration by converting start and end times to minutes and finding the difference.\n***Step 3:*** Create a sample time interval.\n***Step 4:*** Compute and print the duration in minutes."
+  },
+  {
+    "title": "Median Finder with heapq",
+    "ques": "Write a Python program that uses `heapq` to find the median of a list of numbers.",
+    "answer": {
+      "type": "code",
+      "lang": "python",
+      "content": "import heapq\n\ndef find_median(nums):\n    sorted_nums = heapq.nsmallest(len(nums), nums)\n    n = len(sorted_nums)\n    if n % 2 == 0:\n        return (sorted_nums[n//2 - 1] + sorted_nums[n//2]) / 2\n    return sorted_nums[n//2]\n\n# Example usage\nnums = [4, 2, 5, 7, 1]\nresult = find_median(nums)\nprint('Median:', result)"
+    },
+    "explanation": "***Step 1:*** Use `heapq.nsmallest` to sort the list.\n***Step 2:*** If the list length is even, average the two middle elements; if odd, select the middle element.\n***Step 3:*** Print the median."
+  },
+  {
+    "title": "Permutations with Length Constraint using itertools",
+    "ques": "Write a Python program that uses `itertools.permutations` to generate all permutations of a list with a specific length.",
+    "answer": {
+      "type": "code",
+      "lang": "python",
+      "content": "from itertools import permutations\n\ndef get_permutations_with_length(items, length):\n    return list(permutations(items, length))\n\n# Example usage\nitems = ['x', 'y', 'z']\nlength = 2\nresult = get_permutations_with_length(items, length)\nfor perm in result:\n    print(''.join(perm))"
+    },
+    "explanation": "***Step 1:*** Use `itertools.permutations` with a specified length to generate permutations of that size.\n***Step 2:*** Convert the permutations object to a list of tuples.\n***Step 3:*** Join each tuple into a string and print it."
+  },
+  {
+    "title": "Filtering Palindromes with filter",
+    "ques": "Write a Python program that uses the `filter` function to extract palindromic strings from a list.",
+    "answer": {
+      "type": "code",
+      "lang": "python",
+      "content": "def is_palindrome(s):\n    return s == s[::-1]\n\nstrings = ['radar', 'hello', 'level', 'world', 'deed']\npalindromes = list(filter(is_palindrome, strings))\nprint('Palindromes:', palindromes)"
+    },
+    "explanation": "***Step 1:*** Define a function `is_palindrome` that checks if a string equals its reverse.\n***Step 2:*** Use `filter` to apply `is_palindrome` to each string in the list.\n***Step 3:*** Convert the filter object to a list and print the palindromic strings."
+  },
+  {
+    "title": "Sum of Absolute Differences with map and reduce",
+    "ques": "Write a Python program that uses `map` and `reduce` to compute the sum of absolute differences between consecutive elements in a list.",
+    "answer": {
+      "type": "code",
+      "lang": "python",
+      "content": "from functools import reduce\n\ndef abs_diff(pair):\n    return abs(pair[0] - pair[1])\n\ndef add(a, b):\n    return a + b\n\nnumbers = [1, 4, 2, 8]\npairs = zip(numbers, numbers[1:])\ndiffs = map(abs_diff, pairs)\nresult = reduce(add, diffs, 0)\nprint('Sum of absolute differences:', result)"
+    },
+    "explanation": "***Step 1:*** Define `abs_diff` to compute the absolute difference between two numbers.\n***Step 2:*** Define `add` to sum two numbers.\n***Step 3:*** Use `zip` to create pairs of consecutive elements.\n***Step 4:*** Use `map` to apply `abs_diff` to each pair.\n***Step 5:*** Use `reduce` to sum the differences, starting with 0, and print the result."
+  },
+  {
+    "title": "Rolling Average with deque",
+    "ques": "Write a Python program that uses `collections.deque` to compute the rolling average of the last n numbers in a stream of inputs.",
+    "answer": {
+      "type": "code",
+      "lang": "python",
+      "content": "from collections import deque\n\nclass RollingAverage:\n    def __init__(self, size):\n        self.numbers = deque(maxlen=size)\n\n    def add(self, num):\n        self.numbers.append(num)\n        return sum(self.numbers) / len(self.numbers) if self.numbers else 0\n\n# Example usage\navg = RollingAverage(3)\nprint(avg.add(10))  # 10.0\nprint(avg.add(20))  # 15.0\nprint(avg.add(30))  # 20.0\nprint(avg.add(40))  # 30.0"
+    },
+    "explanation": "***Step 1:*** Initialize a `deque` with a fixed `maxlen` to store the last n numbers.\n***Step 2:*** Implement `add` to append a new number and compute the average of the current numbers in the `deque`.\n***Step 3:*** Return 0 if the `deque` is empty.\n***Step 4:*** Demonstrate usage by adding numbers and printing the rolling average."
+  },
+  {
+    "title": "Element Frequency Differences with Counter",
+    "ques": "Write a Python program that uses `collections.Counter` to compute the frequency differences of elements between two lists.",
+    "answer": {
+      "type": "code",
+      "lang": "python",
+      "content": "from collections import Counter\n\ndef frequency_diff(list1, list2):\n    counter1 = Counter(list1)\n    counter2 = Counter(list2)\n    return dict(counter1 - counter2)\n\n# Example usage\nlist1 = ['a', 'b', 'a', 'c']\nlist2 = ['a', 'b', 'b']\nresult = frequency_diff(list1, list2)\nfor item, count in result.items():\n    print(f'Item {item}: Difference = {count}')"
+    },
+    "explanation": "***Step 1:*** Use `Counter` to count the frequency of elements in both lists.\n***Step 2:*** Subtract `counter2` from `counter1` to get the frequency differences.\n***Step 3:*** Convert the result to a dictionary and print each item and its frequency difference."
+  },
+  {
+    "title": "Default Dictionary for Event Logging",
+    "ques": "Write a Python program that uses `collections.defaultdict` to log events by timestamp, grouping event descriptions in a list.",
+    "answer": {
+      "type": "code",
+      "lang": "python",
+      "content": "from collections import defaultdict\n\ndef log_events(events):\n    logs = defaultdict(list)\n    for timestamp, description in events:\n        logs[timestamp].append(description)\n    return dict(logs)\n\n# Example usage\nevents = [(2025, 'Login'), (2025, 'Logout'), (2026, 'Error'), (2025, 'Click')]\nresult = log_events(events)\nfor timestamp, descriptions in result.items():\n    print(f'Timestamp {timestamp}: {descriptions}')"
+    },
+    "explanation": "***Step 1:*** Create a `defaultdict` with a default value of an empty list.\n***Step 2:*** Iterate through the list of events, appending each description to the list for its timestamp.\n***Step 3:*** Convert the `defaultdict` to a regular dictionary.\n***Step 4:*** Print each timestamp and its list of event descriptions."
+  },
+  {
+    "title": "Namedtuple for Student Grades",
+    "ques": "Write a Python program that uses `collections.namedtuple` to represent student records and compute their average grade.",
+    "answer": {
+      "type": "code",
+      "lang": "python",
+      "content": "from collections import namedtuple\n\nStudent = namedtuple('Student', ['name', 'grades'])\n\ndef average_grade(student):\n    return sum(student.grades) / len(student.grades) if student.grades else 0\n\n# Example usage\nstudent = Student('Alice', [85, 90, 95])\navg = average_grade(student)\nprint(f'Student {student.name}: Average Grade = {avg}')"
+    },
+    "explanation": "***Step 1:*** Define a `namedtuple` called `Student` with fields `name` and `grades`.\n***Step 2:*** Create a function to compute the average of the student’s grades, returning 0 if the grades list is empty.\n***Step 3:*** Create a sample student record.\n***Step 4:*** Compute and print the average grade."
+  },
+  {
+    "title": "Running K Smallest with heapq",
+    "ques": "Write a Python program that uses `heapq` to maintain a running list of the k smallest elements from a stream of numbers.",
+    "answer": {
+      "type": "code",
+      "lang": "python",
+      "content": "import heapq\n\nclass KSmallest:\n    def __init__(self, k):\n        self.k = k\n        self.heap = []\n\n    def add(self, num):\n        if len(self.heap) < self.k:\n            heapq.heappush(self.heap, -num)\n        elif -num < self.heap[0]:\n            heapq.heapreplace(self.heap, -num)\n        return [-x for x in self.heap]\n\n# Example usage\ntracker = KSmallest(3)\nfor num in [4, 1, 3, 5, 2]:\n    result = tracker.add(num)\n    print(f'After adding {num}: {sorted(result)}')"
+    },
+    "explanation": "***Step 1:*** Initialize a max-heap (using negative numbers) to store the k smallest elements.\n***Step 2:*** In `add`, if the heap has fewer than k elements, push the negated number; otherwise, replace the largest (smallest negative) if the new number is smaller.\n***Step 3:*** Return the k smallest elements by negating the heap values.\n***Step 4:*** Demonstrate usage by adding numbers and printing the sorted k smallest elements."
+  },
+  {
+    "title": "Combinations with Sum using itertools",
+    "ques": "Write a Python program that uses `itertools.combinations` to find all combinations of numbers from a list that sum to a target value.",
+    "answer": {
+      "type": "code",
+      "lang": "python",
+      "content": "from itertools import combinations\n\ndef find_combinations(numbers, target):\n    result = []\n    for r in range(1, len(numbers) + 1):\n        for combo in combinations(numbers, r):\n            if sum(combo) == target:\n                result.append(list(combo))\n    return result\n\n# Example usage\nnumbers = [1, 2, 3, 4]\ntarget = 7\nresult = find_combinations(numbers, target)\nfor combo in result:\n    print(combo)"
+    },
+    "explanation": "***Step 1:*** Use `itertools.combinations` to generate combinations of all sizes from the input list.\n***Step 2:*** Check if the sum of each combination equals the target value.\n***Step 3:*** Collect valid combinations in a list.\n***Step 4:*** Print each combination that sums to the target."
+  },
+  {
+    "title": "Filtering Uppercase Strings with filter",
+    "ques": "Write a Python program that uses the `filter` function to extract strings from a list that are entirely uppercase.",
+    "answer": {
+      "type": "code",
+      "lang": "python",
+      "content": "def is_uppercase(s):\n    return s.isupper()\n\nstrings = ['HELLO', 'World', 'TEST', 'python', 'CODE']\nuppercase = list(filter(is_uppercase, strings))\nprint('Uppercase strings:', uppercase)"
+    },
+    "explanation": "***Step 1:*** Define a function `is_uppercase` that checks if a string is entirely uppercase using `isupper`.\n***Step 2:*** Use `filter` to apply `is_uppercase` to each string in the list.\n***Step 3:*** Convert the filter object to a list and print the uppercase strings."
+  },
+  {
+    "title": "Cumulative Product with map and reduce",
+    "ques": "Write a Python program that uses `map` and `reduce` to compute the cumulative product of a list of numbers after doubling each element.",
+    "answer": {
+      "type": "code",
+      "lang": "python",
+      "content": "from functools import reduce\n\ndef double(n):\n    return n * 2\n\ndef multiply(a, b):\n    return a * b\n\nnumbers = [1, 2, 3, 4]\ndoubled = map(double, numbers)\nresult = reduce(multiply, doubled, 1)\nprint('Cumulative product of doubled numbers:', result)"
+    },
+    "explanation": "***Step 1:*** Define a `double` function to multiply each number by 2.\n***Step 2:*** Define a `multiply` function to multiply two numbers.\n***Step 3:*** Use `map` to apply `double` to each number in the list.\n***Step 4:*** Use `reduce` to compute the product of the doubled numbers, starting with 1.\n***Step 5:*** Print the result."
+  },
+  {
+    "title": "Bounded History with deque",
+    "ques": "Write a Python program that uses `collections.deque` to maintain a bounded history of user actions, allowing retrieval of the most recent actions in reverse order.",
+    "answer": {
+      "type": "code",
+      "lang": "python",
+      "content": "from collections import deque\n\nclass ActionHistory:\n    def __init__(self, size):\n        self.history = deque(maxlen=size)\n\n    def add_action(self, action):\n        self.history.append(action)\n\n    def get_recent(self):\n        return list(reversed(self.history))\n\n# Example usage\nhistory = ActionHistory(3)\nhistory.add_action('click')\nhistory.add_action('type')\nhistory.add_action('scroll')\nhistory.add_action('save')\nprint(history.get_recent())  # ['save', 'scroll', 'type']"
+    },
+    "explanation": "***Step 1:*** Initialize a `deque` with a fixed `maxlen` to store actions.\n***Step 2:*** Implement `add_action` to append a new action, automatically removing the oldest if the history is full.\n***Step 3:*** Implement `get_recent` to return the actions in reverse order (most recent first).\n***Step 4:*** Demonstrate usage by adding actions and printing the recent history."
+  },
+  {
+    "title": "Character Run-Length Encoding with Counter",
+    "ques": "Write a Python program that uses `collections.Counter` to perform run-length encoding on a string, counting consecutive character occurrences.",
+    "answer": {
+      "type": "code",
+      "lang": "python",
+      "content": "from collections import Counter\n\ndef run_length_encoding(text):\n    runs = []\n    current_char = text[0]\n    count = 1\n    for char in text[1:]:\n        if char == current_char:\n            count += 1\n        else:\n            runs.append((current_char, count))\n            current_char = char\n            count = 1\n    runs.append((current_char, count))\n    return dict(Counter(runs))\n\n# Example usage\ntext = 'aaabbc'\nresult = run_length_encoding(text)\nfor (char, count), freq in result.items():\n    print(f'{char}{count}: {freq}')"
+    },
+    "explanation": "***Step 1:*** Iterate through the string to identify runs of consecutive characters and their counts.\n***Step 2:*** Store each run as a tuple of (character, count).\n***Step 3:*** Use `Counter` to count the frequency of each run tuple.\n***Step 4:*** Print each run and its frequency."
+  },
+  {
+    "title": "Default Dictionary for Item Aggregation",
+    "ques": "Write a Python program that uses `collections.defaultdict` to aggregate total quantities of items by category from a list of transactions.",
+    "answer": {
+      "type": "code",
+      "lang": "python",
+      "content": "from collections import defaultdict\n\ndef aggregate_quantities(transactions):\n    totals = defaultdict(int)\n    for item, category, quantity in transactions:\n        totals[category] += quantity\n    return dict(totals)\n\n# Example usage\ntransactions = [('apple', 'fruit', 5), ('carrot', 'vegetable', 3), ('banana', 'fruit', 2)]\nresult = aggregate_quantities(transactions)\nfor category, total in result.items():\n    print(f'{category}: {total}')"
+    },
+    "explanation": "***Step 1:*** Create a `defaultdict` with a default value of 0 for summing quantities.\n***Step 2:*** Iterate through the list of transactions, adding each quantity to the total for its category.\n***Step 3:*** Convert the `defaultdict` to a regular dictionary.\n***Step 4:*** Print each category and its total quantity."
+  },
+  {
+    "title": "Namedtuple for Vector Operations",
+    "ques": "Write a Python program that uses `collections.namedtuple` to represent 3D vectors and compute their dot product.",
+    "answer": {
+      "type": "code",
+      "lang": "python",
+      "content": "from collections import namedtuple\n\nVector3D = namedtuple('Vector3D', ['x', 'y', 'z'])\n\ndef dot_product(v1, v2):\n    return v1.x * v2.x + v1.y * v2.y + v1.z * v2.z\n\n# Example usage\nv1 = Vector3D(1, 2, 3)\nv2 = Vector3D(4, 5, 6)\nresult = dot_product(v1, v2)\nprint(f'Dot product of {v1} and {v2}: {result}')"
+    },
+    "explanation": "***Step 1:*** Define a `namedtuple` called `Vector3D` with fields `x`, `y`, and `z`.\n***Step 2:*** Create a function to compute the dot product using the formula `x1*x2 + y1*y2 + z1*z2`.\n***Step 3:*** Create two sample vectors.\n***Step 4:*** Compute and print the dot product."
+  },
+  {
+    "title": "Top K Frequent Elements with heapq",
+    "ques": "Write a Python program that uses `heapq` to find the k most frequent elements in a list.",
+    "answer": {
+      "type": "code",
+      "lang": "python",
+      "content": "import heapq\nfrom collections import Counter\n\ndef top_k_frequent(nums, k):\n    counts = Counter(nums)\n    return heapq.nlargest(k, counts.keys(), key=counts.get)\n\n# Example usage\nnums = [1, 1, 1, 2, 2, 3]\nk = 2\nresult = top_k_frequent(nums, k)\nprint(f'Top {k} frequent elements: {result}')"
+    },
+    "explanation": "***Step 1:*** Use `Counter` to count the frequency of each element.\n***Step 2:*** Use `heapq.nlargest` to get the k elements with the highest frequencies, using the `Counter`’s `get` method as the key.\n***Step 3:*** Print the top k frequent elements."
+  },
+  {
+    "title": "Cyclic Permutations with itertools",
+    "ques": "Write a Python program that uses `itertools.cycle` to simulate a round-robin scheduler for a list of tasks.",
+    "answer": {
+      "type": "code",
+      "lang": "python",
+      "content": "from itertools import cycle\n\ndef round_robin(tasks, steps):\n    scheduler = cycle(tasks)\n    return [next(scheduler) for _ in range(steps)]\n\n# Example usage\ntasks = ['Task1', 'Task2', 'Task3']\nsteps = 5\nresult = round_robin(tasks, steps)\nprint('Scheduled tasks:', result)"
+    },
+    "explanation": "***Step 1:*** Use `itertools.cycle` to create an iterator that cycles through the tasks indefinitely.\n***Step 2:*** Generate a list of the next `steps` tasks using a list comprehension with `next`.\n***Step 3:*** Print the scheduled tasks."
+  },
+  {
+    "title": "Filtering Divisible Numbers with filter",
+    "ques": "Write a Python program that uses the `filter` function to extract numbers from a list that are divisible by a given divisor.",
+    "answer": {
+      "type": "code",
+      "lang": "python",
+      "content": "def is_divisible(n, divisor=3):\n    return n % divisor == 0\n\nnumbers = [3, 4, 6, 7, 9, 12]\ndivisible = list(filter(is_divisible, numbers))\nprint('Numbers divisible by 3:', divisible)"
+    },
+    "explanation": "***Step 1:*** Define a function `is_divisible` that checks if a number is divisible by a given divisor (default 3).\n***Step 2:*** Use `filter` to apply `is_divisible` to each number in the list.\n***Step 3:*** Convert the filter object to a list and print the divisible numbers."
+  },
+  {
+    "title": "Weighted Sum with map and reduce",
+    "ques": "Write a Python program that uses `map` and `reduce` to compute the weighted sum of a list of numbers given a list of weights.",
+    "answer": {
+      "type": "code",
+      "lang": "python",
+      "content": "from functools import reduce\n\ndef weigh(num, weight):\n    return num * weight\n\ndef add(a, b):\n    return a + b\n\nnumbers = [1, 2, 3]\nweights = [0.5, 1.0, 1.5]\nweighted = map(weigh, numbers, weights)\nresult = reduce(add, weighted, 0)\nprint('Weighted sum:', result)"
+    },
+    "explanation": "***Step 1:*** Define a `weigh` function to multiply a number by its corresponding weight.\n***Step 2:*** Define an `add` function to sum two numbers.\n***Step 3:*** Use `map` to apply `weigh` to pairs of numbers and weights.\n***Step 4:*** Use `reduce` to sum the weighted values, starting with 0.\n***Step 5:*** Print the weighted sum."
+  },
+  {
+    "title": "Recent Unique Entries with deque",
+    "ques": "Write a Python program that uses `collections.deque` to track the last n unique entries from a stream, ensuring no duplicates and maintaining insertion order.",
+    "answer": {
+      "type": "code",
+      "lang": "python",
+      "content": "from collections import deque\n\nclass UniqueEntryTracker:\n    def __init__(self, size):\n        self.entries = deque(maxlen=size)\n        self.seen = set()\n\n    def add_entry(self, entry):\n        if entry not in self.seen:\n            if len(self.entries) == self.entries.maxlen:\n                oldest = self.entries.popleft()\n                self.seen.remove(oldest)\n            self.entries.append(entry)\n            self.seen.add(entry)\n\n    def get_entries(self):\n        return list(self.entries)\n\n# Example usage\ntracker = UniqueEntryTracker(3)\ntracker.add_entry('login')\ntracker.add_entry('click')\ntracker.add_entry('login')\ntracker.add_entry('view')\ntracker.add_entry('save')\nprint(tracker.get_entries())  # ['click', 'view', 'save']"
+    },
+    "explanation": "***Step 1:*** Initialize a `deque` with a fixed `maxlen` and a `set` to track seen entries.\n***Step 2:*** In `add_entry`, check if the entry is new; if so, add it to the `deque` and `set`, removing the oldest entry if the `deque` is full.\n***Step 3:*** Implement `get_entries` to return the current entries.\n***Step 4:*** Demonstrate usage by adding entries, including duplicates, and printing the unique entries."
+  },
+  {
+    "title": "Word Length Frequency with Counter",
+    "ques": "Write a Python program that uses `collections.Counter` to count the frequency of word lengths in a sentence.",
+    "answer": {
+      "type": "code",
+      "lang": "python",
+      "content": "from collections import Counter\n\ndef word_length_frequency(sentence):\n    words = sentence.split()\n    lengths = [len(word) for word in words]\n    return Counter(lengths)\n\n# Example usage\nsentence = 'the quick brown fox jumps'\nresult = word_length_frequency(sentence)\nfor length, count in sorted(result.items()):\n    print(f'Length {length}: {count} words')"
+    },
+    "explanation": "***Step 1:*** Split the sentence into words.\n***Step 2:*** Create a list of word lengths using a list comprehension.\n***Step 3:*** Use `Counter` to count the frequency of each length.\n***Step 4:*** Print the word lengths and their counts in sorted order."
+  },
+  {
+    "title": "Default Dictionary for Key-Value Aggregation",
+    "ques": "Write a Python program that uses `collections.defaultdict` to aggregate values by key, concatenating strings for each key from a list of key-value pairs.",
+    "answer": {
+      "type": "code",
+      "lang": "python",
+      "content": "from collections import defaultdict\n\ndef aggregate_strings(pairs):\n    aggregated = defaultdict(str)\n    for key, value in pairs:\n        aggregated[key] += value\n    return dict(aggregated)\n\n# Example usage\npairs = [('a', 'hello'), ('b', 'world'), ('a', 'python')]\nresult = aggregate_strings(pairs)\nfor key, value in result.items():\n    print(f'Key {key}: {value}')"
+    },
+    "explanation": "***Step 1:*** Create a `defaultdict` with a default value of an empty string.\n***Step 2:*** Iterate through the key-value pairs, concatenating each value to the string for its key.\n***Step 3:*** Convert the `defaultdict` to a regular dictionary.\n***Step 4:*** Print each key and its concatenated string."
+  },
+  {
+    "title": "Namedtuple for Book Records",
+    "ques": "Write a Python program that uses `collections.namedtuple` to represent book records and find books published after a given year.",
+    "answer": {
+      "type": "code",
+      "lang": "python",
+      "content": "from collections import namedtuple\n\nBook = namedtuple('Book', ['title', 'year'])\n\ndef recent_books(books, year):\n    return [book for book in books if book.year > year]\n\n# Example usage\nbooks = [Book('Python Guide', 2020), Book('Data Science', 2018), Book('AI Basics', 2023)]\nrecent = recent_books(books, 2019)\nfor book in recent:\n    print(f'{book.title}: {book.year}')"
+    },
+    "explanation": "***Step 1:*** Define a `namedtuple` called `Book` with fields `title` and `year`.\n***Step 2:*** Create a function to filter books with a publication year after the given year.\n***Step 3:*** Create sample book records.\n***Step 4:*** Filter and print books published after the specified year."
+  },
+  {
+    "title": "Smallest Window with heapq",
+    "ques": "Write a Python program that uses `heapq` to find the smallest window of k numbers from a list with the minimum range.",
+    "answer": {
+      "type": "code",
+      "lang": "python",
+      "content": "import heapq\n\ndef min_range_window(nums, k):\n    if len(nums) < k:\n        return None\n    min_range = float('inf')\n    min_window = None\n    for i in range(len(nums) - k + 1):\n        window = nums[i:i+k]\n        smallest = heapq.nsmallest(1, window)[0]\n        largest = heapq.nlargest(1, window)[0]\n        range_val = largest - smallest\n        if range_val < min_range:\n            min_range = range_val\n            min_window = window\n    return min_window\n\n# Example usage\nnums = [4, 2, 7, 1, 5, 3]\nk = 3\nresult = min_range_window(nums, k)\n    print(f'Smallest range window: {result}')"
+    },
+    "explanation": "***Step 1:*** Check if the list length is less than k; if so, return `None`.\n***Step 2:*** Iterate through all possible windows of size k.\n***Step 3:*** For each window, use `heapq.nsmallest` and `heapq.nlargest` to find the minimum and maximum values.\n***Step 4:*** Compute the range and update the minimum range and corresponding window if smaller.\n***Step 5:*** Print the window with the smallest range."
+  },
+  {
+    "title": "Grouped Combinations with itertools",
+    "ques": "Write a Python program that uses `itertools.combinations` to generate all combinations of a list grouped by size.",
+    "answer": {
+      "type": "code",
+      "lang": "python",
+      "content": "from itertools import combinations\n\ndef grouped_combinations(items):\n    result = {}\n    for r in range(1, len(items) + 1):\n        result[r] = list(combinations(items, r))\n    return result\n\n# Example usage\nitems = ['a', 'b', 'c']\nresult = grouped_combinations(items)\nfor size, combos in result.items():\n    print(f'Combinations of size {size}: {[list(combo) for combo in combos]}')"
+    },
+    "explanation": "***Step 1:*** Create a dictionary to store combinations grouped by size.\n***Step 2:*** Use `itertools.combinations` to generate combinations for each size from 1 to the length of the list.\n***Step 3:*** Store the combinations in the dictionary under their size key.\n***Step 4:*** Print each size and its corresponding combinations, converting tuples to lists for readability."
+  },
+  {
+    "title": "Filtering Prime Numbers with filter",
+    "ques": "Write a Python program that uses the `filter` function to extract prime numbers from a list of integers.",
+    "answer": {
+      "type": "code",
+      "lang": "python",
+      "content": "def is_prime(n):\n    if n < 2:\n        return False\n    for i in range(2, int(n ** 0.5) + 1):\n        if n % i == 0:\n            return False\n    return True\n\nnumbers = [4, 7, 10, 11, 13, 15]\nprimes = list(filter(is_prime, numbers))\nprint('Prime numbers:', primes)"
+    },
+    "explanation": "***Step 1:*** Define a function `is_prime` that checks if a number is prime by testing divisibility up to its square root.\n***Step 2:*** Use `filter` to apply `is_prime` to each number in the list.\n***Step 3:*** Convert the filter object to a list and print the prime numbers."
+  },
+  {
+    "title": "Sum of Cubes with map and reduce",
+    "ques": "Write a Python program that uses `map` and `reduce` to compute the sum of cubes of a list of numbers.",
+    "answer": {
+      "type": "code",
+      "lang": "python",
+      "content": "from functools import reduce\n\ndef cube(n):\n    return n ** 3\n\ndef add(a, b):\n    return a + b\n\nnumbers = [1, 2, 3, 4]\ncubed = map(cube, numbers)\nresult = reduce(add, cubed, 0)\nprint('Sum of cubes:', result)"
+    },
+    "explanation": "***Step 1:*** Define a `cube` function to compute the cube of a number.\n***Step 2:*** Define an `add` function to sum two numbers.\n***Step 3:*** Use `map` to apply `cube` to each number in the list.\n***Step 4:*** Use `reduce` to sum the cubed values, starting with 0.\n***Step 5:*** Print the result."
+  }
+]

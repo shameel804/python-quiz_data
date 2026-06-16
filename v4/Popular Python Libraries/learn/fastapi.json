@@ -1,0 +1,41 @@
+{
+    "id": "learn_lib_fastapi",
+    "topicId": "fastapi",
+    "topicTitle": "FastAPI",
+    "description": "Modern, high-performance web framework",
+    "baseKP": 75,
+    "slides": [
+        {
+            "id": "lib_fast_1",
+            "type": "content",
+            "title": "Why FastAPI? ⚡",
+            "content": "# Speed & Standards\n\n1. **Fast**: On par with NodeJS and Go.\n2. **Type Hints**: Uses Python type hints for validation.\n3. **Async**: Native support for `async` / `await`.\n4. **Auto Docs**: Generates Swagger UI automatically.\n\n```python\nfrom fastapi import FastAPI\napp = FastAPI()\n\n@app.get(\"/\")\nasync def root():\n    return {\"message\": \"Hello World\"}\n```"
+        },
+        {
+            "id": "lib_fast_2",
+            "type": "content",
+            "title": "Request Validation",
+            "content": "# Pydantic Models 🛡️\n\nDefine schema using standard Python classes.\n\n```python\nfrom pydantic import BaseModel\n\nclass Item(BaseModel):\n    name: str\n    price: float\n    is_offer: bool = None\n\n@app.post(\"/items/\")\nasync def create_item(item: Item):\n    # item is now a valid object!\n    return {\"name\": item.name, \"price_tax\": item.price * 1.2}\n```\nIf user sends bad data, FastAPI returns detailed error JSON automatically."
+        },
+        {
+            "id": "lib_fast_quiz_1",
+            "type": "quiz",
+            "title": "Validation Quiz",
+            "content": "Check your understanding",
+            "quizQuestion": "What library does FastAPI use for data validation?",
+            "quizOptions": [
+                "Marshmallow",
+                "Django Forms",
+                "Pydantic",
+                "Cerberus"
+            ],
+            "correctOptionIndex": 2
+        },
+        {
+            "id": "lib_fast_3",
+            "type": "content",
+            "title": "Query & Path Params",
+            "content": "# Parameters 📥\n\n- **Path Param**: Part of URL path.\n- **Query Param**: After `?` in URL.\n\n```python\n# /items/5?q=search\n@app.get(\"/items/{item_id}\")\nasync def read_item(item_id: int, q: str = None):\n    return {\"item_id\": item_id, \"q\": q}\n```"
+        }
+    ]
+}

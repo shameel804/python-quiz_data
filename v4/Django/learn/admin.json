@@ -1,0 +1,41 @@
+{
+    "id": "learn_django_admin",
+    "topicId": "admin",
+    "topicTitle": "Django Admin",
+    "description": "Master the powerful built-in Admin interface",
+    "baseKP": 60,
+    "slides": [
+        {
+            "id": "django_admin_1",
+            "type": "content",
+            "title": "The Admin Panel",
+            "content": "# The Admin Interface 🎛️\n\nOne of Djangos killer features. It reads your models and provides a quick, professional interface for trusted users (staff) to manage content.\n\n## Getting In\n1. Ensure `django.contrib.admin` is installed.\n2. Create a superuser:\n   ```bash\n   python manage.py createsuperuser\n   ```\n3. Go to `/admin/` and login.\n\n> 💡 **Tip**: Allows non-technical staff to add/update content without SQL!"
+        },
+        {
+            "id": "django_admin_2",
+            "type": "content",
+            "title": "Registering Models",
+            "content": "# Configuration ⚙️\n\nTo see your models in the admin, you must register them in `admin.py`.\n\n## Basic Registration\n```django\nfrom django.contrib import admin\nfrom .models import Book\n\nadmin.site.register(Book)\n```\n\n## Custom Registration\nUse the decorator `@admin.register` to customize the list view.\n```django\n@admin.register(Book)\nclass BookAdmin(admin.ModelAdmin):\n    list_display = ('title', 'author', 'price')\n    search_fields = ('title',)\n```"
+        },
+        {
+            "id": "django_admin_3",
+            "type": "content",
+            "title": "Customizing Admin",
+            "content": "# Customizing the List View 📋\n\nMake the admin useful!\n\n- `list_display`: Which fields show up as columns.\n- `list_filter`: Add a sidebar filter (e.g., filter by Date or Boolean).\n- `search_fields`: Add a search bar.\n- `prepopulated_fields`: Auto-fill slugs from titles.\n\n```django\nclass ArticleAdmin(admin.ModelAdmin):\n    list_display = ['title', 'status', 'published_at']\n    list_filter = ['status']\n    search_fields = ['title', 'content']\n```"
+        },
+        {
+            "id": "django_admin_quiz_1",
+            "type": "quiz",
+            "title": "Admin Quiz",
+            "content": "Check your understanding",
+            "quizQuestion": "Which attribute adds a sidebar to filter objects in the admin list view?",
+            "quizOptions": [
+                "list_display",
+                "search_fields",
+                "list_filter",
+                "filter_horizontal"
+            ],
+            "correctOptionIndex": 2
+        }
+    ]
+}

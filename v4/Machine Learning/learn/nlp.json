@@ -1,0 +1,41 @@
+{
+    "id": "learn_ml_nlp",
+    "topicId": "nlp",
+    "topicTitle": "NLP",
+    "description": "Processing and understanding human language with AI",
+    "baseKP": 80,
+    "slides": [
+        {
+            "id": "ml_nlp_1",
+            "type": "content",
+            "title": "Text Preprocessing",
+            "content": "# Text Cleanup 🧼\n\nComputers can't read messy text. We must prep it.\n\n1. **Lowercasing**: \"Apple\" == \"apple\".\n2. **Stopwords Removal**: Remove common useless words (\"the\", \"is\", \"at\").\n3. **Stemming/Lemmatization**: Reduce words to root.\n   - *Running, Ran, Runs* -> *Run*.\n4. **Tokenization**: Splitting sentences into words list."
+        },
+        {
+            "id": "ml_nlp_2",
+            "type": "content",
+            "title": "Vectorization",
+            "content": "# Words to Numbers 🔢\n\n## Bag of Words (BoW)\nCounts frequency of words. Simple but loses context.\n\n## TF-IDF\n**Term Frequency - Inverse Document Frequency**. Highlights unique words that are important to a specific document, ignoring generic words.\n\n## Word Embeddings (Word2Vec)\nConverts words to dense vectors. Captures meaning!\n- *King - Man + Woman ≈ Queen*\n- Words with similar meanings are close in vector space."
+        },
+        {
+            "id": "ml_nlp_3",
+            "type": "content",
+            "title": "Models and Apps",
+            "content": "# NLP Models & Uses 🗣️\n\n## Modern Models\n- **RNN/LSTM**: Good for sequences.\n- **Transformers (BERT, GPT)**: The revolution! Process entire sentences at once using \"Attention Mechanisms\".\n\n## Applications\n- Sentiment Analysis (Positive/Negative review?)\n- Machine Translation (Google Translate)\n- Chatbots (ChatGPT)\n- Text Summarization"
+        },
+        {
+            "id": "ml_nlp_quiz_1",
+            "type": "quiz",
+            "title": "NLP Quiz",
+            "content": "Check your understanding",
+            "quizQuestion": "Which technique captures the semantic relationship (meaning) between words?",
+            "quizOptions": [
+                "Bag of Words",
+                "Stopword Removal",
+                "Word Embeddings (Word2Vec)",
+                "Stemming"
+            ],
+            "correctOptionIndex": 2
+        }
+    ]
+}

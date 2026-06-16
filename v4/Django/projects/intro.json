@@ -1,0 +1,40 @@
+[
+  {
+    "title": "What is Django? 🎸",
+    "ques": "Briefly explain **what Django is** and highlight its primary **design philosophy**.",
+    "answer": {
+      "type": "text",
+      "content": "*   **What is Django?**: Django is a high-level Python web framework that encourages rapid development and clean, pragmatic design. It is free and open-source.\n*   **Design Philosophy**: It follows the **\"Batteries Included\"** philosophy, meaning it comes with a wide array of built-in features (ORM, authentication, admin interface) so developers don't have to reinvent the wheel."
+    },
+    "explanation": "Django is famous for being a **\"batteries-included\"** framework, providing almost everything needed to build a secure and maintainable website right out of the box."
+  },
+  {
+    "title": "Installing Django 📦",
+    "ques": "Write the command to **install Django** using `pip` and then the command to **verify the installed version**.",
+    "answer": {
+      "type": "code",
+      "lang": "bash",
+      "content": "pip install django\npython -m django --version"
+    },
+    "explanation": "The standard way to install Django is via Python's package manager, **pip**. Verifying the version ensures the installation was successful."
+  },
+  {
+    "title": "Creating a Project 🏗️",
+    "ques": "Write the command to **create a new Django project** named `mysite`.",
+    "answer": {
+      "type": "code",
+      "lang": "bash",
+      "content": "django-admin startproject mysite"
+    },
+    "explanation": "**`django-admin startproject <name>`** is the command-line utility used to auto-generate the base directory structure for a new Django project."
+  },
+  {
+    "title": "Project Structure 📂",
+    "ques": "In a standard Django project structure, explain the purpose of the following two files:\n1.  **`manage.py`**\n2.  **`settings.py`**",
+    "answer": {
+      "type": "text",
+      "content": "1.  **`manage.py`**: A command-line utility that lets you interact with this Django project in various ways (e.g., running the server, making migrations). It is a wrapper around `django-admin`.\n2.  **`settings.py`**: Contains the configuration for the Django project, including database settings, installed apps, middleware, and static file locations."
+    },
+    "explanation": "**`manage.py`** is your main entry point for commands, while **`settings.py`** is the central control room for your project's configuration."
+  }
+]

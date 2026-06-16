@@ -1,0 +1,32 @@
+[
+    {
+        "title": "Training a Model 🎓",
+        "ques": "Train a **Support Vector Machine (SVM)** classifier `clf` on training data `X_train` and `y_train`.",
+        "answer": {
+            "type": "code",
+            "lang": "python",
+            "content": "from sklearn import svm\n\nclf = svm.SVC()\nclf.fit(X_train, y_train)"
+        },
+        "explanation": "The **`fit()`** method is consistent across almost all Scikit-learn estimators."
+    },
+    {
+        "title": "Making Predictions 🔮",
+        "ques": "Use the trained classifier `clf` to predict labels for new data `X_new`.",
+        "answer": {
+            "type": "code",
+            "lang": "python",
+            "content": "predictions = clf.predict(X_new)"
+        },
+        "explanation": "**`predict()`** returns the class labels for the samples in `X_new`."
+    },
+    {
+        "title": "Pipelines ⛓️",
+        "ques": "Create a **Pipeline** that first scales the data using `StandardScaler` and then trains a `LogisticRegression` model.",
+        "answer": {
+            "type": "code",
+            "lang": "python",
+            "content": "from sklearn.pipeline import Pipeline\nfrom sklearn.preprocessing import StandardScaler\nfrom sklearn.linear_model import LogisticRegression\n\npipe = Pipeline([\n    ('scaler', StandardScaler()),\n    ('logreg', LogisticRegression())\n])"
+        },
+        "explanation": "**Pipelines** allow you to chain multiple processing steps (transformers) and a final estimator into a single unit."
+    }
+]

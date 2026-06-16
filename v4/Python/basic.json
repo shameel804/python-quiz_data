@@ -56,12 +56,12 @@
         "isCaseSensitive": true
     },
     {
-        "q": "What is the integer value of binary string '100'?",
-        "c": "result = int('100', 2)\nprint(result)",
+        "q": "What is the value of variable 'b' after unpacking?",
+        "c": "a, b, c = (5, 10, 15)",
         "type": "slider",
         "min": 0,
-        "max": 10,
-        "correct": 4
+        "max": 20,
+        "correct": 10
     },
     {
         "q": "Which operator is used for exponentiation in Python?",
@@ -3722,12 +3722,12 @@
         "correct": "True"
     },
     {
-        "q": "What is the value of variable 'b' after unpacking?",
-        "c": "a, b, c = (5, 10, 15)",
+        "q": "What is the integer value of binary string '100'?",
+        "c": "result = int('100', 2)\nprint(result)",
         "type": "slider",
         "min": 0,
-        "max": 20,
-        "correct": 10
+        "max": 10,
+        "correct": 4
     },
     {
         "q": "What is the output of this code?",

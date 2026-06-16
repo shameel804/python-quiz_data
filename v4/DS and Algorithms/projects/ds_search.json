@@ -1,0 +1,452 @@
+[
+  {
+    "title": "Linear Search Implementation",
+    "ques": "Write a Python program to implement linear search to find an element in a list.",
+    "answer": {
+      "type": "code",
+      "lang": "python",
+      "content": "def linear_search(arr, target):\n    for i in range(len(arr)):\n        if arr[i] == target:\n            return i\n    return -1\n\n# Example usage\narr = [5, 2, 8, 12, 1]\ntarget = 8\nresult = linear_search(arr, target)\nprint(f'Element {target} found at index: {result}')"
+    },
+    "explanation": "***Step 1:*** Define a function ```linear_search``` that takes a list ```arr``` and a ```target``` value.\n***Step 2:*** Iterate through the list using a for loop with index ```i```.\n***Step 3:*** If the element at index ```i``` equals the ```target```, return the index.\n***Step 4:*** If the loop completes without finding the target, return ```-1```.\n***Step 5:*** Test the function with a sample list and target value, printing the result."
+  },
+  {
+    "title": "Binary Search Implementation",
+    "ques": "Write a Python program to implement binary search on a sorted list.",
+    "answer": {
+      "type": "code",
+      "lang": "python",
+      "content": "def binary_search(arr, target):\n    left, right = 0, len(arr) - 1\n    while left <= right:\n        mid = (left + right) // 2\n        if arr[mid] == target:\n            return mid\n        elif arr[mid] < target:\n            left = mid + 1\n        else:\n            right = mid - 1\n    return -1\n\n# Example usage\narr = [1, 3, 5, 7, 9, 11]\ntarget = 7\nresult = binary_search(arr, target)\nprint(f'Element {target} found at index: {result}')"
+    },
+    "explanation": "***Step 1:*** Define a function ```binary_search``` that takes a sorted list ```arr``` and a ```target``` value.\n***Step 2:*** Initialize ```left``` and ```right``` pointers to the start and end of the list.\n***Step 3:*** While ```left``` is less than or equal to ```right```, calculate the middle index ```mid```.\n***Step 4:*** If the element at ```mid``` equals the ```target```, return ```mid```.\n***Step 5:*** If the element at ```mid``` is less than the ```target```, move ```left``` to ```mid + 1```; otherwise, move ```right``` to ```mid - 1```.\n***Step 6:*** If the target is not found, return ```-1```.\n***Step 7:*** Test with a sorted list and print the result."
+  },
+  {
+    "title": "Bubble Sort Implementation",
+    "ques": "Write a Python program to implement bubble sort to sort a list in ascending order.",
+    "answer": {
+      "type": "code",
+      "lang": "python",
+      "content": "def bubble_sort(arr):\n    n = len(arr)\n    for i in range(n):\n        for j in range(0, n - i - 1):\n            if arr[j] > arr[j + 1]:\n                arr[j], arr[j + 1] = arr[j + 1], arr[j]\n    return arr\n\n# Example usage\narr = [64, 34, 25, 12, 22, 11, 90]\nprint(f'Sorted array: {bubble_sort(arr)}')"
+    },
+    "explanation": "***Step 1:*** Define a function ```bubble_sort``` that takes a list ```arr```.\n***Step 2:*** Iterate through the list with an outer loop ```i``` from 0 to ```n-1```.\n***Step 3:*** For each ```i```, perform an inner loop ```j``` from 0 to ```n-i-1```, comparing adjacent elements.\n***Step 4:*** If the element at ```j``` is greater than the element at ```j+1```, swap them.\n***Step 5:*** Return the sorted list.\n***Step 6:*** Test with a sample list and print the result."
+  },
+  {
+    "title": "Selection Sort Implementation",
+    "ques": "Write a Python program to implement selection sort to sort a list in ascending order.",
+    "answer": {
+      "type": "code",
+      "lang": "python",
+      "content": "def selection_sort(arr):\n    for i in range(len(arr)):\n        min_idx = i\n        for j in range(i + 1, len(arr)):\n            if arr[j] < arr[min_idx]:\n                min_idx = j\n        arr[i], arr[min_idx] = arr[min_idx], arr[i]\n    return arr\n\n# Example usage\narr = [64, 25, 12, 22, 11]\nprint(f'Sorted array: {selection_sort(arr)}')"
+    },
+    "explanation": "***Step 1:*** Define a function ```selection_sort``` that takes a list ```arr```.\n***Step 2:*** For each index ```i```, assume the minimum element is at ```i``` (```min_idx```).\n***Step 3:*** Iterate from ```i+1``` to the end to find the index of the smallest element.\n***Step 4:*** Swap the element at ```i``` with the smallest element found.\n***Step 5:*** Return the sorted list.\n***Step 6:*** Test with a sample list and print the result."
+  },
+  {
+    "title": "Insertion Sort Implementation",
+    "ques": "Write a Python program to implement insertion sort to sort a list in ascending order.",
+    "answer": {
+      "type": "code",
+      "lang": "python",
+      "content": "def insertion_sort(arr):\n    for i in range(1, len(arr)):\n        key = arr[i]\n        j = i - 1\n        while j >= 0 and arr[j] > key:\n            arr[j + 1] = arr[j]\n            j -= 1\n        arr[j + 1] = key\n    return arr\n\n# Example usage\narr = [12, 11, 13, 5, 6]\nprint(f'Sorted array: {insertion_sort(arr)}')"
+    },
+    "explanation": "***Step 1:*** Define a function ```insertion_sort``` that takes a list ```arr```.\n***Step 2:*** Start from index 1 and treat the element at ```i``` as the ```key```.\n***Step 3:*** Compare ```key``` with previous elements, shifting larger elements one position ahead.\n***Step 4:*** Place ```key``` in its correct position.\n***Step 5:*** Repeat for all elements.\n***Step 6:*** Return the sorted list.\n***Step 7:*** Test with a sample list and print the result."
+  },
+  {
+    "title": "Merge Sort Implementation",
+    "ques": "Write a Python program to implement merge sort to sort a list in ascending order.",
+    "answer": {
+      "type": "code",
+      "lang": "python",
+      "content": "def merge_sort(arr):\n    if len(arr) <= 1:\n        return arr\n    mid = len(arr) // 2\n    left = merge_sort(arr[:mid])\n    right = merge_sort(arr[mid:])\n    return merge(left, right)\n\ndef merge(left, right):\n    result = []\n    i = j = 0\n    while i < len(left) and j < len(right):\n        if left[i] <= right[j]:\n            result.append(left[i])\n            i += 1\n        else:\n            result.append(right[j])\n            j += 1\n    result.extend(left[i:])\n    result.extend(right[j:])\n    return result\n\n# Example usage\narr = [38, 27, 43, 3, 9, 82, 10]\nprint(f'Sorted array: {merge_sort(arr)}')"
+    },
+    "explanation": "***Step 1:*** Define a function ```merge_sort``` that recursively divides the list into two halves until each sublist has one element.\n***Step 2:*** Define a helper function ```merge``` to combine two sorted lists.\n***Step 3:*** In ```merge```, compare elements from both lists and append the smaller one to the result.\n***Step 4:*** Append remaining elements from either list.\n***Step 5:*** Return the merged list.\n***Step 6:*** Test with a sample list and print the result."
+  },
+  {
+    "title": "Quick Sort Implementation",
+    "ques": "Write a Python program to implement quick sort to sort a list in ascending order.",
+    "answer": {
+      "type": "code",
+      "lang": "python",
+      "content": "def quick_sort(arr, low, high):\n    if low < high:\n        pi = partition(arr, low, high)\n        quick_sort(arr, low, pi - 1)\n        quick_sort(arr, pi + 1, high)\n    return arr\n\ndef partition(arr, low, high):\n    pivot = arr[high]\n    i = low - 1\n    for j in range(low, high):\n        if arr[j] <= pivot:\n            i += 1\n            arr[i], arr[j] = arr[j], arr[i]\n    arr[i + 1], arr[high] = arr[high], arr[i + 1]\n    return i + 1\n\n# Example usage\narr = [10 пропускать 7, 8, 9, 1, 5]\nprint(f'Sorted array: {quick_sort(arr, 0, len(arr) - 1)}')"
+    },
+    "explanation": "***Step 1:*** Define a function ```quick_sort``` that takes a list ```arr```, and indices ```low``` and ```high```.\n***Step 2:*** If ```low``` is less than ```high```, call ```partition``` to get the pivot index.\n***Step 3:*** Recursively apply ```quick_sort``` to the sublists before and after the pivot.\n***Step 4:*** In ```partition```, select the last element as the pivot and rearrange elements so that smaller elements are before the pivot and larger ones after.\n***Step 5:*** Return the pivot index.\n***Step 6:*** Test with a sample list and print the result."
+  },
+  {
+    "title": "Using Built-in sorted() Function",
+    "ques": "Write a Python program to sort a list in ascending and descending order using the built-in sorted() function.",
+    "answer": {
+      "type": "code",
+      "lang": "python",
+      "content": "# Example usage of sorted()\narr = [64, 34, 25, 12, 22, 11, 90]\nsorted_asc = sorted(arr)\nsorted_desc = sorted(arr, reverse=True)\nprint(f'Ascending order: {sorted_asc}')\nprint(f'Descending order: {sorted_desc}')"
+    },
+    "explanation": "***Step 1:*** Define a sample list ```arr```.\n***Step 2:*** Use the ```sorted()``` function to create a new sorted list in ascending order.\n***Step 3:*** Use ```sorted(arr, reverse=True)``` to create a new sorted list in descending order.\n***Step 4:*** Print both sorted lists."
+  },
+  {
+    "title": "Using list.sort() Method",
+    "ques": "Write a Python program to sort a list in-place in ascending and descending order using the list.sort() method.",
+    "answer": {
+      "type": "code",
+      "lang": "python",
+      "content": "# Example usage of list.sort()\narr = [64, 34, 25, 12, 22, 11, 90]\narr_asc = arr.copy()\narr_desc = arr.copy()\narr_asc.sort()\narr_desc.sort(reverse=True)\nprint(f'Ascending order: {arr_asc}')\nprint(f'Descending order: {arr_desc}')"
+    },
+    "explanation": "***Step 1:*** Define a sample list ```arr```.\n***Step 2:*** Create two copies of the list to demonstrate sorting without modifying the original.\n***Step 3:*** Use ```list.sort()``` to sort ```arr_asc``` in ascending order.\n***Step 4:*** Use ```list.sort(reverse=True)``` to sort ```arr_desc``` in descending order.\n***Step 5:*** Print both sorted lists."
+  },
+  {
+    "title": "Linear Search with Multiple Occurrences",
+    "ques": "Write a Python program to implement linear search that finds all occurrences of a target element in a list and returns their indices.",
+    "answer": {
+      "type": "code",
+      "lang": "python",
+      "content": "def linear_search_all(arr, target):\n    indices = []\n    for i in range(len(arr)):\n        if arr[i] == target:\n            indices.append(i)\n    return indices if indices else [-1]\n\n# Example usage\narr = [3, 7, 3, 9, 3, 4]\ntarget = 3\nresult = linear_search_all(arr, target)\nprint(f'Element {target} found at indices: {result}')"
+    },
+    "explanation": "***Step 1:*** Define a function ```linear_search_all``` that takes a list ```arr``` and a ```target``` value.\n***Step 2:*** Initialize an empty list ```indices``` to store the indices of all occurrences.\n***Step 3:*** Iterate through the list, appending the index ```i``` to ```indices``` when ```arr[i]``` equals ```target```.\n***Step 4:*** Return ```indices``` if it’s not empty; otherwise, return ```[-1]```.\n***Step 5:*** Test with a sample list containing multiple occurrences of the target and print the result."
+  },
+  {
+    "title": "Binary Search with First Occurrence",
+    "ques": "Write a Python program to implement binary search that finds the first occurrence of a target element in a sorted list with duplicates.",
+    "answer": {
+      "type": "code",
+      "lang": "python",
+      "content": "def binary_search_first(arr, target):\n    left, right = 0, len(arr) - 1\n    result = -1\n    while left <= right:\n        mid = (left + right) // 2\n        if arr[mid] == target:\n            result = mid\n            right = mid - 1\n        elif arr[mid] < target:\n            left = mid + 1\n        else:\n            right = mid - 1\n    return result\n\n# Example usage\narr = [1, 2, 2, 2, 3, 4, 5]\ntarget = 2\nresult = binary_search_first(arr, target)\nprint(f'First occurrence of {target} at index: {result}')"
+    },
+    "explanation": "***Step 1:*** Define a function ```binary_search_first``` for a sorted list ```arr``` and a ```target``` value.\n***Step 2:*** Initialize ```left```, ```right```, and ```result``` (to store the first occurrence index).\n***Step 3:*** Perform binary search; if ```arr[mid]``` equals ```target```, store ```mid``` in ```result``` and continue searching in the left half.\n***Step 4:*** Adjust ```left``` or ```right``` based on comparison with ```target```.\n***Step 5:*** Return ```result```.\n***Step 6:*** Test with a sorted list containing duplicates and print the result."
+  },
+  {
+    "title": "Optimized Bubble Sort with Early Termination",
+    "ques": "Write a Python program to implement bubble sort with a flag to stop early if the list is already sorted.",
+    "answer": {
+      "type": "code",
+      "lang": "python",
+      "content": "def optimized_bubble_sort(arr):\n    n = len(arr)\n    for i in range(n):\n        swapped = False\n        for j in range(0, n - i - 1):\n            if arr[j] > arr[j + 1]:\n                arr[j], arr[j + 1] = arr[j + 1], arr[j]\n                swapped = True\n        if not swapped:\n            break\n    return arr\n\n# Example usage\narr = [1, 2, 3, 5, 4]\nprint(f'Sorted array: {optimized_bubble_sort(arr)}')"
+    },
+    "explanation": "***Step 1:*** Define a function ```optimized_bubble_sort``` that takes a list ```arr```.\n***Step 2:*** Use a ```swapped``` flag to track if any swaps occur in an iteration.\n***Step 3:*** Perform bubble sort by comparing and swapping adjacent elements.\n***Step 4:*** If no swaps occur (```swapped``` is ```False```), the list is sorted, so break the loop.\n***Step 5:*** Return the sorted list.\n***Step 6:*** Test with a nearly sorted list and print the result."
+  },
+  {
+    "title": "Selection Sort for Minimum Swaps",
+    "ques": "Write a Python program to implement selection sort and count the number of swaps performed.",
+    "answer": {
+      "type": "code",
+      "lang": "python",
+      "content": "def selection_sort_swaps(arr):\n    swaps = 0\n    for i in range(len(arr)):\n        min_idx = i\n        for j in range(i + 1, len(arr)):\n            if arr[j] < arr[min_idx]:\n                min_idx = j\n        if min_idx != i:\n            arr[i], arr[min_idx] = arr[min_idx], arr[i]\n            swaps += 1\n    return arr, swaps\n\n# Example usage\narr = [64, 25, 12, 22, 11]\nsorted_arr, swap_count = selection_sort_swaps(arr)\nprint(f'Sorted array: {sorted_arr}, Swaps: {swap_count}')"
+    },
+    "explanation": "***Step 1:*** Define a function ```selection_sort_swaps``` that takes a list ```arr```.\n***Step 2:*** Initialize a ```swaps``` counter.\n***Step 3:*** For each index ```i```, find the index of the minimum element from ```i+1``` to the end.\n***Step 4:*** If a minimum is found (```min_idx != i```), swap elements and increment ```swaps```.\n***Step 5:*** Return the sorted list and swap count.\n***Step 6:*** Test with a sample list and print the result."
+  },
+  {
+    "title": "Insertion Sort for Partially Sorted List",
+    "ques": "Write a Python program to implement insertion sort and demonstrate its efficiency on a partially sorted list.",
+    "answer": {
+      "type": "code",
+      "lang": "python",
+      "content": "def insertion_sort(arr):\n    for i in range(1, len(arr)):\n        key = arr[i]\n        j = i - 1\n        while j >= 0 and arr[j] > key:\n            arr[j + 1] = arr[j]\n            j -= 1\n        arr[j + 1] = key\n    return arr\n\n# Example usage with partially sorted list\narr = [1, 2, 3, 5, 4, 6, 8, 7]\nprint(f'Sorted array: {insertion_sort(arr)}')"
+    },
+    "explanation": "***Step 1:*** Define a function ```insertion_sort``` that takes a list ```arr```.\n***Step 2:*** For each index ```i```, take ```arr[i]``` as the ```key``` and shift larger elements in the sorted portion.\n***Step 3:*** Place ```key``` in its correct position.\n***Step 4:*** Return the sorted list.\n***Step 5:*** Test with a partially sorted list to show insertion sort’s efficiency (fewer shifts for nearly sorted data).\n***Step 6:*** Print the result."
+  },
+  {
+    "title": "Merge Sort with Inversion Count",
+    "ques": "Write a Python program to implement merge sort and count the number of inversions in the list.",
+    "answer": {
+      "type": "code",
+      "lang": "python",
+      "content": "def merge_sort_inversions(arr):\n    if len(arr) <= 1:\n        return arr, 0\n    mid = len(arr) // 2\n    left, left_inv = merge_sort_inversions(arr[:mid])\n    right, right_inv = merge_sort_inversions(arr[mid:])\n    merged, merge_inv = merge_inversions(left, right)\n    return merged, left_inv + right_inv + merge_inv\n\ndef merge_inversions(left, right):\n    result = []\n    inversions = 0\n    i = j = 0\n    while i < len(left) and j < len(right):\n        if left[i] <= right[j]:\n            result.append(left[i])\n            i += 1\n        else:\n            result.append(right[j])\n            inversions += len(left) - i\n            j += 1\n    result.extend(left[i:])\n    result.extend(right[j:])\n    return result, inversions\n\n# Example usage\narr = [1, 20, 6, 4, 5]\nsorted_arr, inv_count = merge_sort_inversions(arr)\nprint(f'Sorted array: {sorted_arr}, Inversions: {inv_count}')"
+    },
+    "explanation": "***Step 1:*** Define a function ```merge_sort_inversions``` that returns the sorted list and inversion count.\n***Step 2:*** Recursively divide the list and count inversions in left and right halves.\n***Step 3:*** In ```merge_inversions```, merge two sorted halves and count inversions when a right element is smaller than a left element.\n***Step 4:*** Sum inversions from left, right, and merge steps.\n***Step 5:*** Test with a sample list and print the sorted list and inversion count."
+  },
+  {
+    "title": "Quick Sort with Random Pivot",
+    "ques": "Write a Python program to implement quick sort with a random pivot to avoid worst-case scenarios.",
+    "answer": {
+      "type": "code",
+      "lang": "python",
+      "content": "import random\n\ndef quick_sort_random(arr, low, high):\n    if low < high:\n        pi = partition_random(arr, low, high)\n        quick_sort_random(arr, low, pi - 1)\n        quick_sort_random(arr, pi + 1, high)\n    return arr\n\ndef partition_random(arr, low, high):\n    pivot_idx = random.randint(low, high)\n    arr[pivot_idx], arr[high] = arr[high], arr[pivot_idx]\n    pivot = arr[high]\n    i = low - 1\n    for j in range(low, high):\n        if arr[j] <= pivot:\n            i += 1\n            arr[i], arr[j] = arr[j], arr[i]\n    arr[i + 1], arr[high] = arr[high], arr[i + 1]\n    return i + 1\n\n# Example usage\narr = [10, 7, 8, 9, 1, 5]\nprint(f'Sorted array: {quick_sort_random(arr, 0, len(arr) - 1)}')"
+    },
+    "explanation": "***Step 1:*** Import the ```random``` module for random pivot selection.\n***Step 2:*** Define ```quick_sort_random``` that takes a list ```arr```, ```low```, and ```high``` indices.\n***Step 3:*** In ```partition_random```, select a random pivot index and swap it with the last element.\n***Step 4:*** Perform partitioning as in standard quick sort, placing smaller elements before the pivot.\n***Step 5:*** Recursively sort sublists.\n***Step 6:*** Test with a sample list and print the result."
+  },
+  {
+    "title": "Sorting Custom Objects with sorted()",
+    "ques": "Write a Python program to sort a list of dictionaries by a specific key using the built-in sorted() function.",
+    "answer": {
+      "type": "code",
+      "lang": "python",
+      "content": "# Example usage of sorted() with custom objects\npeople = [\n    {'name': 'Alice', 'age': 25},\n    {'name': 'Bob', 'age': 30},\n    {'name': 'Charlie', 'age': 20}\n]\nsorted_by_age = sorted(people, key=lambda x: x['age'])\nsorted_by_name = sorted(people, key=lambda x: x['name'])\nprint(f'Sorted by age: {sorted_by_age}')\nprint(f'Sorted by name: {sorted_by_name}')"
+    },
+    "explanation": "***Step 1:*** Define a list of dictionaries ```people``` with keys ```name``` and ```age```.\n***Step 2:*** Use ```sorted()``` with a ```key``` function to sort by ```age``` using a lambda function.\n***Step 3:*** Use ```sorted()``` with a ```key``` function to sort by ```name```.\n***Step 4:*** Print the sorted lists."
+  },
+  {
+    "title": "In-Place Sorting with list.sort() and Custom Key",
+    "ques": "Write a Python program to sort a list of tuples in-place by the second element using list.sort().",
+    "answer": {
+      "type": "code",
+      "lang": "python",
+      "content": "# Example usage of list.sort() with tuples\ntuples = [(1, 5), (3, 2), (2, 8), (4, 1)]\ntuples.sort(key=lambda x: x[1])\nprint(f'Sorted by second element: {tuples}')"
+    },
+    "explanation": "***Step 1:*** Define a list of tuples ```tuples``` where each tuple contains two elements.\n***Step 2:*** Use ```list.sort()``` with a ```key``` function to sort in-place based on the second element of each tuple.\n***Step 3:*** Print the sorted list."
+  },
+  {
+    "title": "Linear Search with Custom Predicate",
+    "ques": "Write a Python program to implement linear search that finds all elements in a list satisfying a custom predicate (e.g., elements greater than a threshold) and returns their indices.",
+    "answer": {
+      "type": "code",
+      "lang": "python",
+      "content": "def linear_search_predicate(arr, predicate):\n    indices = []\n    for i in range(len(arr)):\n        if predicate(arr[i]):\n            indices.append(i)\n    return indices if indices else [-1]\n\n# Example usage: Find indices of elements > 5\narr = [3, 7, 2, 9, 4, 6, 1]\nthreshold = 5\nresult = linear_search_predicate(arr, lambda x: x > threshold)\nprint(f'Elements greater than {threshold} found at indices: {result}')"
+    },
+    "explanation": "***Step 1:*** Define a function ```linear_search_predicate``` that takes a list ```arr``` and a ```predicate``` function.\n***Step 2:*** Initialize an empty list ```indices``` to store indices of elements satisfying the predicate.\n***Step 3:*** Iterate through the list, appending index ```i``` to ```indices``` if ```predicate(arr[i])``` is true.\n***Step 4:*** Return ```indices``` if not empty; otherwise, return ```[-1]```.\n***Step 5:*** Test with a lambda function to find elements greater than a threshold and print the result."
+  },
+  {
+    "title": "Binary Search for Closest Value",
+    "ques": "Write a Python program to implement binary search that finds the index of the element closest to a target value in a sorted list.",
+    "answer": {
+      "type": "code",
+      "lang": "python",
+      "content": "def binary_search_closest(arr, target):\n    if not arr:\n        return -1\n    left, right = 0, len(arr) - 1\n    closest_idx = 0\n    min_diff = abs(arr[0] - target)\n    while left <= right:\n        mid = (left + right) // 2\n        diff = abs(arr[mid] - target)\n        if diff < min_diff:\n            min_diff = diff\n            closest_idx = mid\n        if arr[mid] == target:\n            return mid\n        elif arr[mid] < target:\n            left = mid + 1\n        else:\n            right = mid - 1\n    return closest_idx\n\n# Example usage\narr = [2, 5, 7, 9, 12, 15]\ntarget = 10\nresult = binary_search_closest(arr, target)\nprint(f'Closest element to {target} at index: {result}, value: {arr[result]}')"
+    },
+    "explanation": "***Step 1:*** Define a function ```binary_search_closest``` for a sorted list ```arr``` and a ```target```.\n***Step 2:*** Handle empty list case by returning ```-1```.\n***Step 3:*** Initialize ```closest_idx``` and ```min_diff``` with the first element’s difference.\n***Step 4:*** Perform binary search, updating ```closest_idx``` if the current element’s difference is smaller.\n***Step 5:*** If an exact match is found, return its index; otherwise, adjust ```left``` or ```right```.\n***Step 6:*** Return ```closest_idx```.\n***Step 7:*** Test with a sample list and print the result."
+  },
+  {
+    "title": "Bubble Sort with Reverse Sorting Option",
+    "ques": "Write a Python program to implement bubble sort that can sort a list in ascending or descending order based on a parameter.",
+    "answer": {
+      "type": "code",
+      "lang": "python",
+      "content": "def bubble_sort_direction(arr, reverse=False):\n    n = len(arr)\n    for i in range(n):\n        for j in range(0, n - i - 1):\n            if (arr[j] > arr[j + 1]) == (not reverse):\n                arr[j], arr[j + 1] = arr[j + 1], arr[j]\n    return arr\n\n# Example usage\narr_asc = [64, 34, 25, 12, 22]\narr_desc = arr_asc.copy()\nprint(f'Ascending order: {bubble_sort_direction(arr_asc)}')\nprint(f'Descending order: {bubble_sort_direction(arr_desc, reverse=True)}')"
+    },
+    "explanation": "***Step 1:*** Define a function ```bubble_sort_direction``` with a ```reverse``` parameter (default ```False``` for ascending).\n***Step 2:*** Iterate through the list, comparing adjacent elements.\n***Step 3:*** Swap elements if ```arr[j] > arr[j + 1]``` for ascending (```reverse=False```) or ```arr[j] < arr[j + 1]``` for descending (```reverse=True```).\n***Step 4:*** Return the sorted list.\n***Step 5:*** Test for both ascending and descending orders and print the results."
+  },
+  {
+    "title": "Selection Sort with Maximum and Minimum Sorting",
+    "ques": "Write a Python program to implement selection sort that alternates between finding minimum and maximum elements to sort a list.",
+    "answer": {
+      "type": "code",
+      "lang": "python",
+      "content": "def selection_sort_min_max(arr):\n    n = len(arr)\n    for i in range(n // 2):\n        min_idx = i\n        max_idx = i\n        for j in range(i, n - i):\n            if arr[j] < arr[min_idx]:\n                min_idx = j\n            if arr[j] > arr[max_idx]:\n                max_idx = j\n        arr[i], arr[min_idx] = arr[min_idx], arr[i]\n        if max_idx == i:\n            max_idx = min_idx\n        arr[n - i - 1], arr[max_idx] = arr[max_idx], arr[n - i - 1]\n    return arr\n\n# Example usage\narr = [64, 25, 12, 22, 11, 90]\nprint(f'Sorted array: {selection_sort_min_max(arr)}')"
+    },
+    "explanation": "***Step 1:*** Define a function ```selection_sort_min_max``` that takes a list ```arr```.\n***Step 2:*** For each iteration ```i``` up to ```n//2```, find the minimum and maximum elements in the unsorted portion.\n***Step 3:*** Place the minimum at index ```i``` and the maximum at index ```n-i-1```.\n***Step 4:*** Handle the case where the maximum was at index ```i``` by updating ```max_idx```.\n***Step 5:*** Return the sorted list.\n***Step 6:*** Test with a sample list and print the result."
+  },
+  {
+    "title": "Insertion Sort with Comparison Count",
+    "ques": "Write a Python program to implement insertion sort and count the number of comparisons made during sorting.",
+    "answer": {
+      "type": "code",
+      "lang": "python",
+      "content": "def insertion_sort_comparisons(arr):\n    comparisons = 0\n    for i in range(1, len(arr)):\n        key = arr[i]\n        j = i - 1\n        while j >= 0:\n            comparisons += 1\n            if arr[j] <= key:\n                break\n            arr[j + 1] = arr[j]\n            j -= 1\n        arr[j + 1] = key\n    return arr, comparisons\n\n# Example usage\narr = [12, 11, 13, 5, 6]\nsorted_arr, comp_count = insertion_sort_comparisons(arr)\nprint(f'Sorted array: {sorted_arr}, Comparisons: {comp_count}')"
+    },
+    "explanation": "***Step 1:*** Define a function ```insertion_sort_comparisons``` that takes a list ```arr```.\n***Step 2:*** Initialize a ```comparisons``` counter.\n***Step 3:*** For each index ```i```, take ```arr[i]``` as the ```key``` and compare with previous elements, incrementing ```comparisons```.\n***Step 4:*** Shift larger elements and place ```key``` in its correct position.\n***Step 5:*** Return the sorted list and comparison count.\n***Step 6:*** Test with a sample list and print the result."
+  },
+  {
+    "title": "Merge Sort for Linked List Simulation",
+    "ques": "Write a Python program to implement merge sort on a list simulating a singly linked list (using indices).",
+    "answer": {
+      "type": "code",
+      "lang": "python",
+      "content": "def merge_sort_linked(arr):\n    if len(arr) <= 1:\n        return arr\n    mid = len(arr) // 2\n    left = merge_sort_linked(arr[:mid])\n    right = merge_sort_linked(arr[mid:])\n    return merge_linked(left, right)\n\ndef merge_linked(left, right):\n    result = []\n    i = j = 0\n    while i < len(left) and j < len(right):\n        if left[i] <= right[j]:\n            result.append(left[i])\n            i += 1\n        else:\n            result.append(right[j])\n            j += 1\n    result.extend(left[i:])\n    result.extend(right[j:])\n    return result\n\n# Example usage\narr = [38, 27, 43, 3, 9, 82, 10]\nprint(f'Sorted array: {merge_sort_linked(arr)}')"
+    },
+    "explanation": "***Step 1:*** Define a function ```merge_sort_linked``` that simulates merge sort on a linked list using a list ```arr```.\n***Step 2:*** Recursively divide the list into two halves until each sublist has one element.\n***Step 3:*** Define ```merge_linked``` to merge two sorted sublists by comparing elements and building a new list.\n***Step 4:*** Append remaining elements from either sublist.\n***Step 5:*** Return the merged list.\n***Step 6:*** Test with a sample list and print the result."
+  },
+  {
+    "title": "Quick Sort with Median-of-Three Pivot",
+    "ques": "Write a Python program to implement quick sort using the median-of-three pivot selection to improve performance.",
+    "answer": {
+      "type": "code",
+      "lang": "python",
+      "content": "def quick_sort_median(arr, low, high):\n    if low < high:\n        pi = partition_median(arr, low, high)\n        quick_sort_median(arr, low, pi - 1)\n        quick_sort_median(arr, pi + 1, high)\n    return arr\n\ndef partition_median(arr, low, high):\n    mid = (low + high) // 2\n    pivot_candidates = [(arr[low], low), (arr[mid], mid), (arr[high], high)]\n    pivot_candidates.sort(key=lambda x: x[0])\n    pivot_idx = pivot_candidates[1][1]\n    arr[pivot_idx], arr[high] = arr[high], arr[pivot_idx]\n    pivot = arr[high]\n    i = low - 1\n    for j in range(low, high):\n        if arr[j] <= pivot:\n            i += 1\n            arr[i], arr[j] = arr[j], arr[i]\n    arr[i + 1], arr[high] = arr[high], arr[i + 1]\n    return i + 1\n\n# Example usage\narr = [10, 7, 8, 9, 1, 5]\nprint(f'Sorted array: {quick_sort_median(arr, 0, len(arr) - 1)}')"
+    },
+    "explanation": "***Step 1:*** Define ```quick_sort_median``` with ```low``` and ```high``` indices.\n***Step 2:*** In ```partition_median```, select the median of the first, middle, and last elements as the pivot.\n***Step 3:*** Swap the median element with the last element and perform standard partitioning.\n***Step 4:*** Recursively sort sublists.\n***Step 5:*** Return the sorted list.\n***Step 6:*** Test with a sample list and print the result."
+  },
+  {
+    "title": "Sorting Strings with sorted() and Custom Key",
+    "ques": "Write a Python program to sort a list of strings by their length and then lexicographically using sorted().",
+    "answer": {
+      "type": "code",
+      "lang": "python",
+      "content": "# Example usage of sorted() with strings\nwords = ['apple', 'bat', 'banana', 'ant', 'cat']\nsorted_words = sorted(words, key=lambda x: (len(x), x))\nprint(f'Sorted by length and lexicographically: {sorted_words}')"
+    },
+    "explanation": "***Step 1:*** Define a list of strings ```words```.\n***Step 2:*** Use ```sorted()``` with a ```key``` function that returns a tuple of ```(length, string)``` to sort first by length and then lexicographically.\n***Step 3:*** Print the sorted list."
+  },
+  {
+    "title": "In-Place Sorting with list.sort() for Case-Insensitive Strings",
+    "ques": "Write a Python program to sort a list of strings in-place case-insensitively using list.sort().",
+    "answer": {
+      "type": "code",
+      "lang": "python",
+      "content": "# Example usage of list.sort() with case-insensitive sorting\nwords = ['Apple', 'banana', 'Cat', 'ant']\nwords.sort(key=lambda x: x.lower())\nprint(f'Case-insensitive sorted list: {words}')"
+    },
+    "explanation": "***Step 1:*** Define a list of strings ```words``` with mixed case.\n***Step 2:*** Use ```list.sort()``` with a ```key``` function that converts each string to lowercase for comparison.\n***Step 3:*** Print the sorted list, preserving original case."
+  },
+  {
+    "title": "Linear Search for Closest Pair Sum",
+    "ques": "Write a Python program to implement linear search to find the pair of elements in a list whose sum is closest to a target value, returning their indices.",
+    "answer": {
+      "type": "code",
+      "lang": "python",
+      "content": "def linear_search_closest_pair(arr, target_sum):\n    if len(arr) < 2:\n        return (-1, -1)\n    min_diff = float('inf')\n    result = (-1, -1)\n    for i in range(len(arr)):\n        for j in range(i + 1, len(arr)):\n            current_sum = arr[i] + arr[j]\n            diff = abs(current_sum - target_sum)\n            if diff < min_diff:\n                min_diff = diff\n                result = (i, j)\n    return result\n\n# Example usage\narr = [2, 7, 11, 15, 3, 6]\ntarget_sum = 12\nresult = linear_search_closest_pair(arr, target_sum)\nprint(f'Indices of pair with sum closest to {target_sum}: {result}, Sum: {arr[result[0]] + arr[result[1]]}')"
+    },
+    "explanation": "***Step 1:*** Define a function ```linear_search_closest_pair``` that takes a list ```arr``` and a ```target_sum```.\n***Step 2:*** Check if the list has fewer than 2 elements; if so, return ```(-1, -1)```.\n***Step 3:*** Initialize ```min_diff``` as infinity and ```result``` as ```(-1, -1)```.\n***Step 4:*** Use nested loops to check all pairs, calculating their sum and difference from ```target_sum```.\n***Step 5:*** Update ```result``` if the current pair’s sum is closer to ```target_sum```.\n***Step 6:*** Return the indices of the closest pair.\n***Step 7:*** Test with a sample list and print the result."
+  },
+  {
+    "title": "Binary Search for Rotation Point",
+    "ques": "Write a Python program to implement binary search to find the rotation point in a rotated sorted list (ascending order, rotated at some pivot).",
+    "answer": {
+      "type": "code",
+      "lang": "python",
+      "content": "def find_rotation_point(arr):\n    left, right = 0, len(arr) - 1\n    if arr[left] <= arr[right]:\n        return 0\n    while left <= right:\n        mid = (left + right) // 2\n        if mid < len(arr) - 1 and arr[mid] > arr[mid + 1]:\n            return mid + 1\n        if mid > 0 and arr[mid - 1] > arr[mid]:\n            return mid\n        if arr[mid] > arr[0]:\n            left = mid + 1\n        else:\n            right = mid - 1\n    return 0\n\n# Example usage\narr = [4, 5, 6, 7, 0, 1, 2]\nresult = find_rotation_point(arr)\nprint(f'Rotation point at index: {result}, Value: {arr[result]}')"
+    },
+    "explanation": "***Step 1:*** Define a function ```find_rotation_point``` for a rotated sorted list ```arr```.\n***Step 2:*** If the list is not rotated (```arr[left] <= arr[right]```), return 0.\n***Step 3:*** Use binary search to find where ```arr[mid] > arr[mid + 1]``` or ```arr[mid - 1] > arr[mid]```, indicating the rotation point.\n***Step 4:*** Adjust ```left``` or ```right``` based on whether ```arr[mid]``` is greater than ```arr[0]```.\n***Step 5:*** Return the rotation point index.\n***Step 6:*** Test with a rotated sorted list and print the result."
+  },
+  {
+    "title": "Bubble Sort with Alternating Direction",
+    "ques": "Write a Python program to implement bubble sort that alternates sorting direction (left-to-right, then right-to-left) in each pass.",
+    "answer": {
+      "type": "code",
+      "lang": "python",
+      "content": "def cocktail_bubble_sort(arr):\n    n = len(arr)\n    start, end = 0, n - 1\n    while start < end:\n        for i in range(start, end):\n            if arr[i] > arr[i + 1]:\n                arr[i], arr[i + 1] = arr[i + 1], arr[i]\n        end -= 1\n        for i in range(end - 1, start - 1, -1):\n            if arr[i] > arr[i + 1]:\n                arr[i], arr[i + 1] = arr[i + 1], arr[i]\n        start += 1\n    return arr\n\n# Example usage\narr = [64, 34, 25, 12, 22, 11, 90]\nprint(f'Sorted array: {cocktail_bubble_sort(arr)}')"
+    },
+    "explanation": "***Step 1:*** Define a function ```cocktail_bubble_sort``` that takes a list ```arr```.\n***Step 2:*** Initialize ```start``` and ```end``` to track the unsorted portion.\n***Step 3:*** Perform a left-to-right pass, swapping adjacent elements if out of order, and decrement ```end```.\n***Step 4:*** Perform a right-to-left pass, swapping elements, and increment ```start```.\n***Step 5:*** Repeat until ```start >= end```.\n***Step 6:*** Return the sorted list.\n***Step 7:*** Test with a sample list and print the result."
+  },
+  {
+    "title": "Selection Sort for Kth Smallest Element",
+    "ques": "Write a Python program to implement selection sort to find the kth smallest element in a list without fully sorting it.",
+    "answer": {
+      "type": "code",
+      "lang": "python",
+      "content": "def selection_kth_smallest(arr, k):\n    if k < 1 or k > len(arr):\n        return None\n    for i in range(k):\n        min_idx = i\n        for j in range(i + 1, len(arr)):\n            if arr[j] < arr[min_idx]:\n                min_idx = j\n        arr[i], arr[min_idx] = arr[min_idx], arr[i]\n    return arr[k - 1]\n\n# Example usage\narr = [64, 25, 12, 22, 11]\nk = 3\nresult = selection_kth_smallest(arr, k)\nprint(f'{k}th smallest element: {result}')"
+    },
+    "explanation": "***Step 1:*** Define a function ```selection_kth_smallest``` that takes a list ```arr``` and position ```k```.\n***Step 2:*** Validate ```k```; return ```None``` if invalid.\n***Step 3:*** Perform selection sort for only ```k``` iterations to place the kth smallest element at index ```k-1```.\n***Step 4:*** Return the element at ```k-1```.\n***Step 5:*** Test with a sample list and ```k``` value, printing the result."
+  },
+  {
+    "title": "Insertion Sort for Stable Sorting Check",
+    "ques": "Write a Python program to implement insertion sort on a list of tuples to demonstrate its stability (maintaining relative order of equal elements).",
+    "answer": {
+      "type": "code",
+      "lang": "python",
+      "content": "def insertion_sort_stable(arr):\n    for i in range(1, len(arr)):\n        key = arr[i]\n        j = i - 1\n        while j >= 0 and arr[j][0] > key[0]:\n            arr[j + 1] = arr[j]\n            j -= 1\n        arr[j + 1] = key\n    return arr\n\n# Example usage with tuples\narr = [(2, 'a'), (1, 'b'), (2, 'c'), (1, 'd')]\nprint(f'Sorted array (stable by first element): {insertion_sort_stable(arr)}')"
+    },
+    "explanation": "***Step 1:*** Define a function ```insertion_sort_stable``` for a list of tuples ```arr```.\n***Step 2:*** For each index ```i```, take tuple ```arr[i]``` as ```key``` and compare its first element with previous tuples.\n***Step 3:*** Shift tuples with larger first elements and place ```key``` in position.\n***Step 4:*** Return the sorted list, preserving order of tuples with equal first elements.\n***Step 5:*** Test with a list of tuples and print the result to show stability."
+  },
+  {
+    "title": "Merge Sort with Custom Comparator",
+    "ques": "Write a Python program to implement merge sort with a custom comparator function for sorting in ascending or descending order.",
+    "answer": {
+      "type": "code",
+      "lang": "python",
+      "content": "def merge_sort_custom(arr, comparator=lambda x, y: x <= y):\n    if len(arr) <= 1:\n        return arr\n    mid = len(arr) // 2\n    left = merge_sort_custom(arr[:mid], comparator)\n    right = merge_sort_custom(arr[mid:], comparator)\n    return merge_custom(left, right, comparator)\n\ndef merge_custom(left, right, comparator):\n    result = []\n    i = j = 0\n    while i < len(left) and j < len(right):\n        if comparator(left[i], right[j]):\n            result.append(left[i])\n            i += 1\n        else:\n            result.append(right[j])\n            j += 1\n    result.extend(left[i:])\n    result.extend(right[j:])\n    return result\n\n# Example usage\narr = [38, 27, 43, 3, 9, 82, 10]\nasc = merge_sort_custom(arr.copy())\ndesc = merge_sort_custom(arr.copy(), lambda x, y: x >= y)\nprint(f'Ascending: {asc}')\nprint(f'Descending: {desc}')"
+    },
+    "explanation": "***Step 1:*** Define ```merge_sort_custom``` with a ```comparator``` function (default for ascending).\n***Step 2:*** Recursively divide the list into halves.\n***Step 3:*** In ```merge_custom```, merge sublists using the ```comparator``` to determine order.\n***Step 4:*** Append remaining elements.\n***Step 5:*** Test with ascending and descending comparators and print the results."
+  },
+  {
+    "title": "Quick Sort with Three-Way Partitioning",
+    "ques": "Write a Python program to implement quick sort with three-way partitioning to handle duplicates efficiently.",
+    "answer": {
+      "type": "code",
+      "lang": "python",
+      "content": "def quick_sort_three_way(arr, low, high):\n    if low < high:\n        lt, gt = partition_three_way(arr, low, high)\n        quick_sort_three_way(arr, low, lt - 1)\n        quick_sort_three_way(arr, gt + 1, high)\n    return arr\n\ndef partition_three_way(arr, low, high):\n    pivot = arr[low]\n    lt = low\n    gt = high\n    i = low\n    while i <= gt:\n        if arr[i] < pivot:\n            arr[lt], arr[i] = arr[i], arr[lt]\n            lt += 1\n            i += 1\n        elif arr[i] > pivot:\n            arr[i], arr[gt] = arr[gt], arr[i]\n            gt -= 1\n        else:\n            i += 1\n    return lt, gt\n\n# Example usage\narr = [3, 1, 3, 4, 2, 3, 1]\nprint(f'Sorted array: {quick_sort_three_way(arr, 0, len(arr) - 1)}')"
+    },
+    "explanation": "***Step 1:*** Define ```quick_sort_three_way``` with ```low``` and ```high``` indices.\n***Step 2:*** In ```partition_three_way```, use three pointers: ```lt``` (less than pivot), ```gt``` (greater than pivot), and ```i``` (current element).\n***Step 3:*** Partition into three groups: less than, equal to, and greater than the pivot.\n***Step 4:*** Recursively sort the less-than and greater-than partitions.\n***Step 5:*** Return the sorted list.\n***Step 6:*** Test with a list containing duplicates and print the result."
+  },
+  {
+    "title": "Sorting with sorted() and Multiple Keys",
+    "ques": "Write a Python program to sort a list of dictionaries by multiple keys (e.g., by age then name) using sorted().",
+    "answer": {
+      "type": "code",
+      "lang": "python",
+      "content": "# Example usage of sorted() with multiple keys\npeople = [\n    {'name': 'Alice', 'age': 25},\n    {'name': 'Bob', 'age': 30},\n    {'name': 'Charlie', 'age': 25}\n]\nsorted_people = sorted(people, key=lambda x: (x['age'], x['name']))\nprint(f'Sorted by age then name: {sorted_people}')"
+    },
+    "explanation": "***Step 1:*** Define a list of dictionaries ```people``` with ```name``` and ```age``` keys.\n***Step 2:*** Use ```sorted()``` with a ```key``` function returning a tuple of ```(age, name)``` to sort by age first, then name.\n***Step 3:*** Print the sorted list."
+  },
+  {
+    "title": "In-Place Sorting with list.sort() for Complex Objects",
+    "ques": "Write a Python program to sort a list of complex numbers in-place by their magnitude using list.sort().",
+    "answer": {
+      "type": "code",
+      "lang": "python",
+      "content": "# Example usage of list.sort() with complex numbers\ncomplex_nums = [1 + 2j, 3 + 4j, 2 + 1j, 0 + 1j]\ncomplex_nums.sort(key=lambda x: abs(x))\nprint(f'Sorted by magnitude: {complex_nums}')"
+    },
+    "explanation": "***Step 1:*** Define a list of complex numbers ```commplex_nums```.\n***Step 2:*** Use ```list.sort()``` with a ```key``` function that computes the magnitude using ```abs()```.\n***Step 3:*** Print the sorted list."
+  },
+  {
+    "title": "Linear Search for Longest Subarray with Target Sum",
+    "ques": "Write a Python program to implement linear search to find the longest subarray with a given sum, returning its start and end indices.",
+    "answer": {
+      "type": "code",
+      "lang": "python",
+      "content": "def linear_search_longest_subarray(arr, target_sum):\n    max_length = 0\n    result = (-1, -1)\n    for i in range(len(arr)):\n        current_sum = 0\n        for j in range(i, len(arr)):\n            current_sum += arr[j]\n            if current_sum == target_sum and (j - i + 1) > max_length:\n                max_length = j - i + 1\n                result = (i, j)\n    return result\n\n# Example usage\narr = [1, 2, 3, -2, 5, 1, 2]\ntarget_sum = 6\nstart, end = linear_search_longest_subarray(arr, target_sum)\nprint(f'Longest subarray with sum {target_sum}: indices {start} to {end}, Subarray: {arr[start:end+1] if start != -1 else []}')"
+    },
+    "explanation": "***Step 1:*** Define a function ```linear_search_longest_subarray``` that takes a list ```arr``` and ```target_sum```.\n***Step 2:*** Initialize ```max_length``` to track the longest subarray and ```result``` as ```(-1, -1)```.\n***Step 3:*** Use nested loops to compute the sum of subarrays starting at index ```i``` and ending at ```j```.\n***Step 4:*** If the sum equals ```target_sum``` and the length exceeds ```max_length```, update ```result``` and ```max_length```.\n***Step 5:*** Return the start and end indices.\n***Step 6:*** Test with a sample list and print the result."
+  },
+  {
+    "title": "Binary Search for Peak Element",
+    "ques": "Write a Python program to implement binary search to find a peak element (an element greater than or equal to its neighbors) in an unsorted list.",
+    "answer": {
+      "type": "code",
+      "lang": "python",
+      "content": "def find_peak_element(arr):\n    left, right = 0, len(arr) - 1\n    while left <= right:\n        mid = (left + right) // 2\n        is_peak = True\n        if mid > 0 and arr[mid] < arr[mid - 1]:\n            is_peak = False\n            right = mid - 1\n        elif mid < len(arr) - 1 and arr[mid] < arr[mid + 1]:\n            is_peak = False\n            left = mid + 1\n        if is_peak:\n            return mid\n    return -1\n\n# Example usage\narr = [1, 3, 20, 4, 1, 0]\nresult = find_peak_element(arr)\nprint(f'Peak element at index: {result}, Value: {arr[result] if result != -1 else None}')"
+    },
+    "explanation": "***Step 1:*** Define a function ```find_peak_element``` for a list ```arr```.\n***Step 2:*** Use binary search with ```left``` and ```right``` pointers.\n***Step 3:*** At ```mid```, check if it’s a peak by comparing with neighbors.\n***Step 4:*** If ```mid``` is less than the left neighbor, search left half; if less than the right neighbor, search right half.\n***Step 5:*** If ```mid``` is a peak, return its index; otherwise, return ```-1```.\n***Step 6:*** Test with a sample list and print the result."
+  },
+  {
+    "title": "Bubble Sort with Swap Limit",
+    "ques": "Write a Python program to implement bubble sort that stops after a specified number of swaps.",
+    "answer": {
+      "type": "code",
+      "lang": "python",
+      "content": "def bubble_sort_swap_limit(arr, max_swaps):\n    n = len(arr)\n    swap_count = 0\n    for i in range(n):\n        for j in range(0, n - i - 1):\n            if arr[j] > arr[j + 1]:\n                arr[j], arr[j + 1] = arr[j + 1], arr[j]\n                swap_count += 1\n                if swap_count >= max_swaps:\n                    return arr, swap_count\n    return arr, swap_count\n\n# Example usage\narr = [64, 34, 25, 12, 22]\nmax_swaps = 3\nsorted_arr, swaps = bubble_sort_swap_limit(arr.copy(), max_swaps)\nprint(f'Array after {swaps} swaps: {sorted_arr}')"
+    },
+    "explanation": "***Step 1:*** Define a function ```bubble_sort_swap_limit``` with a list ```arr``` and ```max_swaps```.\n***Step 2:*** Initialize ```swap_count``` to track swaps.\n***Step 3:*** Perform bubble sort, incrementing ```swap_count``` for each swap.\n***Step 4:*** Stop if ```swap_count``` reaches ```max_swaps```.\n***Step 5:*** Return the partially sorted list and ```swap_count```.\n***Step 6:*** Test with a sample list and print the result."
+  },
+  {
+    "title": "Selection Sort for K Largest Elements",
+    "ques": "Write a Python program to implement selection sort to find the k largest elements in a list without sorting the entire list.",
+    "answer": {
+      "type": "code",
+      "lang": "python",
+      "content": "def selection_k_largest(arr, k):\n    if k < 1 or k > len(arr):\n        return []\n    for i in range(k):\n        max_idx = i\n        for j in range(i + 1, len(arr)):\n            if arr[j] > arr[max_idx]:\n                max_idx = j\n        arr[i], arr[max_idx] = arr[max_idx], arr[i]\n    return arr[:k]\n\n# Example usage\narr = [64, 25, 12, 22, 11, 90]\nk = 3\nresult = selection_k_largest(arr.copy(), k)\nprint(f'{k} largest elements: {result}')"
+    },
+    "explanation": "***Step 1:*** Define a function ```selection_k_largest``` that takes a list ```arr``` and ```k```.\n***Step 2:*** Validate ```k```; return empty list if invalid.\n***Step 3:*** Perform selection sort for ```k``` iterations to place the ```k``` largest elements at the start.\n***Step 4:*** Return the first ```k``` elements.\n***Step 5:*** Test with a sample list and print the result."
+  },
+  {
+    "title": "Insertion Sort with Gap (Shell Sort Variant)",
+    "ques": "Write a Python program to implement a simplified Shell sort using insertion sort with a fixed gap to partially sort a list.",
+    "answer": {
+      "type": "code",
+      "lang": "python",
+      "content": "def shell_insertion_sort(arr, gap):\n    n = len(arr)\n    for i in range(gap, n):\n        key = arr[i]\n        j = i - gap\n        while j >= 0 and arr[j] > key:\n            arr[j + gap] = arr[j]\n            j -= gap\n        arr[j + gap] = key\n    return arr\n\n# Example usage\narr = [64, 34, 25, 12, 22, 11, 90]\ngap = 3\nprint(f'Partially sorted with gap {gap}: {shell_insertion_sort(arr.copy(), gap)}')"
+    },
+    "explanation": "***Step 1:*** Define a function ```shell_insertion_sort``` with a list ```arr``` and a fixed ```gap```.\n***Step 2:*** Apply insertion sort to sublists formed by elements ```gap``` indices apart.\n***Step 3:*** For each element at index ```i```, shift larger elements in the sublist and place ```key```.\n***Step 4:*** Return the partially sorted list.\n***Step 5:*** Test with a sample list and gap, printing the result."
+  },
+  {
+    "title": "Merge Sort for Interleaved Lists",
+    "ques": "Write a Python program to implement merge sort to merge and sort two interleaved lists (e.g., even and odd indexed elements).",
+    "answer": {
+      "type": "code",
+      "lang": "python",
+      "content": "def merge_sort_interleaved(arr):\n    even = arr[0::2]\n    odd = arr[1::2]\n    even_sorted = merge_sort(even)\n    odd_sorted = merge_sort(odd)\n    return merge(even_sorted, odd_sorted)\n\ndef merge_sort(arr):\n    if len(arr) <= 1:\n        return arr\n    mid = len(arr) // 2\n    left = merge_sort(arr[:mid])\n    right = merge_sort(arr[mid:])\n    return merge(left, right)\n\ndef merge(left, right):\n    result = []\n    i = j = 0\n    while i < len(left) and j < len(right):\n        if left[i] <= right[j]:\n            result.append(left[i])\n            i += 1\n        else:\n            result.append(right[j])\n            j += 1\n    result.extend(left[i:])\n    result.extend(right[j:])\n    return result\n\n# Example usage\narr = [5, 2, 9, 1, 7, 6, 3, 4]\nprint(f'Sorted interleaved list: {merge_sort_interleaved(arr)}')"
+    },
+    "explanation": "***Step 1:*** Define ```merge_sort_interleaved``` to split the list into even- and odd-indexed elements.\n***Step 2:*** Use ```merge_sort``` to sort each sublist recursively.\n***Step 3:*** Merge the sorted sublists using ```merge```.\n***Step 4:*** In ```merge```, combine two sorted lists by comparing elements.\n***Step 5:*** Test with a sample list and print the result."
+  },
+  {
+    "title": "Quick Sort with Iterative Implementation",
+    "ques": "Write a Python program to implement an iterative version of quick sort using a stack to avoid recursion.",
+    "answer": {
+      "type": "code",
+      "lang": "python",
+      "content": "def quick_sort_iterative(arr):\n    stack = [(0, len(arr) - 1)]\n    while stack:\n        low, high = stack.pop()\n        if low < high:\n            pi = partition(arr, low, high)\n            stack.append((low, pi - 1))\n            stack.append((pi + 1, high))\n    return arr\n\ndef partition(arr, low, high):\n    pivot = arr[high]\n    i = low - 1\n    for j in range(low, high):\n        if arr[j] <= pivot:\n            i += 1\n            arr[i], arr[j] = arr[j], arr[i]\n    arr[i + 1], arr[high] = arr[high], arr[i + 1]\n    return i + 1\n\n# Example usage\narr = [10, 7, 8, 9, 1, 5]\nprint(f'Sorted array: {quick_sort_iterative(arr)}')"
+    },
+    "explanation": "***Step 1:*** Define ```quick_sort_iterative``` using a stack to store index pairs.\n***Step 2:*** Pop ```low``` and ```high``` from the stack and partition the subarray.\n***Step 3:*** In ```partition```, use the last element as pivot and rearrange elements.\n***Step 4:*** Push subarray indices to the stack for further processing.\n***Step 5:*** Continue until the stack is empty.\n***Step 6:*** Test with a sample list and print the result."
+  },
+  {
+    "title": "Sorting with sorted() for Custom Date Format",
+    "ques": "Write a Python program to sort a list of date strings in 'DD-MM-YYYY' format using sorted().",
+    "answer": {
+      "type": "code",
+      "lang": "python",
+      "content": "# Example usage of sorted() with date strings\ndates = ['15-03-2023', '02-01-2022', '25-12-2023', '01-01-2022']\nsorted_dates = sorted(dates, key=lambda x: tuple(map(int, x.split('-'))))\nprint(f'Sorted dates: {sorted_dates}')"
+    },
+    "explanation": "***Step 1:*** Define a list of date strings in 'DD-MM-YYYY' format.\n***Step 2:*** Use ```sorted()``` with a ```key``` function that splits each date into day, month, and year, converting to integers for comparison.\n***Step 3:*** Print the sorted list."
+  },
+  {
+    "title": "In-Place Sorting with list.sort() for Absolute Values",
+    "ques": "Write a Python program to sort a list of integers in-place by their absolute values using list.sort().",
+    "answer": {
+      "type": "code",
+      "lang": "python",
+      "content": "# Example usage of list.sort() with absolute values\nnumbers = [-5, 2, -8, 3, -1, 7]\nnumbers.sort(key=lambda x: abs(x))\nprint(f'Sorted by absolute value: {numbers}')"
+    },
+    "explanation": "***Step 1:*** Define a list of integers ```numbers``` with positive and negative values.\n***Step 2:*** Use ```list.sort()``` with a ```key``` function that sorts based on the absolute value using ```abs()```.\n***Step 3:*** Print the sorted list."
+  }
+]

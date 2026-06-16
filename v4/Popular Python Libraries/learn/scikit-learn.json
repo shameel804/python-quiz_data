@@ -1,0 +1,41 @@
+{
+    "id": "learn_lib_sklearn",
+    "topicId": "scikit-learn",
+    "topicTitle": "Scikit-learn",
+    "description": "The gold standard for classical Machine Learning",
+    "baseKP": 70,
+    "slides": [
+        {
+            "id": "lib_skl_1",
+            "type": "content",
+            "title": "Estimator API",
+            "content": "# Consistent Design 📐\n\nEvery algorithm in Scikit-learn follows the same class structure.\n\n1. **Import** the model.\n2. **Instantiate** with hyperparameters.\n3. **Fit** (Train) on data.\n4. **Predict** on new data.\n\n```sklearn\nfrom sklearn.ensemble import RandomForestClassifier\n\nclf = RandomForestClassifier(n_estimators=100)\nclf.fit(X_train, y_train)\npreds = clf.predict(X_test)\n```"
+        },
+        {
+            "id": "lib_skl_2",
+            "type": "content",
+            "title": "Pipelines",
+            "content": "# Clean Workflows 🚿\n\nChain preprocessing and modeling into one object. Prevents data leakage!\n\n```sklearn\nfrom sklearn.pipeline import Pipeline\nfrom sklearn.preprocessing import StandardScaler\nfrom sklearn.svm import SVC\n\npipe = Pipeline([\n    ('scaler', StandardScaler()), # Step 1: Scale\n    ('svm', SVC())                # Step 2: Model\n])\n\npipe.fit(X_train, y_train)\npipe.score(X_test, y_test)\n```"
+        },
+        {
+            "id": "lib_skl_quiz_1",
+            "type": "quiz",
+            "title": "API Quiz",
+            "content": "Check your understanding",
+            "quizQuestion": "Which method determines the best parameters for a model during training?",
+            "quizOptions": [
+                "predict()",
+                "transform()",
+                "fit()",
+                "score()"
+            ],
+            "correctOptionIndex": 2
+        },
+        {
+            "id": "lib_skl_3",
+            "type": "content",
+            "title": "Model Selection",
+            "content": "# Finding the Best 🏆\n\nHelpers to split data and evaluate models.\n- `train_test_split`: Split arrays into random train and test subsets.\n- `cross_val_score`: Evaluate a score by cross-validation.\n- `GridSearchCV`: Exhaustive search over specified parameter values for an estimator."
+        }
+    ]
+}

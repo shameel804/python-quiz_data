@@ -1,0 +1,41 @@
+{
+    "id": "learn_lib_opencv",
+    "topicId": "opencv",
+    "topicTitle": "OpenCV",
+    "description": "Computer Vision magic",
+    "baseKP": 65,
+    "slides": [
+        {
+            "id": "lib_cv_1",
+            "type": "content",
+            "title": "Images as Arrays",
+            "content": "# Computer Vision 👁️\n\nOpenCV (`cv2`) reads images as NumPy arrays of BGR (Blue-Green-Red) pixels.\n\n```opencv\nimport cv2\n\n# Read image (0 = Grayscale, 1 = Color)\nimg = cv2.imread('logo.png', 1)\n\n# Display\ncv2.imshow('Window', img)\ncv2.waitKey(0) # Wait key press\ncv2.destroyAllWindows()\n```"
+        },
+        {
+            "id": "lib_cv_2",
+            "type": "content",
+            "title": "Image Processing",
+            "content": "# Modifying Pixels 🖌️\n\n## Resizing\n```opencv\nresized = cv2.resize(img, (100, 100))\n```\n\n## Color Conversion\nOften convert BGR to Grayscale for processing.\n```opencv\ngray = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)\n```\n\n## Blurring (Smoothing)\nReduces noise.\n```opencv\nblurred = cv2.GaussianBlur(img, (5, 5), 0)\n```"
+        },
+        {
+            "id": "lib_cv_3",
+            "type": "content",
+            "title": "Video Capture",
+            "content": "# Webcam Access 📹\n\n```opencv\ncap = cv2.VideoCapture(0) # 0 is default webcam\n\nwhile True:\n    ret, frame = cap.read()\n    cv2.imshow('Webcam', frame)\n    if cv2.waitKey(1) == ord('q'):\n        break\n\ncap.release()\n```"
+        },
+        {
+            "id": "lib_cv_quiz_1",
+            "type": "quiz",
+            "title": "Format Quiz",
+            "content": "Check your understanding",
+            "quizQuestion": "In what color order does OpenCV load images by default?",
+            "quizOptions": [
+                "RGB (Red, Green, Blue)",
+                "BGR (Blue, Green, Red)",
+                "Grayscale",
+                "CMYK"
+            ],
+            "correctOptionIndex": 1
+        }
+    ]
+}

@@ -1,0 +1,61 @@
+{
+    "id": "learn_django_templates",
+    "topicId": "templates",
+    "topicTitle": "Templates",
+    "description": "Understand the Django Template Language (DTL)",
+    "baseKP": 55,
+    "slides": [
+        {
+            "id": "django_templates_1",
+            "type": "content",
+            "title": "Template Language Basics",
+            "content": "# Django Template Language 📝\n\nDjango templates are just HTML files with special syntax to inject logic and data.\n\n## Variables `{{ }}`\nOutput a value from the context.\n```html\n<h1>Hello, {{ user.username }}!</h1>\n<p>Score: {{ user.profile.score }}</p>\n```\n\n## Tags `{% %}`\nControl logic (loops, conditions).\n```html\n{% if user.is_authenticated %}\n    <p>Welcome back!</p>\n{% else %}\n    <a href=\"/login\">Log in</a>\n{% endif %}\n```\n\n## Filters `|`\nModify variables for display.\n```html\n{{ name|upper }}      <!-- 'john' -> 'JOHN' -->\n{{ date|date:\"Y-m-d\" }} <!-- Formats date -->\n```"
+        },
+        {
+            "id": "django_templates_2",
+            "type": "content",
+            "title": "Common Tags",
+            "content": "# Essential Tags 🏷️\n\n## For Loop\nIterate over lists or querysets.\n```html\n<ul>\n{% for item in items %}\n    <li>{{ item.name }} - ${{ item.price }}</li>\n{% empty %}\n    <li>No items found.</li>\n{% endfor %}\n</ul>\n```\n> 💡 **Tip**: The `{% empty %}` block runs if the list is empty!\n\n## URL Tag\nGenerate links dynamically.\n```html\n<a href=\"{% url 'app:view_name' id=5 %}\">Link</a>\n```\n\n## CSRF Token\nRequired for security in forms.\n```html\n<form method=\"post\">\n    {% csrf_token %}\n    ...\n</form>\n```"
+        },
+        {
+            "id": "django_templates_quiz_1",
+            "type": "quiz",
+            "title": "Syntax Quiz",
+            "content": "Test your syntax knowledge",
+            "quizQuestion": "Which syntax is used to output a variable's value?",
+            "quizOptions": [
+                "{% variable %}",
+                "{{ variable }}",
+                "[[ variable ]]",
+                "(( variable ))"
+            ],
+            "correctOptionIndex": 1
+        },
+        {
+            "id": "django_templates_3",
+            "type": "content",
+            "title": "Template Inheritance",
+            "content": "# Template Inheritance 🧬\n\nThe most powerful feature of DTL! It allows you to build a base \"skeleton\" template containing common elements (nav, footer) and define **blocks** that child templates can override.\n\n**base.html**:\n```html\n<html>\n<body>\n    <nav>...</nav>\n    <div class=\"content\">\n        {% block content %}{% endblock %}\n    </div>\n    <footer>...</footer>\n</body>\n</html>\n```\n\n**home.html**:\n```html\n{% extends \"base.html\" %}\n\n{% block content %}\n    <h1>Home Page</h1>\n    <p>This replaces the block in base!</p>\n{% endblock %}\n```"
+        },
+        {
+            "id": "django_templates_4",
+            "type": "content",
+            "title": "Handling Static Files",
+            "content": "# Static Files 🖼️\n\nStatic files are images, CSS, and JavaScript that don't change dynamically.\n\n## Setup\n1. Make sure `django.contrib.staticfiles` is in `INSTALLED_APPS`.\n2. Define `STATIC_URL = '/static/'` in `settings.py`.\n\n## Usage in Templates\nAlways load the `static` tag library first.\n\n```html\n{% load static %}\n\n<html>\n<head>\n    <!-- CSS -->\n    <link rel=\"stylesheet\" href=\"{% static 'css/style.css' %}\">\n</head>\n<body>\n    <!-- Image -->\n    <img src=\"{% static 'images/logo.png' %}\" alt=\"Logo\">\n</body>\n</html>\n```"
+        },
+        {
+            "id": "django_templates_quiz_2",
+            "type": "quiz",
+            "title": "Static Quiz",
+            "content": "Check your understanding",
+            "quizQuestion": "What template tag must you load to use the {% static %} tag?",
+            "quizOptions": [
+                "{% load assets %}",
+                "{% load staticfiles %}",
+                "{% load static %}",
+                "No need to load anything"
+            ],
+            "correctOptionIndex": 2
+        }
+    ]
+}

@@ -1,0 +1,41 @@
+{
+    "id": "learn_ml_deploy",
+    "topicId": "deploy",
+    "topicTitle": "Model Deployment",
+    "description": "Taking your model from notebook to production",
+    "baseKP": 85,
+    "slides": [
+        {
+            "id": "ml_dep_1",
+            "type": "content",
+            "title": "Model Serialization",
+            "content": "# Saving the Brain 🧠\n\nYou can't train the model every time a user visits your site. You train once, save it, and load it later.\n\n## Tools\n- **Pickle**: Standard Python serialization.\n- **Joblib**: Better for large NumPy arrays (Scikit-learn optimization).\n- **ONNX**: Open format to move models between frameworks (PyTorch -> TensorFlow).\n\n```python\nimport joblib\n# Save\njoblib.dump(model, 'model.pkl')\n# Load\nmodel = joblib.load('model.pkl')\n```"
+        },
+        {
+            "id": "ml_dep_2",
+            "type": "content",
+            "title": "APIs",
+            "content": "# Serving Predictions 🍽️\n\nUsually, models are wrapped in a **REST API**.\n\n1. User sends JSON data via POST request.\n2. API receives data -> Preprocesses it.\n3. Model predicts.\n4. API returns JSON response.\n\n**Common Frameworks**: Flask, FastAPI (very fast & auto-docs), Django.\n\n> 💡 **Tip**: Use **FastAPI** for ML models due to its async speed and type checking!"
+        },
+        {
+            "id": "ml_dep_3",
+            "type": "content",
+            "title": "Cloud Deployment",
+            "content": "# To the Cloud ☁️\n\nWhere does the API live?\n\n- **Docker**: Containerize the app (Code + Dependencies) so it runs anywhere.\n- **Serverless**: AWS Lambda or Google Cloud Functions (Pay only when used).\n- **Kubernetes**: For massive scale orchestration.\n- **MLOps**: Automated pipelines (CI/CD) for retraining and monitoring models in production."
+        },
+        {
+            "id": "ml_dep_quiz_1",
+            "type": "quiz",
+            "title": "Ops Quiz",
+            "content": "Check your understanding",
+            "quizQuestion": "What technology is used to 'containerize' an application ensuring it runs the same on any machine?",
+            "quizOptions": [
+                "Flask",
+                "Docker",
+                "Pickle",
+                "Jenkins"
+            ],
+            "correctOptionIndex": 1
+        }
+    ]
+}

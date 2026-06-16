@@ -1,0 +1,41 @@
+{
+    "id": "learn_ml_supervise",
+    "topicId": "supervise",
+    "topicTitle": "Supervised Learning",
+    "description": "Master Regression, Classification, and Interpretable Models",
+    "baseKP": 70,
+    "slides": [
+        {
+            "id": "ml_sup_1",
+            "type": "content",
+            "title": "Regression vs Classification",
+            "content": "# Two Main Tasks 🎯\n\n## Regression\nPredicting a **continuous** number.\n- *House Price*: $250k, $500k...\n- *Temperature*: 25.5°C, 30°C...\n- **Algorithms**: Linear Regression, Decision Tree Regressor.\n\n## Classification\nPredicting a **discrete** category (class).\n- *Spam Filter*: Spam or Not Spam (Binary).\n- *Image Recognition*: Cat, Dog, or Bird (Multi-class).\n- **Algorithms**: Logistic Regression, KNN, SVM, Decision Trees."
+        },
+        {
+            "id": "ml_sup_2",
+            "type": "content",
+            "title": "Ensemble Methods",
+            "content": "# Ensemble Learning 🌳🌲🌳\n\nWhy use one model when you can use many? Ensemble methods combine multiple \"weak\" models to create a strong one.\n\n## 1. Bagging (Bootstrap Aggregating)\nTrains models independently on random subsets of data and averages predictions.\n- **Example**: **Random Forest** (A forest of decision trees).\n\n## 2. Boosting\nTrains models sequentially. Each model fixes the errors of the previous one.\n- **Examples**: Gradient Boosting, XGBoost, AdaBoost.\n\n> 💡 **Tip**: In Kaggle competitions, XGBoost and Gradient Boosting are almost always the winners for tabular data!"
+        },
+        {
+            "id": "ml_sup_quiz_1",
+            "type": "quiz",
+            "title": "Algorithms Quiz",
+            "content": "Check your understanding",
+            "quizQuestion": "Which algorithm trains models sequentially to correct previous errors?",
+            "quizOptions": [
+                "Random Forest",
+                "Bagging",
+                "Boosting",
+                "K-Means"
+            ],
+            "correctOptionIndex": 2
+        },
+        {
+            "id": "ml_sup_3",
+            "type": "content",
+            "title": "Evaluation Metrics",
+            "content": "# How Good is the Model? 📊\n\nAccuracy isn't everything!\n\n## Classification Metrics\n- **Accuracy**: % of correct predictions.\n- **Precision**: Of all predicted positives, how many were real? (Avoid False Positives).\n- **Recall**: Of all real positives, how many did we catch? (Avoid False Negatives).\n- **F1-Score**: Harmonic mean of Precision and Recall.\n\n## Regression Metrics\n- **MAE (Mean Absolute Error)**: Average error magnitude.\n- **MSE (Mean Squared Error)**: Punishes large errors heavily.\n- **R² Score**: How well the model explains the variance (0 to 1)."
+        }
+    ]
+}

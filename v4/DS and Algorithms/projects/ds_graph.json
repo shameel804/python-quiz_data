@@ -1,0 +1,452 @@
+[
+  {
+    "title": "Depth-First Search (DFS)",
+    "ques": "Write a Python program to implement Depth-First Search (DFS) on a graph represented as an adjacency list.",
+    "answer": {
+      "type": "code",
+      "lang": "python",
+      "content": "def dfs(graph, start, visited=None):\n    if visited is None:\n        visited = set()\n    visited.add(start)\n    print(start, end=' ')\n    for neighbor in graph[start]:\n        if neighbor not in visited:\n            dfs(graph, neighbor, visited)\n\n# Example usage\ngraph = {\n    'A': ['B', 'C'],\n    'B': ['A', 'D', 'E'],\n    'C': ['A', 'F'],\n    'D': ['B'],\n    'E': ['B', 'F'],\n    'F': ['C', 'E']\n}\ndfs(graph, 'A')"
+    },
+    "explanation": "***Step 1:*** Define a recursive function ```dfs``` that takes a graph, start node, and a set to track visited nodes.\n***Step 2:*** Initialize the visited set if not provided.\n***Step 3:*** Mark the current node as visited and print it.\n***Step 4:*** Recursively visit all unvisited neighbors of the current node.\n***Step 5:*** Use an adjacency list to represent the graph and call ```dfs``` with a start node."
+  },
+  {
+    "title": "Breadth-First Search (BFS)",
+    "ques": "Write a Python program to implement Breadth-First Search (BFS) on a graph using a queue.",
+    "answer": {
+      "type": "code",
+      "lang": "python",
+      "content": "from collections import deque\n\ndef bfs(graph, start):\n    visited = set()\n    queue = deque([start])\n    visited.add(start)\n    while queue:\n        vertex = queue.popleft()\n        print(vertex, end=' ')\n        for neighbor in graph[vertex]:\n            if neighbor not in visited:\n                visited.add(neighbor)\n                queue.append(neighbor)\n\n# Example usage\ngraph = {\n    'A': ['B', 'C'],\n    'B': ['A', 'D', 'E'],\n    'C': ['A', 'F'],\n    'D': ['B'],\n    'E': ['B', 'F'],\n    'F': ['C', 'E']\n}\nbfs(graph, 'A')"
+    },
+    "explanation": "***Step 1:*** Import ```deque``` from collections for queue operations.\n***Step 2:*** Define ```bfs``` function that takes a graph and start node.\n***Step 3:*** Initialize a set for visited nodes and a queue with the start node.\n***Step 4:*** Process nodes in the queue, printing each and adding unvisited neighbors to the queue.\n***Step 5:*** Continue until the queue is empty, ensuring all reachable nodes are visited."
+  },
+  {
+    "title": "Dijkstra’s Shortest Path",
+    "ques": "Write a Python program to implement Dijkstra’s algorithm to find the shortest path in a weighted graph.",
+    "answer": {
+      "type": "code",
+      "lang": "python",
+      "content": "import heapq\n\ndef dijkstra(graph, start):\n    distances = {node: float('infinity') for node in graph}\n    distances[start] = 0\n    pq = [(0, start)]\n    while pq:\n        current_distance, current_node = heapq.heappop(pq)\n        if current_distance > distances[current_node]:\n            continue\n        for neighbor, weight in graph[current_node].items():\n            distance = current_distance + weight\n            if distance < distances[neighbor]:\n                distances[neighbor] = distance\n                heapq.heappush(pq, (distance, neighbor))\n    return distances\n\n# Example usage\ngraph = {\n    'A': {'B': 4, 'C': 2},\n    'B': {'A': 4, 'C': 1, 'D': 5},\n    'C': {'A': 2, 'B': 1, 'D': 8, 'E': 10},\n    'D': {'B': 5, 'C': 8, 'E': 2},\n    'E': {'C': 10, 'D': 2}\n}\nprint(dijkstra(graph, 'A'))"
+    },
+    "explanation": "***Step 1:*** Import ```heapq``` for priority queue operations.\n***Step 2:*** Initialize distances to all nodes as infinity except the start node (0).\n***Step 3:*** Use a priority queue to process nodes by smallest distance.\n***Step 4:*** For each node, update distances to neighbors if a shorter path is found.\n***Step 5:*** Return the dictionary of shortest distances from the start node."
+  },
+  {
+    "title": "Kruskal’s Minimum Spanning Tree",
+    "ques": "Write a Python program to implement Kruskal’s algorithm to find the Minimum Spanning Tree of a graph.",
+    "answer": {
+      "type": "code",
+      "lang": "python",
+      "content": "def find(parent, i):\n    if parent[i] != i:\n        parent[i] = find(parent, parent[i])\n    return parent[i]\n\ndef union(parent, rank, x, y):\n    px, py = find(parent, x), find(parent, y)\n    if rank[px] < rank[py]:\n        parent[px] = py\n    elif rank[px] > rank[py]:\n        parent[py] = px\n    else:\n        parent[py] = px\n        rank[px] += 1\n\ndef kruskal(graph, vertices):\n    result = []\n    edges = sorted([(w, u, v) for u in graph for v, w in graph[u].items()], key=lambda x: x[0])\n    parent = {v: v for v in vertices}\n    rank = {v: 0 for v in vertices}\n    for weight, u, v in edges:\n        if find(parent, u) != find(parent, v):\n            union(parent, rank, u, v)\n            result.append((u, v, weight))\n    return result\n\n# Example usage\ngraph = {\n    'A': {'B': 4, 'C': 2},\n    'B': {'A': 4, 'C': 1, 'D': 5},\n    'C': {'A': 2, 'B': 1, 'D': 8},\n    'D': {'B': 5, 'C': 8}\n}\nvertices = ['A', 'B', 'C', 'D']\nprint(kruskal(graph, vertices))"
+    },
+    "explanation": "***Step 1:*** Define ```find``` to get the root of a node’s set with path compression.\n***Step 2:*** Define ```union``` to merge two sets based on rank.\n***Step 3:*** Sort all edges by weight in ascending order.\n***Step 4:*** Iterate through sorted edges, adding to MST if no cycle is formed (using find/union).\n***Step 5:*** Return the list of edges in the Minimum Spanning Tree."
+  },
+  {
+    "title": "Prim’s Minimum Spanning Tree",
+    "ques": "Write a Python program to implement Prim’s algorithm to find the Minimum Spanning Tree of a graph.",
+    "answer": {
+      "type": "code",
+      "lang": "python",
+      "content": "import heapq\n\ndef prim(graph, start):\n    mst = []\n    visited = set([start])\n    edges = [(weight, start, to) for to, weight in graph[start].items()]\n    heapq.heapify(edges)\n    while edges:\n        weight, frm, to = heapq.heappop(edges)\n        if to in visited:\n            continue\n        visited.add(to)\n        mst.append((frm, to, weight))\n        for next_node, weight in graph[to].items():\n            if next_node not in visited:\n                heapq.heappush(edges, (weight, to, next_node))\n    return mst\n\n# Example usage\ngraph = {\n    'A': {'B': 4, 'C': 2},\n    'B': {'A': 4, 'C': 1, 'D': 5},\n    'C': {'A': 2, 'B': 1, 'D': 8},\n    'D': {'B': 5, 'C': 8}\n}\nprint(prim(graph, 'A'))"
+    },
+    "explanation": "***Step 1:*** Import ```heapq``` for priority queue operations.\n***Step 2:*** Initialize a set for visited nodes and a priority queue with edges from the start node.\n***Step 3:*** Pop the smallest edge; skip if the destination is visited.\n***Step 4:*** Add the edge to the MST and the destination to visited nodes.\n***Step 5:*** Add unvisited neighbors’ edges to the priority queue and repeat until all nodes are visited."
+  },
+  {
+    "title": "DFS for Connected Components",
+    "ques": "Write a Python program to find all connected components in an undirected graph using Depth-First Search (DFS).",
+    "answer": {
+      "type": "code",
+      "lang": "python",
+      "content": "def dfs(graph, vertex, visited, component):\n    visited.add(vertex)\n    component.append(vertex)\n    for neighbor in graph[vertex]:\n        if neighbor not in visited:\n            dfs(graph, neighbor, visited, component)\n\ndef connected_components(graph):\n    visited = set()\n    components = []\n    for vertex in graph:\n        if vertex not in visited:\n            current_component = []\n            dfs(graph, vertex, visited, current_component)\n            components.append(current_component)\n    return components\n\n# Example usage\ngraph = {\n    'A': ['B'],\n    'B': ['A'],\n    'C': ['D'],\n    'D': ['C'],\n    'E': []\n}\nprint(connected_components(graph))  # [['A', 'B'], ['C', 'D'], ['E']]"
+    },
+    "explanation": "***Step 1:*** Define a recursive ```dfs``` function to explore all nodes in a connected component.\n***Step 2:*** Track visited nodes and build the current component list.\n***Step 3:*** Iterate through all vertices, starting DFS for unvisited ones to find new components.\n***Step 4:*** Collect each component as a list of vertices.\n***Step 5:*** Return the list of all connected components."
+  },
+  {
+    "title": "BFS for Level-Order Traversal",
+    "ques": "Write a Python program to perform a level-order traversal of a graph using Breadth-First Search (BFS).",
+    "answer": {
+      "type": "code",
+      "lang": "python",
+      "content": "from collections import deque\n\ndef bfs_level_order(graph, start):\n    visited = set([start])\n    queue = deque([(start, 0)])\n    levels = {}\n    while queue:\n        vertex, level = queue.popleft()\n        if level not in levels:\n            levels[level] = []\n        levels[level].append(vertex)\n        for neighbor in graph[vertex]:\n            if neighbor not in visited:\n                visited.add(neighbor)\n                queue.append((neighbor, level + 1))\n    return levels\n\n# Example usage\ngraph = {\n    'A': ['B', 'C'],\n    'B': ['A', 'D', 'E'],\n    'C': ['A', 'F'],\n    'D': ['B'],\n    'E': ['B'],\n    'F': ['C']\n}\nprint(bfs_level_order(graph, 'A'))  # {0: ['A'], 1: ['B', 'C'], 2: ['D', 'E', 'F']}"
+    },
+    "explanation": "***Step 1:*** Use a queue to store tuples of (vertex, level) starting with the start node at level 0.\n***Step 2:*** Track visited nodes to avoid cycles.\n***Step 3:*** Group vertices by their level (distance from start) in a dictionary.\n***Step 4:*** For each vertex, add unvisited neighbors to the queue with incremented level.\n***Step 5:*** Return the dictionary mapping levels to lists of vertices."
+  },
+  {
+    "title": "Dijkstra’s with Path Reconstruction",
+    "ques": "Write a Python program to implement Dijkstra’s algorithm to find the shortest path and its distance between two specific nodes in a weighted graph.",
+    "answer": {
+      "type": "code",
+      "lang": "python",
+      "content": "import heapq\n\ndef dijkstra_path(graph, start, end):\n    distances = {node: float('infinity') for node in graph}\n    distances[start] = 0\n    prev = {node: None for node in graph}\n    pq = [(0, start)]\n    while pq:\n        curr_dist, curr = heapq.heappop(pq)\n        if curr == end:\n            break\n        if curr_dist > distances[curr]:\n            continue\n        for neighbor, weight in graph[curr].items():\n            distance = curr_dist + weight\n            if distance < distances[neighbor]:\n                distances[neighbor] = distance\n                prev[neighbor] = curr\n                heapq.heappush(pq, (distance, neighbor))\n    path = []\n    curr = end\n    while curr is not None:\n        path.append(curr)\n        curr = prev[curr]\n    return distances[end], path[::-1]\n\n# Example usage\ngraph = {\n    'A': {'B': 5, 'C': 3},\n    'B': {'A': 5, 'C': 2, 'D': 6},\n    'C': {'A': 3, 'B': 2, 'D': 4},\n    'D': {'B': 6, 'C': 4}\n}\ndistance, path = dijkstra_path(graph, 'A', 'D')\nprint(f'Distance: {distance}, Path: {path}')  # Distance: 7, Path: ['A', 'C', 'D']"
+    },
+    "explanation": "***Step 1:*** Initialize distances and a predecessor dictionary for path reconstruction.\n***Step 2:*** Use a priority queue to process nodes by smallest distance.\n***Step 3:*** Update distances and predecessors for neighbors with shorter paths.\n***Step 4:*** Stop when the end node is reached, then reconstruct the path backward.\n***Step 5:*** Return the shortest distance and the path from start to end."
+  },
+  {
+    "title": "Kruskal’s for Weighted Undirected Graph",
+    "ques": "Write a Python program to implement Kruskal’s algorithm to compute the total weight of the Minimum Spanning Tree for a weighted undirected graph.",
+    "answer": {
+      "type": "code",
+      "lang": "python",
+      "content": "def find(parent, i):\n    if parent[i] != i:\n        parent[i] = find(parent, parent[i])\n    return parent[i]\n\ndef union(parent, rank, x, y):\n    px, py = find(parent, x), find(parent, y)\n    if rank[px] < rank[py]:\n        parent[px] = py\n    elif rank[px] > rank[py]:\n        parent[py] = px\n    else:\n        parent[py] = px\n        rank[px] += 1\n\ndef kruskal_weight(graph, vertices):\n    edges = sorted([(w, u, v) for u in graph for v, w in graph[u].items() if u < v], key=lambda x: x[0])\n    parent = {v: v for v in vertices}\n    rank = {v: 0 for v in vertices}\n    total_weight = 0\n    for weight, u, v in edges:\n        if find(parent, u) != find(parent, v):\n            union(parent, rank, u, v)\n            total_weight += weight\n    return total_weight\n\n# Example usage\ngraph = {\n    'A': {'B': 1, 'C': 4},\n    'B': {'A': 1, 'C': 2, 'D': 5},\n    'C': {'A': 4, 'B': 2, 'D': 3},\n    'D': {'B': 5, 'C': 3}\n}\nvertices = ['A', 'B', 'C', 'D']\nprint(kruskal_weight(graph, vertices))  # 6"
+    },
+    "explanation": "***Step 1:*** Define ```find``` and ```union``` for disjoint-set operations.\n***Step 2:*** Create a sorted edge list, filtering u < v to avoid duplicate edges.\n***Step 3:*** Process edges in ascending order, adding weights to total if no cycle is formed.\n***Step 4:*** Use union-find to check for cycles.\n***Step 5:*** Return the total weight of the MST."
+  },
+  {
+    "title": "Prim’s with Priority Queue Optimization",
+    "ques": "Write a Python program to implement Prim’s algorithm to find the Minimum Spanning Tree, optimized with a priority queue, for a weighted graph.",
+    "answer": {
+      "type": "code",
+      "lang": "python",
+      "content": "import heapq\n\ndef prim_optimized(graph, start):\n    visited = set([start])\n    total_weight = 0\n    edges = [(weight, start, to) for to, weight in graph[start].items()]\n    heapq.heapify(edges)\n    while edges:\n        weight, frm, to = heapq.heappop(edges)\n        if to in visited:\n            continue\n        visited.add(to)\n        total_weight += weight\n        for next_node, weight in graph[to].items():\n            if next_node not in visited:\n                heapq.heappush(edges, (weight, to, next_node))\n    return total_weight\n\n# Example usage\ngraph = {\n    'A': {'B': 2, 'C': 3},\n    'B': {'A': 2, 'C': 4, 'D': 1},\n    'C': {'A': 3, 'B': 4, 'D': 5},\n    'D': {'B': 1, 'C': 5}\n}\nprint(prim_optimized(graph, 'A'))  # 6"
+    },
+    "explanation": "***Step 1:*** Initialize a priority queue with edges from the start node.\n***Step 2:*** Track visited nodes and the total weight of the MST.\n***Step 3:*** Pop the smallest edge; skip if the destination is visited.\n***Step 4:*** Add the edge’s weight to the total and include unvisited neighbors in the queue.\n***Step 5:*** Return the total weight of the MST."
+  },
+  {
+    "title": "DFS for Topological Sort",
+    "ques": "Write a Python program to perform a topological sort on a directed acyclic graph (DAG) using Depth-First Search (DFS).",
+    "answer": {
+      "type": "code",
+      "lang": "python",
+      "content": "def dfs_topological(graph, vertex, visited, stack):\n    visited.add(vertex)\n    for neighbor in graph[vertex]:\n        if neighbor not in visited:\n            dfs_topological(graph, neighbor, visited, stack)\n    stack.append(vertex)\n\ndef topological_sort(graph):\n    visited = set()\n    stack = []\n    for vertex in graph:\n        if vertex not in visited:\n            dfs_topological(graph, vertex, visited, stack)\n    return stack[::-1]\n\n# Example usage\ngraph = {\n    'A': ['B', 'C'],\n    'B': ['D'],\n    'C': ['D'],\n    'D': ['E'],\n    'E': []\n}\nprint(topological_sort(graph))  # ['A', 'C', 'B', 'D', 'E']"
+    },
+    "explanation": "***Step 1:*** Define a recursive ```dfs_topological``` function to explore vertices and their neighbors.\n***Step 2:*** Mark each vertex as visited and append it to a stack after exploring all its neighbors.\n***Step 3:*** Iterate through all vertices to handle disconnected components, calling DFS for unvisited ones.\n***Step 4:*** Reverse the stack to get the topological order.\n***Step 5:*** Test with a DAG to return a valid topological sort."
+  },
+  {
+    "title": "BFS for Bipartite Graph Check",
+    "ques": "Write a Python program to check if an undirected graph is bipartite using Breadth-First Search (BFS).",
+    "answer": {
+      "type": "code",
+      "lang": "python",
+      "content": "from collections import deque\n\ndef is_bipartite(graph):\n    colors = {}\n    for start in graph:\n        if start not in colors:\n            colors[start] = 0\n            queue = deque([start])\n            while queue:\n                vertex = queue.popleft()\n                for neighbor in graph[vertex]:\n                    if neighbor not in colors:\n                        colors[neighbor] = 1 - colors[vertex]\n                        queue.append(neighbor)\n                    elif colors[neighbor] == colors[vertex]:\n                        return False\n    return True\n\n# Example usage\ngraph = {\n    '1': ['2', '4'],\n    '2': ['1', '3'],\n    '3': ['2', '4'],\n    '4': ['1', '3']\n}\nprint(is_bipartite(graph))  # True"
+    },
+    "explanation": "***Step 1:*** Initialize a dictionary to assign colors (0 or 1) to vertices.\n***Step 2:*** For each uncolored vertex, assign color 0 and use BFS to explore neighbors.\n***Step 3:*** Assign opposite colors to neighbors; if a neighbor has the same color as the current vertex, return ```False```.\n***Step 4:*** Continue until all vertices are colored or a conflict is found.\n***Step 5:*** Return ```True``` if the graph is bipartite, ```False``` otherwise."
+  },
+  {
+    "title": "Dijkstra’s for Maximum Bandwidth Path",
+    "ques": "Write a Python program to find the path with maximum bandwidth (minimum edge weight) between two nodes using a modified Dijkstra’s algorithm.",
+    "answer": {
+      "type": "code",
+      "lang": "python",
+      "content": "import heapq\n\ndef max_bandwidth_path(graph, start, end):\n    bandwidths = {node: 0 for node in graph}\n    bandwidths[start] = float('infinity')\n    prev = {node: None for node in graph}\n    pq = [(-bandwidths[start], start)]\n    while pq:\n        curr_band, curr = heapq.heappop(pq)\n        curr_band = -curr_band\n        if curr == end:\n            break\n        if curr_band < bandwidths[curr]:\n            continue\n        for neighbor, weight in graph[curr].items():\n            band = min(curr_band, weight)\n            if band > bandwidths[neighbor]:\n                bandwidths[neighbor] = band\n                prev[neighbor] = curr\n                heapq.heappush(pq, (-band, neighbor))\n    path = []\n    curr = end\n    while curr is not None:\n        path.append(curr)\n        curr = prev[curr]\n    return bandwidths[end], path[::-1]\n\n# Example usage\ngraph = {\n    'A': {'B': 10, 'C': 5},\n    'B': {'A': 10, 'D': 8},\n    'C': {'A': 5, 'D': 12},\n    'D': {'B': 8, 'C': 12}\n}\nbandwidth, path = max_bandwidth_path(graph, 'A', 'D')\nprint(f'Bandwidth: {bandwidth}, Path: {path}')  # Bandwidth: 8, Path: ['A', 'B', 'D']"
+    },
+    "explanation": "***Step 1:*** Initialize bandwidths to 0, except for the start node (infinity), and track predecessors.\n***Step 2:*** Use a priority queue with negative bandwidths to prioritize maximum bandwidth.\n***Step 3:*** For each node, compute the bandwidth as the minimum of the current path’s bandwidth and edge weight.\n***Step 4:*** Update bandwidths and predecessors if a larger bandwidth is found, then reconstruct the path.\n***Step 5:*** Return the maximum bandwidth and the corresponding path."
+  },
+  {
+    "title": "Kruskal’s for Sparse Graph",
+    "ques": "Write a Python program to implement Kruskal’s algorithm for a sparse graph represented as a list of edges, returning the MST edges.",
+    "answer": {
+      "type": "code",
+      "lang": "python",
+      "content": "def find(parent, i):\n    if parent[i] != i:\n        parent[i] = find(parent, parent[i])\n    return parent[i]\n\ndef union(parent, rank, x, y):\n    px, py = find(parent, x), find(parent, y)\n    if rank[px] < rank[py]:\n        parent[px] = py\n    elif rank[px] > rank[py]:\n        parent[py] = px\n    else:\n        parent[py] = px\n        rank[px] += 1\n\ndef kruskal_sparse(edges, vertices):\n    edges.sort(key=lambda x: x[2])\n    parent = {v: v for v in vertices}\n    rank = {v: 0 for v in vertices}\n    mst = []\n    for u, v, weight in edges:\n        if find(parent, u) != find(parent, v):\n            union(parent, rank, u, v)\n            mst.append((u, v, weight))\n    return mst\n\n# Example usage\nedges = [('A', 'B', 1), ('B', 'C', 3), ('A', 'C', 3), ('C', 'D', 2)]\nvertices = ['A', 'B', 'C', 'D']\nprint(kruskal_sparse(edges, vertices))  # [('A', 'B', 1), ('C', 'D', 2), ('A', 'C', 3)]"
+    },
+    "explanation": "***Step 1:*** Define ```find``` and ```union``` for disjoint-set operations with path compression.\n***Step 2:*** Sort the edge list by weight to process edges in ascending order.\n***Step 3:*** Iterate through edges, adding to the MST if no cycle is formed (checked via find/union).\n***Step 4:*** Collect MST edges as (u, v, weight) tuples.\n***Step 5:*** Test with a sparse graph represented as an edge list."
+  },
+  {
+    "title": "Prim’s for Dense Graph",
+    "ques": "Write a Python program to implement Prim’s algorithm for a dense graph, returning the MST edges and their total weight.",
+    "answer": {
+      "type": "code",
+      "lang": "python",
+      "content": "import heapq\n\ndef prim_dense(graph, start):\n    visited = set([start])\n    edges = [(weight, start, to) for to, weight in graph[start].items()]\n    heapq.heapify(edges)\n    mst = []\n    total_weight = 0\n    while edges:\n        weight, frm, to = heapq.heappop(edges)\n        if to in visited:\n            continue\n        visited.add(to)\n        mst.append((frm, to, weight))\n        total_weight += weight\n        for next_node, weight in graph[to].items():\n            if next_node not in visited:\n                heapq.heappush(edges, (weight, to, next_node))\n    return mst, total_weight\n\n# Example usage\ngraph = {\n    'A': {'B': 1, 'C': 4, 'D': 3},\n    'B': {'A': 1, 'C': 2, 'D': 5},\n    'C': {'A': 4, 'B': 2, 'D': 6},\n    'D': {'A': 3, 'B': 5, 'C': 6}\n}\nmst, weight = prim_dense(graph, 'A')\nprint(f'MST: {mst}, Total Weight: {weight}')  # MST: [('A', 'B', 1), ('B', 'C', 2), ('A', 'D', 3)], Total Weight: 6"
+    },
+    "explanation": "***Step 1:*** Initialize a priority queue with edges from the start node.\n***Step 2:*** Track visited nodes and maintain a list of MST edges and total weight.\n***Step 3:*** Pop the smallest edge; skip if the destination is visited.\n***Step 4:*** Add the edge to the MST, update the total weight, and include unvisited neighbors’ edges.\n***Step 5:*** Return the MST edges and their total weight."
+  },
+  {
+    "title": "DFS for Strongly Connected Components",
+    "ques": "Write a Python program to find strongly connected components in a directed graph using Depth-First Search (DFS).",
+    "answer": {
+      "type": "code",
+      "lang": "python",
+      "content": "def dfs_fill(graph, vertex, visited, stack):\n    visited.add(vertex)\n    for neighbor in graph[vertex]:\n        if neighbor not in visited:\n            dfs_fill(graph, neighbor, visited, stack)\n    stack.append(vertex)\n\ndef dfs_scc(graph, vertex, visited, component):\n    visited.add(vertex)\n    component.append(vertex)\n    for neighbor in graph[vertex]:\n        if neighbor not in visited:\n            dfs_scc(graph, neighbor, visited, component)\n\ndef strongly_connected_components(graph):\n    visited = set()\n    stack = []\n    # First DFS to fill stack\n    for vertex in graph:\n        if vertex not in visited:\n            dfs_fill(graph, vertex, visited, stack)\n    # Transpose graph\n    transpose = {v: [] for v in graph}\n    for v in graph:\n        for u in graph[v]:\n            transpose[u].append(v)\n    # Second DFS on transpose\n    visited = set()\n    components = []\n    while stack:\n        vertex = stack.pop()\n        if vertex not in visited:\n            component = []\n            dfs_scc(transpose, vertex, visited, component)\n            components.append(component)\n    return components\n\n# Example usage\ngraph = {\n    'A': ['B'],\n    'B': ['C'],\n    'C': ['A', 'D'],\n    'D': ['E'],\n    'E': ['D']\n}\nprint(strongly_connected_components(graph))  # [['A', 'B', 'C'], ['D', 'E']]"
+    },
+    "explanation": "***Step 1:*** Perform a DFS to fill a stack with vertices in finishing time order.\n***Step 2:*** Create a transposed graph by reversing edge directions.\n***Step 3:*** Perform a second DFS on the transposed graph, processing vertices from the stack.\n***Step 4:*** Each DFS in the second pass identifies a strongly connected component.\n***Step 5:*** Return the list of components, tested with a directed graph."
+  },
+  {
+    "title": "BFS for Shortest Path with Unit Weights",
+    "ques": "Write a Python program to find the shortest path length in a directed graph with unit weights using Breadth-First Search (BFS).",
+    "answer": {
+      "type": "code",
+      "lang": "python",
+      "content": "from collections import deque\n\ndef bfs_shortest_path_length(graph, start, end):\n    visited = set()\n    queue = deque([(start, 0)])\n    visited.add(start)\n    while queue:\n        vertex, dist = queue.popleft()\n        if vertex == end:\n            return dist\n        for neighbor in graph[vertex]:\n            if neighbor not in visited:\n                visited.add(neighbor)\n                queue.append((neighbor, dist + 1))\n    return -1  # No path exists\n\n# Example usage\ngraph = {\n    'A': ['B', 'C'],\n    'B': ['D'],\n    'C': ['D', 'E'],\n    'D': ['E'],\n    'E': []\n}\nprint(bfs_shortest_path_length(graph, 'A', 'E'))  # 2"
+    },
+    "explanation": "***Step 1:*** Use a queue to store tuples of (vertex, distance) starting with the start node at distance 0.\n***Step 2:*** Track visited nodes to avoid cycles.\n***Step 3:*** For each vertex, explore unvisited neighbors, incrementing the distance by 1 (unit weights).\n***Step 4:*** Return the distance when the end node is reached, or -1 if no path exists.\n***Step 5:*** Test with a directed graph to find the shortest path length."
+  },
+  {
+    "title": "Dijkstra’s with Edge Constraints",
+    "ques": "Write a Python program to implement Dijkstra’s algorithm to find the shortest path in a graph, ignoring edges with weights above a threshold.",
+    "answer": {
+      "type": "code",
+      "lang": "python",
+      "content": "import heapq\n\ndef dijkstra_constrained(graph, start, end, threshold):\n    distances = {node: float('infinity') for node in graph}\n    distances[start] = 0\n    pq = [(0, start)] \n    while pq:\n        curr_dist, curr = heapq.heappop(pq)\n        if curr == end:\n            break\n        if curr_dist > distances[curr]:\n            continue\n        for neighbor, weight in graph[curr].items():\n            if weight > threshold:\n                continue\n            distance = curr_dist + weight\n            if distance < distances[neighbor]:\n                distances[neighbor] = distance\n                heapq.heappush(pq, (distance, neighbor))\n    return distances[end] if distances[end] != float('infinity') else -1\n\n# Example usage\ngraph = {\n    'A': {'B': 2, 'C': 6},\n    'B': {'A': 2, 'C': 3, 'D': 5},\n    'C': {'A': 6, 'B': 3, 'D': 4},\n    'D': {'B': 5, 'C': 4}\n}\nprint(dijkstra_constrained(graph, 'A', 'D', 4))  # 5"
+    },
+    "explanation": "***Step 1:*** Initialize distances to infinity, except for the start node (0).\n***Step 2:*** Use a priority queue to process nodes by smallest distance.\n***Step 3:*** Skip edges with weights above the threshold during exploration.\n***Step 4:*** Update distances for valid neighbors if a shorter path is found.\n***Step 5:*** Return the shortest distance to the end node, or -1 if no path exists."
+  },
+  {
+    "title": "Kruskal’s with Edge Count Limit",
+    "ques": "Write a Python program to implement Kruskal’s algorithm to find a Minimum Spanning Tree with at most k edges.",
+    "answer": {
+      "type": "code",
+      "lang": "python",
+      "content": "def find(parent, i):\n    if parent[i] != i:\n        parent[i] = find(parent, parent[i])\n    return parent[i]\n\ndef union(parent, rank, x, y):\n    px, py = find(parent, x), find(parent, y)\n    if rank[px] < rank[py]:\n        parent[px] = py\n    elif rank[px] > rank[py]:\n        parent[py] = px\n    else:\n        parent[py] = px\n        rank[px] += 1\n\ndef kruskal_limited(edges, vertices, k):\n    edges.sort(key=lambda x: x[2])\n    parent = {v: v for v in vertices}\n    rank = {v: 0 for v in vertices}\n    mst = []\n    edge_count = 0\n    for u, v, weight in edges:\n        if edge_count >= k:\n            break\n        if find(parent, u) != find(parent, v):\n            union(parent, rank, u, v)\n            mst.append((u, v, weight))\n            edge_count += 1\n    return mst\n\n# Example usage\nedges = [('A', 'B', 1), ('A', 'C', 3), ('B', 'C', 3), ('B', 'D', 2)]\nvertices = ['A', 'B', 'C', 'D']\nprint(kruskal_limited(edges, vertices, 2))  # [('A', 'B', 1), ('B', 'D', 2)]"
+    },
+    "explanation": "***Step 1:*** Define ```find``` and ```union``` for disjoint-set operations.\n***Step 2:*** Sort the edge list by weight.\n***Step 3:*** Process edges in ascending order, adding to the MST if no cycle is formed and the edge count is below k.\n***Step 4:*** Use union-find to check for cycles.\n***Step 5:*** Return the MST with up to k edges."
+  },
+  {
+    "title": "Prim’s with Vertex Priority",
+    "ques": "Write a Python program to implement Prim’s algorithm, prioritizing vertices with lower labels when weights are equal.",
+    "answer": {
+      "type": "code",
+      "lang": "python",
+      "content": "import heapq\n\ndef prim_vertex_priority(graph, start):\n    visited = set([start])\n    edges = [(weight, start, to) for to, weight in graph[start].items()]\n    heapq.heapify(edges)\n    mst = []\n    while edges:\n        weight, frm, to = heapq.heappop(edges)\n        if to in visited:\n            continue\n        visited.add(to)\n        mst.append((frm, to, weight))\n        for next_node, weight in sorted(graph[to].items(), key=lambda x: (x[1], x[0])):\n            if next_node not in visited:\n                heapq.heappush(edges, (weight, to, next_node))\n    return mst\n\n# Example usage\ngraph = {\n    'A': {'B': 2, 'C': 2, 'D': 3},\n    'B': {'A': 2, 'C': 1, 'D': 3},\n    'C': {'A': 2, 'B': 1, 'D': 3},\n    'D': {'A': 3, 'B': 3, 'C': 3}\n}\nprint(prim_vertex_priority(graph, 'A'))  # [('A', 'B', 2), ('B', 'C', 1), ('A', 'D', 3)]"
+    },
+    "explanation": "***Step 1:*** Initialize a priority queue with edges from the start node.\n***Step 2:*** Track visited nodes and build the MST.\n***Step 3:*** Pop the smallest edge; skip if the destination is visited.\n***Step 4:*** When adding neighbors, sort by weight and then vertex label to prioritize lower labels.\n***Step 5:*** Return the MST edges, tested with a graph where equal weights require vertex priority."
+  },
+  {
+    "title": "DFS for Path Existence in Directed Graph",
+    "ques": "Write a Python program to check if there exists a path between two nodes in a directed graph using Depth-First Search (DFS).",
+    "answer": {
+      "type": "code",
+      "lang": "python",
+      "content": "def dfs_path(graph, start, end, visited=None):\n    if visited is None:\n        visited = set()\n    if start == end:\n        return True\n    visited.add(start)\n    for neighbor in graph[start]:\n        if neighbor not in visited:\n            if dfs_path(graph, neighbor, end, visited):\n                return True\n    return False\n\n# Example usage\ngraph = {\n    'A': ['B', 'C'],\n    'B': ['D'],\n    'C': ['E'],\n    'D': ['E'],\n    'E': ['F'],\n    'F': []\n}\nprint(dfs_path(graph, 'A', 'F'))  # True\nprint(dfs_path(graph, 'C', 'B'))  # False"
+    },
+    "explanation": "***Step 1:*** Define a recursive ```dfs_path``` function to explore paths from start to end node.\n***Step 2:*** Initialize a visited set to avoid cycles.\n***Step 3:*** Return ```True``` if the start node equals the end node.\n***Step 4:*** Explore unvisited neighbors recursively, returning ```True``` if a path to the end is found.\n***Step 5:*** Test with a directed graph for path existence between given nodes."
+  },
+  {
+    "title": "BFS for Connected Nodes at Distance K",
+    "ques": "Write a Python program to find all nodes at exactly distance K from a given node in an undirected graph using Breadth-First Search (BFS).",
+    "answer": {
+      "type": "code",
+      "lang": "python",
+      "content": "from collections import deque\n\ndef nodes_at_distance_k(graph, start, k):\n    visited = set([start])\n    queue = deque([(start, 0)])\n    result = []\n    while queue:\n        vertex, dist = queue.popleft()\n        if dist == k:\n            result.append(vertex)\n        elif dist > k:\n            break\n        for neighbor in graph[vertex]:\n            if neighbor not in visited:\n                visited.add(neighbor)\n                queue.append((neighbor, dist + 1))\n    return sorted(result)\n\n# Example usage\ngraph = {\n    'A': ['B', 'C'],\n    'B': ['A', 'D', 'E'],\n    'C': ['A', 'F'],\n    'D': ['B'],\n    'E': ['B', 'F'],\n    'F': ['C', 'E']\n}\nprint(nodes_at_distance_k(graph, 'A', 2))  # ['D', 'E', 'F']"
+    },
+    "explanation": "***Step 1:*** Use a queue to store tuples of (vertex, distance) starting with the start node at distance 0.\n***Step 2:*** Track visited nodes to avoid cycles.\n***Step 3:*** Collect nodes when their distance equals k; stop if distance exceeds k.\n***Step 4:*** Explore unvisited neighbors, incrementing distance by 1.\n***Step 5:*** Return sorted list of nodes at distance k, tested with an undirected graph."
+  },
+  {
+    "title": "Dijkstra’s for Minimum Cost with Edge Limits",
+    "ques": "Write a Python program to implement Dijkstra’s algorithm to find the shortest path cost in a graph, considering only paths with at most L edges.",
+    "answer": {
+      "type": "code",
+      "lang": "python",
+      "content": "import heapq\n\ndef dijkstra_limited_edges(graph, start, end, L):\n    distances = {node: [float('infinity'), L + 1] for node in graph}\n    distances[start] = [0, 0]\n    pq = [(0, 0, start)]\n    while pq:\n        curr_dist, edges_used, curr = heapq.heappop(pq)\n        if curr == end:\n            return curr_dist\n        if edges_used >= L or curr_dist > distances[curr][0]:\n            continue\n        for neighbor, weight in graph[curr].items():\n            new_dist = curr_dist + weight\n            if new_dist < distances[neighbor][0] and edges_used + 1 <= L:\n                distances[neighbor] = [new_dist, edges_used + 1]\n                heapq.heappush(pq, (new_dist, edges_used + 1, neighbor))\n    return -1\n\n# Example usage\ngraph = {\n    'A': {'B': 1, 'C': 4},\n    'B': {'C': 2, 'D': 5},\n    'C': {'D': 1},\n    'D': {}\n}\nprint(dijkstra_limited_edges(graph, 'A', 'D', 2))  # 5"
+    },
+    "explanation": "***Step 1:*** Initialize distances as [cost, edge_count] pairs, with start node at [0, 0].\n***Step 2:*** Use a priority queue to store (distance, edges_used, node) tuples.\n***Step 3:*** Skip paths with more than L edges or non-optimal distances.\n***Step 4:*** Update distances and edge counts for neighbors if a better path is found within L edges.\n***Step 5:*** Return the shortest path cost to the end node, or -1 if no valid path exists."
+  },
+  {
+    "title": "Kruskal’s for Maximum Weight MST",
+    "ques": "Write a Python program to implement Kruskal’s algorithm to find the Maximum Spanning Tree (instead of minimum) of a graph.",
+    "answer": {
+      "type": "code",
+      "lang": "python",
+      "content": "def find(parent, i):\n    if parent[i] != i:\n        parent[i] = find(parent, parent[i])\n    return parent[i]\n\ndef union(parent, rank, x, y):\n    px, py = find(parent, x), find(parent, y)\n    if rank[px] < rank[py]:\n        parent[px] = py\n    elif rank[px] > rank[py]:\n        parent[py] = px\n    else:\n        parent[py] = px\n        rank[px] += 1\n\ndef kruskal_maximum(edges, vertices):\n    edges.sort(key=lambda x: x[2], reverse=True)\n    parent = {v: v for v in vertices}\n    rank = {v: 0 for v in vertices}\n    mst = []\n    for u, v, weight in edges:\n        if find(parent, u) != find(parent, v):\n            union(parent, rank, u, v)\n            mst.append((u, v, weight))\n    return mst\n\n# Example usage\nedges = [('A', 'B', 5), ('A', 'C', 2), ('B', 'C', 3), ('B', 'D', 4)]\nvertices = ['A', 'B', 'C', 'D']\nprint(kruskal_maximum(edges, vertices))  # [('A', 'B', 5), ('B', 'D', 4), ('B', 'C', 3)]"
+    },
+    "explanation": "***Step 1:*** Define ```find``` and ```union``` for disjoint-set operations.\n***Step 2:*** Sort edges by weight in descending order to prioritize maximum weights.\n***Step 3:*** Add edges to the MST if they don’t form a cycle, using union-find.\n***Step 4:*** Collect MST edges as (u, v, weight) tuples.\n***Step 5:*** Test with an edge list to form a maximum spanning tree."
+  },
+  {
+    "title": "Prim’s with Weighted Vertex Selection",
+    "ques": "Write a Python program to implement Prim’s algorithm, selecting edges to minimize total vertex weights in the MST, assuming vertices have weights.",
+    "answer": {
+      "type": "code",
+      "lang": "python",
+      "content": "import heapq\n\ndef prim_vertex_weights(graph, vertex_weights, start):\n    visited = set([start])\n    total_weight = vertex_weights[start]\n    edges = [(weight, start, to) for to, weight in graph[start].items()]\n    heapq.heapify(edges)\n    mst = []\n    while edges:\n        weight, frm, to = heapq.heappop(edges)\n        if to in visited:\n            continue\n        visited.add(to)\n        total_weight += vertex_weights[to]\n        mst.append((frm, to, weight))\n        for next_node, weight in graph[to].items():\n            if next_node not in visited:\n                heapq.heappush(edges, (weight + vertex_weights[next_node], to, next_node))\n    return mst, total_weight\n\n# Example usage\ngraph = {\n    'A': {'B': 1, 'C': 2},\n    'B': {'A': 1, 'C': 3, 'D': 4},\n    'C': {'A': 2, 'B': 3, 'D': 2},\n    'D': {'B': 4, 'C': 2}\n}\nvertex_weights = {'A': 1, 'B': 2, 'C': 1, 'D': 3}\nmst, weight = prim_vertex_weights(graph, vertex_weights, 'A')\nprint(f'MST: {mst}, Total Vertex Weight: {weight}')  # MST: [('A', 'C', 2), ('C', 'D', 2), ('A', 'B', 1)], Total Vertex Weight: 7"
+    },
+    "explanation": "***Step 1:*** Initialize a priority queue with edges from the start node, including vertex weights.\n***Step 2:*** Track visited nodes and sum vertex weights in the MST.\n***Step 3:*** Pop the smallest edge (considering edge weight + destination vertex weight); skip if visited.\n***Step 4:*** Add the edge to the MST and update total vertex weight.\n***Step 5:*** Return the MST and total vertex weight, tested with a graph and vertex weights."
+  },
+  {
+    "title": "DFS for Longest Path in DAG",
+    "ques": "Write a Python program to find the longest path length in a directed acyclic graph (DAG) from a given source using Depth-First Search (DFS).",
+    "answer": {
+      "type": "code",
+      "lang": "python",
+      "content": "def dfs_longest_path(graph, vertex, visited, memo):\n    if vertex in memo:\n        return memo[vertex]\n    visited.add(vertex)\n    max_length = 0\n    for neighbor in graph[vertex]:\n        if neighbor not in visited:\n            max_length = max(max_length, 1 + dfs_longest_path(graph, neighbor, visited, memo))\n    visited.remove(vertex)\n    memo[vertex] = max_length\n    return max_length\n\ndef longest_path(graph, start):\n    visited = set()\n    memo = {}\n    return dfs_longest_path(graph, start, visited, memo)\n\n# Example usage\ngraph = {\n    'A': ['B', 'C'],\n    'B': ['D'],\n    'C': ['D', 'E'],\n    'D': ['E'],\n    'E': []\n}\nprint(longest_path(graph, 'A'))  # 3"
+    },
+    "explanation": "***Step 1:*** Define a recursive ```dfs_longest_path``` function to compute the longest path from a vertex.\n***Step 2:*** Use a memoization dictionary to cache results and a visited set to avoid cycles (though not needed for DAGs).\n***Step 3:*** For each neighbor, compute the longest path recursively, adding 1 for the edge.\n***Step 4:*** Store the maximum path length in memo and return it.\n***Step 5:*** Test with a DAG to find the longest path from the start node."
+  },
+  {
+    "title": "BFS for Minimum Edges Path",
+    "ques": "Write a Python program to find the minimum number of edges to reach a target node from a source in an undirected graph using Breadth-First Search (BFS).",
+    "answer": {
+      "type": "code",
+      "lang": "python",
+      "content": "from collections import deque\n\ndef min_edges_path(graph, start, end):\n    if start == end:\n        return 0\n    visited = set([start])\n    queue = deque([(start, 0)])\n    while queue:\n        vertex, edges = queue.popleft()\n        for neighbor in graph[vertex]:\n            if neighbor not in visited:\n                if neighbor == end:\n                    return edges + 1\n                visited.add(neighbor)\n                queue.append((neighbor, edges + 1))\n    return -1  # No path exists\n\n# Example usage\ngraph = {\n    'A': ['B', 'C'],\n    'B': ['A', 'D', 'E'],\n    'C': ['A', 'F'],\n    'D': ['B'],\n    'E': ['B', 'F'],\n    'F': ['C', 'E']\n}\nprint(min_edges_path(graph, 'A', 'F'))  # 2"
+    },
+    "explanation": "***Step 1:*** Use a queue to store tuples of (vertex, edge_count) starting with the start node at 0 edges.\n***Step 2:*** Track visited nodes to avoid cycles.\n***Step 3:*** For each vertex, explore unvisited neighbors, incrementing edge count.\n***Step 4:*** Return the edge count when the end node is reached, or -1 if no path exists.\n***Step 5:*** Test with an undirected graph to find the minimum number of edges."
+  },
+  {
+    "title": "Dijkstra’s for Shortest Path with Negative Weights",
+    "ques": "Write a Python program to implement Dijkstra’s algorithm modified to handle negative edge weights (assuming no negative cycles) for finding the shortest path.",
+    "answer": {
+      "type": "code",
+      "lang": "python",
+      "content": "import heapq\n\ndef dijkstra_negative_weights(graph, start, end):\n    distances = {node: float('infinity') for node in graph}\n    distances[start] = 0\n    pq = [(0, start)]\n    visited = set()\n    while pq:\n        curr_dist, curr = heapq.heappop(pq)\n        if curr in visited:\n            continue\n        visited.add(curr)\n        if curr == end:\n            return curr_dist\n        for neighbor, weight in graph[curr].items():\n            distance = curr_dist + weight\n            if distance < distances[neighbor]:\n                distances[neighbor] = distance\n                heapq.heappush(pq, (distance, neighbor))\n    return distances[end] if distances[end] != float('infinity') else -1\n\n# Example usage\ngraph = {\n    'A': {'B': 2, 'C': -1},\n    'B': {'C': 3, 'D': 2},\n    'C': {'B': 1, 'D': 4},\n    'D': {}\n}\nprint(dijkstra_negative_weights(graph, 'A', 'D'))  # 1"
+    },
+    "explanation": "***Step 1:*** Initialize distances to infinity, except for the start node (0).\n***Step 2:*** Use a priority queue to process nodes by smallest distance and track visited nodes.\n***Step 3:*** Skip visited nodes to handle negative weights correctly.\n***Step 4:*** Update distances for neighbors if a shorter path is found, even with negative weights.\n***Step 5:*** Return the shortest distance to the end node, or -1 if no path exists."
+  },
+  {
+    "title": "Kruskal’s with Edge Type Prioritization",
+    "ques": "Write a Python program to implement Kruskal’s algorithm, prioritizing edges of a specific type (e.g., 'primary') when weights are equal.",
+    "answer": {
+      "type": "code",
+      "lang": "python",
+      "content": "def find(parent, i):\n    if parent[i] != i:\n        parent[i] = find(parent, parent[i])\n    return parent[i]\n\ndef union(parent, rank, x, y):\n    px, py = find(parent, x), find(parent, y)\n    if rank[px] < rank[py]:\n        parent[px] = py\n    elif rank[px] > rank[py]:\n        parent[py] = px\n    else:\n        parent[py] = px\n        rank[px] += 1\n\ndef kruskal_edge_type(edges, vertices):\n    edges.sort(key=lambda x: (x[2], x[3] != 'primary'))\n    parent = {v: v for v in vertices}\n    rank = {v: 0 for v in vertices}\n    mst = []\n    for u, v, weight, edge_type in edges:\n        if find(parent, u) != find(parent, v):\n            union(parent, rank, u, v)\n            mst.append((u, v, weight, edge_type))\n    return mst\n\n# Example usage\nedges = [('A', 'B', 1, 'primary'), ('A', 'C', 1, 'secondary'), ('B', 'C', 2, 'primary'), ('B', 'D', 2, 'secondary')]\nvertices = ['A', 'B', 'C', 'D']\nprint(kruskal_edge_type(edges, vertices))  # [('A', 'B', 1, 'primary'), ('B', 'C', 2, 'primary'), ('B', 'D', 2, 'secondary')]"
+    },
+    "explanation": "***Step 1:*** Define ```find``` and ```union``` for disjoint-set operations.\n***Step 2:*** Sort edges by weight and then by edge type, prioritizing 'primary' when weights are equal.\n***Step 3:*** Add edges to the MST if they don’t form a cycle, using union-find.\n***Step 4:*** Collect MST edges as (u, v, weight, edge_type) tuples.\n***Step 5:*** Test with an edge list including edge types."
+  },
+  {
+    "title": "Prim’s for Sparse Graph Optimization",
+    "ques": "Write a Python program to implement Prim’s algorithm optimized for a sparse graph, returning the MST edges and their total weight.",
+    "answer": {
+      "type": "code",
+      "lang": "python",
+      "content": "import heapq\n\ndef prim_sparse(graph, start):\n    visited = set([start])\n    edges = [(weight, start, to) for to, weight in graph[start].items()]\n    heapq.heapify(edges)\n    mst = []\n    total_weight = 0\n    while edges and len(visited) < len(graph):\n        weight, frm, to = heapq.heappop(edges)\n        if to in visited:\n            continue\n        visited.add(to)\n        mst.append((frm, to, weight))\n        total_weight += weight\n        for next_node, weight in graph[to].items():\n            if next_node not in visited:\n                heapq.heappush(edges, (weight, to, next_node))\n    return mst, total_weight\n\n# Example usage\ngraph = {\n    'A': {'B': 2, 'C': 5},\n    'B': {'A': 2, 'D': 3},\n    'C': {'A': 5},\n    'D': {'B': 3}\n}\nmst, weight = prim_sparse(graph, 'A')\nprint(f'MST: {mst}, Total Weight: {weight}')  # MST: [('A', 'B', 2), ('B', 'D', 3), ('A', 'C', 5)], Total Weight: 10"
+    },
+    "explanation": "***Step 1:*** Initialize a priority queue with edges from the start node for sparse graph efficiency.\n***Step 2:*** Track visited nodes and maintain MST edges and total weight.\n***Step 3:*** Pop the smallest edge; skip if the destination is visited.\n***Step 4:*** Add the edge to the MST, update the total weight, and include unvisited neighbors.\n***Step 5:*** Return the MST and total weight, optimized for sparse graphs."
+  },
+  {
+    "title": "DFS for Finding Articulation Points",
+    "ques": "Write a Python program to find articulation points in an undirected graph using Depth-First Search (DFS).",
+    "answer": {
+      "type": "code",
+      "lang": "python",
+      "content": "def dfs_articulation(graph, vertex, parent, visited, disc, low, time, ap):\n    children = 0\n    visited.add(vertex)\n    disc[vertex] = low[vertex] = time[0]\n    time[0] += 1\n    for neighbor in graph[vertex]:\n        if neighbor not in visited:\n            children += 1\n            dfs_articulation(graph, neighbor, vertex, visited, disc, low, time, ap)\n            low[vertex] = min(low[vertex], low[neighbor])\n            if parent is None and children > 1:\n                ap.add(vertex)\n            if parent is not None and low[neighbor] >= disc[vertex]:\n                ap.add(vertex)\n        elif neighbor != parent:\n            low[vertex] = min(low[vertex], disc[neighbor])\n\ndef articulation_points(graph):\n    visited = set()\n    disc = {}\n    low = {}\n    time = [0]\n    ap = set()\n    for vertex in graph:\n        if vertex not in visited:\n            dfs_articulation(graph, vertex, None, visited, disc, low, time, ap)\n    return sorted(list(ap))\n\n# Example usage\ngraph = {\n    'A': ['B', 'C'],\n    'B': ['A', 'C', 'D'],\n    'C': ['A', 'B', 'D'],\n    'D': ['B', 'C']\n}\nprint(articulation_points(graph))  # ['B', 'C']"
+    },
+    "explanation": "***Step 1:*** Define a recursive ```dfs_articulation``` function to compute discovery and low-link values.\n***Step 2:*** Track visited nodes, discovery times, and low-link values; increment time for each node.\n***Step 3:*** Identify articulation points: root with multiple children or non-root with low[neighbor] >= disc[vertex].\n***Step 4:*** Update low-link values using back edges, excluding the parent.\n***Step 5:*** Test with an undirected graph to return sorted articulation points."
+  },
+  {
+    "title": "BFS for Maximum Distance Nodes",
+    "ques": "Write a Python program to find all nodes with the maximum distance from a source node in an undirected graph using Breadth-First Search (BFS).",
+    "answer": {
+      "type": "code",
+      "lang": "python",
+      "content": "from collections import deque\n\ndef max_distance_nodes(graph, start):\n    visited = set([start])\n    queue = deque([(start, 0)])\n    max_dist = 0\n    max_nodes = []\n    while queue:\n        vertex, dist = queue.popleft()\n        if dist > max_dist:\n            max_dist = dist\n            max_nodes = [vertex]\n        elif dist == max_dist:\n            max_nodes.append(vertex)\n        for neighbor in graph[vertex]:\n            if neighbor not in visited:\n                visited.add(neighbor)\n                queue.append((neighbor, dist + 1))\n    return sorted(max_nodes), max_dist\n\n# Example usage\ngraph = {\n    'A': ['B', 'C'],\n    'B': ['A', 'D'],\n    'C': ['A', 'E'],\n    'D': ['B', 'F'],\n    'E': ['C'],\n    'F': ['D']\n}\nnodes, dist = max_distance_nodes(graph, 'A')\nprint(f'Nodes: {nodes}, Distance: {dist}')  # Nodes: ['E', 'F'], Distance: 2"
+    },
+    "explanation": "***Step 1:*** Use a queue to store tuples of (vertex, distance) starting with the start node at distance 0.\n***Step 2:*** Track visited nodes and maintain a list of nodes at the maximum distance.\n***Step 3:*** Update max distance and node list when a greater distance is found; append to list for equal distances.\n***Step 4:*** Explore unvisited neighbors, incrementing distance by 1.\n***Step 5:*** Return sorted list of maximum distance nodes and their distance."
+  },
+  {
+    "title": "Dijkstra’s with Path Cost Threshold",
+    "ques": "Write a Python program to implement Dijkstra’s algorithm to find the shortest path where the total path cost does not exceed a given threshold.",
+    "answer": {
+      "type": "code",
+      "lang": "python",
+      "content": "import heapq\n\ndef dijkstra_threshold(graph, start, end, threshold):\n    distances = {node: float('infinity') for node in graph}\n    distances[start] = 0\n    pq = [(0, start)]\n    while pq:\n        curr_dist, curr = heapq.heappop(pq)\n        if curr_dist > threshold or curr_dist > distances[curr]:\n            continue\n        if curr == end:\n            return curr_dist\n        for neighbor, weight in graph[curr].items():\n            distance = curr_dist + weight\n            if distance < distances[neighbor] and distance <= threshold:\n                distances[neighbor] = distance\n                heapq.heappush(pq, (distance, neighbor))\n    return -1\n\n# Example usage\ngraph = {\n    'A': {'B': 2, 'C': 5},\n    'B': {'C': 2, 'D': 4},\n    'C': {'D': 1},\n    'D': {}\n}\nprint(dijkstra_threshold(graph, 'A', 'D', 5))  # 5"
+    },
+    "explanation": "***Step 1:*** Initialize distances to infinity, except for the start node (0).\n***Step 2:*** Use a priority queue to process nodes by smallest distance.\n***Step 3:*** Skip paths exceeding the threshold or non-optimal distances.\n***Step 4:*** Update distances for neighbors if the new path is within the threshold.\n***Step 5:*** Return the shortest path cost to the end node, or -1 if no valid path exists."
+  },
+  {
+    "title": "Kruskal’s with Minimum Edge Weight Constraint",
+    "ques": "Write a Python program to implement Kruskal’s algorithm to find the MST, considering only edges with weights above a minimum value.",
+    "answer": {
+      "type": "code",
+      "lang": "python",
+      "content": "def find(parent, i):\n    if parent[i] != i:\n        parent[i] = find(parent, parent[i])\n    return parent[i]\n\ndef union(parent, rank, x, y):\n    px, py = find(parent, x), find(parent, y)\n    if rank[px] < rank[py]:\n        parent[px] = py\n    elif rank[px] > rank[py]:\n        parent[py] = px\n    else:\n        parent[py] = px\n        rank[px] += 1\n\ndef kruskal_min_weight(edges, vertices, min_weight):\n    valid_edges = [e for e in edges if e[2] >= min_weight]\n    valid_edges.sort(key=lambda x: x[2])\n    parent = {v: v for v in vertices}\n    rank = {v: 0 for v in vertices}\n    mst = []\n    for u, v, weight in valid_edges:\n        if find(parent, u) != find(parent, v):\n            union(parent, rank, u, v)\n            mst.append((u, v, weight))\n    return mst\n\n# Example usage\nedges = [('A', 'B', 1), ('A', 'C', 3), ('B', 'C', 2), ('B', 'D', 4)]\nvertices = ['A', 'B', 'C', 'D']\nprint(kruskal_min_weight(edges, vertices, 2))  # [('B', 'C', 2), ('A', 'C', 3), ('B', 'D', 4)]"
+    },
+    "explanation": "***Step 1:*** Define ```find``` and ```union``` for disjoint-set operations.\n***Step 2:*** Filter edges with weights at least min_weight and sort by weight.\n***Step 3:*** Add edges to the MST if they don’t form a cycle, using union-find.\n***Step 4:*** Collect MST edges as (u, v, weight) tuples.\n***Step 5:*** Test with an edge list and minimum weight constraint."
+  },
+  {
+    "title": "Prim’s with Edge Cost Adjustment",
+    "ques": "Write a Python program to implement Prim’s algorithm where edge weights are adjusted by a constant factor before computing the MST.",
+    "answer": {
+      "type": "code",
+      "lang": "python",
+      "content": "import heapq\n\ndef prim_adjusted(graph, start, factor):\n    visited = set([start])\n    edges = [(weight * factor, start, to) for to, weight in graph[start].items()]\n    heapq.heapify(edges)\n    mst = []\n    total_weight = 0\n    while edges:\n        adj_weight, frm, to = heapq.heappop(edges)\n        if to in visited:\n            continue\n        visited.add(to)\n        mst.append((frm, to, adj_weight / factor))\n        total_weight += adj_weight / factor\n        for next_node, weight in graph[to].items():\n            if next_node not in visited:\n                heapq.heappush(edges, (weight * factor, to, next_node))\n    return mst, total_weight\n\n# Example usage\ngraph = {\n    'A': {'B': 2, 'C': 3},\n    'B': {'A': 2, 'C': 1, 'D': 4},\n    'C': {'A': 3, 'B': 1, 'D': 2},\n    'D': {'B': 4, 'C': 2}\n}\nmst, weight = prim_adjusted(graph, 'A', 2.0)\nprint(f'MST: {mst}, Total Weight: {weight}')  # MST: [('A', 'B', 2.0), ('B', 'C', 1.0), ('C', 'D', 2.0)], Total Weight: 5.0"
+    },
+    "explanation": "***Step 1:*** Initialize a priority queue with edges from the start node, scaling weights by the factor.\n***Step 2:*** Track visited nodes and maintain MST edges and total weight (unscaled).\n***Step 3:*** Pop the smallest adjusted edge; skip if the destination is visited.\n***Step 4:*** Add the edge to the MST with original weight and update total weight.\n***Step 5:*** Return the MST and total weight, tested with a graph and scaling factor."
+  },
+  {
+    "title": "DFS for Bridge Detection",
+    "ques": "Write a Python program to find all bridges in an undirected graph using Depth-First Search (DFS).",
+    "answer": {
+      "type": "code",
+      "lang": "python",
+      "content": "def dfs_bridge(graph, vertex, parent, visited, disc, low, time, bridges):\n    visited.add(vertex)\n    disc[vertex] = low[vertex] = time[0]\n    time[0] += 1\n    for neighbor in graph[vertex]:\n        if neighbor not in visited:\n            dfs_bridge(graph, neighbor, vertex, visited, disc, low, time, bridges)\n            low[vertex] = min(low[vertex], low[neighbor])\n            if low[neighbor] > disc[vertex]:\n                bridges.append((min(vertex, neighbor), max(vertex, neighbor)))\n        elif neighbor != parent:\n            low[vertex] = min(low[vertex], disc[neighbor])\n\ndef find_bridges(graph):\n    visited = set()\n    disc = {}\n    low = {}\n    time = [0]\n    bridges = []\n    for vertex in graph:\n        if vertex not in visited:\n            dfs_bridge(graph, vertex, None, visited, disc, low, time, bridges)\n    return sorted(bridges)\n\n# Example usage\ngraph = {\n    'A': ['B', 'C'],\n    'B': ['A', 'C', 'D'],\n    'C': ['A', 'B', 'E'],\n    'D': ['B'],\n    'E': ['C']\n}\nprint(find_bridges(graph))  # [('B', 'D'), ('C', 'E')]"
+    },
+    "explanation": "***Step 1:*** Define a recursive ```dfs_bridge``` function to compute discovery and low-link values.\n***Step 2:*** Track visited nodes, discovery times, and low-link values; increment time for each node.\n***Step 3:*** Identify bridges when low[neighbor] > disc[vertex], adding sorted (min, max) edge tuples.\n***Step 4:*** Update low-link values using back edges, excluding the parent.\n***Step 5:*** Test with an undirected graph to return sorted bridges."
+  },
+  {
+    "title": "BFS for Shortest Cycle Length",
+    "ques": "Write a Python program to find the length of the shortest cycle in an undirected graph using Breadth-First Search (BFS).",
+    "answer": {
+      "type": "code",
+      "lang": "python",
+      "content": "from collections import deque\n\ndef shortest_cycle(graph):\n    min_cycle = float('infinity')\n    for start in graph:\n        distances = {v: float('infinity') for v in graph}\n        distances[start] = 0\n        queue = deque([(start, None)])\n        while queue:\n            vertex, parent = queue.popleft()\n            for neighbor in graph[vertex]:\n                if neighbor != parent:\n                    if distances[neighbor] == float('infinity'):\n                        distances[neighbor] = distances[vertex] + 1\n                        queue.append((neighbor, vertex))\n                    else:\n                        cycle_length = distances[vertex] + distances[neighbor] + 1\n                        min_cycle = min(min_cycle, cycle_length)\n    return min_cycle if min_cycle != float('infinity') else -1\n\n# Example usage\ngraph = {\n    'A': ['B', 'C'],\n    'B': ['A', 'C', 'D'],\n    'C': ['A', 'B', 'D'],\n    'D': ['B', 'C']\n}\nprint(shortest_cycle(graph))  # 3"
+    },
+    "explanation": "***Step 1:*** For each vertex, run BFS to explore the graph, tracking distances and parents.\n***Step 2:*** Initialize distances to infinity, except for the start node (0).\n***Step 3:*** When a visited neighbor (not parent) is found, compute cycle length as distances[vertex] + distances[neighbor] + 1.\n***Step 4:*** Track the minimum cycle length across all BFS runs.\n***Step 5:*** Return the shortest cycle length, or -1 if no cycle exists."
+  },
+  {
+    "title": "Dijkstra’s with Edge Weight Scaling",
+    "ques": "Write a Python program to implement Dijkstra’s algorithm where edge weights are scaled by a factor based on the destination node’s degree.",
+    "answer": {
+      "type": "code",
+      "lang": "python",
+      "content": "import heapq\n\ndef dijkstra_scaled(graph, start, end):\n    node_degrees = {node: len(graph[node]) for node in graph}\n    distances = {node: float('infinity') for node in graph}\n    distances[start] = 0\n    pq = [(0, start)]\n    while pq:\n        curr_dist, curr = heapq.heappop(pq)\n        if curr == end:\n            return curr_dist\n        if curr_dist > distances[curr]:\n            continue\n        for neighbor, weight in graph[curr].items():\n            scaled_weight = weight * node_degrees[neighbor]\n            distance = curr_dist + scaled_weight\n            if distance < distances[neighbor]:\n                distances[neighbor] = distance\n                heapq.heappush(pq, (distance, neighbor))\n    return -1\n\n# Example usage\ngraph = {\n    'A': {'B': 1, 'C': 3},\n    'B': {'A': 1, 'C': 2, 'D': 4},\n    'C': {'A': 3, 'B': 2},\n    'D': {'B': 4}\n}\nprint(dijkstra_scaled(graph, 'A', 'D'))  # 7"
+    },
+    "explanation": "***Step 1:*** Compute each node’s degree (number of neighbors) for weight scaling.\n***Step 2:*** Initialize distances to infinity, except for the start node (0).\n***Step 3:*** Use a priority queue to process nodes by smallest distance.\n***Step 4:*** Scale edge weights by the destination node’s degree and update distances if a shorter path is found.\n***Step 5:*** Return the shortest path cost to the end node, or -1 if no path exists."
+  },
+  {
+    "title": "Kruskal’s with Edge Weight Transformation",
+    "ques": "Write a Python program to implement Kruskal’s algorithm where edge weights are transformed by taking their square before computing the MST.",
+    "answer": {
+      "type": "code",
+      "lang": "python",
+      "content": "def find(parent, i):\n    if parent[i] != i:\n        parent[i] = find(parent, parent[i])\n    return parent[i]\n\ndef union(parent, rank, x, y):\n    px, py = find(parent, x), find(parent, y)\n    if rank[px] < rank[py]:\n        parent[px] = py\n    elif rank[px] > rank[py]:\n        parent[py] = px\n    else:\n        parent[py] = px\n        rank[px] += 1\n\ndef kruskal_transformed(edges, vertices):\n    transformed_edges = [(u, v, w**2) for u, v, w in edges]\n    transformed_edges.sort(key=lambda x: x[2])\n    parent = {v: v for v in vertices}\n    rank = {v: 0 for v in vertices}\n    mst = []\n    for u, v, weight in transformed_edges:\n        if find(parent, u) != find(parent, v):\n            union(parent, rank, u, v)\n            mst.append((u, v, int(weight**0.5)))\n    return mst\n\n# Example usage\nedges = [('A', 'B', 2), ('A', 'C', 1), ('B', 'C', 2), ('B', 'D', 3)]\nvertices = ['A', 'B', 'C', 'D']\nprint(kruskal_transformed(edges, vertices))  # [('A', 'C', 1), ('A', 'B', 2), ('B', 'D', 3)]"
+    },
+    "explanation": "***Step 1:*** Define ```find``` and ```union``` for disjoint-set operations.\n***Step 2:*** Transform edge weights by squaring them and sort by transformed weight.\n***Step 3:*** Add edges to the MST if they don’t form a cycle, using union-find.\n***Step 4:*** Store original weights in the MST output by taking the square root.\n***Step 5:*** Test with an edge list to compute the MST with transformed weights."
+  },
+  {
+    "title": "Prim’s with Conditional Edge Inclusion",
+    "ques": "Write a Python program to implement Prim’s algorithm, including only edges where the destination node has a degree below a given threshold.",
+    "answer": {
+      "type": "code",
+      "lang": "python",
+      "content": "import heapq\n\ndef prim_degree_limit(graph, start, degree_threshold):\n    node_degrees = {node: len(graph[node]) for node in graph}\n    visited = set([start])\n    edges = [(weight, start, to) for to, weight in graph[start].items() if node_degrees[to] <= degree_threshold]\n    heapq.heapify(edges)\n    mst = []\n    total_weight = 0\n    while edges:\n        weight, frm, to = heapq.heappop(edges)\n        if to in visited:\n            continue\n        visited.add(to)\n        mst.append((frm, to, weight))\n        total_weight += weight\n        for next_node, weight in graph[to].items():\n            if next_node not in visited and node_degrees[next_node] <= degree_threshold:\n                heapq.heappush(edges, (weight, to, next_node))\n    return mst, total_weight\n\n# Example usage\ngraph = {\n    'A': {'B': 1, 'C': 3},\n    'B': {'A': 1, 'C': 2, 'D': 4},\n    'C': {'A': 3, 'B': 2, 'D': 2},\n    'D': {'B': 4, 'C': 2}\n}\nmst, weight = prim_degree_limit(graph, 'A', 2)\nprint(f'MST: {mst}, Total Weight: {weight}')  # MST: [('A', 'C', 3)], Total Weight: 3"
+    },
+    "explanation": "***Step 1:*** Compute node degrees and initialize a priority queue with edges from the start node where the destination’s degree is at most the threshold.\n***Step 2:*** Track visited nodes and maintain MST edges and total weight.\n***Step 3:*** Pop the smallest edge; skip if the destination is visited.\n***Step 4:*** Add valid edges to the MST and update total weight, including only neighbors with degree <= threshold.\n***Step 5:*** Return the MST and total weight, tested with a degree threshold."
+  },
+  {
+    "title": "DFS for Path with Minimum Nodes",
+    "ques": "Write a Python program to find the path with the minimum number of nodes between two nodes in a directed graph using Depth-First Search (DFS).",
+    "answer": {
+      "type": "code",
+      "lang": "python",
+      "content": "def dfs_min_nodes(graph, vertex, end, visited, path, min_path):\n    if vertex == end:\n        if len(path) < len(min_path[0]) or not min_path[0]:\n            min_path[0] = path[:]\n        return\n    visited.add(vertex)\n    for neighbor in graph[vertex]:\n        if neighbor not in visited:\n            path.append(neighbor)\n            dfs_min_nodes(graph, neighbor, end, visited, path, min_path)\n            path.pop()\n    visited.remove(vertex)\n\ndef min_nodes_path(graph, start, end):\n    visited = set()\n    min_path = [[]]\n    dfs_min_nodes(graph, start, end, visited, [start], min_path)\n    return min_path[0] if min_path[0] else []\n\n# Example usage\ngraph = {\n    'A': ['B', 'C'],\n    'B': ['D', 'E'],\n    'C': ['E'],\n    'D': ['E'],\n    'E': []\n}\nprint(min_nodes_path(graph, 'A', 'E'))  # ['A', 'C', 'E']"
+    },
+    "explanation": "***Step 1:*** Define a recursive ```dfs_min_nodes``` function to explore paths from start to end node.\n***Step 2:*** Track visited nodes and the current path; update the minimum path if a shorter one (by node count) is found.\n***Step 3:*** Backtrack by removing the current node from the path and visited set after exploration.\n***Step 4:*** Return the path with the minimum number of nodes, or an empty list if no path exists.\n***Step 5:*** Test with a directed graph to find the shortest node-count path."
+  },
+  {
+    "title": "BFS for Nodes within Distance K",
+    "ques": "Write a Python program to find all nodes within a distance K (edge count) from a source node in an undirected graph using Breadth-First Search (BFS).",
+    "answer": {
+      "type": "code",
+      "lang": "python",
+      "content": "from collections import deque\n\ndef nodes_within_k(graph, start, k):\n    visited = set([start])\n    queue = deque([(start, 0)])\n    result = [start]\n    while queue:\n        vertex, dist = queue.popleft()\n        if dist >= k:\n            continue\n        for neighbor in graph[vertex]:\n            if neighbor not in visited:\n                visited.add(neighbor)\n                queue.append((neighbor, dist + 1))\n                result.append(neighbor)\n    return sorted(result)\n\n# Example usage\ngraph = {\n    'A': ['B', 'C'],\n    'B': ['A', 'D', 'E'],\n    'C': ['A', 'F'],\n    'D': ['B'],\n    'E': ['B', 'F'],\n    'F': ['C', 'E']\n}\nprint(nodes_within_k(graph, 'A', 1))  # ['A', 'B', 'C']"
+    },
+    "explanation": "***Step 1:*** Use a queue to store tuples of (vertex, distance) starting with the start node at distance 0.\n***Step 2:*** Track visited nodes and collect nodes within distance k.\n***Step 3:*** Skip exploration if the current distance reaches k.\n***Step 4:*** Add unvisited neighbors to the queue and result list, incrementing distance.\n***Step 5:*** Return a sorted list of nodes within distance k, tested with an undirected graph."
+  },
+  {
+    "title": "Dijkstra’s with Time-Based Edge Availability",
+    "ques": "Write a Python program to implement Dijkstra’s algorithm where edges are only available after a specific time, finding the shortest path cost.",
+    "answer": {
+      "type": "code",
+      "lang": "python",
+      "content": "import heapq\n\ndef dijkstra_time_based(graph, start, end, current_time):\n    distances = {node: float('infinity') for node in graph}\n    distances[start] = current_time\n    pq = [(current_time, start)]\n    while pq:\n        curr_time, curr = heapq.heappop(pq)\n        if curr == end:\n            return curr_time\n        if curr_time > distances[curr]:\n            continue\n        for neighbor, (weight, avail_time) in graph[curr].items():\n            if curr_time < avail_time:\n                continue\n            distance = curr_time + weight\n            if distance < distances[neighbor]:\n                distances[neighbor] = distance\n                heapq.heappush(pq, (distance, neighbor))\n    return -1\n\n# Example usage\ngraph = {\n    'A': {'B': (2, 0), 'C': (5, 1)},\n    'B': {'C': (3, 2), 'D': (4, 0)},\n    'C': {'D': (1, 3)},\n    'D': {}\n}\nprint(dijkstra_time_based(graph, 'A', 'D', 0))  # 6"
+    },
+    "explanation": "***Step 1:*** Initialize distances to infinity, with the start node at the current time.\n***Step 2:*** Use a priority queue to process nodes by earliest arrival time.\n***Step 3:*** Skip edges not yet available (current time < availability time).\n***Step 4:*** Update distances for neighbors if a shorter path is found, considering edge weights.\n***Step 5:*** Return the shortest path cost to the end node, or -1 if no path exists."
+  },
+  {
+    "title": "Kruskal’s with Edge Cost Penalty",
+    "ques": "Write a Python program to implement Kruskal’s algorithm where edges with a specific attribute incur a penalty to their weight.",
+    "answer": {
+      "type": "code",
+      "lang": "python",
+      "content": "def find(parent, i):\n    if parent[i] != i:\n        parent[i] = find(parent, parent[i])\n    return parent[i]\n\ndef union(parent, rank, x, y):\n    px, py = find(parent, x), find(parent, y)\n    if rank[px] < rank[py]:\n        parent[px] = py\n    elif rank[px] > rank[py]:\n        parent[py] = px\n    else:\n        parent[py] = px\n        rank[px] += 1\n\ndef kruskal_penalty(edges, vertices, penalty, penalized_type):\n    adjusted_edges = [(u, v, w + penalty if t == penalized_type else w, t) for u, v, w, t in edges]\n    adjusted_edges.sort(key=lambda x: x[2])\n    parent = {v: v for v in vertices}\n    rank = {v: 0 for v in vertices}\n    mst = []\n    for u, v, weight, edge_type in adjusted_edges:\n        if find(parent, u) != find(parent, v):\n            union(parent, rank, u, v)\n            mst.append((u, v, weight - penalty if edge_type == penalized_type else weight, edge_type))\n    return mst\n\n# Example usage\nedges = [('A', 'B', 1, 'normal'), ('A', 'C', 2, 'penalized'), ('B', 'C', 1, 'normal'), ('B', 'D', 3, 'normal')]\nvertices = ['A', 'B', 'C', 'D']\nprint(kruskal_penalty(edges, vertices, 2, 'penalized'))  # [('A', 'B', 1, 'normal'), ('B', 'C', 1, 'normal'), ('B', 'D', 3, 'normal')]"
+    },
+    "explanation": "***Step 1:*** Define ```find``` and ```union``` for disjoint-set operations.\n***Step 2:*** Adjust edge weights by adding a penalty for edges of the specified type and sort by adjusted weight.\n***Step 3:*** Add edges to the MST if they don’t form a cycle, using union-find.\n***Step 4:*** Store original weights in the MST by removing the penalty for penalized edges.\n***Step 5:*** Test with an edge list including edge types and a penalty value."
+  },
+  {
+    "title": "Prim’s with Vertex Priority Selection",
+    "ques": "Write a Python program to implement Prim’s algorithm where vertices are prioritized based on an external priority score when selecting edges.",
+    "answer": {
+      "type": "code",
+      "lang": "python",
+      "content": "import heapq\n\ndef prim_vertex_priority(graph, start, priorities):\n    visited = set([start])\n    edges = [(weight + priorities[to], start, to) for to, weight in graph[start].items()]\n    heapq.heapify(edges)\n    mst = []\n    total_weight = 0\n    while edges:\n        priority_weight, frm, to = heapq.heappop(edges)\n        if to in visited:\n            continue\n        visited.add(to)\n        original_weight = priority_weight - priorities[to]\n        mst.append((frm, to, original_weight))\n        total_weight += original_weight\n        for next_node, weight in graph[to].items():\n            if next_node not in visited:\n                heapq.heappush(edges, (weight + priorities[next_node], to, next_node))\n    return mst, total_weight\n\n# Example usage\ngraph = {\n    'A': {'B': 2, 'C': 3},\n    'B': {'A': 2, 'C': 1, 'D': 4},\n    'C': {'A': 3, 'B': 1, 'D': 2},\n    'D': {'B': 4, 'C': 2}\n}\npriorities = {'A': 1, 'B': 2, 'C': 0, 'D': 3}\nmst, weight = prim_vertex_priority(graph, 'A', priorities)\nprint(f'MST: {mst}, Total Weight: {weight}')  # MST: [('A', 'C', 3), ('C', 'B', 1), ('C', 'D', 2)], Total Weight: 6"
+    },
+    "explanation": "***Step 1:*** Initialize a priority queue with edges from the start node, adjusting weights by destination vertex priorities.\n***Step 2:*** Track visited nodes and maintain MST edges and total weight.\n***Step 3:*** Pop the smallest priority-adjusted edge; skip if the destination is visited.\n***Step 4:*** Add the edge with its original weight to the MST and update total weight.\n***Step 5:*** Return the MST and total weight, tested with a graph and vertex priorities."
+  }
+]

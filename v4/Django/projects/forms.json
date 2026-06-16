@@ -1,0 +1,42 @@
+[
+    {
+        "title": "Creating a Form 📝",
+        "ques": "Create a Django **Form** class named `ContactForm` with these fields:\n1.  **`name`** (CharField, max length 50)\n2.  **`email`** (EmailField)\n3.  **`message`** (CharField, widget=Textarea)",
+        "answer": {
+            "type": "code",
+            "lang": "python",
+            "content": "from django import forms\n\nclass ContactForm(forms.Form):\n    name = forms.CharField(max_length=50)\n    email = forms.EmailField()\n    message = forms.CharField(widget=forms.Textarea)"
+        },
+        "explanation": "Forms are defined similarly to models, but they inherit from `forms.Form`. Widgets like `forms.Textarea` control how the field is rendered in HTML."
+    },
+    {
+        "title": "Validating Data ✅",
+        "ques": "In a view, how do you check if the data submitted to a form is **valid**?",
+        "answer": {
+            "type": "code",
+            "lang": "python",
+            "content": "form = ContactForm(request.POST)\nif form.is_valid():\n    # Process the data\n    pass"
+        },
+        "explanation": "The **`form.is_valid()`** method runs validation rules for all fields. It returns `True` if all data is valid and places cleaned data in `form.cleaned_data`."
+    },
+    {
+        "title": "ModelForms 🚀",
+        "ques": "create a **ModelForm** for a `Post` model that automatically includes the `title` and `content` fields.",
+        "answer": {
+            "type": "code",
+            "lang": "python",
+            "content": "from django.forms import ModelForm\nfrom .models import Post\n\nclass PostForm(ModelForm):\n    class Meta:\n        model = Post\n        fields = ['title', 'content']"
+        },
+        "explanation": "**`ModelForm`** saves time by automatically generating form fields from a model. You define the model and fields in the inner `Meta` class."
+    },
+    {
+        "title": "CSRF Protection 🛡️",
+        "ques": "What template tag must be included inside every POST form to protect against **Cross Site Request Forgery**?",
+        "answer": {
+            "type": "code",
+            "lang": "django",
+            "content": "<form method=\"post\">\n    {% csrf_token %}\n    {{ form.as_p }}\n    <button type=\"submit\">Submit</button>\n</form>"
+        },
+        "explanation": "The **`{% csrf_token %}`** tag generates a hidden input with a random token that Django checks to ensure the request comes from your site."
+    }
+]
