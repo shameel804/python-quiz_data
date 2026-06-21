@@ -1,0 +1,6228 @@
+[
+    {
+        "q": "What does HTML stand for?",
+        "type": "mcq",
+        "o": [
+            "HyperText Markup Language",
+            "HyperText Machine Language",
+            "HighText Markup Language",
+            "HyperTool Markup Language"
+        ]
+    },
+    {
+        "q": "Which library provides BeautifulSoup in Python?",
+        "type": "mcq",
+        "o": [
+            "bs4",
+            "soup",
+            "parse",
+            "xml"
+        ]
+    },
+    {
+        "q": "What does the `find` method return when no match is found?",
+        "type": "mcq",
+        "o": [
+            "None",
+            "Empty list",
+            "Error",
+            "Empty string"
+        ]
+    },
+    {
+        "q": "The HTML parsing library lxml is based on which C libraries?",
+        "type": "short_answer",
+        "answers": [
+            "libxml2",
+            "libxslt"
+        ],
+        "isCaseSensitive": false
+    },
+    {
+        "q": "BeautifulSoup is a built-in Python module.",
+        "type": "true_false",
+        "correct": "False"
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "from bs4 import BeautifulSoup\nsoup = BeautifulSoup('<p>Hello</p>', 'html.parser')\nprint(soup.find('p').text)",
+        "o": [
+            "Hello",
+            "<p>Hello</p>",
+            "p",
+            "None"
+        ]
+    },
+    {
+        "q": "Which method finds all matching elements in BeautifulSoup?",
+        "type": "mcq",
+        "o": [
+            "find_all",
+            "find",
+            "select_one",
+            "get_all"
+        ]
+    },
+    {
+        "q": "In XPath, what does `/` represent?",
+        "type": "mcq",
+        "o": [
+            "Selects from the root node",
+            "Selects current node",
+            "Selects parent node",
+            "Selects all nodes"
+        ]
+    },
+    {
+        "q": "The ______ method in BeautifulSoup is used to search for elements by CSS class.",
+        "type": "fill_blank",
+        "answers": [
+            "find_all"
+        ],
+        "other_options": [
+            "select",
+            "find",
+            "search"
+        ]
+    },
+    {
+        "q": "In what year was the first version of BeautifulSoup released?",
+        "type": "slider",
+        "min": 2000,
+        "max": 2010,
+        "correct": 2004
+    },
+    {
+        "q": "Match the XPath expression with its meaning:",
+        "type": "match",
+        "left": [
+            "//div",
+            "./p",
+            "/html",
+            ".."
+        ],
+        "right": [
+            "Selects all div elements",
+            "Selects p relative to current node",
+            "Selects the root html element",
+            "Selects the parent of the current node"
+        ]
+    },
+    {
+        "q": "Which of these is NOT a valid parser engine supported by BeautifulSoup?",
+        "type": "odd_one_out",
+        "options": [
+            "html.parser",
+            "lxml",
+            "html5lib",
+            "bs-core"
+        ],
+        "correct": "bs-core"
+    },
+    {
+        "q": "What does the `soup.select()` method use to find elements?",
+        "type": "mcq",
+        "o": [
+            "CSS selectors",
+            "XPath expressions",
+            "Regular expressions",
+            "HTML tags only"
+        ]
+    },
+    {
+        "q": "In XPath, `@` is used to select attributes.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Which parser is recommended for faster HTML parsing in BeautifulSoup?",
+        "type": "mcq",
+        "o": [
+            "lxml",
+            "html.parser",
+            "html5lib",
+            "xml.etree"
+        ]
+    },
+    {
+        "q": "Match the BeautifulSoup parser with its primary characteristic.",
+        "type": "memory",
+        "pairs": {
+            "html.parser": "Built-in pure Python parser",
+            "lxml": "Fastest C-based external parser",
+            "html5lib": "Parses with browser-like leniency"
+        }
+    },
+    {
+        "q": "Write the XPath to select all elements with the class 'title'.",
+        "type": "short_answer",
+        "answers": [
+            "//*[@class='title']",
+            "//*[@class=\"title\"]"
+        ],
+        "isCaseSensitive": true
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "from bs4 import BeautifulSoup\nsoup = BeautifulSoup('<a href=\"page.html\">Link</a>', 'html.parser')\nprint(soup.find('a')['href'])",
+        "o": [
+            "page.html",
+            "Link",
+            "a",
+            "href"
+        ]
+    },
+    {
+        "q": "Which XPath axis selects all ancestors of the current node?",
+        "type": "mcq",
+        "o": [
+            "ancestor",
+            "parent",
+            "descendant",
+            "preceding"
+        ]
+    },
+    {
+        "q": "Categorize these BeautifulSoup concepts as either Methods or Properties.",
+        "c": "soup.find_all('div')\ntag.name",
+        "type": "swipe_cards",
+        "left_label": "Method",
+        "right_label": "Property",
+        "cards": {
+            "find_all()": "left",
+            "name": "right",
+            "find()": "left",
+            "text": "right"
+        }
+    },
+    {
+        "q": "The `find_all` method in BeautifulSoup returns a ______.",
+        "type": "fill_blank",
+        "answers": [
+            "ResultSet",
+            "list"
+        ],
+        "other_options": [
+            "string",
+            "dictionary",
+            "tuple"
+        ]
+    },
+    {
+        "q": "CSS selectors can only select elements by tag name.",
+        "type": "true_false",
+        "correct": "False"
+    },
+    {
+        "q": "Which library provides the `etree` module for XML and HTML parsing?",
+        "type": "mcq",
+        "o": [
+            "lxml",
+            "BeautifulSoup",
+            "requests",
+            "scrapy"
+        ]
+    },
+    {
+        "q": "In XPath, what is a predicate enclosed in?",
+        "type": "mcq",
+        "o": [
+            "Square brackets []",
+            "Curly braces {}",
+            "Parentheses ()",
+            "Angle brackets <>"
+        ]
+    },
+    {
+        "q": "Match the BeautifulSoup method with its return type:",
+        "type": "match",
+        "left": [
+            "find",
+            "find_all",
+            "select",
+            "get_text"
+        ],
+        "right": [
+            "Single element or None",
+            "ResultSet (list-like)",
+            "List of elements",
+            "String"
+        ]
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "from bs4 import BeautifulSoup\nhtml = '<div><p>1</p><p>2</p></div>'\nsoup = BeautifulSoup(html, 'html.parser')\nprint(len(soup.find_all('p')))",
+        "o": [
+            "2",
+            "1",
+            "0",
+            "Error"
+        ]
+    },
+    {
+        "q": "What is the core engine that reads raw HTML and converts it into a structured tree?",
+        "type": "word_scramble",
+        "answer": "PARSER",
+        "decoys": "XQ"
+    },
+    {
+        "q": "Which XPath function is used to check if a node exists?",
+        "type": "mcq",
+        "o": [
+            "boolean()",
+            "exists()",
+            "check()",
+            "node()"
+        ]
+    },
+    {
+        "q": "In BeautifulSoup, the `string` attribute returns the text inside a tag as a single string.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Complete the sentence regarding BeautifulSoup's core structure:",
+        "type": "inline_dropdown",
+        "text": "Beautiful Soup parses HTML and creates a [0] tree, where the top level is a [1] object.",
+        "dropdowns": [
+            {
+                "correct": "parse",
+                "options": [
+                    "DOM",
+                    "parse",
+                    "binary"
+                ]
+            },
+            {
+                "correct": "BeautifulSoup",
+                "options": [
+                    "Tag",
+                    "ResultSet",
+                    "BeautifulSoup"
+                ]
+            }
+        ]
+    },
+    {
+        "q": "Name the CSS selector syntax for selecting an element by its id.",
+        "type": "short_answer",
+        "answers": [
+            "#id",
+            "#elementid"
+        ],
+        "isCaseSensitive": true
+    },
+    {
+        "q": "If you only want to extract a maximum of 3 elements, what integer should you pass to the limit argument?",
+        "c": "soup.find_all('p', limit=?)",
+        "type": "slider",
+        "min": 1,
+        "max": 10,
+        "correct": 3
+    },
+    {
+        "q": "Which BeautifulSoup method allows searching by attribute values?",
+        "type": "mcq",
+        "o": [
+            "find_all(attrs={'key':'value'})",
+            "find_all('tag', 'value')",
+            "find_all.attr('key','value')",
+            "search_by_attr('key','value')"
+        ]
+    },
+    {
+        "q": "In lxml etree, the ______ method is used to parse an HTML string.",
+        "type": "fill_blank",
+        "answers": [
+            "fromstring",
+            "HTML"
+        ],
+        "other_options": [
+            "parse",
+            "read",
+            "load"
+        ]
+    },
+    {
+        "q": "What does the XPath `//` operator do?",
+        "type": "mcq",
+        "o": [
+            "Selects nodes anywhere in the document",
+            "Selects from the root",
+            "Selects the current node",
+            "Selects comments"
+        ]
+    },
+    {
+        "q": "Which CSS selector syntax selects direct child elements?",
+        "type": "mcq",
+        "o": [
+            "parent > child",
+            "parent child",
+            "parent + child",
+            "parent ~ child"
+        ]
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "from lxml import etree\nroot = etree.HTML('<p class=\"intro\">Text</p>')\nprint(root.xpath('//p/@class')[0])",
+        "o": [
+            "intro",
+            "Text",
+            "p",
+            "class"
+        ]
+    },
+    {
+        "q": "XPath axes are used to navigate through the XML tree.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Match the CSS selector pattern with its description:",
+        "type": "match",
+        "left": [
+            ".classname",
+            "#idname",
+            "div a",
+            "div, p"
+        ],
+        "right": [
+            "Selects elements by class",
+            "Selects element by id",
+            "Selects all a inside div",
+            "Selects all div and all p elements"
+        ]
+    },
+    {
+        "q": "Which of these is NOT a valid BeautifulSoup tree navigation attribute?",
+        "type": "odd_one_out",
+        "options": [
+            ".next_sibling",
+            ".previous_sibling",
+            ".parent",
+            ".next_parent"
+        ],
+        "correct": ".next_parent"
+    },
+    {
+        "q": "Which parser is most lenient with malformed HTML?",
+        "type": "mcq",
+        "o": [
+            "html5lib",
+            "lxml",
+            "html.parser",
+            "xml"
+        ]
+    },
+    {
+        "q": "In BeautifulSoup, how do you access an element's parent?",
+        "type": "mcq",
+        "o": [
+            ".parent",
+            ".ancestor",
+            ".up",
+            ".prev"
+        ]
+    },
+    {
+        "q": "The `lxml` library must be installed separately from the standard Python library.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "What is the XPath predicate to select the first `p` element?",
+        "type": "short_answer",
+        "answers": [
+            "[1]",
+            "p[1]"
+        ],
+        "isCaseSensitive": true
+    },
+    {
+        "q": "Which CSS pseudo-class selects elements based on their position?",
+        "type": "mcq",
+        "o": [
+            "nth-child()",
+            "first-line",
+            "hover",
+            "focus"
+        ]
+    },
+    {
+        "q": "In BeautifulSoup, `find_all()` can take a ______ to filter by text content.",
+        "type": "fill_blank",
+        "answers": [
+            "string",
+            "text"
+        ],
+        "other_options": [
+            "content",
+            "word",
+            "filter"
+        ]
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "from bs4 import BeautifulSoup\nsoup = BeautifulSoup('<div id=\"main\">Hi</div>', 'html.parser')\nprint(soup.select_one('#main').text)",
+        "o": [
+            "Hi",
+            "main",
+            "div",
+            "None"
+        ]
+    },
+    {
+        "q": "Which XPath axis selects the following siblings of the current node?",
+        "type": "mcq",
+        "o": [
+            "following-sibling",
+            "preceding-sibling",
+            "child",
+            "descendant"
+        ]
+    },
+    {
+        "q": "The `html.parser` in BeautifulSoup is a third-party library.",
+        "type": "true_false",
+        "correct": "False"
+    },
+    {
+        "q": "Match the XPath term with its definition:",
+        "type": "match",
+        "left": [
+            "Node",
+            "Attribute",
+            "Text Node",
+            "Element"
+        ],
+        "right": [
+            "Any part of the XML tree",
+            "Property of an element",
+            "The text content of an element",
+            "A tag in the document"
+        ]
+    },
+    {
+        "q": "Which BeautifulSoup object represents the entire parsed document?",
+        "type": "mcq",
+        "o": [
+            "BeautifulSoup object",
+            "Tag object",
+            "NavigableString",
+            "Comment"
+        ]
+    },
+    {
+        "q": "In CSS selectors, what does `a.class` select?",
+        "type": "mcq",
+        "o": [
+            "Anchor tags with a specific class",
+            "Elements with both a and class",
+            "The class named a",
+            "All anchor tags"
+        ]
+    },
+    {
+        "q": "Match the BeautifulSoup navigation attribute with its definition.",
+        "type": "memory",
+        "pairs": {
+            ".parent": "Direct parent tag",
+            ".parents": "Generator of all ancestor tags",
+            ".contents": "List of direct children tags"
+        }
+    },
+    {
+        "q": "Write the lxml command to parse a string into an element tree.",
+        "type": "short_answer",
+        "answers": [
+            "etree.fromstring()",
+            "etree.HTML()"
+        ],
+        "isCaseSensitive": true
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "from bs4 import BeautifulSoup\nsoup = BeautifulSoup('<ul><li>A</li><li>B</li></ul>', 'html.parser')\nprint(soup.li.next_sibling.name)",
+        "o": [
+            "li",
+            "A",
+            "B",
+            "ul"
+        ]
+    },
+    {
+        "q": "In XPath, the expression `//div[@id='content']` is an example of a ______.",
+        "type": "fill_blank",
+        "answers": [
+            "predicate"
+        ],
+        "other_options": [
+            "axis",
+            "function",
+            "operator"
+        ]
+    },
+    {
+        "q": "Swipe left for attributes based on Tree Traversal (hierarchy) and right for Parse Sequence (order in the source code).",
+        "type": "swipe_cards",
+        "left_label": "Tree Traversal",
+        "right_label": "Parse Sequence",
+        "cards": {
+            ".next_sibling": "left",
+            ".next_element": "right",
+            ".previous_sibling": "left",
+            ".previous_element": "right"
+        }
+    },
+    {
+        "q": "The CSS universal selector is represented by which character?",
+        "type": "mcq",
+        "o": [
+            "*",
+            "#",
+            ".",
+            "$"
+        ]
+    },
+    {
+        "q": "What is the result of `soup.find_all(limit=2)`?",
+        "type": "mcq",
+        "o": [
+            "A ResultSet with max 2 elements",
+            "The second element only",
+            "An error",
+            "All elements"
+        ]
+    },
+    {
+        "q": "In lxml, XPath expressions are evaluated using the `xpath()` method.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Match the BeautifulSoup filter with its usage:",
+        "type": "match",
+        "left": [
+            "string",
+            "attrs",
+            "name",
+            "recursive"
+        ],
+        "right": [
+            "Filter by text",
+            "Filter by attributes",
+            "Filter by tag name",
+            "Search nested children"
+        ]
+    },
+    {
+        "q": "Which XPath function returns the number of nodes in a node-set?",
+        "type": "mcq",
+        "o": [
+            "count()",
+            "number()",
+            "sum()",
+            "length()"
+        ]
+    },
+    {
+        "q": "What does the CSS selector `div + p` target?",
+        "type": "mcq",
+        "o": [
+            "p immediately after div",
+            "All p inside div",
+            "All div and p",
+            "p children of div"
+        ]
+    },
+    {
+        "q": "BeautifulSoup's `find_all` returns a list-like object called ______.",
+        "type": "fill_blank",
+        "answers": [
+            "ResultSet"
+        ],
+        "other_options": [
+            "TagList",
+            "SoupSet",
+            "ElementList"
+        ]
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "from bs4 import BeautifulSoup\nsoup = BeautifulSoup('<span class=\"x\">Y</span>', 'html.parser')\nprint(soup.find('span').get('class'))",
+        "o": [
+            "['x']",
+            "x",
+            "Y",
+            "span"
+        ]
+    },
+    {
+        "q": "What term describes a tag that exists at the exact same hierarchy level as another tag under the same parent?",
+        "type": "word_scramble",
+        "answer": "SIBLING",
+        "decoys": "ZJ"
+    },
+    {
+        "q": "In XPath, which symbol selects the parent node?",
+        "type": "mcq",
+        "o": [
+            "..",
+            ".",
+            "/",
+            "//"
+        ]
+    },
+    {
+        "q": "Complete the sentence regarding text extraction:",
+        "type": "inline_dropdown",
+        "text": "To get text, use [0] which returns a string, or use [1] to safely strip trailing whitespace from the extraction.",
+        "dropdowns": [
+            {
+                "correct": ".text",
+                "options": [
+                    ".text",
+                    ".html",
+                    ".name"
+                ]
+            },
+            {
+                "correct": "get_text(strip=True)",
+                "options": [
+                    "get_text(strip=True)",
+                    "strip_all()",
+                    "clean()"
+                ]
+            }
+        ]
+    },
+    {
+        "q": "The `select_one()` method returns a list of all matching elements.",
+        "type": "true_false",
+        "correct": "False"
+    },
+    {
+        "q": "Name the module in `lxml` used for HTML parsing.",
+        "type": "short_answer",
+        "answers": [
+            "etree",
+            "html"
+        ],
+        "isCaseSensitive": true
+    },
+    {
+        "q": "What list index would you use to isolate the 2nd paragraph tag returned by find_all?",
+        "c": "paragraphs = soup.find_all('p')\nsecond_p = paragraphs[?]",
+        "type": "slider",
+        "min": 0,
+        "max": 5,
+        "correct": 1
+    },
+    {
+        "q": "Which XPath predicate selects the last element of a node-set?",
+        "type": "mcq",
+        "o": [
+            "[last()]",
+            "[end()]",
+            "[final()]",
+            "[count()]"
+        ]
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "from bs4 import BeautifulSoup\nsoup = BeautifulSoup('<p>Hello <b>World</b></p>', 'html.parser')\nprint(soup.p.b.string)",
+        "o": [
+            "World",
+            "Hello World",
+            "Hello",
+            "b"
+        ]
+    },
+    {
+        "q": "Match the XPath axis with its direction:",
+        "type": "match",
+        "left": [
+            "ancestor",
+            "descendant",
+            "following",
+            "preceding"
+        ],
+        "right": [
+            "Upwards in the tree",
+            "Downwards in the tree",
+            "Forward in document order",
+            "Backward in document order"
+        ]
+    },
+    {
+        "q": "Which BeautifulSoup navigable object represents a comment?",
+        "type": "mcq",
+        "o": [
+            "Comment",
+            "Tag",
+            "NavigableString",
+            "Declaration"
+        ]
+    },
+    {
+        "q": "In CSS selectors, `E[attr]` selects elements E that have the ______ attribute.",
+        "type": "fill_blank",
+        "answers": [
+            "attr"
+        ],
+        "other_options": [
+            "class",
+            "id",
+            "style"
+        ]
+    },
+    {
+        "q": "XPath is only used for XML documents and not HTML.",
+        "type": "true_false",
+        "correct": "False"
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "from lxml import etree\nroot = etree.HTML('<a href=\"x\">Link</a>')\nprint(root.xpath('//a/text()')[0])",
+        "o": [
+            "Link",
+            "x",
+            "a",
+            "href"
+        ]
+    },
+    {
+        "q": "Which method of a BeautifulSoup Tag returns its direct children?",
+        "type": "mcq",
+        "o": [
+            ".contents",
+            ".children",
+            ".descendants",
+            ".parent"
+        ]
+    },
+    {
+        "q": "The `html5lib` parser creates a tree identical to a web browser.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "What CSS selector targets elements whose id starts with 'prefix'?",
+        "type": "short_answer",
+        "answers": [
+            "[id^='prefix']",
+            "[id^=\"prefix\"]"
+        ],
+        "isCaseSensitive": true
+    },
+    {
+        "q": "Which of these is NOT a valid built-in argument for the find_all method?",
+        "type": "odd_one_out",
+        "options": [
+            "name",
+            "limit",
+            "recursive",
+            "depth"
+        ],
+        "correct": "depth"
+    },
+    {
+        "q": "Which XPath wildcard matches any element node?",
+        "type": "mcq",
+        "o": [
+            "*",
+            ".",
+            "//",
+            "?"
+        ]
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "from bs4 import BeautifulSoup\nsoup = BeautifulSoup('<p></p>', 'html.parser')\nprint(type(soup.p))",
+        "o": [
+            "<class 'bs4.element.Tag'>",
+            "<class 'str'>",
+            "<class 'NoneType'>",
+            "<class 'list'>"
+        ]
+    },
+    {
+        "q": "Match the BeautifulSoup installation command with the parser:",
+        "type": "match",
+        "left": [
+            "pip install beautifulsoup4",
+            "pip install lxml",
+            "pip install html5lib"
+        ],
+        "right": [
+            "Installs BS4 core",
+            "Installs lxml parser",
+            "Installs html5lib parser"
+        ]
+    },
+    {
+        "q": "In XPath, the `text()` function selects the text content of a node.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "The `get_text()` method in BeautifulSoup combines all text within a tag using a separator.",
+        "type": "mcq",
+        "o": [
+            "True",
+            "False"
+        ]
+    },
+    {
+        "q": "Match the find_all argument with its filtering purpose.",
+        "type": "memory",
+        "pairs": {
+            "name": "Filter by the HTML tag type",
+            "attrs": "Filter by a dictionary of tag attributes",
+            "string": "Filter by exact text content matches"
+        }
+    },
+    {
+        "q": "Which XPath expression selects all `p` elements that are direct children of `div`?",
+        "type": "mcq",
+        "o": [
+            "//div/p",
+            "//div//p",
+            "//p/div",
+            "div//p"
+        ]
+    },
+    {
+        "q": "Categorize these methods by whether they return a Single Element or a ResultSet (List).",
+        "type": "swipe_cards",
+        "left_label": "Single Element",
+        "right_label": "ResultSet List",
+        "cards": {
+            "soup.find()": "left",
+            "soup.find_all()": "right",
+            "soup.select_one()": "left",
+            "soup.select()": "right"
+        }
+    },
+    {
+        "q": "What Python concept allows you to pass specific attributes like id='main' directly into find_all?",
+        "type": "word_scramble",
+        "answer": "KWARGS",
+        "decoys": "PL"
+    },
+    {
+        "q": "The ______ attribute of a BeautifulSoup Tag returns its tag name.",
+        "type": "fill_blank",
+        "answers": [
+            "name"
+        ],
+        "other_options": [
+            "tag",
+            "type",
+            "element"
+        ]
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "from bs4 import BeautifulSoup\nsoup = BeautifulSoup('<img src=\"pic.jpg\">', 'html.parser')\nprint(soup.img.has_attr('alt'))",
+        "o": [
+            "False",
+            "True",
+            "None",
+            "Error"
+        ]
+    },
+    {
+        "q": "Which CSS selector targets elements with attribute ending in '.pdf'?",
+        "type": "mcq",
+        "o": [
+            "[href$='.pdf']",
+            "[href^='.pdf']",
+            "[href*='.pdf']",
+            "[href]"
+        ]
+    },
+    {
+        "q": "Write the XPath to select all text nodes within paragraph elements.",
+        "type": "short_answer",
+        "answers": [
+            "//p/text()"
+        ],
+        "isCaseSensitive": true
+    },
+    {
+        "q": "Match the lxml import with its purpose:",
+        "type": "match",
+        "left": [
+            "from lxml import etree",
+            "from lxml import html",
+            "import lxml.objectify"
+        ],
+        "right": [
+            "Standard ElementTree API",
+            "Specific HTML tools",
+            "Object-oriented XML API"
+        ]
+    },
+    {
+        "q": "Complete the sentence regarding searching by CSS classes in BS4:",
+        "type": "inline_dropdown",
+        "text": "Since class is a Python [0], BeautifulSoup uses the special argument [1] to search elements by their CSS class.",
+        "dropdowns": [
+            {
+                "correct": "reserved word",
+                "options": [
+                    "object",
+                    "reserved word",
+                    "function"
+                ]
+            },
+            {
+                "correct": "class_",
+                "options": [
+                    "class_",
+                    "class_name",
+                    "css_class"
+                ]
+            }
+        ]
+    },
+    {
+        "q": "BeautifulSoup's `find` method searches only the direct children of an element.",
+        "type": "true_false",
+        "correct": "False"
+    },
+    {
+        "q": "Which method is used to extract all text from a BeautifulSoup object, stripping whitespace?",
+        "type": "mcq",
+        "o": [
+            "get_text(strip=True)",
+            "extract()",
+            "decompose()",
+            "string"
+        ]
+    },
+    {
+        "q": "How many total elements are matched by the CSS selector 'div, p' in this snippet?",
+        "c": "<div>\n    <p></p>\n</div>\n<div>\n    <p></p>\n    <p></p>\n</div>",
+        "type": "slider",
+        "min": 0,
+        "max": 10,
+        "correct": 5
+    },
+    {
+        "q": "In XPath, what does `position()` return?",
+        "type": "mcq",
+        "o": [
+            "The position of the current node in the node-set",
+            "The character position of text",
+            "The depth of the node",
+            "The number of children"
+        ]
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "from bs4 import BeautifulSoup\nsoup = BeautifulSoup('<p class=\"content\">Text</p>', 'html.parser')\nprint(soup.select_one('p[class]').text)",
+        "o": [
+            "Text",
+            "content",
+            "p",
+            "class"
+        ]
+    },
+    {
+        "q": "The `etree.tostring()` method converts an element back to a string.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "In BeautifulSoup, the ______ method completely removes a tag and its content.",
+        "type": "fill_blank",
+        "answers": [
+            "decompose"
+        ],
+        "other_options": [
+            "extract",
+            "remove",
+            "delete"
+        ]
+    },
+    {
+        "q": "Which of these is NOT a standard valid CSS combinator symbol used in web scraping?",
+        "type": "odd_one_out",
+        "options": [
+            ">",
+            "+",
+            "~",
+            "&"
+        ],
+        "correct": "&"
+    },
+    {
+        "q": "Which CSS pseudo-class selects the first child of an element?",
+        "type": "mcq",
+        "o": [
+            ":first-child",
+            ":first",
+            ":first-of-type",
+            ":nth-child(0)"
+        ]
+    },
+    {
+        "q": "What does the XPath `ancestor-or-self` axis select?",
+        "type": "mcq",
+        "o": [
+            "All ancestors plus the current node",
+            "Only the parent",
+            "All descendants",
+            "The root node"
+        ]
+    },
+    {
+        "q": "Name the BeautifulSoup method that removes a tag but returns it.",
+        "type": "short_answer",
+        "answers": [
+            "extract"
+        ],
+        "isCaseSensitive": true
+    },
+    {
+        "q": "Match the XPath operator with its meaning:",
+        "type": "match",
+        "left": [
+            "|",
+            "and",
+            "or",
+            "="
+        ],
+        "right": [
+            "Union",
+            "Logical AND",
+            "Logical OR",
+            "Equality check"
+        ]
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "from bs4 import BeautifulSoup\nsoup = BeautifulSoup('<div><p>A</p><p>B</p></div>', 'html.parser')\nprint(soup.find('p').next_sibling.next_sibling.text)",
+        "o": [
+            "B",
+            "A",
+            "p",
+            "None"
+        ]
+    },
+    {
+        "q": "In XPath, square brackets are used for predicates and also for specifying position.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Which CSS selector syntax selects elements containing a specific substring in an attribute?",
+        "type": "mcq",
+        "o": [
+            "[attr*='value']",
+            "[attr='value']",
+            "[attr^='value']",
+            "[attr$='value']"
+        ]
+    },
+    {
+        "q": "The `html.parser` is included in Python's ______ library.",
+        "type": "fill_blank",
+        "answers": [
+            "html",
+            "standard"
+        ],
+        "other_options": [
+            "xml",
+            "parser",
+            "lxml"
+        ]
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "from lxml import etree\nroot = etree.HTML('<p>Hello</p>')\nprint(root.xpath('boolean(//p)'))",
+        "o": [
+            "True",
+            "False",
+            "Hello",
+            "p"
+        ]
+    },
+    {
+        "q": "Match the basic CSS selector symbol with its target.",
+        "type": "memory",
+        "pairs": {
+            "#": "Matches a unique ID",
+            ".": "Matches a class name",
+            "*": "Universal selector matching everything",
+            ",": "Grouping selector for multiple targets"
+        }
+    },
+    {
+        "q": "Which BeautifulSoup filter type allows passing a function to determine matches?",
+        "type": "mcq",
+        "o": [
+            "Function/lambda",
+            "String",
+            "Regex",
+            "List"
+        ]
+    },
+    {
+        "q": "The `//` in XPath is inefficient because it searches the entire document.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "What CSS selector matches elements not matching a selector?",
+        "type": "short_answer",
+        "answers": [
+            ":not(selector)",
+            ":not()"
+        ],
+        "isCaseSensitive": true
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "from bs4 import BeautifulSoup\nsoup = BeautifulSoup('<a href=\"1\">A</a><a href=\"2\">B</a>', 'html.parser')\nfor link in soup.find_all('a'):\n    print(link['href'], end=' ')\n",
+        "o": [
+            "1 2",
+            "A B",
+            "1",
+            "2"
+        ]
+    },
+    {
+        "q": "Match the XPath function category with an example:",
+        "type": "match",
+        "left": [
+            "String functions",
+            "Number functions",
+            "Boolean functions",
+            "Node-set functions"
+        ],
+        "right": [
+            "contains()",
+            "count()",
+            "not()",
+            "name()"
+        ]
+    },
+    {
+        "q": "In BeautifulSoup, `soup.select('div > p')` selects direct child paragraphs of divs.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Which method in BeautifulSoup is used to navigate to the next sibling element, ignoring text nodes?",
+        "type": "mcq",
+        "o": [
+            "find_next_sibling()",
+            "next_sibling",
+            "next_element",
+            "find_next()"
+        ]
+    },
+    {
+        "q": "In XPath, `//p[2]` selects the second `p` element in the whole document.",
+        "type": "mcq",
+        "o": [
+            "True",
+            "False"
+        ]
+    },
+    {
+        "q": "The `prettify()` method in BeautifulSoup returns a ______ formatted string.",
+        "type": "fill_blank",
+        "answers": [
+            "pretty",
+            "nicely"
+        ],
+        "other_options": [
+            "minified",
+            "compressed",
+            "raw"
+        ]
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "from bs4 import BeautifulSoup\nsoup = BeautifulSoup('<p>Text</p>', 'xml')\nprint(soup.p.string)",
+        "o": [
+            "Text",
+            "p",
+            "None",
+            "xml"
+        ]
+    },
+    {
+        "q": "Swipe left for CSS combinators that match Direct/Adjacent elements, and right for Descendant/Following elements.",
+        "type": "swipe_cards",
+        "left_label": "Direct or Adjacent",
+        "right_label": "Descendant or Following",
+        "cards": {
+            ">": "left",
+            "Space": "right",
+            "+": "left",
+            "~": "right"
+        }
+    },
+    {
+        "q": "Name the lxml function that parses a file directly.",
+        "type": "short_answer",
+        "answers": [
+            "etree.parse",
+            "parse"
+        ],
+        "isCaseSensitive": true
+    },
+    {
+        "q": "Which XPath axis would you use to select all sibling elements after the current node?",
+        "type": "mcq",
+        "o": [
+            "following-sibling",
+            "preceding-sibling",
+            "following",
+            "sibling"
+        ]
+    },
+    {
+        "q": "CSS pseudo-classes like `:hover` can be used in `soup.select()`.",
+        "type": "true_false",
+        "correct": "False"
+    },
+    {
+        "q": "Which BeautifulSoup method specifically allows you to parse using CSS styling targets?",
+        "type": "word_scramble",
+        "answer": "SELECT",
+        "decoys": "MW"
+    },
+    {
+        "q": "Match the BeautifulSoup attribute with its description:",
+        "type": "match",
+        "left": [
+            ".text",
+            ".attrs",
+            ".name",
+            ".parent"
+        ],
+        "right": [
+            "Text content",
+            "Dictionary of attributes",
+            "Tag name",
+            "Parent element"
+        ]
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "from bs4 import BeautifulSoup\nsoup = BeautifulSoup('<div class=\"a b\">Text</div>', 'html.parser')\nprint(soup.select('.a.b')[0].text)",
+        "o": [
+            "Text",
+            "a b",
+            "div",
+            "None"
+        ]
+    },
+    {
+        "q": "In XPath, `string()` converts an object to a string.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Which BeautifulSoup constant is used to match all tags?",
+        "type": "mcq",
+        "o": [
+            "True",
+            "False",
+            "None",
+            "*"
+        ]
+    },
+    {
+        "q": "Complete the sentence regarding CSS combinator spacing:",
+        "type": "inline_dropdown",
+        "text": "In CSS, 'div p' selects all [0] paragraph elements inside a div, while 'div > p' strictly limits selection to [1] children.",
+        "dropdowns": [
+            {
+                "correct": "descendant",
+                "options": [
+                    "descendant",
+                    "sibling",
+                    "parent"
+                ]
+            },
+            {
+                "correct": "direct",
+                "options": [
+                    "direct",
+                    "last",
+                    "first"
+                ]
+            }
+        ]
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "from lxml import etree\nroot = etree.HTML('<ul><li>1</li><li>2</li></ul>')\nprint(root.xpath('count(//li)'))",
+        "o": [
+            "2.0",
+            "2",
+            "1",
+            "li"
+        ]
+    },
+    {
+        "q": "The ______ parameter in `find_all` limits the depth of the search.",
+        "type": "fill_blank",
+        "answers": [
+            "recursive"
+        ],
+        "other_options": [
+            "limit",
+            "depth",
+            "max"
+        ]
+    },
+    {
+        "q": "Write the CSS selector to match elements with class 'active' inside a 'nav' element.",
+        "type": "short_answer",
+        "answers": [
+            "nav .active",
+            "nav *.active"
+        ],
+        "isCaseSensitive": true
+    },
+    {
+        "q": "Which XPath function checks if the first argument string contains the second argument string?",
+        "type": "mcq",
+        "o": [
+            "contains()",
+            "starts-with()",
+            "substring()",
+            "matches()"
+        ]
+    },
+    {
+        "q": "What does the `soup.find('p', class_='intro')` use to specify the class in BeautifulSoup?",
+        "type": "mcq",
+        "o": [
+            "class_",
+            "class",
+            "cls",
+            "css_class"
+        ]
+    },
+    {
+        "q": "In XPath, what is the difference between `/div` and `//div`?",
+        "type": "mcq",
+        "o": [
+            "/div selects from root, //div selects anywhere",
+            "/div selects anywhere, //div from root",
+            "Both select the same thing",
+            "/div is invalid syntax"
+        ]
+    },
+    {
+        "q": "What index accesses the very first element from the list returned by soup.select()?",
+        "c": "elements = soup.select('.container')\nfirst_node = elements[?]",
+        "type": "slider",
+        "min": 0,
+        "max": 3,
+        "correct": 0
+    },
+    {
+        "q": "The `etree.HTML()` function in lxml returns an Element object representing the root.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "from bs4 import BeautifulSoup\nsoup = BeautifulSoup('<a href=\"page.html\">Click</a>', 'html.parser')\nprint(soup.a.get('href'))",
+        "o": [
+            "page.html",
+            "Click",
+            "a",
+            "None"
+        ]
+    },
+    {
+        "q": "Which of these is NOT a valid CSS structural pseudo-class?",
+        "type": "odd_one_out",
+        "options": [
+            ":first-child",
+            ":last-child",
+            ":nth-child",
+            ":parent-child"
+        ],
+        "correct": ":parent-child"
+    },
+    {
+        "q": "Match the BeautifulSoup search keyword arguments with their purpose:",
+        "type": "match",
+        "left": [
+            "id",
+            "class_",
+            "href",
+            "string"
+        ],
+        "right": [
+            "Search by HTML id",
+            "Search by CSS class",
+            "Search by link target",
+            "Search by text content"
+        ]
+    },
+    {
+        "q": "Which XPath axis selects all child nodes of the current node?",
+        "type": "mcq",
+        "o": [
+            "child",
+            "descendant",
+            "parent",
+            "sibling"
+        ]
+    },
+    {
+        "q": "In BeautifulSoup, `recursive=False` means the search will only look at direct children.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Match the CSS attribute operator to its string matching behavior.",
+        "type": "memory",
+        "pairs": {
+            "=": "Exact identical match",
+            "^=": "Matches strings starting with the value",
+            "$=": "Matches strings ending with the value",
+            "*=": "Matches strings containing the value anywhere"
+        }
+    },
+    {
+        "q": "Name the method in BeautifulSoup used to extract all text from a document, separating pieces with a delimiter.",
+        "type": "short_answer",
+        "answers": [
+            "get_text",
+            "getText"
+        ],
+        "isCaseSensitive": true
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "from bs4 import BeautifulSoup\nsoup = BeautifulSoup('<div>Hello <br/> World</div>', 'html.parser')\nprint(soup.div.get_text(separator=' '))",
+        "o": [
+            "Hello  World",
+            "Hello World",
+            "Hello<br/>World",
+            "Hello"
+        ]
+    },
+    {
+        "q": "The CSS selector `p:first-of-type` selects the first paragraph among its ______.",
+        "type": "fill_blank",
+        "answers": [
+            "siblings"
+        ],
+        "other_options": [
+            "children",
+            "parents",
+            "descendants"
+        ]
+    },
+    {
+        "q": "Which lxml method evaluates an XPath expression against an element?",
+        "type": "mcq",
+        "o": [
+            "xpath()",
+            "find()",
+            "select()",
+            "query()"
+        ]
+    },
+    {
+        "q": "What does the XPath predicate `[@id]` test for?",
+        "type": "mcq",
+        "o": [
+            "Presence of an id attribute",
+            "A specific id value",
+            "The text content",
+            "The node name"
+        ]
+    },
+    {
+        "q": "BeautifulSoup can only parse XML if the 'xml' feature is explicitly set.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "from bs4 import BeautifulSoup\nsoup = BeautifulSoup('<ul><li>A</li><li>B</li></ul>', 'html.parser')\nprint(soup.li.next_sibling.next_sibling.text)",
+        "o": [
+            "B",
+            "A",
+            "li",
+            "ul"
+        ]
+    },
+    {
+        "q": "Match the CSS combinator with its symbol:",
+        "type": "match",
+        "left": [
+            "Descendant",
+            "Child",
+            "Adjacent Sibling",
+            "General Sibling"
+        ],
+        "right": [
+            "space",
+            ">",
+            "+",
+            "~"
+        ]
+    },
+    {
+        "q": "In XPath, the expression `//div/p` selects p elements that are direct children of div.",
+        "type": "mcq",
+        "o": [
+            "True",
+            "False"
+        ]
+    },
+    {
+        "q": "Which BeautifulSoup method searches for the very first match of a CSS selector?",
+        "type": "mcq",
+        "o": [
+            "select_one()",
+            "select()",
+            "find()",
+            "find_first()"
+        ]
+    },
+    {
+        "q": "Write the XPath to select all `img` elements that have an `alt` attribute.",
+        "type": "short_answer",
+        "answers": [
+            "//img[@alt]",
+            "//img[@alt]"
+        ],
+        "isCaseSensitive": true
+    },
+    {
+        "q": "The `lxml` parser automatically converts HTML tags to lowercase.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "from bs4 import BeautifulSoup\nsoup = BeautifulSoup('<div class=\"content\"><p>A</p></div>', 'html.parser')\nprint(soup.select_one('div.content p').text)",
+        "o": [
+            "A",
+            "div.content",
+            "p",
+            "content"
+        ]
+    },
+    {
+        "q": "The ______ method in BeautifulSoup replaces a tag with its text content.",
+        "type": "fill_blank",
+        "answers": [
+            "unwrap"
+        ],
+        "other_options": [
+            "decompose",
+            "extract",
+            "replace_with"
+        ]
+    },
+    {
+        "q": "Which XPath function returns the name of the current node?",
+        "type": "mcq",
+        "o": [
+            "name()",
+            "local-name()",
+            "node-name()",
+            "tag()"
+        ]
+    },
+    {
+        "q": "What does the CSS selector `div p` select compared to `div > p`?",
+        "type": "mcq",
+        "o": [
+            "All p descendants of div vs only direct children",
+            "Only direct children vs all descendants",
+            "Both are identical",
+            "Neither is valid"
+        ]
+    },
+    {
+        "q": "Swipe left for standard CSS Pseudo-classes, and right for CSS Pseudo-elements.",
+        "type": "swipe_cards",
+        "left_label": "Pseudo-class",
+        "right_label": "Pseudo-element",
+        "cards": {
+            ":first-child": "left",
+            "::before": "right",
+            ":last-child": "left",
+            "::after": "right"
+        }
+    },
+    {
+        "q": "In XPath, `following` axis includes all nodes after the closing tag of the current node.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "from lxml import etree\nroot = etree.HTML('<p class=\"x\">Text</p>')\nprint(root.xpath('string(//p/@class)'))",
+        "o": [
+            "x",
+            "Text",
+            "p",
+            "class"
+        ]
+    },
+    {
+        "q": "What is the common HTML attribute targeted to extract link URLs?",
+        "type": "word_scramble",
+        "answer": "HREF",
+        "decoys": "ZQX"
+    },
+    {
+        "q": "Match the XPath wildcard with what it matches:",
+        "type": "match",
+        "left": [
+            "*",
+            "@*",
+            "node()",
+            "text()"
+        ],
+        "right": [
+            "Any element",
+            "Any attribute",
+            "Any node type",
+            "Text nodes"
+        ]
+    },
+    {
+        "q": "Which BeautifulSoup constant can be used as a filter to match all tags?",
+        "type": "mcq",
+        "o": [
+            "True",
+            "False",
+            "None",
+            "All"
+        ]
+    },
+    {
+        "q": "Write the CSS selector to match the third list item in an unordered list.",
+        "type": "short_answer",
+        "answers": [
+            "ul li:nth-child(3)",
+            "ul li:nth-of-type(3)"
+        ],
+        "isCaseSensitive": true
+    },
+    {
+        "q": "The `html5lib` parser is slower but creates a browser-like tree structure.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "from bs4 import BeautifulSoup\nsoup = BeautifulSoup('<a href=\"#\">Link</a>', 'html.parser')\nprint(soup.a.has_attr('href'))",
+        "o": [
+            "True",
+            "False",
+            "#",
+            "Link"
+        ]
+    },
+    {
+        "q": "In XPath, the `descendant-or-self` axis includes the current node and all its descendants.",
+        "type": "mcq",
+        "o": [
+            "True",
+            "False"
+        ]
+    },
+    {
+        "q": "The `find_all` method in BeautifulSoup can accept a list of tag names to match multiple tags.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Which parameter of `find_all` controls how many results are returned?",
+        "type": "mcq",
+        "o": [
+            "limit",
+            "max",
+            "count",
+            "top"
+        ]
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "from bs4 import BeautifulSoup\nsoup = BeautifulSoup('<p class=\"a b c\">Text</p>', 'html.parser')\nprint(len(soup.p['class']))",
+        "o": [
+            "3",
+            "1",
+            "Text",
+            "p"
+        ]
+    },
+    {
+        "q": "Complete the sentence regarding CSS attribute targets:",
+        "type": "inline_dropdown",
+        "text": "The selector 'a[title]' matches any anchor tag that [0] the title attribute, completely regardless of the attribute's [1].",
+        "dropdowns": [
+            {
+                "correct": "contains",
+                "options": [
+                    "contains",
+                    "lacks",
+                    "ignores"
+                ]
+            },
+            {
+                "correct": "value",
+                "options": [
+                    "value",
+                    "length",
+                    "case"
+                ]
+            }
+        ]
+    },
+    {
+        "q": "The `etree.tostring()` method in lxml always returns a bytes object.",
+        "type": "fill_blank",
+        "answers": [
+            "True"
+        ],
+        "other_options": [
+            "False",
+            "Depends",
+            "String"
+        ]
+    },
+    {
+        "q": "What does the XPath predicate `[@type='submit']` select?",
+        "type": "mcq",
+        "o": [
+            "Elements with type attribute equal to submit",
+            "Elements of type submit",
+            "Submit buttons only",
+            "The value submit"
+        ]
+    },
+    {
+        "q": "Match the BeautifulSoup navigable objects with their class:",
+        "type": "match",
+        "left": [
+            "Tag",
+            "NavigableString",
+            "BeautifulSoup",
+            "Comment"
+        ],
+        "right": [
+            "An HTML/XML tag",
+            "Text within a tag",
+            "The whole document",
+            "An HTML comment"
+        ]
+    },
+    {
+        "q": "In CSS selectors, the attribute selector `[href$='.org']` matches elements whose href ends with '.org'.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "lxml provides excellent support for legacy documents. What version of the core XML specification does it implement?",
+        "type": "slider",
+        "min": 0,
+        "max": 5,
+        "correct": 1
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "from bs4 import BeautifulSoup\nsoup = BeautifulSoup('<span>Red <em>Blue</em></span>', 'html.parser')\nprint(soup.span.string)",
+        "o": [
+            "None",
+            "Red",
+            "Blue",
+            "Red Blue"
+        ]
+    },
+    {
+        "q": "Which XPath function returns the number of nodes in a node-set as an integer?",
+        "type": "mcq",
+        "o": [
+            "count()",
+            "last()",
+            "position()",
+            "sum()"
+        ]
+    },
+    {
+        "q": "Write the lxml code snippet to find all links on a page.",
+        "type": "short_answer",
+        "answers": [
+            "root.xpath('//a/@href')",
+            "tree.xpath('//a/@href')"
+        ],
+        "isCaseSensitive": true
+    },
+    {
+        "q": "The `soup.find_all(True)` will match all tags in the document.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "from bs4 import BeautifulSoup\nsoup = BeautifulSoup('<div><p>A</p></div>', 'html.parser')\nprint(soup.p.parent.name)",
+        "o": [
+            "div",
+            "p",
+            "A",
+            "None"
+        ]
+    },
+    {
+        "q": "Which CSS selector matches the last element of a specific type among its siblings?",
+        "type": "mcq",
+        "o": [
+            ":last-of-type",
+            ":last-child",
+            ":last",
+            ":nth-last-child(1)"
+        ]
+    },
+    {
+        "q": "In XPath, `//div[@id='main']/p[1]` selects the first paragraph child of a specific div.",
+        "type": "fill_blank",
+        "answers": [
+            "True"
+        ],
+        "other_options": [
+            "False",
+            "Depends",
+            "Maybe"
+        ]
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "from lxml import etree\nroot = etree.HTML('<p>Hello <b>World</b></p>')\nprint(root.xpath('string(//p)'))",
+        "o": [
+            "Hello World",
+            "Hello",
+            "World",
+            "p"
+        ]
+    },
+    {
+        "q": "Match the CSS pseudo-class with its selection pattern:",
+        "type": "match",
+        "left": [
+            ":first-child",
+            ":last-child",
+            ":only-child",
+            ":empty"
+        ],
+        "right": [
+            "First child of its parent",
+            "Last child of its parent",
+            "Only child of its parent",
+            "Elements with no children"
+        ]
+    },
+    {
+        "q": "BeautifulSoup's `unwrap()` method deletes a tag but keeps its contents.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Which XPath axis selects nodes that come before the current node in document order?",
+        "type": "mcq",
+        "o": [
+            "preceding",
+            "following",
+            "ancestor",
+            "descendant"
+        ]
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "from bs4 import BeautifulSoup\nsoup = BeautifulSoup('<p>Hello <br/> World</p>', 'html.parser')\nprint(soup.p.contents[1])",
+        "o": [
+            "<br/>",
+            "Hello",
+            "World",
+            " "
+        ]
+    },
+    {
+        "q": "Name the library that `BeautifulSoup` uses by default if no parser is specified.",
+        "type": "short_answer",
+        "answers": [
+            "html.parser",
+            "html.parser (Python's built-in)"
+        ],
+        "isCaseSensitive": false
+    },
+    {
+        "q": "In CSS selectors, the negation pseudo-class `:not(selector)` filters out matching elements.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "from bs4 import BeautifulSoup\nsoup = BeautifulSoup('<a class=\"link active\">Page</a>', 'html.parser')\nprint(soup.select_one('a.link.active').text)",
+        "o": [
+            "Page",
+            "link active",
+            "a",
+            "link"
+        ]
+    },
+    {
+        "q": "The `//` in XPath is an abbreviation for the ______ axis.",
+        "type": "fill_blank",
+        "answers": [
+            "descendant-or-self",
+            "descendant-or-self::node"
+        ],
+        "other_options": [
+            "descendant",
+            "child",
+            "ancestor"
+        ]
+    },
+    {
+        "q": "Which method in BeautifulSoup finds all subsequent siblings of a tag?",
+        "type": "mcq",
+        "o": [
+            "find_next_siblings()",
+            "find_previous_siblings()",
+            "next_siblings",
+            "following_siblings"
+        ]
+    },
+    {
+        "q": "What does the XPath `normalize-space()` function do?",
+        "type": "mcq",
+        "o": [
+            "Strips leading/trailing whitespace and replaces multiple spaces with a single space",
+            "Removes all spaces",
+            "Counts the characters",
+            "Trims text to a specific length"
+        ]
+    },
+    {
+        "q": "Which of these is NOT an actual lxml parser class used for typical web scraping?",
+        "type": "odd_one_out",
+        "options": [
+            "XMLParser",
+            "HTMLParser",
+            "JSONParser",
+            "etree"
+        ],
+        "correct": "JSONParser"
+    },
+    {
+        "q": "Match the lxml method with its return type:",
+        "type": "match",
+        "left": [
+            "xpath()",
+            "find()",
+            "findall()",
+            "iter()"
+        ],
+        "right": [
+            "List of matching elements",
+            "First matching subelement",
+            "All matching subelements",
+            "Iterator over elements"
+        ]
+    },
+    {
+        "q": "Match the lxml.etree function with its input/output source.",
+        "type": "memory",
+        "pairs": {
+            "fromstring()": "Parses an XML tree directly from a string",
+            "parse()": "Parses an XML tree from a file or file-like object",
+            "tostring()": "Serializes a parsed tree back into a string"
+        }
+    },
+    {
+        "q": "The `string` property of a BeautifulSoup Tag returns None if a tag contains multiple strings.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "from bs4 import BeautifulSoup\nsoup = BeautifulSoup('<div><h1>Title</h1><p>Body</p></div>', 'html.parser')\nprint(soup.h1.find_next('p').text)",
+        "o": [
+            "Body",
+            "Title",
+            "p",
+            "h1"
+        ]
+    },
+    {
+        "q": "Which CSS selector selects all elements that are the nth child of their parent?",
+        "type": "mcq",
+        "o": [
+            ":nth-child(n)",
+            ":nth-of-type(n)",
+            ":eq(n)",
+            ":nth(n)"
+        ]
+    },
+    {
+        "q": "In XPath, a predicate with a number like `[1]` selects the node at that position index (starting at 1).",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "from bs4 import BeautifulSoup\nsoup = BeautifulSoup('<input type=\"text\" name=\"email\">', 'html.parser')\nprint(soup.find('input')['type'])",
+        "o": [
+            "text",
+            "email",
+            "input",
+            "name"
+        ]
+    },
+    {
+        "q": "Write the XPath to select all elements that have both class 'x' and class 'y'.",
+        "type": "short_answer",
+        "answers": [
+            "//*[contains(@class,'x') and contains(@class,'y')]",
+            "//*[@class='x y']"
+        ],
+        "isCaseSensitive": true
+    },
+    {
+        "q": "The `replace_with()` method in BeautifulSoup replaces a tag with a string or another tag.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "from lxml import etree\nroot = etree.HTML('<div><p>A</p><p>B</p></div>')\nprint(root.xpath('//p[last()]/text()')[0])",
+        "o": [
+            "B",
+            "A",
+            "p",
+            "last()"
+        ]
+    },
+    {
+        "q": "Categorize these methods as belonging strictly to lxml.etree (XML parsing) or lxml.html (HTML parsing).",
+        "type": "swipe_cards",
+        "left_label": "lxml.etree (XML)",
+        "right_label": "lxml.html",
+        "cards": {
+            "etree.XML()": "left",
+            "html.fromstring()": "right",
+            "etree.parse()": "left",
+            "html.parse()": "right"
+        }
+    },
+    {
+        "q": "The `BeautifulSoup` constructor's second argument specifies the ______ to use.",
+        "type": "fill_blank",
+        "answers": [
+            "parser",
+            "features"
+        ],
+        "other_options": [
+            "engine",
+            "driver",
+            "mode"
+        ]
+    },
+    {
+        "q": "Which XPath function is used to test if a string starts with a specific substring?",
+        "type": "mcq",
+        "o": [
+            "starts-with()",
+            "contains()",
+            "substring()",
+            "begins()"
+        ]
+    },
+    {
+        "q": "What CSS selector syntax selects an element that has a specific attribute regardless of its value?",
+        "type": "mcq",
+        "o": [
+            "[attr]",
+            "[attr='']",
+            "[attr*]",
+            "[attr~]"
+        ]
+    },
+    {
+        "q": "Match the BeautifulSoup search method with its scope:",
+        "type": "match",
+        "left": [
+            "find()",
+            "find_all()",
+            "find_parent()",
+            "find_next()"
+        ],
+        "right": [
+            "First match in descendants",
+            "All matches in descendants",
+            "Ancestor matching criteria",
+            "Next match in document"
+        ]
+    },
+    {
+        "q": "The `html5lib` parser can automatically add missing `<html>`, `<head>`, and `<body>` tags.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "from bs4 import BeautifulSoup\nsoup = BeautifulSoup('<p>Hello</p>', 'html.parser')\nprint(soup.p.decompose())\nprint(soup.p)",
+        "o": [
+            "None\nNone",
+            "Hello\nNone",
+            "None\nHello",
+            "Error"
+        ]
+    },
+    {
+        "q": "In XPath, which symbol is used to separate axis name from the node test?",
+        "type": "mcq",
+        "o": [
+            "::",
+            ":",
+            "/",
+            "//"
+        ]
+    },
+    {
+        "q": "What is the core lxml module that handles reading and creating the element hierarchy?",
+        "type": "word_scramble",
+        "answer": "ETREE",
+        "decoys": "VB"
+    },
+    {
+        "q": "Write the CSS selector to match all elements with a `data-` prefixed attribute.",
+        "type": "short_answer",
+        "answers": [
+            "[data-]",
+            "[data-*]"
+        ],
+        "isCaseSensitive": true
+    },
+    {
+        "q": "Complete the sentence explaining lxml's architecture:",
+        "type": "inline_dropdown",
+        "text": "The lxml library provides a highly optimized [0] parser that instantly builds an entire tree of [1] objects in memory.",
+        "dropdowns": [
+            {
+                "correct": "C-based",
+                "options": [
+                    "C-based",
+                    "Java-based",
+                    "Python-based"
+                ]
+            },
+            {
+                "correct": "Element",
+                "options": [
+                    "Element",
+                    "Node",
+                    "Soup"
+                ]
+            }
+        ]
+    },
+    {
+        "q": "How many forward slashes are used at the start of an XPath expression to indicate an absolute root path?",
+        "type": "slider",
+        "min": 0,
+        "max": 4,
+        "correct": 1
+    },
+    {
+        "q": "BeautifulSoup's `find_all` method can accept a compiled regex pattern as an argument.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Which of these is NOT a valid syntax prefix to begin an XPath selection?",
+        "type": "odd_one_out",
+        "options": [
+            "//",
+            "/",
+            ".//",
+            "##"
+        ],
+        "correct": "##"
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "from bs4 import BeautifulSoup\nsoup = BeautifulSoup('<p id=\"first\">One</p>', 'html.parser')\nprint(soup.find(id='first').text)",
+        "o": [
+            "One",
+            "first",
+            "p",
+            "id"
+        ]
+    },
+    {
+        "q": "The XPath predicate `[@class!='x']` selects elements whose class is not equal to 'x'.",
+        "type": "fill_blank",
+        "answers": [
+            "True"
+        ],
+        "other_options": [
+            "False",
+            "Depends",
+            "Maybe"
+        ]
+    },
+    {
+        "q": "Which method in BeautifulSoup returns an iterator over a tag's descendants?",
+        "type": "mcq",
+        "o": [
+            ".descendants",
+            ".children",
+            ".contents",
+            ".find_all()"
+        ]
+    },
+    {
+        "q": "What does the CSS selector `p:nth-of-type(2)` select?",
+        "type": "mcq",
+        "o": [
+            "The second paragraph among its siblings",
+            "Every second paragraph in the document",
+            "The second child if it's a paragraph",
+            "The first two paragraphs"
+        ]
+    },
+    {
+        "q": "Match the XPath path symbol with its navigational behavior.",
+        "type": "memory",
+        "pairs": {
+            "/": "Absolute path from the document root",
+            "//": "Relative path searching descendants anywhere",
+            ".": "Selects the current context node",
+            "..": "Selects the immediate parent node"
+        }
+    },
+    {
+        "q": "In lxml, the `etree.fromstring()` method automatically detects if the input is XML or HTML.",
+        "type": "true_false",
+        "correct": "False"
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "from bs4 import BeautifulSoup\nsoup = BeautifulSoup('<p>Hello <b>World</b></p>', 'html.parser')\nprint(soup.p.b.previous_sibling)",
+        "o": [
+            "Hello ",
+            "World",
+            "b",
+            "p"
+        ]
+    },
+    {
+        "q": "Match the XPath string function with its purpose:",
+        "type": "match",
+        "left": [
+            "concat()",
+            "substring()",
+            "string-length()",
+            "translate()"
+        ],
+        "right": [
+            "Joins strings together",
+            "Extracts part of a string",
+            "Returns length of a string",
+            "Replaces characters in a string"
+        ]
+    },
+    {
+        "q": "BeautifulSoup's `insert()` method can add a tag at a specific position in the tree.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Swipe left if the XPath expression is an Absolute Path, and right if it is a Relative Path.",
+        "type": "swipe_cards",
+        "left_label": "Absolute Path",
+        "right_label": "Relative Path",
+        "cards": {
+            "/html/body/div": "left",
+            "//div/p": "right",
+            "/div": "left",
+            ".//span": "right"
+        }
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "from lxml import etree\nroot = etree.HTML('<a href=\"http://example.com\">Link</a>')\nprint(root.xpath('//a[starts-with(@href, \"http\")]/text()')[0])",
+        "o": [
+            "Link",
+            "http://example.com",
+            "a",
+            "http"
+        ]
+    },
+    {
+        "q": "Write the lxml code to find the title element's text in an HTML document.",
+        "type": "short_answer",
+        "answers": [
+            "root.xpath('//title/text()')[0]",
+            "tree.xpath('//title/text()')[0]"
+        ],
+        "isCaseSensitive": true
+    },
+    {
+        "q": "The XPath `self` axis refers to the current node itself.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Which BeautifulSoup method finds the first previous element matching a filter?",
+        "type": "mcq",
+        "o": [
+            "find_previous()",
+            "find_before()",
+            "prev_element",
+            "previous_sibling"
+        ]
+    },
+    {
+        "q": "What is the name of the standard query language used to select nodes from an XML document?",
+        "type": "word_scramble",
+        "answer": "XPATH",
+        "decoys": "ND"
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "from bs4 import BeautifulSoup\nsoup = BeautifulSoup('<div class=\"one two\"></div>', 'html.parser')\nprint(soup.div['class'][0])",
+        "o": [
+            "one",
+            "two",
+            "['one', 'two']",
+            "class"
+        ]
+    },
+    {
+        "q": "Complete the sentence regarding XPath contextual navigation:",
+        "type": "inline_dropdown",
+        "text": "The expression '//a' selects anchor tags [0] in the document, while './a' restricts the selection strictly relative to the [1] node.",
+        "dropdowns": [
+            {
+                "correct": "anywhere",
+                "options": [
+                    "anywhere",
+                    "at the root",
+                    "at the end"
+                ]
+            },
+            {
+                "correct": "current",
+                "options": [
+                    "current",
+                    "parent",
+                    "root"
+                ]
+            }
+        ]
+    },
+    {
+        "q": "The ______ attribute of a Tag in BeautifulSoup holds the tag's attributes as a dictionary.",
+        "type": "fill_blank",
+        "answers": [
+            "attrs"
+        ],
+        "other_options": [
+            "attributes",
+            "props",
+            "dict"
+        ]
+    },
+    {
+        "q": "Which CSS selector matches elements that are the only child of their parent?",
+        "type": "mcq",
+        "o": [
+            ":only-child",
+            ":single",
+            ":unique",
+            ":one-child"
+        ]
+    },
+    {
+        "q": "Unlike Python lists, XPath indexing is 1-based. What index selects the 4th item?",
+        "type": "slider",
+        "min": 0,
+        "max": 6,
+        "correct": 4
+    },
+    {
+        "q": "What does the XPath `//book[price>35]` predicate do?",
+        "type": "mcq",
+        "o": [
+            "Selects book elements where price child is greater than 35",
+            "Selects books that cost more than 35",
+            "Counts books over 35",
+            "Orders books by price"
+        ]
+    },
+    {
+        "q": "In BeautifulSoup, `soup.contents` returns a generator, not a list.",
+        "type": "true_false",
+        "correct": "False"
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "from bs4 import BeautifulSoup\nsoup = BeautifulSoup('<p>First</p><p>Second</p>', 'html.parser')\nprint(soup.find_all('p')[1].text)",
+        "o": [
+            "Second",
+            "First",
+            "p",
+            "None"
+        ]
+    },
+    {
+        "q": "Match the XPath axis with the nodes it selects:",
+        "type": "match",
+        "left": [
+            "preceding-sibling",
+            "following-sibling",
+            "parent",
+            "ancestor-or-self"
+        ],
+        "right": [
+            "Siblings before current node",
+            "Siblings after current node",
+            "Direct parent",
+            "All ancestors including current"
+        ]
+    },
+    {
+        "q": "Which of these is NOT a valid way to extract or manipulate text content in standard XPath 1.0?",
+        "type": "odd_one_out",
+        "options": [
+            "text()",
+            "string()",
+            "normalize-space()",
+            "inner_text()"
+        ],
+        "correct": "inner_text()"
+    },
+    {
+        "q": "Write the CSS selector to select the second div on a page.",
+        "type": "short_answer",
+        "answers": [
+            "div:nth-of-type(2)",
+            "div:nth-child(2)"
+        ],
+        "isCaseSensitive": true
+    },
+    {
+        "q": "The `soup.select_one()` method returns None if no match is found.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Match the XPath node test with what it successfully matches.",
+        "type": "memory",
+        "pairs": {
+            "text()": "Matches inner text content",
+            "@id": "Matches an ID attribute",
+            "node()": "Matches any node type including comments"
+        }
+    },
+    {
+        "q": "What is the difference between `find_all(text=True)` and `find_all(string=True)` in BeautifulSoup?",
+        "type": "mcq",
+        "o": [
+            "No difference, both filter by text content",
+            "text searches tags, string searches attributes",
+            "text is deprecated, string is preferred",
+            "string matches exact text, text matches partial"
+        ]
+    },
+    {
+        "q": "In XPath, how do you select elements that have a specific attribute regardless of its value?",
+        "type": "mcq",
+        "o": [
+            "[@attribute]",
+            "[attribute]",
+            "[@attribute='*']",
+            "[has(@attribute)]"
+        ]
+    },
+    {
+        "q": "The `etree.XPath` class in lxml allows pre-compiling XPath expressions for repeated use.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "from bs4 import BeautifulSoup\nsoup = BeautifulSoup('<div><p>A</p><p>B</p></div>', 'html.parser')\nprint(soup.find('p').find_next_sibling().text)",
+        "o": [
+            "B",
+            "A",
+            "p",
+            "None"
+        ]
+    },
+    {
+        "q": "Match the BeautifulSoup filter types with examples:",
+        "type": "match",
+        "left": [
+            "String",
+            "Regular Expression",
+            "List",
+            "Function"
+        ],
+        "right": [
+            "find_all('p')",
+            "find_all(re.compile('^b'))",
+            "find_all(['p', 'div'])",
+            "find_all(lambda tag: tag.has_attr('id'))"
+        ]
+    },
+    {
+        "q": "Which XPath axis selects the closest ancestor that matches a condition?",
+        "type": "mcq",
+        "o": [
+            "ancestor",
+            "parent",
+            "ancestor-or-self",
+            "preceding"
+        ]
+    },
+    {
+        "q": "In BeautifulSoup, the `extract()` method removes a tag and returns it, while `decompose()` destroys it permanently.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Categorize these XPath syntax snippets as targeting a structural Node or a specific Attribute.",
+        "type": "swipe_cards",
+        "left_label": "Node Match",
+        "right_label": "Attribute Match",
+        "cards": {
+            "text()": "left",
+            "@href": "right",
+            "node()": "left",
+            "@class": "right"
+        }
+    },
+    {
+        "q": "Name the BeautifulSoup method that allows inserting content after a tag.",
+        "type": "short_answer",
+        "answers": [
+            "insert_after",
+            "append"
+        ],
+        "isCaseSensitive": true
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "from bs4 import BeautifulSoup\nsoup = BeautifulSoup('<p>Hello <i>World</i></p>', 'html.parser')\nprint(soup.p.stripped_strings.__next__())",
+        "o": [
+            "Hello",
+            "Hello World",
+            "World",
+            "p"
+        ]
+    },
+    {
+        "q": "The CSS selector `div:not(.exclude)` selects all div elements that do ______ have the class 'exclude'.",
+        "type": "fill_blank",
+        "answers": [
+            "not"
+        ],
+        "other_options": [
+            "also",
+            "only",
+            "always"
+        ]
+    },
+    {
+        "q": "Which lxml function creates an XPath evaluator with custom namespaces?",
+        "type": "mcq",
+        "o": [
+            "etree.XPath()",
+            "etree.xpath()",
+            "etree.evaluate()",
+            "etree.compile()"
+        ]
+    },
+    {
+        "q": "What does the XPath expression `//div[count(p) > 2]` select?",
+        "type": "mcq",
+        "o": [
+            "Div elements that contain more than 2 paragraph children",
+            "The third paragraph in each div",
+            "Div elements with exactly 2 paragraphs",
+            "All paragraphs in divs with more than 2 children"
+        ]
+    },
+    {
+        "q": "BeautifulSoup's `find_all` method with `limit=1` behaves identically to `find`.",
+        "type": "true_false",
+        "correct": "False"
+    },
+    {
+        "q": "What generic term refers to any single element, attribute, or text block in an XML tree?",
+        "type": "word_scramble",
+        "answer": "NODE",
+        "decoys": "QW"
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "from bs4 import BeautifulSoup\nsoup = BeautifulSoup('<div><p class=\"x\">A</p><p class=\"y\">B</p></div>', 'html.parser')\nprint(soup.select_one('p.x + p').text)",
+        "o": [
+            "B",
+            "A",
+            "p",
+            "x"
+        ]
+    },
+    {
+        "q": "Match the CSS pseudo-class with its numerical pattern:",
+        "type": "match",
+        "left": [
+            ":nth-child(2n)",
+            ":nth-child(odd)",
+            ":nth-child(3n+1)",
+            ":nth-last-child(1)"
+        ],
+        "right": [
+            "Even elements",
+            "Odd elements",
+            "Every 3rd starting from 1st",
+            "Last child"
+        ]
+    },
+    {
+        "q": "In XPath, the `following` axis includes all nodes in document order after the current node's closing tag.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Complete the sentence regarding XPath attribute extraction:",
+        "type": "inline_dropdown",
+        "text": "To target an attribute value in XPath, you must prefix the exact attribute name with an [0] symbol, for example [1].",
+        "dropdowns": [
+            {
+                "correct": "@",
+                "options": [
+                    "@",
+                    "#",
+                    "$"
+                ]
+            },
+            {
+                "correct": "@href",
+                "options": [
+                    "@href",
+                    "#href",
+                    "$href"
+                ]
+            }
+        ]
+    },
+    {
+        "q": "Write the XPath to select all text nodes that are direct children of any div.",
+        "type": "short_answer",
+        "answers": [
+            "//div/text()"
+        ],
+        "isCaseSensitive": true
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "from bs4 import BeautifulSoup\nsoup = BeautifulSoup('<html><head><title>Test</title></head></html>', 'html.parser')\nprint(soup.title.parent.name)",
+        "o": [
+            "head",
+            "title",
+            "html",
+            "Test"
+        ]
+    },
+    {
+        "q": "Which XPath function concatenates multiple strings?",
+        "type": "mcq",
+        "o": [
+            "concat()",
+            "join()",
+            "merge()",
+            "combine()"
+        ]
+    },
+    {
+        "q": "In BeautifulSoup, `Tag.smooth()` cleans up the parse tree by consolidating adjacent NavigableStrings.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "from lxml import etree\nroot = etree.HTML('<div><p>A</p><p>B</p></div>')\nprint(len(root.xpath('//div/node()')))",
+        "o": [
+            "5",
+            "2",
+            "3",
+            "1"
+        ]
+    },
+    {
+        "q": "The `find_all` method's `attrs` parameter accepts a dictionary of attribute-value pairs for filtering.",
+        "type": "fill_blank",
+        "answers": [
+            "True"
+        ],
+        "other_options": [
+            "False",
+            "Depends",
+            "Maybe"
+        ]
+    },
+    {
+        "q": "Which method in BeautifulSoup navigates to the very next element in the parse tree?",
+        "type": "mcq",
+        "o": [
+            ".next_element",
+            ".next_sibling",
+            ".find_next()",
+            ".next"
+        ]
+    },
+    {
+        "q": "If an XPath count() function returns 8 for a node list, what index is accessed by [last()]?",
+        "type": "slider",
+        "min": 1,
+        "max": 10,
+        "correct": 8
+    },
+    {
+        "q": "Which of these is NOT a valid syntax format for an XPath predicate filter?",
+        "type": "odd_one_out",
+        "options": [
+            "[1]",
+            "[last()]",
+            "[first()]",
+            "[position()<3]"
+        ],
+        "correct": "[first()]"
+    },
+    {
+        "q": "What CSS selector selects all p elements that immediately follow a div?",
+        "type": "mcq",
+        "o": [
+            "div + p",
+            "div ~ p",
+            "div > p",
+            "div p"
+        ]
+    },
+    {
+        "q": "In XPath, `normalize-space()` can be used inside a predicate to compare cleaned text.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "from bs4 import BeautifulSoup\nimport re\nsoup = BeautifulSoup('<p>Hello</p><p>World</p>', 'html.parser')\nprint(len(soup.find_all('p', string=re.compile('o'))))",
+        "o": [
+            "2",
+            "1",
+            "0",
+            "3"
+        ]
+    },
+    {
+        "q": "Match the XPath predicate with its filtering action.",
+        "type": "memory",
+        "pairs": {
+            "[1]": "Filters down to the first matching element",
+            "[last()]": "Filters down to the very last matching element",
+            "[@class]": "Filters to elements holding a class attribute"
+        }
+    },
+    {
+        "q": "Match the lxml error handling strategy with its description:",
+        "type": "match",
+        "left": [
+            "recover",
+            "remove_blank_text",
+            "remove_comments",
+            "remove_pis"
+        ],
+        "right": [
+            "Try to parse broken HTML",
+            "Remove whitespace-only text nodes",
+            "Remove HTML comments",
+            "Remove processing instructions"
+        ]
+    },
+    {
+        "q": "Write the CSS selector to match elements whose `title` attribute contains the word 'hello'.",
+        "type": "short_answer",
+        "answers": [
+            "[title~='hello']",
+            "[title~=\"hello\"]"
+        ],
+        "isCaseSensitive": true
+    },
+    {
+        "q": "Swipe left if the predicate relies on an Integer Index, and right if it invokes a built-in XPath Function.",
+        "type": "swipe_cards",
+        "left_label": "Integer Index",
+        "right_label": "Function",
+        "cards": {
+            "[1]": "left",
+            "[last()]": "right",
+            "[3]": "left",
+            "[position()]": "right"
+        }
+    },
+    {
+        "q": "BeautifulSoup can parse only HTML, not XML.",
+        "type": "true_false",
+        "correct": "False"
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "from bs4 import BeautifulSoup\nsoup = BeautifulSoup('<p>Hello <b>World</b></p>', 'html.parser')\nprint(soup.p.b.previous_sibling.string)",
+        "o": [
+            "Hello ",
+            "Hello",
+            "World",
+            "b"
+        ]
+    },
+    {
+        "q": "Which XPath expression selects all sibling elements regardless of their name?",
+        "type": "mcq",
+        "o": [
+            "following-sibling::*",
+            "following::*",
+            "sibling::*",
+            "child::*"
+        ]
+    },
+    {
+        "q": "The `soup.new_tag()` method creates a new Tag object that can be inserted into the tree.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "What mathematical concept refers to the specific positional number of an item in a sequence?",
+        "type": "word_scramble",
+        "answer": "INDEX",
+        "decoys": "FL"
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "from bs4 import BeautifulSoup\nsoup = BeautifulSoup('<a href=\"1\">A</a><a href=\"2\">B</a>', 'html.parser')\nprint(soup.find('a').find_next('a')['href'])",
+        "o": [
+            "2",
+            "1",
+            "A",
+            "B"
+        ]
+    },
+    {
+        "q": "In CSS selectors, the ______ combinator selects all sibling elements that share the same parent.",
+        "type": "fill_blank",
+        "answers": [
+            "~",
+            "general sibling"
+        ],
+        "other_options": [
+            "+",
+            ">",
+            "space"
+        ]
+    },
+    {
+        "q": "What does the XPath function `substring-before(str, 'delim')` return?",
+        "type": "mcq",
+        "o": [
+            "The portion of str before the first occurrence of delim",
+            "The portion after delim",
+            "The entire string if delim not found",
+            "The index of delim"
+        ]
+    },
+    {
+        "q": "Complete the sentence explaining predicate usage:",
+        "type": "inline_dropdown",
+        "text": "Predicates are strictly written within [0] brackets and serve to filter matched nodes based on a [1] condition.",
+        "dropdowns": [
+            {
+                "correct": "square",
+                "options": [
+                    "square",
+                    "curly",
+                    "round"
+                ]
+            },
+            {
+                "correct": "specific",
+                "options": [
+                    "specific",
+                    "random",
+                    "inverted"
+                ]
+            }
+        ]
+    },
+    {
+        "q": "In lxml, `etree.parse()` can accept a URL directly.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "from bs4 import BeautifulSoup\nsoup = BeautifulSoup('<ul><li>A</li><li>B</li></ul>', 'html.parser')\nprint(soup.ul.contents[1].text)",
+        "o": [
+            "B",
+            "A",
+            "li",
+            "ul"
+        ]
+    },
+    {
+        "q": "How many arguments does the standard XPath contains() function require to execute? e.g. contains(arg1, arg2)",
+        "type": "slider",
+        "min": 1,
+        "max": 5,
+        "correct": 2
+    },
+    {
+        "q": "Match the XPath number function with its operation:",
+        "type": "match",
+        "left": [
+            "sum()",
+            "floor()",
+            "ceiling()",
+            "round()"
+        ],
+        "right": [
+            "Adds all values in a node-set",
+            "Rounds down to nearest integer",
+            "Rounds up to nearest integer",
+            "Rounds to nearest integer"
+        ]
+    },
+    {
+        "q": "Write the BeautifulSoup code to find all tags that have exactly two CSS classes.",
+        "type": "short_answer",
+        "answers": [
+            "soup.find_all(lambda tag: len(tag.get('class', [])) == 2)"
+        ],
+        "isCaseSensitive": true
+    },
+    {
+        "q": "Which of these functions is NOT part of standard XPath 1.0 (the version natively used by lxml)?",
+        "type": "odd_one_out",
+        "options": [
+            "contains()",
+            "starts-with()",
+            "substring()",
+            "ends-with()"
+        ],
+        "correct": "ends-with()"
+    },
+    {
+        "q": "The `select()` method in BeautifulSoup supports all CSS3 selectors.",
+        "type": "true_false",
+        "correct": "False"
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "from lxml import etree\nroot = etree.HTML('<div class=\"main\"><p>Text</p></div>')\nprint(root.xpath('//div[@class=\"main\"]/p/text()')[0])",
+        "o": [
+            "Text",
+            "main",
+            "div",
+            "p"
+        ]
+    },
+    {
+        "q": "Which method in BeautifulSoup removes a tag from the tree and discards it completely?",
+        "type": "mcq",
+        "o": [
+            "decompose()",
+            "extract()",
+            "unwrap()",
+            "remove()"
+        ]
+    },
+    {
+        "q": "In XPath, `//*[@id='main']/descendant::p` selects all paragraph descendants of the element with id 'main'.",
+        "type": "fill_blank",
+        "answers": [
+            "True"
+        ],
+        "other_options": [
+            "False",
+            "Depends",
+            "Maybe"
+        ]
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "from bs4 import BeautifulSoup\nsoup = BeautifulSoup('<p class=\"content article\">Text</p>', 'html.parser')\nprint(soup.select_one('p.content.article').text)",
+        "o": [
+            "Text",
+            "content article",
+            "p",
+            "content"
+        ]
+    },
+    {
+        "q": "Which XPath operator returns the union of two node-sets?",
+        "type": "mcq",
+        "o": [
+            "|",
+            "+",
+            "union",
+            "&"
+        ]
+    },
+    {
+        "q": "BeautifulSoup's `find_all` method with `recursive=True` searches all descendants, not just direct children.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "from bs4 import BeautifulSoup\nsoup = BeautifulSoup('<p>First</p><p>Second</p>', 'html.parser')\nprint(soup.find('p').find_all_next()[-1].text)",
+        "o": [
+            "Second",
+            "First",
+            "p",
+            "None"
+        ]
+    },
+    {
+        "q": "Match the XPath string function with its specific text manipulation role.",
+        "type": "memory",
+        "pairs": {
+            "contains()": "Matches a partial substring anywhere inside",
+            "starts-with()": "Matches a strict prefix at the beginning",
+            "concat()": "Joins two separate strings together"
+        }
+    },
+    {
+        "q": "Match the BeautifulSoup output formatter with its effect:",
+        "type": "match",
+        "left": [
+            "minimal",
+            "html",
+            "None",
+            "html5"
+        ],
+        "right": [
+            "Minimal formatting",
+            "HTML-valid formatting",
+            "No formatting",
+            "HTML5 standard formatting"
+        ]
+    },
+    {
+        "q": "Categorize these XPath features: swipe left for Boolean Matches (returns True/False) and right for Text Formatting (returns a string).",
+        "type": "swipe_cards",
+        "left_label": "Boolean Match",
+        "right_label": "Text Formatting",
+        "cards": {
+            "contains()": "left",
+            "normalize-space()": "right",
+            "starts-with()": "left",
+            "translate()": "right"
+        }
+    },
+    {
+        "q": "Name the CSS pseudo-class that selects elements based on a formula for their position.",
+        "type": "short_answer",
+        "answers": [
+            ":nth-child",
+            ":nth-of-type"
+        ],
+        "isCaseSensitive": true
+    },
+    {
+        "q": "Which XPath string function is used to append two distinct strings end-to-end?",
+        "type": "word_scramble",
+        "answer": "CONCAT",
+        "decoys": "PR"
+    },
+    {
+        "q": "In lxml, `etree.HTML()` creates a complete HTML document tree, adding missing structure.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "from bs4 import BeautifulSoup\nsoup = BeautifulSoup('<a href=\"page\">Link</a>', 'html.parser')\nprint(soup.a.attrs)",
+        "o": [
+            "{'href': 'page'}",
+            "page",
+            "a",
+            "Link"
+        ]
+    },
+    {
+        "q": "Complete the sentence regarding XPath 1.0 string matching limitations:",
+        "type": "inline_dropdown",
+        "text": "Unlike modern CSS, standard XPath 1.0 lacks a native [0] function, but it natively supports prefix matching and [1].",
+        "dropdowns": [
+            {
+                "correct": "ends-with()",
+                "options": [
+                    "ends-with()",
+                    "contains()",
+                    "starts-with()"
+                ]
+            },
+            {
+                "correct": "contains()",
+                "options": [
+                    "contains()",
+                    "matches()",
+                    "regex()"
+                ]
+            }
+        ]
+    },
+    {
+        "q": "Match the XPath vertical tree axis to its traversal direction.",
+        "type": "memory",
+        "pairs": {
+            "child::": "Looks only at immediate children",
+            "descendant::": "Recursively scans all sub-levels below",
+            "parent::": "Looks only one level up at the immediate parent"
+        }
+    },
+    {
+        "q": "Which XPath expression selects elements whose text content equals a specific value?",
+        "type": "mcq",
+        "o": [
+            "[text()='value']",
+            "[.='value']",
+            "[string()='value']",
+            "[content()='value']"
+        ]
+    },
+    {
+        "q": "The `prettify()` method can accept a formatter argument to control output style.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "from bs4 import BeautifulSoup\nsoup = BeautifulSoup('<p><b>Bold</b> Normal</p>', 'html.parser')\nprint(soup.p.b.next_sibling)",
+        "o": [
+            " Normal",
+            "Bold",
+            "b",
+            "None"
+        ]
+    },
+    {
+        "q": "The `etree.SubElement()` function creates a new child element and appends it to the parent.",
+        "type": "fill_blank",
+        "answers": [
+            "True"
+        ],
+        "other_options": [
+            "False",
+            "Depends",
+            "Maybe"
+        ]
+    },
+    {
+        "q": "Swipe left for axes that traverse Upward in the tree hierarchy, and right for axes traversing Downward.",
+        "type": "swipe_cards",
+        "left_label": "Upward Axis",
+        "right_label": "Downward Axis",
+        "cards": {
+            "parent::": "left",
+            "child::": "right",
+            "ancestor::": "left",
+            "descendant::": "right"
+        }
+    },
+    {
+        "q": "What CSS selector selects all siblings of a paragraph that come after it?",
+        "type": "mcq",
+        "o": [
+            "p ~ *",
+            "p + *",
+            "p > *",
+            "p *"
+        ]
+    },
+    {
+        "q": "In XPath, `//p[not(@class)]` selects paragraphs that have no class attribute.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "from bs4 import BeautifulSoup\nsoup = BeautifulSoup('<div><p>A</p><p>B</p><p>C</p></div>', 'html.parser')\nprint(soup.find_all('p')[1].find_previous_sibling().text)",
+        "o": [
+            "A",
+            "B",
+            "C",
+            "p"
+        ]
+    },
+    {
+        "q": "Match the XPath string function with its example result:",
+        "type": "match",
+        "left": [
+            "concat('a','b')",
+            "string-length('hello')",
+            "substring('hello',2,3)",
+            "contains('hello','ell')"
+        ],
+        "right": [
+            "'ab'",
+            "5",
+            "'ell'",
+            "true()"
+        ]
+    },
+    {
+        "q": "Write the XPath to select the href attribute value of all anchor tags.",
+        "type": "short_answer",
+        "answers": [
+            "//a/@href"
+        ],
+        "isCaseSensitive": true
+    },
+    {
+        "q": "BeautifulSoup's `string` property returns the first NavigableString inside a tag.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "from lxml import etree\nroot = etree.HTML('<p>100</p>')\nprint(root.xpath('//p[number(text()) > 50]/text()')[0])",
+        "o": [
+            "100",
+            "p",
+            "50",
+            "True"
+        ]
+    },
+    {
+        "q": "Which hierarchical term describes an element nested directly inside another element?",
+        "type": "word_scramble",
+        "answer": "CHILD",
+        "decoys": "XZ"
+    },
+    {
+        "q": "Which BeautifulSoup object is used to represent the declaration at the beginning of an HTML document?",
+        "type": "mcq",
+        "o": [
+            "Doctype",
+            "Declaration",
+            "Comment",
+            "ProcessingInstruction"
+        ]
+    },
+    {
+        "q": "In CSS selectors, `[attr^='val']` matches elements where the attribute starts with 'val'.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "from bs4 import BeautifulSoup\nsoup = BeautifulSoup('<p class=\"a b\">Text</p>', 'html.parser')\nprint(soup.select('p.a')[0].text)",
+        "o": [
+            "Text",
+            "a b",
+            "a",
+            "p"
+        ]
+    },
+    {
+        "q": "The ______ axis in XPath is used to select siblings that appear before the current node.",
+        "type": "fill_blank",
+        "answers": [
+            "preceding-sibling"
+        ],
+        "other_options": [
+            "following-sibling",
+            "ancestor",
+            "descendant"
+        ]
+    },
+    {
+        "q": "What does the XPath `//div/parent::*` expression select?",
+        "type": "mcq",
+        "o": [
+            "The parent of each div element",
+            "The child of each div",
+            "All div elements",
+            "All parent elements"
+        ]
+    },
+    {
+        "q": "Complete the sentence about basic XPath axis usage:",
+        "type": "inline_dropdown",
+        "text": "The [0] axis explicitly selects nodes nested inside the current node, which is identical in behavior to just writing the [1].",
+        "dropdowns": [
+            {
+                "correct": "child::",
+                "options": [
+                    "child::",
+                    "parent::",
+                    "descendant::"
+                ]
+            },
+            {
+                "correct": "tag name",
+                "options": [
+                    "tag name",
+                    "//",
+                    ".."
+                ]
+            }
+        ]
+    },
+    {
+        "q": "BeautifulSoup's `insert_before()` method places content directly before a tag in the tree.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "from bs4 import BeautifulSoup\nsoup = BeautifulSoup('<p>Hello</p>', 'html.parser')\nprint(soup.p.unwrap())\nprint(soup)",
+        "o": [
+            "None\nHello",
+            "Hello\n<p></p>",
+            "None\n<p></p>",
+            "Error"
+        ]
+    },
+    {
+        "q": "Name the lxml module that provides thread-safe XML parsing.",
+        "type": "short_answer",
+        "answers": [
+            "etree",
+            "lxml.etree"
+        ],
+        "isCaseSensitive": true
+    },
+    {
+        "q": "In XPath, the `|` operator creates a union, removing duplicate nodes from the result.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Match the XPath lateral sibling axis to its scope of traversal.",
+        "type": "memory",
+        "pairs": {
+            "following-sibling::": "Siblings appearing later under the same parent",
+            "preceding-sibling::": "Siblings appearing earlier under the same parent",
+            "following::": "Any subsequent element in the entire document"
+        }
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "from bs4 import BeautifulSoup\nsoup = BeautifulSoup('<div>Hello <b>World</b></div>', 'html.parser')\nprint(soup.div.contents[0])",
+        "o": [
+            "Hello ",
+            "Hello",
+            "World",
+            "b"
+        ]
+    },
+    {
+        "q": "Which CSS pseudo-class selects elements that are the only one of their type among siblings?",
+        "type": "mcq",
+        "o": [
+            ":only-of-type",
+            ":only-child",
+            ":unique",
+            ":single-of-type"
+        ]
+    },
+    {
+        "q": "Match the XPath expression with what it selects:",
+        "type": "match",
+        "left": [
+            "//div[1]",
+            "(//div)[1]",
+            "//div/following-sibling::*[1]",
+            "//div/preceding-sibling::*[1]"
+        ],
+        "right": [
+            "First div child of each parent",
+            "The first div in the document",
+            "First element after each div",
+            "First element before each div"
+        ]
+    },
+    {
+        "q": "Categorize these axes: left for Siblings Only (same parent) and right for Entire Document (ignoring parents).",
+        "type": "swipe_cards",
+        "left_label": "Siblings Only",
+        "right_label": "Entire Document",
+        "cards": {
+            "following-sibling::": "left",
+            "following::": "right",
+            "preceding-sibling::": "left",
+            "preceding::": "right"
+        }
+    },
+    {
+        "q": "The `html.parser` in BeautifulSoup cannot handle HTML5 specific elements like `<article>` or `<nav>`.",
+        "type": "true_false",
+        "correct": "False"
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "from bs4 import BeautifulSoup\nsoup = BeautifulSoup('<a>Link</a>', 'html.parser')\nsoup.a['href'] = 'page.html'\nprint(soup.a['href'])",
+        "o": [
+            "page.html",
+            "Link",
+            "a",
+            "None"
+        ]
+    },
+    {
+        "q": "The `find_all` method can search by a combination of tag name, attributes, and text content simultaneously.",
+        "type": "fill_blank",
+        "answers": [
+            "True"
+        ],
+        "other_options": [
+            "False",
+            "Depends",
+            "Maybe"
+        ]
+    },
+    {
+        "q": "What term defines a specific line or direction of node traversal in XPath navigation?",
+        "type": "word_scramble",
+        "answer": "AXIS",
+        "decoys": "KM"
+    },
+    {
+        "q": "What does the XPath `translate()` function do?",
+        "type": "mcq",
+        "o": [
+            "Replaces characters in a string based on a mapping",
+            "Translates text to another language",
+            "Changes element positions",
+            "Moves nodes in the tree"
+        ]
+    },
+    {
+        "q": "In BeautifulSoup, the `.children` attribute returns an iterator over direct children only.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Complete the sentence on scraping tabular rows via axes:",
+        "type": "inline_dropdown",
+        "text": "To step from one table row down to the exact next row, utilize the [0] axis relative to your current [1] tag.",
+        "dropdowns": [
+            {
+                "correct": "following-sibling::",
+                "options": [
+                    "following-sibling::",
+                    "next::",
+                    "following::"
+                ]
+            },
+            {
+                "correct": "tr",
+                "options": [
+                    "tr",
+                    "td",
+                    "th"
+                ]
+            }
+        ]
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "from bs4 import BeautifulSoup\nsoup = BeautifulSoup('<span>One</span><span>Two</span><span>Three</span>', 'html.parser')\nprint(soup.find_all('span')[1].find_next_sibling().text)",
+        "o": [
+            "Three",
+            "Two",
+            "One",
+            "span"
+        ]
+    },
+    {
+        "q": "Write the XPath to select all elements where the id attribute contains the string 'main'.",
+        "type": "short_answer",
+        "answers": [
+            "//*[contains(@id,'main')]",
+            "//*[contains(@id, 'main')]"
+        ],
+        "isCaseSensitive": true
+    },
+    {
+        "q": "CSS attribute selectors are case-sensitive by default.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "from bs4 import BeautifulSoup\nsoup = BeautifulSoup('<div class=\"test\" id=\"main\"></div>', 'html.parser')\nprint(soup.div.has_attr('class'))",
+        "o": [
+            "True",
+            "False",
+            "test",
+            "main"
+        ]
+    },
+    {
+        "q": "Which method in lxml returns an iterator over elements with a specific tag name?",
+        "type": "mcq",
+        "o": [
+            "iter()",
+            "findall()",
+            "getiterator()",
+            "find()"
+        ]
+    },
+    {
+        "q": "BeautifulSoup's `find_parents()` method returns all matching ancestors, while `find_parent()` returns the first.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "from bs4 import BeautifulSoup\nsoup = BeautifulSoup('<p>Hello</p>', 'html.parser')\nnew_tag = soup.new_tag('b')\nnew_tag.string = 'World'\nsoup.p.append(new_tag)\nprint(soup.p.b.string)",
+        "o": [
+            "World",
+            "Hello",
+            "b",
+            "None"
+        ]
+    },
+    {
+        "q": "What is the key difference between `lxml.html` and `lxml.etree` when parsing HTML?",
+        "type": "mcq",
+        "o": [
+            "lxml.html provides HTML-specific methods like `get_element_by_id`",
+            "lxml.etree only parses XML",
+            "lxml.html is slower",
+            "lxml.etree cannot handle broken HTML"
+        ]
+    },
+    {
+        "q": "In XPath, how do you select nodes that have a child with a specific attribute value?",
+        "type": "mcq",
+        "o": [
+            "//*[child::*[@attr='value']]",
+            "//*[@attr='value']/child",
+            "//*[attr='value']",
+            "//child[@attr='value']"
+        ]
+    },
+    {
+        "q": "Match the advanced BeautifulSoup filter argument to its evaluation style.",
+        "type": "memory",
+        "pairs": {
+            "re.compile()": "Matches tags checking against a Regular Expression",
+            "True": "Matches absolutely any tag that successfully parses",
+            "lambda": "Matches passing tags into a custom inline function"
+        }
+    },
+    {
+        "q": "BeautifulSoup's `stripped_strings` generator yields strings with surrounding whitespace removed.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "from bs4 import BeautifulSoup\nsoup = BeautifulSoup('<div><p>A</p>  <p>B</p></div>', 'html.parser')\nprint(soup.p.next_sibling.next_sibling.name)",
+        "o": [
+            "p",
+            "B",
+            "div",
+            "None"
+        ]
+    },
+    {
+        "q": "Match the XPath node comparison operators with their meanings:",
+        "type": "match",
+        "left": [
+            "=",
+            "!=",
+            "<",
+            ">="
+        ],
+        "right": [
+            "Equal",
+            "Not equal",
+            "Less than (for numbers)",
+            "Greater than or equal"
+        ]
+    },
+    {
+        "q": "Which CSS pseudo-class selects elements that match a selector but not another?",
+        "type": "mcq",
+        "o": [
+            ":not()",
+            ":except()",
+            ":without()",
+            ":filter()"
+        ]
+    },
+    {
+        "q": "The `etree.iterparse()` function in lxml yields events as the XML document is parsed incrementally.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Swipe left if accessing the property yields a String Output, and right if it yields a Dictionary/List Output.",
+        "type": "swipe_cards",
+        "left_label": "String Output",
+        "right_label": "Dictionary / List Output",
+        "cards": {
+            "tag.name": "left",
+            "tag.attrs": "right",
+            "tag.text": "left",
+            "tag['class']": "right"
+        }
+    },
+    {
+        "q": "Write the BeautifulSoup code to extract all text from a webpage, excluding script and style tags.",
+        "type": "short_answer",
+        "answers": [
+            "[s.extract() for s in soup(['script', 'style'])]; print(soup.get_text())"
+        ],
+        "isCaseSensitive": true
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "from bs4 import BeautifulSoup\nsoup = BeautifulSoup('<a href=\"http://a.com\">A</a><a href=\"http://b.com\">B</a>', 'html.parser')\nlinks = soup.find_all('a', href=True)\nprint(links[1]['href'])",
+        "o": [
+            "http://b.com",
+            "http://a.com",
+            "B",
+            "A"
+        ]
+    },
+    {
+        "q": "What Python keyword creates small, anonymous functions frequently used as custom BS4 tag filters?",
+        "type": "word_scramble",
+        "answer": "LAMBDA",
+        "decoys": "YQ"
+    },
+    {
+        "q": "In XPath, the expression `//div[@class='x']/following-sibling::*[1]` selects the ______ sibling element immediately following the div.",
+        "type": "fill_blank",
+        "answers": [
+            "first",
+            "next"
+        ],
+        "other_options": [
+            "last",
+            "previous",
+            "all"
+        ]
+    },
+    {
+        "q": "Which lxml method allows transforming an XML document using XSLT?",
+        "type": "mcq",
+        "o": [
+            "etree.XSLT()",
+            "etree.transform()",
+            "etree.apply()",
+            "etree.xslt()"
+        ]
+    },
+    {
+        "q": "Complete the sentence regarding advanced find_all filters:",
+        "type": "inline_dropdown",
+        "text": "When querying tags, passing the boolean [0] matches every valid tag, while passing a [1] object allows regex pattern matching.",
+        "dropdowns": [
+            {
+                "correct": "True",
+                "options": [
+                    "True",
+                    "All",
+                    "*"
+                ]
+            },
+            {
+                "correct": "re.compile()",
+                "options": [
+                    "re.compile()",
+                    "regex()",
+                    "pattern()"
+                ]
+            }
+        ]
+    },
+    {
+        "q": "What does the XPath function `local-name()` return that `name()` does not?",
+        "type": "mcq",
+        "o": [
+            "The element name without namespace prefix",
+            "The full qualified name",
+            "The parent name",
+            "The attribute name"
+        ]
+    },
+    {
+        "q": "BeautifulSoup's `find_all_next` and `find_all_previous` search the entire document after or before a tag.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "from bs4 import BeautifulSoup\nsoup = BeautifulSoup('<p class=\"main\">Hello <span>World</span></p>', 'html.parser')\nprint(soup.p.span.previous_sibling.strip())",
+        "o": [
+            "Hello",
+            " World",
+            "Hello World",
+            "span"
+        ]
+    },
+    {
+        "q": "Match the BeautifulSoup tree modification methods with their effects:",
+        "type": "match",
+        "left": [
+            "insert(0, tag)",
+            "append(tag)",
+            "replace_with(tag)",
+            "wrap(tag)"
+        ],
+        "right": [
+            "Insert at beginning",
+            "Add to the end",
+            "Replace current tag",
+            "Wrap current tag inside another"
+        ]
+    },
+    {
+        "q": "Match the standard HTML table tag to its semantic purpose.",
+        "type": "memory",
+        "pairs": {
+            "tr": "Defines a single horizontal row",
+            "th": "Defines a header cell, often bolded",
+            "td": "Defines standard data cell contents",
+            "ul": "Defines an unordered bulleted list structure"
+        }
+    },
+    {
+        "q": "In CSS selectors, `E[attr~='val']` matches when 'val' is one of a space-separated list of attribute values.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Categorize these heavily-scraped HTML tags as either Block Level (forces new line) or Inline Level (flows within text).",
+        "type": "swipe_cards",
+        "left_label": "Block Level",
+        "right_label": "Inline Level",
+        "cards": {
+            "div": "left",
+            "span": "right",
+            "p": "left",
+            "a": "right"
+        }
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "from lxml import etree\nroot = etree.HTML('<div><p>A</p><p>B</p><p>C</p></div>')\nprint(root.xpath('//p[position() mod 2 = 0]/text()'))",
+        "o": [
+            "['B']",
+            "['A', 'B', 'C']",
+            "['A', 'C']",
+            "['B', 'C']"
+        ]
+    },
+    {
+        "q": "Which XPath function evaluates to true if a condition is false, and vice versa?",
+        "type": "mcq",
+        "o": [
+            "not()",
+            "false()",
+            "invert()",
+            "negate()"
+        ]
+    },
+    {
+        "q": "Write the XPath to select all sibling elements that appear before a specific div with id 'target'.",
+        "type": "short_answer",
+        "answers": [
+            "//div[@id='target']/preceding-sibling::*"
+        ],
+        "isCaseSensitive": true
+    },
+    {
+        "q": "The `html5lib` parser normalizes the document structure more aggressively than `lxml`.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "from bs4 import BeautifulSoup\nsoup = BeautifulSoup('<div><p>One</p><p>Two</p></div>', 'html.parser')\nfor p in soup.find_all('p'):\n    p.decompose()\nprint(soup.div.text.strip())",
+        "o": [
+            "",
+            "One",
+            "Two",
+            "One Two"
+        ]
+    },
+    {
+        "q": "The `etree.CDATA()` function creates a CDATA section in the XML tree.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "from bs4 import BeautifulSoup\nsoup = BeautifulSoup('<html><head><title>Test</title></head><body></body></html>', 'html.parser')\nprint(soup.title.string.parent.name)",
+        "o": [
+            "title",
+            "head",
+            "html",
+            "Test"
+        ]
+    },
+    {
+        "q": "What HTML structure consists of rows and columns heavily targeted during data scraping?",
+        "type": "word_scramble",
+        "answer": "TABLE",
+        "decoys": "VW"
+    },
+    {
+        "q": "The `select()` method in BeautifulSoup can accept a `namespaces` parameter for XML with namespaces.",
+        "type": "fill_blank",
+        "answers": [
+            "True"
+        ],
+        "other_options": [
+            "False",
+            "Depends",
+            "Maybe"
+        ]
+    },
+    {
+        "q": "Which method in BeautifulSoup returns all strings matching a filter recursively?",
+        "type": "mcq",
+        "o": [
+            "find_all(string=True)",
+            "find_all(text=True)",
+            "get_text()",
+            "stripped_strings"
+        ]
+    },
+    {
+        "q": "What does the XPath `//div[matches(@class, 'pattern')]` function do?",
+        "type": "mcq",
+        "o": [
+            "Uses regex to match the class attribute (XPath 2.0 only)",
+            "Finds exact class matches",
+            "Matches partial text",
+            "Checks for attribute existence"
+        ]
+    },
+    {
+        "q": "In lxml, `etree.Element()` creates a new element with a given tag and attributes.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "from bs4 import BeautifulSoup\nsoup = BeautifulSoup('<div id=\"container\"><p>Hi</p></div>', 'html.parser')\nprint(soup.find(id='container').p.text)",
+        "o": [
+            "Hi",
+            "container",
+            "p",
+            "div"
+        ]
+    },
+    {
+        "q": "Match the XPath axis with the type of node it selects:",
+        "type": "match",
+        "left": [
+            "attribute",
+            "namespace",
+            "self",
+            "descendant-or-self"
+        ],
+        "right": [
+            "Attributes of the context node",
+            "Namespace nodes",
+            "The context node itself",
+            "Context node and all descendants"
+        ]
+    },
+    {
+        "q": "Write the CSS selector to match elements that have exactly the class 'active' and no other classes.",
+        "type": "short_answer",
+        "answers": [
+            "[class='active']"
+        ],
+        "isCaseSensitive": true
+    },
+    {
+        "q": "The `soup.title.string` and `soup.title.text` always return identical results.",
+        "type": "true_false",
+        "correct": "False"
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "from bs4 import BeautifulSoup\nsoup = BeautifulSoup('<p>Hello</p>', 'html.parser')\nprint(soup.p.encode_contents())",
+        "o": [
+            "b'Hello'",
+            "Hello",
+            "<p>Hello</p>",
+            "b'<p>Hello</p>'"
+        ]
+    },
+    {
+        "q": "Which XPath expression selects the first ancestor div element?",
+        "type": "mcq",
+        "o": [
+            "ancestor::div[1]",
+            "ancestor::*[1]",
+            "parent::div",
+            "ancestor-or-self::div"
+        ]
+    },
+    {
+        "q": "Complete the sentence on scraping standard table structures:",
+        "type": "inline_dropdown",
+        "text": "When scraping HTML data grids, scripts typically loop over the [0] tags and systematically extract text from the inner [1] elements.",
+        "dropdowns": [
+            {
+                "correct": "tr",
+                "options": [
+                    "tr",
+                    "table",
+                    "tbody"
+                ]
+            },
+            {
+                "correct": "td",
+                "options": [
+                    "td",
+                    "th",
+                    "tr"
+                ]
+            }
+        ]
+    },
+    {
+        "q": "BeautifulSoup's `replace_with_children()` is a built-in method to remove a tag while keeping its children.",
+        "type": "true_false",
+        "correct": "False"
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "from bs4 import BeautifulSoup\nsoup = BeautifulSoup('<p class=\"a b c\">Text</p>', 'html.parser')\nprint('a' in soup.p['class'])",
+        "o": [
+            "True",
+            "False",
+            "a",
+            "Text"
+        ]
+    },
+    {
+        "q": "In CSS selectors, the ______ combinator selects only the first sibling that immediately follows an element.",
+        "type": "fill_blank",
+        "answers": [
+            "+",
+            "adjacent sibling"
+        ],
+        "other_options": [
+            "~",
+            ">",
+            "space"
+        ]
+    },
+    {
+        "q": "What does the XPath function `id('myid')` do?",
+        "type": "mcq",
+        "o": [
+            "Selects an element by its unique ID",
+            "Returns the id attribute value",
+            "Generates a random ID",
+            "Checks if id is valid"
+        ]
+    },
+    {
+        "q": "The `lxml` parser removes duplicate attributes silently by keeping the first occurrence.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "from bs4 import BeautifulSoup\nsoup = BeautifulSoup('<div><p>A</p><span>B</span></div>', 'html.parser')\nprint(soup.p.find_next_sibling('span').text)",
+        "o": [
+            "B",
+            "A",
+            "span",
+            "p"
+        ]
+    },
+    {
+        "q": "Match the lxml parser options with their behavior:",
+        "type": "match",
+        "left": [
+            "remove_blank_text",
+            "remove_comments",
+            "huge_tree",
+            "strip_cdata"
+        ],
+        "right": [
+            "Remove whitespace-only text",
+            "Remove comment nodes",
+            "Disable security restrictions",
+            "Remove CDATA sections"
+        ]
+    },
+    {
+        "q": "Write the XPath expression to count all image elements on a page.",
+        "type": "short_answer",
+        "answers": [
+            "count(//img)",
+            "count(//img)"
+        ],
+        "isCaseSensitive": true
+    },
+    {
+        "q": "In BeautifulSoup, `Tag.attrs` can be modified directly like a regular Python dictionary.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "from bs4 import BeautifulSoup\nsoup = BeautifulSoup('<div><p>A</p><!--comment--><p>B</p></div>', 'html.parser')\nprint(len(soup.div.find_all('p')))",
+        "o": [
+            "2",
+            "3",
+            "1",
+            "0"
+        ]
+    },
+    {
+        "q": "Which XPath predicate selects elements whose position is less than or equal to 3?",
+        "type": "mcq",
+        "o": [
+            "[position() <= 3]",
+            "[count() <= 3]",
+            "[index() <= 3]",
+            "[n <= 3]"
+        ]
+    },
+    {
+        "q": "Match the BeautifulSoup tree modification method to its destructive action.",
+        "type": "memory",
+        "pairs": {
+            "decompose()": "Destroys the tag and its contents permanently",
+            "extract()": "Removes the tag from the tree but returns it for use",
+            "unwrap()": "Deletes the wrapper tag but leaves inner contents intact"
+        }
+    },
+    {
+        "q": "The `soup.new_string()` method creates a new NavigableString object.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Swipe left for safe Read-only methods, and right for Destructive methods that mutate the parse tree.",
+        "type": "swipe_cards",
+        "left_label": "Read-only",
+        "right_label": "Destructive",
+        "cards": {
+            "find()": "left",
+            "decompose()": "right",
+            "select()": "left",
+            "unwrap()": "right"
+        }
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "from bs4 import BeautifulSoup\nsoup = BeautifulSoup('<div><p>A</p><p>B</p></div>', 'html.parser')\nprint(soup.find_all('p', limit=1)[0].text)",
+        "o": [
+            "A",
+            "B",
+            "p",
+            "div"
+        ]
+    },
+    {
+        "q": "In XPath, the expression `//book[author='John']/title` selects the ______ of books authored by John.",
+        "type": "fill_blank",
+        "answers": [
+            "title",
+            "titles"
+        ],
+        "other_options": [
+            "author",
+            "text",
+            "content"
+        ]
+    },
+    {
+        "q": "What CSS selector selects elements that do not have a specific attribute?",
+        "type": "mcq",
+        "o": [
+            ":not([attr])",
+            "[!attr]",
+            "[:without-attr]",
+            "[attr=false]"
+        ]
+    },
+    {
+        "q": "BeautifulSoup's `select()` method accepts only CSS2 selectors.",
+        "type": "true_false",
+        "correct": "False"
+    },
+    {
+        "q": "Which BS4 method rips a tag entirely out of the parsed tree and returns it?",
+        "type": "word_scramble",
+        "answer": "EXTRACT",
+        "decoys": "HJ"
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "from bs4 import BeautifulSoup\nsoup = BeautifulSoup('<p>Hello World</p>', 'html.parser')\nsoup.p.string.replace_with('Hi')\nprint(soup.p.string)",
+        "o": [
+            "Hi",
+            "Hello World",
+            "p",
+            "None"
+        ]
+    },
+    {
+        "q": "Complete the sentence regarding cleaning messy tree data:",
+        "type": "inline_dropdown",
+        "c": "script_tag = soup.find('script')\nscript_tag.decompose()",
+        "text": "If hidden inline scripts corrupt your scraping results, call [0] on them to [1] them from the parse tree altogether.",
+        "dropdowns": [
+            {
+                "correct": "decompose()",
+                "options": [
+                    "decompose()",
+                    "remove()",
+                    "delete()"
+                ]
+            },
+            {
+                "correct": "permanently destroy",
+                "options": [
+                    "permanently destroy",
+                    "hide",
+                    "copy"
+                ]
+            }
+        ]
+    },
+    {
+        "q": "Match the XPath string function with its signature:",
+        "type": "match",
+        "left": [
+            "contains(str1, str2)",
+            "starts-with(str1, str2)",
+            "substring(str, start, len)",
+            "string-length(str)"
+        ],
+        "right": [
+            "Returns boolean",
+            "Returns boolean",
+            "Returns string",
+            "Returns number"
+        ]
+    },
+    {
+        "q": "Write the lxml code to remove all script tags from a parsed HTML tree.",
+        "type": "short_answer",
+        "answers": [
+            "for s in root.xpath('//script'): s.getparent().remove(s)",
+            "etree.strip_tags(root, 'script')"
+        ],
+        "isCaseSensitive": true
+    },
+    {
+        "q": "Which critical computing resource is vastly conserved by switching from pure-Python parsing to lxml's C-bindings?",
+        "type": "word_scramble",
+        "answer": "SPEED",
+        "decoys": "QZ"
+    },
+    {
+        "q": "The `html.parser` in Python automatically closes unclosed tags.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "from bs4 import BeautifulSoup\nsoup = BeautifulSoup('<div><p>A</p><p>B</p></div>', 'html.parser')\nprint(soup.div.prettify().count('\\n'))",
+        "o": [
+            "5",
+            "3",
+            "1",
+            "2"
+        ]
+    },
+    {
+        "q": "Which XPath expression selects the last element in a list of children?",
+        "type": "mcq",
+        "o": [
+            "child::*[last()]",
+            "last()",
+            "child::last()",
+            "child::*[-1]"
+        ]
+    },
+    {
+        "q": "In BeautifulSoup, `soup.find_all(attrs={'class': 'x'})` is equivalent to `soup.find_all(class_='x')`.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "from bs4 import BeautifulSoup\nsoup = BeautifulSoup('<a href=\"http://test.com\" class=\"link\">Test</a>', 'html.parser')\nprint(soup.select_one('a[href][class]').text)",
+        "o": [
+            "Test",
+            "link",
+            "http://test.com",
+            "a"
+        ]
+    },
+    {
+        "q": "Complete the sentence regarding parsing optimization:",
+        "type": "inline_dropdown",
+        "text": "For maximum execution parsing speed in Python scrapers, the external [0] parser is heavily preferred over the native built-in [1] engine.",
+        "dropdowns": [
+            {
+                "correct": "lxml",
+                "options": [
+                    "lxml",
+                    "html5lib",
+                    "bs4"
+                ]
+            },
+            {
+                "correct": "html.parser",
+                "options": [
+                    "html.parser",
+                    "dom.parser",
+                    "core.parser"
+                ]
+            }
+        ]
+    },
+    {
+        "q": "The `etree.HTMLParser` class in lxml allows configuring how HTML is parsed.",
+        "type": "fill_blank",
+        "answers": [
+            "True"
+        ],
+        "other_options": [
+            "False",
+            "Depends",
+            "Maybe"
+        ]
+    },
+    {
+        "q": "What does the XPath `//p[normalize-space()='Hello World']` predicate do?",
+        "type": "mcq",
+        "o": [
+            "Matches p elements whose normalized text equals 'Hello World'",
+            "Removes spaces from the text",
+            "Checks if text contains 'Hello World'",
+            "Normalizes all p elements"
+        ]
+    },
+    {
+        "q": "BeautifulSoup's `select_one()` is equivalent to `select()` with `limit=1`.",
+        "type": "true_false",
+        "correct": "False"
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "from bs4 import BeautifulSoup\nsoup = BeautifulSoup('<p>Hello</p><p>World</p>', 'html.parser')\nprint(soup.select('p:nth-of-type(2)')[0].text)",
+        "o": [
+            "World",
+            "Hello",
+            "p",
+            "2"
+        ]
+    },
+    {
+        "q": "Match the CSS attribute selector with its pattern:",
+        "type": "match",
+        "left": [
+            "[attr='val']",
+            "[attr*='val']",
+            "[attr^='val']",
+            "[attr$='val']"
+        ],
+        "right": [
+            "Exact match",
+            "Contains substring",
+            "Starts with",
+            "Ends with"
+        ]
+    },
+    {
+        "q": "What data type relies on strictly True or False states, commonly evaluated during XPath predicate logic?",
+        "type": "word_scramble",
+        "answer": "BOOLEAN",
+        "decoys": "XF"
+    },
+    {
+        "q": "Write the XPath to select elements that have either class 'x' or class 'y'.",
+        "type": "short_answer",
+        "answers": [
+            "//*[@class='x' or @class='y']",
+            "//*[contains(@class,'x') or contains(@class,'y')]"
+        ],
+        "isCaseSensitive": true
+    },
+    {
+        "q": "In lxml, XPath expressions are evaluated relative to the element they are called on.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Complete the sentence detailing logical combinations in XPath:",
+        "type": "inline_dropdown",
+        "text": "Inside complex XPath predicate brackets, engineers use spelled-out operators like [0] and [1] to merge multiple matching criteria.",
+        "dropdowns": [
+            {
+                "correct": "and",
+                "options": [
+                    "and",
+                    "&",
+                    "&&"
+                ]
+            },
+            {
+                "correct": "or",
+                "options": [
+                    "or",
+                    "|",
+                    "||"
+                ]
+            }
+        ]
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "from bs4 import BeautifulSoup\nsoup = BeautifulSoup('<p>Hello <i>beautiful</i> World</p>', 'html.parser')\nprint(soup.p.i.next_sibling.strip())",
+        "o": [
+            "World",
+            " beautiful ",
+            "Hello",
+            "i"
+        ]
+    },
+    {
+        "q": "Which XPath function returns true if the node-set is empty?",
+        "type": "mcq",
+        "o": [
+            "not(node-set)",
+            "empty(node-set)",
+            "count(node-set) = 0",
+            "null(node-set)"
+        ]
+    },
+    {
+        "q": "BeautifulSoup treats multi-valued attributes like `class` as a list of values.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "from bs4 import BeautifulSoup\nsoup = BeautifulSoup('<div><p>A</p><p>B</p></div>', 'html.parser')\nprint(soup.p.find_next().text)",
+        "o": [
+            "B",
+            "A",
+            "p",
+            "div"
+        ]
+    },
+    {
+        "q": "The ______ method in BeautifulSoup returns the tag's content as a bytes object.",
+        "type": "fill_blank",
+        "answers": [
+            "encode_contents"
+        ],
+        "other_options": [
+            "prettify",
+            "decode",
+            "get_text"
+        ]
+    },
+    {
+        "q": "What does the XPath expression `//*[count(ancestor::*) > 2]` select?",
+        "type": "mcq",
+        "o": [
+            "Elements nested at least 3 levels deep",
+            "Elements with more than 2 ancestors",
+            "Root elements",
+            "Elements with exactly 2 ancestors"
+        ]
+    },
+    {
+        "q": "In CSS, the `E[attr|='val']` selector matches when attr value is exactly 'val' or starts with 'val-'.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "from bs4 import BeautifulSoup\nsoup = BeautifulSoup('<p class=\"content\">A</p><p>B</p>', 'html.parser')\nprint(soup.select_one('p[class]').text)",
+        "o": [
+            "A",
+            "B",
+            "content",
+            "p"
+        ]
+    },
+    {
+        "q": "Match the XPath logical expression with its evaluation:",
+        "type": "match",
+        "left": [
+            "true() and true()",
+            "true() or false()",
+            "not(true())",
+            "true() and false()"
+        ],
+        "right": [
+            "true()",
+            "true()",
+            "false()",
+            "false()"
+        ]
+    },
+    {
+        "q": "When calling get_text() in BS4, what fundamental Python sequence type is physically generated and returned?",
+        "type": "word_scramble",
+        "answer": "STRINGS",
+        "decoys": "JK"
+    },
+    {
+        "q": "Write the BeautifulSoup code to get all text from direct children of a div, excluding nested tag text.",
+        "type": "short_answer",
+        "answers": [
+            "[c for c in soup.div.children if isinstance(c, str)]",
+            "soup.div.find_all(text=True, recursive=False)"
+        ],
+        "isCaseSensitive": true
+    },
+    {
+        "q": "Complete the sentence demonstrating text extraction cleanup:",
+        "type": "inline_dropdown",
+        "text": "Triggering get_text(strip=[0]) guarantees no trailing whitespace remains, while adding separator=[1] smoothly injects spaces between merged block elements.",
+        "dropdowns": [
+            {
+                "correct": "True",
+                "options": [
+                    "True",
+                    "False",
+                    "1"
+                ]
+            },
+            {
+                "correct": "' '",
+                "options": [
+                    "' '",
+                    "null",
+                    "break"
+                ]
+            }
+        ]
+    },
+    {
+        "q": "The `lxml.etree.parse()` function raises an exception on malformed XML unless `recover=True` is set.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "from lxml import etree\nroot = etree.HTML('<p>Hello <b>World</b></p>')\nb = root.xpath('//b')[0]\nprint(b.tail)",
+        "o": [
+            "None",
+            "Hello",
+            "World",
+            " "
+        ]
+    },
+    {
+        "q": "Which method in BeautifulSoup is used to clear all contents of a tag?",
+        "type": "mcq",
+        "o": [
+            ".clear()",
+            ".decompose()",
+            ".extract()",
+            ".empty()"
+        ]
+    },
+    {
+        "q": "In XPath, the `namespace::` axis selects namespace nodes associated with the context node.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "from bs4 import BeautifulSoup\nsoup = BeautifulSoup('<a href=\"page\">Link</a>', 'html.parser')\nsoup.a['href'] = 'newpage'\nprint(soup.a['href'])",
+        "o": [
+            "newpage",
+            "page",
+            "Link",
+            "a"
+        ]
+    },
+    {
+        "q": "The XPath `//*[@*]` predicate selects elements that have ______.",
+        "type": "fill_blank",
+        "answers": [
+            "any attribute"
+        ],
+        "other_options": [
+            "a specific attribute",
+            "no attributes",
+            "text content"
+        ]
+    },
+    {
+        "q": "What CSS selector selects all elements that are hidden?",
+        "type": "mcq",
+        "o": [
+            "[hidden]",
+            ".hidden",
+            ":hidden",
+            "#hidden"
+        ]
+    },
+    {
+        "q": "BeautifulSoup's `find_all` can accept a callable that takes a Tag and returns a boolean.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "from bs4 import BeautifulSoup\nsoup = BeautifulSoup('<div><span>1</span><span>2</span></div>', 'html.parser')\nprint(soup.span.find_next('span').text)",
+        "o": [
+            "2",
+            "1",
+            "span",
+            "div"
+        ]
+    },
+    {
+        "q": "Name the CSS selector that matches elements whose attribute value is a hyphen-separated list starting with a given value.",
+        "type": "short_answer",
+        "answers": [
+            "[attr|='val']",
+            "|= operator"
+        ],
+        "isCaseSensitive": true
+    },
+    {
+        "q": "The `etree.iter()` method in lxml traverses the tree in document order by default.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "How does `lxml` handle XML namespaces differently than BeautifulSoup when using XPath?",
+        "type": "mcq",
+        "o": [
+            "lxml requires namespace prefixes to be registered in XPath expressions",
+            "BeautifulSoup handles namespaces automatically in XPath",
+            "Both treat namespaces identically",
+            "lxml strips all namespaces by default"
+        ]
+    },
+    {
+        "q": "In XPath 2.0, what does the `except` operator do when used with two node-sets?",
+        "type": "mcq",
+        "o": [
+            "Returns nodes in the first set that are not in the second",
+            "Returns the union of both sets",
+            "Returns the intersection",
+            "Throws an error in XPath 1.0"
+        ]
+    },
+    {
+        "q": "BeautifulSoup's `Tag.smooth()` method consolidates adjacent NavigableStrings into a single NavigableString.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "In CSS selectors, keywords like ':first-child' fall under what conceptual class category?",
+        "type": "word_scramble",
+        "answer": "PSEUDO",
+        "decoys": "VW"
+    },
+    {
+        "q": "Complete the sentence utilizing CSS structural matches:",
+        "type": "inline_dropdown",
+        "text": "Without using element indexing, the CSS pseudo-class [0] cleanly isolates the very first nested item, whereas [1] exclusively isolates the very last.",
+        "dropdowns": [
+            {
+                "correct": ":first-child",
+                "options": [
+                    ":first-child",
+                    ":first",
+                    "::first"
+                ]
+            },
+            {
+                "correct": ":last-child",
+                "options": [
+                    ":last-child",
+                    ":last",
+                    "::last"
+                ]
+            }
+        ]
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "from bs4 import BeautifulSoup\nsoup = BeautifulSoup('<p>Hello <b>World</b> <!--comment--></p>', 'html.parser')\nprint(len(list(soup.p.children)))",
+        "o": [
+            "4",
+            "3",
+            "2",
+            "5"
+        ]
+    },
+    {
+        "q": "Match the lxml `iterparse` event types with their description:",
+        "type": "match",
+        "left": [
+            "start",
+            "end",
+            "start-ns",
+            "end-ns"
+        ],
+        "right": [
+            "Element opening tag encountered",
+            "Element closing tag encountered",
+            "Namespace mapping begins",
+            "Namespace mapping ends"
+        ]
+    },
+    {
+        "q": "Which XPath function performs regular expression matching in XPath 2.0?",
+        "type": "mcq",
+        "o": [
+            "matches()",
+            "contains()",
+            "replace()",
+            "tokenize()"
+        ]
+    },
+    {
+        "q": "In lxml, `etree.XMLParser` with `remove_blank_text=True` removes whitespace-only text nodes.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Write the XPath expression to select elements whose string-length of text is greater than 10.",
+        "type": "short_answer",
+        "answers": [
+            "//*[string-length(text()) > 10]",
+            "//*[string-length(normalize-space()) > 10]"
+        ],
+        "isCaseSensitive": true
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "from bs4 import BeautifulSoup\nsoup = BeautifulSoup('<p>Hello <b>World</b></p>', 'html.parser')\ntag = soup.new_tag('i')\ntag.string = 'Beautiful'\nsoup.b.insert_after(tag)\nprint(soup.p.i.string)",
+        "o": [
+            "Beautiful",
+            "World",
+            "Hello",
+            "None"
+        ]
+    },
+    {
+        "q": "When evaluating XML namespaces, what term describes the shorthand identifier string appended before the colon?",
+        "type": "word_scramble",
+        "answer": "PREFIX",
+        "decoys": "QZ"
+    },
+    {
+        "q": "In XPath, the `intersect` operator (XPath 2.0) returns nodes common to both operand node-sets.",
+        "type": "fill_blank",
+        "answers": [
+            "True"
+        ],
+        "other_options": [
+            "False",
+            "Depends",
+            "Only in lxml"
+        ]
+    },
+    {
+        "q": "Which CSS selector level 4 feature is NOT supported by BeautifulSoup's `select()`?",
+        "type": "mcq",
+        "o": [
+            ":has() pseudo-class",
+            ":nth-child()",
+            "[attr='val']",
+            ".classname"
+        ]
+    },
+    {
+        "q": "What does the XPath `//div[every $x in p satisfies $x/@class='x']` expression do?",
+        "type": "mcq",
+        "o": [
+            "Selects divs where all p children have class 'x'",
+            "Iterates over each paragraph",
+            "Counts paragraphs with class 'x'",
+            "This is invalid XPath syntax"
+        ]
+    },
+    {
+        "q": "The `etree.XSLT` transformer in lxml can execute XSLT stylesheets and return the transformed result tree.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "from bs4 import BeautifulSoup\nsoup = BeautifulSoup('<div><p>A</p>B<p>C</p></div>', 'html.parser')\nprint(soup.div.p.next_sibling.next_sibling.name)",
+        "o": [
+            "p",
+            "B",
+            "C",
+            "None"
+        ]
+    },
+    {
+        "q": "Match the BeautifulSoup parser differences with their behaviors:",
+        "type": "match",
+        "left": [
+            "html.parser",
+            "lxml",
+            "html5lib",
+            "xml"
+        ],
+        "right": [
+            "Python built-in, lenient",
+            "C-based, very fast",
+            "Browser-like tree builder",
+            "Strict XML parser"
+        ]
+    },
+    {
+        "q": "In XPath 3.0, the `map` and `filter` functions allow functional programming over sequences.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Complete the sentence governing how lxml handles strict XML namespaces:",
+        "type": "inline_dropdown",
+        "text": "To successfully query XML with strict namespaces via lxml, you must feed a [0] dictionary directly as an argument into the [1] evaluation method.",
+        "dropdowns": [
+            {
+                "correct": "namespaces",
+                "options": [
+                    "namespaces",
+                    "prefixes",
+                    "mapping"
+                ]
+            },
+            {
+                "correct": "xpath()",
+                "options": [
+                    "xpath()",
+                    "find",
+                    "select"
+                ]
+            }
+        ]
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "from bs4 import BeautifulSoup\nsoup = BeautifulSoup('<div><p class=\"a\">1</p><p class=\"b\">2</p></div>', 'html.parser')\nprint(soup.select_one('p.a + p.b').text)",
+        "o": [
+            "2",
+            "1",
+            "a",
+            "b"
+        ]
+    },
+    {
+        "q": "Which XPath expression selects nodes where a specific child does NOT exist?",
+        "type": "mcq",
+        "o": [
+            "//div[not(p)]",
+            "//div[p=false]",
+            "//div[!p]",
+            "//div[missing(p)]"
+        ]
+    },
+    {
+        "q": "Write the BeautifulSoup code to extract all links that have both `href` and `title` attributes.",
+        "type": "short_answer",
+        "answers": [
+            "soup.find_all('a', href=True, title=True)",
+            "soup.select('a[href][title]')"
+        ],
+        "isCaseSensitive": true
+    },
+    {
+        "q": "In lxml, `etree.QName()` helps handle qualified names with namespace URIs and local names.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "from lxml import etree\nroot = etree.HTML('<div><p>A</p>B<p>C</p></div>')\nprint(root.xpath('//p[1]/following-sibling::text()[1]')[0].strip())",
+        "o": [
+            "B",
+            "A",
+            "C",
+            "p"
+        ]
+    },
+    {
+        "q": "The `soup.select()` method can evaluate complex CSS pseudo-classes like `:nth-child(2n+1 of .class)`.",
+        "type": "true_false",
+        "correct": "False"
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "from bs4 import BeautifulSoup\nsoup = BeautifulSoup('<div id=\"1\">A</div><div id=\"2\">B</div>', 'html.parser')\nprint([div['id'] for div in soup.find_all('div')])",
+        "o": [
+            "['1', '2']",
+            "['A', 'B']",
+            "[1, 2]",
+            "['id', 'id']"
+        ]
+    },
+    {
+        "q": "In XPath, the `<<` and `>>` operators compare document order of two nodes.",
+        "type": "fill_blank",
+        "answers": [
+            "True"
+        ],
+        "other_options": [
+            "False",
+            "Depends",
+            "XPath 2.0 only"
+        ]
+    },
+    {
+        "q": "Which method in lxml's custom element class allows defining how elements behave when instantiated?",
+        "type": "mcq",
+        "o": [
+            "__init__ in a subclass of ElementBase",
+            "etree.Element()",
+            "etree.SubElement()",
+            "etree.register()"
+        ]
+    },
+    {
+        "q": "What does the XPath `//*[@*[namespace-uri()='http://ns']]` expression select?",
+        "type": "mcq",
+        "o": [
+            "Elements with attributes in a specific namespace",
+            "All namespaced elements",
+            "The namespace URI itself",
+            "Elements without namespaces"
+        ]
+    },
+    {
+        "q": "BeautifulSoup's `Tag.append()` adds content as the last child, while `insert()` can place at any position.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "from bs4 import BeautifulSoup\nsoup = BeautifulSoup('<p>Hello <b>World</b></p>', 'html.parser')\nprint(soup.p.b.previous_sibling.previous_sibling)",
+        "o": [
+            "None",
+            "Hello",
+            "Hello ",
+            "p"
+        ]
+    },
+    {
+        "q": "Match the XPath 3.0 feature with its description:",
+        "type": "match",
+        "left": [
+            "Arrays",
+            "Maps",
+            "Higher-order functions",
+            "String templates"
+        ],
+        "right": [
+            "Ordered lists of values",
+            "Key-value pairs",
+            "Functions that take functions",
+            "Embedded expressions in strings"
+        ]
+    },
+    {
+        "q": "Write the XPath to select elements where the class attribute contains exactly three space-separated tokens.",
+        "type": "short_answer",
+        "answers": [
+            "//*[count(tokenize(@class, ' ')) = 3]"
+        ],
+        "isCaseSensitive": true
+    },
+    {
+        "q": "The `html5lib` parser always creates an implied `<tbody>` tag inside tables when not present.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "from bs4 import BeautifulSoup\nsoup = BeautifulSoup('<p>Hello</p>', 'html.parser')\nprint(soup.p.prettify(formatter='minimal'))",
+        "o": [
+            "<p>Hello</p>",
+            "<p>\n Hello\n</p>",
+            "Hello",
+            "<p>Hello</p>\\n"
+        ]
+    },
+    {
+        "q": "Which XPath expression returns all text nodes in the document that are not whitespace-only?",
+        "type": "mcq",
+        "o": [
+            "//text()[normalize-space()]",
+            "//text()",
+            "//text()[not(.='')]",
+            "//text()[string-length()>0]"
+        ]
+    },
+    {
+        "q": "In BeautifulSoup, the `__copy__` and `__deepcopy__` methods are implemented for Tag objects.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "from bs4 import BeautifulSoup\nsoup = BeautifulSoup('<p>Hello</p><p>World</p>', 'html.parser')\nprint(soup.find_all(lambda tag: tag.name == 'p' and tag.text == 'World')[0].text)",
+        "o": [
+            "World",
+            "Hello",
+            "p",
+            "None"
+        ]
+    },
+    {
+        "q": "The `etree.iterwalk()` method allows walking the tree while optionally modifying it without breaking iteration.",
+        "type": "fill_blank",
+        "answers": [
+            "True"
+        ],
+        "other_options": [
+            "False",
+            "Depends",
+            "Not possible"
+        ]
+    },
+    {
+        "q": "What does the XPath expression `//*[not(*)]` select?",
+        "type": "mcq",
+        "o": [
+            "All leaf elements (elements with no children)",
+            "All elements with children",
+            "Only text nodes",
+            "The root element"
+        ]
+    },
+    {
+        "q": "BeautifulSoup's `find_all_next` stops at the end of the document, not at the parent's closing tag.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "from bs4 import BeautifulSoup\nsoup = BeautifulSoup('<div class=\"x\">A</div><div class=\"y\">B</div>', 'html.parser')\nprint(soup.select_one('div.x ~ div').text)",
+        "o": [
+            "B",
+            "A",
+            "x",
+            "y"
+        ]
+    },
+    {
+        "q": "Match the XPath sequence type with its notation:",
+        "type": "match",
+        "left": [
+            "element()",
+            "text()",
+            "node()",
+            "item()"
+        ],
+        "right": [
+            "Any element node",
+            "Text nodes",
+            "Any node type",
+            "Any item (including atomic values)"
+        ]
+    },
+    {
+        "q": "Write the lxml code to create a new XML document with a root element and save it to a string.",
+        "type": "short_answer",
+        "answers": [
+            "etree.tostring(etree.Element('root'))",
+            "etree.tostring(etree.XML('<root/>'))"
+        ],
+        "isCaseSensitive": true
+    },
+    {
+        "q": "In XPath, the `every $var in expr satisfies condition` syntax is part of XPath 2.0 quantified expressions.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "from bs4 import BeautifulSoup\nsoup = BeautifulSoup('<p>Hello<br/>World</p>', 'html.parser')\nprint(list(soup.p.strings))",
+        "o": [
+            "['Hello', 'World']",
+            "['Hello World']",
+            "['Hello', 'World'] with line break",
+            "['Hello<br/>World']"
+        ]
+    },
+    {
+        "q": "Which method in lxml's `etree` module provides schema validation against DTD?",
+        "type": "mcq",
+        "o": [
+            "etree.DTD()",
+            "etree.validate()",
+            "etree.Schema()",
+            "etree.check()"
+        ]
+    },
+    {
+        "q": "BeautifulSoup's `NavigableString` class inherits from Python's built-in `str` class.",
+        "type": "true_false",
+        "correct": "False"
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "from bs4 import BeautifulSoup\nsoup = BeautifulSoup('<div><p>A</p><p>B</p></div>', 'html.parser')\nprint(soup.p.parent.contents[2].text)",
+        "o": [
+            "B",
+            "A",
+            "p",
+            "div"
+        ]
+    },
+    {
+        "q": "In XPath, `//div[some $x in p/text() satisfies contains($x, 'keyword')]` is a valid XPath 2.0 expression.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "from bs4 import BeautifulSoup\nsoup = BeautifulSoup('<span>1</span><span>2</span><span>3</span>', 'html.parser')\nprint(soup.find_all('span')[1].find_previous_siblings()[0].text)",
+        "o": [
+            "1",
+            "2",
+            "3",
+            "span"
+        ]
+    },
+    {
+        "q": "The ______ method in lxml returns the string representation of an element, with special handling for HTML void elements.",
+        "type": "fill_blank",
+        "answers": [
+            "tostring",
+            "html.tostring"
+        ],
+        "other_options": [
+            "string",
+            "serialize",
+            "dump"
+        ]
+    },
+    {
+        "q": "What CSS selector syntax selects elements that are the nth child of their parent, counting from the last child?",
+        "type": "mcq",
+        "o": [
+            ":nth-last-child(n)",
+            ":last-nth-child(n)",
+            ":nth-child(-n)",
+            ":child-from-last(n)"
+        ]
+    },
+    {
+        "q": "In BeautifulSoup, the `Diagnose()` function helps identify which parsers are installed.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "from lxml import etree\nroot = etree.HTML('<p>Hello World</p>')\nprint(root.xpath('substring(//p/text(), 1, 5)'))",
+        "o": [
+            "Hello",
+            "Hello World",
+            "World",
+            "p"
+        ]
+    },
+    {
+        "q": "Match the BeautifulSoup diagnostic method with its purpose:",
+        "type": "match",
+        "left": [
+            "diagnose()",
+            "dammit",
+            "detect_encoding",
+            "builder"
+        ],
+        "right": [
+            "Shows parser availability",
+            "Unicode encoding detection",
+            "Guess byte encoding",
+            "Internal tree builder"
+        ]
+    },
+    {
+        "q": "Write the XPath to select all elements whose text contains only digits.",
+        "type": "short_answer",
+        "answers": [
+            "//*[matches(text(), '^\\d+$')]",
+            "//*[translate(text(), '0123456789', '') = '']"
+        ],
+        "isCaseSensitive": true
+    },
+    {
+        "q": "The `etree.RelaxNG()` class in lxml validates XML against RELAX NG schemas.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "from bs4 import BeautifulSoup\nsoup = BeautifulSoup('<p><b>Bold</b><i>Italic</i></p>', 'html.parser')\nprint(soup.p.b.next_element.next_element.text)",
+        "o": [
+            "Italic",
+            "Bold",
+            "i",
+            "p"
+        ]
+    },
+    {
+        "q": "Which XPath expression selects the deepest nested elements in a document?",
+        "type": "mcq",
+        "o": [
+            "//*[not(*)]",
+            "//*[count(ancestor::*)]",
+            "//*[max(depth)]",
+            "//*[depth()]"
+        ]
+    },
+    {
+        "q": "BeautifulSoup's `tag.unwrap()` is equivalent to `tag.replace_with_children()` followed by removing the tag.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "from bs4 import BeautifulSoup\nsoup = BeautifulSoup('<div id=\"main\"><p>Content</p></div>', 'html.parser')\nprint(soup.select_one('div#main p').text)",
+        "o": [
+            "Content",
+            "main",
+            "div",
+            "p"
+        ]
+    },
+    {
+        "q": "In lxml, `etree.strip_tags()` removes all instances of a tag but keeps their text content and children.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "from bs4 import BeautifulSoup\nsoup = BeautifulSoup('<div><p>Hello</p></div>', 'html.parser')\nprint(soup.p.__copy__().text)",
+        "o": [
+            "Hello",
+            "<p>Hello</p>",
+            "p",
+            "None"
+        ]
+    },
+    {
+        "q": "The XPath `//*[position() = last()]` selects the last element child of every parent.",
+        "type": "fill_blank",
+        "answers": [
+            "True"
+        ],
+        "other_options": [
+            "False",
+            "Depends",
+            "Only in XPath 2.0"
+        ]
+    },
+    {
+        "q": "What does the XPath expression `//div[count(p) > count(span)]` select?",
+        "type": "mcq",
+        "o": [
+            "Divs with more p children than span children",
+            "Divs with at least one paragraph",
+            "All paragraphs in divs",
+            "Divs without spans"
+        ]
+    },
+    {
+        "q": "The `html5lib` parser generates an identical tree to what a web browser would produce.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "from bs4 import BeautifulSoup\nsoup = BeautifulSoup('<div><p>1</p><p>2</p><p>3</p></div>', 'html.parser')\nprint(soup.find_all('p')[1].find_previous_sibling().text)",
+        "o": [
+            "1",
+            "2",
+            "3",
+            "p"
+        ]
+    },
+    {
+        "q": "Name the lxml method that safely serializes HTML to a string, handling encoding.",
+        "type": "short_answer",
+        "answers": [
+            "etree.tostring",
+            "html.tostring",
+            "tostring"
+        ],
+        "isCaseSensitive": true
+    },
+    {
+        "q": "In XPath 3.0, the arrow operator `=>` allows function chaining.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "from bs4 import BeautifulSoup\nsoup = BeautifulSoup('<a href=\"/page\">Link</a>', 'html.parser')\nprint(soup.a.get('href', 'default'))",
+        "o": [
+            "/page",
+            "Link",
+            "default",
+            "None"
+        ]
+    },
+    {
+        "q": "Which method in lxml returns an element's text content with all internal markup removed?",
+        "type": "mcq",
+        "o": [
+            "etree.tostring(element, method='text', encoding='unicode')",
+            "element.text_content()",
+            "element.get_text()",
+            "etree.text()"
+        ]
+    },
+    {
+        "q": "BeautifulSoup's `Tag.attrs` property returns a modifiable dictionary of attribute-value pairs.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "from bs4 import BeautifulSoup\nsoup = BeautifulSoup('<p class=\"content article featured\">Text</p>', 'html.parser')\nprint(soup.select_one('p.content.article.featured').text)",
+        "o": [
+            "Text",
+            "content article featured",
+            "p",
+            "content"
+        ]
+    },
+    {
+        "q": "Match the XPath conditional expression components:",
+        "type": "match",
+        "left": [
+            "if",
+            "then",
+            "else",
+            "Result"
+        ],
+        "right": [
+            "Condition keyword",
+            "True branch keyword",
+            "False branch keyword",
+            "The evaluated value"
+        ]
+    },
+    {
+        "q": "Write the XPath to select the first 5 paragraph elements in the document.",
+        "type": "short_answer",
+        "answers": [
+            "(//p)[position() <= 5]",
+            "//p[position() <= 5]"
+        ],
+        "isCaseSensitive": true
+    },
+    {
+        "q": "In lxml, the `etree.XMLSchema()` class validates against W3C XML Schema definitions.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "from bs4 import BeautifulSoup\nsoup = BeautifulSoup('<ul><li>A</li><li>B</li></ul>', 'html.parser')\nprint(soup.li.next_sibling.next_sibling.previous_sibling.text)",
+        "o": [
+            "B",
+            "A",
+            "li",
+            "ul"
+        ]
+    },
+    {
+        "q": "The `etree.SubElement()` is a shortcut for creating and appending an element in one call.",
+        "type": "fill_blank",
+        "answers": [
+            "True"
+        ],
+        "other_options": [
+            "False",
+            "Depends",
+            "Not valid"
+        ]
+    },
+    {
+        "q": "Which XPath expression selects elements whose string value is exactly equal to another element's value?",
+        "type": "mcq",
+        "o": [
+            "//*[. = //title]",
+            "//*[text() = //title/text()]",
+            "//*[compare(., //title)]",
+            "//*[equal(., //title)]"
+        ]
+    },
+    {
+        "q": "BeautifulSoup's `find_all_previous` returns all matching previous elements in reverse document order.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "How does lxml's `etree.XMLParser` with `huge_tree=True` affect memory usage compared to default settings?",
+        "type": "mcq",
+        "o": [
+            "Removes security limits on deeply nested structures, consuming more memory",
+            "Reduces memory by compressing the tree",
+            "Has no effect on memory",
+            "Stores the tree on disk instead of RAM"
+        ]
+    },
+    {
+        "q": "In XPath 3.1, what does the `sort()` function do when applied to a sequence?",
+        "type": "mcq",
+        "o": [
+            "Returns a sorted copy of the sequence based on a key function",
+            "Modifies the original sequence in place",
+            "Sorts only numeric values",
+            "Is not available in XPath 3.1"
+        ]
+    },
+    {
+        "q": "BeautifulSoup's `Tag.smooth()` merges adjacent NavigableStrings and removes empty ones.",
+        "type": "true_false",
+        "correct": "False"
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "from bs4 import BeautifulSoup\nsoup = BeautifulSoup('<p>Hello<!--comment-->World</p>', 'html.parser')\nprint(len(list(soup.p.children)))",
+        "o": [
+            "4",
+            "3",
+            "2",
+            "1"
+        ]
+    },
+    {
+        "q": "Match the lxml incremental parsing event with the data it provides:",
+        "type": "match",
+        "left": [
+            "start event",
+            "end event",
+            "comment event",
+            "pi event"
+        ],
+        "right": [
+            "Element and its attributes",
+            "Element with complete children",
+            "Comment text",
+            "Processing instruction target and data"
+        ]
+    },
+    {
+        "q": "Which XPath expression correctly implements a recursive descent into elements with a specific namespace?",
+        "type": "mcq",
+        "o": [
+            "//ns:* where ns is bound to a namespace URI",
+            "//namespace:*",
+            "//*[namespace()]",
+            "//*[local-name()]"
+        ]
+    },
+    {
+        "q": "The `etree.XSLT.strparam()` function creates an XSLT string parameter from a Python string.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Write the XPath 3.1 expression to group elements by their `@category` attribute and return the group keys.",
+        "type": "short_answer",
+        "answers": [
+            "//*!distinct-values(@category)",
+            "distinct-values(//*/@category)"
+        ],
+        "isCaseSensitive": true
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "from bs4 import BeautifulSoup\nsoup = BeautifulSoup('<div><p>A</p>B<p>C</p>D</div>', 'html.parser')\ntexts = [c for c in soup.div.children if isinstance(c, str)]\nprint(texts[1].strip())",
+        "o": [
+            "D",
+            "B",
+            "C",
+            "A"
+        ]
+    },
+    {
+        "q": "In lxml, custom element classes can be registered using `etree.ElementDefaultClassLookup` or per-parser lookups.",
+        "type": "fill_blank",
+        "answers": [
+            "True"
+        ],
+        "other_options": [
+            "False",
+            "Depends",
+            "Only in lxml 4+"
+        ]
+    },
+    {
+        "q": "Which XPath function performs tokenization of a string into a sequence of substrings?",
+        "type": "mcq",
+        "o": [
+            "tokenize()",
+            "split()",
+            "explode()",
+            "break()"
+        ]
+    },
+    {
+        "q": "What does the XPath expression `//*[deep-equal(., //target)]` check for?",
+        "type": "mcq",
+        "o": [
+            "Deep structural equality with a target element",
+            "Shallow tag name equality",
+            "Text content equality only",
+            "Attribute equality only"
+        ]
+    },
+    {
+        "q": "BeautifulSoup's `encode()` method returns the parsed document as a byte string with specified encoding.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "from bs4 import BeautifulSoup\nsoup = BeautifulSoup('<p class=\"a\" id=\"x\">Text</p>', 'html.parser')\nattrs = soup.p.attrs\nattrs['class'].append('b')\nprint(soup.p['class'])",
+        "o": [
+            "['a', 'b']",
+            "['a']",
+            "a",
+            "Text"
+        ]
+    },
+    {
+        "q": "Match the XPath 3.1 data type with its Python equivalent in lxml:",
+        "type": "match",
+        "left": [
+            "xs:string",
+            "xs:integer",
+            "xs:double",
+            "xs:boolean"
+        ],
+        "right": [
+            "str",
+            "int (Python int)",
+            "float",
+            "bool"
+        ]
+    },
+    {
+        "q": "In BeautifulSoup, `soup.select('div > *:not(p)')` selects all direct children of div that are NOT paragraphs.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "from lxml import etree\nroot = etree.HTML('<div><p>A</p><p>B</p></div>')\nprint(root.xpath('count(//p[preceding-sibling::p])'))",
+        "o": [
+            "1.0",
+            "2.0",
+            "0.0",
+            "3.0"
+        ]
+    },
+    {
+        "q": "Which method in lxml's `etree` allows adding a processing instruction to the tree?",
+        "type": "mcq",
+        "o": [
+            "etree.PI()",
+            "etree.ProcessingInstruction()",
+            "etree.add_pi()",
+            "etree.create_pi()"
+        ]
+    },
+    {
+        "q": "Write the BeautifulSoup code to extract text that appears before the first `<br>` tag inside a paragraph.",
+        "type": "short_answer",
+        "answers": [
+            "soup.p.contents[0].strip() if soup.p.contents else ''",
+            "list(soup.p.children)[0]"
+        ],
+        "isCaseSensitive": true
+    },
+    {
+        "q": "The `etree.resolve_entities` option in XMLParser controls whether entity references are resolved.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "from bs4 import BeautifulSoup\nsoup = BeautifulSoup('<div><p>A</p><p>B</p><p>C</p></div>', 'html.parser')\nfor p in soup.find_all('p'):\n    if p.text == 'B':\n        p.extract()\nprint(len(soup.find_all('p')))",
+        "o": [
+            "2",
+            "3",
+            "1",
+            "0"
+        ]
+    },
+    {
+        "q": "In XPath 3.0, the `let` expression allows binding variables for use within a subexpression.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "from bs4 import BeautifulSoup\nsoup = BeautifulSoup('<div><p>A</p><span>B</span><p>C</p></div>', 'html.parser')\nprint(soup.p.find_next('p').text)",
+        "o": [
+            "C",
+            "A",
+            "B",
+            "span"
+        ]
+    },
+    {
+        "q": "The XPath expression `//*[every $attr in @* satisfies $attr != '']` selects elements with no empty attributes.",
+        "type": "fill_blank",
+        "answers": [
+            "True"
+        ],
+        "other_options": [
+            "False",
+            "Invalid XPath",
+            "XPath 3.0+ only"
+        ]
+    },
+    {
+        "q": "What does the XPath function `parse-xml()` do in XPath 3.0?",
+        "type": "mcq",
+        "o": [
+            "Parses a string as an XML document and returns a document node",
+            "Converts XML to a string",
+            "Validates XML against a schema",
+            "Transforms XML using XSLT"
+        ]
+    },
+    {
+        "q": "BeautifulSoup's `Tag.insert_before()` works only with Tag objects, not with strings.",
+        "type": "true_false",
+        "correct": "False"
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "from bs4 import BeautifulSoup\nsoup = BeautifulSoup('<div><p>A</p><p>B</p></div>', 'html.parser')\nprint(soup.p.next_element.next_element.next_element.text)",
+        "o": [
+            "B",
+            "A",
+            "p",
+            "div"
+        ]
+    },
+    {
+        "q": "Match the lxml namespace handling method with its purpose:",
+        "type": "match",
+        "left": [
+            "nsmap",
+            "register_namespace",
+            "cleanup_namespaces",
+            "strip_namespaces"
+        ],
+        "right": [
+            "Get namespace map of element",
+            "Bind prefix to URI globally",
+            "Remove unused namespace declarations",
+            "Remove all namespaces from tree"
+        ]
+    },
+    {
+        "q": "Write the XPath to find elements where an attribute's value starts with a digit.",
+        "type": "short_answer",
+        "answers": [
+            "//*[matches(@*, '^\\d')]",
+            "//*[@*[starts-with(., '0') or starts-with(., '1') or ...]]"
+        ],
+        "isCaseSensitive": true
+    },
+    {
+        "q": "In lxml, `etree.parse()` can parse from a file path, file object, or URL without additional libraries.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "from bs4 import BeautifulSoup\nsoup = BeautifulSoup('<p>Hello</p>', 'html.parser')\nsoup.p.string.wrap(soup.new_tag('b'))\nprint(soup.p.b.string)",
+        "o": [
+            "Hello",
+            "p",
+            "b",
+            "None"
+        ]
+    },
+    {
+        "q": "Which XPath expression correctly uses the `for` clause to iterate over a sequence?",
+        "type": "mcq",
+        "o": [
+            "for $x in //p return $x/text()",
+            "for (//p) as $x => $x/text()",
+            "foreach //p => text()",
+            "iterate //p return text()"
+        ]
+    },
+    {
+        "q": "The `html5lib` parser handles mismatched tags more gracefully than `lxml` in some edge cases.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "from bs4 import BeautifulSoup\nsoup = BeautifulSoup('<div>Hello <span>World</span></div>', 'html.parser')\nprint(soup.div.span.previous_sibling.strip())",
+        "o": [
+            "Hello",
+            "World",
+            "span",
+            "div"
+        ]
+    },
+    {
+        "q": "In XPath, the `instance of` operator checks the type of a value against a sequence type definition.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "from bs4 import BeautifulSoup\nsoup = BeautifulSoup('<p class=\"a b\">Text</p>', 'html.parser')\nprint(soup.select('p[class~=\"b\"]')[0].text)",
+        "o": [
+            "Text",
+            "a b",
+            "b",
+            "p"
+        ]
+    },
+    {
+        "q": "The `etree.dump()` method prints a human-readable representation of an element tree to stdout.",
+        "type": "fill_blank",
+        "answers": [
+            "True"
+        ],
+        "other_options": [
+            "False",
+            "Depends",
+            "Not available"
+        ]
+    },
+    {
+        "q": "What does the XPath `//*[@*[not(. = following::*/@*)]]` expression attempt to select?",
+        "type": "mcq",
+        "o": [
+            "Elements with unique attribute values not repeated later",
+            "All elements with any attributes",
+            "Elements without attributes",
+            "The first occurrence of each attribute value"
+        ]
+    },
+    {
+        "q": "BeautifulSoup automatically decodes HTML entities like `&amp;` into their character equivalents.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "from bs4 import BeautifulSoup\nsoup = BeautifulSoup('<p>Hello <b>World</b></p>', 'html.parser')\nprint(len(soup.p.contents))",
+        "o": [
+            "3",
+            "2",
+            "1",
+            "4"
+        ]
+    },
+    {
+        "q": "Match the lxml serialization method with its output format:",
+        "type": "match",
+        "left": [
+            "method='xml'",
+            "method='html'",
+            "method='text'",
+            "method='c14n'"
+        ],
+        "right": [
+            "XML output with declaration",
+            "HTML output with void elements",
+            "Plain text without tags",
+            "Canonical XML"
+        ]
+    },
+    {
+        "q": "Write the XPath 3.1 code to create a map from each element's `@id` to its `text()` content.",
+        "type": "short_answer",
+        "answers": [
+            "map:merge(//*[@id]!map:entry(@id, text()))"
+        ],
+        "isCaseSensitive": true
+    },
+    {
+        "q": "In BeautifulSoup, `Tag.contents` returns a list that can be directly mutated to restructure the tree.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "from lxml import etree\nroot = etree.HTML('<div><p>A</p><p>B</p><p>C</p></div>')\nprint(root.xpath('//p[position() = last()]/text()')[0])",
+        "o": [
+            "C",
+            "A",
+            "B",
+            "3"
+        ]
+    },
+    {
+        "q": "Which XPath function returns the URI of the namespace for a given node?",
+        "type": "mcq",
+        "o": [
+            "namespace-uri()",
+            "namespace()",
+            "ns-uri()",
+            "node-namespace()"
+        ]
+    },
+    {
+        "q": "The `etree.iselement()` function checks if an object is a valid lxml Element.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "from bs4 import BeautifulSoup\nsoup = BeautifulSoup('<a href=\"http://a.com\" class=\"x\">A</a><a href=\"http://b.com\" class=\"x\">B</a>', 'html.parser')\nprint(len(soup.select('a.x[href]')))",
+        "o": [
+            "2",
+            "1",
+            "0",
+            "3"
+        ]
+    },
+    {
+        "q": "In XPath, `//p/concat(text()[1], ' - ', text()[2])` would concatenate the first two text children of each paragraph.",
+        "type": "true_false",
+        "correct": "False"
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "from bs4 import BeautifulSoup\nsoup = BeautifulSoup('<div><p>A</p><p>B</p></div>', 'html.parser')\nprint(soup.select('p:nth-child(2)')[0].text)",
+        "o": [
+            "B",
+            "A",
+            "p",
+            "div"
+        ]
+    },
+    {
+        "q": "The ______ method in lxml `html` module drops the entire tree from memory and returns the root element.",
+        "type": "fill_blank",
+        "answers": [
+            "document_fromstring",
+            "fragment_fromstring"
+        ],
+        "other_options": [
+            "parse",
+            "fragment",
+            "fromstring"
+        ]
+    },
+    {
+        "q": "What does the XPath expression `//*[@ref = //*[@id]/@id]` select?",
+        "type": "mcq",
+        "o": [
+            "Elements whose ref attribute matches some element's id",
+            "Elements with equal ref and id attributes",
+            "All elements with ref attributes",
+            "Elements with matching text content"
+        ]
+    },
+    {
+        "q": "BeautifulSoup's `soup.find_all_next(text=True)` includes text inside child elements of subsequent tags.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "from bs4 import BeautifulSoup\nsoup = BeautifulSoup('<div><p>A</p></div>', 'html.parser')\nsoup.p.string = 'New'\nprint(soup.p.text)",
+        "o": [
+            "New",
+            "A",
+            "p",
+            "None"
+        ]
+    },
+    {
+        "q": "Match the XPath 3.0 function with its category:",
+        "type": "match",
+        "left": [
+            "fold-left()",
+            "filter()",
+            "for-each()",
+            "sort()"
+        ],
+        "right": [
+            "Higher-order aggregation",
+            "Filter sequence by predicate",
+            "Apply function to each item",
+            "Sort sequence by key"
+        ]
+    },
+    {
+        "q": "Write the BeautifulSoup code to find elements whose attribute values match a specific regular expression pattern.",
+        "type": "short_answer",
+        "answers": [
+            "import re; soup.find_all(attrs={'href': re.compile(r'pattern')})",
+            "soup.find_all(href=re.compile('pattern'))"
+        ],
+        "isCaseSensitive": true
+    },
+    {
+        "q": "In lxml, `etree.fromstring()` can parse both XML and HTML fragments without specifying the parser type.",
+        "type": "true_false",
+        "correct": "False"
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "from bs4 import BeautifulSoup\nsoup = BeautifulSoup('<div><p>A</p><p>B</p></div>', 'html.parser')\nprint(soup.p.next_sibling.next_sibling.find_previous().text)",
+        "o": [
+            "A",
+            "B",
+            "p",
+            "div"
+        ]
+    },
+    {
+        "q": "Which XPath expression uses the `some` quantifier correctly to test if any child element satisfies a condition?",
+        "type": "mcq",
+        "o": [
+            "//div[some $x in * satisfies $x/@class = 'target']",
+            "//div[some * has @class = 'target']",
+            "//div[exists(*[@class='target'])]",
+            "//div[any(*/@class = 'target')]"
+        ]
+    },
+    {
+        "q": "The `etree.CDATA()` constructor creates a CDATA section that preserves special characters during serialization.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "from bs4 import BeautifulSoup\nsoup = BeautifulSoup('<p>Hello <b>World</b> Again</p>', 'html.parser')\nprint(soup.p.contents[-1].strip())",
+        "o": [
+            "Again",
+            "Hello",
+            "World",
+            "p"
+        ]
+    },
+    {
+        "q": "In XPath, the `treat as` operator performs type casting and raises an error if the cast fails.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "from bs4 import BeautifulSoup\nsoup = BeautifulSoup('<div><p>A</p></div>', 'html.parser')\nnew_p = soup.new_tag('p')\nnew_p.string = 'B'\nsoup.div.append(new_p)\nprint(soup.div.contents[-1].text)",
+        "o": [
+            "B",
+            "A",
+            "p",
+            "div"
+        ]
+    },
+    {
+        "q": "The XPath `//*[@*[starts-with(local-name(), 'data-')]]` selects elements with HTML5 data attributes.",
+        "type": "fill_blank",
+        "answers": [
+            "True"
+        ],
+        "other_options": [
+            "False",
+            "Depends on namespace",
+            "Only in XPath 2.0+"
+        ]
+    },
+    {
+        "q": "What does the XPath function `generate-id()` return?",
+        "type": "mcq",
+        "o": [
+            "A unique string identifier for a node that is stable within a transformation",
+            "The value of the id attribute",
+            "A random UUID",
+            "The element's position in the document"
+        ]
+    },
+    {
+        "q": "BeautifulSoup's `select_one()` method raises an exception if no match is found.",
+        "type": "true_false",
+        "correct": "False"
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "from bs4 import BeautifulSoup\nsoup = BeautifulSoup('<p>Hello<b>World</b></p>', 'html.parser')\nprint(soup.p.text)",
+        "o": [
+            "HelloWorld",
+            "Hello World",
+            "Hello\nWorld",
+            "Hello<b>World</b>"
+        ]
+    },
+    {
+        "q": "Match the BeautifulSoup XML-specific feature with its description:",
+        "type": "match",
+        "left": [
+            "ProcessingInstruction",
+            "Declaration",
+            "Doctype",
+            "CData"
+        ],
+        "right": [
+            "XML PI node",
+            "XML declaration",
+            "Document type declaration",
+            "Unparsed character data"
+        ]
+    },
+    {
+        "q": "Write the lxml code to count the total number of elements in a deeply nested HTML document.",
+        "type": "short_answer",
+        "answers": [
+            "len(root.xpath('//*'))",
+            "len(list(root.iter()))"
+        ],
+        "isCaseSensitive": true
+    },
+    {
+        "q": "In XPath, the `node()` kind test matches any node type, including text, element, comment, and processing instruction nodes.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "from bs4 import BeautifulSoup\nsoup = BeautifulSoup('<div><p>A</p></div>', 'html.parser')\nprint(type(soup.p))",
+        "o": [
+            "<class 'bs4.element.Tag'>",
+            "<class 'str'>",
+            "<class 'list'>",
+            "<class 'dict'>"
+        ]
+    },
+    {
+        "q": "Which lxml feature allows parsing HTML fragments without creating an implied document structure?",
+        "type": "mcq",
+        "o": [
+            "html.fragments_fromstring()",
+            "etree.fragment()",
+            "html.parse(fragment=True)",
+            "etree.partial()"
+        ]
+    },
+    {
+        "q": "BeautifulSoup can handle non-standard HTML attributes and preserve their original case.",
+        "type": "true_false",
+        "correct": "False"
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "from bs4 import BeautifulSoup\nsoup = BeautifulSoup('<p class=\"x\">Text</p>', 'html.parser')\ndel soup.p['class']\nprint(soup.p.has_attr('class'))",
+        "o": [
+            "False",
+            "True",
+            "x",
+            "Text"
+        ]
+    },
+    {
+        "q": "The XPath expression `//*[count(ancestor::*) = max(//*/count(ancestor::*))]` selects the deepest elements in the tree.",
+        "type": "fill_blank",
+        "answers": [
+            "True"
+        ],
+        "other_options": [
+            "False",
+            "Invalid syntax",
+            "In XPath 3.0 only"
+        ]
+    },
+    {
+        "q": "What does the `following-sibling::*[1][self::p]` XPath expression select?",
+        "type": "mcq",
+        "o": [
+            "The first following sibling only if it is a paragraph",
+            "All following sibling paragraphs",
+            "The first paragraph among following siblings",
+            "All siblings"
+        ]
+    },
+    {
+        "q": "The `lxml.etree.tostring()` function with `pretty_print=True` reformats the output with indentation.",
+        "type": "true_false",
+        "correct": "True"
+    }
+]
