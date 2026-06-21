@@ -1,0 +1,2635 @@
+[
+    {
+        "tags": [
+            "django-admin",
+            "startproject",
+            "mysite",
+            "manage.py"
+        ],
+        "description": "Create Django Project"
+    },
+    {
+        "tags": [
+            "python",
+            "manage.py",
+            "startapp",
+            "blog"
+        ],
+        "description": "Create Django App"
+    },
+    {
+        "tags": [
+            "python",
+            "manage.py",
+            "runserver",
+            "8000"
+        ],
+        "description": "Run Development Server"
+    },
+    {
+        "tags": [
+            "python",
+            "manage.py",
+            "makemigrations",
+            "migrate"
+        ],
+        "description": "Apply Database Migrations"
+    },
+    {
+        "tags": [
+            "python",
+            "manage.py",
+            "createsuperuser",
+            "admin"
+        ],
+        "description": "Create Admin Superuser"
+    },
+    {
+        "tags": [
+            "python",
+            "manage.py",
+            "shell",
+            "import",
+            "Model"
+        ],
+        "description": "Django Shell Access"
+    },
+    {
+        "tags": [
+            "python",
+            "manage.py",
+            "collectstatic",
+            "static/"
+        ],
+        "description": "Collect Static Files"
+    },
+    {
+        "tags": [
+            "python",
+            "manage.py",
+            "test",
+            "app_name"
+        ],
+        "description": "Run Django Tests"
+    },
+    {
+        "tags": [
+            "INSTALLED_APPS",
+            "[",
+            "'blog'",
+            ",",
+            "]"
+        ],
+        "description": "Register App Settings"
+    },
+    {
+        "tags": [
+            "from",
+            "django.db",
+            "import",
+            "models"
+        ],
+        "description": "Import Models Module"
+    },
+    {
+        "tags": [
+            "class",
+            "Post(models.Model)",
+            ":",
+            "title",
+            "= CharField()"
+        ],
+        "description": "Define Model Class"
+    },
+    {
+        "tags": [
+            "CharField()",
+            "max_length=",
+            "200",
+            "blank=True"
+        ],
+        "description": "Char Field Options"
+    },
+    {
+        "tags": [
+            "TextField()",
+            "blank=True",
+            "null=True",
+            "default=''"
+        ],
+        "description": "Text Field Options"
+    },
+    {
+        "tags": [
+            "IntegerField()",
+            "default=0",
+            "validators=",
+            "[]"
+        ],
+        "description": "Integer Field Setup"
+    },
+    {
+        "tags": [
+            "BooleanField()",
+            "default=",
+            "False"
+        ],
+        "description": "Boolean Field Default"
+    },
+    {
+        "tags": [
+            "DateTimeField()",
+            "auto_now_add=",
+            "True"
+        ],
+        "description": "Auto DateTime Field"
+    },
+    {
+        "tags": [
+            "DateField()",
+            "auto_now=",
+            "True"
+        ],
+        "description": "Auto Update Date"
+    },
+    {
+        "tags": [
+            "EmailField()",
+            "unique=",
+            "True",
+            "max_length="
+        ],
+        "description": "Email Field Unique"
+    },
+    {
+        "tags": [
+            "URLField()",
+            "blank=True",
+            "max_length=200"
+        ],
+        "description": "URL Field Setup"
+    },
+    {
+        "tags": [
+            "SlugField()",
+            "unique=True",
+            "max_length=100"
+        ],
+        "description": "Slug Field Unique"
+    },
+    {
+        "tags": [
+            "FileField()",
+            "upload_to=",
+            "'files/'"
+        ],
+        "description": "File Upload Field"
+    },
+    {
+        "tags": [
+            "ImageField()",
+            "upload_to=",
+            "'images/'"
+        ],
+        "description": "Image Upload Field"
+    },
+    {
+        "tags": [
+            "DecimalField()",
+            "max_digits=10",
+            "decimal_places=2"
+        ],
+        "description": "Decimal Field Precision"
+    },
+    {
+        "tags": [
+            "FloatField()",
+            "default=",
+            "0.0"
+        ],
+        "description": "Float Field Default"
+    },
+    {
+        "tags": [
+            "JSONField()",
+            "default=",
+            "dict",
+            "blank=True"
+        ],
+        "description": "JSON Field Setup"
+    },
+    {
+        "tags": [
+            "UUIDField()",
+            "default=",
+            "uuid4",
+            "editable=False"
+        ],
+        "description": "UUID Primary Key"
+    },
+    {
+        "tags": [
+            "ForeignKey()",
+            "User",
+            "on_delete=",
+            "CASCADE"
+        ],
+        "description": "Foreign Key Relation"
+    },
+    {
+        "tags": [
+            "OneToOneField()",
+            "Profile",
+            "on_delete=",
+            "CASCADE"
+        ],
+        "description": "One-To-One Relation"
+    },
+    {
+        "tags": [
+            "ManyToManyField()",
+            "Tag",
+            "blank=True",
+            "related_name="
+        ],
+        "description": "Many-To-Many Relation"
+    },
+    {
+        "tags": [
+            "on_delete=",
+            "CASCADE",
+            "PROTECT",
+            "SET_NULL"
+        ],
+        "description": "Delete Constraint Options"
+    },
+    {
+        "tags": [
+            "related_name=",
+            "'posts'",
+            "ForeignKey",
+            "reverse"
+        ],
+        "description": "Reverse Relation Name"
+    },
+    {
+        "tags": [
+            "class Meta",
+            ":",
+            "ordering",
+            "= ['-created']"
+        ],
+        "description": "Model Meta Ordering"
+    },
+    {
+        "tags": [
+            "class Meta",
+            ":",
+            "verbose_name",
+            "= 'Entry'"
+        ],
+        "description": "Model Verbose Name"
+    },
+    {
+        "tags": [
+            "class Meta",
+            ":",
+            "unique_together",
+            "= [()]"
+        ],
+        "description": "Unique Together Constraint"
+    },
+    {
+        "tags": [
+            "class Meta",
+            ":",
+            "db_table",
+            "= 'custom'"
+        ],
+        "description": "Custom Table Name"
+    },
+    {
+        "tags": [
+            "class Meta",
+            ":",
+            "abstract",
+            "= True"
+        ],
+        "description": "Abstract Model Class"
+    },
+    {
+        "tags": [
+            "class Meta",
+            ":",
+            "indexes",
+            "= [Index()]"
+        ],
+        "description": "Model Index Definition"
+    },
+    {
+        "tags": [
+            "class Meta",
+            ":",
+            "constraints",
+            "= [UniqueConstraint()]"
+        ],
+        "description": "Model Constraint Setup"
+    },
+    {
+        "tags": [
+            "def",
+            "__str__(self)",
+            ":",
+            "return",
+            "self.title"
+        ],
+        "description": "Model String Method"
+    },
+    {
+        "tags": [
+            "def",
+            "save(self)",
+            ":",
+            "super().save()",
+            "custom"
+        ],
+        "description": "Override Save Method"
+    },
+    {
+        "tags": [
+            "def",
+            "delete(self)",
+            ":",
+            "cleanup",
+            "super().delete()"
+        ],
+        "description": "Override Delete Method"
+    },
+    {
+        "tags": [
+            "def",
+            "get_absolute_url()",
+            ":",
+            "reverse()",
+            "return"
+        ],
+        "description": "Model Absolute URL"
+    },
+    {
+        "tags": [
+            "@property",
+            "def",
+            "is_published()",
+            ":",
+            "return"
+        ],
+        "description": "Model Property Method"
+    },
+    {
+        "tags": [
+            "objects",
+            "= Manager()",
+            "custom",
+            "queryset"
+        ],
+        "description": "Custom Model Manager"
+    },
+    {
+        "tags": [
+            "Model",
+            ".objects",
+            ".all()",
+            "QuerySet"
+        ],
+        "description": "Get All Objects"
+    },
+    {
+        "tags": [
+            "Model",
+            ".objects",
+            ".filter()",
+            "field=value"
+        ],
+        "description": "Filter Query Objects"
+    },
+    {
+        "tags": [
+            "Model",
+            ".objects",
+            ".get()",
+            "pk=1"
+        ],
+        "description": "Get Single Object"
+    },
+    {
+        "tags": [
+            "Model",
+            ".objects",
+            ".exclude()",
+            "field=value"
+        ],
+        "description": "Exclude Query Objects"
+    },
+    {
+        "tags": [
+            "Model",
+            ".objects",
+            ".create()",
+            "field=value"
+        ],
+        "description": "Create Model Instance"
+    },
+    {
+        "tags": [
+            ".objects",
+            ".get_or_create()",
+            "defaults=",
+            "{}"
+        ],
+        "description": "Get Or Create Object"
+    },
+    {
+        "tags": [
+            ".objects",
+            ".update_or_create()",
+            "defaults=",
+            "{}"
+        ],
+        "description": "Update Or Create Object"
+    },
+    {
+        "tags": [
+            ".objects",
+            ".bulk_create()",
+            "[obj1",
+            "obj2]"
+        ],
+        "description": "Bulk Create Objects"
+    },
+    {
+        "tags": [
+            ".objects",
+            ".bulk_update()",
+            "objs",
+            "fields="
+        ],
+        "description": "Bulk Update Objects"
+    },
+    {
+        "tags": [
+            "QuerySet",
+            ".order_by()",
+            "'-created'",
+            "field"
+        ],
+        "description": "Order Query Results"
+    },
+    {
+        "tags": [
+            "QuerySet",
+            ".values()",
+            "'field1'",
+            "'field2'"
+        ],
+        "description": "Select Specific Fields"
+    },
+    {
+        "tags": [
+            "QuerySet",
+            ".values_list()",
+            "flat=True"
+        ],
+        "description": "Flat Values List"
+    },
+    {
+        "tags": [
+            "QuerySet",
+            ".distinct()",
+            "unique",
+            "results"
+        ],
+        "description": "Distinct Query Results"
+    },
+    {
+        "tags": [
+            "QuerySet",
+            ".count()",
+            "integer",
+            "total"
+        ],
+        "description": "Count Query Results"
+    },
+    {
+        "tags": [
+            "QuerySet",
+            ".exists()",
+            "bool",
+            "check"
+        ],
+        "description": "Check Existence Query"
+    },
+    {
+        "tags": [
+            "QuerySet",
+            ".first()",
+            ".last()",
+            "object"
+        ],
+        "description": "First Last Object"
+    },
+    {
+        "tags": [
+            "QuerySet",
+            ".aggregate()",
+            "Sum()",
+            "Avg()"
+        ],
+        "description": "Aggregate Query Results"
+    },
+    {
+        "tags": [
+            "QuerySet",
+            ".annotate()",
+            "Count()",
+            "field"
+        ],
+        "description": "Annotate Query Data"
+    },
+    {
+        "tags": [
+            "F()",
+            "expression",
+            ".update()",
+            "views=F('views')+1"
+        ],
+        "description": "F Expression Update"
+    },
+    {
+        "tags": [
+            "Q()",
+            "|",
+            "&",
+            "~",
+            "complex",
+            "filter"
+        ],
+        "description": "Q Object Complex Query"
+    },
+    {
+        "tags": [
+            "__contains",
+            "__icontains",
+            "filter()",
+            "lookup"
+        ],
+        "description": "Contains Lookup Filter"
+    },
+    {
+        "tags": [
+            "__startswith",
+            "__endswith",
+            "filter()",
+            "lookup"
+        ],
+        "description": "Starts Ends With Lookup"
+    },
+    {
+        "tags": [
+            "__gt",
+            "__lt",
+            "__gte",
+            "__lte",
+            "filter()"
+        ],
+        "description": "Comparison Lookup Filters"
+    },
+    {
+        "tags": [
+            "__in",
+            "filter()",
+            "[1, 2, 3]",
+            "list"
+        ],
+        "description": "In Lookup Filter"
+    },
+    {
+        "tags": [
+            "__range",
+            "filter()",
+            "(start",
+            "end)"
+        ],
+        "description": "Range Lookup Filter"
+    },
+    {
+        "tags": [
+            "__isnull",
+            "=True",
+            "filter()",
+            "None"
+        ],
+        "description": "Is Null Lookup"
+    },
+    {
+        "tags": [
+            "__date",
+            "__year",
+            "__month",
+            "filter()"
+        ],
+        "description": "Date Part Lookup"
+    },
+    {
+        "tags": [
+            "select_related()",
+            "'fk_field'",
+            "JOIN",
+            "query"
+        ],
+        "description": "Select Related Optimize"
+    },
+    {
+        "tags": [
+            "prefetch_related()",
+            "'m2m'",
+            "reduce",
+            "queries"
+        ],
+        "description": "Prefetch Related Query"
+    },
+    {
+        "tags": [
+            "Prefetch()",
+            "queryset=",
+            "to_attr=",
+            "custom"
+        ],
+        "description": "Custom Prefetch Object"
+    },
+    {
+        "tags": [
+            "transaction",
+            ".atomic()",
+            "with",
+            "rollback"
+        ],
+        "description": "Atomic Transaction Block"
+    },
+    {
+        "tags": [
+            "from",
+            "django.db",
+            "import",
+            "connection",
+            ".cursor()"
+        ],
+        "description": "Raw SQL Cursor"
+    },
+    {
+        "tags": [
+            ".raw()",
+            "SELECT *",
+            "FROM",
+            "table"
+        ],
+        "description": "Raw SQL Query"
+    },
+    {
+        "tags": [
+            "from",
+            "django.urls",
+            "import",
+            "path"
+        ],
+        "description": "Import URL Path"
+    },
+    {
+        "tags": [
+            "urlpatterns",
+            "= [",
+            "path()",
+            "]"
+        ],
+        "description": "URL Patterns List"
+    },
+    {
+        "tags": [
+            "path()",
+            "'posts/'",
+            "views.list",
+            "name="
+        ],
+        "description": "Define URL Route"
+    },
+    {
+        "tags": [
+            "path()",
+            "'<int:pk>/'",
+            "views.detail",
+            "name="
+        ],
+        "description": "URL With Integer Param"
+    },
+    {
+        "tags": [
+            "path()",
+            "'<slug:slug>/'",
+            "view",
+            "name="
+        ],
+        "description": "URL With Slug Param"
+    },
+    {
+        "tags": [
+            "path()",
+            "'<str:name>/'",
+            "view",
+            "name="
+        ],
+        "description": "URL With String Param"
+    },
+    {
+        "tags": [
+            "path()",
+            "'<uuid:id>/'",
+            "view",
+            "name="
+        ],
+        "description": "URL With UUID Param"
+    },
+    {
+        "tags": [
+            "include()",
+            "'blog.urls'",
+            "path()",
+            "'blog/'"
+        ],
+        "description": "Include App URLs"
+    },
+    {
+        "tags": [
+            "re_path()",
+            "r'^regex/'",
+            "view",
+            "name="
+        ],
+        "description": "Regex URL Pattern"
+    },
+    {
+        "tags": [
+            "reverse()",
+            "'app:name'",
+            "args=",
+            "[pk]"
+        ],
+        "description": "Reverse URL Lookup"
+    },
+    {
+        "tags": [
+            "app_name",
+            "= 'blog'",
+            "namespace",
+            "urls"
+        ],
+        "description": "URL Namespace Setup"
+    },
+    {
+        "tags": [
+            "from",
+            "django.shortcuts",
+            "import",
+            "render"
+        ],
+        "description": "Import Render Shortcut"
+    },
+    {
+        "tags": [
+            "def",
+            "index(request)",
+            ":",
+            "return",
+            "render()"
+        ],
+        "description": "Function-Based View"
+    },
+    {
+        "tags": [
+            "render()",
+            "request",
+            "'template.html'",
+            "context"
+        ],
+        "description": "Render With Context"
+    },
+    {
+        "tags": [
+            "redirect()",
+            "'app:name'",
+            "return",
+            "302"
+        ],
+        "description": "Redirect Response"
+    },
+    {
+        "tags": [
+            "get_object_or_404()",
+            "Model",
+            "pk=pk"
+        ],
+        "description": "Get Or 404 Shortcut"
+    },
+    {
+        "tags": [
+            "get_list_or_404()",
+            "Model",
+            "filter"
+        ],
+        "description": "Get List Or 404"
+    },
+    {
+        "tags": [
+            "HttpResponse()",
+            "content",
+            "status=200"
+        ],
+        "description": "HTTP Response Object"
+    },
+    {
+        "tags": [
+            "JsonResponse()",
+            "data",
+            "safe=False"
+        ],
+        "description": "JSON Response Object"
+    },
+    {
+        "tags": [
+            "HttpResponseNotFound()",
+            "404",
+            "page"
+        ],
+        "description": "404 Response"
+    },
+    {
+        "tags": [
+            "request.method",
+            "==",
+            "'POST'",
+            "if"
+        ],
+        "description": "Check Request Method"
+    },
+    {
+        "tags": [
+            "request.GET",
+            ".get()",
+            "'param'",
+            "default"
+        ],
+        "description": "Get Query Parameter"
+    },
+    {
+        "tags": [
+            "request.POST",
+            ".get()",
+            "'field'",
+            "data"
+        ],
+        "description": "Get POST Data"
+    },
+    {
+        "tags": [
+            "request.FILES",
+            "['file']",
+            "upload",
+            "handle"
+        ],
+        "description": "Access Uploaded File"
+    },
+    {
+        "tags": [
+            "request.user",
+            ".is_authenticated",
+            "if",
+            ":"
+        ],
+        "description": "Check User Auth Status"
+    },
+    {
+        "tags": [
+            "request.session",
+            "['key']",
+            "= value",
+            "store"
+        ],
+        "description": "Set Session Data"
+    },
+    {
+        "tags": [
+            "request.COOKIES",
+            ".get()",
+            "'key'",
+            "value"
+        ],
+        "description": "Read Cookie Value"
+    },
+    {
+        "tags": [
+            "class",
+            "PostListView",
+            "(ListView)",
+            ":"
+        ],
+        "description": "List View Class"
+    },
+    {
+        "tags": [
+            "ListView",
+            "model =",
+            "template_name =",
+            "context_object_name ="
+        ],
+        "description": "ListView Configuration"
+    },
+    {
+        "tags": [
+            "class",
+            "PostDetailView",
+            "(DetailView)",
+            ":"
+        ],
+        "description": "Detail View Class"
+    },
+    {
+        "tags": [
+            "DetailView",
+            "model =",
+            "template_name =",
+            "slug_field ="
+        ],
+        "description": "DetailView Configuration"
+    },
+    {
+        "tags": [
+            "class",
+            "PostCreateView",
+            "(CreateView)",
+            ":"
+        ],
+        "description": "Create View Class"
+    },
+    {
+        "tags": [
+            "CreateView",
+            "model =",
+            "fields =",
+            "success_url ="
+        ],
+        "description": "CreateView Configuration"
+    },
+    {
+        "tags": [
+            "class",
+            "PostUpdateView",
+            "(UpdateView)",
+            ":"
+        ],
+        "description": "Update View Class"
+    },
+    {
+        "tags": [
+            "UpdateView",
+            "model =",
+            "fields =",
+            "success_url ="
+        ],
+        "description": "UpdateView Configuration"
+    },
+    {
+        "tags": [
+            "class",
+            "PostDeleteView",
+            "(DeleteView)",
+            ":"
+        ],
+        "description": "Delete View Class"
+    },
+    {
+        "tags": [
+            "DeleteView",
+            "model =",
+            "success_url =",
+            "template_name ="
+        ],
+        "description": "DeleteView Configuration"
+    },
+    {
+        "tags": [
+            "class",
+            "HomeView",
+            "(TemplateView)",
+            ":"
+        ],
+        "description": "Template View Class"
+    },
+    {
+        "tags": [
+            "TemplateView",
+            "template_name =",
+            "get_context_data()"
+        ],
+        "description": "TemplateView Setup"
+    },
+    {
+        "tags": [
+            "class",
+            "RedirectView",
+            "url =",
+            "pattern_name ="
+        ],
+        "description": "Redirect View Class"
+    },
+    {
+        "tags": [
+            "FormView",
+            "form_class =",
+            "success_url =",
+            "form_valid()"
+        ],
+        "description": "Form View Class"
+    },
+    {
+        "tags": [
+            "def",
+            "get_queryset(self)",
+            ":",
+            "return",
+            "filter()"
+        ],
+        "description": "Override Get Queryset"
+    },
+    {
+        "tags": [
+            "def",
+            "get_context_data()",
+            ":",
+            "context",
+            "return"
+        ],
+        "description": "Override Context Data"
+    },
+    {
+        "tags": [
+            "def",
+            "form_valid(self, form)",
+            ":",
+            "return"
+        ],
+        "description": "Override Form Valid"
+    },
+    {
+        "tags": [
+            "paginate_by",
+            "= 10",
+            "ListView",
+            "page"
+        ],
+        "description": "Paginate List View"
+    },
+    {
+        "tags": [
+            "LoginRequiredMixin",
+            "class",
+            "View",
+            ":"
+        ],
+        "description": "Login Required Mixin"
+    },
+    {
+        "tags": [
+            "PermissionRequiredMixin",
+            "permission_required",
+            "="
+        ],
+        "description": "Permission Required Mixin"
+    },
+    {
+        "tags": [
+            "UserPassesTestMixin",
+            "def",
+            "test_func()",
+            ":"
+        ],
+        "description": "User Passes Test Mixin"
+    },
+    {
+        "tags": [
+            "@login_required",
+            "def",
+            "view(request)",
+            ":"
+        ],
+        "description": "Login Required Decorator"
+    },
+    {
+        "tags": [
+            "@permission_required",
+            "'app.perm'",
+            "def",
+            "view()"
+        ],
+        "description": "Permission Decorator"
+    },
+    {
+        "tags": [
+            "@require_POST",
+            "def",
+            "view()",
+            ":",
+            "POST only"
+        ],
+        "description": "Require POST Method"
+    },
+    {
+        "tags": [
+            "@require_http_methods",
+            "['GET', 'POST']",
+            "def"
+        ],
+        "description": "Require HTTP Methods"
+    },
+    {
+        "tags": [
+            "@csrf_exempt",
+            "def",
+            "api_view()",
+            ":"
+        ],
+        "description": "CSRF Exempt View"
+    },
+    {
+        "tags": [
+            "{% extends",
+            "'base.html'",
+            "%}",
+            "template"
+        ],
+        "description": "Template Inheritance"
+    },
+    {
+        "tags": [
+            "{% block",
+            "content",
+            "%}",
+            "{% endblock %}"
+        ],
+        "description": "Template Block Tag"
+    },
+    {
+        "tags": [
+            "{% include",
+            "'partial.html'",
+            "%}",
+            "reuse"
+        ],
+        "description": "Include Template Partial"
+    },
+    {
+        "tags": [
+            "{{ variable }}",
+            "context",
+            "render",
+            "output"
+        ],
+        "description": "Template Variable Output"
+    },
+    {
+        "tags": [
+            "{{ obj.field }}",
+            "dot",
+            "access",
+            "attribute"
+        ],
+        "description": "Template Dot Notation"
+    },
+    {
+        "tags": [
+            "{% if",
+            "condition",
+            "%}",
+            "{% endif %}"
+        ],
+        "description": "Template If Tag"
+    },
+    {
+        "tags": [
+            "{% if %}",
+            "{% elif %}",
+            "{% else %}",
+            "{% endif %}"
+        ],
+        "description": "Template If-Elif-Else"
+    },
+    {
+        "tags": [
+            "{% for",
+            "item in",
+            "list %}",
+            "{% endfor %}"
+        ],
+        "description": "Template For Loop"
+    },
+    {
+        "tags": [
+            "{% for %}",
+            "{% empty %}",
+            "{% endfor %}"
+        ],
+        "description": "For Loop Empty Fallback"
+    },
+    {
+        "tags": [
+            "{{ forloop.counter }}",
+            "first",
+            "last"
+        ],
+        "description": "Forloop Counter Variables"
+    },
+    {
+        "tags": [
+            "{% url",
+            "'app:name'",
+            "pk",
+            "%}"
+        ],
+        "description": "Template URL Tag"
+    },
+    {
+        "tags": [
+            "{% static",
+            "'css/style.css'",
+            "%}"
+        ],
+        "description": "Static File Tag"
+    },
+    {
+        "tags": [
+            "{% load",
+            "static",
+            "%}",
+            "top"
+        ],
+        "description": "Load Static Tag"
+    },
+    {
+        "tags": [
+            "{% csrf_token %}",
+            "form",
+            "POST",
+            "security"
+        ],
+        "description": "CSRF Token Tag"
+    },
+    {
+        "tags": [
+            "{% with",
+            "var=value",
+            "%}",
+            "{% endwith %}"
+        ],
+        "description": "Template With Tag"
+    },
+    {
+        "tags": [
+            "{% comment %}",
+            "text",
+            "{% endcomment %}"
+        ],
+        "description": "Template Comment Tag"
+    },
+    {
+        "tags": [
+            "{% autoescape",
+            "off %}",
+            "{% endautoescape %}"
+        ],
+        "description": "Disable Auto Escape"
+    },
+    {
+        "tags": [
+            "{% spaceless %}",
+            "html",
+            "{% endspaceless %}"
+        ],
+        "description": "Remove Whitespace Tag"
+    },
+    {
+        "tags": [
+            "{% verbatim %}",
+            "literal",
+            "{% endverbatim %}"
+        ],
+        "description": "Verbatim Output Tag"
+    },
+    {
+        "tags": [
+            "{% now",
+            "'Y-m-d'",
+            "%}",
+            "date"
+        ],
+        "description": "Current Date Tag"
+    },
+    {
+        "tags": [
+            "{% cycle",
+            "'odd'",
+            "'even'",
+            "%}"
+        ],
+        "description": "Cycle Values Tag"
+    },
+    {
+        "tags": [
+            "{{ value|default:",
+            "'N/A'",
+            "}}",
+            "filter"
+        ],
+        "description": "Default Filter"
+    },
+    {
+        "tags": [
+            "{{ text|truncatewords:",
+            "30",
+            "}}",
+            "filter"
+        ],
+        "description": "Truncate Words Filter"
+    },
+    {
+        "tags": [
+            "{{ text|lower }}",
+            "|upper",
+            "|title"
+        ],
+        "description": "Case Filters"
+    },
+    {
+        "tags": [
+            "{{ list|length }}",
+            "count",
+            "items"
+        ],
+        "description": "Length Filter"
+    },
+    {
+        "tags": [
+            "{{ date|date:",
+            "'M d, Y'",
+            "}}",
+            "format"
+        ],
+        "description": "Date Format Filter"
+    },
+    {
+        "tags": [
+            "{{ text|linebreaks }}",
+            "paragraphs",
+            "html"
+        ],
+        "description": "Linebreaks Filter"
+    },
+    {
+        "tags": [
+            "{{ text|safe }}",
+            "html",
+            "unescaped"
+        ],
+        "description": "Safe Filter No Escape"
+    },
+    {
+        "tags": [
+            "{{ text|slugify }}",
+            "slug",
+            "url-safe"
+        ],
+        "description": "Slugify Text Filter"
+    },
+    {
+        "tags": [
+            "{{ value|add:",
+            "5",
+            "}}",
+            "arithmetic"
+        ],
+        "description": "Add Filter"
+    },
+    {
+        "tags": [
+            "{{ list|join:",
+            "', '",
+            "}}",
+            "string"
+        ],
+        "description": "Join Filter"
+    },
+    {
+        "tags": [
+            "{{ text|striptags }}",
+            "remove",
+            "html"
+        ],
+        "description": "Strip HTML Tags"
+    },
+    {
+        "tags": [
+            "{{ value|yesno:",
+            "'yes,no'",
+            "}}",
+            "bool"
+        ],
+        "description": "Yes No Filter"
+    },
+    {
+        "tags": [
+            "{{ list|dictsort:",
+            "'key'",
+            "}}",
+            "sort"
+        ],
+        "description": "Dictionary Sort Filter"
+    },
+    {
+        "tags": [
+            "{{ text|escape }}",
+            "html",
+            "entities"
+        ],
+        "description": "Escape HTML Filter"
+    },
+    {
+        "tags": [
+            "{{ list|first }}",
+            "|last",
+            "element"
+        ],
+        "description": "First Last Filter"
+    },
+    {
+        "tags": [
+            "{{ text|wordcount }}",
+            "integer",
+            "words"
+        ],
+        "description": "Word Count Filter"
+    },
+    {
+        "tags": [
+            "from",
+            "django",
+            "import",
+            "forms"
+        ],
+        "description": "Import Forms Module"
+    },
+    {
+        "tags": [
+            "class",
+            "PostForm",
+            "(forms.Form)",
+            ":"
+        ],
+        "description": "Basic Form Class"
+    },
+    {
+        "tags": [
+            "class",
+            "PostForm",
+            "(ModelForm)",
+            ":"
+        ],
+        "description": "Model Form Class"
+    },
+    {
+        "tags": [
+            "class Meta",
+            ":",
+            "model =",
+            "fields ="
+        ],
+        "description": "ModelForm Meta Config"
+    },
+    {
+        "tags": [
+            "fields",
+            "= '__all__'",
+            "ModelForm",
+            "include"
+        ],
+        "description": "Include All Fields"
+    },
+    {
+        "tags": [
+            "fields",
+            "= ['title'",
+            "'body']",
+            "specific"
+        ],
+        "description": "Specific Form Fields"
+    },
+    {
+        "tags": [
+            "exclude",
+            "= ['author']",
+            "ModelForm",
+            "omit"
+        ],
+        "description": "Exclude Form Fields"
+    },
+    {
+        "tags": [
+            "widgets",
+            "= {}",
+            "'field':",
+            "TextInput()"
+        ],
+        "description": "Custom Form Widgets"
+    },
+    {
+        "tags": [
+            "labels",
+            "= {}",
+            "'field':",
+            "'Label'"
+        ],
+        "description": "Custom Field Labels"
+    },
+    {
+        "tags": [
+            "help_texts",
+            "= {}",
+            "'field':",
+            "'Help'"
+        ],
+        "description": "Custom Help Texts"
+    },
+    {
+        "tags": [
+            "def",
+            "clean_field(self)",
+            ":",
+            "validate",
+            "return"
+        ],
+        "description": "Field Level Validation"
+    },
+    {
+        "tags": [
+            "def",
+            "clean(self)",
+            ":",
+            "cleaned_data",
+            "return"
+        ],
+        "description": "Form Level Validation"
+    },
+    {
+        "tags": [
+            "form",
+            "= PostForm()",
+            "request.POST",
+            "or None"
+        ],
+        "description": "Initialize Form"
+    },
+    {
+        "tags": [
+            "form.is_valid()",
+            "if",
+            ":",
+            "form.save()"
+        ],
+        "description": "Validate And Save Form"
+    },
+    {
+        "tags": [
+            "form.errors",
+            "field",
+            "error",
+            "messages"
+        ],
+        "description": "Access Form Errors"
+    },
+    {
+        "tags": [
+            "form.cleaned_data",
+            "['field']",
+            "validated"
+        ],
+        "description": "Access Cleaned Data"
+    },
+    {
+        "tags": [
+            "form.save()",
+            "commit=False",
+            "modify",
+            ".save()"
+        ],
+        "description": "Save With Modifications"
+    },
+    {
+        "tags": [
+            "{{ form.as_p }}",
+            "render",
+            "paragraphs"
+        ],
+        "description": "Render Form Paragraphs"
+    },
+    {
+        "tags": [
+            "{{ form.as_table }}",
+            "render",
+            "rows"
+        ],
+        "description": "Render Form Table"
+    },
+    {
+        "tags": [
+            "{{ form.field }}",
+            "label",
+            "input",
+            "errors"
+        ],
+        "description": "Render Individual Field"
+    },
+    {
+        "tags": [
+            "formset",
+            "= modelformset_factory()",
+            "Model",
+            "fields"
+        ],
+        "description": "Model Formset Factory"
+    },
+    {
+        "tags": [
+            "inlineformset_factory()",
+            "Parent",
+            "Child",
+            "fields"
+        ],
+        "description": "Inline Formset Factory"
+    },
+    {
+        "tags": [
+            "from",
+            "django.contrib",
+            "import",
+            "admin"
+        ],
+        "description": "Import Admin Module"
+    },
+    {
+        "tags": [
+            "admin.site",
+            ".register()",
+            "Model",
+            "ModelAdmin"
+        ],
+        "description": "Register Model Admin"
+    },
+    {
+        "tags": [
+            "@admin.register()",
+            "class",
+            "PostAdmin",
+            ":"
+        ],
+        "description": "Decorator Register Admin"
+    },
+    {
+        "tags": [
+            "list_display",
+            "= ['title'",
+            "'date']"
+        ],
+        "description": "Admin List Display"
+    },
+    {
+        "tags": [
+            "list_filter",
+            "= ['status'",
+            "'date']"
+        ],
+        "description": "Admin List Filters"
+    },
+    {
+        "tags": [
+            "search_fields",
+            "= ['title'",
+            "'body']"
+        ],
+        "description": "Admin Search Fields"
+    },
+    {
+        "tags": [
+            "ordering",
+            "= ['-created']",
+            "admin",
+            "sort"
+        ],
+        "description": "Admin Default Ordering"
+    },
+    {
+        "tags": [
+            "prepopulated_fields",
+            "= {'slug':",
+            "('title',)}"
+        ],
+        "description": "Admin Prepopulate Slug"
+    },
+    {
+        "tags": [
+            "readonly_fields",
+            "= ['created'",
+            "'modified']"
+        ],
+        "description": "Admin Readonly Fields"
+    },
+    {
+        "tags": [
+            "list_editable",
+            "= ['status']",
+            "inline"
+        ],
+        "description": "Admin Inline Editing"
+    },
+    {
+        "tags": [
+            "list_per_page",
+            "= 25",
+            "pagination"
+        ],
+        "description": "Admin Pagination Size"
+    },
+    {
+        "tags": [
+            "date_hierarchy",
+            "= 'created'",
+            "drill"
+        ],
+        "description": "Admin Date Hierarchy"
+    },
+    {
+        "tags": [
+            "fieldsets",
+            "= [",
+            "('Section'",
+            "{'fields': []})]"
+        ],
+        "description": "Admin Field Sections"
+    },
+    {
+        "tags": [
+            "class",
+            "TabularInline",
+            "model =",
+            "extra ="
+        ],
+        "description": "Admin Tabular Inline"
+    },
+    {
+        "tags": [
+            "class",
+            "StackedInline",
+            "model =",
+            "extra ="
+        ],
+        "description": "Admin Stacked Inline"
+    },
+    {
+        "tags": [
+            "inlines",
+            "= [CommentInline]",
+            "admin"
+        ],
+        "description": "Admin Inlines Config"
+    },
+    {
+        "tags": [
+            "actions",
+            "= ['publish']",
+            "def",
+            "publish()"
+        ],
+        "description": "Custom Admin Action"
+    },
+    {
+        "tags": [
+            "def",
+            "get_queryset()",
+            ":",
+            "super()",
+            "filter"
+        ],
+        "description": "Admin Custom Queryset"
+    },
+    {
+        "tags": [
+            "MIDDLEWARE",
+            "= [",
+            "'SecurityMiddleware'",
+            "]"
+        ],
+        "description": "Middleware Configuration"
+    },
+    {
+        "tags": [
+            "class",
+            "CustomMiddleware",
+            ":",
+            "def",
+            "__init__()"
+        ],
+        "description": "Custom Middleware Class"
+    },
+    {
+        "tags": [
+            "def",
+            "__call__(self, request)",
+            ":",
+            "response"
+        ],
+        "description": "Middleware Call Method"
+    },
+    {
+        "tags": [
+            "def",
+            "process_view()",
+            ":",
+            "request",
+            "view_func"
+        ],
+        "description": "Middleware Process View"
+    },
+    {
+        "tags": [
+            "def",
+            "process_exception()",
+            ":",
+            "request",
+            "exception"
+        ],
+        "description": "Middleware Exception Hook"
+    },
+    {
+        "tags": [
+            "DATABASES",
+            "= {",
+            "'default':",
+            "'ENGINE':}"
+        ],
+        "description": "Database Config Settings"
+    },
+    {
+        "tags": [
+            "'ENGINE':",
+            "'django.db.backends",
+            ".postgresql'"
+        ],
+        "description": "PostgreSQL Backend"
+    },
+    {
+        "tags": [
+            "'ENGINE':",
+            "'django.db.backends",
+            ".sqlite3'"
+        ],
+        "description": "SQLite Backend"
+    },
+    {
+        "tags": [
+            "'NAME':",
+            "'HOST':",
+            "'PORT':",
+            "'USER':"
+        ],
+        "description": "Database Connection Params"
+    },
+    {
+        "tags": [
+            "STATIC_URL",
+            "STATIC_ROOT",
+            "STATICFILES_DIRS"
+        ],
+        "description": "Static Files Settings"
+    },
+    {
+        "tags": [
+            "MEDIA_URL",
+            "MEDIA_ROOT",
+            "upload",
+            "files"
+        ],
+        "description": "Media Files Settings"
+    },
+    {
+        "tags": [
+            "TEMPLATES",
+            "DIRS",
+            "APP_DIRS",
+            "OPTIONS"
+        ],
+        "description": "Template Engine Settings"
+    },
+    {
+        "tags": [
+            "DEBUG",
+            "= True",
+            "ALLOWED_HOSTS",
+            "= []"
+        ],
+        "description": "Debug Mode Settings"
+    },
+    {
+        "tags": [
+            "SECRET_KEY",
+            "= 'key'",
+            "security",
+            "settings"
+        ],
+        "description": "Secret Key Setting"
+    },
+    {
+        "tags": [
+            "AUTH_USER_MODEL",
+            "= 'app.User'",
+            "custom"
+        ],
+        "description": "Custom User Model"
+    },
+    {
+        "tags": [
+            "LOGIN_URL",
+            "LOGIN_REDIRECT_URL",
+            "LOGOUT_REDIRECT_URL"
+        ],
+        "description": "Auth URL Settings"
+    },
+    {
+        "tags": [
+            "EMAIL_BACKEND",
+            "EMAIL_HOST",
+            "EMAIL_PORT"
+        ],
+        "description": "Email Backend Settings"
+    },
+    {
+        "tags": [
+            "LANGUAGE_CODE",
+            "TIME_ZONE",
+            "USE_TZ"
+        ],
+        "description": "Locale Time Settings"
+    },
+    {
+        "tags": [
+            "CACHES",
+            "= {",
+            "'default':",
+            "'BACKEND':}"
+        ],
+        "description": "Cache Backend Settings"
+    },
+    {
+        "tags": [
+            "LOGGING",
+            "= {",
+            "'handlers':",
+            "'loggers':}"
+        ],
+        "description": "Logging Configuration"
+    },
+    {
+        "tags": [
+            "from",
+            "django.contrib.auth",
+            "import",
+            "get_user_model"
+        ],
+        "description": "Import User Model"
+    },
+    {
+        "tags": [
+            "AbstractUser",
+            "class",
+            "User",
+            ":",
+            "custom fields"
+        ],
+        "description": "Custom User Model"
+    },
+    {
+        "tags": [
+            "AbstractBaseUser",
+            "class",
+            "User",
+            ":",
+            "from scratch"
+        ],
+        "description": "User From Scratch"
+    },
+    {
+        "tags": [
+            "authenticate()",
+            "login()",
+            "logout()",
+            "auth"
+        ],
+        "description": "Auth Helper Functions"
+    },
+    {
+        "tags": [
+            "user",
+            ".check_password()",
+            ".set_password()",
+            "save"
+        ],
+        "description": "Password Management"
+    },
+    {
+        "tags": [
+            "User",
+            ".objects",
+            ".create_user()",
+            "password"
+        ],
+        "description": "Create User Object"
+    },
+    {
+        "tags": [
+            "Group",
+            "Permission",
+            "user.groups",
+            ".add()"
+        ],
+        "description": "User Groups Permissions"
+    },
+    {
+        "tags": [
+            "@user_passes_test",
+            "lambda u:",
+            "u.is_staff"
+        ],
+        "description": "User Passes Test"
+    },
+    {
+        "tags": [
+            "PasswordChangeView",
+            "success_url",
+            "template"
+        ],
+        "description": "Password Change View"
+    },
+    {
+        "tags": [
+            "PasswordResetView",
+            "email",
+            "token",
+            "confirm"
+        ],
+        "description": "Password Reset Flow"
+    },
+    {
+        "tags": [
+            "from",
+            "django.test",
+            "import",
+            "TestCase"
+        ],
+        "description": "Import Test Case"
+    },
+    {
+        "tags": [
+            "class",
+            "PostTest(TestCase)",
+            ":",
+            "def setUp()"
+        ],
+        "description": "Test Case Class"
+    },
+    {
+        "tags": [
+            "def",
+            "test_create(self)",
+            ":",
+            "assertEqual()"
+        ],
+        "description": "Test Create Method"
+    },
+    {
+        "tags": [
+            "self.client",
+            ".get()",
+            "response",
+            "status_code"
+        ],
+        "description": "Test GET Request"
+    },
+    {
+        "tags": [
+            "self.client",
+            ".post()",
+            "data",
+            "follow=True"
+        ],
+        "description": "Test POST Request"
+    },
+    {
+        "tags": [
+            "self.assertEqual()",
+            "expected",
+            "actual"
+        ],
+        "description": "Assert Equal Test"
+    },
+    {
+        "tags": [
+            "self.assertContains()",
+            "response",
+            "text"
+        ],
+        "description": "Assert Contains Test"
+    },
+    {
+        "tags": [
+            "self.assertTemplateUsed()",
+            "response",
+            "'template'"
+        ],
+        "description": "Assert Template Used"
+    },
+    {
+        "tags": [
+            "self.assertRedirects()",
+            "response",
+            "url"
+        ],
+        "description": "Assert Redirect Test"
+    },
+    {
+        "tags": [
+            "self.assertTrue()",
+            "self.assertFalse()",
+            "bool"
+        ],
+        "description": "Assert Boolean Tests"
+    },
+    {
+        "tags": [
+            "self.assertRaises()",
+            "Exception",
+            "func"
+        ],
+        "description": "Assert Exception Raised"
+    },
+    {
+        "tags": [
+            "@override_settings()",
+            "DEBUG=True",
+            "test"
+        ],
+        "description": "Override Test Settings"
+    },
+    {
+        "tags": [
+            "Client()",
+            "self.client",
+            "login()",
+            "force_login()"
+        ],
+        "description": "Test Client Setup"
+    },
+    {
+        "tags": [
+            "RequestFactory()",
+            ".get()",
+            ".post()",
+            "view"
+        ],
+        "description": "Request Factory Test"
+    },
+    {
+        "tags": [
+            "SimpleTestCase",
+            "no database",
+            "template",
+            "test"
+        ],
+        "description": "Simple Test No Database"
+    },
+    {
+        "tags": [
+            "TransactionTestCase",
+            "database",
+            "transactions"
+        ],
+        "description": "Transaction Test Case"
+    },
+    {
+        "tags": [
+            "LiveServerTestCase",
+            "selenium",
+            "browser"
+        ],
+        "description": "Live Server Test"
+    },
+    {
+        "tags": [
+            "fixtures",
+            "= ['data.json']",
+            "loaddata"
+        ],
+        "description": "Test Fixture Loading"
+    },
+    {
+        "tags": [
+            "from",
+            "django.core.mail",
+            "import",
+            "send_mail"
+        ],
+        "description": "Import Send Mail"
+    },
+    {
+        "tags": [
+            "send_mail()",
+            "subject",
+            "message",
+            "from_email",
+            "to"
+        ],
+        "description": "Send Email Function"
+    },
+    {
+        "tags": [
+            "EmailMessage()",
+            "subject",
+            "body",
+            ".send()"
+        ],
+        "description": "Email Message Object"
+    },
+    {
+        "tags": [
+            "from",
+            "django.core.cache",
+            "import",
+            "cache"
+        ],
+        "description": "Import Cache Framework"
+    },
+    {
+        "tags": [
+            "cache.set()",
+            "key",
+            "value",
+            "timeout"
+        ],
+        "description": "Set Cache Value"
+    },
+    {
+        "tags": [
+            "cache.get()",
+            "key",
+            "default",
+            "value"
+        ],
+        "description": "Get Cache Value"
+    },
+    {
+        "tags": [
+            "@cache_page()",
+            "60 * 15",
+            "view"
+        ],
+        "description": "Cache View Decorator"
+    },
+    {
+        "tags": [
+            "{% cache",
+            "300",
+            "'key'",
+            "%}",
+            "{% endcache %}"
+        ],
+        "description": "Template Cache Tag"
+    },
+    {
+        "tags": [
+            "from",
+            "django.db.models",
+            "import",
+            "signals"
+        ],
+        "description": "Import Model Signals"
+    },
+    {
+        "tags": [
+            "pre_save",
+            ".connect()",
+            "handler",
+            "sender="
+        ],
+        "description": "Pre Save Signal"
+    },
+    {
+        "tags": [
+            "post_save",
+            ".connect()",
+            "handler",
+            "sender="
+        ],
+        "description": "Post Save Signal"
+    },
+    {
+        "tags": [
+            "pre_delete",
+            ".connect()",
+            "handler",
+            "sender="
+        ],
+        "description": "Pre Delete Signal"
+    },
+    {
+        "tags": [
+            "post_delete",
+            ".connect()",
+            "handler",
+            "sender="
+        ],
+        "description": "Post Delete Signal"
+    },
+    {
+        "tags": [
+            "@receiver()",
+            "post_save",
+            "sender=User",
+            "def"
+        ],
+        "description": "Signal Receiver Decorator"
+    },
+    {
+        "tags": [
+            "def",
+            "handler(sender",
+            "instance",
+            "created",
+            "**kwargs)"
+        ],
+        "description": "Signal Handler Function"
+    },
+    {
+        "tags": [
+            "from",
+            "rest_framework",
+            "import",
+            "serializers"
+        ],
+        "description": "Import DRF Serializers"
+    },
+    {
+        "tags": [
+            "class",
+            "PostSerializer",
+            "(ModelSerializer)",
+            ":"
+        ],
+        "description": "DRF Model Serializer"
+    },
+    {
+        "tags": [
+            "class Meta",
+            ":",
+            "model =",
+            "fields =",
+            "'__all__'"
+        ],
+        "description": "Serializer Meta Config"
+    },
+    {
+        "tags": [
+            "from",
+            "rest_framework",
+            "import",
+            "viewsets"
+        ],
+        "description": "Import DRF Viewsets"
+    },
+    {
+        "tags": [
+            "class",
+            "PostViewSet",
+            "(ModelViewSet)",
+            ":"
+        ],
+        "description": "DRF Model ViewSet"
+    },
+    {
+        "tags": [
+            "queryset =",
+            "serializer_class =",
+            "viewset"
+        ],
+        "description": "ViewSet Attributes"
+    },
+    {
+        "tags": [
+            "from",
+            "rest_framework.routers",
+            "import",
+            "DefaultRouter"
+        ],
+        "description": "Import DRF Router"
+    },
+    {
+        "tags": [
+            "router",
+            "= DefaultRouter()",
+            ".register()",
+            "urls"
+        ],
+        "description": "DRF Router Setup"
+    },
+    {
+        "tags": [
+            "@api_view",
+            "['GET']",
+            "def",
+            "view()",
+            ":"
+        ],
+        "description": "DRF API View Decorator"
+    },
+    {
+        "tags": [
+            "Response()",
+            "data",
+            "status=",
+            "200"
+        ],
+        "description": "DRF Response Object"
+    },
+    {
+        "tags": [
+            "permission_classes",
+            "= [IsAuthenticated]"
+        ],
+        "description": "DRF Permission Classes"
+    },
+    {
+        "tags": [
+            "authentication_classes",
+            "= [TokenAuth]"
+        ],
+        "description": "DRF Auth Classes"
+    },
+    {
+        "tags": [
+            "pagination_class",
+            "= PageNumberPagination"
+        ],
+        "description": "DRF Pagination Setup"
+    },
+    {
+        "tags": [
+            "filter_backends",
+            "= [SearchFilter]",
+            "search_fields"
+        ],
+        "description": "DRF Search Filter"
+    },
+    {
+        "tags": [
+            "throttle_classes",
+            "= [UserRateThrottle]"
+        ],
+        "description": "DRF Rate Throttling"
+    },
+    {
+        "tags": [
+            "serializer.is_valid()",
+            "raise_exception=True",
+            ".save()"
+        ],
+        "description": "DRF Validate Save"
+    },
+    {
+        "tags": [
+            "Celery()",
+            "app",
+            "config",
+            "broker"
+        ],
+        "description": "Celery App Setup"
+    },
+    {
+        "tags": [
+            "@shared_task",
+            "def",
+            "send_email()",
+            ":",
+            "async"
+        ],
+        "description": "Celery Shared Task"
+    },
+    {
+        "tags": [
+            "task.delay()",
+            "args",
+            "async",
+            "queue"
+        ],
+        "description": "Call Celery Task"
+    },
+    {
+        "tags": [
+            "@periodic_task",
+            "crontab()",
+            "schedule"
+        ],
+        "description": "Celery Periodic Task"
+    },
+    {
+        "tags": [
+            "custom",
+            "template tag",
+            "register",
+            "simple_tag"
+        ],
+        "description": "Custom Template Tag"
+    },
+    {
+        "tags": [
+            "register",
+            "= template.Library()",
+            "@register.filter"
+        ],
+        "description": "Custom Template Filter"
+    },
+    {
+        "tags": [
+            "@register.simple_tag",
+            "def",
+            "tag()",
+            ":",
+            "return"
+        ],
+        "description": "Simple Custom Tag"
+    },
+    {
+        "tags": [
+            "@register.inclusion_tag",
+            "'tpl.html'",
+            "def"
+        ],
+        "description": "Inclusion Template Tag"
+    },
+    {
+        "tags": [
+            "management",
+            "command",
+            "BaseCommand",
+            "handle()"
+        ],
+        "description": "Management Command"
+    },
+    {
+        "tags": [
+            "class Command",
+            "(BaseCommand)",
+            ":",
+            "def handle()"
+        ],
+        "description": "Custom Django Command"
+    },
+    {
+        "tags": [
+            "self.stdout",
+            ".write()",
+            "self.style",
+            ".SUCCESS()"
+        ],
+        "description": "Command Output Styling"
+    },
+    {
+        "tags": [
+            "add_arguments()",
+            "parser",
+            ".add_argument()",
+            "name"
+        ],
+        "description": "Command Arguments"
+    }
+]

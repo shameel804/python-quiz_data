@@ -1,0 +1,1252 @@
+[
+  {
+    "token": ".count()",
+    "isValid": true,
+    "reason": "Valid count method"
+  },
+  {
+    "token": "{% with x=val %}",
+    "isValid": true,
+    "reason": "Valid variable assignment tag"
+  },
+  {
+    "token": "date__between=(s,e)",
+    "isValid": false,
+    "reason": "Django uses __range"
+  },
+  {
+    "token": "collectstatic",
+    "isValid": true,
+    "reason": "Valid static collection command"
+  },
+  {
+    "token": "migrate",
+    "isValid": true,
+    "reason": "Valid migration apply command"
+  },
+  {
+    "token": ".pluck('name')",
+    "isValid": false,
+    "reason": "Rails syntax, not Django"
+  },
+  {
+    "token": "DecimalField",
+    "isValid": true,
+    "reason": "Valid decimal field type"
+  },
+  {
+    "token": ".include()",
+    "isValid": false,
+    "reason": "Sequelize syntax, not Django"
+  },
+  {
+    "token": "request.query",
+    "isValid": false,
+    "reason": "Express syntax, not Django"
+  },
+  {
+    "token": "STATIC_URL",
+    "isValid": true,
+    "reason": "Valid static files URL"
+  },
+  {
+    "token": "BooleanField",
+    "isValid": true,
+    "reason": "Valid boolean field type"
+  },
+  {
+    "token": ".prefetch_related()",
+    "isValid": true,
+    "reason": "Valid eager loading (M2M)"
+  },
+  {
+    "token": "ImageField",
+    "isValid": true,
+    "reason": "Valid image upload field"
+  },
+  {
+    "token": "{{ x|default:'n' }}",
+    "isValid": true,
+    "reason": "Valid template filter"
+  },
+  {
+    "token": "{% partial 'h' %}",
+    "isValid": false,
+    "reason": "Django uses include"
+  },
+  {
+    "token": "{% load static %}",
+    "isValid": true,
+    "reason": "Valid template tag loading"
+  },
+  {
+    "token": "SECRET_KEY",
+    "isValid": true,
+    "reason": "Valid secret key setting"
+  },
+  {
+    "token": "auto_now_add=True",
+    "isValid": true,
+    "reason": "Valid auto timestamp option"
+  },
+  {
+    "token": "forms.Form",
+    "isValid": true,
+    "reason": "Valid form base class"
+  },
+  {
+    "token": "form.is_valid()",
+    "isValid": true,
+    "reason": "Valid form validation"
+  },
+  {
+    "token": "request.currentUser",
+    "isValid": false,
+    "reason": "Not a Django attribute"
+  },
+  {
+    "token": "ROUTES_FILE",
+    "isValid": false,
+    "reason": "Django uses ROOT_URLCONF"
+  },
+  {
+    "token": "name__endswith",
+    "isValid": true,
+    "reason": "Valid ends-with lookup"
+  },
+  {
+    "token": "verbose_name='Name'",
+    "isValid": true,
+    "reason": "Valid human-readable name"
+  },
+  {
+    "token": "StringField",
+    "isValid": false,
+    "reason": "Django uses CharField, not StringField"
+  },
+  {
+    "token": "{{ x|implode:', ' }}",
+    "isValid": false,
+    "reason": "PHP function, not Django"
+  },
+  {
+    "token": "request.GET",
+    "isValid": true,
+    "reason": "Valid GET params access"
+  },
+  {
+    "token": ".exists()",
+    "isValid": true,
+    "reason": "Valid existence check"
+  },
+  {
+    "token": ".compute()",
+    "isValid": false,
+    "reason": "Not a Django method"
+  },
+  {
+    "token": "<%= variable %>",
+    "isValid": false,
+    "reason": "ERB/JSP syntax, not Django"
+  },
+  {
+    "token": "forms.ModelForm",
+    "isValid": true,
+    "reason": "Valid model form class"
+  },
+  {
+    "token": "{{ x|safe }}",
+    "isValid": true,
+    "reason": "Valid safe HTML filter"
+  },
+  {
+    "token": "urlpatterns = []",
+    "isValid": true,
+    "reason": "Valid URL conf variable"
+  },
+  {
+    "token": "objects.insert()",
+    "isValid": false,
+    "reason": "Django uses create(), not insert()"
+  },
+  {
+    "token": "compileassets",
+    "isValid": false,
+    "reason": "Django uses collectstatic"
+  },
+  {
+    "token": "request.verb",
+    "isValid": false,
+    "reason": "Not a Django request attribute"
+  },
+  {
+    "token": "{% if x %}",
+    "isValid": true,
+    "reason": "Valid template if tag"
+  },
+  {
+    "token": "{% for i in l %}",
+    "isValid": true,
+    "reason": "Valid template for loop"
+  },
+  {
+    "token": "SlugField",
+    "isValid": true,
+    "reason": "Valid slug field type"
+  },
+  {
+    "token": "findOrFail()",
+    "isValid": false,
+    "reason": "Laravel syntax, not Django"
+  },
+  {
+    "token": "nullable=True",
+    "isValid": false,
+    "reason": "Django uses null=True"
+  },
+  {
+    "token": "choices=OPTS",
+    "isValid": true,
+    "reason": "Valid field choices"
+  },
+  {
+    "token": "{% endfor %}",
+    "isValid": true,
+    "reason": "Valid end-for tag"
+  },
+  {
+    "token": "{% comment %}",
+    "isValid": true,
+    "reason": "Valid template comment tag"
+  },
+  {
+    "token": "REGISTERED_APPS",
+    "isValid": false,
+    "reason": "Django uses INSTALLED_APPS"
+  },
+  {
+    "token": "EmailField",
+    "isValid": true,
+    "reason": "Valid email field type"
+  },
+  {
+    "token": "DoubleField",
+    "isValid": false,
+    "reason": "Django uses FloatField"
+  },
+  {
+    "token": "runserver",
+    "isValid": true,
+    "reason": "Valid dev server command"
+  },
+  {
+    "token": ".values_list()",
+    "isValid": true,
+    "reason": "Valid flat value list"
+  },
+  {
+    "token": "{% set x=val %}",
+    "isValid": false,
+    "reason": "Jinja2 syntax, not Django"
+  },
+  {
+    "token": "DATABASES",
+    "isValid": true,
+    "reason": "Valid database configuration"
+  },
+  {
+    "token": "makemigrations",
+    "isValid": true,
+    "reason": "Valid migration creation command"
+  },
+  {
+    "token": "inverse_of='x'",
+    "isValid": false,
+    "reason": "Rails syntax, not Django"
+  },
+  {
+    "token": "TimestampField",
+    "isValid": false,
+    "reason": "Django uses DateTimeField"
+  },
+  {
+    "token": "TextField",
+    "isValid": true,
+    "reason": "Valid long text field type"
+  },
+  {
+    "token": ".delete()",
+    "isValid": true,
+    "reason": "Valid QuerySet deletion"
+  },
+  {
+    "token": "ENV = 'dev'",
+    "isValid": false,
+    "reason": "Not a standard Django setting"
+  },
+  {
+    "token": "request.POST",
+    "isValid": true,
+    "reason": "Valid POST data access"
+  },
+  {
+    "token": "{{ x|truncate:10 }}",
+    "isValid": false,
+    "reason": "Django uses truncatechars"
+  },
+  {
+    "token": "DateTimeField",
+    "isValid": true,
+    "reason": "Valid datetime field type"
+  },
+  {
+    "token": "name__startswith",
+    "isValid": true,
+    "reason": "Valid starts-with lookup"
+  },
+  {
+    "token": "MailField",
+    "isValid": false,
+    "reason": "Django uses EmailField"
+  },
+  {
+    "token": "GuidField",
+    "isValid": false,
+    "reason": "Django uses UUIDField, not Guid"
+  },
+  {
+    "token": "models.Entity",
+    "isValid": false,
+    "reason": "Django uses Model, not Entity"
+  },
+  {
+    "token": "form.validated_data",
+    "isValid": false,
+    "reason": "DRF uses this, not forms"
+  },
+  {
+    "token": "help_text='Info'",
+    "isValid": true,
+    "reason": "Valid field help text"
+  },
+  {
+    "token": "{% each i in l %}",
+    "isValid": false,
+    "reason": "Django uses for, not each"
+  },
+  {
+    "token": ".first()",
+    "isValid": true,
+    "reason": "Valid first object retrieval"
+  },
+  {
+    "token": "{{ x|json_encode }}",
+    "isValid": false,
+    "reason": "PHP filter, not Django"
+  },
+  {
+    "token": "IntegerField",
+    "isValid": true,
+    "reason": "Valid integer field type"
+  },
+  {
+    "token": "indexed=True",
+    "isValid": false,
+    "reason": "Django uses db_index=True"
+  },
+  {
+    "token": "table_name = 'users'",
+    "isValid": false,
+    "reason": "Django uses db_table"
+  },
+  {
+    "token": "request.uploads",
+    "isValid": false,
+    "reason": "Django uses request.FILES"
+  },
+  {
+    "token": "form.cleaned_data",
+    "isValid": true,
+    "reason": "Valid cleaned form data"
+  },
+  {
+    "token": "enum=OPTS",
+    "isValid": false,
+    "reason": "Django uses choices="
+  },
+  {
+    "token": "startserver",
+    "isValid": false,
+    "reason": "Django uses runserver"
+  },
+  {
+    "token": ".last()",
+    "isValid": true,
+    "reason": "Valid last object retrieval"
+  },
+  {
+    "token": "{% auth_token %}",
+    "isValid": false,
+    "reason": "Django uses csrf_token"
+  },
+  {
+    "token": ".findFirst()",
+    "isValid": false,
+    "reason": "Not a Django method"
+  },
+  {
+    "token": "request.FILES",
+    "isValid": true,
+    "reason": "Valid uploaded files access"
+  },
+  {
+    "token": "{% include 'h' %}",
+    "isValid": true,
+    "reason": "Valid template include"
+  },
+  {
+    "token": "objects.get(pk=1)",
+    "isValid": true,
+    "reason": "Valid single object retrieval"
+  },
+  {
+    "token": "class Config:",
+    "isValid": false,
+    "reason": "Pydantic uses Config, Django uses Meta"
+  },
+  {
+    "token": "UUIDField",
+    "isValid": true,
+    "reason": "Valid UUID field type"
+  },
+  {
+    "token": "request.cookies",
+    "isValid": false,
+    "reason": "Django uses request.COOKIES"
+  },
+  {
+    "token": "MIDDLEWARES",
+    "isValid": false,
+    "reason": "Django uses MIDDLEWARE (no S)"
+  },
+  {
+    "token": "re_path(r'^api/')",
+    "isValid": true,
+    "reason": "Valid regex URL pattern"
+  },
+  {
+    "token": "ordering = ['-date']",
+    "isValid": true,
+    "reason": "Valid meta ordering"
+  },
+  {
+    "token": "models.Model",
+    "isValid": true,
+    "reason": "Valid base model class"
+  },
+  {
+    "token": "age__>=18",
+    "isValid": false,
+    "reason": "Use __gte, not __>="
+  },
+  {
+    "token": ".unique()",
+    "isValid": false,
+    "reason": "Django uses distinct()"
+  },
+  {
+    "token": "{{ if x }}",
+    "isValid": false,
+    "reason": "Use {% %} for tags, not {{ }}"
+  },
+  {
+    "token": "objects.exclude()",
+    "isValid": true,
+    "reason": "Valid QuerySet exclusion"
+  },
+  {
+    "token": "{% spaceless %}",
+    "isValid": true,
+    "reason": "Valid whitespace removal tag"
+  },
+  {
+    "token": "name__equals='Jo'",
+    "isValid": false,
+    "reason": "Django uses exact, not equals"
+  },
+  {
+    "token": "{% block title %}",
+    "isValid": true,
+    "reason": "Valid template block"
+  },
+  {
+    "token": "db_table = 'users'",
+    "isValid": true,
+    "reason": "Valid custom table name"
+  },
+  {
+    "token": "createsuperuser",
+    "isValid": true,
+    "reason": "Valid admin creation command"
+  },
+  {
+    "token": "{% note %}",
+    "isValid": false,
+    "reason": "Not a Django template tag"
+  },
+  {
+    "token": "{{ loop.first }}",
+    "isValid": false,
+    "reason": "Jinja2 syntax, not Django"
+  },
+  {
+    "token": "AUTH_USER_MODEL",
+    "isValid": true,
+    "reason": "Valid custom user model setting"
+  },
+  {
+    "token": "BoolField",
+    "isValid": false,
+    "reason": "Django uses BooleanField"
+  },
+  {
+    "token": "{{ x|downcase }}",
+    "isValid": false,
+    "reason": "Liquid filter, not Django"
+  },
+  {
+    "token": "{% link 'name' %}",
+    "isValid": false,
+    "reason": "Django uses url, not link"
+  },
+  {
+    "token": "generate_migration",
+    "isValid": false,
+    "reason": "Django uses makemigrations"
+  },
+  {
+    "token": "class Meta:",
+    "isValid": true,
+    "reason": "Valid model meta class"
+  },
+  {
+    "token": "DateOnlyField",
+    "isValid": false,
+    "reason": "Django uses DateField"
+  },
+  {
+    "token": ".findLast()",
+    "isValid": false,
+    "reason": "Not a Django method"
+  },
+  {
+    "token": "TEMPLATES",
+    "isValid": true,
+    "reason": "Valid template settings"
+  },
+  {
+    "token": ".aggregate(Sum())",
+    "isValid": true,
+    "reason": "Valid aggregation"
+  },
+  {
+    "token": "{{ x|raw }}",
+    "isValid": false,
+    "reason": "Jinja2 syntax, not Django"
+  },
+  {
+    "token": "default=now()",
+    "isValid": false,
+    "reason": "Use auto_now_add, not default=now()"
+  },
+  {
+    "token": "request.session",
+    "isValid": true,
+    "reason": "Valid session access"
+  },
+  {
+    "token": "{{ x|format:'Y' }}",
+    "isValid": false,
+    "reason": "Django uses date, not format"
+  },
+  {
+    "token": "{% import static %}",
+    "isValid": false,
+    "reason": "Django uses load, not import"
+  },
+  {
+    "token": "ASSETS_URL",
+    "isValid": false,
+    "reason": "Django uses STATIC_URL"
+  },
+  {
+    "token": "UPLOAD_DIR",
+    "isValid": false,
+    "reason": "Django uses MEDIA_ROOT"
+  },
+  {
+    "token": "PhotoField",
+    "isValid": false,
+    "reason": "Django uses ImageField"
+  },
+  {
+    "token": "OneToOneField",
+    "isValid": true,
+    "reason": "Valid one-to-one relation"
+  },
+  {
+    "token": "allow_blank=True",
+    "isValid": false,
+    "reason": "Django uses blank=True"
+  },
+  {
+    "token": "MIDDLEWARE",
+    "isValid": true,
+    "reason": "Valid middleware settings"
+  },
+  {
+    "token": "{% compact %}",
+    "isValid": false,
+    "reason": "Not a Django template tag"
+  },
+  {
+    "token": "value__is_none=True",
+    "isValid": false,
+    "reason": "Django uses __isnull"
+  },
+  {
+    "token": ".destroy()",
+    "isValid": false,
+    "reason": "Rails syntax, not Django"
+  },
+  {
+    "token": "TimeOnlyField",
+    "isValid": false,
+    "reason": "Django uses TimeField"
+  },
+  {
+    "token": "include('app.urls')",
+    "isValid": true,
+    "reason": "Valid URL include"
+  },
+  {
+    "token": "{% layout 'b' %}",
+    "isValid": false,
+    "reason": "Django uses extends"
+  },
+  {
+    "token": "{{ x|size }}",
+    "isValid": false,
+    "reason": "Django uses length, not size"
+  },
+  {
+    "token": "age__<=65",
+    "isValid": false,
+    "reason": "Use __lte, not __<="
+  },
+  {
+    "token": "HasOne",
+    "isValid": false,
+    "reason": "Rails syntax, not Django"
+  },
+  {
+    "token": "INSTALLED_APPS",
+    "isValid": true,
+    "reason": "Valid settings configuration"
+  },
+  {
+    "token": "MoneyField",
+    "isValid": false,
+    "reason": "Not a built-in Django field"
+  },
+  {
+    "token": "path('url/', view)",
+    "isValid": true,
+    "reason": "Valid URL pattern"
+  },
+  {
+    "token": "CORS_ORIGINS",
+    "isValid": false,
+    "reason": "Not a default Django setting"
+  },
+  {
+    "token": "json_encode()",
+    "isValid": false,
+    "reason": "PHP function, not Django"
+  },
+  {
+    "token": "objects.filter()",
+    "isValid": true,
+    "reason": "Valid QuerySet filtering"
+  },
+  {
+    "token": "require('app.urls')",
+    "isValid": false,
+    "reason": "Node.js syntax, not Django"
+  },
+  {
+    "token": "{{ forloop.counter}}",
+    "isValid": true,
+    "reason": "Valid loop counter variable"
+  },
+  {
+    "token": "NumberField",
+    "isValid": false,
+    "reason": "Django uses IntegerField"
+  },
+  {
+    "token": "name__begins_with",
+    "isValid": false,
+    "reason": "Django uses __startswith"
+  },
+  {
+    "token": "onDelete: cascade",
+    "isValid": false,
+    "reason": "JS/Sequelize style, not Django"
+  },
+  {
+    "token": "name__icontains",
+    "isValid": true,
+    "reason": "Valid case-insensitive lookup"
+  },
+  {
+    "token": "JSONField",
+    "isValid": true,
+    "reason": "Valid JSON data field"
+  },
+  {
+    "token": "objects.where()",
+    "isValid": false,
+    "reason": "Rails syntax, not Django"
+  },
+  {
+    "token": "{{ forloop.first }}",
+    "isValid": true,
+    "reason": "Valid first iteration check"
+  },
+  {
+    "token": "{% endif %}",
+    "isValid": true,
+    "reason": "Valid end-if tag"
+  },
+  {
+    "token": "form.commit()",
+    "isValid": false,
+    "reason": "Django uses save()"
+  },
+  {
+    "token": ".eager_load()",
+    "isValid": false,
+    "reason": "Rails syntax, not Django"
+  },
+  {
+    "token": "FileField",
+    "isValid": true,
+    "reason": "Valid file upload field"
+  },
+  {
+    "token": "{% extends 'b' %}",
+    "isValid": true,
+    "reason": "Valid template inheritance"
+  },
+  {
+    "token": "{{ x|upcase }}",
+    "isValid": false,
+    "reason": "Liquid filter, not Django"
+  },
+  {
+    "token": "BelongsTo",
+    "isValid": false,
+    "reason": "Rails syntax, not Django"
+  },
+  {
+    "token": "render(request, t)",
+    "isValid": true,
+    "reason": "Valid template rendering"
+  },
+  {
+    "token": ".any()",
+    "isValid": false,
+    "reason": "Django uses exists()"
+  },
+  {
+    "token": "ROOT_URLCONF",
+    "isValid": true,
+    "reason": "Valid root URL configuration"
+  },
+  {
+    "token": ".sort_by('name')",
+    "isValid": false,
+    "reason": "Django uses order_by()"
+  },
+  {
+    "token": "USER_CLASS",
+    "isValid": false,
+    "reason": "Django uses AUTH_USER_MODEL"
+  },
+  {
+    "token": "LinkField",
+    "isValid": false,
+    "reason": "Django uses URLField"
+  },
+  {
+    "token": ".distinct()",
+    "isValid": true,
+    "reason": "Valid unique results"
+  },
+  {
+    "token": "hint_text='Info'",
+    "isValid": false,
+    "reason": "Django uses help_text"
+  },
+  {
+    "token": "ManyToManyField",
+    "isValid": true,
+    "reason": "Valid many-to-many relation"
+  },
+  {
+    "token": "JsonResponse",
+    "isValid": true,
+    "reason": "Valid JSON response class"
+  },
+  {
+    "token": ".update(name='x')",
+    "isValid": true,
+    "reason": "Valid bulk update"
+  },
+  {
+    "token": "{{ x|length }}",
+    "isValid": true,
+    "reason": "Valid length filter"
+  },
+  {
+    "token": "{{ x|date:'Y-m-d' }}",
+    "isValid": true,
+    "reason": "Valid date format filter"
+  },
+  {
+    "token": ".values('name')",
+    "isValid": true,
+    "reason": "Valid QuerySet projection"
+  },
+  {
+    "token": "{{x|truncatechars}}",
+    "isValid": true,
+    "reason": "Valid truncate filter"
+  },
+  {
+    "token": "objects.not()",
+    "isValid": false,
+    "reason": "Not a Django QuerySet method"
+  },
+  {
+    "token": "DEBUG = True",
+    "isValid": true,
+    "reason": "Valid debug mode setting"
+  },
+  {
+    "token": "{% /if %}",
+    "isValid": false,
+    "reason": "Django uses endif, not /if"
+  },
+  {
+    "token": "request.body",
+    "isValid": false,
+    "reason": "Express syntax, not Django"
+  },
+  {
+    "token": "unique=True",
+    "isValid": true,
+    "reason": "Valid uniqueness constraint"
+  },
+  {
+    "token": "TEMPLATE_DIRS",
+    "isValid": false,
+    "reason": "Deprecated, use TEMPLATES"
+  },
+  {
+    "token": "routes = []",
+    "isValid": false,
+    "reason": "Django uses urlpatterns"
+  },
+  {
+    "token": "request.method",
+    "isValid": true,
+    "reason": "Valid HTTP method check"
+  },
+  {
+    "token": "id__in=[1,2,3]",
+    "isValid": true,
+    "reason": "Valid IN lookup"
+  },
+  {
+    "token": ".length()",
+    "isValid": false,
+    "reason": "Django uses count()"
+  },
+  {
+    "token": "Response.send()",
+    "isValid": false,
+    "reason": "Express.js syntax, not Django"
+  },
+  {
+    "token": "ForeignKey",
+    "isValid": true,
+    "reason": "Valid many-to-one relation"
+  },
+  {
+    "token": ".annotate()",
+    "isValid": true,
+    "reason": "Valid per-object annotation"
+  },
+  {
+    "token": "length=255",
+    "isValid": false,
+    "reason": "Django uses max_length"
+  },
+  {
+    "token": "{{ x|upper }}",
+    "isValid": true,
+    "reason": "Valid uppercase filter"
+  },
+  {
+    "token": "order_by = 'date'",
+    "isValid": false,
+    "reason": "Django uses ordering in Meta"
+  },
+  {
+    "token": "objects.findAll()",
+    "isValid": false,
+    "reason": "Sequelize syntax, not Django"
+  },
+  {
+    "token": "request.user",
+    "isValid": true,
+    "reason": "Valid current user access"
+  },
+  {
+    "token": "MapField",
+    "isValid": false,
+    "reason": "Not a Django field type"
+  },
+  {
+    "token": "on_delete=CASCADE",
+    "isValid": true,
+    "reason": "Valid deletion behavior"
+  },
+  {
+    "token": "{{ x|escapejs }}",
+    "isValid": true,
+    "reason": "Valid JS escape filter"
+  },
+  {
+    "token": "db_index=True",
+    "isValid": true,
+    "reason": "Valid database index option"
+  },
+  {
+    "token": "PermalinkField",
+    "isValid": false,
+    "reason": "Not a built-in Django field"
+  },
+  {
+    "token": "ALLOWED_HOSTS",
+    "isValid": true,
+    "reason": "Valid hosts setting"
+  },
+  {
+    "token": "name__ends_with",
+    "isValid": false,
+    "reason": "Django uses __endswith"
+  },
+  {
+    "token": "URLField",
+    "isValid": true,
+    "reason": "Valid URL field type"
+  },
+  {
+    "token": "HttpResponse",
+    "isValid": true,
+    "reason": "Valid HTTP response class"
+  },
+  {
+    "token": "{{ loop.index }}",
+    "isValid": false,
+    "reason": "Jinja2 syntax, not Django"
+  },
+  {
+    "token": "{{ variable }}",
+    "isValid": true,
+    "reason": "Valid template variable output"
+  },
+  {
+    "token": "{{ x|lower }}",
+    "isValid": true,
+    "reason": "Valid lowercase filter"
+  },
+  {
+    "token": "null=True",
+    "isValid": true,
+    "reason": "Valid nullable option"
+  },
+  {
+    "token": "{{ x|join:', ' }}",
+    "isValid": true,
+    "reason": "Valid join filter"
+  },
+  {
+    "token": "form.validate()",
+    "isValid": false,
+    "reason": "Django uses is_valid()"
+  },
+  {
+    "token": "APP_SECRET",
+    "isValid": false,
+    "reason": "Django uses SECRET_KEY"
+  },
+  {
+    "token": "{% csrf_token %}",
+    "isValid": true,
+    "reason": "Valid CSRF protection tag"
+  },
+  {
+    "token": "res.redirect('/u')",
+    "isValid": false,
+    "reason": "Express.js syntax, not Django"
+  },
+  {
+    "token": "forms.AutoForm",
+    "isValid": false,
+    "reason": "Django uses ModelForm"
+  },
+  {
+    "token": "objects.create()",
+    "isValid": true,
+    "reason": "Valid object creation"
+  },
+  {
+    "token": "{{ x || 'n' }}",
+    "isValid": false,
+    "reason": "JS syntax, not Django template"
+  },
+  {
+    "token": "{% url 'name' %}",
+    "isValid": true,
+    "reason": "Valid URL reverse tag"
+  },
+  {
+    "token": "form.getErrors()",
+    "isValid": false,
+    "reason": "Not a Django form method"
+  },
+  {
+    "token": ".set(name='x')",
+    "isValid": false,
+    "reason": "Not a Django QuerySet method"
+  },
+  {
+    "token": ".order_by('name')",
+    "isValid": true,
+    "reason": "Valid QuerySet ordering"
+  },
+  {
+    "token": "{% /for %}",
+    "isValid": false,
+    "reason": "Django uses endfor, not /for"
+  },
+  {
+    "token": "res.render('tmpl')",
+    "isValid": false,
+    "reason": "Express.js syntax, not Django"
+  },
+  {
+    "token": "CharField",
+    "isValid": true,
+    "reason": "Valid string field type"
+  },
+  {
+    "token": "{% section title %}",
+    "isValid": false,
+    "reason": "Django uses block, not section"
+  },
+  {
+    "token": "get_object_or_404",
+    "isValid": true,
+    "reason": "Valid shortcut function"
+  },
+  {
+    "token": "isUnique=True",
+    "isValid": false,
+    "reason": "Django uses unique=True"
+  },
+  {
+    "token": "MEDIA_ROOT",
+    "isValid": true,
+    "reason": "Valid media files root"
+  },
+  {
+    "token": "age__lte=65",
+    "isValid": true,
+    "reason": "Valid 'less than or equal' lookup"
+  },
+  {
+    "token": "form.save()",
+    "isValid": true,
+    "reason": "Valid ModelForm save"
+  },
+  {
+    "token": "DB_CONFIG",
+    "isValid": false,
+    "reason": "Django uses DATABASES"
+  },
+  {
+    "token": "name__like",
+    "isValid": false,
+    "reason": "Django uses contains/icontains"
+  },
+  {
+    "token": ".select('name')",
+    "isValid": false,
+    "reason": "Django uses values(), not select()"
+  },
+  {
+    "token": "id__within=[1,2]",
+    "isValid": false,
+    "reason": "Django uses __in, not __within"
+  },
+  {
+    "token": ".select_related()",
+    "isValid": true,
+    "reason": "Valid eager loading (FK)"
+  },
+  {
+    "token": "HasMany",
+    "isValid": false,
+    "reason": "Rails syntax, not Django"
+  },
+  {
+    "token": "createadmin",
+    "isValid": false,
+    "reason": "Django uses createsuperuser"
+  },
+  {
+    "token": "display_name='Name'",
+    "isValid": false,
+    "reason": "Django uses verbose_name"
+  },
+  {
+    "token": "LongTextField",
+    "isValid": false,
+    "reason": "Django uses TextField"
+  },
+  {
+    "token": "date__range=(s,e)",
+    "isValid": true,
+    "reason": "Valid range lookup"
+  },
+  {
+    "token": "age__gte=18",
+    "isValid": true,
+    "reason": "Valid 'greater than or equal' lookup"
+  },
+  {
+    "token": "blank=True",
+    "isValid": true,
+    "reason": "Valid form validation option"
+  },
+  {
+    "token": "TimeField",
+    "isValid": true,
+    "reason": "Valid time field type"
+  },
+  {
+    "token": "FloatField",
+    "isValid": true,
+    "reason": "Valid float field type"
+  },
+  {
+    "token": "form.errors",
+    "isValid": true,
+    "reason": "Valid form errors access"
+  },
+  {
+    "token": "defaultValue='hi'",
+    "isValid": false,
+    "reason": "Django uses default="
+  },
+  {
+    "token": "max_length=255",
+    "isValid": true,
+    "reason": "Valid CharField constraint"
+  },
+  {
+    "token": "BlobField",
+    "isValid": false,
+    "reason": "Django uses FileField"
+  },
+  {
+    "token": "forms.FormBase",
+    "isValid": false,
+    "reason": "Django uses Form, not FormBase"
+  },
+  {
+    "token": "db:migrate",
+    "isValid": false,
+    "reason": "Rails syntax, not Django"
+  },
+  {
+    "token": ".groupBy('type')",
+    "isValid": false,
+    "reason": "Not a Django QuerySet method"
+  },
+  {
+    "token": "default='hello'",
+    "isValid": true,
+    "reason": "Valid default value"
+  },
+  {
+    "token": "route('url/', view)",
+    "isValid": false,
+    "reason": "Flask/Express syntax, not Django"
+  },
+  {
+    "token": "objects.all()",
+    "isValid": true,
+    "reason": "Valid QuerySet: get all"
+  },
+  {
+    "token": "name__exact='Jo'",
+    "isValid": true,
+    "reason": "Valid exact match lookup"
+  },
+  {
+    "token": "value__isnull=True",
+    "isValid": true,
+    "reason": "Valid null check lookup"
+  },
+  {
+    "token": "redirect('/url/')",
+    "isValid": true,
+    "reason": "Valid redirect shortcut"
+  },
+  {
+    "token": "url_regex(r'^api/')",
+    "isValid": false,
+    "reason": "Django uses re_path"
+  },
+  {
+    "token": "DateField",
+    "isValid": true,
+    "reason": "Valid date field type"
+  },
+  {
+    "token": "related_name='x'",
+    "isValid": true,
+    "reason": "Valid reverse relation name"
+  },
+  {
+    "token": "objects.findOne()",
+    "isValid": false,
+    "reason": "Sequelize syntax, not Django"
+  }
+]

@@ -1,0 +1,1546 @@
+[
+    {
+        "word": "PRINT",
+        "hint": "Output text to the console"
+    },
+    {
+        "word": "INPUT",
+        "hint": "Read user input from console"
+    },
+    {
+        "word": "RANGE",
+        "hint": "Generate a sequence of numbers"
+    },
+    {
+        "word": "LAMBDA",
+        "hint": "Anonymous inline function"
+    },
+    {
+        "word": "YIELD",
+        "hint": "Produce a value from a generator"
+    },
+    {
+        "word": "CLASS",
+        "hint": "Blueprint for creating objects"
+    },
+    {
+        "word": "TUPLE",
+        "hint": "Immutable ordered collection"
+    },
+    {
+        "word": "FLOAT",
+        "hint": "Decimal number data type"
+    },
+    {
+        "word": "STRING",
+        "hint": "Sequence of characters"
+    },
+    {
+        "word": "BOOLEAN",
+        "hint": "True or False data type"
+    },
+    {
+        "word": "WHILE",
+        "hint": "Loop that runs while condition is true"
+    },
+    {
+        "word": "BREAK",
+        "hint": "Exit a loop immediately"
+    },
+    {
+        "word": "CONTINUE",
+        "hint": "Skip to next loop iteration"
+    },
+    {
+        "word": "RETURN",
+        "hint": "Send a value back from a function"
+    },
+    {
+        "word": "IMPORT",
+        "hint": "Bring in an external module"
+    },
+    {
+        "word": "EXCEPT",
+        "hint": "Handle a caught exception"
+    },
+    {
+        "word": "FINALLY",
+        "hint": "Block that always executes after try"
+    },
+    {
+        "word": "ASSERT",
+        "hint": "Test a condition and raise error if false"
+    },
+    {
+        "word": "GLOBAL",
+        "hint": "Declare a variable as global scope"
+    },
+    {
+        "word": "ASYNC",
+        "hint": "Define an asynchronous function"
+    },
+    {
+        "word": "AWAIT",
+        "hint": "Pause until async operation completes"
+    },
+    {
+        "word": "RAISE",
+        "hint": "Throw an exception manually"
+    },
+    {
+        "word": "PASS",
+        "hint": "Placeholder that does nothing"
+    },
+    {
+        "word": "WITH",
+        "hint": "Context manager statement"
+    },
+    {
+        "word": "ELIF",
+        "hint": "Else if conditional branch"
+    },
+    {
+        "word": "NONE",
+        "hint": "Represents absence of a value"
+    },
+    {
+        "word": "SELF",
+        "hint": "Reference to current class instance"
+    },
+    {
+        "word": "SUPER",
+        "hint": "Access parent class methods"
+    },
+    {
+        "word": "DICT",
+        "hint": "Key-value pair collection"
+    },
+    {
+        "word": "LIST",
+        "hint": "Mutable ordered collection"
+    },
+    {
+        "word": "APPEND",
+        "hint": "Add item to end of a list"
+    },
+    {
+        "word": "EXTEND",
+        "hint": "Add all items from another iterable"
+    },
+    {
+        "word": "INSERT",
+        "hint": "Add item at a specific index"
+    },
+    {
+        "word": "REMOVE",
+        "hint": "Delete first occurrence of a value"
+    },
+    {
+        "word": "SORT",
+        "hint": "Arrange list elements in order"
+    },
+    {
+        "word": "REVERSE",
+        "hint": "Flip the order of list elements"
+    },
+    {
+        "word": "STRIP",
+        "hint": "Remove leading and trailing whitespace"
+    },
+    {
+        "word": "SPLIT",
+        "hint": "Divide string into a list"
+    },
+    {
+        "word": "JOIN",
+        "hint": "Combine list elements into a string"
+    },
+    {
+        "word": "REPLACE",
+        "hint": "Substitute part of a string"
+    },
+    {
+        "word": "FORMAT",
+        "hint": "Insert values into a string template"
+    },
+    {
+        "word": "UPPER",
+        "hint": "Convert string to uppercase"
+    },
+    {
+        "word": "LOWER",
+        "hint": "Convert string to lowercase"
+    },
+    {
+        "word": "TITLE",
+        "hint": "Capitalize first letter of each word"
+    },
+    {
+        "word": "FIND",
+        "hint": "Locate substring position in string"
+    },
+    {
+        "word": "COUNT",
+        "hint": "Return number of occurrences"
+    },
+    {
+        "word": "INDEX",
+        "hint": "Find position of an element"
+    },
+    {
+        "word": "SLICE",
+        "hint": "Extract a portion using indices"
+    },
+    {
+        "word": "ENUMERATE",
+        "hint": "Loop with index and value pairs"
+    },
+    {
+        "word": "FILTER",
+        "hint": "Select items matching a condition"
+    },
+    {
+        "word": "REDUCE",
+        "hint": "Apply function cumulatively to items"
+    },
+    {
+        "word": "SORTED",
+        "hint": "Return a new sorted list"
+    },
+    {
+        "word": "REVERSED",
+        "hint": "Return a reversed iterator"
+    },
+    {
+        "word": "ISINSTANCE",
+        "hint": "Check if object is of a type"
+    },
+    {
+        "word": "TYPE",
+        "hint": "Return the type of an object"
+    },
+    {
+        "word": "PROPERTY",
+        "hint": "Managed attribute with getter setter"
+    },
+    {
+        "word": "STATIC",
+        "hint": "Method not bound to instance"
+    },
+    {
+        "word": "ABSTRACT",
+        "hint": "Class that cannot be instantiated"
+    },
+    {
+        "word": "MODULE",
+        "hint": "File containing reusable code"
+    },
+    {
+        "word": "PACKAGE",
+        "hint": "Directory of related modules"
+    },
+    {
+        "word": "DECORATOR",
+        "hint": "Function that wraps another function"
+    },
+    {
+        "word": "GENERATOR",
+        "hint": "Function that yields values lazily"
+    },
+    {
+        "word": "ITERATOR",
+        "hint": "Object that produces next values"
+    },
+    {
+        "word": "ITERABLE",
+        "hint": "Object that can be looped over"
+    },
+    {
+        "word": "CLOSURE",
+        "hint": "Function retaining outer scope vars"
+    },
+    {
+        "word": "SCOPE",
+        "hint": "Region where a variable is accessible"
+    },
+    {
+        "word": "NONLOCAL",
+        "hint": "Refer to variable in enclosing scope"
+    },
+    {
+        "word": "BYTES",
+        "hint": "Immutable sequence of byte values"
+    },
+    {
+        "word": "FROZENSET",
+        "hint": "Immutable version of a set"
+    },
+    {
+        "word": "COMPLEX",
+        "hint": "Number with real and imaginary parts"
+    },
+    {
+        "word": "DIVMOD",
+        "hint": "Return quotient and remainder pair"
+    },
+    {
+        "word": "HASH",
+        "hint": "Return integer hash of an object"
+    },
+    {
+        "word": "CALLABLE",
+        "hint": "Check if object can be called"
+    },
+    {
+        "word": "COMPILE",
+        "hint": "Compile source into a code object"
+    },
+    {
+        "word": "EVAL",
+        "hint": "Evaluate a string as expression"
+    },
+    {
+        "word": "EXEC",
+        "hint": "Execute dynamically created code"
+    },
+    {
+        "word": "VARS",
+        "hint": "Return object attributes as dict"
+    },
+    {
+        "word": "LOCALS",
+        "hint": "Dictionary of local variables"
+    },
+    {
+        "word": "GLOBALS",
+        "hint": "Dictionary of global variables"
+    },
+    {
+        "word": "REPR",
+        "hint": "Return printable representation"
+    },
+    {
+        "word": "OPEN",
+        "hint": "Open a file and return file object"
+    },
+    {
+        "word": "READ",
+        "hint": "Read content from a file"
+    },
+    {
+        "word": "WRITE",
+        "hint": "Write content to a file"
+    },
+    {
+        "word": "CLOSE",
+        "hint": "Close an open file"
+    },
+    {
+        "word": "SEEK",
+        "hint": "Move file cursor to a position"
+    },
+    {
+        "word": "FLUSH",
+        "hint": "Force write buffered data to file"
+    },
+    {
+        "word": "READLINE",
+        "hint": "Read a single line from file"
+    },
+    {
+        "word": "PICKLE",
+        "hint": "Serialize objects to bytes"
+    },
+    {
+        "word": "UNPICKLE",
+        "hint": "Deserialize bytes back to objects"
+    },
+    {
+        "word": "SHELVE",
+        "hint": "Persistent dictionary-like storage"
+    },
+    {
+        "word": "ZLIB",
+        "hint": "Data compression library"
+    },
+    {
+        "word": "GZIP",
+        "hint": "Read and write gzip compressed files"
+    },
+    {
+        "word": "STRUCT",
+        "hint": "Pack and unpack binary data"
+    },
+    {
+        "word": "SOCKET",
+        "hint": "Low-level networking interface"
+    },
+    {
+        "word": "THREAD",
+        "hint": "Concurrent execution unit"
+    },
+    {
+        "word": "PROCESS",
+        "hint": "Independent execution with own memory"
+    },
+    {
+        "word": "QUEUE",
+        "hint": "Thread-safe FIFO data structure"
+    },
+    {
+        "word": "DEQUE",
+        "hint": "Double-ended queue collection"
+    },
+    {
+        "word": "HEAPQ",
+        "hint": "Priority queue using heap algorithm"
+    },
+    {
+        "word": "BISECT",
+        "hint": "Binary search on sorted lists"
+    },
+    {
+        "word": "COUNTER",
+        "hint": "Dict subclass for counting hashables"
+    },
+    {
+        "word": "CHAIN",
+        "hint": "Combine multiple iterables into one"
+    },
+    {
+        "word": "CYCLE",
+        "hint": "Repeat an iterable indefinitely"
+    },
+    {
+        "word": "REPEAT",
+        "hint": "Yield a value a set number of times"
+    },
+    {
+        "word": "PRODUCT",
+        "hint": "Cartesian product of iterables"
+    },
+    {
+        "word": "STARMAP",
+        "hint": "Apply function with unpacked args"
+    },
+    {
+        "word": "GROUPBY",
+        "hint": "Group consecutive elements by key"
+    },
+    {
+        "word": "PARTIAL",
+        "hint": "Fix some arguments of a function"
+    },
+    {
+        "word": "WRAPS",
+        "hint": "Preserve metadata in decorators"
+    },
+    {
+        "word": "CACHE",
+        "hint": "Store results for repeated calls"
+    },
+    {
+        "word": "DATACLASS",
+        "hint": "Auto-generate class boilerplate"
+    },
+    {
+        "word": "FIELD",
+        "hint": "Customize dataclass attribute"
+    },
+    {
+        "word": "SLOTS",
+        "hint": "Restrict attributes to save memory"
+    },
+    {
+        "word": "INIT",
+        "hint": "Constructor method of a class"
+    },
+    {
+        "word": "REPR",
+        "hint": "String representation dunder method"
+    },
+    {
+        "word": "ITER",
+        "hint": "Make object iterable dunder method"
+    },
+    {
+        "word": "NEXT",
+        "hint": "Retrieve next item from iterator"
+    },
+    {
+        "word": "GETATTR",
+        "hint": "Get attribute value by name"
+    },
+    {
+        "word": "SETATTR",
+        "hint": "Set attribute value by name"
+    },
+    {
+        "word": "DELATTR",
+        "hint": "Delete an attribute by name"
+    },
+    {
+        "word": "HASATTR",
+        "hint": "Check if object has an attribute"
+    },
+    {
+        "word": "ENTER",
+        "hint": "Context manager entry dunder"
+    },
+    {
+        "word": "EXIT",
+        "hint": "Context manager cleanup dunder"
+    },
+    {
+        "word": "CALL",
+        "hint": "Make instance callable like function"
+    },
+    {
+        "word": "CONTAINS",
+        "hint": "Support the in operator"
+    },
+    {
+        "word": "GETITEM",
+        "hint": "Enable bracket indexing on object"
+    },
+    {
+        "word": "SETITEM",
+        "hint": "Enable bracket assignment on object"
+    },
+    {
+        "word": "DELITEM",
+        "hint": "Enable bracket deletion on object"
+    },
+    {
+        "word": "MISSING",
+        "hint": "Handle missing dict key access"
+    },
+    {
+        "word": "ABSTRACTMETHOD",
+        "hint": "Method that must be overridden"
+    },
+    {
+        "word": "CLASSMETHOD",
+        "hint": "Method bound to class not instance"
+    },
+    {
+        "word": "STATICMETHOD",
+        "hint": "Method with no self or cls param"
+    },
+    {
+        "word": "TRACEBACK",
+        "hint": "Stack trace of an exception"
+    },
+    {
+        "word": "EXCEPTION",
+        "hint": "Base class for all errors"
+    },
+    {
+        "word": "VALUEERROR",
+        "hint": "Wrong value for an operation"
+    },
+    {
+        "word": "TYPEERROR",
+        "hint": "Wrong type for an operation"
+    },
+    {
+        "word": "KEYERROR",
+        "hint": "Dictionary key not found"
+    },
+    {
+        "word": "INDEXERROR",
+        "hint": "Sequence index out of range"
+    },
+    {
+        "word": "NAMEERROR",
+        "hint": "Variable name not defined"
+    },
+    {
+        "word": "RUNTIME",
+        "hint": "Error detected during execution"
+    },
+    {
+        "word": "OVERFLOW",
+        "hint": "Arithmetic result too large"
+    },
+    {
+        "word": "ZERO",
+        "hint": "Division by zero exception"
+    },
+    {
+        "word": "IMPORT",
+        "hint": "Error when module not found"
+    },
+    {
+        "word": "SYNTAX",
+        "hint": "Error in code structure"
+    },
+    {
+        "word": "INDENT",
+        "hint": "Error from incorrect whitespace"
+    },
+    {
+        "word": "STOPITER",
+        "hint": "Signal that iterator is exhausted"
+    },
+    {
+        "word": "WARNING",
+        "hint": "Non-fatal alert during execution"
+    },
+    {
+        "word": "LOGGING",
+        "hint": "Built-in event recording module"
+    },
+    {
+        "word": "DEBUG",
+        "hint": "Lowest severity logging level"
+    },
+    {
+        "word": "INFO",
+        "hint": "General informational logging level"
+    },
+    {
+        "word": "CRITICAL",
+        "hint": "Highest severity logging level"
+    },
+    {
+        "word": "HANDLER",
+        "hint": "Logging output destination"
+    },
+    {
+        "word": "REGEX",
+        "hint": "Pattern matching with re module"
+    },
+    {
+        "word": "MATCH",
+        "hint": "Check pattern at string start"
+    },
+    {
+        "word": "SEARCH",
+        "hint": "Find pattern anywhere in string"
+    },
+    {
+        "word": "FINDALL",
+        "hint": "Return all pattern matches as list"
+    },
+    {
+        "word": "COMPILE",
+        "hint": "Pre-compile a regex pattern"
+    },
+    {
+        "word": "GROUP",
+        "hint": "Extract matched substring portion"
+    },
+    {
+        "word": "MATH",
+        "hint": "Built-in mathematical functions module"
+    },
+    {
+        "word": "RANDOM",
+        "hint": "Generate pseudo-random numbers"
+    },
+    {
+        "word": "CHOICE",
+        "hint": "Pick random element from sequence"
+    },
+    {
+        "word": "SHUFFLE",
+        "hint": "Randomize list element order"
+    },
+    {
+        "word": "SAMPLE",
+        "hint": "Select random items without repeat"
+    },
+    {
+        "word": "SEED",
+        "hint": "Initialize random number generator"
+    },
+    {
+        "word": "DATETIME",
+        "hint": "Date and time handling module"
+    },
+    {
+        "word": "TIMEDELTA",
+        "hint": "Duration between two time points"
+    },
+    {
+        "word": "STRFTIME",
+        "hint": "Format datetime as string"
+    },
+    {
+        "word": "STRPTIME",
+        "hint": "Parse string into datetime object"
+    },
+    {
+        "word": "TIME",
+        "hint": "Time-related functions module"
+    },
+    {
+        "word": "SLEEP",
+        "hint": "Pause execution for given seconds"
+    },
+    {
+        "word": "PATH",
+        "hint": "Object-oriented filesystem paths"
+    },
+    {
+        "word": "PATHLIB",
+        "hint": "Modern path manipulation module"
+    },
+    {
+        "word": "MKDIR",
+        "hint": "Create a new directory"
+    },
+    {
+        "word": "RMDIR",
+        "hint": "Remove an empty directory"
+    },
+    {
+        "word": "LISTDIR",
+        "hint": "List contents of a directory"
+    },
+    {
+        "word": "WALK",
+        "hint": "Traverse directory tree recursively"
+    },
+    {
+        "word": "RENAME",
+        "hint": "Change name of file or directory"
+    },
+    {
+        "word": "EXISTS",
+        "hint": "Check if file or path exists"
+    },
+    {
+        "word": "ISFILE",
+        "hint": "Check if path is a regular file"
+    },
+    {
+        "word": "ISDIR",
+        "hint": "Check if path is a directory"
+    },
+    {
+        "word": "ABSPATH",
+        "hint": "Get absolute path from relative"
+    },
+    {
+        "word": "BASENAME",
+        "hint": "Extract filename from full path"
+    },
+    {
+        "word": "DIRNAME",
+        "hint": "Extract directory from full path"
+    },
+    {
+        "word": "ENVIRON",
+        "hint": "Access environment variables dict"
+    },
+    {
+        "word": "GETCWD",
+        "hint": "Get current working directory"
+    },
+    {
+        "word": "SYSTEM",
+        "hint": "Execute a shell command"
+    },
+    {
+        "word": "SUBPROCESS",
+        "hint": "Spawn and manage child processes"
+    },
+    {
+        "word": "POPEN",
+        "hint": "Open a pipe to a process"
+    },
+    {
+        "word": "STDIN",
+        "hint": "Standard input stream"
+    },
+    {
+        "word": "STDOUT",
+        "hint": "Standard output stream"
+    },
+    {
+        "word": "STDERR",
+        "hint": "Standard error stream"
+    },
+    {
+        "word": "ARGV",
+        "hint": "Command line argument list"
+    },
+    {
+        "word": "ARGPARSE",
+        "hint": "Parse command line arguments"
+    },
+    {
+        "word": "JSON",
+        "hint": "Encode and decode JSON data"
+    },
+    {
+        "word": "DUMPS",
+        "hint": "Serialize object to JSON string"
+    },
+    {
+        "word": "LOADS",
+        "hint": "Deserialize JSON string to object"
+    },
+    {
+        "word": "ENCODE",
+        "hint": "Convert string to bytes"
+    },
+    {
+        "word": "DECODE",
+        "hint": "Convert bytes to string"
+    },
+    {
+        "word": "COPY",
+        "hint": "Create a shallow duplicate"
+    },
+    {
+        "word": "DEEPCOPY",
+        "hint": "Create a fully independent duplicate"
+    },
+    {
+        "word": "WEAKREF",
+        "hint": "Reference without preventing cleanup"
+    },
+    {
+        "word": "PPRINT",
+        "hint": "Pretty-print data structures"
+    },
+    {
+        "word": "TEXTWRAP",
+        "hint": "Format and wrap text paragraphs"
+    },
+    {
+        "word": "NAMEDTUPLE",
+        "hint": "Tuple subclass with named fields"
+    },
+    {
+        "word": "ORDEREDDICT",
+        "hint": "Dict that remembers insert order"
+    },
+    {
+        "word": "DEFAULTDICT",
+        "hint": "Dict with automatic default values"
+    },
+    {
+        "word": "CHAINMAP",
+        "hint": "Group multiple dicts as one view"
+    },
+    {
+        "word": "ARRAY",
+        "hint": "Efficient numeric value storage"
+    },
+    {
+        "word": "MEMORYVIEW",
+        "hint": "Access buffer data without copy"
+    },
+    {
+        "word": "CTYPES",
+        "hint": "Call C library functions from code"
+    },
+    {
+        "word": "TYPING",
+        "hint": "Type hints support module"
+    },
+    {
+        "word": "OPTIONAL",
+        "hint": "Type that allows None value"
+    },
+    {
+        "word": "UNION",
+        "hint": "Type allowing multiple types"
+    },
+    {
+        "word": "GENERIC",
+        "hint": "Base class for generic types"
+    },
+    {
+        "word": "PROTOCOL",
+        "hint": "Structural subtyping interface"
+    },
+    {
+        "word": "LITERAL",
+        "hint": "Type restricted to specific values"
+    },
+    {
+        "word": "FINAL",
+        "hint": "Mark variable as non-reassignable"
+    },
+    {
+        "word": "ANNOTATE",
+        "hint": "Add type metadata to variables"
+    },
+    {
+        "word": "OVERLOAD",
+        "hint": "Define multiple function signatures"
+    },
+    {
+        "word": "TYPEVAR",
+        "hint": "Generic type placeholder variable"
+    },
+    {
+        "word": "ANYTYPE",
+        "hint": "Type compatible with everything"
+    },
+    {
+        "word": "DOCSTRING",
+        "hint": "Documentation string in triple quotes"
+    },
+    {
+        "word": "PYDOC",
+        "hint": "Auto-generate documentation"
+    },
+    {
+        "word": "UNITTEST",
+        "hint": "Built-in testing framework"
+    },
+    {
+        "word": "TESTCASE",
+        "hint": "Base class for test methods"
+    },
+    {
+        "word": "SETUP",
+        "hint": "Run before each test method"
+    },
+    {
+        "word": "TEARDOWN",
+        "hint": "Run after each test method"
+    },
+    {
+        "word": "MOCK",
+        "hint": "Simulate objects for testing"
+    },
+    {
+        "word": "PATCH",
+        "hint": "Temporarily replace an object"
+    },
+    {
+        "word": "FIXTURE",
+        "hint": "Setup state for test functions"
+    },
+    {
+        "word": "PYTEST",
+        "hint": "Popular third-party test framework"
+    },
+    {
+        "word": "VIRTUALENV",
+        "hint": "Isolated environment for packages"
+    },
+    {
+        "word": "VENV",
+        "hint": "Built-in virtual environment module"
+    },
+    {
+        "word": "INSTALL",
+        "hint": "Add package via pip"
+    },
+    {
+        "word": "FREEZE",
+        "hint": "List installed packages and versions"
+    },
+    {
+        "word": "REQUIRE",
+        "hint": "Specify project dependencies"
+    },
+    {
+        "word": "WHEEL",
+        "hint": "Built package distribution format"
+    },
+    {
+        "word": "SDIST",
+        "hint": "Source distribution package format"
+    },
+    {
+        "word": "SETUPTOOLS",
+        "hint": "Package building and distribution lib"
+    },
+    {
+        "word": "SPHINX",
+        "hint": "Documentation generation tool"
+    },
+    {
+        "word": "PYLINT",
+        "hint": "Static code analysis tool"
+    },
+    {
+        "word": "FLAKE",
+        "hint": "Style guide enforcement tool"
+    },
+    {
+        "word": "BLACK",
+        "hint": "Opinionated code formatter"
+    },
+    {
+        "word": "MYPY",
+        "hint": "Static type checker for code"
+    },
+    {
+        "word": "ISORT",
+        "hint": "Sort and organize import statements"
+    },
+    {
+        "word": "WALRUS",
+        "hint": "Assignment expression operator"
+    },
+    {
+        "word": "FSTRING",
+        "hint": "Formatted string literal with braces"
+    },
+    {
+        "word": "TERNARY",
+        "hint": "Inline conditional expression"
+    },
+    {
+        "word": "UNPACK",
+        "hint": "Destructure iterable into variables"
+    },
+    {
+        "word": "SPLAT",
+        "hint": "Spread args with asterisk operator"
+    },
+    {
+        "word": "KWARGS",
+        "hint": "Keyword arguments dictionary"
+    },
+    {
+        "word": "ARGS",
+        "hint": "Positional arguments tuple"
+    },
+    {
+        "word": "MUTABLE",
+        "hint": "Object whose state can change"
+    },
+    {
+        "word": "IMMUTABLE",
+        "hint": "Object whose state cannot change"
+    },
+    {
+        "word": "HASHABLE",
+        "hint": "Object usable as dictionary key"
+    },
+    {
+        "word": "TRUTHY",
+        "hint": "Value that evaluates to True"
+    },
+    {
+        "word": "FALSY",
+        "hint": "Value that evaluates to False"
+    },
+    {
+        "word": "DUNDER",
+        "hint": "Double underscore special method"
+    },
+    {
+        "word": "METACLASS",
+        "hint": "Class that creates other classes"
+    },
+    {
+        "word": "MIXIN",
+        "hint": "Class adding methods via inheritance"
+    },
+    {
+        "word": "MULTIPLE",
+        "hint": "Inherit from more than one class"
+    },
+    {
+        "word": "DIAMOND",
+        "hint": "Ambiguity in multiple inheritance"
+    },
+    {
+        "word": "METHOD",
+        "hint": "Function defined inside a class"
+    },
+    {
+        "word": "ATTRIBUTE",
+        "hint": "Variable belonging to an object"
+    },
+    {
+        "word": "INSTANCE",
+        "hint": "Individual object created from class"
+    },
+    {
+        "word": "INHERIT",
+        "hint": "Derive new class from existing one"
+    },
+    {
+        "word": "POLYMORPHISM",
+        "hint": "Same interface for different types"
+    },
+    {
+        "word": "ENCAPSULATE",
+        "hint": "Hide internal state from outside"
+    },
+    {
+        "word": "PRIVATE",
+        "hint": "Name-mangled attribute with prefix"
+    },
+    {
+        "word": "PROTECTED",
+        "hint": "Convention with single underscore"
+    },
+    {
+        "word": "DESCRIPTOR",
+        "hint": "Object defining get set delete"
+    },
+    {
+        "word": "SLOTS",
+        "hint": "Fixed set of allowed attributes"
+    },
+    {
+        "word": "WEAKREF",
+        "hint": "Non-preventing garbage collection ref"
+    },
+    {
+        "word": "COLLECT",
+        "hint": "Force garbage collection cycle"
+    },
+    {
+        "word": "REFCOUNT",
+        "hint": "Number of references to an object"
+    },
+    {
+        "word": "INTERN",
+        "hint": "Cache string for identity check"
+    },
+    {
+        "word": "BYTECODE",
+        "hint": "Compiled intermediate instruction set"
+    },
+    {
+        "word": "CPYTHON",
+        "hint": "Default reference implementation"
+    },
+    {
+        "word": "PYPY",
+        "hint": "Fast alternative with JIT compiler"
+    },
+    {
+        "word": "CYTHON",
+        "hint": "Compile to C for speed boost"
+    },
+    {
+        "word": "ASYNCIO",
+        "hint": "Asynchronous IO event loop library"
+    },
+    {
+        "word": "COROUTINE",
+        "hint": "Function that can be suspended"
+    },
+    {
+        "word": "TASK",
+        "hint": "Scheduled coroutine wrapper"
+    },
+    {
+        "word": "GATHER",
+        "hint": "Run multiple coroutines together"
+    },
+    {
+        "word": "EVENTLOOP",
+        "hint": "Core of async execution engine"
+    },
+    {
+        "word": "FUTURE",
+        "hint": "Placeholder for pending async result"
+    },
+    {
+        "word": "SEMAPHORE",
+        "hint": "Limit concurrent access to resource"
+    },
+    {
+        "word": "LOCK",
+        "hint": "Mutual exclusion for thread safety"
+    },
+    {
+        "word": "CONDITION",
+        "hint": "Wait for state change notification"
+    },
+    {
+        "word": "EVENT",
+        "hint": "Signal between threads or coroutines"
+    },
+    {
+        "word": "BARRIER",
+        "hint": "Sync point for multiple threads"
+    },
+    {
+        "word": "POOL",
+        "hint": "Manage group of worker threads"
+    },
+    {
+        "word": "EXECUTOR",
+        "hint": "Run callables asynchronously"
+    },
+    {
+        "word": "MAPPING",
+        "hint": "Abstract base class for dict types"
+    },
+    {
+        "word": "SEQUENCE",
+        "hint": "Abstract base class for list types"
+    },
+    {
+        "word": "MUTABLESET",
+        "hint": "Abstract changeable set interface"
+    },
+    {
+        "word": "COLLECTION",
+        "hint": "Abstract container base classes"
+    },
+    {
+        "word": "FUNCTOOLS",
+        "hint": "Higher-order function utilities"
+    },
+    {
+        "word": "OPERATOR",
+        "hint": "Functions matching built-in operators"
+    },
+    {
+        "word": "CONTEXTLIB",
+        "hint": "Utilities for with-statement"
+    },
+    {
+        "word": "SUPPRESS",
+        "hint": "Ignore specific exceptions silently"
+    },
+    {
+        "word": "REDIRECT",
+        "hint": "Reroute stdout to another target"
+    },
+    {
+        "word": "TEMPFILE",
+        "hint": "Create temporary files and dirs"
+    },
+    {
+        "word": "SHUTIL",
+        "hint": "High-level file operations module"
+    },
+    {
+        "word": "COPYTREE",
+        "hint": "Recursively copy directory tree"
+    },
+    {
+        "word": "RMTREE",
+        "hint": "Recursively delete directory tree"
+    },
+    {
+        "word": "FNMATCH",
+        "hint": "Unix filename pattern matching"
+    },
+    {
+        "word": "GLOB",
+        "hint": "Find pathnames matching a pattern"
+    },
+    {
+        "word": "HASHLIB",
+        "hint": "Secure hash and digest algorithms"
+    },
+    {
+        "word": "HMAC",
+        "hint": "Keyed-hash message authentication"
+    },
+    {
+        "word": "SECRETS",
+        "hint": "Generate cryptographic random values"
+    },
+    {
+        "word": "UUID",
+        "hint": "Generate universally unique IDs"
+    },
+    {
+        "word": "BASE64",
+        "hint": "Encode and decode base64 data"
+    },
+    {
+        "word": "URLLIB",
+        "hint": "URL handling and fetching module"
+    },
+    {
+        "word": "REQUEST",
+        "hint": "Open and read URL resources"
+    },
+    {
+        "word": "PARSE",
+        "hint": "Break URL into components"
+    },
+    {
+        "word": "EMAIL",
+        "hint": "Email handling and parsing module"
+    },
+    {
+        "word": "SMTPLIB",
+        "hint": "Send emails via SMTP protocol"
+    },
+    {
+        "word": "IMAPLIB",
+        "hint": "Read emails via IMAP protocol"
+    },
+    {
+        "word": "FTPLIB",
+        "hint": "FTP client operations module"
+    },
+    {
+        "word": "XMLPARSE",
+        "hint": "Parse and manipulate XML data"
+    },
+    {
+        "word": "CSVREAD",
+        "hint": "Read and write CSV tabular files"
+    },
+    {
+        "word": "CONFIGPARSER",
+        "hint": "Read INI configuration files"
+    },
+    {
+        "word": "SQLITE",
+        "hint": "Built-in relational database module"
+    },
+    {
+        "word": "CURSOR",
+        "hint": "Execute SQL queries on database"
+    },
+    {
+        "word": "COMMIT",
+        "hint": "Save pending database changes"
+    },
+    {
+        "word": "ROLLBACK",
+        "hint": "Undo pending database changes"
+    },
+    {
+        "word": "FETCHONE",
+        "hint": "Retrieve single query result row"
+    },
+    {
+        "word": "FETCHALL",
+        "hint": "Retrieve all query result rows"
+    },
+    {
+        "word": "CONNECT",
+        "hint": "Open database connection"
+    },
+    {
+        "word": "TKINTER",
+        "hint": "Standard GUI toolkit module"
+    },
+    {
+        "word": "WIDGET",
+        "hint": "GUI element like button or label"
+    },
+    {
+        "word": "MAINLOOP",
+        "hint": "Start GUI event processing loop"
+    },
+    {
+        "word": "CANVAS",
+        "hint": "Drawing surface for graphics"
+    },
+    {
+        "word": "FRAME",
+        "hint": "Container widget for layout"
+    },
+    {
+        "word": "BUTTON",
+        "hint": "Clickable GUI element"
+    },
+    {
+        "word": "LABEL",
+        "hint": "Display text GUI element"
+    },
+    {
+        "word": "ENTRY",
+        "hint": "Single line text input widget"
+    },
+    {
+        "word": "LISTBOX",
+        "hint": "Scrollable selection list widget"
+    },
+    {
+        "word": "MENU",
+        "hint": "Drop-down menu bar widget"
+    },
+    {
+        "word": "GRID",
+        "hint": "Table-based layout manager"
+    },
+    {
+        "word": "PACK",
+        "hint": "Simple geometry layout manager"
+    },
+    {
+        "word": "PLACE",
+        "hint": "Absolute position layout manager"
+    },
+    {
+        "word": "BIND",
+        "hint": "Attach event handler to widget"
+    },
+    {
+        "word": "EVENT",
+        "hint": "User interaction trigger object"
+    },
+    {
+        "word": "AFTER",
+        "hint": "Schedule delayed GUI callback"
+    },
+    {
+        "word": "NUMPY",
+        "hint": "Numerical array computing library"
+    },
+    {
+        "word": "NDARRAY",
+        "hint": "N-dimensional array object"
+    },
+    {
+        "word": "RESHAPE",
+        "hint": "Change array dimensions"
+    },
+    {
+        "word": "ARANGE",
+        "hint": "Array with evenly spaced values"
+    },
+    {
+        "word": "LINSPACE",
+        "hint": "Array with linearly spaced values"
+    },
+    {
+        "word": "ZEROS",
+        "hint": "Array filled with zero values"
+    },
+    {
+        "word": "ONES",
+        "hint": "Array filled with one values"
+    },
+    {
+        "word": "DOTPROD",
+        "hint": "Dot product of two arrays"
+    },
+    {
+        "word": "TRANSPOSE",
+        "hint": "Swap array rows and columns"
+    },
+    {
+        "word": "PANDAS",
+        "hint": "Data analysis and manipulation lib"
+    },
+    {
+        "word": "DATAFRAME",
+        "hint": "Two-dimensional labeled table"
+    },
+    {
+        "word": "SERIES",
+        "hint": "One-dimensional labeled array"
+    },
+    {
+        "word": "GROUPBY",
+        "hint": "Group rows by column values"
+    },
+    {
+        "word": "MERGE",
+        "hint": "Combine dataframes on columns"
+    },
+    {
+        "word": "PIVOT",
+        "hint": "Reshape data into summary table"
+    },
+    {
+        "word": "DROPNA",
+        "hint": "Remove rows with missing values"
+    },
+    {
+        "word": "FILLNA",
+        "hint": "Replace missing values with data"
+    },
+    {
+        "word": "APPLY",
+        "hint": "Apply function along an axis"
+    },
+    {
+        "word": "CONCAT",
+        "hint": "Stack dataframes together"
+    },
+    {
+        "word": "PLOT",
+        "hint": "Create visualizations from data"
+    },
+    {
+        "word": "SCATTER",
+        "hint": "Plot points on x-y coordinates"
+    },
+    {
+        "word": "HISTOGRAM",
+        "hint": "Chart showing value distribution"
+    },
+    {
+        "word": "BARPLOT",
+        "hint": "Chart with rectangular bars"
+    },
+    {
+        "word": "HEATMAP",
+        "hint": "Color-coded matrix visualization"
+    },
+    {
+        "word": "SUBPLOT",
+        "hint": "Multiple plots in one figure"
+    },
+    {
+        "word": "LEGEND",
+        "hint": "Label explaining plot elements"
+    },
+    {
+        "word": "XLABEL",
+        "hint": "Label for horizontal axis"
+    },
+    {
+        "word": "YLABEL",
+        "hint": "Label for vertical axis"
+    },
+    {
+        "word": "SAVEFIG",
+        "hint": "Export plot to image file"
+    },
+    {
+        "word": "SHOW",
+        "hint": "Display the current plot"
+    },
+    {
+        "word": "REQUESTS",
+        "hint": "HTTP client library for APIs"
+    },
+    {
+        "word": "RESPONSE",
+        "hint": "Object returned from HTTP call"
+    },
+    {
+        "word": "SESSION",
+        "hint": "Persist settings across requests"
+    },
+    {
+        "word": "FLASK",
+        "hint": "Lightweight web framework"
+    },
+    {
+        "word": "ROUTE",
+        "hint": "URL pattern mapped to function"
+    },
+    {
+        "word": "JINJA",
+        "hint": "Template engine for HTML rendering"
+    },
+    {
+        "word": "RENDER",
+        "hint": "Generate HTML from template"
+    },
+    {
+        "word": "BLUEPRINT",
+        "hint": "Modular app component in Flask"
+    },
+    {
+        "word": "ENDPOINT",
+        "hint": "Named URL route destination"
+    },
+    {
+        "word": "MIDDLEWARE",
+        "hint": "Process request before handler"
+    }
+]
