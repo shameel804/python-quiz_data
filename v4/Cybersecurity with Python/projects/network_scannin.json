@@ -1,0 +1,30 @@
+[
+  {
+    "title": "Sockets in Python",
+    "ques": "Write a short Python script using the `socket` module to check if port 80 is open on a specific IP address.",
+    "answer": {
+      "type": "code",
+      "lang": "python",
+      "content": "import socket\n\ndef check_port(ip, port):\n    s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)\n    s.settimeout(1)\n    result = s.connect_ex((ip, port))\n    s.close()\n    if result == 0:\n        print(f\"Port {port} is open\")\n    else:\n        print(f\"Port {port} is closed\")\n\ncheck_port('8.8.8.8', 80)"
+    },
+    "explanation": "The `socket` module provides low-level network interfaces. `connect_ex` returns 0 if the connection was successful (port open), otherwise it returns an error indicator."
+  },
+  {
+    "title": "Packet Crafting with Scapy",
+    "ques": "What makes `scapy` a powerful tool for network analysis compared to standard sockets?",
+    "answer": {
+      "type": "text",
+      "content": "`scapy` is a highly flexible packet manipulation program. Unlike standard sockets which rely on the OS networking stack, `scapy` allows you to forge or decode packets at almost any layer of the OSI model. You can build custom ping requests, perform complex network scans, inject traffic, and intercept network data with just a few lines of Python."
+    },
+    "explanation": "Scapy is an essential tool for network engineers and penetration testers for deep network probing."
+  },
+  {
+    "title": "Banner Grabbing",
+    "ques": "What is 'banner grabbing' and how can Python be used to perform it?",
+    "answer": {
+      "type": "text",
+      "content": "Banner grabbing is an enumeration technique used to glean information about a computer system on a network and the services running on its open ports (e.g., determining the exact version of a web server or SSH daemon). In Python, you can connect to a port using a `socket`, send a generic request (like an HTTP GET or just a carriage return), and read the first few bytes of the response (the 'banner') to identify the service."
+    },
+    "explanation": "Identifying service versions is the first step in finding known vulnerabilities."
+  }
+]

@@ -1,0 +1,31 @@
+[
+  {
+    "title": "Basic Pytest Functions",
+    "ques": "Write a simple pytest function named `test_subtraction` that asserts 5 - 2 equals 3 using the standard Python `assert` keyword.",
+    "answer": {
+      "type": "code",
+      "lang": "python",
+      "content": "def test_subtraction():\n    result = 5 - 2\n    assert result == 3"
+    },
+    "explanation": "Unlike `unittest` which requires boilerplate code, `pytest` allows writing tests as simple functions and using the built-in `assert` statement."
+  },
+  {
+    "title": "Testing Exceptions in Pytest",
+    "ques": "Use `pytest.raises` to test that attempting to access a missing key in a dictionary raises a `KeyError`.",
+    "answer": {
+      "type": "code",
+      "lang": "python",
+      "content": "import pytest\n\ndef test_missing_key():\n    my_dict = {\"a\": 1}\n    with pytest.raises(KeyError):\n        value = my_dict[\"b\"]"
+    },
+    "explanation": "`pytest.raises` functions as a context manager, similar to `unittest.assertRaises`. It confirms that the code within the `with` block triggers the specified exception."
+  },
+  {
+    "title": "Pytest Command Line Flags",
+    "ques": "Explain the purpose of the `-v`, `-k`, and `-x` command-line flags in pytest.",
+    "answer": {
+      "type": "text",
+      "content": "* **`-v` (Verbose):** Increases verbosity, showing detailed information for each test, such as its name and pass/fail status.\n* **`-k` (Keyword expression):** Allows running a specific subset of tests whose names match a given string or expression (e.g., `pytest -k \"test_login\"`).\n* **`-x` (Exit on first error/failure):** Stops the test execution immediately as soon as a single test fails, which is useful for debugging."
+    },
+    "explanation": "Command-line flags make `pytest` highly flexible, allowing developers to filter tests and get detailed feedback quickly during development."
+  }
+]

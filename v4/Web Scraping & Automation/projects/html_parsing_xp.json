@@ -1,0 +1,32 @@
+[
+  {
+    "title": "Parsing with BeautifulSoup \ud83c\udf72",
+    "ques": "Write a script using `BeautifulSoup` to parse `html_doc = \"<html><body><h1>Title</h1></body></html>\"` and extract the text inside the `<h1>` tag.",
+    "answer": {
+      "type": "code",
+      "lang": "python",
+      "content": "from bs4 import BeautifulSoup\n\nhtml_doc = \"<html><body><h1>Title</h1></body></html>\"\nsoup = BeautifulSoup(html_doc, 'html.parser')\nprint(soup.h1.text)"
+    },
+    "explanation": "`BeautifulSoup` creates a parse tree, allowing you to navigate HTML elements easily via attributes like `.h1` and `.text`."
+  },
+  {
+    "title": "Finding Multiple Elements \ud83d\udd0e",
+    "ques": "Use `BeautifulSoup` to find all `<a>` tags in a parsed HTML document and print their `href` attributes.",
+    "answer": {
+      "type": "code",
+      "lang": "python",
+      "content": "links = soup.find_all('a')\nfor link in links:\n    print(link.get('href'))"
+    },
+    "explanation": "`find_all` returns a list of matching tags. The `get()` method safely extracts attribute values like URLs."
+  },
+  {
+    "title": "Using XPath with lxml \ud83d\uddfa",
+    "ques": "Write an XPath expression to select all `<p>` tags that have a class named `content`.",
+    "answer": {
+      "type": "code",
+      "lang": "xpath",
+      "content": "//p[@class='content']"
+    },
+    "explanation": "XPath is a powerful language for navigating XML/HTML. `//` searches anywhere in the document, and `[@attr='value']` filters by attribute."
+  }
+]

@@ -1,0 +1,141 @@
+{
+    "id": "learn_nosql_mongodb_r",
+    "topicId": "nosql_mongodb_r",
+    "topicTitle": "NoSQL \u2014 MongoDB & Redis",
+    "description": "Explore the world of NoSQL by mastering document databases with MongoDB and in-memory key-value stores with Redis.",
+    "baseKP": 85,
+    "slides": [
+        {
+            "id": "nosql_1",
+            "type": "content",
+            "title": "What is NoSQL?",
+            "content": "# Not Only SQL \ud83d\udeab\n\nNoSQL databases are built to store and query data in formats other than relational tables.\n\nWhile SQL databases are strict (Schemas, Tables, Rows), NoSQL databases are flexible and designed to scale horizontally across many servers.\n\n## Main Types of NoSQL\n1. **Document Stores:** Store JSON-like documents (e.g., MongoDB).\n2. **Key-Value Stores:** Simple dictionary-like storage (e.g., Redis).\n3. **Wide-Column Stores:** Optimized for large datasets (e.g., Cassandra).\n4. **Graph Databases:** Optimized for relationships (e.g., Neo4j)."
+        },
+        {
+            "id": "nosql_2",
+            "type": "content",
+            "title": "Introduction to MongoDB",
+            "content": "# MongoDB \ud83c\udf43\n\nMongoDB is the most popular document-based NoSQL database.\n\nInstead of Tables and Rows, it uses:\n- **Collections** (like Tables)\n- **Documents** (like Rows)\n\nA Document is a JSON-like object (technically BSON). \nEvery document in a collection can have a completely different structure! No schema required!"
+        },
+        {
+            "id": "nosql_3",
+            "type": "content",
+            "title": "pymongo and BSON",
+            "content": "# Connecting via Python \ud83d\udc0d\n\nTo use MongoDB in Python, we use the `pymongo` driver.\n\n```bash\npip install pymongo\n```\n\n## BSON (Binary JSON)\nMongoDB stores data in BSON format. \nBSON extends JSON to include additional types like `Date`, `ObjectId` (MongoDB's default primary key type), and raw `Binary` data.\n\n`pymongo` handles the conversion between Python dictionaries and BSON automatically!"
+        },
+        {
+            "id": "nosql_4",
+            "type": "content",
+            "title": "Connecting to MongoDB",
+            "content": "# The MongoClient \ud83d\udd0c\n\nHere is how you connect to a local MongoDB instance:\n\n```python_not\nfrom pymongo import MongoClient\n\n# Connect to the default localhost port 27017\nclient = MongoClient('mongodb://localhost:27017/')\n\n# Access a database (it is created automatically if it doesn't exist!)\ndb = client['my_app_database']\n\n# Access a collection\nusers_col = db['users']\n```"
+        },
+        {
+            "id": "nosql_5",
+            "type": "content",
+            "title": "CRUD: Insert",
+            "content": "# Inserting Documents \ud83d\udce5\n\nYou can insert a single dictionary or a list of dictionaries.\n\n```python_not\n# Insert One\nalice = {\"name\": \"Alice\", \"age\": 28, \"tags\": [\"python\", \"sql\"]}\nresult = users_col.insert_one(alice)\nprint(\"Inserted ID:\", result.inserted_id) # Returns the auto-generated ObjectId\n\n# Insert Many\nusers_col.insert_many([\n    {\"name\": \"Bob\", \"age\": 35, \"admin\": True},\n    {\"name\": \"Charlie\", \"email\": \"c@test.com\"} # Notice the completely different schema!\n])\n```"
+        },
+        {
+            "id": "nosql_quiz_1",
+            "type": "quiz",
+            "title": "Knowledge Check: MongoDB",
+            "content": "Test your MongoDB basics.",
+            "quizQuestion": "What does MongoDB use instead of tables and rows?",
+            "quizOptions": [
+                "Arrays and Objects",
+                "Keys and Values",
+                "Collections and Documents",
+                "Graphs and Nodes"
+            ],
+            "correctOptionIndex": 2
+        },
+        {
+            "id": "nosql_6",
+            "type": "content",
+            "title": "CRUD: Find",
+            "content": "# Querying Documents \ud83d\udd0d\n\nFinding data uses dictionary-based syntax instead of SQL `WHERE` clauses.\n\n```python_not\n# Find One\nbob = users_col.find_one({\"name\": \"Bob\"})\n\n# Find Many (returns a cursor you can loop over)\nfor user in users_col.find({\"age\": 28}):\n    print(user['name'])\n```\n\n## MongoDB Operators\nMongoDB uses special operators that start with `$`: `$gt` (greater than), `$in` (in array), `$or`.\n\n```python_not\n# Find users older than 30\nusers_col.find({\"age\": {\"$gt\": 30}})\n```"
+        },
+        {
+            "id": "nosql_7",
+            "type": "content",
+            "title": "CRUD: Update and Delete",
+            "content": "# Modifying Data \u270f\ufe0f\n\n## Updating\nYou must use the `$set` operator to modify specific fields, otherwise, it replaces the entire document!\n\n```python_not\n# Update Alice's age\nusers_col.update_one(\n    {\"name\": \"Alice\"},          # Filter\n    {\"$set\": {\"age\": 29}}       # Update action\n)\n```\n\n## Deleting\n```python_not\n# Delete all users with no email\nusers_col.delete_many({\"email\": {\"$exists\": False}})\n```"
+        },
+        {
+            "id": "nosql_8",
+            "type": "content",
+            "title": "The Aggregate Pipeline",
+            "content": "# Aggregation Framework \ud83c\udfed\n\nMongoDB's equivalent of `GROUP BY` is the **Aggregation Pipeline**.\nData passes through an array of \"stages\" (like a factory assembly line).\n\n```python_not\npipeline = [\n    # Stage 1: Filter to adults\n    {\"$match\": {\"age\": {\"$gte\": 18}}},\n    \n    # Stage 2: Group by city, calculate average age and count\n    {\"$group\": {\n        \"_id\": \"$city\", \n        \"avg_age\": {\"$avg\": \"$age\"}, \n        \"total\": {\"$sum\": 1}\n    }},\n    \n    # Stage 3: Sort by total descending\n    {\"$sort\": {\"total\": -1}}\n]\n\nresults = users_col.aggregate(pipeline)\n```"
+        },
+        {
+            "id": "nosql_9",
+            "type": "content",
+            "title": "MongoDB $lookup",
+            "content": "# JOINs in MongoDB \ud83d\udd17\n\nWait, didn't NoSQL say \"No JOINs\"? \nWhile it's usually better to embed related data inside a single document, sometimes you *must* join collections.\n\nMongoDB provides the `$lookup` aggregation stage (effectively a LEFT OUTER JOIN).\n\n```python_not\npipeline = [\n    {\"$lookup\": {\n        \"from\": \"orders\",           # The table to join\n        \"localField\": \"_id\",        # Field from 'users'\n        \"foreignField\": \"user_id\",  # Field from 'orders'\n        \"as\": \"user_orders\"         # The array where matches will be placed\n    }}\n]\nusers_with_orders = users_col.aggregate(pipeline)\n```"
+        },
+        {
+            "id": "nosql_quiz_2",
+            "type": "quiz",
+            "title": "Knowledge Check: Aggregations",
+            "content": "Test your MongoDB advanced queries.",
+            "quizQuestion": "Which MongoDB aggregation stage acts similar to a SQL JOIN?",
+            "quizOptions": [
+                "$match",
+                "$group",
+                "$lookup",
+                "$join"
+            ],
+            "correctOptionIndex": 2
+        },
+        {
+            "id": "nosql_10",
+            "type": "content",
+            "title": "Introduction to Redis",
+            "content": "# Redis \ud83d\udd34\n\nRedis is an open-source, **in-memory** data structure store.\nIt is wildly popular because it is ridiculously fast. It is used as a database, cache, message broker, and streaming engine.\n\nBecause it lives in RAM, it shouldn't be used as your primary permanent data store (unless configured specifically for persistence). It is mostly used alongside PostgreSQL or MongoDB to speed things up."
+        },
+        {
+            "id": "nosql_11",
+            "type": "content",
+            "title": "Using redis-py",
+            "content": "# redis-py \ud83d\udc0d\n\nTo talk to Redis from Python, use the `redis` package.\n\n```bash\npip install redis\n```\n\n## Basic Usage (Key-Value)\n```python_not\nimport redis\n\n# Connect to Redis\nr = redis.Redis(host='localhost', port=6379, db=0)\n\n# Set a string value\nr.set('app_name', 'My Super App')\n\n# Get a value (Returns bytes, so we decode it)\nname = r.get('app_name').decode('utf-8')\nprint(name)\n```"
+        },
+        {
+            "id": "nosql_12",
+            "type": "content",
+            "title": "Time to Live (TTL)",
+            "content": "# Expirable Data \u23f1\ufe0f\n\nRedis is perfect for Caching because you can set a \"Time To Live\" (TTL) on any key.\nAfter the TTL expires, Redis automatically deletes the key!\n\n## Setting Expiration\n```python_not\n# Set a key that expires in 60 seconds\nr.setex('user_123_session', 60, 'active')\n\n# Or set an expiration on an existing key\nr.expire('app_name', 300) # Expires in 5 minutes\n\n# Check how much time is left\nprint(r.ttl('user_123_session'))\n```\nThis is commonly used for user login sessions or caching slow database queries."
+        },
+        {
+            "id": "nosql_13",
+            "type": "content",
+            "title": "Redis Sorted Sets",
+            "content": "# Sorted Sets (Leaderboards) \ud83c\udfc6\n\nRedis isn't just strings. It supports advanced structures like **Sorted Sets**. \nEvery member in a Sorted Set is associated with a floating-point score, allowing lightning-fast sorting.\n\n## Example: Gaming Leaderboard\n```python_not\n# Add players and their scores\nr.zadd('leaderboard', {'Alice': 1500, 'Bob': 1200, 'Charlie': 1800})\n\n# Get top 3 players (descending order)\ntop_players = r.zrevrange('leaderboard', 0, 2, withscores=True)\nprint(top_players) \n# Output: [(b'Charlie', 1800.0), (b'Alice', 1500.0), (b'Bob', 1200.0)]\n```"
+        },
+        {
+            "id": "nosql_14",
+            "type": "content",
+            "title": "Redis Pub/Sub",
+            "content": "# Publish / Subscribe \ud83d\udce1\n\nRedis has built-in Pub/Sub capabilities, perfect for real-time chat apps or event-driven architectures.\n\n- **Publishers:** Send messages to a \"channel\".\n- **Subscribers:** Listen to a \"channel\" and react when a message arrives.\n\n```python_not\n# Subscriber\np = r.pubsub()\np.subscribe('notifications')\n\n# Publisher (in another script)\nr.publish('notifications', 'Hello World!')\n\n# Subscriber reads the message\nmessage = p.get_message()\nprint(message['data']) # b'Hello World!'\n```"
+        },
+        {
+            "id": "nosql_quiz_3",
+            "type": "quiz",
+            "title": "Knowledge Check: Redis",
+            "content": "Test your Redis knowledge.",
+            "quizQuestion": "Which Redis feature allows you to specify that a key should automatically delete itself after a certain amount of time?",
+            "quizOptions": [
+                "Sorted Sets",
+                "Pub/Sub",
+                "TTL (Time to Live)",
+                "Garbage Collection"
+            ],
+            "correctOptionIndex": 2
+        },
+        {
+            "id": "nosql_15",
+            "type": "content",
+            "title": "Summary",
+            "content": "# Summary \ud83c\udf89\n\nYou've expanded your database toolkit beyond SQL!\n\n## Key Takeaways\n- \u2705 **MongoDB:** A flexible, schema-less document database that stores BSON (JSON-like) objects.\n- \u2705 **pymongo:** The Python driver for MongoDB.\n- \u2705 **Aggregation Pipeline:** MongoDB's powerful tool for transforming, grouping, and joining (`$lookup`) data.\n- \u2705 **Redis:** An ultra-fast in-memory data store, heavily used for caching.\n- \u2705 **TTL:** Automatically expire cache keys or sessions in Redis.\n- \u2705 **Sorted Sets:** Perfect data structure for leaderboards.\n- \u2705 **Pub/Sub:** Send real-time events between different parts of your application via Redis channels."
+        }
+    ]
+}

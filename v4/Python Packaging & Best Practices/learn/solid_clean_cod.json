@@ -1,0 +1,109 @@
+{
+    "id": "learn_solid_clean_cod",
+    "topicId": "solid_clean_cod",
+    "topicTitle": "SOLID, Clean Code & Security",
+    "description": "Write code that is easy to read, easy to maintain, and mathematically secure. Master the SOLID principles, clean code patterns like Early Returns, and automated security scanning.",
+    "baseKP": 75,
+    "slides": [
+        {
+            "id": "solid_cc_1",
+            "type": "content",
+            "title": "Clean Code",
+            "content": "# Writing for Humans 🧑‍💻\n\nCode is read 10 times more often than it is written. \n\nIf you write \"clever\" one-liners with terrible variable names, the next developer who has to fix a bug in your code will hate you. (Often, that \"next developer\" is you, 6 months later).\n\nClean Code is about organizing logic so it is immediately obvious what is happening."
+        },
+        {
+            "id": "solid_cc_2",
+            "type": "content",
+            "title": "Early Returns",
+            "content": "# Avoid the Arrow Anti-Pattern 🏹\n\nDeeply nested `if` statements are incredibly hard to read. Use **Early Returns** to handle edge cases immediately, keeping the main logic flat.\n\n```python_not\n# INSECURE / MESSY\ndef process_payment(user, amount):\n    if user.is_active:\n        if amount > 0:\n            if user.balance >= amount:\n                user.balance -= amount\n                return True\n            else:\n                return False\n    return False\n\n# CLEAN (Early Returns)\ndef process_payment(user, amount):\n    # Handle edge cases immediately and exit\n    if not user.is_active: return False\n    if amount <= 0: return False\n    if user.balance < amount: return False\n    \n    # The main logic is flat and easy to read!\n    user.balance -= amount\n    return True\n```"
+        },
+        {
+            "id": "solid_cc_3",
+            "type": "content",
+            "title": "DRY and YAGNI",
+            "content": "# Two Golden Acronyms 🏅\n\n1. **DRY (Don't Repeat Yourself):** If you find yourself copying and pasting the same 5 lines of code into 3 different functions, extract them into a separate helper function.\n\n2. **YAGNI (You Aren't Gonna Need It):** Developers love over-engineering. They build a massive database abstraction layer because \"maybe one day we will switch from PostgreSQL to MongoDB.\" \n\nYou probably won't. Don't write code for hypothetical future problems. Write exactly what you need today."
+        },
+        {
+            "id": "solid_cc_4",
+            "type": "content",
+            "title": "The SOLID Principles",
+            "content": "# Object-Oriented Architecture 🏛️\n\nSOLID is an acronym defining 5 principles of Object-Oriented Design that make software easier to maintain.\n\n1. **S**ingle Responsibility\n2. **O**pen/Closed\n3. **L**iskov Substitution\n4. **I**nterface Segregation\n5. **D**ependency Inversion"
+        },
+        {
+            "id": "solid_cc_5",
+            "type": "content",
+            "title": "Single Responsibility Principle (SRP)",
+            "content": "# Do One Thing ☝️\n\nA class or module should have one, and only one, reason to change.\n\nIf you have a `User` class that holds user data, calculates their taxes, AND sends them marketing emails, it violates SRP.\n\n```python_not\n# VIOLATION\nclass User:\n    def save_to_db(self): ...\n    def generate_pdf_report(self): ...\n\n# SRP COMPLIANT\nclass User: ...\nclass UserRepository: ...\nclass ReportGenerator: ...\n```"
+        },
+        {
+            "id": "solid_cc_6",
+            "type": "content",
+            "title": "Open/Closed Principle (OCP)",
+            "content": "# Open for Extension 🧱\n\nClasses should be open for extension, but closed for modification.\n\nIf you want to add a new feature, you should NOT have to edit existing, tested, working code. You should achieve it by adding new classes.\n\n*(Hint: Using the Strategy Pattern we learned earlier perfectly satisfies the Open/Closed Principle!)*"
+        },
+        {
+            "id": "solid_cc_7",
+            "type": "content",
+            "title": "LSP, ISP, and DIP",
+            "content": "# The Rest of SOLID 🧩\n\n- **Liskov Substitution (LSP):** If `Penguin` inherits from `Bird`, but `Penguin` raises an Error when you call `fly()`, you have violated LSP. Subclasses must be perfectly swappable with their parents.\n- **Interface Segregation (ISP):** Don't force a class to implement methods it doesn't need. Make smaller, specific interfaces (Protocols in Python).\n- **Dependency Inversion (DIP):** High-level modules should not import low-level modules directly. Both should depend on abstractions (like Interfaces/Protocols)."
+        },
+        {
+            "id": "solid_cc_quiz_1",
+            "type": "quiz",
+            "title": "Clean Code Quiz",
+            "content": "Test your architecture knowledge.",
+            "quizQuestion": "Which coding principle specifically warns developers against writing complex, abstract code for hypothetical features they 'might need' in the future?",
+            "quizOptions": [
+                "DRY (Don't Repeat Yourself)",
+                "LSP (Liskov Substitution Principle)",
+                "SRP (Single Responsibility Principle)",
+                "YAGNI (You Aren't Gonna Need It)"
+            ],
+            "correctOptionIndex": 3
+        },
+        {
+            "id": "solid_cc_8",
+            "type": "content",
+            "title": "Python Security",
+            "content": "# Hardening the Code 🛡️\n\nPython is a high-level language, so it is immune to C-style Buffer Overflows. \n\nHowever, it has its own set of critical security vulnerabilities that developers constantly fall victim to."
+        },
+        {
+            "id": "solid_cc_9",
+            "type": "content",
+            "title": "The Danger of eval() and exec()",
+            "content": "# Remote Code Execution 💀\n\nThe `eval()` and `exec()` functions execute strings as Python code. \n\nIf you ever pass user input into these functions, a hacker can easily input `__import__('os').system('rm -rf /')` and completely destroy your server.\n\n**NEVER use `eval()` or `exec()` on untrusted input. There is almost always a safer alternative (like `ast.literal_eval`).**"
+        },
+        {
+            "id": "solid_cc_10",
+            "type": "content",
+            "title": "Dangerous Serialization",
+            "content": "# Unsafe YAML and Pickle 🪤\n\nSimilarly, loading YAML files or `pickle` files can execute arbitrary code if the file was maliciously crafted.\n\n```python_not\nimport yaml\n\n# INSECURE! Can execute code embedded in the YAML file.\nyaml.load(user_file)\n\n# SECURE. Only loads basic data structures (lists, dicts).\nyaml.safe_load(user_file)\n```\n\nNever unpickle data you receive over a network. Use JSON instead!"
+        },
+        {
+            "id": "solid_cc_11",
+            "type": "content",
+            "title": "Automated Security Scanning",
+            "content": "# Bandit 🤠\n\nJust as Ruff checks for style issues, a tool called **Bandit** specifically scans your code for common security vulnerabilities (like using `eval()`, hardcoding passwords, or using `yaml.load`).\n\n```bash\npip install bandit\n\n# Scan your source code for security flaws\nbandit -r src/\n```\n\nYou should always add Bandit to your Pre-commit hooks!"
+        },
+        {
+            "id": "solid_cc_quiz_2",
+            "type": "quiz",
+            "title": "Security Quiz",
+            "content": "Ensure you write secure Python.",
+            "quizQuestion": "Why must you NEVER pass untrusted user input into Python's built-in `eval()` function?",
+            "quizOptions": [
+                "Because `eval()` will delete the user's account.",
+                "Because `eval()` evaluates the string as raw Python code. A hacker can provide a string that imports the OS module and executes malicious bash commands on your server.",
+                "Because it causes a memory leak.",
+                "Because it violates the Open/Closed Principle."
+            ],
+            "correctOptionIndex": 1
+        },
+        {
+            "id": "solid_cc_12",
+            "type": "content",
+            "title": "Summary",
+            "content": "# Senior Python Developer! 🎉\n\nYou have completed the ultimate Python journey.\n\n## Key Takeaways\n\n- ✅ **Early Returns:** Flatten your code. Don't nest 5 `if` statements.\n- ✅ **YAGNI:** Keep it simple. Don't over-engineer for the future.\n- ✅ **SOLID:** 5 principles to ensure your code is decoupled, testable, and maintainable.\n- ✅ **Security:** Never use `eval()`, `exec()`, or `yaml.load()` on untrusted user input. Use `ast.literal_eval()` and `yaml.safe_load()`.\n- ✅ **Bandit:** Run automated security scanners on your code before deploying.\n\nCongratulations! You are now equipped to build professional, scalable, and secure Python applications."
+        }
+    ]
+}

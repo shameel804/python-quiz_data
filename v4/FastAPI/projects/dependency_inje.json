@@ -1,0 +1,32 @@
+[
+  {
+    "title": "Basic Dependencies \ud83d\udc89",
+    "ques": "Write a dependency function `verify_token` that returns a hardcoded string `\"token_abc\"`. Inject it into a `/secure` route.",
+    "answer": {
+      "type": "code",
+      "lang": "python",
+      "content": "from fastapi import Depends, FastAPI\n\ndef verify_token():\n    return 'token_abc'\n\napp = FastAPI()\n\n@app.get('/secure')\ndef secure_route(token: str = Depends(verify_token)):\n    return {'token': token}"
+    },
+    "explanation": "Dependencies allow you to share logic, like database connections or authentication, cleanly across multiple routes."
+  },
+  {
+    "title": "Middleware Setup \ud83d\udea7",
+    "ques": "Add a middleware to a FastAPI app that intercepts every request and adds a custom header `X-Custom-Header: True` to the response.",
+    "answer": {
+      "type": "code",
+      "lang": "python",
+      "content": "from fastapi import Request\n\n@app.middleware('http')\nasync def add_custom_header(request: Request, call_next):\n    response = await call_next(request)\n    response.headers['X-Custom-Header'] = 'True'\n    return response"
+    },
+    "explanation": "Middleware functions run before and after every request, useful for logging, CORS, or modifying headers globally."
+  },
+  {
+    "title": "CORS Configuration \ud83c\udf10",
+    "ques": "Configure FastAPI to allow CORS requests from `http://localhost:3000`.",
+    "answer": {
+      "type": "code",
+      "lang": "python",
+      "content": "from fastapi.middleware.cors import CORSMiddleware\n\napp.add_middleware(\n    CORSMiddleware,\n    allow_origins=['http://localhost:3000'],\n    allow_credentials=True,\n    allow_methods=['*'],\n    allow_headers=['*'],\n)"
+    },
+    "explanation": "CORS (Cross-Origin Resource Sharing) configuration is required when your frontend and backend run on different ports or domains."
+  }
+]

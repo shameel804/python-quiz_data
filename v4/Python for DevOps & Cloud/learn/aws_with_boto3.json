@@ -1,0 +1,129 @@
+{
+    "id": "learn_aws_with_boto3",
+    "topicId": "aws_with_boto3",
+    "topicTitle": "AWS with Boto3",
+    "description": "Master AWS automation using the official Boto3 SDK. Learn to manage S3, EC2, Lambda, DynamoDB, and messaging queues (SQS/SNS).",
+    "baseKP": 75,
+    "slides": [
+        {
+            "id": "aws_boto3_1",
+            "type": "content",
+            "title": "AWS and Python",
+            "content": "# The Official SDK: `boto3` ☁️\n\nAmazon Web Services (AWS) is the largest cloud provider in the world. \n\nWhile you can manage AWS via their web console, real DevOps uses automation. Python is the language of choice for AWS automation, thanks to the incredibly powerful `boto3` library.\n\n```bash\npip install boto3\n```\n\n`boto3` automatically reads your AWS credentials from `~/.aws/credentials` or from environment variables (`AWS_ACCESS_KEY_ID` and `AWS_SECRET_ACCESS_KEY`)."
+        },
+        {
+            "id": "aws_boto3_2",
+            "type": "content",
+            "title": "Clients vs Resources",
+            "content": "# Two APIs ✌️\n\nBoto3 provides two different ways to interact with AWS:\n\n1. **Clients:** Low-level, 1-to-1 mapping of the underlying AWS HTTP API. Responses are massive, raw Python dictionaries. Available for *every* AWS service.\n2. **Resources:** High-level, object-oriented API. Much easier to read and write. Only available for *some* AWS services (like S3, EC2, DynamoDB).\n\nWhenever possible, use the Resource API. When a feature isn't supported, fall back to the Client API."
+        },
+        {
+            "id": "aws_boto3_3",
+            "type": "content",
+            "title": "Amazon S3",
+            "content": "# Cloud Storage: S3 🪣\n\nSimple Storage Service (S3) is used for storing files (objects) inside logical containers called Buckets.\n\nLet's use the Resource API to manage S3.\n\n```python_not\nimport boto3\n\n# Create an S3 resource object\ns3 = boto3.resource('s3')\n\n# Reference a specific bucket\nbucket = s3.Bucket('my-company-assets')\n\n# Print all files in the bucket\nfor obj in bucket.objects.all():\n    print(obj.key) # 'key' is the file path\n```"
+        },
+        {
+            "id": "aws_boto3_4",
+            "type": "content",
+            "title": "S3 CRUD Operations",
+            "content": "# Uploading and Downloading ⬆️⬇️\n\nBoto3 makes file transfers incredibly easy, automatically handling multi-part uploads for huge files.\n\n```python_not\nimport boto3\ns3 = boto3.resource('s3')\nbucket = s3.Bucket('my-company-assets')\n\n# UPLOAD a local file\nbucket.upload_file('local_image.png', 'images/cloud_image.png')\n\n# DOWNLOAD a file to your local machine\nbucket.download_file('images/cloud_image.png', 'downloaded.png')\n\n# DELETE a file from the bucket\ns3.Object('my-company-assets', 'images/cloud_image.png').delete()\n```"
+        },
+        {
+            "id": "aws_boto3_5",
+            "type": "content",
+            "title": "Presigned URLs",
+            "content": "# Secure Sharing: Presigned URLs 🔗\n\nBy default, S3 buckets are private. If you want to allow a user to download a specific file for a limited time (e.g., a purchased e-book), you generate a **Presigned URL**.\n\nBecause this is a specific API action, we must use the low-level Client.\n\n```python_not\nimport boto3\n\n# Use the low-level client\ns3_client = boto3.client('s3')\n\n# Generate a URL valid for exactly 1 hour (3600 seconds)\nurl = s3_client.generate_presigned_url(\n    'get_object',\n    Params={'Bucket': 'my-assets', 'Key': 'secret.pdf'},\n    ExpiresIn=3600\n)\n\nprint(f\"Share this link: {url}\")\n```"
+        },
+        {
+            "id": "aws_boto3_quiz_1",
+            "type": "quiz",
+            "title": "S3 Quiz",
+            "content": "Check your understanding of S3 APIs.",
+            "quizQuestion": "When should you use the `boto3.client('s3')` instead of `boto3.resource('s3')`?",
+            "quizOptions": [
+                "When you are uploading very large files.",
+                "When you need to interact with the high-level object-oriented API.",
+                "When you need to perform actions that are not supported by the Resource API, such as generating presigned URLs.",
+                "Client and Resource are exactly the same thing."
+            ],
+            "correctOptionIndex": 2
+        },
+        {
+            "id": "aws_boto3_6",
+            "type": "content",
+            "title": "Amazon EC2",
+            "content": "# Virtual Machines: EC2 💻\n\nElastic Compute Cloud (EC2) provides virtual servers.\n\nYou can use Boto3 to start, stop, or terminate instances programmatically. This is perfect for a cron job that shuts down development servers at night to save money!\n\n```python_not\nimport boto3\n\nec2 = boto3.resource('ec2', region_name='us-east-1')\n\n# Find all instances with a specific tag\ninstances = ec2.instances.filter(\n    Filters=[{'Name': 'tag:Environment', 'Values': ['Development']}]\n)\n\n# Stop them all!\nfor instance in instances:\n    print(f\"Stopping {instance.id}...\")\n    instance.stop()\n```"
+        },
+        {
+            "id": "aws_boto3_7",
+            "type": "content",
+            "title": "AWS Lambda",
+            "content": "# Serverless: Lambda ⚡\n\nAWS Lambda allows you to run Python code without provisioning servers. You upload the code, and AWS executes it on demand.\n\nYou can invoke a Lambda function directly from another Python script using Boto3.\n\n```python_not\nimport boto3\nimport json\n\nlambda_client = boto3.client('lambda')\n\n# Invoke a function synchronously\nresponse = lambda_client.invoke(\n    FunctionName='CalculateTaxFunction',\n    InvocationType='RequestResponse', # Wait for the result\n    Payload=json.dumps({\"amount\": 100, \"state\": \"CA\"})\n)\n\n# Read the response payload\nresult = json.loads(response['Payload'].read())\nprint(result)\n```"
+        },
+        {
+            "id": "aws_boto3_8",
+            "type": "content",
+            "title": "IAM and Security",
+            "content": "# Identity and Access Management (IAM) 🛡️\n\nIAM controls who can do what in your AWS account. If a Boto3 script running on an EC2 instance needs to read from S3, the EC2 instance must have an IAM Role attached with S3 permissions.\n\nIf the permissions are denied, Boto3 will raise a `botocore.exceptions.ClientError`.\n\n```python_not\nimport boto3\nfrom botocore.exceptions import ClientError\n\ns3 = boto3.resource('s3')\ntry:\n    s3.Bucket('top-secret-data').objects.all()\nexcept ClientError as e:\n    if e.response['Error']['Code'] == 'AccessDenied':\n        print(\"Your IAM user/role does not have permission!\")\n```"
+        },
+        {
+            "id": "aws_boto3_quiz_2",
+            "type": "quiz",
+            "title": "Compute Quiz",
+            "content": "Test your knowledge of AWS compute services.",
+            "quizQuestion": "Which AWS service would you invoke using Boto3 if you wanted to execute a small snippet of Python code without managing a virtual machine?",
+            "quizOptions": [
+                "EC2",
+                "S3",
+                "Lambda",
+                "IAM"
+            ],
+            "correctOptionIndex": 2
+        },
+        {
+            "id": "aws_boto3_9",
+            "type": "content",
+            "title": "Message Queues: SQS",
+            "content": "# Decoupling with SQS 📨\n\nSimple Queue Service (SQS) is a managed message queue (similar to what Celery uses, but fully managed by AWS).\n\nIt is highly scalable and perfect for decoupling microservices.\n\n```python_not\nimport boto3\nsqs = boto3.resource('sqs')\n\n# Get a queue by name\nqueue = sqs.get_queue_by_name(QueueName='order-processing')\n\n# Send a message to the queue\nresponse = queue.send_message(\n    MessageBody='{\"order_id\": 123, \"status\": \"paid\"}',\n    MessageAttributes={\n        'Priority': {'StringValue': 'High', 'DataType': 'String'}\n    }\n)\nprint(f\"Message ID: {response.get('MessageId')}\")\n```"
+        },
+        {
+            "id": "aws_boto3_10",
+            "type": "content",
+            "title": "Receiving from SQS",
+            "content": "# Processing Messages 📥\n\nA worker script can continuously poll SQS to process messages.\n\n```python_not\n# Wait up to 20 seconds for a message (Long Polling - saves money!)\nmessages = queue.receive_messages(WaitTimeSeconds=20, MaxNumberOfMessages=1)\n\nfor message in messages:\n    print(f\"Processing: {message.body}\")\n    \n    # YOU MUST DELETE THE MESSAGE AFTER PROCESSING IT!\n    # Otherwise, it will become visible to other workers again.\n    message.delete()\n```"
+        },
+        {
+            "id": "aws_boto3_11",
+            "type": "content",
+            "title": "Pub/Sub: SNS",
+            "content": "# Broadcasting with SNS 📡\n\nSimple Notification Service (SNS) is a Pub/Sub system. Instead of sending a message to one queue, you publish a message to an SNS **Topic**.\n\nMultiple subscribers (like an SQS queue, an email address, or an SMS number) receive the message simultaneously.\n\n```python_not\nimport boto3\nsns = boto3.client('sns')\n\n# Publish an alert to a topic\nsns.publish(\n    TopicArn='arn:aws:sns:us-east-1:123456789012:ServerAlerts',\n    Message='CPU usage on DB server exceeded 90%!',\n    Subject='CRITICAL ALERT'\n)\n```"
+        },
+        {
+            "id": "aws_boto3_12",
+            "type": "content",
+            "title": "NoSQL Database: DynamoDB",
+            "content": "# Scalable NoSQL: DynamoDB 🗄️\n\nDynamoDB is a serverless, incredibly fast NoSQL database. Boto3's Resource API makes querying it feel like interacting with standard Python dictionaries.\n\n```python_not\nimport boto3\n\ndynamodb = boto3.resource('dynamodb')\ntable = dynamodb.Table('Users')\n\n# Insert or update an item\ntable.put_item(\n    Item={\n        'username': 'johndoe', # Partition key\n        'age': 30,\n        'skills': ['Python', 'AWS']\n    }\n)\n\n# Retrieve an item\nresponse = table.get_item(Key={'username': 'johndoe'})\nprint(response['Item']['age']) # 30\n```"
+        },
+        {
+            "id": "aws_boto3_quiz_3",
+            "type": "quiz",
+            "title": "Messaging Quiz",
+            "content": "Ensure you know the difference between SQS and SNS.",
+            "quizQuestion": "Which AWS service is designed for a Pub/Sub pattern, where a single published message is broadcasted to multiple independent subscribers (like sending an SMS and adding to a queue simultaneously)?",
+            "quizOptions": [
+                "SQS",
+                "SNS",
+                "S3",
+                "DynamoDB"
+            ],
+            "correctOptionIndex": 1
+        },
+        {
+            "id": "aws_boto3_13",
+            "type": "content",
+            "title": "Summary",
+            "content": "# Cloud Architect! 🎉\n\nYou've learned how to harness the immense power of AWS using Python.\n\n## Key Takeaways\n\n- ✅ **Boto3:** The official AWS SDK for Python. Uses `~/.aws/credentials`.\n- ✅ **Resource vs Client:** Use `boto3.resource()` for clean, object-oriented code. Fall back to `boto3.client()` for low-level API features.\n- ✅ **S3:** Use for storage. Generate Presigned URLs to grant temporary, secure access to files.\n- ✅ **EC2 & Lambda:** Use Boto3 to orchestrate virtual machines or invoke serverless functions dynamically.\n- ✅ **SQS & SNS:** Decouple your architecture using Queues (1-to-1) and Pub/Sub Topics (1-to-many).\n- ✅ **DynamoDB:** Seamlessly read and write NoSQL data using Python dictionaries.\n\nAutomate everything!"
+        }
+    ]
+}

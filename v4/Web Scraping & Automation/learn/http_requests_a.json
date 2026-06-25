@@ -1,0 +1,141 @@
+{
+    "id": "learn_http_requests_a",
+    "topicId": "http_requests_a",
+    "topicTitle": "HTTP, Requests & APIs",
+    "description": "Master the fundamentals of HTTP communication and learn to use Python's requests library.",
+    "baseKP": 75,
+    "slides": [
+        {
+            "id": "http_1",
+            "type": "content",
+            "title": "Introduction to HTTP",
+            "content": "# The Language of the Web \ud83c\udf10\n\nHyperText Transfer Protocol (HTTP) is the foundation of data communication on the World Wide Web.\n\nWhen you visit a website or scrape data, your Python code acts as a **Client**. It sends an HTTP **Request** to a **Server**, and the server responds with an HTTP **Response** (usually containing HTML or JSON data).\n\nIf you want to extract data from the internet, you MUST understand how HTTP works."
+        },
+        {
+            "id": "http_2",
+            "type": "content",
+            "title": "HTTP Methods",
+            "content": "# HTTP Methods (Verbs) \ud83d\udde3\ufe0f\n\nWhen making a request, you must specify the *Method*. This tells the server what action you want to perform.\n\n- **GET:** Retrieve data from the server. (e.g., viewing a webpage, fetching API data).\n- **POST:** Send data to the server to create a new resource. (e.g., submitting a login form, uploading a file).\n- **PUT / PATCH:** Update an existing resource on the server.\n- **DELETE:** Remove a resource from the server.\n\nFor Web Scraping, you will use **GET** 90% of the time, and **POST** when trying to bypass login forms."
+        },
+        {
+            "id": "http_3",
+            "type": "content",
+            "title": "The Requests Library",
+            "content": "# Python's Requests Library \ud83d\udc0d\n\nThe `requests` library is the de facto standard for making HTTP requests in Python. It is incredibly user-friendly.\n\n## Installation\n```bash\npip install requests\n```\n\n## Making a GET Request\n```python_not\nimport requests\n\n# Fetch data from a URL\nresponse = requests.get('https://api.github.com')\n\n# Did it succeed?\nprint(response.status_code) # 200 means OK!\n```"
+        },
+        {
+            "id": "http_4",
+            "type": "content",
+            "title": "HTTP Status Codes",
+            "content": "# Status Codes \ud83d\udea6\n\nEvery HTTP response comes with a 3-digit status code telling you what happened.\n\n- **1xx (Informational):** Request received.\n- **2xx (Success):** Action successfully received, understood, and accepted. (e.g., **200 OK**, 201 Created).\n- **3xx (Redirection):** Further action must be taken to complete the request. (e.g., **301 Moved Permanently**).\n- **4xx (Client Error):** The request contains bad syntax or cannot be fulfilled. (e.g., **404 Not Found**, **401 Unauthorized**, **403 Forbidden**).\n- **5xx (Server Error):** The server failed to fulfill a valid request. (e.g., **500 Internal Server Error**)."
+        },
+        {
+            "id": "http_5",
+            "type": "content",
+            "title": "Inspecting the Response",
+            "content": "# Reading the Data \ud83d\udcd6\n\nOnce you have a `response` object, how do you read the data?\n\n```python_not\nimport requests\nresponse = requests.get('https://api.github.com')\n\n# To get the raw text (HTML string)\nprint(response.text)\n\n# To get the raw bytes (useful for downloading images/files)\nprint(response.content)\n\n# If the server returns JSON, requests can parse it directly into a Python Dictionary!\ndata = response.json()\nprint(data['current_user_url'])\n```"
+        },
+        {
+            "id": "http_quiz_1",
+            "type": "quiz",
+            "title": "Knowledge Check: Methods",
+            "content": "Test your HTTP knowledge.",
+            "quizQuestion": "Which HTTP method is primarily used for submitting form data to create a new resource on a server?",
+            "quizOptions": [
+                "GET",
+                "POST",
+                "UPDATE",
+                "FETCH"
+            ],
+            "correctOptionIndex": 1
+        },
+        {
+            "id": "http_6",
+            "type": "content",
+            "title": "Query Parameters",
+            "content": "# Query Parameters \ud83d\udd0d\n\nOften, you need to send data in the URL itself (e.g., `https://example.com/search?q=python&page=2`).\n\nInstead of concatenating strings, `requests` lets you pass a dictionary!\n\n```python_not\npayload = {'q': 'python', 'page': 2}\nresponse = requests.get('https://example.com/search', params=payload)\n\n# Check the URL that was actually constructed\nprint(response.url)\n```\nThis handles URL encoding (converting spaces to `%20`) automatically."
+        },
+        {
+            "id": "http_7",
+            "type": "content",
+            "title": "HTTP Headers",
+            "content": "# HTTP Headers \ud83c\udfa9\n\nHeaders are hidden key-value pairs sent with every request and response. They contain metadata about the browser, the data format, authorization, etc.\n\n## The User-Agent\nThe most important header for scraping is the `User-Agent`. It tells the server what browser you are using.\nBy default, Python's requests library sends `python-requests/2.x.x`.\n\n**Many servers block default Python requests!** You must fake it:\n\n```python_not\nheaders = {\n    'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36'\n}\nresponse = requests.get('https://example.com', headers=headers)\n```"
+        },
+        {
+            "id": "http_8",
+            "type": "content",
+            "title": "POST Requests and Forms",
+            "content": "# Submitting Forms \ud83d\udcdd\n\nTo simulate a user submitting a form (like a login), you make a POST request and pass a `data` dictionary.\n\n```python_not\nlogin_data = {\n    'username': 'my_user',\n    'password': 'secret_password'\n}\n\nresponse = requests.post('https://example.com/login', data=login_data)\n\nif \"Welcome back\" in response.text:\n    print(\"Login successful!\")\n```"
+        },
+        {
+            "id": "http_9",
+            "type": "content",
+            "title": "Cookies",
+            "content": "# Cookies \ud83c\udf6a\n\nHTTP is a *stateless* protocol. Every request is completely independent. \nHow does a website remember you are logged in when you click a new page? **Cookies.**\n\nCookies are small pieces of data the server sends in the response, which your browser saves and sends back on subsequent requests.\n\n```python_not\n# Reading cookies from a response\nresponse = requests.get('https://google.com')\nprint(response.cookies['1P_JAR'])\n\n# Sending cookies with a request\nmy_cookies = {'session_id': 'xyz123'}\nrequests.get('https://example.com/dashboard', cookies=my_cookies)\n```"
+        },
+        {
+            "id": "http_10",
+            "type": "content",
+            "title": "Sessions",
+            "content": "# Session Objects \ud83d\uded2\n\nManually passing cookies back and forth is annoying. \nA `Session` object does this for you automatically! It persists cookies across all requests made from the Session instance.\n\n```python_not\nsession = requests.Session()\n\n# 1. Log in (Server sends a session cookie)\nsession.post('https://example.com/login', data={'user': 'me', 'pass': '123'})\n\n# 2. Visit a protected page (Session automatically sends the cookie!)\nresponse = session.get('https://example.com/protected_dashboard')\nprint(response.text)\n```\nThis is essential for scraping websites behind a login wall!"
+        },
+        {
+            "id": "http_quiz_2",
+            "type": "quiz",
+            "title": "Knowledge Check: State Management",
+            "content": "Test your understanding of HTTP state.",
+            "quizQuestion": "Why is a requests.Session() object highly recommended when scraping multiple pages from the same website?",
+            "quizOptions": [
+                "It automatically creates a PostgreSQL database.",
+                "It automatically persists cookies (like login tokens) across multiple requests.",
+                "It parses HTML into a BeautifulSoup object.",
+                "It bypasses all CAPTCHAs."
+            ],
+            "correctOptionIndex": 1
+        },
+        {
+            "id": "http_11",
+            "type": "content",
+            "title": "Authentication (OAuth & Tokens)",
+            "content": "# API Authentication \ud83d\udd10\n\nMany APIs require authentication. Instead of a username/password form, they use tokens.\n\n## Bearer Tokens\nA common pattern is sending a token in the `Authorization` header.\n\n```python_not\nheaders = {\n    'Authorization': 'Bearer YOUR_SECRET_API_TOKEN'\n}\nresponse = requests.get('https://api.example.com/v1/data', headers=headers)\n```\n\n## Basic Auth\nSome older APIs use HTTP Basic Auth. `requests` has a built-in parameter for this:\n```python_not\nfrom requests.auth import HTTPBasicAuth\nresponse = requests.get('https://api.example.com', auth=HTTPBasicAuth('user', 'pass'))\n```"
+        },
+        {
+            "id": "http_12",
+            "type": "content",
+            "title": "Pagination",
+            "content": "# Handling Pagination \ud83d\udcda\n\nAPIs rarely return all their data at once. They return it in \"pages\" to save bandwidth.\nTo get all data, you must write a loop.\n\n```python_not\nall_data = []\npage = 1\n\nwhile True:\n    response = requests.get(f'https://api.example.com/items?page={page}')\n    data = response.json()\n    \n    if not data['items']: \n        break # We hit an empty page, stop looping!\n        \n    all_data.extend(data['items'])\n    page += 1\n\nprint(f\"Fetched {len(all_data)} total items.\")\n```"
+        },
+        {
+            "id": "http_13",
+            "type": "content",
+            "title": "Rate Limiting",
+            "content": "# Rate Limiting & Throttling \ud83d\uded1\n\nIf you make 1000 requests per second, a server might think you are a DDoS attack and ban your IP address.\nAPIs enforce **Rate Limits** (e.g., 60 requests per minute).\n\nIf you exceed it, the server usually returns a **429 Too Many Requests** status code.\n\n## Be Polite!\nAlways respect rate limits and `time.sleep()` in your scraping loops.\n```python_not\nimport time\nimport requests\n\nfor url in list_of_urls:\n    response = requests.get(url)\n    # ... process data ...\n    time.sleep(1) # Wait 1 second before the next request\n```"
+        },
+        {
+            "id": "http_14",
+            "type": "content",
+            "title": "Handling Exceptions",
+            "content": "# Defensive Scraping \ud83d\udee1\ufe0f\n\nNetworks are unreliable. Servers crash. APIs change. Your code must handle exceptions.\n\n```python_not\ntry:\n    # timeout=5 ensures the request gives up after 5 seconds of hanging\n    response = requests.get('https://example.com', timeout=5)\n    \n    # Raises an exception if status code is 4xx or 5xx\n    response.raise_for_status() \n    \nexcept requests.exceptions.HTTPError as errh:\n    print (\"HTTP Error:\",errh)\nexcept requests.exceptions.ConnectionError as errc:\n    print (\"Error Connecting:\",errc)\nexcept requests.exceptions.Timeout as errt:\n    print (\"Timeout Error:\",errt)\n```"
+        },
+        {
+            "id": "http_quiz_3",
+            "type": "quiz",
+            "title": "Knowledge Check: Rate Limits",
+            "content": "Test your web scraping etiquette.",
+            "quizQuestion": "Which HTTP status code is commonly returned when you exceed a server's rate limit?",
+            "quizOptions": [
+                "200 OK",
+                "404 Not Found",
+                "429 Too Many Requests",
+                "500 Internal Server Error"
+            ],
+            "correctOptionIndex": 2
+        },
+        {
+            "id": "http_15",
+            "type": "content",
+            "title": "Summary",
+            "content": "# Summary \ud83c\udf89\n\nYou are now ready to communicate with the World Wide Web using Python!\n\n## Key Takeaways\n- \u2705 **HTTP Methods:** Use GET to fetch data, and POST to submit data.\n- \u2705 **Status Codes:** 200 is good, 404 is missing, 500 is a server crash, 429 is rate-limited.\n- \u2705 **Requests Library:** Python's best tool for making HTTP requests.\n- \u2705 **Headers:** Use the `User-Agent` header to disguise your script as a real browser to prevent getting blocked.\n- \u2705 **Sessions:** Use `requests.Session()` to automatically save and send cookies across requests (crucial for logins).\n- \u2705 **Pagination & Rate Limits:** Always use loops to fetch multi-page data, and `time.sleep()` to avoid getting banned."
+        }
+    ]
+}

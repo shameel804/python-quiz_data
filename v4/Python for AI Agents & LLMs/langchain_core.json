@@ -1,0 +1,5744 @@
+[
+    {
+        "q": "Which class is used to interact with OpenAI's chat models in LangChain?",
+        "type": "mcq",
+        "o": [
+            "ChatOpenAI",
+            "OpenAI",
+            "ChatGPT",
+            "OpenAIChat"
+        ]
+    },
+    {
+        "q": "What is the primary purpose of a PromptTemplate in LangChain?",
+        "type": "mcq",
+        "o": [
+            "To create structured prompts with dynamic variables",
+            "To store conversation history",
+            "To parse model outputs",
+            "To connect to external APIs"
+        ]
+    },
+    {
+        "q": "The ______ class is used to create simple sequential chains in LangChain.",
+        "type": "fill_blank",
+        "answers": [
+            "LLMChain"
+        ],
+        "other_options": [
+            "Chain",
+            "RouterChain",
+            "SimpleChain"
+        ]
+    },
+    {
+        "q": "LangChain is a framework designed exclusively for Python developers.",
+        "type": "true_false",
+        "correct": "False"
+    },
+    {
+        "q": "What does the StrOutputParser do in LangChain?",
+        "type": "mcq",
+        "o": [
+            "Converts model output to a plain string",
+            "Parses JSON from the model output",
+            "Splits strings into tokens",
+            "Formats strings for input"
+        ]
+    },
+    {
+        "q": "Match the LangChain component with its function:",
+        "type": "match",
+        "left": [
+            "ChatOpenAI",
+            "PromptTemplate",
+            "StrOutputParser",
+            "LLMChain"
+        ],
+        "right": [
+            "Interface to OpenAI chat models",
+            "Creates dynamic prompts from templates",
+            "Converts output to string format",
+            "Combines a prompt and model into a chain"
+        ]
+    },
+    {
+        "q": "Which method is used to invoke a LangChain chain with input data?",
+        "type": "mcq",
+        "o": [
+            "invoke()",
+            "run()",
+            "execute()",
+            "call()"
+        ]
+    },
+    {
+        "q": "What is a RunnableSequence in LangChain?",
+        "type": "mcq",
+        "o": [
+            "A chain of runnable components executed in order",
+            "A type of memory buffer",
+            "A data parser utility",
+            "An error handling mechanism"
+        ]
+    },
+    {
+        "q": "Name the LangChain module that provides interfaces for language models.",
+        "type": "short_answer",
+        "answers": [
+            "langchain.llms",
+            "langchain_community.llms",
+            "langchain.chat_models"
+        ],
+        "isCaseSensitive": true
+    },
+    {
+        "q": "Which of the following is NOT a type of memory in LangChain?",
+        "type": "mcq",
+        "o": [
+            "ConversationBufferMemory",
+            "ConversationSummaryMemory",
+            "ConversationTokenMemory",
+            "ConversationBufferWindowMemory"
+        ]
+    },
+    {
+        "q": "In LangChain, the `temperature` parameter controls the ______ of the model's responses.",
+        "type": "fill_blank",
+        "answers": [
+            "randomness"
+        ],
+        "other_options": [
+            "speed",
+            "length",
+            "accuracy"
+        ]
+    },
+    {
+        "q": "In what year was the first version of LangChain released?",
+        "type": "slider",
+        "min": 2020,
+        "max": 2025,
+        "correct": 2022
+    },
+    {
+        "q": "LangChain requires a paid API key from OpenAI to function.",
+        "type": "true_false",
+        "correct": "False"
+    },
+    {
+        "q": "Match the LangChain core component with its primary role.",
+        "type": "memory",
+        "pairs": {
+            "PromptTemplate": "String templating and variable injection",
+            "ChatModel": "Message-based LLM interactions",
+            "StrOutputParser": "String extraction from model outputs"
+        }
+    },
+    {
+        "q": "What does the `model_name` parameter specify when using ChatOpenAI?",
+        "type": "mcq",
+        "o": [
+            "The specific OpenAI model to use, like gpt-3.5-turbo",
+            "The name of your application",
+            "The file path for the model",
+            "The training dataset name"
+        ]
+    },
+    {
+        "q": "How do you define a variable in a PromptTemplate?",
+        "type": "mcq",
+        "o": [
+            "Using curly braces {variable_name}",
+            "Using square brackets [variable_name]",
+            "Using dollar signs $variable_name",
+            "Using angle brackets <variable_name>"
+        ]
+    },
+    {
+        "q": "Which of these is NOT a standard method of the LCEL Runnable interface?",
+        "c": "chain = prompt | model\n# Which method below is invalid?\nchain.run_fast({'input': 'hello'})",
+        "type": "odd_one_out",
+        "options": [
+            "invoke",
+            "batch",
+            "stream",
+            "run_fast"
+        ],
+        "correct": "run_fast"
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "from langchain.chains import LLMChain\nfrom langchain.prompts import PromptTemplate\nfrom langchain.chat_models import ChatOpenAI\n\nprompt = PromptTemplate.from_template(\"Say hello to {name}\")\nprint(type(prompt))",
+        "o": [
+            "<class 'langchain_core.prompts.PromptTemplate'>",
+            "<class 'str'>",
+            "<class 'dict'>",
+            "<class 'function'>"
+        ]
+    },
+    {
+        "q": "What is the primary advantage of using ConversationBufferMemory?",
+        "type": "mcq",
+        "o": [
+            "It stores the complete conversation history for context",
+            "It reduces API costs by summarizing",
+            "It only keeps recent messages",
+            "It encrypts the conversation"
+        ]
+    },
+    {
+        "q": "The pipe operator `|` is used in LangChain to create ______.",
+        "type": "fill_blank",
+        "answers": [
+            "RunnableSequence",
+            "chains"
+        ],
+        "other_options": [
+            "prompts",
+            "parsers",
+            "memories"
+        ]
+    },
+    {
+        "q": "Swipe RIGHT for modern LCEL, LEFT for Legacy LangChain approaches.",
+        "type": "swipe_cards",
+        "left_label": "Legacy",
+        "right_label": "LCEL",
+        "cards": {
+            "LLMChain": "left",
+            "Pipe Operator (|)": "right",
+            "SimpleSequentialChain": "left",
+            "RunnableSequence": "right"
+        }
+    },
+    {
+        "q": "In LangChain, you can only use OpenAI models.",
+        "type": "true_false",
+        "correct": "False"
+    },
+    {
+        "q": "Which method format does a PromptTemplate use to fill in variables?",
+        "type": "mcq",
+        "o": [
+            "format()",
+            "fill()",
+            "render()",
+            "populate()"
+        ]
+    },
+    {
+        "q": "What is the main purpose of memory in LangChain chains?",
+        "type": "mcq",
+        "o": [
+            "To maintain context across multiple interactions",
+            "To store API keys securely",
+            "To cache model responses",
+            "To log debug information"
+        ]
+    },
+    {
+        "q": "What is the English word for the '|' operator used to compose Runnables in LCEL?",
+        "type": "word_scramble",
+        "answer": "PIPE",
+        "decoys": "XQZ"
+    },
+    {
+        "q": "Name the decorator used to turn a Python function into a LangChain tool.",
+        "type": "short_answer",
+        "answers": [
+            "@tool"
+        ],
+        "isCaseSensitive": true
+    },
+    {
+        "q": "Match the memory type with its description:",
+        "type": "match",
+        "left": [
+            "ConversationBufferMemory",
+            "ConversationBufferWindowMemory",
+            "ConversationSummaryMemory",
+            "ConversationSummaryBufferMemory"
+        ],
+        "right": [
+            "Stores all messages in full",
+            "Keeps only the last K messages",
+            "Creates a summary of the conversation",
+            "Combines summary and recent messages"
+        ]
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "from langchain.chat_models import ChatOpenAI\n\nllm = ChatOpenAI(model_name=\"gpt-3.5-turbo\", temperature=0.7)\nprint(type(llm))",
+        "o": [
+            "<class 'langchain.chat_models.openai.ChatOpenAI'>",
+            "<class 'openai.ChatCompletion'>",
+            "<class 'str'>",
+            "<class 'dict'>"
+        ]
+    },
+    {
+        "q": "Which parameter limits the number of tokens in the model's response?",
+        "type": "mcq",
+        "o": [
+            "max_tokens",
+            "temperature",
+            "top_p",
+            "frequency_penalty"
+        ]
+    },
+    {
+        "q": "A PromptTemplate can include multiple ______ that are replaced at runtime.",
+        "type": "fill_blank",
+        "answers": [
+            "input variables",
+            "variables"
+        ],
+        "other_options": [
+            "functions",
+            "classes",
+            "constants"
+        ]
+    },
+    {
+        "q": "Complete the basic LCEL syntax for a simple QA chain:",
+        "c": "chain = prompt | llm | parser",
+        "type": "inline_dropdown",
+        "text": "In LCEL, you build a chain using the [0] operator, typically ordering it as prompt, then [1], then parser.",
+        "dropdowns": [
+            {
+                "correct": "pipe (|)",
+                "options": [
+                    "plus (+)",
+                    "pipe (|)",
+                    "arrow (->)"
+                ]
+            },
+            {
+                "correct": "llm",
+                "options": [
+                    "llm",
+                    "memory",
+                    "agent"
+                ]
+            }
+        ]
+    },
+    {
+        "q": "LangChain's Expression Language (LCEL) uses the `&` operator for parallel execution.",
+        "type": "true_false",
+        "correct": "False"
+    },
+    {
+        "q": "What does the `from_template` method of PromptTemplate do?",
+        "type": "mcq",
+        "o": [
+            "Creates a PromptTemplate from a string with variables",
+            "Loads a template from an external file",
+            "Converts a template to JSON",
+            "Compiles a template into bytecode"
+        ]
+    },
+    {
+        "q": "How can you print the formatted output of a PromptTemplate?",
+        "type": "mcq",
+        "o": [
+            "By calling prompt.format(variable=value)",
+            "By calling prompt.print()",
+            "By calling prompt.display()",
+            "By printing the prompt object directly"
+        ]
+    },
+    {
+        "q": "Which LangChain component converts a string to a message object?",
+        "type": "mcq",
+        "o": [
+            "HumanMessage",
+            "StringParser",
+            "MessageFormatter",
+            "TextConverter"
+        ]
+    },
+    {
+        "q": "Name the method used to create a ChatOpenAI instance with a specific model.",
+        "type": "short_answer",
+        "answers": [
+            "ChatOpenAI",
+            "ChatOpenAI()"
+        ],
+        "isCaseSensitive": true
+    },
+    {
+        "q": "What is the default temperature value when not specified in ChatOpenAI?",
+        "type": "mcq",
+        "o": [
+            "0.7",
+            "0.0",
+            "1.0",
+            "0.5"
+        ]
+    },
+    {
+        "q": "The `return_messages` flag in ConversationBufferMemory determines whether to return ______ objects.",
+        "type": "fill_blank",
+        "answers": [
+            "message"
+        ],
+        "other_options": [
+            "string",
+            "dict",
+            "JSON"
+        ]
+    },
+    {
+        "q": "LLMChain requires an LLM and a prompt to function.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "What is the default number of max_retries for ChatOpenAI in LangChain?",
+        "c": "llm = ChatOpenAI(model='gpt-4')\n# llm.max_retries = ?",
+        "type": "slider",
+        "min": 0,
+        "max": 5,
+        "correct": 2
+    },
+    {
+        "q": "Match the core LangChain message types to their definitions.",
+        "type": "memory",
+        "pairs": {
+            "SystemMessage": "Instructions defining model behavior",
+            "HumanMessage": "Input provided by the user",
+            "AIMessage": "Output generated by the model",
+            "ToolMessage": "Result returned from a function call"
+        }
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "from langchain.prompts import PromptTemplate\n\nprompt = PromptTemplate.from_template(\"My name is {name} and I am {age} years old\")\nresult = prompt.format(name=\"Alice\", age=\"25\")\nprint(result)",
+        "o": [
+            "My name is Alice and I am 25 years old",
+            "My name is {name} and I am {age} years old",
+            "Alice 25",
+            "Error: missing variables"
+        ]
+    },
+    {
+        "q": "Which of the following is NOT a standard message role in LangChain?",
+        "type": "odd_one_out",
+        "options": [
+            "HumanMessage",
+            "AIMessage",
+            "SystemMessage",
+            "DatabaseMessage"
+        ],
+        "correct": "DatabaseMessage"
+    },
+    {
+        "q": "Swipe RIGHT for ChatModel, LEFT for BaseLLM characteristics.",
+        "type": "swipe_cards",
+        "left_label": "BaseLLM",
+        "right_label": "ChatModel",
+        "cards": {
+            "Takes a list of messages as input": "right",
+            "Takes a plain string as input": "left",
+            "Returns an AIMessage object": "right",
+            "Returns a plain string": "left"
+        }
+    },
+    {
+        "q": "Which method sends a prompt to an LLM and returns a response in LCEL?",
+        "type": "mcq",
+        "o": [
+            "invoke",
+            "predict",
+            "generate",
+            "complete"
+        ]
+    },
+    {
+        "q": "What is the primary benefit of using RunnableSequence?",
+        "type": "mcq",
+        "o": [
+            "It allows chaining components in a declarative way",
+            "It improves model accuracy",
+            "It reduces memory usage",
+            "It encrypts data in transit"
+        ]
+    },
+    {
+        "q": "Match the LangChain class with its purpose:",
+        "type": "match",
+        "left": [
+            "ChatPromptTemplate",
+            "MessagesPlaceholder",
+            "SystemMessage",
+            "AIMessage"
+        ],
+        "right": [
+            "Template for chat-specific prompts",
+            "Placeholder for message history",
+            "Message from the system to set context",
+            "Message representing AI's response"
+        ]
+    },
+    {
+        "q": "What does ConversationBufferWindowMemory do differently from ConversationBufferMemory?",
+        "type": "mcq",
+        "o": [
+            "It only keeps a specified number of recent messages",
+            "It stores messages in a database",
+            "It compresses messages for efficiency",
+            "It deletes old messages permanently"
+        ]
+    },
+    {
+        "q": "Which parameter in ChatOpenAI controls response diversity via nucleus sampling?",
+        "type": "mcq",
+        "o": [
+            "top_p",
+            "temperature",
+            "n",
+            "stop"
+        ]
+    },
+    {
+        "q": "Name the LangChain class used to parse list outputs from an LLM.",
+        "type": "short_answer",
+        "answers": [
+            "CommaSeparatedListOutputParser",
+            "ListOutputParser"
+        ],
+        "isCaseSensitive": true
+    },
+    {
+        "q": "Which core method is called to execute a chain synchronously with a single input?",
+        "type": "word_scramble",
+        "answer": "INVOKE",
+        "decoys": "WQR"
+    },
+    {
+        "q": "Complete the sentence regarding Chat Models:",
+        "type": "inline_dropdown",
+        "text": "Modern conversational agents use [0] which accept a list of [1] and return an AIMessage.",
+        "dropdowns": [
+            {
+                "correct": "Chat Models",
+                "options": [
+                    "Chat Models",
+                    "Text LLMs",
+                    "Embedding Models"
+                ]
+            },
+            {
+                "correct": "BaseMessage objects",
+                "options": [
+                    "Strings",
+                    "BaseMessage objects",
+                    "Dictionaries"
+                ]
+            }
+        ]
+    },
+    {
+        "q": "The ______ operator in LCEL chains two runnables together sequentially.",
+        "type": "fill_blank",
+        "answers": [
+            "pipe",
+            "|"
+        ],
+        "other_options": [
+            "plus",
+            "ampersand",
+            "dollar"
+        ]
+    },
+    {
+        "q": "If a PromptTemplate is defined with 3 input variables, how many must you provide when invoking it?",
+        "c": "prompt = PromptTemplate.from_template('{a} + {b} + {c}')\n# prompt.invoke(...) requires how many inputs?",
+        "type": "slider",
+        "min": 1,
+        "max": 5,
+        "correct": 3
+    },
+    {
+        "q": "A PromptTemplate can only contain a single variable.",
+        "type": "true_false",
+        "correct": "False"
+    },
+    {
+        "q": "What is the purpose of the `verbose` flag in LangChain chains?",
+        "type": "mcq",
+        "o": [
+            "To print detailed execution logs",
+            "To increase model response length",
+            "To enable faster processing",
+            "To compress the output"
+        ]
+    },
+    {
+        "q": "Which of these correctly defines a conversation summarization memory?",
+        "type": "mcq",
+        "o": [
+            "ConversationSummaryMemory(llm=llm)",
+            "ConversationMemory(mode='summary')",
+            "SummaryBuffer()",
+            "MemorySummarizer()"
+        ]
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "from langchain.chains import LLMChain\n\nchain = LLMChain(llm=None, prompt=None)\nprint(chain.llm)",
+        "o": [
+            "None",
+            "Error",
+            "ChatOpenAI()",
+            "Empty string"
+        ]
+    },
+    {
+        "q": "How does LangChain handle OpenAI API keys by default?",
+        "type": "mcq",
+        "o": [
+            "It reads the OPENAI_API_KEY environment variable",
+            "It requires manual input each time",
+            "It uses a built-in public key",
+            "It stores the key in a config file"
+        ]
+    },
+    {
+        "q": "The `input_variables` attribute of a PromptTemplate is a list of variable ______.",
+        "type": "fill_blank",
+        "answers": [
+            "names"
+        ],
+        "other_options": [
+            "values",
+            "types",
+            "objects"
+        ]
+    },
+    {
+        "q": "StrOutputParser is only used for parsing JSON outputs.",
+        "type": "true_false",
+        "correct": "False"
+    },
+    {
+        "q": "What does the `model_kwargs` parameter allow you to do in ChatOpenAI?",
+        "type": "mcq",
+        "o": [
+            "Pass additional parameters to the underlying OpenAI API",
+            "Change the model's architecture",
+            "Modify the model's training data",
+            "Set the response language"
+        ]
+    },
+    {
+        "q": "Match the Prompt components with their definitions.",
+        "type": "memory",
+        "pairs": {
+            "Input Variables": "Data provided strictly at runtime",
+            "Partial Variables": "Data bound or pre-filled before execution",
+            "Template String": "The raw text string containing curly brace placeholders"
+        }
+    },
+    {
+        "q": "Which memory type provides a sliding window of conversation history?",
+        "type": "mcq",
+        "o": [
+            "ConversationBufferWindowMemory",
+            "ConversationBufferMemory",
+            "ConversationSummaryMemory",
+            "ConversationEntityMemory"
+        ]
+    },
+    {
+        "q": "Name the LangChain class that represents a prompt with a system and user message.",
+        "type": "short_answer",
+        "answers": [
+            "ChatPromptTemplate"
+        ],
+        "isCaseSensitive": true
+    },
+    {
+        "q": "Which of these is NOT a valid method to interact with or format a PromptTemplate?",
+        "type": "odd_one_out",
+        "options": [
+            "format",
+            "invoke",
+            "format_prompt",
+            "compile_string"
+        ],
+        "correct": "compile_string"
+    },
+    {
+        "q": "What is the main difference between ChatOpenAI and OpenAI classes?",
+        "type": "mcq",
+        "o": [
+            "ChatOpenAI uses chat model endpoints, OpenAI uses completion endpoints",
+            "ChatOpenAI is faster",
+            "ChatOpenAI supports more languages",
+            "ChatOpenAI is open source"
+        ]
+    },
+    {
+        "q": "Match the LCEL operator with its behavior:",
+        "type": "match",
+        "left": [
+            "Pipe (|)",
+            "RunnablePassthrough",
+            "RunnableParallel",
+            "RunnableLambda"
+        ],
+        "right": [
+            "Chains components sequentially",
+            "Passes input through unchanged",
+            "Runs multiple runnables concurrently",
+            "Wraps a Python function as a runnable"
+        ]
+    },
+    {
+        "q": "What does `verbose=True` show when executing an LLMChain?",
+        "type": "mcq",
+        "o": [
+            "The prompt text, model response, and execution steps",
+            "Only the final output",
+            "A progress bar",
+            "Memory usage statistics"
+        ]
+    },
+    {
+        "q": "Swipe RIGHT for ChatPromptTemplate components, LEFT for standard PromptTemplate.",
+        "type": "swipe_cards",
+        "left_label": "PromptTemplate",
+        "right_label": "ChatPromptTemplate",
+        "cards": {
+            "MessagesPlaceholder": "right",
+            "SystemMessagePromptTemplate": "right",
+            "Single string with {vars}": "left"
+        }
+    },
+    {
+        "q": "Which method loads a PromptTemplate from a YAML file?",
+        "type": "mcq",
+        "o": [
+            "load_prompt()",
+            "from_yaml()",
+            "read_prompt()",
+            "import_yaml()"
+        ]
+    },
+    {
+        "q": "The `output_key` parameter in LLMChain specifies the key to store the ______.",
+        "type": "fill_blank",
+        "answers": [
+            "output",
+            "response"
+        ],
+        "other_options": [
+            "input",
+            "prompt",
+            "memory"
+        ]
+    },
+    {
+        "q": "LangChain automatically batches multiple API calls for efficiency.",
+        "type": "true_false",
+        "correct": "False"
+    },
+    {
+        "q": "What is the purpose of the `stop` parameter in ChatOpenAI?",
+        "type": "mcq",
+        "o": [
+            "To specify sequences where the model should stop generating text",
+            "To halt the chain execution",
+            "To limit the number of API calls",
+            "To terminate the program"
+        ]
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "from langchain_core.output_parsers import StrOutputParser\n\nparser = StrOutputParser()\nresult = parser.invoke(\"Hello World\")\nprint(type(result))",
+        "o": [
+            "<class 'str'>",
+            "<class 'dict'>",
+            "<class 'list'>",
+            "<class 'int'>"
+        ]
+    },
+    {
+        "q": "Which memory type uses an LLM to condense the conversation history?",
+        "type": "mcq",
+        "o": [
+            "ConversationSummaryMemory",
+            "ConversationBufferMemory",
+            "ConversationBufferWindowMemory",
+            "ReadOnlyMemory"
+        ]
+    },
+    {
+        "q": "How do you access the response from an LLMChain invocation?",
+        "type": "mcq",
+        "o": [
+            "Via the output key specified in the chain",
+            "By calling chain.response",
+            "By printing the chain",
+            "By using chain.answer()"
+        ]
+    },
+    {
+        "q": "Name the LangChain method used to create a RunnableSequence from components.",
+        "type": "short_answer",
+        "answers": [
+            "RunnableSequence",
+            "__or__",
+            "pipe"
+        ],
+        "isCaseSensitive": false
+    },
+    {
+        "q": "The `max_token_limit` parameter in ConversationSummaryBufferMemory sets the maximum ______.",
+        "type": "fill_blank",
+        "answers": [
+            "number of tokens"
+        ],
+        "other_options": [
+            "messages",
+            "characters",
+            "time"
+        ]
+    },
+    {
+        "q": "What is the role of the `human_prefix` parameter in conversation memory?",
+        "type": "mcq",
+        "o": [
+            "It sets the label for human messages in the conversation",
+            "It defines the AI's response format",
+            "It specifies the user's language",
+            "It changes the API endpoint"
+        ]
+    },
+    {
+        "q": "You must always set an explicit temperature value when using ChatOpenAI.",
+        "type": "true_false",
+        "correct": "False"
+    },
+    {
+        "q": "Which of the following is a valid way to create a PromptTemplate?",
+        "type": "mcq",
+        "o": [
+            "PromptTemplate.from_template(\"Hello {name}\")",
+            "PromptTemplate(template=\"Hello {name}\")",
+            "PromptTemplate.new(\"Hello {name}\")",
+            "PromptTemplate.create(\"Hello {name}\")"
+        ]
+    },
+    {
+        "q": "What does `k` represent in ConversationBufferWindowMemory?",
+        "type": "mcq",
+        "o": [
+            "The number of recent message pairs to keep",
+            "The API key length",
+            "The thousand tokens limit",
+            "The knowledge base size"
+        ]
+    },
+    {
+        "q": "Match the parsing class with the output format it handles:",
+        "type": "match",
+        "left": [
+            "StrOutputParser",
+            "JsonOutputParser",
+            "PydanticOutputParser",
+            "CommaSeparatedListOutputParser"
+        ],
+        "right": [
+            "Plain text string",
+            "JSON objects",
+            "Pydantic model instances",
+            "Comma-separated list"
+        ]
+    },
+    {
+        "q": "What is the function of `RunnablePassthrough` in LCEL?",
+        "type": "mcq",
+        "o": [
+            "To pass input data through without modification",
+            "To block data from passing",
+            "To encrypt data in transit",
+            "To convert data types"
+        ]
+    },
+    {
+        "q": "What legacy method replaces variables in a PromptTemplate and returns a raw string?",
+        "type": "word_scramble",
+        "answer": "FORMAT",
+        "decoys": "PZ"
+    },
+    {
+        "q": "How can you add metadata to a LangChain message?",
+        "type": "mcq",
+        "o": [
+            "By using the additional_kwargs parameter",
+            "By modifying the message class",
+            "By using a decorator",
+            "By adding a comment"
+        ]
+    },
+    {
+        "q": "Name the LangChain class used specifically for chat model interactions.",
+        "type": "short_answer",
+        "answers": [
+            "ChatOpenAI",
+            "ChatModel"
+        ],
+        "isCaseSensitive": true
+    },
+    {
+        "q": "The `validate_template` parameter in PromptTemplate checks for ______.",
+        "type": "fill_blank",
+        "answers": [
+            "valid syntax"
+        ],
+        "other_options": [
+            "API keys",
+            "variable types",
+            "output format"
+        ]
+    },
+    {
+        "q": "What does the `ai_prefix` parameter control in conversation memory?",
+        "type": "mcq",
+        "o": [
+            "The label used for AI messages in the stored history",
+            "The AI model's name",
+            "The response language",
+            "The token prefix"
+        ]
+    },
+    {
+        "q": "Complete the snippet for creating a simple prompt template:",
+        "c": "prompt = PromptTemplate.from_template('Tell me a joke about {topic}')",
+        "type": "inline_dropdown",
+        "text": "To create a prompt from a single string, use PromptTemplate.[0], passing a string with variables enclosed in [1].",
+        "dropdowns": [
+            {
+                "correct": "from_template",
+                "options": [
+                    "from_string",
+                    "from_template",
+                    "create"
+                ]
+            },
+            {
+                "correct": "curly braces {}",
+                "options": [
+                    "square brackets []",
+                    "curly braces {}",
+                    "parentheses ()"
+                ]
+            }
+        ]
+    },
+    {
+        "q": "StrOutputParser modifies the content of the model's response.",
+        "type": "true_false",
+        "correct": "False"
+    },
+    {
+        "q": "How many abstract methods MUST be implemented when creating a custom subclass of BaseOutputParser?",
+        "c": "class MyParser(BaseOutputParser):\n    def parse(self, text: str):\n        return text.strip()",
+        "type": "slider",
+        "min": 1,
+        "max": 4,
+        "correct": 1
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "from langchain.prompts import PromptTemplate\n\ntemplate = \"Write a {tone} email about {topic}\"\nprompt = PromptTemplate.from_template(template)\nvars = prompt.input_variables\nprint(vars)",
+        "o": [
+            "['tone', 'topic']",
+            "['tone', 'topic', 'email']",
+            "[]",
+            "Error"
+        ]
+    },
+    {
+        "q": "Which method clears the stored conversation from a memory object?",
+        "type": "mcq",
+        "o": [
+            "clear()",
+            "reset()",
+            "flush()",
+            "delete()"
+        ]
+    },
+    {
+        "q": "What is the purpose of `partial_variables` in PromptTemplate?",
+        "type": "mcq",
+        "o": [
+            "To set some variable values that are filled in later",
+            "To remove variables from the template",
+            "To add extra spaces to variables",
+            "To hide variables from the user"
+        ]
+    },
+    {
+        "q": "The `streaming` parameter in ChatOpenAI enables ______ of response tokens.",
+        "type": "fill_blank",
+        "answers": [
+            "streaming",
+            "real-time generation"
+        ],
+        "other_options": [
+            "batching",
+            "caching",
+            "compression"
+        ]
+    },
+    {
+        "q": "Match the LangChain message type with its role:",
+        "type": "match",
+        "left": [
+            "SystemMessage",
+            "HumanMessage",
+            "AIMessage",
+            "FunctionMessage"
+        ],
+        "right": [
+            "Sets the assistant's behavior",
+            "Represents user input",
+            "Represents model response",
+            "Contains function call results"
+        ]
+    },
+    {
+        "q": "What does an LLMChain return by default?",
+        "type": "mcq",
+        "o": [
+            "A dictionary with the output key and response text",
+            "Only the response text as a string",
+            "A list of tokens",
+            "A JSON object"
+        ]
+    },
+    {
+        "q": "Which parameter in ChatOpenAI sets the number of response completions to generate?",
+        "type": "mcq",
+        "o": [
+            "n",
+            "best_of",
+            "num_responses",
+            "count"
+        ]
+    },
+    {
+        "q": "Match the Output Parser to its return type.",
+        "type": "memory",
+        "pairs": {
+            "StrOutputParser": "Returns plain text strings",
+            "PydanticOutputParser": "Returns a structured Python object",
+            "JsonOutputParser": "Returns a standard Python dictionary"
+        }
+    },
+    {
+        "q": "Which of the following is NOT a built-in LangChain output parser?",
+        "type": "odd_one_out",
+        "options": [
+            "StrOutputParser",
+            "JsonOutputParser",
+            "FloatMathOutputParser",
+            "PydanticOutputParser"
+        ],
+        "correct": "FloatMathOutputParser"
+    },
+    {
+        "q": "Name the function that converts a Python function into a runnable for LCEL.",
+        "type": "short_answer",
+        "answers": [
+            "RunnableLambda"
+        ],
+        "isCaseSensitive": true
+    },
+    {
+        "q": "You can combine multiple PromptTemplates in a single LLMChain.",
+        "type": "true_false",
+        "correct": "False"
+    },
+    {
+        "q": "What is the role of the `frequency_penalty` parameter?",
+        "type": "mcq",
+        "o": [
+            "To penalize repeated tokens in the model's output",
+            "To set the response frequency",
+            "To limit API call frequency",
+            "To adjust output speed"
+        ]
+    },
+    {
+        "q": "Swipe RIGHT for Structured object outputs, LEFT for Plain Text outputs.",
+        "type": "swipe_cards",
+        "left_label": "Plain Text",
+        "right_label": "Structured",
+        "cards": {
+            "PydanticOutputParser": "right",
+            "JsonOutputParser": "right",
+            "StrOutputParser": "left"
+        }
+    },
+    {
+        "q": "How does ConversationSummaryBufferMemory optimize memory usage?",
+        "type": "mcq",
+        "o": [
+            "By summarizing older messages while keeping recent ones full",
+            "By deleting all old messages",
+            "By compressing messages into binary",
+            "By storing messages on disk"
+        ]
+    },
+    {
+        "q": "The `openai_api_key` parameter in ChatOpenAI overrides the ______ variable.",
+        "type": "fill_blank",
+        "answers": [
+            "OPENAI_API_KEY",
+            "environment"
+        ],
+        "other_options": [
+            "API",
+            "config",
+            "session"
+        ]
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "from langchain_core.output_parsers import StrOutputParser\nfrom langchain_core.prompts import PromptTemplate\n\nparser = StrOutputParser()\nprint(hasattr(parser, 'invoke'))",
+        "o": [
+            "True",
+            "False",
+            "None",
+            "Error"
+        ]
+    },
+    {
+        "q": "Which memory type allows you to extract and remember entities from conversations?",
+        "type": "mcq",
+        "o": [
+            "ConversationEntityMemory",
+            "ConversationBufferMemory",
+            "ConversationSummaryMemory",
+            "ConversationKnowledgeMemory"
+        ]
+    },
+    {
+        "q": "What is the function of `ChatPromptTemplate.from_messages()`?",
+        "type": "mcq",
+        "o": [
+            "To create a chat prompt from a list of message templates",
+            "To extract messages from a chat log",
+            "To convert messages to strings",
+            "To send messages to an API"
+        ]
+    },
+    {
+        "q": "Name the LangChain module that provides standard output parsers.",
+        "type": "short_answer",
+        "answers": [
+            "langchain_core.output_parsers",
+            "output_parsers"
+        ],
+        "isCaseSensitive": true
+    },
+    {
+        "q": "The LCEL component that extracts desired information from the LLM's raw text response.",
+        "type": "word_scramble",
+        "answer": "PARSER",
+        "decoys": "XN"
+    },
+    {
+        "q": "Match the conversation memory method with its action:",
+        "type": "match",
+        "left": [
+            "load_memory_variables",
+            "save_context",
+            "clear",
+            "chat_memory"
+        ],
+        "right": [
+            "Loads stored memory into variables",
+            "Saves the context of an interaction",
+            "Empties the memory store",
+            "Accesses the underlying chat history"
+        ]
+    },
+    {
+        "q": "A RunnableSequence can only contain two components.",
+        "type": "true_false",
+        "correct": "False"
+    },
+    {
+        "q": "What does the `template_format` parameter in PromptTemplate specify?",
+        "type": "mcq",
+        "o": [
+            "The template syntax style like f-string or jinja2",
+            "The output format of the prompt",
+            "The file format of the template",
+            "The encoding type"
+        ]
+    },
+    {
+        "q": "How do you set up a Pydantic parser?",
+        "type": "inline_dropdown",
+        "text": "Pydantic parsers use a [0] class to generate JSON schema formatting instructions via the [1] method.",
+        "dropdowns": [
+            {
+                "correct": "BaseModel",
+                "options": [
+                    "BaseModel",
+                    "DataClass",
+                    "TypedDict"
+                ]
+            },
+            {
+                "correct": "get_format_instructions()",
+                "options": [
+                    "get_schema()",
+                    "get_format_instructions()",
+                    "to_json()"
+                ]
+            }
+        ]
+    },
+    {
+        "q": "Which method is used to stream tokens from a ChatOpenAI model as they are generated?",
+        "type": "mcq",
+        "o": [
+            "stream()",
+            "generate()",
+            "invoke()",
+            "predict()"
+        ]
+    },
+    {
+        "q": "What is the purpose of using `MessagesPlaceholder` in a ChatPromptTemplate?",
+        "type": "mcq",
+        "o": [
+            "To insert conversation history dynamically at a specific position",
+            "To hold static system messages",
+            "To format output strings",
+            "To validate message types"
+        ]
+    },
+    {
+        "q": "The ______ method of a runnable is used for asynchronous invocation.",
+        "type": "fill_blank",
+        "answers": [
+            "ainvoke"
+        ],
+        "other_options": [
+            "async_invoke",
+            "call_async",
+            "invoke_async"
+        ]
+    },
+    {
+        "q": "ConversationSummaryBufferMemory always keeps the full conversation history in memory.",
+        "type": "true_false",
+        "correct": "False"
+    },
+    {
+        "q": "How do you bind tool functions to a ChatOpenAI model in LangChain?",
+        "type": "mcq",
+        "o": [
+            "Using the .bind_tools() method",
+            "By setting the tools parameter in the constructor",
+            "By using a ToolChain wrapper",
+            "By importing tools directly into the prompt"
+        ]
+    },
+    {
+        "q": "What is the primary use of `RunnableParallel` in LCEL?",
+        "type": "mcq",
+        "o": [
+            "To execute multiple runnables concurrently and merge their outputs",
+            "To run chains in a sequence",
+            "To debug runnable execution",
+            "To cache intermediate results"
+        ]
+    },
+    {
+        "q": "Match the LCEL component with its creation method:",
+        "type": "match",
+        "left": [
+            "RunnableLambda",
+            "RunnableParallel",
+            "RunnablePassthrough",
+            "RunnableBranch"
+        ],
+        "right": [
+            "Wrapping a Python function",
+            "Combining multiple runnables to run concurrently",
+            "Passing input through unchanged",
+            "Creating conditional logic based on input"
+        ]
+    },
+    {
+        "q": "The legacy LLMChain requires a minimum of how many constructor arguments?",
+        "c": "chain = LLMChain(llm=my_llm, prompt=my_prompt)",
+        "type": "slider",
+        "min": 1,
+        "max": 5,
+        "correct": 2
+    },
+    {
+        "q": "What does the `return_intermediate_steps` parameter do in a chain?",
+        "type": "mcq",
+        "o": [
+            "Returns outputs from each step of the chain for inspection",
+            "Stops execution halfway",
+            "Only returns the final step",
+            "Returns error logs"
+        ]
+    },
+    {
+        "q": "Name the method used to attach fallback models to a ChatOpenAI instance.",
+        "type": "short_answer",
+        "answers": [
+            "with_fallbacks",
+            "fallbacks"
+        ],
+        "isCaseSensitive": true
+    },
+    {
+        "q": "Which class allows you to create a custom output parser that validates against a Pydantic model?",
+        "type": "mcq",
+        "o": [
+            "PydanticOutputParser",
+            "StructuredOutputParser",
+            "JsonOutputParser",
+            "RegexParser"
+        ]
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "from langchain_core.prompts import ChatPromptTemplate\n\nprompt = ChatPromptTemplate.from_messages([\n    (\"system\", \"You are a helpful assistant\"),\n    (\"human\", \"{input}\")\n])\nprint(len(prompt.messages))",
+        "o": [
+            "2",
+            "1",
+            "3",
+            "0"
+        ]
+    },
+    {
+        "q": "The `callbacks` parameter allows you to hook into the execution lifecycle of a chain for ______.",
+        "type": "fill_blank",
+        "answers": [
+            "logging",
+            "monitoring"
+        ],
+        "other_options": [
+            "acceleration",
+            "encryption",
+            "serialization"
+        ]
+    },
+    {
+        "q": "What is the role of `output_parser` in a LangChain chain?",
+        "type": "mcq",
+        "o": [
+            "To transform the raw model output into a structured format",
+            "To parse user input",
+            "To format the prompt",
+            "To manage memory"
+        ]
+    },
+    {
+        "q": "You can combine a `str` output parser with a `PydanticOutputParser` using the pipe operator.",
+        "type": "true_false",
+        "correct": "False"
+    },
+    {
+        "q": "Match the legacy concept to its modern LCEL equivalent.",
+        "type": "memory",
+        "pairs": {
+            "LLMChain": "prompt | llm",
+            "SimpleSequentialChain": "prompt1 | llm1 | prompt2 | llm2",
+            "AgentExecutor (legacy)": "create_react_agent"
+        }
+    },
+    {
+        "q": "How does ConversationEntityMemory store information?",
+        "type": "mcq",
+        "o": [
+            "By extracting and maintaining a knowledge graph of entities",
+            "By keeping a full message log",
+            "By summarizing only recent messages",
+            "By deleting old entities"
+        ]
+    },
+    {
+        "q": "What is the purpose of `RunnableBranch` in LCEL?",
+        "type": "mcq",
+        "o": [
+            "To create conditional routing logic based on input predicates",
+            "To connect multiple chains linearly",
+            "To store branch information in memory",
+            "To optimize parallel execution"
+        ]
+    },
+    {
+        "q": "Which method returns the JSON schema for a PydanticOutputParser?",
+        "type": "mcq",
+        "o": [
+            "get_format_instructions()",
+            "to_json()",
+            "schema()",
+            "export_schema()"
+        ]
+    },
+    {
+        "q": "Name the LangChain callback handler used for tracing with LangSmith.",
+        "type": "short_answer",
+        "answers": [
+            "LangSmithTracer",
+            "tracer"
+        ],
+        "isCaseSensitive": false
+    },
+    {
+        "q": "Match the error handling technique with its description:",
+        "type": "match",
+        "left": [
+            "with_fallbacks",
+            "with_retry",
+            "RunnableLambda exception",
+            "try/except in chain"
+        ],
+        "right": [
+            "Switches to backup models on failure",
+            "Retries failed calls automatically",
+            "Custom error handling in a function",
+            "Pythonic error handling in a script"
+        ]
+    },
+    {
+        "q": "The `output_key` in a chain defines which key will contain the ______ in the result dictionary.",
+        "type": "fill_blank",
+        "answers": [
+            "response",
+            "output"
+        ],
+        "other_options": [
+            "error",
+            "prompt",
+            "timestamp"
+        ]
+    },
+    {
+        "q": "Which of these is NOT an argument you pass to a legacy LLMChain?",
+        "type": "odd_one_out",
+        "options": [
+            "llm",
+            "prompt",
+            "memory",
+            "gpu_accelerator"
+        ],
+        "correct": "gpu_accelerator"
+    },
+    {
+        "q": "Swipe RIGHT for verbose=False, LEFT for verbose=True in legacy chains.",
+        "type": "swipe_cards",
+        "left_label": "Verbose=True",
+        "right_label": "Verbose=False",
+        "cards": {
+            "Prints intermediate steps": "left",
+            "Silent execution": "right",
+            "Useful for detailed debugging": "left"
+        }
+    },
+    {
+        "q": "What does `top_p` sampling control in ChatOpenAI?",
+        "type": "mcq",
+        "o": [
+            "Nucleus sampling: cumulative probability cutoff for token selection",
+            "Top token selection",
+            "Penalty for frequent tokens",
+            "Response length"
+        ]
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "from langchain.memory import ConversationBufferMemory\n\nmemory = ConversationBufferMemory(return_messages=True)\nmemory.save_context({\"input\": \"Hi\"}, {\"output\": \"Hello\"})\nprint(type(memory.load_memory_variables({})['history']))",
+        "o": [
+            "<class 'list'>",
+            "<class 'str'>",
+            "<class 'dict'>",
+            "<class 'tuple'>"
+        ]
+    },
+    {
+        "q": "A core concept in LangChain linking multiple modular components together.",
+        "type": "word_scramble",
+        "answer": "CHAIN",
+        "decoys": "QW"
+    },
+    {
+        "q": "Which LLM parameter introduces randomness during sampling, with 0 being deterministic?",
+        "type": "mcq",
+        "o": [
+            "temperature",
+            "max_tokens",
+            "seed",
+            "logprobs"
+        ]
+    },
+    {
+        "q": "Comparing legacy and modern chains:",
+        "type": "inline_dropdown",
+        "text": "In legacy code, [0] connects a prompt and an LLM. Modern LCEL replaces this with the [1] operator.",
+        "dropdowns": [
+            {
+                "correct": "LLMChain",
+                "options": [
+                    "LLMChain",
+                    "AgentExecutor",
+                    "BaseModel"
+                ]
+            },
+            {
+                "correct": "pipe (|)",
+                "options": [
+                    "plus (+)",
+                    "pipe (|)",
+                    "ampersand (&)"
+                ]
+            }
+        ]
+    },
+    {
+        "q": "The `@tool` decorator automatically infers the tool's name and description from the function's ______.",
+        "type": "fill_blank",
+        "answers": [
+            "docstring"
+        ],
+        "other_options": [
+            "signature",
+            "name",
+            "return type"
+        ]
+    },
+    {
+        "q": "RunnableLambda can only wrap synchronous functions.",
+        "type": "true_false",
+        "correct": "False"
+    },
+    {
+        "q": "What is a key advantage of using LCEL for building chains?",
+        "type": "mcq",
+        "o": [
+            "Automatic support for async, streaming, and parallel execution",
+            "It requires less code than Python",
+            "It bypasses API authentication",
+            "It automatically deploys the chain to production"
+        ]
+    },
+    {
+        "q": "Which method on a runnable allows you to inspect or transform inputs/outputs between steps?",
+        "type": "mcq",
+        "o": [
+            "with_listeners()",
+            "map()",
+            "filter()",
+            "transform()"
+        ]
+    },
+    {
+        "q": "What is the purpose of `StructuredOutputParser`?",
+        "type": "mcq",
+        "o": [
+            "To parse LLM output into a predefined structured format without Pydantic",
+            "To structure the input prompt",
+            "To validate API keys",
+            "To compress output tokens"
+        ]
+    },
+    {
+        "q": "Name the data structure returned by `memory.load_memory_variables({})`.",
+        "type": "short_answer",
+        "answers": [
+            "dict",
+            "dictionary"
+        ],
+        "isCaseSensitive": false
+    },
+    {
+        "q": "Match the memory type with a typical use case:",
+        "type": "match",
+        "left": [
+            "ConversationBufferWindowMemory",
+            "ConversationSummaryMemory",
+            "ConversationEntityMemory",
+            "ConversationKGMemory"
+        ],
+        "right": [
+            "Chatbots needing only recent context",
+            "Long conversations needing compression",
+            "Applications tracking user facts/entities",
+            "Building knowledge graphs from dialogue"
+        ]
+    },
+    {
+        "q": "What does the `verbose` flag output when set to `True` on a chain?",
+        "type": "mcq",
+        "o": [
+            "Detailed step-by-step execution logs including prompts and responses",
+            "Only the final answer",
+            "A summary report",
+            "Error stack traces"
+        ]
+    },
+    {
+        "q": "How can you pass runtime arguments to a chain that are not part of the prompt variables?",
+        "type": "mcq",
+        "o": [
+            "Using the `configurable` fields in the runnable config",
+            "By adding them to the prompt template",
+            "By setting global variables",
+            "By using environment variables"
+        ]
+    },
+    {
+        "q": "The `batch()` method on a runnable processes multiple inputs in ______.",
+        "type": "fill_blank",
+        "answers": [
+            "parallel",
+            "a batch"
+        ],
+        "other_options": [
+            "sequence",
+            "random order",
+            "real-time"
+        ]
+    },
+    {
+        "q": "If you define a RunnableParallel with 3 dictionary keys, how many concurrent threads/tasks are spawned under the hood?",
+        "c": "chain = RunnableParallel(a=llm1, b=llm2, c=llm3)",
+        "type": "slider",
+        "min": 1,
+        "max": 5,
+        "correct": 3
+    },
+    {
+        "q": "What is the primary function of the `HumanMessage` class?",
+        "type": "mcq",
+        "o": [
+            "To represent a message coming from the user",
+            "To format AI responses",
+            "To store system prompts",
+            "To parse function calls"
+        ]
+    },
+    {
+        "q": "You must always define a `SystemMessage` in a ChatPromptTemplate.",
+        "type": "true_false",
+        "correct": "False"
+    },
+    {
+        "q": "Match the Runnable type to its execution behavior.",
+        "type": "memory",
+        "pairs": {
+            "RunnableSequence": "Runs steps one after another",
+            "RunnableParallel": "Runs steps concurrently in independent branches",
+            "RunnablePassthrough": "Forwards input unchanged to the next step"
+        }
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "from langchain.memory import ConversationBufferWindowMemory\n\nmemory = ConversationBufferWindowMemory(k=1, return_messages=True)\nmemory.save_context({\"input\": \"Hi\"}, {\"output\": \"Hello\"})\nmemory.save_context({\"input\": \"How are you?\"}, {\"output\": \"I'm fine\"})\nprint(memory.load_memory_variables({})['history'])",
+        "o": [
+            "[HumanMessage(content='How are you?'), AIMessage(content=\"I'm fine\")]",
+            "[HumanMessage(content='Hi'), AIMessage(content='Hello'), HumanMessage(content='How are you?'), AIMessage(content=\"I'm fine\")]",
+            "[HumanMessage(content='Hi'), AIMessage(content='Hello')]",
+            "[]"
+        ]
+    },
+    {
+        "q": "What is a `chain` in the context of LangChain?",
+        "type": "mcq",
+        "o": [
+            "A sequence of calls to components like LLMs, prompts, and parsers",
+            "A data structure for storing prompts",
+            "A type of API authentication",
+            "A Python decorator"
+        ]
+    },
+    {
+        "q": "Which parameter in `ChatOpenAI` specifies a unique identifier for tracing requests?",
+        "type": "mcq",
+        "o": [
+            "tags",
+            "model_name",
+            "request_id",
+            "trace_id"
+        ]
+    },
+    {
+        "q": "Name the base class that all LangChain runnables inherit from.",
+        "type": "short_answer",
+        "answers": [
+            "Runnable",
+            "RunnableSerializable"
+        ],
+        "isCaseSensitive": true
+    },
+    {
+        "q": "The ______ method is used to configure alternative runnables in case the primary one fails.",
+        "type": "fill_blank",
+        "answers": [
+            "with_fallbacks"
+        ],
+        "other_options": [
+            "with_retry",
+            "set_backup",
+            "on_error"
+        ]
+    },
+    {
+        "q": "Match the ChatOpenAI parameter with its effect:",
+        "type": "match",
+        "left": [
+            "temperature",
+            "max_tokens",
+            "top_p",
+            "frequency_penalty"
+        ],
+        "right": [
+            "Controls randomness of output",
+            "Limits response length",
+            "Sets nucleus sampling probability",
+            "Reduces word repetition"
+        ]
+    },
+    {
+        "q": "What does `RunnablePassthrough.assign()` do in LCEL?",
+        "type": "mcq",
+        "o": [
+            "Adds new key-value pairs to the input dictionary while passing it through",
+            "Assigns a variable name to the runnable",
+            "Replaces the entire input",
+            "Assigns error handlers"
+        ]
+    },
+    {
+        "q": "Which of these is NOT a standard method on a Runnable object?",
+        "type": "odd_one_out",
+        "options": [
+            "invoke",
+            "batch",
+            "stream",
+            "teleport"
+        ],
+        "correct": "teleport"
+    },
+    {
+        "q": "What is the purpose of `ChatPromptTemplate.from_messages()`?",
+        "type": "mcq",
+        "o": [
+            "To construct a chat prompt from a list of message templates or tuples",
+            "To extract messages from a chat log file",
+            "To serialize messages for API calls",
+            "To delete old messages"
+        ]
+    },
+    {
+        "q": "ConversationBufferMemory stores every interaction indefinitely, which can lead to high token usage.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "How do you attach a custom callback handler to a chain invocation?",
+        "type": "mcq",
+        "o": [
+            "By passing a callbacks list in the config dict to invoke()",
+            "By modifying the chain's source code",
+            "By setting an environment variable",
+            "By using a decorator on the chain"
+        ]
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "from langchain_core.runnables import RunnableLambda\n\nfunc = RunnableLambda(lambda x: x.upper())\nresult = func.invoke(\"hello\")\nprint(result)",
+        "o": [
+            "HELLO",
+            "hello",
+            "Hello",
+            "Error"
+        ]
+    },
+    {
+        "q": "Swipe RIGHT for Concurrent execution, LEFT for Sequential execution.",
+        "type": "swipe_cards",
+        "left_label": "Sequential",
+        "right_label": "Concurrent",
+        "cards": {
+            "RunnableSequence": "left",
+            "RunnableParallel": "right",
+            "Prompt | LLM | Parser": "left",
+            "Dict with multiple LLM branches": "right"
+        }
+    },
+    {
+        "q": "Which component manages the window of recent interactions in a conversation?",
+        "type": "mcq",
+        "o": [
+            "ConversationBufferWindowMemory",
+            "ConversationSummaryMemory",
+            "ConversationBufferMemory",
+            "ReadOnlySharedMemory"
+        ]
+    },
+    {
+        "q": "The `llm` parameter in `ConversationSummaryMemory` is used to ______ the conversation history.",
+        "type": "fill_blank",
+        "answers": [
+            "summarize"
+        ],
+        "other_options": [
+            "delete",
+            "encrypt",
+            "translate"
+        ]
+    },
+    {
+        "q": "What is a `tool` in LangChain terminology?",
+        "type": "mcq",
+        "o": [
+            "A function that an LLM can call to interact with external systems",
+            "A debugging utility",
+            "A prompt formatting helper",
+            "A type of memory"
+        ]
+    },
+    {
+        "q": "Name the method that validates if an LLM's output conforms to a Pydantic model.",
+        "type": "short_answer",
+        "answers": [
+            "parse",
+            "invoke"
+        ],
+        "isCaseSensitive": false
+    },
+    {
+        "q": "What Runnable method processes a list of inputs efficiently at once?",
+        "type": "word_scramble",
+        "answer": "BATCH",
+        "decoys": "ZXY"
+    },
+    {
+        "q": "How does RunnablePassthrough work?",
+        "type": "inline_dropdown",
+        "text": "`RunnablePassthrough` allows you to [0] the input, while `RunnablePassthrough.assign()` allows you to [1] the input dictionary.",
+        "dropdowns": [
+            {
+                "correct": "forward",
+                "options": [
+                    "forward",
+                    "delete",
+                    "mutate"
+                ]
+            },
+            {
+                "correct": "add keys to",
+                "options": [
+                    "add keys to",
+                    "remove keys from",
+                    "clear entirely"
+                ]
+            }
+        ]
+    },
+    {
+        "q": "What is the advantage of using `with_retry()` on a runnable?",
+        "type": "mcq",
+        "o": [
+            "It automatically retries failed calls based on configurable conditions",
+            "It makes the chain run faster",
+            "It encrypts retry data",
+            "It logs retries to a file"
+        ]
+    },
+    {
+        "q": "Match the LCEL method with its function:",
+        "type": "match",
+        "left": [
+            "invoke()",
+            "batch()",
+            "stream()",
+            "ainvoke()"
+        ],
+        "right": [
+            "Single synchronous call",
+            "Process multiple inputs at once",
+            "Stream tokens as they are generated",
+            "Single asynchronous call"
+        ]
+    },
+    {
+        "q": "A ConversationBufferWindowMemory with k=4 keeps how many TOTAL messages (Human + AI combined)?",
+        "type": "slider",
+        "min": 2,
+        "max": 10,
+        "correct": 8
+    },
+    {
+        "q": "What does the `input_variables` property of a PromptTemplate return?",
+        "type": "mcq",
+        "o": [
+            "A list of variable names found in the template",
+            "The values passed to the template",
+            "The output format",
+            "The template's file path"
+        ]
+    },
+    {
+        "q": "Match the Memory class to its storage strategy.",
+        "type": "memory",
+        "pairs": {
+            "ConversationBufferMemory": "Keeps all raw messages indefinitely",
+            "ConversationSummaryMemory": "Summarizes history dynamically via LLM",
+            "ConversationBufferWindowMemory": "Keeps only the last K turns"
+        }
+    },
+    {
+        "q": "A `SystemMessage` in a chat prompt sets the context or persona for the AI assistant.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "How can you save a ConversationBufferMemory to a file for persistence?",
+        "type": "mcq",
+        "o": [
+            "By serializing the `chat_memory` attribute using JSON or pickle",
+            "By calling memory.save_to_file()",
+            "By using the write() method",
+            "By setting a file_path in the constructor"
+        ]
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "from langchain_core.runnables import RunnablePassthrough\n\nchain = RunnablePassthrough.assign(double=lambda x: x[\"num\"] * 2)\nresult = chain.invoke({\"num\": 5})\nprint(result)",
+        "o": [
+            "{'num': 5, 'double': 10}",
+            "{'num': 5}",
+            "10",
+            "{'double': 10}"
+        ]
+    },
+    {
+        "q": "Which of the following is NOT a built-in LangChain memory type?",
+        "type": "odd_one_out",
+        "options": [
+            "ConversationBufferMemory",
+            "ConversationSummaryMemory",
+            "ConversationQuantumMemory",
+            "ConversationTokenBufferMemory"
+        ],
+        "correct": "ConversationQuantumMemory"
+    },
+    {
+        "q": "Swipe RIGHT for Summarized history, LEFT for Raw message history.",
+        "type": "swipe_cards",
+        "left_label": "Raw Messages",
+        "right_label": "Summarized",
+        "cards": {
+            "ConversationBufferMemory": "left",
+            "ConversationSummaryMemory": "right",
+            "ConversationBufferWindowMemory": "left"
+        }
+    },
+    {
+        "q": "What does the `response_metadata` attribute of an `AIMessage` typically contain?",
+        "type": "mcq",
+        "o": [
+            "Information about the API response like token usage and model name",
+            "The message content",
+            "The user's input",
+            "Error codes"
+        ]
+    },
+    {
+        "q": "The `chat_memory` parameter in a memory class accepts a ______ object for custom storage.",
+        "type": "fill_blank",
+        "answers": [
+            "BaseChatMessageHistory"
+        ],
+        "other_options": [
+            "BaseMemory",
+            "ChatHistory",
+            "MessageStore"
+        ]
+    },
+    {
+        "q": "The component that gives LangChain agents the ability to remember past turns.",
+        "type": "word_scramble",
+        "answer": "MEMORY",
+        "decoys": "JQX"
+    },
+    {
+        "q": "Configuring a memory component:",
+        "c": "memory = ConversationBufferMemory(memory_key='chat_history')",
+        "type": "inline_dropdown",
+        "text": "The memory component stores its history in a variable determined by [0], which often defaults to [1].",
+        "dropdowns": [
+            {
+                "correct": "memory_key",
+                "options": [
+                    "memory_key",
+                    "storage_id",
+                    "var_name"
+                ]
+            },
+            {
+                "correct": "history",
+                "options": [
+                    "history",
+                    "data",
+                    "context"
+                ]
+            }
+        ]
+    },
+    {
+        "q": "What is the role of `RunnableConfig` in LangChain?",
+        "type": "mcq",
+        "o": [
+            "To pass runtime configuration like callbacks and tags to a runnable",
+            "To store API keys",
+            "To define the model architecture",
+            "To set environment variables"
+        ]
+    },
+    {
+        "q": "Which memory type can share context between multiple chains?",
+        "type": "mcq",
+        "o": [
+            "ReadOnlySharedMemory",
+            "ConversationBufferMemory",
+            "ConversationSummaryMemory",
+            "ConversationEntityMemory"
+        ]
+    },
+    {
+        "q": "What is the default max_iterations limit for an AgentExecutor before it force-stops?",
+        "type": "slider",
+        "min": 5,
+        "max": 25,
+        "correct": 15
+    },
+    {
+        "q": "Name the LangChain component that generates structured output by providing format instructions to the LLM.",
+        "type": "short_answer",
+        "answers": [
+            "PydanticOutputParser",
+            "StructuredOutputParser"
+        ],
+        "isCaseSensitive": true
+    },
+    {
+        "q": "What does `chain.invoke()` return if the chain has no `output_parser`?",
+        "type": "mcq",
+        "o": [
+            "An `AIMessage` object containing the raw model response",
+            "A plain string",
+            "A dictionary",
+            "A tuple"
+        ]
+    },
+    {
+        "q": "LCEL allows you to build chains that automatically support both synchronous and asynchronous execution.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Match the Agent concepts to their descriptions.",
+        "type": "memory",
+        "pairs": {
+            "Agent": "The LLM reasoning engine determining actions",
+            "Tool": "A specific function the LLM is allowed to call",
+            "AgentExecutor": "The runtime loop executing the agent and its tools"
+        }
+    },
+    {
+        "q": "What is the purpose of `ChatPromptTemplate.from_role_strings()`?",
+        "type": "mcq",
+        "o": [
+            "To create a prompt from a list of strings with associated roles",
+            "To convert role strings to system prompts",
+            "To format output for specific roles",
+            "To validate role permissions"
+        ]
+    },
+    {
+        "q": "How does the `presence_penalty` parameter affect model output?",
+        "type": "mcq",
+        "o": [
+            "It encourages the model to talk about new topics by penalizing already-mentioned tokens",
+            "It reduces the response length",
+            "It increases response speed",
+            "It changes the model's persona"
+        ]
+    },
+    {
+        "q": "The `from_template` method of `ChatPromptTemplate` uses single curly braces `{var}` for variable ______.",
+        "type": "fill_blank",
+        "answers": [
+            "interpolation",
+            "substitution"
+        ],
+        "other_options": [
+            "isolation",
+            "compilation",
+            "validation"
+        ]
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "from langchain.memory import ConversationSummaryBufferMemory\n\nmemory = ConversationSummaryBufferMemory(llm=None, max_token_limit=100)\nprint(memory.moving_summary_buffer)",
+        "o": [
+            "\"\"",
+            "None",
+            "100",
+            "Error"
+        ]
+    },
+    {
+        "q": "Which `PromptTemplate` parameter ensures a template is validated for correct syntax?",
+        "type": "mcq",
+        "o": [
+            "validate_template",
+            "template_format",
+            "input_variables",
+            "partial_variables"
+        ]
+    },
+    {
+        "q": "Match the memory loading parameter with its description:",
+        "type": "match",
+        "left": [
+            "return_messages",
+            "input_key",
+            "output_key",
+            "memory_key"
+        ],
+        "right": [
+            "Returns history as Message objects",
+            "Key for user input in context",
+            "Key for AI output in context",
+            "Key used to store history in the prompt"
+        ]
+    },
+    {
+        "q": "Which of these is NOT a recognized LangChain agent type or framework?",
+        "type": "odd_one_out",
+        "options": [
+            "Zero-shot ReAct",
+            "OpenAI Functions",
+            "Self-ask with search",
+            "Psychic-reasoning"
+        ],
+        "correct": "Psychic-reasoning"
+    },
+    {
+        "q": "What does `RunnableLambda` do in LCEL?",
+        "type": "mcq",
+        "o": [
+            "Converts a Python function into a runnable object that can be chained",
+            "Creates a lambda function for LLMs",
+            "Runs a chain asynchronously",
+            "Lambdifies the prompt template"
+        ]
+    },
+    {
+        "q": "Name the LangChain exception raised when an output parser fails to parse the model's response.",
+        "type": "short_answer",
+        "answers": [
+            "OutputParserException"
+        ],
+        "isCaseSensitive": true
+    },
+    {
+        "q": "What is the default behavior of `ConversationBufferMemory` if `return_messages` is `False`?",
+        "type": "mcq",
+        "o": [
+            "It returns history as a single concatenated string",
+            "It returns history as a list of message objects",
+            "It returns an empty string",
+            "It raises an error"
+        ]
+    },
+    {
+        "q": "The `stop` sequences parameter in `ChatOpenAI` can be a string or a list of strings.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "What is the purpose of `model_name` in `ChatOpenAI`?",
+        "type": "mcq",
+        "o": [
+            "To select which OpenAI chat model to interact with",
+            "To name your LangChain application",
+            "To identify the user session",
+            "To set the response style"
+        ]
+    },
+    {
+        "q": "Swipe RIGHT for Class-based tool definitions, LEFT for Decorator-based tool definitions.",
+        "type": "swipe_cards",
+        "left_label": "Decorator",
+        "right_label": "Class",
+        "cards": {
+            "@tool": "left",
+            "StructuredTool.from_function": "right",
+            "Tool(name=...)": "right",
+            "@tool('search')": "left"
+        }
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "from langchain_core.prompts import ChatPromptTemplate\n\nmessages = [\n    (\"system\", \"You are {role}\"),\n    (\"human\", \"Tell me about {topic}\")\n]\npt = ChatPromptTemplate.from_messages(messages)\nprint(pt.input_variables)",
+        "o": [
+            "['role', 'topic']",
+            "['system', 'human']",
+            "['role', 'topic', 'input']",
+            "[]"
+        ]
+    },
+    {
+        "q": "A utility or Python function that an agent can invoke to interact with the outside world.",
+        "type": "word_scramble",
+        "answer": "TOOL",
+        "decoys": "ZV"
+    },
+    {
+        "q": "Which method is used to generate multiple responses from a single prompt?",
+        "type": "mcq",
+        "o": [
+            "generate()",
+            "invoke()",
+            "batch()",
+            "stream()"
+        ]
+    },
+    {
+        "q": "The `memory_key` parameter in memory classes defines the variable name used to store history in the ______.",
+        "type": "fill_blank",
+        "answers": [
+            "prompt",
+            "input dictionary"
+        ],
+        "other_options": [
+            "output",
+            "database",
+            "config"
+        ]
+    },
+    {
+        "q": "What does the `assign()` method of `RunnablePassthrough` do?",
+        "type": "mcq",
+        "o": [
+            "It adds extra computed fields to the input dict as it passes through",
+            "It assigns a new output key",
+            "It replaces the input entirely",
+            "It assigns error handlers"
+        ]
+    },
+    {
+        "q": "Which of these is a valid way to create a `ChatOpenAI` instance with GPT-4?",
+        "type": "mcq",
+        "o": [
+            "ChatOpenAI(model='gpt-4')",
+            "ChatOpenAI(model_name='gpt-4')",
+            "ChatOpenAI(version='gpt-4')",
+            "ChatOpenAI(engine='gpt-4')"
+        ]
+    },
+    {
+        "q": "Name the built-in memory type that uses an LLM to progressively summarize the conversation.",
+        "type": "short_answer",
+        "answers": [
+            "ConversationSummaryMemory"
+        ],
+        "isCaseSensitive": true
+    },
+    {
+        "q": "Match the message type with its typical usage:",
+        "type": "match",
+        "left": [
+            "SystemMessage",
+            "HumanMessage",
+            "AIMessage",
+            "ToolMessage"
+        ],
+        "right": [
+            "Defines assistant behavior",
+            "Represents a user query",
+            "Stores AI's response",
+            "Contains the result of a tool execution"
+        ]
+    },
+    {
+        "q": "LangChain output parsers can automatically fix malformed JSON from an LLM.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "What is the role of `max_token_limit` in `ConversationSummaryBufferMemory`?",
+        "type": "mcq",
+        "o": [
+            "To set the total token budget before summarization kicks in",
+            "To limit the number of messages",
+            "To set the API token limit",
+            "To control response length"
+        ]
+    },
+    {
+        "q": "What is the purpose of the `create_openai_fn_runnable` helper in LangChain?",
+        "type": "mcq",
+        "o": [
+            "To create a runnable that converts a function definition into an OpenAI function-calling format",
+            "To run OpenAI functions directly without an LLM",
+            "To create a function that deploys LangChain apps",
+            "To define custom API endpoints"
+        ]
+    },
+    {
+        "q": "How does `RunnableBranch` determine which path to execute?",
+        "type": "mcq",
+        "o": [
+            "By evaluating conditions in order and running the first whose predicate returns True",
+            "By randomly selecting a branch",
+            "By executing all branches concurrently",
+            "By using a hash of the input"
+        ]
+    },
+    {
+        "q": "The `JsonOutputFunctionsParser` parses the output of an OpenAI function call into a ______.",
+        "type": "fill_blank",
+        "answers": [
+            "JSON object",
+            "dictionary"
+        ],
+        "other_options": [
+            "string",
+            "list",
+            "tuple"
+        ]
+    },
+    {
+        "q": "What is the primary benefit of using `RunnableParallel` over a sequential chain?",
+        "type": "mcq",
+        "o": [
+            "It executes independent tasks concurrently, reducing overall latency",
+            "It uses less memory",
+            "It guarantees order of execution",
+            "It automatically retries failed tasks"
+        ]
+    },
+    {
+        "q": "LangChain's `ConversationSummaryBufferMemory` requires both an LLM and a token limit to function.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Which method is used to attach an output parser to an LCEL chain?",
+        "type": "mcq",
+        "o": [
+            "By piping (|) the parser to the model's output",
+            "By setting the `output_parser` attribute",
+            "By wrapping the chain in a `ParserChain`",
+            "By calling `.add_parser()`"
+        ]
+    },
+    {
+        "q": "Match the advanced memory type with its characteristic:",
+        "type": "match",
+        "left": [
+            "VectorStoreRetrieverMemory",
+            "ConversationTokenBufferMemory",
+            "ReadOnlySharedMemory",
+            "ConversationSummaryBufferMemory"
+        ],
+        "right": [
+            "Stores memories in a vector database for semantic retrieval",
+            "Limits history by token count instead of messages",
+            "Shares memory across multiple chains without modification",
+            "Combines summarization with a buffer window"
+        ]
+    },
+    {
+        "q": "What is a `ConfigurableField` used for in LangChain?",
+        "type": "mcq",
+        "o": [
+            "To mark a parameter as configurable at runtime without modifying the chain",
+            "To define fields in a Pydantic model",
+            "To configure API keys",
+            "To set up database connections"
+        ]
+    },
+    {
+        "q": "Name the LangChain class that retrieves stored vectors as memories based on input similarity.",
+        "type": "short_answer",
+        "answers": [
+            "VectorStoreRetrieverMemory"
+        ],
+        "isCaseSensitive": true
+    },
+    {
+        "q": "AgentExecutor setup:",
+        "type": "inline_dropdown",
+        "text": "An AgentExecutor requires an [0] to decide actions, and a list of [1] to execute them.",
+        "dropdowns": [
+            {
+                "correct": "agent",
+                "options": [
+                    "agent",
+                    "parser",
+                    "memory"
+                ]
+            },
+            {
+                "correct": "tools",
+                "options": [
+                    "tools",
+                    "prompts",
+                    "chains"
+                ]
+            }
+        ]
+    },
+    {
+        "q": "What does `RunnableLambda` with an async function (`async def`) enable?",
+        "type": "mcq",
+        "o": [
+            "Non-blocking execution of custom logic within an async chain",
+            "Synchronous execution only",
+            "Automatic batching",
+            "Error suppression"
+        ]
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "from langchain_core.runnables import RunnableBranch\nfrom langchain_core.runnables import RunnableLambda\n\nbranch = RunnableBranch(\n    (lambda x: x['type'] == 'greeting', RunnableLambda(lambda x: \"Hello!\" )),\n    (lambda x: x['type'] == 'farewell', RunnableLambda(lambda x: \"Goodbye!\" )),\n    RunnableLambda(lambda x: \"I don't understand\")\n)\nprint(branch.invoke({'type': 'farewell'}))",
+        "o": [
+            "Goodbye!",
+            "Hello!",
+            "I don't understand",
+            "Error"
+        ]
+    },
+    {
+        "q": "Which parameter in `ChatOpenAI` enables the return of log probabilities for each token?",
+        "type": "mcq",
+        "o": [
+            "logprobs",
+            "top_logprobs",
+            "echo",
+            "verbose"
+        ]
+    },
+    {
+        "q": "The `extra` field in a LangChain message is typically accessed via the ______ property.",
+        "type": "fill_blank",
+        "answers": [
+            "additional_kwargs"
+        ],
+        "other_options": [
+            "metadata",
+            "extra_data",
+            "custom_fields"
+        ]
+    },
+    {
+        "q": "What is a key characteristic of `VectorStoreRetrieverMemory`?",
+        "type": "mcq",
+        "o": [
+            "It stores conversation snippets as embeddings and retrieves them based on semantic similarity",
+            "It saves the conversation as a text file",
+            "It summarizes everything into a single vector",
+            "It only stores the most recent interaction"
+        ]
+    },
+    {
+        "q": "If a streaming LLM response fires on_llm_new_token 50 times, how many times does on_llm_end fire?",
+        "type": "slider",
+        "min": 0,
+        "max": 5,
+        "correct": 1
+    },
+    {
+        "q": "You can use `RunnableBranch` without a default branch; it will return `None` if no condition matches.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "What is the purpose of `ChatOpenAI.bind_functions()`?",
+        "type": "mcq",
+        "o": [
+            "To specify which JSON Schema functions the model can call during a conversation",
+            "To bind the model to a specific API endpoint",
+            "To link multiple models together",
+            "To restrict the model's output language"
+        ]
+    },
+    {
+        "q": "Match the Callback event to when it fires.",
+        "type": "memory",
+        "pairs": {
+            "on_llm_start": "Fires when the LLM begins generating",
+            "on_llm_new_token": "Fires repeatedly during streaming",
+            "on_llm_end": "Fires once when the LLM finishes generating"
+        }
+    },
+    {
+        "q": "How does `ConversationTokenBufferMemory` differ from `ConversationBufferWindowMemory`?",
+        "type": "mcq",
+        "o": [
+            "It limits history by the total number of tokens rather than the number of messages",
+            "It uses a different underlying database",
+            "It only stores user messages",
+            "It flushes history after every call"
+        ]
+    },
+    {
+        "q": "Match the LCEL config method with its purpose:",
+        "type": "match",
+        "left": [
+            "with_config",
+            "with_fallbacks",
+            "with_retry",
+            "with_listeners"
+        ],
+        "right": [
+            "Sets default config values for a runnable",
+            "Provides backup runnables on failure",
+            "Retries on exceptions",
+            "Attaches lifecycle callback hooks"
+        ]
+    },
+    {
+        "q": "Which of the following is NOT a valid event in BaseCallbackHandler?",
+        "type": "odd_one_out",
+        "options": [
+            "on_chain_start",
+            "on_tool_error",
+            "on_server_reboot",
+            "on_agent_action"
+        ],
+        "correct": "on_server_reboot"
+    },
+    {
+        "q": "Swipe RIGHT for Asynchronous methods, LEFT for Synchronous methods.",
+        "type": "swipe_cards",
+        "left_label": "Synchronous",
+        "right_label": "Asynchronous",
+        "cards": {
+            "invoke": "left",
+            "ainvoke": "right",
+            "batch": "left",
+            "astream": "right"
+        }
+    },
+    {
+        "q": "What does `model.dict()` return for a Pydantic output parser?",
+        "type": "mcq",
+        "o": [
+            "A dictionary representation of the parsed Pydantic model",
+            "The model's source code",
+            "The LLM's raw response",
+            "A list of model fields"
+        ]
+    },
+    {
+        "q": "Name the LangChain class that enables tool-calling via the OpenAI function-calling format.",
+        "type": "short_answer",
+        "answers": [
+            "ChatOpenAI",
+            "convert_to_openai_function"
+        ],
+        "isCaseSensitive": true
+    },
+    {
+        "q": "The `callbacks` argument in `ainvoke` accepts a list of callback handlers to hook into the ______ lifecycle.",
+        "type": "fill_blank",
+        "answers": [
+            "execution",
+            "run"
+        ],
+        "other_options": [
+            "compilation",
+            "serialization",
+            "authentication"
+        ]
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "from langchain_core.runnables import RunnableParallel, RunnableLambda\n\nchain = RunnableParallel(\n    upper=RunnableLambda(lambda x: x['text'].upper()),\n    length=RunnableLambda(lambda x: len(x['text']))\n)\nresult = chain.invoke({'text': 'hello'})\nprint(result)",
+        "o": [
+            "{'upper': 'HELLO', 'length': 5}",
+            "{'upper': 'HELLO'}",
+            "{'length': 5}",
+            "'HELLO'"
+        ]
+    },
+    {
+        "q": "What is the role of `JsonOutputKeyToolsParser`?",
+        "type": "mcq",
+        "o": [
+            "To parse a specific tool's output from a function call response by its key",
+            "To format keys for the JSON parser",
+            "To generate tool definitions",
+            "To validate API keys"
+        ]
+    },
+    {
+        "q": "Which memory type is best for long-running conversations where full history is too large but exact recent context matters?",
+        "type": "mcq",
+        "o": [
+            "ConversationSummaryBufferMemory",
+            "ConversationBufferMemory",
+            "ConversationBufferWindowMemory",
+            "ConversationSummaryMemory"
+        ]
+    },
+    {
+        "q": "`RunnablePassthrough.assign` can take a dictionary of runnables as values to compute new fields.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "What does `top_logprobs` return when set on a ChatOpenAI request?",
+        "type": "mcq",
+        "o": [
+            "The most probable tokens and their log probabilities at each position",
+            "The top models available",
+            "The API call frequency",
+            "The maximum tokens allowed"
+        ]
+    },
+    {
+        "q": "How can you persist `ConversationBufferMemory` across application restarts?",
+        "type": "mcq",
+        "o": [
+            "By passing a custom `chat_memory` object backed by a database or file store",
+            "By calling `memory.save()`",
+            "By setting a `persist` flag to True",
+            "By using a context manager"
+        ]
+    },
+    {
+        "q": "The mechanism for tracking execution steps, useful for logging, metrics, and streaming.",
+        "type": "word_scramble",
+        "answer": "CALLBACK",
+        "decoys": "WQ"
+    },
+    {
+        "q": "Name the method used to invoke a runnable asynchronously.",
+        "type": "short_answer",
+        "answers": [
+            "ainvoke"
+        ],
+        "isCaseSensitive": true
+    },
+    {
+        "q": "Match the parser with the format it validates:",
+        "type": "match",
+        "left": [
+            "PydanticOutputParser",
+            "JsonOutputParser",
+            "XMLOutputParser",
+            "StructuredOutputParser"
+        ],
+        "right": [
+            "Pydantic model schema",
+            "Raw JSON objects",
+            "XML markup format",
+            "Key-value pairs with regex"
+        ]
+    },
+    {
+        "q": "What does the `model_json_schema()` method of a Pydantic model provide?",
+        "type": "mcq",
+        "o": [
+            "A JSON schema representing the model's structure for function calling",
+            "A JSON serialization of the model",
+            "A graphical representation of the model",
+            "An API response template"
+        ]
+    },
+    {
+        "q": "How do you handle streaming in LCEL?",
+        "type": "inline_dropdown",
+        "text": "To stream outputs, you can iterate over the result of [0], or use a [1] to intercept tokens.",
+        "dropdowns": [
+            {
+                "correct": "chain.stream()",
+                "options": [
+                    "chain.stream()",
+                    "chain.invoke()",
+                    "chain.batch()"
+                ]
+            },
+            {
+                "correct": "CallbackHandler",
+                "options": [
+                    "CallbackHandler",
+                    "OutputParser",
+                    "Memory"
+                ]
+            }
+        ]
+    },
+    {
+        "q": "What is the absolute minimum number of examples required to perform 'One-Shot' prompting?",
+        "type": "slider",
+        "min": 0,
+        "max": 3,
+        "correct": 1
+    },
+    {
+        "q": "The `extra` parameter in `ConversationBufferMemory` controls what happens when an unknown key is encountered in ______.",
+        "type": "fill_blank",
+        "answers": [
+            "input",
+            "context"
+        ],
+        "other_options": [
+            "output",
+            "memory",
+            "config"
+        ]
+    },
+    {
+        "q": "What is the purpose of `RunnableMap`?",
+        "type": "mcq",
+        "o": [
+            "To transform an input dict by applying different runnables to different keys",
+            "To map a function over a list",
+            "To visualize chain execution",
+            "To hash input data"
+        ]
+    },
+    {
+        "q": "What does `with_listeners()` enable in a LangChain chain?",
+        "type": "mcq",
+        "o": [
+            "Attaching callback functions for `on_start`, `on_end`, and `on_error` events",
+            "Playing audio during chain execution",
+            "Adding network listeners",
+            "Validating input types"
+        ]
+    },
+    {
+        "q": "ConversationTokenBufferMemory uses the tokenizer from the LLM to accurately count tokens.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "from langchain_core.runnables import RunnablePassthrough\n\nchain = RunnablePassthrough.assign(\n    result=lambda x: f\"{x['greeting']} {x['name']}\"\n)\nprint(chain.invoke({'greeting': 'Hi', 'name': 'World'}))",
+        "o": [
+            "{'greeting': 'Hi', 'name': 'World', 'result': 'Hi World'}",
+            "'Hi World'",
+            "{'result': 'Hi World'}",
+            "{'greeting': 'Hi', 'name': 'World'}"
+        ]
+    },
+    {
+        "q": "Which class in LangChain helps format tool outputs for the model's context?",
+        "type": "mcq",
+        "o": [
+            "ToolMessage",
+            "FunctionMessage",
+            "AIMessage",
+            "SystemMessage"
+        ]
+    },
+    {
+        "q": "Match the Example Selector to its selection logic.",
+        "type": "memory",
+        "pairs": {
+            "FewShotPromptTemplate": "Uses a static, hardcoded list of examples",
+            "SemanticSimilarityExampleSelector": "Picks examples via vector database search",
+            "LengthBasedExampleSelector": "Picks examples to fit within context windows"
+        }
+    },
+    {
+        "q": "What is a `chain` composed of in the LCEL paradigm?",
+        "type": "mcq",
+        "o": [
+            "A sequence of Runnable objects connected by the pipe operator",
+            "A list of prompts and models",
+            "A single function call",
+            "A decorator chain"
+        ]
+    },
+    {
+        "q": "The `invoke` method on a `Runnable` always returns the same type as the final component in the chain.",
+        "type": "fill_blank",
+        "answers": [
+            "True"
+        ],
+        "other_options": [
+            "False",
+            "Only for strings",
+            "Only for dicts"
+        ]
+    },
+    {
+        "q": "Which of these is NOT a built-in Example Selector in LangChain?",
+        "type": "odd_one_out",
+        "options": [
+            "SemanticSimilarityExampleSelector",
+            "LengthBasedExampleSelector",
+            "MaxMarginalRelevanceExampleSelector",
+            "AlphabeticalExampleSelector"
+        ],
+        "correct": "AlphabeticalExampleSelector"
+    },
+    {
+        "q": "Name the exception type that `with_retry` handles by default.",
+        "type": "short_answer",
+        "answers": [
+            "Exception",
+            "BaseException"
+        ],
+        "isCaseSensitive": true
+    },
+    {
+        "q": "Match the advanced runnable with its function:",
+        "type": "match",
+        "left": [
+            "RunnableEach",
+            "RunnableMapAssign",
+            "RunnablePick",
+            "RunnableWithMessageHistory"
+        ],
+        "right": [
+            "Applies a runnable to each element in a list",
+            "Adds new keys to input dict without removing existing keys",
+            "Selects specific keys from input dict",
+            "Wraps a runnable to manage chat history automatically"
+        ]
+    },
+    {
+        "q": "What is the benefit of using `ChatPromptTemplate.from_messages()` over `PromptTemplate`?",
+        "type": "mcq",
+        "o": [
+            "It supports multiple message types like system, human, and ai",
+            "It is faster to render",
+            "It automatically optimizes prompts",
+            "It requires no API key"
+        ]
+    },
+    {
+        "q": "Swipe RIGHT for Dynamic examples, LEFT for Static examples.",
+        "type": "swipe_cards",
+        "left_label": "Static",
+        "right_label": "Dynamic",
+        "cards": {
+            "SemanticSimilarityExampleSelector": "right",
+            "Hardcoded list in PromptTemplate": "left",
+            "LengthBasedExampleSelector": "right"
+        }
+    },
+    {
+        "q": "Providing a model with a few solved examples inside the prompt is called ___-shot prompting.",
+        "type": "word_scramble",
+        "answer": "FEW",
+        "decoys": "XZQ"
+    },
+    {
+        "q": "What does the `config` dict in `invoke(input, config=...)` primarily allow you to pass?",
+        "type": "mcq",
+        "o": [
+            "Runtime overrides like callbacks, tags, and metadata for the run",
+            "Model architecture definitions",
+            "API keys",
+            "Database connection strings"
+        ]
+    },
+    {
+        "q": "Semantic selection requirements:",
+        "type": "inline_dropdown",
+        "text": "To select examples by meaning, `SemanticSimilarityExampleSelector` requires an [0] model to embed text and a [1] to query them.",
+        "dropdowns": [
+            {
+                "correct": "Embeddings",
+                "options": [
+                    "Embeddings",
+                    "LLM",
+                    "Parser"
+                ]
+            },
+            {
+                "correct": "VectorStore",
+                "options": [
+                    "VectorStore",
+                    "SQLDatabase",
+                    "Dictionary"
+                ]
+            }
+        ]
+    },
+    {
+        "q": "The `astream()` method yields tokens asynchronously, enabling non-blocking token-by-token processing.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Match the broader LangChain ecosystem tools with their purpose.",
+        "type": "memory",
+        "pairs": {
+            "LangSmith": "Observability, tracing, and evaluation platform",
+            "LangServe": "Deployment tool for exposing chains as REST APIs",
+            "LangGraph": "Framework for stateful, multi-actor agents"
+        }
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "from langchain_core.runnables import RunnableBranch\n\nbranch = RunnableBranch(\n    (lambda x: x > 0, RunnableLambda(lambda x: \"positive\")),\n    (lambda x: x < 0, RunnableLambda(lambda x: \"negative\")),\n    RunnableLambda(lambda x: \"zero\")\n)\nprint(branch.invoke(-5))",
+        "o": [
+            "negative",
+            "positive",
+            "zero",
+            "Error"
+        ]
+    },
+    {
+        "q": "Which `ChatOpenAI` parameter seeds the model for deterministic outputs?",
+        "type": "mcq",
+        "o": [
+            "seed",
+            "temperature",
+            "top_p",
+            "stop"
+        ]
+    },
+    {
+        "q": "The `llm` property in `ConversationSummaryMemory` is an instance of a ______ model used to create summaries.",
+        "type": "fill_blank",
+        "answers": [
+            "language",
+            "chat"
+        ],
+        "other_options": [
+            "embedding",
+            "diffusion",
+            "classification"
+        ]
+    },
+    {
+        "q": "Swipe RIGHT for langchain-community, LEFT for langchain-core.",
+        "type": "swipe_cards",
+        "left_label": "langchain-core",
+        "right_label": "langchain-community",
+        "cards": {
+            "Runnable interface": "left",
+            "BaseMessage class": "left",
+            "WikipediaAPIWrapper": "right",
+            "HuggingFaceHub LLM": "right"
+        }
+    },
+    {
+        "q": "What is the role of `RunnablePick` in LCEL?",
+        "type": "mcq",
+        "o": [
+            "To select and forward specific keys from the input dictionary",
+            "To pick the best runnable for a task",
+            "To randomly choose a branch",
+            "To filter list elements"
+        ]
+    },
+    {
+        "q": "How do you pass per-invocation tags to a LangChain chain for tracing?",
+        "type": "mcq",
+        "o": [
+            "By including a `tags` list inside the `config` dict passed to invoke",
+            "By setting global variables",
+            "By modifying the chain object directly",
+            "By using decorators"
+        ]
+    },
+    {
+        "q": "Name the LCEL helper that applies a runnable to every item in a list.",
+        "type": "short_answer",
+        "answers": [
+            "RunnableEach"
+        ],
+        "isCaseSensitive": true
+    },
+    {
+        "q": "What is the purpose of `model_rebuild()` in Pydantic v2 when used with LangChain parsers?",
+        "type": "mcq",
+        "o": [
+            "To rebuild a Pydantic model's schema after forward references are resolved",
+            "To retrain the language model",
+            "To reload the model from disk",
+            "To update the API schema"
+        ]
+    },
+    {
+        "q": "What is the acronym for LangChain Expression Language?",
+        "type": "word_scramble",
+        "answer": "LCEL",
+        "decoys": "ZQP"
+    },
+    {
+        "q": "Match the tool-related component with its description:",
+        "type": "match",
+        "left": [
+            "bind_tools",
+            "with_structured_output",
+            "ToolMessage",
+            "ToolCall"
+        ],
+        "right": [
+            "Attaches tool definitions to a chat model",
+            "Forces the model to output a specific Pydantic model",
+            "Represents the result returned by a tool",
+            "Represents a request by the model to call a tool"
+        ]
+    },
+    {
+        "q": "The LangChain extension framework designed for cyclic, stateful agents.",
+        "type": "word_scramble",
+        "answer": "GRAPH",
+        "decoys": "WK"
+    },
+    {
+        "q": "`ConversationSummaryBufferMemory` completely discards old messages once they are summarized.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "from langchain.memory import ConversationBufferMemory\n\nmemory = ConversationBufferMemory(memory_key=\"history\", input_key=\"question\")\nmemory.save_context({\"question\": \"What's your name?\"}, {\"output\": \"I'm Bot\"})\nprint(memory.load_memory_variables({})['history'])",
+        "o": [
+            "Human: What's your name?\nAI: I'm Bot",
+            "[HumanMessage(content=\"What's your name?\"), AIMessage(content=\"I'm Bot\")]",
+            "{'question': \"What's your name?\", 'output': \"I'm Bot\"}",
+            "What's your name? I'm Bot"
+        ]
+    },
+    {
+        "q": "Package architecture:",
+        "type": "inline_dropdown",
+        "text": "The [0] package contains base abstractions, while [1] contains third-party integrations.",
+        "dropdowns": [
+            {
+                "correct": "langchain-core",
+                "options": [
+                    "langchain-core",
+                    "langchain-text-splitters",
+                    "langchain-cli"
+                ]
+            },
+            {
+                "correct": "langchain-community",
+                "options": [
+                    "langchain-core",
+                    "langchain-community",
+                    "langchain-experimental"
+                ]
+            }
+        ]
+    },
+    {
+        "q": "Which component ensures that a model's output strictly adheres to a Pydantic schema?",
+        "type": "mcq",
+        "o": [
+            "ChatOpenAI.with_structured_output()",
+            "StrOutputParser()",
+            "PromptTemplate()",
+            "ConversationBufferMemory()"
+        ]
+    },
+    {
+        "q": "The `batch_size` parameter in `batch()` controls how many inputs are processed in ______.",
+        "type": "fill_blank",
+        "answers": [
+            "parallel",
+            "concurrently"
+        ],
+        "other_options": [
+            "sequence",
+            "random order",
+            "real-time"
+        ]
+    },
+    {
+        "q": "What does `RunnableWithMessageHistory` automatically inject into the prompt?",
+        "type": "mcq",
+        "o": [
+            "The stored chat history from a provided `get_session_history` callable",
+            "API keys for authentication",
+            "System performance metrics",
+            "User location data"
+        ]
+    },
+    {
+        "q": "In LCEL, you can only chain components of the same type together.",
+        "type": "true_false",
+        "correct": "False"
+    },
+    {
+        "q": "What is a `BaseMessage` in LangChain?",
+        "type": "mcq",
+        "o": [
+            "The abstract base class for all message types (Human, AI, System, etc.)",
+            "A message sent to the base API",
+            "The first message in a conversation",
+            "An error message"
+        ]
+    },
+    {
+        "q": "Name the memory type that fetches relevant past interactions from a vector store based on input similarity.",
+        "type": "short_answer",
+        "answers": [
+            "VectorStoreRetrieverMemory"
+        ],
+        "isCaseSensitive": true
+    },
+    {
+        "q": "How does `with_retry` decide when to stop retrying?",
+        "type": "mcq",
+        "o": [
+            "Based on a maximum retry count and/or exception types specified in the configuration",
+            "When the API key expires",
+            "After a fixed 3 attempts",
+            "Only when a network error occurs"
+        ]
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "from langchain_core.runnables import RunnableParallel\n\nchain = RunnableParallel(\n    greeting=RunnableLambda(lambda x: x),\n    farewell=RunnableLambda(lambda x: x)\n)\nprint(type(chain.invoke({'text': 'test'})))",
+        "o": [
+            "<class 'dict'>",
+            "<class 'str'>",
+            "<class 'list'>",
+            "<class 'tuple'>"
+        ]
+    },
+    {
+        "q": "The `format_instructions` property of a PydanticOutputParser generates a string describing the expected ______.",
+        "type": "fill_blank",
+        "answers": [
+            "schema",
+            "JSON format"
+        ],
+        "other_options": [
+            "prompt",
+            "model",
+            "API key"
+        ]
+    },
+    {
+        "q": "Match the chain configuration concept with its description:",
+        "type": "match",
+        "left": [
+            "configurable_alternatives",
+            "configurable_fields",
+            "default_config",
+            "per-invocation config"
+        ],
+        "right": [
+            "Swaps entire runnables based on config key",
+            "Changes specific parameters of a runnable",
+            "Base configuration set on a Runnable",
+            "Runtime settings passed to invoke()"
+        ]
+    },
+    {
+        "q": "Custom logic in LCEL:",
+        "type": "inline_dropdown",
+        "text": "In LCEL, `RunnableLambda` converts a custom Python [0] into a [1].",
+        "dropdowns": [
+            {
+                "correct": "function",
+                "options": [
+                    "function",
+                    "class",
+                    "string"
+                ]
+            },
+            {
+                "correct": "Runnable",
+                "options": [
+                    "Runnable",
+                    "Agent",
+                    "Tool"
+                ]
+            }
+        ]
+    },
+    {
+        "q": "What is the purpose of `RunnableEach`?",
+        "type": "mcq",
+        "o": [
+            "To apply a single runnable to every element in an input list independently",
+            "To run multiple chains in sequence",
+            "To batch inputs into a single API call",
+            "To filter list elements"
+        ]
+    },
+    {
+        "q": "`ReadOnlySharedMemory` can be modified by the chains that read it.",
+        "type": "true_false",
+        "correct": "False"
+    },
+    {
+        "q": "Match the BaseMessage properties to their contents.",
+        "type": "memory",
+        "pairs": {
+            "content": "The actual string text of the message",
+            "additional_kwargs": "Provider-specific fields like tool calls",
+            "response_metadata": "Information like token usage or API latency"
+        }
+    },
+    {
+        "q": "What does `ChatOpenAI` return by default when invoked directly without an output parser?",
+        "type": "mcq",
+        "o": [
+            "An `AIMessage` object",
+            "A plain string",
+            "A JSON object",
+            "A list of tokens"
+        ]
+    },
+    {
+        "q": "Which method of `BaseChatMessageHistory` adds a user message to the history?",
+        "type": "mcq",
+        "o": [
+            "add_user_message()",
+            "save_context()",
+            "append()",
+            "write()"
+        ]
+    },
+    {
+        "q": "Name the standard interface method for executing a runnable with a single input.",
+        "type": "short_answer",
+        "answers": [
+            "invoke"
+        ],
+        "isCaseSensitive": true
+    },
+    {
+        "q": "The `stream` method yields output tokens one by one as they are ______.",
+        "type": "fill_blank",
+        "answers": [
+            "generated"
+        ],
+        "other_options": [
+            "parsed",
+            "stored",
+            "deleted"
+        ]
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "from langchain_core.output_parsers import PydanticOutputParser\nfrom pydantic import BaseModel\n\nclass Person(BaseModel):\n    name: str\n    age: int\n\nparser = PydanticOutputParser(pydantic_object=Person)\nprint(type(parser.get_format_instructions()))",
+        "o": [
+            "<class 'str'>",
+            "<class 'dict'>",
+            "<class 'list'>",
+            "<class 'Person'>"
+        ]
+    },
+    {
+        "q": "What is the advantage of `RunnableWithMessageHistory` over manually managing memory?",
+        "type": "mcq",
+        "o": [
+            "It automatically loads, updates, and saves chat history for each session",
+            "It compresses history for free",
+            "It bypasses token limits",
+            "It encrypts all messages"
+        ]
+    },
+    {
+        "q": "Which parameter in `ChatOpenAI.with_structured_output()` specifies the expected output model?",
+        "type": "mcq",
+        "o": [
+            "schema",
+            "method",
+            "include_raw",
+            "strict"
+        ]
+    },
+    {
+        "q": "A `ToolMessage` and a `FunctionMessage` are interchangeable terms for the same concept in LangChain.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Match the LCEL method with the input it processes:",
+        "type": "match",
+        "left": [
+            "invoke()",
+            "batch()",
+            "stream()",
+            "transform()"
+        ],
+        "right": [
+            "Single input",
+            "List of inputs",
+            "Single input, yields tokens",
+            "Iterator of inputs, yields results"
+        ]
+    },
+    {
+        "q": "Swipe RIGHT for RunnableParallel, LEFT for RunnableLambda.",
+        "type": "swipe_cards",
+        "left_label": "RunnableLambda",
+        "right_label": "RunnableParallel",
+        "cards": {
+            "Custom Python function logic": "left",
+            "Executes multiple Runnables concurrently": "right",
+            "Returns a dict of results from branches": "right",
+            "Often wraps a standalone def function": "left"
+        }
+    },
+    {
+        "q": "What does `ChatOpenAI(model='gpt-4-turbo')` specifically enable over `gpt-4`?",
+        "type": "mcq",
+        "o": [
+            "More recent training data cutoff and often lower cost",
+            "Access to image generation",
+            "Larger context window than any other model",
+            "Audio input processing"
+        ]
+    },
+    {
+        "q": "What is the purpose of `RunnableWithMessageHistory` in LangChain?",
+        "type": "mcq",
+        "o": [
+            "It wraps a chain to automatically inject and update conversation history per session",
+            "It deletes old messages to save memory",
+            "It translates messages into multiple languages",
+            "It encrypts chat history for security"
+        ]
+    },
+    {
+        "q": "Provider-specific API arguments in a message are often stored in additional_...",
+        "type": "word_scramble",
+        "answer": "KWARGS",
+        "decoys": "XZ"
+    },
+    {
+        "q": "How does `ConversationTokenBufferMemory` decide which messages to flush?",
+        "type": "mcq",
+        "o": [
+            "It removes older messages when the total token count exceeds the limit",
+            "It randomly deletes messages",
+            "It only flushes after the conversation ends",
+            "It removes the shortest messages first"
+        ]
+    },
+    {
+        "q": "The base Python interface that all LCEL components implement.",
+        "type": "word_scramble",
+        "answer": "RUNNABLE",
+        "decoys": "VQ"
+    },
+    {
+        "q": "The `astream_events` method on a Runnable allows listening to granular events like `on_chat_model_start` and `on_chain_end` for ______ tracking.",
+        "type": "fill_blank",
+        "answers": [
+            "streaming",
+            "event"
+        ],
+        "other_options": [
+            "batch",
+            "parallel",
+            "error"
+        ]
+    },
+    {
+        "q": "Runtime variables in LCEL:",
+        "type": "inline_dropdown",
+        "text": "You can attach variables like tags to an LCEL execution using [0], and attach logging handlers using [1].",
+        "dropdowns": [
+            {
+                "correct": "config",
+                "options": [
+                    "config",
+                    "memory",
+                    "schema"
+                ]
+            },
+            {
+                "correct": "callbacks",
+                "options": [
+                    "callbacks",
+                    "tools",
+                    "parsers"
+                ]
+            }
+        ]
+    },
+    {
+        "q": "What is the role of the `hub` namespace in LangChain?",
+        "type": "mcq",
+        "o": [
+            "To pull and manage prompts from LangSmith Hub",
+            "To connect to GitHub repositories",
+            "To store API keys",
+            "To manage LLM versions"
+        ]
+    },
+    {
+        "q": "Model provider imports:",
+        "type": "inline_dropdown",
+        "text": "For partner packages, `ChatOpenAI` is imported from [0], whereas `ChatAnthropic` is from [1].",
+        "dropdowns": [
+            {
+                "correct": "langchain_openai",
+                "options": [
+                    "langchain_openai",
+                    "langchain_community",
+                    "langchain_core"
+                ]
+            },
+            {
+                "correct": "langchain_anthropic",
+                "options": [
+                    "langchain_anthropic",
+                    "langchain_community",
+                    "langchain"
+                ]
+            }
+        ]
+    },
+    {
+        "q": "`RunnablePassthrough` can be used inside `RunnableParallel` to keep the original input unchanged.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Which method allows a chain to be exposed via a REST API in LangServe?",
+        "type": "mcq",
+        "o": [
+            "add_routes()",
+            "deploy()",
+            "serve()",
+            "expose()"
+        ]
+    },
+    {
+        "q": "Match the LangChain callback event with its timing:",
+        "type": "match",
+        "left": [
+            "on_llm_start",
+            "on_chain_end",
+            "on_tool_start",
+            "on_retriever_error"
+        ],
+        "right": [
+            "When an LLM invocation begins",
+            "When a chain finishes successfully",
+            "When a tool execution is initiated",
+            "When a retriever encounters an exception"
+        ]
+    },
+    {
+        "q": "What does the `get_openai_callback()` context manager track?",
+        "type": "mcq",
+        "o": [
+            "Total tokens, prompt tokens, completion tokens, and cost for OpenAI calls",
+            "The number of API calls made",
+            "Only the total cost",
+            "The success rate of requests"
+        ]
+    },
+    {
+        "q": "Name the LangChain callback that aggregates token usage across multiple LLM calls.",
+        "type": "short_answer",
+        "answers": [
+            "get_openai_callback",
+            "OpenAICallbackHandler"
+        ],
+        "isCaseSensitive": true
+    },
+    {
+        "q": "Match the Runnable configuration method to its purpose.",
+        "type": "memory",
+        "pairs": {
+            "bind": "Attaches constant arguments like stop words to a model",
+            "with_fallbacks": "Adds error recovery chains if the primary fails",
+            "with_config": "Attaches runtime configuration like tags or metadata"
+        }
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "from langchain_core.runnables import RunnableConfig\n\nconfig = RunnableConfig(callbacks=[], tags=[\"test\"], metadata={\"user\": \"admin\"})\nprint(type(config))",
+        "o": [
+            "<class 'langchain_core.runnables.config.RunnableConfig'>",
+            "<class 'dict'>",
+            "<class 'list'>",
+            "<class 'str'>"
+        ]
+    },
+    {
+        "q": "Which `ConversationBufferWindowMemory` parameter sets the number of past exchanges to remember?",
+        "type": "mcq",
+        "o": [
+            "k",
+            "max_tokens",
+            "window_size",
+            "buffer_length"
+        ]
+    },
+    {
+        "q": "The `with_structured_output` method in `ChatOpenAI` uses the ______ parameter to force strict JSON schema compliance.",
+        "type": "fill_blank",
+        "answers": [
+            "strict",
+            "method"
+        ],
+        "other_options": [
+            "include_raw",
+            "schema",
+            "temperature"
+        ]
+    },
+    {
+        "q": "What does the `batch` method return when processing multiple inputs concurrently?",
+        "type": "mcq",
+        "o": [
+            "A list of outputs corresponding to each input in the same order",
+            "A single aggregated output",
+            "A dictionary of results",
+            "An async generator"
+        ]
+    },
+    {
+        "q": "Swipe RIGHT for AIMessage, LEFT for SystemMessage.",
+        "type": "swipe_cards",
+        "left_label": "SystemMessage",
+        "right_label": "AIMessage",
+        "cards": {
+            "Instructions for the model's persona": "left",
+            "Response output from the model": "right",
+            "'You are a helpful assistant'": "left",
+            "'The answer is 42'": "right"
+        }
+    },
+    {
+        "q": "LangServe allows you to deploy a LangChain chain as a web API without writing server code.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "What is the purpose of `BaseCallbackHandler` in LangChain?",
+        "type": "mcq",
+        "o": [
+            "To define hooks for executing custom logic at different stages of a chain's lifecycle",
+            "To format prompts",
+            "To store API keys",
+            "To compress output tokens"
+        ]
+    },
+    {
+        "q": "The Runnable method used to attach permanent keyword arguments to a model call.",
+        "type": "word_scramble",
+        "answer": "BIND",
+        "decoys": "WQ"
+    },
+    {
+        "q": "How can you pass custom metadata to all runs in a chain invocation?",
+        "type": "mcq",
+        "o": [
+            "By including a metadata dictionary in the RunnableConfig",
+            "By setting environment variables",
+            "By modifying the chain's init method",
+            "By adding comments to the code"
+        ]
+    },
+    {
+        "q": "The prefix for LangChain models that take messages instead of plain strings (e.g., ___OpenAI).",
+        "type": "word_scramble",
+        "answer": "CHAT",
+        "decoys": "ZX"
+    },
+    {
+        "q": "Match the LCEL creation method with the component it builds:",
+        "type": "match",
+        "left": [
+            "RunnableLambda(lambda x: x)",
+            "RunnableParallel(dict)",
+            "RunnableBranch(conditions)",
+            "RunnablePassthrough()"
+        ],
+        "right": [
+            "Wraps a Python function",
+            "Runs multiple runnables concurrently",
+            "Routes input based on conditions",
+            "Passes input through unchanged"
+        ]
+    },
+    {
+        "q": "Tool calling internals:",
+        "type": "inline_dropdown",
+        "text": "When using `bind_tools`, if the LLM decides to use a tool, it populates the [0] attribute of the returned [1].",
+        "dropdowns": [
+            {
+                "correct": "tool_calls",
+                "options": [
+                    "tool_calls",
+                    "content",
+                    "memory"
+                ]
+            },
+            {
+                "correct": "AIMessage",
+                "options": [
+                    "AIMessage",
+                    "SystemMessage",
+                    "HumanMessage"
+                ]
+            }
+        ]
+    },
+    {
+        "q": "What is a key benefit of using `configurable_alternatives` on a Runnable?",
+        "type": "mcq",
+        "o": [
+            "Swapping entire LLMs or components at runtime based on a configuration key",
+            "Creating multiple output formats",
+            "Running the chain in different languages",
+            "Encrypting alternative paths"
+        ]
+    },
+    {
+        "q": "Parsing concept:",
+        "type": "inline_dropdown",
+        "text": "An [0] parses LLM string outputs into Python objects, often by injecting [1] into the prompt.",
+        "dropdowns": [
+            {
+                "correct": "OutputParser",
+                "options": [
+                    "OutputParser",
+                    "AgentExecutor",
+                    "LLMChain"
+                ]
+            },
+            {
+                "correct": "format instructions",
+                "options": [
+                    "format instructions",
+                    "memory history",
+                    "API keys"
+                ]
+            }
+        ]
+    },
+    {
+        "q": "Name the method used to evaluate a string of Python code inside a LangChain tool safely.",
+        "type": "short_answer",
+        "answers": [
+            "eval",
+            "exec"
+        ],
+        "isCaseSensitive": true
+    },
+    {
+        "q": "The `callbacks` list in `RunnableConfig` can contain instances of classes inheriting from ______.",
+        "type": "fill_blank",
+        "answers": [
+            "BaseCallbackHandler"
+        ],
+        "other_options": [
+            "BaseOutputParser",
+            "BaseMemory",
+            "BasePromptTemplate"
+        ]
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "from langchain.memory import ConversationTokenBufferMemory\nfrom langchain.chat_models import ChatOpenAI\n\nmemory = ConversationTokenBufferMemory(llm=ChatOpenAI(), max_token_limit=50)\nprint(memory.llm is not None)",
+        "o": [
+            "True",
+            "False",
+            "None",
+            "Error"
+        ]
+    },
+    {
+        "q": "What is the purpose of `RunnableMapAssign`?",
+        "type": "mcq",
+        "o": [
+            "To add new keys to an existing input dict without removing the original keys",
+            "To assign variable names to runnables",
+            "To replace the entire input",
+            "To assign error handlers"
+        ]
+    },
+    {
+        "q": "Which decorator marks a function as a callable tool for an LLM agent?",
+        "type": "mcq",
+        "o": [
+            "@tool",
+            "@agent",
+            "@function_call",
+            "@chain"
+        ]
+    },
+    {
+        "q": "Match the tool execution keys to their descriptions.",
+        "type": "memory",
+        "pairs": {
+            "tool_calls": "List of requested tools inside an AIMessage",
+            "tool_call_id": "ID to match a ToolMessage back to the original request",
+            "name": "The actual name of the tool function to execute"
+        }
+    },
+    {
+        "q": "`ConversationSummaryMemory` requires the `prompt` parameter to format the summary prompt.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "What does `ChatOpenAI.with_structured_output(method='json_mode')` do?",
+        "type": "mcq",
+        "o": [
+            "Forces the model to output valid JSON as a raw string rather than function calling",
+            "Switches to XML output",
+            "Enables streaming mode",
+            "Disables output parsing"
+        ]
+    },
+    {
+        "q": "How does `VectorStoreRetrieverMemory` retrieve relevant memories?",
+        "type": "mcq",
+        "o": [
+            "By performing a similarity search over stored embeddings using the current input",
+            "By fetching the most recent memories",
+            "By randomly sampling memories",
+            "By returning all stored memories"
+        ]
+    },
+    {
+        "q": "The `input_key` in a memory configuration specifies the key in the input dictionary that maps to the ______ message.",
+        "type": "fill_blank",
+        "answers": [
+            "human",
+            "user"
+        ],
+        "other_options": [
+            "system",
+            "ai",
+            "tool"
+        ]
+    },
+    {
+        "q": "What does the `echo` parameter do when set to True on a ChatOpenAI request?",
+        "type": "mcq",
+        "o": [
+            "Returns the input prompt alongside the generated response",
+            "Repeats the response twice",
+            "Enables audio output",
+            "Sends the response to a secondary API"
+        ]
+    },
+    {
+        "q": "Swipe RIGHT for Agent concepts, LEFT for Memory concepts.",
+        "type": "swipe_cards",
+        "left_label": "Memory",
+        "right_label": "Agents",
+        "cards": {
+            "ConversationBuffer": "left",
+            "AgentExecutor": "right",
+            "ReAct Framework": "right",
+            "ChatMessageHistory": "left"
+        }
+    },
+    {
+        "q": "Name the method that provides a synchronous context manager for tracking OpenAI costs.",
+        "type": "short_answer",
+        "answers": [
+            "get_openai_callback"
+        ],
+        "isCaseSensitive": true
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "from langchain_core.runnables import RunnablePassthrough, RunnableLambda\n\nchain = RunnablePassthrough.assign(\n    result=lambda x: RunnableLambda(lambda y: y.upper()).invoke(x['text'])\n)\nprint(chain.invoke({'text': 'hello'}))",
+        "o": [
+            "{'text': 'hello', 'result': 'HELLO'}",
+            "{'result': 'HELLO'}",
+            "{'text': 'hello'}",
+            "HELLO"
+        ]
+    },
+    {
+        "q": "What is the role of the `AsyncCallbackHandler` class?",
+        "type": "mcq",
+        "o": [
+            "To define asynchronous hooks for a chain's execution lifecycle",
+            "To handle synchronous callbacks only",
+            "To convert sync chains to async",
+            "To manage API rate limits"
+        ]
+    },
+    {
+        "q": "The Runnable method used to yield chunks of a response sequentially.",
+        "type": "word_scramble",
+        "answer": "STREAM",
+        "decoys": "PL"
+    },
+    {
+        "q": "An autonomous software entity that uses an LLM to decide which tools to call.",
+        "type": "word_scramble",
+        "answer": "AGENT",
+        "decoys": "ZQ"
+    },
+    {
+        "q": "Match the runnable configuration method with its scope:",
+        "type": "match",
+        "left": [
+            "with_config()",
+            "with_fallbacks()",
+            "configurable_fields()",
+            "per-invoke config dict"
+        ],
+        "right": [
+            "Sets default config for all future invocations",
+            "Defines backup runnables on failure",
+            "Marks parameters as switchable at runtime",
+            "Passes settings for a single invocation"
+        ]
+    },
+    {
+        "q": "`ConversationTokenBufferMemory` can work with any LLM provider, not just OpenAI.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Creating a ReAct agent:",
+        "type": "inline_dropdown",
+        "text": "The function `create_react_agent` requires an [0], a list of [1], and a [2] template.",
+        "dropdowns": [
+            {
+                "correct": "llm",
+                "options": [
+                    "llm",
+                    "parser",
+                    "database"
+                ]
+            },
+            {
+                "correct": "tools",
+                "options": [
+                    "tools",
+                    "agents",
+                    "memories"
+                ]
+            },
+            {
+                "correct": "prompt",
+                "options": [
+                    "prompt",
+                    "document",
+                    "schema"
+                ]
+            }
+        ]
+    },
+    {
+        "q": "Branching in LCEL:",
+        "c": "chain = RunnableBranch((cond1, run1), (cond2, run2), default_run)",
+        "type": "inline_dropdown",
+        "text": "`RunnableBranch` takes a list of [0] and evaluates them in [1] until one condition is True.",
+        "dropdowns": [
+            {
+                "correct": "condition-runnable tuples",
+                "options": [
+                    "condition-runnable tuples",
+                    "strings",
+                    "integers"
+                ]
+            },
+            {
+                "correct": "sequential order",
+                "options": [
+                    "sequential order",
+                    "parallel",
+                    "random order"
+                ]
+            }
+        ]
+    },
+    {
+        "q": "What does the `return_scores` parameter in a vector store retriever do?",
+        "type": "mcq",
+        "o": [
+            "Includes similarity scores alongside the retrieved documents",
+            "Returns only the highest score",
+            "Converts scores to grades",
+            "Hides scores by default"
+        ]
+    },
+    {
+        "q": "What is the purpose of `ChatPromptTemplate.partial()`?",
+        "type": "mcq",
+        "o": [
+            "To pre-fill some prompt variables, returning a new template expecting the remaining variables",
+            "To partially execute a chain",
+            "To validate partial JSON",
+            "To limit the prompt size"
+        ]
+    },
+    {
+        "q": "Match the Message Type to an example content string.",
+        "type": "memory",
+        "pairs": {
+            "HumanMessage": "'What is 2+2?'",
+            "AIMessage": "'The answer is 4'",
+            "SystemMessage": "'You are a strict math tutor'",
+            "ToolMessage": "'{'result': 4}'"
+        }
+    },
+    {
+        "q": "The `runnable` returned by `ChatOpenAI.with_structured_output()` guarantees that the output is always a ______.",
+        "type": "fill_blank",
+        "answers": [
+            "Pydantic model instance",
+            "structured object"
+        ],
+        "other_options": [
+            "string",
+            "list",
+            "float"
+        ]
+    },
+    {
+        "q": "What does `model.invoke()` typically accept as input for a chat model?",
+        "type": "mcq",
+        "o": [
+            "A list of Message objects or a string",
+            "Only a single string",
+            "Only a dictionary",
+            "A file path"
+        ]
+    },
+    {
+        "q": "How does LangChain's `hub` library simplify prompt management?",
+        "type": "mcq",
+        "o": [
+            "By allowing users to pull versioned prompts from a central repository using `hub.pull()`",
+            "By generating prompts automatically",
+            "By compiling prompts into bytecode",
+            "By encrypting prompts for security"
+        ]
+    },
+    {
+        "q": "Name the Pydantic field type used in tools to describe a parameter that accepts any string.",
+        "type": "short_answer",
+        "answers": [
+            "str"
+        ],
+        "isCaseSensitive": true
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "from langchain.memory import ConversationSummaryMemory\nfrom langchain.chat_models import ChatOpenAI\n\nllm = ChatOpenAI(model='gpt-3.5-turbo')\nmemory = ConversationSummaryMemory(llm=llm)\nprint(hasattr(memory, 'predict_new_summary'))",
+        "o": [
+            "True",
+            "False",
+            "None",
+            "Error"
+        ]
+    },
+    {
+        "q": "What is the function of `RunnableGenerator` in LCEL?",
+        "type": "mcq",
+        "o": [
+            "To create a runnable from a generator function that yields outputs incrementally",
+            "To generate random runnable configurations",
+            "To generate prompts automatically",
+            "To compile chains"
+        ]
+    },
+    {
+        "q": "`get_openai_callback()` tracks costs even if the underlying model is not from OpenAI.",
+        "type": "true_false",
+        "correct": "False"
+    },
+    {
+        "q": "What does the `transform` method of a `Runnable` do differently from `invoke`?",
+        "type": "mcq",
+        "o": [
+            "It accepts an iterator of inputs and yields outputs as they are generated",
+            "It only works with strings",
+            "It transforms the input type",
+            "It runs in parallel automatically"
+        ]
+    },
+    {
+        "q": "Which attribute of a `PydanticOutputParser` holds the Pydantic model schema?",
+        "type": "mcq",
+        "o": [
+            "pydantic_object",
+            "schema",
+            "model",
+            "parser_schema"
+        ]
+    },
+    {
+        "q": "The `__or__` method on a `Runnable` is the magic method that enables the ______ operator.",
+        "type": "fill_blank",
+        "answers": [
+            "pipe",
+            "|"
+        ],
+        "other_options": [
+            "plus",
+            "ampersand",
+            "dollar"
+        ]
+    },
+    {
+        "q": "What is the primary use case for `ConversationTokenBufferMemory`?",
+        "type": "mcq",
+        "o": [
+            "To strictly limit the token count of conversation history sent to the LLM",
+            "To store messages in a tokenized database",
+            "To convert messages to tokens for analysis",
+            "To encrypt tokenized messages"
+        ]
+    },
+    {
+        "q": "Match the callback method with the object it monitors:",
+        "type": "match",
+        "left": [
+            "on_chat_model_start",
+            "on_tool_end",
+            "on_retriever_start",
+            "on_chain_error"
+        ],
+        "right": [
+            "Tracks when an LLM call begins",
+            "Tracks when a tool execution completes",
+            "Tracks when a retriever is invoked",
+            "Tracks when a chain encounters an error"
+        ]
+    },
+    {
+        "q": "Name the exception that `RunnableWithMessageHistory` raises if `session_id` is missing from the config.",
+        "type": "short_answer",
+        "answers": [
+            "ValueError",
+            "KeyError"
+        ],
+        "isCaseSensitive": true
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "from langchain_core.runnables import RunnableLambda, RunnableParallel\n\nchain = RunnableParallel(\n    a=RunnableLambda(lambda x: 1),\n    b=RunnableLambda(lambda x: 2)\n) | RunnableLambda(lambda d: d['a'] + d['b'])\nprint(chain.invoke({}))",
+        "o": [
+            "3",
+            "{'a': 1, 'b': 2}",
+            "Error",
+            "None"
+        ]
+    },
+    {
+        "q": "What does the `config` parameter `max_concurrency` control in `batch()`?",
+        "type": "mcq",
+        "o": [
+            "The maximum number of parallel calls to the underlying runnable",
+            "The total number of inputs allowed",
+            "The batch size for processing",
+            "The API rate limit"
+        ]
+    },
+    {
+        "q": "`ReadOnlySharedMemory` is safe to use across multiple concurrent chains.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "What is the purpose of the `from_orm` method in Pydantic when used with LangChain parsers?",
+        "type": "mcq",
+        "o": [
+            "To create a model instance from an arbitrary object with attributes",
+            "To import a model from a database",
+            "To convert a model to SQL",
+            "To serialize a model to JSON"
+        ]
+    },
+    {
+        "q": "Which component automatically formats the output schema instructions into the prompt for structured output?",
+        "type": "mcq",
+        "o": [
+            "PydanticOutputParser",
+            "PromptTemplate",
+            "LLMChain",
+            "StrOutputParser"
+        ]
+    },
+    {
+        "q": "The `with_retry` configuration parameter `stop_after_attempt` defines the ______ number of retries.",
+        "type": "fill_blank",
+        "answers": [
+            "maximum",
+            "max"
+        ],
+        "other_options": [
+            "minimum",
+            "average",
+            "initial"
+        ]
+    },
+    {
+        "q": "What is the benefit of using `astream_events` over `astream`?",
+        "type": "mcq",
+        "o": [
+            "It provides structured event objects with metadata about the streaming source",
+            "It is always faster",
+            "It uses less memory",
+            "It automatically logs events to LangSmith"
+        ]
+    },
+    {
+        "q": "How do you define a runnable that uses different models for different inputs based on a config key?",
+        "type": "mcq",
+        "o": [
+            "Using `configurable_alternatives` on a Runnable",
+            "By writing if/else statements inside a chain",
+            "By using a different API key each time",
+            "By creating multiple chain objects"
+        ]
+    },
+    {
+        "q": "Name the method on `ConversationBufferMemory` that loads the stored history into a variable dictionary.",
+        "type": "short_answer",
+        "answers": [
+            "load_memory_variables"
+        ],
+        "isCaseSensitive": true
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "from langchain_core.runnables import RunnablePassthrough\n\nchain = RunnablePassthrough() | RunnableLambda(lambda x: {'output': x})\nprint(chain.invoke('test'))",
+        "o": [
+            "{'output': 'test'}",
+            "'test'",
+            "Error",
+            "None"
+        ]
+    },
+    {
+        "q": "What does the `strict` parameter in `with_structured_output` enforce?",
+        "type": "mcq",
+        "o": [
+            "That the model's JSON output adheres exactly to the defined schema",
+            "That the model runs faster",
+            "That the output is encrypted",
+            "That the prompt is kept private"
+        ]
+    },
+    {
+        "q": "Match the LangChain callback event with its data payload:",
+        "type": "match",
+        "left": [
+            "on_llm_end",
+            "on_chain_start",
+            "on_tool_error",
+            "on_text"
+        ],
+        "right": [
+            "Response object with generations",
+            "Chain name and inputs",
+            "Error message from tool",
+            "Incremental text chunk from LLM"
+        ]
+    },
+    {
+        "q": "LangChain chains built with LCEL automatically integrate with LangSmith for tracing without extra code.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "What is a `tool_choice` parameter in function calling?",
+        "type": "mcq",
+        "o": [
+            "It forces the model to call a specific tool or none at all",
+            "It lets the user choose the tool",
+            "It randomly selects a tool",
+            "It disables tool calling"
+        ]
+    },
+    {
+        "q": "The `partial_variables` in a `PromptTemplate` are values that are filled in ______ the main `format` call.",
+        "type": "fill_blank",
+        "answers": [
+            "before"
+        ],
+        "other_options": [
+            "after",
+            "during",
+            "independent of"
+        ]
+    },
+    {
+        "q": "What does `RunnableLambda(func).bind(**kwargs)` do?",
+        "type": "mcq",
+        "o": [
+            "Pre-fills arguments of the wrapped function, returning a new runnable expecting remaining inputs",
+            "Binds the lambda to a specific LLM",
+            "Converts the lambda to an async function",
+            "Stops the lambda from executing"
+        ]
+    },
+    {
+        "q": "Swipe RIGHT for OutputParser duties, LEFT for PromptTemplate duties.",
+        "type": "swipe_cards",
+        "left_label": "PromptTemplate",
+        "right_label": "OutputParser",
+        "cards": {
+            "Formats user input into a string or messages": "left",
+            "Formats LLM string into JSON or Objects": "right",
+            "Uses from_template()": "left",
+            "Uses get_format_instructions()": "right"
+        }
+    },
+    {
+        "q": "Which context manager tracks detailed token usage for OpenAI models in LangChain?",
+        "type": "mcq",
+        "o": [
+            "get_openai_callback()",
+            "track_usage()",
+            "TokenCounter()",
+            "CostMonitor()"
+        ]
+    },
+    {
+        "q": "Name the method on a Pydantic model that generates the JSON schema for function calling.",
+        "type": "short_answer",
+        "answers": [
+            "model_json_schema"
+        ],
+        "isCaseSensitive": true
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "from langchain_core.runnables import RunnableBranch, RunnableLambda\n\nbranch = RunnableBranch(\n    (lambda x: x == 1, RunnableLambda(lambda x: \"one\")),\n    (lambda x: x == 2, RunnableLambda(lambda x: \"two\"))\n)\nprint(branch.invoke(3))",
+        "o": [
+            "None",
+            "three",
+            "Error",
+            "zero"
+        ]
+    },
+    {
+        "q": "What does `ChatOpenAI.dict()` return?",
+        "type": "mcq",
+        "o": [
+            "A dictionary of the model's configuration parameters",
+            "The model's response as a dictionary",
+            "A dictionary of all available models",
+            "The training data dictionary"
+        ]
+    },
+    {
+        "q": "`ConversationSummaryMemory` can generate summaries without an LLM if the conversation is short enough.",
+        "type": "true_false",
+        "correct": "False"
+    },
+    {
+        "q": "What is the purpose of `stream_mode='values'` in LCEL?",
+        "type": "mcq",
+        "o": [
+            "To yield the complete current state of the input at each step of the chain",
+            "To stream only numeric values",
+            "To stream values as base64",
+            "To disable streaming"
+        ]
+    },
+    {
+        "q": "The base class for all conversational turns in LangChain.",
+        "type": "word_scramble",
+        "answer": "MESSAGE",
+        "decoys": "KX"
+    },
+    {
+        "q": "How can you dynamically route inputs to different chains based on content?",
+        "type": "mcq",
+        "o": [
+            "By using `RunnableBranch` with predicate functions",
+            "By writing a custom Python router outside of LangChain",
+            "By using a random number generator",
+            "By sorting the input"
+        ]
+    },
+    {
+        "q": "The `output_key` parameter in memory configuration specifies the key used for the model's ______.",
+        "type": "fill_blank",
+        "answers": [
+            "response",
+            "output"
+        ],
+        "other_options": [
+            "input",
+            "prompt",
+            "config"
+        ]
+    },
+    {
+        "q": "Match the streaming mode with its behavior:",
+        "type": "match",
+        "left": [
+            "values",
+            "updates",
+            "custom",
+            "messages"
+        ],
+        "right": [
+            "Current state after each step",
+            "Only new data added at each step",
+            "User-defined event streaming",
+            "Streaming individual message chunks"
+        ]
+    },
+    {
+        "q": "What does `model.config` contain in a LangChain model instance?",
+        "type": "mcq",
+        "o": [
+            "The default configuration parameters used for invocations",
+            "The API response configuration",
+            "The model's training configuration",
+            "The server configuration"
+        ]
+    },
+    {
+        "q": "What is the purpose of `RunnableBinding` in LangChain's advanced LCEL usage?",
+        "type": "mcq",
+        "o": [
+            "To bind specific arguments to a Runnable's `invoke` method, creating a customized callable",
+            "To bind two chains together permanently",
+            "To bind a Runnable to a specific memory instance",
+            "To create a binding contract between LLMs"
+        ]
+    },
+    {
+        "q": "The message type that sets the global behavior or persona of the ChatModel.",
+        "type": "word_scramble",
+        "answer": "SYSTEM",
+        "decoys": "WQ"
+    },
+    {
+        "q": "How does `ConversationSummaryBufferMemory` dynamically decide when to summarize?",
+        "type": "mcq",
+        "o": [
+            "It triggers summarization when the token count of messages exceeds `max_token_limit`",
+            "It summarizes after every message",
+            "It summarizes based on time intervals",
+            "It summarizes only when explicitly called"
+        ]
+    },
+    {
+        "q": "The `with_listeners` method can attach callbacks for the events: `on_start`, `on_end`, and `on_`______.",
+        "type": "fill_blank",
+        "answers": [
+            "error"
+        ],
+        "other_options": [
+            "success",
+            "cancel",
+            "pause"
+        ]
+    },
+    {
+        "q": "What does `Runnable.map()` do in LCEL?",
+        "type": "mcq",
+        "o": [
+            "Applies a runnable to each element of an input iterable, similar to built-in map",
+            "Creates a geographical map of chain execution",
+            "Maps input keys to output keys",
+            "Converts a dict to a list"
+        ]
+    },
+    {
+        "q": "Defining tools:",
+        "type": "inline_dropdown",
+        "text": "The [0] decorator easily turns a function into a Tool, while the [1] class provides strict Pydantic validation.",
+        "dropdowns": [
+            {
+                "correct": "@tool",
+                "options": [
+                    "@tool",
+                    "@chain",
+                    "@agent"
+                ]
+            },
+            {
+                "correct": "StructuredTool",
+                "options": [
+                    "StructuredTool",
+                    "BaseTool",
+                    "AgentTool"
+                ]
+            }
+        ]
+    },
+    {
+        "q": "LangChain's `BaseChatMessageHistory` can be subclassed to create custom persistent storage for conversation memory.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "from langchain_core.runnables import RunnableLambda, RunnableParallel\n\nchain = RunnableParallel(\n    doubled=RunnableLambda(lambda x: x * 2),\n    squared=RunnableLambda(lambda x: x ** 2)\n) | RunnableLambda(lambda res: res['doubled'] + res['squared'])\nprint(chain.invoke(5))",
+        "o": [
+            "35",
+            "10",
+            "25",
+            "Error"
+        ]
+    },
+    {
+        "q": "What is the role of the `filter` parameter in `astream_events`?",
+        "type": "mcq",
+        "o": [
+            "To selectively listen to specific event types like `on_chat_model_stream`",
+            "To filter out large responses",
+            "To remove sensitive data from the stream",
+            "To filter based on API keys"
+        ]
+    },
+    {
+        "q": "Match the advanced LCEL component with its function:",
+        "type": "match",
+        "left": [
+            "RunnableLambda.afunc",
+            "RunnableGenerator",
+            "RunnableBinding",
+            "RunnableMapAssign"
+        ],
+        "right": [
+            "Wraps an async Python function",
+            "Wraps a generator yielding intermediate results",
+            "Pre-bound runnable with fixed args",
+            "Adds computed keys to input dict"
+        ]
+    },
+    {
+        "q": "Standard LCEL interfaces:",
+        "type": "inline_dropdown",
+        "text": "The LCEL standard interface includes [0] for single inputs, and [1] for lists of inputs.",
+        "dropdowns": [
+            {
+                "correct": "invoke",
+                "options": [
+                    "invoke",
+                    "call",
+                    "run"
+                ]
+            },
+            {
+                "correct": "batch",
+                "options": [
+                    "batch",
+                    "map",
+                    "gather"
+                ]
+            }
+        ]
+    },
+    {
+        "q": "How can you implement a custom fallback strategy that tries multiple LLM providers in sequence?",
+        "type": "mcq",
+        "o": [
+            "By chaining multiple models with `with_fallbacks()` where each fallback is an alternative provider",
+            "By using a single try-except block",
+            "By hardcoding API keys",
+            "By using a random selector"
+        ]
+    },
+    {
+        "q": "Name the method that converts a LangChain tool definition into the OpenAI function calling JSON schema format.",
+        "type": "short_answer",
+        "answers": [
+            "convert_to_openai_function",
+            "format_tool_to_openai_function"
+        ],
+        "isCaseSensitive": true
+    },
+    {
+        "q": "What does the `max_concurrency` parameter in `batch` configuration limit?",
+        "type": "mcq",
+        "o": [
+            "The number of API calls executed simultaneously",
+            "The total number of inputs in a batch",
+            "The total cost of API calls",
+            "The total tokens processed"
+        ]
+    },
+    {
+        "q": "The `return_exceptions` parameter in `batch()` determines whether to raise errors or return them as ______.",
+        "type": "fill_blank",
+        "answers": [
+            "values",
+            "results"
+        ],
+        "other_options": [
+            "strings",
+            "logs",
+            "None"
+        ]
+    },
+    {
+        "q": "What is the primary function of `RunnableWithMessageHistory`'s `get_session_history` parameter?",
+        "type": "mcq",
+        "o": [
+            "A factory callable that returns a `BaseChatMessageHistory` for a given session ID",
+            "A function that deletes session history",
+            "A method to serialize history to JSON",
+            "A callback to log history"
+        ]
+    },
+    {
+        "q": "`VectorStoreRetrieverMemory` stores memories as dense vector embeddings in a vector store.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "from langchain_core.runnables import RunnableLambda, RunnableBranch\n\ndef route(info):\n    if info['score'] > 90:\n        return RunnableLambda(lambda x: 'Excellent')\n    return RunnableLambda(lambda x: 'Good')\n\n# Using RunnableLambda for custom routing\nchain = RunnableLambda(lambda x: route(x)).invoke({'score': 95})\nprint(chain.invoke({}))",
+        "o": [
+            "Excellent",
+            "Good",
+            "Error",
+            "None"
+        ]
+    },
+    {
+        "q": "What is the purpose of `Runnable.config_schema`?",
+        "type": "mcq",
+        "o": [
+            "To define a Pydantic model specifying the structure of acceptable configuration for a runnable",
+            "To return the config as a JSON schema",
+            "To validate API keys",
+            "To store the chain configuration"
+        ]
+    },
+    {
+        "q": "How does `ChatOpenAI.with_structured_output(method='function_calling')` internally guarantee structured output?",
+        "type": "mcq",
+        "o": [
+            "By passing the Pydantic schema as a function definition and forcing the model to call it",
+            "By parsing the raw string output with regex",
+            "By limiting the output tokens",
+            "By using a second LLM to validate the output"
+        ]
+    },
+    {
+        "q": "Match the memory method with its signature behavior:",
+        "type": "match",
+        "left": [
+            "save_context",
+            "load_memory_variables",
+            "clear",
+            "moving_summary_buffer"
+        ],
+        "right": [
+            "Stores input/output of a conversation turn",
+            "Retrieves history formatted for the prompt",
+            "Removes all stored history",
+            "Accumulates summary text until flushed"
+        ]
+    },
+    {
+        "q": "Name the LangChain exception specifically designed for cases when an output parser fails.",
+        "type": "short_answer",
+        "answers": [
+            "OutputParserException"
+        ],
+        "isCaseSensitive": true
+    },
+    {
+        "q": "What does the `tags` parameter in a `RunnableConfig` typically enable?",
+        "type": "mcq",
+        "o": [
+            "Filtering and grouping traces in LangSmith for monitoring and analysis",
+            "Adding HTML tags to output",
+            "Tagging data for deletion",
+            "Encrypting tagged messages"
+        ]
+    },
+    {
+        "q": "The `ainvoke` method of a `Runnable` returns a coroutine that must be awaited to get the ______.",
+        "type": "fill_blank",
+        "answers": [
+            "result",
+            "output"
+        ],
+        "other_options": [
+            "chain",
+            "exception",
+            "config"
+        ]
+    },
+    {
+        "q": "What is the advantage of using `RunnableGenerator` over `RunnableLambda` for streaming?",
+        "type": "mcq",
+        "o": [
+            "It can yield intermediate results multiple times, enabling true streaming from custom logic",
+            "It always runs faster",
+            "It uses less memory than a lambda",
+            "It automatically retries on failure"
+        ]
+    },
+    {
+        "q": "You can nest `RunnableParallel` inside another `RunnableParallel` to create hierarchical concurrent execution.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "from langchain_core.runnables import RunnablePassthrough, RunnableLambda\n\nchain = RunnablePassthrough() | RunnableLambda(lambda x: list(x.keys()))\nprint(chain.invoke({'a': 1, 'b': 2}))",
+        "o": [
+            "['a', 'b']",
+            "[1, 2]",
+            "{'a': 1, 'b': 2}",
+            "Error"
+        ]
+    },
+    {
+        "q": "What is the role of `BaseRetriever` in LangChain's advanced RAG patterns?",
+        "type": "mcq",
+        "o": [
+            "Abstract base class for all retrievers that fetch documents based on a query",
+            "A class that generates text",
+            "A memory component",
+            "An output parser"
+        ]
+    },
+    {
+        "q": "Which method is called by `ConversationSummaryBufferMemory` to create a summary of older messages?",
+        "type": "mcq",
+        "o": [
+            "predict_new_summary()",
+            "summarize()",
+            "compress()",
+            "reduce()"
+        ]
+    },
+    {
+        "q": "Name the module that provides SQL database-backed chat message history in LangChain.",
+        "type": "short_answer",
+        "answers": [
+            "langchain_community.chat_message_histories.sql",
+            "SQLChatMessageHistory"
+        ],
+        "isCaseSensitive": true
+    },
+    {
+        "q": "The `configurable` parameter in `Runnable.with_configurable_fields()` makes a parameter ______ at runtime.",
+        "type": "fill_blank",
+        "answers": [
+            "swappable",
+            "changeable"
+        ],
+        "other_options": [
+            "private",
+            "static",
+            "encrypted"
+        ]
+    },
+    {
+        "q": "What does `model.stream()` yield when the model is generating a response?",
+        "type": "mcq",
+        "o": [
+            "AIMessageChunk objects representing incremental parts of the response",
+            "The complete response at once",
+            "A single string",
+            "An error message"
+        ]
+    },
+    {
+        "q": "Match the LangChain message storage backend with its description:",
+        "type": "match",
+        "left": [
+            "InMemoryChatMessageHistory",
+            "RedisChatMessageHistory",
+            "PostgresChatMessageHistory",
+            "FileChatMessageHistory"
+        ],
+        "right": [
+            "Stores messages in Python memory",
+            "Stores messages in Redis",
+            "Stores messages in PostgreSQL",
+            "Stores messages as JSON in a file"
+        ]
+    },
+    {
+        "q": "`ConversationTokenBufferMemory` flushes messages based on character count, not token count.",
+        "type": "true_false",
+        "correct": "False"
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "from langchain_core.runnables import RunnableLambda\n\nasync def async_func(x):\n    return x * 2\n\nchain = RunnableLambda(async_func)\nprint(type(chain))",
+        "o": [
+            "<class 'langchain_core.runnables.base.RunnableLambda'>",
+            "<class 'coroutine'>",
+            "<class 'function'>",
+            "<class 'async_generator'>"
+        ]
+    },
+    {
+        "q": "What is the purpose of `RunnableSequence.get_graph()`?",
+        "type": "mcq",
+        "o": [
+            "To generate a visual graph representation of the chain's structure for debugging",
+            "To plot performance metrics",
+            "To get the execution graph of the last run",
+            "To export the chain as a graph database"
+        ]
+    },
+    {
+        "q": "How does `with_structured_output(include_raw=True)` differ from the default?",
+        "type": "mcq",
+        "o": [
+            "It returns both the parsed Pydantic object and the raw AIMessage output",
+            "It includes raw HTML in the output",
+            "It disables output parsing",
+            "It streams raw bytes"
+        ]
+    },
+    {
+        "q": "The `input_schema` property of a `Runnable` returns a ______ model representing the expected input structure.",
+        "type": "fill_blank",
+        "answers": [
+            "Pydantic"
+        ],
+        "other_options": [
+            "dictionary",
+            "string",
+            "list"
+        ]
+    },
+    {
+        "q": "What is the function of `ChatOpenAI.bind(functions=..., function_call=...)`?",
+        "type": "mcq",
+        "o": [
+            "Legacy method to specify available functions and force a function call for older OpenAI models",
+            "To bind the model to a specific server",
+            "To bind two models together",
+            "To validate function signatures"
+        ]
+    },
+    {
+        "q": "Name the LCEL method that provides a synchronous iterable of events from a chain execution.",
+        "type": "short_answer",
+        "answers": [
+            "stream_events",
+            "astream_events"
+        ],
+        "isCaseSensitive": true
+    },
+    {
+        "q": "What does `RunnableAssign` do in LCEL?",
+        "type": "mcq",
+        "o": [
+            "Creates a runnable that adds new key-value pairs to a dict input",
+            "Assigns a name to a runnable",
+            "Assigns tags to a chain",
+            "Assigns memory to a chain"
+        ]
+    },
+    {
+        "q": "`ConversationSummaryMemory` uses a fixed prompt template that cannot be customized.",
+        "type": "true_false",
+        "correct": "False"
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "from langchain_core.runnables import RunnableLambda\n\ndef func(x):\n    return x['a'] + x['b']\n\nchain = RunnableLambda(func)\nprint(chain.invoke({'a': 10, 'b': 20}))",
+        "o": [
+            "30",
+            "{'a': 10, 'b': 20}",
+            "Error",
+            "10 + 20"
+        ]
+    },
+    {
+        "q": "What is a key advantage of using `astream_events` over callbacks for monitoring?",
+        "type": "mcq",
+        "o": [
+            "It provides a unified stream of events from all nested components with metadata",
+            "It requires no code changes",
+            "It is always faster than callbacks",
+            "It automatically fixes errors"
+        ]
+    },
+    {
+        "q": "Match the streaming mode with the output type it yields:",
+        "type": "match",
+        "left": [
+            "values",
+            "updates",
+            "messages",
+            "events"
+        ],
+        "right": [
+            "Complete state after each step",
+            "Delta changes at each step",
+            "AIMessageChunk tokens",
+            "Structured event objects"
+        ]
+    },
+    {
+        "q": "Which method in `BaseChatMessageHistory` adds an AI message to the stored history?",
+        "type": "mcq",
+        "o": [
+            "add_ai_message()",
+            "save_response()",
+            "append_ai()",
+            "write_ai()"
+        ]
+    },
+    {
+        "q": "The `astream_log` method streams logs generated during chain execution, useful for debugging ______ chains.",
+        "type": "fill_blank",
+        "answers": [
+            "complex",
+            "nested"
+        ],
+        "other_options": [
+            "simple",
+            "synchronous",
+            "short"
+        ]
+    },
+    {
+        "q": "What is the purpose of `RunnablePick` in advanced data transformation?",
+        "type": "mcq",
+        "o": [
+            "To select only specific keys from an input dictionary and pass them forward",
+            "To pick a random element from a list",
+            "To choose the best model for a task",
+            "To filter dictionary values"
+        ]
+    },
+    {
+        "q": "How can you capture the token usage of a single `ainvoke` call programmatically?",
+        "type": "mcq",
+        "o": [
+            "By inspecting the `response_metadata` attribute of the returned `AIMessage`",
+            "By printing the response",
+            "By using a global variable",
+            "By checking the API dashboard manually"
+        ]
+    },
+    {
+        "q": "Name the specific `ChatOpenAI` attribute that contains the token usage after a successful API call.",
+        "type": "short_answer",
+        "answers": [
+            "response_metadata",
+            "token_usage"
+        ],
+        "isCaseSensitive": true
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "from langchain_core.runnables import RunnableParallel, RunnableLambda\n\nchain = RunnableParallel(\n    a=RunnableLambda(lambda x: 1),\n    b=RunnableLambda(lambda x: 2)\n) | RunnableLambda(lambda x: tuple(x.values()))\nprint(chain.invoke({}))",
+        "o": [
+            "(1, 2)",
+            "(2, 1)",
+            "[1, 2]",
+            "Error"
+        ]
+    },
+    {
+        "q": "`RunnableWithMessageHistory` can work with file-based, SQL, and Redis-backed history stores.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "What is the purpose of `ConversationEntityMemory`'s entity extraction?",
+        "type": "mcq",
+        "o": [
+            "To identify and store factual information about people, places, or things mentioned in the conversation",
+            "To extract the main topic of the conversation",
+            "To extract API keys from messages",
+            "To extract code snippets"
+        ]
+    },
+    {
+        "q": "Which parameter in `ChatOpenAI.with_structured_output` specifies the output method?",
+        "type": "mcq",
+        "o": [
+            "method",
+            "mode",
+            "parser",
+            "style"
+        ]
+    },
+    {
+        "q": "The `output_schema` property defines the ______ model representing the expected output structure of a runnable.",
+        "type": "fill_blank",
+        "answers": [
+            "Pydantic"
+        ],
+        "other_options": [
+            "dictionary",
+            "JSON",
+            "string"
+        ]
+    },
+    {
+        "q": "What does the `max_retries` parameter in `with_retry` configure?",
+        "type": "mcq",
+        "o": [
+            "The maximum number of times to retry a failed call before raising an exception",
+            "The maximum response length",
+            "The number of fallback models",
+            "The retry delay in seconds"
+        ]
+    },
+    {
+        "q": "Match the LCEL error handling mechanism with its behavior:",
+        "type": "match",
+        "left": [
+            "with_fallbacks",
+            "with_retry",
+            "on_error callback",
+            "RunnableBranch fallback"
+        ],
+        "right": [
+            "Switches to alternate runnables",
+            "Re-executes the same runnable",
+            "Invokes a callback function on error",
+            "Routes to a default branch on condition failure"
+        ]
+    },
+    {
+        "q": "What is the role of `format_tool_to_openai_function`?",
+        "type": "mcq",
+        "o": [
+            "Converts a LangChain `Tool` object into the JSON schema format expected by OpenAI's function calling API",
+            "Formats the output of a tool into a readable string",
+            "Converts a tool into an LLM",
+            "Registers the tool with OpenAI"
+        ]
+    },
+    {
+        "q": "Name the `ToolMessage` attribute that contains the identifier of the tool call this message responds to.",
+        "type": "short_answer",
+        "answers": [
+            "tool_call_id"
+        ],
+        "isCaseSensitive": true
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "from langchain.memory import ConversationBufferMemory\nfrom langchain_core.messages import HumanMessage, AIMessage\n\nmemory = ConversationBufferMemory(return_messages=True)\nmemory.chat_memory.add_user_message(HumanMessage(content=\"Hi\"))\nmemory.chat_memory.add_ai_message(AIMessage(content=\"Hello\"))\nprint(len(memory.chat_memory.messages))",
+        "o": [
+            "2",
+            "1",
+            "0",
+            "Error"
+        ]
+    },
+    {
+        "q": "`RunnableGenerator` can yield values indefinitely, enabling streaming of infinite sequences from a chain.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "What is the purpose of `Runnable.configurable_alternatives`?",
+        "type": "mcq",
+        "o": [
+            "To define a set of alternative runnables that can be selected at runtime via config",
+            "To create a random selector for models",
+            "To alternate between two runnables automatically",
+            "To configure alternative API endpoints"
+        ]
+    },
+    {
+        "q": "How does `ConversationTokenBufferMemory` interact with the LLM's tokenizer?",
+        "type": "mcq",
+        "o": [
+            "It uses the tokenizer to accurately count tokens in messages to enforce the limit",
+            "It ignores the tokenizer",
+            "It uses the tokenizer to encrypt messages",
+            "It trains the tokenizer on conversation data"
+        ]
+    },
+    {
+        "q": "The `prompt` parameter in `ConversationSummaryMemory` allows customization of the ______ prompt.",
+        "type": "fill_blank",
+        "answers": [
+            "summarization"
+        ],
+        "other_options": [
+            "system",
+            "user",
+            "welcome"
+        ]
+    },
+    {
+        "q": "What is the benefit of using `ChatOpenAI` with `streaming=True`?",
+        "type": "mcq",
+        "o": [
+            "Enables token-by-token yield of the response, reducing time-to-first-token",
+            "Increases the total speed of API calls",
+            "Reduces the cost of API calls",
+            "Enables audio streaming"
+        ]
+    },
+    {
+        "q": "Which method in `RunnableWithMessageHistory` triggers the update of session history after a run?",
+        "type": "mcq",
+        "o": [
+            "It is handled automatically by the wrapper after `invoke` or `ainvoke` completes",
+            "update_history()",
+            "save_session()",
+            "flush_history()"
+        ]
+    },
+    {
+        "q": "Name the method used to get the string representation of the output format instructions from a parser.",
+        "type": "short_answer",
+        "answers": [
+            "get_format_instructions"
+        ],
+        "isCaseSensitive": true
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "from langchain_core.output_parsers import StrOutputParser\nfrom langchain_core.prompts import PromptTemplate\nfrom langchain_core.runnables import RunnablePassthrough\n\nchain = {\"text\": RunnablePassthrough()} | RunnableLambda(lambda x: x['text'] * 2) | StrOutputParser()\nprint(chain.invoke('ab'))",
+        "o": [
+            "abab",
+            "ab",
+            "ab ab",
+            "Error"
+        ]
+    },
+    {
+        "q": "Match the LangChain callback handler method with the execution phase:",
+        "type": "match",
+        "left": [
+            "on_llm_start",
+            "on_retriever_end",
+            "on_agent_action",
+            "on_chain_start"
+        ],
+        "right": [
+            "LLM call begins",
+            "Document retrieval finishes",
+            "Agent selects a tool",
+            "Chain execution begins"
+        ]
+    },
+    {
+        "q": "`RunnablePassthrough.assign()` can accept dictionaries of `Runnable` objects as values.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "What is the role of `schema` in `ChatOpenAI.with_structured_output(schema=MyModel)`?",
+        "type": "mcq",
+        "o": [
+            "It defines the Pydantic model that the output must conform to",
+            "It specifies the API schema version",
+            "It defines the input format",
+            "It sets the database schema"
+        ]
+    },
+    {
+        "q": "What is the internal mechanism by which `RunnableWithMessageHistory` isolates sessions?",
+        "type": "mcq",
+        "o": [
+            "It uses a `session_id` from the config to fetch and update a distinct `BaseChatMessageHistory` instance",
+            "It stores all sessions in a single global list",
+            "It separates sessions by API key",
+            "It uses thread-local storage"
+        ]
+    },
+    {
+        "q": "How does `ConversationTokenBufferMemory` calculate token count when the LLM's tokenizer is not available?",
+        "type": "mcq",
+        "o": [
+            "It falls back to estimating tokens based on character count divided by a constant factor",
+            "It refuses to work without a tokenizer",
+            "It counts messages instead of tokens",
+            "It uses an external API to count tokens"
+        ]
+    },
+    {
+        "q": "The `RunnableBinding` class is typically created by calling the ______ method on a Runnable instance.",
+        "type": "fill_blank",
+        "answers": [
+            "bind"
+        ],
+        "other_options": [
+            "configure",
+            "setup",
+            "initialize"
+        ]
+    },
+    {
+        "q": "What is the purpose of `Runnable.with_listeners` in a production context?",
+        "type": "mcq",
+        "o": [
+            "To inject monitoring, logging, and alerting hooks without modifying the chain's core logic",
+            "To add network listeners for API requests",
+            "To make the chain listen to voice commands",
+            "To attach file system watchers"
+        ]
+    },
+    {
+        "q": "`astream_events` can be used to capture both the final output and intermediate steps of a chain in a single stream.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "from langchain_core.runnables import RunnableLambda, RunnableGenerator\n\ndef gen(x):\n    for i in range(x):\n        yield f\"step_{i}\"\n\nchain = RunnableGenerator(gen)\nresult = list(chain.stream(3))\nprint(result)",
+        "o": [
+            "['step_0', 'step_1', 'step_2']",
+            "['step_1', 'step_2', 'step_3']",
+            "[0, 1, 2]",
+            "Error"
+        ]
+    },
+    {
+        "q": "What is a critical consideration when implementing custom `BaseChatMessageHistory` for production?",
+        "type": "mcq",
+        "o": [
+            "Ensuring thread-safety and atomic writes if multiple chains access the same session concurrently",
+            "Making the history as large as possible",
+            "Storing messages in plain text only",
+            "Avoiding the use of message IDs"
+        ]
+    },
+    {
+        "q": "Match the expert LCEL concept with its implementation detail:",
+        "type": "match",
+        "left": [
+            "RunnableConfig",
+            "RunnableBinding",
+            "RunnableSequence",
+            "RunnableGenerator"
+        ],
+        "right": [
+            "Dict passed to invoke() for runtime settings",
+            "Runnable with pre-set arguments",
+            "Linear chain of runnables via pipe",
+            "Yields values incrementally from a generator"
+        ]
+    },
+    {
+        "q": "How can you dynamically modify the configuration of a runnable inside a chain based on input data?",
+        "type": "mcq",
+        "o": [
+            "By using a `RunnableLambda` that inspects the input and returns a configured `RunnableBinding`",
+            "By changing global variables before invoke",
+            "By editing the source code at runtime",
+            "By using decorators"
+        ]
+    },
+    {
+        "q": "Name the method used to programmatically generate a visualization of a LangChain chain's execution graph.",
+        "type": "short_answer",
+        "answers": [
+            "get_graph",
+            "get_graph()"
+        ],
+        "isCaseSensitive": true
+    },
+    {
+        "q": "What does `RunnableParallel` do under the hood to achieve concurrency?",
+        "type": "mcq",
+        "o": [
+            "It executes each branch as a separate task using asyncio or thread pools, depending on the context",
+            "It runs branches sequentially in a single thread",
+            "It compiles branches into a single LLM call",
+            "It uses multiprocessing only"
+        ]
+    },
+    {
+        "q": "The `extra` field in `RunnableConfig` allows passing arbitrary user-defined data that is accessible to all ______ in the chain.",
+        "type": "fill_blank",
+        "answers": [
+            "callbacks",
+            "listeners"
+        ],
+        "other_options": [
+            "models",
+            "prompts",
+            "memories"
+        ]
+    },
+    {
+        "q": "What is the primary architectural role of `RunnableBranch` in a multi-modal agent router?",
+        "type": "mcq",
+        "o": [
+            "To act as a conditional dispatcher that routes input to specialized sub-chains based on predicates",
+            "To merge multiple branches into one output",
+            "To create a tree structure for data",
+            "To optimize branching network calls"
+        ]
+    },
+    {
+        "q": "`VectorStoreRetrieverMemory` relies on the vector store's similarity search to return relevant memories, which means relevance depends on the embedding model used.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "from langchain_core.runnables import RunnableLambda, RunnableParallel\n\ndef merge(d):\n    return d['a'] + d['b']\n\nchain = RunnableParallel(a=RunnableLambda(lambda x: x+1), b=RunnableLambda(lambda x: x*2)) | RunnableLambda(merge)\nprint(chain.invoke(5))",
+        "o": [
+            "16",
+            "15",
+            "11",
+            "Error"
+        ]
+    },
+    {
+        "q": "How does `ConversationSummaryBufferMemory` achieve a balance between context fidelity and token efficiency?",
+        "type": "mcq",
+        "o": [
+            "By keeping the most recent messages in full and summarizing older messages when the token limit is exceeded",
+            "By discarding all old messages",
+            "By keeping only summaries and never full messages",
+            "By randomly selecting messages to keep"
+        ]
+    },
+    {
+        "q": "What is the purpose of `RunnablePick` in a data preprocessing pipeline?",
+        "type": "mcq",
+        "o": [
+            "To select a subset of keys from a dictionary input to pass to the next step",
+            "To pick the best data source",
+            "To randomly sample data",
+            "To filter out null values"
+        ]
+    },
+    {
+        "q": "Name the underlying Python protocol that `RunnableGenerator` leverages to enable streaming.",
+        "type": "short_answer",
+        "answers": [
+            "generator",
+            "iterator protocol"
+        ],
+        "isCaseSensitive": false
+    },
+    {
+        "q": "What does the `include_raw` parameter in `with_structured_output` return when set to True?",
+        "type": "mcq",
+        "o": [
+            "A dict containing both 'parsed' (Pydantic model) and 'raw' (AIMessage) keys",
+            "Only raw bytes of the response",
+            "The raw prompt text",
+            "Unprocessed audio data"
+        ]
+    },
+    {
+        "q": "The `config_schema` of a `Runnable` can be used to validate the `config` dict passed to `invoke`, raising errors for incorrect ______.",
+        "type": "fill_blank",
+        "answers": [
+            "parameters",
+            "keys"
+        ],
+        "other_options": [
+            "values",
+            "types",
+            "formats"
+        ]
+    },
+    {
+        "q": "What is the role of `AsyncCallbackHandler` in a high-concurrency deployment?",
+        "type": "mcq",
+        "o": [
+            "To handle lifecycle events asynchronously without blocking the main execution thread",
+            "To convert sync handlers to async",
+            "To limit the number of concurrent calls",
+            "To batch async requests"
+        ]
+    },
+    {
+        "q": "Match the LangChain advanced feature with its primary benefit:",
+        "type": "match",
+        "left": [
+            "astream_events",
+            "with_fallbacks",
+            "configurable_alternatives",
+            "get_graph"
+        ],
+        "right": [
+            "Granular streaming of internal events",
+            "Resilience against model outages",
+            "Runtime component swapping",
+            "Chain visualization for debugging"
+        ]
+    },
+    {
+        "q": "`ConversationSummaryBufferMemory` requires that the `llm` parameter be set to a model capable of summarization.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "from langchain_core.runnables import RunnableBranch, RunnableLambda\n\nbranch = RunnableBranch(\n    (lambda x: isinstance(x, int), RunnableLambda(lambda x: 'integer')),\n    (lambda x: isinstance(x, str), RunnableLambda(lambda x: 'string')),\n    RunnableLambda(lambda x: 'unknown')\n)\nprint(branch.invoke(3.14))",
+        "o": [
+            "unknown",
+            "integer",
+            "string",
+            "float"
+        ]
+    },
+    {
+        "q": "How can you implement a custom token-counting function for `ConversationTokenBufferMemory`?",
+        "type": "mcq",
+        "o": [
+            "By passing a `custom_token_counter` callable to the constructor or subclassing",
+            "By modifying the OpenAI API",
+            "By changing the model's vocabulary",
+            "By counting characters manually"
+        ]
+    },
+    {
+        "q": "What is the function of `RunnableSequence.from_runnables`?",
+        "type": "mcq",
+        "o": [
+            "A factory method to explicitly create a `RunnableSequence` from a list of runnables",
+            "To convert a sequence to a string",
+            "To run sequences in reverse order",
+            "To import sequences from a file"
+        ]
+    },
+    {
+        "q": "The `callbacks` list passed in a config dict will be inherited by all child runs in the chain unless explicitly ______.",
+        "type": "fill_blank",
+        "answers": [
+            "overridden",
+            "stopped"
+        ],
+        "other_options": [
+            "ignored",
+            "deleted",
+            "merged"
+        ]
+    },
+    {
+        "q": "Name the method on `BaseChatMessageHistory` that retrieves all stored messages.",
+        "type": "short_answer",
+        "answers": [
+            "messages",
+            "get_messages"
+        ],
+        "isCaseSensitive": true
+    },
+    {
+        "q": "What is the primary risk of using `ConversationBufferMemory` with a very long conversation?",
+        "type": "mcq",
+        "o": [
+            "Exceeding the model's context window limit and significantly increasing API costs",
+            "Running out of disk space",
+            "Losing the first message",
+            "Slowing down the Python interpreter"
+        ]
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "from langchain_core.runnables import RunnableParallel, RunnableLambda\n\nchain = RunnableLambda(lambda x: {'a': x['val']+1, 'b': x['val']*2}) | RunnableParallel(\n    sum=RunnableLambda(lambda d: d['a'] + d['b']),\n    prod=RunnableLambda(lambda d: d['a'] * d['b'])\n)\nprint(chain.invoke({'val': 3}))",
+        "o": [
+            "{'sum': 10, 'prod': 24}",
+            "{'sum': 10, 'prod': 16}",
+            "{'a': 4, 'b': 6}",
+            "Error"
+        ]
+    },
+    {
+        "q": "How does `ChatOpenAI.with_structured_output(method='json_schema')` differ from `method='function_calling'`?",
+        "type": "mcq",
+        "o": [
+            "It uses the model's native JSON mode with a provided schema rather than function calling API",
+            "It uses XML schemas for validation",
+            "It disables the LLM",
+            "It always returns a string"
+        ]
+    },
+    {
+        "q": "`Runnable.map()` is functionally equivalent to Python's built-in `map()` but integrated into the LCEL pipeline.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Match the `astream_events` event type with what it represents:",
+        "type": "match",
+        "left": [
+            "on_chat_model_stream",
+            "on_chain_start",
+            "on_tool_end",
+            "on_retriever_end"
+        ],
+        "right": [
+            "Token generated by an LLM",
+            "A sub-chain execution begins",
+            "A tool execution completes",
+            "Document retrieval finishes"
+        ]
+    },
+    {
+        "q": "What is the purpose of the `metadata` field in `RunnableConfig`?",
+        "type": "mcq",
+        "o": [
+            "To attach arbitrary key-value pairs for logging, filtering, and tracing",
+            "To store the model's architecture",
+            "To configure the database connection",
+            "To define the chain's type"
+        ]
+    },
+    {
+        "q": "The `return_messages` flag in memory classes controls whether history is returned as a single string or a list of ______ objects.",
+        "type": "fill_blank",
+        "answers": [
+            "Message"
+        ],
+        "other_options": [
+            "dict",
+            "int",
+            "float"
+        ]
+    },
+    {
+        "q": "What is the role of `PydanticOutputParser.parse` when it receives malformed JSON?",
+        "type": "mcq",
+        "o": [
+            "It attempts to use `OutputFixingParser` logic if configured, or raises `OutputParserException`",
+            "It always returns None",
+            "It silently ignores the error",
+            "It retries the LLM call automatically"
+        ]
+    },
+    {
+        "q": "Name the property of a `Runnable` that defines the required input type as a Pydantic model.",
+        "type": "short_answer",
+        "answers": [
+            "input_schema",
+            "InputType"
+        ],
+        "isCaseSensitive": true
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "from langchain_core.runnables import RunnablePassthrough, RunnableLambda\n\nchain = RunnablePassthrough() | RunnableLambda(lambda x: {k: v*2 for k, v in x.items()})\nprint(chain.invoke({'a': 1, 'b': 2}))",
+        "o": [
+            "{'a': 2, 'b': 4}",
+            "{'a': 1, 'b': 2}",
+            "[2, 4]",
+            "Error"
+        ]
+    },
+    {
+        "q": "What is a critical security consideration when building LangChain tools that execute code?",
+        "type": "mcq",
+        "o": [
+            "Sandboxing the execution environment and validating all inputs to prevent injection attacks",
+            "Making the tool as fast as possible",
+            "Using a simple API key",
+            "Logging all code to the console"
+        ]
+    },
+    {
+        "q": "`RunnableWithMessageHistory` updates the message history after the chain invokes, even if the chain raises an exception.",
+        "type": "true_false",
+        "correct": "False"
+    },
+    {
+        "q": "What is the purpose of `ConversationKnowledgeGraphMemory`?",
+        "type": "mcq",
+        "o": [
+            "To build and maintain a knowledge graph from conversation entities and relationships",
+            "To store conversation in a graph database only",
+            "To visualize the conversation as a chart",
+            "To compress memory into graph form"
+        ]
+    },
+    {
+        "q": "How does `batch` with `return_exceptions=True` handle failures?",
+        "type": "mcq",
+        "o": [
+            "It returns the exception objects in the result list instead of raising them, allowing partial results",
+            "It retries automatically",
+            "It skips the failed inputs",
+            "It logs and raises all exceptions"
+        ]
+    },
+    {
+        "q": "The `astream_log` method provides a detailed log of all steps in a chain, including prompts, LLM calls, and intermediate ______.",
+        "type": "fill_blank",
+        "answers": [
+            "outputs",
+            "results"
+        ],
+        "other_options": [
+            "errors",
+            "exceptions",
+            "costs"
+        ]
+    },
+    {
+        "q": "Match the method of `Runnable` with its concurrency model:",
+        "type": "match",
+        "left": [
+            "invoke",
+            "ainvoke",
+            "batch",
+            "abatch"
+        ],
+        "right": [
+            "Synchronous, single-threaded",
+            "Asynchronous, non-blocking",
+            "Synchronous, concurrent",
+            "Asynchronous, concurrent"
+        ]
+    },
+    {
+        "q": "What is the function of `JsonOutputFunctionsParser` in tool-calling chains?",
+        "type": "mcq",
+        "o": [
+            "To parse the `arguments` field of a function call into a JSON object",
+            "To validate JSON functions",
+            "To create function definitions",
+            "To serialize functions to JSON"
+        ]
+    },
+    {
+        "q": "Name the specific `AIMessage` attribute that holds a list of requested tool calls from the model.",
+        "type": "short_answer",
+        "answers": [
+            "tool_calls",
+            "additional_kwargs.tool_calls"
+        ],
+        "isCaseSensitive": true
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "from langchain_core.runnables import RunnableLambda, RunnableParallel\n\nchain = RunnableParallel(\n    a=RunnableLambda(lambda x: [1, 2]),\n    b=RunnableLambda(lambda x: [3, 4])\n) | RunnableLambda(lambda d: d['a'] + d['b'])\nprint(chain.invoke({}))",
+        "o": [
+            "[1, 2, 3, 4]",
+            "[[1, 2], [3, 4]]",
+            "[1, 2, 3, 4]",
+            "Error"
+        ]
+    },
+    {
+        "q": "What is the design pattern behind `RunnableBranch`?",
+        "type": "mcq",
+        "o": [
+            "Chain of Responsibility: evaluating predicates sequentially and executing the first matching handler",
+            "Observer pattern: notifying all branches",
+            "Strategy pattern: selecting one algorithm",
+            "Singleton pattern: ensuring one branch exists"
+        ]
+    },
+    {
+        "q": "`ConversationSummaryBufferMemory` uses an internal buffer to accumulate messages until a flush condition is met.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "How can you expose a LangChain chain via a web server with streaming support?",
+        "type": "mcq",
+        "o": [
+            "Using LangServe's `add_routes` which automatically handles SSE streaming for chains",
+            "By writing a custom Flask app from scratch",
+            "By printing the output to the console",
+            "By saving the response to a file"
+        ]
+    },
+    {
+        "q": "The `on_chain_end` callback receives the chain's final output as part of its ______ parameter.",
+        "type": "fill_blank",
+        "answers": [
+            "outputs",
+            "output"
+        ],
+        "other_options": [
+            "inputs",
+            "error",
+            "metadata"
+        ]
+    },
+    {
+        "q": "What is the purpose of `ChatOpenAI.dict()` when debugging?",
+        "type": "mcq",
+        "o": [
+            "To serialize the model's configuration parameters into a dictionary for inspection",
+            "To convert the response to a dict",
+            "To export the model as a file",
+            "To count tokens"
+        ]
+    },
+    {
+        "q": "Which `Runnable` method allows you to inspect or modify the input before it reaches the next step?",
+        "type": "mcq",
+        "o": [
+            "with_listeners(on_start=...)",
+            "with_retry()",
+            "with_fallbacks()",
+            "configurable_fields()"
+        ]
+    },
+    {
+        "q": "Name the LCEL class that represents a constant value that can be piped into a chain.",
+        "type": "short_answer",
+        "answers": [
+            "RunnableLambda",
+            "RunnablePassthrough"
+        ],
+        "isCaseSensitive": true
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "from langchain_core.runnables import RunnablePassthrough, RunnableLambda\n\nchain = RunnablePassthrough() | RunnableLambda(lambda x: sum(x))\nprint(chain.invoke([10, 20, 30]))",
+        "o": [
+            "60",
+            "[10, 20, 30]",
+            "Error",
+            "102030"
+        ]
+    },
+    {
+        "q": "What is the key distinction between `Runnable.map()` and `Runnable.each()`?",
+        "type": "mcq",
+        "o": [
+            "`Runnable.map()` transforms each element; `Runnable.each()` runs a side-effect for each without changing the list",
+            "They are identical",
+            "`map()` works on dicts, `each()` on lists",
+            "`each()` is async, `map()` is sync"
+        ]
+    },
+    {
+        "q": "`ConversationEntityMemory` can be combined with a vector store for long-term entity persistence.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Match the expert debugging tool with its purpose:",
+        "type": "match",
+        "left": [
+            "get_graph()",
+            "astream_events()",
+            "verbose=True",
+            "LangSmith tracing"
+        ],
+        "right": [
+            "Visualize chain structure",
+            "Stream granular execution events",
+            "Print debug logs to console",
+            "Cloud-based detailed tracing"
+        ]
+    },
+    {
+        "q": "What is the role of `Runnable.configurable_alternatives` in A/B testing?",
+        "type": "mcq",
+        "o": [
+            "To seamlessly switch between different model versions or chains based on a runtime config key",
+            "To randomly select models",
+            "To permanently replace models",
+            "To run models in sequence"
+        ]
+    },
+    {
+        "q": "The `batch` method of a `Runnable` can automatically split large inputs into smaller batches to manage memory.",
+        "type": "fill_blank",
+        "answers": [
+            "False"
+        ],
+        "other_options": [
+            "True",
+            "Only with configuration",
+            "Only for strings"
+        ]
+    },
+    {
+        "q": "How does `with_retry` in LCEL handle transient failures?",
+        "type": "mcq",
+        "o": [
+            "It re-executes the runnable on specified exceptions with exponential backoff",
+            "It ignores errors and continues",
+            "It only retries once",
+            "It terminates the chain immediately"
+        ]
+    },
+    {
+        "q": "Name the specific LangChain component that wraps a standard LLM and adds structured output parsing.",
+        "type": "short_answer",
+        "answers": [
+            "ChatOpenAI.with_structured_output",
+            "StructuredChatOutput"
+        ],
+        "isCaseSensitive": true
+    },
+    {
+        "q": "What is the output of this code?",
+        "type": "mcq",
+        "c": "from langchain_core.runnables import RunnableParallel\n\nchain = RunnableParallel(x=lambda: 1, y=lambda: 2) | RunnableParallel(\n    sum=lambda d: d['x'] + d['y'],\n    diff=lambda d: d['x'] - d['y']\n)\nprint(chain.invoke({}))",
+        "o": [
+            "{'sum': 3, 'diff': -1}",
+            "{'sum': 3, 'diff': 1}",
+            "{'x': 1, 'y': 2}",
+            "Error"
+        ]
+    }
+]

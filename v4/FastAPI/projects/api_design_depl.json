@@ -1,0 +1,31 @@
+[
+  {
+    "title": "Using APIRouter \ud83d\uddc2",
+    "ques": "Create an `APIRouter` instance, add a `/users/` route to it, and then include that router in the main `app` instance.",
+    "answer": {
+      "type": "code",
+      "lang": "python",
+      "content": "from fastapi import APIRouter, FastAPI\n\nrouter = APIRouter()\n@router.get('/users/')\ndef read_users():\n    return []\n\napp = FastAPI()\napp.include_router(router)"
+    },
+    "explanation": "`APIRouter` is essential for organizing larger applications. It allows you to split routes across multiple files and modules cleanly."
+  },
+  {
+    "title": "Running with Uvicorn \ud83c\udfc3\u200d\u2642\ufe0f",
+    "ques": "What is the terminal command to run a FastAPI app named `app` located in a file named `main.py` using Uvicorn with auto-reload enabled?",
+    "answer": {
+      "type": "code",
+      "lang": "bash",
+      "content": "uvicorn main:app --reload"
+    },
+    "explanation": "Uvicorn is a lightning-fast ASGI server. The `--reload` flag automatically restarts the server when code changes are detected during development."
+  },
+  {
+    "title": "API Documentation Options \ud83d\udcd6",
+    "ques": "FastAPI automatically generates two interactive API documentations. What are the default URL paths to access the **Swagger UI** and the **ReDoc** UI?",
+    "answer": {
+      "type": "text",
+      "content": "1.  **Swagger UI:** Access it at the `/docs` path.\n2.  **ReDoc:** Access it at the `/redoc` path."
+    },
+    "explanation": "Interactive documentation is automatically generated from your Pydantic models and type hints, drastically reducing maintenance effort."
+  }
+]

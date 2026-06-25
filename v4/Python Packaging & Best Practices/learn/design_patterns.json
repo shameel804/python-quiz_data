@@ -1,0 +1,91 @@
+{
+    "id": "learn_design_patterns",
+    "topicId": "design_patterns",
+    "topicTitle": "Design Patterns",
+    "description": "Solve recurring architectural problems elegantly. Learn how to implement standard Software Engineering patterns (like Factory and Singleton) the Pythonic way.",
+    "baseKP": 75,
+    "slides": [
+        {
+            "id": "dp_1",
+            "type": "content",
+            "title": "What are Design Patterns?",
+            "content": "# Reusable Solutions 🏗️\n\nDesign Patterns are typical solutions to commonly occurring problems in software design.\n\nThey were famously categorized by the \"Gang of Four\" (GoF) in 1994, originally for C++ and Java.\n\nBecause Python has advanced features like first-class functions and dynamic typing, we often implement these patterns much more simply than Java developers do."
+        },
+        {
+            "id": "dp_2",
+            "type": "content",
+            "title": "The Singleton Pattern",
+            "content": "# There Can Be Only One ☝️\n\nA **Singleton** ensures that a class has only one single instance, and provides a global point of access to it (e.g., a Database Connection pool or a global Configuration object).\n\nIn Python, you can achieve this by overriding the `__new__` dunder method, which controls object creation *before* `__init__` is called.\n\n```python_not\nclass ConfigSingleton:\n    _instance = None\n    \n    def __new__(cls):\n        if cls._instance is None:\n            # If it doesn't exist, create it\n            cls._instance = super().__new__(cls)\n            cls._instance.settings = {\"theme\": \"dark\"}\n        # Otherwise, return the exact same existing object!\n        return cls._instance\n```"
+        },
+        {
+            "id": "dp_3",
+            "type": "content",
+            "title": "The Factory Pattern",
+            "content": "# Outsourcing Creation 🏭\n\nThe **Factory** pattern is used when you have a superclass with multiple sub-classes, and you need to return one of them based on some input data.\n\nInstead of scattering `if/else` creation logic all over your app, you centralize it in a Factory.\n\n```python_not\nclass Dog: def speak(self): return \"Woof\"\nclass Cat: def speak(self): return \"Meow\"\n\nclass AnimalFactory:\n    @staticmethod\n    def get_animal(animal_type: str):\n        if animal_type == \"dog\":\n            return Dog()\n        elif animal_type == \"cat\":\n            return Cat()\n        raise ValueError(\"Unknown animal\")\n\npet = AnimalFactory.get_animal(\"dog\")\n```"
+        },
+        {
+            "id": "dp_4",
+            "type": "content",
+            "title": "The Observer Pattern",
+            "content": "# Publish / Subscribe 📡\n\nThe **Observer** pattern is used when one object changes state, and it needs to automatically notify a list of \"Subscribers\". This is heavily used in UI programming.\n\n```python_not\nclass NewsPublisher:\n    def __init__(self):\n        self.subscribers = []\n        \n    def subscribe(self, subscriber_function):\n        self.subscribers.append(subscriber_function)\n        \n    def publish_news(self, news: str):\n        # Notify everyone!\n        for sub in self.subscribers:\n            sub(news)\n\n# Usage:\npublisher = NewsPublisher()\npublisher.subscribe(lambda x: print(f\"User 1 read: {x}\"))\npublisher.publish_news(\"Python 4.0 Released!\")\n```"
+        },
+        {
+            "id": "dp_quiz_1",
+            "type": "quiz",
+            "title": "Patterns Quiz",
+            "content": "Check your architectural knowledge.",
+            "quizQuestion": "Which design pattern restricts the instantiation of a class to exactly ONE object, making it useful for managing shared resources like database connections?",
+            "quizOptions": [
+                "Factory Pattern",
+                "Singleton Pattern",
+                "Observer Pattern",
+                "Decorator Pattern"
+            ],
+            "correctOptionIndex": 1
+        },
+        {
+            "id": "dp_5",
+            "type": "content",
+            "title": "The Strategy Pattern",
+            "content": "# Swappable Algorithms ♟️\n\nThe **Strategy** pattern lets you define a family of algorithms and make them interchangeable at runtime without altering the code that uses them.\n\nIn Java, this requires complex Interfaces. In Python, because functions are first-class objects, we just pass the function directly!\n\n```python_not\n# The Strategies (Algorithms)\ndef regular_discount(price): return price * 0.90\ndef vip_discount(price): return price * 0.50\n\nclass Checkout:\n    # Pass the strategy function into the object\n    def __init__(self, discount_strategy):\n        self.discount_strategy = discount_strategy\n        \n    def calculate_total(self, price):\n        # Execute whichever strategy was passed in!\n        return self.discount_strategy(price)\n        \ncart = Checkout(vip_discount)\n```"
+        },
+        {
+            "id": "dp_6",
+            "type": "content",
+            "title": "The Decorator Pattern",
+            "content": "# Wrapping Behavior 🎁\n\nThe **Decorator** pattern attaches new behaviors to objects dynamically without altering their code.\n\nPython has this built-in via the `@` syntax!\n\n```python_not\nimport time\n\n# The Decorator (A function that takes a function)\ndef timer_decorator(func):\n    def wrapper(*args, **kwargs):\n        start = time.time()\n        result = func(*args, **kwargs)\n        print(f\"{func.__name__} took {time.time() - start} seconds.\")\n        return result\n    return wrapper\n\n# We easily wrap new behavior around existing code!\n@timer_decorator\ndef slow_task():\n    time.sleep(1)\n```"
+        },
+        {
+            "id": "dp_7",
+            "type": "content",
+            "title": "Pythonic Properties",
+            "content": "# `@property` 🏠\n\nIn Java, developers write tedious `get_age()` and `set_age()` methods to control access to variables.\n\nIn Python, this is considered an anti-pattern. You should access variables directly (`user.age`). If you ever need to add validation logic later, you upgrade the variable using the `@property` decorator without breaking the public API!\n\n```python_not\nclass Person:\n    def __init__(self):\n        self._age = 0\n        \n    @property\n    def age(self): # The Getter\n        return self._age\n        \n    @age.setter\n    def age(self, value): # The Setter\n        if value < 0:\n            raise ValueError(\"Age cannot be negative!\")\n        self._age = value\n        \n# Looks like a simple variable, but runs the setter logic!\np = Person()\np.age = -5 # Raises ValueError!\n```"
+        },
+        {
+            "id": "dp_8",
+            "type": "content",
+            "title": "Advanced: Metaclasses",
+            "content": "# Classes of Classes 🤯\n\nA class creates objects. A **Metaclass** creates classes.\n\nThis is extremely advanced. If you've ever wondered how Django ORM models work (where you define `name = models.CharField()` but get back a complex database query object), it's because Django uses Metaclasses to intercept the class creation and rewrite the variables on the fly.\n\n> *\"Metaclasses are deeper magic than 99% of users should ever worry about. If you wonder whether you need them, you don't.\" — Tim Peters (Creator of the Zen of Python)*"
+        },
+        {
+            "id": "dp_quiz_2",
+            "type": "quiz",
+            "title": "Pythonic Patterns Quiz",
+            "content": "Test your Python-specific patterns.",
+            "quizQuestion": "Why is it discouraged to write explicit getter and setter methods (like `def get_name():`) in Python?",
+            "quizOptions": [
+                "Because Python is purely functional.",
+                "Because Python has the `@property` decorator, allowing you to intercept direct variable access (`obj.name`) with hidden logic, meaning you can add validation later without breaking the API for users who are already using direct access.",
+                "Because variables in Python cannot be changed once set.",
+                "Because it consumes too much memory."
+            ],
+            "correctOptionIndex": 1
+        },
+        {
+            "id": "dp_9",
+            "type": "content",
+            "title": "Summary",
+            "content": "# Software Architect! 🎉\n\nYou've learned how to structure complex logic.\n\n## Key Takeaways\n\n- ✅ **Singleton:** Use `__new__` to guarantee only one instance of a class exists globally.\n- ✅ **Factory:** Centralize object creation logic so your app doesn't have `if/else` statements everywhere.\n- ✅ **Strategy:** Pass functions directly into objects to swap out algorithms at runtime.\n- ✅ **Decorator:** Use Python's built-in `@` syntax to wrap logic (like logging or timing) around existing functions without modifying them.\n- ✅ **@property:** Never use `get_x()` and `set_x()`. Use properties to add hidden getter/setter logic to standard variable access."
+        }
+    ]
+}

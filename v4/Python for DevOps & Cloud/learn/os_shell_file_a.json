@@ -1,0 +1,135 @@
+{
+    "id": "learn_os_shell_file_a",
+    "topicId": "os_shell_file_a",
+    "topicTitle": "OS, Shell & File Automation",
+    "description": "Learn to automate your operating system using Python. Master file manipulation, shell command execution, environment variables, and filesystem monitoring.",
+    "baseKP": 75,
+    "slides": [
+        {
+            "id": "os_shell_1",
+            "type": "content",
+            "title": "Python for Systems",
+            "content": "# Why Python for DevOps? 🛠️\n\nHistorically, System Administrators wrote Bash scripts to automate server tasks (moving files, checking logs, restarting services).\n\nBash is great for simple commands, but it becomes a nightmare for complex logic, error handling, or cross-platform support (Windows vs Linux).\n\nPython replaces Bash scripts by providing powerful, cross-platform standard libraries for interacting with the Operating System."
+        },
+        {
+            "id": "os_shell_2",
+            "type": "content",
+            "title": "The os Module",
+            "content": "# Interacting with the OS 🖥️\n\nThe `os` module provides a portable way of using operating system dependent functionality.\n\n```python_not\nimport os\n\n# Get current working directory\ncwd = os.getcwd()\n\n# Create a directory\nos.mkdir(\"backup_folder\")\n\n# Rename a file\nos.rename(\"old.txt\", \"new.txt\")\n\n# Delete a file\nos.remove(\"temp.log\")\n```\n\nThese commands work identically on Windows, Mac, and Linux, saving you from writing OS-specific code!"
+        },
+        {
+            "id": "os_shell_3",
+            "type": "content",
+            "title": "Environment Variables",
+            "content": "# Configuration via Environment 🌍\n\nIn DevOps (especially Docker and Kubernetes), applications are configured via Environment Variables rather than hardcoded configuration files.\n\nYou access them using `os.environ`, which acts like a dictionary.\n\n```python_not\nimport os\n\n# Read a variable\ndb_user = os.environ.get(\"DB_USER\", \"default_user\")\n\n# Set a variable (only applies to this process and its children)\nos.environ[\"API_KEY\"] = \"secret123\"\n```\n\n> ⚠️ **Security:** Never hardcode passwords in your scripts. Always load them from environment variables!"
+        },
+        {
+            "id": "os_shell_4",
+            "type": "content",
+            "title": "The sys Module",
+            "content": "# Interpreter and Arguments 🧠\n\nWhile `os` interacts with the operating system, `sys` interacts with the Python interpreter itself.\n\nThe most common use case for `sys` is reading command-line arguments.\n\n```python_not\nimport sys\n\n# sys.argv is a list of arguments passed to the script\n# sys.argv[0] is ALWAYS the name of the script itself\nif len(sys.argv) < 2:\n    print(\"Usage: python script.py <filename>\")\n    sys.exit(1) # Exit with an error code (1)\n\nfilename = sys.argv[1]\nprint(f\"Processing {filename}...\")\n```"
+        },
+        {
+            "id": "os_shell_quiz_1",
+            "type": "quiz",
+            "title": "OS Basics Quiz",
+            "content": "Check your understanding of the OS module.",
+            "quizQuestion": "Which object in the `os` module acts like a dictionary and allows you to read the system environment variables?",
+            "quizOptions": [
+                "os.env",
+                "os.environ",
+                "os.getenv()",
+                "os.system_vars"
+            ],
+            "correctOptionIndex": 1
+        },
+        {
+            "id": "os_shell_5",
+            "type": "content",
+            "title": "The subprocess Module",
+            "content": "# Running Shell Commands 🐚\n\nSometimes, you *have* to run a raw Bash command (like `git clone` or `docker build`). Python's `subprocess` module allows you to spawn new processes, connect to their input/output pipes, and obtain their return codes.\n\n```python_not\nimport subprocess\n\n# Run a simple command and wait for it to finish\nsubprocess.run([\"echo\", \"Hello World\"])\n```\n\n> 💡 **Best Practice:** Always pass commands as a list of strings (`[\"ls\", \"-l\"]`), not a single string (`\"ls -l\"`), to avoid shell injection vulnerabilities."
+        },
+        {
+            "id": "os_shell_6",
+            "type": "content",
+            "title": "Capturing Subprocess Output",
+            "content": "# Capturing STDOUT 📥\n\nIf you want to read the output of a command (rather than just printing it to the terminal), you must pass `capture_output=True` and `text=True`.\n\n```python_not\nimport subprocess\n\n# Run 'ls -l' and capture the result\nresult = subprocess.run([\"ls\", \"-l\"], capture_output=True, text=True)\n\nif result.returncode == 0:\n    print(\"Success! Output:\")\n    print(result.stdout)\nelse:\n    print(\"Command failed with error:\")\n    print(result.stderr)\n```\n\nThis allows your Python script to parse the output of CLI tools like `aws` or `kubectl`."
+        },
+        {
+            "id": "os_shell_7",
+            "type": "content",
+            "title": "High-Level File Operations: shutil",
+            "content": "# The `shutil` Module 📁\n\nThe `os` module handles basic file operations, but for high-level operations like copying entirely directory trees or archiving files, you use `shutil`.\n\n```python_not\nimport shutil\n\n# Copy a file\nshutil.copy(\"source.txt\", \"destination.txt\")\n\n# Recursively copy an entire folder!\nshutil.copytree(\"my_project\", \"backup_my_project\")\n\n# Recursively delete an entire folder!\nshutil.rmtree(\"old_folder\")\n\n# Create a ZIP archive of a folder\nshutil.make_archive(\"backup_zip\", \"zip\", \"backup_my_project\")\n```"
+        },
+        {
+            "id": "os_shell_8",
+            "type": "content",
+            "title": "The pathlib Module",
+            "content": "# Object-Oriented Paths: `pathlib` 🛣️\n\nTraditionally, Python developers manipulated file paths using string concatenation (`dir + \"/\" + filename`) or `os.path.join()`. This is ugly and error-prone.\n\nPython 3 introduced `pathlib`, which treats file paths as elegant, cross-platform Objects.\n\n```python_not\nfrom pathlib import Path\n\n# Create a Path object\nfolder = Path(\"/var/log\")\n\n# Use the '/' operator to elegantly join paths!\nlog_file = folder / \"nginx\" / \"access.log\"\n\nprint(log_file.name)   # 'access.log'\nprint(log_file.suffix) # '.log'\nprint(log_file.parent) # '/var/log/nginx'\n```"
+        },
+        {
+            "id": "os_shell_9",
+            "type": "content",
+            "title": "Reading and Writing with pathlib",
+            "content": "# Simple I/O with Path objects ✍️\n\n`pathlib` makes reading and writing files incredibly concise. You don't even need the `open()` context manager for simple operations!\n\n```python_not\nfrom pathlib import Path\n\nconfig = Path(\"settings.json\")\n\n# Check if file exists\nif not config.exists():\n    # Write text directly to the file\n    config.write_text('{\"debug\": true}')\n\n# Read entire text directly from the file\ncontent = config.read_text()\nprint(content)\n```"
+        },
+        {
+            "id": "os_shell_quiz_2",
+            "type": "quiz",
+            "title": "Pathlib Quiz",
+            "content": "Test your knowledge of pathlib.",
+            "quizQuestion": "In `pathlib`, which operator is overloaded to allow joining paths together gracefully?",
+            "quizOptions": [
+                "+",
+                "//",
+                "/",
+                "|"
+            ],
+            "correctOptionIndex": 2
+        },
+        {
+            "id": "os_shell_10",
+            "type": "content",
+            "title": "Pattern Matching: glob",
+            "content": "# Finding Files: `glob` 🔍\n\nIf you need to find all `.csv` files in a directory, you use the `glob` module (or the built-in `glob` method on `pathlib.Path` objects).\n\n```python_not\nimport glob\nfrom pathlib import Path\n\n# Using the glob module\nfor filename in glob.glob(\"*.csv\"):\n    print(f\"Found CSV: {filename}\")\n\n# Using pathlib (Preferred!)\nfolder = Path(\"./data\")\n# rglob means \"recursive glob\" (searches all subdirectories!)\nfor csv_file in folder.rglob(\"*.csv\"):\n    print(csv_file.absolute())\n```"
+        },
+        {
+            "id": "os_shell_11",
+            "type": "content",
+            "title": "Temporary Files",
+            "content": "# The `tempfile` Module 🗑️\n\nDevOps scripts often need to download a file, parse it, and then throw it away.\n\nDo not hardcode paths like `/tmp/data.txt`! It creates security risks and platform conflicts. Use the `tempfile` module to create secure, auto-deleting temporary files.\n\n```python_not\nimport tempfile\n\n# Creates a secure file in the OS's temp directory\nwith tempfile.NamedTemporaryFile(mode='w+', delete=True) as temp:\n    print(f\"Created temp file at: {temp.name}\")\n    \n    temp.write(\"Sensitive API data\")\n    temp.seek(0)\n    print(temp.read())\n    \n# The exact moment the 'with' block ends, the file is securely deleted from disk!\n```"
+        },
+        {
+            "id": "os_shell_12",
+            "type": "content",
+            "title": "Monitoring the Filesystem",
+            "content": "# The `watchdog` Library 🐕\n\nWhat if you want to trigger a Python script the exact moment a new log file is created, or a config file is modified?\n\nPolling (checking `os.listdir()` in a `while` loop) destroys CPU performance.\n\nThe third-party `watchdog` library uses OS-level event hooks (like `inotify` on Linux or `FSEvents` on Mac) to alert you instantly with zero CPU overhead."
+        },
+        {
+            "id": "os_shell_13",
+            "type": "content",
+            "title": "Using watchdog",
+            "content": "# Watching a Folder 👀\n\nHere is how you use `watchdog` to monitor a directory for new files.\n\n```python_not\nfrom watchdog.observers import Observer\nfrom watchdog.events import FileSystemEventHandler\nimport time\n\nclass MyHandler(FileSystemEventHandler):\n    def on_created(self, event):\n        if not event.is_directory:\n            print(f\"New file detected! {event.src_path}\")\n\nif __name__ == \"__main__\":\n    event_handler = MyHandler()\n    observer = Observer()\n    # Schedule the observer on the current directory\n    observer.schedule(event_handler, path='.', recursive=False)\n    observer.start()\n    \n    try:\n        while True:\n            time.sleep(1) # Keep main thread alive\n    except KeyboardInterrupt:\n        observer.stop()\n```"
+        },
+        {
+            "id": "os_shell_quiz_3",
+            "type": "quiz",
+            "title": "Review Quiz",
+            "content": "Let's review.",
+            "quizQuestion": "When running a command using `subprocess.run`, why is it recommended to pass the command as a list of strings (e.g., `['ls', '-l']`) rather than a single string (`'ls -l'`)?",
+            "quizOptions": [
+                "It is faster to execute.",
+                "It prevents shell injection attacks by bypassing the system shell.",
+                "It is a strict syntax requirement; a single string will throw a TypeError.",
+                "It automatically captures STDOUT."
+            ],
+            "correctOptionIndex": 1
+        },
+        {
+            "id": "os_shell_14",
+            "type": "content",
+            "title": "Summary",
+            "content": "# Systems Automation Master! 🎉\n\nYou've learned how to replace clunky Bash scripts with elegant Python code.\n\n## Key Takeaways\n\n- ✅ **os & sys:** Use `os.environ` for environment variables and `sys.argv` for CLI arguments.\n- ✅ **subprocess:** Safely execute external shell commands and capture their output using `subprocess.run()`.\n- ✅ **shutil:** Use for high-level operations like recursively copying or archiving folders.\n- ✅ **pathlib:** The modern, object-oriented way to build and traverse file paths using the `/` operator.\n- ✅ **tempfile:** Securely create throw-away files that auto-delete.\n- ✅ **watchdog:** Monitor directories for changes without burning CPU cycles.\n\nWith these tools, you can automate anything on a server!"
+        }
+    ]
+}

@@ -1,0 +1,30 @@
+[
+  {
+    "title": "Streamlit Basics",
+    "ques": "Write a minimal Streamlit app script that displays a title 'My Dashboard' and a slider from 0 to 100, saving the slider's value to a variable.",
+    "answer": {
+      "type": "code",
+      "lang": "python",
+      "content": "import streamlit as st\n\nst.title('My Dashboard')\nslider_val = st.slider('Select a value', 0, 100, 50)\nst.write(f'Selected: {slider_val}')"
+    },
+    "explanation": "Streamlit fundamentally changes app development by running the script top-to-bottom every time a user interacts with a widget. State is inferred automatically."
+  },
+  {
+    "title": "Dash Callbacks",
+    "ques": "Explain how user interactivity is handled in Plotly Dash using the `@callback` decorator.",
+    "answer": {
+      "type": "text",
+      "content": "In Dash, the UI layout and the interactivity logic are separated. Interactivity is defined using functions decorated with `@callback`. The decorator maps specific properties of input components (like the 'value' of a Dropdown) to properties of output components (like the 'figure' of a Graph). When the input changes, Dash automatically calls the function and updates the output component in the browser."
+    },
+    "explanation": "Dash uses a reactive programming model based on these input/output callback definitions."
+  },
+  {
+    "title": "Streamlit Session State",
+    "ques": "Why is `st.session_state` necessary in complex Streamlit applications?",
+    "answer": {
+      "type": "text",
+      "content": "Because Streamlit reruns the entire script upon every user interaction, normal Python variables lose their values between runs. `st.session_state` is a dictionary-like object that persists data across these reruns for a specific user session. It is required for things like multi-step wizards, authentication flows, or maintaining a history of chat messages."
+    },
+    "explanation": "Session state bridges the gap between Streamlit's stateless execution model and the stateful requirements of modern web apps."
+  }
+]

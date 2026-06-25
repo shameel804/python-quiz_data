@@ -1,0 +1,91 @@
+{
+    "id": "learn_static_analysis",
+    "topicId": "static_analysis",
+    "topicTitle": "Static Analysis & Code Style",
+    "description": "Enforce code quality automatically. Learn to use Mypy for static type checking, Ruff for blazing-fast linting, and set up Git pre-commit hooks.",
+    "baseKP": 75,
+    "slides": [
+        {
+            "id": "static_an_1",
+            "type": "content",
+            "title": "The Need for CI/CD",
+            "content": "# Code Reviews are Not Enough 🙅‍♂️\n\nRelying on humans to catch missing type hints or formatting errors during a Pull Request is a waste of time. Humans get tired. Machines don't.\n\nProfessional teams use **Static Analysis** tools. These tools read your code without executing it, checking for style violations, missing types, and logical bugs.\n\nYou run these locally, and also in your CI/CD pipeline (e.g., GitHub Actions) to block bad code from being merged."
+        },
+        {
+            "id": "static_an_2",
+            "type": "content",
+            "title": "Type Checking with Mypy",
+            "content": "# Enforcing Types 👮\n\nYou added `x: int` to your code. Great! But Python itself won't stop you from passing a string to it at runtime.\n\nTo actually verify your types, you use **Mypy**.\n\n```bash\npip install mypy\n```\n\n```bash\n# Run mypy on your source folder\nmypy src/my_package\n\n# Output:\n# src/my_package/math.py:5: error: Argument 1 to \"calc\" has incompatible type \"str\"; expected \"int\"\n```"
+        },
+        {
+            "id": "static_an_3",
+            "type": "content",
+            "title": "Strict Mode and py.typed",
+            "content": "# `mypy --strict` 📏\n\nBy default, Mypy is lenient. To force your team to write types for *everything*, use strict mode.\n\n```bash\nmypy --strict src/my_package\n```\n\n**IMPORTANT:** If you publish your package to PyPI, you must include an empty file named `py.typed` in the root of your package folder. This tells other developers' Mypy tools that your package officially supports type hinting!"
+        },
+        {
+            "id": "static_an_4",
+            "type": "content",
+            "title": "Code Formatting",
+            "content": "# The Uncompromising Formatter 🖤\n\nArguing over whether to use single quotes (`'`) or double quotes (`\"`), or whether to put a space after a comma, is a massive waste of developer time.\n\n**Black** is the industry-standard auto-formatter. It formats all Python code exactly the same way. You don't configure it; you just accept its style.\n\n```bash\npip install black\n\n# Automatically reformat every file in the directory!\nblack src/\n```"
+        },
+        {
+            "id": "static_an_quiz_1",
+            "type": "quiz",
+            "title": "Formatting Quiz",
+            "content": "Test your formatting knowledge.",
+            "quizQuestion": "Why is the `black` auto-formatter famously called 'The Uncompromising Formatter'?",
+            "quizOptions": [
+                "Because it deletes code that it doesn't understand.",
+                "Because it forces developers to use object-oriented programming.",
+                "Because it has almost zero configuration options, forcing an entire team (or the entire Python community) to adopt exactly the same uniform coding style, eliminating debates during code reviews.",
+                "Because it automatically emails your boss if you write bad code."
+            ],
+            "correctOptionIndex": 2
+        },
+        {
+            "id": "static_an_5",
+            "type": "content",
+            "title": "Linting",
+            "content": "# Catching Bugs 🐛\n\nFormatters make code pretty. **Linters** find logical bugs (e.g., \"You imported `os` but never used it\", or \"You defined a variable but never returned it\").\n\nHistorically, the community used `flake8` and `pylint`.\n\nHowever, these tools were written in Python, making them slow on massive codebases."
+        },
+        {
+            "id": "static_an_6",
+            "type": "content",
+            "title": "The Ruff Revolution",
+            "content": "# Blazing Fast Linting 🚀\n\n**Ruff** is an extremely fast Python linter written in Rust. It is 10-100x faster than Flake8.\n\nIt has taken the Python world by storm and replaces Flake8, isort (import sorting), and dozens of other tools.\n\n```bash\npip install ruff\n\n# Check for logical errors\nruff check .\n\n# Automatically fix import sorting and minor errors!\nruff check --fix .\n```"
+        },
+        {
+            "id": "static_an_7",
+            "type": "content",
+            "title": "Automating the Process",
+            "content": "# Pre-commit Hooks 🪝\n\nIt's annoying to manually run `black`, `ruff`, and `mypy` before every single git commit.\n\nThe `pre-commit` framework automates this. You define a `.pre-commit-config.yaml` file in your repo.\n\n```yaml\nrepos:\n  - repo: https://github.com/psf/black\n    rev: 23.3.0\n    hooks:\n      - id: black\n  - repo: https://github.com/charliermarsh/ruff-pre-commit\n    rev: v0.0.261\n    hooks:\n      - id: ruff\n```"
+        },
+        {
+            "id": "static_an_8",
+            "type": "content",
+            "title": "Installing Pre-commit",
+            "content": "# The Gatekeeper ⛩️\n\nOnce configured, you install the hook into your local `.git` folder.\n\n```bash\npip install pre-commit\npre-commit install\n```\n\nNow, whenever you type `git commit`, the system will automatically pause, run Black to format your code, and run Ruff to check for bugs. \n\nIf any tool fails, the commit is blocked! This guarantees bad code never enters the repository."
+        },
+        {
+            "id": "static_an_quiz_2",
+            "type": "quiz",
+            "title": "Automation Quiz",
+            "content": "Check your DevOps knowledge.",
+            "quizQuestion": "What is the primary benefit of using a `pre-commit` hook in a Git repository?",
+            "quizOptions": [
+                "It automatically pushes your code to production.",
+                "It automatically runs tools like formatters and linters BEFORE the code is allowed to be committed, ensuring that bad or unformatted code never makes it into the version control history.",
+                "It encrypts the commit message.",
+                "It automatically generates a `requirements.txt` file."
+            ],
+            "correctOptionIndex": 1
+        },
+        {
+            "id": "static_an_9",
+            "type": "content",
+            "title": "Summary",
+            "content": "# Code Quality Master! 🎉\n\nYou've learned how to enforce standards like a pro.\n\n## Key Takeaways\n\n- ✅ **Mypy:** Enforce static typing. Use `--strict` for maximum safety, and remember to include `py.typed` if publishing.\n- ✅ **Black:** Stop arguing about formatting. Let Black format everything identically.\n- ✅ **Ruff:** The blazing-fast Rust-based linter that replaces Flake8 and Isort.\n- ✅ **Pre-commit:** Automate these tools to run automatically every time a developer attempts to type `git commit`, blocking broken code at the source."
+        }
+    ]
+}

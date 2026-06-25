@@ -1,0 +1,29 @@
+[
+  {
+    "title": "Avoiding eval()",
+    "ques": "Explain why using `eval()` or `exec()` in Python is considered a severe security risk.",
+    "answer": {
+      "type": "text",
+      "content": "`eval()` and `exec()` execute arbitrary Python code passed to them as strings. If you pass user-supplied input directly into these functions without extreme sanitization, an attacker can execute malicious commands on your server, such as reading sensitive files, dropping databases, or opening reverse shells."
+    },
+    "explanation": "Remote Code Execution (RCE) is one of the most critical vulnerabilities. Always use safer alternatives like `ast.literal_eval()` if parsing simple data."
+  },
+  {
+    "title": "Safe subprocess usage",
+    "ques": "When using the `subprocess` module, why should you avoid setting `shell=True` whenever possible?",
+    "answer": {
+      "type": "text",
+      "content": "Setting `shell=True` passes the command string directly to the system shell. If any part of that command string incorporates unvalidated user input, it creates a 'Command Injection' vulnerability. An attacker can append their own commands (e.g., `; rm -rf /`). By passing commands as a list of arguments without the shell, the OS executes the executable directly, safely escaping all arguments."
+    },
+    "explanation": "Command injection occurs when external input is unsafely embedded into shell commands."
+  },
+  {
+    "title": "Vulnerability Scanning",
+    "ques": "What is the purpose of tools like `pip-audit` or `bandit`?",
+    "answer": {
+      "type": "text",
+      "content": "*   **`pip-audit`:** Scans your project's dependencies (e.g., `requirements.txt`) against a database of known vulnerabilities to ensure you aren't using compromised or outdated packages.\n*   **`bandit`:** A static analysis tool specifically designed to find common security issues within your own Python code (like hardcoded passwords, weak cryptography, or unsafe `eval` usage)."
+    },
+    "explanation": "Integrating these tools into a CI/CD pipeline ensures automated, continuous security checks before code is deployed."
+  }
+]

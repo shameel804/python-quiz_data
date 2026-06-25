@@ -1,0 +1,109 @@
+{
+    "id": "learn_dependency_inje",
+    "topicId": "dependency_inje",
+    "topicTitle": "Dependencies & Middlewares",
+    "description": "Understand FastAPI's powerful Dependency Injection system and how to intercept requests using Middlewares.",
+    "baseKP": 80,
+    "slides": [
+        {
+            "id": "dep_1",
+            "type": "content",
+            "title": "What is Dependency Injection?",
+            "content": "# The \"Depends\" Concept \ud83d\udc89\n\nDependency Injection (DI) sounds scary, but it just means: \"My function needs something to work. Instead of my function creating it, the framework will give it to me.\"\n\nIn FastAPI, DI is a first-class citizen.\nIt allows you to share logic (like connecting to a database, verifying authentication, or extracting common query parameters) across many different routes without repeating code."
+        },
+        {
+            "id": "dep_2",
+            "type": "content",
+            "title": "A Simple Dependency",
+            "content": "# Using `Depends` \ud83e\udd1d\n\nLet's say multiple endpoints need to know the `skip` and `limit` pagination parameters.\n\n```python_not\nfrom fastapi import FastAPI, Depends\n\napp = FastAPI()\n\n# 1. Define the dependency (it's just a normal function!)\ndef common_parameters(q: str | None = None, skip: int = 0, limit: int = 100):\n    return {\"q\": q, \"skip\": skip, \"limit\": limit}\n\n# 2. Inject it into your route using Depends()\n@app.get(\"/items/\")\ndef read_items(commons: dict = Depends(common_parameters)):\n    return commons\n    \n@app.get(\"/users/\")\ndef read_users(commons: dict = Depends(common_parameters)):\n    return commons\n```\nFastAPI automatically calls `common_parameters()`, passes the URL query params into it, and then passes the returned dictionary into your `read_items` function!"
+        },
+        {
+            "id": "dep_3",
+            "type": "content",
+            "title": "Classes as Dependencies",
+            "content": "# Object-Oriented Dependencies \ud83c\udfd7\ufe0f\n\nDependencies don't have to be functions. They can be Python classes!\n\n```python_not\nclass CommonQueryParams:\n    def __init__(self, q: str | None = None, skip: int = 0, limit: int = 100):\n        self.q = q\n        self.skip = skip\n        self.limit = limit\n\n@app.get(\"/items/\")\ndef read_items(commons: CommonQueryParams = Depends(CommonQueryParams)):\n    # commons is now an INSTANCE of the class!\n    return {\"q\": commons.q, \"skip\": commons.skip}\n```\n\n**Shortcut:** You can just write `Depends()` (empty). FastAPI will look at the type hint (`CommonQueryParams`) and figure it out automatically!"
+        },
+        {
+            "id": "dep_4",
+            "type": "content",
+            "title": "Sub-Dependencies",
+            "content": "# Dependencies of Dependencies \ud83e\ude86\n\nA dependency can require another dependency! FastAPI resolves the entire chain automatically.\n\n```python_not\ndef query_extractor(q: str | None = None):\n    return q\n\ndef query_or_cookie_extractor(q: str = Depends(query_extractor), last_query: str | None = Cookie(None)):\n    if not q:\n        return last_query\n    return q\n\n@app.get(\"/items/\")\ndef read_query(query: str = Depends(query_or_cookie_extractor)):\n    return {\"q_or_cookie\": query}\n```\nFastAPI will call `query_extractor` first, pass its result to `query_or_cookie_extractor`, and pass *that* result to your route."
+        },
+        {
+            "id": "dep_5",
+            "type": "content",
+            "title": "Global Dependencies",
+            "content": "# App-Wide Dependencies \ud83c\udf10\n\nSometimes you want a dependency to run for *every single route* in your application (e.g., verifying an API key in the header).\n\nYou can add it directly to the `FastAPI()` instance.\n\n```python_not\nfrom fastapi import FastAPI, Depends, Header, HTTPException\n\ndef verify_token(x_token: str = Header()):\n    if x_token != \"fake-super-secret-token\":\n        raise HTTPException(status_code=400, detail=\"X-Token header invalid\")\n\n# This runs for ALL routes\napp = FastAPI(dependencies=[Depends(verify_token)])\n\n@app.get(\"/\")\ndef root():\n    return {\"message\": \"You passed the token check!\"}\n```"
+        },
+        {
+            "id": "dep_quiz_1",
+            "type": "quiz",
+            "title": "Knowledge Check: Dependencies",
+            "content": "Test your DI knowledge.",
+            "quizQuestion": "In FastAPI, what is a 'Dependency'?",
+            "quizOptions": [
+                "A third-party library listed in requirements.txt.",
+                "A function or class that FastAPI executes to provide required data or verify conditions before your path operation runs.",
+                "A JavaScript file required by the frontend.",
+                "A database table."
+            ],
+            "correctOptionIndex": 1
+        },
+        {
+            "id": "dep_6",
+            "type": "content",
+            "title": "Yielding Dependencies",
+            "content": "# The `yield` Keyword in Dependencies \ud83d\udea6\n\nSometimes a dependency needs to do some setup, yield a value to the route, and then do some cleanup *after* the route finishes (like closing a database connection).\n\n```python_not\ndef get_db():\n    db = SessionLocal() # Open connection\n    try:\n        yield db        # Give the connection to the path operation\n    finally:\n        db.close()      # Close connection AFTER the response is sent\n\n@app.get(\"/users/\")\ndef read_users(db: Session = Depends(get_db)):\n    users = db.query(User).all()\n    return users\n```\nThis ensures you never leak database connections!"
+        },
+        {
+            "id": "dep_7",
+            "type": "content",
+            "title": "What are Middlewares?",
+            "content": "# Middlewares \ud83d\udee1\ufe0f\n\nA \"middleware\" is a function that sits in the middle of every request and response.\nIt catches every HTTP Request *before* it reaches any router/dependency, and catches every HTTP Response *before* it is sent back to the client.\n\nCommon uses:\n1. Timing how long a request takes.\n2. Logging all incoming requests.\n3. Modifying headers globally.\n4. Compressing responses (GZip)."
+        },
+        {
+            "id": "dep_8",
+            "type": "content",
+            "title": "BaseHTTPMiddleware",
+            "content": "# Writing Custom Middleware \u23f1\ufe0f\n\nYou can write your own middleware using `@app.middleware(\"http\")`.\n\n```python_not\nimport time\nfrom fastapi import FastAPI, Request\n\napp = FastAPI()\n\n@app.middleware(\"http\")\nasync def add_process_time_header(request: Request, call_next):\n    start_time = time.time()\n    \n    # 1. Let the rest of the application process the request\n    response = await call_next(request)\n    \n    # 2. Modify the response before sending it back\n    process_time = time.time() - start_time\n    response.headers[\"X-Process-Time\"] = str(process_time)\n    return response\n```"
+        },
+        {
+            "id": "dep_9",
+            "type": "content",
+            "title": "CORS",
+            "content": "# Cross-Origin Resource Sharing (CORS) \ud83c\udf0d\n\nIf your API is hosted on `api.example.com` and your frontend (React/Vue) is hosted on `frontend.example.com`, the browser will BLOCK the frontend from making requests to the API for security reasons.\n\nTo allow it, your API must send specific CORS headers. FastAPI provides a built-in middleware for this!\n\n```python_not\nfrom fastapi.middleware.cors import CORSMiddleware\n\norigins = [\n    \"http://frontend.example.com\",\n    \"http://localhost:3000\",\n]\n\napp.add_middleware(\n    CORSMiddleware,\n    allow_origins=origins,\n    allow_credentials=True,\n    allow_methods=[\"*\"], # Allow GET, POST, PUT, DELETE, etc.\n    allow_headers=[\"*\"], # Allow all headers\n)\n```"
+        },
+        {
+            "id": "dep_10",
+            "type": "content",
+            "title": "GZip Middleware",
+            "content": "# Compressing Responses \ud83d\udddc\ufe0f\n\nIf your API returns a 5MB JSON array of products, it will load slowly on mobile networks.\nYou can compress the HTTP response using GZip. The browser will automatically decompress it!\n\nFastAPI makes this a one-liner:\n\n```python_not\nfrom fastapi.middleware.gzip import GZipMiddleware\n\n# Compress responses that are larger than 1000 bytes (1KB)\napp.add_middleware(GZipMiddleware, minimum_size=1000)\n\n@app.get(\"/\")\ndef heavy_route():\n    return {\"data\": \"...very long string...\" * 10000}\n```"
+        },
+        {
+            "id": "dep_quiz_2",
+            "type": "quiz",
+            "title": "Knowledge Check: Middleware",
+            "content": "Test your middleware knowledge.",
+            "quizQuestion": "Which FastAPI middleware is required if your frontend JavaScript application is hosted on a different domain name than your backend API?",
+            "quizOptions": [
+                "GZipMiddleware",
+                "CORSMiddleware",
+                "TrustedHostMiddleware",
+                "SessionMiddleware"
+            ],
+            "correctOptionIndex": 1
+        },
+        {
+            "id": "dep_11",
+            "type": "content",
+            "title": "Dependencies vs Middlewares",
+            "content": "# Which should I use? \ud83e\udd14\n\nBoth Dependencies and Middlewares execute code before your route runs. Which should you use?\n\n## Use Middlewares when:\n- The logic applies to **100% of all routes** (e.g., CORS, logging, compression).\n- You need to modify the raw HTTP headers of the response.\n\n## Use Dependencies when:\n- The logic only applies to **specific routes** (e.g., \"Only admins can access this route\").\n- You need to connect to a database or external service.\n- You need to pass the *result* of the logic into your Python function."
+        },
+        {
+            "id": "dep_12",
+            "type": "content",
+            "title": "Summary",
+            "content": "# Summary \ud83c\udf89\n\nYou've mastered advanced request flow!\n\n## Key Takeaways\n- \u2705 **Dependencies (`Depends`):** Inject shared logic, database connections, or security checks into specific routes.\n- \u2705 **Yield Dependencies:** Use `yield` instead of `return` when you need to execute cleanup code (like closing a DB session) after the request finishes.\n- \u2705 **Middlewares:** Intercept *all* incoming requests and outgoing responses globally.\n- \u2705 **CORS:** Use `CORSMiddleware` to allow web browsers on different domains to fetch data from your API.\n- \u2705 **GZip:** Use `GZipMiddleware` to compress large JSON payloads and speed up your API."
+        }
+    ]
+}

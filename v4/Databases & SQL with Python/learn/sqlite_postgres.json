@@ -1,0 +1,147 @@
+{
+    "id": "learn_sqlite_postgres",
+    "topicId": "sqlite_postgres",
+    "topicTitle": "SQLite & PostgreSQL",
+    "description": "Deep dive into Python's built-in SQLite and the powerful PostgreSQL database.",
+    "baseKP": 85,
+    "slides": [
+        {
+            "id": "sqlp_1",
+            "type": "content",
+            "title": "Introduction to Database Engines",
+            "content": "# SQLite vs PostgreSQL \ud83d\udc18\n\nPython can connect to almost any database, but two are incredibly common:\n\n## SQLite\n- Built-in to Python (no installation needed).\n- Serverless (the database is just a file).\n- Great for testing, small apps, and local tools.\n\n## PostgreSQL\n- Powerful, open-source object-relational database system.\n- Requires a server process running in the background.\n- Great for complex applications, large datasets, and concurrent access.\n\nLet's explore how to use both from Python!"
+        },
+        {
+            "id": "sqlp_2",
+            "type": "content",
+            "title": "The sqlite3 Module",
+            "content": "# Using sqlite3 \ud83e\udeb6\n\nPython comes with `sqlite3` in its standard library.\n\n## Connecting to a Database\n```python_not\nimport sqlite3\n\n# Connect to a file (creates it if it doesn't exist)\nconn = sqlite3.connect('my_database.db')\n\n# Create a cursor object to execute queries\ncursor = conn.cursor()\n```\n\n## Always Close Connections!\nWhen you're done, always close the connection to prevent file locking and memory leaks.\n```python_not\nconn.close()\n```"
+        },
+        {
+            "id": "sqlp_3",
+            "type": "content",
+            "title": "In-Memory Databases",
+            "content": "# RAM Databases \u26a1\n\nSQLite has a super-power: `In-Memory` databases.\n\nIf you pass `:memory:` to the connect function, the database is created entirely in RAM. It is lightning fast, but **completely destroyed** when the connection is closed.\n\n## Use Case\nPerfect for Unit Testing! You don't want tests to leave junk data behind on the hard drive.\n\n<!-- FULL_CODE_START\nimport sqlite3\n\n# Creates a fresh database in RAM\nconn = sqlite3.connect(':memory:')\ncursor = conn.cursor()\n\ncursor.execute('''CREATE TABLE config (key TEXT, value TEXT)''')\ncursor.execute(\"INSERT INTO config VALUES ('theme', 'dark')\")\nconn.commit()\n\nprint(\"Fetching from RAM DB:\")\nfor row in cursor.execute(\"SELECT * FROM config\"):\n    print(f\"{row[0]}: {row[1]}\")\n\n# Database is wiped clean when closed!\nconn.close()\nFULL_CODE_END -->"
+        },
+        {
+            "id": "sqlp_4",
+            "type": "content",
+            "title": "Executing Queries in SQLite",
+            "content": "# Executing Queries \ud83c\udfc3\n\nUse `cursor.execute()` for single queries.\n\n```python_not\ncursor.execute(\"SELECT * FROM users WHERE id = ?\", (user_id,))\nuser = cursor.fetchone()\n```\n\n> \u26a0\ufe0f **WARNING:** Never use string formatting (`f\"{user_id}\"`) to insert variables into a query. This exposes you to **SQL Injection** attacks! Always use parameterized queries (the `?` placeholder in SQLite)."
+        },
+        {
+            "id": "sqlp_5",
+            "type": "content",
+            "title": "Fetching Data",
+            "content": "# Fetching Results \ud83c\udfa3\n\nOnce you execute a `SELECT` query, you need to grab the data.\n\n- `fetchone()`: Returns the next row as a tuple (or None).\n- `fetchmany(size)`: Returns a list of `size` rows.\n- `fetchall()`: Returns a list of all remaining rows.\n\n## Best Practice\nYou can also iterate over the cursor directly!\n```python_not\nfor row in cursor.execute(\"SELECT * FROM users\"):\n    print(row)\n```"
+        },
+        {
+            "id": "sqlp_quiz_1",
+            "type": "quiz",
+            "title": "Knowledge Check: SQLite",
+            "content": "Test your SQLite knowledge.",
+            "quizQuestion": "How do you securely pass variables into an SQLite query in Python?",
+            "quizOptions": [
+                "Using f-strings: f\"SELECT * FROM users WHERE id = {my_id}\"",
+                "Using the ? placeholder: execute(\"SELECT * FROM users WHERE id = ?\", (my_id,))",
+                "Using string formatting: \"SELECT * FROM users WHERE id = %s\" % my_id",
+                "Using the .format() method"
+            ],
+            "correctOptionIndex": 1
+        },
+        {
+            "id": "sqlp_6",
+            "type": "content",
+            "title": "Connecting to PostgreSQL",
+            "content": "# Enter psycopg2 \ud83d\udc18\n\nTo connect to PostgreSQL, you need a third-party driver. The most popular is `psycopg2`.\n\n## Installation\n```bash\npip install psycopg2-binary\n```\n\n## Connecting\n```python_not\nimport psycopg2\n\nconn = psycopg2.connect(\n    dbname=\"mydb\",\n    user=\"myuser\",\n    password=\"mypassword\",\n    host=\"localhost\",\n    port=\"5432\"\n)\ncursor = conn.cursor()\n```\n\nUnlike SQLite which uses `?`, `psycopg2` uses `%s` as the parameter placeholder!"
+        },
+        {
+            "id": "sqlp_7",
+            "type": "content",
+            "title": "Transactions",
+            "content": "# Database Transactions \ud83c\udfe6\n\nA transaction is a sequence of operations performed as a single logical unit of work. \n\n**The Rule:** Either ALL operations in a transaction succeed, or NONE of them do. This is crucial for things like bank transfers.\n\n## Committing\nChanges made to the database aren't saved immediately. You must call:\n```python_not\nconn.commit()\n```\n\n## Rolling Back\nIf something goes wrong (e.g., an Exception is thrown), you can undo all changes since the last commit:\n```python_not\nconn.rollback()\n```"
+        },
+        {
+            "id": "sqlp_8",
+            "type": "content",
+            "title": "Transaction Example",
+            "content": "# Using Transactions in Python \ud83d\udd04\n\nHere is how you safely handle transactions using a `try-except` block.\n\n```python_not\ntry:\n    # Deduct $100 from Alice\n    cursor.execute(\"UPDATE accounts SET balance = balance - 100 WHERE name = 'Alice'\")\n    \n    # Add $100 to Bob\n    cursor.execute(\"UPDATE accounts SET balance = balance + 100 WHERE name = 'Bob'\")\n    \n    # Only save if BOTH queries succeed\n    conn.commit() \nexcept Exception as e:\n    # Undo everything if any query failed\n    conn.rollback() \n    print(\"Transaction failed!\", e)\n```"
+        },
+        {
+            "id": "sqlp_9",
+            "type": "content",
+            "title": "Connection Pooling",
+            "content": "# Connection Pooling \ud83c\udfca\n\nOpening a new connection to a PostgreSQL database takes time and network resources. \n\nInstead of opening a new connection for every query, we use a **Connection Pool**. \nA pool holds several pre-opened connections. Your app \"borrows\" one, runs the query, and \"returns\" it to the pool.\n\n## Using psycopg2.pool\n```python_not\nfrom psycopg2 import pool\n\n# Create a pool of 1 to 10 connections\npg_pool = pool.SimpleConnectionPool(1, 10, dsn=\"dbname=test user=postgres\")\n\n# Borrow a connection\nconn = pg_pool.getconn()\n# ... use it ...\n# Return it\npg_pool.putconn(conn)\n```"
+        },
+        {
+            "id": "sqlp_quiz_2",
+            "type": "quiz",
+            "title": "Knowledge Check: Transactions",
+            "content": "Test your transaction knowledge.",
+            "quizQuestion": "Which method is used to undo changes made during a transaction if an error occurs?",
+            "quizOptions": [
+                "conn.undo()",
+                "conn.rollback()",
+                "conn.cancel()",
+                "cursor.revert()"
+            ],
+            "correctOptionIndex": 1
+        },
+        {
+            "id": "sqlp_10",
+            "type": "content",
+            "title": "PostgreSQL JSONB",
+            "content": "# NoSQL in a SQL Database? \ud83e\udd2f\n\nPostgreSQL supports a data type called `JSONB` (Binary JSON).\nThis allows you to store semi-structured JSON data directly in a table column, while still allowing fast indexing and querying!\n\n## Creating a JSONB column\n```sql_not\nCREATE TABLE users (id serial PRIMARY KEY, data JSONB);\n```\n\n## Querying JSONB\nYou can query deep inside the JSON document:\n```sql_not\n-- Find users whose 'city' key inside 'data' is 'New York'\nSELECT * FROM users WHERE data->>'city' = 'New York';\n```"
+        },
+        {
+            "id": "sqlp_11",
+            "type": "content",
+            "title": "Python and JSONB",
+            "content": "# JSONB in psycopg2 \ud83d\udce6\n\n`psycopg2` makes it very easy to work with JSONB columns using the `psycopg2.extras` module.\n\n```python_not\nimport psycopg2\nimport psycopg2.extras\n\nuser_data = {\n    \"city\": \"New York\",\n    \"preferences\": [\"dark_mode\", \"email_alerts\"]\n}\n\n# Wrap dict in extras.Json()\ncursor.execute(\"INSERT INTO users (data) VALUES (%s)\", (psycopg2.extras.Json(user_data),))\nconn.commit()\n```"
+        },
+        {
+            "id": "sqlp_12",
+            "type": "content",
+            "title": "The COPY Command",
+            "content": "# Lightning Fast Inserts: COPY \ud83d\ude80\n\nIf you need to insert millions of rows into PostgreSQL, `INSERT INTO` is too slow.\nPostgreSQL has a specialized `COPY` command designed for bulk loading data from files (like CSVs).\n\n## Using psycopg2 for COPY\n```python_not\nwith open('large_dataset.csv', 'r') as f:\n    # Skip the header row if necessary\n    next(f) \n    # Copy data directly into the database\n    cursor.copy_from(f, 'my_table', sep=',')\nconn.commit()\n```\nThis is astronomically faster than `cursor.executemany()`!"
+        },
+        {
+            "id": "sqlp_13",
+            "type": "content",
+            "title": "Cursor Dictionary Row Factory",
+            "content": "# Getting Dicts instead of Tuples \ud83d\udcd6\n\nBy default, both `sqlite3` and `psycopg2` return rows as Tuples `(1, 'Alice', 'admin')`.\nThis can be annoying because you have to remember the column order.\n\n## SQLite Row Factory\n```python_not\nconn.row_factory = sqlite3.Row\ncursor = conn.cursor()\ncursor.execute(\"SELECT * FROM users\")\nrow = cursor.fetchone()\n\n# Now you can access columns by name!\nprint(row['name']) \n```"
+        },
+        {
+            "id": "sqlp_14",
+            "type": "content",
+            "title": "PostgreSQL DictCursor",
+            "content": "# DictCursor in psycopg2 \ud83d\udcd6\n\nSimilarly, in PostgreSQL, you can use `DictCursor` or `RealDictCursor`.\n\n```python_not\nimport psycopg2.extras\n\n# Create a special cursor\ncursor = conn.cursor(cursor_factory=psycopg2.extras.RealDictCursor)\n\ncursor.execute(\"SELECT * FROM users\")\nrows = cursor.fetchall()\n\nfor row in rows:\n    # row is a standard Python dictionary\n    print(row['email'])\n```"
+        },
+        {
+            "id": "sqlp_15",
+            "type": "content",
+            "title": "Context Managers for Databases",
+            "content": "# Using 'with' statements \ud83e\uddf9\n\nYou should always close database connections and cursors. Python's `with` statement (context managers) makes this automatic and safe.\n\n## SQLite Example\n```python_not\nimport sqlite3\n\n# Automatically commits on exit (or rolls back on Exception)\nwith sqlite3.connect('my_db.db') as conn:\n    cursor = conn.cursor()\n    cursor.execute(\"INSERT INTO users (name) VALUES ('Bob')\")\n\n# Note: You still need to call conn.close() manually for sqlite3!\n```"
+        },
+        {
+            "id": "sqlp_quiz_3",
+            "type": "quiz",
+            "title": "Knowledge Check: Advanced PostgreSQL",
+            "content": "Test your PostgreSQL knowledge.",
+            "quizQuestion": "Which PostgreSQL feature allows you to store and efficiently query nested, semi-structured document data?",
+            "quizOptions": [
+                "JSONB",
+                "XMLType",
+                "TEXT",
+                "COPY command"
+            ],
+            "correctOptionIndex": 0
+        },
+        {
+            "id": "sqlp_16",
+            "type": "content",
+            "title": "Summary",
+            "content": "# Summary \ud83c\udf89\n\nYou've learned how to interact with the two most important databases in the Python ecosystem!\n\n## Key Takeaways\n- \u2705 **SQLite:** Built-in, zero-config, file-based. Use `?` for parameterization. Supports ultra-fast `:memory:` databases.\n- \u2705 **psycopg2:** The go-to adapter for PostgreSQL. Uses `%s` for parameterization.\n- \u2705 **Transactions:** Use `commit()` to save and `rollback()` to undo operations upon failure to ensure data integrity.\n- \u2705 **Connection Pools:** Improve performance by reusing PostgreSQL connections.\n- \u2705 **JSONB:** PostgreSQL's superpower for storing NoSQL-style data.\n- \u2705 **COPY:** Use `copy_from()` to bulk load data into Postgres much faster than standard INSERTs.\n- \u2705 **Row Factories:** Use `sqlite3.Row` or `RealDictCursor` to return data as dictionaries instead of tuples."
+        }
+    ]
+}

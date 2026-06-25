@@ -1,0 +1,32 @@
+[
+  {
+    "title": "Creating a FastAPI App \ud83d\ude80",
+    "ques": "Write the minimal code to create a FastAPI application instance and define a `GET` route at `/hello` that returns `{\"msg\": \"Hello\"}`.",
+    "answer": {
+      "type": "code",
+      "lang": "python",
+      "content": "from fastapi import FastAPI\n\napp = FastAPI()\n\n@app.get('/hello')\ndef read_root():\n    return {'msg': 'Hello'}"
+    },
+    "explanation": "FastAPI uses Python decorators to map HTTP methods and paths to specific handler functions."
+  },
+  {
+    "title": "Path Parameters \ud83d\udee4",
+    "ques": "Create a `GET` route at `/users/{user_id}` that accepts an integer `user_id` and returns it in a JSON dictionary.",
+    "answer": {
+      "type": "code",
+      "lang": "python",
+      "content": "@app.get('/users/{user_id}')\ndef get_user(user_id: int):\n    return {'user_id': user_id}"
+    },
+    "explanation": "FastAPI automatically parses and validates path parameters based on standard Python type hints."
+  },
+  {
+    "title": "Query Parameters \ud83d\udd0d",
+    "ques": "Create a `GET` route at `/items/` that accepts an optional query parameter `skip` with a default value of `0`.",
+    "answer": {
+      "type": "code",
+      "lang": "python",
+      "content": "@app.get('/items/')\ndef read_items(skip: int = 0):\n    return {'skip': skip}"
+    },
+    "explanation": "Function arguments that are not declared in the route path automatically become query parameters."
+  }
+]

@@ -1,0 +1,141 @@
+{
+    "id": "learn_selenium_playwr",
+    "topicId": "selenium_playwr",
+    "topicTitle": "Selenium & Playwright",
+    "description": "Control real web browsers using Python to scrape dynamic sites and automate workflows.",
+    "baseKP": 85,
+    "slides": [
+        {
+            "id": "sel_1",
+            "type": "content",
+            "title": "Why Browser Automation?",
+            "content": "# The Limits of Requests \ud83d\udea7\n\n`requests` and `Scrapy` download raw HTML. But modern websites are heavily reliant on JavaScript (React, Vue, Angular).\n\nIf the data you want to scrape is injected into the page by JavaScript *after* the initial HTML loads, `requests` will just see an empty `<div>`!\n\nTo scrape these sites, you must run a real web browser that executes the JavaScript. Enter **Browser Automation**."
+        },
+        {
+            "id": "sel_2",
+            "type": "content",
+            "title": "What is Selenium?",
+            "content": "# Selenium WebDriver \ud83d\ude97\n\nSelenium is a widely used tool for automating web browsers. It requires a \"Driver\" (like ChromeDriver or GeckoDriver) to talk to the specific browser installed on your computer.\n\n## Installation\n```bash\npip install selenium\n```\n\n## Basic Setup\n```python_not\nfrom selenium import webdriver\n\n# Open a Chrome window\ndriver = webdriver.Chrome()\n\n# Navigate to a URL\ndriver.get(\"https://google.com\")\n\n# Get the page title\nprint(driver.title)\n\n# Close the browser\ndriver.quit()\n```"
+        },
+        {
+            "id": "sel_3",
+            "type": "content",
+            "title": "Finding Elements",
+            "content": "# Locating Elements \ud83d\udd0d\n\nOnce the browser loads the page, you can find elements to interact with using the `By` class.\n\n```python_not\nfrom selenium.webdriver.common.by import By\n\n# Find by ID\nelement = driver.find_element(By.ID, \"submit-button\")\n\n# Find by CSS Selector\nelement = driver.find_element(By.CSS_SELECTOR, \".product-title\")\n\n# Find by XPath\nelement = driver.find_element(By.XPATH, \"//div[@class='nav']/a[1]\")\n\n# Find MULTIPLE elements\nelements = driver.find_elements(By.CLASS_NAME, \"item\")\n```"
+        },
+        {
+            "id": "sel_4",
+            "type": "content",
+            "title": "Interacting with Elements",
+            "content": "# Clicking and Typing \u2328\ufe0f\n\nUnlike BeautifulSoup which only reads data, Selenium can *interact* with the webpage!\n\n```python_not\nfrom selenium.webdriver.common.keys import Keys\n\nsearch_box = driver.find_element(By.NAME, \"q\")\n\n# Type text into the input field\nsearch_box.send_keys(\"Python Web Scraping\")\n\n# Press the ENTER key\nsearch_box.send_keys(Keys.RETURN)\n\n# Click a button\nlogin_btn = driver.find_element(By.ID, \"login\")\nlogin_btn.click()\n```"
+        },
+        {
+            "id": "sel_5",
+            "type": "content",
+            "title": "Explicit and Implicit Waits",
+            "content": "# Waiting for Elements \u23f3\n\nBecause JavaScript loads elements asynchronously, an element might not exist the millisecond the `driver.get()` finishes.\nIf you try to click it immediately, your script crashes!\n\n## Implicit Wait (Global)\nTells WebDriver to poll the DOM for a certain amount of time when trying to find *any* element.\n```python_not\ndriver.implicitly_wait(10) # wait up to 10 seconds\n```\n\n## Explicit Wait (Specific)\nWait for a specific condition on a specific element.\n```python_not\nfrom selenium.webdriver.support.ui import WebDriverWait\nfrom selenium.webdriver.support import expected_conditions as EC\n\n# Wait up to 10 seconds until the element is clickable\nelement = WebDriverWait(driver, 10).until(\n    EC.element_to_be_clickable((By.ID, 'myDynamicElement'))\n)\n```"
+        },
+        {
+            "id": "sel_quiz_1",
+            "type": "quiz",
+            "title": "Knowledge Check: Selenium",
+            "content": "Test your WebDriver knowledge.",
+            "quizQuestion": "Why is it important to use 'Waits' when automating a browser?",
+            "quizOptions": [
+                "To prevent the browser from using too much RAM.",
+                "Because elements loaded via JavaScript might not exist immediately after the HTML finishes loading.",
+                "To bypass CAPTCHAs.",
+                "To slow down the script so the user can watch what is happening."
+            ],
+            "correctOptionIndex": 1
+        },
+        {
+            "id": "sel_6",
+            "type": "content",
+            "title": "ActionChains",
+            "content": "# Complex Interactions \ud83d\uddb1\ufe0f\n\nSometimes you need to do more than just click. You need to hover, drag-and-drop, or perform complex key combinations.\n\nUse `ActionChains`!\n\n```python_not\nfrom selenium.webdriver import ActionChains\n\nmenu = driver.find_element(By.ID, \"dropdown-menu\")\nsubmenu = driver.find_element(By.ID, \"submenu-item\")\n\n# Hover over the menu, wait for submenu, then click it\nactions = ActionChains(driver)\nactions.move_to_element(menu)\nactions.click(submenu)\nactions.perform()  # Don't forget to call perform()!\n```"
+        },
+        {
+            "id": "sel_7",
+            "type": "content",
+            "title": "Headless Mode",
+            "content": "# Invisible Browsers \ud83d\udc7b\n\nRunning automated tests or scraping scripts with a visible browser window popping up is annoying, especially on a server (which doesn't have a screen!).\n\nYou can run browsers in **Headless Mode**.\n\n```python_not\nfrom selenium.webdriver.chrome.options import Options\n\nchrome_options = Options()\nchrome_options.add_argument(\"--headless\")\n# Often required on Linux servers\nchrome_options.add_argument(\"--no-sandbox\") \n\ndriver = webdriver.Chrome(options=chrome_options)\n```"
+        },
+        {
+            "id": "sel_8",
+            "type": "content",
+            "title": "What is Playwright?",
+            "content": "# The New Challenger \ud83c\udfad\n\nWhile Selenium is the industry standard, **Playwright** (built by Microsoft) is rapidly gaining popularity.\n\nWhy Playwright?\n- It doesn't require downloading separate WebDrivers.\n- It has built-in auto-waiting (no more `WebDriverWait`!).\n- It supports extremely fast asynchronous execution.\n- It has powerful network interception tools.\n\n## Installation\n```bash\npip install playwright\nplaywright install  # Downloads Chromium, Firefox, and WebKit\n```"
+        },
+        {
+            "id": "sel_9",
+            "type": "content",
+            "title": "Async Playwright",
+            "content": "# Async Execution \u26a1\n\nPlaywright has a synchronous API, but its true power lies in its `async` API, allowing you to run multiple browser contexts concurrently.\n\n```python_not\nimport asyncio\nfrom playwright.async_api import async_playwright\n\nasync def main():\n    async with async_playwright() as p:\n        # Launch Chromium\n        browser = await p.chromium.launch(headless=False)\n        page = await browser.new_page()\n        \n        await page.goto('http://whatsmyuseragent.org/')\n        \n        # Take a screenshot\n        await page.screenshot(path='example.png')\n        await browser.close()\n\nasyncio.run(main())\n```"
+        },
+        {
+            "id": "sel_10",
+            "type": "content",
+            "title": "Auto-waiting in Playwright",
+            "content": "# Smart Waiting \ud83e\udde0\n\nUnlike Selenium where you must manually wait for elements, Playwright auto-waits for elements to be actionable (visible, stable, enabled) before performing actions!\n\n```python_not\n# This will automatically wait until the #submit button \n# exists, is visible, and is no longer moving or disabled.\nawait page.click('#submit')\n\n# Fill out a form (auto-waits for the input field)\nawait page.fill('#email', 'user@example.com')\n```"
+        },
+        {
+            "id": "sel_quiz_2",
+            "type": "quiz",
+            "title": "Knowledge Check: Playwright",
+            "content": "Test your Playwright knowledge.",
+            "quizQuestion": "Which of the following is a major advantage of Playwright over Selenium?",
+            "quizOptions": [
+                "It only supports Google Chrome.",
+                "It automatically waits for elements to be actionable before interacting with them.",
+                "It cannot run in headless mode.",
+                "It requires downloading third-party WebDrivers manually."
+            ],
+            "correctOptionIndex": 1
+        },
+        {
+            "id": "sel_11",
+            "type": "content",
+            "title": "Network Interception",
+            "content": "# Modifying Network Traffic \ud83d\udd78\ufe0f\n\nPlaywright allows you to intercept and modify HTTP traffic! You can block images to save bandwidth or mock API responses.\n\n```python_not\n# Block all images from loading to speed up scraping\nasync def intercept_route(route):\n    if route.request.resource_type == \"image\":\n        await route.abort()\n    else:\n        await route.continue_()\n\nawait page.route(\"**/*\", intercept_route)\nawait page.goto(\"https://amazon.com\")\n```"
+        },
+        {
+            "id": "sel_12",
+            "type": "content",
+            "title": "Device Emulation",
+            "content": "# Emulating Mobile Devices \ud83d\udcf1\n\nMany websites serve different HTML to mobile devices. Playwright makes it trivially easy to emulate an iPhone or Android.\n\n```python_not\nasync with async_playwright() as p:\n    iphone_12 = p.devices['iPhone 12']\n    browser = await p.webkit.launch()\n    \n    # Create a new context simulating an iPhone 12\n    context = await browser.new_context(\n        **iphone_12,\n        locale='de-DE',        # Fake the location to Germany\n        color_scheme='dark'    # Force dark mode\n    )\n    \n    page = await context.new_page()\n    await page.goto('https://maps.google.com')\n```"
+        },
+        {
+            "id": "sel_13",
+            "type": "content",
+            "title": "Evaluating JavaScript",
+            "content": "# Injecting JavaScript \ud83d\udc89\n\nBoth Selenium and Playwright allow you to execute arbitrary JavaScript inside the browser context.\n\n## Playwright Example\n```python_not\n# Get the window's scroll height\nheight = await page.evaluate(\"document.body.scrollHeight\")\n\n# Modify the DOM directly\nawait page.evaluate(\"document.body.style.backgroundColor = 'red'\")\n\n# Pass variables from Python to JS\nresult = await page.evaluate(\"x => x * 2\", 5)\n```"
+        },
+        {
+            "id": "sel_14",
+            "type": "content",
+            "title": "Extracting Data",
+            "content": "# Getting the Scraped Data \ud83d\udce6\n\nWhile you can use `page.evaluate()` to extract text, Playwright provides helper methods.\n\n```python_not\n# Get text content of a single element\ntitle = await page.text_content('h1.title')\n\n# Get an attribute\nhref = await page.get_attribute('a.login', 'href')\n\n# Better yet: Get the full HTML and pass it to BeautifulSoup!\nhtml_content = await page.content()\nsoup = BeautifulSoup(html_content, 'lxml')\n```\nPassing the fully rendered HTML to BeautifulSoup is often the fastest way to extract complex data!"
+        },
+        {
+            "id": "sel_quiz_3",
+            "type": "quiz",
+            "title": "Knowledge Check: Advanced Playwright",
+            "content": "Test your advanced browser automation skills.",
+            "quizQuestion": "Why might you want to intercept network requests and block images while scraping?",
+            "quizOptions": [
+                "To prevent the website from knowing your IP address.",
+                "To bypass Cloudflare protection.",
+                "To significantly speed up page load times and reduce bandwidth.",
+                "Because BeautifulSoup cannot parse image tags."
+            ],
+            "correctOptionIndex": 2
+        },
+        {
+            "id": "sel_15",
+            "type": "content",
+            "title": "Summary",
+            "content": "# Summary \ud83c\udf89\n\nYou are now a master of browser automation!\n\n## Key Takeaways\n- \u2705 **Browser Automation:** Necessary for scraping Javascript-rendered applications.\n- \u2705 **Selenium:** The industry standard. Uses `WebDriverWait` and `ActionChains` for complex interactions.\n- \u2705 **Playwright:** The modern alternative. Supports `async`, auto-waiting, and requires no external driver downloads.\n- \u2705 **Headless Mode:** Run browsers invisibly for server deployment.\n- \u2705 **Network Interception:** Block images/ads or mock API responses using Playwright's `route()` method.\n- \u2705 **Device Emulation:** Spoof user agents, screen sizes, and geolocation to view mobile versions of websites."
+        }
+    ]
+}

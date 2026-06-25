@@ -1,0 +1,135 @@
+{
+    "id": "learn_javascript_heav",
+    "topicId": "javascript_heav",
+    "topicTitle": "JavaScript-Heavy & Dynamic Sites",
+    "description": "Strategies for scraping Single Page Applications (SPAs) and handling infinite scrolling.",
+    "baseKP": 80,
+    "slides": [
+        {
+            "id": "js_1",
+            "type": "content",
+            "title": "The Problem with JS Sites",
+            "content": "# The Dynamic Web \ud83d\udd78\ufe0f\n\nIn the old days, when you clicked a link, the server sent a brand new HTML document.\n\nToday, **Single Page Applications (SPAs)** built with React, Vue, or Angular load a single HTML file (which is mostly empty). \nThen, JavaScript makes hidden HTTP requests to an API, gets JSON data, and updates the DOM dynamically.\n\nIf you use `requests.get()`, you only get the empty HTML!"
+        },
+        {
+            "id": "js_2",
+            "type": "content",
+            "title": "Strategy 1: Browser Automation",
+            "content": "# The Brute Force Approach \ud83d\udd28\n\nThe most obvious solution is to use Selenium or Playwright. \nSince these tools run real browsers, the JavaScript executes perfectly, and the DOM is populated.\n\n## Pros:\n- Almost guaranteed to work.\n- Code is straightforward to write.\n\n## Cons:\n- **Very Slow.** Opening a browser and rendering CSS/JS takes seconds, compared to milliseconds for a simple HTTP request.\n- **Resource Intensive.** Requires a lot of RAM/CPU, making it hard to scale."
+        },
+        {
+            "id": "js_3",
+            "type": "content",
+            "title": "Strategy 2: API Reverse Engineering",
+            "content": "# The Elegant Approach \ud83d\udd75\ufe0f\u200d\u2642\ufe0f\n\nIf a React app is displaying data, that data must have come from somewhere! It almost always came from a hidden API request.\n\nIf you can find that API request, you can skip the HTML entirely and fetch the raw JSON data directly using Python's `requests`.\n\n## Pros:\n- **Incredibly Fast.**\n- **Clean Data.** You get structured JSON instead of having to parse HTML.\n\n## Cons:\n- Requires detective work in the browser's Network tab.\n- Sometimes APIs use complex encryption or tokens that are hard to replicate."
+        },
+        {
+            "id": "js_4",
+            "type": "content",
+            "title": "Reverse Engineering APIs",
+            "content": "# Finding the Hidden API \ud83d\udd0e\n\nHow to find the data source:\n1. Open your browser's Developer Tools (F12).\n2. Go to the **Network** tab.\n3. Filter by **Fetch/XHR** (this hides images and CSS).\n4. Reload the page or scroll down.\n5. Look at the requests being made. Click on them and check the **Response** tab.\n\nIf you see a JSON response containing the data you want, you've found the API!\nRight-click the request -> Copy -> **Copy as cURL (bash)**."
+        },
+        {
+            "id": "js_5",
+            "type": "content",
+            "title": "cURL to Python",
+            "content": "# Translating to Python \ud83d\udc0d\n\nOnce you copy the cURL command, you can easily translate it to a Python `requests` call.\n\n*(Pro tip: Search for \"cURL to Python requests converter\" online to do this instantly!)*\n\n```python_not\nimport requests\n\n# You MUST include the headers the browser sent, \n# or the API might reject you!\nheaders = {\n    'accept': 'application/json',\n    'user-agent': 'Mozilla/5.0...',\n    'authorization': 'Bearer xyz123'\n}\n\nresponse = requests.get('https://api.example.com/products', headers=headers)\ndata = response.json()\n```\nThis is the ultimate secret of professional web scraping!"
+        },
+        {
+            "id": "js_quiz_1",
+            "type": "quiz",
+            "title": "Knowledge Check: Strategies",
+            "content": "Test your strategic scraping knowledge.",
+            "quizQuestion": "When scraping a React SPA, what is usually the fastest and most efficient strategy to get the data?",
+            "quizOptions": [
+                "Use Selenium to open the page and extract the HTML.",
+                "Use requests.get() on the URL and parse the `<script>` tags.",
+                "Open the Network tab, find the backend API request, and recreate it in Python using `requests`.",
+                "Use BeautifulSoup's built-in JavaScript executor."
+            ],
+            "correctOptionIndex": 2
+        },
+        {
+            "id": "js_6",
+            "type": "content",
+            "title": "Infinite Scrolling",
+            "content": "# Infinite Scroll \ud83d\udcdc\n\nInfinite scroll (like Twitter or Instagram) happens when new data loads automatically as you reach the bottom of the page.\n\nIf you use API Reverse Engineering, look at the Network tab as you scroll. You will see requests like `?page=2` or `?offset=20`. You can just loop over these in Python!\n\nBut what if the API is secured and you *must* use Selenium/Playwright?"
+        },
+        {
+            "id": "js_7",
+            "type": "content",
+            "title": "Scrolling via Automation",
+            "content": "# Scrolling with Playwright \ud83d\udefc\n\nTo trigger the infinite scroll, you must execute JavaScript to force the browser to scroll down.\n\n```python_not\nasync def scroll_to_bottom(page):\n    previous_height = 0\n    \n    while True:\n        # Scroll down to bottom\n        await page.evaluate(\"window.scrollTo(0, document.body.scrollHeight)\")\n        \n        # Wait for new elements to load\n        await page.wait_for_timeout(2000)\n        \n        # Check if height changed\n        new_height = await page.evaluate(\"document.body.scrollHeight\")\n        if new_height == previous_height:\n            break # We reached the absolute bottom!\n            \n        previous_height = new_height\n```"
+        },
+        {
+            "id": "js_8",
+            "type": "content",
+            "title": "Waiting for Dynamic Content",
+            "content": "# Handling Loading Spinners \u23f3\n\nWhen scraping SPAs with Selenium/Playwright, elements frequently disappear and reappear.\n\nIf you click \"Next Page\", a loading spinner might appear for 1 second.\nIf you try to scrape data immediately, you'll scrape the old data or get an error.\n\n```python_not\n# Playwright: Wait for a specific element to vanish\nawait page.wait_for_selector('.loading-spinner', state='hidden')\n\n# Playwright: Wait for network to be idle (no active HTTP requests!)\nawait page.wait_for_load_state('networkidle')\n\n# Now it's safe to scrape!\n```"
+        },
+        {
+            "id": "js_9",
+            "type": "content",
+            "title": "IFrame Handling",
+            "content": "# The IFrame Trap \ud83e\udea4\n\nAn `iframe` is a webpage embedded inside another webpage. (e.g., Embedded YouTube videos, or Stripe payment forms).\n\nIf you try to `find_element` inside an iframe, Selenium/Playwright will fail! They cannot \"see\" inside the iframe by default.\n\n## Playwright Solution\n```python_not\n# Access the frame using its name or URL\nframe = page.frame(name=\"my-iframe\")\n# OR access it via a selector\nframe_element = await page.wait_for_selector(\"iframe#payment\")\nframe = await frame_element.content_frame()\n\n# Now search INSIDE the frame\nawait frame.fill('#card_number', '1234')\n```"
+        },
+        {
+            "id": "js_10",
+            "type": "content",
+            "title": "Selenium IFrame Handling",
+            "content": "# Switching Frames in Selenium \ud83d\udd04\n\nIn Selenium, you must explicitly tell the driver to \"switch\" its context into the iframe.\n\n```python_not\n# Switch to iframe by ID\ndriver.switch_to.frame(\"my-iframe\")\n\n# Now all driver commands execute INSIDE the iframe\nbutton = driver.find_element(By.ID, \"submit\")\nbutton.click()\n\n# IMPORTANT: Switch back to the main page when done!\ndriver.switch_to.default_content()\n```"
+        },
+        {
+            "id": "js_quiz_2",
+            "type": "quiz",
+            "title": "Knowledge Check: IFrames",
+            "content": "Test your IFrame knowledge.",
+            "quizQuestion": "Why will `driver.find_element()` fail to find an element that is clearly visible on the screen, if that element is inside an iframe?",
+            "quizOptions": [
+                "Because elements inside an iframe are loaded via GraphQL.",
+                "Because the driver's context is tied to the main document. You must explicitly switch the driver's context to the iframe.",
+                "Because iframes always use different domain names.",
+                "Because the element is hidden using CSS."
+            ],
+            "correctOptionIndex": 1
+        },
+        {
+            "id": "js_11",
+            "type": "content",
+            "title": "Extracting JSON from Script Tags",
+            "content": "# The Hydration State \ud83d\udca7\n\nSometimes, modern frameworks (like Next.js or Nuxt.js) use Server Side Rendering (SSR).\n\nThey render the HTML, but they ALSO embed the raw JSON data inside a `<script>` tag so the frontend doesn't have to make a second API call. This is a goldmine!\n\nLook at the page source for something like:\n```html\n<script id=\"__NEXT_DATA__\" type=\"application/json\">\n  {\"props\": {\"pageProps\": {\"products\": [ ... ]}}}\n</script>\n```"
+        },
+        {
+            "id": "js_12",
+            "type": "content",
+            "title": "Parsing Embedded JSON",
+            "content": "# Extracting Next.js Data \u26cf\ufe0f\n\nIf you find a hydration script tag, you don't need Selenium at all!\n\n```python_not\nimport requests\nfrom bs4 import BeautifulSoup\nimport json\n\nresponse = requests.get('https://nextjs-site.com/products')\nsoup = BeautifulSoup(response.text, 'lxml')\n\n# Find the specific script tag\nscript_tag = soup.find('script', id='__NEXT_DATA__')\n\nif script_tag:\n    # Load the text content as a Python dictionary\n    data = json.loads(script_tag.string)\n    \n    # Navigate the dictionary to get your clean data!\n    products = data['props']['pageProps']['products']\n    print(products)\n```"
+        },
+        {
+            "id": "js_13",
+            "type": "content",
+            "title": "Shadow DOM",
+            "content": "# The Shadow DOM \ud83c\udf11\n\nWeb Components often use the \"Shadow DOM\" to encapsulate their CSS and HTML so it doesn't clash with the rest of the page.\n\nLike IFrames, standard CSS/XPath selectors cannot pierce the Shadow DOM.\n\nIn Playwright, however, the default CSS engine pierces open shadow roots automatically!\nIf you use `await page.locator('my-custom-element').click()`, it will work seamlessly."
+        },
+        {
+            "id": "js_quiz_3",
+            "type": "quiz",
+            "title": "Knowledge Check: Hydration",
+            "content": "Test your knowledge of SSR apps.",
+            "quizQuestion": "If you see a `<script id=\"__NEXT_DATA__\" type=\"application/json\">` tag in the HTML source, what is the best way to extract its data?",
+            "quizOptions": [
+                "Use Selenium to evaluate Javascript on the page.",
+                "Use BeautifulSoup to extract the tag's string content, then parse it with the `json` module.",
+                "Use regex to parse the HTML string.",
+                "Initiate a POST request to the Next.js API endpoint."
+            ],
+            "correctOptionIndex": 1
+        },
+        {
+            "id": "js_14",
+            "type": "content",
+            "title": "Summary",
+            "content": "# Summary \ud83c\udf89\n\nYou are now ready to tackle complex JavaScript applications!\n\n## Key Takeaways\n- \u2705 **API Reverse Engineering:** The fastest way to scrape an SPA is to find the hidden API calls in the Network tab and recreate them with `requests`.\n- \u2705 **Scrolling:** Use `execute_script('window.scrollTo...')` in Selenium/Playwright to trigger infinite scrolling.\n- \u2705 **Network Idle:** When automating SPAs, wait for the `networkidle` state to ensure loading spinners are finished.\n- \u2705 **IFrames:** Remember to explicitly switch context to `frame()` before trying to interact with elements inside them.\n- \u2705 **Hydration Data:** Always check the raw HTML source for embedded JSON data (like `__NEXT_DATA__`) to bypass complex HTML parsing entirely!"
+        }
+    ]
+}

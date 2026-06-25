@@ -1,0 +1,85 @@
+{
+    "id": "learn_documentation_d",
+    "topicId": "documentation_d",
+    "topicTitle": "Documentation & Dunder Methods",
+    "description": "Write code that explains itself. Learn standard Docstring formats, automate documentation generation with Sphinx, and master Python's magic Dunder methods.",
+    "baseKP": 75,
+    "slides": [
+        {
+            "id": "doc_dun_1",
+            "type": "content",
+            "title": "The Art of Docstrings",
+            "content": "# Explaining Your Code 📝\n\nCode tells you *how* it does something. Documentation tells you *why*.\n\nIn Python, you document functions and classes using **Docstrings** (triple-quoted strings placed immediately underneath the definition).\n\n```python_not\ndef fetch_data(url: str) -> dict:\n    \"\"\"Fetches data from a REST API and returns a parsed dictionary.\"\"\"\n    pass\n```\n\nIf a user hovers over `fetch_data` in their IDE, this exact string pops up!"
+        },
+        {
+            "id": "doc_dun_2",
+            "type": "content",
+            "title": "Docstring Formats",
+            "content": "# Google vs NumPy Style 📐\n\nFor complex functions, a single sentence isn't enough. You must document the arguments and return types.\n\nThe industry uses standardized formats. The most popular is the **Google Style**.\n\n```python_not\ndef process_image(img_path: str, resize: bool = True) -> bytes:\n    \"\"\"\n    Processes an image file for machine learning.\n\n    Args:\n        img_path (str): The absolute path to the local image file.\n        resize (bool, optional): Whether to resize to 256x256. Defaults to True.\n\n    Returns:\n        bytes: The processed image byte stream.\n\n    Raises:\n        FileNotFoundError: If the img_path does not exist.\n    \"\"\"\n    pass\n```"
+        },
+        {
+            "id": "doc_dun_3",
+            "type": "content",
+            "title": "Automating Documentation",
+            "content": "# Sphinx and ReadTheDocs 📖\n\nIf you write perfect Google-style docstrings, you don't need to manually type out an HTML wiki for your users.\n\nYou use a tool called **Sphinx**. It parses your entire codebase, reads all the docstrings, and automatically generates a beautiful, searchable HTML website!\n\n```bash\npip install sphinx\n\n# Set up the documentation folder\nsphinx-quickstart docs/\n\n# Automatically generate the HTML from your docstrings\nsphinx-apidoc -o docs/source src/\nmake html\n```\n\nYou can then host this generated site for free on `readthedocs.org`."
+        },
+        {
+            "id": "doc_dun_quiz_1",
+            "type": "quiz",
+            "title": "Documentation Quiz",
+            "content": "Test your documentation knowledge.",
+            "quizQuestion": "What is the primary advantage of writing standardized (e.g., Google or NumPy style) Docstrings in your Python code?",
+            "quizOptions": [
+                "It makes the Python code run faster by pre-compiling it.",
+                "It prevents the code from being reverse-engineered.",
+                "It allows IDEs to display helpful tooltips to developers, and enables tools like Sphinx to automatically generate comprehensive HTML documentation websites directly from the source code.",
+                "It automatically translates the comments into multiple languages."
+            ],
+            "correctOptionIndex": 2
+        },
+        {
+            "id": "doc_dun_4",
+            "type": "content",
+            "title": "Dunder Methods",
+            "content": "# Magic Methods ✨\n\nNow let's look at how Python documents objects internally.\n\nPython classes have \"Magic Methods\" (or \"Dunder\" methods, meaning Double-Underscore). The most famous is `__init__`.\n\nBut there are many others that allow your custom classes to behave exactly like built-in Python objects!"
+        },
+        {
+            "id": "doc_dun_5",
+            "type": "content",
+            "title": "Representation Methods",
+            "content": "# `__str__` vs `__repr__` 🗣️\n\nIf you print a custom object, you usually get garbage: `<User object at 0x10a2...>`.\n\n- `__str__`: Should return a human-readable string (for end users).\n- `__repr__`: Should return a string that could theoretically be used to recreate the object (for developers debugging).\n\n```python_not\nclass User:\n    def __init__(self, name: str, uid: int):\n        self.name = name\n        self.uid = uid\n        \n    def __str__(self) -> str:\n        return f\"User {self.name}\"\n        \n    def __repr__(self) -> str:\n        return f\"User(name='{self.name}', uid={self.uid})\"\n\nu = User(\"Alice\", 42)\nprint(u)       # Calls __str__: \"User Alice\"\nprint(repr(u)) # Calls __repr__: \"User(name='Alice', uid=42)\"\n```"
+        },
+        {
+            "id": "doc_dun_6",
+            "type": "content",
+            "title": "Comparison and Hashing",
+            "content": "# `__eq__` and `__hash__` ⚖️\n\nBy default, `user1 == user2` is only True if they are the *exact same object in memory*.\n\nIf you want them to be equal if their IDs match, override `__eq__`.\nIf you want to use your custom object as a Dictionary Key, you MUST override `__hash__`!\n\n```python_not\nclass User:\n    # ... (init from previous slide)\n\n    def __eq__(self, other) -> bool:\n        if isinstance(other, User):\n            return self.uid == other.uid\n        return False\n        \n    def __hash__(self) -> int:\n        # Hash based on the unique ID\n        return hash(self.uid)\n```"
+        },
+        {
+            "id": "doc_dun_7",
+            "type": "content",
+            "title": "Context Managers",
+            "content": "# `__enter__` and `__exit__` 🚪\n\nWhen you use `with open('file.txt') as f:`, Python is calling a Context Manager. It guarantees the file is closed even if an error occurs.\n\nYou can make your own classes work with the `with` statement!\n\n```python_not\nclass DatabaseConnection:\n    def __enter__(self):\n        print(\"Connecting to DB...\")\n        self.conn = \"Active\"\n        return self.conn # This becomes the 'as' variable\n        \n    def __exit__(self, exc_type, exc_value, traceback):\n        # This runs automatically at the end of the 'with' block!\n        print(\"Disconnecting from DB...\")\n        self.conn = None\n\nwith DatabaseConnection() as db:\n    print(f\"Executing query on: {db}\")\n```"
+        },
+        {
+            "id": "doc_dun_quiz_2",
+            "type": "quiz",
+            "title": "Dunder Quiz",
+            "content": "Test your magic method skills.",
+            "quizQuestion": "If you want your custom Python class to be usable in a `with` statement (e.g., `with MyClass() as obj:`), which two dunder methods must you implement?",
+            "quizOptions": [
+                "`__str__` and `__repr__`",
+                "`__init__` and `__del__`",
+                "`__enter__` and `__exit__`",
+                "`__iter__` and `__next__`"
+            ],
+            "correctOptionIndex": 2
+        },
+        {
+            "id": "doc_dun_8",
+            "type": "content",
+            "title": "Summary",
+            "content": "# Pythonic Developer! 🎉\n\nYou've learned how to make your code professional and native.\n\n## Key Takeaways\n\n- ✅ **Docstrings:** Use Google-style docstrings to formally declare arguments and return types.\n- ✅ **Sphinx:** Use `sphinx-apidoc` to automatically generate HTML websites from your docstrings.\n- ✅ **`__str__` vs `__repr__`:** `__str__` is for users, `__repr__` is for developers debugging.\n- ✅ **`__eq__` and `__hash__`:** Override these to allow custom equality checks and enable using your objects as dictionary keys.\n- ✅ **`__enter__` and `__exit__`:** Override these to allow your object to safely manage resources using the `with` statement."
+        }
+    ]
+}

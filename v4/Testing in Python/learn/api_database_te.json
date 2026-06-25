@@ -1,0 +1,141 @@
+{
+    "id": "learn_api_database_te",
+    "topicId": "api_database_te",
+    "topicTitle": "API & Database Testing",
+    "description": "Learn how to effectively test code that interacts with external APIs and databases. Covers mocking HTTP requests, managing test databases, and generating test data.",
+    "baseKP": 75,
+    "slides": [
+        {
+            "id": "api_db_1",
+            "type": "content",
+            "title": "Testing External APIs",
+            "content": "# The HTTP Problem 🌐\n\nYour application almost certainly talks to third-party services (Stripe, GitHub, AWS). Testing these integrations directly is a bad idea:\n\n1. **Slow:** Network requests take hundreds of milliseconds.\n2. **Flaky:** If the API goes down or you lose Wi-Fi, your tests fail.\n3. **Costly:** You might get rate-limited or charged for API calls.\n\nWe need to intercept HTTP requests made by our code and return fake responses."
+        },
+        {
+            "id": "api_db_2",
+            "type": "content",
+            "title": "The responses Library",
+            "content": "# Mocking with `responses` 📡\n\nIf your code uses the standard `requests` library, the `responses` package is the best way to mock HTTP calls.\n\n```python_not\nimport requests\nimport responses\n\n@responses.activate\ndef test_github_api():\n    # 1. Register a fake response\n    responses.add(\n        responses.GET, \n        'https://api.github.com/users/testuser', \n        json={'login': 'testuser', 'id': 123}, \n        status=200\n    )\n\n    # 2. Call your actual code (which uses requests.get)\n    resp = requests.get('https://api.github.com/users/testuser')\n\n    # 3. Verify\n    assert resp.json()['id'] == 123\n```\n\nThe `@responses.activate` decorator intercepts all `requests` traffic. If your code tries to hit a URL that isn't registered, the test will fail!"
+        },
+        {
+            "id": "api_db_3",
+            "type": "content",
+            "title": "Advanced responses usage",
+            "content": "# Simulating Errors with `responses` 💥\n\nTesting the happy path is easy. Testing how your code handles a 500 Internal Server Error or a timeout is harder, but `responses` makes it simple.\n\n```python_not\nimport requests\nimport responses\nfrom requests.exceptions import Timeout\n\n@responses.activate\ndef test_api_timeout():\n    # Simulate a network timeout\n    responses.add(\n        responses.GET,\n        'https://api.example.com',\n        body=Timeout()\n    )\n\n    with pytest.raises(Timeout):\n        requests.get('https://api.example.com')\n```"
+        },
+        {
+            "id": "api_db_4",
+            "type": "content",
+            "title": "httpretty and respx",
+            "content": "# Alternatives: `httpretty` and `respx` 🔀\n\nWhile `responses` is great for the `requests` library, you might be using other HTTP clients.\n\n## `httpretty`\nA generic HTTP mocking tool that intercepts at the socket level. It works with `requests`, `urllib`, `httplib2`, and more.\n\n## `respx`\nIf you are writing modern, asynchronous Python using the `httpx` library, you MUST use `respx`. It perfectly mimics `httpx`'s async/await behavior.\n\n```python_not\nimport httpx\nimport respx\n\n@respx.mock\nasync def test_async_api():\n    respx.get(\"https://example.org/\").mock(return_value=httpx.Response(204))\n    async with httpx.AsyncClient() as client:\n        response = await client.get(\"https://example.org/\")\n        assert response.status_code == 204\n```"
+        },
+        {
+            "id": "api_db_quiz_1",
+            "type": "quiz",
+            "title": "API Mocking Quiz",
+            "content": "Test your knowledge of API mocking tools.",
+            "quizQuestion": "Which library is specifically designed to mock asynchronous HTTP requests made by the `httpx` library?",
+            "quizOptions": [
+                "responses",
+                "httpretty",
+                "respx",
+                "unittest.mock"
+            ],
+            "correctOptionIndex": 2
+        },
+        {
+            "id": "api_db_5",
+            "type": "content",
+            "title": "Testing Databases",
+            "content": "# The Database Dilemma 🗄️\n\nUnit tests shouldn't talk to a database. But what about integration tests? You *must* test that your SQL queries or ORM models actually work!\n\nTesting against a real database introduces challenges:\n1. **State:** If Test A creates a user, Test B might fail because that user already exists.\n2. **Speed:** Writing to disk is slow.\n\n## Solution 1: In-Memory SQLite\nIf you use an ORM like SQLAlchemy or Django, you can configure your test suite to use an in-memory SQLite database (`sqlite:///:memory:`). It is blazingly fast and destroyed when the test suite ends."
+        },
+        {
+            "id": "api_db_6",
+            "type": "content",
+            "title": "Transactional Rollbacks",
+            "content": "# Solution 2: Transactional Rollbacks ⏪\n\nIn-memory SQLite doesn't support advanced features of PostgreSQL or MySQL (like JSONB or advanced constraints). You often need to test against a real, running test database.\n\nTo solve the \"State\" problem, we use **Transactional Rollbacks**.\n\n1. Before the test starts, open a database transaction.\n2. Run the test (which inserts/updates data).\n3. After the test finishes, **ROLLBACK** the transaction.\n\nBecause the transaction is rolled back, the data is never permanently saved! The database is instantly wiped clean for the next test."
+        },
+        {
+            "id": "api_db_7",
+            "type": "content",
+            "title": "Implementing Rollbacks",
+            "content": "# Rollbacks in Practice 🛠️\n\nIf you are using `pytest` and `SQLAlchemy`, you can implement a fixture to handle this automatically.\n\n```python_not\nimport pytest\nfrom my_app.db import SessionLocal, engine\n\n@pytest.fixture\ndef db_session():\n    # 1. Connect to the DB\n    connection = engine.connect()\n    # 2. Begin a transaction\n    transaction = connection.begin()\n    # 3. Bind the session to the connection\n    session = SessionLocal(bind=connection)\n    \n    yield session # Run the test!\n    \n    # 4. Teardown: Close session and rollback transaction\n    session.close()\n    transaction.rollback()\n    connection.close()\n```\n\nEvery test that requests `db_session` gets a perfectly clean, isolated database state!"
+        },
+        {
+            "id": "api_db_8",
+            "type": "content",
+            "title": "Generating Test Data",
+            "content": "# The Setup Problem 🧩\n\nTesting complex database relationships requires a lot of setup.\n\nImagine testing an `Order` model. An Order requires a `User`, a `Product`, a `PaymentMethod`, and an `Address`.\n\n```python_not\ndef test_order_total(db_session):\n    # Ugh, so much setup!\n    user = User(name=\"Alice\", email=\"a@b.com\")\n    product = Product(name=\"Laptop\", price=1000)\n    address = Address(street=\"123 Main\")\n    payment = Payment(card=\"1234\")\n    db_session.add_all([user, product, address, payment])\n    \n    order = Order(user=user, product=product, ...)\n    # Finally, the actual test...\n```\n\nThis makes tests incredibly verbose and brittle. Enter **Factories**."
+        },
+        {
+            "id": "api_db_9",
+            "type": "content",
+            "title": "Introduction to factory_boy",
+            "content": "# `factory_boy` 🏭\n\n`factory_boy` is a library for creating complex objects dynamically for testing. It automatically handles foreign keys and relationships!\n\n```python_not\nimport factory\nfrom my_app.models import User, Order\nfrom .database import db_session\n\nclass UserFactory(factory.alchemy.SQLAlchemyModelFactory):\n    class Meta:\n        model = User\n        sqlalchemy_session = db_session\n        \n    # Generate fake data using faker!\n    name = factory.Faker('name')\n    email = factory.Faker('email')\n```\n\nNow, in your tests, you just do this:\n```python_not\ndef test_something():\n    # Creates a user and saves it to the DB!\n    user = UserFactory()\n    assert \"@\" in user.email\n```"
+        },
+        {
+            "id": "api_db_10",
+            "type": "content",
+            "title": "SubFactories and Traits",
+            "content": "# Complex Factories 🕸️\n\nYou can link factories together using `SubFactory`. If an `Order` needs a `User`, `factory_boy` will create the User automatically!\n\n```python_not\nclass OrderFactory(factory.alchemy.SQLAlchemyModelFactory):\n    class Meta:\n        model = Order\n        \n    # Automatically create a User for this Order!\n    user = factory.SubFactory(UserFactory)\n    total = 100.00\n```\n\nIn your test:\n```python_not\ndef test_order_logic():\n    # This creates the Order AND the associated User in one line!\n    order = OrderFactory()\n    assert order.user.name is not None\n    \n    # Or you can override specific fields!\n    custom_order = OrderFactory(total=500.00, user__name=\"Bob\")\n```"
+        },
+        {
+            "id": "api_db_quiz_2",
+            "type": "quiz",
+            "title": "Factory Check",
+            "content": "Test your knowledge of test data generation.",
+            "quizQuestion": "Why is using `factory_boy` preferable to manually instantiating database models in your test `setUp`?",
+            "quizOptions": [
+                "It makes the tests run significantly faster.",
+                "It bypasses the ORM entirely for direct SQL injection.",
+                "It automatically generates fake data and handles complex foreign key relationships with minimal boilerplate.",
+                "It is a required dependency for pytest to connect to a database."
+            ],
+            "correctOptionIndex": 2
+        },
+        {
+            "id": "api_db_11",
+            "type": "content",
+            "title": "Contract Testing",
+            "content": "# The Mocking Trap 🪤\n\nThere is a hidden danger in mocking APIs using `responses`. What if the third-party API changes its response format? \n\nYour mock will still return the *old* format, so your tests will pass, but your application will crash in production!\n\n**Contract Testing** solves this. A contract ensures that the mock you use in your tests exactly matches the real API's behavior."
+        },
+        {
+            "id": "api_db_12",
+            "type": "content",
+            "title": "Implementing Contract Tests",
+            "content": "# Pact and Schema Validation 🤝\n\nThere are two ways to solve the mocking trap:\n\n1. **Pact:** A dedicated contract testing framework. You write a \"Pact\" file that defines the expected requests and responses. The provider of the API must verify against this Pact.\n2. **Schema Validation:** If the API provides an OpenAPI (Swagger) specification, you can write a test that periodically calls the *real* API, validates the response against the schema, and updates your mocks if the schema changes.\n\n> 💡 **Best Practice:** Never mock code you don't own without some form of contract or periodic validation."
+        },
+        {
+            "id": "api_db_13",
+            "type": "content",
+            "title": "Database Seed Data",
+            "content": "# Seed Data vs Factories 🌱\n\nWhile factories are great for dynamic data, some tests require static **Seed Data** (e.g., a list of countries, or predefined user roles).\n\nIt is common practice to create a `conftest.py` fixture that loads seed data from a JSON or CSV file into the test database before the suite runs.\n\n```python_not\n@pytest.fixture(scope=\"session\")\ndef seed_roles(db_engine):\n    roles = [\"Admin\", \"Moderator\", \"User\"]\n    # Insert roles into db_engine here...\n    yield\n    # Clean up here...\n```\n\nBy scoping it to `session`, you only pay the performance cost of inserting the seed data once."
+        },
+        {
+            "id": "api_db_14",
+            "type": "content",
+            "title": "Avoiding the Database Entirely",
+            "content": "# Do you even need a database? 🛑\n\nBefore spending hours configuring test databases and factories, ask yourself: *Does this test actually need the database?*\n\nIf you design your code using the **Repository Pattern**, you can mock the repository layer in your unit tests, completely bypassing the database.\n\n```python_not\n# Instead of testing the DB, we mock the repo\n@patch('app.repos.UserRepository.get_by_id')\ndef test_user_service(mock_get):\n    mock_get.return_value = User(id=1, name=\"Alice\")\n    \n    result = process_user_data(user_id=1)\n    assert result == \"Processed Alice\"\n```\n\nSave database testing for a dedicated suite of Integration Tests."
+        },
+        {
+            "id": "api_db_quiz_3",
+            "type": "quiz",
+            "title": "Review Quiz",
+            "content": "Let's review the concepts of contract testing.",
+            "quizQuestion": "What specific problem does 'Contract Testing' aim to solve that standard mocking (e.g., using `responses`) fails to address?",
+            "quizOptions": [
+                "Mocking is too slow.",
+                "Mocks can become out of sync with the real API if the external service changes its structure.",
+                "Mocking cannot handle asynchronous HTTP requests.",
+                "Mocking requires a live internet connection."
+            ],
+            "correctOptionIndex": 1
+        },
+        {
+            "id": "api_db_15",
+            "type": "content",
+            "title": "Summary",
+            "content": "# Integration Testing Mastered! 🎉\n\nYou've learned how to safely test the edges of your application.\n\n## Key Takeaways\n\n- ✅ **Mocking HTTP:** Use `responses` (for requests) or `respx` (for httpx) to intercept network calls and return fake data without hitting the internet.\n- ✅ **Test Databases:** Use in-memory SQLite or Transactional Rollbacks to ensure test isolation and speed when testing real SQL.\n- ✅ **Factories:** Use `factory_boy` instead of manual fixtures to elegantly generate complex database records and relationships.\n- ✅ **Contracts:** Beware of stale mocks! Use Contract Testing or schema validation to ensure your mocked APIs match reality.\n\nBy keeping your unit tests fast and your integration tests isolated, you ensure a robust, maintainable test suite!"
+        }
+    ]
+}

@@ -1,0 +1,31 @@
+[
+  {
+    "title": "Introduction to Mocking",
+    "ques": "What is the primary purpose of mocking in unit tests, and what is `unittest.mock.MagicMock` used for?",
+    "answer": {
+      "type": "text",
+      "content": "* **Primary Purpose:** Mocking is used to isolate the unit of code being tested by replacing external dependencies (like databases, APIs, or complex classes) with controlled substitute objects.\n* **MagicMock:** It is a flexible mock object in Python that automatically creates all attributes and methods as you access them. It also keeps track of how it was used (e.g., which methods were called and with what arguments)."
+    },
+    "explanation": "Mocking ensures that unit tests remain fast and deterministic by avoiding actual network calls or database operations."
+  },
+  {
+    "title": "Patching a Function",
+    "ques": "Use `@patch` to mock the `requests.get` function so it returns a mock object whose `status_code` is 200.",
+    "answer": {
+      "type": "code",
+      "lang": "python",
+      "content": "from unittest.mock import patch\nimport requests\nimport unittest\n\nclass TestAPI(unittest.TestCase):\n    @patch('requests.get')\n    def test_api_call(self, mock_get):\n        mock_get.return_value.status_code = 200\n        response = requests.get(\"http://example.com\")\n        self.assertEqual(response.status_code, 200)"
+    },
+    "explanation": "The `@patch` decorator temporarily replaces the specified target with a mock object. `return_value` defines what the mock object returns when it is called."
+  },
+  {
+    "title": "Side Effects in Mocks",
+    "ques": "How can you configure a mock object to raise a `TimeoutError` when it is called, simulating a network timeout?",
+    "answer": {
+      "type": "code",
+      "lang": "python",
+      "content": "from unittest.mock import MagicMock\nimport unittest\n\nclass TestNetwork(unittest.TestCase):\n    def test_timeout(self):\n        mock_network_call = MagicMock(side_effect=TimeoutError(\"Connection timed out\"))\n        with self.assertRaises(TimeoutError):\n            mock_network_call()"
+    },
+    "explanation": "The `side_effect` attribute is used to raise exceptions, return a sequence of different values, or call a specific function when the mock is invoked."
+  }
+]

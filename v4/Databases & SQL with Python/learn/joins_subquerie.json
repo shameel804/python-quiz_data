@@ -1,0 +1,135 @@
+{
+    "id": "learn_joins_subquerie",
+    "topicId": "joins_subquerie",
+    "topicTitle": "Joins, Subqueries & CTEs",
+    "description": "Learn how to combine data from multiple tables and write complex, layered queries.",
+    "baseKP": 80,
+    "slides": [
+        {
+            "id": "joins_1",
+            "type": "content",
+            "title": "Introduction to SQL JOINs",
+            "content": "# Combining Data with JOINs \ud83d\udd17\n\nIn real-world databases, data is distributed across multiple tables. A `JOIN` clause is used to combine rows from two or more tables, based on a related column between them.\n\n## Why use JOINs?\nImagine you have a `users` table and an `orders` table. You don't store user details inside every order (that would be inefficient!). Instead, the order simply references the user's ID.\n\nTo see which user placed which order, you must **JOIN** the tables.\n\n## Types of JOINs\n- **INNER JOIN:** Returns records that have matching values in both tables\n- **LEFT JOIN:** Returns all records from the left table, and matched records from the right table\n- **RIGHT JOIN:** Returns all records from the right table, and matched records from the left table\n- **FULL JOIN:** Returns all records when there is a match in either left or right table"
+        },
+        {
+            "id": "joins_2",
+            "type": "content",
+            "title": "INNER JOIN",
+            "content": "# INNER JOIN \ud83e\udd1d\n\nThe `INNER JOIN` keyword selects records that have matching values in both tables. If a row doesn't have a match, it is omitted.\n\n## Syntax\n```sql_not\nSELECT column_names\nFROM table1\nINNER JOIN table2\nON table1.column_name = table2.column_name;\n```\n\n## Example\nGet orders and the name of the user who placed them:\n```sql_not\nSELECT orders.id, users.name, orders.total\nFROM orders\nINNER JOIN users ON orders.user_id = users.id;\n```\n\n> \ud83d\udca1 **Tip:** You can just write `JOIN` instead of `INNER JOIN` in most SQL databases, as INNER is the default type of join."
+        },
+        {
+            "id": "joins_3",
+            "type": "content",
+            "title": "LEFT JOIN and RIGHT JOIN",
+            "content": "# LEFT & RIGHT JOIN \u2b05\ufe0f\u27a1\ufe0f\n\n## LEFT JOIN\nReturns ALL records from the left table, and the matched records from the right table. If there is no match, the result is `NULL` on the right side.\n\n```sql_not\n-- Find all users, and their orders (if they have any)\nSELECT users.name, orders.id\nFROM users\nLEFT JOIN orders ON users.id = orders.user_id;\n```\n*This is useful to find users who have NEVER placed an order (order.id will be NULL).* \n\n## RIGHT JOIN\nReturns ALL records from the right table, and matched records from the left. (Less commonly used, as you can usually just swap the table order in a LEFT JOIN).\n\n```sql_not\nSELECT orders.id, users.name\nFROM users\nRIGHT JOIN orders ON users.id = orders.user_id;\n```"
+        },
+        {
+            "id": "joins_4",
+            "type": "content",
+            "title": "FULL OUTER JOIN",
+            "content": "# FULL OUTER JOIN \ud83c\udf10\n\nThe `FULL OUTER JOIN` keyword returns all records when there is a match in left table or right table records.\n\nIt essentially combines the result of both LEFT and RIGHT joins. Unmatched rows will have `NULL` values for the columns from the table where no match was found.\n\n## Syntax\n```sql_not\nSELECT users.name, orders.id\nFROM users\nFULL OUTER JOIN orders ON users.id = orders.user_id;\n```\n\n> \u26a0\ufe0f **Note:** SQLite does not natively support `FULL OUTER JOIN`. You typically have to simulate it using a `LEFT JOIN` combined with a `UNION` of a `RIGHT JOIN`."
+        },
+        {
+            "id": "joins_5",
+            "type": "content",
+            "title": "Self Joins",
+            "content": "# Self JOINs \ud83e\ude9e\n\nA self JOIN is a regular join, but the table is joined with itself. This is incredibly useful for hierarchical data.\n\n## Example: Employee-Manager Hierarchy\nImagine an `employees` table where each employee has a `manager_id` that refers to the `id` of another employee in the *same table*.\n\n```sql_not\nSELECT e1.name AS Employee, e2.name AS Manager\nFROM employees e1\nLEFT JOIN employees e2 ON e1.manager_id = e2.id;\n```\n\nNotice how we **must** use aliases (`e1` and `e2`) to differentiate between the two instances of the `employees` table in the query!"
+        },
+        {
+            "id": "joins_quiz_1",
+            "type": "quiz",
+            "title": "Knowledge Check: JOINs",
+            "content": "Test your understanding of SQL Joins.",
+            "quizQuestion": "Which type of JOIN returns all rows from both tables, with NULLs where there is no match?",
+            "quizOptions": [
+                "INNER JOIN",
+                "LEFT JOIN",
+                "RIGHT JOIN",
+                "FULL OUTER JOIN"
+            ],
+            "correctOptionIndex": 3
+        },
+        {
+            "id": "joins_6",
+            "type": "content",
+            "title": "Introduction to Subqueries",
+            "content": "# Subqueries \ud83e\uddc5\n\nA subquery (or inner query) is a query nested inside another SQL query. It allows you to use the result of one query as the input for another.\n\n## Where can you use them?\n- In a `SELECT` clause\n- In a `FROM` clause\n- In a `WHERE` clause\n\n## Basic Example (Scalar Subquery)\nFind employees who earn more than the company average:\n```sql_not\nSELECT name, salary \nFROM employees\nWHERE salary > (\n    SELECT AVG(salary) FROM employees\n);\n```\nThe inner query `(SELECT AVG(salary)...)` runs first and returns a single number. The outer query then uses that number."
+        },
+        {
+            "id": "joins_7",
+            "type": "content",
+            "title": "Nested Subqueries",
+            "content": "# Nested Subqueries \ud83c\udfaf\n\nSubqueries can return multiple values, usually using the `IN` operator.\n\n## Example\nFind the names of users who have placed an order over $1000:\n\n```sql_not\nSELECT name \nFROM users\nWHERE id IN (\n    SELECT user_id \n    FROM orders \n    WHERE total > 1000\n);\n```\n\n### Why use this instead of a JOIN?\nSometimes a subquery is easier to read and write. However, modern SQL engines often optimize subqueries and JOINs to execute in a very similar way under the hood."
+        },
+        {
+            "id": "joins_8",
+            "type": "content",
+            "title": "Correlated Subqueries",
+            "content": "# Correlated Subqueries \ud83d\udd01\n\nA correlated subquery is a subquery that uses values from the outer query. Because it depends on the outer query, it **cannot** be executed independently.\n\nIt executes once for *every row* processed by the outer query.\n\n## Example\nFind employees whose salary is above the average salary of *their specific department*:\n\n```sql_not\nSELECT e1.name, e1.salary, e1.department_id\nFROM employees e1\nWHERE e1.salary > (\n    SELECT AVG(salary)\n    FROM employees e2\n    WHERE e1.department_id = e2.department_id\n);\n```\nNotice how the inner query references `e1.department_id` from the outer query! This makes it correlated."
+        },
+        {
+            "id": "joins_quiz_2",
+            "type": "quiz",
+            "title": "Knowledge Check: Subqueries",
+            "content": "Test your understanding of nested and correlated subqueries.",
+            "quizQuestion": "What defines a correlated subquery?",
+            "quizOptions": [
+                "It uses an INNER JOIN instead of an IN clause.",
+                "It references columns from the outer query and runs row-by-row.",
+                "It returns multiple columns to the outer query.",
+                "It is executed only once before the outer query starts."
+            ],
+            "correctOptionIndex": 1
+        },
+        {
+            "id": "joins_9",
+            "type": "content",
+            "title": "The WITH Clause (CTEs)",
+            "content": "# Common Table Expressions (CTEs) \ud83c\udfd7\ufe0f\n\nA CTE, created using the `WITH` clause, allows you to define a temporary, named result set that you can reference within a `SELECT`, `INSERT`, `UPDATE`, or `DELETE` statement.\n\nCTEs make complex queries much more readable than deeply nested subqueries.\n\n## Syntax\n```sql_not\nWITH cte_name AS (\n    -- Your complex query here\n    SELECT ...\n)\nSELECT * FROM cte_name;\n```"
+        },
+        {
+            "id": "joins_10",
+            "type": "content",
+            "title": "CTE Example",
+            "content": "# CTE in Action \ud83d\ude80\n\nLet's rewrite a complex query using a CTE.\n\n## Scenario: Find top spenders\nInstead of a nested subquery, we can write:\n\n```sql_not\nWITH UserTotals AS (\n    SELECT user_id, SUM(total) as lifetime_spend\n    FROM orders\n    GROUP BY user_id\n)\nSELECT u.name, ut.lifetime_spend\nFROM users u\nJOIN UserTotals ut ON u.id = ut.user_id\nWHERE ut.lifetime_spend > 5000;\n```\n\n> \ud83d\udca1 **Benefits:** \n> 1. Improved Readability\n> 2. You can reference `UserTotals` multiple times in the main query!\n> 3. You can chain multiple CTEs by separating them with commas."
+        },
+        {
+            "id": "joins_11",
+            "type": "content",
+            "title": "Recursive CTEs",
+            "content": "# Recursive CTEs \ud83d\udd04\n\nA recursive CTE is a CTE that references itself. They are perfectly designed for querying hierarchical or tree-structured data (like organizational charts, file systems, or graph paths).\n\n## Anatomy of a Recursive CTE\nIt consists of two parts separated by `UNION ALL`:\n1. **Anchor Member:** The starting point (base case).\n2. **Recursive Member:** A query that references the CTE itself.\n\n```sql_not\nWITH RECURSIVE cte_name AS (\n    -- 1. Anchor Member\n    SELECT ...\n    UNION ALL\n    -- 2. Recursive Member\n    SELECT ... FROM cte_name WHERE ...\n)\nSELECT * FROM cte_name;\n```"
+        },
+        {
+            "id": "joins_12",
+            "type": "content",
+            "title": "Recursive CTE Example",
+            "content": "# Generating a Sequence \ud83d\udd22\n\nLet's use a recursive CTE to simply count from 1 to 5.\n\n```sql_not\nWITH RECURSIVE Counter(n) AS (\n    -- Anchor: start with 1\n    SELECT 1\n    \n    UNION ALL\n    \n    -- Recursive step: add 1 until we hit 5\n    SELECT n + 1 FROM Counter WHERE n < 5\n)\nSELECT * FROM Counter;\n```\n\n**Result:**\n| n |\n|---|\n| 1 |\n| 2 |\n| 3 |\n| 4 |\n| 5 |\n\nThis same logic can traverse an employee-manager hierarchy to find the chain of command for a specific employee!"
+        },
+        {
+            "id": "joins_13",
+            "type": "content",
+            "title": "Python Implementation of CTEs",
+            "content": "# Using Python with Advanced SQL \ud83d\udc0d\n\nAdvanced SQL like CTEs work perfectly through Python's database connectors.\n\n<!-- FULL_CODE_START\nimport sqlite3\n\nconn = sqlite3.connect(':memory:')\ncursor = conn.cursor()\n\n# Setup hierarchy data\ncursor.execute('''CREATE TABLE employees (id INTEGER, name TEXT, manager_id INTEGER)''')\ncursor.executemany(\"INSERT INTO employees VALUES (?, ?, ?)\", [\n    (1, 'CEO Alice', None),\n    (2, 'VP Bob', 1),\n    (3, 'Director Charlie', 2),\n    (4, 'Dev Dave', 3)\n])\n\n# Recursive CTE to find Dave's management chain\nrecursive_query = '''\nWITH RECURSIVE org_chart AS (\n    -- Anchor: Start with Dave\n    SELECT id, name, manager_id, 1 as level\n    FROM employees \n    WHERE name = 'Dev Dave'\n    \n    UNION ALL\n    \n    -- Recursive: Find manager\n    SELECT e.id, e.name, e.manager_id, o.level + 1\n    FROM employees e\n    JOIN org_chart o ON e.id = o.manager_id\n)\nSELECT level, name FROM org_chart ORDER BY level;\n'''\n\nprint(\"Chain of Command for Dev Dave:\")\nfor row in cursor.execute(recursive_query):\n    print(f\"Level {row[0]}: {row[1]}\")\n\nconn.close()\nFULL_CODE_END -->"
+        },
+        {
+            "id": "joins_quiz_3",
+            "type": "quiz",
+            "title": "Knowledge Check: CTEs",
+            "content": "Test your understanding of Common Table Expressions.",
+            "quizQuestion": "Which keyword is required in PostgreSQL/SQLite to make a CTE recursive?",
+            "quizOptions": [
+                "WITH LOOP",
+                "RECURSIVE",
+                "REPEAT UNTIL",
+                "SELF JOIN"
+            ],
+            "correctOptionIndex": 1
+        },
+        {
+            "id": "joins_14",
+            "type": "content",
+            "title": "Summary",
+            "content": "# Congratulations! \ud83c\udf89\n\nYou've unlocked the power of combining data!\n\n## Key Takeaways\n- \u2705 **JOINs** (`INNER`, `LEFT`, `RIGHT`, `FULL`) combine columns from different tables based on relationships.\n- \u2705 **Self-Joins** are used to query hierarchical data within a single table.\n- \u2705 **Subqueries** allow you to nest queries to use intermediate results.\n- \u2705 **Correlated Subqueries** execute row-by-row based on the outer query's data.\n- \u2705 **CTEs (`WITH` clause)** make complex queries clean, readable, and reusable.\n- \u2705 **Recursive CTEs** are the standard SQL method for traversing graphs and hierarchies.\n\nNow you can write professional-grade SQL queries to analyze complex data structures!"
+        }
+    ]
+}

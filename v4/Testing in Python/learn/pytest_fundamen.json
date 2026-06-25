@@ -1,0 +1,153 @@
+{
+    "id": "learn_pytest_fundamen",
+    "topicId": "pytest_fundamen",
+    "topicTitle": "pytest Fundamentals",
+    "description": "Master the basics of pytest, a mature full-featured Python testing tool that helps you write better programs. Covers functions, asserts, markers, and CLI flags.",
+    "baseKP": 75,
+    "slides": [
+        {
+            "id": "pytest_fun_1",
+            "type": "content",
+            "title": "Introduction to pytest",
+            "content": "# What is pytest? 🚀\n\n`pytest` is a mature, full-featured Python testing tool that makes it easy to write small, simple tests, yet scales to support complex functional testing for applications and libraries.\n\n## Why use pytest over unittest?\n\n- 📝 **Less Boilerplate:** You don't need to create classes or inherit from `TestCase`. Just write simple functions!\n- 🛡️ **Plain Asserts:** No more `self.assertEqual` or `self.assertTrue`. You just use Python's built-in `assert` statement.\n- 🔌 **Ecosystem:** A massive ecosystem of third-party plugins (e.g., `pytest-django`, `pytest-cov`, `pytest-asyncio`).\n- 🎯 **Advanced Features:** Powerful fixtures, parametrization, and custom markers out of the box.\n\n> 💡 **Installation:** `pytest` is a third-party library, so you'll need to install it via `pip install pytest` before you begin."
+        },
+        {
+            "id": "pytest_fun_2",
+            "type": "content",
+            "title": "Writing Test Functions",
+            "content": "# The Beauty of Simplicity 🌸\n\nIn `pytest`, a test is simply a function that starts with `test_`.\n\n## Example\n\nLet's say you have a file `math_ops.py`:\n\n```python\n# math_ops.py\ndef add(a, b):\n    return a + b\n```\n\nYour test file, `test_math_ops.py`, would look like this:\n\n```python\n# test_math_ops.py\nfrom math_ops import add\n\ndef test_add_positive_numbers():\n    assert add(2, 3) == 5\n    \ndef test_add_negative_numbers():\n    assert add(-1, -1) == -2\n```\n\nNo classes, no inheritance, just plain Python functions!"
+        },
+        {
+            "id": "pytest_fun_3",
+            "type": "content",
+            "title": "The Power of assert",
+            "content": "# Plain Python `assert` 🥊\n\nIn `unittest`, you have to memorize a dozen different methods like `assertIsNone`, `assertNotIn`, `assertGreater`, etc.\n\nIn `pytest`, you only need one keyword: **`assert`**.\n\n```python_not\ndef test_various_assertions():\n    # Equality\n    assert 1 + 1 == 2\n    \n    # Truthiness\n    assert [1, 2, 3]  # Checks if list is not empty\n    \n    # Membership\n    assert \"hello\" in \"hello world\"\n    \n    # Identity\n    x = None\n    assert x is None\n    \n    # Comparison\n    assert 10 > 5\n```\n\n`pytest` intelligently introspects your assertions. If `assert 1 + 1 == 3` fails, `pytest` will show you exactly what the left side evaluated to, and why it doesn't match the right side!"
+        },
+        {
+            "id": "pytest_fun_4",
+            "type": "content",
+            "title": "Deep Dive into Assertions",
+            "content": "# Advanced Assertions 🔬\n\nLet's see how `pytest` provides incredibly detailed feedback when an assertion fails.\n\n```python_not\ndef test_dictionary_comparison():\n    user = {\n        \"id\": 1,\n        \"name\": \"Alice\",\n        \"role\": \"admin\"\n    }\n    \n    expected = {\n        \"id\": 1,\n        \"name\": \"Alice\",\n        \"role\": \"user\"  # Uh oh! Mismatch!\n    }\n    \n    assert user == expected\n```\n\nIf you run this, `pytest` won't just say \"False\". It will print a diff:\n```\nE         Differing items:\nE         {'role': 'admin'} != {'role': 'user'}\nE         Use -v to get more diff\n```\n\nThis makes debugging infinitely easier compared to standard `unittest` output."
+        },
+        {
+            "id": "pytest_quiz_1",
+            "type": "quiz",
+            "title": "Assertion Check",
+            "content": "Let's test your knowledge of pytest assertions.",
+            "quizQuestion": "How do you check if the string 'Python' is in a list of `languages` using pytest?",
+            "quizOptions": [
+                "self.assertIn('Python', languages)",
+                "pytest.assert('Python' in languages)",
+                "assert 'Python' in languages",
+                "assertIn('Python', languages)"
+            ],
+            "correctOptionIndex": 2
+        },
+        {
+            "id": "pytest_fun_5",
+            "type": "content",
+            "title": "Testing Exceptions (pytest.raises)",
+            "content": "# Asserting Exceptions 💥\n\nTo test that your code correctly raises exceptions when given bad input, use the `pytest.raises` context manager.\n\n```python_not\nimport pytest\n\ndef divide(a, b):\n    if b == 0:\n        raise ValueError(\"Cannot divide by zero!\")\n    return a / b\n\ndef test_divide_by_zero():\n    # We EXPECT a ValueError to occur inside the block\n    with pytest.raises(ValueError):\n        divide(10, 0)\n```\n\nIf the code inside the `with` block *doesn't* raise a `ValueError`, the test will fail!"
+        },
+        {
+            "id": "pytest_fun_6",
+            "type": "content",
+            "title": "Inspecting Exception Details",
+            "content": "# Matching Exception Messages 🔍\n\nSometimes, just knowing an exception was raised isn't enough. You want to verify the *exact error message*.\n\nYou can use the `match` parameter in `pytest.raises`, which accepts a regular expression.\n\n```python_not\nimport pytest\n\ndef test_exception_message():\n    with pytest.raises(ValueError, match=r\"Cannot divide by zero\"):\n        divide(10, 0)\n```\n\nAlternatively, you can capture the exception information using the `as` keyword:\n\n```python_not\ndef test_exception_info():\n    with pytest.raises(ValueError) as exc_info:\n        divide(10, 0)\n        \n    # exc_info.value contains the actual exception instance\n    assert str(exc_info.value) == \"Cannot divide by zero!\"\n    assert exc_info.type is ValueError\n```"
+        },
+        {
+            "id": "pytest_fun_7",
+            "type": "content",
+            "title": "Testing Warnings (pytest.warns)",
+            "content": "# Asserting Warnings ⚠️\n\nSimilarly to exceptions, you might want to test that a function issues a warning (e.g., a `DeprecationWarning`) without crashing the program.\n\nUse `pytest.warns` for this.\n\n```python_not\nimport pytest\nimport warnings\n\ndef old_function():\n    warnings.warn(\"old_function is deprecated\", DeprecationWarning)\n    return 42\n\ndef test_deprecation_warning():\n    # Check that calling the function emits a DeprecationWarning\n    with pytest.warns(DeprecationWarning, match=\"deprecated\"):\n        result = old_function()\n        \n    assert result == 42\n```\n\nThis ensures that your users are properly notified when you deprecate APIs in your library."
+        },
+        {
+            "id": "pytest_fun_8",
+            "type": "content",
+            "title": "Test Discovery",
+            "content": "# How pytest Finds Your Tests 🕵️‍♂️\n\nYou don't need to tell `pytest` exactly where your tests are. It uses **Test Discovery** based on standard naming conventions.\n\nWhen you simply type `pytest` in your terminal, it will recursively search the current directory and all subdirectories for:\n\n1. Files named `test_*.py` or `*_test.py`\n2. Inside those files, functions prefixed with `test_`\n3. Inside those files, classes prefixed with `Test` (without an `__init__` method)\n4. Inside those classes, methods prefixed with `test_`\n\nIf you follow these naming rules, running your entire suite is as simple as typing `pytest`."
+        },
+        {
+            "id": "pytest_fun_9",
+            "type": "content",
+            "title": "Running Specific Tests",
+            "content": "# Precision Targeting 🎯\n\nYou don't always want to run the entire suite. You can point `pytest` exactly where to look.\n\n## Run a specific file\n```bash\npytest tests/test_database.py\n```\n\n## Run a specific folder\n```bash\npytest tests/api/\n```\n\n## Run a specific function by name\nUse the `-k` (keyword) flag. This runs tests whose names match the given substring expression.\n```bash\n# Runs test_login_success, test_login_failure, etc.\npytest -k \"login\"\n\n# Runs test_login_success, but NOT test_login_failure\npytest -k \"login and not failure\"\n```"
+        },
+        {
+            "id": "pytest_fun_10",
+            "type": "content",
+            "title": "Important CLI Flags: -v and -q",
+            "content": "# Controlling Output Verbosity 📢\n\n`pytest` has excellent CLI flags to alter how much information you see.\n\n## `-v` or `--verbose`\nBy default, `pytest` prints a simple dot `.` for a passing test. Using `-v` tells `pytest` to print the full name of every test function and explicitly say `PASSED` or `FAILED`.\n\n```bash\npytest -v\n\n# Output looks like:\n# test_math.py::test_addition PASSED\n# test_math.py::test_subtraction PASSED\n```\n\n## `-q` or `--quiet`\nThe opposite of verbose. It minimizes the output, hiding the system info header and the summary block, printing only the dots. Great for CI/CD pipelines where you only care if things pass."
+        },
+        {
+            "id": "pytest_quiz_2",
+            "type": "quiz",
+            "title": "CLI Knowledge Check",
+            "content": "Test your knowledge of the pytest Command Line Interface.",
+            "quizQuestion": "Which command will run all tests whose names contain the word 'auth'?",
+            "quizOptions": [
+                "pytest --search auth",
+                "pytest -k auth",
+                "pytest -m auth",
+                "pytest test_auth*"
+            ],
+            "correctOptionIndex": 1
+        },
+        {
+            "id": "pytest_fun_11",
+            "type": "content",
+            "title": "Important CLI Flags: -x and --maxfail",
+            "content": "# Fail Fast! 🛑\n\nWhen you are refactoring and break 50 tests, you don't want to wait for all 50 to fail and scroll through a massive wall of errors.\n\n## `-x` or `--exitfirst`\nThis flag tells `pytest` to stop the entire test session the very moment the **first** test fails.\n\n```bash\npytest -x\n```\n\n## `--maxfail=num`\nIf you want to see a few failures before stopping, you can use `--maxfail`.\n\n```bash\n# Stop the test run after 3 failures\npytest --maxfail=3\n```\n\nThis workflow is fantastic: run with `-x`, fix the first broken test, rerun with `-x`, fix the next one, until the suite passes."
+        },
+        {
+            "id": "pytest_fun_12",
+            "type": "content",
+            "title": "Important CLI Flags: --lf and --ff",
+            "content": "# Rerunning Failures ♻️\n\n`pytest` remembers the state of your previous test runs!\n\n## `--lf` or `--last-failed`\nThis runs **ONLY** the tests that failed in the previous run. This is incredibly useful for isolating and fixing broken tests without waiting for the whole suite.\n\n```bash\npytest --lf\n```\n\n## `--ff` or `--failed-first`\nThis runs **ALL** tests, but it runs the ones that failed previously *first*. This ensures you get immediate feedback on whether your fix worked, while still ensuring you didn't break anything else.\n\n```bash\npytest --ff\n```"
+        },
+        {
+            "id": "pytest_fun_13",
+            "type": "content",
+            "title": "Introduction to Markers",
+            "content": "# Markers: Tagging Your Tests 🏷️\n\nMarkers (`@pytest.mark.*`) allow you to attach metadata to your tests. You can use built-in markers or create your own custom ones.\n\n## Built-in Markers\n\n- `@pytest.mark.skip(reason=\"...\")`: Unconditionally skips a test.\n- `@pytest.mark.skipif(condition, reason=\"...\")`: Skips if a condition is met.\n- `@pytest.mark.xfail(reason=\"...\")`: Expects the test to fail (like `expectedFailure`).\n\n```python_not\nimport pytest\nimport sys\n\n@pytest.mark.skipif(sys.platform == 'win32', reason=\"does not run on windows\")\ndef test_unix_symlink():\n    pass\n```"
+        },
+        {
+            "id": "pytest_fun_14",
+            "type": "content",
+            "title": "Custom Markers",
+            "content": "# Custom Markers 🎨\n\nYou can create your own markers to categorize tests. For example, marking tests that hit a database as `slow`, or tests for a specific API endpoint as `api`.\n\n```python_not\nimport pytest\n\n@pytest.mark.slow\ndef test_heavy_database_query():\n    # Takes 10 seconds to run\n    pass\n\n@pytest.mark.api\ndef test_user_endpoint():\n    pass\n```\n\n## Running Marked Tests\nUse the `-m` (marker) flag to selectively run these tests!\n\n```bash\n# Run ONLY the slow tests\npytest -m slow\n\n# Run everything EXCEPT the slow tests\npytest -m \"not slow\"\n\n# Run tests that are BOTH api and slow\npytest -m \"api and slow\"\n```"
+        },
+        {
+            "id": "pytest_fun_15",
+            "type": "content",
+            "title": "Registering Custom Markers",
+            "content": "# Best Practice: Registering Markers 📝\n\nIf you use custom markers, `pytest` will issue a warning because it thinks you might have made a typo (e.g., `@pytest.mark.slwo`).\n\nTo prevent this, you should register your custom markers in a `pytest.ini` configuration file at the root of your project.\n\n```ini\n# pytest.ini\n[pytest]\nmarkers =\n    slow: marks tests as slow (deselect with '-m \"not slow\"')\n    api: tests related to the external API\n    e2e: end-to-end tests\n```\n\nNow, `pytest --markers` will list your custom markers alongside the built-in ones, and the warnings will disappear."
+        },
+        {
+            "id": "pytest_quiz_3",
+            "type": "quiz",
+            "title": "Markers Quiz",
+            "content": "Let's review custom markers.",
+            "quizQuestion": "If you have tagged a test with `@pytest.mark.database`, how do you run ONLY tests that DO NOT have this tag?",
+            "quizOptions": [
+                "pytest -k \"not database\"",
+                "pytest -m \"not database\"",
+                "pytest --exclude database",
+                "pytest --ignore-mark database"
+            ],
+            "correctOptionIndex": 1
+        },
+        {
+            "id": "pytest_fun_16",
+            "type": "content",
+            "title": "Comparing unittest and pytest",
+            "content": "# The Showdown ⚔️\n\nLet's summarize the differences between the two frameworks.\n\n| Feature | `unittest` | `pytest` |\n|---------|------------|----------|\n| **Style** | Object-Oriented (Classes) | Functional (Functions) |\n| **Boilerplate** | High (`self.assertEqual`) | Low (`assert a == b`) |\n| **Setup/Teardown** | `setUp()` methods | Fixtures (Covered next lesson!) |\n| **Failure Output** | Basic | Highly detailed introspection |\n| **Plugins** | Limited | Massive ecosystem |\n| **Test Discovery** | Built-in | Excellent & flexible |\n| **Parametrization** | `subTest` (A bit clunky) | `@pytest.mark.parametrize` |\n\n> 🏆 **Winner:** While `unittest` is great because it requires no installation, `pytest` is widely considered the industry standard for modern Python development due to its power and brevity."
+        },
+        {
+            "id": "pytest_fun_17",
+            "type": "content",
+            "title": "Summary",
+            "content": "# pytest Fundamentals Mastered! 🎉\n\nYou've taken your first steps into the powerful world of `pytest`.\n\n## Key Takeaways\n\n- ✅ **Simplicity:** Write standard Python functions prefixed with `test_`.\n- ✅ **Asserts:** Use plain `assert` statements. `pytest` will handle the deep introspection for you.\n- ✅ **Exceptions & Warnings:** Use `with pytest.raises()` and `with pytest.warns()` to validate errors.\n- ✅ **CLI Power:** Use `-v`, `-q`, `-x`, `--lf`, and `--ff` to dramatically improve your testing workflow.\n- ✅ **Markers:** Categorize your tests using `@pytest.mark.*` and run them selectively with `-m`.\n\nIn the next topic, we will unlock the true superpower of `pytest`: **Fixtures and Parametrization!**"
+        }
+    ]
+}

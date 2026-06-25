@@ -1,0 +1,30 @@
+[
+  {
+    "title": "Hashing Basics",
+    "ques": "Using the `hashlib` module, write a snippet to compute the SHA-256 hash of the string 'securepassword'.",
+    "answer": {
+      "type": "code",
+      "lang": "python",
+      "content": "import hashlib\n\ndata = \"securepassword\"\nhash_object = hashlib.sha256(data.encode('utf-8'))\nhex_dig = hash_object.hexdigest()\n\nprint(hex_dig)"
+    },
+    "explanation": "Hashing is a one-way function. To hash a string in Python, it must first be encoded into bytes (usually UTF-8). `.hexdigest()` returns the hash as a readable hexadecimal string."
+  },
+  {
+    "title": "Symmetric Encryption with Fernet",
+    "ques": "What is Fernet (from the `cryptography` package), and what type of encryption does it provide?",
+    "answer": {
+      "type": "text",
+      "content": "Fernet is a high-level symmetric encryption recipe provided by the `cryptography` package. Symmetric means the same key is used for both encrypting and decrypting the data. Fernet guarantees that a message encrypted using it cannot be manipulated or read without the key, as it implements AES encryption with authentication."
+    },
+    "explanation": "Fernet is designed to be highly secure and easy to use, preventing common cryptographic implementation mistakes."
+  },
+  {
+    "title": "The Importance of Salting",
+    "ques": "Why is 'salting' essential when storing hashed passwords?",
+    "answer": {
+      "type": "text",
+      "content": "A 'salt' is a random piece of data appended to a password before hashing. If passwords are not salted, two users with the same password will have the exact same hash, and attackers can use precomputed tables (rainbow tables) to crack them instantly. Salting ensures that every hashed password is unique, even if the original passwords are identical."
+    },
+    "explanation": "Salting adds randomness to the hashing process, making bulk dictionary attacks computationally unfeasible."
+  }
+]

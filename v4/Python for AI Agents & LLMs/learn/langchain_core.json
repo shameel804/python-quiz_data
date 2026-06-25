@@ -1,0 +1,97 @@
+{
+    "id": "learn_langchain_core",
+    "topicId": "langchain_core",
+    "topicTitle": "LangChain Core",
+    "description": "Abstract away API complexities. Learn how LangChain uses PromptTemplates, Chat Models, and Output Parsers to build modular AI pipelines.",
+    "baseKP": 75,
+    "slides": [
+        {
+            "id": "lc_core_1",
+            "type": "content",
+            "title": "The Need for LangChain",
+            "content": "# Orchestrating AI 🎼\n\nThe OpenAI SDK is great, but building complex apps requires a lot of boilerplate code.\n\nWhat if you want to swap OpenAI for an open-source Hugging Face model? What if you want to automatically format variables into a prompt? What if you want to parse the AI's string output into a Python Dictionary?\n\n**LangChain** is a massive framework designed to abstract away these complexities. It provides standardized interfaces for Models, Prompts, and Parsers."
+        },
+        {
+            "id": "lc_core_2",
+            "type": "content",
+            "title": "Model Abstraction",
+            "content": "# The `ChatModel` Interface 🤖\n\nIn LangChain, you don't call the OpenAI API directly. You use a LangChain wrapper class. This means you can swap LLM providers by changing exactly one line of code!\n\n```bash\npip install langchain langchain-openai\n```\n\n```python_not\nfrom langchain_openai import ChatOpenAI\nfrom langchain_core.messages import HumanMessage, SystemMessage\n\n# Initialize the model wrapper\nllm = ChatOpenAI(model=\"gpt-3.5-turbo\", temperature=0.7)\n\n# LangChain has its own message classes\nmessages = [\n    SystemMessage(content=\"You are a helpful assistant.\"),\n    HumanMessage(content=\"Tell me a joke about Python.\")\n]\n\n# Invoke the model\nresponse = llm.invoke(messages)\nprint(response.content)\n```"
+        },
+        {
+            "id": "lc_core_3",
+            "type": "content",
+            "title": "Prompt Templates",
+            "content": "# Reusable Prompts 📝\n\nInstead of using Python f-strings to inject variables into prompts, LangChain provides `PromptTemplate` objects.\n\nThese are highly reusable, can be saved to files, and automatically handle complex variable validation.\n\n```python_not\nfrom langchain_core.prompts import PromptTemplate\n\n# Define the template string with {variables}\ntemplate = \"Write a short poem about {topic} in the style of {author}.\"\n\n# Create the PromptTemplate object\nprompt = PromptTemplate.from_template(template)\n\n# Format the template into a string\nformatted_str = prompt.format(topic=\"Artificial Intelligence\", author=\"Shakespeare\")\nprint(formatted_str)\n```"
+        },
+        {
+            "id": "lc_core_4",
+            "type": "content",
+            "title": "Chat Prompt Templates",
+            "content": "# Templating Roles 🎭\n\nFor Chat Models, you don't just format a string; you need to format the entire array of Roles (System, User).\n\n```python_not\nfrom langchain_core.prompts import ChatPromptTemplate\n\n# Define the template as a list of tuples (Role, Content)\nchat_template = ChatPromptTemplate.from_messages([\n    (\"system\", \"You are an expert translator. Translate {source_lang} to {target_lang}.\"),\n    (\"user\", \"{text}\")\n])\n\n# Format it into a list of LangChain Message objects\nmessages = chat_template.format_messages(\n    source_lang=\"English\", \n    target_lang=\"French\", \n    text=\"Where is the library?\"\n)\n```"
+        },
+        {
+            "id": "lc_core_quiz_1",
+            "type": "quiz",
+            "title": "LangChain Basics Quiz",
+            "content": "Test your knowledge of LangChain abstractions.",
+            "quizQuestion": "Why would a developer use a LangChain `ChatModel` wrapper (like `ChatOpenAI`) instead of using the raw `openai` SDK directly?",
+            "quizOptions": [
+                "Because LangChain models are completely free.",
+                "Because LangChain runs the model locally instead of on the cloud.",
+                "Because LangChain provides a standardized interface, allowing the developer to easily swap OpenAI for Anthropic, Google, or local models without rewriting the rest of the application logic.",
+                "Because the raw SDK cannot stream responses."
+            ],
+            "correctOptionIndex": 2
+        },
+        {
+            "id": "lc_core_5",
+            "type": "content",
+            "title": "Output Parsers",
+            "content": "# Structuring the Output 🧱\n\nLLMs return raw strings. If you want the AI to return a JSON object, you historically had to write fragile Regex code to extract it.\n\nLangChain's **Output Parsers** handle this automatically. The most basic is the `StrOutputParser`, which just extracts the string content from the complex AI Message object.\n\n```python_not\nfrom langchain_core.output_parsers import StrOutputParser\n\nparser = StrOutputParser()\n\n# (Assume 'response' is the complex object returned by llm.invoke())\nclean_string = parser.invoke(response)\n```"
+        },
+        {
+            "id": "lc_core_6",
+            "type": "content",
+            "title": "The LangChain Expression Language",
+            "content": "# LCEL: The Pipe Operator `|` ⛓️\n\nLangChain's greatest innovation is **LCEL (LangChain Expression Language)**.\n\nIt overloads the Python pipe operator `|` to allow you to chain Prompts, Models, and Parsers together seamlessly. The output of the left side is automatically passed as input to the right side!\n\n```python_not\n# 1. Define the components\nprompt = ChatPromptTemplate.from_template(\"Tell me a fact about {topic}.\")\nmodel = ChatOpenAI()\nparser = StrOutputParser()\n\n# 2. Chain them together using LCEL!\nchain = prompt | model | parser\n\n# 3. Invoke the entire pipeline in one go!\n# We pass the dictionary required by the PromptTemplate\nresult = chain.invoke({\"topic\": \"Mars\"})\n\nprint(result) # Raw string output!\n```"
+        },
+        {
+            "id": "lc_core_7",
+            "type": "content",
+            "title": "Under the Hood of LCEL",
+            "content": "# Runnable Sequences 🏃‍♂️\n\nWhen you use `prompt | model | parser`, LangChain is actually building a `RunnableSequence` object.\n\nBecause they all share the `Runnable` interface, LCEL chains automatically support:\n- `.invoke()` (Synchronous)\n- `.ainvoke()` (Asynchronous)\n- `.stream()` (Streaming real-time text!)\n\n```python_not\n# Stream the output of the entire chain!\nfor chunk in chain.stream({\"topic\": \"Jupiter\"}):\n    print(chunk, end=\"\", flush=True)\n```"
+        },
+        {
+            "id": "lc_core_8",
+            "type": "content",
+            "title": "Memory in LangChain",
+            "content": "# Remembering the Past 🧠\n\nAs we learned, LLMs are stateless. To build a Chatbot, you must pass the entire history every time.\n\nLangChain provides memory classes to manage this automatically. \n\n*Note: In modern LangChain, memory is usually handled via `RunnableWithMessageHistory`, which wraps your LCEL chain and injects history from a database.*"
+        },
+        {
+            "id": "lc_core_9",
+            "type": "content",
+            "title": "Types of Memory",
+            "content": "# Managing Token Limits 📏\n\nIf a conversation goes on for hours, the history will exceed the model's maximum token limit, causing a crash. LangChain provides different memory strategies:\n\n1. **`ConversationBufferMemory`**: Stores everything. Will eventually crash.\n2. **`ConversationBufferWindowMemory`**: Only keeps the last `k` messages (e.g., the last 5 turns). Forgetful, but safe.\n3. **`ConversationSummaryMemory`**: Uses the LLM itself to summarize the old conversation! It passes the summary + recent messages. Highly token-efficient, but costs more API calls."
+        },
+        {
+            "id": "lc_core_quiz_2",
+            "type": "quiz",
+            "title": "LCEL Quiz",
+            "content": "Check your understanding of LangChain's syntax.",
+            "quizQuestion": "In LangChain Expression Language (LCEL), what does the code `chain = prompt | model | parser` do?",
+            "quizOptions": [
+                "It uses the Python `or` operator to execute whichever component runs fastest.",
+                "It creates a sequence where the output of the `prompt` is fed into the `model`, and the output of the `model` is fed into the `parser`.",
+                "It zips the three objects into a single tuple.",
+                "It writes the prompt to a file, then models it, then parses the file."
+            ],
+            "correctOptionIndex": 1
+        },
+        {
+            "id": "lc_core_10",
+            "type": "content",
+            "title": "Summary",
+            "content": "# Pipeline Master! 🎉\n\nYou've learned how to orchestrate AI components cleanly.\n\n## Key Takeaways\n\n- ✅ **Abstraction:** Use `ChatOpenAI` (and similar wrappers) to keep your code provider-agnostic.\n- ✅ **PromptTemplates:** Modularize your prompts and securely inject variables.\n- ✅ **OutputParsers:** Use `StrOutputParser` to automatically extract clean strings from complex AI message objects.\n- ✅ **LCEL (`|`):** The modern way to build LangChain apps. Chain components together elegantly (e.g., `prompt | model | parser`).\n- ✅ **Memory:** Use strategies like Window or Summary memory to prevent long conversations from exceeding token limits.\n\nNext, we'll give our LCEL chains the ability to use tools!"
+        }
+    ]
+}

@@ -1,0 +1,29 @@
+[
+  {
+    "title": "Understanding Celery",
+    "ques": "What is Celery, and why does it require a 'broker' like Redis or RabbitMQ?",
+    "answer": {
+      "type": "text",
+      "content": "Celery is an asynchronous distributed task queue system used to execute operations in the background, away from the main web request cycle. It requires a message broker (like Redis or RabbitMQ) to act as a middleman: the main application sends messages (tasks) to the broker, and Celery worker processes pull these messages from the broker to execute them."
+    },
+    "explanation": "Task queues allow web applications to remain responsive by offloading slow processes (like sending emails or processing videos) to background workers."
+  },
+  {
+    "title": "Dispatching Tasks",
+    "ques": "Explain the difference between calling a Celery task as a normal function `my_task()` vs using `my_task.delay()`.",
+    "answer": {
+      "type": "text",
+      "content": "* **`my_task()`:** Calls the function synchronously, blocking the current process until the function completes. It bypasses Celery entirely.\n* **`my_task.delay()`:** This is a shortcut to dispatch the task to the Celery broker asynchronously. The function returns immediately, and a background worker will execute the actual logic."
+    },
+    "explanation": "The `.delay()` (or `.apply_async()`) method is essential for actually pushing the task onto the distributed queue."
+  },
+  {
+    "title": "Scheduled Tasks with Celery Beat",
+    "ques": "What is the purpose of `celery beat` in a Celery architecture?",
+    "answer": {
+      "type": "text",
+      "content": "`celery beat` is a scheduler service that acts like a distributed cron job. It reads a configured schedule (e.g., 'run this task every hour') and periodically kicks off tasks by pushing them into the message broker, where standard Celery workers will eventually pick them up and execute them."
+    },
+    "explanation": "Beat is used for recurring background jobs, such as generating daily reports or performing database cleanups."
+  }
+]

@@ -1,0 +1,32 @@
+[
+  {
+    "title": "SQLite Connections \ud83d\udd0c",
+    "ques": "Write a Python script using the `sqlite3` module to connect to an in-memory database and create a table named `items` with an `id` and `name`.",
+    "answer": {
+      "type": "code",
+      "lang": "python",
+      "content": "import sqlite3\n\nconn = sqlite3.connect(':memory:')\ncursor = conn.cursor()\ncursor.execute('CREATE TABLE items (id INTEGER PRIMARY KEY, name TEXT)')\nconn.commit()\nconn.close()"
+    },
+    "explanation": "Using `':memory:'` creates a temporary, fast database in RAM. Connections must be committed and closed to manage resources."
+  },
+  {
+    "title": "PostgreSQL with psycopg2 \ud83d\udc18",
+    "ques": "Write a basic `psycopg2` snippet to connect to a PostgreSQL database named `mydb` with user `postgres` and password `pass`, then execute a simple `SELECT 1;` query.",
+    "answer": {
+      "type": "code",
+      "lang": "python",
+      "content": "import psycopg2\n\nconn = psycopg2.connect(dbname='mydb', user='postgres', password='pass')\ncursor = conn.cursor()\ncursor.execute('SELECT 1;')\nprint(cursor.fetchone())\nconn.close()"
+    },
+    "explanation": "`psycopg2` is a popular PostgreSQL adapter for Python. It follows the standard DB-API interface with cursors and executions."
+  },
+  {
+    "title": "Using JSONB in PostgreSQL \ud83d\uddc2",
+    "ques": "Write an SQL query to insert a JSON object `{\"theme\": \"dark\"}` into a `jsonb` column named `preferences` in the `users` table where `id = 1`.",
+    "answer": {
+      "type": "code",
+      "lang": "sql",
+      "content": "UPDATE users SET preferences = '{\"theme\": \"dark\"}'::jsonb WHERE id = 1;"
+    },
+    "explanation": "PostgreSQL's `jsonb` type allows efficient storage and querying of semi-structured JSON data."
+  }
+]

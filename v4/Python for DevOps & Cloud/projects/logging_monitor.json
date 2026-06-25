@@ -1,0 +1,29 @@
+[
+  {
+    "title": "Standard Logging vs Loguru",
+    "ques": "Why do many modern Python projects prefer third-party libraries like `loguru` over the built-in `logging` module?",
+    "answer": {
+      "type": "text",
+      "content": "The built-in `logging` module is powerful but famously complex to configure (requiring formatters, handlers, and loggers). `loguru` provides a much simpler, out-of-the-box experience. It offers automatic formatting, colored terminal output, easy rotation/retention policies for log files, and simpler exception catching with `@logger.catch`, all with virtually zero boilerplate."
+    },
+    "explanation": "`loguru` abstracts away the verbose configuration of the standard library, making it easier to implement robust logging quickly."
+  },
+  {
+    "title": "Structured Logging",
+    "ques": "What is structured logging, and why is it important for cloud deployments?",
+    "answer": {
+      "type": "text",
+      "content": "Structured logging is the practice of outputting log messages as structured data objects (typically JSON) rather than plain text strings. It is critical for cloud deployments because log aggregators (like Datadog, Elasticsearch, or CloudWatch) can easily parse, index, and query JSON keys. For example, finding all logs where `\"user_id\": 123` is trivial with structured logs, but requires complex Regex with plain text."
+    },
+    "explanation": "Structured logs turn your application's output into a highly queryable database of events."
+  },
+  {
+    "title": "Error Tracking with Sentry",
+    "ques": "What is the primary function of the Sentry SDK in a Python application?",
+    "answer": {
+      "type": "text",
+      "content": "The Sentry SDK monitors the application in real-time and automatically captures unhandled exceptions. When an error occurs, it sends a detailed report to the Sentry dashboard, including the stack trace, local variables, OS context, and the sequence of events leading up to the crash, helping developers diagnose and fix bugs proactively."
+    },
+    "explanation": "Tools like Sentry provide application observability, alerting development teams to issues before users even report them."
+  }
+]

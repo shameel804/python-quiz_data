@@ -1,0 +1,30 @@
+[
+  {
+    "title": "Customizing Subplots with GridSpec",
+    "ques": "What advantage does `matplotlib.gridspec.GridSpec` have over standard `plt.subplots()`?",
+    "answer": {
+      "type": "text",
+      "content": "While `plt.subplots()` creates a regular grid of evenly sized plots, `GridSpec` allows for complex layouts where subplots can span multiple rows or columns, and can have varying height or width ratios. It provides total control over the geometry of the figure."
+    },
+    "explanation": "`GridSpec` is essential for creating dashboard-style static reports or complex multi-panel scientific figures."
+  },
+  {
+    "title": "Twin Axes",
+    "ques": "Write a Matplotlib snippet that creates a plot with two different y-axes (left and right) sharing the same x-axis.",
+    "answer": {
+      "type": "code",
+      "lang": "python",
+      "content": "import matplotlib.pyplot as plt\n\nfig, ax1 = plt.subplots()\nax1.plot(x_data, y1_data, color='blue')\nax1.set_ylabel('Primary Y', color='blue')\n\nax2 = ax1.twinx()  # Create a twin y-axis\nax2.plot(x_data, y2_data, color='red')\nax2.set_ylabel('Secondary Y', color='red')"
+    },
+    "explanation": "`twinx()` creates a new Axes instance that shares the x-axis but has an independent y-axis on the right side."
+  },
+  {
+    "title": "Global Styling with rcParams",
+    "ques": "What is the purpose of modifying `matplotlib.rcParams`?",
+    "answer": {
+      "type": "text",
+      "content": "`rcParams` (Run Command Parameters) is a dictionary-like object that holds all the default configuration settings for Matplotlib. By modifying it at the top of your script (e.g., `plt.rcParams['font.size'] = 14`), you can change the global style (fonts, line widths, colors, grid visibility) for all subsequent plots, ensuring a consistent look without having to pass the same arguments to every single plotting function."
+    },
+    "explanation": "Modifying rcParams or using `plt.style.use()` is the best practice for establishing a cohesive aesthetic across an entire project."
+  }
+]

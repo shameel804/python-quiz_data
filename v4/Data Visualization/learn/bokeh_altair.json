@@ -1,0 +1,97 @@
+{
+    "id": "learn_bokeh_altair",
+    "topicId": "bokeh_altair",
+    "topicTitle": "Bokeh & Altair",
+    "description": "Explore declarative visualization with Altair based on the Vega-Lite grammar, and build massive real-time streaming dashboards with Bokeh.",
+    "baseKP": 75,
+    "slides": [
+        {
+            "id": "bok_alt_1",
+            "type": "content",
+            "title": "Alternative Paradigms",
+            "content": "# Beyond Plotly 🗺️\n\nWhile Plotly is the most popular interactive plotting library, two other libraries offer unique paradigms that are highly valued in specific industries:\n\n1. **Altair:** Uses a \"Declarative\" grammar (Vega-Lite). You declare *what* the visual should mean, not *how* to draw it. Excellent for clean, reproducible data science.\n2. **Bokeh:** Designed specifically for streaming, real-time data, and massive datasets. It can push server-side updates directly to the browser."
+        },
+        {
+            "id": "bok_alt_2",
+            "type": "content",
+            "title": "Introduction to Altair",
+            "content": "# Declarative Syntax: Altair 🏔️\n\nIn traditional libraries (like Matplotlib), you issue commands: `draw_axis()`, `plot_line()`. This is *imperative* programming.\n\nAltair is *declarative*. You map data columns to visual \"channels\" (like x, y, color, size), and Altair handles the drawing.\n\n```bash\npip install altair vega_datasets\n```\n\n```python_not\nimport altair as alt\nfrom vega_datasets import data\n\ncars = data.cars()\n\n# The fundamental Altair object is the Chart\nchart = alt.Chart(cars).mark_point().encode(\n    x='Horsepower',\n    y='Miles_per_Gallon',\n    color='Origin'\n)\n\n# chart.show() or chart.save('chart.html')\n```"
+        },
+        {
+            "id": "bok_alt_3",
+            "type": "content",
+            "title": "Altair Marks and Encodings",
+            "content": "# Marks and Channels 🎨\n\nEvery Altair chart consists of Data, a **Mark** (the geometric shape), and **Encodings** (mapping columns to visual channels).\n\n```python_not\n# Instead of mark_point() (scatter), we use mark_bar()!\nalt.Chart(cars).mark_bar().encode(\n    # Notice the ':Q' and ':O'. These are shorthand for types!\n    # Q = Quantitative (Continuous numbers)\n    # O = Ordinal (Discrete, ordered categories)\n    # N = Nominal (Discrete, unordered categories)\n    x='Origin:N',\n    y='count()', # Altair can do aggregations internally!\n    color='Origin:N'\n)\n```\n\nBy changing `mark_point()` to `mark_line()` or `mark_bar()`, you completely change the chart type instantly."
+        },
+        {
+            "id": "bok_alt_4",
+            "type": "content",
+            "title": "Altair Interactions",
+            "content": "# Selections and Filters 🖱️\n\nAltair makes linking charts together trivial. You can create a selection brush on one chart to filter data on another.\n\n```python_not\n# Create a brush selection tool\nbrush = alt.selection_interval()\n\n# Chart 1: Scatter plot (Add the brush to it)\npoints = alt.Chart(cars).mark_point().encode(\n    x='Horsepower:Q',\n    y='Miles_per_Gallon:Q',\n    color=alt.condition(brush, 'Origin:N', alt.value('lightgray'))\n).add_params(brush)\n\n# Chart 2: Bar chart (Filter data based on the brush from Chart 1)\nbars = alt.Chart(cars).mark_bar().encode(\n    y='Origin:N',\n    color='Origin:N',\n    x='count(Origin):Q'\n).transform_filter(brush)\n\n# Combine them side-by-side using the | operator!\npoints | bars\n```"
+        },
+        {
+            "id": "bok_alt_quiz_1",
+            "type": "quiz",
+            "title": "Altair Quiz",
+            "content": "Check your understanding of declarative grammar.",
+            "quizQuestion": "In Altair's declarative syntax, what is the purpose of the `.encode()` method?",
+            "quizOptions": [
+                "It encrypts the dataset to prevent unauthorized access.",
+                "It maps the columns of your Pandas DataFrame to visual channels on the chart, such as the X-axis, Y-axis, or Color.",
+                "It exports the chart as a Base64 encoded string.",
+                "It sets the font styling for the chart titles."
+            ],
+            "correctOptionIndex": 1
+        },
+        {
+            "id": "bok_alt_5",
+            "type": "content",
+            "title": "Introduction to Bokeh",
+            "content": "# The Power of Bokeh 🌟\n\nBokeh (pronounced BO-kay) is a highly customizable library. While Altair abstracts everything away, Bokeh gives you low-level control over every DOM element.\n\nIt shines when dealing with massive, streaming datasets because it uses a highly optimized WebGL rendering engine.\n\n```bash\npip install bokeh\n```"
+        },
+        {
+            "id": "bok_alt_6",
+            "type": "content",
+            "title": "Basic Bokeh Plot",
+            "content": "# `figure` and Glyphs 🖌️\n\nIn Bokeh, you create a `figure`, and then add \"Glyphs\" (shapes) to it.\n\n```python_not\nfrom bokeh.plotting import figure, show, output_file\n\n# output_file(\"lines.html\") # Tells Bokeh to generate an HTML file\n\n# Create a figure object\np = figure(title=\"Simple Line Example\", x_axis_label='x', y_axis_label='y')\n\n# Add a line glyph\np.line([1, 2, 3, 4, 5], [6, 7, 2, 4, 5], legend_label=\"Temp\", line_width=2)\n\n# Add a circle glyph (scatter)\np.circle([1, 2, 3, 4, 5], [6, 7, 2, 4, 5], legend_label=\"Temp\", size=10, color=\"red\")\n\nshow(p)\n```"
+        },
+        {
+            "id": "bok_alt_7",
+            "type": "content",
+            "title": "The ColumnDataSource",
+            "content": "# The Core Data Object: CDS 🗃️\n\nWhile you can pass lists directly to Bokeh, the proper way to handle data (especially for interactions) is the `ColumnDataSource` (CDS).\n\nThe CDS acts as a central dictionary. If multiple plots share the same CDS, and you select data in one plot, Bokeh automatically updates the other plots!\n\n```python_not\nfrom bokeh.models import ColumnDataSource\nimport pandas as pd\n\ndf = pd.DataFrame({'x': [1,2,3], 'y': [4,5,6], 'desc': ['A', 'B', 'C']})\n\n# Convert Pandas DataFrame to Bokeh CDS\nsource = ColumnDataSource(df)\n\n# Pass the source and use the column names as strings\np.circle(x='x', y='y', source=source, size=15)\n```"
+        },
+        {
+            "id": "bok_alt_8",
+            "type": "content",
+            "title": "HoverTools",
+            "content": "# Customizing Tooltips 💬\n\nBokeh's `HoverTool` is incredibly powerful. You can use HTML to format exactly how the tooltip appears.\n\n```python_not\nfrom bokeh.models import HoverTool\n\n# Add the tool to the figure\nhover = HoverTool()\n\n# Use HTML formatting. The @ symbol references columns in the ColumnDataSource\nhover.tooltips = \"\"\"\n    <div>\n        <h3>Data Point Info</h3>\n        <p><strong>X:</strong> @x</p>\n        <p><strong>Y:</strong> @y</p>\n        <p><em>Description: @desc</em></p>\n    </div>\n\"\"\"\n\np.add_tools(hover)\n```"
+        },
+        {
+            "id": "bok_alt_9",
+            "type": "content",
+            "title": "Bokeh Server Apps",
+            "content": "# Real-Time Updates ⏱️\n\nThe most powerful feature of Bokeh is the **Bokeh Server**. \n\nInstead of generating a static HTML file, the Bokeh Server keeps a Python process running in the background, synchronized with the browser via WebSockets.\n\nThis allows you to write Python callback functions that update the chart in real-time when a user clicks a button, or when new data arrives from a database!\n\n*(Note: Building server apps requires running `bokeh serve my_script.py` from the command line, rather than just calling `show()`)*."
+        },
+        {
+            "id": "bok_alt_quiz_2",
+            "type": "quiz",
+            "title": "Bokeh Quiz",
+            "content": "Test your Bokeh knowledge.",
+            "quizQuestion": "In Bokeh, what is the primary benefit of wrapping your Pandas DataFrame in a `ColumnDataSource` before plotting?",
+            "quizOptions": [
+                "It automatically converts the data to a Plotly format.",
+                "It allows the data to be shared across multiple plots and enables interactive tools (like HoverTools) to access specific column data using the `@column_name` syntax.",
+                "It compresses the data to save memory.",
+                "It prevents the data from being rendered."
+            ],
+            "correctOptionIndex": 1
+        },
+        {
+            "id": "bok_alt_10",
+            "type": "content",
+            "title": "Summary",
+            "content": "# Paradigm Master! 🎉\n\nYou've learned two highly specialized visualization tools.\n\n## Key Takeaways\n\n- ✅ **Altair (Declarative):** Uses Vega-Lite grammar. Focus on mapping data columns to visual Encodings (`x`, `y`, `color`) and let the library handle the drawing. Perfect for clean data science workflows.\n- ✅ **Altair Operators:** Easily combine charts using `|` (side-by-side) or `&` (top-and-bottom).\n- ✅ **Bokeh (Imperative/Web):** Builds DOM elements directly. Uses `figure` and `glyphs` (like line, circle).\n- ✅ **ColumnDataSource:** Bokeh's core data structure for sharing data across interactive widgets and tools.\n- ✅ **Bokeh Server:** Use it to build advanced, real-time streaming dashboards synchronized via WebSockets."
+        }
+    ]
+}

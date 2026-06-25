@@ -1,0 +1,91 @@
+{
+    "id": "learn_hugging_face_fi",
+    "topicId": "hugging_face_fi",
+    "topicTitle": "Hugging Face & Fine-Tuning",
+    "description": "Escape vendor lock-in. Learn to run powerful open-source AI models locally using the Hugging Face transformers library, and explore fine-tuning techniques like LoRA.",
+    "baseKP": 75,
+    "slides": [
+        {
+            "id": "hf_ft_1",
+            "type": "content",
+            "title": "The Open Source AI Revolution",
+            "content": "# Beyond OpenAI 🌍\n\nUsing OpenAI's API is easy, but it has downsides:\n1. **Privacy:** You are sending your data to a 3rd party.\n2. **Cost:** API calls get expensive at scale.\n3. **Control:** OpenAI can change or deprecate models at any time.\n\nThe alternative is **Open-Source AI**. You download the model files to your own server and run them locally. \n\nThe central hub for open-source AI is **Hugging Face**."
+        },
+        {
+            "id": "hf_ft_2",
+            "type": "content",
+            "title": "The transformers Library",
+            "content": "# Downloading Models 🤗\n\nHugging Face provides the `transformers` Python library, which makes downloading and running state-of-the-art models (like Meta's Llama 3 or Mistral) incredibly simple.\n\n```bash\n# Install transformers and PyTorch (the underlying math engine)\npip install transformers torch\n```\n\n```python_not\nfrom transformers import pipeline\n\n# The pipeline is the highest-level API\n# It automatically downloads the model and handles all the complex math\nclassifier = pipeline(\"sentiment-analysis\")\n\nresult = classifier(\"I absolutely love Python programming!\")\nprint(result) \n# Output: [{'label': 'POSITIVE', 'score': 0.9998}]\n```"
+        },
+        {
+            "id": "hf_ft_3",
+            "type": "content",
+            "title": "AutoClasses",
+            "content": "# Under the Hood: Tokenizers 🧩\n\nThe `pipeline` is great for quick tasks, but for deep control, we use `AutoClasses`.\n\nAI models cannot read text; they only understand numbers. \n\nA **Tokenizer** splits text into sub-words (tokens) and converts them into IDs. You *must* use the exact tokenizer that was used to train the model!\n\n```python_not\nfrom transformers import AutoTokenizer, AutoModelForCausalLM\n\nmodel_id = \"gpt2\" # A small, open-source language model\n\n# Download and load the specific tokenizer for GPT-2\ntokenizer = AutoTokenizer.from_pretrained(model_id)\n\n# Download and load the model itself\nmodel = AutoModelForCausalLM.from_pretrained(model_id)\n\n# Convert text into a tensor (multi-dimensional array) of numbers\ninputs = tokenizer(\"The capital of France is\", return_tensors=\"pt\")\n```"
+        },
+        {
+            "id": "hf_ft_4",
+            "type": "content",
+            "title": "Generating Text Locally",
+            "content": "# Running the Model 💻\n\nOnce we have the tokenized input, we pass it to the model to generate the next tokens, and then decode the numerical output back into human-readable text.\n\n```python_not\n# (Continuing from previous slide)\n\n# Generate text (max 20 new tokens)\noutputs = model.generate(**inputs, max_new_tokens=20)\n\n# Decode the output numbers back into a string\ntext = tokenizer.decode(outputs[0], skip_special_tokens=True)\n\nprint(text)\n# Output: The capital of France is Paris. It is the most populous city in...\n```\n\n> 💡 **Note:** Running large models (like Llama-3-8B) requires a powerful GPU and lots of VRAM. Without a GPU, generation will be incredibly slow."
+        },
+        {
+            "id": "hf_ft_quiz_1",
+            "type": "quiz",
+            "title": "Hugging Face Quiz",
+            "content": "Check your understanding of the Hugging Face ecosystem.",
+            "quizQuestion": "In the `transformers` library, what is the critical role of a Tokenizer?",
+            "quizOptions": [
+                "It authenticates your API key with Hugging Face.",
+                "It translates Python code into C++ for faster execution.",
+                "It converts raw text strings into numerical IDs that the AI model can mathematically process, and vice-versa.",
+                "It encrypts the text before sending it to the cloud."
+            ],
+            "correctOptionIndex": 2
+        },
+        {
+            "id": "hf_ft_5",
+            "type": "content",
+            "title": "Introduction to Fine-Tuning",
+            "content": "# Teaching New Tricks 🎓\n\nRAG (Retrieval-Augmented Generation) is great for giving an AI new *knowledge* (facts).\n\n**Fine-Tuning** is used to give an AI new *skills* or change its *behavior*. \n\nFor example, if you want a model to consistently output valid Python code formatted exactly to your company's highly specific internal style guide, RAG will struggle. You need to Fine-Tune the model by showing it thousands of examples of your code."
+        },
+        {
+            "id": "hf_ft_6",
+            "type": "content",
+            "title": "The Cost of Fine-Tuning",
+            "content": "# Full Fine-Tuning vs PEFT 💰\n\nA large model like Llama-3-8B has 8 billion parameters (mathematical weights).\n\nHistorically, fine-tuning meant updating *all* 8 billion parameters simultaneously. This required massive server clusters and hundreds of thousands of dollars.\n\nThis led to the invention of **PEFT (Parameter-Efficient Fine-Tuning)**."
+        },
+        {
+            "id": "hf_ft_7",
+            "type": "content",
+            "title": "LoRA (Low-Rank Adaptation)",
+            "content": "# The LoRA Revolution 🔬\n\n**LoRA** is the most popular PEFT technique.\n\nInstead of updating the 8 billion original parameters, LoRA freezes the entire base model. It then injects a tiny, \"low-rank\" matrix (e.g., just 10 million parameters) next to the base model.\n\nDuring training, *only* the tiny matrix is updated! \n\nThis reduces memory requirements by 90%, allowing you to fine-tune massive AI models on a single consumer GPU in a few hours!"
+        },
+        {
+            "id": "hf_ft_8",
+            "type": "content",
+            "title": "Using the SFTTrainer",
+            "content": "# Code: Supervised Fine-Tuning 🏋️\n\nHugging Face provides the `SFTTrainer` (Supervised Fine-Tuning Trainer) via the `trl` library to make fine-tuning with LoRA easy.\n\n```python_not\nfrom peft import LoraConfig, get_peft_model\nfrom trl import SFTTrainer\n\n# 1. Define the LoRA configuration (the tiny matrices)\nlora_config = LoraConfig(\n    r=8, # Rank (size of the tiny matrix)\n    target_modules=[\"q_proj\", \"v_proj\"], # Inject into attention layers\n    task_type=\"CAUSAL_LM\"\n)\n\n# 2. Wrap the base model with the LoRA config\npeft_model = get_peft_model(base_model, lora_config)\n\n# 3. Initialize the Trainer\ntrainer = SFTTrainer(\n    model=peft_model,\n    train_dataset=my_custom_dataset,\n    dataset_text_field=\"text\",\n)\n\n# 4. Train the model!\ntrainer.train()\n```"
+        },
+        {
+            "id": "hf_ft_quiz_2",
+            "type": "quiz",
+            "title": "Fine-Tuning Quiz",
+            "content": "Ensure you know when and how to train.",
+            "quizQuestion": "Why is LoRA (Low-Rank Adaptation) used when fine-tuning massive Language Models?",
+            "quizOptions": [
+                "It connects the model to the internet.",
+                "It freezes the massive base model and only trains a tiny injected matrix, drastically reducing the required GPU memory and compute time.",
+                "It converts the model into a Vector Database.",
+                "It automatically downloads data from Wikipedia to train the model."
+            ],
+            "correctOptionIndex": 1
+        },
+        {
+            "id": "hf_ft_9",
+            "type": "content",
+            "title": "Summary",
+            "content": "# Open Source AI Developer! 🎉\n\nYou've learned how to harness models locally without relying on paid APIs.\n\n## Key Takeaways\n\n- ✅ **Hugging Face:** The central repository for open-source AI models and datasets.\n- ✅ **transformers:** Use `pipeline()` for rapid deployment, or `AutoModel` and `AutoTokenizer` for deep control.\n- ✅ **Tokenization:** AI only understands numbers. You must map text to numerical IDs using the model's specific Tokenizer.\n- ✅ **RAG vs Fine-Tuning:** Use RAG to add facts/knowledge. Use Fine-Tuning to change the model's behavior/skills/format.\n- ✅ **LoRA / PEFT:** Never do full fine-tuning. Use LoRA to train a tiny \"adapter\" matrix alongside a frozen base model, allowing training on standard GPUs."
+        }
+    ]
+}

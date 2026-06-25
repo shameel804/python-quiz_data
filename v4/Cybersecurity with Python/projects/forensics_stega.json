@@ -1,0 +1,29 @@
+[
+  {
+    "title": "Metadata Extraction",
+    "ques": "What is EXIF data, and how might it pose a privacy risk?",
+    "answer": {
+      "type": "text",
+      "content": "EXIF data is metadata embedded inside image files (like JPEGs) by cameras and smartphones. It can contain sensitive information such as the exact GPS coordinates where the photo was taken, the date and time, and the device model. If a Python app accepts image uploads and doesn't strip this metadata before making the images public, it can severely compromise user privacy."
+    },
+    "explanation": "Forensic analysts often extract EXIF data to gather intelligence. Applications should use libraries like `Pillow` to strip it from public uploads."
+  },
+  {
+    "title": "Steganography Basics",
+    "ques": "Explain the concept of LSB (Least Significant Bit) steganography in digital images.",
+    "answer": {
+      "type": "text",
+      "content": "Steganography is the practice of hiding a secret message inside a non-secret file. In LSB steganography, the least significant (right-most) bit of the color values in an image's pixels is altered to encode the bits of a secret message. Because changing the least significant bit only alters the color value by a tiny fraction, the visual change is imperceptible to the human eye, allowing data to be hidden in plain sight."
+    },
+    "explanation": "Python scripts can be used to easily manipulate binary data and pixel values to both embed and extract hidden messages."
+  },
+  {
+    "title": "pwntools Overview",
+    "ques": "What is the `pwntools` library primarily used for in cybersecurity?",
+    "answer": {
+      "type": "text",
+      "content": "`pwntools` is a powerful CTF (Capture The Flag) framework and exploit development library. It is designed to rapidly prototype exploits. It provides easy-to-use interfaces for packing/unpacking binary data, interacting with local processes or remote sockets, mitigating protections like ASLR, and crafting shellcode."
+    },
+    "explanation": "It simplifies the complex tasks involved in binary exploitation and reverse engineering challenges."
+  }
+]

@@ -1,0 +1,29 @@
+[
+  {
+    "title": "Static Type Checking with Mypy",
+    "ques": "What is `mypy` and what does the `--strict` flag enforce?",
+    "answer": {
+      "type": "text",
+      "content": "`mypy` is an optional static type checker for Python. It analyzes your code before it runs to find type inconsistencies. Using the `--strict` flag turns on all optional error checking; for example, it will complain if a function is missing type hints, or if you return an `int` from a function annotated to return a `str`."
+    },
+    "explanation": "Static typing catches entire classes of bugs (like `AttributeError` or `TypeError`) before the code is even executed."
+  },
+  {
+    "title": "Code Formatting",
+    "ques": "How does an uncompromising formatter like `black` differ from a traditional linter like `flake8`?",
+    "answer": {
+      "type": "text",
+      "content": "A linter (like `flake8`) scans your code and *warns* you about style violations (e.g., lines being too long) or potential logical errors, leaving it up to you to fix them. An uncompromising formatter (like `black`) automatically rewrites your code into a strict, predetermined style. It removes all arguments over code formatting because the tool simply formats it for you."
+    },
+    "explanation": "Formatters save time in code reviews by eliminating debates about spacing and line breaks."
+  },
+  {
+    "title": "Automating Checks with Pre-commit",
+    "ques": "What are 'pre-commit hooks' and why are they valuable in a collaborative project?",
+    "answer": {
+      "type": "text",
+      "content": "Pre-commit hooks are scripts that run automatically right before a `git commit` is finalized. They are valuable because they can automatically run tools like `black`, `isort`, and `flake8` on the changed files. If any tool fails or alters a file, the commit is aborted. This guarantees that all code entering the repository adheres to the project's standards, regardless of the developer's local IDE settings."
+    },
+    "explanation": "Pre-commit shifts quality control to the very beginning of the development cycle."
+  }
+]

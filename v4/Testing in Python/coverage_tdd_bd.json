@@ -1,0 +1,5834 @@
+[
+    {
+        "q": "What is the primary purpose of the `coverage.py` tool?",
+        "type": "mcq",
+        "o": [
+            "Measuring code coverage during testing",
+            "Running unit tests automatically",
+            "Formatting Python code",
+            "Managing package dependencies"
+        ]
+    },
+    {
+        "q": "What does the term 'TDD' stand for?",
+        "type": "short_answer",
+        "answers": [
+            "test driven development",
+            "test-driven development"
+        ],
+        "isCaseSensitive": false
+    },
+    {
+        "q": "In TDD, the first step is to write a failing ______ before writing any production code.",
+        "type": "fill_blank",
+        "answers": [
+            "test"
+        ],
+        "other_options": [
+            "function",
+            "class",
+            "module",
+            "documentation"
+        ]
+    },
+    {
+        "q": "Branch coverage measures whether each possible path of execution in conditional statements has been taken.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Which command is used to run `coverage.py` on a test suite?",
+        "type": "mcq",
+        "o": [
+            "coverage run -m pytest",
+            "python cover",
+            "pytest --cov",
+            "test --coverage"
+        ]
+    },
+    {
+        "q": "Match the TDD phases with their descriptions:",
+        "type": "match",
+        "left": [
+            "Red",
+            "Green",
+            "Refactor"
+        ],
+        "right": [
+            "Write a failing test",
+            "Make the test pass with minimal code",
+            "Improve code structure without changing behavior"
+        ]
+    },
+    {
+        "q": "The `pytest-bdd` plugin allows writing tests using the ______ language.",
+        "type": "fill_blank",
+        "answers": [
+            "Gherkin"
+        ],
+        "other_options": [
+            "Python",
+            "YAML",
+            "JSON",
+            "Markdown"
+        ]
+    },
+    {
+        "q": "Which file is used to configure `coverage.py` settings?",
+        "type": "mcq",
+        "o": [
+            ".coveragerc",
+            "coverage.ini",
+            "setup.cfg",
+            "pyproject.toml"
+        ]
+    },
+    {
+        "q": "In BDD, what is the role of a step definition?",
+        "type": "mcq",
+        "o": [
+            "It connects Gherkin steps to actual test code",
+            "It describes the business requirement in plain language",
+            "It generates test reports",
+            "It manages test data"
+        ]
+    },
+    {
+        "q": "How many distinct color-named phases are in the core TDD cycle?",
+        "type": "slider",
+        "min": 1,
+        "max": 5,
+        "correct": 3
+    },
+    {
+        "q": "Line coverage only tracks which lines of code are executed, but ignores conditional logic.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "The TDD cycle is commonly known as Red-______-Refactor.",
+        "type": "fill_blank",
+        "answers": [
+            "Green"
+        ],
+        "other_options": [
+            "Blue",
+            "Yellow",
+            "Build",
+            "Test"
+        ]
+    },
+    {
+        "q": "What keyword starts a feature description in Gherkin?",
+        "type": "mcq",
+        "o": [
+            "Feature:",
+            "Scenario:",
+            "Given",
+            "Test:"
+        ]
+    },
+    {
+        "q": "What does BDD stand for?",
+        "type": "short_answer",
+        "answers": [
+            "behavior driven development",
+            "behaviour driven development",
+            "behavior-driven development",
+            "behaviour-driven development"
+        ],
+        "isCaseSensitive": false
+    },
+    {
+        "q": "Which of the following is a valid Gherkin keyword for a precondition?",
+        "type": "mcq",
+        "o": [
+            "Given",
+            "When",
+            "Then",
+            "And"
+        ]
+    },
+    {
+        "q": "In `coverage.py`, what does the `--source` option specify?",
+        "type": "mcq",
+        "o": [
+            "The directory or package to measure coverage for",
+            "The test runner to use",
+            "The output format of the report",
+            "The Python version to target"
+        ]
+    },
+    {
+        "q": "The `pytest-bdd` library requires feature files to have a `.feature` extension.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "In Gherkin, a ______ represents a specific example of a feature's behavior.",
+        "type": "fill_blank",
+        "answers": [
+            "scenario"
+        ],
+        "other_options": [
+            "step",
+            "background",
+            "rule",
+            "example"
+        ]
+    },
+    {
+        "q": "Which Gherkin keyword is used to describe an expected outcome?",
+        "type": "mcq",
+        "o": [
+            "Then",
+            "Given",
+            "When",
+            "But"
+        ]
+    },
+    {
+        "q": "Match the Gherkin keywords with their purposes:",
+        "type": "match",
+        "left": [
+            "Given",
+            "When",
+            "Then",
+            "And"
+        ],
+        "right": [
+            "Sets up a precondition",
+            "Describes an action",
+            "Describes an expected result",
+            "Adds more conditions to a step"
+        ]
+    },
+    {
+        "q": "What is the main advantage of branch coverage over line coverage?",
+        "type": "mcq",
+        "o": [
+            "It checks both true and false paths in conditionals",
+            "It runs faster",
+            "It requires no configuration",
+            "It measures performance"
+        ]
+    },
+    {
+        "q": "Match the TDD phase to its primary action.",
+        "type": "memory",
+        "pairs": {
+            "Red": "Write a failing test",
+            "Green": "Write minimal passing code",
+            "Refactor": "Improve code structure"
+        }
+    },
+    {
+        "q": "In TDD, you should refactor code only after all tests pass.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Which command generates an HTML report in `coverage.py`?",
+        "type": "mcq",
+        "o": [
+            "coverage html",
+            "coverage report --html",
+            "coverage generate",
+            "coverage output -f html"
+        ]
+    },
+    {
+        "q": "A step definition function in `pytest-bdd` uses decorators to map to ______ steps.",
+        "type": "fill_blank",
+        "answers": [
+            "Gherkin"
+        ],
+        "other_options": [
+            "Python",
+            "pytest",
+            "unit",
+            "integration"
+        ]
+    },
+    {
+        "q": "Match the testing level to its scope.",
+        "type": "memory",
+        "pairs": {
+            "Unit Test": "Tests a single isolated function",
+            "Integration Test": "Tests interacting components",
+            "E2E Test": "Tests the entire application flow"
+        }
+    },
+    {
+        "q": "What is the typical file structure for a `pytest-bdd` project?",
+        "type": "mcq",
+        "o": [
+            "Feature files and step definition files separated",
+            "All tests in a single Python file",
+            "Feature files embedded in Python docstrings",
+            "Step definitions written directly in feature files"
+        ]
+    },
+    {
+        "q": "The `coverage.py` tool can only measure coverage for tests written with pytest.",
+        "type": "false",
+        "correct": "False"
+    },
+    {
+        "q": "Which of these is NOT a phase in the Test-Driven Development cycle?",
+        "type": "odd_one_out",
+        "options": [
+            "Red",
+            "Green",
+            "Deploy",
+            "Refactor"
+        ],
+        "correct": "Deploy"
+    },
+    {
+        "q": "Which of these is NOT a coverage metric provided by `coverage.py`?",
+        "type": "mcq",
+        "o": [
+            "Memory usage",
+            "Line coverage",
+            "Branch coverage",
+            "Path coverage"
+        ]
+    },
+    {
+        "q": "Name the file format used for configuring `coverage.py`.",
+        "type": "short_answer",
+        "answers": [
+            ".coveragerc",
+            "coveragerc",
+            "setup.cfg",
+            "tox.ini"
+        ],
+        "isCaseSensitive": false
+    },
+    {
+        "q": "In the Red-Green-Refactor cycle, the 'Green' phase means the test passes.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "What is a 'Background' section used for in Gherkin?",
+        "type": "mcq",
+        "o": [
+            "Defining steps common to all scenarios in a feature",
+            "Setting up the test database",
+            "Describing the overall project goal",
+            "Listing test dependencies"
+        ]
+    },
+    {
+        "q": "The `______` decorator in `pytest-bdd` is used to define a step that executes a test action.",
+        "type": "fill_blank",
+        "answers": [
+            "@when",
+            "when"
+        ],
+        "other_options": [
+            "@given",
+            "@then",
+            "@step",
+            "@action"
+        ]
+    },
+    {
+        "q": "Which phase of TDD focuses on improving code design without adding functionality?",
+        "type": "mcq",
+        "o": [
+            "Refactor",
+            "Red",
+            "Green",
+            "Blue"
+        ]
+    },
+    {
+        "q": "Categorize these practices as TDD or Traditional.",
+        "type": "swipe_cards",
+        "left_label": "TDD",
+        "right_label": "Traditional",
+        "cards": {
+            "Test written before code": "left",
+            "Test written after code": "right",
+            "Failing test drives design": "left",
+            "Implementation drives test": "right"
+        }
+    },
+    {
+        "q": "In `coverage.py`, what does the `--omit` option do?",
+        "type": "mcq",
+        "o": [
+            "Excludes specified files from coverage measurement",
+            "Removes old coverage data",
+            "Skips failing tests",
+            "Ignores branch coverage"
+        ]
+    },
+    {
+        "q": "Match the `coverage.py` commands with their functions:",
+        "type": "match",
+        "left": [
+            "coverage run",
+            "coverage report",
+            "coverage html",
+            "coverage erase"
+        ],
+        "right": [
+            "Executes tests and collects data",
+            "Shows a terminal summary",
+            "Generates a browsable report",
+            "Deletes previous coverage data"
+        ]
+    },
+    {
+        "q": "In BDD, feature files are typically written by developers only.",
+        "type": "true_false",
+        "correct": "False"
+    },
+    {
+        "q": "Which Gherkin keyword introduces a list of examples for a scenario outline?",
+        "type": "mcq",
+        "o": [
+            "Examples:",
+            "Data:",
+            "Values:",
+            "Cases:"
+        ]
+    },
+    {
+        "q": "What does a `Scenario Outline` in Gherkin allow you to do?",
+        "type": "mcq",
+        "o": [
+            "Run the same scenario with multiple data sets",
+            "Sketch an incomplete scenario",
+            "Define steps without implementation",
+            "Link multiple features together"
+        ]
+    },
+    {
+        "q": "The `pytest-bdd` plugin generates step definitions automatically from feature files.",
+        "type": "false",
+        "correct": "False"
+    },
+    {
+        "q": "In Gherkin, the `______` keyword is used to describe a user action.",
+        "type": "fill_blank",
+        "answers": [
+            "When"
+        ],
+        "other_options": [
+            "Given",
+            "Then",
+            "And",
+            "But"
+        ]
+    },
+    {
+        "q": "Which section of `.coveragerc` specifies files to exclude?",
+        "type": "mcq",
+        "o": [
+            "[run] omit",
+            "[report] exclude_lines",
+            "[html] ignore",
+            "[paths] skip"
+        ]
+    },
+    {
+        "q": "Identify traits of good unit tests vs bad unit tests.",
+        "type": "swipe_cards",
+        "left_label": "Good",
+        "right_label": "Bad",
+        "cards": {
+            "Runs entirely in memory": "left",
+            "Depends on a live database": "right",
+            "Can be run in parallel": "left",
+            "Fails randomly": "right"
+        }
+    },
+    {
+        "q": "The TDD phase where you write a failing test.",
+        "type": "word_scramble",
+        "answer": "RED",
+        "decoys": "XYZ"
+    },
+    {
+        "q": "What is the primary goal of writing a test before code in TDD?",
+        "type": "mcq",
+        "o": [
+            "To define the expected behavior before implementation",
+            "To find bugs in existing code",
+            "To satisfy code coverage requirements",
+            "To document the code"
+        ]
+    },
+    {
+        "q": "The TDD phase where the code successfully passes the test.",
+        "type": "word_scramble",
+        "answer": "GREEN",
+        "decoys": "PQRS"
+    },
+    {
+        "q": "In `pytest-bdd`, what is the conventional name for the directory containing step definitions?",
+        "type": "short_answer",
+        "answers": [
+            "steps",
+            "step_defs",
+            "step_definitions"
+        ],
+        "isCaseSensitive": false
+    },
+    {
+        "q": "Complete the TDD cycle definition:",
+        "type": "inline_dropdown",
+        "text": "In TDD, you first write a [0] test, then write minimal code to make it [1].",
+        "dropdowns": [
+            {
+                "correct": "failing",
+                "options": [
+                    "failing",
+                    "passing",
+                    "mocked"
+                ]
+            },
+            {
+                "correct": "pass",
+                "options": [
+                    "fail",
+                    "pass",
+                    "refactor"
+                ]
+            }
+        ]
+    },
+    {
+        "q": "Code coverage of 100% guarantees that the software has no bugs.",
+        "type": "true_false",
+        "correct": "False"
+    },
+    {
+        "q": "Complete the refactoring definition:",
+        "type": "inline_dropdown",
+        "text": "The [0] phase allows you to clean up the code without changing its [1].",
+        "dropdowns": [
+            {
+                "correct": "Refactor",
+                "options": [
+                    "Red",
+                    "Green",
+                    "Refactor"
+                ]
+            },
+            {
+                "correct": "behavior",
+                "options": [
+                    "syntax",
+                    "behavior",
+                    "tests"
+                ]
+            }
+        ]
+    },
+    {
+        "q": "How many core keywords form the standard BDD scenario structure (Given/When/Then)?",
+        "type": "slider",
+        "min": 1,
+        "max": 5,
+        "correct": 3
+    },
+    {
+        "q": "Which tool is specifically designed for BDD in Python?",
+        "type": "mcq",
+        "o": [
+            "behave",
+            "unittest",
+            "nose2",
+            "tox"
+        ]
+    },
+    {
+        "q": "What does the `@given` decorator in `pytest-bdd` indicate?",
+        "type": "mcq",
+        "o": [
+            "A step that sets up initial conditions",
+            "A step that performs an action",
+            "A step that checks an outcome",
+            "A step that cleans up after a test"
+        ]
+    },
+    {
+        "q": "Match the Gherkin keyword to its purpose.",
+        "type": "memory",
+        "pairs": {
+            "Given": "Sets up the initial context",
+            "When": "Describes the specific action",
+            "Then": "Checks the expected outcome"
+        }
+    },
+    {
+        "q": "The `[report]` section in `.coveragerc` can be used to set the precision of coverage percentages.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Match the BDD file extension or term to its meaning.",
+        "type": "memory",
+        "pairs": {
+            ".feature": "Contains plain-text scenarios",
+            "Scenario": "A single test case in BDD",
+            "Step Definition": "Python code matching Gherkin"
+        }
+    },
+    {
+        "q": "In `coverage.py`, what is the default coverage data file called?",
+        "type": "fill_blank",
+        "answers": [
+            ".coverage"
+        ],
+        "other_options": [
+            "coverage.json",
+            "cov.data",
+            "coverage.xml",
+            "data.cov"
+        ]
+    },
+    {
+        "q": "Which of the following is a core principle of TDD?",
+        "type": "mcq",
+        "o": [
+            "Write only enough code to pass the failing test",
+            "Write all tests after development is complete",
+            "Maximize code complexity to cover edge cases",
+            "Avoid refactoring to save time"
+        ]
+    },
+    {
+        "q": "Match the testing concepts with their descriptions:",
+        "type": "match",
+        "left": [
+            "Unit Test",
+            "Integration Test",
+            "Acceptance Test",
+            "Smoke Test"
+        ],
+        "right": [
+            "Tests a single function or method",
+            "Tests interaction between components",
+            "Validates business requirements",
+            "Quick check for basic functionality"
+        ]
+    },
+    {
+        "q": "In Gherkin, indentation is required to define the structure of a feature file.",
+        "type": "false",
+        "correct": "False"
+    },
+    {
+        "q": "Which parameter in `pytest-bdd` step definitions captures values from Gherkin steps?",
+        "type": "mcq",
+        "o": [
+            "parsers.parse",
+            "capture.group",
+            "re.match",
+            "extract.values"
+        ]
+    },
+    {
+        "q": "The 'Refactor' phase in TDD may include removing duplicate code.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Which of these is NOT a standard Gherkin keyword?",
+        "c": "Given the user is logged in\nWhere the user clicks checkout",
+        "type": "odd_one_out",
+        "options": [
+            "Given",
+            "When",
+            "Then",
+            "Where",
+            "And",
+            "But"
+        ],
+        "correct": "Where"
+    },
+    {
+        "q": "Which command combines `coverage.py` with pytest to measure coverage directly?",
+        "type": "mcq",
+        "o": [
+            "pytest --cov=myproject",
+            "coverage pytest",
+            "pytest-coverage run",
+            "test --measure"
+        ]
+    },
+    {
+        "q": "A Gherkin feature file can contain multiple scenarios.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "In the TDD cycle, the 'Red' phase means you write code that ______.",
+        "type": "fill_blank",
+        "answers": [
+            "fails"
+        ],
+        "other_options": [
+            "passes",
+            "compiles",
+            "refactors",
+            "runs"
+        ]
+    },
+    {
+        "q": "Does this concept belong more to BDD or pure TDD?",
+        "type": "swipe_cards",
+        "left_label": "BDD",
+        "right_label": "TDD",
+        "cards": {
+            "Focuses on system behavior": "left",
+            "Focuses on isolated functions": "right",
+            "Written in Gherkin": "left",
+            "Written solely in Python": "right"
+        }
+    },
+    {
+        "q": "Identify valid vs invalid Gherkin syntax lines.",
+        "type": "swipe_cards",
+        "left_label": "Valid",
+        "right_label": "Invalid",
+        "cards": {
+            "Given the user is logged in": "left",
+            "If the user clicks button": "right",
+            "Then the total should be 50": "left",
+            "Assert total == 50": "right"
+        }
+    },
+    {
+        "q": "What is the purpose of `parsers.re` in `pytest-bdd`?",
+        "type": "mcq",
+        "o": [
+            "To match steps using regular expressions",
+            "To replace strings in feature files",
+            "To re-run failed tests",
+            "To report test results"
+        ]
+    },
+    {
+        "q": "Which file format does `.coveragerc` use?",
+        "type": "mcq",
+        "o": [
+            "INI",
+            "JSON",
+            "YAML",
+            "TOML"
+        ]
+    },
+    {
+        "q": "BDD encourages collaboration between developers, testers, and business stakeholders.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "The plain-text language used to write BDD features.",
+        "type": "word_scramble",
+        "answer": "GHERKIN",
+        "decoys": "WXY"
+    },
+    {
+        "q": "What does the `target` function in `pytest-bdd` step definitions receive?",
+        "type": "short_answer",
+        "answers": [
+            "fixture",
+            "pytest fixture",
+            "test fixture"
+        ],
+        "isCaseSensitive": false
+    },
+    {
+        "q": "The `coverage.py` tool can generate reports in XML format.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "In Gherkin, the `But` keyword is used to add a contrasting condition to a step.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Which option in `coverage.py` combines data from multiple runs?",
+        "type": "mcq",
+        "o": [
+            "coverage combine",
+            "coverage merge",
+            "coverage aggregate",
+            "coverage collect"
+        ]
+    },
+    {
+        "q": "In TDD, you should write the simplest possible code to make a test pass.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "A sequence of steps representing a single test case in BDD.",
+        "type": "word_scramble",
+        "answer": "SCENARIO",
+        "decoys": "BKL"
+    },
+    {
+        "q": "The `______` Gherkin keyword is used to group multiple scenarios under a single feature.",
+        "type": "fill_blank",
+        "answers": [
+            "Feature"
+        ],
+        "other_options": [
+            "Scenario",
+            "Outline",
+            "Background",
+            "Rule"
+        ]
+    },
+    {
+        "q": "What does the `--fail-under` option in `coverage.py` do?",
+        "type": "mcq",
+        "o": [
+            "Fails the build if coverage is below a specified percentage",
+            "Skips tests with low coverage",
+            "Reports only files below a threshold",
+            "Excludes files from measurement"
+        ]
+    },
+    {
+        "q": "Match the BDD tools with their primary function:",
+        "type": "match",
+        "left": [
+            "Gherkin",
+            "pytest-bdd",
+            "behave",
+            "cucumber"
+        ],
+        "right": [
+            "Language for writing feature files",
+            "Python plugin for BDD with pytest",
+            "Python BDD framework",
+            "BDD tool for various languages"
+        ]
+    },
+    {
+        "q": "In `pytest-bdd`, a step definition can match multiple Gherkin steps using parameterized patterns.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Which Gherkin keyword is used to define a reusable set of steps?",
+        "type": "mcq",
+        "o": [
+            "Background",
+            "Feature",
+            "Scenario",
+            "Given"
+        ]
+    },
+    {
+        "q": "What is the main benefit of TDD?",
+        "type": "mcq",
+        "o": [
+            "It leads to better designed, more maintainable code",
+            "It eliminates the need for documentation",
+            "It guarantees bug-free software",
+            "It makes coding faster"
+        ]
+    },
+    {
+        "q": "The `coverage.xml` file can be used by CI/CD tools to track coverage trends.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "In a Gherkin step, text between angle brackets like `<value>` indicates a ______.",
+        "type": "fill_blank",
+        "answers": [
+            "parameter",
+            "placeholder",
+            "variable"
+        ],
+        "other_options": [
+            "comment",
+            "tag",
+            "keyword",
+            "description"
+        ]
+    },
+    {
+        "q": "What does the `@then` decorator in `pytest-bdd` verify?",
+        "type": "mcq",
+        "o": [
+            "The expected outcome after an action",
+            "The initial system state",
+            "The action to be performed",
+            "The test environment setup"
+        ]
+    },
+    {
+        "q": "Branch coverage is also known as decision coverage.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Which command installs `coverage.py` via pip?",
+        "type": "mcq",
+        "o": [
+            "pip install coverage",
+            "pip install coverage.py",
+            "pip install pycoverage",
+            "pip install cov"
+        ]
+    },
+    {
+        "q": "In BDD, feature files serve as executable documentation.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "In `pytest-bdd`, what is the purpose of `conftest.py`?",
+        "type": "mcq",
+        "o": [
+            "To share fixtures across multiple step definition files",
+            "To configure the pytest runner",
+            "To store feature files",
+            "To define Gherkin keywords"
+        ]
+    },
+    {
+        "q": "Complete the sentence regarding BDD:",
+        "type": "inline_dropdown",
+        "text": "BDD uses a [0] language to bridge the gap between [1] and technical teams.",
+        "dropdowns": [
+            {
+                "correct": "ubiquitous",
+                "options": [
+                    "ubiquitous",
+                    "compiled",
+                    "legacy"
+                ]
+            },
+            {
+                "correct": "business",
+                "options": [
+                    "business",
+                    "server",
+                    "database"
+                ]
+            }
+        ]
+    },
+    {
+        "q": "The 'Don't Repeat Yourself' (DRY) principle is often applied during the ______ phase of TDD.",
+        "type": "fill_blank",
+        "answers": [
+            "Refactor"
+        ],
+        "other_options": [
+            "Red",
+            "Green",
+            "Test",
+            "Design"
+        ]
+    },
+    {
+        "q": "What does the `--branch` flag do in `coverage.py`?",
+        "type": "mcq",
+        "o": [
+            "Enables branch coverage measurement",
+            "Creates a new branch in version control",
+            "Runs tests on a specific branch",
+            "Compares coverage between branches"
+        ]
+    },
+    {
+        "q": "Complete the file structure description:",
+        "type": "inline_dropdown",
+        "text": "A [0] file contains the human-readable text, while the [1] file contains the executing code.",
+        "dropdowns": [
+            {
+                "correct": "feature",
+                "options": [
+                    "feature",
+                    "python",
+                    "yaml"
+                ]
+            },
+            {
+                "correct": "step definition",
+                "options": [
+                    "feature",
+                    "step definition",
+                    "readme"
+                ]
+            }
+        ]
+    },
+    {
+        "q": "The `Scenario Outline` keyword requires an `Examples` table.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "What is the theoretical maximum percentage for code coverage?",
+        "type": "slider",
+        "min": 50,
+        "max": 100,
+        "correct": 100
+    },
+    {
+        "q": "Which of the following is NOT a valid Gherkin keyword?",
+        "type": "mcq",
+        "o": [
+            "Verify",
+            "Given",
+            "When",
+            "Then"
+        ]
+    },
+    {
+        "q": "What is the purpose of the `pytest-bdd` `scenarios` function?",
+        "type": "mcq",
+        "o": [
+            "To register all scenarios from feature files",
+            "To create new test scenarios programmatically",
+            "To list all passing scenarios",
+            "To delete failing scenarios"
+        ]
+    },
+    {
+        "q": "A `.coveragerc` file must be placed in the project root directory.",
+        "type": "true_false",
+        "correct": "False"
+    },
+    {
+        "q": "In `coverage.py`, the `______` command erases previously collected data.",
+        "type": "fill_blank",
+        "answers": [
+            "coverage erase"
+        ],
+        "other_options": [
+            "coverage clean",
+            "coverage clear",
+            "coverage reset",
+            "coverage delete"
+        ]
+    },
+    {
+        "q": "What is the first keyword typically used in a Gherkin scenario?",
+        "type": "mcq",
+        "o": [
+            "Given",
+            "When",
+            "Then",
+            "Scenario"
+        ]
+    },
+    {
+        "q": "TDD stands for Test Driven Design.",
+        "type": "true_false",
+        "correct": "False"
+    },
+    {
+        "q": "Which of the following best describes the relationship between TDD and unit testing?",
+        "type": "mcq",
+        "o": [
+            "TDD uses unit tests to drive design, but unit testing can exist without TDD",
+            "TDD and unit testing are the same thing",
+            "Unit testing is a part of BDD, not TDD",
+            "TDD replaces unit testing"
+        ]
+    },
+    {
+        "q": "Match the coverage term to its definition.",
+        "type": "memory",
+        "pairs": {
+            "Statement Coverage": "Percentage of executable lines run",
+            "Branch Coverage": "Percentage of executed logic paths",
+            "Missing Lines": "Lines that were not executed"
+        }
+    },
+    {
+        "q": "In Gherkin, comments start with the `#` character.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Which Python library is commonly used alongside `pytest-bdd` for assertions?",
+        "type": "mcq",
+        "o": [
+            "pytest's built-in assert",
+            "unittest.TestCase",
+            "nose assertions",
+            "doctest"
+        ]
+    },
+    {
+        "q": "In TDD, test code should be kept separate from production code.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "What does the `[paths]` section in `.coveragerc` define?",
+        "type": "fill_blank",
+        "answers": [
+            "source paths",
+            "path mappings"
+        ],
+        "other_options": [
+            "test files",
+            "output directories",
+            "excluded patterns",
+            "report formats"
+        ]
+    },
+    {
+        "q": "Which of the following is a benefit of using BDD?",
+        "type": "mcq",
+        "o": [
+            "Improved communication with non-technical stakeholders",
+            "Faster test execution",
+            "Elimination of all bugs",
+            "Automatic code generation"
+        ]
+    },
+    {
+        "q": "The `pytest-bdd` plugin can generate missing step definitions automatically.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "What is the output format of `coverage html`?",
+        "type": "mcq",
+        "o": [
+            "A directory of HTML files",
+            "A single HTML file",
+            "A PDF report",
+            "A JSON file"
+        ]
+    },
+    {
+        "q": "Match the coverage.py command to its action.",
+        "type": "memory",
+        "pairs": {
+            "coverage run": "Executes the script and collects data",
+            "coverage report": "Prints results to the terminal",
+            "coverage html": "Generates a browsable web report"
+        }
+    },
+    {
+        "q": "In `pytest-bdd`, what does `parsers.cfparse` allow that `parsers.parse` does not?",
+        "type": "mcq",
+        "o": [
+            "Cardinality field types like lists",
+            "Faster parsing",
+            "Support for Unicode characters",
+            "Integration with databases"
+        ]
+    },
+    {
+        "q": "Match the TDD roles with their responsibilities:",
+        "type": "match",
+        "left": [
+            "Developer",
+            "Tester",
+            "Product Owner"
+        ],
+        "right": [
+            "Writes unit tests and production code",
+            "Ensures overall quality and acceptance",
+            "Defines business requirements and priorities"
+        ]
+    },
+    {
+        "q": "Code coverage is a measure of test quality, not code quality.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Which of these is NOT a code coverage tool in the Python ecosystem?",
+        "c": "pip install coverage pytest-cov pytest-bdd nose-cov",
+        "type": "odd_one_out",
+        "options": [
+            "coverage",
+            "pytest-cov",
+            "pytest-bdd",
+            "nose-cov"
+        ],
+        "correct": "pytest-bdd"
+    },
+    {
+        "q": "What does code coverage actually measure?",
+        "type": "swipe_cards",
+        "left_label": "Measures",
+        "right_label": "Does Not Measure",
+        "cards": {
+            "Lines of code executed": "left",
+            "Correctness of the code": "right",
+            "Branches taken": "left",
+            "Absence of logical bugs": "right"
+        }
+    },
+    {
+        "q": "Which Gherkin section runs before each scenario in a feature file?",
+        "type": "mcq",
+        "o": [
+            "Background",
+            "Setup",
+            "Precondition",
+            "Given-When"
+        ]
+    },
+    {
+        "q": "Sort these file types generated by coverage tools.",
+        "type": "swipe_cards",
+        "left_label": "Coverage Artifacts",
+        "right_label": "Source Code",
+        "cards": {
+            ".coverage": "left",
+            "index.html": "left",
+            "main.py": "right",
+            "test_main.py": "right"
+        }
+    },
+    {
+        "q": "In TDD, writing a failing test before production code ensures the test actually tests something.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "The `coverage.py` tool is included in Python's standard library.",
+        "type": "false",
+        "correct": "False"
+    },
+    {
+        "q": "What is a 'fixture' in the context of `pytest-bdd`?",
+        "type": "mcq",
+        "o": [
+            "A function that provides data or state for tests",
+            "A type of Gherkin step",
+            "A configuration file",
+            "A test result report"
+        ]
+    },
+    {
+        "q": "In Gherkin, the keyword `______` is used to combine multiple conditions of the same type.",
+        "type": "fill_blank",
+        "answers": [
+            "And"
+        ],
+        "other_options": [
+            "But",
+            "Or",
+            "With",
+            "Also"
+        ]
+    },
+    {
+        "q": "What is the recommended approach to achieve high branch coverage?",
+        "type": "mcq",
+        "o": [
+            "Write tests for both true and false conditions in branches",
+            "Only test the most common code paths",
+            "Ignore conditional logic",
+            "Use only line coverage"
+        ]
+    },
+    {
+        "q": "The metric indicating how much of your code is executed by tests.",
+        "type": "word_scramble",
+        "answer": "COVERAGE",
+        "decoys": "QZ"
+    },
+    {
+        "q": "The `pytest-bdd` library requires Python 3.6 or higher.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Which of the following describes 'dogfooding' in the context of TDD?",
+        "type": "mcq",
+        "o": [
+            "Developers using their own tests and tools",
+            "Writing tests for pet projects",
+            "Testing with animal data",
+            "A type of acceptance testing"
+        ]
+    },
+    {
+        "q": "What does the `.coveragerc` option `exclude_lines` do?",
+        "type": "mcq",
+        "o": [
+            "Marks lines to be ignored in coverage reports",
+            "Removes lines from the source code",
+            "Skips test files",
+            "Excludes entire modules"
+        ]
+    },
+    {
+        "q": "A Gherkin feature file typically has the `.gherkin` extension.",
+        "type": "true_false",
+        "correct": "False"
+    },
+    {
+        "q": "The command used to view coverage results in the terminal.",
+        "type": "word_scramble",
+        "answer": "REPORT",
+        "decoys": "JXV"
+    },
+    {
+        "q": "Which option in `coverage.py` shows line-by-line coverage in the terminal?",
+        "type": "mcq",
+        "o": [
+            "coverage report -m",
+            "coverage show",
+            "coverage lines",
+            "coverage detail"
+        ]
+    },
+    {
+        "q": "In TDD, what is the primary reason for writing the simplest code to pass a test?",
+        "type": "mcq",
+        "o": [
+            "To avoid over-engineering and keep code minimal",
+            "To make tests run faster",
+            "To reduce the number of files",
+            "To simplify the test suite"
+        ]
+    },
+    {
+        "q": "The `pytest-bdd` library uses ______ to share state between steps.",
+        "type": "fill_blank",
+        "answers": [
+            "fixtures"
+        ],
+        "other_options": [
+            "globals",
+            "classes",
+            "singletons",
+            "modules"
+        ]
+    },
+    {
+        "q": "Branch coverage requires testing both the if and else branches of a conditional.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "What does the `--concurrency` option in `coverage.py` support?",
+        "type": "mcq",
+        "o": [
+            "Measuring coverage in multi-threaded programs",
+            "Running tests in parallel",
+            "Setting the number of test workers",
+            "Enabling asynchronous test execution"
+        ]
+    },
+    {
+        "q": "In Gherkin, which keyword is used to tag features or scenarios for filtering?",
+        "type": "mcq",
+        "o": [
+            "@tag",
+            "#tag",
+            "!tag",
+            "$tag"
+        ]
+    },
+    {
+        "q": "Match the following `coverage.py` report types with their formats:",
+        "type": "match",
+        "left": [
+            "Terminal report",
+            "HTML report",
+            "XML report",
+            "JSON report"
+        ],
+        "right": [
+            "Plain text with optional line details",
+            "Interactive web pages with source highlighting",
+            "Machine-readable for CI tools",
+            "Structured data for programmatic use"
+        ]
+    },
+    {
+        "q": "What is the purpose of the `--strict` flag in `pytest-bdd`?",
+        "type": "short_answer",
+        "answers": [
+            "enforce strict gherkin validation",
+            "validate feature files strictly"
+        ],
+        "isCaseSensitive": false
+    },
+    {
+        "q": "In TDD, you should refactor production code and test code simultaneously.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Complete the explanation of code coverage:",
+        "type": "inline_dropdown",
+        "text": "Running tests with [0] helps identify code that is [1].",
+        "dropdowns": [
+            {
+                "correct": "coverage",
+                "options": [
+                    "coverage",
+                    "debuggers",
+                    "profilers"
+                ]
+            },
+            {
+                "correct": "untested",
+                "options": [
+                    "untested",
+                    "optimized",
+                    "compiled"
+                ]
+            }
+        ]
+    },
+    {
+        "q": "Which `.coveragerc` section defines how source files are discovered?",
+        "type": "mcq",
+        "o": [
+            "[run]",
+            "[report]",
+            "[paths]",
+            "[html]"
+        ]
+    },
+    {
+        "q": "In `pytest-bdd`, what does `parsers.cfparse` stand for?",
+        "type": "mcq",
+        "o": [
+            "Cardinality field parse",
+            "Context free parse",
+            "Custom format parse",
+            "Configuration file parse"
+        ]
+    },
+    {
+        "q": "The Gherkin keyword `Scenario Outline` is used with an `Examples` table to run the same scenario with different data.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "In `coverage.py`, the ______ command shows a quick summary of coverage percentages.",
+        "type": "fill_blank",
+        "answers": [
+            "coverage report"
+        ],
+        "other_options": [
+            "coverage summary",
+            "coverage stats",
+            "coverage show",
+            "coverage percent"
+        ]
+    },
+    {
+        "q": "Which of the following is a valid use of the Gherkin `Rule` keyword?",
+        "type": "mcq",
+        "o": [
+            "Grouping scenarios that share a common business rule",
+            "Defining validation constraints",
+            "Setting up test permissions",
+            "Configuring the test environment"
+        ]
+    },
+    {
+        "q": "What is the primary advantage of using `coverage.py` with pytest-cov over standalone `coverage.py`?",
+        "type": "mcq",
+        "o": [
+            "Tighter integration with pytest fixtures and plugins",
+            "Faster execution",
+            "Smaller report files",
+            "Support for older Python versions"
+        ]
+    },
+    {
+        "q": "In BDD, step definitions should be written before the feature file.",
+        "type": "true_false",
+        "correct": "False"
+    },
+    {
+        "q": "What does a `pytest-bdd` step definition return when it uses `target_fixture`?",
+        "type": "mcq",
+        "o": [
+            "A pytest fixture value to be shared with other steps",
+            "A boolean indicating test success",
+            "A Gherkin step object",
+            "A coverage report"
+        ]
+    },
+    {
+        "q": "In TDD, the term 'regression' refers to ______.",
+        "type": "fill_blank",
+        "answers": [
+            "breaking existing functionality with new changes"
+        ],
+        "other_options": [
+            "writing new tests",
+            "refactoring code",
+            "measuring performance",
+            "deleting old code"
+        ]
+    },
+    {
+        "q": "The `coverage.py` tool can measure coverage of code run in subprocesses.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Which Gherkin keyword is NOT part of the primary Given-When-Then structure?",
+        "type": "mcq",
+        "o": [
+            "Feature",
+            "Given",
+            "When",
+            "Then"
+        ]
+    },
+    {
+        "q": "What is the typical file extension for a step definition file in `pytest-bdd`?",
+        "type": "short_answer",
+        "answers": [
+            ".py",
+            "py"
+        ],
+        "isCaseSensitive": false
+    },
+    {
+        "q": "The 'Red' phase in TDD confirms that the new test is valid and can fail.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Complete the warning about coverage:",
+        "type": "inline_dropdown",
+        "text": "Even with [0]% coverage, your application might still contain [1].",
+        "dropdowns": [
+            {
+                "correct": "100",
+                "options": [
+                    "50",
+                    "80",
+                    "100"
+                ]
+            },
+            {
+                "correct": "bugs",
+                "options": [
+                    "tests",
+                    "bugs",
+                    "syntax errors"
+                ]
+            }
+        ]
+    },
+    {
+        "q": "Which `coverage.py` command generates a Cobertura-compatible XML report?",
+        "type": "mcq",
+        "o": [
+            "coverage xml",
+            "coverage cobertura",
+            "coverage export",
+            "coverage generate-xml"
+        ]
+    },
+    {
+        "q": "In `pytest-bdd`, how are scenario parameters passed from feature files to step definitions?",
+        "type": "mcq",
+        "o": [
+            "Through parsers and step argument strings",
+            "Via command line arguments",
+            "Through environment variables",
+            "Using configuration files"
+        ]
+    },
+    {
+        "q": "Match the TDD anti-patterns with their descriptions:",
+        "type": "match",
+        "left": [
+            "Test Skipping",
+            "Slow Tests",
+            "Fragile Tests",
+            "Obscure Tests"
+        ],
+        "right": [
+            "Avoiding failing tests by not running them",
+            "Tests that take too long reducing feedback",
+            "Tests that break on minor code changes",
+            "Tests that are hard to understand"
+        ]
+    },
+    {
+        "q": "In `coverage.py`, the `--include` option allows specifying which files to measure.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "What does the Gherkin `\"\"\"` (triple quotes) syntax in a step denote?",
+        "type": "mcq",
+        "o": [
+            "A multi-line string argument (Doc String)",
+            "A comment block",
+            "A code block",
+            "A feature description"
+        ]
+    },
+    {
+        "q": "In TDD, test coverage should be the primary goal rather than a guiding metric.",
+        "type": "true_false",
+        "correct": "False"
+    },
+    {
+        "q": "The `______` section in `.coveragerc` allows excluding lines matching specific patterns.",
+        "type": "fill_blank",
+        "answers": [
+            "[report] exclude_lines"
+        ],
+        "other_options": [
+            "[run] omit",
+            "[html] ignore",
+            "[paths] skip",
+            "[xml] filter"
+        ]
+    },
+    {
+        "q": "Which of the following is a common pitfall when interpreting branch coverage?",
+        "type": "mcq",
+        "o": [
+            "Assuming 100% branch coverage means no logic errors",
+            "Confusing it with line coverage",
+            "Running it only on Windows",
+            "Using it with pytest"
+        ]
+    },
+    {
+        "q": "What is the role of `conftest.py` in a `pytest-bdd` project?",
+        "type": "mcq",
+        "o": [
+            "Defining shared fixtures and hooks for step definitions",
+            "Storing feature files",
+            "Configuring the web server",
+            "Generating test data"
+        ]
+    },
+    {
+        "q": "The Gherkin `Background` keyword creates steps that run after each scenario.",
+        "type": "true_false",
+        "correct": "False"
+    },
+    {
+        "q": "In TDD, how many distinct test scenarios should you typically try to make pass at the exact same time?",
+        "type": "slider",
+        "min": 1,
+        "max": 10,
+        "correct": 1
+    },
+    {
+        "q": "In `coverage.py`, what does the `--timid` flag do?",
+        "type": "mcq",
+        "o": [
+            "Uses a slower but more reliable tracing mechanism",
+            "Reduces memory usage",
+            "Runs only critical tests",
+            "Suppresses warnings"
+        ]
+    },
+    {
+        "q": "Name the Gherkin keyword used to provide additional step context without a new step type.",
+        "type": "short_answer",
+        "answers": [
+            "And",
+            "But"
+        ],
+        "isCaseSensitive": false
+    },
+    {
+        "q": "In TDD, 'YAGNI' stands for 'You Aren't Gonna Need It' and is applied during the Red phase.",
+        "type": "true_false",
+        "correct": "False"
+    },
+    {
+        "q": "Match the TDD principle to its description.",
+        "type": "memory",
+        "pairs": {
+            "YAGNI": "You Aren't Gonna Need It",
+            "KISS": "Keep It Simple, Stupid",
+            "DRY": "Don't Repeat Yourself"
+        }
+    },
+    {
+        "q": "Which `pytest-bdd` hook allows modifying scenarios before they run?",
+        "type": "mcq",
+        "o": [
+            "pytest_bdd_before_scenario",
+            "pytest_bdd_modify_scenario",
+            "pytest_bdd_pre_run",
+            "pytest_bdd_setup"
+        ]
+    },
+    {
+        "q": "In BDD, feature files are written in a language that is readable by non-technical stakeholders.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "What does the `--parallel` flag in `coverage.py` enable?",
+        "type": "fill_blank",
+        "answers": [
+            "parallel mode"
+        ],
+        "other_options": [
+            "multi-threading",
+            "distributed testing",
+            "concurrent reporting",
+            "async collection"
+        ]
+    },
+    {
+        "q": "Which of the following describes 'Mocks' in TDD?",
+        "type": "mcq",
+        "o": [
+            "Simulated objects that mimic real object behavior",
+            "Tests that are skipped",
+            "Failed test cases",
+            "Code comments"
+        ]
+    },
+    {
+        "q": "Match the refactoring technique to its action.",
+        "type": "memory",
+        "pairs": {
+            "Extract Method": "Moving logic into a helper function",
+            "Rename Variable": "Giving a more descriptive name",
+            "Inline Temp": "Removing an unnecessary variable"
+        }
+    },
+    {
+        "q": "Which of these is a BAD practice during the Red phase of TDD?",
+        "type": "odd_one_out",
+        "options": [
+            "Writing an assertion",
+            "Writing production logic",
+            "Watching the test fail",
+            "Writing only one test at a time"
+        ],
+        "correct": "Writing production logic"
+    },
+    {
+        "q": "In Gherkin, you can use variables in step text by enclosing them in `<>` brackets.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "What does the `@scenario` decorator in `pytest-bdd` do?",
+        "type": "mcq",
+        "o": [
+            "Maps a test function to a specific Gherkin scenario",
+            "Marks a test as pending",
+            "Skips a scenario",
+            "Generates a feature file"
+        ]
+    },
+    {
+        "q": "The `coverage.py` HTML report uses color coding to indicate covered and uncovered lines.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Match the `coverage.py` file patterns with their usage:",
+        "type": "match",
+        "left": [
+            "*.py",
+            "test_*.py",
+            "*/migrations/*",
+            "*/settings.py"
+        ],
+        "right": [
+            "All Python files",
+            "Test files often excluded",
+            "Database migration files often omitted",
+            "Configuration files"
+        ]
+    },
+    {
+        "q": "In TDD, what does 'Fake It Till You Make It' mean?",
+        "type": "mcq",
+        "o": [
+            "Start with hardcoded return values to pass tests quickly",
+            "Pretend tests pass",
+            "Copy code from the internet",
+            "Write fake documentation"
+        ]
+    },
+    {
+        "q": "What is the primary difference between BDD and TDD?",
+        "type": "mcq",
+        "o": [
+            "BDD focuses on behavior from a user's perspective, TDD on code correctness",
+            "BDD is faster than TDD",
+            "TDD uses English, BDD uses Python",
+            "There is no difference"
+        ]
+    },
+    {
+        "q": "In `pytest-bdd`, the `pytest-bdd-generate` command creates missing step definitions.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "The `______` Gherkin keyword is used after a Scenario Outline to provide data.",
+        "type": "fill_blank",
+        "answers": [
+            "Examples"
+        ],
+        "other_options": [
+            "Data",
+            "Values",
+            "Params",
+            "Inputs"
+        ]
+    },
+    {
+        "q": "Which `.coveragerc` option sets the working directory for coverage?",
+        "type": "mcq",
+        "o": [
+            "directory",
+            "source",
+            "data_file",
+            "root"
+        ]
+    },
+    {
+        "q": "In TDD, you should avoid writing tests that depend on external resources like databases.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "What is the function of `pytest-bdd`'s `given` step when used with `target_fixture`?",
+        "type": "mcq",
+        "o": [
+            "It creates a fixture that other steps can use",
+            "It marks a test as incomplete",
+            "It generates test data randomly",
+            "It skips the scenario"
+        ]
+    },
+    {
+        "q": "The `coverage combine` command merges data from multiple parallel coverage runs.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "In Gherkin, what is the purpose of tags like `@smoke` or `@regression`?",
+        "type": "mcq",
+        "o": [
+            "To categorize and filter scenarios for execution",
+            "To add comments to feature files",
+            "To define test priority",
+            "To link to external documentation"
+        ]
+    },
+    {
+        "q": "What does the `--cov-report` option in pytest-cov specify?",
+        "type": "mcq",
+        "o": [
+            "The format and destination of coverage output",
+            "The test files to run",
+            "The coverage data file name",
+            "The source directory to measure"
+        ]
+    },
+    {
+        "q": "In TDD, a 'spike' is a time-boxed exploration used to learn before writing tests.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Are these actions part of the Refactor phase or Green phase?",
+        "type": "swipe_cards",
+        "left_label": "Refactor",
+        "right_label": "Green",
+        "cards": {
+            "Removing duplicate code": "left",
+            "Hardcoding a return value to pass": "right",
+            "Improving variable names": "left",
+            "Adding a missing if-statement to pass": "right"
+        }
+    },
+    {
+        "q": "Identify TDD antipatterns vs Good practices.",
+        "type": "swipe_cards",
+        "left_label": "Antipattern",
+        "right_label": "Good Practice",
+        "cards": {
+            "Writing tests after code": "left",
+            "Refactoring without tests": "left",
+            "Running tests frequently": "right",
+            "Writing minimal code": "right"
+        }
+    },
+    {
+        "q": "Name the pytest plugin that integrates `coverage.py` with pytest directly.",
+        "type": "short_answer",
+        "answers": [
+            "pytest-cov",
+            "pytest_cov"
+        ],
+        "isCaseSensitive": false
+    },
+    {
+        "q": "To restructure code without changing its external behavior.",
+        "type": "word_scramble",
+        "answer": "REFACTOR",
+        "decoys": "WM"
+    },
+    {
+        "q": "During the Red phase, the newly written test must do this.",
+        "type": "word_scramble",
+        "answer": "FAIL",
+        "decoys": "ZQK"
+    },
+    {
+        "q": "Which Gherkin keyword can replace `And` to add a negative condition?",
+        "type": "mcq",
+        "o": [
+            "But",
+            "Not",
+            "Or",
+            "Nor"
+        ]
+    },
+    {
+        "q": "Complete the logic behind the Red phase:",
+        "type": "inline_dropdown",
+        "text": "By seeing a test [0] first, you confirm that the test is actually [1] something.",
+        "dropdowns": [
+            {
+                "correct": "fail",
+                "options": [
+                    "pass",
+                    "fail",
+                    "compile"
+                ]
+            },
+            {
+                "correct": "verifying",
+                "options": [
+                    "ignoring",
+                    "verifying",
+                    "deleting"
+                ]
+            }
+        ]
+    },
+    {
+        "q": "In `pytest-bdd`, step definitions are discovered automatically from any Python file.",
+        "type": "true_false",
+        "correct": "False"
+    },
+    {
+        "q": "The `______` option in `coverage.py` sets the name of the data file.",
+        "type": "fill_blank",
+        "answers": [
+            "--data-file",
+            "data_file"
+        ],
+        "other_options": [
+            "--output",
+            "--file",
+            "--save",
+            "--storage"
+        ]
+    },
+    {
+        "q": "What is the main purpose of the `[html]` section in `.coveragerc`?",
+        "type": "mcq",
+        "o": [
+            "To configure the appearance and location of HTML reports",
+            "To define HTML test reports",
+            "To set up a web server for tests",
+            "To write tests in HTML"
+        ]
+    },
+    {
+        "q": "In BDD, acceptance criteria are typically defined before development begins.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Which `pytest-bdd` hook runs after a scenario completes?",
+        "type": "mcq",
+        "o": [
+            "pytest_bdd_after_scenario",
+            "pytest_bdd_scenario_complete",
+            "pytest_bdd_post_run",
+            "pytest_bdd_teardown"
+        ]
+    },
+    {
+        "q": "Complete the methodology of Green to Refactor:",
+        "type": "inline_dropdown",
+        "text": "During the Green phase, it is acceptable to write [0] code, as long as you clean it up during the [1] phase.",
+        "dropdowns": [
+            {
+                "correct": "messy",
+                "options": [
+                    "perfect",
+                    "messy",
+                    "untested"
+                ]
+            },
+            {
+                "correct": "Refactor",
+                "options": [
+                    "Red",
+                    "Green",
+                    "Refactor"
+                ]
+            }
+        ]
+    },
+    {
+        "q": "The 'Green' phase in TDD may involve writing code that is not production-ready.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "If a pytest fixture returns 3 items, how many values can you unpack it into directly in the test signature?",
+        "type": "slider",
+        "min": 1,
+        "max": 5,
+        "correct": 3
+    },
+    {
+        "q": "What does `coverage.py` measure besides line execution?",
+        "type": "mcq",
+        "o": [
+            "Branch taken",
+            "Function calls",
+            "Memory allocation",
+            "Execution time"
+        ]
+    },
+    {
+        "q": "Match the pytest-bdd decorator to its matched Gherkin step.",
+        "c": "from pytest_bdd import given, when, then",
+        "type": "memory",
+        "pairs": {
+            "@given('a user')": "Given a user",
+            "@when('they log in')": "When they log in",
+            "@then('show dashboard')": "Then show dashboard"
+        }
+    },
+    {
+        "q": "Match the Gherkin elements with their hierarchy level:",
+        "type": "match",
+        "left": [
+            "Feature",
+            "Rule",
+            "Scenario",
+            "Step"
+        ],
+        "right": [
+            "Highest level describing a capability",
+            "Groups related scenarios",
+            "A single example of behavior",
+            "An individual action or assertion"
+        ]
+    },
+    {
+        "q": "In `pytest-bdd`, `parsers.parse` uses a syntax similar to Python's string formatting.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "What is the purpose of the `--no-cov` flag in pytest when pytest-cov is installed?",
+        "type": "mcq",
+        "o": [
+            "Disables coverage measurement for that run",
+            "Prevents pytest-cov from installing",
+            "Removes old coverage data",
+            "Skips all tests"
+        ]
+    },
+    {
+        "q": "In TDD, tests should be independent and not rely on the order of execution.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Match the pytest-bdd parser to its syntax approach.",
+        "type": "memory",
+        "pairs": {
+            "parsers.parse": "Uses simple format strings",
+            "parsers.re": "Uses regular expressions",
+            "parsers.cfparse": "Uses Cardinality Field syntax"
+        }
+    },
+    {
+        "q": "The `______` file in `pytest-bdd` projects typically contains shared step fixtures.",
+        "type": "fill_blank",
+        "answers": [
+            "conftest.py",
+            "conftest"
+        ],
+        "other_options": [
+            "setup.py",
+            "init.py",
+            "fixtures.py",
+            "config.py"
+        ]
+    },
+    {
+        "q": "Which of the following is true about the Gherkin `Scenario` keyword?",
+        "type": "mcq",
+        "o": [
+            "It must be indented under a Feature",
+            "It can exist without a Feature",
+            "It replaces the need for steps",
+            "It runs before Background"
+        ]
+    },
+    {
+        "q": "Which decorator is NOT provided by pytest-bdd?",
+        "type": "odd_one_out",
+        "options": [
+            "@given",
+            "@when",
+            "@then",
+            "@scenario",
+            "@testcase"
+        ],
+        "correct": "@testcase"
+    },
+    {
+        "q": "The `coverage.py` XML report can be used by Jenkins and other CI servers.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "What is the purpose of 'Test Doubles' in TDD?",
+        "type": "mcq",
+        "o": [
+            "To isolate the code under test from its dependencies",
+            "To run tests twice for accuracy",
+            "To duplicate test scenarios",
+            "To increase coverage percentage"
+        ]
+    },
+    {
+        "q": "In `pytest-bdd`, what must match between a feature file step and a step definition?",
+        "type": "mcq",
+        "o": [
+            "The step text pattern defined in the decorator",
+            "The line number",
+            "The file name",
+            "The import statement"
+        ]
+    },
+    {
+        "q": "The Gherkin language supports only English keywords.",
+        "type": "true_false",
+        "correct": "False"
+    },
+    {
+        "q": "What does the `--append` flag in `coverage.py` do?",
+        "type": "mcq",
+        "o": [
+            "Adds data to an existing .coverage file instead of overwriting",
+            "Adds extra files to the report",
+            "Appends log messages",
+            "Runs additional tests"
+        ]
+    },
+    {
+        "q": "In TDD, the 'Triangulation' technique helps drive generalization.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Name the built-in Python module that `coverage.py` uses for tracing.",
+        "type": "short_answer",
+        "answers": [
+            "sys.settrace",
+            "trace",
+            "sys"
+        ],
+        "isCaseSensitive": false
+    },
+    {
+        "q": "Which Gherkin keyword is used to describe the initial context of a system?",
+        "type": "mcq",
+        "o": [
+            "Given",
+            "When",
+            "Then",
+            "Assume"
+        ]
+    },
+    {
+        "q": "In `pytest-bdd`, a single step definition can be used by multiple feature files.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "The `______` section in `.coveragerc` maps source paths for combined reports.",
+        "type": "fill_blank",
+        "answers": [
+            "[paths]"
+        ],
+        "other_options": [
+            "[run]",
+            "[report]",
+            "[combine]",
+            "[map]"
+        ]
+    },
+    {
+        "q": "Sort the responsibilities in a pytest-bdd test suite.",
+        "type": "swipe_cards",
+        "left_label": "Feature File",
+        "right_label": "Python Code",
+        "cards": {
+            "Business requirements": "left",
+            "Gherkin steps": "left",
+            "Database queries": "right",
+            "Assertions": "right"
+        }
+    },
+    {
+        "q": "What is the benefit of using 'Example Mapping' in BDD?",
+        "type": "mcq",
+        "o": [
+            "It helps discover and clarify acceptance criteria collaboratively",
+            "It generates Python code automatically",
+            "It measures test performance",
+            "It formats feature files"
+        ]
+    },
+    {
+        "q": "The `coverage.py` tool can be used with Django projects.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Which of the following is a valid TDD assertion library in Python?",
+        "type": "mcq",
+        "o": [
+            "pytest assert",
+            "print",
+            "logging",
+            "input"
+        ]
+    },
+    {
+        "q": "In Gherkin, the `*` (asterisk) character can be used as a bullet for any step type.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "What does the `@then` step in `pytest-bdd` typically contain?",
+        "type": "mcq",
+        "o": [
+            "Assertions to verify the expected outcome",
+            "Setup code for the test",
+            "Action performing code",
+            "Cleanup code"
+        ]
+    },
+    {
+        "q": "Match the `pytest-bdd` parser types with their capabilities:",
+        "type": "match",
+        "left": [
+            "parsers.parse",
+            "parsers.re",
+            "parsers.cfparse"
+        ],
+        "right": [
+            "String format style parameters",
+            "Regular expression matching",
+            "Cardinality field parsing"
+        ]
+    },
+    {
+        "q": "In TDD, 'Obvious Implementation' means you should always write complex code first.",
+        "type": "true_false",
+        "correct": "False"
+    },
+    {
+        "q": "Which `coverage.py` command shows coverage of code not yet executed?",
+        "type": "mcq",
+        "o": [
+            "coverage report --show-missing",
+            "coverage missing",
+            "coverage uncovered",
+            "coverage find-gaps"
+        ]
+    },
+    {
+        "q": "The `pytest-bdd` library supports Python 2.7.",
+        "type": "true_false",
+        "correct": "False"
+    },
+    {
+        "q": "In BDD, a 'Ubiquitous Language' is shared between team members to avoid ambiguity.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "What does the `--source` option in `coverage.py` accept as a value?",
+        "type": "mcq",
+        "o": [
+            "A directory path or package name",
+            "A URL",
+            "A file hash",
+            "A git commit"
+        ]
+    },
+    {
+        "q": "Identify pytest-bdd specific decorators vs standard pytest components.",
+        "type": "swipe_cards",
+        "left_label": "pytest-bdd",
+        "right_label": "Standard pytest",
+        "cards": {
+            "@scenario": "left",
+            "@given": "left",
+            "@fixture": "right",
+            "assert": "right"
+        }
+    },
+    {
+        "q": "In TDD, the 'Fake' test double returns a canned answer for testing purposes.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "The `______` command installs `pytest-bdd`.",
+        "type": "fill_blank",
+        "answers": [
+            "pip install pytest-bdd"
+        ],
+        "other_options": [
+            "pip install bdd",
+            "pip install pytest_bdd",
+            "pip install gherkin",
+            "pip install behave"
+        ]
+    },
+    {
+        "q": "Which of the following describes a 'Stub' in TDD?",
+        "type": "mcq",
+        "o": [
+            "A test double that returns predefined data",
+            "A test that is not yet implemented",
+            "A broken test",
+            "A type of coverage report"
+        ]
+    },
+    {
+        "q": "What does the `--rcfile` option in `coverage.py` allow you to specify?",
+        "type": "mcq",
+        "o": [
+            "A custom configuration file path instead of .coveragerc",
+            "The Python interpreter to use",
+            "The test runner to invoke",
+            "The output directory for reports"
+        ]
+    },
+    {
+        "q": "A single line executed by a Python function in a Gherkin script.",
+        "type": "word_scramble",
+        "answer": "STEP",
+        "decoys": "ZX"
+    },
+    {
+        "q": "In TDD, what is the purpose of the 'Evident' step during the Refactor phase?",
+        "type": "mcq",
+        "o": [
+            "Making the code's intention clearer without changing behavior",
+            "Adding more tests to increase coverage",
+            "Removing all comments from code",
+            "Converting code to a different language"
+        ]
+    },
+    {
+        "q": "The `pytest-bdd` plugin supports ______ to pass complex objects between steps.",
+        "type": "fill_blank",
+        "answers": [
+            "fixtures",
+            "target fixtures"
+        ],
+        "other_options": [
+            "global variables",
+            "class attributes",
+            "environment variables",
+            "file storage"
+        ]
+    },
+    {
+        "q": "Used to extract dynamic variables from Gherkin text in pytest-bdd.",
+        "type": "word_scramble",
+        "answer": "PARSER",
+        "decoys": "LQ"
+    },
+    {
+        "q": "Complete the explanation on sharing context in pytest-bdd:",
+        "type": "inline_dropdown",
+        "text": "To share state between steps in pytest-bdd, you should use a standard pytest [0] or a custom [1] object.",
+        "dropdowns": [
+            {
+                "correct": "fixture",
+                "options": [
+                    "variable",
+                    "fixture",
+                    "plugin"
+                ]
+            },
+            {
+                "correct": "context",
+                "options": [
+                    "database",
+                    "context",
+                    "global"
+                ]
+            }
+        ]
+    },
+    {
+        "q": "Branch coverage can detect missing else clauses even if the if block is executed.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Which `.coveragerc` option under `[run]` enables branch coverage by default?",
+        "type": "mcq",
+        "o": [
+            "branch = True",
+            "measure_branch = on",
+            "coverage_type = branch",
+            "include_branch = yes"
+        ]
+    },
+    {
+        "q": "Complete the usage of scenario decorators:",
+        "type": "inline_dropdown",
+        "text": "The [0] decorator in pytest-bdd acts strictly as a test function generator, taking a [1] file as an argument.",
+        "dropdowns": [
+            {
+                "correct": "@scenario",
+                "options": [
+                    "@given",
+                    "@scenario",
+                    "@test"
+                ]
+            },
+            {
+                "correct": "feature",
+                "options": [
+                    "python",
+                    "feature",
+                    "config"
+                ]
+            }
+        ]
+    },
+    {
+        "q": "In Gherkin, what is the maximum number of 'When' steps recommended per scenario?",
+        "type": "mcq",
+        "o": [
+            "One",
+            "Two",
+            "Three",
+            "No limit"
+        ]
+    },
+    {
+        "q": "Match the advanced `coverage.py` configurations with their purposes:",
+        "type": "match",
+        "left": [
+            "[run] dynamic_context",
+            "[run] context",
+            "[report] precision",
+            "[report] sort"
+        ],
+        "right": [
+            "Sets context based on test name",
+            "Manually sets a label for this run",
+            "Controls decimal places in percentages",
+            "Orders the report output"
+        ]
+    },
+    {
+        "q": "Name the Gherkin keyword that was introduced in Gherkin 6 to group scenarios by business rule.",
+        "type": "short_answer",
+        "answers": [
+            "Rule"
+        ],
+        "isCaseSensitive": false
+    },
+    {
+        "q": "In TDD, the 'Refactor' phase should only target production code, not test code.",
+        "type": "true_false",
+        "correct": "False"
+    },
+    {
+        "q": "How many bracketed configuration sections typically appear for basic run and report in .coveragerc?",
+        "type": "slider",
+        "min": 1,
+        "max": 5,
+        "correct": 2
+    },
+    {
+        "q": "Match the .coveragerc section to its purpose.",
+        "type": "memory",
+        "pairs": {
+            "[run]": "Settings for test execution",
+            "[report]": "Settings for terminal output",
+            "[html]": "Settings for web output"
+        }
+    },
+    {
+        "q": "What does the `--context` option in `coverage.py` help achieve?",
+        "type": "mcq",
+        "o": [
+            "Tracking which test covered which line for debugging",
+            "Translating reports to another language",
+            "Running tests in a specific order",
+            "Setting environment variables"
+        ]
+    },
+    {
+        "q": "In `pytest-bdd`, how do you handle a step that must pass data to subsequent steps?",
+        "type": "mcq",
+        "o": [
+            "Use target_fixture in the step decorator",
+            "Use a global variable",
+            "Write data to a temporary file",
+            "Print data to standard output"
+        ]
+    },
+    {
+        "q": "A Gherkin `Background` section can contain 'Then' steps.",
+        "type": "true_false",
+        "correct": "False"
+    },
+    {
+        "q": "The `______` parameter in `parsers.re` allows naming captured groups for use in step definitions.",
+        "type": "fill_blank",
+        "answers": [
+            "(?P<name>...)",
+            "named groups"
+        ],
+        "other_options": [
+            "capture group",
+            "regex match",
+            "string format",
+            "variable assignment"
+        ]
+    },
+    {
+        "q": "Which tool is an alternative to `pytest-bdd` for BDD in Python?",
+        "type": "mcq",
+        "o": [
+            "behave",
+            "nose",
+            "tox",
+            "flake8"
+        ]
+    },
+    {
+        "q": "What is the correct way to specify multiple source directories in `coverage.py`?",
+        "type": "mcq",
+        "o": [
+            "Use comma-separated paths with --source",
+            "Specify them in separate --source flags",
+            "Use a wildcard pattern",
+            "It only supports one directory"
+        ]
+    },
+    {
+        "q": "Match the [run] configuration option to its effect.",
+        "type": "memory",
+        "pairs": {
+            "branch = True": "Measures logical path coverage",
+            "omit = */tests/*": "Excludes test files from metrics",
+            "source = myapp": "Restricts coverage to a directory"
+        }
+    },
+    {
+        "q": "In TDD, the practice of 'Test First' requires the test to exist before the code.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Which of these is NOT a valid configuration option under [report] in .coveragerc?",
+        "c": "[report]\nshow_missing = True",
+        "type": "odd_one_out",
+        "options": [
+            "show_missing",
+            "fail_under",
+            "exclude_lines",
+            "branch"
+        ],
+        "correct": "branch"
+    },
+    {
+        "q": "What does the `pytest-bdd` `scenarios()` function return?",
+        "type": "mcq",
+        "o": [
+            "A list of scenario objects to be registered with pytest",
+            "A dictionary of step definitions",
+            "A boolean indicating success",
+            "A string summary of feature files"
+        ]
+    },
+    {
+        "q": "Does this setting belong in the [run] or [report] section of .coveragerc?",
+        "type": "swipe_cards",
+        "left_label": "[run]",
+        "right_label": "[report]",
+        "cards": {
+            "branch = True": "left",
+            "omit = tests/*": "left",
+            "show_missing = True": "right",
+            "fail_under = 80": "right"
+        }
+    },
+    {
+        "q": "The `______` keyword in Gherkin is used to provide setup that is common to an entire feature.",
+        "type": "fill_blank",
+        "answers": [
+            "Background"
+        ],
+        "other_options": [
+            "Setup",
+            "Context",
+            "Fixture",
+            "Initialize"
+        ]
+    },
+    {
+        "q": "Code coverage tools can measure the execution of docstrings.",
+        "type": "true_false",
+        "correct": "False"
+    },
+    {
+        "q": "Which files should typically be included or omitted from coverage reports?",
+        "type": "swipe_cards",
+        "left_label": "Include",
+        "right_label": "Omit",
+        "cards": {
+            "Business logic": "left",
+            "Database Models": "left",
+            "Test files": "right",
+            "Virtual environments": "right"
+        }
+    },
+    {
+        "q": "The .coveragerc directive used to ignore specific files.",
+        "type": "word_scramble",
+        "answer": "OMIT",
+        "decoys": "ZW"
+    },
+    {
+        "q": "Which of the following is a benefit of the 'Red-Green-Refactor' loop?",
+        "type": "mcq",
+        "o": [
+            "It provides a short, rapid feedback cycle",
+            "It eliminates the need for code reviews",
+            "It guarantees optimal performance",
+            "It automates deployment"
+        ]
+    },
+    {
+        "q": "In `pytest-bdd`, what happens if a step definition is missing for a Gherkin step?",
+        "type": "mcq",
+        "o": [
+            "The test fails with a StepDefinitionNotFoundError",
+            "The step is skipped silently",
+            "A default step is used",
+            "The scenario is marked as pending"
+        ]
+    },
+    {
+        "q": "Match the TDD strategies with their descriptions:",
+        "type": "match",
+        "left": [
+            "Fake It",
+            "Triangulation",
+            "Obvious Implementation",
+            "One Step Test"
+        ],
+        "right": [
+            "Return a constant to pass the test",
+            "Use multiple examples to drive generalization",
+            "Write the obvious code directly",
+            "Test a single behavior per test case"
+        ]
+    },
+    {
+        "q": "The `coverage.py` tool automatically measures branch coverage unless disabled.",
+        "type": "true_false",
+        "correct": "False"
+    },
+    {
+        "q": "What is the primary use case for `parsers.re` in `pytest-bdd`?",
+        "type": "mcq",
+        "o": [
+            "Matching complex or flexible step patterns that parse cannot handle",
+            "Formatting strings for output",
+            "Replacing text in feature files",
+            "Generating random test data"
+        ]
+    },
+    {
+        "q": "In BDD, what is the consequence of having too many 'And' steps?",
+        "type": "mcq",
+        "o": [
+            "The scenario may become unclear and hard to maintain",
+            "Tests run faster",
+            "Coverage increases automatically",
+            "It has no negative effect"
+        ]
+    },
+    {
+        "q": "Coverage type that checks if both true and false paths of an if-statement are executed.",
+        "type": "word_scramble",
+        "answer": "BRANCH",
+        "decoys": "QJ"
+    },
+    {
+        "q": "In TDD, a 'Smell' in test code indicates a possible design problem.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Which command runs only scenarios tagged with `@smoke` in `pytest-bdd`?",
+        "type": "fill_blank",
+        "answers": [
+            "pytest -k smoke",
+            "pytest --tags smoke"
+        ],
+        "other_options": [
+            "pytest --filter smoke",
+            "pytest --scenario smoke",
+            "pytest @smoke",
+            "pytest -t smoke"
+        ]
+    },
+    {
+        "q": "Complete the .coveragerc configuration instructions:",
+        "type": "inline_dropdown",
+        "text": "To ensure that every if-statement's True and False paths are tested, enable [0] coverage in the [1] section.",
+        "dropdowns": [
+            {
+                "correct": "branch",
+                "options": [
+                    "line",
+                    "branch",
+                    "path"
+                ]
+            },
+            {
+                "correct": "run",
+                "options": [
+                    "run",
+                    "report",
+                    "html"
+                ]
+            }
+        ]
+    },
+    {
+        "q": "What does `[run] parallel = True` in `.coveragerc` do?",
+        "type": "mcq",
+        "o": [
+            "Enables parallel mode automatically for every run",
+            "Runs tests in parallel",
+            "Generates reports faster",
+            "Uses multiple CPU cores for analysis"
+        ]
+    },
+    {
+        "q": "In `pytest-bdd`, you can use `*args` and `**kwargs` in step definition functions.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Complete the CI/CD coverage enforcement setup:",
+        "type": "inline_dropdown",
+        "text": "You can use [0] under the report section to enforce a minimum coverage threshold, causing the build to [1] if not met.",
+        "dropdowns": [
+            {
+                "correct": "fail_under",
+                "options": [
+                    "fail_under",
+                    "min_cov",
+                    "require"
+                ]
+            },
+            {
+                "correct": "fail",
+                "options": [
+                    "pass",
+                    "fail",
+                    "hang"
+                ]
+            }
+        ]
+    },
+    {
+        "q": "Which of the following is an example of good Gherkin step phrasing?",
+        "type": "mcq",
+        "o": [
+            "Given the user is logged in",
+            "Given the user login function executes successfully",
+            "Given the system performs authentication for the user account",
+            "Given user_login(state=1)"
+        ]
+    },
+    {
+        "q": "The `coverage.py` JSON report is primarily used for programmatic consumption by other tools.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "What is the difference between a 'Mock' and a 'Stub' in TDD?",
+        "type": "mcq",
+        "o": [
+            "Mocks verify behavior/interaction, Stubs provide state/data",
+            "Stubs are for Python, Mocks for Java",
+            "Mocks are faster than Stubs",
+            "There is no difference"
+        ]
+    },
+    {
+        "q": "Name the method used in `pytest-bdd` to register a step definition that is shared between features.",
+        "type": "short_answer",
+        "answers": [
+            "given",
+            "when",
+            "then",
+            "step"
+        ],
+        "isCaseSensitive": false
+    },
+    {
+        "q": "In BDD, 'Discovery Workshops' are used to collaboratively define features and scenarios.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "In Gherkin, how many pipe characters (|) are minimally needed to define a single row containing one value in an Examples table?",
+        "type": "slider",
+        "min": 1,
+        "max": 4,
+        "correct": 2
+    },
+    {
+        "q": "What does `coverage json -o coverage.json` do?",
+        "type": "mcq",
+        "o": [
+            "Exports coverage data to a JSON file",
+            "Opens a JSON file for reading",
+            "Converts Python files to JSON",
+            "Validates a JSON report"
+        ]
+    },
+    {
+        "q": "Match the advanced Gherkin keyword to its usage.",
+        "type": "memory",
+        "pairs": {
+            "Background": "Steps run before every scenario",
+            "Scenario Outline": "A template for multiple test cases",
+            "Examples": "Data tables for Outlines"
+        }
+    },
+    {
+        "q": "The `[xml]` section in `.coveragerc` can configure the output path for XML reports.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "In `pytest-bdd`, what is the purpose of the `@pytest.fixture` decorator alongside step definitions?",
+        "type": "mcq",
+        "o": [
+            "To define a fixture that can be used as a target_fixture",
+            "To mark a function as a test",
+            "To skip a step",
+            "To generate test reports"
+        ]
+    },
+    {
+        "q": "Match the Gherkin conjunctions to their behavior.",
+        "type": "memory",
+        "pairs": {
+            "And": "Continues the previous step type",
+            "But": "Continues with a negative context",
+            "*": "A bullet point acting as a step"
+        }
+    },
+    {
+        "q": "The 'Given-When-Then' format for scenarios was originally derived from BDD.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "The `______` flag in `coverage.py` forces the use of the C trace function instead of Python's.",
+        "type": "fill_blank",
+        "answers": [
+            "--timid"
+        ],
+        "other_options": [
+            "--trace-c",
+            "--use-c",
+            "--fast",
+            "--native"
+        ]
+    },
+    {
+        "q": "Which of the following is a common mistake when implementing TDD?",
+        "type": "mcq",
+        "o": [
+            "Writing multiple tests before any production code",
+            "Running tests frequently",
+            "Refactoring after each passing test",
+            "Keeping tests simple"
+        ]
+    },
+    {
+        "q": "Match the BDD anti-patterns with their fixes:",
+        "type": "match",
+        "left": [
+            "Too technical steps",
+            "Multiple Whens",
+            "Missing examples",
+            "Vague scenarios"
+        ],
+        "right": [
+            "Use business language",
+            "Refactor to single user action",
+            "Add Scenario Outlines",
+            "Clarify with concrete data"
+        ]
+    },
+    {
+        "q": "`coverage.py` can measure coverage of code executed in a Jupyter notebook.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Which of these keywords cannot be used at the root level of a .feature file?",
+        "type": "odd_one_out",
+        "options": [
+            "Feature",
+            "Background",
+            "Scenario",
+            "Given"
+        ],
+        "correct": "Given"
+    },
+    {
+        "q": "In `pytest-bdd`, how do you refer to a fixture created by a `given` step in a `when` step?",
+        "type": "mcq",
+        "o": [
+            "By adding the fixture name as a function parameter",
+            "By using a global variable name",
+            "By calling get_fixture()",
+            "By importing the fixture directly"
+        ]
+    },
+    {
+        "q": "What does a `coverage.py` 'missing line' annotation with '->' signify?",
+        "type": "mcq",
+        "o": [
+            "A line that was executed but a branch exit was not taken",
+            "A syntax error",
+            "A comment line",
+            "A deprecated API call"
+        ]
+    },
+    {
+        "q": "In TDD, 'Baby Steps' refers to taking the smallest possible increment to pass a test.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "The `______` hook in `pytest-bdd` is used to inject custom logic before each step executes.",
+        "type": "fill_blank",
+        "answers": [
+            "pytest_bdd_before_step"
+        ],
+        "other_options": [
+            "pytest_bdd_setup_step",
+            "pytest_bdd_pre_step",
+            "pytest_bdd_step_hook",
+            "pytest_bdd_run_step"
+        ]
+    },
+    {
+        "q": "Which Gherkin feature allows writing a single scenario that runs with multiple data sets?",
+        "type": "mcq",
+        "o": [
+            "Scenario Outline",
+            "Data Scenario",
+            "Parameterized Scenario",
+            "Loop Scenario"
+        ]
+    },
+    {
+        "q": "The `coverage.py` `--skip-empty` option hides files with no executable code in the report.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "What is the purpose of the `pytest-bdd` `--generate-missing` feature?",
+        "type": "mcq",
+        "o": [
+            "To auto-generate step definition stubs for undefined steps",
+            "To create new feature files",
+            "To fix broken tests",
+            "To delete unused scenarios"
+        ]
+    },
+    {
+        "q": "In BDD, a 'Living Documentation' refers to feature files that are executable and always up-to-date.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Which `.coveragerc` option under `[report]` excludes lines with `# pragma: no cover`?",
+        "type": "mcq",
+        "o": [
+            "exclude_lines",
+            "omit",
+            "skip_lines",
+            "ignore_patterns"
+        ]
+    },
+    {
+        "q": "What is the role of a 'Test Spy' in TDD?",
+        "type": "mcq",
+        "o": [
+            "Records calls made to it for later verification",
+            "Provides fake data to the system",
+            "Monitors system performance",
+            "Generates test reports"
+        ]
+    },
+    {
+        "q": "The `pytest-bdd` library can be used without pytest installed.",
+        "type": "true_false",
+        "correct": "False"
+    },
+    {
+        "q": "In `coverage.py`, what is the effect of setting `[run] source_pkgs`?",
+        "type": "fill_blank",
+        "answers": [
+            "limits coverage measurement to specified packages only"
+        ],
+        "other_options": [
+            "adds external packages to measurement",
+            "excludes packages from report",
+            "installs missing packages",
+            "runs tests for those packages"
+        ]
+    },
+    {
+        "q": "Which of the following best describes a Gherkin 'Doc String'?",
+        "type": "mcq",
+        "o": [
+            "Multi-line text passed as an argument to a step",
+            "A comment block for developers",
+            "The feature description header",
+            "A tag summary"
+        ]
+    },
+    {
+        "q": "In TDD, 'Code Duplication' is a primary target for elimination during Refactor.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "What does the `pytest --cov-config` option allow?",
+        "type": "mcq",
+        "o": [
+            "Specifying a custom .coveragerc file path for this run",
+            "Editing the coverage configuration",
+            "Creating a new config file",
+            "Validating the config file syntax"
+        ]
+    },
+    {
+        "q": "Categorize these Gherkin components as structure or step keywords.",
+        "type": "swipe_cards",
+        "left_label": "Structure keywords",
+        "right_label": "Step keywords",
+        "cards": {
+            "Feature": "left",
+            "Scenario Outline": "left",
+            "When": "right",
+            "Then": "right"
+        }
+    },
+    {
+        "q": "Is the keyword used for iteration or setup?",
+        "type": "swipe_cards",
+        "left_label": "Iteration",
+        "right_label": "Setup",
+        "cards": {
+            "Examples": "left",
+            "Scenario Outline": "left",
+            "Background": "right",
+            "Given": "right"
+        }
+    },
+    {
+        "q": "Match the `pytest-bdd` step parameter types with examples:",
+        "type": "match",
+        "left": [
+            "{value}",
+            "{value:d}",
+            "{value:f}",
+            "{value:Type}"
+        ],
+        "right": [
+            "String parameter",
+            "Integer parameter",
+            "Float parameter",
+            "Custom type parameter"
+        ]
+    },
+    {
+        "q": "A Gherkin feature file can only contain one 'Background' section.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "What is the `coverage.py` 'context' feature used for?",
+        "type": "mcq",
+        "o": [
+            "Labeling coverage data from different test runs or suites",
+            "Switching between Python environments",
+            "Translating report text",
+            "Setting runtime variables"
+        ]
+    },
+    {
+        "q": "The keyword used alongside Examples to run a test multiple times.",
+        "type": "word_scramble",
+        "answer": "OUTLINE",
+        "decoys": "VK"
+    },
+    {
+        "q": "In TDD, the term 'SOLID' principles refers to a set of design guidelines often applied during Refactor.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Name the pip package that provides the `pytest-bdd` functionality.",
+        "type": "short_answer",
+        "answers": [
+            "pytest-bdd",
+            "pytest_bdd"
+        ],
+        "isCaseSensitive": false
+    },
+    {
+        "q": "Which Gherkin keyword is used to define a template scenario with placeholders?",
+        "type": "mcq",
+        "o": [
+            "Scenario Outline",
+            "Scenario Template",
+            "Scenario Pattern",
+            "Scenario Blueprint"
+        ]
+    },
+    {
+        "q": "The `coverage.py` HTML report includes a filtering feature to show/hide files.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "In `pytest-bdd`, what happens if two step definitions match the same Gherkin step?",
+        "type": "mcq",
+        "o": [
+            "The last one defined overrides the previous one",
+            "Both are executed sequentially",
+            "An error is raised immediately",
+            "One is chosen randomly"
+        ]
+    },
+    {
+        "q": "The `______` option in `.coveragerc` specifies directories or files that should not be traced at all.",
+        "type": "fill_blank",
+        "answers": [
+            "omit"
+        ],
+        "other_options": [
+            "exclude",
+            "skip",
+            "ignore",
+            "drop"
+        ]
+    },
+    {
+        "q": "In BDD, the practice of 'Specification by Example' uses concrete examples to define requirements.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "The keyword that provides data tables in Gherkin.",
+        "type": "word_scramble",
+        "answer": "EXAMPLES",
+        "decoys": "ZY"
+    },
+    {
+        "q": "What is the output of `coverage report --format=markdown`?",
+        "type": "mcq",
+        "o": [
+            "A Markdown formatted table of coverage results",
+            "A PDF document",
+            "A plain text file",
+            "An HTML page"
+        ]
+    },
+    {
+        "q": "Complete the Gherkin setup explanation:",
+        "type": "inline_dropdown",
+        "text": "A [0] is useful for avoiding duplication when multiple tests share the same [1] steps.",
+        "dropdowns": [
+            {
+                "correct": "Background",
+                "options": [
+                    "Background",
+                    "Scenario",
+                    "Feature"
+                ]
+            },
+            {
+                "correct": "Given",
+                "options": [
+                    "Given",
+                    "Then",
+                    "Examples"
+                ]
+            }
+        ]
+    },
+    {
+        "q": "Which of the following is a valid reason to exclude files from coverage measurement?",
+        "type": "mcq",
+        "o": [
+            "They contain only boilerplate or configuration constants",
+            "They are too small",
+            "They were written by another developer",
+            "They have no bugs"
+        ]
+    },
+    {
+        "q": "Complete the variable injection syntax in Gherkin:",
+        "type": "inline_dropdown",
+        "text": "When using a Scenario Outline, variables are enclosed in [0] brackets within the [1] descriptions.",
+        "dropdowns": [
+            {
+                "correct": "angle",
+                "options": [
+                    "square",
+                    "curly",
+                    "angle"
+                ]
+            },
+            {
+                "correct": "step",
+                "options": [
+                    "feature",
+                    "step",
+                    "file"
+                ]
+            }
+        ]
+    },
+    {
+        "q": "In TDD, a passing test suite gives you the confidence to refactor aggressively.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "What does the `@scenario` decorator require as arguments in `pytest-bdd`?",
+        "type": "mcq",
+        "o": [
+            "Feature file path and scenario name",
+            "Only the scenario name",
+            "A step definition function",
+            "A tag name"
+        ]
+    },
+    {
+        "q": "If coverage shows 40 lines executed out of 50 total statements, what is the percentage?",
+        "type": "slider",
+        "min": 10,
+        "max": 100,
+        "correct": 80
+    },
+    {
+        "q": "The `pytest-bdd` plugin executes Background steps before every scenario in the feature.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Match the coverage pragma comment to its effect.",
+        "type": "memory",
+        "pairs": {
+            "# pragma: no cover": "Ignores the block for coverage metrics",
+            "# pragma: no branch": "Ignores branch coverage for this line",
+            "# type: ignore": "Used by mypy, not coverage"
+        }
+    },
+    {
+        "q": "The `______` command shows which lines are missing coverage in the terminal.",
+        "type": "fill_blank",
+        "answers": [
+            "coverage report -m"
+        ],
+        "other_options": [
+            "coverage show-missing",
+            "coverage gaps",
+            "coverage uncover",
+            "coverage details"
+        ]
+    },
+    {
+        "q": "What is the primary goal of the 'Red' phase in TDD?",
+        "type": "mcq",
+        "o": [
+            "To define the desired behavior as a failing test",
+            "To fix a bug",
+            "To improve code structure",
+            "To increase performance"
+        ]
+    },
+    {
+        "q": "Match the `pytest-bdd` hooks with their trigger points:",
+        "type": "match",
+        "left": [
+            "before_scenario",
+            "after_step",
+            "before_feature",
+            "after_all"
+        ],
+        "right": [
+            "Runs before each scenario",
+            "Runs after each step",
+            "Runs before a feature",
+            "Runs after all tests"
+        ]
+    },
+    {
+        "q": "In Gherkin, data tables passed to a step are always represented as lists of dictionaries in Python.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Match the exclude_lines regex pattern to what it ignores in coverage.",
+        "type": "memory",
+        "pairs": {
+            "def __repr__": "Ignores object representation methods",
+            "if __name__ == .__main__.:": "Ignores execution entry points",
+            "raise NotImplementedError": "Ignores abstract method bodies"
+        }
+    },
+    {
+        "q": "Which `coverage.py` command is used to run a specific Python script and measure it?",
+        "type": "mcq",
+        "o": [
+            "coverage run script.py",
+            "coverage execute script.py",
+            "coverage measure script.py",
+            "coverage trace script.py"
+        ]
+    },
+    {
+        "q": "Which flag is NOT natively used with the `coverage run` command?",
+        "c": "coverage run --source=app -m pytest",
+        "type": "odd_one_out",
+        "options": [
+            "--source",
+            "--branch",
+            "--fail-under",
+            "-m"
+        ],
+        "correct": "--fail-under"
+    },
+    {
+        "q": "In TDD, you should refactor immediately after the first test passes, before writing more tests.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Identify which tool handles which step in the testing pipeline.",
+        "type": "swipe_cards",
+        "left_label": "pytest",
+        "right_label": "coverage",
+        "cards": {
+            "Executing test assertions": "left",
+            "Generating HTML reports": "right",
+            "Tracking executed lines": "right",
+            "Discovering test files": "left"
+        }
+    },
+    {
+        "q": "What is the advantage of using `--cov-append` in pytest-cov?",
+        "type": "mcq",
+        "o": [
+            "It accumulates coverage data across multiple test runs",
+            "It adds comments to the report",
+            "It runs additional test files",
+            "It combines HTML pages"
+        ]
+    },
+    {
+        "q": "Should these usually be covered by unit tests or excluded using a pragma?",
+        "type": "swipe_cards",
+        "left_label": "Cover",
+        "right_label": "Exclude (pragma)",
+        "cards": {
+            "Core business logic": "left",
+            "Utility algorithms": "left",
+            "Debugging __repr__ methods": "right",
+            "Fallback fatal error logs": "right"
+        }
+    },
+    {
+        "q": "The `pytest-bdd` library is a fork of the `behave` project.",
+        "type": "true_false",
+        "correct": "False"
+    },
+    {
+        "q": "A comment directive telling coverage to ignore a specific line or block.",
+        "type": "word_scramble",
+        "answer": "PRAGMA",
+        "decoys": "DX"
+    },
+    {
+        "q": "Name the Python package that provides the `coverage` command.",
+        "type": "short_answer",
+        "answers": [
+            "coverage",
+            "coverage.py"
+        ],
+        "isCaseSensitive": false
+    },
+    {
+        "q": "In Gherkin, what does the `Scenario Template` keyword provide?",
+        "type": "mcq",
+        "o": [
+            "It is an alias for Scenario Outline in some dialects",
+            "It creates a new file template",
+            "It defines a reusable step library",
+            "It generates test data"
+        ]
+    },
+    {
+        "q": "The `coverage.py` tool cannot measure coverage of code in `if __name__ == '__main__'` blocks.",
+        "type": "true_false",
+        "correct": "False"
+    },
+    {
+        "q": "In TDD, 'Emergent Design' means the software design evolves through refactoring.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "What does `[run] disable_warnings` in `.coveragerc` do?",
+        "type": "mcq",
+        "o": [
+            "Suppresses common coverage warning messages",
+            "Disables Python warnings during tests",
+            "Prevents test failures on warning",
+            "Hides report summaries"
+        ]
+    },
+    {
+        "q": "The `______` step in a `pytest-bdd` scenario verifies the new state of the system.",
+        "type": "fill_blank",
+        "answers": [
+            "Then"
+        ],
+        "other_options": [
+            "Given",
+            "When",
+            "And",
+            "But"
+        ]
+    },
+    {
+        "q": "In BDD, it is acceptable to have multiple 'Then' steps to check different outcomes.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Which `coverage.py` feature helps identify tests that never executed certain code paths?",
+        "type": "mcq",
+        "o": [
+            "Context-based dynamic contexts",
+            "Branch percentage",
+            "HTML annotation",
+            "Line counts"
+        ]
+    },
+    {
+        "q": "In `pytest-bdd`, `parsers.cfparse` can parse lists using `{values:List}` syntax.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "The format used to generate an interactive browser-based coverage report.",
+        "type": "word_scramble",
+        "answer": "HTML",
+        "decoys": "WZ"
+    },
+    {
+        "q": "What is the purpose of a 'Dummy' object in TDD?",
+        "type": "mcq",
+        "o": [
+            "An object passed around but never actually used",
+            "A placeholder for a future feature",
+            "A test that always passes",
+            "A simplified version of a complex object"
+        ]
+    },
+    {
+        "q": "What does the `coverage debug` command display?",
+        "type": "mcq",
+        "o": [
+            "Configuration details and trace function information",
+            "Source code with syntax highlighting",
+            "Test execution times",
+            "Memory usage statistics"
+        ]
+    },
+    {
+        "q": "In TDD, what is the 'Strategy' pattern's relevance during the Refactor phase?",
+        "type": "mcq",
+        "o": [
+            "Extracting conditional logic into interchangeable classes",
+            "Running tests in a specific order",
+            "Selecting which tests to skip",
+            "Generating test data"
+        ]
+    },
+    {
+        "q": "Complete the pragma explanation:",
+        "type": "inline_dropdown",
+        "text": "Using `# pragma: [0] cover` tells the tool to ignore the line, which generally [1] the overall percentage reported.",
+        "dropdowns": [
+            {
+                "correct": "no",
+                "options": [
+                    "no",
+                    "skip",
+                    "exclude"
+                ]
+            },
+            {
+                "correct": "increases",
+                "options": [
+                    "decreases",
+                    "increases",
+                    "corrupts"
+                ]
+            }
+        ]
+    },
+    {
+        "q": "The `pytest-bdd` `parsers.cfparse` supports ______ which can be used to define custom type conversions.",
+        "type": "fill_blank",
+        "answers": [
+            "extra_types",
+            "custom types"
+        ],
+        "other_options": [
+            "type hints",
+            "converters",
+            "adapters",
+            "formatters"
+        ]
+    },
+    {
+        "q": "A partial branch coverage of 50% indicates that every if statement had one branch never taken.",
+        "type": "true_false",
+        "correct": "False"
+    },
+    {
+        "q": "Which `.coveragerc` section allows remapping file paths for combined reports?",
+        "type": "mcq",
+        "o": [
+            "[paths]",
+            "[run]",
+            "[report]",
+            "[combine]"
+        ]
+    },
+    {
+        "q": "Complete the coverage workflow description:",
+        "type": "inline_dropdown",
+        "text": "The [0] command parses the `.coverage` file generated by the [1] command to show results.",
+        "dropdowns": [
+            {
+                "correct": "report",
+                "options": [
+                    "run",
+                    "report",
+                    "html"
+                ]
+            },
+            {
+                "correct": "run",
+                "options": [
+                    "run",
+                    "report",
+                    "test"
+                ]
+            }
+        ]
+    },
+    {
+        "q": "In Gherkin, what is the recommended maximum number of scenarios per feature file to maintain readability?",
+        "type": "mcq",
+        "o": [
+            "5 to 10",
+            "1 to 2",
+            "20 to 30",
+            "No limit exists"
+        ]
+    },
+    {
+        "q": "Match the `coverage.py` plugins with their functions:",
+        "type": "match",
+        "left": [
+            "coverage-conditional-plugin",
+            "coverage-badge",
+            "diff-cover",
+            "coverage-threshold"
+        ],
+        "right": [
+            "Adds conditional branch tracking",
+            "Generates a coverage badge SVG",
+            "Shows coverage of changed lines only",
+            "Enforces minimum coverage levels in CI"
+        ]
+    },
+    {
+        "q": "Name the design principle in TDD that suggests classes should be open for extension but closed for modification.",
+        "type": "short_answer",
+        "answers": [
+            "open closed principle",
+            "open-closed principle",
+            "OCP"
+        ],
+        "isCaseSensitive": false
+    },
+    {
+        "q": "In `pytest-bdd`, a step definition can yield a value to pass it as a fixture.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "What does the `--debug=trace` option in `coverage.py` do?",
+        "type": "mcq",
+        "o": [
+            "Logs detailed trace function activity for troubleshooting",
+            "Debugs the test suite",
+            "Prints a stack trace on errors",
+            "Runs tests in debug mode"
+        ]
+    },
+    {
+        "q": "In TDD, what is the purpose of the 'Dependency Inversion' principle during refactoring?",
+        "type": "mcq",
+        "o": [
+            "To make high-level modules independent of low-level implementation details",
+            "To increase the number of dependencies",
+            "To remove all imports",
+            "To make code run faster"
+        ]
+    },
+    {
+        "q": "A Gherkin feature file can import steps from another feature file using the `@import` tag.",
+        "type": "true_false",
+        "correct": "False"
+    },
+    {
+        "q": "The `______` attribute on a `pytest-bdd` fixture allows the fixture to be used as a target for step return values.",
+        "type": "fill_blank",
+        "answers": [
+            "target_fixture"
+        ],
+        "other_options": [
+            "return_value",
+            "output",
+            "result",
+            "step_value"
+        ]
+    },
+    {
+        "q": "Which `coverage.py` feature is used to measure coverage of code run inside Docker containers?",
+        "type": "mcq",
+        "o": [
+            "Coverage with properly configured paths and source remapping",
+            "Docker-specific coverage mode",
+            "Container coverage plugin",
+            "Remote coverage collection"
+        ]
+    },
+    {
+        "q": "How many assertions are actually executed in this code during a standard test run?",
+        "c": "def test_count():\n    assert True\n    assert False\n    assert True",
+        "type": "slider",
+        "min": 1,
+        "max": 3,
+        "correct": 2
+    },
+    {
+        "q": "What is the primary role of a 'Test Suite' in TDD?",
+        "type": "mcq",
+        "o": [
+            "To provide fast feedback on the health of the entire system",
+            "To replace documentation",
+            "To deploy code automatically",
+            "To measure developer productivity"
+        ]
+    },
+    {
+        "q": "The `coverage.py` `--parallel-mode` flag uses the hostname and process ID in data file names.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "In `pytest-bdd`, what is the mechanism to pass a complex object from a `given` step to a `then` step?",
+        "type": "mcq",
+        "o": [
+            "The `target_fixture` parameter in the `given` decorator",
+            "A global dictionary",
+            "A temporary database",
+            "An environment variable"
+        ]
+    },
+    {
+        "q": "The `______` Gherkin keyword is used after `Examples` to delimit the data table header.",
+        "type": "fill_blank",
+        "answers": [
+            "|"
+        ],
+        "other_options": [
+            "colon",
+            "semicolon",
+            "dash",
+            "pipe"
+        ]
+    },
+    {
+        "q": "In TDD, 'System Under Test' (SUT) refers to the class or module currently being verified.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Which of the following is a sign of 'Test Over-Specification'?",
+        "type": "mcq",
+        "o": [
+            "Tests break when implementation details change but behavior remains the same",
+            "Tests run too slowly",
+            "Tests cover every line of code",
+            "Tests have long names"
+        ]
+    },
+    {
+        "q": "Match the BDD frameworks with their languages:",
+        "type": "match",
+        "left": [
+            "pytest-bdd",
+            "behave",
+            "cucumber-ruby",
+            "specflow"
+        ],
+        "right": [
+            "Python (pytest)",
+            "Python",
+            "Ruby",
+            ".NET"
+        ]
+    },
+    {
+        "q": "The `coverage.py` tool can produce coverage reports in LCOV format.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "What does the `--cov-fail-under` option in pytest-cov do?",
+        "type": "mcq",
+        "o": [
+            "Fails the test run if total coverage is below a specified percentage",
+            "Sets a minimum for individual file coverage",
+            "Skips files with low coverage",
+            "Lowers coverage requirements"
+        ]
+    },
+    {
+        "q": "In `pytest-bdd`, how do you handle a step that requires a multi-line string argument?",
+        "type": "mcq",
+        "o": [
+            "Use triple-quoted Doc Strings in the feature file",
+            "Put the string in a separate file",
+            "Use a tag to reference it",
+            "Encode it in Base64"
+        ]
+    },
+    {
+        "q": "In TDD, the 'Single Responsibility Principle' means a class should have only one reason to change.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Which command generates an HTML report and opens it in the browser automatically?",
+        "type": "fill_blank",
+        "answers": [
+            "coverage html --open",
+            "coverage html and open browser"
+        ],
+        "other_options": [
+            "coverage serve",
+            "coverage view",
+            "coverage browse",
+            "coverage show"
+        ]
+    },
+    {
+        "q": "What is the advantage of using `[run] dynamic_context = test_function`?",
+        "type": "mcq",
+        "o": [
+            "It labels each line with the exact test function that executed it",
+            "It speeds up test execution",
+            "It automatically fixes failing tests",
+            "It reduces memory usage"
+        ]
+    },
+    {
+        "q": "In Gherkin, using technical jargon in steps is encouraged for precision.",
+        "type": "true_false",
+        "correct": "False"
+    },
+    {
+        "q": "Which `pytest-bdd` hook can be used to take a screenshot on test failure?",
+        "type": "mcq",
+        "o": [
+            "pytest_bdd_step_error",
+            "pytest_bdd_on_fail",
+            "pytest_bdd_error_handler",
+            "pytest_bdd_capture"
+        ]
+    },
+    {
+        "q": "In TDD, a 'Test Double' that verifies interactions is called a Mock.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "What does the `coverage python` command do?",
+        "type": "mcq",
+        "o": [
+            "Runs a Python interpreter with coverage measurement enabled",
+            "Checks Python version compatibility",
+            "Installs the coverage tool",
+            "Analyzes Python source code"
+        ]
+    },
+    {
+        "q": "Name the file where `pytest-bdd` step definitions are typically discovered unless configured otherwise.",
+        "type": "short_answer",
+        "answers": [
+            "conftest.py",
+            "steps.py",
+            "step_defs.py"
+        ],
+        "isCaseSensitive": false
+    },
+    {
+        "q": "Match the Python testing tool to its description.",
+        "type": "memory",
+        "pairs": {
+            "unittest": "Built-in standard library framework",
+            "pytest": "Third-party framework with simpler syntax",
+            "doctest": "Tests embedded in docstrings"
+        }
+    },
+    {
+        "q": "The `pytest-bdd` library can execute scenarios in parallel using the `pytest-xdist` plugin.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Which of the following is an example of a good BDD step?",
+        "type": "mcq",
+        "o": [
+            "Given the shopping cart contains 2 items",
+            "Given the cart array length equals 2",
+            "Given the database cart table has 2 rows",
+            "Given cart.items.count() == 2"
+        ]
+    },
+    {
+        "q": "The `coverage.py` `[run] note` option allows adding arbitrary metadata to the coverage data.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "In TDD, what is the term for tests that ensure previously fixed bugs do not reappear?",
+        "type": "fill_blank",
+        "answers": [
+            "regression tests"
+        ],
+        "other_options": [
+            "unit tests",
+            "acceptance tests",
+            "smoke tests",
+            "integration tests"
+        ]
+    },
+    {
+        "q": "Which `coverage.py` feature helps measure coverage of code executed via `exec` or `eval`?",
+        "type": "mcq",
+        "o": [
+            "Setting `[run] cover_pylib = True` in some cases, but general dynamic code is limited",
+            "It always measures exec automatically",
+            "Using a special import hook",
+            "Dynamic code cannot be measured"
+        ]
+    },
+    {
+        "q": "Match the pytest feature to its capability.",
+        "type": "memory",
+        "pairs": {
+            "Fixtures": "Provide setup and dependencies",
+            "Markers": "Tag tests for selective execution",
+            "Parametrization": "Run a test with multiple data sets"
+        }
+    },
+    {
+        "q": "Match the `coverage.py` data lifecycle steps with commands:",
+        "type": "match",
+        "left": [
+            "Collection",
+            "Combining",
+            "Reporting",
+            "Erasing"
+        ],
+        "right": [
+            "coverage run",
+            "coverage combine",
+            "coverage html",
+            "coverage erase"
+        ]
+    },
+    {
+        "q": "In `pytest-bdd`, scenario steps are executed in alphabetical order by step text.",
+        "type": "true_false",
+        "correct": "False"
+    },
+    {
+        "q": "What is the purpose of the `--no-coveragerc` flag?",
+        "type": "mcq",
+        "o": [
+            "Prevents `coverage.py` from reading any configuration file",
+            "Deletes the existing .coveragerc file",
+            "Creates a blank configuration",
+            "Resets configuration to defaults"
+        ]
+    },
+    {
+        "q": "In BDD, 'Outside-in Development' starts with high-level acceptance tests and works inward to unit tests.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Which of these is NOT a built-in pytest marker?",
+        "c": "@pytest.mark.xyz",
+        "type": "odd_one_out",
+        "options": [
+            "skip",
+            "xfail",
+            "parametrize",
+            "flake8"
+        ],
+        "correct": "flake8"
+    },
+    {
+        "q": "The `______` function in `pytest-bdd` is used to load scenarios from multiple feature files at once.",
+        "type": "fill_blank",
+        "answers": [
+            "scenarios"
+        ],
+        "other_options": [
+            "load_features",
+            "register_scenarios",
+            "collect_scenarios",
+            "import_features"
+        ]
+    },
+    {
+        "q": "Identify the framework based on its assertion syntax.",
+        "type": "swipe_cards",
+        "left_label": "pytest",
+        "right_label": "unittest",
+        "cards": {
+            "assert x == y": "left",
+            "self.assertEqual(x, y)": "right",
+            "assert 'a' in b": "left",
+            "self.assertTrue('a' in b)": "right"
+        }
+    },
+    {
+        "q": "Which of the following is a best practice for organizing step definitions in a large project?",
+        "type": "mcq",
+        "o": [
+            "Group step definitions into modules matching feature areas",
+            "Put all steps in one file for simplicity",
+            "Generate steps from a database",
+            "Keep steps in the feature file"
+        ]
+    },
+    {
+        "q": "The `coverage.py` `--skip-covered` option shows only files with missing coverage.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "In TDD, what is the 'Liskov Substitution Principle'?",
+        "type": "mcq",
+        "o": [
+            "Subtypes must be substitutable for their base types without breaking correctness",
+            "All classes must inherit from a base class",
+            "Functions should accept lists only",
+            "Code should be rewritten every sprint"
+        ]
+    },
+    {
+        "q": "Classify test execution commands based on their primary driver.",
+        "type": "swipe_cards",
+        "left_label": "pytest",
+        "right_label": "coverage",
+        "cards": {
+            "pytest tests/": "left",
+            "pytest -k 'login'": "left",
+            "coverage run -m pytest": "right",
+            "coverage report -m": "right"
+        }
+    },
+    {
+        "q": "The `pytest-bdd` library automatically converts Gherkin data tables into Python dictionaries.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "What does the `coverage annotate` command produce?",
+        "type": "mcq",
+        "o": [
+            "Annotated copies of source files with coverage markers",
+            "Comments in the feature file",
+            "A summary PDF",
+            "Git blame information"
+        ]
+    },
+    {
+        "q": "Name the SOLID principle that states 'clients should not be forced to depend on interfaces they do not use'.",
+        "type": "short_answer",
+        "answers": [
+            "interface segregation principle",
+            "interface segregation",
+            "ISP"
+        ],
+        "isCaseSensitive": false
+    },
+    {
+        "q": "In `pytest-bdd`, a scenario can be marked as `@skip` to prevent its execution.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Which Gherkin keyword allows you to combine multiple 'Given' steps into a reusable block?",
+        "type": "mcq",
+        "o": [
+            "Background",
+            "Setup",
+            "Precondition",
+            "Macro"
+        ]
+    },
+    {
+        "q": "The `coverage.py` 'sqlite' data format stores coverage results in a SQLite database.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "In TDD, what is the concept of 'Graceful Degradation' in test design?",
+        "type": "mcq",
+        "o": [
+            "Tests should still provide useful feedback even when some fixtures fail",
+            "Code should run slower over time",
+            "Tests should be deleted after they pass",
+            "Coverage should decrease gradually"
+        ]
+    },
+    {
+        "q": "The most popular third-party testing framework for Python.",
+        "type": "word_scramble",
+        "answer": "PYTEST",
+        "decoys": "KM"
+    },
+    {
+        "q": "The `______` section in `.coveragerc` can configure the SQLite database storage for coverage data.",
+        "type": "fill_blank",
+        "answers": [
+            "[run] data_file"
+        ],
+        "other_options": [
+            "[storage]",
+            "[database]",
+            "[sqlite]",
+            "[persist]"
+        ]
+    },
+    {
+        "q": "Which `pytest-bdd` function registers a feature file's scenarios without decorating each one?",
+        "type": "mcq",
+        "o": [
+            "scenarios()",
+            "register_feature()",
+            "add_scenario()",
+            "load_feature()"
+        ]
+    },
+    {
+        "q": "Match the testing levels with their primary focus in TDD:",
+        "type": "match",
+        "left": [
+            "Unit Tests",
+            "Integration Tests",
+            "Acceptance Tests",
+            "End-to-End Tests"
+        ],
+        "right": [
+            "Individual functions or methods",
+            "Interaction between modules",
+            "Business requirements validation",
+            "Full system workflow"
+        ]
+    },
+    {
+        "q": "A reusable context or dependency injected into a test.",
+        "type": "word_scramble",
+        "answer": "FIXTURE",
+        "decoys": "XZ"
+    },
+    {
+        "q": "The `pytest-bdd` plugin supports Python's async/await syntax for step definitions.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "What does setting `[run] source = .` achieve in `.coveragerc`?",
+        "type": "mcq",
+        "o": [
+            "Measures coverage only for the current directory's code",
+            "Includes all installed packages",
+            "Measures the entire filesystem",
+            "Disables source filtering"
+        ]
+    },
+    {
+        "q": "In BDD, 'Ubiquitous Language' should be used only in feature files, not in code.",
+        "type": "true_false",
+        "correct": "False"
+    },
+    {
+        "q": "Complete the pytest assertion explanation:",
+        "type": "inline_dropdown",
+        "text": "In pytest, you simply use the standard Python [0] statement instead of specialized [1] methods.",
+        "dropdowns": [
+            {
+                "correct": "assert",
+                "options": [
+                    "assert",
+                    "expect",
+                    "check"
+                ]
+            },
+            {
+                "correct": "assertion",
+                "options": [
+                    "assertion",
+                    "setup",
+                    "teardown"
+                ]
+            }
+        ]
+    },
+    {
+        "q": "Complete the marker behavior explanation:",
+        "type": "inline_dropdown",
+        "text": "You can use `@pytest.mark.[0]` to indicate a test is currently broken, but shouldn't fail the [1].",
+        "dropdowns": [
+            {
+                "correct": "xfail",
+                "options": [
+                    "skip",
+                    "xfail",
+                    "ignore"
+                ]
+            },
+            {
+                "correct": "suite",
+                "options": [
+                    "suite",
+                    "syntax",
+                    "coverage"
+                ]
+            }
+        ]
+    },
+    {
+        "q": "What is the recommended approach when a `pytest-bdd` scenario has too many steps?",
+        "type": "mcq",
+        "o": [
+            "Split it into multiple smaller scenarios or use a Scenario Outline",
+            "Add more comments to explain it",
+            "Ignore the issue and keep testing",
+            "Convert all steps to a single Python function"
+        ]
+    },
+    {
+        "q": "What is generally considered a 'good' minimum code coverage target percentage for critical enterprise apps?",
+        "type": "slider",
+        "min": 10,
+        "max": 100,
+        "correct": 80
+    },
+    {
+        "q": "The `coverage.py` XML report format is compatible with the Cobertura standard.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "In TDD, what is 'Test-Driven Damage'?",
+        "type": "mcq",
+        "o": [
+            "Over-engineering the production code or tests due to misapplied TDD",
+            "Physical damage to hardware from running tests",
+            "Deleting tests accidentally",
+            "Reducing code coverage"
+        ]
+    },
+    {
+        "q": "The `______` option in `pytest-bdd` step parsers converts matched text to a specified Python type.",
+        "type": "fill_blank",
+        "answers": [
+            ":type",
+            "type cast",
+            "converter"
+        ],
+        "other_options": [
+            "format",
+            "transform",
+            "map",
+            "filter"
+        ]
+    },
+    {
+        "q": "In Gherkin, you can use the `#` symbol to comment out a single line.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "What does the `coverage report --precision=3` option control?",
+        "type": "mcq",
+        "o": [
+            "The number of decimal places in coverage percentages",
+            "The accuracy of line measurements",
+            "The depth of the report tree",
+            "The number of significant figures in file sizes"
+        ]
+    },
+    {
+        "q": "In `pytest-bdd`, how can you pass a data table from a Gherkin step to a step definition?",
+        "type": "mcq",
+        "o": [
+            "Add a `datatable` argument in the step function signature",
+            "Use a global variable",
+            "Encode it in the step text",
+            "Save it to a file and read it"
+        ]
+    },
+    {
+        "q": "The `pytest-bdd` plugin requires feature files to be in a directory named `features/`.",
+        "type": "true_false",
+        "correct": "False"
+    },
+    {
+        "q": "Match the testing anti-pattern to its description.",
+        "type": "memory",
+        "pairs": {
+            "Testing Implementation": "Tests break instantly when refactoring",
+            "Slow Tests": "Developers actively avoid running them",
+            "Mocking Everything": "Tests pass but app fails in reality"
+        }
+    },
+    {
+        "q": "Name the Gherkin dialect keyword that can be used instead of 'Feature' for the primary section.",
+        "type": "short_answer",
+        "answers": [
+            "Feature",
+            "Business Need",
+            "Ability",
+            "Capability"
+        ],
+        "isCaseSensitive": false
+    },
+    {
+        "q": "Which `coverage.py` plugin is used to ensure coverage does not drop below a certain threshold in CI?",
+        "type": "mcq",
+        "o": [
+            "coverage-threshold",
+            "coverage-gate",
+            "coverage-check",
+            "coverage-enforce"
+        ]
+    },
+    {
+        "q": "In TDD, the 'Interface Segregation Principle' suggests many small specific interfaces over one general-purpose interface.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "What is the effect of the `--cov-context` option in pytest-cov?",
+        "type": "mcq",
+        "o": [
+            "Sets the coverage dynamic context for reporting which test covered which line",
+            "Changes the working directory",
+            "Sets an environment variable",
+            "Switches between test databases"
+        ]
+    },
+    {
+        "q": "The `______` Gherkin keyword defines a specific example of a feature's behavior.",
+        "type": "fill_blank",
+        "answers": [
+            "Scenario"
+        ],
+        "other_options": [
+            "Example",
+            "Case",
+            "Test",
+            "Behavior"
+        ]
+    },
+    {
+        "q": "In `pytest-bdd`, tags on a Feature apply to all scenarios within that feature.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "What does the `[run] sigterm = True` option in `.coveragerc` do?",
+        "type": "mcq",
+        "o": [
+            "Ensures coverage data is saved if the process is terminated by SIGTERM",
+            "Sends a signal to tests on failure",
+            "Terminates long-running tests",
+            "Enables signal-based test triggers"
+        ]
+    },
+    {
+        "q": "Match the `coverage.py` output formats with their use cases:",
+        "type": "match",
+        "left": [
+            "Terminal",
+            "HTML",
+            "XML",
+            "JSON"
+        ],
+        "right": [
+            "Quick developer feedback",
+            "Interactive browsing with highlighting",
+            "CI system integration",
+            "Programmatic parsing and dashboards"
+        ]
+    },
+    {
+        "q": "In TDD, 'Tell, Don't Ask' principle suggests objects should tell others what to do rather than querying state.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Which Python magic method is often mocked in TDD to isolate tests from file system operations?",
+        "type": "mcq",
+        "o": [
+            "open",
+            "__init__",
+            "__str__",
+            "len"
+        ]
+    },
+    {
+        "q": "The `pytest-bdd` library supports Python's `async def` for step definitions.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Match the FIRST principles of testing to their meaning.",
+        "type": "memory",
+        "pairs": {
+            "Fast": "Executes in milliseconds",
+            "Isolated": "Order of execution doesn't matter",
+            "Repeatable": "Yields same result every time"
+        }
+    },
+    {
+        "q": "Which of these is NOT part of the FIRST principles for good unit tests?",
+        "type": "odd_one_out",
+        "options": [
+            "Fast",
+            "Isolated",
+            "Repeatable",
+            "Synchronous",
+            "Timely"
+        ],
+        "correct": "Synchronous"
+    },
+    {
+        "q": "What is the consequence of setting `[run] branch = False` explicitly in `.coveragerc`?",
+        "type": "mcq",
+        "o": [
+            "Only line coverage is measured, branch coverage is disabled",
+            "No coverage is measured at all",
+            "All branches are treated as covered",
+            "Tests run without tracing"
+        ]
+    },
+    {
+        "q": "In BDD, what is the term for a person who represents the business side and helps define features?",
+        "type": "fill_blank",
+        "answers": [
+            "product owner",
+            "business analyst",
+            "stakeholder"
+        ],
+        "other_options": [
+            "developer",
+            "tester",
+            "scrum master",
+            "designer"
+        ]
+    },
+    {
+        "q": "The `coverage.py` report can be sorted by file name, coverage percentage, or number of missing lines.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "In `pytest-bdd`, what is a common way to share state between `given`, `when`, and `then` steps?",
+        "type": "mcq",
+        "o": [
+            "Pytest fixtures passed via function arguments",
+            "Global variables in conftest.py",
+            "Writing to a shared CSV file",
+            "Using environment variables"
+        ]
+    },
+    {
+        "q": "Sort the characteristics into Unit Tests vs E2E Tests.",
+        "type": "swipe_cards",
+        "left_label": "Unit Tests",
+        "right_label": "E2E Tests",
+        "cards": {
+            "Tests single functions": "left",
+            "Simulates user in a real browser": "right",
+            "Executes rapidly": "left",
+            "Prone to flakiness": "right"
+        }
+    },
+    {
+        "q": "How does `coverage.py` handle coverage measurement of C extensions loaded by Python?",
+        "type": "mcq",
+        "o": [
+            "It cannot trace C extensions; it only measures Python bytecode",
+            "It uses a special C tracer automatically",
+            "It decompiles C code to Python for tracing",
+            "It measures only the Python wrapper functions around C code"
+        ]
+    },
+    {
+        "q": "Sort the definitions of Test Doubles.",
+        "type": "swipe_cards",
+        "left_label": "Mock",
+        "right_label": "Stub",
+        "cards": {
+            "Verifies behavior and calls": "left",
+            "Provides hardcoded answers": "right",
+            "Asserts a method was called": "left",
+            "Never fails the test itself": "right"
+        }
+    },
+    {
+        "q": "In TDD, what is the 'Composed Method' pattern often applied during the Refactor phase?",
+        "type": "mcq",
+        "o": [
+            "Breaking large methods into smaller, well-named methods at the same abstraction level",
+            "Creating composite test suites",
+            "Combining multiple classes into one",
+            "Writing tests that cover multiple methods simultaneously"
+        ]
+    },
+    {
+        "q": "A fake object used to verify that a specific function was called during a test.",
+        "type": "word_scramble",
+        "answer": "MOCK",
+        "decoys": "JP"
+    },
+    {
+        "q": "The `pytest-bdd` `parsers.cfparse` allows defining custom ______ for complex parameter types like dates.",
+        "type": "fill_blank",
+        "answers": [
+            "extra_types",
+            "type converters"
+        ],
+        "other_options": [
+            "data classes",
+            "serializers",
+            "decorators",
+            "annotations"
+        ]
+    },
+    {
+        "q": "Branch coverage of 100% guarantees that all possible logical paths in the code have been tested.",
+        "type": "true_false",
+        "correct": "False"
+    },
+    {
+        "q": "What is the internal storage backend used by `coverage.py` for its data file?",
+        "type": "mcq",
+        "o": [
+            "SQLite",
+            "JSON flat file",
+            "Pickle",
+            "MessagePack"
+        ]
+    },
+    {
+        "q": "In `pytest-bdd`, how can you dynamically skip a scenario based on a runtime condition within a step?",
+        "type": "mcq",
+        "o": [
+            "Call pytest.skip() inside the step definition",
+            "Use the @skip tag in the feature file",
+            "Delete the feature file temporarily",
+            "Set an environment variable before the run"
+        ]
+    },
+    {
+        "q": "Match the advanced TDD concepts with their descriptions:",
+        "type": "match",
+        "left": [
+            "Test Spy",
+            "Dummy Object",
+            "Fake Object",
+            "Decorator Pattern"
+        ],
+        "right": [
+            "Records interactions for later verification",
+            "Passed but never used, often to satisfy signatures",
+            "Working implementation with shortcuts",
+            "Dynamically adding responsibilities without modifying class"
+        ]
+    },
+    {
+        "q": "Name the `coverage.py` internal module that performs the actual bytecode tracing.",
+        "type": "short_answer",
+        "answers": [
+            "pytracer",
+            "collector",
+            "tracer"
+        ],
+        "isCaseSensitive": false
+    },
+    {
+        "q": "In TDD, the 'Red' phase should ideally last no more than a few seconds of wall clock time.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "A fake object that merely provides predefined return values when called.",
+        "type": "word_scramble",
+        "answer": "STUB",
+        "decoys": "QV"
+    },
+    {
+        "q": "What is the purpose of the `coverage.process_startup()` function?",
+        "type": "mcq",
+        "o": [
+            "To initialize coverage measurement in subprocesses started via multiprocessing",
+            "To start the test runner",
+            "To begin generating a report",
+            "To launch the coverage server"
+        ]
+    },
+    {
+        "q": "In Gherkin, what is the impact of using a 'Rule' block on execution of its contained scenarios?",
+        "type": "mcq",
+        "o": [
+            "Scenarios are executed as normal; Rule is an organizational grouping only",
+            "Scenarios are skipped unless explicitly tagged",
+            "Rules change the execution order",
+            "Scenarios in a Rule run with higher priority"
+        ]
+    },
+    {
+        "q": "The `pytest-bdd` library supports customizing the ______ used to generate missing step definitions.",
+        "type": "fill_blank",
+        "answers": [
+            "template",
+            "step template"
+        ],
+        "other_options": [
+            "skeleton",
+            "blueprint",
+            "pattern",
+            "stub"
+        ]
+    },
+    {
+        "q": "Complete the rationale for fast tests:",
+        "type": "inline_dropdown",
+        "text": "A test suite that is too [0] will interrupt developer flow, which completely breaks the rhythm of [1].",
+        "dropdowns": [
+            {
+                "correct": "slow",
+                "options": [
+                    "fast",
+                    "slow",
+                    "small"
+                ]
+            },
+            {
+                "correct": "TDD",
+                "options": [
+                    "TDD",
+                    "compilation",
+                    "debugging"
+                ]
+            }
+        ]
+    },
+    {
+        "q": "`coverage.py` uses Python's `sys.monitoring` API for tracing in Python 3.12+.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Complete the mocking best practice:",
+        "type": "inline_dropdown",
+        "text": "Mocking external APIs makes tests more [0] and prevents network [1].",
+        "dropdowns": [
+            {
+                "correct": "reliable",
+                "options": [
+                    "brittle",
+                    "reliable",
+                    "slow"
+                ]
+            },
+            {
+                "correct": "latency",
+                "options": [
+                    "latency",
+                    "security",
+                    "code"
+                ]
+            }
+        ]
+    },
+    {
+        "q": "Which `.coveragerc` configuration enables the new sys.monitoring-based tracer?",
+        "type": "mcq",
+        "o": [
+            "[run] tracer = sysmon",
+            "[run] backend = monitoring",
+            "[run] sys_monitoring = True",
+            "[run] engine = pep669"
+        ]
+    },
+    {
+        "q": "In TDD, what is the primary distinction between 'Classical' and 'Mockist' schools?",
+        "type": "mcq",
+        "o": [
+            "Classical tests real objects where possible; Mockist mocks all dependencies",
+            "Classical is for Python, Mockist for Java",
+            "Classical uses classes, Mockist uses functions",
+            "There is no distinction"
+        ]
+    },
+    {
+        "q": "A Gherkin 'Scenario Outline' can have nested 'Examples' tables.",
+        "type": "true_false",
+        "correct": "False"
+    },
+    {
+        "q": "What does the `coverage json` `--pretty-print` option do?",
+        "type": "mcq",
+        "o": [
+            "Formats the JSON output with indentation for human readability",
+            "Prints only passing files",
+            "Highlights syntax errors",
+            "Compresses the JSON output"
+        ]
+    },
+    {
+        "q": "In `pytest-bdd`, what is the mechanism to map a complex Gherkin data table to a Python object automatically?",
+        "type": "mcq",
+        "o": [
+            "Using `parsers.cfparse` with a custom type converter in extra_types",
+            "Writing a custom pytest fixture",
+            "Using a global dictionary",
+            "Serializing to YAML first"
+        ]
+    },
+    {
+        "q": "The 'Single Responsibility Principle' during TDD Refactor suggests that a test should only fail for one reason.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "What is the purpose of `[run] plugins` in `.coveragerc`?",
+        "type": "mcq",
+        "o": [
+            "To load third-party coverage plugins that extend functionality",
+            "To install missing dependencies",
+            "To specify pytest plugins",
+            "To define custom report formats"
+        ]
+    },
+    {
+        "q": "In BDD, what is 'Example Mapping' and when is it used?",
+        "type": "mcq",
+        "o": [
+            "A collaborative workshop to break down user stories into concrete examples before coding",
+            "A technique to map test results to requirements",
+            "A way to generate code from examples",
+            "A method for documenting APIs"
+        ]
+    },
+    {
+        "q": "The `______` parameter in a `pytest-bdd` step function receives the contents of a Gherkin Doc String.",
+        "type": "fill_blank",
+        "answers": [
+            "docstring",
+            "text"
+        ],
+        "other_options": [
+            "body",
+            "content",
+            "message",
+            "data"
+        ]
+    },
+    {
+        "q": "`coverage.py` can measure coverage of Jython code running on the JVM.",
+        "type": "true_false",
+        "correct": "False"
+    },
+    {
+        "q": "Which `coverage.py` command helps diagnose why certain files or lines are not being traced?",
+        "type": "mcq",
+        "o": [
+            "coverage debug sys",
+            "coverage check",
+            "coverage analyze",
+            "coverage inspect"
+        ]
+    },
+    {
+        "q": "In TDD, what does the 'Transformation Priority Premise' suggest?",
+        "type": "mcq",
+        "o": [
+            "Prefer simpler code transformations over complex ones when making a test pass",
+            "Always transform tests before code",
+            "Prioritize refactoring over adding features",
+            "Transform data formats for tests"
+        ]
+    },
+    {
+        "q": "Match the Gherkin dialects with their primary localized keyword for 'Feature':",
+        "type": "match",
+        "left": [
+            "English",
+            "French",
+            "German",
+            "Spanish"
+        ],
+        "right": [
+            "Feature",
+            "Fonctionnalit\u00e9",
+            "Funktionalit\u00e4t",
+            "Caracter\u00edstica"
+        ]
+    },
+    {
+        "q": "In `pytest-bdd`, a step definition can return a value to be used as a fixture only if `target_fixture` is specified.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "What is the role of `coverage.collector.Collector` class?",
+        "type": "mcq",
+        "o": [
+            "Core engine that traces execution and records which lines are hit",
+            "Garbage collection for test data",
+            "Collecting test files from a directory",
+            "Gathering performance metrics"
+        ]
+    },
+    {
+        "q": "In TDD, 'Test Doubles' that throw exceptions to test error handling are called Stubs.",
+        "type": "true_false",
+        "correct": "False"
+    },
+    {
+        "q": "What does the `--cov-append` flag in pytest-cov allow?",
+        "type": "mcq",
+        "o": [
+            "Accumulating coverage from multiple test runs into one data set",
+            "Adding new test files to the suite",
+            "Extending the report with notes",
+            "Including additional metrics"
+        ]
+    },
+    {
+        "q": "Name the design pattern often introduced during TDD Refactor to encapsulate complex conditional logic.",
+        "type": "short_answer",
+        "answers": [
+            "strategy pattern",
+            "state pattern",
+            "command pattern"
+        ],
+        "isCaseSensitive": false
+    },
+    {
+        "q": "The `pytest-bdd` `@scenario` decorator can accept a `features_base_dir` parameter to set the root feature directory.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Which Gherkin keyword is preferred to add additional context to a 'When' step without creating a new action?",
+        "type": "mcq",
+        "o": [
+            "And",
+            "Then",
+            "Given",
+            "But"
+        ]
+    },
+    {
+        "q": "What does `[run] concurrency = multiprocessing` enable in `coverage.py`?",
+        "type": "mcq",
+        "o": [
+            "Support for measuring coverage in programs using the multiprocessing module",
+            "Running tests on multiple cores",
+            "Parallel report generation",
+            "Concurrent file access"
+        ]
+    },
+    {
+        "q": "In BDD, a 'Scenario' describes a specific path through a use case with concrete values.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "The `______` function in `coverage.py` is used to start coverage measurement programmatically within a Python script.",
+        "type": "fill_blank",
+        "answers": [
+            "coverage.start",
+            "start"
+        ],
+        "other_options": [
+            "begin",
+            "run",
+            "init",
+            "measure"
+        ]
+    },
+    {
+        "q": "In `pytest-bdd`, what is the correct way to pass a list parameter using `parsers.cfparse`?",
+        "type": "mcq",
+        "o": [
+            "{values:List}",
+            "[values]",
+            "<values>",
+            "(values)"
+        ]
+    },
+    {
+        "q": "The `coverage.py` data file `.coverage` is a binary format not readable by text editors.",
+        "type": "true_false",
+        "correct": "False"
+    },
+    {
+        "q": "What is the primary goal of 'Behaviour Driven Development' over 'Test Driven Development'?",
+        "type": "mcq",
+        "o": [
+            "To bridge the communication gap between technical and non-technical stakeholders",
+            "To increase code coverage percentage",
+            "To run tests faster",
+            "To remove the need for unit tests"
+        ]
+    },
+    {
+        "q": "Match the `coverage.py` report sorting options with their effects:",
+        "type": "match",
+        "left": [
+            "Name",
+            "Stmts",
+            "Miss",
+            "Cover"
+        ],
+        "right": [
+            "Alphabetical by file name",
+            "By number of statements",
+            "By number of missing lines",
+            "By coverage percentage"
+        ]
+    },
+    {
+        "q": "In TDD, the 'Arrange-Act-Assert' pattern corresponds to Given-When-Then in BDD.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Which `coverage.py` option allows specifying a Python interpreter to use for subprocess coverage?",
+        "type": "mcq",
+        "o": [
+            "--command-line",
+            "--python",
+            "--interpreter",
+            "--exec"
+        ]
+    },
+    {
+        "q": "The `pytest-bdd` plugin requires feature files to be UTF-8 encoded.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "In Gherkin, what is the purpose of a 'Feature' description that follows the Feature keyword line?",
+        "type": "mcq",
+        "o": [
+            "To provide context and business value for the scenarios below",
+            "To write technical implementation details",
+            "To list test dependencies",
+            "To set configuration parameters"
+        ]
+    },
+    {
+        "q": "The `______` method in `coverage.py` stops tracing and saves collected data.",
+        "type": "fill_blank",
+        "answers": [
+            "coverage.stop",
+            "stop",
+            "save"
+        ],
+        "other_options": [
+            "end",
+            "finish",
+            "close",
+            "flush"
+        ]
+    },
+    {
+        "q": "In TDD, 'Code Coverage' is a valuable metric but should not be the target itself.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "What does the `--cov-report term-missing` option provide in pytest-cov?",
+        "type": "mcq",
+        "o": [
+            "A terminal report that lists the specific lines not covered",
+            "A summary of missing files",
+            "A warning about incomplete coverage",
+            "An error if coverage is below 100%"
+        ]
+    },
+    {
+        "q": "In `pytest-bdd`, how can you share data between step definition files in different modules?",
+        "type": "mcq",
+        "o": [
+            "Define fixtures in conftest.py at the appropriate scope level",
+            "Use global Python variables",
+            "Write to a shared database",
+            "Copy step definitions to every file"
+        ]
+    },
+    {
+        "q": "Name the `pytest-bdd` hook that fires when a step fails.",
+        "type": "short_answer",
+        "answers": [
+            "pytest_bdd_step_error",
+            "pytest_bdd_step_failed"
+        ],
+        "isCaseSensitive": false
+    },
+    {
+        "q": "`coverage.py` can differentiate between coverage of the same file executed in different test contexts.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Which of the following is a characteristic of 'Clean Code' as promoted by TDD refactoring?",
+        "type": "mcq",
+        "o": [
+            "Functions should do one thing and do it well",
+            "Functions should be as long as needed to cover logic",
+            "Code should have maximum number of parameters",
+            "Abbreviations should be used extensively to save space"
+        ]
+    },
+    {
+        "q": "In `pytest-bdd`, the `@given` step when used with `target_fixture` creates a fixture visible only within the current scenario.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "What does the `coverage debug data` command display?",
+        "type": "mcq",
+        "o": [
+            "Statistics about the collected coverage data in the current .coverage file",
+            "The source code of test files",
+            "Runtime performance data",
+            "Database connection strings"
+        ]
+    },
+    {
+        "q": "In BDD, 'Discovery' is the phase where the team clarifies requirements through conversation and examples.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "The `______` plugin for `coverage.py` allows coverage measurement of Django templates.",
+        "type": "fill_blank",
+        "answers": [
+            "django-coverage-plugin",
+            "coverage-django"
+        ],
+        "other_options": [
+            "django-cov",
+            "template-coverage",
+            "django-test-cov",
+            "pytest-django-cov"
+        ]
+    },
+    {
+        "q": "Which TDD pattern involves starting with a high-level acceptance test and mocking unwritten components?",
+        "type": "mcq",
+        "o": [
+            "Outside-In Development (London School)",
+            "Inside-Out Development (Detroit School)",
+            "Bottom-Up Development",
+            "Data-Driven Development"
+        ]
+    },
+    {
+        "q": "Match the `coverage.py` context types with their use cases:",
+        "type": "match",
+        "left": [
+            "static",
+            "dynamic",
+            "none"
+        ],
+        "right": [
+            "Fixed label for entire run",
+            "Label changes per test function",
+            "No context tracking"
+        ]
+    },
+    {
+        "q": "The `pytest-bdd` library can generate step definition stubs that include the correct parser type automatically.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "What is the effect of `[run] source_pkgs = mypkg` versus `[run] source = mypkg`?",
+        "type": "mcq",
+        "o": [
+            "source_pkgs uses importable package names; source uses file paths",
+            "They have identical functionality",
+            "source_pkgs is deprecated",
+            "source_pkgs adds the package to the path"
+        ]
+    },
+    {
+        "q": "In TDD, what is the term for the principle that states 'You should not have to change existing tests when refactoring'?",
+        "type": "mcq",
+        "o": [
+            "Test Stability Principle",
+            "Refactoring Immunity",
+            "Green Bar Pattern",
+            "Permanent Test Theory"
+        ]
+    },
+    {
+        "q": "The `pytest-bdd` `--verbose` option prints the full text of each Gherkin step as it runs.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "What does the `coverage report --fail-under=MIN` option do?",
+        "type": "mcq",
+        "o": [
+            "Exits with a non-zero status if total coverage is less than MIN",
+            "Skips files with coverage below MIN",
+            "Truncates the report at MIN lines",
+            "Only reports files above MIN"
+        ]
+    },
+    {
+        "q": "In Gherkin, the `But` keyword is used to continue a chain of `And` steps.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "The `______` option in `.coveragerc` allows specifying a pattern to match files for coverage measurement.",
+        "type": "fill_blank",
+        "answers": [
+            "include"
+        ],
+        "other_options": [
+            "match",
+            "pattern",
+            "filter",
+            "select"
+        ]
+    },
+    {
+        "q": "In `pytest-bdd`, what is the purpose of `pytest_bdd_apply_tag` hook?",
+        "type": "mcq",
+        "o": [
+            "To programmatically handle custom tags on scenarios or features",
+            "To add tags to a running test",
+            "To remove tags from a feature file",
+            "To sort scenarios by tag"
+        ]
+    },
+    {
+        "q": "The TDD cycle can be applied to database schema design and migrations.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "What is 'Mutation Testing' in relation to TDD and coverage?",
+        "type": "mcq",
+        "o": [
+            "Introducing small bugs to verify that tests detect them",
+            "Testing genetic algorithms",
+            "Changing test data randomly",
+            "Modifying production code unpredictably"
+        ]
+    },
+    {
+        "q": "Name the attribute of a `pytest-bdd` step that indicates it should be used as a target fixture.",
+        "type": "short_answer",
+        "answers": [
+            "target_fixture",
+            "target"
+        ],
+        "isCaseSensitive": false
+    },
+    {
+        "q": "The `coverage.py` XML report includes a `timestamp` attribute on the root element.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Which `coverage.py` feature is used to measure coverage of code running in a Celery worker?",
+        "type": "mcq",
+        "o": [
+            "Setting `COVERAGE_PROCESS_START` environment variable and using concurrency support",
+            "It is not possible",
+            "Using a special Celery coverage plugin",
+            "Wrapping worker tasks in decorators"
+        ]
+    },
+    {
+        "q": "In BDD, the practice of 'Deliberate Discovery' attempts to reduce the cost of late-discovered misunderstandings.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "What does the `coverage run --pylib` option do?",
+        "type": "mcq",
+        "o": [
+            "Measures coverage of the Python standard library in addition to user code",
+            "Uses PyPy instead of CPython",
+            "Links to Python documentation",
+            "Checks code style"
+        ]
+    },
+    {
+        "q": "The `______` design pattern is often used in TDD to inject dependencies and enable mocking.",
+        "type": "fill_blank",
+        "answers": [
+            "dependency injection"
+        ],
+        "other_options": [
+            "singleton",
+            "observer",
+            "factory method",
+            "adapter"
+        ]
+    },
+    {
+        "q": "In `pytest-bdd`, features can be organized into subdirectories and discovered recursively.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "What is the outcome of setting `[run] disable_warnings = trace-changed`?",
+        "type": "mcq",
+        "o": [
+            "Suppresses warnings about the trace function being changed by other code",
+            "Disables all warnings",
+            "Changes the trace mode",
+            "Prevents test failures"
+        ]
+    },
+    {
+        "q": "What is the internal mechanism `coverage.py` uses in Python 3.12+ to significantly reduce tracing overhead?",
+        "type": "mcq",
+        "o": [
+            "sys.monitoring API with per-bytecode-offset callbacks",
+            "Rewriting bytecode at import time",
+            "Using ptrace system calls",
+            "Injecting AST nodes into the source"
+        ]
+    },
+    {
+        "q": "In TDD, what does the 'Mikado Method' help address during complex refactoring?",
+        "type": "mcq",
+        "o": [
+            "Systematically untangling dependencies by reverting and trying smaller steps",
+            "Writing tests for legacy code without changing it",
+            "Generating documentation from test names",
+            "Parallelizing test execution"
+        ]
+    },
+    {
+        "q": "The `pytest-bdd` plugin allows injecting custom ______ into the Gherkin parser to extend keyword recognition.",
+        "type": "fill_blank",
+        "answers": [
+            "dialects",
+            "languages"
+        ],
+        "other_options": [
+            "parsers",
+            "lexers",
+            "grammars",
+            "formatters"
+        ]
+    },
+    {
+        "q": "`coverage.py` can measure coverage of code executed in a `__del__` method reliably on all Python versions.",
+        "type": "true_false",
+        "correct": "False"
+    },
+    {
+        "q": "Which `.coveragerc` section controls how `coverage.py` interacts with the `sys.monitoring` API?",
+        "type": "mcq",
+        "o": [
+            "[run] tracer",
+            "[monitoring]",
+            "[sys]",
+            "[trace]"
+        ]
+    },
+    {
+        "q": "In `pytest-bdd`, what is the consequence of using `parsers.re` with a non-matching step text?",
+        "type": "mcq",
+        "o": [
+            "The step definition is not invoked and StepDefinitionNotFoundError may occur",
+            "A default step is executed instead",
+            "The test passes silently",
+            "The feature file is modified to match"
+        ]
+    },
+    {
+        "q": "Match the `coverage.py` SQLite database tables with their contents:",
+        "type": "match",
+        "left": [
+            "file",
+            "line_bits",
+            "context",
+            "meta"
+        ],
+        "right": [
+            "File paths and their unique IDs",
+            "Bit fields indicating line execution",
+            "Test context labels",
+            "Version and configuration metadata"
+        ]
+    },
+    {
+        "q": "Name the Python bytecode instruction that `coverage.py` hooks into for branch coverage arc tracking.",
+        "type": "short_answer",
+        "answers": [
+            "JUMP_IF_TRUE_OR_POP",
+            "POP_JUMP_IF_FALSE",
+            "JUMP_ABSOLUTE",
+            "JUMP_FORWARD"
+        ],
+        "isCaseSensitive": true
+    },
+    {
+        "q": "In TDD, the 'Rule of Three' refers to waiting until code duplication occurs three times before abstracting.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "What is the architectural pattern of `coverage.py`'s plugin system?",
+        "type": "mcq",
+        "o": [
+            "Entry point based plugins using setuptools entry_points",
+            "Monkey patching of coverage classes",
+            "Inheritance from base classes only",
+            "Dynamically loaded DLLs"
+        ]
+    },
+    {
+        "q": "In Gherkin, what is the formal grammar format that defines the syntax of feature files?",
+        "type": "mcq",
+        "o": [
+            "Gherkin uses a PEG (Parsing Expression Grammar) defined in the cucumber/gherkin repository",
+            "EBNF defined by ISO standards",
+            "ANTLR grammar shipped with Python",
+            "Regular expression based validation"
+        ]
+    },
+    {
+        "q": "The `______` algorithm is used by `coverage.py` to map line numbers between different versions of source files for comparison.",
+        "type": "fill_blank",
+        "answers": [
+            "diff",
+            "sequence matcher",
+            "levenshtein"
+        ],
+        "other_options": [
+            "hash",
+            "checksum",
+            "grep",
+            "index"
+        ]
+    },
+    {
+        "q": "`pytest-bdd` supports the 'Rule' Gherkin keyword natively since version 4.0.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "What is the effect of setting `[run] dynamic_context = test_function` on the size of the `.coverage` data file?",
+        "type": "mcq",
+        "o": [
+            "It significantly increases file size due to per-line context data",
+            "It decreases file size",
+            "It has no effect on file size",
+            "It compresses the data automatically"
+        ]
+    },
+    {
+        "q": "In TDD, what is 'Object Calisthenics' and how does it relate to the Refactor phase?",
+        "type": "mcq",
+        "o": [
+            "A set of 9 rules that constrain design to promote maintainability during refactoring",
+            "A performance optimization technique for test suites",
+            "A method for generating test data",
+            "A way to measure object complexity"
+        ]
+    },
+    {
+        "q": "Branch coverage in `coverage.py` tracks arcs between basic blocks, not just if/else statements.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Which `coverage.py` debug command shows the raw arcs collected during a run?",
+        "type": "mcq",
+        "o": [
+            "coverage debug data",
+            "coverage debug arcs",
+            "coverage debug trace",
+            "coverage debug lines"
+        ]
+    },
+    {
+        "q": "In `pytest-bdd`, how can you programmatically access the Gherkin scenario object from within a step definition?",
+        "type": "mcq",
+        "o": [
+            "By requesting the `scenario` fixture in the step function parameters",
+            "By importing it from pytest_bdd",
+            "By reading the feature file again",
+            "It is not accessible"
+        ]
+    },
+    {
+        "q": "The 'Protocol' pattern in TDD (Python typing.Protocol) enables structural subtyping for test doubles.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "What is the purpose of the `coverage.lcov` module in newer versions of `coverage.py`?",
+        "type": "mcq",
+        "o": [
+            "To generate LCOV format reports for integration with tools like genhtml",
+            "To provide Linux kernel coverage metrics",
+            "To compress coverage data",
+            "To validate line coverage"
+        ]
+    },
+    {
+        "q": "In Gherkin, what is the maximum nesting depth allowed for 'Rule' and 'Scenario' blocks?",
+        "type": "mcq",
+        "o": [
+            "Rule can contain Scenarios; Scenarios contain Steps; no deeper nesting is allowed",
+            "Unlimited nesting is allowed",
+            "Only one level of nesting",
+            "Three levels maximum"
+        ]
+    },
+    {
+        "q": "The `______` method of a `Coverage` object returns a float representing the total coverage percentage.",
+        "type": "fill_blank",
+        "answers": [
+            "report",
+            "html_report",
+            "xml_report"
+        ],
+        "other_options": [
+            "get_percentage",
+            "summary",
+            "calculate",
+            "total"
+        ]
+    },
+    {
+        "q": "`coverage.py` can measure coverage of code executed via `ctypes` foreign function calls.",
+        "type": "true_false",
+        "correct": "False"
+    },
+    {
+        "q": "What is the role of the `coverage.parser.PythonParser` class?",
+        "type": "mcq",
+        "o": [
+            "Analyzes Python source code to determine which statements are executable",
+            "Parses feature files",
+            "Compiles Python code to bytecode",
+            "Reads configuration files"
+        ]
+    },
+    {
+        "q": "In TDD, what is the 'Walking Skeleton' approach?",
+        "type": "mcq",
+        "o": [
+            "Building a minimal end-to-end implementation first to validate architecture",
+            "Writing tests without any implementation",
+            "Creating empty class hierarchies",
+            "Refactoring before writing tests"
+        ]
+    },
+    {
+        "q": "Match the `pytest-bdd` parser types with their internal implementation:",
+        "type": "match",
+        "left": [
+            "parsers.parse",
+            "parsers.re",
+            "parsers.cfparse"
+        ],
+        "right": [
+            "Based on Python's string.Formatter",
+            "Wraps Python's re module",
+            "Extends parse with cardinality fields"
+        ]
+    },
+    {
+        "q": "The `coverage.py` sys.monitoring tracer requires the `PYTHON_PERF_JIT_SUPPORT` environment variable to be set.",
+        "type": "true_false",
+        "correct": "False"
+    },
+    {
+        "q": "Which Gherkin keyword was deprecated and replaced by the 'Rule' keyword?",
+        "type": "mcq",
+        "o": [
+            "No keyword was directly replaced; Rule is an addition for organization",
+            "Background was replaced",
+            "Scenario Outline was renamed",
+            "Feature was split into Rule"
+        ]
+    },
+    {
+        "q": "In `pytest-bdd`, what is the mechanism to pass a full Gherkin `DataTable` to a step definition?",
+        "type": "mcq",
+        "o": [
+            "Adding a `datatable` parameter to the step function, which receives a list of lists",
+            "Using `**kwargs`",
+            "Accessing a global variable",
+            "Reading the feature file within the step"
+        ]
+    },
+    {
+        "q": "The TDD practice of 'Test First' has been mathematically proven to reduce defect rates by exactly 40%.",
+        "type": "true_false",
+        "correct": "False"
+    },
+    {
+        "q": "What is the internal data structure used by `coverage.py` to store line execution counts?",
+        "type": "mcq",
+        "o": [
+            "A dictionary mapping file IDs to NumPy-style bit arrays or byte strings",
+            "A list of line numbers",
+            "A set of executed lines",
+            "A boolean 2D array"
+        ]
+    },
+    {
+        "q": "In BDD, what is the 'Three Amigos' meeting and its purpose?",
+        "type": "mcq",
+        "o": [
+            "A session between Business, Development, and Testing to agree on acceptance criteria",
+            "A code review session with three developers",
+            "A performance testing meeting",
+            "A daily standup format"
+        ]
+    },
+    {
+        "q": "The `______` environment variable can be set to enable `coverage.py` to trace subprocesses automatically.",
+        "type": "fill_blank",
+        "answers": [
+            "COVERAGE_PROCESS_START"
+        ],
+        "other_options": [
+            "COVERAGE_RUN_SUBPROCESS",
+            "COV_START",
+            "PYTHON_COVERAGE",
+            "COVERAGE_ENABLE"
+        ]
+    },
+    {
+        "q": "`pytest-bdd` step definitions can be written as async coroutines using `async def`.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Which of the following is a valid method to measure coverage of a code path inside a `lambda` function?",
+        "type": "mcq",
+        "o": [
+            "Lambda bodies are traced like any other code; ensure the lambda is executed during tests",
+            "Lambdas cannot be covered by coverage.py",
+            "Only named functions are traced",
+            "Special syntax is required in the lambda"
+        ]
+    },
+    {
+        "q": "In TDD, what does 'Speculative Generality' refer to as a code smell?",
+        "type": "mcq",
+        "o": [
+            "Adding abstractions for future use cases that do not yet exist",
+            "Writing tests for every possible input",
+            "Making code too simple",
+            "Avoiding all comments"
+        ]
+    },
+    {
+        "q": "Name the underlying library `coverage.py` uses for its HTML report's source code syntax highlighting.",
+        "type": "short_answer",
+        "answers": [
+            "pygments",
+            "Pygments"
+        ],
+        "isCaseSensitive": false
+    },
+    {
+        "q": "The `coverage.py` data file uses a WAL (Write-Ahead Log) mode for concurrent access.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "What is the purpose of the `@pytest.mark.parametrize` in combination with `pytest-bdd`?",
+        "type": "mcq",
+        "o": [
+            "It is generally not used with `pytest-bdd`; Scenario Outlines provide parameterization instead",
+            "To parameterize step definitions",
+            "To run feature files multiple times",
+            "To generate feature files dynamically"
+        ]
+    },
+    {
+        "q": "In Gherkin, what is the semantic difference between a Doc String and a Data Table as step arguments?",
+        "type": "mcq",
+        "o": [
+            "Doc Strings pass multi-line text; Data Tables pass tabular structured data",
+            "There is no difference",
+            "Doc Strings are for comments, Data Tables for values",
+            "Doc Strings are deprecated"
+        ]
+    },
+    {
+        "q": "The `______` plugin for `coverage.py` enables tracking coverage of SQL statements executed via SQLAlchemy.",
+        "type": "fill_blank",
+        "answers": [
+            "coverage-sqlalchemy",
+            "sqlalchemy-coverage"
+        ],
+        "other_options": [
+            "orm-coverage",
+            "db-coverage",
+            "query-coverage",
+            "sql-cover"
+        ]
+    },
+    {
+        "q": "In TDD, the 'Composite' pattern is often introduced during Refactor to treat individual and grouped objects uniformly.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Which `coverage.py` API method allows programmatic control over starting and stopping tracing?",
+        "type": "mcq",
+        "o": [
+            "Coverage.start() and Coverage.stop()",
+            "Coverage.begin() and Coverage.end()",
+            "Coverage.trace_on() and Coverage.trace_off()",
+            "Coverage.run() and Coverage.halt()"
+        ]
+    },
+    {
+        "q": "In `pytest-bdd`, what happens when a `Background` step fails?",
+        "type": "mcq",
+        "o": [
+            "All scenarios in that feature are skipped or failed as setup failed",
+            "Only the first scenario fails",
+            "The background is skipped and scenarios run",
+            "The test suite aborts"
+        ]
+    },
+    {
+        "q": "The `coverage.py` command `coverage debug sys` shows the paths where coverage looks for modules.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "What is the concept of 'Test Impact Analysis' in relation to TDD and coverage?",
+        "type": "mcq",
+        "o": [
+            "Using coverage data to determine which tests need to run based on code changes",
+            "Measuring the emotional impact of testing on developers",
+            "Analyzing how tests affect production performance",
+            "Calculating the cost of test maintenance"
+        ]
+    },
+    {
+        "q": "Match the `coverage.py` dispatch methods with their trace event types:",
+        "type": "match",
+        "left": [
+            "_trace_call",
+            "_trace_line",
+            "_trace_return",
+            "_trace_exception"
+        ],
+        "right": [
+            "Function call",
+            "Line execution",
+            "Function return",
+            "Exception raised"
+        ]
+    },
+    {
+        "q": "`pytest-bdd` supports writing step definitions in languages other than Python using language plugins.",
+        "type": "true_false",
+        "correct": "False"
+    },
+    {
+        "q": "In Gherkin, what is the effect of placing a tag on the `Examples` table of a Scenario Outline?",
+        "type": "mcq",
+        "o": [
+            "Tags on Examples apply to all individual examples derived from that table",
+            "Tags on Examples are ignored",
+            "The tag applies only to the header row",
+            "It creates a new scenario for each example with the tag"
+        ]
+    },
+    {
+        "q": "What does the `coverage run --module` option allow?",
+        "type": "mcq",
+        "o": [
+            "Running a module as a script (like `python -m`) with coverage measurement",
+            "Measuring coverage of a single module only",
+            "Running tests in module mode",
+            "Splitting coverage by module"
+        ]
+    },
+    {
+        "q": "The 'Null Object' pattern is a TDD technique where a no-op object is used instead of None to simplify tests.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "The `______` method in `pytest-bdd` allows registering step definitions programmatically without decorators.",
+        "type": "fill_blank",
+        "answers": [
+            "step",
+            "register_step"
+        ],
+        "other_options": [
+            "add_step",
+            "define_step",
+            "create_step",
+            "map_step"
+        ]
+    },
+    {
+        "q": "Which `coverage.py` feature allows tracking coverage of code executed in a Python REPL session?",
+        "type": "mcq",
+        "o": [
+            "Using `coverage run` with an interactive session or measuring via API calls",
+            "It is not possible to measure REPL coverage",
+            "Using a special REPL tracer flag",
+            "Wrapping the REPL in a test"
+        ]
+    },
+    {
+        "q": "In BDD, what is the relationship between 'User Story' and 'Feature' in Gherkin?",
+        "type": "mcq",
+        "o": [
+            "A Feature often represents one or more related User Stories",
+            "They are identical concepts",
+            "A User Story contains multiple Features",
+            "There is no relationship"
+        ]
+    },
+    {
+        "q": "`coverage.py` uses bytecode manipulation via `importlib` hooks to inject tracing in some edge cases.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "What is the time complexity of the arc-tracing algorithm in `coverage.py` per executed line?",
+        "type": "mcq",
+        "o": [
+            "O(1) amortized due to dictionary lookups and bit setting",
+            "O(n) where n is the number of lines in the file",
+            "O(log n)",
+            "O(n^2)"
+        ]
+    },
+    {
+        "q": "In `pytest-bdd`, how can you ensure a fixture created by a `given` step is cleaned up after the scenario?",
+        "type": "mcq",
+        "o": [
+            "Use the `yield` statement in the fixture function to run teardown code",
+            "Manually delete the fixture",
+            "Run a cleanup script after tests",
+            "It is cleaned up automatically without any code"
+        ]
+    },
+    {
+        "q": "Name the Python standard library module that `coverage.py` historically relied on before sys.monitoring.",
+        "type": "short_answer",
+        "answers": [
+            "sys.settrace",
+            "sys",
+            "trace"
+        ],
+        "isCaseSensitive": false
+    },
+    {
+        "q": "The `coverage.py` `[run] file_tracers` option allows specifying custom tracers for non-Python files.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "What is the purpose of the `--fail-under` flag in the `coverage report` command?",
+        "type": "mcq",
+        "o": [
+            "To exit with a non-zero status if total coverage is below a specified percentage",
+            "To skip files below a threshold",
+            "To flag lines that need more testing",
+            "To set a minimum for branch coverage only"
+        ]
+    },
+    {
+        "q": "In TDD, what is 'Constant Refactoring' anti-pattern?",
+        "type": "mcq",
+        "o": [
+            "Refactoring without adding new tests or functionality, leading to stagnation",
+            "Refactoring constants into configuration files",
+            "Never refactoring at all",
+            "Using constants instead of variables"
+        ]
+    },
+    {
+        "q": "The `pytest-bdd` `scenarios()` function can accept a glob pattern to select specific feature files.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Which Gherkin localisation feature allows writing feature files in languages other than English?",
+        "type": "mcq",
+        "o": [
+            "A `# language: xx` comment header at the top of the feature file",
+            "Setting an environment variable",
+            "Using a different file extension",
+            "Installing a translation plugin"
+        ]
+    },
+    {
+        "q": "The `______` class in `coverage.py` is responsible for rendering the final HTML report with navigation.",
+        "type": "fill_blank",
+        "answers": [
+            "HtmlReporter",
+            "Reporter"
+        ],
+        "other_options": [
+            "WebGenerator",
+            "ReportBuilder",
+            "HtmlWriter",
+            "OutputFormatter"
+        ]
+    },
+    {
+        "q": "In `pytest-bdd`, a step definition decorated with both `@given` and `@when` for the same step text is valid.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "What does the `coverage xml --skip-empty` option do?",
+        "type": "mcq",
+        "o": [
+            "Omits files from the XML report that have zero executable statements",
+            "Skips empty lines in the report",
+            "Excludes test files automatically",
+            "Creates a smaller XML file"
+        ]
+    }
+]

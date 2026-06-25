@@ -1,0 +1,32 @@
+[
+  {
+    "title": "Basic Queries \ud83d\udcda",
+    "ques": "Write a basic SQL query to retrieve all columns for users whose `age` is exactly 25. Use the `SELECT` and `WHERE` statements.",
+    "answer": {
+      "type": "code",
+      "lang": "sql",
+      "content": "SELECT * FROM users WHERE age = 25;"
+    },
+    "explanation": "The `SELECT *` command retrieves all columns, and the `WHERE` clause filters rows based on a specific condition."
+  },
+  {
+    "title": "Sorting and Limiting Data \ud83d\udcca",
+    "ques": "Write an SQL query to find the top 5 highest-paid employees. You need to use `ORDER BY` and `LIMIT`.",
+    "answer": {
+      "type": "code",
+      "lang": "sql",
+      "content": "SELECT * FROM employees ORDER BY salary DESC LIMIT 5;"
+    },
+    "explanation": "`ORDER BY salary DESC` sorts the results in descending order, and `LIMIT 5` restricts the output to the top five rows."
+  },
+  {
+    "title": "Updating and Deleting Records \ud83d\udee0",
+    "ques": "Write two separate queries:\n1. Update the status of order ID 10 to 'Shipped'.\n2. Delete all records from `cart_items` where `session_id` is 99.",
+    "answer": {
+      "type": "code",
+      "lang": "sql",
+      "content": "UPDATE orders SET status = 'Shipped' WHERE order_id = 10;\n\nDELETE FROM cart_items WHERE session_id = 99;"
+    },
+    "explanation": "The `UPDATE` statement modifies existing records, while `DELETE` removes them. Always use a `WHERE` clause to avoid modifying the entire table."
+  }
+]

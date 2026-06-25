@@ -1,0 +1,103 @@
+{
+    "id": "learn_google_cloud_az",
+    "topicId": "google_cloud_az",
+    "topicTitle": "Google Cloud & Azure",
+    "description": "Expand your multi-cloud expertise. Learn to manage Google Cloud (GCS, BigQuery, Pub/Sub) and Microsoft Azure (Blob Storage, Cosmos DB) via Python SDKs.",
+    "baseKP": 75,
+    "slides": [
+        {
+            "id": "gcp_az_1",
+            "type": "content",
+            "title": "The Multi-Cloud World",
+            "content": "# Beyond AWS 🌍\n\nWhile AWS is the market leader, enterprise companies often adopt a multi-cloud strategy to avoid vendor lock-in or to utilize specific strengths of other providers.\n\n- **Google Cloud Platform (GCP):** Renowned for data analytics (BigQuery) and machine learning.\n- **Microsoft Azure:** Deeply integrated with enterprise Microsoft ecosystems (Active Directory, .NET) and massive global reach.\n\nPython has official, robust SDKs for both platforms."
+        },
+        {
+            "id": "gcp_az_2",
+            "type": "content",
+            "title": "Google Cloud Storage (GCS)",
+            "content": "# GCP: Cloud Storage 🪣\n\nThe GCP equivalent of Amazon S3 is Google Cloud Storage (GCS).\n\n```bash\npip install google-cloud-storage\n```\n\nAuthentication is typically handled by setting the `GOOGLE_APPLICATION_CREDENTIALS` environment variable to point to a service account JSON file.\n\n```python_not\nfrom google.cloud import storage\n\n# Initialize the client\nclient = storage.Client()\n\n# Get a specific bucket\nbucket = client.bucket('my-gcp-bucket')\n\n# Upload a string to a file\nblob = bucket.blob('config/settings.txt')\nblob.upload_from_string('{\"mode\": \"prod\"}')\n\nprint(f\"File uploaded to {blob.public_url}\")\n```"
+        },
+        {
+            "id": "gcp_az_3",
+            "type": "content",
+            "title": "Google BigQuery",
+            "content": "# GCP: BigQuery Analytics 📈\n\nBigQuery is GCP's crown jewel: a serverless, highly scalable enterprise data warehouse. You can query terabytes of data using standard SQL in seconds.\n\n```bash\npip install google-cloud-bigquery\n```\n\n```python_not\nfrom google.cloud import bigquery\n\nclient = bigquery.Client()\n\n# Standard SQL query\nquery = \"\"\"\n    SELECT name, count\n    FROM `bigquery-public-data.usa_names.usa_1910_2013`\n    WHERE state = 'TX'\n    ORDER BY count DESC\n    LIMIT 5\n\"\"\"\n\n# Execute the query\nquery_job = client.query(query)\n\n# Iterate over the results\nfor row in query_job:\n    print(f\"{row.name}: {row.count}\")\n```"
+        },
+        {
+            "id": "gcp_az_4",
+            "type": "content",
+            "title": "Google Pub/Sub",
+            "content": "# GCP: Messaging with Pub/Sub 📡\n\nGoogle Cloud Pub/Sub is equivalent to a hybrid of AWS SNS and SQS. It is an asynchronous messaging service designed to be highly reliable and scalable.\n\n```python_not\nfrom google.cloud import pubsub_v1\nimport json\n\nproject_id = \"my-project-123\"\ntopic_id = \"user-signups\"\n\npublisher = pubsub_v1.PublisherClient()\ntopic_path = publisher.topic_path(project_id, topic_id)\n\n# Data must be a bytestring\ndata = json.dumps({\"user_id\": 99, \"email\": \"a@b.com\"}).encode(\"utf-8\")\n\n# Publish the message\nfuture = publisher.publish(topic_path, data)\nprint(f\"Published message ID: {future.result()}\")\n```"
+        },
+        {
+            "id": "gcp_az_quiz_1",
+            "type": "quiz",
+            "title": "GCP Quiz",
+            "content": "Test your knowledge of GCP services.",
+            "quizQuestion": "Which Google Cloud service is widely known as a highly scalable, serverless data warehouse that you can query using standard SQL?",
+            "quizOptions": [
+                "Google Cloud Storage",
+                "Google Cloud Pub/Sub",
+                "BigQuery",
+                "Cloud Functions"
+            ],
+            "correctOptionIndex": 2
+        },
+        {
+            "id": "gcp_az_5",
+            "type": "content",
+            "title": "Introduction to Azure SDK",
+            "content": "# Microsoft Azure Python SDK 🟦\n\nAzure takes a slightly different approach to its SDK. Instead of one massive library (like Boto3), Azure provides separate packages for each service.\n\nThis keeps your deployment packages small!\n\n```bash\n# Core identity package\npip install azure-identity \n\n# Specific service packages\npip install azure-storage-blob\npip install azure-cosmos\n```"
+        },
+        {
+            "id": "gcp_az_6",
+            "type": "content",
+            "title": "Azure DefaultCredential",
+            "content": "# Azure Authentication 🔐\n\nThe `azure-identity` package provides the incredible `DefaultAzureCredential`. \n\nIt automatically attempts to authenticate via environment variables, managed identities (if running on Azure), or the Azure CLI (if running locally on your laptop), in that order.\n\n```python_not\nfrom azure.identity import DefaultAzureCredential\n\n# One credential object rules them all!\ncredential = DefaultAzureCredential()\n```"
+        },
+        {
+            "id": "gcp_az_7",
+            "type": "content",
+            "title": "Azure Blob Storage",
+            "content": "# Azure: Blob Storage 💧\n\nThe Azure equivalent of S3 and GCS is Azure Blob Storage. \n\nFiles (blobs) are stored inside Containers (similar to buckets).\n\n```python_not\nfrom azure.storage.blob import BlobServiceClient\nfrom azure.identity import DefaultAzureCredential\n\naccount_url = \"https://myaccount.blob.core.windows.net\"\nclient = BlobServiceClient(account_url, credential=DefaultAzureCredential())\n\n# Get a client for a specific blob (file)\nblob_client = client.get_blob_client(container=\"reports\", blob=\"january.pdf\")\n\n# Upload a file\nwith open(\"./local_report.pdf\", \"rb\") as data:\n    blob_client.upload_blob(data, overwrite=True)\n    print(\"Upload complete!\")\n```"
+        },
+        {
+            "id": "gcp_az_8",
+            "type": "content",
+            "title": "Azure Cosmos DB",
+            "content": "# Azure: Cosmos DB 🪐\n\nCosmos DB is Azure's fully managed NoSQL database (equivalent to AWS DynamoDB). It is globally distributed and supports multiple APIs (including a MongoDB-compatible API).\n\n```python_not\nfrom azure.cosmos import CosmosClient\nimport os\n\nURL = os.environ['COSMOS_URL']\nKEY = os.environ['COSMOS_KEY']\n\nclient = CosmosClient(URL, credential=KEY)\n\n# Connect to database and container\ndatabase = client.get_database_client(\"InventoryDB\")\ncontainer = database.get_container_client(\"Products\")\n\n# Insert a JSON document\nnew_item = {'id': '1', 'product_name': 'Laptop', 'price': 999}\ncontainer.upsert_item(new_item)\n```"
+        },
+        {
+            "id": "gcp_az_9",
+            "type": "content",
+            "title": "Azure Service Bus",
+            "content": "# Azure: Service Bus 🚌\n\nAzure Service Bus is an enterprise message broker, handling queues and pub/sub topics.\n\n```python_not\nfrom azure.servicebus import ServiceBusClient, ServiceBusMessage\nimport os\n\nCONNECTION_STR = os.environ['SERVICE_BUS_CONN_STR']\nQUEUE_NAME = \"order-queue\"\n\nclient = ServiceBusClient.from_connection_string(conn_str=CONNECTION_STR)\n\nwith client:\n    sender = client.get_queue_sender(queue_name=QUEUE_NAME)\n    with sender:\n        # Create and send a message\n        message = ServiceBusMessage(\"Process Order #404\")\n        sender.send_messages(message)\n        print(\"Message sent!\")\n```"
+        },
+        {
+            "id": "gcp_az_quiz_2",
+            "type": "quiz",
+            "title": "Azure Auth Quiz",
+            "content": "Check your understanding of Azure SDK.",
+            "quizQuestion": "In the Azure Python SDK, what is the purpose of `DefaultAzureCredential()`?",
+            "quizOptions": [
+                "It generates a random password for a new database.",
+                "It automatically discovers and applies the correct authentication method (Environment variables, CLI, or Managed Identity) without changing code.",
+                "It prompts the user to type their Azure password into the terminal.",
+                "It disables all authentication for local testing."
+            ],
+            "correctOptionIndex": 1
+        },
+        {
+            "id": "gcp_az_10",
+            "type": "content",
+            "title": "Cloud Functions",
+            "content": "# Serverless Compute 🌩️\n\nBoth GCP and Azure offer Serverless computing (equivalent to AWS Lambda).\n\n- **GCP:** Google Cloud Functions\n- **Azure:** Azure Functions\n\nIn both systems, you write a Python function that takes a Request object and returns a Response. You deploy the function, and the cloud provider handles the servers, scaling, and execution.\n\nYou typically deploy these using the cloud provider's CLI (`gcloud` or `func`), or using Infrastructure as Code (covered next!)."
+        },
+        {
+            "id": "gcp_az_11",
+            "type": "content",
+            "title": "Summary",
+            "content": "# Multi-Cloud Master! 🎉\n\nYou've expanded your toolkit to cover the three major cloud providers.\n\n## Key Takeaways\n\n- **Google Cloud (GCP):**\n  - Use `google-cloud-storage` for file objects (like S3).\n  - Use `google-cloud-bigquery` for executing massive SQL analytics.\n  - Use `google-cloud-pubsub` for asynchronous messaging.\n- **Microsoft Azure:**\n  - The SDK is modular. Install only what you need.\n  - Use `DefaultAzureCredential` for seamless authentication across environments.\n  - Use `azure-storage-blob` for file objects.\n  - Use `azure-cosmos` for global NoSQL databases.\n  - Use `azure-servicebus` for enterprise messaging queues.\n\nYou are now ready to automate infrastructure anywhere!"
+        }
+    ]
+}

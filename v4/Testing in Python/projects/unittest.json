@@ -1,0 +1,31 @@
+[
+  {
+    "title": "Introduction to unittest",
+    "ques": "Write a basic `unittest.TestCase` class named `TestMath` with a single test method `test_addition` that asserts 1 + 1 equals 2.",
+    "answer": {
+      "type": "code",
+      "lang": "python",
+      "content": "import unittest\n\nclass TestMath(unittest.TestCase):\n    def test_addition(self):\n        self.assertEqual(1 + 1, 2)\n\nif __name__ == '__main__':\n    unittest.main()"
+    },
+    "explanation": "This exercise introduces the standard `unittest` framework. By subclassing `unittest.TestCase` and writing methods that start with `test_`, we define test cases. The `assertEqual` method is used for assertions."
+  },
+  {
+    "title": "Setup and TearDown",
+    "ques": "Explain the purpose of `setUp` and `tearDown` methods in `unittest` and provide a brief code snippet demonstrating their usage.",
+    "answer": {
+      "type": "text",
+      "content": "* **setUp:** Runs before each test method. Useful for creating resources needed for testing, like opening a file or initializing a database connection.\n* **tearDown:** Runs after each test method. Used to clean up resources, ensuring test isolation.\n\n```python\nclass TestDatabase(unittest.TestCase):\n    def setUp(self):\n        self.db = connect_db()\n\n    def tearDown(self):\n        self.db.close()\n```"
+    },
+    "explanation": "`setUp` and `tearDown` ensure that each test starts with a clean slate, preventing interference between tests and promoting test isolation."
+  },
+  {
+    "title": "Advanced Assertions and Skipping",
+    "ques": "How do you check if a specific exception is raised during a test? Also, write a decorator to skip a test unconditionally.",
+    "answer": {
+      "type": "code",
+      "lang": "python",
+      "content": "class TestAdvanced(unittest.TestCase):\n    def test_divide_by_zero(self):\n        with self.assertRaises(ZeroDivisionError):\n            result = 10 / 0\n\n    @unittest.skip(\"Skipping this test unconditionally\")\n    def test_skip_me(self):\n        self.fail(\"This should not run\")"
+    },
+    "explanation": "`assertRaises` is used as a context manager to verify that the block of code raises the expected exception. The `@unittest.skip` decorator is handy for temporarily disabling tests."
+  }
+]

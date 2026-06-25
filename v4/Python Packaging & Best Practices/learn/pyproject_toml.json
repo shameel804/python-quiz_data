@@ -1,0 +1,103 @@
+{
+    "id": "learn_pyproject_toml",
+    "topicId": "pyproject_toml",
+    "topicTitle": "pyproject.toml & Dependency Management",
+    "description": "Say goodbye to setup.py! Learn how to use the modern pyproject.toml standard to manage build systems, pin dependencies with lock files, and automate versioning.",
+    "baseKP": 75,
+    "slides": [
+        {
+            "id": "pyproj_1",
+            "type": "content",
+            "title": "The End of setup.py",
+            "content": "# A New Standard 📜\n\nFor 15 years, Python developers configured their projects using a file called `setup.py`.\n\nThe problem? `setup.py` was an *executable Python script*. Running it to install a package could theoretically run malicious code or fail depending on the user's Python version.\n\nIn PEP 518, Python introduced **`pyproject.toml`**: a static, declarative configuration file that replaces `setup.py`, `requirements.txt`, and config files like `flake8.ini`."
+        },
+        {
+            "id": "pyproj_2",
+            "type": "content",
+            "title": "Anatomy of pyproject.toml",
+            "content": "# The `[build-system]` Table 🏗️\n\nThe most important part of `pyproject.toml` is the build system. \n\nHistorically, `setuptools` was the only way to build Python packages. Now, you can explicitly tell `pip` which tool to use (e.g., Poetry, Flit, Hatch) before it attempts to build your code!\n\n```toml\n# pyproject.toml\n[build-system]\nrequires = [\"poetry-core>=1.0.0\"]\nbuild-backend = \"poetry.core.masonry.api\"\n```"
+        },
+        {
+            "id": "pyproj_3",
+            "type": "content",
+            "title": "Project Metadata",
+            "content": "# The `[project]` Table 📋\n\nInstead of passing arguments to a `setup()` function, you declare your project metadata statically.\n\n```toml\n[project]\nname = \"my_awesome_app\"\nversion = \"1.2.0\"\ndescription = \"An application that does things.\"\nauthors = [{name = \"Jane Doe\", email = \"jane@doe.com\"}]\nrequires-python = \">=3.9\"\n\n# Your actual dependencies!\ndependencies = [\n    \"requests >=2.25.0\",\n    \"flask >=2.0.0\"\n]\n```"
+        },
+        {
+            "id": "pyproj_4",
+            "type": "content",
+            "title": "Tool Configuration",
+            "content": "# The `[tool]` Table 🛠️\n\nInstead of having 10 different config files in your repository (`.pylintrc`, `.flake8`, `pytest.ini`), you can put all tool configurations in this one file!\n\n```toml\n[tool.black]\nline-length = 88\ntarget-version = ['py310']\n\n[tool.pytest.ini_options]\naddopts = \"-ra -q\"\ntestpaths = [\n    \"tests\",\n]\n```"
+        },
+        {
+            "id": "pyproj_quiz_1",
+            "type": "quiz",
+            "title": "TOML Quiz",
+            "content": "Check your understanding of the modern standard.",
+            "quizQuestion": "Why did the Python community replace `setup.py` with `pyproject.toml`?",
+            "quizOptions": [
+                "Because TOML files execute faster than Python files.",
+                "Because `setup.py` was executable code, whereas `pyproject.toml` is a safe, static, declarative file that allows explicit declaration of the required build system.",
+                "Because `setup.py` only supported Python 2.",
+                "Because Microsoft bought Python and forced the change."
+            ],
+            "correctOptionIndex": 1
+        },
+        {
+            "id": "pyproj_5",
+            "type": "content",
+            "title": "Dependency Management",
+            "content": "# The Problem with `>=` 💣\n\nIn our `pyproject.toml`, we specified `requests >=2.25.0`.\n\nIf you deploy your app today, it might install `2.26.0`. If you deploy it tomorrow, it might install `2.30.0`. \n\nIf `2.30.0` introduces a breaking change, your production app will crash unexpectedly, even though you didn't change any of your own code! This is the nightmare of unpinned dependencies."
+        },
+        {
+            "id": "pyproj_6",
+            "type": "content",
+            "title": "Version Pinning",
+            "content": "# Exact Versions 📌\n\nTo prevent this, we must use **Version Pinning** (e.g., `requests ==2.26.0`). \n\nHowever, manually finding and pinning exact versions for your dependencies (and all of *their* sub-dependencies!) is impossible.\n\nWe solve this using **Lock Files**."
+        },
+        {
+            "id": "pyproj_7",
+            "type": "content",
+            "title": "Lock Files",
+            "content": "# `poetry.lock` 🔒\n\nWhen you use Poetry (or `pipenv`), it reads your `pyproject.toml`, calculates the exact, perfectly compatible versions of every single package and sub-package required, and writes them to a `poetry.lock` file.\n\n```text\n# poetry.lock (Auto-generated, do not edit manually!)\n[[package]]\nname = \"requests\"\nversion = \"2.26.0\"\n\n[[package]]\nname = \"urllib3\" # A sub-dependency of requests\nversion = \"1.26.7\"\n```\n\nYou commit `poetry.lock` to git. When you deploy, the server installs exactly what is in the lock file. Deterministic, crash-free deployments!"
+        },
+        {
+            "id": "pyproj_8",
+            "type": "content",
+            "title": "The Traditional Way",
+            "content": "# `pip-compile` 🛠️\n\nIf you aren't using Poetry, you can achieve lock files using the standard `pip-tools` library.\n\nYou create a simple `requirements.in` file:\n`flask>=2.0`\n\nThen you run `pip-compile`.\nIt calculates the exact hashes and sub-dependencies and generates a massive, pinned `requirements.txt` file automatically!\n\n*(This is the professional way to use requirements.txt!)*"
+        },
+        {
+            "id": "pyproj_quiz_2",
+            "type": "quiz",
+            "title": "Dependencies Quiz",
+            "content": "Test your knowledge of deterministic builds.",
+            "quizQuestion": "What is the primary purpose of a Lock File (like `poetry.lock`)?",
+            "quizOptions": [
+                "It encrypts your source code so competitors cannot read it.",
+                "It permanently pins the exact version of every dependency (and sub-dependency) so that your application installs identically on every machine, preventing unexpected breaks from upstream updates.",
+                "It locks the database to prevent concurrent write errors.",
+                "It prevents users from uninstalling the application."
+            ],
+            "correctOptionIndex": 1
+        },
+        {
+            "id": "pyproj_9",
+            "type": "content",
+            "title": "Version Bumping",
+            "content": "# Automating Releases 📈\n\nWhen you release a new feature, you must bump the version in `pyproject.toml` from `1.2.0` to `1.3.0`.\n\nIf that version number is also hardcoded in your `__init__.py` and your documentation, changing it manually everywhere leads to mistakes.\n\nTools like `bumpversion` (or `bump2version`) automate this using RegEx."
+        },
+        {
+            "id": "pyproj_10",
+            "type": "content",
+            "title": "Using bumpversion",
+            "content": "# `bumpversion` in Action 🤖\n\nYou define a `.bumpversion.cfg` file telling the tool where the version string lives.\n\n```bash\n# Automatically increments the 'minor' version (1.2.0 -> 1.3.0)\n# It updates pyproject.toml, __init__.py, AND creates a git commit and git tag automatically!\nbumpversion minor\n```\n\nThis is essential for CI/CD pipelines!"
+        },
+        {
+            "id": "pyproj_11",
+            "type": "content",
+            "title": "Summary",
+            "content": "# Build Master! 🎉\n\nYou've learned the modern standard for configuring Python.\n\n## Key Takeaways\n\n- ✅ **`pyproject.toml`:** The static, declarative replacement for `setup.py`. It holds build settings, project metadata, and tool configs (`[tool.black]`).\n- ✅ **Version Pinning:** Using `>=` in production is dangerous. You must use exact `==` versions to ensure deterministic deployments.\n- ✅ **Lock Files:** Use Poetry (or `pip-compile`) to automatically generate lock files that pin the exact versions of all sub-dependencies.\n- ✅ **`bumpversion`:** Automate the tedious process of incrementing version numbers across your entire repository."
+        }
+    ]
+}

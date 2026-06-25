@@ -1,0 +1,135 @@
+{
+    "id": "learn_routing_request",
+    "topicId": "routing_request",
+    "topicTitle": "Routing & Request Handling",
+    "description": "Learn how to build high-performance web APIs with FastAPI by mastering path operations and parameters.",
+    "baseKP": 80,
+    "slides": [
+        {
+            "id": "fast_1",
+            "type": "content",
+            "title": "What is FastAPI?",
+            "content": "# Enter FastAPI \ud83d\ude80\n\nFastAPI is a modern, fast (high-performance) web framework for building APIs with Python 3.8+ based on standard Python type hints.\n\n## Key Features\n- **Fast:** Performance on par with NodeJS and Go (thanks to Starlette and Pydantic).\n- **Fast to code:** Increases development speed by 200% to 300%.\n- **Fewer bugs:** Reduces human-induced errors by 40%.\n- **Intuitive:** Great editor support. Completion everywhere. Less time debugging.\n- **Standards-based:** Fully compatible with OpenAPI (formerly Swagger) and JSON Schema."
+        },
+        {
+            "id": "fast_2",
+            "type": "content",
+            "title": "Hello World",
+            "content": "# Your First API \ud83c\udf0d\n\nCreating an API endpoint is incredibly simple.\n\n```python_not\nfrom fastapi import FastAPI\n\n# Create the application instance\napp = FastAPI()\n\n# Define a path operation (route)\n@app.get(\"/\")\ndef read_root():\n    return {\"Hello\": \"World\"}\n```\n\nWhen a user visits the root URL `/`, FastAPI automatically converts the Python dictionary into a JSON response!"
+        },
+        {
+            "id": "fast_3",
+            "type": "content",
+            "title": "Path Operations",
+            "content": "# HTTP Methods as Decorators \ud83d\udea6\n\nIn FastAPI, you use decorators to define the HTTP method (operation) and the URL path.\n\n```python_not\n@app.get(\"/items\")     # Read data\ndef read_items(): pass\n\n@app.post(\"/items\")    # Create data\ndef create_item(): pass\n\n@app.put(\"/items\")     # Update data\ndef update_item(): pass\n\n@app.delete(\"/items\")  # Delete data\ndef delete_item(): pass\n```\nThese perfectly map to the CRUD operations of a RESTful API."
+        },
+        {
+            "id": "fast_4",
+            "type": "content",
+            "title": "Type Hints",
+            "content": "# The Magic of Type Hints \u2728\n\nFastAPI is built entirely around Python type hints. \nYou declare the type of a variable, and FastAPI does the rest: data validation, serialization, and documentation.\n\n```python_not\n# Without type hints (Hard to read, no auto-complete)\ndef process_items(items):\n    for item in items:\n        print(item.upper())\n\n# With type hints (Editor auto-completes string methods!)\ndef process_items(items: list[str]):\n    for item in items:\n        print(item.upper())\n```\nFastAPI uses these hints to validate incoming HTTP requests."
+        },
+        {
+            "id": "fast_quiz_1",
+            "type": "quiz",
+            "title": "Knowledge Check: Basics",
+            "content": "Test your FastAPI fundamentals.",
+            "quizQuestion": "What does FastAPI use extensively to provide auto-completion, validation, and documentation?",
+            "quizOptions": [
+                "XML Schemas",
+                "Regular Expressions",
+                "Python Type Hints",
+                "Jinja2 Templates"
+            ],
+            "correctOptionIndex": 2
+        },
+        {
+            "id": "fast_5",
+            "type": "content",
+            "title": "Path Parameters",
+            "content": "# Extracting Data from URLs \ud83d\udee3\ufe0f\n\nIf you want to fetch a specific item, you pass its ID in the URL: `/items/42`.\n\nYou capture this in FastAPI using curly braces `{}` and adding a parameter to your function.\n\n```python_not\n@app.get(\"/items/{item_id}\")\ndef read_item(item_id: int):\n    return {\"item_id\": item_id}\n```\n\n**The Magic:** Because we declared `item_id: int`, if a user visits `/items/foo`, FastAPI will automatically return a nice HTTP 422 Error explaining that `item_id` must be an integer!"
+        },
+        {
+            "id": "fast_6",
+            "type": "content",
+            "title": "Order Matters",
+            "content": "# Routing Order \ud83d\udd00\n\nWhen defining path operations, **order matters**.\nFastAPI evaluates routes from top to bottom.\n\n```python_not\n# \u274c BAD: The second route will never be hit!\n@app.get(\"/users/{user_id}\")\ndef read_user(user_id: str):\n    return {\"user_id\": user_id}\n\n@app.get(\"/users/me\")\ndef read_current_user():\n    return {\"user_id\": \"the current user\"}\n```\n\nBecause `\"me\"` matches the `{user_id}` pattern, the first function will intercept the request. Always put specific paths *before* dynamic paths!"
+        },
+        {
+            "id": "fast_7",
+            "type": "content",
+            "title": "Query Parameters",
+            "content": "# Query Parameters \u2753\n\nWhen you declare function parameters that are **not** part of the path, FastAPI automatically interprets them as \"query\" parameters.\n\nQuery parameters appear after the `?` in the URL (e.g., `/items?skip=0&limit=10`).\n\n```python_not\n@app.get(\"/items/\")\ndef read_item(skip: int = 0, limit: int = 10):\n    return {\"skip\": skip, \"limit\": limit}\n```\nHere, `skip` and `limit` have default values, making them **optional**. If the user doesn't provide them, FastAPI uses `0` and `10`."
+        },
+        {
+            "id": "fast_8",
+            "type": "content",
+            "title": "Optional Query Parameters",
+            "content": "# Making Parameters Optional \ud83e\udd37\u200d\u2642\ufe0f\n\nIf a parameter doesn't have a default value, it is **required**.\nTo make a parameter optional *without* a default value, you use `None`.\n\n```python_not\n# In Python 3.10+, you can use the | operator for Union\n@app.get(\"/items/{item_id}\")\ndef read_item(item_id: str, q: str | None = None):\n    if q:\n        return {\"item_id\": item_id, \"q\": q}\n    return {\"item_id\": item_id}\n```\nNow, `/items/42` and `/items/42?q=hello` are both valid requests!"
+        },
+        {
+            "id": "fast_quiz_2",
+            "type": "quiz",
+            "title": "Knowledge Check: Parameters",
+            "content": "Test your parameter routing knowledge.",
+            "quizQuestion": "Given `@app.get(\"/users/{id}\")` and `def get_user(id: int, active: bool = True):`, how does FastAPI treat the `active` parameter?",
+            "quizOptions": [
+                "As a Path parameter.",
+                "As a required Query parameter.",
+                "As an optional Query parameter with a default value.",
+                "As a JSON Request Body."
+            ],
+            "correctOptionIndex": 2
+        },
+        {
+            "id": "fast_9",
+            "type": "content",
+            "title": "Multiple Path and Query Parameters",
+            "content": "# Mixing Parameters \ud83c\udf9b\ufe0f\n\nYou can declare multiple path parameters and query parameters at the same time. FastAPI knows which is which based on the `@app.get()` string!\n\n```python_not\n@app.get(\"/users/{user_id}/items/{item_id}\")\ndef read_user_item(\n    user_id: int, \n    item_id: str, \n    q: str | None = None, \n    short: bool = False\n):\n    item = {\"item_id\": item_id, \"owner_id\": user_id}\n    if q:\n        item.update({\"q\": q})\n    if not short:\n        item.update({\"description\": \"A very long description\"})\n    return item\n```"
+        },
+        {
+            "id": "fast_10",
+            "type": "content",
+            "title": "Boolean Type Conversion",
+            "content": "# Smart Conversion \ud83e\udde0\n\nNotice the `short: bool = False` parameter in the previous slide.\n\nIf a user accesses `/users/1/items/A?short=1` or `?short=true` or `?short=on` or `?short=yes`...\n\nFastAPI is smart enough to convert all of those string variations into the Python boolean `True`!\nIf they pass `?short=false` or `0`, it becomes `False`."
+        },
+        {
+            "id": "fast_11",
+            "type": "content",
+            "title": "Path Parameter Validation",
+            "content": "# Advanced Path Validation \ud83d\udee1\ufe0f\n\nYou can use FastAPI's `Path` function to add metadata and strict validation to path parameters.\n\n```python_not\nfrom fastapi import FastAPI, Path\n\napp = FastAPI()\n\n@app.get(\"/items/{item_id}\")\ndef read_items(\n    # The item_id must be greater than or equal to 1, and less than 1000\n    item_id: int = Path(title=\"The ID of the item\", ge=1, lt=1000)\n):\n    return {\"item_id\": item_id}\n```\nIf a user visits `/items/0`, they get a clean 422 validation error."
+        },
+        {
+            "id": "fast_12",
+            "type": "content",
+            "title": "Query Parameter Validation",
+            "content": "# Advanced Query Validation \ud83d\udccf\n\nSimilarly, you can use `Query` to validate query parameters.\n\n```python_not\nfrom fastapi import FastAPI, Query\n\n@app.get(\"/items/\")\ndef read_items(\n    # q must be between 3 and 50 characters, and match the regex pattern\n    q: str | None = Query(\n        default=None, \n        min_length=3, \n        max_length=50, \n        pattern=\"^fixedquery$\"\n    )\n):\n    results = {\"items\": [{\"item_id\": \"Foo\"}]}\n    if q:\n        results.update({\"q\": q})\n    return results\n```"
+        },
+        {
+            "id": "fast_13",
+            "type": "content",
+            "title": "HTTP Status Codes",
+            "content": "# Setting Status Codes \ud83d\udea6\n\nBy default, FastAPI returns a `200 OK` status. \nWhen creating an item with a POST request, you should return `201 Created`.\n\nYou can declare the `status_code` directly in the path operation decorator.\n\n```python_not\nfrom fastapi import FastAPI, status\n\napp = FastAPI()\n\n@app.post(\"/items/\", status_code=status.HTTP_201_CREATED)\ndef create_item(name: str):\n    return {\"name\": name}\n```\nUsing the `status` module gives you autocomplete for all HTTP codes, preventing typos like `2011` instead of `201`."
+        },
+        {
+            "id": "fast_quiz_3",
+            "type": "quiz",
+            "title": "Knowledge Check: Validation",
+            "content": "Test your parameter validation knowledge.",
+            "quizQuestion": "If you want to ensure a query parameter string is exactly 10 characters long, which FastAPI function do you use?",
+            "quizOptions": [
+                "Path(length=10)",
+                "Query(min_length=10, max_length=10)",
+                "String(10)",
+                "Depends(length=10)"
+            ],
+            "correctOptionIndex": 1
+        },
+        {
+            "id": "fast_14",
+            "type": "content",
+            "title": "Summary",
+            "content": "# Summary \ud83c\udf89\n\nYou've built your first FastAPI endpoints!\n\n## Key Takeaways\n- \u2705 **Decorators:** Define routes using `@app.get()`, `@app.post()`, etc.\n- \u2705 **Type Hints:** The core of FastAPI. They provide validation, parsing, and editor support.\n- \u2705 **Path Parameters:** Declared in the route URL using `{var_name}` and required in the function signature.\n- \u2705 **Query Parameters:** Function arguments that are *not* in the URL path. Making them `None` makes them optional.\n- \u2705 **Validation:** Use `Path()` and `Query()` to enforce string lengths, number ranges (`ge`, `lt`), and regex patterns.\n- \u2705 **Status Codes:** Set the HTTP response code using the `status_code` argument in the decorator."
+        }
+    ]
+}

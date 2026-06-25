@@ -1,0 +1,31 @@
+[
+  {
+    "title": "Docker SDK Basics",
+    "ques": "Using the `docker` Python SDK, write a script that connects to the local Docker daemon and lists the names of all currently running containers.",
+    "answer": {
+      "type": "code",
+      "lang": "python",
+      "content": "import docker\n\nclient = docker.from_env()\ncontainers = client.containers.list()\n\nfor container in containers:\n    print(container.name)"
+    },
+    "explanation": "`docker.from_env()` automatically configures the client using local environment variables (similar to how the CLI works). `client.containers.list()` fetches active containers."
+  },
+  {
+    "title": "Managing Container Lifecycle",
+    "ques": "How would you use the Python Docker SDK to pull the `nginx:latest` image and start it as a detached container mapping port 80 to 8080?",
+    "answer": {
+      "type": "code",
+      "lang": "python",
+      "content": "import docker\n\nclient = docker.from_env()\ncontainer = client.containers.run(\n    \"nginx:latest\",\n    detach=True,\n    ports={'80/tcp': 8080}\n)\nprint(f\"Started container {container.short_id}\")"
+    },
+    "explanation": "The SDK provides a programmatic way to manage the entire lifecycle of Docker containers, allowing for automated testing and deployment workflows."
+  },
+  {
+    "title": "Kubernetes Client",
+    "ques": "Briefly describe the standard steps to list all Pods in a specific namespace using the official Python `kubernetes` client.",
+    "answer": {
+      "type": "text",
+      "content": "1.  **Load Config:** Use `config.load_kube_config()` to load credentials from your local `~/.kube/config`.\n2.  **Initialize API:** Instantiate the core API client using `client.CoreV1Api()`.\n3.  **Fetch Pods:** Call `list_namespaced_pod(namespace='my-namespace')` on the API instance to retrieve and iterate through the Pod list."
+    },
+    "explanation": "The Kubernetes Python client provides full CRUD access to the k8s API, enabling developers to build custom operators or CI/CD integrations."
+  }
+]

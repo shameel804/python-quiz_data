@@ -1,0 +1,135 @@
+{
+    "id": "learn_docker_kubernet",
+    "topicId": "docker_kubernet",
+    "topicTitle": "Docker & Kubernetes",
+    "description": "Programmatically manage containers and orchestrate clusters using the official Python SDKs for Docker and Kubernetes.",
+    "baseKP": 75,
+    "slides": [
+        {
+            "id": "dock_k8s_1",
+            "type": "content",
+            "title": "Containers and Python",
+            "content": "# Automating Infrastructure 🐳\n\nDocker revolutionized software delivery by packaging applications and their dependencies into standardized units called **Containers**.\n\nKubernetes (K8s) revolutionized operations by orchestrating thousands of those containers across multiple servers.\n\nUsually, developers interact with these tools using CLIs (`docker run...` or `kubectl apply...`). However, as a DevOps engineer, you often need to automate these tasks programmatically using Python."
+        },
+        {
+            "id": "dock_k8s_2",
+            "type": "content",
+            "title": "The Docker SDK for Python",
+            "content": "# Introduction to `docker-py` 🐋\n\nThe official Docker SDK for Python allows you to do anything the `docker` CLI can do, but from within a Python script.\n\n```bash\npip install docker\n```\n\nUnder the hood, the SDK communicates with the Docker Daemon via its local Unix Socket (or an HTTP API if remote).\n\n```python_not\nimport docker\n\n# Connect to the local Docker daemon\nclient = docker.from_env()\n\n# Ping the daemon to check connection\nif client.ping():\n    print(\"Connected to Docker!\")\n```"
+        },
+        {
+            "id": "dock_k8s_3",
+            "type": "content",
+            "title": "Managing Docker Images",
+            "content": "# Pulling and Building Images 🖼️\n\nImages are the blueprints for containers. You can use the SDK to pull images from Docker Hub or build them from a Dockerfile.\n\n```python_not\nimport docker\nclient = docker.from_env()\n\n# Pull an image (equivalent to: docker pull nginx:latest)\nprint(\"Pulling nginx image...\")\nimage = client.images.pull('nginx', tag='latest')\nprint(f\"Pulled {image.id}\")\n\n# List all downloaded images\nfor img in client.images.list():\n    print(img.tags)\n```"
+        },
+        {
+            "id": "dock_k8s_4",
+            "type": "content",
+            "title": "Running Containers",
+            "content": "# Spawning Containers 🏃‍♂️\n\nYou can run containers, bind ports, and attach volumes.\n\n```python_not\nimport docker\nclient = docker.from_env()\n\n# Equivalent to: docker run -d -p 8080:80 --name my_web nginx\ncontainer = client.containers.run(\n    \"nginx\", \n    detach=True,           # Run in background\n    ports={'80/tcp': 8080}, # Map container port 80 to host port 8080\n    name=\"my_web\"\n)\n\nprint(f\"Container {container.name} is {container.status}\")\n```"
+        },
+        {
+            "id": "dock_k8s_5",
+            "type": "content",
+            "title": "Interacting with Containers",
+            "content": "# Logs and Commands 📜\n\nOnce a container is running, you can stream its logs or execute commands inside it.\n\n```python_not\n# Assuming 'container' is the object from the previous slide\n\n# Get the logs\nlogs = container.logs(tail=10).decode('utf-8')\nprint(logs)\n\n# Execute a command inside the container (equivalent to docker exec)\nexit_code, output = container.exec_run(\"echo Hello from inside!\")\nprint(output.decode('utf-8'))\n\n# Stop and remove the container\ncontainer.stop()\ncontainer.remove()\n```"
+        },
+        {
+            "id": "dock_k8s_quiz_1",
+            "type": "quiz",
+            "title": "Docker SDK Quiz",
+            "content": "Test your knowledge of the Docker SDK.",
+            "quizQuestion": "In the Docker Python SDK, what does the `detach=True` argument do when calling `client.containers.run()`?",
+            "quizOptions": [
+                "It deletes the image from the hard drive after running.",
+                "It detaches the container from the network.",
+                "It runs the container in the background and immediately returns a Container object, instead of blocking the Python script until the container exits.",
+                "It detaches the Python debugger from the process."
+            ],
+            "correctOptionIndex": 2
+        },
+        {
+            "id": "dock_k8s_6",
+            "type": "content",
+            "title": "Introduction to Kubernetes",
+            "content": "# The K8s Orchestrator ☸️\n\nDocker manages containers on a single machine. Kubernetes manages them across a cluster of machines.\n\nIn Kubernetes, the smallest deployable unit is a **Pod** (which usually contains one container). \n\nYou manage Pods using **Deployments** (to ensure X copies of a Pod are always running) and **Services** (to load balance traffic between them)."
+        },
+        {
+            "id": "dock_k8s_7",
+            "type": "content",
+            "title": "The Kubernetes Python Client",
+            "content": "# Scripting the Cluster 🤖\n\nThe official `kubernetes` package allows you to interact with the Kubernetes API Server.\n\n```bash\npip install kubernetes\n```\n\nTo connect to the cluster, the client needs credentials (usually stored in `~/.kube/config`).\n\n```python_not\nfrom kubernetes import client, config\n\n# Load credentials from ~/.kube/config\nconfig.load_kube_config()\n\n# Create an API client instance\nv1 = client.CoreV1Api()\n\n# Print all pods in all namespaces\nprint(\"Listing pods with their IPs:\")\nret = v1.list_pod_for_all_namespaces(watch=False)\nfor i in ret.items:\n    print(f\"{i.status.pod_ip} \\t {i.metadata.namespace} \\t {i.metadata.name}\")\n```"
+        },
+        {
+            "id": "dock_k8s_8",
+            "type": "content",
+            "title": "Namespaces and CoreV1Api",
+            "content": "# Core Resources 🏢\n\nThe `CoreV1Api` handles fundamental K8s resources like Pods, Namespaces, ConfigMaps, and Secrets.\n\nLet's create a new Namespace.\n\n```python_not\nfrom kubernetes import client, config\nconfig.load_kube_config()\nv1 = client.CoreV1Api()\n\n# Define the namespace metadata\nns_meta = client.V1ObjectMeta(name=\"my-python-namespace\")\nns_body = client.V1Namespace(metadata=ns_meta)\n\n# Create it via the API\nv1.create_namespace(body=ns_body)\nprint(\"Namespace created!\")\n```"
+        },
+        {
+            "id": "dock_k8s_9",
+            "type": "content",
+            "title": "ConfigMaps",
+            "content": "# Managing ConfigMaps 🗺️\n\nConfigMaps inject configuration data into Pods. You can update them programmatically using Python.\n\n```python_not\n# Define the data\nconfig_data = {\"LOG_LEVEL\": \"DEBUG\", \"API_URL\": \"https://api.example.com\"}\n\n# Create the ConfigMap object\ncmap_meta = client.V1ObjectMeta(name=\"app-config\")\ncmap_body = client.V1ConfigMap(\n    metadata=cmap_meta, \n    data=config_data\n)\n\n# Apply to the cluster in the 'default' namespace\nv1.create_namespaced_config_map(namespace=\"default\", body=cmap_body)\n```"
+        },
+        {
+            "id": "dock_k8s_10",
+            "type": "content",
+            "title": "AppsV1Api and Deployments",
+            "content": "# Deployments and AppsV1Api 🚀\n\nResources like Deployments and StatefulSets are not in the Core API; they are in the Apps API.\n\nTo interact with them, you use `AppsV1Api`.\n\n```python_not\nfrom kubernetes import client, config\nconfig.load_kube_config()\n\n# Use AppsV1Api for Deployments!\napps_v1 = client.AppsV1Api()\n\n# Read a deployment\ndeployment = apps_v1.read_namespaced_deployment(name=\"my-app\", namespace=\"default\")\n\nprint(f\"Current Replicas: {deployment.spec.replicas}\")\n```"
+        },
+        {
+            "id": "dock_k8s_11",
+            "type": "content",
+            "title": "Scaling Deployments",
+            "content": "# Programmatic Scaling 📈\n\nYou can easily scale applications up or down by updating the Deployment object and patching it.\n\n```python_not\n# (Continuing from previous slide)\n\n# Update the desired replica count\ndeployment.spec.replicas = 5\n\n# Patch the deployment in the cluster\napps_v1.patch_namespaced_deployment(\n    name=\"my-app\",\n    namespace=\"default\",\n    body=deployment\n)\n\nprint(\"Scaled deployment up to 5 replicas!\")\n```\n\nThis is incredibly useful for building custom auto-scalers based on specific business logic!"
+        },
+        {
+            "id": "dock_k8s_quiz_2",
+            "type": "quiz",
+            "title": "Kubernetes API Quiz",
+            "content": "Check your understanding of the K8s client structure.",
+            "quizQuestion": "Which API class would you use to list the Pods running in a cluster?",
+            "quizOptions": [
+                "AppsV1Api",
+                "PodV1Api",
+                "CoreV1Api",
+                "KubeV1Api"
+            ],
+            "correctOptionIndex": 2
+        },
+        {
+            "id": "dock_k8s_12",
+            "type": "content",
+            "title": "In-Cluster Configuration",
+            "content": "# Running Python INSIDE the Cluster 📦\n\nWhen you run the Python script on your laptop, `config.load_kube_config()` reads your `~/.kube/config` file.\n\nBut what if you package your Python script into a Docker container and run it *inside* the Kubernetes cluster (e.g., as a CronJob)?\n\nThere is no `~/.kube/config` inside the pod! You must use In-Cluster configuration.\n\n```python_not\nfrom kubernetes import client, config\n\ntry:\n    # Try to load in-cluster config (if running inside K8s)\n    config.load_incluster_config()\n    print(\"Loaded in-cluster config.\")\nexcept config.ConfigException:\n    # Fallback to local config (if running on developer laptop)\n    config.load_kube_config()\n    print(\"Loaded local config.\")\n```"
+        },
+        {
+            "id": "dock_k8s_13",
+            "type": "content",
+            "title": "Watching Resources",
+            "content": "# Streaming Kubernetes Events 📺\n\nInstead of repeatedly polling the API, you can use the `Watch` object to stream real-time events (Add, Modify, Delete) from the cluster.\n\n```python_not\nfrom kubernetes import client, config, watch\n\nconfig.load_kube_config()\nv1 = client.CoreV1Api()\nw = watch.Watch()\n\nprint(\"Watching for Pod events...\")\n# Stream events infinitely\nfor event in w.stream(v1.list_pod_for_all_namespaces):\n    event_type = event['type']      # ADDED, MODIFIED, DELETED\n    pod = event['object']\n    \n    print(f\"Event: {event_type} - Pod: {pod.metadata.name}\")\n```"
+        },
+        {
+            "id": "dock_k8s_quiz_3",
+            "type": "quiz",
+            "title": "In-Cluster Quiz",
+            "content": "Ensure you know how to deploy K8s scripts.",
+            "quizQuestion": "If you deploy your Python K8s-automation script as a Pod inside the cluster, which method must you use to authenticate the client?",
+            "quizOptions": [
+                "config.load_kube_config()",
+                "config.load_incluster_config()",
+                "config.authenticate_pod()",
+                "You cannot run K8s SDK scripts inside the cluster."
+            ],
+            "correctOptionIndex": 1
+        },
+        {
+            "id": "dock_k8s_14",
+            "type": "content",
+            "title": "Summary",
+            "content": "# Orchestration Master! 🎉\n\nYou've learned how to control modern infrastructure using Python.\n\n## Key Takeaways\n\n- ✅ **Docker SDK:** Use `docker.from_env()` to connect. Use `client.containers.run()` to programmatically spawn and manage containers.\n- ✅ **Kubernetes Client:** The official K8s client is split into APIs. `CoreV1Api` handles Pods and ConfigMaps; `AppsV1Api` handles Deployments.\n- ✅ **CRUD Operations:** Every resource supports create, read, patch, and delete operations via Python.\n- ✅ **In-Cluster:** Use `config.load_incluster_config()` when deploying your Python script inside K8s so it automatically authenticates via its ServiceAccount.\n- ✅ **Watch:** Use the `Watch` object to build real-time reactive event listeners.\n\nPython makes custom infrastructure orchestration incredibly easy!"
+        }
+    ]
+}

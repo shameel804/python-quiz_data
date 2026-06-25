@@ -1,0 +1,29 @@
+[
+  {
+    "title": "Docstring Styles",
+    "ques": "Name two popular docstring formatting styles used in Python, aside from the standard reStructuredText (Sphinx) format.",
+    "answer": {
+      "type": "text",
+      "content": "1.  **Google Style:** Known for its readability and simplicity, using sections like `Args:` and `Returns:`.\n2.  **NumPy Style:** Similar to Google style but uses extensive underlining, designed specifically for dense scientific documentation with many parameters."
+    },
+    "explanation": "Adopting a standard docstring style makes the code much easier to read and allows tools to automatically generate API documentation web pages."
+  },
+  {
+    "title": "Dunder Methods: String Representation",
+    "ques": "Explain the difference between the `__str__` and `__repr__` dunder (magic) methods.",
+    "answer": {
+      "type": "text",
+      "content": "*   **`__str__`:** Should return a readable, user-friendly string representation of the object. It is called by the `print()` function and `str()`.\n*   **`__repr__`:** Should return an unambiguous string representation of the object, primarily meant for developers for debugging. Ideally, it should look like a valid Python expression that could be used to recreate the object."
+    },
+    "explanation": "If only `__repr__` is defined, `__str__` will fall back to using it. Good classes define both."
+  },
+  {
+    "title": "Context Managers",
+    "ques": "Which two dunder methods must a class implement to be used within a `with` statement (as a context manager)?",
+    "answer": {
+      "type": "text",
+      "content": "A class must implement `__enter__` (which runs at the beginning of the block to acquire resources) and `__exit__` (which runs at the end of the block, even if an exception occurs, to safely release resources)."
+    },
+    "explanation": "Context managers are the Pythonic way to handle resource acquisition and release, ensuring files or network connections are never left open."
+  }
+]

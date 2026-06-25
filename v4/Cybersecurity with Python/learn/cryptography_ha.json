@@ -1,0 +1,147 @@
+{
+    "id": "learn_cryptography_ha",
+    "topicId": "cryptography_ha",
+    "topicTitle": "Cryptography & Hashing",
+    "description": "Master the fundamentals of cybersecurity in Python. Learn hashing with hashlib, symmetric encryption with AES and Fernet, and asymmetric encryption with RSA and EC keys.",
+    "baseKP": 75,
+    "slides": [
+        {
+            "id": "crypto_ha_1",
+            "type": "content",
+            "title": "Introduction to Cryptography",
+            "content": "# Protecting the Data 🔐\n\nCryptography is the mathematical foundation of cybersecurity. It ensures three core principles:\n\n1. **Confidentiality:** Only authorized parties can read the data (Encryption).\n2. **Integrity:** The data has not been secretly tampered with (Hashing/Signatures).\n3. **Authentication:** Proving you are who you say you are.\n\nIn Python, we primarily rely on the built-in `hashlib` module for hashing, and the third-party `cryptography` library for encryption."
+        },
+        {
+            "id": "crypto_ha_2",
+            "type": "content",
+            "title": "What is Hashing?",
+            "content": "# One-Way Functions 🔀\n\nA Hash function takes an input of *any* size (a password, a PDF file, a 10GB movie) and produces a fixed-size string of characters, called a Hash or Digest.\n\n**Crucial Properties of a Hash:**\n1. **Deterministic:** The same input *always* produces the exact same hash.\n2. **One-Way:** It is mathematically impossible to reverse the hash to figure out the original input.\n3. **Avalanche Effect:** Changing even one single letter in the input completely changes the entire hash.\n\nHashes are used to verify file integrity and securely store passwords."
+        },
+        {
+            "id": "crypto_ha_3",
+            "type": "content",
+            "title": "Using hashlib",
+            "content": "# Python's `hashlib` 🐍\n\nPython's standard library provides several secure hash algorithms (SHA-256, SHA-512) and insecure ones (MD5, SHA-1).\n\n```python_not\nimport hashlib\n\n# Data MUST be encoded to bytes before hashing!\ndata = \"Super Secret Message\".encode('utf-8')\n\n# Create a SHA-256 hash object\nhash_obj = hashlib.sha256(data)\n\n# Get the hexadecimal representation of the hash\ndigest = hash_obj.hexdigest()\n\nprint(digest)\n# Outputs: e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855\n```\n\n> ⚠️ **Warning:** Never use MD5 or SHA-1 for security. They are mathematically broken. Always use SHA-256 or SHA-512."
+        },
+        {
+            "id": "crypto_ha_4",
+            "type": "content",
+            "title": "Salting",
+            "content": "# The Rainbow Table Problem 🌈\n\nIf a hacker steals a database full of hashed passwords, they can't reverse them. But they *can* hash a list of common passwords (\"password123\", \"qwerty\") and see if the resulting hashes match the stolen ones. These are called Rainbow Tables.\n\nTo defeat this, we use a **Salt**.\n\nA salt is a random string added to the password *before* hashing it.\n\n```python_not\nimport hashlib\nimport os\n\npassword = b\"password123\"\n\n# Generate a 16-byte random salt\nsalt = os.urandom(16)\n\n# Hash the (salt + password)\nsecure_hash = hashlib.sha256(salt + password).hexdigest()\n```\n\nEven if two users have the same password, their unique salts mean their hashes will be completely different!"
+        },
+        {
+            "id": "crypto_ha_5",
+            "type": "content",
+            "title": "Message Authentication Codes (HMAC)",
+            "content": "# HMAC 🔏\n\nA Hash proves data integrity. But how do you know the *source* of the data is authentic? A hacker could alter the data AND generate a new hash!\n\nAn HMAC (Hash-based Message Authentication Code) solves this by mixing a Secret Key into the hashing process.\n\n```python_not\nimport hmac\nimport hashlib\n\nsecret_key = b\"my_api_secret_key\"\nmessage = b\"Transfer $1000 to Eve\"\n\n# Generate an HMAC using SHA-256\nmac = hmac.new(secret_key, message, hashlib.sha256).hexdigest()\n\nprint(mac)\n```\n\nWebhooks (like from Stripe or GitHub) use HMACs. When they send you a payload, they send the HMAC. Since only you and Stripe know the `secret_key`, you can verify Stripe actually sent it!"
+        },
+        {
+            "id": "crypto_ha_quiz_1",
+            "type": "quiz",
+            "title": "Hashing Quiz",
+            "content": "Test your knowledge of cryptographic hashing.",
+            "quizQuestion": "Why do we add a 'salt' to a password before hashing it?",
+            "quizOptions": [
+                "To encrypt the password so it can be decrypted later.",
+                "To make the hashing algorithm run faster.",
+                "To ensure that identical passwords produce completely different hashes, defending against Rainbow Table attacks.",
+                "To convert the password into a Base64 string."
+            ],
+            "correctOptionIndex": 2
+        },
+        {
+            "id": "crypto_ha_6",
+            "type": "content",
+            "title": "Base64 Encoding",
+            "content": "# Base64: Encoding, NOT Encryption 🔡\n\nCryptography often produces raw, unreadable binary data (bytes). If you try to paste binary data into a JSON file, an email, or a URL, it will break.\n\n**Base64** takes raw binary bytes and translates them into safe, printable ASCII characters (A-Z, a-z, 0-9, +, /).\n\n```python_not\nimport base64\n\nbinary_data = b\"\\x00\\x10\\x20\\x30\"\n\n# Encode to Base64 (Safe for JSON)\nencoded = base64.b64encode(binary_data)\nprint(encoded) # b'ABAgMA=='\n\n# Decode back to binary\ndecoded = base64.b64decode(encoded)\nprint(decoded) # b'\\x00\\x10\\x20\\x30'\n```\n\n> 🚨 **Critical Rule:** Base64 is NOT encryption! Anyone can decode Base64 instantly. It provides zero security."
+        },
+        {
+            "id": "crypto_ha_7",
+            "type": "content",
+            "title": "Symmetric Encryption",
+            "content": "# One Key to Rule Them All 🔑\n\nUnlike hashing, **Encryption** is a two-way process. You lock the data, and you can unlock it later.\n\n**Symmetric Encryption** uses the exact same key to lock (encrypt) and unlock (decrypt) the data. It is extremely fast.\n\nThe industry standard algorithm for symmetric encryption is **AES** (Advanced Encryption Standard)."
+        },
+        {
+            "id": "crypto_ha_8",
+            "type": "content",
+            "title": "Introduction to the cryptography library",
+            "content": "# The `cryptography` Library 🛡️\n\nPython's standard library does not include AES. You must install the industry-standard `cryptography` package.\n\n```bash\npip install cryptography\n```\n\nThis library is split into two layers:\n1. **Hazmat (Hazardous Materials):** The low-level, complex cryptographic primitives. Easy to make security mistakes here.\n2. **Recipes:** High-level, safe APIs that make the right choices for you."
+        },
+        {
+            "id": "crypto_ha_9",
+            "type": "content",
+            "title": "Symmetric Encryption with Fernet",
+            "content": "# Fernet (Safe Symmetric Encryption) 🌿\n\nFernet is a \"Recipe\" provided by the `cryptography` library. Under the hood, it uses AES-128 in CBC mode with an HMAC for integrity verification. It is incredibly secure and easy to use.\n\n```python_not\nfrom cryptography.fernet import Fernet\n\n# 1. Generate a random, URL-safe Base64 key\nkey = Fernet.generate_key()\n\n# 2. Initialize the Fernet object\nf = Fernet(key)\n\n# 3. Encrypt data (MUST be bytes)\nciphertext = f.encrypt(b\"My super secret API Key\")\nprint(f\"Encrypted: {ciphertext}\")\n\n# 4. Decrypt data\nplaintext = f.decrypt(ciphertext)\nprint(f\"Decrypted: {plaintext.decode('utf-8')}\")\n```"
+        },
+        {
+            "id": "crypto_ha_quiz_2",
+            "type": "quiz",
+            "title": "Symmetric Quiz",
+            "content": "Check your understanding of symmetric encryption.",
+            "quizQuestion": "What is the defining characteristic of Symmetric Encryption?",
+            "quizOptions": [
+                "It uses two different keys: a public key for encryption, and a private key for decryption.",
+                "It is a one-way function that cannot be reversed.",
+                "It uses the exact same secret key for both encryption and decryption.",
+                "It is only used for verifying the integrity of a file."
+            ],
+            "correctOptionIndex": 2
+        },
+        {
+            "id": "crypto_ha_10",
+            "type": "content",
+            "title": "Asymmetric Encryption",
+            "content": "# Two Keys: Public and Private 🗝️🔓\n\nThe problem with Symmetric encryption is sharing the key. How do you securely send the key to someone over the internet without a hacker stealing it?\n\n**Asymmetric Encryption** solves this by using a mathematically linked pair of keys:\n1. **Public Key:** Given to the entire world. It can ONLY be used to lock (encrypt) data.\n2. **Private Key:** Kept strictly secret by you. It can ONLY be used to unlock (decrypt) data.\n\nIf Alice wants to send a secret to Bob, she encrypts it using Bob's Public Key. Once encrypted, even Alice cannot decrypt it! Only Bob's Private Key can open it."
+        },
+        {
+            "id": "crypto_ha_11",
+            "type": "content",
+            "title": "Generating RSA Keys",
+            "content": "# The RSA Algorithm 🧮\n\nRSA is the most famous asymmetric algorithm. Let's generate a key pair using the `cryptography` hazmat layer.\n\n```python_not\nfrom cryptography.hazmat.primitives.asymmetric import rsa\n\n# Generate the Private Key (Keep this safe!)\nprivate_key = rsa.generate_private_key(\n    public_exponent=65537,\n    key_size=2048, # 2048-bit is the standard minimum size\n)\n\n# Derive the Public Key from the Private Key (Share this!)\npublic_key = private_key.public_key()\n```"
+        },
+        {
+            "id": "crypto_ha_12",
+            "type": "content",
+            "title": "Encrypting with RSA",
+            "content": "# Using the Public Key 🔒\n\nNow we encrypt a message using the Public Key. We must use a \"Padding\" scheme (OAEP is the modern standard) to prevent certain mathematical attacks.\n\n```python_not\nfrom cryptography.hazmat.primitives import hashes\nfrom cryptography.hazmat.primitives.asymmetric import padding\n\nmessage = b\"Hello, Asymmetric World!\"\n\n# Encrypt with PUBLIC key\nciphertext = public_key.encrypt(\n    message,\n    padding.OAEP(\n        mgf=padding.MGF1(algorithm=hashes.SHA256()),\n        algorithm=hashes.SHA256(),\n        label=None\n    )\n)\n```"
+        },
+        {
+            "id": "crypto_ha_13",
+            "type": "content",
+            "title": "Decrypting with RSA",
+            "content": "# Using the Private Key 🔓\n\nNow, only the holder of the Private Key can decrypt the ciphertext.\n\n```python_not\n# Decrypt with PRIVATE key\n# Must use the exact same padding scheme used during encryption!\nplaintext = private_key.decrypt(\n    ciphertext,\n    padding.OAEP(\n        mgf=padding.MGF1(algorithm=hashes.SHA256()),\n        algorithm=hashes.SHA256(),\n        label=None\n    )\n)\n\nprint(plaintext.decode('utf-8')) # Hello, Asymmetric World!\n```"
+        },
+        {
+            "id": "crypto_ha_14",
+            "type": "content",
+            "title": "Digital Signatures",
+            "content": "# Reversing the Keys: Signatures ✍️\n\nAsymmetric keys have another superpower. If you \"encrypt\" data with your PRIVATE key, anyone can \"decrypt\" it using your PUBLIC key.\n\nWhy is this useful? Because it proves that YOU (the holder of the private key) are the only person who could have sent that message! \n\nThis is called a **Digital Signature**. It provides authentication and non-repudiation."
+        },
+        {
+            "id": "crypto_ha_15",
+            "type": "content",
+            "title": "Elliptic Curve Cryptography (ECC)",
+            "content": "# The Modern Standard: EC Keys 🪢\n\nRSA relies on factoring massive prime numbers. The keys are huge (2048+ bits) and the math is slow.\n\n**Elliptic Curve Cryptography (ECC)** relies on the geometry of curves. It provides the exact same security as RSA, but with drastically smaller keys (e.g., 256 bits) and much faster speeds.\n\n```python_not\nfrom cryptography.hazmat.primitives.asymmetric import ec\n\n# Generate a modern Elliptic Curve Private Key (SECP384R1 is highly secure)\nprivate_key = ec.generate_private_key(ec.SECP384R1())\npublic_key = private_key.public_key()\n```\n\nECC is widely used in cryptocurrency (Bitcoin/Ethereum), modern web servers (TLS), and mobile devices."
+        },
+        {
+            "id": "crypto_ha_quiz_3",
+            "type": "quiz",
+            "title": "Asymmetric Quiz",
+            "content": "Test your knowledge of key pairs.",
+            "quizQuestion": "In asymmetric cryptography, if you want to send a highly confidential message to a server, which key do you use to encrypt it?",
+            "quizOptions": [
+                "Your own Private Key.",
+                "Your own Public Key.",
+                "The server's Private Key.",
+                "The server's Public Key."
+            ],
+            "correctOptionIndex": 3
+        },
+        {
+            "id": "crypto_ha_16",
+            "type": "content",
+            "title": "Summary",
+            "content": "# Cryptography Master! 🎉\n\nYou've learned the fundamental building blocks of secure applications.\n\n## Key Takeaways\n\n- ✅ **Hashing (`hashlib`):** One-way deterministic functions. Use SHA-256 with a unique Salt to safely verify passwords. Use HMAC to verify the authenticity of a payload.\n- ✅ **Base64:** Encodes raw binary bytes into safe text. It is NOT encryption.\n- ✅ **Symmetric Encryption (Fernet/AES):** Fast, two-way encryption using a single shared key.\n- ✅ **Asymmetric Encryption (RSA/ECC):** Uses a Public Key (to encrypt data) and a strictly secret Private Key (to decrypt data). Solves the key-distribution problem.\n- ✅ **Digital Signatures:** Proving identity by signing a hash with a Private Key.\n\nNext, we'll apply these concepts to secure User Passwords and API Tokens!"
+        }
+    ]
+}

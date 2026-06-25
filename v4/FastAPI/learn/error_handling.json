@@ -1,0 +1,59 @@
+{
+    "id": "learn_error_handling",
+    "topicId": "error_handling",
+    "topicTitle": "Error Handling",
+    "description": "Learn to throw HTTP exceptions and write custom global exception handlers for your API.",
+    "baseKP": 75,
+    "slides": [
+        {
+            "id": "err_1",
+            "type": "content",
+            "title": "The HTTPException",
+            "content": "# Returning Errors \ud83d\udea8\n\nIn a normal Python function, you `raise Exception()`. \nIn FastAPI, if you raise a standard Exception, it crashes the route and returns a generic `500 Internal Server Error`.\n\nTo return a proper, helpful error to the client, you must raise an `HTTPException`.\n\n```python_not\nfrom fastapi import FastAPI, HTTPException\n\n@app.get(\"/items/{item_id}\")\nasync def read_item(item_id: str):\n    if item_id not in items_db:\n        # Raise an HTTPException to stop the route immediately\n        raise HTTPException(status_code=404, detail=\"Item not found\")\n    return {\"item\": items_db[item_id]}\n```"
+        },
+        {
+            "id": "err_2",
+            "type": "content",
+            "title": "Custom Exception Handlers",
+            "content": "# Global Error Catching \ud83e\udde4\n\nWhat if you have a custom exception in your business logic (e.g., `UserBannedException`), and you want FastAPI to automatically return a `403 Forbidden` every time it is raised *anywhere* in your app?\n\nYou can use the `@app.exception_handler()` decorator.\n\n```python_not\nfrom fastapi import Request\nfrom fastapi.responses import JSONResponse\n\nclass UserBannedException(Exception):\n    def __init__(self, name: str):\n        self.name = name\n\n# Register the global handler\n@app.exception_handler(UserBannedException)\nasync def banned_exception_handler(request: Request, exc: UserBannedException):\n    return JSONResponse(\n        status_code=403,\n        content={\"message\": f\"Oops! {exc.name} is banned.\"},\n    )\n```"
+        },
+        {
+            "id": "err_3",
+            "type": "content",
+            "title": "Raising the Custom Exception",
+            "content": "# Clean Business Logic \ud83e\uddf9\n\nNow, your route doesn't need to know anything about HTTP status codes!\n\n```python_not\n@app.get(\"/users/{username}\")\nasync def get_user(username: str):\n    if username == \"hacker_bob\":\n        # Just raise your normal Python exception!\n        raise UserBannedException(name=username)\n        \n    return {\"user\": username}\n```\nWhen `UserBannedException` is raised, FastAPI catches it globally and runs the `banned_exception_handler`, returning the proper JSON to the user."
+        },
+        {
+            "id": "err_quiz_1",
+            "type": "quiz",
+            "title": "Knowledge Check: Exceptions",
+            "content": "Test your error handling knowledge.",
+            "quizQuestion": "Why should you raise an `HTTPException` instead of a standard Python `ValueError` when an item is not found in the database?",
+            "quizOptions": [
+                "Because ValueError uses more RAM.",
+                "Because HTTPException allows you to specify the exact HTTP status code (e.g., 404) and a detail message to send to the client.",
+                "Because standard Exceptions do not work in asynchronous functions.",
+                "To prevent the Pydantic validator from crashing."
+            ],
+            "correctOptionIndex": 1
+        },
+        {
+            "id": "err_4",
+            "type": "content",
+            "title": "Overriding RequestValidationError",
+            "content": "# Customizing Validation Errors \ud83d\udc85\n\nWhen Pydantic validation fails, FastAPI automatically throws a `RequestValidationError` and returns a `422 Unprocessable Entity`.\n\nIf you don't like the default format of the 422 error, you can override it globally!\n\n```python_not\nfrom fastapi.exceptions import RequestValidationError\n\n@app.exception_handler(RequestValidationError)\nasync def validation_exception_handler(request: Request, exc: RequestValidationError):\n    # 'exc.errors()' contains the list of Pydantic validation errors\n    return JSONResponse(\n        status_code=400, # Changing the default 422 to a 400\n        content={\"message\": \"You sent bad data!\", \"details\": exc.errors()},\n    )\n```"
+        },
+        {
+            "id": "err_5",
+            "type": "content",
+            "title": "Handling 500 Errors",
+            "content": "# Catching Everything Else \ud83d\udd78\ufe0f\n\nSometimes, your code just crashes. A variable is None, or a list index is out of bounds.\nThis causes an unhandled Exception, resulting in a `500 Internal Server Error`.\n\nYou can add a global \"catch-all\" handler to log these errors or return a friendly message.\n\n```python_not\n@app.exception_handler(Exception)\nasync def global_exception_handler(request: Request, exc: Exception):\n    # Log the error to your monitoring system (Sentry, Datadog, etc.)\n    print(f\"CRITICAL ERROR: {exc}\")\n    \n    return JSONResponse(\n        status_code=500,\n        content={\"message\": \"Our servers are currently on fire. Please try again later.\"},\n    )\n```"
+        },
+        {
+            "id": "err_6",
+            "type": "content",
+            "title": "Summary",
+            "content": "# Summary \ud83c\udf89\n\nYou know how to gracefully handle failure!\n\n## Key Takeaways\n- \u2705 **HTTPException:** Use this to intentionally stop a request and return a specific HTTP status code (like 404 Not Found or 401 Unauthorized).\n- \u2705 **Custom Handlers:** Use `@app.exception_handler()` to map standard Python exceptions to specific HTTP responses globally.\n- \u2705 **RequestValidationError:** Override this specific exception if you want to change the format of Pydantic's default 422 validation errors.\n- \u2705 **Catch-All Handler:** You can create a global handler for `Exception` to gracefully handle server crashes and log them to your monitoring tools."
+        }
+    ]
+}

@@ -1,0 +1,135 @@
+{
+    "id": "learn_aggregations_in",
+    "topicId": "aggregations_in",
+    "topicTitle": "Aggregations & Indexes",
+    "description": "Learn how to group data, calculate statistics, and optimize your database with indexes.",
+    "baseKP": 75,
+    "slides": [
+        {
+            "id": "agg_1",
+            "type": "content",
+            "title": "Introduction to Aggregations",
+            "content": "# Data Aggregation \ud83e\uddee\n\nAggregation functions perform a calculation on a set of values and return a single value. They are essential for reporting and analytics.\n\n## Common Aggregate Functions\n- `COUNT()`: Returns the number of rows.\n- `SUM()`: Returns the total sum of a numeric column.\n- `AVG()`: Returns the average value.\n- `MIN()`: Returns the smallest value.\n- `MAX()`: Returns the largest value.\n\n```sql_not\n-- Get total number of users\nSELECT COUNT(*) FROM users;\n\n-- Get the highest salary\nSELECT MAX(salary) FROM employees;\n```"
+        },
+        {
+            "id": "agg_2",
+            "type": "content",
+            "title": "The GROUP BY Clause",
+            "content": "# Grouping Data \ud83d\udce6\n\nThe `GROUP BY` statement groups rows that have the same values into summary rows. It is almost always used with aggregate functions.\n\n## Syntax\n```sql_not\nSELECT column_name, AGGREGATE_FUNCTION(column_name)\nFROM table_name\nGROUP BY column_name;\n```\n\n## Example: Sales by Region\nImagine a `sales` table. To find total sales per region:\n```sql_not\nSELECT region, SUM(amount) AS total_sales\nFROM sales\nGROUP BY region;\n```\n\n**Result:**\n| region | total_sales |\n|--------|-------------|\n| North | 15000 |\n| South | 22000 |"
+        },
+        {
+            "id": "agg_3",
+            "type": "content",
+            "title": "The HAVING Clause",
+            "content": "# Filtering Grouped Data \ud83d\udee1\ufe0f\n\nYou know that `WHERE` filters rows. But what if you want to filter based on the *result of an aggregate function*? You cannot use `WHERE`.\n\nThis is why SQL introduced the `HAVING` clause!\n\n## Example\nFind regions where the total sales are greater than $20,000:\n\n```sql_not\nSELECT region, SUM(amount) AS total_sales\nFROM sales\nGROUP BY region\nHAVING SUM(amount) > 20000;\n```\n\n> \ud83d\udd11 **Rule of Thumb:** Use `WHERE` to filter individual rows *before* grouping. Use `HAVING` to filter groups *after* grouping."
+        },
+        {
+            "id": "agg_quiz_1",
+            "type": "quiz",
+            "title": "Knowledge Check: HAVING vs WHERE",
+            "content": "Test your understanding of filtering groups.",
+            "quizQuestion": "Why can't you use the WHERE clause to filter based on a SUM() calculation?",
+            "quizOptions": [
+                "WHERE only works on strings and dates.",
+                "WHERE executes before data is grouped and aggregated.",
+                "WHERE requires a subquery to use aggregate functions.",
+                "You can, it is just slower."
+            ],
+            "correctOptionIndex": 1
+        },
+        {
+            "id": "agg_4",
+            "type": "content",
+            "title": "Advanced Grouping: ROLLUP",
+            "content": "# Supercharging GROUP BY \ud83d\ude80\n\nThe `ROLLUP` operator is an extension of the `GROUP BY` clause. It allows you to calculate grand totals and subtotals in a single query!\n\n## Example\n```sql_not\nSELECT year, region, SUM(sales)\nFROM sales_data\nGROUP BY ROLLUP (year, region);\n```\n\nThis query will return:\n1. Sales grouped by `year` and `region`.\n2. Subtotals for each `year` (aggregating all regions).\n3. A Grand Total for the entire table (where both year and region are NULL).\n\n*(Note: ROLLUP syntax varies slightly between PostgreSQL, MySQL, and SQL Server)*"
+        },
+        {
+            "id": "agg_5",
+            "type": "content",
+            "title": "Python Aggregation Demo",
+            "content": "# Aggregating Data in Python \ud83d\udc0d\n\nLet's see grouping and aggregations using Python and SQLite.\n\n<!-- FULL_CODE_START\nimport sqlite3\n\nconn = sqlite3.connect(':memory:')\ncursor = conn.cursor()\n\n# Setup table and data\ncursor.execute('''CREATE TABLE orders (department TEXT, amount REAL)''')\norders = [\n    ('Electronics', 1200), ('Clothing', 50), ('Electronics', 800),\n    ('Groceries', 150), ('Clothing', 75), ('Electronics', 2000)\n]\ncursor.executemany(\"INSERT INTO orders VALUES (?, ?)\", orders)\n\n# Query using GROUP BY, Aggregations, and HAVING\nquery = '''\nSELECT department, COUNT(*) as num_orders, SUM(amount) as total_revenue, AVG(amount) as avg_order\nFROM orders\nGROUP BY department\nHAVING total_revenue > 100\nORDER BY total_revenue DESC;\n'''\n\nprint(\"{:<15} | {:<10} | {:<15} | {:<15}\".format(\"Department\", \"Orders\", \"Total Rev\", \"Avg Order\"))\nprint(\"-\" * 65)\nfor row in cursor.execute(query):\n    print(\"{:<15} | {:<10} | ${:<14.2f} | ${:<14.2f}\".format(row[0], row[1], row[2], row[3]))\n\nconn.close()\nFULL_CODE_END -->"
+        },
+        {
+            "id": "agg_6",
+            "type": "content",
+            "title": "Introduction to Indexes",
+            "content": "# Database Indexes \u26a1\n\nAn index is a data structure (typically a B-Tree) that improves the speed of data retrieval operations on a database table.\n\nThink of it like the **index at the back of a book**.\nWithout an index, to find every mention of \"Python\", you have to read the book page-by-page from start to finish (a **Full Table Scan**).\n\nWith an index, you look up \"Python\", it tells you \"Page 42, 89\", and you jump straight there.\n\n## Pros & Cons\n\u2705 Dramatically speeds up `SELECT` queries (especially `WHERE` and `JOIN` clauses).\n\u274c Slows down `INSERT`, `UPDATE`, and `DELETE` operations (because the index must be updated too).\n\u274c Consumes additional disk space."
+        },
+        {
+            "id": "agg_7",
+            "type": "content",
+            "title": "Creating Indexes",
+            "content": "# CREATE INDEX \ud83c\udfd7\ufe0f\n\nYou can add indexes to existing tables without affecting the data.\n\n## Syntax\n```sql_not\nCREATE INDEX index_name\nON table_name (column_name);\n```\n\n## Example\nIf we frequently search for users by their email address:\n```sql_not\nCREATE INDEX idx_user_email ON users (email);\n```\n\nNow, queries like `SELECT * FROM users WHERE email = 'test@test.com';` will execute blazingly fast!"
+        },
+        {
+            "id": "agg_8",
+            "type": "content",
+            "title": "Composite Indexes",
+            "content": "# Composite Indexes \ud83e\udde9\n\nA composite index is an index on **two or more columns** of a table.\n\n## Syntax\n```sql_not\nCREATE INDEX idx_name_age ON users (last_name, first_name);\n```\n\n## The Order Matters!\nComposite indexes work like a phone book (sorted by Last Name, then First Name).\n- Searching by `last_name` AND `first_name`? Super fast.\n- Searching by `last_name` only? Fast.\n- Searching by `first_name` only? **The index cannot be used efficiently!**\n\n> \ud83d\udca1 **Rule:** Put the most frequently queried, or most \"selective\" columns first in a composite index."
+        },
+        {
+            "id": "agg_9",
+            "type": "content",
+            "title": "Analyzing Performance",
+            "content": "# EXPLAIN ANALYZE \u23f1\ufe0f\n\nHow do you know if your query is slow, or if it is actually using the index you created?\n\nYou ask the database to explain its \"query execution plan\".\n\n## Using EXPLAIN\nIn PostgreSQL (and similarly in MySQL/SQLite):\n```sql_not\nEXPLAIN ANALYZE SELECT * FROM users WHERE email = 'test@test.com';\n```\n\n**Output Example:**\n```text\nIndex Scan using idx_user_email on users  (cost=0.29..8.30 rows=1 width=104) (actual time=0.015..0.016 rows=1 loops=1)\n  Index Cond: ((email)::text = 'test@test.com'::text)\nPlanning Time: 0.086 ms\nExecution Time: 0.035 ms\n```\nIt tells you it used an \"Index Scan\" instead of a \"Sequential Scan\" (Full Table Scan)!"
+        },
+        {
+            "id": "agg_quiz_2",
+            "type": "quiz",
+            "title": "Knowledge Check: Indexes",
+            "content": "Test your understanding of database performance.",
+            "quizQuestion": "Why shouldn't you put an index on every single column in a table?",
+            "quizOptions": [
+                "Because it is not allowed by SQL standards.",
+                "Because it slows down INSERT, UPDATE, and DELETE operations.",
+                "Because it makes SELECT queries slower.",
+                "Because composite indexes only allow a maximum of two columns."
+            ],
+            "correctOptionIndex": 1
+        },
+        {
+            "id": "agg_10",
+            "type": "content",
+            "title": "Unique Indexes",
+            "content": "# UNIQUE Indexes \ud83d\udee1\ufe0f\n\nA Unique Index ensures that the indexed column doesn't contain duplicate values.\n\nThis is crucial for data integrity.\n\n## Syntax\n```sql_not\nCREATE UNIQUE INDEX idx_unique_email ON users (email);\n```\n\nIf you try to insert a new user with an email that already exists, the database will throw an error and abort the insertion.\n\n> \ud83d\udca1 **Note:** When you declare a column as a `PRIMARY KEY`, the database automatically creates a unique index on that column behind the scenes!"
+        },
+        {
+            "id": "agg_11",
+            "type": "content",
+            "title": "Index Maintenance",
+            "content": "# Index Maintenance \ud83e\uddf9\n\nOver time, as data is updated, deleted, and inserted, indexes can become fragmented, leading to slower performance.\n\n## Dropping Indexes\nIf you find an index is rarely used by queries but is slowing down your writes, drop it:\n```sql_not\nDROP INDEX index_name;\n```\n\n## Rebuilding Indexes\nIn systems like PostgreSQL, you can rebuild indexes to optimize them:\n```sql_not\nREINDEX INDEX idx_name;\n-- or \nVACUUM ANALYZE table_name;\n```"
+        },
+        {
+            "id": "agg_12",
+            "type": "content",
+            "title": "When to Create Indexes",
+            "content": "# Indexing Strategy Checklist \ud83d\udccb\n\nBefore creating an index, ask yourself:\n\n1. **Is the table large?** (Small tables don't need indexes; a full scan is fast enough).\n2. **Is the column used in `WHERE`, `JOIN`, or `ORDER BY` clauses frequently?**\n3. **Does the column have high cardinality?** (Many unique values, like User ID, are great for indexes. Low cardinality, like a Boolean `is_active`, often are ignored by the query planner).\n4. **Is the table read-heavy or write-heavy?** (Heavily updated tables suffer performance penalties from too many indexes)."
+        },
+        {
+            "id": "agg_13",
+            "type": "content",
+            "title": "Python Execution Plan Demo",
+            "content": "# EXPLAIN in Python \ud83d\udc0d\n\nYou can run `EXPLAIN QUERY PLAN` in SQLite via Python to see how the database engine is resolving your query.\n\n<!-- FULL_CODE_START\nimport sqlite3\n\nconn = sqlite3.connect(':memory:')\ncursor = conn.cursor()\n\ncursor.execute('CREATE TABLE large_table (id INTEGER PRIMARY KEY, value TEXT)')\n\n# Insert dummy data\ncursor.executemany(\n    'INSERT INTO large_table (value) VALUES (?)', \n    [('data_' + str(i),) for i in range(100)]\n)\n\nprint(\"1. Query Plan WITHOUT Index on 'value' column:\")\nfor row in cursor.execute('EXPLAIN QUERY PLAN SELECT * FROM large_table WHERE value = \"data_50\"'):\n    print(row)\n\nprint(\"\\nCreating Index...\")\ncursor.execute('CREATE INDEX idx_value ON large_table(value)')\n\nprint(\"\\n2. Query Plan WITH Index:\")\nfor row in cursor.execute('EXPLAIN QUERY PLAN SELECT * FROM large_table WHERE value = \"data_50\"'):\n    print(row)\n\nconn.close()\nFULL_CODE_END -->"
+        },
+        {
+            "id": "agg_quiz_3",
+            "type": "quiz",
+            "title": "Knowledge Check: Composite Indexes",
+            "content": "Test your understanding of composite indexing rules.",
+            "quizQuestion": "If you have a composite index on (country, city), which of the following queries will NOT efficiently use the index?",
+            "quizOptions": [
+                "WHERE country = 'USA' AND city = 'NY'",
+                "WHERE country = 'USA'",
+                "WHERE city = 'NY'",
+                "All of them will use it equally efficiently."
+            ],
+            "correctOptionIndex": 2
+        },
+        {
+            "id": "agg_14",
+            "type": "content",
+            "title": "Summary",
+            "content": "# Congratulations! \ud83c\udf89\n\nYou've learned how to aggregate data and optimize queries!\n\n## Key Takeaways\n- \u2705 **Aggregations:** Use `SUM`, `COUNT`, `AVG`, `MIN`, `MAX` to calculate metrics.\n- \u2705 **GROUP BY:** Groups rows sharing a property so you can apply aggregations to each group.\n- \u2705 **HAVING:** Filters the results of grouped and aggregated data (unlike WHERE, which filters raw rows).\n- \u2705 **Indexes:** B-Tree structures that massively speed up reads (`SELECT`, `JOIN`) at the cost of slower writes (`INSERT`, `UPDATE`).\n- \u2705 **Composite Indexes:** Indexes on multiple columns. Order matters! (Left-most prefix rule).\n- \u2705 **EXPLAIN ANALYZE:** The ultimate tool to diagnose query performance and verify index usage.\n\nYour database querying skills are now fast and analytical!"
+        }
+    ]
+}

@@ -1,0 +1,29 @@
+[
+  {
+    "title": "Avoiding Chartjunk",
+    "ques": "Define the term 'chartjunk' as coined by Edward Tufte.",
+    "answer": {
+      "type": "text",
+      "content": "'Chartjunk' refers to all the visual elements in a chart that are not necessary to comprehend the information represented or that distract the viewer from this information. This includes heavy grid lines, 3D effects on 2D data, unnecessary background colors, drop shadows, and excessive ornamentation."
+    },
+    "explanation": "Good data visualization maximizes the 'data-to-ink ratio', stripping away anything that doesn't serve the data."
+  },
+  {
+    "title": "Choosing the Right Chart",
+    "ques": "If you want to visualize how the composition of a company's revenue changes over time, why is a stacked bar chart or stacked area chart generally better than multiple pie charts?",
+    "answer": {
+      "type": "text",
+      "content": "Human brains are notoriously bad at comparing angles and areas (which pie charts rely on), especially across multiple separate charts over a time series. A stacked bar or stacked area chart utilizes a common baseline and linear axes, making it much easier to track the trend of the total amount as well as the relative proportions of individual categories over time."
+    },
+    "explanation": "Pie charts should be used sparingly, and almost never for time-series comparisons."
+  },
+  {
+    "title": "Color Accessibility",
+    "ques": "Why is it important to test your data visualizations for color blindness, and how can you mitigate issues?",
+    "answer": {
+      "type": "text",
+      "content": "Approximately 8% of men and 0.5% of women have some form of color vision deficiency (most commonly red-green color blindness). If a chart relies solely on distinguishing red and green to convey critical information, it will be illegible to them. You can mitigate this by using colorblind-safe palettes (like `viridis` in Matplotlib/Seaborn), adjusting lightness/contrast, and using secondary cues like different marker shapes, line styles, or direct labeling."
+    },
+    "explanation": "Accessible design ensures your data insights reach the entire audience without friction."
+  }
+]

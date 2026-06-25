@@ -1,0 +1,29 @@
+[
+  {
+    "title": "Understanding Agents",
+    "ques": "What is the primary difference between a LangChain 'Chain' and a LangChain 'Agent'?",
+    "answer": {
+      "type": "text",
+      "content": "*   **Chain:** Executes a hardcoded, predetermined sequence of steps (e.g., format prompt -> call LLM -> parse output). The flow is rigid.\n*   **Agent:** Uses an LLM as a reasoning engine to dynamically decide *which* actions to take and in *what* order. It has access to a suite of tools and will continue looping (think -> act -> observe) until it determines it has solved the user's problem."
+    },
+    "explanation": "Agents provide autonomous decision-making capabilities, allowing applications to handle complex, multi-step queries."
+  },
+  {
+    "title": "Creating Tools",
+    "ques": "How do you turn a standard Python function into a tool that a LangChain agent can use?",
+    "answer": {
+      "type": "text",
+      "content": "You can use the `@tool` decorator provided by LangChain. You must provide a comprehensive docstring for the function. The agent reads this docstring to understand what the tool does and when to use it.\n\n```python\nfrom langchain.tools import tool\n\n@tool\ndef search_web(query: str) -> str:\n    \"\"\"Useful for searching the internet for current events.\"\"\"\n    return \"Search results...\"\n```"
+    },
+    "explanation": "The docstring serves as the 'prompt' for the tool, guiding the LLM's decision-making process."
+  },
+  {
+    "title": "ReAct Framework",
+    "ques": "Briefly explain the 'ReAct' (Reasoning and Acting) paradigm commonly used by AI agents.",
+    "answer": {
+      "type": "text",
+      "content": "ReAct is a prompting framework where the LLM is instructed to interleave reasoning (Thoughts) with actions (Tool calls). The cycle looks like:\n1.  **Thought:** The agent reasons about what it needs to do next based on the goal.\n2.  **Action:** The agent selects a tool and provides the arguments.\n3.  **Observation:** The system executes the tool and returns the raw output to the agent.\nThis loop continues until the agent has enough information to output the final Answer."
+    },
+    "explanation": "ReAct significantly improves an LLM's ability to solve complex tasks by breaking them down into manageable, verifiable steps."
+  }
+]

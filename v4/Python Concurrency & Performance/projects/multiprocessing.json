@@ -1,0 +1,30 @@
+[
+  {
+    "title": "Using Multiprocessing Pool",
+    "ques": "Write a snippet using `multiprocessing.Pool` and its `.map()` method to square a list of numbers from 1 to 5.",
+    "answer": {
+      "type": "code",
+      "lang": "python",
+      "content": "from multiprocessing import Pool\n\ndef square(x):\n    return x * x\n\nif __name__ == '__main__':\n    numbers = [1, 2, 3, 4, 5]\n    with Pool() as pool:\n        results = pool.map(square, numbers)\n    print(results)  # Output: [1, 4, 9, 16, 25]"
+    },
+    "explanation": "The `Pool` object automatically manages a pool of worker processes. `pool.map()` behaves like the built-in `map()` function but distributes the workload across the available CPU cores."
+  },
+  {
+    "title": "ProcessPoolExecutor",
+    "ques": "What is `concurrent.futures.ProcessPoolExecutor` and how does it compare to `multiprocessing.Pool`?",
+    "answer": {
+      "type": "text",
+      "content": "`ProcessPoolExecutor` is a higher-level interface provided by the `concurrent.futures` module for executing calls asynchronously. While it is built on top of `multiprocessing`, it provides a more modern, simpler API that uses `Future` objects, making it easier to integrate with other asynchronous workflows."
+    },
+    "explanation": "For most modern Python applications, `concurrent.futures` is preferred for its cleaner abstraction, though `multiprocessing.Pool` offers more granular control."
+  },
+  {
+    "title": "Chunksize Tuning",
+    "ques": "In the context of `Pool.map`, what is `chunksize` and why might you tune it?",
+    "answer": {
+      "type": "text",
+      "content": "`chunksize` determines how many items from the iterable are bundled together and sent to a worker process as a single task. Tuning it can improve performance: a larger chunksize reduces the overhead of inter-process communication, which is highly beneficial when processing very large iterables with fast-executing functions."
+    },
+    "explanation": "Optimizing chunksize minimizes the IPC overhead, ensuring that worker processes spend more time computing and less time receiving data."
+  }
+]

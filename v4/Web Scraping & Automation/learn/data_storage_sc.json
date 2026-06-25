@@ -1,0 +1,135 @@
+{
+    "id": "learn_data_storage_sc",
+    "topicId": "data_storage_sc",
+    "topicTitle": "Data Storage & Scheduling",
+    "description": "Learn how to store your scraped data properly and schedule your scripts to run automatically.",
+    "baseKP": 80,
+    "slides": [
+        {
+            "id": "ds_1",
+            "type": "content",
+            "title": "Saving Scraped Data",
+            "content": "# What to do with the data? \ud83d\udcbe\n\nPrinting scraped data to the console is useless. You must store it.\n\nThe three most common formats for simple scripts are:\n1. **CSV:** Best for tabular data (spreadsheets).\n2. **JSON:** Best for nested/hierarchical data.\n3. **SQLite:** Best when you need to query the data later using SQL."
+        },
+        {
+            "id": "ds_2",
+            "type": "content",
+            "title": "Saving to CSV",
+            "content": "# Exporting to CSV \ud83d\udcca\n\nPython's built-in `csv` module makes this easy.\n\n```python_not\nimport csv\n\ndata = [\n    {'name': 'Laptop', 'price': 999.99},\n    {'name': 'Mouse', 'price': 25.50}\n]\n\n# Open file in 'w' (write) mode. newline='' prevents blank lines in Windows.\nwith open('products.csv', 'w', newline='', encoding='utf-8') as f:\n    # Define the headers\n    writer = csv.DictWriter(f, fieldnames=['name', 'price'])\n    \n    writer.writeheader()\n    for row in data:\n        writer.writerow(row)\n```"
+        },
+        {
+            "id": "ds_3",
+            "type": "content",
+            "title": "Saving to JSON",
+            "content": "# Exporting to JSON \ud83d\udce6\n\nIf your scraped data contains lists within lists, CSV won't work well. Use JSON.\n\n```python_not\nimport json\n\ndata = {\n    \"site\": \"example.com\",\n    \"products\": [\n        {\"name\": \"Laptop\", \"specs\": [\"16GB RAM\", \"512GB SSD\"]},\n        {\"name\": \"Mouse\", \"specs\": [\"Wireless\", \"Optical\"]}\n    ]\n}\n\nwith open('data.json', 'w', encoding='utf-8') as f:\n    # indent=4 makes the JSON easily readable by humans\n    json.dump(data, f, indent=4)\n```"
+        },
+        {
+            "id": "ds_4",
+            "type": "content",
+            "title": "Saving to Databases",
+            "content": "# Storing in SQLite \ud83d\uddc4\ufe0f\n\nFor larger datasets, save directly to a database so you can query it later.\n\n```python_not\nimport sqlite3\n\nconn = sqlite3.connect('scraped_data.db')\ncursor = conn.cursor()\ncursor.execute('CREATE TABLE IF NOT EXISTS articles (title TEXT, url TEXT)')\n\narticles = [(\"Python 101\", \"url1\"), (\"Scraping Guide\", \"url2\")]\n\n# Bulk insert the scraped data\ncursor.executemany('INSERT INTO articles VALUES (?, ?)', articles)\n\nconn.commit()\nconn.close()\n```"
+        },
+        {
+            "id": "ds_quiz_1",
+            "type": "quiz",
+            "title": "Knowledge Check: Storage",
+            "content": "Test your data storage knowledge.",
+            "quizQuestion": "Which built-in Python module is best suited for saving highly nested data (like a product with a list of reviews and an object of specifications)?",
+            "quizOptions": [
+                "csv",
+                "json",
+                "sqlite3",
+                "xml"
+            ],
+            "correctOptionIndex": 1
+        },
+        {
+            "id": "ds_5",
+            "type": "content",
+            "title": "Introduction to Scheduling",
+            "content": "# Automating your Scripts \u2699\ufe0f\n\nWeb scraping is often a recurring task. You might want to track product prices every morning at 8:00 AM.\n\nYou don't want to wake up and type `python scraper.py` every day. You need to **schedule** the script to run automatically."
+        },
+        {
+            "id": "ds_6",
+            "type": "content",
+            "title": "Using Cron (Linux/Mac)",
+            "content": "# The Cron Daemon \ud83d\udd52\n\nIf you are on Linux or macOS, `cron` is the built-in system scheduler.\nYou edit the crontab file using `crontab -e` in the terminal.\n\n## Cron Syntax\nCron uses a 5-part syntax: `Minute Hour Day Month DayOfWeek`\n\n```bash\n# Run the script every day at 8:30 AM\n30 8 * * * /usr/bin/python3 /path/to/your/scraper.py\n\n# Run the script every 15 minutes\n*/15 * * * * /usr/bin/python3 /path/to/your/scraper.py\n```\n*Pro tip: Always use absolute paths to your Python executable and script when using cron!*"
+        },
+        {
+            "id": "ds_7",
+            "type": "content",
+            "title": "Using APScheduler",
+            "content": "# Scheduling inside Python \ud83d\udc0d\n\nIf you are on Windows, or you want the scheduling logic to live *inside* your Python code, use `APScheduler` (Advanced Python Scheduler).\n\n```bash\npip install apscheduler\n```\n\n```python_not\nfrom apscheduler.schedulers.blocking import BlockingScheduler\n\ndef my_scraper():\n    print(\"Scraping Amazon prices...\")\n    # Scrape logic here\n\nscheduler = BlockingScheduler()\n\n# Schedule to run every day at 08:00 AM\nscheduler.add_job(my_scraper, 'cron', hour=8, minute=0)\n\nprint(\"Scheduler started...\")\nscheduler.start()  # This blocks the script and keeps it running forever!\n```"
+        },
+        {
+            "id": "ds_8",
+            "type": "content",
+            "title": "Scrapy CrawlerProcess",
+            "content": "# Scheduling Scrapy Spiders \ud83d\udd77\ufe0f\n\nIf you use Scrapy, you usually run spiders via the CLI (`scrapy crawl myspider`).\nTo run them from a Python script (so you can schedule them), use `CrawlerProcess`.\n\n```python_not\nfrom scrapy.crawler import CrawlerProcess\nfrom scrapy.utils.project import get_project_settings\nfrom my_project.spiders.my_spider import MySpider\n\ndef run_spider():\n    process = CrawlerProcess(get_project_settings())\n    process.crawl(MySpider)\n    process.start() # This blocks until the spider finishes\n\n# Now you can schedule run_spider() using APScheduler!\n```"
+        },
+        {
+            "id": "ds_quiz_2",
+            "type": "quiz",
+            "title": "Knowledge Check: Scheduling",
+            "content": "Test your automation knowledge.",
+            "quizQuestion": "If you add the line `0 12 * * * /usr/bin/python3 scraper.py` to your crontab, when will the script run?",
+            "quizOptions": [
+                "Every 12 minutes.",
+                "Every day at 12:00 PM (Noon).",
+                "Every day at 12:00 AM (Midnight).",
+                "Every 12th day of the month."
+            ],
+            "correctOptionIndex": 1
+        },
+        {
+            "id": "ds_9",
+            "type": "content",
+            "title": "Cloud Deployment",
+            "content": "# Moving to the Cloud \u2601\ufe0f\n\nIf you schedule a script on your laptop using cron, it will fail if your laptop goes to sleep or loses Wi-Fi.\n\nTo make your scrapers run 24/7, you must deploy them to a cloud server.\n\n## Popular Options:\n1. **VPS (Virtual Private Server):** DigitalOcean Droplets, AWS EC2, or Linode. You get a full Linux OS to configure cron jobs.\n2. **Serverless Functions:** AWS Lambda, Google Cloud Functions. Good for quick, short-lived scraping scripts.\n3. **Scrapy Cloud (Zyte):** A platform specifically built for deploying and scheduling Scrapy spiders."
+        },
+        {
+            "id": "ds_10",
+            "type": "content",
+            "title": "Deploying to a VPS",
+            "content": "# The VPS Workflow \ud83d\udda5\ufe0f\n\nDeploying to a Linux VPS is the most common workflow for data engineers.\n\n1. Rent a Linux server (e.g., Ubuntu on DigitalOcean for $5/month).\n2. Connect to it via SSH: `ssh root@192.168.1.100`\n3. Git clone your scraper repository onto the server.\n4. Install requirements: `pip install -r requirements.txt`.\n5. Open `crontab -e` and schedule the script.\n\nNow you can close your laptop and the server will scrape data for you every day!"
+        },
+        {
+            "id": "ds_11",
+            "type": "content",
+            "title": "Running Processes in the Background",
+            "content": "# Screen & Nohup \ud83c\udfc3\n\nIf you have a long-running script (e.g., scraping 100,000 pages) and you run it on a VPS, what happens when you close your SSH connection?\n**The script stops!**\n\nTo keep scripts running in the background after you log out:\n\n```bash\n# Using nohup (No Hangup). Saves output to nohup.out\nnohup python3 scraper.py &\n\n# Or use 'screen' or 'tmux' to create virtual terminal sessions\nscreen -S scraper_session\npython3 scraper.py\n# Press Ctrl+A, then D to detach. The script keeps running!\n```"
+        },
+        {
+            "id": "ds_12",
+            "type": "content",
+            "title": "Dockerizing Scrapers",
+            "content": "# Enter Docker \ud83d\udc33\n\n\"It works on my machine, but it crashes on the server!\"\nThis is a common problem due to different Python versions or missing dependencies (like Playwright browsers).\n\n**Docker** solves this by packaging your code, Python, and all dependencies into a single \"Container\".\n\n```dockerfile\n# Example Dockerfile\nFROM python:3.9\nWORKDIR /app\nCOPY . .\nRUN pip install -r requirements.txt\nCMD [\"python\", \"scraper.py\"]\n```\nYou can run this container on ANY server in the world, and it is guaranteed to work exactly as it did on your laptop."
+        },
+        {
+            "id": "ds_13",
+            "type": "content",
+            "title": "Database Hosting",
+            "content": "# Cloud Databases \ud83d\udc18\n\nIf your scraper runs on AWS EC2, where does it save the SQLite database? On the EC2 hard drive.\nIf the EC2 instance is deleted, you lose your data!\n\nFor production, use a managed cloud database (like Amazon RDS, Heroku Postgres, or MongoDB Atlas).\n\nYour scraper running on the VPS simply connects to the remote Database URL:\n```python_not\nengine = create_engine(\"postgresql://user:pass@remote-aws-server.com/db\")\n```"
+        },
+        {
+            "id": "ds_quiz_3",
+            "type": "quiz",
+            "title": "Knowledge Check: Deployment",
+            "content": "Test your cloud deployment skills.",
+            "quizQuestion": "Why might you use the `nohup` command or `tmux` when running a Python scraper on a remote Linux server?",
+            "quizOptions": [
+                "To install Python libraries globally.",
+                "To automatically schedule the script to run every day.",
+                "To prevent the script from terminating when you close your SSH connection.",
+                "To bypass Cloudflare protections."
+            ],
+            "correctOptionIndex": 2
+        },
+        {
+            "id": "ds_14",
+            "type": "content",
+            "title": "Summary",
+            "content": "# Summary \ud83c\udf89\n\nYou've completed the Web Scraping & Automation course!\n\n## Key Takeaways\n- \u2705 **Storage:** Use `csv` for tables, `json` for nested data, and `sqlite3` for SQL queries.\n- \u2705 **Cron:** The native Linux tool for scheduling jobs based on a timestamp syntax.\n- \u2705 **APScheduler:** The Python library for scheduling tasks directly within your code.\n- \u2705 **CrawlerProcess:** Use this to run Scrapy spiders from inside a normal Python script.\n- \u2705 **VPS:** Deploy your code to a Virtual Private Server so it can run 24/7 without relying on your laptop.\n- \u2705 **Nohup/Screen:** Use these tools to keep scripts running in the background on a remote server.\n- \u2705 **Docker:** Containerize your scraper to ensure it runs flawlessly on any machine or server."
+        }
+    ]
+}

@@ -1,0 +1,29 @@
+[
+  {
+    "title": "Cloud Storage Basics",
+    "ques": "Compare the core object storage services of the top three cloud providers (AWS, Google Cloud, Azure).",
+    "answer": {
+      "type": "text",
+      "content": "*   **AWS:** Amazon Simple Storage Service (S3)\n*   **Google Cloud:** Google Cloud Storage (GCS)\n*   **Azure:** Azure Blob Storage\n\nAll three provide highly scalable, durable object storage, and have dedicated Python SDKs (`boto3`, `google-cloud-storage`, and `azure-storage-blob`)."
+    },
+    "explanation": "While the APIs differ, the fundamental concepts of 'Buckets/Containers' and 'Objects/Blobs' remain consistent across all major cloud providers."
+  },
+  {
+    "title": "Serverless Functions",
+    "ques": "What is the equivalent of AWS Lambda in Google Cloud and Azure, and how does Python fit into this paradigm?",
+    "answer": {
+      "type": "text",
+      "content": "The equivalents are **Google Cloud Functions** and **Azure Functions**. Python is a first-class supported language in all these serverless environments. Developers simply write a Python function that takes an event (like an HTTP request or a database trigger), and the cloud provider automatically manages the underlying infrastructure, scaling, and execution."
+    },
+    "explanation": "Serverless computing allows Python developers to focus entirely on application logic without managing servers or operating systems."
+  },
+  {
+    "title": "Pub/Sub Messaging",
+    "ques": "Briefly describe what Google Cloud Pub/Sub is and why a Python application might use it.",
+    "answer": {
+      "type": "text",
+      "content": "Google Cloud Pub/Sub is an asynchronous, scalable messaging service that decouples services that produce events from services that process them. A Python application might use it to reliably broadcast events (like 'user_registered') to multiple independent microservices, ensuring that even if a consumer service is temporarily down, the message is not lost."
+    },
+    "explanation": "Message queues and pub/sub systems are critical for building resilient, event-driven microservice architectures."
+  }
+]

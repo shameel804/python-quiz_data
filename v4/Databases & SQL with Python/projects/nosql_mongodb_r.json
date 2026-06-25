@@ -1,0 +1,32 @@
+[
+  {
+    "title": "Inserting Documents in MongoDB \ud83c\udf43",
+    "ques": "Write a Python script using `pymongo` to insert a dictionary `{\"name\": \"Alice\", \"age\": 30}` into a collection named `users`.",
+    "answer": {
+      "type": "code",
+      "lang": "python",
+      "content": "from pymongo import MongoClient\n\nclient = MongoClient('mongodb://localhost:27017/')\ndb = client.mydb\ncollection = db.users\ncollection.insert_one({'name': 'Alice', 'age': 30})"
+    },
+    "explanation": "MongoDB is a document database. `insert_one` stores a JSON-like Python dictionary (BSON) into a specified collection."
+  },
+  {
+    "title": "Redis Key-Value Storage \u26a1",
+    "ques": "Write a Python script using `redis-py` to connect to a local Redis server, set a key `status` to `\"active\"`, and retrieve it.",
+    "answer": {
+      "type": "code",
+      "lang": "python",
+      "content": "import redis\n\nr = redis.Redis(host='localhost', port=6379, db=0)\nr.set('status', 'active')\nprint(r.get('status').decode('utf-8'))"
+    },
+    "explanation": "Redis is an in-memory data structure store used as a database, cache, and message broker. Data is typically stored as strings or binary data."
+  },
+  {
+    "title": "Setting Redis TTL \u23f3",
+    "ques": "Modify the Redis set command to include a Time-To-Live (TTL) so that the key `session_token` expires in 60 seconds.",
+    "answer": {
+      "type": "code",
+      "lang": "python",
+      "content": "r.setex('session_token', 60, 'abc123xyz')"
+    },
+    "explanation": "`setex` sets the value and the expiration time simultaneously, useful for caching and temporary sessions."
+  }
+]

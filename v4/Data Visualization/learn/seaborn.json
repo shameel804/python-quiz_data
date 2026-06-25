@@ -1,0 +1,129 @@
+{
+    "id": "learn_seaborn",
+    "topicId": "seaborn",
+    "topicTitle": "Seaborn",
+    "description": "Create beautiful statistical graphics with Seaborn. Master scatterplots, heatmaps, boxplots, and multi-plot grids using concise, high-level code.",
+    "baseKP": 75,
+    "slides": [
+        {
+            "id": "seaborn_1",
+            "type": "content",
+            "title": "Statistical Data Visualization",
+            "content": "# Why Seaborn? 🌊\n\nMatplotlib is the foundational plotting library in Python, but it requires a lot of code to make plots look good and to calculate statistics.\n\n**Seaborn** is built *on top* of Matplotlib. It provides a high-level, elegant interface designed specifically for statistical data exploration.\n\nIt integrates flawlessly with Pandas DataFrames and automatically applies beautiful color palettes and themes."
+        },
+        {
+            "id": "seaborn_2",
+            "type": "content",
+            "title": "Loading Data",
+            "content": "# Built-in Datasets 📊\n\nSeaborn comes with several famous datasets built-in, making it incredibly easy to practice.\n\n```python_not\nimport seaborn as sns\nimport matplotlib.pyplot as plt\n\n# Load the 'tips' dataset (a Pandas DataFrame)\ntips = sns.load_dataset(\"tips\")\n\nprint(tips.head(3))\n# Output:\n#    total_bill   tip     sex smoker  day    time  size\n# 0       16.99  1.01  Female     No  Sun  Dinner     2\n# 1       10.34  1.66    Male     No  Sun  Dinner     3\n# 2       21.01  3.50    Male     No  Sun  Dinner     3\n```"
+        },
+        {
+            "id": "seaborn_3",
+            "type": "content",
+            "title": "Relational Plots",
+            "content": "# `scatterplot` 🔵\n\nRelational plots show the relationship between two numerical variables.\n\n```python_not\n# Plot total_bill on the X axis, and tip on the Y axis\nsns.scatterplot(data=tips, x=\"total_bill\", y=\"tip\")\n\n# You MUST call plt.show() to render the plot!\nplt.show()\n```\n\nJust by passing the DataFrame to `data=` and the column names as strings, Seaborn extracts the data and labels the axes automatically!"
+        },
+        {
+            "id": "seaborn_4",
+            "type": "content",
+            "title": "Adding Dimensions with Hue",
+            "content": "# The Magic of `hue` 🎨\n\nIn Matplotlib, coloring dots based on a third variable requires a complex loop. In Seaborn, you just pass the column name to the `hue` parameter.\n\n```python_not\n# Color the dots differently based on whether they were a smoker\nsns.scatterplot(\n    data=tips, \n    x=\"total_bill\", \n    y=\"tip\",\n    hue=\"smoker\" # Magic!\n)\nplt.show()\n```\n\nSeaborn automatically assigns contrasting colors and creates a Legend for you!"
+        },
+        {
+            "id": "seaborn_5",
+            "type": "content",
+            "title": "Line Plots",
+            "content": "# `lineplot` 📈\n\nLine plots are perfect for visualizing trends over time.\n\nIf your dataset contains multiple readings for the exact same X value, Seaborn's `lineplot` will automatically calculate the mean and plot a shaded region representing the 95% Confidence Interval (the statistical uncertainty)!\n\n```python_not\nflights = sns.load_dataset(\"flights\")\n\n# x is the year, y is the number of passengers\nsns.lineplot(data=flights, x=\"year\", y=\"passengers\")\nplt.show()\n```"
+        },
+        {
+            "id": "seaborn_quiz_1",
+            "type": "quiz",
+            "title": "Relational Plots Quiz",
+            "content": "Check your understanding of Seaborn syntax.",
+            "quizQuestion": "In a Seaborn plotting function like `sns.scatterplot`, what does the `hue` parameter do?",
+            "quizOptions": [
+                "It changes the background color of the chart.",
+                "It colors the data points based on a categorical variable (column) in your dataset, automatically creating a legend.",
+                "It sets the transparency (opacity) of the data points.",
+                "It changes the font style of the axis labels."
+            ],
+            "correctOptionIndex": 1
+        },
+        {
+            "id": "seaborn_6",
+            "type": "content",
+            "title": "Categorical Plots",
+            "content": "# `boxplot` 📦\n\nCategorical plots show the relationship between a numerical variable and one or more categorical variables.\n\nA **Boxplot** is the standard way to display the distribution of data based on a five-number summary (minimum, first quartile, median, third quartile, and maximum), and it easily highlights outliers.\n\n```python_not\n# Show the distribution of 'total_bill' for each 'day' of the week\nsns.boxplot(data=tips, x=\"day\", y=\"total_bill\")\nplt.show()\n```"
+        },
+        {
+            "id": "seaborn_7",
+            "type": "content",
+            "title": "Violin Plots",
+            "content": "# `violinplot` 🎻\n\nA Boxplot only shows summaries. It hides the underlying shape of the distribution.\n\nA **Violin Plot** combines a boxplot with a KDE (Kernel Density Estimate), drawing a smooth curve that shows exactly where the data is most dense.\n\n```python_not\nsns.violinplot(data=tips, x=\"day\", y=\"total_bill\")\nplt.show()\n```\n\nFatter sections of the violin indicate a higher density of data points at that value."
+        },
+        {
+            "id": "seaborn_8",
+            "type": "content",
+            "title": "Matrix Plots",
+            "content": "# `heatmap` 🌡️\n\nA Heatmap takes a 2D matrix of data (often a correlation matrix) and visualizes the values using a color gradient.\n\nIt is an essential tool in Machine Learning for quickly spotting correlations between features.\n\n```python_not\nimport pandas as pd\nimport numpy as np\n\n# Create a 10x10 matrix of random numbers\ndata = np.random.rand(10, 10)\n\n# annot=True prints the exact numbers inside the colored squares!\nsns.heatmap(data, annot=True, cmap=\"coolwarm\")\nplt.show()\n```"
+        },
+        {
+            "id": "seaborn_9",
+            "type": "content",
+            "title": "The Ultimate Overview",
+            "content": "# `pairplot` 👯\n\nWhen exploring a brand new dataset, you want to see the relationship between *every single* numerical column at once.\n\n`pairplot` does exactly this. It creates a massive grid where the diagonal shows the distribution of a single variable, and the off-diagonals show scatterplots between every pair of variables.\n\n```python_not\niris = sns.load_dataset(\"iris\")\n\n# Creates a 4x4 grid of plots instantly!\nsns.pairplot(data=iris, hue=\"species\")\nplt.show()\n```"
+        },
+        {
+            "id": "seaborn_quiz_2",
+            "type": "quiz",
+            "title": "Categorical Quiz",
+            "content": "Test your knowledge of chart types.",
+            "quizQuestion": "Which Seaborn plot type provides a visual representation of a Kernel Density Estimate (KDE) to show the underlying shape and density of a distribution, often replacing standard boxplots?",
+            "quizOptions": [
+                "heatmap",
+                "scatterplot",
+                "violinplot",
+                "lineplot"
+            ],
+            "correctOptionIndex": 2
+        },
+        {
+            "id": "seaborn_10",
+            "type": "content",
+            "title": "Multi-plot Grids",
+            "content": "# `FacetGrid` 🪟\n\nWhat if you want to create 4 separate scatterplots, one for each 'day' of the week?\n\nYou use a **FacetGrid**. It splits your dataset into subsets based on a categorical variable and maps a plotting function onto a grid of subplots.\n\n```python_not\n# Create a grid with 1 column per 'day' (Thur, Fri, Sat, Sun)\ng = sns.FacetGrid(tips, col=\"day\")\n\n# Map the sns.scatterplot function onto the grid\ng.map(sns.scatterplot, \"total_bill\", \"tip\")\nplt.show()\n```"
+        },
+        {
+            "id": "seaborn_11",
+            "type": "content",
+            "title": "Figure Level vs Axes Level",
+            "content": "# Understanding the Architecture 🏛️\n\nSeaborn has two types of functions:\n\n1. **Axes-level functions** (`scatterplot`, `boxplot`): They draw onto a single specific Matplotlib Axes. They cannot create multiple subplots themselves.\n2. **Figure-level functions** (`relplot`, `catplot`, `displot`): These wrap `FacetGrid` under the hood. They CAN create grids of subplots automatically!\n\n```python_not\n# Instead of building a FacetGrid manually, use the figure-level 'relplot'\n# It automatically creates a column for each day!\nsns.relplot(data=tips, x=\"total_bill\", y=\"tip\", kind=\"scatter\", col=\"day\")\n```"
+        },
+        {
+            "id": "seaborn_12",
+            "type": "content",
+            "title": "Themes and Styling",
+            "content": "# Making it Beautiful ✨\n\nSeaborn allows you to change the entire aesthetic of your plots globally with a single function call.\n\n```python_not\n# Set the aesthetic style ('darkgrid', 'whitegrid', 'dark', 'white', 'ticks')\nsns.set_style(\"whitegrid\")\n\n# Set the color palette\nsns.set_palette(\"husl\")\n\n# Set the context (scales fonts/lines for different mediums)\n# Contexts: 'paper', 'notebook', 'talk', 'poster'\nsns.set_context(\"talk\")\n\n# Now, all subsequent plots will use these settings!\nsns.boxplot(data=tips, x=\"day\", y=\"total_bill\")\n```"
+        },
+        {
+            "id": "seaborn_quiz_3",
+            "type": "quiz",
+            "title": "Grid Quiz",
+            "content": "Check your understanding of Seaborn architecture.",
+            "quizQuestion": "Which Seaborn class allows you to automatically split your dataset based on a categorical variable (like 'day') and draw a separate subplot for each category side-by-side?",
+            "quizOptions": [
+                "FacetGrid",
+                "ColorPalette",
+                "StyleGrid",
+                "Axes3D"
+            ],
+            "correctOptionIndex": 0
+        },
+        {
+            "id": "seaborn_13",
+            "type": "content",
+            "title": "Summary",
+            "content": "# Seaborn Master! 🎉\n\nYou've learned how to turn raw DataFrames into beautiful statistical graphics.\n\n## Key Takeaways\n\n- ✅ **Integration:** Seaborn is built on Matplotlib but accepts Pandas DataFrames directly via the `data=` parameter.\n- ✅ **Dimensions:** Use the `hue` parameter to instantly add a third dimension (color) based on a category.\n- ✅ **Plot Types:** Use `scatterplot` (relationships), `boxplot`/`violinplot` (distributions), and `heatmap` (matrices).\n- ✅ **Pairplot:** The fastest way to explore a new dataset by plotting every numerical variable against every other one.\n- ✅ **Figure-level Grids:** Use `relplot` or `catplot` with the `col` parameter to instantly generate multi-subplot `FacetGrid` figures.\n\nNext, we'll learn how to make our plots interactive!"
+        }
+    ]
+}

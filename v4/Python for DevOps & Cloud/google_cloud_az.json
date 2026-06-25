@@ -1,0 +1,6794 @@
+[
+    {
+        "q": "What type of storage is Google Cloud Storage (GCS)?",
+        "type": "mcq",
+        "o": [
+            "Object storage",
+            "Block storage",
+            "File storage",
+            "Tape storage"
+        ]
+    },
+    {
+        "q": "In Azure, what service is equivalent to GCS for object storage?",
+        "type": "mcq",
+        "o": [
+            "Azure Blob Storage",
+            "Azure Files",
+            "Azure Disk Storage",
+            "Azure Queue Storage"
+        ]
+    },
+    {
+        "q": "The basic unit of data organization in BigQuery is a _____.",
+        "type": "fill_blank",
+        "answers": [
+            "dataset"
+        ],
+        "other_options": [
+            "table",
+            "bucket",
+            "container",
+            "view"
+        ]
+    },
+    {
+        "q": "Google Cloud Pub/Sub is a service for real-time messaging and streaming data.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "What is the primary purpose of a Cloud Function?",
+        "type": "short_answer",
+        "answers": [
+            "serverless compute",
+            "event-driven compute",
+            "run code in response to events"
+        ],
+        "isCaseSensitive": false
+    },
+    {
+        "q": "What is the maximum size of a single Google Cloud Storage object in Terabytes?",
+        "type": "slider",
+        "min": 1,
+        "max": 10,
+        "correct": 5
+    },
+    {
+        "q": "Match the GCP service to its primary function:",
+        "type": "match",
+        "left": [
+            "GCS",
+            "BigQuery",
+            "Pub/Sub",
+            "Cloud Functions"
+        ],
+        "right": [
+            "Object storage",
+            "Data warehouse",
+            "Messaging",
+            "Serverless compute"
+        ]
+    },
+    {
+        "q": "Which of the following is a NoSQL document database on GCP?",
+        "type": "mcq",
+        "o": [
+            "Firestore",
+            "Cloud SQL",
+            "Spanner",
+            "Bigtable"
+        ]
+    },
+    {
+        "q": "What is the globally distributed, multi-model database service on Azure?",
+        "type": "mcq",
+        "o": [
+            "Cosmos DB",
+            "Azure SQL Database",
+            "Azure Table Storage",
+            "Azure Database for MySQL"
+        ]
+    },
+    {
+        "q": "Match the GCS storage class to its typical use case.",
+        "type": "memory",
+        "pairs": {
+            "Standard": "Active, frequently accessed data",
+            "Nearline": "Data accessed about once a month",
+            "Coldline": "Data accessed about once a quarter",
+            "Archive": "Data accessed less than once a year"
+        }
+    },
+    {
+        "q": "A Pub/Sub topic is where messages are stored before being processed.",
+        "type": "true_false",
+        "correct": "False"
+    },
+    {
+        "q": "Azure Service Bus is an enterprise _____ broker.",
+        "type": "fill_blank",
+        "answers": [
+            "message"
+        ],
+        "other_options": [
+            "storage",
+            "compute",
+            "network",
+            "identity"
+        ]
+    },
+    {
+        "q": "In Firestore, data is organized into _____ and collections.",
+        "type": "fill_blank",
+        "answers": [
+            "documents"
+        ],
+        "other_options": [
+            "tables",
+            "rows",
+            "blobs",
+            "queues"
+        ]
+    },
+    {
+        "q": "Which storage tier in GCS is designed for data accessed less than once a year?",
+        "type": "mcq",
+        "o": [
+            "Archive",
+            "Nearline",
+            "Coldline",
+            "Standard"
+        ]
+    },
+    {
+        "q": "What type of storage is Azure Blob Storage?",
+        "type": "short_answer",
+        "answers": [
+            "object storage",
+            "blob storage"
+        ],
+        "isCaseSensitive": false
+    },
+    {
+        "q": "BigQuery uses a serverless architecture.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Which GCS storage class is best for frequently accessed data?",
+        "type": "mcq",
+        "o": [
+            "Standard",
+            "Nearline",
+            "Coldline",
+            "Archive"
+        ]
+    },
+    {
+        "q": "In Azure, a Service Bus _____ is a container for messages.",
+        "type": "fill_blank",
+        "answers": [
+            "queue"
+        ],
+        "other_options": [
+            "topic",
+            "blob",
+            "table",
+            "function"
+        ]
+    },
+    {
+        "q": "Match the Azure service to its GCP counterpart:",
+        "type": "match",
+        "left": [
+            "Azure Blob Storage",
+            "Azure Functions",
+            "Cosmos DB",
+            "Service Bus"
+        ],
+        "right": [
+            "Cloud Storage",
+            "Cloud Functions",
+            "Firestore",
+            "Pub/Sub"
+        ]
+    },
+    {
+        "q": "What query language does BigQuery use?",
+        "type": "mcq",
+        "o": [
+            "SQL",
+            "NoSQL",
+            "GQL",
+            "MongoDB Query Language"
+        ]
+    },
+    {
+        "q": "Cloud Functions can only be triggered by HTTP requests.",
+        "type": "true_false",
+        "correct": "False"
+    },
+    {
+        "q": "Which of these is NOT a valid predefined IAM role for Google Cloud Storage?",
+        "type": "odd_one_out",
+        "options": [
+            "roles/storage.objectAdmin",
+            "roles/storage.objectViewer",
+            "roles/storage.objectCreator",
+            "roles/storage.objectDestroyer"
+        ],
+        "correct": "roles/storage.objectDestroyer"
+    },
+    {
+        "q": "What is the command-line tool for managing GCP resources?",
+        "type": "short_answer",
+        "answers": [
+            "gcloud",
+            "gcloud cli"
+        ],
+        "isCaseSensitive": false
+    },
+    {
+        "q": "Which Azure service provides a fully managed NoSQL database with multiple consistency levels?",
+        "type": "mcq",
+        "o": [
+            "Cosmos DB",
+            "Azure SQL Database",
+            "Azure Table Storage",
+            "Azure Blob Storage"
+        ]
+    },
+    {
+        "q": "Categorize these GCS operations by their scope.",
+        "type": "swipe_cards",
+        "left_label": "Bucket Level",
+        "right_label": "Object Level",
+        "cards": {
+            "create_bucket()": "left",
+            "upload_from_filename()": "right",
+            "delete_bucket()": "left",
+            "download_to_filename()": "right"
+        }
+    },
+    {
+        "q": "What action transfers a local file into a cloud storage bucket?",
+        "type": "word_scramble",
+        "answer": "UPLOAD",
+        "decoys": "XYZ"
+    },
+    {
+        "q": "A GCS bucket name must be globally _____.",
+        "type": "fill_blank",
+        "answers": [
+            "unique"
+        ],
+        "other_options": [
+            "accessible",
+            "replicated",
+            "secure",
+            "indexed"
+        ]
+    },
+    {
+        "q": "Pub/Sub subscriptions receive messages published to a topic.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Which Firestore mode allows real-time listeners and offline support?",
+        "type": "mcq",
+        "o": [
+            "Native mode",
+            "Datastore mode",
+            "Classic mode",
+            "Legacy mode"
+        ]
+    },
+    {
+        "q": "What action retrieves a cloud object to your local disk?",
+        "type": "word_scramble",
+        "answer": "DOWNLOAD",
+        "decoys": "ABC"
+    },
+    {
+        "q": "Azure Service Bus supports both queues and _____ for publish/subscribe messaging.",
+        "type": "fill_blank",
+        "answers": [
+            "topics"
+        ],
+        "other_options": [
+            "blobs",
+            "tables",
+            "functions",
+            "containers"
+        ]
+    },
+    {
+        "q": "Match the storage class to its description:",
+        "type": "match",
+        "left": [
+            "Standard",
+            "Nearline",
+            "Coldline",
+            "Archive"
+        ],
+        "right": [
+            "Frequent access",
+            "Accessed monthly",
+            "Accessed quarterly",
+            "Accessed yearly"
+        ]
+    },
+    {
+        "q": "What is the maximum size of a single object in GCS?",
+        "type": "mcq",
+        "o": [
+            "5 TiB",
+            "1 TiB",
+            "10 TiB",
+            "100 GiB"
+        ]
+    },
+    {
+        "q": "Complete the code to initialize the GCS client.",
+        "c": "from google.cloud import [0]\nclient = [0].[1]()",
+        "type": "inline_dropdown",
+        "text": "Import the [0] module and instantiate the [1] class.",
+        "dropdowns": [
+            {
+                "correct": "storage",
+                "options": [
+                    "storage",
+                    "gcs",
+                    "cloud"
+                ]
+            },
+            {
+                "correct": "Client",
+                "options": [
+                    "Client",
+                    "Connection",
+                    "Session"
+                ]
+            }
+        ]
+    },
+    {
+        "q": "BigQuery is optimized for OLTP workloads.",
+        "type": "true_false",
+        "correct": "False"
+    },
+    {
+        "q": "What is the name of the Azure service for serverless compute?",
+        "type": "short_answer",
+        "answers": [
+            "azure functions",
+            "functions"
+        ],
+        "isCaseSensitive": false
+    },
+    {
+        "q": "Which Pub/Sub pattern involves pushing messages to subscriber endpoints?",
+        "type": "mcq",
+        "o": [
+            "Push subscription",
+            "Pull subscription",
+            "Long polling",
+            "Webhook"
+        ]
+    },
+    {
+        "q": "Complete the GCS object retrieval snippet.",
+        "c": "bucket = client.[0]('my-bucket')\nfile_obj = bucket.[1]('data.txt')",
+        "type": "inline_dropdown",
+        "text": "Use the [0] method on the client, then access the [1].",
+        "dropdowns": [
+            {
+                "correct": "get_bucket",
+                "options": [
+                    "get_bucket",
+                    "fetch_bucket",
+                    "bucket"
+                ]
+            },
+            {
+                "correct": "blob",
+                "options": [
+                    "blob",
+                    "file",
+                    "object"
+                ]
+            }
+        ]
+    },
+    {
+        "q": "In Cosmos DB, a _____ is the smallest unit of data storage.",
+        "type": "fill_blank",
+        "answers": [
+            "item"
+        ],
+        "other_options": [
+            "document",
+            "row",
+            "blob",
+            "record"
+        ]
+    },
+    {
+        "q": "Azure Blob Storage has a hierarchical namespace feature called Azure Data Lake Storage Gen2.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Which tool can be used to transfer data from on-premises to GCS?",
+        "type": "mcq",
+        "o": [
+            "gsutil",
+            "gcloud transfer",
+            "azcopy",
+            "aws cli"
+        ]
+    },
+    {
+        "q": "Match the BigQuery concept with its description:",
+        "type": "match",
+        "left": [
+            "Dataset",
+            "Table",
+            "View",
+            "Job"
+        ],
+        "right": [
+            "Container for tables",
+            "Structured data",
+            "Virtual table from query",
+            "Unit of work"
+        ]
+    },
+    {
+        "q": "Cloud Functions automatically scales based on demand.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "What protocol is used to access Azure Blob Storage over the internet?",
+        "type": "short_answer",
+        "answers": [
+            "http",
+            "https"
+        ],
+        "isCaseSensitive": false
+    },
+    {
+        "q": "What is the maximum number of blocks allowed in a single Azure Block Blob?",
+        "type": "slider",
+        "min": 10000,
+        "max": 100000,
+        "correct": 50000
+    },
+    {
+        "q": "Match the Azure Blob type to its optimized use case.",
+        "type": "memory",
+        "pairs": {
+            "Block Blob": "Text and binary data, generic files",
+            "Append Blob": "Optimized for append operations like logging",
+            "Page Blob": "Frequent read/write operations, VHD files"
+        }
+    },
+    {
+        "q": "Which Azure Service Bus feature ensures a message is processed exactly once?",
+        "type": "mcq",
+        "o": [
+            "Duplicate detection",
+            "Sessions",
+            "Dead-lettering",
+            "Partitioning"
+        ]
+    },
+    {
+        "q": "Firestore stores data as JSON-like _____.",
+        "type": "fill_blank",
+        "answers": [
+            "documents"
+        ],
+        "other_options": [
+            "blobs",
+            "tables",
+            "queues",
+            "objects"
+        ]
+    },
+    {
+        "q": "A Pub/Sub message is automatically deleted after it is acknowledged by a subscriber.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "What is the default consistency model for GCS?",
+        "type": "mcq",
+        "o": [
+            "Strong consistency",
+            "Eventual consistency",
+            "Read-after-write consistency",
+            "Session consistency"
+        ]
+    },
+    {
+        "q": "Cosmos DB supports multiple APIs including SQL, MongoDB, and _____.",
+        "type": "fill_blank",
+        "answers": [
+            "cassandra",
+            "gremlin",
+            "table"
+        ],
+        "other_options": [
+            "mysql",
+            "postgresql",
+            "redis",
+            "neo4j"
+        ]
+    },
+    {
+        "q": "Match the Azure Storage SDK client to its interaction scope.",
+        "type": "memory",
+        "pairs": {
+            "BlobServiceClient": "Interact at the top storage account level",
+            "ContainerClient": "Interact with a specific directory or container",
+            "BlobClient": "Interact with a specific individual file"
+        }
+    },
+    {
+        "q": "Match the Cloud Functions trigger type to an example:",
+        "type": "match",
+        "left": [
+            "HTTP",
+            "Cloud Storage",
+            "Pub/Sub",
+            "Firestore"
+        ],
+        "right": [
+            "Web request",
+            "Object upload",
+            "Message publish",
+            "Document write"
+        ]
+    },
+    {
+        "q": "Which BigQuery pricing model charges based on data scanned?",
+        "type": "mcq",
+        "o": [
+            "On-demand",
+            "Flat-rate",
+            "Reserved",
+            "Spot"
+        ]
+    },
+    {
+        "q": "What is the name of the Azure CLI command to copy data to Blob Storage?",
+        "type": "short_answer",
+        "answers": [
+            "azcopy",
+            "az copy"
+        ],
+        "isCaseSensitive": false
+    },
+    {
+        "q": "Which of these is NOT a valid Azure Blob access tier?",
+        "type": "odd_one_out",
+        "options": [
+            "Hot",
+            "Cool",
+            "Cold",
+            "Archive",
+            "Warm"
+        ],
+        "correct": "Warm"
+    },
+    {
+        "q": "Service Bus Queues follow a First-In-First-Out (FIFO) pattern by default.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Match the terminology between GCP and Azure Storage.",
+        "type": "swipe_cards",
+        "left_label": "Google Cloud",
+        "right_label": "Microsoft Azure",
+        "cards": {
+            "Bucket": "left",
+            "Container": "right",
+            "Object": "left",
+            "Block Blob": "right"
+        }
+    },
+    {
+        "q": "What is the top-level directory structure for Azure Blobs called?",
+        "type": "word_scramble",
+        "answer": "CONTAINER",
+        "decoys": "QZ"
+    },
+    {
+        "q": "What type of blob is best for generic file storage in Azure?",
+        "type": "word_scramble",
+        "answer": "BLOCK",
+        "decoys": "PX"
+    },
+    {
+        "q": "Which GCS feature allows automatic deletion of objects after a set time?",
+        "type": "mcq",
+        "o": [
+            "Object Lifecycle Management",
+            "Retention Policy",
+            "Versioning",
+            "Bucket Lock"
+        ]
+    },
+    {
+        "q": "In BigQuery, a _____ is a virtual table defined by a SQL query.",
+        "type": "fill_blank",
+        "answers": [
+            "view"
+        ],
+        "other_options": [
+            "table",
+            "dataset",
+            "schema",
+            "index"
+        ]
+    },
+    {
+        "q": "Azure Functions can be written in C#, JavaScript, Python, and Java.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Which type of Cosmos DB account is designed for global distribution?",
+        "type": "mcq",
+        "o": [
+            "Multi-region write",
+            "Single-region write",
+            "Read-only",
+            "Local"
+        ]
+    },
+    {
+        "q": "Match the Azure Blob access tier to its use case:",
+        "type": "match",
+        "left": [
+            "Hot",
+            "Cool",
+            "Archive"
+        ],
+        "right": [
+            "Frequent access",
+            "Infrequent access",
+            "Rare access"
+        ]
+    },
+    {
+        "q": "Identify the correct Azure Blob Python package and connection method.",
+        "c": "from azure.storage.blob import BlobServiceClient",
+        "type": "inline_dropdown",
+        "text": "The [0] package is used for Azure Blob, and you often connect using a [1].",
+        "dropdowns": [
+            {
+                "correct": "azure-storage-blob",
+                "options": [
+                    "azure-blob",
+                    "azure-storage-blob",
+                    "azure-storage"
+                ]
+            },
+            {
+                "correct": "connection string",
+                "options": [
+                    "connection string",
+                    "secret key",
+                    "account id"
+                ]
+            }
+        ]
+    },
+    {
+        "q": "Cloud Functions has a maximum timeout of 9 minutes for HTTP-triggered functions.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "What does Pub/Sub guarantee about message delivery?",
+        "type": "mcq",
+        "o": [
+            "At-least-once delivery",
+            "Exactly-once delivery",
+            "At-most-once delivery",
+            "No guarantees"
+        ]
+    },
+    {
+        "q": "The Firestore database can be structured in either Native mode or _____ mode.",
+        "type": "fill_blank",
+        "answers": [
+            "datastore"
+        ],
+        "other_options": [
+            "classic",
+            "legacy",
+            "sql",
+            "realtime"
+        ]
+    },
+    {
+        "q": "What is the primary use case for Azure Service Bus Topics?",
+        "type": "short_answer",
+        "answers": [
+            "publish/subscribe",
+            "pub/sub",
+            "one-to-many messaging"
+        ],
+        "isCaseSensitive": false
+    },
+    {
+        "q": "GCS buckets can be created in specific geographical locations.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Which command creates a new BigQuery dataset?",
+        "type": "mcq",
+        "o": [
+            "bq mk",
+            "bq create",
+            "gcloud dataset create",
+            "bq new"
+        ]
+    },
+    {
+        "q": "Azure Blob Storage containers are analogous to GCS _____.",
+        "type": "fill_blank",
+        "answers": [
+            "buckets"
+        ],
+        "other_options": [
+            "tables",
+            "queues",
+            "datasets",
+            "topics"
+        ]
+    },
+    {
+        "q": "Complete the snippet to upload data to an Azure Blob.",
+        "c": "blob_client = container_client.get_blob_client('file.txt')\nblob_client.[0](data, overwrite=[1])",
+        "type": "inline_dropdown",
+        "text": "Call [0] to upload data, setting overwrite to [1] if replacing an existing file.",
+        "dropdowns": [
+            {
+                "correct": "upload_blob",
+                "options": [
+                    "upload_blob",
+                    "put_blob",
+                    "send_blob"
+                ]
+            },
+            {
+                "correct": "True",
+                "options": [
+                    "True",
+                    "False",
+                    "None"
+                ]
+            }
+        ]
+    },
+    {
+        "q": "Match the Pub/Sub component to its role:",
+        "type": "match",
+        "left": [
+            "Publisher",
+            "Topic",
+            "Subscription",
+            "Subscriber"
+        ],
+        "right": [
+            "Sends messages",
+            "Named resource for messages",
+            "Entity representing interest",
+            "Receives messages"
+        ]
+    },
+    {
+        "q": "A Firestore document can contain subcollections.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Which Azure service provides a serverless version of Apache Spark?",
+        "type": "mcq",
+        "o": [
+            "Azure Synapse Analytics",
+            "Azure Databricks",
+            "Azure HDInsight",
+            "Azure Analysis Services"
+        ]
+    },
+    {
+        "q": "What is the name of the GCP service for data warehousing?",
+        "type": "short_answer",
+        "answers": [
+            "bigquery",
+            "google bigquery"
+        ],
+        "isCaseSensitive": false
+    },
+    {
+        "q": "Service Bus messages can be up to 256 KB in size for the Standard tier.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Which Cloud Functions runtime supports Node.js, Python, and Go?",
+        "type": "mcq",
+        "o": [
+            "Cloud Functions (1st gen)",
+            "Cloud Functions (2nd gen)",
+            "App Engine",
+            "Cloud Run"
+        ]
+    },
+    {
+        "q": "In Cosmos DB, a _____ determines the geographical distribution of your database.",
+        "type": "fill_blank",
+        "answers": [
+            "replication policy"
+        ],
+        "other_options": [
+            "partition key",
+            "index",
+            "container",
+            "account"
+        ]
+    },
+    {
+        "q": "What is the minimum billing unit for BigQuery queries in Megabytes (MB)?",
+        "type": "slider",
+        "min": 1,
+        "max": 50,
+        "correct": 10
+    },
+    {
+        "q": "BigQuery allows streaming inserts of data in real-time.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Match the BigQuery component to its definition.",
+        "type": "memory",
+        "pairs": {
+            "Dataset": "Top-level container for tables and views",
+            "Table": "Collection of columns and rows",
+            "Job": "Actions like running queries or loading data"
+        }
+    },
+    {
+        "q": "Which Azure Blob Storage type is optimized for append operations?",
+        "type": "mcq",
+        "o": [
+            "Append Blob",
+            "Block Blob",
+            "Page Blob",
+            "General Blob"
+        ]
+    },
+    {
+        "q": "Which of these is NOT a valid BigQuery standard SQL data type?",
+        "type": "odd_one_out",
+        "options": [
+            "STRING",
+            "INTEGER",
+            "FLOAT64",
+            "VARCHAR",
+            "BOOLEAN"
+        ],
+        "correct": "VARCHAR"
+    },
+    {
+        "q": "Match the GCP service to its pricing model:",
+        "type": "match",
+        "left": [
+            "GCS",
+            "BigQuery",
+            "Pub/Sub",
+            "Cloud Functions"
+        ],
+        "right": [
+            "Storage and egress",
+            "Data scanned or slots",
+            "Message volume",
+            "Invocation and duration"
+        ]
+    },
+    {
+        "q": "What is the maximum execution time for an Azure Function in the Consumption plan?",
+        "type": "mcq",
+        "o": [
+            "10 minutes",
+            "5 minutes",
+            "9 minutes",
+            "15 minutes"
+        ]
+    },
+    {
+        "q": "Pub/Sub topic names must be unique within a project.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "What API does Firestore use for real-time updates?",
+        "type": "short_answer",
+        "answers": [
+            "websocket",
+            "grpc",
+            "real-time listeners"
+        ],
+        "isCaseSensitive": false
+    },
+    {
+        "q": "Which Service Bus feature allows grouping related messages?",
+        "type": "mcq",
+        "o": [
+            "Sessions",
+            "Topics",
+            "Subscriptions",
+            "Filters"
+        ]
+    },
+    {
+        "q": "Categorize Azure Blob operations by their client level.",
+        "type": "swipe_cards",
+        "left_label": "Account Level",
+        "right_label": "Container Level",
+        "cards": {
+            "List Containers": "left",
+            "Create Container": "left",
+            "List Blobs": "right",
+            "Delete Blob": "right"
+        }
+    },
+    {
+        "q": "A GCS _____ is a logical container for storing objects.",
+        "type": "fill_blank",
+        "answers": [
+            "bucket"
+        ],
+        "other_options": [
+            "container",
+            "blob",
+            "file",
+            "dataset"
+        ]
+    },
+    {
+        "q": "Cosmos DB automatically indexes every property in a document by default.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Which BigQuery feature allows querying external data without loading it?",
+        "type": "mcq",
+        "o": [
+            "External tables",
+            "Views",
+            "Materialized views",
+            "Partitioned tables"
+        ]
+    },
+    {
+        "q": "Cloud Functions can be written in which languages? (Choose the most common)",
+        "type": "mcq",
+        "o": [
+            "Node.js, Python, Go",
+            "Java, C#, Ruby",
+            "PHP, Perl, Swift",
+            "Rust, Kotlin, Scala"
+        ]
+    },
+    {
+        "q": "Match the Azure Service Bus messaging pattern:",
+        "type": "match",
+        "left": [
+            "Queue",
+            "Topic",
+            "Relay",
+            "Event Hub"
+        ],
+        "right": [
+            "One-to-one",
+            "One-to-many",
+            "Direct connection",
+            "High throughput"
+        ]
+    },
+    {
+        "q": "What is the term for a serverless function's single execution in response to an event?",
+        "type": "short_answer",
+        "answers": [
+            "invocation",
+            "trigger"
+        ],
+        "isCaseSensitive": false
+    },
+    {
+        "q": "Azure Blob Storage supports versioning to recover deleted or modified blobs.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Which tool allows you to query BigQuery from the command line?",
+        "type": "mcq",
+        "o": [
+            "bq",
+            "gcloud sql",
+            "gsutil",
+            "az query"
+        ]
+    },
+    {
+        "q": "In Firestore, a _____ is a group of documents.",
+        "type": "fill_blank",
+        "answers": [
+            "collection"
+        ],
+        "other_options": [
+            "table",
+            "bucket",
+            "dataset",
+            "container"
+        ]
+    },
+    {
+        "q": "Pub/Sub supports filtering messages based on attributes.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Which Azure storage account type offers the lowest cost per GB for rarely accessed data?",
+        "type": "mcq",
+        "o": [
+            "Archive",
+            "Cool",
+            "Hot",
+            "Premium"
+        ]
+    },
+    {
+        "q": "Cosmos DB's _____ consistency level offers the highest throughput but lowest consistency.",
+        "type": "fill_blank",
+        "answers": [
+            "eventual"
+        ],
+        "other_options": [
+            "strong",
+            "bounded staleness",
+            "session",
+            "consistent prefix"
+        ]
+    },
+    {
+        "q": "Match the data type to its storage service:",
+        "type": "match",
+        "left": [
+            "Unstructured files",
+            "Relational data",
+            "JSON documents",
+            "Messages"
+        ],
+        "right": [
+            "Blob Storage",
+            "Cloud SQL",
+            "Firestore",
+            "Pub/Sub"
+        ]
+    },
+    {
+        "q": "What is the maximum size of an Azure Blob block?",
+        "type": "mcq",
+        "o": [
+            "4000 MiB",
+            "100 MiB",
+            "1000 MiB",
+            "5000 MiB"
+        ]
+    },
+    {
+        "q": "BigQuery datasets are regional or multi-regional resources.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "What does GCS stand for?",
+        "type": "short_answer",
+        "answers": [
+            "google cloud storage"
+        ],
+        "isCaseSensitive": false
+    },
+    {
+        "q": "Swipe based on BigQuery Cost Models.",
+        "type": "swipe_cards",
+        "left_label": "Storage Cost",
+        "right_label": "Compute Cost",
+        "cards": {
+            "Active logical bytes stored": "left",
+            "Bytes scanned during SELECT": "right",
+            "Long-term physical bytes": "left",
+            "Query processing time": "right"
+        }
+    },
+    {
+        "q": "Which Cloud Functions feature allows passing configuration at deployment?",
+        "type": "mcq",
+        "o": [
+            "Environment variables",
+            "Runtime arguments",
+            "Code comments",
+            "Metadata"
+        ]
+    },
+    {
+        "q": "What is executed to retrieve data from a database?",
+        "type": "word_scramble",
+        "answer": "QUERY",
+        "decoys": "JK"
+    },
+    {
+        "q": "Service Bus dead-letter queues store messages that could not be processed.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "What is the grouping of tables in BigQuery called?",
+        "type": "word_scramble",
+        "answer": "DATASET",
+        "decoys": "LM"
+    },
+    {
+        "q": "In Azure, a _____ is a logical grouping of related services including storage.",
+        "type": "fill_blank",
+        "answers": [
+            "resource group"
+        ],
+        "other_options": [
+            "subscription",
+            "management group",
+            "container",
+            "bucket"
+        ]
+    },
+    {
+        "q": "Which Pub/Sub client library method is used to acknowledge a message?",
+        "type": "mcq",
+        "o": [
+            "ack()",
+            "confirm()",
+            "delete()",
+            "commit()"
+        ]
+    },
+    {
+        "q": "Cosmos DB allows you to choose from five well-defined consistency models.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "What is the name of the Azure service for real-time analytics on streaming data?",
+        "type": "short_answer",
+        "answers": [
+            "azure stream analytics",
+            "stream analytics"
+        ],
+        "isCaseSensitive": false
+    },
+    {
+        "q": "Match the GCS operation to its tool:",
+        "type": "match",
+        "left": [
+            "Upload file",
+            "List buckets",
+            "Download file",
+            "Set lifecycle"
+        ],
+        "right": [
+            "gsutil cp",
+            "gsutil ls",
+            "gsutil cp",
+            "gsutil lifecycle"
+        ]
+    },
+    {
+        "q": "A Firestore composite index is required to query across multiple fields.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Which BigQuery operation combines multiple tables into one result?",
+        "type": "mcq",
+        "o": [
+            "JOIN",
+            "MERGE",
+            "UNION ALL",
+            "INSERT"
+        ]
+    },
+    {
+        "q": "Azure Functions _____ plan scales automatically based on demand.",
+        "type": "fill_blank",
+        "answers": [
+            "consumption"
+        ],
+        "other_options": [
+            "premium",
+            "dedicated",
+            "standard",
+            "basic"
+        ]
+    },
+    {
+        "q": "GCS provides server-side encryption for data at rest by default.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Which Azure Service Bus tier supports larger messages and more features?",
+        "type": "mcq",
+        "o": [
+            "Premium",
+            "Standard",
+            "Basic",
+            "Free"
+        ]
+    },
+    {
+        "q": "What is the maximum size of a Firestore document?",
+        "type": "short_answer",
+        "answers": [
+            "1 MiB",
+            "1 mebibyte",
+            "1048576 bytes"
+        ],
+        "isCaseSensitive": false
+    },
+    {
+        "q": "In Cosmos DB, the _____ key determines how data is distributed across physical partitions.",
+        "type": "fill_blank",
+        "answers": [
+            "partition"
+        ],
+        "other_options": [
+            "primary",
+            "sort",
+            "index",
+            "foreign"
+        ]
+    },
+    {
+        "q": "Complete the BigQuery Python snippet.",
+        "c": "query_job = client.[0]('SELECT * FROM table')\nresults = query_job.[1]()",
+        "type": "inline_dropdown",
+        "text": "To run a BQ query in Python, call client.[0] and then call [1] to wait for completion.",
+        "dropdowns": [
+            {
+                "correct": "query",
+                "options": [
+                    "query",
+                    "run",
+                    "execute"
+                ]
+            },
+            {
+                "correct": "result",
+                "options": [
+                    "result",
+                    "wait",
+                    "fetch"
+                ]
+            }
+        ]
+    },
+    {
+        "q": "Cloud Functions pricing is based on number of invocations and compute time.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Which type of Azure Blob is optimized for random read/write operations?",
+        "type": "mcq",
+        "o": [
+            "Page Blob",
+            "Block Blob",
+            "Append Blob",
+            "Random Blob"
+        ]
+    },
+    {
+        "q": "Match the BigQuery partition type to its basis:",
+        "type": "match",
+        "left": [
+            "Time-unit column",
+            "Ingestion time",
+            "Integer range"
+        ],
+        "right": [
+            "DATE or TIMESTAMP column",
+            "When data is loaded",
+            "INTEGER column with range"
+        ]
+    },
+    {
+        "q": "Pub/Sub messages are retained for up to 7 days by default.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Which command deploys a Cloud Function from the gcloud CLI?",
+        "type": "mcq",
+        "o": [
+            "gcloud functions deploy",
+            "gcloud deploy function",
+            "gcloud function create",
+            "gcloud serverless deploy"
+        ]
+    },
+    {
+        "q": "Azure Blob Storage _____ access tier is for data that is accessed infrequently and stored for at least 30 days.",
+        "type": "fill_blank",
+        "answers": [
+            "cool"
+        ],
+        "other_options": [
+            "hot",
+            "archive",
+            "cold",
+            "standard"
+        ]
+    },
+    {
+        "q": "What is the name of the Azure message broker service?",
+        "type": "short_answer",
+        "answers": [
+            "azure service bus",
+            "service bus"
+        ],
+        "isCaseSensitive": false
+    },
+    {
+        "q": "Cosmos DB is a relational database service.",
+        "type": "true_false",
+        "correct": "False"
+    },
+    {
+        "q": "Complete the code to load a Pandas DataFrame into BigQuery.",
+        "c": "job = client.[0](dataframe, [1])\njob.result()",
+        "type": "inline_dropdown",
+        "text": "You can load a pandas DataFrame to BQ using [0] and providing a [1].",
+        "dropdowns": [
+            {
+                "correct": "load_table_from_dataframe",
+                "options": [
+                    "load_table_from_dataframe",
+                    "insert_dataframe",
+                    "upload_df"
+                ]
+            },
+            {
+                "correct": "table_id",
+                "options": [
+                    "table_id",
+                    "dataset_id",
+                    "project_id"
+                ]
+            }
+        ]
+    },
+    {
+        "q": "What is the GCS storage class designed for data accessed less than once every 90 days?",
+        "type": "mcq",
+        "o": [
+            "Coldline",
+            "Nearline",
+            "Archive",
+            "Standard"
+        ]
+    },
+    {
+        "q": "Which Azure service provides fully managed file shares in the cloud?",
+        "type": "mcq",
+        "o": [
+            "Azure Files",
+            "Azure Blob Storage",
+            "Azure Disk Storage",
+            "Azure Data Lake Storage"
+        ]
+    },
+    {
+        "q": "In BigQuery, a _____ is a user-defined function written in SQL or JavaScript.",
+        "type": "fill_blank",
+        "answers": [
+            "UDF"
+        ],
+        "other_options": [
+            "view",
+            "procedure",
+            "macro",
+            "trigger"
+        ]
+    },
+    {
+        "q": "Cloud Functions can be triggered by changes in a Firestore document.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "What protocol does Azure Service Bus primarily use for messaging?",
+        "type": "short_answer",
+        "answers": [
+            "amqp",
+            "advanced message queuing protocol"
+        ],
+        "isCaseSensitive": false
+    },
+    {
+        "q": "Match the GCS lifecycle action to its description:",
+        "type": "match",
+        "left": [
+            "Delete",
+            "SetStorageClass",
+            "AbortIncompleteMultipartUpload"
+        ],
+        "right": [
+            "Remove objects",
+            "Change to a colder tier",
+            "Clean up failed uploads"
+        ]
+    },
+    {
+        "q": "Which consistency level does Cosmos DB use by default?",
+        "type": "mcq",
+        "o": [
+            "Session",
+            "Strong",
+            "Bounded staleness",
+            "Eventual"
+        ]
+    },
+    {
+        "q": "A Pub/Sub _____ is a named resource that represents a stream of messages.",
+        "type": "fill_blank",
+        "answers": [
+            "topic"
+        ],
+        "other_options": [
+            "subscription",
+            "queue",
+            "channel",
+            "stream"
+        ]
+    },
+    {
+        "q": "What is the default minimum Request Units per second (RU/s) for manual provisioned throughput in Cosmos DB?",
+        "type": "slider",
+        "min": 100,
+        "max": 1000,
+        "correct": 400
+    },
+    {
+        "q": "Azure Blob Storage lifecycle management policies can automatically move blobs to cooler tiers.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Which BigQuery feature caches query results to improve performance and reduce costs?",
+        "type": "mcq",
+        "o": [
+            "Query cache",
+            "Materialized view",
+            "BI Engine",
+            "Partitioning"
+        ]
+    },
+    {
+        "q": "What is the name of the Azure service for migrating databases to the cloud?",
+        "type": "short_answer",
+        "answers": [
+            "azure database migration service",
+            "azure DMS"
+        ],
+        "isCaseSensitive": false
+    },
+    {
+        "q": "Firestore queries are _____ by default, meaning results reflect all previous writes.",
+        "type": "fill_blank",
+        "answers": [
+            "strongly consistent"
+        ],
+        "other_options": [
+            "eventually consistent",
+            "weakly consistent",
+            "eventual",
+            "strong"
+        ]
+    },
+    {
+        "q": "Service Bus topics support multiple subscribers using filters on message properties.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Which GCP service would you use for a serverless, event-driven data processing pipeline?",
+        "type": "mcq",
+        "o": [
+            "Cloud Functions",
+            "Compute Engine",
+            "GKE",
+            "App Engine"
+        ]
+    },
+    {
+        "q": "Match the Azure Service Bus feature to its purpose:",
+        "type": "match",
+        "left": [
+            "Duplicate Detection",
+            "Sessions",
+            "Dead-letter Queue",
+            "Auto-forwarding"
+        ],
+        "right": [
+            "Prevent duplicate messages",
+            "Group related messages",
+            "Hold undeliverable messages",
+            "Move messages between entities"
+        ]
+    },
+    {
+        "q": "Match the Cosmos DB API to its primary data model.",
+        "type": "memory",
+        "pairs": {
+            "SQL API": "Core API for document data using JSON",
+            "MongoDB API": "Compatible with Mongo drivers and tools",
+            "Gremlin API": "Used for graph data models",
+            "Cassandra API": "Used for column-family data"
+        }
+    },
+    {
+        "q": "BigQuery can directly query data stored in GCS without loading it first.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Which Cosmos DB API allows you to use MongoDB drivers and tools?",
+        "type": "mcq",
+        "o": [
+            "MongoDB API",
+            "SQL API",
+            "Cassandra API",
+            "Gremlin API"
+        ]
+    },
+    {
+        "q": "In GCS, an object's _____ is a key-value pair used for conditional storage operations.",
+        "type": "fill_blank",
+        "answers": [
+            "metadata"
+        ],
+        "other_options": [
+            "etag",
+            "checksum",
+            "cache-control",
+            "crc32c"
+        ]
+    },
+    {
+        "q": "Which of these is NOT a valid Cosmos DB consistency level?",
+        "type": "odd_one_out",
+        "options": [
+            "Strong",
+            "Bounded Staleness",
+            "Session",
+            "Eventual",
+            "Immediate"
+        ],
+        "correct": "Immediate"
+    },
+    {
+        "q": "Azure Functions supports dependency injection in .NET.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "What is the term for a Cloud Function that runs in response to a cloud event?",
+        "type": "short_answer",
+        "answers": [
+            "event-driven function",
+            "background function"
+        ],
+        "isCaseSensitive": false
+    },
+    {
+        "q": "Categorize these BigQuery vs Cloud SQL features.",
+        "type": "swipe_cards",
+        "left_label": "BigQuery",
+        "right_label": "Cloud SQL",
+        "cards": {
+            "Petabyte-scale analytics": "left",
+            "OLTP transactions": "right",
+            "Serverless data warehouse": "left",
+            "Relational database instance": "right"
+        }
+    },
+    {
+        "q": "Which Pub/Sub feature allows you to replay previously acknowledged messages?",
+        "type": "mcq",
+        "o": [
+            "Seek",
+            "Replay",
+            "Restore",
+            "Rewind"
+        ]
+    },
+    {
+        "q": "Azure Cosmos DB uses _____ as its underlying storage engine.",
+        "type": "fill_blank",
+        "answers": [
+            "atoms",
+            "atom-record-sequence"
+        ],
+        "other_options": [
+            "b-trees",
+            "lsm trees",
+            "columnar",
+            "in-memory"
+        ]
+    },
+    {
+        "q": "GCS signed URLs provide time-limited access to specific objects.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Which Azure Blob Storage redundancy option replicates data to a secondary region?",
+        "type": "mcq",
+        "o": [
+            "Geo-redundant storage (GRS)",
+            "Locally redundant storage (LRS)",
+            "Zone-redundant storage (ZRS)",
+            "Standard redundancy"
+        ]
+    },
+    {
+        "q": "Match the Cloud Functions event type to the GCP service:",
+        "type": "match",
+        "left": [
+            "google.storage.object.finalize",
+            "google.pubsub.topic.publish",
+            "google.firestore.document.write"
+        ],
+        "right": [
+            "Cloud Storage",
+            "Pub/Sub",
+            "Firestore"
+        ]
+    },
+    {
+        "q": "Categorize Cosmos DB operations by their hierarchy level.",
+        "type": "swipe_cards",
+        "left_label": "Database Level",
+        "right_label": "Container Level",
+        "cards": {
+            "Create Container": "left",
+            "Read Database Throughput": "left",
+            "Upsert Item": "right",
+            "Read Item by ID": "right"
+        }
+    },
+    {
+        "q": "BigQuery supports ACID transactions on tables.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "What is the maximum message size for Azure Service Bus Premium tier?",
+        "type": "mcq",
+        "o": [
+            "1 MB",
+            "256 KB",
+            "512 KB",
+            "100 MB"
+        ]
+    },
+    {
+        "q": "Firestore security rules are written in a language similar to _____.",
+        "type": "fill_blank",
+        "answers": [
+            "CEL",
+            "Common Expression Language"
+        ],
+        "other_options": [
+            "SQL",
+            "JavaScript",
+            "YAML",
+            "JSON"
+        ]
+    },
+    {
+        "q": "Cosmos DB automatically scales throughput based on demand.",
+        "type": "true_false",
+        "correct": "False"
+    },
+    {
+        "q": "What CLI command lists all BigQuery datasets in a project?",
+        "type": "short_answer",
+        "answers": [
+            "bq ls",
+            "bq list"
+        ],
+        "isCaseSensitive": false
+    },
+    {
+        "q": "Which GCS feature allows you to host a static website?",
+        "type": "mcq",
+        "o": [
+            "Static website hosting",
+            "Cloud CDN",
+            "Load Balancer",
+            "App Engine"
+        ]
+    },
+    {
+        "q": "Azure Service Bus _____ are used to forward messages from one entity to another.",
+        "type": "fill_blank",
+        "answers": [
+            "auto-forwarding"
+        ],
+        "other_options": [
+            "bridges",
+            "relays",
+            "connectors",
+            "links"
+        ]
+    },
+    {
+        "q": "A BigQuery job is an asynchronous operation that can run for minutes or hours.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "What is a single JSON document in Cosmos DB often called?",
+        "type": "word_scramble",
+        "answer": "ITEM",
+        "decoys": "TR"
+    },
+    {
+        "q": "Which Azure Blob Storage type is composed of blocks and is ideal for text and binary data?",
+        "type": "mcq",
+        "o": [
+            "Block Blob",
+            "Page Blob",
+            "Append Blob",
+            "Base Blob"
+        ]
+    },
+    {
+        "q": "Match the Cosmos DB API to its wire protocol compatibility:",
+        "type": "match",
+        "left": [
+            "SQL API",
+            "MongoDB API",
+            "Cassandra API",
+            "Gremlin API"
+        ],
+        "right": [
+            "JSON over HTTP",
+            "BSON/MongoDB wire protocol",
+            "CQL",
+            "GraphSON over WebSockets"
+        ]
+    },
+    {
+        "q": "Cloud Functions cold starts occur when a new function instance is initialized.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "What is the name of the GCP service for IoT device management and data ingestion?",
+        "type": "short_answer",
+        "answers": [
+            "cloud iot core",
+            "iot core"
+        ],
+        "isCaseSensitive": false
+    },
+    {
+        "q": "In Pub/Sub, a _____ represents the interest of a specific subscriber in a topic.",
+        "type": "fill_blank",
+        "answers": [
+            "subscription"
+        ],
+        "other_options": [
+            "queue",
+            "channel",
+            "binding",
+            "route"
+        ]
+    },
+    {
+        "q": "Azure Functions Durable Functions extension enables stateful workflows.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Which BigQuery function is used to flatten nested and repeated data?",
+        "type": "mcq",
+        "o": [
+            "UNNEST",
+            "FLATTEN",
+            "EXPLODE",
+            "EXPAND"
+        ]
+    },
+    {
+        "q": "GCS object versioning keeps a history of modifications and deletions.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Which Azure service provides fully managed PostgreSQL, MySQL, and MariaDB?",
+        "type": "mcq",
+        "o": [
+            "Azure Database for open-source relational databases",
+            "Azure SQL Database",
+            "Cosmos DB",
+            "Azure Synapse Analytics"
+        ]
+    },
+    {
+        "q": "What key is essential for scaling out data in Cosmos DB?",
+        "type": "word_scramble",
+        "answer": "PARTITION",
+        "decoys": "XZ"
+    },
+    {
+        "q": "The Firestore _____ mode is backwards compatible with Cloud Datastore.",
+        "type": "fill_blank",
+        "answers": [
+            "datastore"
+        ],
+        "other_options": [
+            "native",
+            "classic",
+            "legacy",
+            "compatible"
+        ]
+    },
+    {
+        "q": "What is the primary query language for Cosmos DB SQL API?",
+        "type": "short_answer",
+        "answers": [
+            "sql",
+            "structured query language"
+        ],
+        "isCaseSensitive": false
+    },
+    {
+        "q": "Match the GCS storage class to the minimum storage duration:",
+        "type": "match",
+        "left": [
+            "Standard",
+            "Nearline",
+            "Coldline",
+            "Archive"
+        ],
+        "right": [
+            "No minimum",
+            "30 days",
+            "90 days",
+            "365 days"
+        ]
+    },
+    {
+        "q": "Service Bus message sessions guarantee FIFO processing within a session.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Which BigQuery pricing model reserves capacity for predictable workloads?",
+        "type": "mcq",
+        "o": [
+            "Flat-rate",
+            "On-demand",
+            "Spot",
+            "Reserved"
+        ]
+    },
+    {
+        "q": "Complete the initialization for Cosmos DB in Python.",
+        "c": "from azure.cosmos import CosmosClient\nclient = [0](url, credential=[1])",
+        "type": "inline_dropdown",
+        "text": "In Cosmos DB Python SDK, you initialize a [0] using an endpoint and [1].",
+        "dropdowns": [
+            {
+                "correct": "CosmosClient",
+                "options": [
+                    "CosmosClient",
+                    "DbClient",
+                    "AzureClient"
+                ]
+            },
+            {
+                "correct": "key",
+                "options": [
+                    "key",
+                    "password",
+                    "token"
+                ]
+            }
+        ]
+    },
+    {
+        "q": "Complete the code to add or update a document in Cosmos DB.",
+        "c": "container.[0]({ '[1]': '123', 'name': 'DevOps' })",
+        "type": "inline_dropdown",
+        "text": "To insert or update a document, use [0] which requires a dictionary containing an [1] field.",
+        "dropdowns": [
+            {
+                "correct": "upsert_item",
+                "options": [
+                    "upsert_item",
+                    "put_item",
+                    "save_item"
+                ]
+            },
+            {
+                "correct": "id",
+                "options": [
+                    "id",
+                    "index",
+                    "pk"
+                ]
+            }
+        ]
+    },
+    {
+        "q": "In Azure Functions, _____ is a file that contains configuration for the function app.",
+        "type": "fill_blank",
+        "answers": [
+            "host.json"
+        ],
+        "other_options": [
+            "local.settings.json",
+            "function.json",
+            "appsettings.json",
+            "config.json"
+        ]
+    },
+    {
+        "q": "Pub/Sub message ordering is enabled by default.",
+        "type": "true_false",
+        "correct": "False"
+    },
+    {
+        "q": "Which Azure service enables real-time event ingestion at massive scale?",
+        "type": "mcq",
+        "o": [
+            "Azure Event Hubs",
+            "Azure Service Bus",
+            "Azure Queue Storage",
+            "Azure Notification Hubs"
+        ]
+    },
+    {
+        "q": "Cosmos DB stores data in _____ which are schema-agnostic.",
+        "type": "fill_blank",
+        "answers": [
+            "containers"
+        ],
+        "other_options": [
+            "tables",
+            "databases",
+            "collections",
+            "buckets"
+        ]
+    },
+    {
+        "q": "What is the maximum default message retention duration in Google Cloud Pub/Sub in days?",
+        "type": "slider",
+        "min": 7,
+        "max": 40,
+        "correct": 31
+    },
+    {
+        "q": "What is the term for a serverless function's configuration that defines how it is triggered?",
+        "type": "short_answer",
+        "answers": [
+            "trigger",
+            "event trigger"
+        ],
+        "isCaseSensitive": false
+    },
+    {
+        "q": "Cloud Functions can access resources within a VPC using a Serverless VPC Access connector.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Which GCS operation allows resumable uploads for large files?",
+        "type": "mcq",
+        "o": [
+            "Resumable upload",
+            "Multipart upload",
+            "Chunked upload",
+            "Streaming upload"
+        ]
+    },
+    {
+        "q": "Match the Azure Blob storage tool to its function:",
+        "type": "match",
+        "left": [
+            "AzCopy",
+            "Azure Storage Explorer",
+            "Azure Portal",
+            "Azure CLI"
+        ],
+        "right": [
+            "Command-line transfer",
+            "GUI management",
+            "Web-based management",
+            "Scripting and automation"
+        ]
+    },
+    {
+        "q": "Match the Cosmos DB consistency level to its behavior.",
+        "type": "memory",
+        "pairs": {
+            "Strong": "Highest consistency, lowest availability",
+            "Bounded Staleness": "Consistent within a specific time or operations window",
+            "Session": "Consistent within a specific user session scope",
+            "Eventual": "Lowest latency, out of order reads possible"
+        }
+    },
+    {
+        "q": "BigQuery tables can be partitioned by ingestion time or a specific column.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Which Service Bus queue type follows FIFO ordering?",
+        "type": "mcq",
+        "o": [
+            "Session-enabled queue",
+            "Standard queue",
+            "Partitioned queue",
+            "Topic"
+        ]
+    },
+    {
+        "q": "In Firestore, a _____ query retrieves documents from multiple collections with the same name.",
+        "type": "fill_blank",
+        "answers": [
+            "collection group"
+        ],
+        "other_options": [
+            "cross-collection",
+            "multi-collection",
+            "joined",
+            "union"
+        ]
+    },
+    {
+        "q": "Match the Pub/Sub component to its role.",
+        "type": "memory",
+        "pairs": {
+            "Topic": "Named resource to which messages are sent by publishers",
+            "Subscription": "Named resource representing the stream of messages",
+            "Publisher": "Application that creates and sends messages",
+            "Subscriber": "Application that receives messages"
+        }
+    },
+    {
+        "q": "Azure Functions can be triggered by Azure Service Bus messages.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "What does Pub/Sub stand for?",
+        "type": "short_answer",
+        "answers": [
+            "publish/subscribe",
+            "publish subscribe"
+        ],
+        "isCaseSensitive": false
+    },
+    {
+        "q": "Which Azure storage solution is optimized for big data analytics and supports HDFS?",
+        "type": "mcq",
+        "o": [
+            "Azure Data Lake Storage Gen2",
+            "Azure Blob Storage",
+            "Azure Files",
+            "Azure Disk Storage"
+        ]
+    },
+    {
+        "q": "Cosmos DB throughput is provisioned in _____ per second.",
+        "type": "fill_blank",
+        "answers": [
+            "request units",
+            "RUs"
+        ],
+        "other_options": [
+            "IOPS",
+            "transactions",
+            "operations",
+            "messages"
+        ]
+    },
+    {
+        "q": "GCS bucket names must be DNS-compliant and cannot contain underscores.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Which BigQuery clause is used to filter aggregated results?",
+        "type": "mcq",
+        "o": [
+            "HAVING",
+            "WHERE",
+            "FILTER",
+            "QUALIFY"
+        ]
+    },
+    {
+        "q": "Match the GCP serverless compute option to its level of abstraction:",
+        "type": "match",
+        "left": [
+            "Cloud Functions",
+            "Cloud Run",
+            "App Engine",
+            "GKE Autopilot"
+        ],
+        "right": [
+            "Functions as a Service",
+            "Container as a Service",
+            "Platform as a Service",
+            "Managed Kubernetes"
+        ]
+    },
+    {
+        "q": "Service Bus topics can have multiple subscriptions with different filter rules.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Which GCS feature allows an object to be retained for a specific period regardless of deletion attempts?",
+        "type": "mcq",
+        "o": [
+            "Bucket Lock",
+            "Object Versioning",
+            "Lifecycle Policy",
+            "Retention Policy"
+        ]
+    },
+    {
+        "q": "Which of these is NOT a valid Pub/Sub subscription delivery type?",
+        "type": "odd_one_out",
+        "options": [
+            "Push",
+            "Pull",
+            "BigQuery",
+            "Fetch"
+        ],
+        "correct": "Fetch"
+    },
+    {
+        "q": "Azure Blob Storage's _____ tier stores data offline and charges for data retrieval.",
+        "type": "fill_blank",
+        "answers": [
+            "archive"
+        ],
+        "other_options": [
+            "cold",
+            "cool",
+            "offline",
+            "frozen"
+        ]
+    },
+    {
+        "q": "Firestore indexes are automatically created for single-field queries.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "What is the name of the Azure service for caching frequently accessed data?",
+        "type": "short_answer",
+        "answers": [
+            "azure redis cache",
+            "azure cache for redis"
+        ],
+        "isCaseSensitive": false
+    },
+    {
+        "q": "Which Pub/Sub feature enables exactly-once delivery of messages?",
+        "type": "mcq",
+        "o": [
+            "Pub/Sub does not guarantee exactly-once delivery",
+            "Idempotent publishing",
+            "Message deduplication",
+            "Acknowledgment"
+        ]
+    },
+    {
+        "q": "Cloud Functions run in a fully managed, _____ environment.",
+        "type": "fill_blank",
+        "answers": [
+            "serverless"
+        ],
+        "other_options": [
+            "containerized",
+            "virtualized",
+            "dedicated",
+            "shared"
+        ]
+    },
+    {
+        "q": "Cosmos DB supports automatic failover to a read region.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Which Azure Service Bus entity guarantees first-in, first-out message delivery within a session?",
+        "type": "mcq",
+        "o": [
+            "Session-enabled queue",
+            "Standard queue",
+            "Topic",
+            "Relay"
+        ]
+    },
+    {
+        "q": "In BigQuery, the _____ statement is used to update existing rows in a table.",
+        "type": "fill_blank",
+        "answers": [
+            "UPDATE"
+        ],
+        "other_options": [
+            "MERGE",
+            "INSERT",
+            "MODIFY",
+            "ALTER"
+        ]
+    },
+    {
+        "q": "Match the Azure Functions hosting plan to its scaling behavior:",
+        "type": "match",
+        "left": [
+            "Consumption",
+            "Premium",
+            "Dedicated"
+        ],
+        "right": [
+            "Scale to zero",
+            "Always warm instances",
+            "Fixed number of VMs"
+        ]
+    },
+    {
+        "q": "GCS supports parallel composite uploads to improve upload speed for large files.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "What is the primary unit of scale in Cosmos DB?",
+        "type": "mcq",
+        "o": [
+            "Physical partition",
+            "Container",
+            "Database",
+            "Item"
+        ]
+    },
+    {
+        "q": "Azure Functions can integrate with Azure _____ to connect to virtual networks.",
+        "type": "fill_blank",
+        "answers": [
+            "virtual network integration"
+        ],
+        "other_options": [
+            "expressroute",
+            "load balancer",
+            "gateway",
+            "peering"
+        ]
+    },
+    {
+        "q": "Swipe based on Pub/Sub application roles.",
+        "type": "swipe_cards",
+        "left_label": "Publisher",
+        "right_label": "Subscriber",
+        "cards": {
+            "Calls publish()": "left",
+            "Defines topic_path": "left",
+            "Calls pull()": "right",
+            "Defines subscription_path": "right"
+        }
+    },
+    {
+        "q": "Pub/Sub Lite is a lower-cost, high-volume messaging service compared to Pub/Sub.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Categorize these Pub/Sub delivery mechanisms.",
+        "type": "swipe_cards",
+        "left_label": "Push",
+        "right_label": "Pull",
+        "cards": {
+            "Requires Webhook endpoint": "left",
+            "Continuous open connection": "right",
+            "Requires public HTTPS": "left",
+            "High throughput streaming pull": "right"
+        }
+    },
+    {
+        "q": "Which command lists the objects in a GCS bucket?",
+        "type": "short_answer",
+        "answers": [
+            "gsutil ls",
+            "gsutil list"
+        ],
+        "isCaseSensitive": false
+    },
+    {
+        "q": "Which Azure service provides a managed Cassandra database?",
+        "type": "mcq",
+        "o": [
+            "Cosmos DB Cassandra API",
+            "Azure SQL Database",
+            "Azure Database for MariaDB",
+            "Azure Synapse"
+        ]
+    },
+    {
+        "q": "A Firestore _____ is a limit on the number of writes per second to a document.",
+        "type": "fill_blank",
+        "answers": [
+            "soft limit",
+            "contention limit"
+        ],
+        "other_options": [
+            "hard limit",
+            "quota",
+            "threshold",
+            "ceiling"
+        ]
+    },
+    {
+        "q": "Service Bus relay service enables communication between on-premises and cloud services without opening firewall ports.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Which BigQuery function extracts a value from a JSON string?",
+        "type": "mcq",
+        "o": [
+            "JSON_EXTRACT",
+            "PARSE_JSON",
+            "JSON_QUERY",
+            "EXTRACT_JSON"
+        ]
+    },
+    {
+        "q": "Cloud Functions (2nd gen) is built on top of Cloud Run and Eventarc.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "What is the term for Azure's globally distributed network of data centers?",
+        "type": "short_answer",
+        "answers": [
+            "regions",
+            "azure regions"
+        ],
+        "isCaseSensitive": false
+    },
+    {
+        "q": "Which GCS storage class is suitable for data that is accessed once a month on average?",
+        "type": "mcq",
+        "o": [
+            "Nearline",
+            "Coldline",
+            "Archive",
+            "Standard"
+        ]
+    },
+    {
+        "q": "Match the BigQuery table type to its description:",
+        "type": "match",
+        "left": [
+            "Permanent table",
+            "Temporary table",
+            "External table",
+            "Snapshot table"
+        ],
+        "right": [
+            "Stored in a dataset",
+            "Lifetime of the session",
+            "Data stored externally",
+            "Point-in-time copy"
+        ]
+    },
+    {
+        "q": "Cosmos DB charges for provisioned throughput, not storage consumed.",
+        "type": "true_false",
+        "correct": "False"
+    },
+    {
+        "q": "In Azure Service Bus, a _____ is a message that is moved to a special queue after exceeding delivery attempts.",
+        "type": "fill_blank",
+        "answers": [
+            "dead-letter message"
+        ],
+        "other_options": [
+            "expired message",
+            "failed message",
+            "orphaned message",
+            "rejected message"
+        ]
+    },
+    {
+        "q": "Where are messages sent to in a Pub/Sub system?",
+        "type": "word_scramble",
+        "answer": "TOPIC",
+        "decoys": "BW"
+    },
+    {
+        "q": "Pub/Sub message attributes are key-value pairs for filtering and routing.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Which Azure Blob Storage tier is intended for data that is accessed frequently?",
+        "type": "mcq",
+        "o": [
+            "Hot",
+            "Cool",
+            "Archive",
+            "Cold"
+        ]
+    },
+    {
+        "q": "What is the name of the GCP service for centralized log management?",
+        "type": "short_answer",
+        "answers": [
+            "cloud logging",
+            "stackdriver logging",
+            "operations suite"
+        ],
+        "isCaseSensitive": false
+    },
+    {
+        "q": "Firestore allows offline data persistence in client SDKs.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Which BigQuery operation merges data from a source table into a target table based on conditions?",
+        "type": "mcq",
+        "o": [
+            "MERGE",
+            "UPSERT",
+            "INSERT INTO SELECT",
+            "REPLACE"
+        ]
+    },
+    {
+        "q": "What is the default encryption for data at rest in GCS?",
+        "type": "mcq",
+        "o": [
+            "Google-managed encryption keys",
+            "Customer-supplied encryption keys",
+            "Customer-managed encryption keys",
+            "No encryption by default"
+        ]
+    },
+    {
+        "q": "What is the actual data content of a message called?",
+        "type": "word_scramble",
+        "answer": "PAYLOAD",
+        "decoys": "VQ"
+    },
+    {
+        "q": "Complete the message publishing code.",
+        "c": "data = 'Hello Cloud'\ndata_bytes = data.[1]()\nfuture = publisher.publish(topic_path, data=data_bytes)",
+        "type": "inline_dropdown",
+        "text": "Pub/Sub messages must be sent as a [0], so use [1] to convert string text.",
+        "dropdowns": [
+            {
+                "correct": "bytestring",
+                "options": [
+                    "bytestring",
+                    "json",
+                    "base64"
+                ]
+            },
+            {
+                "correct": "encode",
+                "options": [
+                    "encode",
+                    "bytes",
+                    "convert"
+                ]
+            }
+        ]
+    },
+    {
+        "q": "Which Azure Blob Storage feature provides immutable storage for compliance?",
+        "type": "mcq",
+        "o": [
+            "WORM (Write Once Read Many)",
+            "Object Lock",
+            "Retention Policy",
+            "Archive Tier"
+        ]
+    },
+    {
+        "q": "In BigQuery, a _____ is a pre-computed view that stores results for faster query performance.",
+        "type": "fill_blank",
+        "answers": [
+            "materialized view"
+        ],
+        "other_options": [
+            "standard view",
+            "cached table",
+            "snapshot",
+            "clone"
+        ]
+    },
+    {
+        "q": "Cloud Functions can be deployed with custom service accounts for fine-grained permissions.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Complete the Pub/Sub subscriber callback logic.",
+        "c": "def callback(message):\n    print(message.data)\n    [0]()",
+        "type": "inline_dropdown",
+        "text": "When processing a pulled message, you must call [0] to remove it, or [1] if it failed.",
+        "dropdowns": [
+            {
+                "correct": "message.ack",
+                "options": [
+                    "message.ack",
+                    "message.done",
+                    "message.delete"
+                ]
+            },
+            {
+                "correct": "message.nack",
+                "options": [
+                    "message.nack",
+                    "message.fail",
+                    "message.retry"
+                ]
+            }
+        ]
+    },
+    {
+        "q": "What is the name of the Pub/Sub feature that allows messages to be stored for up to 31 days?",
+        "type": "short_answer",
+        "answers": [
+            "message retention",
+            "retention policy"
+        ],
+        "isCaseSensitive": false
+    },
+    {
+        "q": "Match the Cosmos DB consistency level to its guarantee:",
+        "type": "match",
+        "left": [
+            "Strong",
+            "Bounded Staleness",
+            "Session",
+            "Consistent Prefix"
+        ],
+        "right": [
+            "Linearizability",
+            "Maximum lag defined",
+            "Monotonic reads in session",
+            "Order preserved, no lag guarantee"
+        ]
+    },
+    {
+        "q": "What is the maximum message size in Kilobytes (KB) for the Azure Service Bus Standard tier?",
+        "type": "slider",
+        "min": 64,
+        "max": 1024,
+        "correct": 256
+    },
+    {
+        "q": "Match the Azure Service Bus concepts.",
+        "type": "memory",
+        "pairs": {
+            "Queue": "Point-to-point communication channel",
+            "Topic": "Publish-subscribe with multiple independent receivers",
+            "Subscription": "Attached to a topic to receive its messages"
+        }
+    },
+    {
+        "q": "Which Azure Service Bus feature allows receiving messages without polling?",
+        "type": "mcq",
+        "o": [
+            "Service Bus sessions",
+            "Long-polling receive",
+            "WebSocket support",
+            "AMQP link credit"
+        ]
+    },
+    {
+        "q": "Firestore uses _____ to enforce security rules on a per-document basis.",
+        "type": "fill_blank",
+        "answers": [
+            "security rules"
+        ],
+        "other_options": [
+            "IAM policies",
+            "ACLs",
+            "firewall rules",
+            "roles"
+        ]
+    },
+    {
+        "q": "Which of these is NOT a valid Azure Service Bus tier?",
+        "type": "odd_one_out",
+        "options": [
+            "Basic",
+            "Standard",
+            "Premium",
+            "Enterprise"
+        ],
+        "correct": "Enterprise"
+    },
+    {
+        "q": "GCS Object Versioning can be combined with Lifecycle Management to automatically delete old versions.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Which BigQuery pricing model allows you to purchase dedicated query processing capacity?",
+        "type": "mcq",
+        "o": [
+            "Slot reservations",
+            "On-demand pricing",
+            "Flat-rate pricing",
+            "Committed use discounts"
+        ]
+    },
+    {
+        "q": "Azure Functions _____ extension allows you to define stateful workflows in code.",
+        "type": "fill_blank",
+        "answers": [
+            "durable functions"
+        ],
+        "other_options": [
+            "proxy",
+            "signalr",
+            "event grid",
+            "timer"
+        ]
+    },
+    {
+        "q": "Swipe to differentiate Azure messaging services.",
+        "type": "swipe_cards",
+        "left_label": "Service Bus",
+        "right_label": "Event Grid",
+        "cards": {
+            "High-value enterprise messaging": "left",
+            "Reactive event routing": "right",
+            "Strict order preservation": "left",
+            "Push-push notification model": "right"
+        }
+    },
+    {
+        "q": "What command exports a BigQuery table to GCS in CSV format?",
+        "type": "short_answer",
+        "answers": [
+            "bq extract",
+            "bq export"
+        ],
+        "isCaseSensitive": false
+    },
+    {
+        "q": "What is the point-to-point message structure called?",
+        "type": "word_scramble",
+        "answer": "QUEUE",
+        "decoys": "MN"
+    },
+    {
+        "q": "Match the Azure Blob Redundancy option to its description:",
+        "type": "match",
+        "left": [
+            "LRS",
+            "ZRS",
+            "GRS",
+            "RA-GRS"
+        ],
+        "right": [
+            "3 copies in one datacenter",
+            "3 copies across availability zones",
+            "6 copies across regions",
+            "GRS with read access to secondary"
+        ]
+    },
+    {
+        "q": "Pub/Sub push subscriptions can deliver messages to endpoints outside of GCP.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Which Cosmos DB API is best suited for graph-based data models?",
+        "type": "mcq",
+        "o": [
+            "Gremlin API",
+            "SQL API",
+            "MongoDB API",
+            "Table API"
+        ]
+    },
+    {
+        "q": "What is the general term for a system that handles messages between services?",
+        "type": "word_scramble",
+        "answer": "BROKER",
+        "decoys": "PQ"
+    },
+    {
+        "q": "In GCS, a _____ URL provides temporary access to an object without requiring authentication.",
+        "type": "fill_blank",
+        "answers": [
+            "signed"
+        ],
+        "other_options": [
+            "public",
+            "shared",
+            "temporary",
+            "pre-authenticated"
+        ]
+    },
+    {
+        "q": "Complete the Service Bus client initialization.",
+        "c": "from azure.servicebus import ServiceBusClient\nclient = [0].from_connection_string([1])",
+        "type": "inline_dropdown",
+        "text": "To connect to Service Bus, instantiate a [0] from a [1].",
+        "dropdowns": [
+            {
+                "correct": "ServiceBusClient",
+                "options": [
+                    "ServiceBusClient",
+                    "BusConnection",
+                    "QueueClient"
+                ]
+            },
+            {
+                "correct": "connection string",
+                "options": [
+                    "connection string",
+                    "sas token",
+                    "client secret"
+                ]
+            }
+        ]
+    },
+    {
+        "q": "Azure Service Bus Premium tier provides dedicated resources and predictable performance.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Which Cloud Functions generation supports longer runtime and concurrency?",
+        "type": "mcq",
+        "o": [
+            "Cloud Functions 2nd gen",
+            "Cloud Functions 1st gen",
+            "Cloud Functions 3rd gen",
+            "Cloud Functions Enterprise"
+        ]
+    },
+    {
+        "q": "Complete the code to send a message to a Service Bus queue.",
+        "c": "sender = client.get_queue_sender('myqueue')\nmessage = [1]('Hello')\nsender.[0](message)",
+        "type": "inline_dropdown",
+        "text": "Send a message using [0] with a [1] object inside.",
+        "dropdowns": [
+            {
+                "correct": "send_messages",
+                "options": [
+                    "send_messages",
+                    "push_messages",
+                    "publish"
+                ]
+            },
+            {
+                "correct": "ServiceBusMessage",
+                "options": [
+                    "ServiceBusMessage",
+                    "EventData",
+                    "MessagePayload"
+                ]
+            }
+        ]
+    },
+    {
+        "q": "BigQuery's _____ function converts a string to a timestamp.",
+        "type": "fill_blank",
+        "answers": [
+            "PARSE_TIMESTAMP"
+        ],
+        "other_options": [
+            "CAST_TIMESTAMP",
+            "TO_TIMESTAMP",
+            "CONVERT_TIMESTAMP",
+            "FORMAT_TIMESTAMP"
+        ]
+    },
+    {
+        "q": "Azure Blob Storage supports SFTP natively for file transfers.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "What is the name of the Azure service for managing API gateways?",
+        "type": "short_answer",
+        "answers": [
+            "azure api management",
+            "api management"
+        ],
+        "isCaseSensitive": false
+    },
+    {
+        "q": "What is the maximum timeout for a Google Cloud Function (Gen 2) in seconds?",
+        "type": "slider",
+        "min": 300,
+        "max": 3600,
+        "correct": 3600
+    },
+    {
+        "q": "Which Pub/Sub client library supports streaming pull for high throughput?",
+        "type": "mcq",
+        "o": [
+            "Java client library",
+            "Python client library",
+            "Node.js client library",
+            "All of them"
+        ]
+    },
+    {
+        "q": "Match the Firestore data type to its example:",
+        "type": "match",
+        "left": [
+            "String",
+            "Geopoint",
+            "Timestamp",
+            "Reference"
+        ],
+        "right": [
+            "hello world",
+            "(37.4, -122.1)",
+            "2023-01-01T00:00:00Z",
+            "Path to another document"
+        ]
+    },
+    {
+        "q": "Cloud Functions supports custom domain mapping through Firebase Hosting.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Which Azure Service Bus feature enables routing messages based on rules?",
+        "type": "mcq",
+        "o": [
+            "Topic filters",
+            "Queue rules",
+            "Message routing",
+            "Event subscriptions"
+        ]
+    },
+    {
+        "q": "In Cosmos DB, a _____ is a container of items that share the same partition key.",
+        "type": "fill_blank",
+        "answers": [
+            "logical partition"
+        ],
+        "other_options": [
+            "physical partition",
+            "database",
+            "collection",
+            "container"
+        ]
+    },
+    {
+        "q": "GCS requester pays feature charges the data requester for network egress.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Which BigQuery DML statement inserts or updates rows based on a condition?",
+        "type": "mcq",
+        "o": [
+            "MERGE",
+            "UPSERT",
+            "INSERT OR UPDATE",
+            "REPLACE"
+        ]
+    },
+    {
+        "q": "Match the Azure Service Bus message state to its meaning.",
+        "type": "memory",
+        "pairs": {
+            "Active": "Available for a receiver to process immediately",
+            "Dead-letter": "Moved aside due to max delivery failures",
+            "Deferred": "Set aside intentionally for later processing"
+        }
+    },
+    {
+        "q": "Azure Functions _____ triggers are based on CRON expressions.",
+        "type": "fill_blank",
+        "answers": [
+            "timer"
+        ],
+        "other_options": [
+            "schedule",
+            "cron",
+            "periodic",
+            "interval"
+        ]
+    },
+    {
+        "q": "What is the maximum number of Pub/Sub subscriptions per topic?",
+        "type": "short_answer",
+        "answers": [
+            "10000",
+            "10,000",
+            "ten thousand"
+        ],
+        "isCaseSensitive": false
+    },
+    {
+        "q": "Cosmos DB analytical store enables real-time analytics on operational data without ETL.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Match the Cloud Function trigger to its definition.",
+        "type": "memory",
+        "pairs": {
+            "HTTP Trigger": "Invoked via a standard web request",
+            "Eventarc Trigger": "Invoked by various GCP internal events",
+            "Pub/Sub Trigger": "Invoked by messages arriving on a specific topic"
+        }
+    },
+    {
+        "q": "Which of these is NOT a valid Azure Function trigger type?",
+        "type": "odd_one_out",
+        "options": [
+            "TimerTrigger",
+            "BlobTrigger",
+            "QueueTrigger",
+            "TableTrigger",
+            "ComputeTrigger"
+        ],
+        "correct": "ComputeTrigger"
+    },
+    {
+        "q": "Which Azure storage solution provides NFS file shares?",
+        "type": "mcq",
+        "o": [
+            "Azure Files",
+            "Azure Blob Storage",
+            "Azure Disk Storage",
+            "Azure NetApp Files"
+        ]
+    },
+    {
+        "q": "Match the BigQuery partition type to its use case:",
+        "type": "match",
+        "left": [
+            "Time-unit column",
+            "Ingestion time",
+            "Integer range"
+        ],
+        "right": [
+            "Event timestamp",
+            "Data load time",
+            "Sequential IDs"
+        ]
+    },
+    {
+        "q": "Service Bus topics can have up to 2,000 subscriptions per topic.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Which GCS storage class incurs a higher cost for data retrieval?",
+        "type": "mcq",
+        "o": [
+            "Archive",
+            "Nearline",
+            "Coldline",
+            "Standard"
+        ]
+    },
+    {
+        "q": "In Firestore, _____ queries retrieve documents based on field values across multiple documents.",
+        "type": "fill_blank",
+        "answers": [
+            "composite"
+        ],
+        "other_options": [
+            "simple",
+            "single-field",
+            "group",
+            "batch"
+        ]
+    },
+    {
+        "q": "Azure Functions runtime is open-source and available on GitHub.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Which command line tool is used for Azure Blob Storage operations?",
+        "type": "short_answer",
+        "answers": [
+            "azcopy",
+            "az storage blob"
+        ],
+        "isCaseSensitive": false
+    },
+    {
+        "q": "Which Pub/Sub feature helps reduce duplicate messages from publishers?",
+        "type": "mcq",
+        "o": [
+            "Exactly-once delivery",
+            "Message ordering",
+            "Dead letter topics",
+            "Retry policy"
+        ]
+    },
+    {
+        "q": "Cosmos DB supports _____ transactions that span multiple items within a logical partition.",
+        "type": "fill_blank",
+        "answers": [
+            "ACID"
+        ],
+        "other_options": [
+            "BASE",
+            "batch",
+            "distributed",
+            "multi-document"
+        ]
+    },
+    {
+        "q": "BigQuery BI Engine provides in-memory analysis acceleration for dashboards.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Differentiate Serverless configuration files.",
+        "type": "swipe_cards",
+        "left_label": "GCP Cloud Functions",
+        "right_label": "Azure Functions",
+        "cards": {
+            "main.py entrypoint": "left",
+            "function_app.py entrypoint": "right",
+            "requirements.txt dependency": "left",
+            "host.json configuration": "right"
+        }
+    },
+    {
+        "q": "Which Azure Service Bus entity is used for load-leveling messages between producers and consumers?",
+        "type": "mcq",
+        "o": [
+            "Queue",
+            "Topic",
+            "Relay",
+            "Event Hub"
+        ]
+    },
+    {
+        "q": "Match the Cloud Functions trigger to its event source:",
+        "type": "match",
+        "left": [
+            "onCreate",
+            "onPublish",
+            "onFinalize",
+            "onWrite"
+        ],
+        "right": [
+            "Firestore document created",
+            "Pub/Sub message published",
+            "GCS object created",
+            "Firestore document changed"
+        ]
+    },
+    {
+        "q": "GCS supports object-level IAM permissions for fine-grained access control.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "What is the name of the Azure service for real-time event routing?",
+        "type": "short_answer",
+        "answers": [
+            "azure event grid",
+            "event grid"
+        ],
+        "isCaseSensitive": false
+    },
+    {
+        "q": "Which BigQuery function performs regular expression matching?",
+        "type": "mcq",
+        "o": [
+            "REGEXP_CONTAINS",
+            "LIKE",
+            "MATCH",
+            "SIMILAR TO"
+        ]
+    },
+    {
+        "q": "Azure Blob Storage's _____ tier has no minimum storage duration.",
+        "type": "fill_blank",
+        "answers": [
+            "hot"
+        ],
+        "other_options": [
+            "cool",
+            "archive",
+            "standard",
+            "premium"
+        ]
+    },
+    {
+        "q": "Cloud Functions min instances reduce cold start latency by keeping instances warm.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Which Cosmos DB API is compatible with Azure Table Storage?",
+        "type": "mcq",
+        "o": [
+            "Table API",
+            "SQL API",
+            "MongoDB API",
+            "Cassandra API"
+        ]
+    },
+    {
+        "q": "In Pub/Sub, a _____ topic is where messages that exceed delivery attempts are sent.",
+        "type": "fill_blank",
+        "answers": [
+            "dead letter"
+        ],
+        "other_options": [
+            "backup",
+            "failure",
+            "error",
+            "expired"
+        ]
+    },
+    {
+        "q": "Azure Service Bus supports scheduled message delivery for future processing.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "What term describes computing without managing underlying infrastructure?",
+        "type": "word_scramble",
+        "answer": "SERVERLESS",
+        "decoys": "XY"
+    },
+    {
+        "q": "Which GCS feature enables object data to be accessed using a fixed IP address?",
+        "type": "mcq",
+        "o": [
+            "VPC Service Controls",
+            "Private Google Access",
+            "Cloud VPN",
+            "Cloud Interconnect"
+        ]
+    },
+    {
+        "q": "Firestore batch writes are _____ operations, meaning all writes succeed or none do.",
+        "type": "fill_blank",
+        "answers": [
+            "atomic"
+        ],
+        "other_options": [
+            "eventual",
+            "consistent",
+            "distributed",
+            "parallel"
+        ]
+    },
+    {
+        "q": "What is the name of the Azure service for monitoring and diagnostics?",
+        "type": "short_answer",
+        "answers": [
+            "azure monitor",
+            "monitor"
+        ],
+        "isCaseSensitive": false
+    },
+    {
+        "q": "BigQuery table snapshots provide a read-only copy of a table at a specific time.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "What is the event that causes a function to execute?",
+        "type": "word_scramble",
+        "answer": "TRIGGER",
+        "decoys": "WJ"
+    },
+    {
+        "q": "Which Azure Functions trigger executes functions on a fixed schedule?",
+        "type": "mcq",
+        "o": [
+            "Timer trigger",
+            "HTTP trigger",
+            "Queue trigger",
+            "Event trigger"
+        ]
+    },
+    {
+        "q": "Match the Service Bus messaging pattern to its use case:",
+        "type": "match",
+        "left": [
+            "Competing Consumers",
+            "Publish/Subscribe",
+            "Request/Reply",
+            "Temporal Decoupling"
+        ],
+        "right": [
+            "Queue with multiple receivers",
+            "Topic with subscriptions",
+            "Sessions with correlation",
+            "Scheduled messages"
+        ]
+    },
+    {
+        "q": "Complete the GCP HTTP Cloud Function signature.",
+        "c": "import functions_framework\n\n@functions_framework.http\ndef hello_http([0]):\n    return [1]",
+        "type": "inline_dropdown",
+        "text": "In an HTTP Cloud Function, the entry point takes a [0] argument and returns a [1] string or object.",
+        "dropdowns": [
+            {
+                "correct": "request",
+                "options": [
+                    "request",
+                    "context",
+                    "event"
+                ]
+            },
+            {
+                "correct": "response",
+                "options": [
+                    "response",
+                    "status",
+                    "promise"
+                ]
+            }
+        ]
+    },
+    {
+        "q": "Complete the Azure Function v2 Python routing logic.",
+        "c": "import azure.functions as func\n[0] = func.FunctionApp()\n\n[1](route='hello')\ndef main(req: func.HttpRequest) -> func.HttpResponse:",
+        "type": "inline_dropdown",
+        "text": "Azure Functions in the v2 model use [0] decorators like [1] to define routes.",
+        "dropdowns": [
+            {
+                "correct": "app",
+                "options": [
+                    "app",
+                    "func",
+                    "trigger"
+                ]
+            },
+            {
+                "correct": "@app.route",
+                "options": [
+                    "@app.route",
+                    "@app.http",
+                    "@app.web"
+                ]
+            }
+        ]
+    },
+    {
+        "q": "Cosmos DB change feed enables real-time event sourcing and stream processing.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Which BigQuery feature allows querying data in real-time as it arrives?",
+        "type": "mcq",
+        "o": [
+            "Streaming buffer",
+            "Query cache",
+            "Materialized view",
+            "BI Engine"
+        ]
+    },
+    {
+        "q": "What is the maximum document size in Google Cloud Firestore in Megabytes?",
+        "type": "slider",
+        "min": 1,
+        "max": 10,
+        "correct": 1
+    },
+    {
+        "q": "In GCS, the _____ operation performs a byte-by-byte comparison to validate data integrity.",
+        "type": "fill_blank",
+        "answers": [
+            "CRC32C"
+        ],
+        "other_options": [
+            "MD5",
+            "SHA256",
+            "ETag",
+            "checksum"
+        ]
+    },
+    {
+        "q": "Azure Functions can be secured with Azure Active Directory authentication.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "What does CORS stand for in the context of cloud storage?",
+        "type": "short_answer",
+        "answers": [
+            "cross-origin resource sharing"
+        ],
+        "isCaseSensitive": false
+    },
+    {
+        "q": "Which Pub/Sub subscription type minimizes costs by only delivering messages when the subscriber is active?",
+        "type": "mcq",
+        "o": [
+            "Pull subscription",
+            "Push subscription",
+            "Active subscription",
+            "Streaming subscription"
+        ]
+    },
+    {
+        "q": "Azure Blob Storage _____ allows you to define rules for automatic tiering and deletion.",
+        "type": "fill_blank",
+        "answers": [
+            "lifecycle management"
+        ],
+        "other_options": [
+            "versioning",
+            "snapshots",
+            "access control",
+            "encryption"
+        ]
+    },
+    {
+        "q": "Match the Firestore component to its description.",
+        "type": "memory",
+        "pairs": {
+            "Document": "A unit of storage containing fields and values",
+            "Collection": "A container for organizing documents",
+            "Field": "A single key-value pair inside a document"
+        }
+    },
+    {
+        "q": "Cloud Functions can be deployed using Cloud Build for CI/CD pipelines.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Which Cosmos DB consistency level provides the strongest guarantee across all regions?",
+        "type": "mcq",
+        "o": [
+            "Strong",
+            "Bounded Staleness",
+            "Session",
+            "Eventual"
+        ]
+    },
+    {
+        "q": "Which of these is NOT a valid Firestore data type?",
+        "type": "odd_one_out",
+        "options": [
+            "String",
+            "Number",
+            "Boolean",
+            "Map",
+            "Tuple"
+        ],
+        "correct": "Tuple"
+    },
+    {
+        "q": "Match the BigQuery window function to its description:",
+        "type": "match",
+        "left": [
+            "ROW_NUMBER",
+            "RANK",
+            "LAG",
+            "SUM OVER"
+        ],
+        "right": [
+            "Sequential row number",
+            "Rank with gaps",
+            "Previous row value",
+            "Running total"
+        ]
+    },
+    {
+        "q": "Differentiate Function Trigger patterns.",
+        "type": "swipe_cards",
+        "left_label": "HTTP Trigger",
+        "right_label": "Event Trigger",
+        "cards": {
+            "Returns HTTP Response": "left",
+            "Returns None typically": "right",
+            "Takes request object": "left",
+            "Takes cloud event object": "right"
+        }
+    },
+    {
+        "q": "Service Bus Geo-disaster recovery enables pairing namespaces across regions.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Which GCS feature enables automatic replication of objects across regions?",
+        "type": "mcq",
+        "o": [
+            "Turbo replication",
+            "Multi-region buckets",
+            "Cross-region sync",
+            "Object mirroring"
+        ]
+    },
+    {
+        "q": "In Firestore, _____ limit the number of document writes per second to prevent contention.",
+        "type": "fill_blank",
+        "answers": [
+            "soft limits"
+        ],
+        "other_options": [
+            "hard limits",
+            "quotas",
+            "thresholds",
+            "rate limits"
+        ]
+    },
+    {
+        "q": "Azure Functions Proxies allow defining a reverse proxy for function apps.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "What is the name of the GCP service for managing machine learning models?",
+        "type": "short_answer",
+        "answers": [
+            "vertex ai",
+            "ai platform"
+        ],
+        "isCaseSensitive": false
+    },
+    {
+        "q": "Which Azure Service Bus protocol is optimized for cloud messaging?",
+        "type": "mcq",
+        "o": [
+            "AMQP",
+            "HTTP",
+            "MQTT",
+            "STOMP"
+        ]
+    },
+    {
+        "q": "BigQuery supports _____ functions for aggregating data across multiple rows.",
+        "type": "fill_blank",
+        "answers": [
+            "aggregate"
+        ],
+        "other_options": [
+            "scalar",
+            "window",
+            "analytic",
+            "table"
+        ]
+    },
+    {
+        "q": "Categorize Firestore vs Cloud SQL properties.",
+        "type": "swipe_cards",
+        "left_label": "Firestore",
+        "right_label": "Cloud SQL",
+        "cards": {
+            "NoSQL Document Database": "left",
+            "Relational SQL Database": "right",
+            "Collections and Documents": "left",
+            "Tables and Rows": "right"
+        }
+    },
+    {
+        "q": "Cosmos DB serverless allows you to pay only for the RU/s consumed, not provisioned.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Which Azure Blob Storage type is used for virtual hard disk (VHD) files?",
+        "type": "mcq",
+        "o": [
+            "Page Blob",
+            "Block Blob",
+            "Append Blob",
+            "Disk Blob"
+        ]
+    },
+    {
+        "q": "In Pub/Sub, _____ is the process of confirming that a message has been processed.",
+        "type": "fill_blank",
+        "answers": [
+            "acknowledgment"
+        ],
+        "other_options": [
+            "commit",
+            "confirmation",
+            "receipt",
+            "deletion"
+        ]
+    },
+    {
+        "q": "Match the GCP serverless service to its typical use case:",
+        "type": "match",
+        "left": [
+            "Cloud Functions",
+            "Cloud Run",
+            "App Engine",
+            "Workflows"
+        ],
+        "right": [
+            "Event-driven microservice",
+            "Containerized web app",
+            "Web application framework",
+            "Multi-step orchestration"
+        ]
+    },
+    {
+        "q": "GCS supports dual-region buckets for higher availability within a continent.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "What is the maximum execution time for a Cloud Function (1st gen)?",
+        "type": "mcq",
+        "o": [
+            "9 minutes",
+            "5 minutes",
+            "10 minutes",
+            "15 minutes"
+        ]
+    },
+    {
+        "q": "Azure Service Bus _____ pricing tier includes message deduplication and sessions.",
+        "type": "fill_blank",
+        "answers": [
+            "standard"
+        ],
+        "other_options": [
+            "basic",
+            "premium",
+            "free",
+            "enterprise"
+        ]
+    },
+    {
+        "q": "Firestore transactions allow you to read and write multiple documents atomically.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Which command creates a new Pub/Sub topic in gcloud?",
+        "type": "short_answer",
+        "answers": [
+            "gcloud pubsub topics create",
+            "gcloud pubsub create topic"
+        ],
+        "isCaseSensitive": false
+    },
+    {
+        "q": "Which BigQuery DML statement removes rows from a table?",
+        "type": "mcq",
+        "o": [
+            "DELETE",
+            "TRUNCATE",
+            "DROP",
+            "REMOVE"
+        ]
+    },
+    {
+        "q": "Cosmos DB automatic indexing can be customized with an _____ policy.",
+        "type": "fill_blank",
+        "answers": [
+            "indexing"
+        ],
+        "other_options": [
+            "partition",
+            "consistency",
+            "replication",
+            "throughput"
+        ]
+    },
+    {
+        "q": "Azure Functions supports out-of-process execution for .NET 5+.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Which Azure service provides a fully managed MQTT broker for IoT?",
+        "type": "mcq",
+        "o": [
+            "Azure IoT Hub",
+            "Azure Service Bus",
+            "Azure Event Hubs",
+            "Azure Notification Hubs"
+        ]
+    },
+    {
+        "q": "What is a group of documents called in Firestore?",
+        "type": "word_scramble",
+        "answer": "COLLECTION",
+        "decoys": "VZ"
+    },
+    {
+        "q": "In GCS, _____ is the process of verifying that data has not been corrupted during transfer.",
+        "type": "fill_blank",
+        "answers": [
+            "integrity checking"
+        ],
+        "other_options": [
+            "encryption",
+            "compression",
+            "deduplication",
+            "validation"
+        ]
+    },
+    {
+        "q": "Match the Azure Functions authorization level to its scope:",
+        "type": "match",
+        "left": [
+            "Anonymous",
+            "Function",
+            "Admin"
+        ],
+        "right": [
+            "No key required",
+            "Function-specific key",
+            "Master key"
+        ]
+    },
+    {
+        "q": "Pub/Sub message ordering can be enabled per subscription.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "What is the primary language for writing Firestore security rules?",
+        "type": "short_answer",
+        "answers": [
+            "CEL",
+            "Common Expression Language"
+        ],
+        "isCaseSensitive": false
+    },
+    {
+        "q": "Which Cosmos DB API is compatible with Apache Gremlin?",
+        "type": "mcq",
+        "o": [
+            "Gremlin API",
+            "SQL API",
+            "MongoDB API",
+            "Cassandra API"
+        ]
+    },
+    {
+        "q": "Azure Blob Storage soft delete allows recovering deleted blobs within a retention period.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "What is the read-only representation of data fetched from Firestore?",
+        "type": "word_scramble",
+        "answer": "SNAPSHOT",
+        "decoys": "BN"
+    },
+    {
+        "q": "In BigQuery, the _____ function is used to hash sensitive data for anonymization.",
+        "type": "fill_blank",
+        "answers": [
+            "SHA256"
+        ],
+        "other_options": [
+            "ENCRYPT",
+            "MASK",
+            "TOKENIZE",
+            "HASH"
+        ]
+    },
+    {
+        "q": "Complete the code to perform a query in Firestore.",
+        "c": "users_ref = db.[0]('users')\nquery = users_ref.[1]('age', '>=', 18)",
+        "type": "inline_dropdown",
+        "text": "To query Firestore, reference a [0] and call the [1] method to filter.",
+        "dropdowns": [
+            {
+                "correct": "collection",
+                "options": [
+                    "collection",
+                    "document",
+                    "database"
+                ]
+            },
+            {
+                "correct": "where",
+                "options": [
+                    "where",
+                    "filter",
+                    "select"
+                ]
+            }
+        ]
+    },
+    {
+        "q": "Complete the code to execute a Firestore query and retrieve data.",
+        "c": "results = query.[0]()\nfor doc in results:\n    print(f'{doc.id}: {doc.to_dict()}')",
+        "type": "inline_dropdown",
+        "text": "To retrieve documents from a query, call [0] which returns a stream of [1] objects.",
+        "dropdowns": [
+            {
+                "correct": "stream",
+                "options": [
+                    "stream",
+                    "get",
+                    "fetch"
+                ]
+            },
+            {
+                "correct": "DocumentSnapshot",
+                "options": [
+                    "DocumentSnapshot",
+                    "Row",
+                    "Entity"
+                ]
+            }
+        ]
+    },
+    {
+        "q": "Cloud Functions has a maximum deployment size of 100 MB for the source code (compressed).",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Which Service Bus feature allows a message to be visible after a delay?",
+        "type": "mcq",
+        "o": [
+            "Scheduled message",
+            "Deferred message",
+            "Delayed delivery",
+            "Timed release"
+        ]
+    },
+    {
+        "q": "What is the maximum number of objects a GCS bucket can store?",
+        "type": "mcq",
+        "o": [
+            "Unlimited",
+            "1 million",
+            "100 million",
+            "10 million"
+        ]
+    },
+    {
+        "q": "Which Azure Service Bus feature enables batching of messages for more efficient transfer?",
+        "type": "mcq",
+        "o": [
+            "Message batching",
+            "Prefetch",
+            "Session pooling",
+            "Batch operations"
+        ]
+    },
+    {
+        "q": "In BigQuery, _____ are used to define row-level security policies on tables.",
+        "type": "fill_blank",
+        "answers": [
+            "row-level security",
+            "row access policies"
+        ],
+        "other_options": [
+            "column-level security",
+            "IAM conditions",
+            "authorized views",
+            "security rules"
+        ]
+    },
+    {
+        "q": "Cloud Functions 2nd gen supports concurrent requests on a single function instance.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "What protocol does Cosmos DB use for its wire communication in the SQL API?",
+        "type": "short_answer",
+        "answers": [
+            "https",
+            "rest over https",
+            "tcp"
+        ],
+        "isCaseSensitive": false
+    },
+    {
+        "q": "Match the Pub/Sub message flow pattern to its description:",
+        "type": "match",
+        "left": [
+            "Fan-in",
+            "Fan-out",
+            "Load balancing",
+            "Streaming"
+        ],
+        "right": [
+            "Many publishers to one subscriber",
+            "One topic to many subscribers",
+            "Multiple subscribers share subscription",
+            "Continuous message processing"
+        ]
+    },
+    {
+        "q": "Which GCS storage class is optimal for disaster recovery scenarios with yearly access?",
+        "type": "mcq",
+        "o": [
+            "Archive",
+            "Coldline",
+            "Nearline",
+            "Standard"
+        ]
+    },
+    {
+        "q": "Azure Blob Storage point-in-time restore requires versioning and change feed to be enabled.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Firestore supports _____ queries that retrieve data from multiple collections simultaneously.",
+        "type": "fill_blank",
+        "answers": [
+            "collection group"
+        ],
+        "other_options": [
+            "union",
+            "join",
+            "cross-collection",
+            "multi-path"
+        ]
+    },
+    {
+        "q": "Which Azure Functions hosting plan provides dedicated compute with no cold start?",
+        "type": "mcq",
+        "o": [
+            "Premium plan",
+            "Consumption plan",
+            "Dedicated plan",
+            "App Service plan"
+        ]
+    },
+    {
+        "q": "What is the default message retention period for Pub/Sub subscriptions?",
+        "type": "short_answer",
+        "answers": [
+            "7 days",
+            "7 days",
+            "168 hours"
+        ],
+        "isCaseSensitive": false
+    },
+    {
+        "q": "What is the default maximum number of redirects allowed by Python's requests library?",
+        "type": "slider",
+        "min": 10,
+        "max": 50,
+        "correct": 30
+    },
+    {
+        "q": "Match the Cosmos DB request unit components to their cost factors:",
+        "type": "match",
+        "left": [
+            "Point read",
+            "Write",
+            "Query",
+            "Stored procedure"
+        ],
+        "right": [
+            "1 RU for 1KB document",
+            "~5 RUs per write",
+            "Varies by complexity",
+            "RUs for execution"
+        ]
+    },
+    {
+        "q": "BigQuery Omni allows querying data across multiple cloud providers.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Match the Firestore modification method.",
+        "type": "memory",
+        "pairs": {
+            "set()": "Creates or completely overwrites a document",
+            "update()": "Updates specific fields of an existing document",
+            "add()": "Adds a document with an auto-generated unique ID"
+        }
+    },
+    {
+        "q": "Which GCS feature automatically transitions objects between storage classes?",
+        "type": "mcq",
+        "o": [
+            "Object Lifecycle Management",
+            "Autoclass",
+            "Storage Transfer Service",
+            "Cloud Scheduler"
+        ]
+    },
+    {
+        "q": "In Azure Service Bus, _____ is the client-side queue that reduces the number of receive operations.",
+        "type": "fill_blank",
+        "answers": [
+            "prefetch"
+        ],
+        "other_options": [
+            "buffer",
+            "cache",
+            "batch",
+            "pool"
+        ]
+    },
+    {
+        "q": "Cosmos DB hierarchical partition keys allow sub-partitioning within a logical partition.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Which BigQuery table type allows querying the latest data from a streaming source?",
+        "type": "mcq",
+        "o": [
+            "Streaming table",
+            "External table",
+            "Materialized view",
+            "Clone"
+        ]
+    },
+    {
+        "q": "Cloud Functions can be invoked synchronously via HTTP or asynchronously via _____ events.",
+        "type": "fill_blank",
+        "answers": [
+            "background"
+        ],
+        "other_options": [
+            "webhook",
+            "trigger",
+            "delayed",
+            "scheduled"
+        ]
+    },
+    {
+        "q": "Azure Blob Storage change feed provides an ordered log of blob events.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Match the HTTP method to its standard CRUD operation.",
+        "type": "memory",
+        "pairs": {
+            "GET": "Retrieve data",
+            "POST": "Submit new data",
+            "PUT": "Update existing data fully",
+            "DELETE": "Remove data"
+        }
+    },
+    {
+        "q": "What is the name of the Azure service for orchestrating complex workflows?",
+        "type": "short_answer",
+        "answers": [
+            "azure logic apps",
+            "logic apps"
+        ],
+        "isCaseSensitive": false
+    },
+    {
+        "q": "Which Pub/Sub subscription type pushes messages to a URL endpoint?",
+        "type": "mcq",
+        "o": [
+            "Push subscription",
+            "Pull subscription",
+            "Streaming subscription",
+            "Webhook subscription"
+        ]
+    },
+    {
+        "q": "Which of these is NOT a valid built-in method in Python's requests library?",
+        "type": "odd_one_out",
+        "options": [
+            "requests.get()",
+            "requests.post()",
+            "requests.put()",
+            "requests.fetch()"
+        ],
+        "correct": "requests.fetch()"
+    },
+    {
+        "q": "Match the Firestore security rule function to its purpose:",
+        "type": "match",
+        "left": [
+            "request.auth",
+            "resource.data",
+            "request.resource",
+            "get()"
+        ],
+        "right": [
+            "Authenticated user info",
+            "Existing document data",
+            "Incoming document data",
+            "Read another document"
+        ]
+    },
+    {
+        "q": "GCS turbo replication provides a 15-minute Recovery Point Objective (RPO).",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Which Cosmos DB feature allows you to migrate data with zero downtime?",
+        "type": "mcq",
+        "o": [
+            "Live migration",
+            "Change feed",
+            "Bulk executor",
+            "Data migration tool"
+        ]
+    },
+    {
+        "q": "In BigQuery, the _____ function pivots rows into columns for reporting.",
+        "type": "fill_blank",
+        "answers": [
+            "PIVOT"
+        ],
+        "other_options": [
+            "UNPIVOT",
+            "TRANSPOSE",
+            "CROSSTAB",
+            "FLATTEN"
+        ]
+    },
+    {
+        "q": "Azure Functions supports Key Vault references for securely accessing secrets.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Which Azure Service Bus feature allows grouping related messages for batch processing?",
+        "type": "mcq",
+        "o": [
+            "Sessions",
+            "Topics",
+            "Queues",
+            "Relays"
+        ]
+    },
+    {
+        "q": "Cloud Build can trigger Cloud Functions deployments from source repositories.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "What is the maximum size of a Pub/Sub message?",
+        "type": "short_answer",
+        "answers": [
+            "10 MB",
+            "10 megabytes"
+        ],
+        "isCaseSensitive": false
+    },
+    {
+        "q": "Which Azure Blob Storage redundancy option stores data across three availability zones in a region?",
+        "type": "mcq",
+        "o": [
+            "Zone-redundant storage (ZRS)",
+            "Locally redundant storage (LRS)",
+            "Geo-redundant storage (GRS)",
+            "Read-access geo-redundant storage (RA-GRS)"
+        ]
+    },
+    {
+        "q": "In Firestore, _____ limits restrict the depth of subcollections to 100 levels.",
+        "type": "fill_blank",
+        "answers": [
+            "document depth"
+        ],
+        "other_options": [
+            "subcollection depth",
+            "hierarchy limit",
+            "nesting limit",
+            "path limit"
+        ]
+    },
+    {
+        "q": "Match the BigQuery pricing component to its description:",
+        "type": "match",
+        "left": [
+            "Analysis",
+            "Storage",
+            "Streaming inserts",
+            "BI Engine"
+        ],
+        "right": [
+            "Cost per byte scanned",
+            "Cost per GB per month",
+            "Cost per successful insert",
+            "Flat-rate reservation"
+        ]
+    },
+    {
+        "q": "Swipe CI vs CD concepts.",
+        "type": "swipe_cards",
+        "left_label": "Continuous Integration",
+        "right_label": "Continuous Deployment",
+        "cards": {
+            "Automated unit testing": "left",
+            "Automated release to production": "right",
+            "Build code on every commit": "left",
+            "Zero-downtime rollouts": "right"
+        }
+    },
+    {
+        "q": "Cosmos DB transactional batch can operate on up to 100 items in a single partition.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Which Cloud Functions feature enables private communication with VPC resources?",
+        "type": "mcq",
+        "o": [
+            "Serverless VPC Access",
+            "Private Google Access",
+            "VPC Peering",
+            "Cloud VPN"
+        ]
+    },
+    {
+        "q": "Azure Service Bus _____ is a feature that automatically moves messages to the dead-letter queue after maximum delivery attempts.",
+        "type": "fill_blank",
+        "answers": [
+            "max delivery count"
+        ],
+        "other_options": [
+            "dead-letter policy",
+            "retry policy",
+            "expiration policy",
+            "failure action"
+        ]
+    },
+    {
+        "q": "GCS object holds prevent deletion of objects for a specified retention period.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Which BigQuery feature enables running scheduled queries and storing results?",
+        "type": "mcq",
+        "o": [
+            "Scheduled queries",
+            "Jobs",
+            "Transfers",
+            "Workflows"
+        ]
+    },
+    {
+        "q": "What is the name of the Azure service for event-driven serverless compute?",
+        "type": "short_answer",
+        "answers": [
+            "azure functions",
+            "functions"
+        ],
+        "isCaseSensitive": false
+    },
+    {
+        "q": "Match the Pub/Sub dead letter topic behavior:",
+        "type": "match",
+        "left": [
+            "Max delivery attempts exceeded",
+            "Message expires",
+            "Subscription deleted"
+        ],
+        "right": [
+            "Forwarded to dead letter topic",
+            "Discarded if not acknowledged",
+            "Messages may be lost"
+        ]
+    },
+    {
+        "q": "Cosmos DB supports MongoDB wire protocol version 4.2.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Which Azure Blob Storage feature scans containers for security vulnerabilities?",
+        "type": "mcq",
+        "o": [
+            "Microsoft Defender for Storage",
+            "Azure Security Center",
+            "Blob Inventory",
+            "Storage Analytics"
+        ]
+    },
+    {
+        "q": "What sequence of automated steps builds and deploys code?",
+        "type": "word_scramble",
+        "answer": "PIPELINE",
+        "decoys": "QK"
+    },
+    {
+        "q": "In Cloud Functions, the _____ file contains the entry point and trigger definition for 1st gen.",
+        "type": "fill_blank",
+        "answers": [
+            "function.json"
+        ],
+        "other_options": [
+            "package.json",
+            "host.json",
+            "index.js",
+            "config.json"
+        ]
+    },
+    {
+        "q": "BigQuery authorized views allow sharing query results without granting access to underlying tables.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "What action pushes code to a live environment?",
+        "type": "word_scramble",
+        "answer": "DEPLOY",
+        "decoys": "XZ"
+    },
+    {
+        "q": "Which Azure Service Bus tier supports availability zones?",
+        "type": "mcq",
+        "o": [
+            "Premium",
+            "Standard",
+            "Basic",
+            "Enterprise"
+        ]
+    },
+    {
+        "q": "Firestore _____ mode enforces strict schema definitions for documents.",
+        "type": "fill_blank",
+        "answers": [
+            "does not enforce"
+        ],
+        "other_options": [
+            "native",
+            "datastore",
+            "sql",
+            "schema"
+        ]
+    },
+    {
+        "q": "What is the name of the GCP service for managing infrastructure as code?",
+        "type": "short_answer",
+        "answers": [
+            "deployment manager",
+            "cloud deployment manager"
+        ],
+        "isCaseSensitive": false
+    },
+    {
+        "q": "Which Cosmos DB API supports the Apache Cassandra Query Language (CQL)?",
+        "type": "mcq",
+        "o": [
+            "Cassandra API",
+            "SQL API",
+            "MongoDB API",
+            "Gremlin API"
+        ]
+    },
+    {
+        "q": "Match the GCS bucket location type to its description:",
+        "type": "match",
+        "left": [
+            "Regional",
+            "Dual-region",
+            "Multi-region"
+        ],
+        "right": [
+            "Data in one region",
+            "Data in two specific regions",
+            "Data across continents"
+        ]
+    },
+    {
+        "q": "Pub/Sub Lite supports zonal and regional topics for lower latency.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Which Azure Functions trigger processes messages from an Azure Service Bus queue?",
+        "type": "mcq",
+        "o": [
+            "Service Bus Queue trigger",
+            "Queue trigger",
+            "Event Hub trigger",
+            "Service Bus Topic trigger"
+        ]
+    },
+    {
+        "q": "In BigQuery, a _____ is a writable, lightweight copy of a table at a specific time.",
+        "type": "fill_blank",
+        "answers": [
+            "table clone"
+        ],
+        "other_options": [
+            "snapshot",
+            "copy",
+            "replica",
+            "backup"
+        ]
+    },
+    {
+        "q": "Azure Blob Storage immutable storage policies can be either time-based or legal hold.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Which GCS feature allows you to monitor bucket access patterns?",
+        "type": "mcq",
+        "o": [
+            "Cloud Audit Logs",
+            "Bucket Insights",
+            "Cloud Monitoring",
+            "Access Transparency"
+        ]
+    },
+    {
+        "q": "Cosmos DB integrated cache reduces read latency and cost for frequently accessed data.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "In Azure Service Bus, a _____ filter allows subscribers to receive only messages matching specific properties.",
+        "type": "fill_blank",
+        "answers": [
+            "correlation"
+        ],
+        "other_options": [
+            "sql",
+            "boolean",
+            "rule",
+            "property"
+        ]
+    },
+    {
+        "q": "What is the maximum number of Firestore composite indexes per database?",
+        "type": "short_answer",
+        "answers": [
+            "200",
+            "two hundred"
+        ],
+        "isCaseSensitive": false
+    },
+    {
+        "q": "Complete the code to parse JSON from an API response.",
+        "c": "response = requests.get('https://api.example.com/data')\ndata = response.[0]()",
+        "type": "inline_dropdown",
+        "text": "To parse JSON from a response using requests, call the [0] method which typically returns a Python [1].",
+        "dropdowns": [
+            {
+                "correct": "json",
+                "options": [
+                    "json",
+                    "parse",
+                    "to_dict"
+                ]
+            },
+            {
+                "correct": "dictionary",
+                "options": [
+                    "dictionary",
+                    "string",
+                    "tuple"
+                ]
+            }
+        ]
+    },
+    {
+        "q": "Which BigQuery feature enables querying across multiple cloud environments?",
+        "type": "mcq",
+        "o": [
+            "BigQuery Omni",
+            "BigQuery ML",
+            "BigQuery BI Engine",
+            "BigQuery GIS"
+        ]
+    },
+    {
+        "q": "Match the Azure Functions binding direction to its purpose:",
+        "type": "match",
+        "left": [
+            "Input binding",
+            "Output binding",
+            "Trigger"
+        ],
+        "right": [
+            "Read data from source",
+            "Write data to destination",
+            "Initiates function execution"
+        ]
+    },
+    {
+        "q": "Cloud Functions max instances limit prevents runaway scaling and billing.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Which Azure storage service provides SMB file shares?",
+        "type": "mcq",
+        "o": [
+            "Azure Files",
+            "Azure Blob Storage",
+            "Azure Disk Storage",
+            "Azure NetApp Files"
+        ]
+    },
+    {
+        "q": "Complete the sentence regarding CI/CD pipelines.",
+        "type": "inline_dropdown",
+        "text": "A CI/CD pipeline often runs a [0] script to check Python syntax, and uses a [1] to store Docker images.",
+        "dropdowns": [
+            {
+                "correct": "linter",
+                "options": [
+                    "linter",
+                    "compiler",
+                    "linker"
+                ]
+            },
+            {
+                "correct": "registry",
+                "options": [
+                    "registry",
+                    "cache",
+                    "buffer"
+                ]
+            }
+        ]
+    },
+    {
+        "q": "In Pub/Sub, _____ delivery means messages arrive in the order they were published.",
+        "type": "fill_blank",
+        "answers": [
+            "ordered"
+        ],
+        "other_options": [
+            "sequential",
+            "sorted",
+            "fifo",
+            "priority"
+        ]
+    },
+    {
+        "q": "Cosmos DB burst capacity allows temporarily exceeding provisioned throughput.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Which command updates a Cloud Function's environment variables?",
+        "type": "mcq",
+        "o": [
+            "gcloud functions deploy --update-env-vars",
+            "gcloud functions update --set-env-vars",
+            "gcloud functions env set",
+            "gcloud functions configure --env"
+        ]
+    },
+    {
+        "q": "How many digits are typically in a GCP Project Number?",
+        "type": "slider",
+        "min": 10,
+        "max": 15,
+        "correct": 12
+    },
+    {
+        "q": "Azure Blob Storage object replication copies blobs asynchronously between containers.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Match the GCP IAM concept to its role.",
+        "type": "memory",
+        "pairs": {
+            "Service Account": "A special account for an application, not a person",
+            "Role": "A collection of permissions",
+            "Policy": "A binding that ties members to roles"
+        }
+    },
+    {
+        "q": "What is the name of the Azure service for data catalog and metadata management?",
+        "type": "short_answer",
+        "answers": [
+            "azure purview",
+            "purview"
+        ],
+        "isCaseSensitive": false
+    },
+    {
+        "q": "Which Firestore query limitation requires composite indexes?",
+        "type": "mcq",
+        "o": [
+            "Range and equality on different fields",
+            "Single field equality",
+            "Simple ordering",
+            "Document ID lookup"
+        ]
+    },
+    {
+        "q": "In BigQuery, the _____ function converts a string to a date.",
+        "type": "fill_blank",
+        "answers": [
+            "PARSE_DATE"
+        ],
+        "other_options": [
+            "CAST_TO_DATE",
+            "TO_DATE",
+            "CONVERT_DATE",
+            "FORMAT_DATE"
+        ]
+    },
+    {
+        "q": "Match the Service Bus exception to its cause:",
+        "type": "match",
+        "left": [
+            "MessageLockLostException",
+            "SessionLockLostException",
+            "ServiceBusException",
+            "MessagingEntityNotFoundException"
+        ],
+        "right": [
+            "Lock expired before completion",
+            "Session lock not renewed",
+            "General service error",
+            "Queue or topic does not exist"
+        ]
+    },
+    {
+        "q": "GCS supports customer-managed encryption keys (CMEK) via Cloud KMS.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Which Cosmos DB consistency level is the default and balances performance with consistency?",
+        "type": "mcq",
+        "o": [
+            "Session",
+            "Strong",
+            "Bounded staleness",
+            "Eventual"
+        ]
+    },
+    {
+        "q": "Azure Functions _____ is a file that defines function bindings and triggers.",
+        "type": "fill_blank",
+        "answers": [
+            "function.json"
+        ],
+        "other_options": [
+            "host.json",
+            "local.settings.json",
+            "appsettings.json",
+            "bindings.json"
+        ]
+    },
+    {
+        "q": "Pub/Sub schema support allows enforcing message format using Apache Avro or Protocol Buffers.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Which Azure Service Bus feature allows a receiver to defer processing of a message?",
+        "type": "mcq",
+        "o": [
+            "Message deferral",
+            "Scheduled delivery",
+            "Session state",
+            "Message suspension"
+        ]
+    },
+    {
+        "q": "In Firestore, _____ rules control access to documents based on user identity.",
+        "type": "fill_blank",
+        "answers": [
+            "security"
+        ],
+        "other_options": [
+            "access",
+            "IAM",
+            "firewall",
+            "validation"
+        ]
+    },
+    {
+        "q": "Which of these is NOT an Infrastructure as Code (IaC) or Config Management tool?",
+        "type": "odd_one_out",
+        "options": [
+            "Terraform",
+            "Ansible",
+            "Pulumi",
+            "Jenkins",
+            "Photoshop"
+        ],
+        "correct": "Photoshop"
+    },
+    {
+        "q": "BigQuery reservations allow you to commit to a certain amount of query capacity.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "What is the name of the GCP service for building and deploying machine learning models?",
+        "type": "short_answer",
+        "answers": [
+            "vertex ai",
+            "cloud AI platform"
+        ],
+        "isCaseSensitive": false
+    },
+    {
+        "q": "Which Cloud Functions event type triggers on object deletion in GCS?",
+        "type": "mcq",
+        "o": [
+            "google.storage.object.delete",
+            "google.storage.object.remove",
+            "google.storage.object.finalize",
+            "google.storage.object.archive"
+        ]
+    },
+    {
+        "q": "Azure Blob Storage version-level immutability allows setting retention policies per version.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Swipe JSON vs YAML syntax rules.",
+        "type": "swipe_cards",
+        "left_label": "JSON",
+        "right_label": "YAML",
+        "cards": {
+            "Uses curly braces to define objects": "left",
+            "Uses indentation heavily for structure": "right",
+            "Double quotes required for all string keys": "left",
+            "Allows unquoted strings in many cases": "right"
+        }
+    },
+    {
+        "q": "Match the Cosmos DB throughput mode to its use case:",
+        "type": "match",
+        "left": [
+            "Provisioned throughput",
+            "Autoscale",
+            "Serverless"
+        ],
+        "right": [
+            "Predictable workload",
+            "Variable workload",
+            "Intermittent workload"
+        ]
+    },
+    {
+        "q": "In GCS, the _____ condition can be used to make an object publicly readable.",
+        "type": "fill_blank",
+        "answers": [
+            "allUsers"
+        ],
+        "other_options": [
+            "allAuthenticatedUsers",
+            "public",
+            "everyone",
+            "anonymous"
+        ]
+    },
+    {
+        "q": "Swipe User vs Service Accounts.",
+        "type": "swipe_cards",
+        "left_label": "User Account",
+        "right_label": "Service Account",
+        "cards": {
+            "Belongs to an individual person": "left",
+            "Belongs to a running application": "right",
+            "Uses interactive browser login": "left",
+            "Uses JSON key files or workload identity": "right"
+        }
+    },
+    {
+        "q": "Azure Service Bus supports batch delete of messages to improve throughput.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "What popular HashiCorp tool is used for Infrastructure as Code?",
+        "type": "word_scramble",
+        "answer": "TERRAFORM",
+        "decoys": "WJ"
+    },
+    {
+        "q": "Which BigQuery table function returns a single row with no columns?",
+        "type": "mcq",
+        "o": [
+            "UNNEST([])",
+            "GENERATE_ARRAY",
+            "GENERATE_DATE_ARRAY",
+            "UNNEST(ARRAY[1])"
+        ]
+    },
+    {
+        "q": "Azure Functions _____ support language workers other than .NET and Node.js.",
+        "type": "fill_blank",
+        "answers": [
+            "custom handlers"
+        ],
+        "other_options": [
+            "extensions",
+            "bindings",
+            "proxies",
+            "adapters"
+        ]
+    },
+    {
+        "q": "What is the maximum number of Firestore fields that can be indexed in a composite index?",
+        "type": "short_answer",
+        "answers": [
+            "100",
+            "one hundred"
+        ],
+        "isCaseSensitive": false
+    },
+    {
+        "q": "What does the 'I' in IAM stand for?",
+        "type": "word_scramble",
+        "answer": "IDENTITY",
+        "decoys": "PX"
+    },
+    {
+        "q": "Which Cosmos DB feature allows auditing all changes to items in a container?",
+        "type": "mcq",
+        "o": [
+            "Change feed",
+            "Audit logs",
+            "Diagnostic settings",
+            "Activity log"
+        ]
+    },
+    {
+        "q": "Pub/Sub dead letter topics can be configured per subscription.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Match the Azure Blob Storage authentication method to its type:",
+        "type": "match",
+        "left": [
+            "Storage account key",
+            "Shared access signature",
+            "Azure AD",
+            "Anonymous"
+        ],
+        "right": [
+            "Account-level access",
+            "Delegated access with policy",
+            "Identity-based access",
+            "Public container access"
+        ]
+    },
+    {
+        "q": "Complete the Google Cloud authentication logic.",
+        "c": "import google.auth\ncredentials, project = google.auth.[0]()",
+        "type": "inline_dropdown",
+        "text": "Using [0] automatically finds credentials, often reading the [1] environment variable.",
+        "dropdowns": [
+            {
+                "correct": "default",
+                "options": [
+                    "default",
+                    "login",
+                    "start"
+                ]
+            },
+            {
+                "correct": "GOOGLE_APPLICATION_CREDENTIALS",
+                "options": [
+                    "GOOGLE_APPLICATION_CREDENTIALS",
+                    "GCP_AUTH_TOKEN",
+                    "GCLOUD_KEY"
+                ]
+            }
+        ]
+    },
+    {
+        "q": "Cloud Functions supports traffic splitting for gradual rollouts.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Which BigQuery wildcard function queries multiple tables using a common prefix?",
+        "type": "mcq",
+        "o": [
+            "TABLE_SUFFIX",
+            "WILDCARD",
+            "TABLE_QUERY",
+            "TABLE_RANGE"
+        ]
+    },
+    {
+        "q": "In Azure Service Bus, the _____ property uniquely identifies a message for deduplication.",
+        "type": "fill_blank",
+        "answers": [
+            "messageId"
+        ],
+        "other_options": [
+            "correlationId",
+            "sequenceNumber",
+            "sessionId",
+            "label"
+        ]
+    },
+    {
+        "q": "GCS Autoclass automatically optimizes storage class based on access patterns.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Which Azure service provides a serverless Apache Spark environment?",
+        "type": "mcq",
+        "o": [
+            "Azure Synapse Analytics",
+            "Azure Databricks",
+            "Azure HDInsight",
+            "Azure Machine Learning"
+        ]
+    },
+    {
+        "q": "Firestore _____ listeners receive real-time updates when document data changes.",
+        "type": "fill_blank",
+        "answers": [
+            "snapshot"
+        ],
+        "other_options": [
+            "change",
+            "event",
+            "update",
+            "realtime"
+        ]
+    },
+    {
+        "q": "Cosmos DB allows storing multiple entity types in the same container.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "What is the maximum number of GCS buckets per project by default?",
+        "type": "mcq",
+        "o": [
+            "1000",
+            "100",
+            "500",
+            "Unlimited"
+        ]
+    },
+    {
+        "q": "Which Azure Service Bus feature provides transactional consistency across multiple entities?",
+        "type": "mcq",
+        "o": [
+            "Transactions",
+            "Sessions",
+            "Batching",
+            "Atomic operations"
+        ]
+    },
+    {
+        "q": "In BigQuery, a _____ is a persistent, user-defined function written in JavaScript that can include external libraries.",
+        "type": "fill_blank",
+        "answers": [
+            "persistent UDF"
+        ],
+        "other_options": [
+            "temporary UDF",
+            "stored procedure",
+            "remote function",
+            "table function"
+        ]
+    },
+    {
+        "q": "Cloud Functions 2nd gen supports up to 16 GiB of memory per instance.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Complete the Azure Default Authentication logic.",
+        "c": "from azure.identity import [0]\ncredential = [0]()",
+        "type": "inline_dropdown",
+        "text": "In Azure SDKs, the [0] class handles finding credentials, part of the [1] package.",
+        "dropdowns": [
+            {
+                "correct": "DefaultAzureCredential",
+                "options": [
+                    "DefaultAzureCredential",
+                    "AzureAuth",
+                    "ManagedIdentityAuth"
+                ]
+            },
+            {
+                "correct": "azure-identity",
+                "options": [
+                    "azure-identity",
+                    "azure-auth",
+                    "azure-core"
+                ]
+            }
+        ]
+    },
+    {
+        "q": "What is the maximum number of physical partitions Cosmos DB can scale to for a single container?",
+        "type": "short_answer",
+        "answers": [
+            "unlimited",
+            "no limit"
+        ],
+        "isCaseSensitive": false
+    },
+    {
+        "q": "Match the Pub/Sub subscription state to its meaning:",
+        "type": "match",
+        "left": [
+            "Active",
+            "Inactive",
+            "Seeking",
+            "Acknowledged"
+        ],
+        "right": [
+            "Receiving messages",
+            "Not receiving messages",
+            "Replaying old messages",
+            "Message processed successfully"
+        ]
+    },
+    {
+        "q": "Which GCS feature enables sub-millisecond access latency for small objects?",
+        "type": "mcq",
+        "o": [
+            "GCS does not guarantee sub-millisecond latency",
+            "Turbo replication",
+            "Premium tier",
+            "Edge caching"
+        ]
+    },
+    {
+        "q": "Azure Blob Storage customer-managed keys can be stored in Azure Key Vault with soft delete disabled.",
+        "type": "true_false",
+        "correct": "False"
+    },
+    {
+        "q": "In Firestore, _____ mode allows for strongly consistent queries across all replicas.",
+        "type": "fill_blank",
+        "answers": [
+            "native"
+        ],
+        "other_options": [
+            "datastore",
+            "classic",
+            "realtime",
+            "global"
+        ]
+    },
+    {
+        "q": "Which Azure Functions hosting plan supports always-ready instances with pre-warmed workers?",
+        "type": "mcq",
+        "o": [
+            "Premium plan",
+            "Consumption plan",
+            "Dedicated plan",
+            "Isolated plan"
+        ]
+    },
+    {
+        "q": "What is the name of the Pub/Sub feature that enables exactly-once delivery at the subscription level?",
+        "type": "short_answer",
+        "answers": [
+            "exactly-once delivery",
+            "EOS"
+        ],
+        "isCaseSensitive": false
+    },
+    {
+        "q": "Match the Cosmos DB index kind to its data type coverage:",
+        "type": "match",
+        "left": [
+            "Range",
+            "Spatial",
+            "Composite"
+        ],
+        "right": [
+            "Order and equality",
+            "Geospatial queries",
+            "Multi-field sort"
+        ]
+    },
+    {
+        "q": "BigQuery capacity commitments offer significant discounts for annual or multi-year terms.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Which GCS API operation performs a byte-for-byte validation during upload?",
+        "type": "mcq",
+        "o": [
+            "CRC32C hash verification",
+            "MD5 hash verification",
+            "ETag matching",
+            "SHA256 check"
+        ]
+    },
+    {
+        "q": "Azure Service Bus JMS 2.0 support requires the _____ tier.",
+        "type": "fill_blank",
+        "answers": [
+            "premium"
+        ],
+        "other_options": [
+            "standard",
+            "basic",
+            "enterprise",
+            "dedicated"
+        ]
+    },
+    {
+        "q": "What is the default recursion limit in Python?",
+        "type": "slider",
+        "min": 500,
+        "max": 2000,
+        "correct": 1000
+    },
+    {
+        "q": "Match the Azure Identity concepts.",
+        "type": "memory",
+        "pairs": {
+            "Managed Identity": "Azure feature to automatically manage app credentials",
+            "Service Principal": "App identity used for role-based access control in Azure",
+            "Azure Active Directory": "Cloud-based identity and access management service"
+        }
+    },
+    {
+        "q": "Cosmos DB merge operation combines partitions to reduce RU/s consumption.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Which BigQuery feature allows querying data in external databases without moving data?",
+        "type": "mcq",
+        "o": [
+            "Federated queries",
+            "External tables",
+            "Linked datasets",
+            "Cross-cloud queries"
+        ]
+    },
+    {
+        "q": "Cloud Functions can use _____ to define minimum and maximum instances for cost control.",
+        "type": "fill_blank",
+        "answers": [
+            "min instances",
+            "max instances"
+        ],
+        "other_options": [
+            "scaling limits",
+            "instance caps",
+            "auto scaling",
+            "traffic limits"
+        ]
+    },
+    {
+        "q": "Azure Blob Storage blob index tags enable multi-dimensional categorization of blobs.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "What is the name of the Azure service for managing application configurations and feature flags?",
+        "type": "short_answer",
+        "answers": [
+            "azure app configuration",
+            "app configuration"
+        ],
+        "isCaseSensitive": false
+    },
+    {
+        "q": "Match the Python data structure to its mutability.",
+        "type": "memory",
+        "pairs": {
+            "List": "Mutable, ordered collection",
+            "Tuple": "Immutable, ordered collection",
+            "Set": "Mutable, unordered collection of unique elements"
+        }
+    },
+    {
+        "q": "Which Pub/Sub metric indicates the age of the oldest unacknowledged message?",
+        "type": "mcq",
+        "o": [
+            "Oldest unacked message age",
+            "Subscription backlog",
+            "Message retention",
+            "Delivery latency"
+        ]
+    },
+    {
+        "q": "Match the Firestore transaction type to its characteristics:",
+        "type": "match",
+        "left": [
+            "Read-only transaction",
+            "Read-write transaction",
+            "Batch write"
+        ],
+        "right": [
+            "Multiple reads, no writes",
+            "Atomic read and write",
+            "Atomic write only"
+        ]
+    },
+    {
+        "q": "GCS soft delete feature retains deleted objects for a configurable recovery period.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Which Cosmos DB feature provides a tumbling window view of container changes?",
+        "type": "mcq",
+        "o": [
+            "Change feed processor",
+            "Analytical store",
+            "Synapse Link",
+            "Full fidelity change feed"
+        ]
+    },
+    {
+        "q": "In BigQuery, _____ are used to define column-level security and masking rules.",
+        "type": "fill_blank",
+        "answers": [
+            "policy tags",
+            "data policies"
+        ],
+        "other_options": [
+            "security labels",
+            "column masks",
+            "access policies",
+            "IAM conditions"
+        ]
+    },
+    {
+        "q": "Azure Functions supports OpenTelemetry for distributed tracing.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Which Azure Service Bus feature allows a message to be locked exclusively for a receiver?",
+        "type": "mcq",
+        "o": [
+            "PeekLock",
+            "ReceiveAndDelete",
+            "SessionLock",
+            "MessageLock"
+        ]
+    },
+    {
+        "q": "Cosmos DB _____ partition key is a synthetic key used to distribute data evenly.",
+        "type": "fill_blank",
+        "answers": [
+            "synthetic"
+        ],
+        "other_options": [
+            "composite",
+            "hierarchical",
+            "logical",
+            "physical"
+        ]
+    },
+    {
+        "q": "Which of these is NOT a built-in Python keyword?",
+        "type": "odd_one_out",
+        "options": [
+            "def",
+            "class",
+            "return",
+            "function",
+            "yield"
+        ],
+        "correct": "function"
+    },
+    {
+        "q": "Cloud Functions max instance request concurrency is configurable in 2nd gen.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "What is the maximum number of Pub/Sub topics per project?",
+        "type": "short_answer",
+        "answers": [
+            "10000",
+            "10,000",
+            "ten thousand"
+        ],
+        "isCaseSensitive": false
+    },
+    {
+        "q": "Which Azure Blob Storage feature provides NFS v3 protocol support?",
+        "type": "mcq",
+        "o": [
+            "Azure Blob NFS v3",
+            "Azure Files NFS",
+            "Azure NetApp Files",
+            "Azure Data Lake NFS"
+        ]
+    },
+    {
+        "q": "Match the BigQuery ML model type to its use case:",
+        "type": "match",
+        "left": [
+            "Linear regression",
+            "Logistic regression",
+            "K-means clustering",
+            "ARIMA"
+        ],
+        "right": [
+            "Predict numeric values",
+            "Binary classification",
+            "Customer segmentation",
+            "Time-series forecasting"
+        ]
+    },
+    {
+        "q": "Firestore bundled queries allow packaging query results for offline access.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Which GCS feature enables automatic, asynchronous replication within a region?",
+        "type": "mcq",
+        "o": [
+            "Turbo replication",
+            "Regional replication",
+            "Cross-region sync",
+            "Standard replication"
+        ]
+    },
+    {
+        "q": "In Azure Service Bus, the _____ property correlates messages to a specific conversation.",
+        "type": "fill_blank",
+        "answers": [
+            "correlationId"
+        ],
+        "other_options": [
+            "messageId",
+            "sessionId",
+            "label",
+            "replyTo"
+        ]
+    },
+    {
+        "q": "BigQuery tables can be clustered on up to 4 columns.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Which Azure Functions binding supports Azure Cosmos DB change feed?",
+        "type": "mcq",
+        "o": [
+            "Cosmos DB trigger",
+            "Event Hub trigger",
+            "Blob trigger",
+            "Queue trigger"
+        ]
+    },
+    {
+        "q": "Categorize Python built-in types.",
+        "type": "swipe_cards",
+        "left_label": "Mutable",
+        "right_label": "Immutable",
+        "cards": {
+            "list": "left",
+            "dict": "left",
+            "tuple": "right",
+            "string": "right"
+        }
+    },
+    {
+        "q": "What is the name of the GCP service for secrets management?",
+        "type": "short_answer",
+        "answers": [
+            "secret manager",
+            "cloud secret manager"
+        ],
+        "isCaseSensitive": false
+    },
+    {
+        "q": "Match the Cosmos DB conflict resolution mode to its strategy:",
+        "type": "match",
+        "left": [
+            "Last Writer Wins",
+            "Custom",
+            "None"
+        ],
+        "right": [
+            "Based on timestamp",
+            "User-defined stored procedure",
+            "No conflict resolution"
+        ]
+    },
+    {
+        "q": "What keyword defines an anonymous, inline function in Python?",
+        "type": "word_scramble",
+        "answer": "LAMBDA",
+        "decoys": "ZQ"
+    },
+    {
+        "q": "Pub/Sub Lite requires management of partition resources manually.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Complete the Python error handling syntax.",
+        "c": "try:\n    risky_operation()\n[0] Exception as e:\n    print(f'Error: {[1]}')",
+        "type": "inline_dropdown",
+        "text": "Use a [0] block to catch exceptions and assign them to the variable [1].",
+        "dropdowns": [
+            {
+                "correct": "except",
+                "options": [
+                    "except",
+                    "catch",
+                    "on_error"
+                ]
+            },
+            {
+                "correct": "e",
+                "options": [
+                    "e",
+                    "err",
+                    "exception"
+                ]
+            }
+        ]
+    },
+    {
+        "q": "Which Cloud Functions 2nd gen trigger type supports CloudEvents specification?",
+        "type": "mcq",
+        "o": [
+            "Eventarc triggers",
+            "HTTP triggers",
+            "Background triggers",
+            "Pub/Sub triggers"
+        ]
+    },
+    {
+        "q": "Azure Blob Storage append blobs support up to 50,000 blocks.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "In BigQuery, the _____ function allows executing dynamic SQL statements.",
+        "type": "fill_blank",
+        "answers": [
+            "EXECUTE IMMEDIATE"
+        ],
+        "other_options": [
+            "EVAL",
+            "RUN",
+            "DYNAMIC SQL",
+            "EXEC"
+        ]
+    },
+    {
+        "q": "Which Azure Service Bus entity type provides brokered messaging with request-reply pattern?",
+        "type": "mcq",
+        "o": [
+            "Queue with sessions",
+            "Topic with filters",
+            "Relay",
+            "Event hub"
+        ]
+    },
+    {
+        "q": "Firestore _____ indexes are automatically created for simple queries on single fields.",
+        "type": "fill_blank",
+        "answers": [
+            "single-field"
+        ],
+        "other_options": [
+            "composite",
+            "automatic",
+            "default",
+            "built-in"
+        ]
+    },
+    {
+        "q": "Cosmos DB analytical store can be accessed via Azure Synapse Link without impacting transactional workloads.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "What is the default page size for Firestore queries?",
+        "type": "short_answer",
+        "answers": [
+            "20",
+            "twenty"
+        ],
+        "isCaseSensitive": false
+    },
+    {
+        "q": "Which BigQuery feature enables real-time dashboarding with sub-second query latency?",
+        "type": "mcq",
+        "o": [
+            "BI Engine",
+            "Materialized views",
+            "Query cache",
+            "Streaming buffer"
+        ]
+    },
+    {
+        "q": "Match the GCS retention policy component to its function:",
+        "type": "match",
+        "left": [
+            "Retention period",
+            "Locked retention",
+            "WORM state"
+        ],
+        "right": [
+            "Minimum time object is retained",
+            "Irreversible policy",
+            "Write Once Read Many"
+        ]
+    },
+    {
+        "q": "Azure Functions supports custom scaling logic using target-based scaling.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Which Azure Blob Storage feature allows running SQL queries directly on blobs?",
+        "type": "mcq",
+        "o": [
+            "Azure Synapse Analytics",
+            "Azure Stream Analytics",
+            "Azure SQL Database",
+            "Azure Cosmos DB"
+        ]
+    },
+    {
+        "q": "In Pub/Sub, _____ is the maximum time a message can remain undelivered.",
+        "type": "fill_blank",
+        "answers": [
+            "message retention duration"
+        ],
+        "other_options": [
+            "ack deadline",
+            "TTL",
+            "expiration",
+            "max age"
+        ]
+    },
+    {
+        "q": "Cosmos DB dedicated gateway improves performance for cached read-heavy workloads.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Which Cloud Functions feature enables sharing CPU and memory across requests?",
+        "type": "mcq",
+        "o": [
+            "Concurrency",
+            "Multi-threading",
+            "Batching",
+            "Pooling"
+        ]
+    },
+    {
+        "q": "Azure Service Bus duplicate detection is based on the _____ property and a configurable time window.",
+        "type": "fill_blank",
+        "answers": [
+            "messageId"
+        ],
+        "other_options": [
+            "correlationId",
+            "sequenceNumber",
+            "sessionId",
+            "batchId"
+        ]
+    },
+    {
+        "q": "BigQuery supports cross-region table replication for disaster recovery.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "What is the name of the Azure service for building conversational AI?",
+        "type": "short_answer",
+        "answers": [
+            "azure bot service",
+            "bot service"
+        ],
+        "isCaseSensitive": false
+    },
+    {
+        "q": "Which GCS API operation conditionally retrieves an object only if it has changed?",
+        "type": "mcq",
+        "o": [
+            "If-None-Match header",
+            "If-Modified-Since header",
+            "ETag comparison",
+            "Generation check"
+        ]
+    },
+    {
+        "q": "Match the Firestore aggregation query to its result:",
+        "type": "match",
+        "left": [
+            "COUNT",
+            "SUM",
+            "AVG",
+            "MAX"
+        ],
+        "right": [
+            "Number of documents",
+            "Total of field values",
+            "Average of field values",
+            "Maximum field value"
+        ]
+    },
+    {
+        "q": "Cosmos DB RBAC supports Azure AD authentication for data plane operations.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Which Azure Functions runtime version supports .NET 7 and Node.js 18?",
+        "type": "mcq",
+        "o": [
+            "Azure Functions v4",
+            "Azure Functions v3",
+            "Azure Functions v2",
+            "Azure Functions v1"
+        ]
+    },
+    {
+        "q": "In BigQuery, a _____ is a user-defined aggregate function that processes multiple rows.",
+        "type": "fill_blank",
+        "answers": [
+            "UDAF"
+        ],
+        "other_options": [
+            "UDF",
+            "stored procedure",
+            "window function",
+            "table function"
+        ]
+    },
+    {
+        "q": "Pub/Sub seek operation allows replaying messages from any point in the message backlog.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Which Azure Service Bus operation atomically receives and deletes a message?",
+        "type": "mcq",
+        "o": [
+            "ReceiveAndDelete",
+            "PeekLock",
+            "Complete",
+            "Abandon"
+        ]
+    },
+    {
+        "q": "GCS object composition allows creating a single object from up to 32 existing objects.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "What is the maximum number of Azure Functions in a single function app?",
+        "type": "short_answer",
+        "answers": [
+            "unlimited",
+            "no practical limit"
+        ],
+        "isCaseSensitive": false
+    },
+    {
+        "q": "Which Cosmos DB feature allows time-to-live (TTL) at both container and item level?",
+        "type": "mcq",
+        "o": [
+            "Time to Live",
+            "Expiration policy",
+            "Data aging",
+            "Auto-deletion"
+        ]
+    },
+    {
+        "q": "Match the BigQuery user role to its permissions:",
+        "type": "match",
+        "left": [
+            "dataViewer",
+            "dataEditor",
+            "dataOwner",
+            "jobUser"
+        ],
+        "right": [
+            "Read data and metadata",
+            "Read and write data",
+            "Full table control",
+            "Run jobs and queries"
+        ]
+    },
+    {
+        "q": "Cloud Functions ingress settings control whether functions can be invoked from the internet.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Which Azure Blob Storage redundancy option provides 16 nines of durability?",
+        "type": "mcq",
+        "o": [
+            "Geo-zone-redundant storage (GZRS)",
+            "Locally redundant storage (LRS)",
+            "Geo-redundant storage (GRS)",
+            "Zone-redundant storage (ZRS)"
+        ]
+    },
+    {
+        "q": "In Firestore, a _____ query can filter documents based on the absence of a field.",
+        "type": "fill_blank",
+        "answers": [
+            "NOT NULL"
+        ],
+        "other_options": [
+            "EXISTS",
+            "MISSING",
+            "IS NULL",
+            "UNDEFINED"
+        ]
+    },
+    {
+        "q": "Azure Service Bus SQL filters support up to 10,000 characters in filter expressions.",
+        "type": "true_false",
+        "correct": "False"
+    },
+    {
+        "q": "Which Pub/Sub client library feature enables asynchronous message processing?",
+        "type": "mcq",
+        "o": [
+            "Streaming pull",
+            "Synchronous pull",
+            "Push endpoint",
+            "Polling"
+        ]
+    },
+    {
+        "q": "Cosmos DB _____ allows you to export data to Azure Storage for analysis.",
+        "type": "fill_blank",
+        "answers": [
+            "data export",
+            "change feed"
+        ],
+        "other_options": [
+            "backup",
+            "migration",
+            "sync",
+            "replication"
+        ]
+    },
+    {
+        "q": "BigQuery ML supports importing TensorFlow and XGBoost models.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "What is the name of the GCP service for centralized network management?",
+        "type": "short_answer",
+        "answers": [
+            "network connectivity center",
+            "network intelligence center"
+        ],
+        "isCaseSensitive": false
+    },
+    {
+        "q": "Which Azure Functions trigger type is used for processing Azure Event Grid events?",
+        "type": "mcq",
+        "o": [
+            "Event Grid trigger",
+            "HTTP trigger",
+            "Queue trigger",
+            "Service Bus trigger"
+        ]
+    },
+    {
+        "q": "Match the GCS IAM role to its permissions:",
+        "type": "match",
+        "left": [
+            "Storage Object Viewer",
+            "Storage Object Creator",
+            "Storage Object Admin",
+            "Storage Admin"
+        ],
+        "right": [
+            "Read objects",
+            "Create objects",
+            "Full object control",
+            "Full bucket and object control"
+        ]
+    },
+    {
+        "q": "Firestore PITR (Point-in-time recovery) can recover data up to 7 days in the past.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Which Azure Blob Storage feature uses machine learning to detect anomalies?",
+        "type": "mcq",
+        "o": [
+            "Storage Analytics",
+            "Azure Monitor",
+            "Defender for Storage",
+            "Activity Log"
+        ]
+    },
+    {
+        "q": "In Cloud Functions, the _____ setting determines the maximum time a function can run before timing out.",
+        "type": "fill_blank",
+        "answers": [
+            "timeout"
+        ],
+        "other_options": [
+            "duration",
+            "runtime",
+            "deadline",
+            "limit"
+        ]
+    },
+    {
+        "q": "Cosmos DB supports partial document update (patch) operations.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Which BigQuery DDL statement creates a table with a schema definition?",
+        "type": "mcq",
+        "o": [
+            "CREATE TABLE",
+            "DEFINE TABLE",
+            "NEW TABLE",
+            "MAKE TABLE"
+        ]
+    },
+    {
+        "q": "Azure Service Bus geo-disaster recovery uses _____ to pair primary and secondary namespaces.",
+        "type": "fill_blank",
+        "answers": [
+            "aliases"
+        ],
+        "other_options": [
+            "pairs",
+            "links",
+            "connectors",
+            "bridges"
+        ]
+    },
+    {
+        "q": "What is the name of the Azure service for mobile push notifications?",
+        "type": "short_answer",
+        "answers": [
+            "azure notification hubs",
+            "notification hubs"
+        ],
+        "isCaseSensitive": false
+    },
+    {
+        "q": "Which Pub/Sub feature allows messages to be filtered at the subscription level?",
+        "type": "mcq",
+        "o": [
+            "Message filtering",
+            "Topic partitioning",
+            "Subscription routing",
+            "Attribute filtering"
+        ]
+    },
+    {
+        "q": "Match the Cosmos DB backup mode to its capability:",
+        "type": "match",
+        "left": [
+            "Periodic",
+            "Continuous"
+        ],
+        "right": [
+            "Scheduled snapshots",
+            "Point-in-time restore"
+        ]
+    },
+    {
+        "q": "BigQuery session tables are automatically deleted after the session ends.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Which GCS feature enables integration with on-premises storage systems?",
+        "type": "mcq",
+        "o": [
+            "Storage Transfer Service",
+            "Cloud VPN",
+            "Cloud Interconnect",
+            "gsutil rsync"
+        ]
+    },
+    {
+        "q": "Azure Functions _____ allows you to customize the host process using .NET middleware.",
+        "type": "fill_blank",
+        "answers": [
+            "startup class"
+        ],
+        "other_options": [
+            "middleware pipeline",
+            "configure method",
+            "host builder",
+            "service collection"
+        ]
+    },
+    {
+        "q": "Firestore offline persistence caches recently read documents on the client device.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Which Azure Service Bus feature enables sending messages to multiple entities atomically?",
+        "type": "mcq",
+        "o": [
+            "Batch transaction",
+            "Bulk send",
+            "Multi-entity publish",
+            "Atomic broadcast"
+        ]
+    },
+    {
+        "q": "In BigQuery, _____ allows running procedural SQL with variables and control flow.",
+        "type": "fill_blank",
+        "answers": [
+            "scripting"
+        ],
+        "other_options": [
+            "stored procedures",
+            "UDFs",
+            "macros",
+            "triggers"
+        ]
+    },
+    {
+        "q": "Cosmos DB total cost of ownership includes storage, throughput, and bandwidth charges.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "What is the maximum object size for a single GCS XML API multipart upload?",
+        "type": "mcq",
+        "o": [
+            "5 TiB",
+            "1 TiB",
+            "10 TiB",
+            "2 TiB"
+        ]
+    },
+    {
+        "q": "Which Azure Service Bus feature guarantees ordered message processing across multiple sessions?",
+        "type": "mcq",
+        "o": [
+            "Sessions with state",
+            "Topics with filters",
+            "Partitioned queues",
+            "Forwarding chains"
+        ]
+    },
+    {
+        "q": "In BigQuery, a _____ combines table partitioning and clustering to optimize query performance and cost.",
+        "type": "fill_blank",
+        "answers": [
+            "partitioned and clustered table"
+        ],
+        "other_options": [
+            "materialized view",
+            "snapshot",
+            "clone",
+            "external table"
+        ]
+    },
+    {
+        "q": "Cloud Functions 2nd gen supports gRPC protocol for HTTP-triggered functions.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "What is the maximum number of Azure Cosmos DB containers per database with shared throughput?",
+        "type": "short_answer",
+        "answers": [
+            "25",
+            "twenty-five"
+        ],
+        "isCaseSensitive": false
+    },
+    {
+        "q": "Match the Pub/Sub delivery type to its acknowledgement mechanism:",
+        "type": "match",
+        "left": [
+            "Synchronous pull",
+            "Asynchronous pull",
+            "Push",
+            "Streaming pull"
+        ],
+        "right": [
+            "Client waits for response",
+            "Client registers callback",
+            "Server sends to endpoint",
+            "Long-lived bidirectional stream"
+        ]
+    },
+    {
+        "q": "Which GCS HMAC key feature enables compatibility with S3-compatible tools?",
+        "type": "mcq",
+        "o": [
+            "S3-compatible API",
+            "XML API",
+            "Interoperability mode",
+            "Legacy access"
+        ]
+    },
+    {
+        "q": "Azure Blob Storage blob versioning can be combined with lifecycle management to reduce costs.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "In Firestore, _____ measures the number of index entries read during a query.",
+        "type": "fill_blank",
+        "answers": [
+            "index entries read"
+        ],
+        "other_options": [
+            "documents read",
+            "bytes transferred",
+            "read operations",
+            "entity reads"
+        ]
+    },
+    {
+        "q": "Which Azure Functions hosting plan runs on dedicated App Service Environment v3?",
+        "type": "mcq",
+        "o": [
+            "Isolated plan",
+            "Premium plan",
+            "Dedicated plan",
+            "ASE plan"
+        ]
+    },
+    {
+        "q": "What is the name of the BigQuery feature that enables native JSON data type support?",
+        "type": "short_answer",
+        "answers": [
+            "JSON data type",
+            "native JSON"
+        ],
+        "isCaseSensitive": false
+    },
+    {
+        "q": "Match the Cosmos DB throughput allocation to its scope:",
+        "type": "match",
+        "left": [
+            "Database-level provisioned",
+            "Container-level provisioned",
+            "Autoscale",
+            "Serverless"
+        ],
+        "right": [
+            "Shared across containers",
+            "Dedicated to one container",
+            "Instant scale up to max",
+            "Pay per request"
+        ]
+    },
+    {
+        "q": "Pub/Sub schema validation rejects messages that do not conform to a defined schema.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Which GCS storage class uses a minimum storage duration of 365 days?",
+        "type": "mcq",
+        "o": [
+            "Archive",
+            "Coldline",
+            "Nearline",
+            "Standard"
+        ]
+    },
+    {
+        "q": "Azure Service Bus _____ enables batching of multiple messages into a single transaction.",
+        "type": "fill_blank",
+        "answers": [
+            "transactional batch"
+        ],
+        "other_options": [
+            "send batch",
+            "message group",
+            "atomic send",
+            "composite message"
+        ]
+    },
+    {
+        "q": "Cosmos DB fully managed backup service supports point-in-time restore with continuous backup.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Which BigQuery DML statement allows combining insert, update, and delete in one operation?",
+        "type": "mcq",
+        "o": [
+            "MERGE",
+            "REPLACE",
+            "UPSERT",
+            "MULTI_DML"
+        ]
+    },
+    {
+        "q": "Cloud Functions _____ pricing model charges based on CPU, memory, and request count.",
+        "type": "fill_blank",
+        "answers": [
+            "v2"
+        ],
+        "other_options": [
+            "v1",
+            "gen1",
+            "gen2",
+            "premium"
+        ]
+    },
+    {
+        "q": "Azure Blob Storage customer-managed failover allows manual failover to secondary region.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "What is the name of the Azure service for managing Kubernetes clusters?",
+        "type": "short_answer",
+        "answers": [
+            "azure kubernetes service",
+            "AKS"
+        ],
+        "isCaseSensitive": false
+    },
+    {
+        "q": "Which Pub/Sub metric tracks the number of messages published per second?",
+        "type": "mcq",
+        "o": [
+            "publish_message_operations",
+            "topic/send_request_count",
+            "message_publish_rate",
+            "publisher_throughput"
+        ]
+    },
+    {
+        "q": "Match the Firestore query cursor type to its behavior:",
+        "type": "match",
+        "left": [
+            "startAt",
+            "startAfter",
+            "endAt",
+            "endBefore"
+        ],
+        "right": [
+            "Inclusive start",
+            "Exclusive start",
+            "Inclusive end",
+            "Exclusive end"
+        ]
+    },
+    {
+        "q": "GCS retention policies can be locked permanently to prevent modification or removal.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Which Cosmos DB feature provides globally distributed low-latency access via Microsoft backbone?",
+        "type": "mcq",
+        "o": [
+            "Global distribution",
+            "Multi-region writes",
+            "Geo-redundancy",
+            "Cross-region sync"
+        ]
+    },
+    {
+        "q": "In BigQuery, _____ are temporary objects that exist only for the duration of a session.",
+        "type": "fill_blank",
+        "answers": [
+            "temp tables"
+        ],
+        "other_options": [
+            "session tables",
+            "transient tables",
+            "volatile tables",
+            "ephemeral views"
+        ]
+    },
+    {
+        "q": "Azure Functions supports custom OpenAPI definitions for HTTP-triggered functions.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Which Azure Service Bus feature allows a queue to automatically forward messages to another queue?",
+        "type": "mcq",
+        "o": [
+            "Auto-forwarding",
+            "Message chaining",
+            "Queue relay",
+            "Forward proxy"
+        ]
+    },
+    {
+        "q": "Cosmos DB _____ partitions are the underlying physical storage units that host logical partitions.",
+        "type": "fill_blank",
+        "answers": [
+            "physical"
+        ],
+        "other_options": [
+            "logical",
+            "container",
+            "database",
+            "storage"
+        ]
+    },
+    {
+        "q": "Cloud Functions max instance request concurrency can be set up to 1000 in 2nd gen.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "What is the maximum number of Pub/Sub Lite partitions per topic?",
+        "type": "short_answer",
+        "answers": [
+            "unlimited",
+            "no limit"
+        ],
+        "isCaseSensitive": false
+    },
+    {
+        "q": "Which Azure Blob Storage feature enables account failover for disaster recovery?",
+        "type": "mcq",
+        "o": [
+            "Account failover",
+            "Geo-redundant failover",
+            "Cross-region replication",
+            "Automatic failover"
+        ]
+    },
+    {
+        "q": "Match the BigQuery table sampling method to its syntax:",
+        "type": "match",
+        "left": [
+            "TABLESAMPLE SYSTEM",
+            "TABLESAMPLE BERNOULLI",
+            "Sampled datasets"
+        ],
+        "right": [
+            "Fixed percentage of blocks",
+            "Probabilistic per row",
+            "Random subset of data"
+        ]
+    },
+    {
+        "q": "Firestore TTL policies automatically delete documents after a specified timestamp.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Which GCS feature enables per-object encryption with a customer-supplied key?",
+        "type": "mcq",
+        "o": [
+            "CSEK (Customer-Supplied Encryption Key)",
+            "CMEK (Customer-Managed Encryption Key)",
+            "Google-managed encryption",
+            "Client-side encryption"
+        ]
+    },
+    {
+        "q": "In Azure Service Bus, the _____ property stores application-specific metadata as key-value pairs.",
+        "type": "fill_blank",
+        "answers": [
+            "applicationProperties"
+        ],
+        "other_options": [
+            "userProperties",
+            "customProperties",
+            "metadata",
+            "tags"
+        ]
+    },
+    {
+        "q": "BigQuery ML supports hyperparameter tuning for model optimization.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Which Azure Functions feature enables dependency injection via a custom Startup class?",
+        "type": "mcq",
+        "o": [
+            "FunctionsStartup",
+            "IWebJobsStartup",
+            "Startup",
+            "HostBuilder"
+        ]
+    },
+    {
+        "q": "What is the name of the GCP service for managing API keys and authentication?",
+        "type": "short_answer",
+        "answers": [
+            "identity and access management",
+            "IAM",
+            "cloud IAM"
+        ],
+        "isCaseSensitive": false
+    },
+    {
+        "q": "Match the Cosmos DB data model to its API mapping:",
+        "type": "match",
+        "left": [
+            "Document",
+            "Graph",
+            "Column-family",
+            "Key-value"
+        ],
+        "right": [
+            "SQL API",
+            "Gremlin API",
+            "Cassandra API",
+            "Table API"
+        ]
+    },
+    {
+        "q": "Pub/Sub Lite topics support both regional and zonal placement.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Which Cloud Functions environment variable stores the event timestamp?",
+        "type": "mcq",
+        "o": [
+            "Cloud Functions do not provide a standard env var for event timestamp",
+            "EVENT_TIMESTAMP",
+            "GCP_TIMESTAMP",
+            "FUNCTION_TIMESTAMP"
+        ]
+    },
+    {
+        "q": "Azure Blob Storage account object replication supports up to 10 destination containers.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "In BigQuery, the _____ operator compares a value against a list of values from a subquery.",
+        "type": "fill_blank",
+        "answers": [
+            "IN"
+        ],
+        "other_options": [
+            "ANY",
+            "SOME",
+            "EXISTS",
+            "CONTAINS"
+        ]
+    },
+    {
+        "q": "Which Azure Service Bus feature enables a subscriber to pause receiving without losing messages?",
+        "type": "mcq",
+        "o": [
+            "Pause subscription",
+            "Disable subscription",
+            "Suspend topic",
+            "Hold subscription"
+        ]
+    },
+    {
+        "q": "Cosmos DB integrated cache has a maximum cache size of 500 GB.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Firestore _____ mode database has a maximum write rate of 10,000 writes per second per database.",
+        "type": "fill_blank",
+        "answers": [
+            "native"
+        ],
+        "other_options": [
+            "datastore",
+            "classic",
+            "legacy",
+            "realtime"
+        ]
+    },
+    {
+        "q": "What is the name of the Azure service for data warehousing and big data analytics?",
+        "type": "short_answer",
+        "answers": [
+            "azure synapse analytics",
+            "synapse analytics"
+        ],
+        "isCaseSensitive": false
+    },
+    {
+        "q": "Which BigQuery function returns the number of elements in an array?",
+        "type": "mcq",
+        "o": [
+            "ARRAY_LENGTH",
+            "COUNT",
+            "ARRAY_SIZE",
+            "LENGTH"
+        ]
+    },
+    {
+        "q": "Match the GCS object metadata key to its description:",
+        "type": "match",
+        "left": [
+            "Content-Type",
+            "Content-Encoding",
+            "Cache-Control",
+            "Content-Disposition"
+        ],
+        "right": [
+            "MIME type of object",
+            "Compression type",
+            "Browser caching directive",
+            "Download filename hint"
+        ]
+    },
+    {
+        "q": "Azure Functions Durable Entities provide actor-like stateful programming.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Which Azure Blob Storage feature uses blob snapshots to create point-in-time copies?",
+        "type": "mcq",
+        "o": [
+            "Blob snapshots",
+            "Blob versioning",
+            "Blob backups",
+            "Soft delete"
+        ]
+    },
+    {
+        "q": "In Pub/Sub, the _____ is the maximum time a subscriber has to acknowledge a message.",
+        "type": "fill_blank",
+        "answers": [
+            "ack deadline"
+        ],
+        "other_options": [
+            "retention period",
+            "message timeout",
+            "delivery window",
+            "expiration time"
+        ]
+    },
+    {
+        "q": "Cosmos DB partial document update supports JSON Patch operations.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Which Cloud Functions runtime supports up to 60 minutes timeout?",
+        "type": "mcq",
+        "o": [
+            "Cloud Functions 2nd gen",
+            "Cloud Functions 1st gen",
+            "Both generations",
+            "Neither generation"
+        ]
+    },
+    {
+        "q": "Azure Service Bus _____ allows a message to be temporarily locked for exclusive processing.",
+        "type": "fill_blank",
+        "answers": [
+            "PeekLock"
+        ],
+        "other_options": [
+            "ReceiveAndDelete",
+            "SessionLock",
+            "MessageDeferral",
+            "Complete"
+        ]
+    },
+    {
+        "q": "BigQuery supports querying Apache Iceberg tables natively.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "What is the name of the Azure service for real-time application insights?",
+        "type": "short_answer",
+        "answers": [
+            "application insights",
+            "azure monitor application insights"
+        ],
+        "isCaseSensitive": false
+    },
+    {
+        "q": "Which GCS feature allows cross-origin requests from web applications?",
+        "type": "mcq",
+        "o": [
+            "CORS configuration",
+            "IAM policies",
+            "Signed URLs",
+            "Bucket ACLs"
+        ]
+    },
+    {
+        "q": "Match the Firestore limit to its value:",
+        "type": "match",
+        "left": [
+            "Max document size",
+            "Max write rate per document",
+            "Max depth of subcollections",
+            "Max number of composite indexes"
+        ],
+        "right": [
+            "1 MiB",
+            "1 write per second sustained",
+            "100 levels",
+            "200"
+        ]
+    },
+    {
+        "q": "Cosmos DB Synapse Link enables near real-time analytics without ETL pipelines.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Which Azure Functions binding type supports output to Azure Service Bus?",
+        "type": "mcq",
+        "o": [
+            "Service Bus output binding",
+            "Queue output binding",
+            "Event Hub output binding",
+            "Topic output binding"
+        ]
+    },
+    {
+        "q": "In BigQuery, _____ tables allow querying data stored in Google Sheets.",
+        "type": "fill_blank",
+        "answers": [
+            "external"
+        ],
+        "other_options": [
+            "federated",
+            "linked",
+            "connection",
+            "reference"
+        ]
+    },
+    {
+        "q": "Pub/Sub message ordering requires a consistent ordering key across messages.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Which Azure Service Bus tier supports availability zones and premium messaging features?",
+        "type": "mcq",
+        "o": [
+            "Premium",
+            "Standard",
+            "Basic",
+            "Enterprise"
+        ]
+    },
+    {
+        "q": "GCS object checksums are validated using _____ hashing algorithm for data integrity.",
+        "type": "fill_blank",
+        "answers": [
+            "CRC32C"
+        ],
+        "other_options": [
+            "MD5",
+            "SHA256",
+            "SHA1",
+            "CRC32"
+        ]
+    },
+    {
+        "q": "Cloud Functions can be triggered by Cloud Scheduler for cron job execution.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "What is the maximum number of Firestore transactions per second per database?",
+        "type": "short_answer",
+        "answers": [
+            "10000",
+            "10,000",
+            "ten thousand"
+        ],
+        "isCaseSensitive": false
+    },
+    {
+        "q": "Which Cosmos DB consistency level guarantees that reads never see out-of-order writes?",
+        "type": "mcq",
+        "o": [
+            "Consistent Prefix",
+            "Strong",
+            "Session",
+            "Bounded Staleness"
+        ]
+    },
+    {
+        "q": "Match the BigQuery array function to its description:",
+        "type": "match",
+        "left": [
+            "GENERATE_ARRAY",
+            "ARRAY_AGG",
+            "ARRAY_CONCAT",
+            "OFFSET"
+        ],
+        "right": [
+            "Create array from range",
+            "Aggregate values into array",
+            "Combine multiple arrays",
+            "Access element by position"
+        ]
+    },
+    {
+        "q": "Azure Blob Storage version-level immutability supports both enterprise and legal hold policies.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Which GCP service provides distributed tracing for Cloud Functions?",
+        "type": "mcq",
+        "o": [
+            "Cloud Trace",
+            "Cloud Monitoring",
+            "Cloud Logging",
+            "Cloud Debugger"
+        ]
+    },
+    {
+        "q": "Azure Service Bus message lock duration can be up to 5 minutes in the Standard tier.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "In Firestore, the _____ function retrieves another document within a security rule.",
+        "type": "fill_blank",
+        "answers": [
+            "get()",
+            "getAfter()"
+        ],
+        "other_options": [
+            "fetch()",
+            "read()",
+            "query()",
+            "lookup()"
+        ]
+    },
+    {
+        "q": "Which Azure Functions binding supports reading from Azure Blob Storage?",
+        "type": "mcq",
+        "o": [
+            "Blob input binding",
+            "Blob trigger",
+            "Blob output binding",
+            "Storage binding"
+        ]
+    },
+    {
+        "q": "BigQuery stored procedures can return result sets using the _____ keyword.",
+        "type": "fill_blank",
+        "answers": [
+            "SELECT",
+            "RETURN SELECT"
+        ],
+        "other_options": [
+            "OUTPUT",
+            "RESULTS",
+            "RETURNS",
+            "YIELD"
+        ]
+    },
+    {
+        "q": "Cosmos DB integrated cache uses dedicated gateway for cached reads.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "What is the name of the Azure service for workload orchestration and ETL?",
+        "type": "short_answer",
+        "answers": [
+            "azure data factory",
+            "ADF",
+            "data factory"
+        ],
+        "isCaseSensitive": false
+    },
+    {
+        "q": "Which Pub/Sub feature enables streaming data into BigQuery without intermediate storage?",
+        "type": "mcq",
+        "o": [
+            "BigQuery subscriptions",
+            "Dataflow templates",
+            "Pub/Sub IO connector",
+            "Streaming insert API"
+        ]
+    },
+    {
+        "q": "Match the GCS API endpoint type to its use case:",
+        "type": "match",
+        "left": [
+            "XML API",
+            "JSON API",
+            "gRPC API"
+        ],
+        "right": [
+            "S3 compatibility",
+            "OAuth 2.0 authentication",
+            "Low-latency operations"
+        ]
+    },
+    {
+        "q": "Azure Functions warmup trigger can be used to pre-load dependencies.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Which Azure Blob Storage feature enables hierarchical namespace for analytics workloads?",
+        "type": "mcq",
+        "o": [
+            "Azure Data Lake Storage Gen2",
+            "Blob storage with HNS",
+            "Azure Files",
+            "Premium Blob Storage"
+        ]
+    },
+    {
+        "q": "In BigQuery, a _____ specifies the structure of a table including column names and types.",
+        "type": "fill_blank",
+        "answers": [
+            "schema"
+        ],
+        "other_options": [
+            "definition",
+            "metadata",
+            "descriptor",
+            "layout"
+        ]
+    },
+    {
+        "q": "Cosmos DB manual failover allows switching the write region without data loss.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Which Cloud Functions runtime supports Java 17?",
+        "type": "mcq",
+        "o": [
+            "Cloud Functions 2nd gen",
+            "Cloud Functions 1st gen",
+            "Cloud Run",
+            "App Engine"
+        ]
+    },
+    {
+        "q": "Azure Service Bus _____ allows a receiver to abandon a message and make it available for reprocessing.",
+        "type": "fill_blank",
+        "answers": [
+            "abandon"
+        ],
+        "other_options": [
+            "defer",
+            "dead-letter",
+            "release",
+            "unlock"
+        ]
+    },
+    {
+        "q": "What is the default TTL for Pub/Sub messages if not acknowledged?",
+        "type": "short_answer",
+        "answers": [
+            "7 days",
+            "168 hours"
+        ],
+        "isCaseSensitive": false
+    },
+    {
+        "q": "Which Firestore feature provides strongly consistent timestamp ordering of mutations?",
+        "type": "mcq",
+        "o": [
+            "Server timestamps",
+            "Client timestamps",
+            "Document timestamps",
+            "Field timestamps"
+        ]
+    },
+    {
+        "q": "Match the Cosmos DB SDK to its language support:",
+        "type": "match",
+        "left": [
+            "Java SDK v4",
+            ".NET SDK v3",
+            "Python SDK",
+            "Node.js SDK"
+        ],
+        "right": [
+            "Maven package",
+            "NuGet package",
+            "pip package",
+            "npm package"
+        ]
+    },
+    {
+        "q": "BigQuery ML supports unsupervised learning with PCA and K-means models.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Which GCS feature allows configuring custom domain names for bucket access?",
+        "type": "mcq",
+        "o": [
+            "Custom domains",
+            "Cloud CDN",
+            "Load Balancer integration",
+            "DNS routing"
+        ]
+    },
+    {
+        "q": "Azure Functions _____ plan provides network isolation via dedicated App Service Environment.",
+        "type": "fill_blank",
+        "answers": [
+            "isolated"
+        ],
+        "other_options": [
+            "premium",
+            "dedicated",
+            "consumption",
+            "enterprise"
+        ]
+    },
+    {
+        "q": "Cosmos DB materialized views are not natively supported and require change feed processing.",
+        "type": "true_false",
+        "correct": "True"
+    }
+]

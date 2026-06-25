@@ -1,0 +1,103 @@
+{
+    "id": "learn_database_files",
+    "topicId": "database_files",
+    "topicTitle": "Database & File Handling",
+    "description": "Integrate SQL databases using SQLAlchemy and learn to handle file uploads in FastAPI.",
+    "baseKP": 80,
+    "slides": [
+        {
+            "id": "dbf_1",
+            "type": "content",
+            "title": "FastAPI and Databases",
+            "content": "# The Database Layer \ud83d\uddc4\ufe0f\n\nFastAPI does not force you to use any specific database or ORM.\nYou can use standard SQL drivers, Tortoise ORM, or SQLModel.\n\nHowever, the most common and robust choice is **SQLAlchemy**.\nBecause SQLAlchemy uses Python classes (Declarative Base), it pairs beautifully with FastAPI and Pydantic!"
+        },
+        {
+            "id": "dbf_2",
+            "type": "content",
+            "title": "SQLAlchemy Setup",
+            "content": "# Creating the Connection \ud83d\udd0c\n\nFirst, we create an `engine` and a `SessionLocal` class.\n\n```python_not\nfrom sqlalchemy import create_engine\nfrom sqlalchemy.orm import sessionmaker, declarative_base\n\nSQLALCHEMY_DATABASE_URL = \"sqlite:///./sql_app.db\"\n\nengine = create_engine(\n    # connect_args is only needed for SQLite!\n    SQLALCHEMY_DATABASE_URL, connect_args={\"check_same_thread\": False}\n)\n\n# We will use this class to create a new session per request\nSessionLocal = sessionmaker(autocommit=False, autoflush=False, bind=engine)\n\nBase = declarative_base()\n```"
+        },
+        {
+            "id": "dbf_3",
+            "type": "content",
+            "title": "Pydantic vs SQLAlchemy Models",
+            "content": "# Two Types of Models \ud83d\udc6f\n\nThis is the most confusing part for beginners!\n\n1. **SQLAlchemy Models:** These define the structure of your *Database Tables*. They are used to read/write to the DB.\n2. **Pydantic Models:** These define the structure of your *API JSON*. They validate incoming HTTP requests and format outgoing HTTP responses.\n\n*You need both!* You receive a Pydantic model from the user, convert it to an SQLAlchemy model, save it to the DB, fetch an SQLAlchemy model, and return it as a Pydantic model."
+        },
+        {
+            "id": "dbf_4",
+            "type": "content",
+            "title": "Creating the DB Session Dependency",
+            "content": "# The Database Dependency \ud83d\udc89\n\nWe don't want a single, global database session (it would crash under concurrent requests).\nWe want a fresh session for every HTTP request, which closes when the request is done.\n\nWe use a `yield` dependency for this:\n\n```python_not\n# dependencies.py\ndef get_db():\n    db = SessionLocal()\n    try:\n        yield db\n    finally:\n        db.close()\n```"
+        },
+        {
+            "id": "dbf_5",
+            "type": "content",
+            "title": "Bringing it Together",
+            "content": "# The Full Route \ud83d\udee3\ufe0f\n\nHere is how everything connects in your FastAPI route.\n\n```python_not\nfrom fastapi import Depends\nfrom sqlalchemy.orm import Session\n# schemas is Pydantic, models is SQLAlchemy\nfrom . import schemas, models, dependencies \n\n@app.post(\"/users/\", response_model=schemas.UserOut)\ndef create_user(user: schemas.UserCreate, db: Session = Depends(dependencies.get_db)):\n    \n    # 1. Convert Pydantic JSON schema to SQLAlchemy DB Model\n    db_user = models.User(email=user.email, hashed_password=user.password)\n    \n    # 2. Save to database\n    db.add(db_user)\n    db.commit()\n    db.refresh(db_user)\n    \n    # 3. Return the DB object (FastAPI converts it back to Pydantic UserOut)\n    return db_user\n```"
+        },
+        {
+            "id": "dbf_quiz_1",
+            "type": "quiz",
+            "title": "Knowledge Check: Databases",
+            "content": "Test your DB integration knowledge.",
+            "quizQuestion": "Why is the `get_db` dependency written using `yield` instead of `return`?",
+            "quizOptions": [
+                "Because it is an asynchronous function.",
+                "So that the database connection can be safely closed in the `finally` block after the HTTP response has been sent.",
+                "Because SQLAlchemy sessions are Python generators.",
+                "To prevent SQL injection attacks."
+            ],
+            "correctOptionIndex": 1
+        },
+        {
+            "id": "dbf_6",
+            "type": "content",
+            "title": "Alembic Migrations",
+            "content": "# Managing the Schema \ud83d\uddfa\ufe0f\n\nWhen using SQLAlchemy with FastAPI, you shouldn't use `Base.metadata.create_all(bind=engine)` in production.\nIf you change a column, your app will crash.\n\nYou must use **Alembic** to track database schema changes over time.\n\n1. `alembic init alembic`\n2. Edit `alembic/env.py` and set `target_metadata = Base.metadata`\n3. Run `alembic revision --autogenerate -m \"Initial commit\"`\n4. Run `alembic upgrade head`"
+        },
+        {
+            "id": "dbf_7",
+            "type": "content",
+            "title": "Handling Files",
+            "content": "# File Uploads \ud83d\udcc1\n\nFastAPI makes file uploads incredibly easy using `File` and `UploadFile`.\n\nTo use them, you must install the `python-multipart` library, because files are sent as `multipart/form-data` instead of JSON.\n\n```bash\npip install python-multipart\n```"
+        },
+        {
+            "id": "dbf_8",
+            "type": "content",
+            "title": "UploadFile vs File",
+            "content": "# Memory vs Spooled \ud83e\udde0\n\n```python_not\nfrom fastapi import FastAPI, File, UploadFile\n\n@app.post(\"/uploadfile/\")\nasync def create_upload_file(file: UploadFile):\n    return {\"filename\": file.filename}\n```\n\nWhy use `UploadFile` instead of `bytes = File()`?\n1. **`UploadFile` is Spooled:** If the user uploads a 5GB video, `UploadFile` writes it directly to the hard drive. If you use `File()`, it loads all 5GB into RAM, crashing your server!\n2. **Metadata:** It gives you the `file.filename` and `file.content_type` (e.g., `image/jpeg`).\n3. **File-like interface:** It acts like a normal Python file, allowing you to `await file.read()` or `await file.seek(0)`."
+        },
+        {
+            "id": "dbf_9",
+            "type": "content",
+            "title": "Saving Uploaded Files",
+            "content": "# Writing to Disk \ud83d\udcbe\n\nTo save the uploaded file to your server, you use standard Python file operations.\nBecause `UploadFile` uses async methods, we can save it cleanly.\n\n```python_not\nimport shutil\nfrom pathlib import Path\nfrom fastapi import FastAPI, UploadFile\n\n@app.post(\"/upload/\")\nasync def upload_image(file: UploadFile):\n    # Define where to save the file\n    save_path = Path(\"uploaded_images\") / file.filename\n    \n    # Open a local file and copy the contents of the upload into it\n    with open(save_path, \"wb\") as buffer:\n        shutil.copyfileobj(file.file, buffer)\n        \n    return {\"status\": \"success\", \"saved_to\": str(save_path)}\n```"
+        },
+        {
+            "id": "dbf_10",
+            "type": "content",
+            "title": "Multiple Files",
+            "content": "# Batch Uploads \ud83d\udcda\n\nYou can easily allow users to upload multiple files at once by declaring a `list` of `UploadFile`.\n\n```python_not\n@app.post(\"/uploadfiles/\")\nasync def create_upload_files(files: list[UploadFile]):\n    filenames = []\n    for file in files:\n        filenames.append(file.filename)\n        # Add saving logic here\n        \n    return {\"uploaded_files\": filenames}\n```\nIn the HTML form, the `<input type=\"file\" multiple>` element allows selecting several files."
+        },
+        {
+            "id": "dbf_quiz_2",
+            "type": "quiz",
+            "title": "Knowledge Check: File Uploads",
+            "content": "Test your multipart knowledge.",
+            "quizQuestion": "Why is `UploadFile` vastly preferred over `File()` for handling file uploads in FastAPI?",
+            "quizOptions": [
+                "Because File() cannot accept PDF documents.",
+                "Because UploadFile streams large files directly to disk instead of loading them entirely into RAM.",
+                "Because UploadFile automatically compresses images.",
+                "Because File() requires a third-party AWS S3 bucket."
+            ],
+            "correctOptionIndex": 1
+        },
+        {
+            "id": "dbf_11",
+            "type": "content",
+            "title": "Summary",
+            "content": "# Summary \ud83c\udf89\n\nYou can now persist data and accept files!\n\n## Key Takeaways\n- \u2705 **SQLAlchemy:** The standard ORM used with FastAPI.\n- \u2705 **Dual Models:** Use Pydantic to validate JSON HTTP requests, and SQLAlchemy to define Database tables.\n- \u2705 **Database Dependency:** Use a `yield` dependency to create a fresh DB session for each request and close it afterward.\n- \u2705 **python-multipart:** Required to parse `multipart/form-data` uploads.\n- \u2705 **UploadFile:** The best way to handle uploads. It provides metadata and safely spools large files to disk to prevent RAM exhaustion.\n- \u2705 **shutil:** Use `shutil.copyfileobj()` to save uploaded files directly to your server's hard drive."
+        }
+    ]
+}

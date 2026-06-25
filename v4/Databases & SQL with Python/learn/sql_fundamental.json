@@ -1,0 +1,153 @@
+{
+    "id": "learn_sql_fundamental",
+    "topicId": "sql_fundamental",
+    "topicTitle": "SQL Fundamentals",
+    "description": "Master the basics of SQL including SELECT, INSERT, UPDATE, DELETE, and filtering data.",
+    "baseKP": 75,
+    "slides": [
+        {
+            "id": "sql_fun_1",
+            "type": "content",
+            "title": "Introduction to SQL",
+            "content": "# Welcome to SQL Fundamentals \ud83d\uddc4\ufe0f\n\nStructured Query Language (SQL) is the standard language for managing and manipulating relational databases.\n\n## What you'll learn:\n- **CRUD Operations** - Create, Read, Update, Delete\n- **Filtering Data** - Using the WHERE clause\n- **Sorting and Limiting** - ORDER BY and LIMIT\n- **Advanced Queries** - DISTINCT, Aliases, and CASE WHEN\n\n> \ud83d\udca1 **Fun Fact:** SQL was initially developed at IBM in the early 1970s and was originally called SEQUEL (Structured English Query Language)!\n\n## Why Learn SQL?\n- \ud83d\udcca **Data Analysis** - Extract insights from massive datasets\n- \ud83c\udfd7\ufe0f **Backend Dev** - Interact with databases in web applications\n- \ud83d\ude80 **Universal Standard** - Used across PostgreSQL, MySQL, SQLite, and more."
+        },
+        {
+            "id": "sql_fun_2",
+            "type": "content",
+            "title": "The Relational Database Model",
+            "content": "# Relational Databases \ud83c\udfdb\ufe0f\n\nBefore diving into commands, let's understand how data is stored.\n\n## Tables, Rows, and Columns\n- **Table (Relation):** A collection of related data entries.\n- **Column (Field):** A specific attribute (e.g., `name`, `age`, `email`).\n- **Row (Record):** A single entry containing data for each column.\n\n### Example: `users` table\n| id | name | age | email |\n|----|------|-----|-------|\n| 1 | Alice | 28 | alice@email.com |\n| 2 | Bob | 34 | bob@email.com |\n\n> \ud83d\udd11 **Primary Key:** A unique identifier for each row (like the `id` column above)."
+        },
+        {
+            "id": "sql_fun_3",
+            "type": "content",
+            "title": "The SELECT Statement",
+            "content": "# The SELECT Statement \ud83d\udd0d\n\nThe `SELECT` statement is the most commonly used SQL command. It allows you to retrieve data from a database.\n\n## Basic Syntax\n```sql_not\nSELECT column1, column2 FROM table_name;\n```\n\n## Selecting Everything\nIf you want to fetch all columns from a table, use the asterisk (`*`) wildcard:\n```sql_not\nSELECT * FROM users;\n```\n\n> \u26a0\ufe0f **Best Practice:** In production applications, it's better to explicitly name the columns you need rather than using `SELECT *`, as it reduces the amount of data transferred and improves performance."
+        },
+        {
+            "id": "sql_fun_4",
+            "type": "content",
+            "title": "Selecting Specific Columns",
+            "content": "# Selecting Specific Columns \ud83c\udfaf\n\nOften, you only need a subset of the data in a table.\n\n## Example\nLet's say we only want the `name` and `email` from our `users` table:\n\n```sql_not\nSELECT name, email FROM users;\n```\n\n**Result:**\n| name | email |\n|------|-------|\n| Alice | alice@email.com |\n| Bob | bob@email.com |\n\n## Python Integration\nHere's how you might execute this query using Python's built-in `sqlite3` library:\n\n<!-- FULL_CODE_START\nimport sqlite3\n\n# Create an in-memory database for demonstration\nconn = sqlite3.connect(':memory:')\ncursor = conn.cursor()\n\n# Setup table and data\ncursor.execute('''CREATE TABLE users (id INTEGER PRIMARY KEY, name TEXT, email TEXT)''')\ncursor.execute(\"INSERT INTO users (name, email) VALUES ('Alice', 'alice@email.com')\")\ncursor.execute(\"INSERT INTO users (name, email) VALUES ('Bob', 'bob@email.com')\")\nconn.commit()\n\n# Execute SELECT\nprint(\"Executing: SELECT name, email FROM users;\")\ncursor.execute(\"SELECT name, email FROM users;\")\n\n# Fetch and print results\nrows = cursor.fetchall()\nfor row in rows:\n    print(f\"Name: {row[0]}, Email: {row[1]}\")\n\nconn.close()\nFULL_CODE_END -->"
+        },
+        {
+            "id": "sql_fun_5",
+            "type": "content",
+            "title": "The WHERE Clause",
+            "content": "# Filtering Data with WHERE \ud83d\udd75\ufe0f\n\nThe `WHERE` clause is used to filter records, returning only those that fulfill a specified condition.\n\n## Basic Syntax\n```sql_not\nSELECT column1, column2 \nFROM table_name\nWHERE condition;\n```\n\n## Example\nSelect users who are older than 30:\n```sql_not\nSELECT * FROM users WHERE age > 30;\n```\n\n## Common Operators\n| Operator | Description |\n|----------|-------------|\n| `=` | Equal |\n| `>` | Greater than |\n| `<` | Less than |\n| `>=` | Greater than or equal |\n| `<=` | Less than or equal |\n| `<>` or `!=` | Not equal |"
+        },
+        {
+            "id": "sql_fun_6",
+            "type": "content",
+            "title": "Logical Operators (AND, OR, NOT)",
+            "content": "# Logical Operators \ud83e\udde0\n\nYou can combine multiple conditions in a `WHERE` clause using `AND`, `OR`, and `NOT`.\n\n## The AND Operator\nRequires BOTH conditions to be true:\n```sql_not\nSELECT * FROM users WHERE age > 25 AND role = 'admin';\n```\n\n## The OR Operator\nRequires AT LEAST ONE condition to be true:\n```sql_not\nSELECT * FROM users WHERE country = 'USA' OR country = 'Canada';\n```\n\n## The NOT Operator\nReverses the condition:\n```sql_not\nSELECT * FROM users WHERE NOT status = 'inactive';\n```\n\n> \ud83d\udca1 **Tip:** You can use parentheses to group complex logic, e.g., `WHERE (age > 18 OR country = 'UK') AND status = 'active'`"
+        },
+        {
+            "id": "sql_fun_quiz_1",
+            "type": "quiz",
+            "title": "Knowledge Check: Filtering",
+            "content": "Test your understanding of the WHERE clause.",
+            "quizQuestion": "Which SQL statement selects all customers from the 'customers' table who live in 'London'?",
+            "quizOptions": [
+                "SELECT * FROM customers WHERE city = 'London';",
+                "SELECT London FROM customers;",
+                "SELECT * FROM customers IF city = 'London';",
+                "GET customers WHERE city IS 'London';"
+            ],
+            "correctOptionIndex": 0
+        },
+        {
+            "id": "sql_fun_7",
+            "type": "content",
+            "title": "The DISTINCT Keyword",
+            "content": "# Unique Values with DISTINCT \ud83e\udd84\n\nThe `SELECT DISTINCT` statement is used to return only distinct (different) values.\n\nInside a table, a column often contains many duplicate values. Sometimes you only want to list the different values.\n\n## Syntax\n```sql_not\nSELECT DISTINCT column_name FROM table_name;\n```\n\n## Example\nImagine an `orders` table with a `country` column. To see which countries your customers are from (without duplicates):\n\n```sql_not\nSELECT DISTINCT country FROM orders;\n```\n\nIf the column had `['USA', 'UK', 'USA', 'Canada', 'UK']`, the result would be `['USA', 'UK', 'Canada']`."
+        },
+        {
+            "id": "sql_fun_8",
+            "type": "content",
+            "title": "Sorting with ORDER BY",
+            "content": "# Sorting Data: ORDER BY \ud83d\udd00\n\nThe `ORDER BY` keyword is used to sort the result set in ascending or descending order.\n\n- It sorts records in **ascending** order (`ASC`) by default.\n- To sort in descending order, use the `DESC` keyword.\n\n## Syntax\n```sql_not\nSELECT column1, column2 FROM table_name ORDER BY column1 ASC|DESC;\n```\n\n## Examples\nSort users by age (youngest first):\n```sql_not\nSELECT * FROM users ORDER BY age;\n```\n\nSort users by age (oldest first), then by name alphabetically:\n```sql_not\nSELECT * FROM users ORDER BY age DESC, name ASC;\n```"
+        },
+        {
+            "id": "sql_fun_9",
+            "type": "content",
+            "title": "Restricting Output with LIMIT",
+            "content": "# Limiting Results \ud83d\uded1\n\nThe `LIMIT` clause is used to specify the number of records to return. This is especially useful for large tables with thousands of records.\n\n## Syntax\n```sql_not\nSELECT column_name(s) FROM table_name LIMIT number;\n```\n\n## Top N Queries\nTo get the top 3 highest-paid employees:\n```sql_not\nSELECT name, salary \nFROM employees \nORDER BY salary DESC \nLIMIT 3;\n```\n\n## Offset (Pagination)\nYou can also skip records using `OFFSET`:\n```sql_not\n-- Get rows 11 through 20\nSELECT * FROM products LIMIT 10 OFFSET 10;\n```"
+        },
+        {
+            "id": "sql_fun_10",
+            "type": "content",
+            "title": "Using Aliases (AS)",
+            "content": "# Renaming with Aliases \ud83c\udfad\n\nAliases are used to give a table or a column a temporary name. This is often used to make column names more readable in the output.\n\n## Syntax\n```sql_not\nSELECT column_name AS alias_name FROM table_name;\n```\n\n## Column Alias\n```sql_not\nSELECT first_name AS Name, date_of_birth AS DOB FROM users;\n```\n\n## Table Alias (Useful in Joins)\n```sql_not\nSELECT u.name, u.email FROM users AS u;\n```\n\n> \ud83d\udca1 **Note:** The `AS` keyword is optional in most database systems, so `SELECT first_name Name` also works, but using `AS` is much clearer."
+        },
+        {
+            "id": "sql_fun_quiz_2",
+            "type": "quiz",
+            "title": "Knowledge Check: Sorting and Limiting",
+            "content": "Test your understanding of ORDER BY and LIMIT.",
+            "quizQuestion": "How do you select the 5 most recently created users?",
+            "quizOptions": [
+                "SELECT * FROM users ORDER BY created_at LIMIT 5;",
+                "SELECT * FROM users LIMIT 5 ORDER BY created_at DESC;",
+                "SELECT * FROM users ORDER BY created_at DESC LIMIT 5;",
+                "TOP 5 * FROM users ORDER BY created_at DESC;"
+            ],
+            "correctOptionIndex": 2
+        },
+        {
+            "id": "sql_fun_11",
+            "type": "content",
+            "title": "The INSERT Statement",
+            "content": "# Adding Data: INSERT INTO \ud83d\udce5\n\nThe `INSERT INTO` statement is used to insert new records in a table.\n\n## Specifying Columns\n```sql_not\nINSERT INTO table_name (column1, column2, column3)\nVALUES (value1, value2, value3);\n```\n\n## Example\n```sql_not\nINSERT INTO users (name, age, email) \nVALUES ('Charlie', 29, 'charlie@email.com');\n```\n\n## Without Specifying Columns\nIf you are adding values for all columns, you don't need to specify column names. However, values must be in the exact order of the columns:\n```sql_not\nINSERT INTO users \nVALUES (3, 'David', 42, 'david@email.com');\n```"
+        },
+        {
+            "id": "sql_fun_12",
+            "type": "content",
+            "title": "Inserting Multiple Rows",
+            "content": "# Bulk Inserts \ud83d\udce6\n\nYou can insert multiple rows in a single query by providing multiple lists of values.\n\n## Example\n```sql_not\nINSERT INTO users (name, age, email) \nVALUES \n    ('Eve', 22, 'eve@email.com'),\n    ('Frank', 31, 'frank@email.com'),\n    ('Grace', 27, 'grace@email.com');\n```\n\n## Python Integration: `executemany`\nWhen using Python's `sqlite3`, you can efficiently bulk insert using `executemany()`:\n\n<!-- FULL_CODE_START\nimport sqlite3\n\nconn = sqlite3.connect(':memory:')\ncursor = conn.cursor()\ncursor.execute('''CREATE TABLE products (name TEXT, price REAL)''')\n\n# Data to insert\nproducts_to_add = [\n    ('Laptop', 999.99),\n    ('Mouse', 25.50),\n    ('Keyboard', 45.00)\n]\n\n# Use executemany for bulk insert\ncursor.executemany(\"INSERT INTO products (name, price) VALUES (?, ?)\", products_to_add)\nconn.commit()\n\n# Verify\ncursor.execute(\"SELECT * FROM products\")\nprint(cursor.fetchall())\nconn.close()\nFULL_CODE_END -->"
+        },
+        {
+            "id": "sql_fun_13",
+            "type": "content",
+            "title": "The UPDATE Statement",
+            "content": "# Modifying Data: UPDATE \u270f\ufe0f\n\nThe `UPDATE` statement is used to modify the existing records in a table.\n\n## Syntax\n```sql_not\nUPDATE table_name\nSET column1 = value1, column2 = value2\nWHERE condition;\n```\n\n## Example\nChange Alice's age and email:\n```sql_not\nUPDATE users \nSET age = 29, email = 'alice.new@email.com' \nWHERE name = 'Alice';\n```\n\n> \u26a0\ufe0f **DANGER ZONE:** Be careful when updating records! If you omit the `WHERE` clause, ALL records in the table will be updated!\n```sql_not\n-- THIS UPDATES EVERY USER!\nUPDATE users SET status = 'active'; \n```"
+        },
+        {
+            "id": "sql_fun_14",
+            "type": "content",
+            "title": "The DELETE Statement",
+            "content": "# Removing Data: DELETE \ud83d\uddd1\ufe0f\n\nThe `DELETE` statement is used to delete existing records in a table.\n\n## Syntax\n```sql_not\nDELETE FROM table_name WHERE condition;\n```\n\n## Example\nDelete user with ID 4:\n```sql_not\nDELETE FROM users WHERE id = 4;\n```\n\n> \u26a0\ufe0f **DANGER ZONE:** Just like `UPDATE`, if you omit the `WHERE` clause, ALL records will be deleted!\n```sql_not\n-- THIS DELETES EVERY ROW!\nDELETE FROM users;\n```\n\n> \ud83d\udca1 **Tip:** To delete an entire table completely (structure and data), use `DROP TABLE table_name;`."
+        },
+        {
+            "id": "sql_fun_15",
+            "type": "content",
+            "title": "Conditional Logic: CASE WHEN",
+            "content": "# CASE WHEN Statements \ud83d\udd00\n\nThe `CASE` statement goes through conditions and returns a value when the first condition is met (like an IF-THEN-ELSE statement).\n\n## Syntax\n```sql_not\nCASE\n    WHEN condition1 THEN result1\n    WHEN condition2 THEN result2\n    ELSE result\nEND\n```\n\n## Example: Categorizing Users\n```sql_not\nSELECT name, age,\nCASE\n    WHEN age < 18 THEN 'Minor'\n    WHEN age >= 18 AND age < 65 THEN 'Adult'\n    ELSE 'Senior'\nEND AS age_category\nFROM users;\n```\nThis is incredibly useful for data analysis and creating derived columns dynamically in your query output!"
+        },
+        {
+            "id": "sql_fun_quiz_3",
+            "type": "quiz",
+            "title": "Knowledge Check: UPDATE and DELETE",
+            "content": "Test your understanding of modifying data.",
+            "quizQuestion": "What happens if you run an UPDATE or DELETE statement without a WHERE clause?",
+            "quizOptions": [
+                "The database throws a syntax error.",
+                "Only the first row in the table is affected.",
+                "Only the last row in the table is affected.",
+                "Every row in the table is affected."
+            ],
+            "correctOptionIndex": 3
+        },
+        {
+            "id": "sql_fun_16",
+            "type": "content",
+            "title": "Putting it all Together (CRUD)",
+            "content": "# CRUD Operations in Python \ud83d\udee0\ufe0f\n\nHere is a complete example of Create, Read, Update, and Delete using Python's `sqlite3`.\n\n<!-- FULL_CODE_START\nimport sqlite3\n\nprint(\"=== SQL CRUD Operations Demo ===\\n\")\n\n# 1. Connect & CREATE table\nconn = sqlite3.connect(':memory:')\ncursor = conn.cursor()\ncursor.execute('''CREATE TABLE employees (id INTEGER PRIMARY KEY, name TEXT, role TEXT, salary REAL)''')\nprint(\"Table 'employees' created.\")\n\n# 2. INSERT (Create)\nemployees_data = [\n    ('Alice', 'Developer', 85000),\n    ('Bob', 'Designer', 75000),\n    ('Charlie', 'Manager', 95000)\n]\ncursor.executemany(\"INSERT INTO employees (name, role, salary) VALUES (?, ?, ?)\", employees_data)\nconn.commit()\nprint(f\"{cursor.rowcount} records inserted.\\n\")\n\n# 3. SELECT (Read)\nprint(\"Current Employees:\")\ncursor.execute(\"SELECT * FROM employees ORDER BY salary DESC\")\nfor row in cursor.fetchall():\n    print(f\"ID: {row[0]}, Name: {row[1]}, Role: {row[2]}, Salary: ${row[3]}\")\nprint()\n\n# 4. UPDATE\ncursor.execute(\"UPDATE employees SET salary = salary + 5000 WHERE role = 'Developer'\")\nconn.commit()\nprint(\"Updated Developer salary.\\n\")\n\n# 5. DELETE\ncursor.execute(\"DELETE FROM employees WHERE name = 'Bob'\")\nconn.commit()\nprint(\"Deleted Bob.\\n\")\n\n# Final Read\nprint(\"Final Employees List:\")\ncursor.execute(\"SELECT name, salary FROM employees\")\nfor row in cursor.fetchall():\n    print(f\"{row[0]} earns ${row[1]}\")\n\nconn.close()\nFULL_CODE_END -->"
+        },
+        {
+            "id": "sql_fun_17",
+            "type": "content",
+            "title": "Summary",
+            "content": "# Congratulations! \ud83c\udf89\n\nYou've mastered the fundamentals of SQL! Let's review what you learned:\n\n## Key Takeaways\n\n### The SELECT Statement\n- \u2705 Retrieves data from tables (`SELECT * FROM table`)\n- \u2705 Filter results using `WHERE` with operators like `=`, `<`, `>`, `AND`, `OR`\n- \u2705 Remove duplicates using `DISTINCT`\n\n### Sorting and Limiting\n- \u2705 Sort results using `ORDER BY column ASC/DESC`\n- \u2705 Restrict number of rows using `LIMIT`\n\n### Modifying Data\n- \u2705 Add new data using `INSERT INTO table (cols) VALUES (vals)`\n- \u2705 Change existing data using `UPDATE table SET col=val WHERE condition`\n- \u2705 Remove data using `DELETE FROM table WHERE condition`\n\n### Advanced Concepts\n- \u2705 Rename columns dynamically with `AS` (Aliases)\n- \u2705 Add conditional logic using `CASE WHEN`\n\n## Next Steps\nNow that you know how to query a single table, the next logical step is learning how to combine data from multiple tables using **JOINs**!"
+        }
+    ]
+}

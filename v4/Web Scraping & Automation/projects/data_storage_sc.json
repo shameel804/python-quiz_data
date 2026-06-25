@@ -1,0 +1,32 @@
+[
+  {
+    "title": "Saving Scraped Data to CSV \ud83d\udcdd",
+    "ques": "Write a Python snippet using the built-in `csv` module to write a single row `['Alice', 25]` into a file named `data.csv`.",
+    "answer": {
+      "type": "code",
+      "lang": "python",
+      "content": "import csv\n\nwith open('data.csv', 'w', newline='') as file:\n    writer = csv.writer(file)\n    writer.writerow(['Alice', 25])"
+    },
+    "explanation": "The `csv` module is a lightweight way to store structured data. Using `newline=''` prevents extra blank lines in Windows."
+  },
+  {
+    "title": "Exporting Data in Scrapy \ud83d\udce6",
+    "ques": "What command-line argument do you pass to `scrapy crawl` to automatically save the output items to a file named `output.json`?",
+    "answer": {
+      "type": "code",
+      "lang": "bash",
+      "content": "scrapy crawl myspider -O output.json"
+    },
+    "explanation": "Scrapy's Feed Exports make it trivial to export extracted data into JSON, CSV, or XML without writing custom code."
+  },
+  {
+    "title": "Scheduling Scripts with Cron \ud83d\udd52",
+    "ques": "Write a Linux crontab expression to run a python script `scraper.py` every day exactly at 3:00 AM.",
+    "answer": {
+      "type": "code",
+      "lang": "bash",
+      "content": "0 3 * * * /usr/bin/python3 /path/to/scraper.py"
+    },
+    "explanation": "Cron is a time-based job scheduler. The format is `Minute Hour DayOfMonth Month DayOfWeek`."
+  }
+]

@@ -1,0 +1,91 @@
+{
+    "id": "learn_matplotlib_adva",
+    "topicId": "matplotlib_adva",
+    "topicTitle": "Matplotlib Advanced",
+    "description": "Unlock the full power of Matplotlib. Master complex grid layouts, 3D plotting, custom animations, and fine-tuning rcParams for publication-quality figures.",
+    "baseKP": 75,
+    "slides": [
+        {
+            "id": "mpl_adv_1",
+            "type": "content",
+            "title": "The Foundation of Python Viz",
+            "content": "# Deep Dive into Matplotlib 🧱\n\nSeaborn and Pandas plotting are just high-level wrappers around **Matplotlib**.\n\nWhen you need to publish a paper in a scientific journal, or when a client demands a chart formatted to exact pixel specifications, the high-level libraries often fail.\n\nTo achieve absolute, pixel-perfect control, you must master the advanced, low-level Matplotlib Object-Oriented API."
+        },
+        {
+            "id": "mpl_adv_2",
+            "type": "content",
+            "title": "The Object-Oriented API",
+            "content": "# `Figure` vs `Axes` 🖼️\n\nStop using `plt.plot()`. That is the \"State-based\" API designed to mimic MATLAB. It is dangerous in complex scripts.\n\nAlways use the **Object-Oriented API**.\n\n```python_not\nimport matplotlib.pyplot as plt\n\n# 1. Create a Figure (The blank canvas)\nfig = plt.figure(figsize=(8, 6))\n\n# 2. Add an Axes to the canvas (The actual chart area)\n# [left, bottom, width, height] as fractions of the figure size\nax = fig.add_axes([0.1, 0.1, 0.8, 0.8]) \n\n# 3. Call methods on the specific Axes object\nax.plot([1, 2, 3], [4, 1, 2])\nax.set_title(\"Object Oriented Method\")\n\nplt.show()\n```"
+        },
+        {
+            "id": "mpl_adv_3",
+            "type": "content",
+            "title": "Complex Layouts",
+            "content": "# `GridSpec` 📐\n\n`plt.subplots(2, 2)` creates a boring, perfectly even 2x2 grid.\n\nWhat if you want the top chart to span the entire width, and two smaller charts below it? You need **GridSpec**.\n\n```python_not\nimport matplotlib.gridspec as gridspec\n\nfig = plt.figure(figsize=(10, 8))\n\n# Create a 2x2 grid specification\ngs = gridspec.GridSpec(2, 2, figure=fig)\n\n# ax1 takes row 0, and spans BOTH columns (:)\nax1 = fig.add_subplot(gs[0, :])\nax1.set_title('Header Chart')\n\n# ax2 takes row 1, column 0\nax2 = fig.add_subplot(gs[1, 0])\nax2.set_title('Bottom Left')\n\n# ax3 takes row 1, column 1\nax3 = fig.add_subplot(gs[1, 1])\nax3.set_title('Bottom Right')\n```"
+        },
+        {
+            "id": "mpl_adv_4",
+            "type": "content",
+            "title": "Twin Axes",
+            "content": "# `twinx()` ♊\n\nLike Plotly's Secondary Y-axis, Matplotlib allows you to overlay two charts with different Y-scales perfectly.\n\n```python_not\nfig, ax1 = plt.subplots()\n\n# Plot the primary data\nax1.plot([1, 2, 3], [20, 25, 22], color='red')\nax1.set_ylabel('Temperature (C)', color='red')\n\n# Create a twin Axes sharing the same X-axis\nax2 = ax1.twinx()\n\n# Plot the secondary data (massive scale!)\nax2.plot([1, 2, 3], [4000, 5000, 3000], color='blue')\nax2.set_ylabel('Revenue ($)', color='blue')\n```"
+        },
+        {
+            "id": "mpl_adv_quiz_1",
+            "type": "quiz",
+            "title": "Layout Quiz",
+            "content": "Test your Matplotlib knowledge.",
+            "quizQuestion": "Which Matplotlib tool should you use if you need to create a layout where one subplot takes up 75% of the figure, and another subplot takes up the remaining 25%?",
+            "quizOptions": [
+                "plt.subplots()",
+                "GridSpec",
+                "twinx()",
+                "plt.plot()"
+            ],
+            "correctOptionIndex": 1
+        },
+        {
+            "id": "mpl_adv_5",
+            "type": "content",
+            "title": "3D Plotting",
+            "content": "# `Axes3D` 🧊\n\nMatplotlib supports 3D rendering. You simply pass `projection='3d'` when creating the Axes.\n\n```python_not\nimport numpy as np\n# Must import this for 3D projections!\nfrom mpl_toolkits.mplot3d import Axes3D \n\nfig = plt.figure()\n# Create a 3D Axes\nax = fig.add_subplot(111, projection='3d')\n\n# Generate some spiral data\nz = np.linspace(0, 15, 1000)\nx = np.sin(z)\ny = np.cos(z)\n\n# Plot a 3D line\nax.plot3D(x, y, z, 'gray')\n\nax.set_title('3D Spiral')\nplt.show()\n```"
+        },
+        {
+            "id": "mpl_adv_6",
+            "type": "content",
+            "title": "Animations",
+            "content": "# `FuncAnimation` 🎞️\n\nYou can generate MP4 videos or GIFs directly from Matplotlib.\n\nThe `FuncAnimation` class takes your Figure, and a custom `animate` function. It calls the `animate` function repeatedly (e.g., 60 times for 60 frames), and you update the plot data slightly each time.\n\n```python_not\nfrom matplotlib.animation import FuncAnimation\n\nfig, ax = plt.subplots()\nxdata, ydata = [], []\nln, = plt.plot([], [], 'r-', animated=True)\n\ndef init():\n    ax.set_xlim(0, 10)\n    ax.set_ylim(-1.5, 1.5)\n    return ln,\n\ndef update(frame):\n    xdata.append(frame)\n    ydata.append(np.sin(frame))\n    ln.set_data(xdata, ydata) # Update the line data!\n    return ln,\n\n# Generate an animation spanning 0 to 10\nani = FuncAnimation(fig, update, frames=np.linspace(0, 10, 128), init_func=init, blit=True)\n# ani.save('sine_wave.gif')\n```"
+        },
+        {
+            "id": "mpl_adv_7",
+            "type": "content",
+            "title": "Custom Colormaps",
+            "content": "# `LinearSegmentedColormap` 🌈\n\nIf your company has strict brand guidelines, the default `viridis` colormap won't work.\n\nYou can define a custom gradient from scratch.\n\n```python_not\nfrom matplotlib.colors import LinearSegmentedColormap\n\n# Define colors (can be hex codes or names)\ncolors = ['#FF0000', '#FFFFFF', '#0000FF'] # Red -> White -> Blue\n\n# Create the colormap\ncustom_cmap = LinearSegmentedColormap.from_list('my_brand', colors)\n\n# Use it in a plot (like a scatter or imshow)\n# ax.scatter(x, y, c=z, cmap=custom_cmap)\n```"
+        },
+        {
+            "id": "mpl_adv_8",
+            "type": "content",
+            "title": "Global Settings",
+            "content": "# `rcParams` ⚙️\n\nIf you want every plot in your script to have a dark background, size 14 font, and dashed grid lines, you don't want to pass those arguments to every single function call.\n\nYou update the `matplotlib.rcParams` dictionary. This configures the global defaults for the entire library.\n\n```python_not\nimport matplotlib as mpl\n\n# Set global defaults\nmpl.rcParams['lines.linewidth'] = 2\nmpl.rcParams['lines.color'] = 'r'\nmpl.rcParams['font.size'] = 14\nmpl.rcParams['axes.grid'] = True\nmpl.rcParams['grid.linestyle'] = '--'\n\n# Now, ALL plots will inherit these settings automatically!\n```"
+        },
+        {
+            "id": "mpl_adv_quiz_2",
+            "type": "quiz",
+            "title": "Advanced Matplotlib Quiz",
+            "content": "Check your Matplotlib skills.",
+            "quizQuestion": "What is the correct and most robust way to set global aesthetic defaults (like font size and default line width) for every Matplotlib chart generated in your Python script?",
+            "quizOptions": [
+                "Pass the arguments individually to every `ax.plot()` call.",
+                "Modify the `matplotlib.rcParams` dictionary at the top of your script.",
+                "Use the `GridSpec` library.",
+                "Write a CSS file and import it into Matplotlib."
+            ],
+            "correctOptionIndex": 1
+        },
+        {
+            "id": "mpl_adv_9",
+            "type": "content",
+            "title": "Summary",
+            "content": "# Pixel Perfect! 🎉\n\nYou've unlocked the absolute foundation of Python visualization.\n\n## Key Takeaways\n\n- ✅ **OO API:** Always use `fig, ax = plt.subplots()` instead of `plt.plot()`. Interact with the `Axes` object.\n- ✅ **GridSpec:** Use it to create asymmetrical, complex multi-plot grid layouts.\n- ✅ **twinx():** Create secondary Y-axes to plot drastically different scales on the same chart.\n- ✅ **3D & Animation:** Use `projection='3d'` and `FuncAnimation` to bring static data to life.\n- ✅ **rcParams:** Configure global defaults so you don't repeat yourself styling individual charts.\n\nWhen high-level wrappers fail, Matplotlib is always there to save the day."
+        }
+    ]
+}

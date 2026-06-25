@@ -1,0 +1,109 @@
+{
+    "id": "learn_logging_monitor",
+    "topicId": "logging_monitor",
+    "topicTitle": "Logging, Monitoring & CI/CD",
+    "description": "Stop using print()! Learn enterprise-grade logging, structured JSON logs, Sentry error tracking, and GitHub Actions automation.",
+    "baseKP": 75,
+    "slides": [
+        {
+            "id": "log_mon_1",
+            "type": "content",
+            "title": "The Problem with print()",
+            "content": "# Why `print()` is bad 🛑\n\nWhen you first learn Python, you use `print(\"Got here!\")` to debug. In a production application, this is a disaster.\n\n1. You can't turn it off without deleting the code.\n2. You don't know *when* the print happened.\n3. You don't know *which module* the print came from.\n4. You can't filter out unimportant messages from critical errors.\n\nYou must use the built-in `logging` module."
+        },
+        {
+            "id": "log_mon_2",
+            "type": "content",
+            "title": "The logging Module",
+            "content": "# Standard Logging 📝\n\nThe standard library provides 5 levels of severity:\n1. **DEBUG:** Detailed information, typically of interest only when diagnosing problems.\n2. **INFO:** Confirmation that things are working as expected.\n3. **WARNING:** An indication that something unexpected happened, but the software is still working.\n4. **ERROR:** Due to a more serious problem, the software has not been able to perform some function.\n5. **CRITICAL:** A serious error, indicating that the program itself may be unable to continue running."
+        },
+        {
+            "id": "log_mon_3",
+            "type": "content",
+            "title": "Configuring Logging",
+            "content": "# Setting it up 🛠️\n\nBy default, Python only prints WARNING, ERROR, and CRITICAL to the console.\n\nYou must configure the root logger to see DEBUG or INFO messages, and to add useful formatting (like timestamps).\n\n```python_not\nimport logging\n\n# Configure the root logger\nlogging.basicConfig(\n    level=logging.INFO,\n    format='%(asctime)s - %(name)s - %(levelname)s - %(message)s',\n    datefmt='%Y-%m-%d %H:%M:%S'\n)\n\n# Get a specific logger for this file\nlogger = logging.getLogger(__name__)\n\nlogger.info(\"Application started.\")\n# Output: 2023-10-25 14:30:00 - __main__ - INFO - Application started.\n```"
+        },
+        {
+            "id": "log_mon_4",
+            "type": "content",
+            "title": "Structured Logs",
+            "content": "# Structured JSON Logging 🧱\n\nIn modern DevOps, humans don't read logs; machines read logs (like Datadog, ELK stack, or Splunk). \n\nMachines hate parsing raw text. They love JSON.\n\n**Structured Logging** means outputting your logs as JSON dictionaries. Instead of parsing `\"User 123 purchased item 4\"`, the machine reads `{\"event\": \"purchase\", \"user_id\": 123, \"item_id\": 4}`.\n\nYou can use libraries like `python-json-logger` to format standard logging into JSON automatically."
+        },
+        {
+            "id": "log_mon_5",
+            "type": "content",
+            "title": "Introduction to loguru",
+            "content": "# The Modern Way: `loguru` 🦉\n\nThe built-in `logging` module is powerful but notoriously difficult to configure (especially with multiple handlers). \n\nThe community favorite alternative is **`loguru`**.\n\n```bash\npip install loguru\n```\n\n```python_not\nfrom loguru import logger\n\n# No setup required! Just start logging. It's colorized by default!\nlogger.info(\"That's it, beautiful and simple logging!\")\n\n# Easily log to a file, rotating it every week\nlogger.add(\"app.log\", rotation=\"1 week\")\n\n# Easily output JSON structured logs!\nlogger.add(\"structured.log\", serialize=True)\n```"
+        },
+        {
+            "id": "log_mon_quiz_1",
+            "type": "quiz",
+            "title": "Logging Quiz",
+            "content": "Test your logging knowledge.",
+            "quizQuestion": "Why is Structured Logging (JSON logs) preferred over plain-text logging in production environments?",
+            "quizOptions": [
+                "JSON logs take up less disk space than plain text.",
+                "Python parses JSON faster than it prints strings.",
+                "It allows log aggregation tools (like Datadog or ELK) to easily index, search, and graph the log data without writing complex Regex parsers.",
+                "JSON is the only format supported by Docker."
+            ],
+            "correctOptionIndex": 2
+        },
+        {
+            "id": "log_mon_6",
+            "type": "content",
+            "title": "Error Tracking with Sentry",
+            "content": "# When Things Break 💥\n\nIf your application crashes with an unhandled exception, it dumps a stack trace into your logs.\n\nIf you have 50 servers, how do you know an error happened? Do you check the logs of all 50 servers manually every day?\n\n**Sentry** is an Error Tracking platform. When a Python exception occurs, Sentry automatically catches it, packages up the stack trace, the local variables, and the user's OS info, and sends it to a beautiful web dashboard."
+        },
+        {
+            "id": "log_mon_7",
+            "type": "content",
+            "title": "Using the Sentry SDK",
+            "content": "# Code: Sentry SDK 🛡️\n\nIntegrating Sentry into a Python app requires just 3 lines of code at the top of your main entry file.\n\n```bash\npip install sentry-sdk\n```\n\n```python_not\nimport sentry_sdk\n\n# Initialize the SDK with your unique project DSN\nsentry_sdk.init(\n    dsn=\"https://examplePublicKey@o0.ingest.sentry.io/0\",\n    traces_sample_rate=1.0 # Enable performance monitoring too!\n)\n\ndef divide_by_zero():\n    return 1 / 0\n\n# If this crashes, the error instantly appears in your Sentry dashboard\n# and you get an email alert!\ndivide_by_zero() \n```"
+        },
+        {
+            "id": "log_mon_8",
+            "type": "content",
+            "title": "CI/CD Introduction",
+            "content": "# Continuous Integration & Deployment 🤖\n\nWe've covered writing good code and logging it. But how do we get that code onto the servers safely?\n\n**CI/CD (Continuous Integration / Continuous Deployment)** is the practice of automating the testing and deployment of your code.\n\nThe most popular CI/CD tool today is **GitHub Actions**."
+        },
+        {
+            "id": "log_mon_9",
+            "type": "content",
+            "title": "GitHub Actions for Python",
+            "content": "# The Python Action YAML 🐙\n\nYou define a workflow in a `.github/workflows/main.yml` file in your repository.\n\n```yaml\nname: Python CI\n\non: [push, pull_request] # Run on every commit and PR\n\njobs:\n  build:\n    runs-on: ubuntu-latest\n    steps:\n    - uses: actions/checkout@v3\n    \n    # This official action sets up the exact Python version you need\n    - name: Set up Python 3.11\n      uses: actions/setup-python@v4\n      with:\n        python-version: \"3.11\"\n        cache: 'pip' # Automatically caches dependencies for speed!\n        \n    - name: Install dependencies\n      run: pip install -r requirements.txt pytest\n      \n    - name: Run tests\n      run: pytest\n```"
+        },
+        {
+            "id": "log_mon_10",
+            "type": "content",
+            "title": "Pipeline API Triggers",
+            "content": "# Automating the Automation ⛓️\n\nUsually, GitHub Actions are triggered by a developer pushing code (`on: push`).\n\nBut what if you want to trigger a deployment script from your internal Python dashboard?\n\nYou can configure GitHub Actions to trigger via a webhook API call (using `repository_dispatch` or `workflow_dispatch`)."
+        },
+        {
+            "id": "log_mon_11",
+            "type": "content",
+            "title": "Triggering Actions from Python",
+            "content": "# Hitting the GitHub API 🎯\n\nHere is how you can use Python's `requests` library to trigger a GitHub Action remotely.\n\n```python_not\nimport requests\nimport os\n\n# Your GitHub Personal Access Token\ntoken = os.environ[\"GITHUB_TOKEN\"]\nrepo = \"my-username/my-repo\"\n\nheaders = {\n    \"Accept\": \"application/vnd.github+json\",\n    \"Authorization\": f\"Bearer {token}\"\n}\n\npayload = {\n    \"ref\": \"main\", # The branch to run on\n    \"inputs\": {\"environment\": \"production\"}\n}\n\n# Hit the dispatch endpoint\nresponse = requests.post(\n    f\"https://api.github.com/repos/{repo}/actions/workflows/deploy.yml/dispatches\",\n    headers=headers,\n    json=payload\n)\n\nprint(\"Triggered deployment!\" if response.ok else \"Failed!\")\n```"
+        },
+        {
+            "id": "log_mon_quiz_2",
+            "type": "quiz",
+            "title": "CI/CD Quiz",
+            "content": "Check your DevOps knowledge.",
+            "quizQuestion": "In GitHub Actions, what is the primary benefit of the `actions/setup-python` step?",
+            "quizOptions": [
+                "It installs Docker.",
+                "It writes your unit tests for you.",
+                "It provisions the exact specified Python version and can seamlessly cache `pip` dependencies to dramatically speed up pipeline execution.",
+                "It automatically deploys the code to AWS."
+            ],
+            "correctOptionIndex": 2
+        },
+        {
+            "id": "log_mon_12",
+            "type": "content",
+            "title": "Summary",
+            "content": "# Production Ready! 🎉\n\nYou've completed the DevOps & Cloud module.\n\n## Key Takeaways\n\n- ✅ **Logging:** Stop using `print()`. Use the `logging` module or the easier `loguru` library.\n- ✅ **Structured Logs:** Output logs as JSON to make them easily searchable by indexing tools.\n- ✅ **Sentry:** Integrate `sentry-sdk` to automatically catch unhandled exceptions and alert your team.\n- ✅ **GitHub Actions:** Automate your testing and deployment using `.yml` workflows.\n- ✅ **API Triggers:** Use Python to programmatically trigger CI/CD pipelines via GitHub's REST API.\n\nYour applications are now robust, observable, and automated!"
+        }
+    ]
+}

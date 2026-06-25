@@ -1,0 +1,5455 @@
+[
+    {
+        "q": "What is the primary purpose of Matplotlib's `GridSpec`?",
+        "type": "mcq",
+        "o": [
+            "To create complex, non-uniform grid layouts for subplots",
+            "To adjust the spacing between tick labels",
+            "To specify the grid line style for a single plot",
+            "To save figures in a grid format like PNG"
+        ]
+    },
+    {
+        "q": "Which module provides the `GridSpec` class?",
+        "type": "mcq",
+        "o": [
+            "matplotlib.gridspec",
+            "matplotlib.subplots",
+            "matplotlib.layouts",
+            "matplotlib.axes"
+        ]
+    },
+    {
+        "q": "What is a 'twin axes' in Matplotlib typically used for?",
+        "type": "mcq",
+        "o": [
+            "Plotting two different scales (e.g., temperature in Celsius and Fahrenheit) on the same plot",
+            "Creating two identical copies of the same plot",
+            "Displaying a plot side-by-side with its mirror image",
+            "Generating a dual-monitor display of the figure"
+        ]
+    },
+    {
+        "q": "The ______ function creates a second axes that shares the x-axis but has an independent y-axis.",
+        "type": "fill_blank",
+        "answers": [
+            "twinx"
+        ],
+        "other_options": [
+            "twiny",
+            "twin",
+            "dual_axis",
+            "secondary_y"
+        ]
+    },
+    {
+        "q": "Which method is used to create a new axes that shares the y-axis?",
+        "type": "mcq",
+        "o": [
+            "ax.twiny()",
+            "ax.twinx()",
+            "ax.twin()",
+            "ax.dualx()"
+        ]
+    },
+    {
+        "q": "In Matplotlib, 3D plotting is primarily handled by which class?",
+        "type": "mcq",
+        "o": [
+            "Axes3D",
+            "Plot3D",
+            "Axes3",
+            "mplot3d.Axes"
+        ]
+    },
+    {
+        "q": "How many rows does this GridSpec configuration create?",
+        "c": "import matplotlib.pyplot as plt\nfig = plt.figure()\ngs = fig.add_gridspec(3, 2)",
+        "type": "slider",
+        "min": 1,
+        "max": 5,
+        "correct": 3
+    },
+    {
+        "q": "What is the purpose of `FuncAnimation` in Matplotlib?",
+        "type": "mcq",
+        "o": [
+            "To create animations by repeatedly calling a function to update the plot",
+            "To add functional annotations to a static plot",
+            "To automatically animate any static plot without user code",
+            "To create mathematical function diagrams"
+        ]
+    },
+    {
+        "q": "Match the GridSpec configuration terms with their specific purposes.",
+        "type": "memory",
+        "pairs": {
+            "gridspec_kw": "Subplot configuration dict",
+            "height_ratios": "Relative row heights",
+            "width_ratios": "Relative column widths"
+        }
+    },
+    {
+        "q": "Global plotting parameters like font size and figure DPI are set using a dictionary-like object called ______.",
+        "type": "fill_blank",
+        "answers": [
+            "rcParams"
+        ],
+        "other_options": [
+            "mplConfig",
+            "plotParams",
+            "styleSheet",
+            "pltSettings"
+        ]
+    },
+    {
+        "q": "Which of these is NOT a layout manager in Matplotlib?",
+        "type": "odd_one_out",
+        "options": [
+            "GridSpec",
+            "subplots",
+            "subplot2grid",
+            "Axes3D"
+        ],
+        "correct": "Axes3D"
+    },
+    {
+        "q": "What is the primary goal of creating 'publication-quality figures'?",
+        "type": "mcq",
+        "o": [
+            "To produce clear, well-formatted visuals suitable for journals or reports",
+            "To maximize the use of colors and 3D effects",
+            "To generate figures that are exclusively in the PDF format",
+            "To ensure the plot file size is small"
+        ]
+    },
+    {
+        "q": "A custom colormap is created by combining existing colormaps in a `LinearSegmentedColormap`.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Match the Matplotlib feature with its typical use case.",
+        "type": "match",
+        "left": [
+            "GridSpec",
+            "twin axes",
+            "FuncAnimation",
+            "rcParams"
+        ],
+        "right": [
+            "Non-uniform subplot layouts",
+            "Dual y-axis on a single plot",
+            "Creating a live-updating chart",
+            "Setting global default styles"
+        ]
+    },
+    {
+        "q": "What does `ax.twinx()` return?",
+        "type": "mcq",
+        "o": [
+            "A new Axes object sharing the x-axis",
+            "The twin of the x-axis label",
+            "A copy of the original axes",
+            "A tuple of (x, y) coordinates"
+        ]
+    },
+    {
+        "q": "To create a 3D projection, you pass the argument ______ to `add_subplot()` or `subplots()`.",
+        "type": "fill_blank",
+        "answers": [
+            "projection='3d'"
+        ],
+        "other_options": [
+            "'3d'",
+            "three_d=True",
+            "dim=3",
+            "axes3d"
+        ]
+    },
+    {
+        "q": "Which function is used to initialize a figure for an animation in `FuncAnimation`?",
+        "type": "mcq",
+        "o": [
+            "An `init_func` passed as an argument",
+            "`plt.animation_init()`",
+            "The `__init__` method of FuncAnimation",
+            "A built-in default initialization; no function is needed"
+        ]
+    },
+    {
+        "q": "What does the `GridSpec` parameter `width_ratios` control?",
+        "type": "mcq",
+        "o": [
+            "The relative widths of columns in the grid",
+            "The aspect ratio of the entire figure",
+            "The spacing between grid cells",
+            "The linewidth of the grid lines"
+        ]
+    },
+    {
+        "q": "A `twinx()` axes is often used to plot two variables with different units against the same independent variable.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Which module must be imported to use `FuncAnimation`?",
+        "type": "short_answer",
+        "answers": [
+            "matplotlib.animation"
+        ],
+        "isCaseSensitive": false
+    },
+    {
+        "q": "What is the default format for saving publication-quality vector figures?",
+        "type": "mcq",
+        "o": [
+            "PDF",
+            "PNG",
+            "JPEG",
+            "GIF"
+        ]
+    },
+    {
+        "q": "The `plt.rcParams` object behaves like a Python ______.",
+        "type": "fill_blank",
+        "answers": [
+            "dictionary"
+        ],
+        "other_options": [
+            "list",
+            "tuple",
+            "set",
+            "module"
+        ]
+    },
+    {
+        "q": "Swipe RIGHT for configurations that span Columns, LEFT for spanning Rows.",
+        "c": "ax1 = fig.add_subplot(gs[0, :])\nax2 = fig.add_subplot(gs[:, 1])",
+        "type": "swipe_cards",
+        "left_label": "Spans Rows",
+        "right_label": "Spans Columns",
+        "cards": {
+            "gs[0, :]": "right",
+            "gs[:, 1]": "left",
+            "gs[1:3, 0]": "left"
+        }
+    },
+    {
+        "q": "What is the output of the following code?\ncustom_cycler = plt.cycler(color=['r', 'g', 'b'])\nprint(type(custom_cycler))",
+        "type": "mcq",
+        "c": "custom_cycler = plt.cycler(color=['r', 'g', 'b'])\nprint(type(custom_cycler))",
+        "o": [
+            "<class 'cycler.Cycler'>",
+            "<class 'list'>",
+            "<class 'dict'>",
+            "<class 'matplotlib.cycler'>"
+        ]
+    },
+    {
+        "q": "Unscramble the term representing the number of rows or columns a subplot occupies:",
+        "type": "word_scramble",
+        "answer": "SPAN",
+        "decoys": "XZ"
+    },
+    {
+        "q": "To save a figure with tightly cropped borders, you would use `bbox_inches='tight'` in the ______ function.",
+        "type": "fill_blank",
+        "answers": [
+            "savefig"
+        ],
+        "other_options": [
+            "show",
+            "plot",
+            "tight_layout",
+            "subplots_adjust"
+        ]
+    },
+    {
+        "q": "Match the `GridSpec` argument with its description.",
+        "type": "match",
+        "left": [
+            "nrows",
+            "ncols",
+            "width_ratios",
+            "hspace"
+        ],
+        "right": [
+            "Number of rows in grid",
+            "Number of columns in grid",
+            "Relative width of each column",
+            "Vertical spacing between subplots"
+        ]
+    },
+    {
+        "q": "In `FuncAnimation`, the `fargs` parameter is used to:",
+        "type": "mcq",
+        "o": [
+            "Pass additional arguments to the animation update function",
+            "Define the function's arguments",
+            "Specify the output file format",
+            "Set the figure's arguments"
+        ]
+    },
+    {
+        "q": "Fill in the missing parameters to create a 2x2 GridSpec:",
+        "c": "import matplotlib.pyplot as plt\nfig = plt.figure()",
+        "type": "inline_dropdown",
+        "text": "gs = fig.add_gridspec([0], [1])",
+        "dropdowns": [
+            {
+                "correct": "nrows=2",
+                "options": [
+                    "cols=2",
+                    "nrows=2",
+                    "x=2"
+                ]
+            },
+            {
+                "correct": "ncols=2",
+                "options": [
+                    "y=2",
+                    "ncols=2",
+                    "width=2"
+                ]
+            }
+        ]
+    },
+    {
+        "q": "Which statement about 3D axes is true?",
+        "type": "mcq",
+        "o": [
+            "They are created using projection='3d'",
+            "They are the default axes type in Matplotlib",
+            "They only support scatter plots",
+            "They cannot be animated"
+        ]
+    },
+    {
+        "q": "A colormap in Matplotlib maps a scalar value to a(n) ______.",
+        "type": "fill_blank",
+        "answers": [
+            "color"
+        ],
+        "other_options": [
+            "alpha channel",
+            "line style",
+            "marker size",
+            "texture"
+        ]
+    },
+    {
+        "q": "The primary purpose of setting DPI via `rcParams['figure.dpi']` is to:",
+        "type": "mcq",
+        "o": [
+            "Control the resolution of the rendered figure",
+            "Define the number of data points plotted",
+            "Set the animation frame rate",
+            "Configure the plot's interactive zoom level"
+        ]
+    },
+    {
+        "q": "A twin axes can share both the x and y axes simultaneously.",
+        "type": "true_false",
+        "correct": "False"
+    },
+    {
+        "q": "What is the name of the Matplotlib module for custom colormap creation?",
+        "type": "short_answer",
+        "answers": [
+            "matplotlib.colors",
+            "colors"
+        ],
+        "isCaseSensitive": false
+    },
+    {
+        "q": "Which `GridSpec` method allows a subplot to span multiple rows or columns?",
+        "type": "mcq",
+        "o": [
+            "Slicing the GridSpec object (e.g., gs[0, :])",
+            "Using the `span` argument in add_subplot",
+            "Calling gs.span()",
+            "Setting the `rowspan` and `colspan` parameters in subplots()"
+        ]
+    },
+    {
+        "q": "What is the typical extension for an animation saved by `FuncAnimation.save()`?",
+        "type": "mcq",
+        "o": [
+            ".mp4",
+            ".csv",
+            ".jpg",
+            ".html"
+        ]
+    },
+    {
+        "q": "To set all text in a figure to use the 'Serif' font family, you would modify the ______ key in `rcParams`.",
+        "type": "fill_blank",
+        "answers": [
+            "font.family"
+        ],
+        "other_options": [
+            "font.serif",
+            "text.font",
+            "family",
+            "text.style"
+        ]
+    },
+    {
+        "q": "What is the output of `gs = gridspec.GridSpec(2, 2); print(gs[1, 0])`?",
+        "type": "mcq",
+        "c": "gs = gridspec.GridSpec(2, 2)\nprint(gs[1, 0])",
+        "o": [
+            "A matplotlib.gridspec.SubplotSpec object",
+            "A tuple (1, 0)",
+            "The integer 1",
+            "A matplotlib.axes.Axes object"
+        ]
+    },
+    {
+        "q": "Which function stops the current animation when called?",
+        "type": "mcq",
+        "o": [
+            "ani.pause()",
+            "ani.stop()",
+            "ani.freeze()",
+            "plt.stop_animation()"
+        ]
+    },
+    {
+        "q": "The `vmin` and `vmax` parameters in a colormap function control the:",
+        "type": "mcq",
+        "o": [
+            "Range of data values that the colormap covers",
+            "Dimensions of the colorbar",
+            "Minimum and maximum alpha (transparency) values",
+            "Version of the colormap to use"
+        ]
+    },
+    {
+        "q": "For publication-quality figures, it is recommended to use rasterized (bitmap) formats for line art.",
+        "type": "true_false",
+        "correct": "False"
+    },
+    {
+        "q": "What property of an `Axes` object holds the 3D projection attributes?",
+        "type": "short_answer",
+        "answers": [
+            "axes3d"
+        ],
+        "isCaseSensitive": false
+    },
+    {
+        "q": "Which method is called to change the line data in a `FuncAnimation` update function?",
+        "type": "mcq",
+        "o": [
+            "line.set_data()",
+            "line.update()",
+            "line.redraw()",
+            "line.change()"
+        ]
+    },
+    {
+        "q": "To create a figure with a 3D projection using `plt.subplots()`, you need to import `Axes3D`.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "How many total subplots are initialized by this command?",
+        "c": "fig, axes = plt.subplots(2, 2)",
+        "type": "slider",
+        "min": 1,
+        "max": 10,
+        "correct": 4
+    },
+    {
+        "q": "Match the rcParams key with the element it styles.",
+        "type": "match",
+        "left": [
+            "axes.grid",
+            "figure.facecolor",
+            "lines.linewidth",
+            "xtick.labelsize"
+        ],
+        "right": [
+            "Toggles grid visibility",
+            "Background color of the figure",
+            "Default thickness of plotted lines",
+            "Font size for x-axis tick labels"
+        ]
+    },
+    {
+        "q": "What is the function of `tight_layout()`?",
+        "type": "mcq",
+        "o": [
+            "Automatically adjust subplot params for a tight layout",
+            "Remove all margins and borders completely",
+            "Make the lines in the plot thicker",
+            "Compress the saved file size"
+        ]
+    },
+    {
+        "q": "A custom colormap can be built from a list of colors using `ListedColormap`.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "The `FuncAnimation` class requires a ______ object as its first argument.",
+        "type": "fill_blank",
+        "answers": [
+            "Figure"
+        ],
+        "other_options": [
+            "Axes",
+            "Plot",
+            "Canvas",
+            "Line2D"
+        ]
+    },
+    {
+        "q": "What does the `sharex` argument in `plt.subplots()` do?",
+        "type": "mcq",
+        "o": [
+            "Forces all subplots to have the same x-axis limits and scale",
+            "Creates a twin x-axis on the first subplot",
+            "Duplicates the x-axis data from one subplot to another",
+            "Shares the x-axis label across all subplots"
+        ]
+    },
+    {
+        "q": "Match the twin axes methods with their descriptions.",
+        "type": "memory",
+        "pairs": {
+            "twinx": "Shared X, separate Y",
+            "twiny": "Shared Y, separate X",
+            "secondary_xaxis": "Function mapping for X"
+        }
+    },
+    {
+        "q": "Which parameter of `savefig` is crucial for setting the output resolution?",
+        "type": "short_answer",
+        "answers": [
+            "dpi"
+        ],
+        "isCaseSensitive": false
+    },
+    {
+        "q": "Which of these methods is NOT used to generate a secondary or twin axis?",
+        "type": "odd_one_out",
+        "options": [
+            "twinx",
+            "twiny",
+            "secondary_yaxis",
+            "set_title"
+        ],
+        "correct": "set_title"
+    },
+    {
+        "q": "In `GridSpec`, how would you select the cell in the first row and second column?",
+        "type": "mcq",
+        "o": [
+            "gs[0, 1]",
+            "gs[1, 0]",
+            "gs(0, 1)",
+            "gs{0}{1}"
+        ]
+    },
+    {
+        "q": "Swipe RIGHT for Y-axis operations, LEFT for X-axis operations.",
+        "type": "swipe_cards",
+        "left_label": "X-Axis",
+        "right_label": "Y-Axis",
+        "cards": {
+            "twinx()": "right",
+            "twiny()": "left",
+            "secondary_xaxis()": "left",
+            "secondary_yaxis()": "right"
+        }
+    },
+    {
+        "q": "What does the `blit=True` parameter do in `FuncAnimation`?",
+        "type": "mcq",
+        "o": [
+            "Optimizes drawing by only redrawing the parts that have changed",
+            "Clears the entire figure before each frame",
+            "Saves the animation directly to a file without displaying",
+            "Applies a blur effect to the animation"
+        ]
+    },
+    {
+        "q": "Unscramble the term for an axis that shares a dimension with another:",
+        "type": "word_scramble",
+        "answer": "TWIN",
+        "decoys": "QK"
+    },
+    {
+        "q": "An `Axes3D` object has a method called `scatter3D`.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Which of the following is a valid way to create a twin axes object with `ax1` being the original?",
+        "type": "mcq",
+        "o": [
+            "ax2 = ax1.twinx()",
+            "ax2 = plt.twin(ax1)",
+            "ax2 = ax1.twin('x')",
+            "ax2 = plt.twiny(ax1)"
+        ]
+    },
+    {
+        "q": "Complete the code to create a secondary y-axis sharing the x-axis of ax1:",
+        "c": "fig, ax1 = plt.subplots()",
+        "type": "inline_dropdown",
+        "text": "ax2 = ax1.[0]()",
+        "dropdowns": [
+            {
+                "correct": "twinx",
+                "options": [
+                    "twiny",
+                    "twinx",
+                    "secondary_yaxis"
+                ]
+            }
+        ]
+    },
+    {
+        "q": "What type of object does `plt.rcParams` return when you access a key like `plt.rcParams['figure.figsize']`?",
+        "type": "mcq",
+        "o": [
+            "List",
+            "String",
+            "Tuple",
+            "Dictionary"
+        ]
+    },
+    {
+        "q": "The function `matplotlib.animation.FuncAnimation` needs an update function that returns an iterable of ______.",
+        "type": "fill_blank",
+        "answers": [
+            "artists"
+        ],
+        "other_options": [
+            "numbers",
+            "frames",
+            "images",
+            "strings"
+        ]
+    },
+    {
+        "q": "Match the method to its class.",
+        "type": "match",
+        "left": [
+            "scatter()",
+            "set_xlabel()",
+            "savefig()",
+            "FuncAnimation()"
+        ],
+        "right": [
+            "Axes method",
+            "Axes method",
+            "pyplot module level",
+            "animation module"
+        ]
+    },
+    {
+        "q": "Which function is used to apply a colormap to a scalar array?",
+        "type": "mcq",
+        "o": [
+            "plt.cm.ScalarMappable",
+            "plt.colormap_apply",
+            "plt.paint",
+            "plt.cm.colorize"
+        ]
+    },
+    {
+        "q": "What is the output of this code?\nfig = plt.figure()\nax = fig.add_subplot(111, projection='3d')\nprint(type(ax))",
+        "type": "mcq",
+        "c": "fig = plt.figure()\nax = fig.add_subplot(111, projection='3d')\nprint(type(ax))",
+        "o": [
+            "<class 'mpl_toolkits.mplot3d.axes3d.Axes3D'>",
+            "<class 'matplotlib.axes.Axes'>",
+            "<class 'matplotlib.figure.Figure'>",
+            "<class 'numpy.ndarray'>"
+        ]
+    },
+    {
+        "q": "What is the default elevation angle (in degrees) when initializing an Axes3D object?",
+        "type": "slider",
+        "min": 0,
+        "max": 90,
+        "correct": 30
+    },
+    {
+        "q": "A `LinearSegmentedColormap` requires at least the colors for the start, middle, and end.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "What is the standard library alias for the gridspec module?",
+        "type": "short_answer",
+        "answers": [
+            "gridspec"
+        ],
+        "isCaseSensitive": false
+    },
+    {
+        "q": "Match the 3D plotting functions to their visual output.",
+        "type": "memory",
+        "pairs": {
+            "plot_surface": "Solid 3D rendering",
+            "plot_wireframe": "Grid of 3D lines",
+            "scatter3D": "3D data points"
+        }
+    },
+    {
+        "q": "Which `GridSpec` parameter controls the space between subplots horizontally?",
+        "type": "mcq",
+        "o": [
+            "wspace",
+            "hspace",
+            "pad",
+            "gap"
+        ]
+    },
+    {
+        "q": "What is the primary use of the `set_zlabel` method?",
+        "type": "mcq",
+        "o": [
+            "To label the z-axis of a 3D plot",
+            "To label the z-order of plot elements",
+            "To set a label for a zoomed-in view",
+            "To label a zero line on the y-axis"
+        ]
+    },
+    {
+        "q": "The `FuncAnimation` class saves files using a 'writer'. The default writer for .mp4 is 'ffmpeg'.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "What dictionary-like object do you use to restore Matplotlib defaults?",
+        "type": "fill_blank",
+        "answers": [
+            "rcdefaults"
+        ],
+        "other_options": [
+            "rcParams",
+            "defaultParams",
+            "mplReset",
+            "styleReset"
+        ]
+    },
+    {
+        "q": "Which of these is strictly a 2D plotting function?",
+        "type": "odd_one_out",
+        "options": [
+            "plot_surface",
+            "plot_trisurf",
+            "contour3D",
+            "pie"
+        ],
+        "correct": "pie"
+    },
+    {
+        "q": "What is the output of this code?\nfrom matplotlib.gridspec import GridSpec\nprint(type(GridSpec(2,2)))",
+        "type": "mcq",
+        "c": "from matplotlib.gridspec import GridSpec\nprint(type(GridSpec(2,2)))",
+        "o": [
+            "<class 'matplotlib.gridspec.GridSpec'>",
+            "<class 'list'>",
+            "<class 'tuple'>",
+            "<class 'matplotlib.figure.Figure'>"
+        ]
+    },
+    {
+        "q": "Swipe RIGHT for Column-based strides, LEFT for Row-based strides.",
+        "type": "swipe_cards",
+        "left_label": "Row-based",
+        "right_label": "Col-based",
+        "cards": {
+            "rstride": "left",
+            "cstride": "right",
+            "nrows": "left",
+            "ncols": "right"
+        }
+    },
+    {
+        "q": "To have a publication-quality figure, one should avoid using `tight_layout()` because it often crops important labels.",
+        "type": "true_false",
+        "correct": "False"
+    },
+    {
+        "q": "Unscramble the kwarg used to set the vertical viewing angle in 3D plots:",
+        "type": "word_scramble",
+        "answer": "ELEV",
+        "decoys": "JF"
+    },
+    {
+        "q": "Which of these is a valid input to create a `ListedColormap`?",
+        "type": "mcq",
+        "o": [
+            "A list of RGB tuples",
+            "A file path to an image",
+            "A string of color names separated by spaces",
+            "A dictionary mapping values to colors"
+        ]
+    },
+    {
+        "q": "What parameter in `FuncAnimation` controls the delay between frames in milliseconds?",
+        "type": "mcq",
+        "o": [
+            "interval",
+            "delay",
+            "fps",
+            "speed"
+        ]
+    },
+    {
+        "q": "In 3D plots, the 'camera angle' can be set with the ______ function.",
+        "type": "fill_blank",
+        "answers": [
+            "view_init"
+        ],
+        "other_options": [
+            "set_angle",
+            "rotate",
+            "look_at",
+            "set_camera"
+        ]
+    },
+    {
+        "q": "Which module must be imported to define a custom `Cycler` for plot styling?",
+        "type": "short_answer",
+        "answers": [
+            "cycler"
+        ],
+        "isCaseSensitive": false
+    },
+    {
+        "q": "Match the `FuncAnimation` parameter with its purpose.",
+        "type": "match",
+        "left": [
+            "fig",
+            "func",
+            "frames",
+            "interval"
+        ],
+        "right": [
+            "The figure object",
+            "The function to update the plot",
+            "The number of frames to generate",
+            "Time between frames in ms"
+        ]
+    },
+    {
+        "q": "Using `rcParams['savefig.bbox'] = 'tight'` ensures all figures are saved with tight bounding boxes by default.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "What does the `add_subplot` method return when used with a `GridSpec` slice?",
+        "type": "mcq",
+        "o": [
+            "An Axes object",
+            "A GridSpec object",
+            "A Figure object",
+            "A list of Axes objects"
+        ]
+    },
+    {
+        "q": "Which of the following is a key benefit of using vector graphics for publication?",
+        "type": "mcq",
+        "o": [
+            "Scalability without loss of quality",
+            "Smaller file size than any raster format",
+            "Ability to be animated",
+            "Native support in Microsoft Word only"
+        ]
+    },
+    {
+        "q": "To animate a 3D plot with `FuncAnimation`, the update function must return a list of artists.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "What is the name of the method to create a 3D wireframe plot?",
+        "type": "short_answer",
+        "answers": [
+            "plot_wireframe"
+        ],
+        "isCaseSensitive": false
+    },
+    {
+        "q": "The `color` parameter in `ax.plot()` overrides the color cycle set in `rcParams`.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Complete the code to initialize a 3D axis:",
+        "c": "import matplotlib.pyplot as plt\nfig = plt.figure()",
+        "type": "inline_dropdown",
+        "text": "ax = fig.add_subplot(projection=[0])",
+        "dropdowns": [
+            {
+                "correct": "'3d'",
+                "options": [
+                    "'polar'",
+                    "'3d'",
+                    "'rectilinear'"
+                ]
+            }
+        ]
+    },
+    {
+        "q": "What is the default interval time in milliseconds for a FuncAnimation?",
+        "type": "slider",
+        "min": 10,
+        "max": 500,
+        "correct": 200
+    },
+    {
+        "q": "What does `ax2 = ax1.twinx()` create when `ax1` is a standard 2D axes?",
+        "type": "mcq",
+        "o": [
+            "A new axes overlaying ax1, sharing its x-axis but with an independent y-axis",
+            "A new figure window linked to ax1",
+            "A duplicate of ax1 placed next to it",
+            "A 3D axes sharing the same x-axis"
+        ]
+    },
+    {
+        "q": "Match the animation classes to their mechanism.",
+        "type": "memory",
+        "pairs": {
+            "FuncAnimation": "Updates via callback",
+            "ArtistAnimation": "Iterates fixed visual states",
+            "FFmpegWriter": "Saves to MP4 format"
+        }
+    },
+    {
+        "q": "The `matplotlib.rcParams` object is a global registry for default plot styles.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "In a publication-quality figure, the font size of labels should be set relative to the figure width, not as an absolute value.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "What is the key parameter to control the transparency of a colormap?",
+        "type": "mcq",
+        "o": [
+            "alpha",
+            "beta",
+            "gamma",
+            "delta"
+        ]
+    },
+    {
+        "q": "The `plt.subplots_adjust()` function provides similar functionality to the `GridSpec` spacing parameters.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Match the colormap type with its description.",
+        "type": "match",
+        "left": [
+            "Sequential",
+            "Diverging",
+            "Qualitative"
+        ],
+        "right": [
+            "Good for ordered data from low to high",
+            "Good for data with a critical midpoint",
+            "Good for categorical data"
+        ]
+    },
+    {
+        "q": "Which of these is NOT a valid `FuncAnimation` parameter?",
+        "type": "mcq",
+        "o": [
+            "repeat_delay",
+            "repeat",
+            "interval",
+            "frames"
+        ]
+    },
+    {
+        "q": "Which of these is NOT a valid Matplotlib animation writer class?",
+        "type": "odd_one_out",
+        "options": [
+            "PillowWriter",
+            "FFmpegWriter",
+            "HTMLWriter",
+            "CSVWriter"
+        ],
+        "correct": "CSVWriter"
+    },
+    {
+        "q": "A `GridSpec` object must be created within the context of a `Figure` object using `fig.add_gridspec()`.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Swipe RIGHT for Pre-rendered animation methods, LEFT for Callback-based animation.",
+        "type": "swipe_cards",
+        "left_label": "Callback",
+        "right_label": "Pre-rendered",
+        "cards": {
+            "FuncAnimation": "left",
+            "ArtistAnimation": "right",
+            "animation.FuncAnimation": "left"
+        }
+    },
+    {
+        "q": "What is the output of this code?\nimport matplotlib.pyplot as plt\nfig, ax = plt.subplots()\nax2 = ax.twinx()\nprint(type(ax2))",
+        "type": "mcq",
+        "c": "import matplotlib.pyplot as plt\nfig, ax = plt.subplots()\nax2 = ax.twinx()\nprint(type(ax2))",
+        "o": [
+            "<class 'matplotlib.axes._axes.Axes'>",
+            "<class 'matplotlib.axes.TwinAxes'>",
+            "<class 'matplotlib.axes._axes.Axes'> or a subclass",
+            "<class 'matplotlib.figure.Figure'>"
+        ]
+    },
+    {
+        "q": "Unscramble the keyword argument that ensures only modified pixels are redrawn in animations:",
+        "type": "word_scramble",
+        "answer": "BLIT",
+        "decoys": "VQ"
+    },
+    {
+        "q": "What is the name of the attribute to access the 3D axis object's z-axis?",
+        "type": "short_answer",
+        "answers": [
+            "zaxis"
+        ],
+        "isCaseSensitive": true
+    },
+    {
+        "q": "Complete the FuncAnimation initialization block:",
+        "c": "def update(frame):\n    line.set_ydata(data[frame])\n    return line,",
+        "type": "inline_dropdown",
+        "text": "anim = FuncAnimation(fig, [0], frames=[1])",
+        "dropdowns": [
+            {
+                "correct": "update",
+                "options": [
+                    "init",
+                    "update",
+                    "draw"
+                ]
+            },
+            {
+                "correct": "100",
+                "options": [
+                    "'100'",
+                    "100",
+                    "True"
+                ]
+            }
+        ]
+    },
+    {
+        "q": "The `FuncAnimation` object must be assigned to a variable to prevent it from being garbage-collected.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "To add a colorbar that corresponds to a custom colormap, you would typically use `fig.colorbar()` with a ______.",
+        "type": "fill_blank",
+        "answers": [
+            "ScalarMappable"
+        ],
+        "other_options": [
+            "Line2D",
+            "AxesImage",
+            "Patch",
+            "Collection"
+        ]
+    },
+    {
+        "q": "How many colors are in the default 'tab10' qualitative color cycle?",
+        "type": "slider",
+        "min": 5,
+        "max": 20,
+        "correct": 10
+    },
+    {
+        "q": "What is the typical use of `GridSpecFromSubplotSpec`?",
+        "type": "mcq",
+        "o": [
+            "To create a nested grid layout within an existing subplot",
+            "To generate a GridSpec from an existing figure",
+            "To copy a GridSpec layout from another figure",
+            "To export the GridSpec to a text file"
+        ]
+    },
+    {
+        "q": "Which parameter in `rcParams` sets the default line width for all plots?",
+        "type": "mcq",
+        "o": [
+            "lines.linewidth",
+            "lines.width",
+            "plot.linewidth",
+            "axes.linewidth"
+        ]
+    },
+    {
+        "q": "In `Axes3D`, the `plot_surface` method requires X, Y, and Z data as 2D arrays.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "What function is used to reset the frame number in a `FuncAnimation`?",
+        "type": "mcq",
+        "o": [
+            "There is no built-in function to reset; you must create a new animation",
+            "ani.reset()",
+            "ani.restart()",
+            "ani.goto(0)"
+        ]
+    },
+    {
+        "q": "Which of the following is a valid way to set the 'tableau-colorblind10' color cycle?",
+        "type": "mcq",
+        "o": [
+            "plt.rcParams['axes.prop_cycle'] = plt.cycler(color=plt.get_cmap('tab10').colors)",
+            "plt.set_cycle('tableau-colorblind10')",
+            "plt.cycle('colorblind')",
+            "plt.rcParams['color.cycle'] = 'tableau'"
+        ]
+    },
+    {
+        "q": "Match the custom colormap classes with their traits.",
+        "type": "memory",
+        "pairs": {
+            "ListedColormap": "Discrete colors",
+            "LinearSegmentedColormap": "Continuous gradients",
+            "TwoSlopeNorm": "Diverging around center"
+        }
+    },
+    {
+        "q": "What is the primary purpose of the `frameon` parameter in `Figure`?",
+        "type": "mcq",
+        "o": [
+            "To toggle the visibility of the figure's background patch",
+            "To start or stop the animation",
+            "To control whether the figure window is frameless",
+            "To set the frame rate of the animation"
+        ]
+    },
+    {
+        "q": "Which of these is NOT a standard colormap normalization class?",
+        "type": "odd_one_out",
+        "options": [
+            "LogNorm",
+            "TwoSlopeNorm",
+            "CenteredNorm",
+            "GridNorm"
+        ],
+        "correct": "GridNorm"
+    },
+    {
+        "q": "Swipe RIGHT for Continuous colormaps, LEFT for Discrete colormaps.",
+        "type": "swipe_cards",
+        "left_label": "Discrete",
+        "right_label": "Continuous",
+        "cards": {
+            "ListedColormap": "left",
+            "LinearSegmentedColormap": "right",
+            "tab10": "left"
+        }
+    },
+    {
+        "q": "The `cmap` argument in scatter or plot functions is used to specify the ______.",
+        "type": "fill_blank",
+        "answers": [
+            "colormap"
+        ],
+        "other_options": [
+            "color cycle",
+            "marker style",
+            "line style",
+            "alpha channel"
+        ]
+    },
+    {
+        "q": "Match the file format with its typical characteristic for publication.",
+        "type": "match",
+        "left": [
+            "PDF",
+            "PNG",
+            "SVG"
+        ],
+        "right": [
+            "Vector, widely accepted by journals",
+            "Raster, lossless compression",
+            "Vector, editable in vector graphics software"
+        ]
+    },
+    {
+        "q": "Unscramble the term for scaling data into the [0, 1] range for color mapping:",
+        "type": "word_scramble",
+        "answer": "NORM",
+        "decoys": "ZX"
+    },
+    {
+        "q": "The `twinx` function can be used multiple times on the same original axes to create multiple independent y-axes.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "In `GridSpec`, how do you specify that a subplot should span the entire first row?",
+        "type": "mcq",
+        "o": [
+            "gs[0, :]",
+            "gs[0, 0:1]",
+            "gs[0, all]",
+            "gs.row(0)"
+        ]
+    },
+    {
+        "q": "What is the key difference between `ax.twinx()` and `ax.twiny()`?",
+        "type": "mcq",
+        "o": [
+            "twinx shares the x-axis; twiny shares the y-axis",
+            "twinx shares the y-axis; twiny shares the x-axis",
+            "twinx creates a 3D axis; twiny creates a 2D axis",
+            "They are identical in function"
+        ]
+    },
+    {
+        "q": "When using `Axes3D`, what does the `plot` method require as its first three positional arguments?",
+        "type": "mcq",
+        "o": [
+            "xs, ys, zs",
+            "x, y, z",
+            "x_data, y_data, z_data",
+            "coordinate lists"
+        ]
+    },
+    {
+        "q": "In `FuncAnimation`, the `frames` parameter can be an iterable of data passed directly to the update function.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Which method is used to create a new axes that shares both x and y axes?",
+        "type": "mcq",
+        "o": [
+            "There is no direct single method; you must chain twinx and twiny",
+            "ax.twinxy()",
+            "ax.twin()",
+            "ax.dual()"
+        ]
+    },
+    {
+        "q": "Complete the code to create a custom discrete colormap:",
+        "c": "import matplotlib.colors as mcolors",
+        "type": "inline_dropdown",
+        "text": "cmap = mcolors.[0](['red', 'blue'])",
+        "dropdowns": [
+            {
+                "correct": "ListedColormap",
+                "options": [
+                    "LinearSegmentedColormap",
+                    "ListedColormap",
+                    "ColorMap"
+                ]
+            }
+        ]
+    },
+    {
+        "q": "A `ListedColormap` is best suited for data that has a ______ number of discrete levels.",
+        "type": "fill_blank",
+        "answers": [
+            "small"
+        ],
+        "other_options": [
+            "large",
+            "continuous",
+            "infinite",
+            "random"
+        ]
+    },
+    {
+        "q": "What is the output of this code?\nimport matplotlib.pyplot as plt\nplt.rcParams['lines.linewidth'] = 3\nprint(plt.rcParams['lines.linewidth'])",
+        "type": "mcq",
+        "c": "import matplotlib.pyplot as plt\nplt.rcParams['lines.linewidth'] = 3\nprint(plt.rcParams['lines.linewidth'])",
+        "o": [
+            "3.0",
+            "3",
+            "'3'",
+            "3.0 (as a float)"
+        ]
+    },
+    {
+        "q": "What is the recommended DPI for high-quality publication graphics?",
+        "type": "slider",
+        "min": 72,
+        "max": 600,
+        "correct": 300
+    },
+    {
+        "q": "Which `GridSpec` method allows access to a specific subplot specification?",
+        "type": "mcq",
+        "o": [
+            "Indexing with square brackets, e.g., gs[0, 0]",
+            "Calling gs.get_subplot()",
+            "Using gs.cell()",
+            "The GridSpec object is not indexable"
+        ]
+    },
+    {
+        "q": "To customize the appearance of tick labels for a twin axes, you would access the axes object's `yaxis` property.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Match the rcParams application methods.",
+        "type": "memory",
+        "pairs": {
+            "mpl.rcParams": "Global config dict",
+            "style.use": "Apply theme globally",
+            "style.context": "Apply theme locally"
+        }
+    },
+    {
+        "q": "Which of these is NOT a valid style sheet reference in `plt.style.use()`?",
+        "type": "mcq",
+        "o": [
+            "fivethirtyeight",
+            "ggplot",
+            "seaborn-v0_8",
+            "matlab-default"
+        ]
+    },
+    {
+        "q": "Match the `FuncAnimation` writer with its typical output format.",
+        "type": "match",
+        "left": [
+            "FFMpegWriter",
+            "ImageMagickWriter",
+            "PillowWriter"
+        ],
+        "right": [
+            "mp4, mov, avi",
+            "gif",
+            "gif (alternative to ImageMagick)"
+        ]
+    },
+    {
+        "q": "What parameter of `savefig` is used to set the background color to transparent?",
+        "type": "mcq",
+        "o": [
+            "transparent=True",
+            "facecolor='none'",
+            "alpha=0",
+            "bg='transparent'"
+        ]
+    },
+    {
+        "q": "In a 3D plot created with `Axes3D`, what does `ax.view_init(elev, azim)` control?",
+        "type": "mcq",
+        "o": [
+            "The camera elevation and azimuthal angle",
+            "The initial limits of the z-axis",
+            "The elevation of the surface plot",
+            "The azimuth of the grid lines"
+        ]
+    },
+    {
+        "q": "The `plt.rcdefaults()` function restores all Matplotlib parameters to their default values.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Which of these is NOT a built-in Matplotlib style?",
+        "type": "odd_one_out",
+        "options": [
+            "fivethirtyeight",
+            "bmh",
+            "dark_background",
+            "matrix"
+        ],
+        "correct": "matrix"
+    },
+    {
+        "q": "What is a common method to ensure a colorbar uses a custom colormap correctly?",
+        "type": "mcq",
+        "o": [
+            "Create a `ScalarMappable` with the custom colormap and pass it to `fig.colorbar()`",
+            "Set `plt.cm.custom = True`",
+            "Pass the colormap name as a string directly to `fig.colorbar()`",
+            "Attach the colormap to the axes before plotting"
+        ]
+    },
+    {
+        "q": "Swipe RIGHT for Local/Temporary styling, LEFT for Global styling.",
+        "type": "swipe_cards",
+        "left_label": "Global",
+        "right_label": "Local",
+        "cards": {
+            "style.use()": "left",
+            "style.context()": "right",
+            "mpl.rc()": "left"
+        }
+    },
+    {
+        "q": "What does the `tight_layout` parameter `pad` control?",
+        "type": "mcq",
+        "o": [
+            "Padding between the figure edge and subplots",
+            "Padding between tick labels and the axes",
+            "The linewidth of the bounding box",
+            "The pressure applied to the layout algorithm"
+        ]
+    },
+    {
+        "q": "The `______` method in `Axes3D` is used to create a 2D histogram visualized in 3D as bars.",
+        "type": "fill_blank",
+        "answers": [
+            "hist2d"
+        ],
+        "other_options": [
+            "bar3d",
+            "hist3d",
+            "plot_hist",
+            "bin3d"
+        ]
+    },
+    {
+        "q": "When saving an animation, the `dpi` parameter can be set directly in the `save` method.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Unscramble the module used to apply pre-configured visual themes:",
+        "type": "word_scramble",
+        "answer": "STYLE",
+        "decoys": "BQ"
+    },
+    {
+        "q": "What is the primary use of `SubplotSpec` in relation to `GridSpec`?",
+        "type": "mcq",
+        "o": [
+            "It defines the location of a specific subplot within the grid",
+            "It is the parent class of GridSpec",
+            "It validates the grid specification",
+            "It generates a list of all subplot positions"
+        ]
+    },
+    {
+        "q": "Which `rcParams` key controls the size of the figure title font?",
+        "type": "mcq",
+        "o": [
+            "axes.titlesize",
+            "figure.titlesize",
+            "title.fontsize",
+            "font.size"
+        ]
+    },
+    {
+        "q": "In `FuncAnimation`, the `save_count` parameter is used to:",
+        "type": "mcq",
+        "o": [
+            "Specify the number of frames to cache when saving",
+            "Limit the total number of saved files",
+            "Count how many times the save button is clicked",
+            "Set the number of animation loops before saving"
+        ]
+    },
+    {
+        "q": "Complete the code to globally apply a built-in plotting style:",
+        "c": "import matplotlib.pyplot as plt",
+        "type": "inline_dropdown",
+        "text": "plt.style.use([0])",
+        "dropdowns": [
+            {
+                "correct": "'ggplot'",
+                "options": [
+                    "'ggplot'",
+                    "ggplot",
+                    "Style('ggplot')"
+                ]
+            }
+        ]
+    },
+    {
+        "q": "A twin axes object can have its legend combined with the original axes' legend using `fig.legend()`.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "In transAxes coordinates, what is the exact X coordinate for the right-most edge of the plot?",
+        "type": "slider",
+        "min": 0,
+        "max": 5,
+        "correct": 1
+    },
+    {
+        "q": "What does the `c` parameter in a 3D scatter plot represent?",
+        "type": "mcq",
+        "o": [
+            "The color of each marker",
+            "The z-coordinate of each marker",
+            "The size of each marker",
+            "The category label of each marker"
+        ]
+    },
+    {
+        "q": "Match the colormap name with its typical usage.",
+        "type": "match",
+        "left": [
+            "viridis",
+            "coolwarm",
+            "tab10"
+        ],
+        "right": [
+            "Perceptually uniform sequential data",
+            "Diverging data with a meaningful midpoint",
+            "Qualitative data with up to 10 categories"
+        ]
+    },
+    {
+        "q": "What is the purpose of `matplotlib.colors.Normalize`?",
+        "type": "mcq",
+        "o": [
+            "To map data values linearly to the [0, 1] range for colormaps",
+            "To normalize the figure size to standard dimensions",
+            "To standardize the font sizes across all plots",
+            "To adjust the aspect ratio of the axes"
+        ]
+    },
+    {
+        "q": "The `plt.subplots()` function can accept a `gridspec_kw` dictionary to pass parameters to the underlying `GridSpec`.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "What function is used to create a `GridSpec` from an existing subplot specification?",
+        "type": "short_answer",
+        "answers": [
+            "GridSpecFromSubplotSpec"
+        ],
+        "isCaseSensitive": true
+    },
+    {
+        "q": "Which parameter of `FuncAnimation` is used to stop the animation after a certain number of repeats?",
+        "type": "mcq",
+        "o": [
+            "repeat",
+            "stop",
+            "loop",
+            "max_frames"
+        ]
+    },
+    {
+        "q": "The `bbox_inches` parameter in `savefig` can accept which of the following values?",
+        "type": "mcq",
+        "o": [
+            "'tight'",
+            "'auto'",
+            "'fit'",
+            "'expand'"
+        ]
+    },
+    {
+        "q": "In `GridSpec`, what is the default value for `height_ratios`?",
+        "type": "mcq",
+        "o": [
+            "None, meaning all rows are of equal height",
+            "[1, 1, 1, ...]",
+            "The figure height divided by the number of rows",
+            "It must always be explicitly defined"
+        ]
+    },
+    {
+        "q": "A `FuncAnimation` update function can accept a single argument, which by convention represents the ______ number.",
+        "type": "fill_blank",
+        "answers": [
+            "frame"
+        ],
+        "other_options": [
+            "index",
+            "step",
+            "iteration",
+            "time"
+        ]
+    },
+    {
+        "q": "When creating a custom colormap, the `N` parameter in `ListedColormap` specifies the number of:",
+        "type": "mcq",
+        "o": [
+            "Discrete colors in the list",
+            "Data points to plot",
+            "Rows in the grid",
+            "Animation frames"
+        ]
+    },
+    {
+        "q": "The `sharex` property of an axes is automatically set to True for all axes in a `twinx` pair.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Which of these is a correct way to set the x-axis to a logarithmic scale?",
+        "type": "mcq",
+        "o": [
+            "ax.set_xscale('log')",
+            "ax.xscale('log')",
+            "ax.set_xaxis('log')",
+            "ax.logx()"
+        ]
+    },
+    {
+        "q": "What is the name of the function to create a new `GridSpec` from a list of subplot specs?",
+        "type": "short_answer",
+        "answers": [
+            "GridSpecFromSubplotSpec"
+        ],
+        "isCaseSensitive": true
+    },
+    {
+        "q": "The `set_facecolor` method on an `Axes` object changes the background color of the plotting area.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "What does `plt.rcParams['axes.spines.right'] = False` achieve?",
+        "type": "mcq",
+        "o": [
+            "Hides the right spine of the axes by default",
+            "Disables right-click on the plot",
+            "Moves the right spine to the left side",
+            "Sets the right spine color to transparent"
+        ]
+    },
+    {
+        "q": "Match the 3D plot type with its function.",
+        "type": "match",
+        "left": [
+            "Surface Plot",
+            "Wireframe Plot",
+            "Contour Plot"
+        ],
+        "right": [
+            "plot_surface",
+            "plot_wireframe",
+            "contour"
+        ]
+    },
+    {
+        "q": "In `FuncAnimation`, the `init_func` must return a tuple of artists.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "What is the default location for the legend in a twin axes plot if not specified?",
+        "type": "mcq",
+        "o": [
+            "It places legends on each respective axes, which may overlap",
+            "It combines them into a single legend automatically",
+            "It hides the legend for the twin axes",
+            "It places the twin legend outside the figure"
+        ]
+    },
+    {
+        "q": "The `matplotlib.colorbar` module defines the `Colorbar` class which can be used independently of `pyplot`.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Match the savefig kwargs to their functions.",
+        "type": "memory",
+        "pairs": {
+            "bbox_inches": "Bounding box sizing",
+            "transparent": "Background opacity",
+            "rasterized": "Vector to pixel conversion"
+        }
+    },
+    {
+        "q": "Which of these is a valid approach to create a figure with a 2x2 grid of subplots using `GridSpec`?",
+        "type": "mcq",
+        "o": [
+            "fig = plt.figure(); gs = fig.add_gridspec(2, 2)",
+            "gs = GridSpec(fig, 2, 2)",
+            "gs = plt.GridSpec(2, 2)",
+            "fig, gs = plt.subplots_grid(2, 2)"
+        ]
+    },
+    {
+        "q": "Which of these is NOT a valid kwarg for the savefig function?",
+        "type": "odd_one_out",
+        "options": [
+            "dpi",
+            "bbox_inches",
+            "transparent",
+            "rotation"
+        ],
+        "correct": "rotation"
+    },
+    {
+        "q": "What is the purpose of the `constrained_layout` parameter in `plt.subplots()`?",
+        "type": "mcq",
+        "o": [
+            "To automatically adjust subplot and decoration sizes to fit in the figure",
+            "To fix the aspect ratio of the plots",
+            "To limit the number of subplots that can be drawn",
+            "To enforce specific plot dimensions"
+        ]
+    },
+    {
+        "q": "The `______` parameter in `ax.twinx()` is not typically used but can be passed to specify the axes class.",
+        "type": "fill_blank",
+        "answers": [
+            "cls"
+        ],
+        "other_options": [
+            "ax_type",
+            "kind",
+            "projection",
+            "base"
+        ]
+    },
+    {
+        "q": "Which `rcParams` key is used to set the default colormap?",
+        "type": "mcq",
+        "o": [
+            "image.cmap",
+            "axes.cmap",
+            "cmap.default",
+            "plot.cmap"
+        ]
+    },
+    {
+        "q": "Swipe RIGHT for Raster/Pixel formats, LEFT for Vector formats.",
+        "type": "swipe_cards",
+        "left_label": "Vector",
+        "right_label": "Raster",
+        "cards": {
+            "SVG": "left",
+            "PNG": "right",
+            "PDF": "left",
+            "JPG": "right",
+            "EPS": "left"
+        }
+    },
+    {
+        "q": "A `ScalarMappable` object requires a `Normalize` instance and a colormap instance.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "What is the function of `set_aspect` in a 3D axes?",
+        "type": "mcq",
+        "o": [
+            "To set the aspect ratio of the bounding box, though it might behave differently than in 2D",
+            "To adjust the perspective distortion",
+            "To set the camera's field of view",
+            "It is not available for 3D axes"
+        ]
+    },
+    {
+        "q": "In Matplotlib, the term 'artist' refers to what?",
+        "type": "mcq",
+        "o": [
+            "Any object that is part of the visual representation of a plot",
+            "A specialized tool for drawing custom shapes",
+            "The person who created the plot",
+            "An algorithm for rendering complex visuals"
+        ]
+    },
+    {
+        "q": "How do you animate a 2D histogram using `FuncAnimation`?",
+        "type": "mcq",
+        "o": [
+            "Update the underlying data array for each frame and redraw the histogram",
+            "Pass the histogram to `FuncAnimation` and it auto-animates",
+            "Use `hist_animation` instead of `FuncAnimation`",
+            "Histograms cannot be animated"
+        ]
+    },
+    {
+        "q": "The `matplotlib.rc` function is an older, non-dictionary interface for setting configuration parameters.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "What is the primary difference between `fig.add_subplot()` and `fig.add_axes()`?",
+        "type": "mcq",
+        "o": [
+            "add_subplot uses a grid-like system; add_axes uses absolute coordinates [left, bottom, width, height]",
+            "add_subplot is for 2D; add_axes is for 3D",
+            "add_axes is deprecated",
+            "There is no functional difference"
+        ]
+    },
+    {
+        "q": "Unscramble the image type that scales infinitely without losing quality:",
+        "type": "word_scramble",
+        "answer": "VECTOR",
+        "decoys": "JX"
+    },
+    {
+        "q": "Which of the following file formats does `FuncAnimation` NOT natively support for saving?",
+        "type": "mcq",
+        "o": [
+            ".xlsx",
+            ".mp4",
+            ".gif",
+            ".html"
+        ]
+    },
+    {
+        "q": "Match the `rcParams` key category with its example.",
+        "type": "match",
+        "left": [
+            "lines",
+            "figure",
+            "axes",
+            "savefig"
+        ],
+        "right": [
+            "lines.linewidth",
+            "figure.dpi",
+            "axes.labelsize",
+            "savefig.dpi"
+        ]
+    },
+    {
+        "q": "A custom colormap's `name` attribute is optional and only used for display purposes.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "What does the `zorder` property control in a Matplotlib plot?",
+        "type": "mcq",
+        "o": [
+            "The drawing order of artists; higher zorder artists are drawn on top",
+            "The coordinate of the z-axis in a 3D plot",
+            "The order of elements in the legend",
+            "The zoom level of the figure"
+        ]
+    },
+    {
+        "q": "The `______` method of an `Axes` object is used to add a vertical span (rectangle) across the axes.",
+        "type": "fill_blank",
+        "answers": [
+            "axvspan"
+        ],
+        "other_options": [
+            "axhspan",
+            "add_span",
+            "vspan",
+            "rectangle"
+        ]
+    },
+    {
+        "q": "Which parameter is essential for creating a `ListedColormap`?",
+        "type": "mcq",
+        "o": [
+            "colors",
+            "values",
+            "name",
+            "N"
+        ]
+    },
+    {
+        "q": "When using `GridSpec`, the parameter `left`, `bottom`, `right`, `top` control:",
+        "type": "mcq",
+        "o": [
+            "The margins of the entire grid within the figure",
+            "The data limits for each subplot",
+            "The alignment of text within grid cells",
+            "The clipping boundaries for lines"
+        ]
+    },
+    {
+        "q": "Complete the savefig code to export a plot with tight margins:",
+        "type": "inline_dropdown",
+        "text": "fig.savefig('plot.pdf', [0]='tight')",
+        "dropdowns": [
+            {
+                "correct": "bbox_inches",
+                "options": [
+                    "layout",
+                    "bbox_inches",
+                    "margin"
+                ]
+            }
+        ]
+    },
+    {
+        "q": "How many spines does a standard 2D Cartesian axis have by default?",
+        "type": "slider",
+        "min": 1,
+        "max": 6,
+        "correct": 4
+    },
+    {
+        "q": "The `twinx` function creates a new axes instance that is stored in the same figure.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "What is the default value for the `frameon` parameter when creating a new `Figure`?",
+        "type": "short_answer",
+        "answers": [
+            "True"
+        ],
+        "isCaseSensitive": true
+    },
+    {
+        "q": "Which of these is a correct way to check if an axes is a `Axes3D` instance?",
+        "type": "mcq",
+        "o": [
+            "isinstance(ax, mpl_toolkits.mplot3d.Axes3D)",
+            "ax.is_3d()",
+            "type(ax) == '3d'",
+            "ax.projection == '3d'"
+        ]
+    },
+    {
+        "q": "Match the layout adjustment engines with their descriptions.",
+        "type": "memory",
+        "pairs": {
+            "tight_layout": "Adjusts margins to fit labels",
+            "constrained_layout": "Modern solver-based layout",
+            "GridSpec": "Manual grid placement module"
+        }
+    },
+    {
+        "q": "The `savefig` method belongs to which class?",
+        "type": "mcq",
+        "o": [
+            "matplotlib.figure.Figure",
+            "matplotlib.axes.Axes",
+            "matplotlib.pyplot (as a module-level function)",
+            "Both Figure and pyplot"
+        ]
+    },
+    {
+        "q": "What is the purpose of the `blit` parameter in `FuncAnimation`?",
+        "type": "mcq",
+        "o": [
+            "To improve animation performance by only redrawing changed parts",
+            "To apply a blur effect to the animation",
+            "To enable bitmap caching",
+            "To clear the plot before each frame"
+        ]
+    },
+    {
+        "q": "In `GridSpec`, the `width_ratios` and `height_ratios` parameters accept lists of floats that represent proportional ratios.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "What does the `contourf` method produce in a 3D axes?",
+        "type": "mcq",
+        "o": [
+            "Filled contours projected onto a 2D plane, usually the bottom of the 3D box",
+            "3D filled contours wrapping a surface",
+            "A error when called, as it does not exist",
+            "The same output as `plot_surface`"
+        ]
+    },
+    {
+        "q": "The `matplotlib.animation` module provides the `ArtistAnimation` class for animations based on a list of pre-drawn artists.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "What is the name of the parameter in `imshow` used to specify the colormap?",
+        "type": "short_answer",
+        "answers": [
+            "cmap"
+        ],
+        "isCaseSensitive": false
+    },
+    {
+        "q": "Which of the following best describes the difference between `plt.style.use('seaborn-v0_8')` and modifying `rcParams` directly?",
+        "type": "mcq",
+        "o": [
+            "Style sheets set multiple parameters at once to a predefined theme; rcParams sets individual parameters globally",
+            "Style sheets are temporary; rcParams changes are permanent",
+            "Style sheets only affect colors; rcParams affect everything",
+            "They are identical in function"
+        ]
+    },
+    {
+        "q": "The `fig.add_subplot(111, projection='3d')` call is equivalent to `fig.add_subplot(1,1,1, projection='3d')`.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Which of these is NOT a valid text alignment parameter in Matplotlib?",
+        "type": "odd_one_out",
+        "options": [
+            "left",
+            "right",
+            "center",
+            "diagonal"
+        ],
+        "correct": "diagonal"
+    },
+    {
+        "q": "Swipe RIGHT for Resolution configs, LEFT for Dimension configs.",
+        "type": "swipe_cards",
+        "left_label": "Dimensions",
+        "right_label": "Resolution",
+        "cards": {
+            "set_size_inches": "left",
+            "set_dpi": "right",
+            "figsize": "left"
+        }
+    },
+    {
+        "q": "Match the `GridSpec` index type with its result.",
+        "type": "match",
+        "left": [
+            "gs[0, 0]",
+            "gs[0, :]",
+            "gs[:, 0]"
+        ],
+        "right": [
+            "Single cell in first row, first column",
+            "All cells in the first row",
+            "All cells in the first column"
+        ]
+    },
+    {
+        "q": "What is a `Cycler` used for in Matplotlib?",
+        "type": "mcq",
+        "o": [
+            "Controlling a set of property cycles, like colors, for successive plot elements",
+            "Automatically cycling through different plot types",
+            "Creating GIF animations from static plots",
+            "Repeating a sequence of plotting commands"
+        ]
+    },
+    {
+        "q": "The `renderer` argument in a `FuncAnimation` update function is optional and provides access to the drawing backend.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "How do you hide the x-axis tick labels on a twin axes?",
+        "type": "mcq",
+        "o": [
+            "ax2.set_xticklabels([])",
+            "ax2.xticks(False)",
+            "ax2.xaxis.hide()",
+            "ax2.set_xvisible(False)"
+        ]
+    },
+    {
+        "q": "Unscramble the layout manager that strictly bounds subplots within the figure area:",
+        "type": "word_scramble",
+        "answer": "TIGHT",
+        "decoys": "VZ"
+    },
+    {
+        "q": "What does `plt.rcParams['legend.loc'] = 'best'` configure?",
+        "type": "mcq",
+        "o": [
+            "The default location for all legends",
+            "The location of the best-fitting line in a regression plot",
+            "The optimal file save location",
+            "The placement of the colorbar"
+        ]
+    },
+    {
+        "q": "The `FuncAnimation` object can only be used to animate line plots.",
+        "type": "true_false",
+        "correct": "False"
+    },
+    {
+        "q": "In a `GridSpec` layout, how can you create a gap between specific rows?",
+        "type": "mcq",
+        "o": [
+            "Set the `hspace` parameter when creating the GridSpec",
+            "Add an empty row between them",
+            "Use the `pad` argument in `ax.set_position`",
+            "Gaps are automatically calculated and cannot be customized"
+        ]
+    },
+    {
+        "q": "What is the typical first step in creating a custom colormap from scratch?",
+        "type": "mcq",
+        "o": [
+            "Define a dictionary with keys 'red', 'green', 'blue' and pass to `LinearSegmentedColormap`",
+            "Create a list of color names and pass to `ListedColormap`",
+            "Call `plt.register_cmap`",
+            "Create a PNG image of the desired colors"
+        ]
+    },
+    {
+        "q": "The `draw` function in the `FuncAnimation` saving process is used to render the initial frame before the animation loop.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "What is the output of `gs = GridSpec(2, 3); print(gs.nrows, gs.ncols)`?",
+        "type": "mcq",
+        "c": "from matplotlib.gridspec import GridSpec\ngs = GridSpec(2, 3)\nprint(gs.nrows, gs.ncols)",
+        "o": [
+            "2 3",
+            "6",
+            "3 2",
+            "(2, 3)"
+        ]
+    },
+    {
+        "q": "The function `matplotlib.colors.rgb_to_hsv` converts an RGB tuple to an ______ tuple.",
+        "type": "fill_blank",
+        "answers": [
+            "HSV"
+        ],
+        "other_options": [
+            "CMYK",
+            "Hex",
+            "HSL",
+            "Gray"
+        ]
+    },
+    {
+        "q": "Which function is used to set the major locator for an axis?",
+        "type": "mcq",
+        "o": [
+            "ax.xaxis.set_major_locator()",
+            "ax.set_xticks()",
+            "ax.xaxis.major.locator()",
+            "ax.set_xlocator()"
+        ]
+    },
+    {
+        "q": "Complete the figure initialization to use the solver-based layout engine:",
+        "type": "inline_dropdown",
+        "text": "fig = plt.figure(layout=[0])",
+        "dropdowns": [
+            {
+                "correct": "'constrained'",
+                "options": [
+                    "'tight'",
+                    "'constrained'",
+                    "True"
+                ]
+            }
+        ]
+    },
+    {
+        "q": "In `Axes3D`, the `set_box_aspect` method attempts to set the physical aspect ratio of the plot's bounding box.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "What is the primary reason to use `constrained_layout` over `tight_layout`?",
+        "type": "mcq",
+        "o": [
+            "constrained_layout dynamically adjusts as elements are added; tight_layout is a one-time adjustment",
+            "constrained_layout is faster",
+            "tight_layout is deprecated",
+            "constrained_layout only works for 3D plots"
+        ]
+    },
+    {
+        "q": "How do you set the title of a twin axes object?",
+        "type": "short_answer",
+        "answers": [
+            "ax2.set_title()",
+            "set_title()"
+        ],
+        "isCaseSensitive": false
+    },
+    {
+        "q": "The `set_animated` method on an artist can be used to optimize animation rendering by marking an artist as static.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "What is the default zorder for a 2D Line2D plot object?",
+        "type": "slider",
+        "min": 0,
+        "max": 5,
+        "correct": 2
+    },
+    {
+        "q": "Which module contains the `Normalize` class used for colormap mapping?",
+        "type": "mcq",
+        "o": [
+            "matplotlib.colors",
+            "matplotlib.cm",
+            "matplotlib.normalize",
+            "numpy"
+        ]
+    },
+    {
+        "q": "Match the Matplotlib coordinate systems.",
+        "type": "memory",
+        "pairs": {
+            "transData": "Units dictated by data values",
+            "transAxes": "0 to 1 relative to axes box",
+            "transFigure": "0 to 1 relative to whole figure"
+        }
+    },
+    {
+        "q": "What is the default value for `interpolation` in `imshow` when displaying an image with a colormap?",
+        "type": "mcq",
+        "o": [
+            "'antialiased'",
+            "'bilinear'",
+            "'nearest'",
+            "'none'"
+        ]
+    },
+    {
+        "q": "The `matplotlib.gridspec.GridSpecBase` is the abstract base class for all grid specifications.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Match the twin axes creation method with the axis it shares.",
+        "type": "match",
+        "left": [
+            "ax.twinx()",
+            "ax.twiny()"
+        ],
+        "right": [
+            "Shares the x-axis",
+            "Shares the y-axis"
+        ]
+    },
+    {
+        "q": "What is the purpose of `plt.rcParams['path.simplify'] = False`?",
+        "type": "mcq",
+        "o": [
+            "To disable path simplification, which can improve rendering quality for complex paths",
+            "To speed up rendering by simplifying paths",
+            "To disable all paths and only plot points",
+            "To convert all paths to straight lines"
+        ]
+    },
+    {
+        "q": "Which of these is NOT a built-in Matplotlib colormap?",
+        "type": "odd_one_out",
+        "options": [
+            "viridis",
+            "plasma",
+            "magma",
+            "supernova"
+        ],
+        "correct": "supernova"
+    },
+    {
+        "q": "The `FuncAnimation` class requires a `Figure` object and an update function as its minimum arguments.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "What does the `wspace` and `hspace` parameters in `GridSpec` control?",
+        "type": "mcq",
+        "o": [
+            "Width and height spacing between subplots as a fraction of average axes size",
+            "The number of subplot columns and rows",
+            "The width and height ratios of the subplots",
+            "The whitespace around the entire figure"
+        ]
+    },
+    {
+        "q": "To save a figure with a tight bounding box but no padding, you can use `bbox_inches='tight'` with `pad_inches=0`.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Which `Axes3D` method is used to create a 3D bar plot?",
+        "type": "short_answer",
+        "answers": [
+            "bar3d"
+        ],
+        "isCaseSensitive": false
+    },
+    {
+        "q": "What is the primary advantage of using `add_gridspec` over `subplots`?",
+        "type": "mcq",
+        "o": [
+            "Greater flexibility for non-uniform layouts, like subplots spanning multiple rows or columns",
+            "It is simpler and requires less code",
+            "It automatically saves the figure",
+            "It only supports 3D subplots"
+        ]
+    },
+    {
+        "q": "When using `GridSpec` with `width_ratios=[2, 1]`, what does the first column's width represent relative to the second?",
+        "type": "mcq",
+        "o": [
+            "It is twice as wide as the second column",
+            "It takes up 2 out of 3 total units of width",
+            "Its absolute width is 2 inches",
+            "It spans 2 grid cells"
+        ]
+    },
+    {
+        "q": "How can you align the grid lines of two twin axes with different y-scales?",
+        "type": "mcq",
+        "o": [
+            "Manually set the y-ticks of both axes so their grid lines coincide",
+            "Use `ax.align_grids()`",
+            "Set `sharey=True` when creating the twin",
+            "Grid lines are automatically aligned on twin axes"
+        ]
+    },
+    {
+        "q": "In `Axes3D`, what does the `plot_trisurf` method do?",
+        "type": "mcq",
+        "o": [
+            "Creates a triangular surface plot from unstructured grid data",
+            "Plots three surfaces simultaneously",
+            "Triangulates the x and y axes",
+            "Attempts to plot a surface but fails if data is not a perfect grid"
+        ]
+    },
+    {
+        "q": "The `FuncAnimation` parameter `cache_frame_data` can be set to `False` to save memory when frames are generated on the fly.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Which method creates a second y-axis that is scaled such that a specific data point on the first axis maps to a point on the second?",
+        "type": "mcq",
+        "o": [
+            "There is no built-in method; you must manually calculate and set the limits",
+            "ax.secondary_yaxis()",
+            "ax.twinx(scale=...)",
+            "ax.parasite_axes()"
+        ]
+    },
+    {
+        "q": "When nesting `GridSpec` objects using `GridSpecFromSubplotSpec`, the inner grid is a ______ of the outer grid's cell.",
+        "type": "fill_blank",
+        "answers": [
+            "child"
+        ],
+        "other_options": [
+            "parent",
+            "clone",
+            "duplicate",
+            "subset"
+        ]
+    },
+    {
+        "q": "Swipe RIGHT for Axes-relative coordinates (0 to 1), LEFT for Data-relative units.",
+        "type": "swipe_cards",
+        "left_label": "Data Units",
+        "right_label": "Relative 0-1",
+        "cards": {
+            "transData": "left",
+            "transAxes": "right",
+            "transFigure": "right"
+        }
+    },
+    {
+        "q": "What is the purpose of `matplotlib.colors.BoundaryNorm`?",
+        "type": "mcq",
+        "o": [
+            "To map data values to discrete colormap indices based on a set of boundaries",
+            "To normalize the boundaries of a figure",
+            "To set the limits of the colorbar",
+            "To handle missing data in colormap boundaries"
+        ]
+    },
+    {
+        "q": "Which `rcParams` key sets the default hatch pattern for bar plots?",
+        "type": "mcq",
+        "o": [
+            "patch.hatch",
+            "bar.hatch",
+            "hatch.pattern",
+            "plot.hatch"
+        ]
+    },
+    {
+        "q": "In a `FuncAnimation`, the update function can return multiple artists by including them in a single iterable, such as a list.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "What does the `zdir` parameter control in a 3D contour plot?",
+        "type": "mcq",
+        "o": [
+            "The axis along which the contours are projected",
+            "The direction of the z-axis label",
+            "The directory to save the plot",
+            "The zoom-in direction"
+        ]
+    },
+    {
+        "q": "Unscramble the term related to positioning text perfectly with axes borders:",
+        "type": "word_scramble",
+        "answer": "ALIGN",
+        "decoys": "KB"
+    },
+    {
+        "q": "Complete the code to place text exactly in the center of the axes, regardless of data limits:",
+        "c": "ax.plot([0, 100], [0, 100])",
+        "type": "inline_dropdown",
+        "text": "ax.text(0.5, 0.5, 'Center', transform=[0].[1])",
+        "dropdowns": [
+            {
+                "correct": "ax",
+                "options": [
+                    "plt",
+                    "ax",
+                    "fig"
+                ]
+            },
+            {
+                "correct": "transAxes",
+                "options": [
+                    "transData",
+                    "transAxes",
+                    "transFigure"
+                ]
+            }
+        ]
+    },
+    {
+        "q": "Match the `Norm` subclass with its function.",
+        "type": "match",
+        "left": [
+            "Normalize",
+            "LogNorm",
+            "BoundaryNorm"
+        ],
+        "right": [
+            "Linear mapping of data to [0,1]",
+            "Logarithmic mapping of data to [0,1]",
+            "Discrete mapping based on boundary values"
+        ]
+    },
+    {
+        "q": "To create a custom colormap that smoothly transitions through a midpoint, you might use `TwoSlopeNorm`.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "What is the primary function of `matplotlib.ticker.FuncFormatter`?",
+        "type": "mcq",
+        "o": [
+            "To create custom tick label formatting using a user-defined function",
+            "To format function names in the legend",
+            "To apply a function to all tick locations",
+            "To create functional tick marks"
+        ]
+    },
+    {
+        "q": "How can you synchronize the panning and zooming of multiple subplots created via `GridSpec`?",
+        "type": "mcq",
+        "o": [
+            "By sharing axes during creation or using callbacks on the axes' xlim_changed event",
+            "They automatically synchronize",
+            "Use `plt.link_subplots()`",
+            "Set `sync=True` in GridSpec"
+        ]
+    },
+    {
+        "q": "The `FuncAnimation` method `pause()` suspends the animation, while `resume()` continues it.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Which of these is a valid use of `ax.secondary_xaxis`?",
+        "type": "mcq",
+        "o": [
+            "To create an additional x-axis showing a different unit, linked by a conversion function",
+            "To plot a second, less important dataset",
+            "To create a twin axes sharing the x-axis",
+            "To add an x-axis label on the right side"
+        ]
+    },
+    {
+        "q": "The `matplotlib.path` module is used to define custom shapes that can be added as patches to an axes.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "What alpha value represents completely opaque (no transparency)?",
+        "type": "slider",
+        "min": 0,
+        "max": 1,
+        "correct": 1
+    },
+    {
+        "q": "What is the function of `ax.autoscale()` in the context of an animated plot?",
+        "type": "mcq",
+        "o": [
+            "To automatically rescale the axes limits based on the data currently in the plot",
+            "To adjust the animation speed automatically",
+            "To set the figure size to 'auto'",
+            "To scale the z-order of artists"
+        ]
+    },
+    {
+        "q": "The `constrained_layout` engine can be specifically applied to a `GridSpec` using the `figure` parameter `constrained_layout=True`.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "What does the `set_axis_off()` method do to a `GridSpec` subplot?",
+        "type": "mcq",
+        "o": [
+            "Hides the axes spines, ticks, and labels for that specific subplot",
+            "Removes the subplot from the grid entirely",
+            "Disables interactivity for that subplot",
+            "Turns off the grid lines only"
+        ]
+    },
+    {
+        "q": "The ______ property of an artist controls its transparency level, with 1.0 being fully opaque.",
+        "type": "fill_blank",
+        "answers": [
+            "alpha"
+        ],
+        "other_options": [
+            "beta",
+            "gamma",
+            "zorder",
+            "visible"
+        ]
+    },
+    {
+        "q": "In `FuncAnimation`, what is the difference between `repeat=True` and `repeat=False`?",
+        "type": "mcq",
+        "o": [
+            "With True, the animation loops continuously; with False, it plays once",
+            "True creates multiple copies of the animation; False creates a single copy",
+            "True repeats the last frame; False stops on the first frame",
+            "True is for GIF; False is for MP4"
+        ]
+    },
+    {
+        "q": "Which `Axes3D` method is used to add text at a specific 3D coordinate?",
+        "type": "mcq",
+        "o": [
+            "text(x, y, z, 'label')",
+            "annotate3D(x, y, z)",
+            "set_3Dlabel()",
+            "text3D(x, y, z)"
+        ]
+    },
+    {
+        "q": "A custom colormap can be saved and reused across different sessions by registering it with `plt.register_cmap()`.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "What is the primary benefit of using `GridSpecFromSubplotSpec` over `subplot2grid`?",
+        "type": "mcq",
+        "o": [
+            "It allows for more complex, recursive nesting of subplot grids",
+            "It is simpler to use for basic layouts",
+            "It automatically creates 3D subplots",
+            "It does not require a figure object"
+        ]
+    },
+    {
+        "q": "Match the annotate keyword arguments.",
+        "type": "memory",
+        "pairs": {
+            "xy": "Point to annotate",
+            "xytext": "Position of text box",
+            "arrowprops": "Arrow styling dictionary"
+        }
+    },
+    {
+        "q": "How do you remove the legend from a specific twin axes without affecting the original?",
+        "type": "short_answer",
+        "answers": [
+            "ax2.get_legend().remove()",
+            "ax2.legend().remove()"
+        ],
+        "isCaseSensitive": false
+    },
+    {
+        "q": "The `plt.rcParams['errorbar.capsize']` parameter controls the size of the caps on error bars.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "What is the role of `matplotlib.scale.LogScale`?",
+        "type": "mcq",
+        "o": [
+            "It defines the transformation for logarithmic axes",
+            "It scales the legend to a logarithmic size",
+            "It measures the performance of plotting functions",
+            "It logs all plotting commands to a file"
+        ]
+    },
+    {
+        "q": "When using `FuncAnimation`, how can you dynamically change the plot title with each frame?",
+        "type": "mcq",
+        "o": [
+            "Update the title artist in the update function and return it",
+            "Set `ani.title = dynamic_function`",
+            "Titles cannot be animated",
+            "Use the `fargs` parameter to pass the title"
+        ]
+    },
+    {
+        "q": "Match the `GridSpec` error or warning with its likely cause.",
+        "type": "match",
+        "left": [
+            "IndexError",
+            "UserWarning",
+            "ValueError"
+        ],
+        "right": [
+            "Trying to access a subplot outside the grid dimensions",
+            "Subplot overlaps with another",
+            "Invalid parameter passed to GridSpec"
+        ]
+    },
+    {
+        "q": "The `autopct` parameter in `ax.pie()` controls the format of the percentage text labels.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Which function returns the current `Figure` object for an animation?",
+        "type": "mcq",
+        "o": [
+            "plt.gcf()",
+            "ani.get_figure()",
+            "fig.current()",
+            "plt.figure()"
+        ]
+    },
+    {
+        "q": "What is the purpose of `matplotlib.lines.Line2D.set_pickradius`?",
+        "type": "mcq",
+        "o": [
+            "To set the radius around a line in points for picking (mouse selection)",
+            "To set the line's thickness",
+            "To set the radius for a marker",
+            "To choose the best radius for a circle plot"
+        ]
+    },
+    {
+        "q": "The `mpl_toolkits.mplot3d.art3d` module contains 3D versions of common 2D artists like `Line3D` and `Patch3D`.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "In `GridSpec`, how can you create an invisible subplot that takes up space but shows nothing?",
+        "type": "mcq",
+        "o": [
+            "Call `ax.set_visible(False)` on the created subplot",
+            "Set the `invisible` parameter in GridSpec",
+            "Use `gs.remove_cell(0,0)`",
+            "Create the subplot with `projection='none'`"
+        ]
+    },
+    {
+        "q": "What is the function of `plt.rc_context`?",
+        "type": "mcq",
+        "o": [
+            "To temporarily change rcParams within a 'with' statement context manager",
+            "To view the current rcParams in a readable format",
+            "To reset rcParams to their context-appropriate defaults",
+            "To create a context for interactive plotting"
+        ]
+    },
+    {
+        "q": "The `set_rmax` method is used on a polar axes to set the outer radial limit.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "What is the difference between `ax.set_xlim()` and `ax.set_xbound()`?",
+        "type": "mcq",
+        "o": [
+            "set_xlim triggers autoscaling to be turned off; set_xbound sets the bounds for autoscaling",
+            "There is no difference; they are aliases",
+            "set_xlim is for data limits; set_xbound is for the axis visual range",
+            "set_xlim only works for 2D plots"
+        ]
+    },
+    {
+        "q": "Which of these is NOT a standard spine in a 2D axes?",
+        "type": "odd_one_out",
+        "options": [
+            "top",
+            "bottom",
+            "right",
+            "middle"
+        ],
+        "correct": "middle"
+    },
+    {
+        "q": "The `FuncAnimation` constructor accepts an `event_source` parameter to manually control the animation loop.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Which parameter of `imshow` allows you to define the data range mapped by the colormap?",
+        "type": "mcq",
+        "o": [
+            "vmin and vmax",
+            "clim",
+            "norm",
+            "Both vmin/vmax and norm"
+        ]
+    },
+    {
+        "q": "Swipe RIGHT for Text Anchor arguments, LEFT for Arrow Target arguments in `annotate`.",
+        "type": "swipe_cards",
+        "left_label": "Arrow Target",
+        "right_label": "Text Anchor",
+        "cards": {
+            "xy": "left",
+            "xytext": "right",
+            "arrow_tip": "left",
+            "text_box": "right"
+        }
+    },
+    {
+        "q": "To create a `ScalarMappable` for a custom colorbar, you need a `Normalize` instance and a(n) ______.",
+        "type": "fill_blank",
+        "answers": [
+            "colormap"
+        ],
+        "other_options": [
+            "axis",
+            "figure",
+            "color list",
+            "artist"
+        ]
+    },
+    {
+        "q": "The `mpl_toolkits.axes_grid1` module provides classes to create complex axes layouts including colorbars with consistent heights.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "In a 3D plot, the `set_xlabel`, `set_ylabel`, and `set_zlabel` methods accept a `labelpad` parameter to adjust:",
+        "type": "mcq",
+        "o": [
+            "The distance between the label and the axis ticks",
+            "The padding around the label text background",
+            "The padding inside the label bounding box",
+            "The space between the label and the figure edge"
+        ]
+    },
+    {
+        "q": "Match the `FuncAnimation` event with its trigger.",
+        "type": "match",
+        "left": [
+            "init_func call",
+            "func call",
+            "stop() method"
+        ],
+        "right": [
+            "Called once before the first frame",
+            "Called repeatedly for each frame",
+            "Called when the animation is manually stopped"
+        ]
+    },
+    {
+        "q": "The `spines` attribute of an axes does not exist for `Axes3D` objects.",
+        "type": "true_false",
+        "correct": "False"
+    },
+    {
+        "q": "What is the primary use of `matplotlib.patches.ConnectionPatch`?",
+        "type": "mcq",
+        "o": [
+            "To draw a line or arrow connecting two points, potentially across different axes",
+            "To patch a connection to a database for plotting",
+            "To create a network graph patch",
+            "To connect two figures together"
+        ]
+    },
+    {
+        "q": "How can you change the color of a specific grid line in a `GridSpec` subplot?",
+        "type": "mcq",
+        "o": [
+            "Grid lines are part of the axes; you can't target a single one without redrawing it manually",
+            "Use `ax.grid(color='red', which='single')`",
+            "Access the specific grid line artist from `ax.get_xgridlines()`",
+            "Set `gs.grid_color[0] = 'red'`"
+        ]
+    },
+    {
+        "q": "The `plt.figure(constrained_layout=True)` option is often preferred over `tight_layout()` for interactive figures.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "What does `ax.dist` represent in a 3D plot?",
+        "type": "mcq",
+        "o": [
+            "The distance of the camera viewpoint from the center of the plot",
+            "The distribution of data points",
+            "The distortion factor of the perspective",
+            "The displacement of tick labels"
+        ]
+    },
+    {
+        "q": "The `draw_idle` method of a canvas is preferred over `draw` for non-blocking updates in interactive backends.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Unscramble the visual indicator configured using the `arrowprops` dictionary:",
+        "type": "word_scramble",
+        "answer": "ARROW",
+        "decoys": "QX"
+    },
+    {
+        "q": "What is the function of `ax.get_shared_x_axes()`?",
+        "type": "short_answer",
+        "answers": [
+            "get_shared_x_axes"
+        ],
+        "isCaseSensitive": false
+    },
+    {
+        "q": "Which method is used to create a discrete colormap with specific colors for ranges of data?",
+        "type": "mcq",
+        "o": [
+            "ListedColormap combined with BoundaryNorm",
+            "LinearSegmentedColormap with discrete=True",
+            "DiscreteColormap",
+            "cmap.set_discrete()"
+        ]
+    },
+    {
+        "q": "Complete the code to annotate a plot with an arrow pointing to (1, 1):",
+        "type": "inline_dropdown",
+        "text": "ax.annotate('Look', xy=(1, 1), [0]=(2, 2), [1]=dict(arrowstyle='->'))",
+        "dropdowns": [
+            {
+                "correct": "xytext",
+                "options": [
+                    "textxy",
+                    "xytext",
+                    "pos"
+                ]
+            },
+            {
+                "correct": "arrowprops",
+                "options": [
+                    "arrow",
+                    "arrowstyle",
+                    "arrowprops"
+                ]
+            }
+        ]
+    },
+    {
+        "q": "The `agg_filter` parameter in `savefig` applies a post-rendering filter like anti-aliasing to the saved figure.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "In `FuncAnimation`, how do you pass the current frame number and an additional parameter to the update function?",
+        "type": "mcq",
+        "o": [
+            "Define update_func(frame, extra_param) and pass (extra_param,) to fargs",
+            "The frame number is not passed automatically; you must manage it",
+            "Use a lambda function: lambda f: update_func(f, extra_param)",
+            "Both using fargs and a lambda wrapper are valid"
+        ]
+    },
+    {
+        "q": "What is the typical use of `ax.set_adjustable('datalim')`?",
+        "type": "mcq",
+        "o": [
+            "To allow the axes to change size based on the data limits while maintaining the aspect ratio",
+            "To adjust the data limits to fit the axes size",
+            "To make the data limits adjustable by the user via a slider",
+            "To set the axes to 'auto' mode"
+        ]
+    },
+    {
+        "q": "The `Figure` object's `dpi_scale_trans` transform handles the scaling from pixels to inches.",
+        "type": "true_false",
+        "correct": "False"
+    },
+    {
+        "q": "If `constrained_layout=True` is set, how many layout engines are actively computing the plot layout?",
+        "type": "slider",
+        "min": 0,
+        "max": 3,
+        "correct": 1
+    },
+    {
+        "q": "Which `GridSpec` parameter can be used to set the relative heights of rows?",
+        "type": "mcq",
+        "o": [
+            "height_ratios",
+            "row_heights",
+            "h_ratios",
+            "row_span"
+        ]
+    },
+    {
+        "q": "The `mpl_toolkits.axisartist` module allows for advanced axis manipulations, like floating axes.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "What does the `get_tightbbox` method of an artist return?",
+        "type": "mcq",
+        "o": [
+            "A bounding box that tightly encloses the artist's visual representation",
+            "A tight layout bounding box for the whole figure",
+            "A boolean indicating if the layout is tight",
+            "The tightest possible path for a line"
+        ]
+    },
+    {
+        "q": "Match the 3D plot method with its typical input.",
+        "type": "match",
+        "left": [
+            "scatter",
+            "plot_surface",
+            "quiver"
+        ],
+        "right": [
+            "xs, ys, zs arrays",
+            "X, Y, Z 2D arrays",
+            "X, Y, Z, U, V, W components"
+        ]
+    },
+    {
+        "q": "Match the spine modification methods.",
+        "type": "memory",
+        "pairs": {
+            "set_visible": "Show or hide the spine",
+            "set_position": "Move to coordinate",
+            "set_color": "Change edge color"
+        }
+    },
+    {
+        "q": "A `FuncAnimation` can be embedded directly in a Jupyter notebook using the `%matplotlib notebook` or `%matplotlib widget` magic commands.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Which of these is NOT a valid string shorthand for an `arrowstyle` in `arrowprops`?",
+        "type": "odd_one_out",
+        "options": [
+            "->",
+            "-|>",
+            "<->",
+            "=>"
+        ],
+        "correct": "=>"
+    },
+    {
+        "q": "Swipe RIGHT for Linear normalization, LEFT for Non-Linear normalization.",
+        "type": "swipe_cards",
+        "left_label": "Non-Linear",
+        "right_label": "Linear",
+        "cards": {
+            "LogNorm()": "left",
+            "Normalize()": "right",
+            "SymLogNorm()": "left"
+        }
+    },
+    {
+        "q": "Unscramble the top-level container that holds all plot elements:",
+        "type": "word_scramble",
+        "answer": "FIGURE",
+        "decoys": "ZJ"
+    },
+    {
+        "q": "What is the `label` parameter used for in most plotting functions?",
+        "type": "mcq",
+        "o": [
+            "To assign a name to the artist for use in a legend",
+            "To set the axis label",
+            "To tag the data for debugging",
+            "To label the colorbar"
+        ]
+    },
+    {
+        "q": "The `______` module provides tools to create streamlines, which are a type of plot often used in fluid dynamics.",
+        "type": "fill_blank",
+        "answers": [
+            "streamplot"
+        ],
+        "other_options": [
+            "quiver",
+            "flow",
+            "contour",
+            "matplotlib.stream"
+        ]
+    },
+    {
+        "q": "Which `rcParams` key configures the use of LaTeX for text rendering?",
+        "type": "mcq",
+        "o": [
+            "text.usetex",
+            "font.latex",
+            "renderer.latex",
+            "text.renderer"
+        ]
+    },
+    {
+        "q": "The `subplots_adjust` method can be called on a `Figure` object after a `GridSpec` has been created to fine-tune spacing.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "What is a `CallbackRegistry` used for in Matplotlib?",
+        "type": "mcq",
+        "o": [
+            "To manage event handlers for user interactions like mouse clicks or key presses",
+            "To register callbacks for when a plot is saved",
+            "To log all callback functions used in an animation",
+            "To create a registry of custom colormaps"
+        ]
+    },
+    {
+        "q": "In a twin axes setup, the `sharex` property of the second axes is `True`, meaning changes to the x-limits of the original will propagate.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Complete the code to set the figure background to white:",
+        "type": "inline_dropdown",
+        "text": "fig.[0](facecolor=[1])",
+        "dropdowns": [
+            {
+                "correct": "set_facecolor",
+                "options": [
+                    "set_bg",
+                    "set_facecolor",
+                    "background"
+                ]
+            },
+            {
+                "correct": "'white'",
+                "options": [
+                    "'white'",
+                    "True",
+                    "255"
+                ]
+            }
+        ]
+    },
+    {
+        "q": "Which function is used to create a scale bar on a plot, for instance, on a map?",
+        "type": "mcq",
+        "o": [
+            "There is no built-in function; you must use `AnchoredSizeBar` from `mpl_toolkits`",
+            "ax.add_scalebar()",
+            "plt.scalebar()",
+            "ax.scale()"
+        ]
+    },
+    {
+        "q": "What does the `set_navigate` method of an `Axes3D` object control?",
+        "type": "mcq",
+        "o": [
+            "Whether the axes responds to interactive navigation toolbar commands",
+            "The initial camera position for 3D navigation",
+            "How to navigate through animation frames",
+            "The path of a fly-through animation"
+        ]
+    },
+    {
+        "q": "When calling `ax2 = ax1.twinx()`, how many total y-axes are present on the combined plot space?",
+        "type": "slider",
+        "min": 1,
+        "max": 4,
+        "correct": 2
+    },
+    {
+        "q": "The `ArtistAnimation` class is more suited for animations where the list of artists for each frame is pre-computed.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Match the legend configuration kwargs.",
+        "type": "memory",
+        "pairs": {
+            "loc": "General placement anchor",
+            "bbox_to_anchor": "Custom exact positioning",
+            "ncol": "Number of columns"
+        }
+    },
+    {
+        "q": "What is the purpose of `matplotlib.transforms.blended_transform_factory`?",
+        "type": "mcq",
+        "o": [
+            "To create a new transform blending x and y transforms from different coordinate systems",
+            "To create a blended colormap from two existing ones",
+            "To blend two figures together",
+            "To manufacture a composite animation"
+        ]
+    },
+    {
+        "q": "The `plt.rcParams['axes.autolimit_mode']` controls the margin padding around data when autoscaling.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "How can you create a custom colormap that is perceptually uniform?",
+        "type": "mcq",
+        "o": [
+            "Use tools like `colorcet` or manually design the colormap in a CAM02-UCS colorspace and convert to sRGB",
+            "All `ListedColormap` instances are automatically perceptually uniform",
+            "Perceptual uniformity is impossible in Matplotlib",
+            "Simply use the 'rainbow' colormap"
+        ]
+    },
+    {
+        "q": "Which of these is NOT a valid interactive event type in Matplotlib?",
+        "type": "odd_one_out",
+        "options": [
+            "button_press_event",
+            "key_press_event",
+            "resize_event",
+            "think_event"
+        ],
+        "correct": "think_event"
+    },
+    {
+        "q": "The `w_xaxis` and `w_yaxis` attributes of an `Axes` object control the visibility of the axis spines.",
+        "type": "true_false",
+        "correct": "False"
+    },
+    {
+        "q": "What does the `set_yscale('log', base=2)` command do?",
+        "type": "mcq",
+        "o": [
+            "Sets the y-axis to a logarithmic scale with base 2",
+            "Sets the y-axis scale to log2",
+            "Applies a base-2 log transform to the y-data before plotting",
+            "It is an invalid command; base must be 10"
+        ]
+    },
+    {
+        "q": "Swipe RIGHT for Spine moving methods, LEFT for Spine hiding methods.",
+        "type": "swipe_cards",
+        "left_label": "Hide",
+        "right_label": "Move",
+        "cards": {
+            "set_visible(False)": "left",
+            "set_position('center')": "right",
+            "set_alpha(0)": "left"
+        }
+    },
+    {
+        "q": "The `______` method on a `Figure` object is used to align the x or y labels of multiple subplots.",
+        "type": "fill_blank",
+        "answers": [
+            "align_labels"
+        ],
+        "other_options": [
+            "align_axes",
+            "sync_labels",
+            "match_labels",
+            "set_align"
+        ]
+    },
+    {
+        "q": "In `FuncAnimation`, the `to_jshtml()` method is used to:",
+        "type": "mcq",
+        "o": [
+            "Produce an HTML5 video representation of the animation for Jupyter notebooks",
+            "Convert the animation to a JavaScript file",
+            "Save the animation in a JSON-based HTML format",
+            "Render the animation in a browser without Python"
+        ]
+    },
+    {
+        "q": "The `set_clip_on` method on an artist controls whether the artist is clipped by the axes boundaries.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Unscramble the object that represents a single plotting area:",
+        "type": "word_scramble",
+        "answer": "AXES",
+        "decoys": "YQ"
+    },
+    {
+        "q": "Which of these is a valid method to set the minor tick locations on a log-scale axis?",
+        "type": "mcq",
+        "o": [
+            "ax.yaxis.set_minor_locator(plt.LogLocator(base=10, subs='all'))",
+            "ax.minor_ticks('log')",
+            "ax.set_yminorticks('log')",
+            "ax.log_minor_ticks()"
+        ]
+    },
+    {
+        "q": "Match the `mplot3d` function with its visual output.",
+        "type": "match",
+        "left": [
+            "plot_wireframe",
+            "plot_surface",
+            "voxels"
+        ],
+        "right": [
+            "Mesh of lines",
+            "Continuous colored face mesh",
+            "3D volumetric pixels"
+        ]
+    },
+    {
+        "q": "The `Axes3D` object has a property called `xy_view_angle`.",
+        "type": "true_false",
+        "correct": "False"
+    },
+    {
+        "q": "What is the primary purpose of `matplotlib.projections.get_projection_class`?",
+        "type": "mcq",
+        "o": [
+            "To retrieve the class for a given projection name, e.g., '3d'",
+            "To project data onto a plane",
+            "To calculate the projection of a vector",
+            "To get the camera projection matrix"
+        ]
+    },
+    {
+        "q": "In `GridSpec`, the `subplots` method of the figure can directly accept `gridspec_kw` to customise the internal `GridSpec`.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Complete the code to turn off the top boundary line of a plot:",
+        "type": "inline_dropdown",
+        "text": "ax.spines['top'].[0]([1])",
+        "dropdowns": [
+            {
+                "correct": "set_visible",
+                "options": [
+                    "set_hidden",
+                    "set_visible",
+                    "remove"
+                ]
+            },
+            {
+                "correct": "False",
+                "options": [
+                    "True",
+                    "False",
+                    "0"
+                ]
+            }
+        ]
+    },
+    {
+        "q": "What is the purpose of the `SubplotSpec` object returned when indexing a `GridSpec`?",
+        "type": "mcq",
+        "o": [
+            "It defines the exact location and span of a subplot within the grid for later addition to the figure",
+            "It is a read-only string describing the subplot's position",
+            "It immediately creates an Axes object in that grid cell",
+            "It stores the data limits for the subplot"
+        ]
+    },
+    {
+        "q": "When using `twinx()`, how can you ensure the twin axes' y-axis limits are always exactly double the original axes' limits?",
+        "type": "mcq",
+        "o": [
+            "Define a callback on the original axes' ylim_changed event to update the twin's limits",
+            "Set `ax2.set_ylim(ax1.get_ylim() * 2)` once before plotting",
+            "Use `ax2 = ax1.twinx(multiplier=2)`",
+            "Twin axes limits are automatically synchronized"
+        ]
+    },
+    {
+        "q": "In `Axes3D`, what is the purpose of `ax.set_proj_type('persp')`?",
+        "type": "mcq",
+        "o": [
+            "To set the projection type to perspective rather than orthographic",
+            "To set the projection type for contour plots",
+            "To configure the projector for saving images",
+            "It is not a valid method; proj_type is always 'ortho'"
+        ]
+    },
+    {
+        "q": "The `FuncAnimation` class can be subclassed to override the `_step` method for custom frame-stepping logic.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Which method in `matplotlib.colors` is used to create a colormap from a list of discrete colors that are linearly interpolated?",
+        "type": "mcq",
+        "o": [
+            "LinearSegmentedColormap.from_list",
+            "ListedColormap.from_interpolation",
+            "create_interpolated_cmap",
+            "ListedColormap.smooth"
+        ]
+    },
+    {
+        "q": "The `rcParams` parameter `axes.prop_cycle` must be set using a ______ object, not a plain list.",
+        "type": "fill_blank",
+        "answers": [
+            "Cycler"
+        ],
+        "other_options": [
+            "Cycler",
+            "cycle",
+            "color_cycle",
+            "property"
+        ]
+    },
+    {
+        "q": "What does `fig.subplots_adjust()` return?",
+        "type": "mcq",
+        "o": [
+            "None; it modifies the figure in place",
+            "A dictionary of the new spacing parameters",
+            "A new Figure object with adjusted subplots",
+            "A GridSpec instance"
+        ]
+    },
+    {
+        "q": "The `constrained_layout` engine can be used with `GridSpecFromSubplotSpec` for nested layouts.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "What is the primary difference between `ax.set_xlim(0, 10)` and `ax.set_xlim(auto=True)`?",
+        "type": "mcq",
+        "o": [
+            "The first sets fixed limits; the second re-enables auto-scaling for the x-axis",
+            "There is no `auto` parameter for `set_xlim`",
+            "The first is for 2D; the second is for 3D",
+            "The first sets limits; the second automatically finds the best limits and freezes them"
+        ]
+    },
+    {
+        "q": "Match the `GridSpec` attribute with its meaning.",
+        "type": "match",
+        "left": [
+            "nrows",
+            "ncols",
+            "wspace",
+            "hspace"
+        ],
+        "right": [
+            "Number of rows",
+            "Number of columns",
+            "Horizontal spacing between subplots",
+            "Vertical spacing between subplots"
+        ]
+    },
+    {
+        "q": "In `FuncAnimation`, the `_resize_id` attribute is part of the public API for handling window resizing.",
+        "type": "true_false",
+        "correct": "False"
+    },
+    {
+        "q": "Which of the following is a valid way to create a colormap that maps data values from -1 to 1, with 0 being white?",
+        "type": "mcq",
+        "o": [
+            "Use `TwoSlopeNorm` with vcenter=0 along with a diverging colormap",
+            "Use `Normalize` with vmin=-1, vmax=1",
+            "Use `BoundaryNorm` with boundaries at [-1, 0, 1]",
+            "Create a custom colormap with three colors and use `LogNorm`"
+        ]
+    },
+    {
+        "q": "Match the interactive event types to user actions.",
+        "type": "memory",
+        "pairs": {
+            "button_press_event": "Mouse click",
+            "key_press_event": "Keyboard strike",
+            "motion_notify_event": "Mouse movement"
+        }
+    },
+    {
+        "q": "The `mpl_toolkits.axes_grid1.inset_locator` provides tools to create zoomed-in inset axes within a larger plot.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "What is the purpose of the `set_sketch_params` method on an `Axes` object?",
+        "type": "mcq",
+        "o": [
+            "To give lines a hand-drawn or sketch-like appearance",
+            "To set parameters for rapid prototyping of plots",
+            "To configure the axes for a 'sketch' projection",
+            "To prepare a rough draft of the figure before final rendering"
+        ]
+    },
+    {
+        "q": "How can you programmatically check if a specific `Axes` object is the result of a `twinx()` call?",
+        "type": "mcq",
+        "o": [
+            "Check if `ax in ax.get_shared_x_axes().get_siblings(ax)`",
+            "There is no way to check this",
+            "Check the `_twin_type` attribute",
+            "Call `ax.is_twin()`"
+        ]
+    },
+    {
+        "q": "The `matplotlib.colors.LightSource` class is used to create a shaded relief effect, often applied to surface plots.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "What is the function of `ax.set_anchor` in a `GridSpec` layout?",
+        "type": "mcq",
+        "o": [
+            "To fix the subplot's anchor point within its allocated grid cell if the cell is larger than the axes",
+            "To create an anchor link between two subplots",
+            "To set a clickable link on the axes",
+            "To define the starting cell for a spanned subplot"
+        ]
+    },
+    {
+        "q": "Swipe RIGHT for Full Redraw animations, LEFT for Optimized Partial Redraws.",
+        "type": "swipe_cards",
+        "left_label": "Optimized/Partial",
+        "right_label": "Full Redraw",
+        "cards": {
+            "blit=True": "left",
+            "blit=False": "right",
+            "draw_artist()": "left"
+        }
+    },
+    {
+        "q": "The `animation` parameter `repeat_delay` sets the time in milliseconds that the animation pauses before repeating.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Which of these is a method to create a 3D quiver plot?",
+        "type": "short_answer",
+        "answers": [
+            "quiver"
+        ],
+        "isCaseSensitive": false
+    },
+    {
+        "q": "What is the primary use of `matplotlib.transforms.offset_copy`?",
+        "type": "mcq",
+        "o": [
+            "To create a copy of a transform with an added offset in figure or data coordinates",
+            "To copy a figure with a pixel offset",
+            "To offset the start of a copied animation",
+            "To create an offset in a color copy"
+        ]
+    },
+    {
+        "q": "The `plt.rcParams['date.autoformatter.hour']` setting controls the default date format for hour-level data on time-series plots.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Unscramble the geometric curve type commonly smoothed in advanced plots:",
+        "type": "word_scramble",
+        "answer": "SPLINE",
+        "decoys": "VK"
+    },
+    {
+        "q": "In `FuncAnimation`, how can you manually stop an animation based on a condition inside the update function?",
+        "type": "mcq",
+        "o": [
+            "Call `self.event_source.stop()` inside the update function",
+            "Return `False` from the update function",
+            "Raise a `StopAnimation` exception",
+            "Use `plt.pause(0)` to stop"
+        ]
+    },
+    {
+        "q": "The `mpl_toolkits.mplot3d` module provides a `proj3d` submodule containing low-level projection utilities.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "What does the `clip_path` artist property do?",
+        "type": "mcq",
+        "o": [
+            "Clips the artist's rendering to the boundaries of a specified path",
+            "Creates a clipping path for saving a cropped image",
+            "Sets the path along which an artist is clipped to the figure edge",
+            "Defines the clipping path for an animation"
+        ]
+    },
+    {
+        "q": "Which `GridSpec` parameter allows you to create a grid where the first row is twice as tall as the second?",
+        "type": "mcq",
+        "o": [
+            "height_ratios=[2, 1]",
+            "row_heights=[2, 1]",
+            "h_ratios=[2, 1]",
+            "row_span=[2, 1]"
+        ]
+    },
+    {
+        "q": "The `set_path_effects` method on a plot artist can be used to add outlines or shadows to text and lines.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "What is the role of `matplotlib.artist.setp`?",
+        "type": "mcq",
+        "o": [
+            "To set properties on an artist or a list of artists",
+            "To set the position of an artist in a figure",
+            "To prepare an artist for publication-quality output",
+            "To set the parent axes of an artist"
+        ]
+    },
+    {
+        "q": "Complete the code to enforce exact limits on the x-axis:",
+        "type": "inline_dropdown",
+        "text": "ax.[0]([0, 10])",
+        "dropdowns": [
+            {
+                "correct": "set_xlim",
+                "options": [
+                    "set_bounds",
+                    "set_xlim",
+                    "xbound"
+                ]
+            }
+        ]
+    },
+    {
+        "q": "The `______` method on a `Figure` object returns the tight bounding box of the figure in inches.",
+        "type": "fill_blank",
+        "answers": [
+            "get_tightbbox"
+        ],
+        "other_options": [
+            "tight_bbox",
+            "calculate_bbox",
+            "get_bbox",
+            "compute_layout"
+        ]
+    },
+    {
+        "q": "When using a twin axes, the `zorder` of the twin is automatically set higher than the original to ensure it is drawn on top.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Which function in `matplotlib.colors` allows you to convert a hex color string to an RGB tuple?",
+        "type": "mcq",
+        "o": [
+            "matplotlib.colors.hex2color",
+            "matplotlib.colors.to_rgb",
+            "matplotlib.colors.rgb2hex",
+            "matplotlib.colors.colorConverter"
+        ]
+    },
+    {
+        "q": "In `Axes3D`, the `set_xlim3d` method is deprecated in favor of which method?",
+        "type": "mcq",
+        "o": [
+            "set_xlim",
+            "set_xbound",
+            "set_xlim3D",
+            "set_xscale"
+        ]
+    },
+    {
+        "q": "The `FuncAnimation` object's `new_frame_seq()` method can be overridden to provide a custom frame generator.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "What does `plt.get_cmap()` return if the named colormap is not found?",
+        "type": "mcq",
+        "o": [
+            "It raises a ValueError",
+            "It returns the default 'viridis' colormap",
+            "It returns None",
+            "It creates a new colormap with that name"
+        ]
+    },
+    {
+        "q": "Match the Matplotlib interactive widgets to their functions.",
+        "type": "memory",
+        "pairs": {
+            "Slider": "Value range selection",
+            "Button": "Trigger one-time action",
+            "RadioButtons": "Mutually exclusive options"
+        }
+    },
+    {
+        "q": "Match the `matplotlib.path.Path` method with its purpose.",
+        "type": "match",
+        "left": [
+            "contains_point",
+            "intersects_path",
+            "get_extents"
+        ],
+        "right": [
+            "Tests if a point is inside the path",
+            "Tests if two paths overlap",
+            "Returns the bounding box of the path"
+        ]
+    },
+    {
+        "q": "Swipe RIGHT for 2D Radial systems, LEFT for 3D Cartesian systems.",
+        "type": "swipe_cards",
+        "left_label": "3D Cartesian",
+        "right_label": "2D Radial",
+        "cards": {
+            "'3d'": "left",
+            "'polar'": "right",
+            "Axes3D": "left"
+        }
+    },
+    {
+        "q": "The `set_axis_on()` and `set_axis_off()` methods on an axes do not affect the drawing of the plot data itself.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "What is the function of `matplotlib.patches.FancyBboxPatch`?",
+        "type": "mcq",
+        "o": [
+            "To draw a rectangle with rounded corners or other fancy box styles",
+            "To create a fancy bounding box for text annotations",
+            "To apply a fancy border to the entire figure",
+            "To patch a box with a texture fill"
+        ]
+    },
+    {
+        "q": "Unscramble the term used for the bounding rectangle of a text object or figure:",
+        "type": "word_scramble",
+        "answer": "BBOX",
+        "decoys": "ZR"
+    },
+    {
+        "q": "In `GridSpec`, what happens if you try to index a cell that is already part of a larger spanning subplot?",
+        "type": "mcq",
+        "o": [
+            "It raises a warning or error about overlapping subplots",
+            "It automatically adjusts the spanning subplot to accommodate the new one",
+            "It creates overlapping axes, which is allowed by default",
+            "It returns the existing spanning subplot"
+        ]
+    },
+    {
+        "q": "The `interactive` parameter in `plt.rcParams` controls whether plots are displayed in a blocking or non-blocking manner.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Complete the code to attach a colorbar to an existing axis map:",
+        "type": "inline_dropdown",
+        "text": "plt.[0](mappable, ax=[1])",
+        "dropdowns": [
+            {
+                "correct": "colorbar",
+                "options": [
+                    "legend",
+                    "colorbar",
+                    "cbar"
+                ]
+            },
+            {
+                "correct": "ax",
+                "options": [
+                    "fig",
+                    "ax",
+                    "plot"
+                ]
+            }
+        ]
+    },
+    {
+        "q": "Match the colormap normalization kwargs.",
+        "type": "memory",
+        "pairs": {
+            "vmin": "Lower data bound",
+            "vmax": "Upper data bound",
+            "clip": "Handle out of bounds values"
+        }
+    },
+    {
+        "q": "Which keyword argument is used to specify a function for formatting colorbar tick labels?",
+        "type": "mcq",
+        "o": [
+            "format",
+            "formatter",
+            "tickformat",
+            "label_format"
+        ]
+    },
+    {
+        "q": "The `ax.margins()` method sets the padding added to the data limits during autoscaling, expressed as a fraction of the data range.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "What is the output of `isinstance(ax, mpl_toolkits.mplot3d.Axes3D)` when `ax` is created using `projection='3d'`?",
+        "type": "mcq",
+        "c": "import matplotlib.pyplot as plt\nfrom mpl_toolkits.mplot3d import Axes3D\nfig = plt.figure()\nax = fig.add_subplot(111, projection='3d')\nprint(isinstance(ax, Axes3D))",
+        "o": [
+            "True",
+            "False",
+            "None",
+            "TypeError"
+        ]
+    },
+    {
+        "q": "The `set_snap` method on an artist controls whether the artist's position snaps to the nearest pixel during rendering.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "What is the purpose of `matplotlib.artist.Artist.remove()`?",
+        "type": "mcq",
+        "o": [
+            "To remove the artist from its axes and renderer",
+            "To delete the artist from memory",
+            "To hide the artist temporarily",
+            "To unlink the artist from any callbacks"
+        ]
+    },
+    {
+        "q": "The `FuncAnimation` parameter `blit=True` requires the update function to return a list of artists that have changed.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Which of the following methods creates a 3D bar plot on an `Axes3D` object?",
+        "type": "mcq",
+        "o": [
+            "bar3d",
+            "bar",
+            "hist3d",
+            "plot3d"
+        ]
+    },
+    {
+        "q": "The `set_rasterized` method on an artist forces that element to be rendered as a bitmap even in a vector output file.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Swipe RIGHT for Axes-level methods, LEFT for Figure-level methods.",
+        "type": "swipe_cards",
+        "left_label": "Figure-level",
+        "right_label": "Axes-level",
+        "cards": {
+            "fig.suptitle()": "left",
+            "ax.set_title()": "right",
+            "fig.savefig()": "left"
+        }
+    },
+    {
+        "q": "What does the `get_figure` method of an `Axes` object return?",
+        "type": "short_answer",
+        "answers": [
+            "Figure"
+        ],
+        "isCaseSensitive": true
+    },
+    {
+        "q": "How can you create a shared colorbar for multiple subplots created via `GridSpec`?",
+        "type": "mcq",
+        "o": [
+            "Create a `ScalarMappable` with a common norm and colormap, then pass it to `fig.colorbar()`",
+            "Colorbar sharing is automatic for gridspec subplots",
+            "Use `gs.colorbar()`",
+            "Pass `share_colorbar=True` to `GridSpec`"
+        ]
+    },
+    {
+        "q": "The `mpl_toolkits.axisartist.floating_axes` module allows creating axes that are not aligned to the figure edges.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "What is the purpose of `matplotlib.colors.to_hex()`?",
+        "type": "mcq",
+        "o": [
+            "To convert a color specification to a hex string",
+            "To convert a hex string to an RGB tuple",
+            "To create a hexagonal binning colormap",
+            "To format numbers as hexadecimal"
+        ]
+    },
+    {
+        "q": "In `Axes3D`, the `proj3d.inv_transform` function is used to convert 3D data coordinates to 2D screen coordinates.",
+        "type": "true_false",
+        "correct": "False"
+    },
+    {
+        "q": "Which `rcParams` key controls the resolution of figures displayed on the screen in a Jupyter notebook?",
+        "type": "mcq",
+        "o": [
+            "figure.dpi",
+            "savefig.dpi",
+            "display.dpi",
+            "screen.dpi"
+        ]
+    },
+    {
+        "q": "Match the `FuncAnimation` method with its action.",
+        "type": "match",
+        "left": [
+            "save",
+            "to_html5_video",
+            "to_jshtml",
+            "pause"
+        ],
+        "right": [
+            "Writes to a file",
+            "Creates an HTML5 video tag",
+            "Generates JavaScript HTML representation",
+            "Temporarily halts the animation"
+        ]
+    },
+    {
+        "q": "Unscramble the keyword argument that controls visual transparency:",
+        "type": "word_scramble",
+        "answer": "ALPHA",
+        "decoys": "QJ"
+    },
+    {
+        "q": "The `draw` method on a `Figure` canvas forces a synchronous re-render of the entire figure.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "What is the primary function of `matplotlib.figure.figaspect`?",
+        "type": "mcq",
+        "o": [
+            "To compute the figure dimensions for a given aspect ratio",
+            "To set the aspect ratio of a specific subplot",
+            "To calculate the aspect ratio of the data",
+            "To create a figure with a fixed aspect ratio"
+        ]
+    },
+    {
+        "q": "The `GridSpec` argument `left`, `bottom`, `right`, `top` are specified in normalized figure coordinates, ranging from 0 to 1.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Which method is used to add an arrow to a 3D plot?",
+        "type": "mcq",
+        "o": [
+            "quiver",
+            "arrow3D",
+            "annotate3D",
+            "FancyArrow3D"
+        ]
+    },
+    {
+        "q": "The `get_window_extent` method of an artist returns the artist's bounding box in ______ coordinates.",
+        "type": "fill_blank",
+        "answers": [
+            "display"
+        ],
+        "other_options": [
+            "data",
+            "figure",
+            "axes",
+            "pixel"
+        ]
+    },
+    {
+        "q": "In `FuncAnimation`, setting `cache_frame_data=False` is necessary when the frame data is too large to store in memory.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Complete the code to auto-place a legend in the optimal empty space:",
+        "type": "inline_dropdown",
+        "text": "ax.legend([0]=[1])",
+        "dropdowns": [
+            {
+                "correct": "loc",
+                "options": [
+                    "position",
+                    "loc",
+                    "anchor"
+                ]
+            },
+            {
+                "correct": "'best'",
+                "options": [
+                    "'auto'",
+                    "'best'",
+                    "'free'"
+                ]
+            }
+        ]
+    },
+    {
+        "q": "What does `plt.rcdefaults()` restore?",
+        "type": "mcq",
+        "o": [
+            "All rcParams to their original default values at Matplotlib startup",
+            "The default plot style to 'classic'",
+            "The default figure size and DPI only",
+            "The default user configuration file"
+        ]
+    },
+    {
+        "q": "Match the PathEffects attributes to their visual outcome.",
+        "type": "memory",
+        "pairs": {
+            "withStroke": "Add outline to text",
+            "Normal": "Default rendering without effects",
+            "SimpleLineShadow": "Add drop shadow"
+        }
+    },
+    {
+        "q": "The `stale` flag on an artist indicates that it has been modified and needs to be redrawn.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Which of these is a valid use of `ax.set_box_aspect` in a 2D axes?",
+        "type": "mcq",
+        "o": [
+            "To set the physical aspect ratio of the axes box, e.g., to make it square",
+            "To set the aspect ratio of the data-to-display scaling",
+            "To configure the 3D bounding box dimensions",
+            "It is only valid for 3D axes"
+        ]
+    },
+    {
+        "q": "The `matplotlib.colors.PowerNorm` class applies a power-law normalization to data before colormapping.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Swipe RIGHT for Solid backgrounds, LEFT for Clear/Transparent backgrounds.",
+        "type": "swipe_cards",
+        "left_label": "Clear",
+        "right_label": "Solid",
+        "cards": {
+            "transparent=True": "left",
+            "facecolor='none'": "left",
+            "facecolor='white'": "right"
+        }
+    },
+    {
+        "q": "What is the function of `matplotlib.ticker.MaxNLocator`?",
+        "type": "mcq",
+        "o": [
+            "To automatically choose a maximum number of tick locations at 'nice' intervals",
+            "To locate the maximum value of the data and place a tick there",
+            "To set the maximum number of nested locators",
+            "To maximize the number of ticks shown"
+        ]
+    },
+    {
+        "q": "The `FuncAnimation` object can be garbage collected if you do not keep a persistent reference to it in your code.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "How can you add a rectangle to an `Axes3D` plot that is oriented in 3D space?",
+        "type": "mcq",
+        "o": [
+            "Use `Poly3DCollection` with the coordinates of the rectangle's vertices",
+            "Use `ax.add_patch(Rectangle(...))` and it will automatically project",
+            "Rectangles are not supported in 3D",
+            "Use `ax.rectangle3D()`"
+        ]
+    },
+    {
+        "q": "Unscramble the term for the border lines surrounding an axis area:",
+        "type": "word_scramble",
+        "answer": "SPINE",
+        "decoys": "XW"
+    },
+    {
+        "q": "The `set_alpha` method on an artist overrides any alpha value set in the colormap.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "What is the purpose of `matplotlib.rcsetup`?",
+        "type": "mcq",
+        "o": [
+            "To validate and process rcParams configurations",
+            "To set up the initial rcParams on import",
+            "To create a new Matplotlib runtime configuration",
+            "To run a setup script for custom parameters"
+        ]
+    },
+    {
+        "q": "Match the `Axes3D` method with its description.",
+        "type": "match",
+        "left": [
+            "contour",
+            "contourf",
+            "plot_surface"
+        ],
+        "right": [
+            "Contour lines on a 2D grid",
+            "Filled contours on a 2D grid",
+            "Shaded 3D surface"
+        ]
+    },
+    {
+        "q": "The `patches` attribute of an `Axes` object stores all patch artists added to the axes.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "What does the `ginput` function from `pyplot` do?",
+        "type": "mcq",
+        "o": [
+            "Allows the user to interactively select points on the figure with the mouse",
+            "Gets input from the keyboard to annotate a plot",
+            "Imports data from a user-specified file",
+            "Guesses the input format of a data file"
+        ]
+    },
+    {
+        "q": "The `in_axes` method on a mouse event object checks if the event occurred within a given axes.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Which keyword argument of `GridSpec` replaces the deprecated `left`, `bottom`, `right`, `top` parameters?",
+        "type": "mcq",
+        "o": [
+            "figure",
+            "rect",
+            "bounds",
+            "extent"
+        ]
+    },
+    {
+        "q": "In `FuncAnimation`, the `_stop` method can be called to cleanly terminate the animation timer.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "What is a 'spine' in Matplotlib terminology?",
+        "type": "mcq",
+        "o": [
+            "The line connecting the axis tick marks and noting the boundaries of the data area",
+            "A special type of line plot with spline interpolation",
+            "A line connecting data points in a 3D plot",
+            "The backbone of a figure layout"
+        ]
+    },
+    {
+        "q": "Complete the code to halt a running FuncAnimation object:",
+        "type": "inline_dropdown",
+        "text": "anim.event_source.[0]()",
+        "dropdowns": [
+            {
+                "correct": "stop",
+                "options": [
+                    "pause",
+                    "stop",
+                    "halt"
+                ]
+            }
+        ]
+    },
+    {
+        "q": "Unscramble the term representing a single image state in an animation sequence:",
+        "type": "word_scramble",
+        "answer": "FRAME",
+        "decoys": "QZ"
+    },
+    {
+        "q": "Complete the code to make all tick marks red on both axes:",
+        "type": "inline_dropdown",
+        "text": "ax.tick_params(axis=[0], colors=[1])",
+        "dropdowns": [
+            {
+                "correct": "'both'",
+                "options": [
+                    "'all'",
+                    "'both'",
+                    "'xy'"
+                ]
+            },
+            {
+                "correct": "'red'",
+                "options": [
+                    "'red'",
+                    "red",
+                    "color"
+                ]
+            }
+        ]
+    },
+    {
+        "q": "The `matplotlib.artist.allow_rasterization` decorator is used to mark a drawing function as safe for rasterized output.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Which method is used to create a 'broken' axis or a discontinuity in an axis?",
+        "type": "mcq",
+        "o": [
+            "There is no built-in method; it requires manual construction using two subplots and spine manipulation",
+            "ax.broken_axis()",
+            "plt.subplots(discontinuity=True)",
+            "ax.set_discontinuity()"
+        ]
+    },
+    {
+        "q": "Unscramble the kwarg representing the horizontal rotation around the Z-axis in 3D plots:",
+        "type": "word_scramble",
+        "answer": "AZIM",
+        "decoys": "YW"
+    },
+    {
+        "q": "The `pickradius` property of a `Line2D` object defines how close the mouse must be to the line to trigger a pick event.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "When using `GridSpec` with `figure`, what is the effect of setting `gridspec_kw={'width_ratios': [1, 3]}` in `plt.subplots()`?",
+        "type": "mcq",
+        "o": [
+            "The second column is three times as wide as the first",
+            "The first column takes 1/4 of the total width",
+            "There are 3 subplots in the second row",
+            "The width of the first subplot is fixed at 1 inch"
+        ]
+    },
+    {
+        "q": "How can you dynamically link the panning of two twin axes with different x-limits?",
+        "type": "mcq",
+        "o": [
+            "Register a callback on the xlim_changed event of the master axes to update the slave axes with a transformation function",
+            "Twin axes automatically share panning when using the navigation toolbar",
+            "Use `ax2.link_pan(ax1)`",
+            "Set `ax2.sharex(ax1)` with a transform parameter"
+        ]
+    },
+    {
+        "q": "Complete the code to set a figure to 8 inches wide and 6 inches tall:",
+        "type": "inline_dropdown",
+        "text": "fig.[0]([1])",
+        "dropdowns": [
+            {
+                "correct": "set_size_inches",
+                "options": [
+                    "set_size",
+                    "set_size_inches",
+                    "resize"
+                ]
+            },
+            {
+                "correct": "(8, 6)",
+                "options": [
+                    "[8, 6]",
+                    "(8, 6)",
+                    "8, 6"
+                ]
+            }
+        ]
+    },
+    {
+        "q": "Unscramble the kwarg abbreviation for 'colormap':",
+        "type": "word_scramble",
+        "answer": "CMAP",
+        "decoys": "JD"
+    },
+    {
+        "q": "In `Axes3D`, what is the function of `ax.w_xaxis` and `ax.w_yaxis`?",
+        "type": "mcq",
+        "o": [
+            "They are 2D axes objects representing the wall projections of the x and y axes, allowing custom formatting",
+            "They control the width of the x and y axes lines",
+            "They are deprecated attributes for the wireframe x and y",
+            "They store the world-coordinate limits for the x and y axes"
+        ]
+    },
+    {
+        "q": "The `FuncAnimation` class internally uses a `TimerBase` object from the backend to schedule frame updates.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Complete the code to render a surface plot with a specific colormap:",
+        "c": "from mpl_toolkits.mplot3d import Axes3D",
+        "type": "inline_dropdown",
+        "text": "ax.plot_surface(X, Y, Z, cmap=[0])",
+        "dropdowns": [
+            {
+                "correct": "'viridis'",
+                "options": [
+                    "viridis",
+                    "'viridis'",
+                    "colormap"
+                ]
+            }
+        ]
+    },
+    {
+        "q": "What is the purpose of `matplotlib.colors.from_levels_and_colors`?",
+        "type": "mcq",
+        "o": [
+            "To create a `ListedColormap` and a `BoundaryNorm` from a set of levels and corresponding colors",
+            "To extract color levels from an existing plot",
+            "To generate contour levels from data and colors",
+            "To create a discrete colormap from a continuous one"
+        ]
+    },
+    {
+        "q": "The `rcParams` key `axes.axisbelow` controls whether gridlines and ticks are drawn below or above the plot data.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Unscramble the term for converting vector graphics into pixel grids:",
+        "type": "word_scramble",
+        "answer": "RASTER",
+        "decoys": "QW"
+    },
+    {
+        "q": "Which of the following describes the behavior of `plt.rc_context` as a context manager?",
+        "type": "mcq",
+        "o": [
+            "It temporarily overrides rcParams for the duration of the 'with' block and restores them afterwards",
+            "It saves the current rcParams to a context file",
+            "It creates a new plotting context with independent rcParams",
+            "It prints the current context of all rcParams"
+        ]
+    },
+    {
+        "q": "Match the `GridSpec` parameter with its valid input type.",
+        "type": "match",
+        "left": [
+            "width_ratios",
+            "hspace",
+            "left"
+        ],
+        "right": [
+            "List of floats",
+            "Float (fraction of average axes height)",
+            "Float (0 to 1, normalized figure coordinate)"
+        ]
+    },
+    {
+        "q": "Complete the code to globally increase the default font size:",
+        "type": "inline_dropdown",
+        "text": "plt.rc('font', [0]=[1])",
+        "dropdowns": [
+            {
+                "correct": "size",
+                "options": [
+                    "size",
+                    "fontsize",
+                    "scale"
+                ]
+            },
+            {
+                "correct": "12",
+                "options": [
+                    "'12'",
+                    "12",
+                    "large"
+                ]
+            }
+        ]
+    },
+    {
+        "q": "The `set_cursor_props` method on an `Axes` object controls the appearance of the mouse cursor when hovering over that axes.",
+        "type": "true_false",
+        "correct": "False"
+    },
+    {
+        "q": "What is the correct way to create an animation where the data source is an infinite generator?",
+        "type": "mcq",
+        "o": [
+            "Use a generator function for `frames` in `FuncAnimation` and set `save_count` to limit cached frames",
+            "Use `ArtistAnimation` with an infinite list of artists",
+            "Set `frames=itertools.count()` without any `save_count`",
+            "Infinite generators are not supported; you must use a finite iterable"
+        ]
+    },
+    {
+        "q": "The `matplotlib.projections.polar.PolarAxes` class can be paired with a twin axes using `twinx` to share the angular axis.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "What does the `set_3d_properties` method on a `Line3D` object do?",
+        "type": "mcq",
+        "o": [
+            "It sets the z-data and optionally the color of a 3D line after it has been created",
+            "It configures whether the line has 3D shading",
+            "It sets the projection properties for a 3D line",
+            "It is used to change a 2D line into a 3D line"
+        ]
+    },
+    {
+        "q": "The `FuncAnimation` method `frame_seq` is a generator that yields the frame index for each update.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "What is the function of `matplotlib.cm.ScalarMappable.set_clim`?",
+        "type": "mcq",
+        "o": [
+            "To set the color limits (vmin, vmax) of the mappable, controlling the range mapped by the colormap",
+            "To set the climate data for a weather plot",
+            "To clip the colormap to a specific range of colors",
+            "To set the climbing limits for a 3D surface"
+        ]
+    },
+    {
+        "q": "The `gs.update()` method on a `GridSpec` can be used to dynamically modify the grid layout after it has been created.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Which method of the `NavigationToolbar2` class allows programmatic access to the 'Back' history button?",
+        "type": "mcq",
+        "o": [
+            "toolbar.back()",
+            "toolbar.push_current()",
+            "toolbar.undo()",
+            "There is no programmatic equivalent; it is GUI-only"
+        ]
+    },
+    {
+        "q": "In `Axes3D`, the `zorder` of patch collections like `Poly3DCollection` determines the order they are painted, which may not correspond to their actual 3D depth.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "The `matplotlib.artist.Artist.set` method is a general-purpose setter that accepts a dictionary of property-value pairs.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Unscramble the Matplotlib object responsible for iterating through default colors:",
+        "type": "word_scramble",
+        "answer": "CYCLER",
+        "decoys": "XF"
+    },
+    {
+        "q": "What does the `autoscale_view` method on an `Axes` object do?",
+        "type": "mcq",
+        "o": [
+            "Rescales the view limits based on the data and margin parameters, if autoscaling is enabled",
+            "Automatically scales the figure to fit the screen",
+            "Enables or disables autoscaling for that axes",
+            "Scales the view to a user-defined default"
+        ]
+    },
+    {
+        "q": "The `matplotlib.backend_bases.RendererBase` class provides the abstract interface for drawing operations, which each backend must implement.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Which of the following is a valid use of `matplotlib.transforms.ScaledTranslation`?",
+        "type": "mcq",
+        "o": [
+            "To shift an artist by a fixed physical distance (e.g., 10 points) from its data position",
+            "To scale the translation of an animation",
+            "To translate data units to display units",
+            "To create a translated copy of a figure"
+        ]
+    },
+    {
+        "q": "What is the purpose of `ax.dist` in an `Axes3D` plot?",
+        "type": "mcq",
+        "o": [
+            "It represents the distance from the camera to the center of the plot; setting it changes the perspective scale",
+            "It calculates the distance between the minimum and maximum data points",
+            "It defines the distribution of tick marks on the z-axis",
+            "It measures the distortion ratio of the plot"
+        ]
+    },
+    {
+        "q": "Complete the code applying a logarithmic normalization to an image:",
+        "c": "from matplotlib.colors import LogNorm",
+        "type": "inline_dropdown",
+        "text": "ax.imshow(data, cmap=[0], norm=[1]())",
+        "dropdowns": [
+            {
+                "correct": "'magma'",
+                "options": [
+                    "'magma'",
+                    "magma",
+                    "map"
+                ]
+            },
+            {
+                "correct": "LogNorm",
+                "options": [
+                    "log",
+                    "LogNorm",
+                    "NormLog"
+                ]
+            }
+        ]
+    },
+    {
+        "q": "The `FuncAnimation` parameter `blit=True` is only effective when using interactive backends like QtAgg or TkAgg.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Match the `matplotlib.patches` class with its shape.",
+        "type": "match",
+        "left": [
+            "FancyBboxPatch",
+            "Wedge",
+            "Polygon"
+        ],
+        "right": [
+            "Rectangle with rounded corners",
+            "A pie-slice shape",
+            "A closed shape defined by vertices"
+        ]
+    },
+    {
+        "q": "In `GridSpec`, how can you create a gap that is exactly 0.5 inches between two columns?",
+        "type": "mcq",
+        "o": [
+            "You cannot specify absolute units directly; use the normalized `wspace` parameter and calculate based on figure width",
+            "Set `wspace='0.5in'`",
+            "Use `column_spacing=0.5` with units='inches'",
+            "Pass `gridspec_kw={'wspace': 0.5}` to `subplots` and set figure dpi appropriately"
+        ]
+    },
+    {
+        "q": "Unscramble the acronym for Dots Per Inch, controlling figure resolution:",
+        "type": "word_scramble",
+        "answer": "DPI",
+        "decoys": "KM"
+    },
+    {
+        "q": "The `matplotlib.axis.Axis.set_major_formatter` method accepts a `Formatter` object or a format string for old-style formatting.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Complete the code to save an animation using the FFmpeg writer plugin:",
+        "type": "inline_dropdown",
+        "text": "anim.save('vid.[0]', writer=[1])",
+        "dropdowns": [
+            {
+                "correct": "mp4",
+                "options": [
+                    "gif",
+                    "mp4",
+                    "png"
+                ]
+            },
+            {
+                "correct": "'ffmpeg'",
+                "options": [
+                    "'ffmpeg'",
+                    "ffmpeg",
+                    "'pillow'"
+                ]
+            }
+        ]
+    },
+    {
+        "q": "What is the effect of calling `ax.relim()` before `ax.autoscale_view()`?",
+        "type": "mcq",
+        "o": [
+            "It recalculates the data limits of all artists in the axes, ensuring autoscale uses up-to-date data bounds",
+            "It releases all memory used by the axes limits",
+            "It resets the limits to their initial values",
+            "It removes all limits so the plot can be redrawn freely"
+        ]
+    },
+    {
+        "q": "The `mpl_toolkits.mplot3d.proj3d.persp_transformation` function applies a perspective transformation to 3D coordinates.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Which function is used to temporarily modify the active style sheet within a code block?",
+        "type": "mcq",
+        "o": [
+            "plt.style.context()",
+            "plt.style.use()",
+            "plt.style.temp()",
+            "plt.style.set()"
+        ]
+    },
+    {
+        "q": "The `matplotlib.colors.TwoSlopeNorm` is particularly useful for data that has a meaningful midpoint, like diverging anomaly data.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "What is the purpose of `matplotlib.figure.Figure.add_axes()` when given a list `[left, bottom, width, height]`?",
+        "type": "mcq",
+        "o": [
+            "To add an axes at an arbitrary, precisely specified location in normalized figure coordinates",
+            "To add a subplot using a grid specification",
+            "To add multiple axes at once",
+            "To configure the axes limits"
+        ]
+    },
+    {
+        "q": "The `set_dpi` method on a `Figure` object changes the DPI of the figure, which affects the size of the figure in pixels.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "In `FuncAnimation`, how can you create a smooth transition between two different datasets?",
+        "type": "mcq",
+        "o": [
+            "Interpolate the data linearly between the two states in the update function and return the updated artists",
+            "Call `ani.smooth()`",
+            "Use two separate `FuncAnimation` objects and cross-fade",
+            "Set the `transition` parameter to a number of frames"
+        ]
+    },
+    {
+        "q": "The `ax.has_data()` method returns `True` if any artist in the axes has data associated with it.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "What is the role of `matplotlib.artist.Artist.set_transform`?",
+        "type": "mcq",
+        "o": [
+            "To set the transformation applied to the artist's coordinates, converting from data to display space",
+            "To apply a mathematical transform to the artist's data",
+            "To animate the artist by transforming it over time",
+            "To set the coordinate system for the entire axes"
+        ]
+    },
+    {
+        "q": "The `constrained_layout` and `tight_layout` engines cannot be used together in the same figure.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Which method allows you to draw a line between two points in different axes within the same figure?",
+        "type": "mcq",
+        "o": [
+            "Using `ConnectionPatch` with `ConnectionStyle`",
+            "`ax.plot` with `figure_coordinates=True`",
+            "`fig.lines` with `multi_axes=True`",
+            "It is not possible in Matplotlib"
+        ]
+    },
+    {
+        "q": "The `______` method on a `Poly3DCollection` is used to set the face colors of individual polygons.",
+        "type": "fill_blank",
+        "answers": [
+            "set_facecolor"
+        ],
+        "other_options": [
+            "set_color",
+            "set_fc",
+            "set_poly_color",
+            "set_fill"
+        ]
+    },
+    {
+        "q": "In `Axes3D`, the `auto_add_to_figure` attribute is `False` by default, meaning 3D artists must be explicitly added to the axes.",
+        "type": "true_false",
+        "correct": "False"
+    },
+    {
+        "q": "What is the purpose of `matplotlib.font_manager.FontProperties`?",
+        "type": "mcq",
+        "o": [
+            "To define and query font properties for text objects in plots",
+            "To manage system-level font installation",
+            "To create new font files for Matplotlib",
+            "To convert fonts between different formats"
+        ]
+    },
+    {
+        "q": "The `FuncAnimation` class can animate changes in ticks, labels, and titles in addition to data artists.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Which `rcParams` key must be set to `True` to enable the use of LaTeX for all text rendering in Matplotlib?",
+        "type": "short_answer",
+        "answers": [
+            "text.usetex"
+        ],
+        "isCaseSensitive": false
+    },
+    {
+        "q": "What does `ax.set_adjustable('box')` enforce?",
+        "type": "mcq",
+        "o": [
+            "The axes box size remains fixed, and the data limits may be changed to fit while preserving the aspect ratio",
+            "The box of the axes is adjustable by the user via drag handles",
+            "The axes adjusts its size to fit the figure box",
+            "It creates a box-plot adjustable layout"
+        ]
+    },
+    {
+        "q": "The `matplotlib.transforms.blended_transform_factory` can combine a data transform for the x-axis with an axes-fraction transform for the y-axis.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "What is the function of `plt.get_current_fig_manager()`?",
+        "type": "mcq",
+        "o": [
+            "To retrieve the backend-specific figure manager for the current figure, allowing access to GUI window methods",
+            "To get the current figure's manager for saving files",
+            "To manage the figure number counter",
+            "To retrieve a list of all figure managers"
+        ]
+    },
+    {
+        "q": "Match the `FuncAnimation` parameter with its effect on memory.",
+        "type": "match",
+        "left": [
+            "cache_frame_data=True",
+            "cache_frame_data=False",
+            "blit=True"
+        ],
+        "right": [
+            "Stores all frame data in memory",
+            "Generates frame data on-the-fly",
+            "Optimizes rendering but requires careful artist management"
+        ]
+    },
+    {
+        "q": "The `GridSpec` `subplots` method can return an array of `Axes` objects that matches the shape of the grid.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "In 3D plotting, what does the `do_3d_projection` method on a custom 3D artist do?",
+        "type": "mcq",
+        "o": [
+            "It projects the artist's 3D coordinates into 2D screen space and returns the z-order for compositing",
+            "It enables 3D projection for a 2D artist",
+            "It calculates the projection matrix for the axes",
+            "It decides whether an artist should be rendered in perspective or orthographic mode"
+        ]
+    },
+    {
+        "q": "The `sticky_edges` property of an `Axes` accumulates the data limits of artists that should not be auto-scaled.",
+        "type": "true_false",
+        "correct": "False"
+    },
+    {
+        "q": "What is the purpose of `matplotlib.ticker.EngFormatter`?",
+        "type": "mcq",
+        "o": [
+            "To format tick labels using engineering notation (powers of 10^3)",
+            "To format ticks for engineering drawings",
+            "To apply an English language locale to tick labels",
+            "To format engineering units like meters and kilograms"
+        ]
+    },
+    {
+        "q": "The `Figure` object's `transFigure` transform maps from figure fraction coordinates to display coordinates.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "How can you create a 'parasite' axes that tracks the parent axes' limits but displays a different scale?",
+        "type": "mcq",
+        "o": [
+            "Use `mpl_toolkits.axes_grid1.parasite_axes.HostAxes` and `ParasiteAxes`",
+            "Use a standard `twinx` axes",
+            "Use `ax.add_parasite()`",
+            "Create a subplot and set `sharex` and `sharey`"
+        ]
+    },
+    {
+        "q": "The `mpl_toolkits.mplot3d.art3d.Line3D` class inherits directly from `matplotlib.lines.Line2D`.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "What does the `get_visible` method on an artist return?",
+        "type": "mcq",
+        "o": [
+            "A boolean indicating whether the artist is set to be drawn",
+            "The visibility bounds of the artist",
+            "The visible data range of the artist",
+            "Whether the artist is currently on-screen"
+        ]
+    },
+    {
+        "q": "In `FuncAnimation`, the `_init_draw` method is responsible for drawing the initial frame before the timer starts.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Which function from `matplotlib.colors` is used to desaturate a color by a given amount?",
+        "type": "mcq",
+        "o": [
+            "matplotlib.colors.rgb_to_hsv followed by HSV manipulation and conversion back",
+            "matplotlib.colors.desaturate",
+            "matplotlib.colors.lighten",
+            "matplotlib.colors.fade"
+        ]
+    },
+    {
+        "q": "The `ax.axes_locator` property can be set to a callable that dynamically calculates the axes position, enabling responsive layouts.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "What is the primary use of `matplotlib.backend_bases.FigureCanvasBase.copy_from_bbox`?",
+        "type": "mcq",
+        "o": [
+            "To save a region of the canvas as a pixel buffer, often used for blitting in animations",
+            "To copy a bounding box from one figure to another",
+            "To duplicate a figure's canvas",
+            "To export a bounding box to the clipboard"
+        ]
+    },
+    {
+        "q": "The `set_agg_filter` method on a `Figure` applies a filter function to the rendered pixel buffer before display or saving.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Which method on a `GridSpec` object allows you to access the geometry (position and size) of a specific cell in figure coordinates?",
+        "type": "mcq",
+        "o": [
+            "gs[i, j].get_position(fig)",
+            "gs.get_cell_geometry(i, j)",
+            "fig.get_gridspec_geometry(gs, i, j)",
+            "gs[i, j].get_geometry()"
+        ]
+    },
+    {
+        "q": "The `patheffects.Normal` class is the default path effect that simply draws the artist without any modification.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "What does `ax.format_coord` do when overridden in a custom axes class?",
+        "type": "mcq",
+        "o": [
+            "It customizes the string displayed in the status bar when the mouse hovers over the axes",
+            "It formats the coordinates of all data points before plotting",
+            "It specifies the coordinate format for saving the figure",
+            "It converts the axes coordinate system to a custom one"
+        ]
+    },
+    {
+        "q": "The `FuncAnimation` class uses a `Timer` from the backend to repeatedly call the update function; this timer is stored in the `event_source` attribute.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Match the `matplotlib.colors` class with its normalization method.",
+        "type": "match",
+        "left": [
+            "Normalize",
+            "LogNorm",
+            "SymLogNorm"
+        ],
+        "right": [
+            "Linear scaling between vmin and vmax",
+            "Logarithmic scaling",
+            "Logarithmic scaling with a linear threshold around zero"
+        ]
+    },
+    {
+        "q": "In `Axes3D`, the `set_zlim` method automatically adjusts the aspect ratio of the plot.",
+        "type": "true_false",
+        "correct": "False"
+    },
+    {
+        "q": "What is the effect of setting `plt.rcParams['savefig.format'] = 'pdf'`?",
+        "type": "mcq",
+        "o": [
+            "It sets the default file format for saving figures via `savefig` to PDF",
+            "It makes PDF the only allowed output format",
+            "It converts all saved PNG files to PDF",
+            "It formats the save dialog to show PDF files first"
+        ]
+    },
+    {
+        "q": "The `matplotlib.projections.get_projection_names` function lists all available projection names, including custom ones added by the user.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Which attribute of an `Axes` object holds the `DataLimits` bounding box, which tracks the limits of all plotted data?",
+        "type": "mcq",
+        "o": [
+            "ax.dataLim",
+            "ax.viewLim",
+            "ax.limits",
+            "ax.data_bbox"
+        ]
+    },
+    {
+        "q": "The `callback` registry in Matplotlib uses the `Observable` pattern, allowing multiple callbacks to be connected to a single event.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "What is the purpose of `matplotlib.colors.hsv_to_rgb`?",
+        "type": "mcq",
+        "o": [
+            "To convert an HSV (Hue, Saturation, Value) tuple to an RGB tuple",
+            "To create a colormap from HSV values",
+            "To convert a plot from black and white to color",
+            "To render an image in the HSV color space"
+        ]
+    },
+    {
+        "q": "The `FuncAnimation` method `to_html5_video()` returns an HTML string with a base64-encoded video.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "In `GridSpec`, how can you create a layout where a subplot spans two rows and one column, and another spans one row and two columns, side-by-side?",
+        "type": "mcq",
+        "o": [
+            "Use gs[0:2, 0] and gs[0, 1:3]",
+            "Use gs[0, 0].span(2, 1) and gs[0, 1].span(1, 2)",
+            "Use gs.span(2, 1) and gs.span(1, 2)",
+            "This layout is not possible with GridSpec"
+        ]
+    },
+    {
+        "q": "The `set_marker` method on a `Line2D` object accepts a `MarkerStyle` object in addition to a marker string.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "What is the function of `matplotlib.ticker.ScalarFormatter.set_powerlimits`?",
+        "type": "mcq",
+        "o": [
+            "To set the range of exponents for which scientific notation is used for tick labels",
+            "To set the power limits for a log-scale plot",
+            "To limit the power of scalar data to prevent overflow",
+            "To set the maximum and minimum values for a power transform"
+        ]
+    },
+    {
+        "q": "When defining a custom `GridSpec` subclass, which method must be overridden to enforce a non-rectangular cell shape?",
+        "type": "mcq",
+        "o": [
+            "get_subplot_params",
+            "get_grid_positions",
+            "set_geometry",
+            "non_rectangular_cells are not natively supported; the method does not exist"
+        ]
+    },
+    {
+        "q": "In a twin axes configuration, how can you intercept and transform the draw event to ensure one axes' grid aligns exactly with the other's scaled ticks?",
+        "type": "mcq",
+        "o": [
+            "Connect a callback to the 'draw_event' of the figure that manually sets the ticks of the twin to match calculated positions",
+            "Override the `draw` method of the twin axes to synchronize ticks",
+            "Use the `sharex` mechanism which handles grid alignment natively",
+            "Grid alignment is automatically handled by the `twinx` function"
+        ]
+    },
+    {
+        "q": "In `Axes3D`, the `get_proj` method returns the projection matrix used to transform 3D coordinates to 2D. This matrix is recalculated:",
+        "type": "mcq",
+        "o": [
+            "Every time the view angles or limits change",
+            "Only once when the axes is created",
+            "Only when `apply_aspect` is called",
+            "It is a static identity matrix for 3D plots"
+        ]
+    },
+    {
+        "q": "The `FuncAnimation` object's `_stop` method can be safely called from a different thread to terminate an animation.",
+        "type": "true_false",
+        "correct": "False"
+    },
+    {
+        "q": "What is the internal mechanism by which `LinearSegmentedColormap` performs color lookups?",
+        "type": "mcq",
+        "o": [
+            "It linearly interpolates between stored RGB values at defined anchor points in the [0, 1] space",
+            "It uses a lookup table stored as a dictionary of all possible integer values",
+            "It calculates colors using a cubic spline through the defined color points",
+            "It converts all colors to HSV, interpolates, and converts back"
+        ]
+    },
+    {
+        "q": "The `rcParams` architecture uses a `RcParams` object which is a subclass of `dict` with additional validation and deprecation handling.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "What is the purpose of `matplotlib.backend_bases.FigureCanvasBase.blit` and how does it interact with `FuncAnimation`?",
+        "type": "mcq",
+        "o": [
+            "It copies a rectangular region from the pixel buffer to the screen, used to restore backgrounds when `blit=True`",
+            "It applies a GPU-accelerated blur to the animation for smooth transitions",
+            "It blinks the canvas to indicate a pending animation update",
+            "It is a blocking wait method that waits for the animation to complete"
+        ]
+    },
+    {
+        "q": "Match the `GridSpec` internal method with its private purpose.",
+        "type": "match",
+        "left": [
+            "_layout_grid",
+            "_get_rows_and_cols",
+            "_make_tight_layout"
+        ],
+        "right": [
+            "Calculates the geometry of all grid cells",
+            "Validates and processes row/column specifications",
+            "Manually triggers a tight layout calculation for the grid"
+        ]
+    },
+    {
+        "q": "The `matplotlib.projections.polar.PolarAxes` class allows setting the radial axis to a logarithmic scale using `set_rscale('log')`.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "How can you implement a custom projection in Matplotlib that is compatible with `FuncAnimation`?",
+        "type": "mcq",
+        "o": [
+            "Subclass `matplotlib.axes.Axes`, implement `name` and `_init_axis`, register it, and ensure the draw method respects the animation loop",
+            "Use the `projection='custom'` keyword in `add_subplot` with a JSON config",
+            "Create a custom `Renderer` that handles the animation loop",
+            "Custom projections inherently block `FuncAnimation`"
+        ]
+    },
+    {
+        "q": "The `matplotlib.artist.Artist.update` method is called during the rendering process to prepare an artist's internal state before drawing.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "What is the core function of `matplotlib.transforms.Affine2D` in the context of a 3D plot's text annotations?",
+        "type": "mcq",
+        "o": [
+            "It defines a 2D affine transform that can be applied to the text's position after the 3D to 2D projection, for rotation or scaling",
+            "It converts 3D text into 2D text",
+            "It is the base class for the 3D projection matrix",
+            "It cannot be used with 3D axes"
+        ]
+    },
+    {
+        "q": "In `Axes3D`, the internal `_calculate_view_axes` method determines which faces of the bounding box are visible.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "What is the effect of overriding `_update_title_position` in a custom `Axes` subclass?",
+        "type": "mcq",
+        "o": [
+            "It allows precise control over where the title is drawn, potentially relative to custom axis positions",
+            "It updates the title text with the latest data value",
+            "It repositions the title from the top to the bottom of the axes",
+            "It synchronizes the title position with the animation frame"
+        ]
+    },
+    {
+        "q": "The `FuncAnimation` parameter `repeat_delay` is measured in seconds.",
+        "type": "true_false",
+        "correct": "False"
+    },
+    {
+        "q": "Which method on a `Colorbar` object allows updating its `Norm` and `cmap` dynamically during an animation?",
+        "type": "mcq",
+        "o": [
+            "colorbar.set_norm() and colorbar.set_cmap()",
+            "colorbar.update_normalization()",
+            "colorbar.rescale()",
+            "Colorbar properties are static and cannot be updated dynamically"
+        ]
+    },
+    {
+        "q": "The `constrained_layout` algorithm uses a `layoutbox` tree structure internally to represent the nesting of axes, colorbars, and their associated labels.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "What is the function of `matplotlib.scale.AsinhScale`?",
+        "type": "mcq",
+        "o": [
+            "It provides an inverse hyperbolic sine scale, which behaves like a log scale but handles zero and negative values",
+            "It is a linear scale with adaptive sampling",
+            "It provides a symmetric logarithmic scale similar to SymLogNorm",
+            "It scales data for anti-aliased rendering"
+        ]
+    },
+    {
+        "q": "The `gs.tight_layout` method on a `GridSpec` object dynamically calculates and applies the `left`, `bottom`, `right`, `top` parameters for the whole figure.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "How can you synchronize a `FuncAnimation` with an external real-time data stream (e.g., a sensor) without polling?",
+        "type": "mcq",
+        "o": [
+            "Use a callback-driven architecture where the data stream triggers `event_source.start()` and passes new data to the update function",
+            "Set `interval=0` in `FuncAnimation` for instant updates",
+            "Use `ani.resume()` and `ani.pause()` in a loop with `time.sleep()`",
+            "`FuncAnimation` cannot work with event-driven data; use manual `draw` calls instead"
+        ]
+    },
+    {
+        "q": "The `matplotlib.backend_bases.TimerBase` class, used by `FuncAnimation`, is guaranteed to be thread-safe on all backends.",
+        "type": "true_false",
+        "correct": "False"
+    },
+    {
+        "q": "What is the primary role of `matplotlib.legend_handler.HandlerBase`?",
+        "type": "mcq",
+        "o": [
+            "To define how a specific type of artist is represented in a legend, by providing drawing instructions",
+            "To handle mouse click events on legend entries",
+            "To organize the storage of legend items",
+            "To provide a base class for legend positioning algorithms"
+        ]
+    },
+    {
+        "q": "The `Axes3D` class overrides `_set_lim_and_transforms` to add the third dimension's limits and transformation.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Which `GridSpec` method is called internally by `tight_layout` to get the positions of all subplots?",
+        "type": "mcq",
+        "o": [
+            "get_grid_positions",
+            "update",
+            "tight_layout",
+            "get_subplot_params"
+        ]
+    },
+    {
+        "q": "The `matplotlib.artist.Artist.properties` method returns a dictionary of all settable properties and their current values.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "What is the purpose of `ax.set_yscale('function', functions=(forward, inverse))` in Matplotlib 3.1+?",
+        "type": "mcq",
+        "o": [
+            "To create a completely custom, user-defined axis scale using forward and inverse transformation functions",
+            "To set the y-axis to a functional programming interface",
+            "To apply a function to all y-tick labels",
+            "It is not valid; scales must be pre-registered"
+        ]
+    },
+    {
+        "q": "The `mpl_toolkits.mplot3d.proj3d.proj_points` function takes a list of 3D points and returns their 2D screen coordinates directly.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "In `FuncAnimation`, what is the consequence of not holding a reference to the animation object in a script?",
+        "type": "mcq",
+        "o": [
+            "The animation will immediately stop and may be garbage collected, resulting in no visible output",
+            "It will run in the background indefinitely",
+            "It will throw a `WeakReferenceError`",
+            "Nothing, Matplotlib internally holds a reference"
+        ]
+    },
+    {
+        "q": "The `set_antialiased` method on a `Line2D` object controls the use of anti-aliasing only when the line is rendered to a vector format.",
+        "type": "true_false",
+        "correct": "False"
+    },
+    {
+        "q": "What does the `matplotlib.patches.PathPatch` constructor use to define the shape of the patch?",
+        "type": "mcq",
+        "o": [
+            "A `matplotlib.path.Path` object",
+            "A list of vertices and codes",
+            "An SVG path string",
+            "Both a Path object and a list of vertices with codes"
+        ]
+    },
+    {
+        "q": "Match the `Axes3D` internal state variable with its meaning.",
+        "type": "match",
+        "left": [
+            "self._view_margin",
+            "self._focal_length",
+            "self._azim"
+        ],
+        "right": [
+            "Margin around the data for view limits",
+            "Distance of the camera from the center",
+            "Current azimuthal viewing angle"
+        ]
+    },
+    {
+        "q": "The `FuncAnimation` class's `frame_seq` generator can be overridden to provide frames from a live feed instead of a pre-computed sequence.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "What is the purpose of `matplotlib.colors.ColorConverter.colors`?",
+        "type": "mcq",
+        "o": [
+            "It is a dictionary mapping color names to their hex or RGB values, used to support named colors like 'coral'",
+            "It stores all the colors currently in use in a figure",
+            "It is a cache of all converted colors for the current session",
+            "It lists all available colormap names"
+        ]
+    },
+    {
+        "q": "The `ax.apply_aspect()` method in a 3D axes recalculates the position and scaling to enforce `set_box_aspect`.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "How can you modify the behavior of the zoom tool in a custom Matplotlib backend to enable synchronized zoom across multiple figures?",
+        "type": "mcq",
+        "o": [
+            "Subclass the backend's `NavigationToolbar2` and override the `zoom` method to broadcast the view limits to registered figures",
+            "Set `plt.rcParams['toolbar.multi_figure'] = True`",
+            "Use the `sharex` and `sharey` parameters between figures",
+            "It is impossible; figures are independent"
+        ]
+    },
+    {
+        "q": "The `get_tightbbox` method of a `Text` artist accounts for descenders and ascenders to calculate a visually accurate bounding box.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Which function in `matplotlib.ticker` allows you to format tick labels based on the data value's logarithm?",
+        "type": "mcq",
+        "o": [
+            "LogFormatter",
+            "LogLocator",
+            "LogScale",
+            "LogTick"
+        ]
+    },
+    {
+        "q": "In `GridSpecFromSubplotSpec`, the parent `SubplotSpec` is stored internally as `_parent`.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "What is the internal mechanism of `mpl_toolkits.mplot3d.art3d.Line3D.draw()` that enables proper occlusion?",
+        "type": "mcq",
+        "o": [
+            "It splits the line into segments, projects each, calculates their z-order, and renders them in order from back to front",
+            "It uses the Z-buffer of the graphics card for hardware occlusion",
+            "It draws the entire line and relies on the Painter's Algorithm based on z-order",
+            "It sorts the vertices by depth before drawing, which prevents intersections"
+        ]
+    },
+    {
+        "q": "The `FuncAnimation` `_pre_draw` and `_post_draw` callbacks are part of the public API for customizing the animation pipeline.",
+        "type": "true_false",
+        "correct": "False"
+    },
+    {
+        "q": "What is the role of `matplotlib.projections.register_projection`?",
+        "type": "mcq",
+        "o": [
+            "To associate a custom `Axes` subclass with a string name, making it usable in `projection='myname'`",
+            "To register a map projection for geographic plots",
+            "To save a projection matrix for later use",
+            "To create an alias for an existing projection"
+        ]
+    },
+    {
+        "q": "The `matplotlib.backends.backend_agg.FigureCanvasAgg` class renders the figure to a pixel buffer entirely in memory without a display.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "How does the `symlog` scale in `matplotlib.scale` handle values around zero?",
+        "type": "mcq",
+        "o": [
+            "It uses a linear scale within a `linthresh` range around zero, and logarithmic outside",
+            "It uses a symmetric logarithmic transformation that handles negative values directly",
+            "It clamps all values to a minimum threshold before applying the log",
+            "It applies a linear offset to make all data positive, then logs, then shifts back"
+        ]
+    },
+    {
+        "q": "The `GridSpec` parameter `figure` can accept a `Figure` object to define the bounding box of the grid within that figure.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "What is the purpose of `matplotlib.artist.Artist.set_clip_box`?",
+        "type": "mcq",
+        "o": [
+            "To define a bounding box that clips the artist's rendering, hiding any parts outside the box",
+            "To set a box that clips the artist's interactive picking region",
+            "To create a clip art box for a decorative plot",
+            "To set the clipping box for the colorbar"
+        ]
+    },
+    {
+        "q": "In `Axes3D`, the internal `_on_move` callback is connected to mouse motion events and updates the `_focal_length` or `_azim` during rotation.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "What is the function of `plt.gci()`?",
+        "type": "mcq",
+        "o": [
+            "Get the current colorable artist, typically the last one created that a colorbar can be added to",
+            "Get the current image file",
+            "Get the current color index",
+            "Get the current iterator for colors"
+        ]
+    },
+    {
+        "q": "The `set_url` method on an artist attaches a hyperlink to the artist in SVG output, making it interactive when viewed in a browser.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Which method of a `Figure` object returns all the `Axes` objects that belong to it?",
+        "type": "short_answer",
+        "answers": [
+            "get_axes"
+        ],
+        "isCaseSensitive": false
+    },
+    {
+        "q": "What does the `matplotlib.transforms.Transform.transform` method return when given a single point?",
+        "type": "mcq",
+        "o": [
+            "A NumPy array of the transformed coordinates",
+            "A tuple of floats",
+            "A list of lists",
+            "A plain Python list"
+        ]
+    },
+    {
+        "q": "The `FuncAnimation` save method's `writer` parameter can be a string like 'ffmpeg' or an instance of a writer class.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Match the `matplotlib.ticker` class with its tick placement strategy.",
+        "type": "match",
+        "left": [
+            "LinearLocator",
+            "LogLocator",
+            "MultipleLocator"
+        ],
+        "right": [
+            "Evenly spaced ticks",
+            "Logarithmically spaced ticks",
+            "Ticks at multiples of a base value"
+        ]
+    },
+    {
+        "q": "The `SubplotSpec` object returned by `GridSpec.__getitem__` is immutable and cannot be resized.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "In `Axes3D`, what does the `set_xlim` method call internally to update the 3D view?",
+        "type": "mcq",
+        "o": [
+            "It calls `self.set_view` or a similar internal method to update the projection matrix and trigger a redraw",
+            "It simply sets the `_xlim` attribute and posts a draw event",
+            "It throws a `NotImplementedError` in 3D; use `set_xlim3d`",
+            "It updates the limits and automatically calls `autoscale_view`"
+        ]
+    },
+    {
+        "q": "The `Figure` object's `canvas` attribute provides the backend-specific drawing surface that connects Matplotlib to the GUI toolkit.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "What is the effect of using `matplotlib.colors.LogNorm` with data that contains zero or negative values?",
+        "type": "mcq",
+        "o": [
+            "It will raise an error or produce invalid results because log(0) is undefined",
+            "It automatically clips those values to a small positive number",
+            "It switches to a linear scale for those values",
+            "It ignores those values and maps them to the lowest color"
+        ]
+    },
+    {
+        "q": "The `matplotlib.widgets` module provides interactive widgets like `Slider` and `Button`, which can be used to control `FuncAnimation` parameters in real-time.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "What is the core purpose of `matplotlib.transforms.Bbox`?",
+        "type": "mcq",
+        "o": [
+            "To represent an axis-aligned bounding box, providing methods for union, intersection, and point containment tests",
+            "To define the bounding box of a figure for saving",
+            "To create a box-shaped transform",
+            "To bound the values in a colormap"
+        ]
+    },
+    {
+        "q": "In `GridSpec`, the `get_position` method of a `SubplotSpec` returns a `Bbox` in normalized figure coordinates.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "How can you implement a custom colormap that is strictly cyclic (e.g., for phase angles) and wraps around seamlessly?",
+        "type": "mcq",
+        "o": [
+            "Create a `ListedColormap` where the first and last colors are identical, or use `LinearSegmentedColormap` with appropriate endpoints",
+            "Set `cyclic=True` in the colormap constructor",
+            "Use `cmap.set_cyclic(True)` after creation",
+            "Any colormap is cyclic if you set `vmin` and `vmax` appropriately"
+        ]
+    },
+    {
+        "q": "The `FuncAnimation` object's `_handle_resize` method is called automatically by the window resize event and re-caches the background for blitting.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "What does `ax.autoscale(enable=True, axis='both', tight=False)` do?",
+        "type": "mcq",
+        "o": [
+            "Enables autoscaling on both axes, but with a small margin (not tight) around the data limits",
+            "Sets both axes to autoscale tightly without any margins",
+            "Enables autoscaling for the entire figure",
+            "Disables autoscaling and sets fixed tight limits"
+        ]
+    },
+    {
+        "q": "The `mpl_toolkits.axes_grid1.inset_locator.zoomed_inset_axes` function returns the new inset axes and the connection lines as a tuple.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Which of the following is a correct method to serialize and restore the entire state of a `Figure` including its `GridSpec` layout?",
+        "type": "mcq",
+        "o": [
+            "Use `pickle` to serialize the figure object, as Matplotlib figures support pickling",
+            "Save as a `.mpl` state file using `plt.save_state()`",
+            "Export to JSON using `fig.to_json()`",
+            "Serialize the `rcParams` only, as the layout is deterministic"
+        ]
+    },
+    {
+        "q": "The `matplotlib.artist.Artist.set_gid` method sets a global ID for the artist, which appears in SVG output as an `id` attribute for CSS targeting.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "What is the internal function of `Axes3D._get_coord_info`?",
+        "type": "mcq",
+        "o": [
+            "It processes a mouse event to return the 3D coordinate under the cursor, used for the status bar display",
+            "It retrieves the coordinate axes limits",
+            "It gets the coordinate information for the tick labels",
+            "It formats the coordinate system for the axes title"
+        ]
+    },
+    {
+        "q": "The `constrained_layout` engine respects custom `gridspec_kw` passed to `Figure.subplots`.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "What does `plt.rcParams['agg.path.chunksize']` control?",
+        "type": "mcq",
+        "o": [
+            "The number of vertices in a path that are sent to the Agg renderer at once, affecting performance",
+            "The size of chunks when saving animations in Agg backend",
+            "The number of parallel paths rendered",
+            "The size of the file chunks when reading an image"
+        ]
+    },
+    {
+        "q": "The `FuncAnimation` class can be used with the `%matplotlib inline` backend in Jupyter to display live animations.",
+        "type": "true_false",
+        "correct": "False"
+    },
+    {
+        "q": "What is the purpose of `matplotlib.artist.Artist.get_cursor_data`?",
+        "type": "mcq",
+        "o": [
+            "To return the data value under the mouse cursor for an artist, used for interactive tooltips",
+            "To get the cursor position data for the current figure",
+            "To retrieve the cursor style set for the artist",
+            "To fetch the data that the cursor will plot next"
+        ]
+    },
+    {
+        "q": "In `GridSpec`, the `_layout_grid` method is a pure virtual function that must be implemented by all grid-like layouts.",
+        "type": "true_false",
+        "correct": "False"
+    },
+    {
+        "q": "How can you dynamically change the colormap of a `pcolormesh` plot during a `FuncAnimation`?",
+        "type": "mcq",
+        "o": [
+            "Update the array data and optionally the `norm` and `cmap` of the `QuadMesh` artist, then return it",
+            "Call `pcolormesh` again inside the update function and the old mesh is automatically replaced",
+            "Use `mesh.set_cmap()` before `FuncAnimation` starts; it cannot be changed per frame",
+            "Set `ani.colormap` to a list of cmaps"
+        ]
+    },
+    {
+        "q": "The `bbox_extra_artists` parameter in `savefig` or `tight_layout` allows you to include artists that exist outside the standard subplot bounds in the layout calculation.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "What is the primary function of `matplotlib.ticker.LogFormatterSciNotation`?",
+        "type": "mcq",
+        "o": [
+            "To format logarithmic tick labels using scientific notation for the major ticks",
+            "To format the scientific notation of log-scale data values",
+            "To log the usage of scientific notation in plots",
+            "To format the tick labels of a log-log plot using scientific notation"
+        ]
+    },
+    {
+        "q": "The `FuncAnimation` class is not thread-safe; all GUI updates must be performed from the main thread.",
+        "type": "true_false",
+        "correct": "True"
+    },
+    {
+        "q": "Match the `Axes3D` method with the type of plot it generates.",
+        "type": "match",
+        "left": [
+            "text3D",
+            "quiver3D",
+            "voxels"
+        ],
+        "right": [
+            "Text placed at 3D coordinates",
+            "Arrows representing vector fields",
+            "3D volumetric pixels"
+        ]
+    },
+    {
+        "q": "The `matplotlib.dates` module provides locators and formatters specifically for time-series data, but they cannot be used with 3D axes.",
+        "type": "true_false",
+        "correct": "False"
+    },
+    {
+        "q": "What does the `set_contains` method on an `Artist` do?",
+        "type": "mcq",
+        "o": [
+            "It sets a custom hit-testing function for the artist, defining what is considered 'inside' the artist for mouse events",
+            "It sets whether the artist contains data",
+            "It defines the bounding box that contains the artist",
+            "It contains the artist's rendering within a specific region"
+        ]
+    }
+]

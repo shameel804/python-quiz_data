@@ -1,0 +1,91 @@
+{
+    "id": "learn_environments_pr",
+    "topicId": "environments_pr",
+    "topicTitle": "Environments & Project Structure",
+    "description": "Learn how professional Python developers structure their code. Master virtual environments, package managers like Poetry, and the 'src' layout.",
+    "baseKP": 75,
+    "slides": [
+        {
+            "id": "env_pr_1",
+            "type": "content",
+            "title": "The Dependency Nightmare",
+            "content": "# \"It Works on My Machine\" 💥\n\nIf you `pip install Django` on your Mac, it installs globally. \n\nIf Project A needs Django v2.0, and Project B needs Django v4.0, your global Python environment is broken. You cannot run both projects.\n\nProfessional developers NEVER install packages globally. They use **Virtual Environments**."
+        },
+        {
+            "id": "env_pr_2",
+            "type": "content",
+            "title": "The Built-in Solution",
+            "content": "# `venv` 📦\n\nPython comes with a built-in tool called `venv`. It creates an isolated, fake Python installation inside a specific folder in your project.\n\n```bash\n# Create a virtual environment folder named '.venv'\npython -m venv .venv\n\n# Activate it (Mac/Linux)\nsource .venv/bin/activate\n\n# Activate it (Windows)\n.venv\\Scripts\\activate\n```\n\nWhen activated, running `pip install requests` places the library *inside* `.venv`, leaving your global Python untouched!"
+        },
+        {
+            "id": "env_pr_3",
+            "type": "content",
+            "title": "Modern Package Managers",
+            "content": "# Beyond `venv` 🚀\n\n`venv` + `requirements.txt` is the old way.\n\nModern Python development uses tools that handle both virtual environments AND complex dependency locking simultaneously.\n\n1. **Poetry:** The current industry favorite. Uses `pyproject.toml` and creates virtual environments automatically.\n2. **Pipenv:** The original attempt to bring npm-like behavior to Python.\n3. **Conda:** Heavily used in Data Science/Machine Learning because it can install non-Python binaries (like C++ compilers for NumPy)."
+        },
+        {
+            "id": "env_pr_4",
+            "type": "content",
+            "title": "Introduction to Poetry",
+            "content": "# Managing Projects with `poetry` 📜\n\nInstead of manually creating a `.venv` and a `requirements.txt`, Poetry does it all.\n\n```bash\n# Initialize a new project\npoetry new my_project\n\n# Install a package (like 'npm install')\npoetry add requests\n\n# Run a Python script inside the automatically managed virtual environment\npoetry run python main.py\n```\n\nPoetry automatically resolves complex dependency conflicts that standard `pip` fails to handle."
+        },
+        {
+            "id": "env_pr_quiz_1",
+            "type": "quiz",
+            "title": "Environment Quiz",
+            "content": "Check your understanding of dependency isolation.",
+            "quizQuestion": "Why is it considered a bad practice to run `pip install [package]` without an active virtual environment?",
+            "quizOptions": [
+                "Because it installs the package globally, which can cause version conflicts between different projects running on the same machine.",
+                "Because it deletes all other Python packages.",
+                "Because it requires a credit card to download.",
+                "Because `pip` does not work on Windows."
+            ],
+            "correctOptionIndex": 0
+        },
+        {
+            "id": "env_pr_5",
+            "type": "content",
+            "title": "Project Architecture",
+            "content": "# The `src` Layout 📂\n\nHow should you arrange files in your project repository?\n\nBeginners put all their `.py` files in the root folder next to their `README.md`. This is messy and causes import bugs when testing.\n\nThe industry standard is the **`src` layout**.\n\n```text\nmy_project/\n├── pyproject.toml\n├── README.md\n├── tests/\n│   └── test_math.py\n└── src/\n    └── my_package/\n        ├── __init__.py\n        └── math.py\n```\n\nAll source code lives securely inside a `src` directory."
+        },
+        {
+            "id": "env_pr_6",
+            "type": "content",
+            "title": "Defining a Package",
+            "content": "# `__init__.py` 🎁\n\nHow does Python know that a folder is a module that can be imported (e.g., `import my_package.math`), and not just a random folder on your computer?\n\nIt looks for a file named `__init__.py`.\n\nHistorically, this file was required. Today (Python 3.3+), it's technically optional, but it is still highly recommended as it allows you to define what is exposed to the user when they run `from my_package import *`."
+        },
+        {
+            "id": "env_pr_7",
+            "type": "content",
+            "title": "Executable Packages",
+            "content": "# `__main__.py` 🏃\n\nWhat if you want someone to run your entire package as a script from the terminal, like this:\n`python -m my_package`\n\nPython will look inside your package folder for a file named `__main__.py` and execute it.\n\n```python_not\n# src/my_package/__main__.py\nimport sys\nfrom .math import run_calculator\n\ndef main():\n    print(\"Starting calculator...\")\n    run_calculator(sys.argv)\n\nif __name__ == \"__main__\":\n    main()\n```"
+        },
+        {
+            "id": "env_pr_8",
+            "type": "content",
+            "title": "Advanced Packaging",
+            "content": "# Namespace Packages 🌌\n\nImagine a massive corporation like Google. They have thousands of Python packages.\n\nThey don't want a massive `google` package containing everything. They want developers to install `google-cloud-storage` and `google-auth` separately, but still import them via:\n`import google.cloud.storage`\n`import google.auth`\n\nThis is a **Namespace Package**. It allows multiple separate Python packages (installed via `pip`) to seamlessly merge into a single folder hierarchy (`google`) without overwriting each other! You achieve this by specifically *omitting* the `__init__.py` in the top-level `google` folder."
+        },
+        {
+            "id": "env_pr_quiz_2",
+            "type": "quiz",
+            "title": "Structure Quiz",
+            "content": "Test your packaging knowledge.",
+            "quizQuestion": "In professional Python development, what is the purpose of the `__main__.py` file inside a package directory?",
+            "quizOptions": [
+                "It defines the variables exposed by `import *`.",
+                "It is the configuration file for the Poetry package manager.",
+                "It stores the unit tests for the package.",
+                "It allows the entire package directory to be executed as a script using the `python -m package_name` command."
+            ],
+            "correctOptionIndex": 3
+        },
+        {
+            "id": "env_pr_9",
+            "type": "content",
+            "title": "Summary",
+            "content": "# Python Architect! 🎉\n\nYou've learned how to structure code so it doesn't break.\n\n## Key Takeaways\n\n- ✅ **Virtual Environments:** Always isolate dependencies. Use `venv` natively, or upgrade to `poetry` for full management.\n- ✅ **src Layout:** Put your code inside `src/package_name/` to avoid import resolution bugs and keep the root clean.\n- ✅ **`__init__.py`:** Placed in a folder to tell Python it is a real importable package.\n- ✅ **`__main__.py`:** Allows your package to act as a command-line executable via `python -m`.\n- ✅ **Namespace Packages:** Massive applications can span multiple pip-installable repositories but share the same top-level import name (by omitting the top-level `__init__.py`)."
+        }
+    ]
+}

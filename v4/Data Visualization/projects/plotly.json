@@ -1,0 +1,30 @@
+[
+  {
+    "title": "Interactive Plotly Express",
+    "ques": "Using `plotly.express`, write a snippet to create an interactive bar chart of 'sales' against 'month' from a DataFrame `df`.",
+    "answer": {
+      "type": "code",
+      "lang": "python",
+      "content": "import plotly.express as px\n\nfig = px.bar(df, x='month', y='sales', title=\"Monthly Sales\")\nfig.show()"
+    },
+    "explanation": "`plotly.express` (often imported as `px`) is a terse, consistent, high-level wrapper around the Plotly core library. It generates fully interactive web-based charts (with hover tooltips and zooming) using very little code."
+  },
+  {
+    "title": "Plotly Graph Objects",
+    "ques": "When would you choose `plotly.graph_objects` (`go.Figure`) over `plotly.express`?",
+    "answer": {
+      "type": "text",
+      "content": "While `plotly.express` is great for quick, standard charts, `plotly.graph_objects` provides lower-level, granular control over every aspect of the figure. You would use `go.Figure` when you need highly customized layouts, complex multi-trace charts (like overlaying a bar chart and a line chart on different axes), or customized subplots that Express cannot easily handle."
+    },
+    "explanation": "Graph Objects represent the underlying data structure of all Plotly charts."
+  },
+  {
+    "title": "Interactive Elements",
+    "ques": "What are some of the built-in interactive features of Plotly charts rendered in a browser?",
+    "answer": {
+      "type": "text",
+      "content": "By default, Plotly charts offer hover tooltips displaying exact data point values, zooming and panning, box-select and lasso-select tools, toggling traces on/off by clicking items in the legend, and an option to download the current view as a static PNG image."
+    },
+    "explanation": "These out-of-the-box interactive features make Plotly ideal for dashboards and web applications."
+  }
+]

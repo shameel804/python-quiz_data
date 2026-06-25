@@ -1,0 +1,31 @@
+[
+  {
+    "title": "Alembic Basics \ud83d\udd70",
+    "ques": "What command line instruction do you run to automatically generate a new Alembic migration script based on changes in your SQLAlchemy models?",
+    "answer": {
+      "type": "code",
+      "lang": "bash",
+      "content": "alembic revision --autogenerate -m \"Add user table\""
+    },
+    "explanation": "The `--autogenerate` flag tells Alembic to compare the current database state against your models and generate the required SQL."
+  },
+  {
+    "title": "Applying Migrations \ud83c\udfd7",
+    "ques": "What command applies all pending Alembic migrations to update the database to the latest version?",
+    "answer": {
+      "type": "code",
+      "lang": "bash",
+      "content": "alembic upgrade head"
+    },
+    "explanation": "`upgrade head` applies all unapplied migration scripts up to the most recent one."
+  },
+  {
+    "title": "ACID Properties \ud83e\uddea",
+    "ques": "Briefly describe the **Isolation** property in database transactions.",
+    "answer": {
+      "type": "text",
+      "content": "**Isolation** ensures that concurrent transactions occur independently without interfering with each other. It guarantees that the intermediate state of a transaction is invisible to other transactions."
+    },
+    "explanation": "ACID (Atomicity, Consistency, Isolation, Durability) guarantees reliable processing of database transactions."
+  }
+]

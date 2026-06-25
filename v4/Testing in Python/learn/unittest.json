@@ -1,0 +1,147 @@
+{
+    "id": "learn_unittest",
+    "topicId": "unittest",
+    "topicTitle": "unittest",
+    "description": "Learn the fundamentals of Python's built-in testing framework, including TestCase, setup/teardown, assertions, subtests, and test suites.",
+    "baseKP": 75,
+    "slides": [
+        {
+            "id": "unittest_1",
+            "type": "content",
+            "title": "Introduction to unittest",
+            "content": "# What is unittest? 🧪\n\nPython's `unittest` module, sometimes referred to as \"PyUnit,\" is the built-in testing framework inspired by Java's JUnit. It provides a robust, object-oriented way to write and run tests.\n\n## Why use unittest?\n\n- 📦 **Built-in:** It comes pre-packaged with Python's standard library. No `pip install` required!\n- 🧱 **Structured:** Uses classes and methods to organize tests neatly.\n- 🛠️ **Feature-Rich:** Supports test automation, sharing setup/teardown code, aggregation of tests, and independence of tests.\n\n## Core Concepts\n\n1. **Test Case:** The smallest unit of testing. It checks for a specific response to a specific set of inputs.\n2. **Test Fixture:** The preparation needed to perform tests (e.g., creating temporary databases or directories).\n3. **Test Suite:** A collection of test cases or test suites.\n4. **Test Runner:** A component that orchestrates the execution of tests and provides the outcome to the user."
+        },
+        {
+            "id": "unittest_2",
+            "type": "content",
+            "title": "The TestCase Class",
+            "content": "# The `TestCase` Class 🏛️\n\nTo write a test, you must create a class that inherits from `unittest.TestCase`. This is the fundamental building block of `unittest`.\n\n## Basic Rules\n\n- Import the `unittest` module.\n- Create a subclass of `unittest.TestCase`.\n- Any method inside your class that starts with the word `test` will automatically be executed as a test!\n\n```python\nimport unittest\n\nclass MyFirstTest(unittest.TestCase):\n    def test_something(self):\n        self.assertEqual(1 + 1, 2)\n```\n\n> 💡 **Naming Convention:** Always start your test methods with `test_` (e.g., `test_addition`, `test_login_success`). If you don't, the test runner will completely ignore them!"
+        },
+        {
+            "id": "unittest_3",
+            "type": "content",
+            "title": "Writing Your First Test",
+            "content": "# Your First Test in Action 🚀\n\nLet's write a simple test for a custom string manipulation function.\n\n<!-- FULL_CODE_START\nimport unittest\n\ndef reverse_string(text):\n    return text[::-1]\n\ndef capitalize_string(text):\n    return text.capitalize()\n\nclass StringUtilitiesTest(unittest.TestCase):\n    def test_reverse(self):\n        \"\"\"Test if reverse_string works properly.\"\"\"\n        result = reverse_string(\"hello\")\n        self.assertEqual(result, \"olleh\")\n        \n    def test_capitalize(self):\n        \"\"\"Test if capitalize_string works properly.\"\"\"\n        result = capitalize_string(\"python\")\n        self.assertEqual(result, \"Python\")\n\nif __name__ == '__main__':\n    print(\"=== Running unittest Demonstration ===\")\n    # We pass verbosity=2 to see detailed output of each test\n    unittest.main(verbosity=2, exit=False)\nFULL_CODE_END -->\n\n## The Boilerplate\n\nNotice the `unittest.main()` call at the bottom. This provides a command-line interface to the test script, automatically discovering and running all the test methods inside your `TestCase` classes."
+        },
+        {
+            "id": "unittest_4",
+            "type": "content",
+            "title": "setUp and tearDown",
+            "content": "# Test Fixtures: setUp & tearDown 🏗️\n\nWhen writing tests, you often need to perform some initialization before tests run, and some cleanup afterward.\n\n## `setUp()`\n- Called **BEFORE** every single test method.\n- Perfect for initializing variables, opening file handlers, or setting up a clean database state.\n\n## `tearDown()`\n- Called **AFTER** every single test method.\n- Used for cleaning up, closing files, or clearing out the database.\n\n```python\nclass FileTest(unittest.TestCase):\n    def setUp(self):\n        # Runs before each test\n        self.file = open(\"test_data.txt\", \"w\")\n        \n    def tearDown(self):\n        # Runs after each test\n        self.file.close()\n```\n\n> ⚠️ **Important:** `tearDown()` runs even if the test method raises an exception! It guarantees your cleanup code is executed."
+        },
+        {
+            "id": "unittest_5",
+            "type": "content",
+            "title": "setUp/tearDown in Action",
+            "content": "# Demonstrating Fixtures 🔄\n\nLet's see how `setUp` and `tearDown` interact with multiple tests.\n\n<!-- FULL_CODE_START\nimport unittest\n\nclass BankAccount:\n    def __init__(self, balance=0):\n        self.balance = balance\n\nclass TestBankAccount(unittest.TestCase):\n    def setUp(self):\n        print(\"\\n[setUp] Creating a fresh bank account...\")\n        self.account = BankAccount(100)\n        \n    def tearDown(self):\n        print(\"[tearDown] Destroying the bank account...\\n\")\n        self.account = None\n        \n    def test_deposit(self):\n        print(\"Running test_deposit...\")\n        self.account.balance += 50\n        self.assertEqual(self.account.balance, 150)\n        \n    def test_withdraw(self):\n        print(\"Running test_withdraw...\")\n        self.account.balance -= 20\n        self.assertEqual(self.account.balance, 80)\n\nif __name__ == '__main__':\n    unittest.main(verbosity=2, exit=False)\nFULL_CODE_END -->\n\nNotice the order of print statements: `setUp` -> `test_1` -> `tearDown` -> `setUp` -> `test_2` -> `tearDown`."
+        },
+        {
+            "id": "unittest_quiz_1",
+            "type": "quiz",
+            "title": "Test Fixtures Check",
+            "content": "Let's test your understanding of `setUp` and `tearDown`.",
+            "quizQuestion": "If a TestCase class has 5 test methods, how many times will the `setUp` method be called during a full test run?",
+            "quizOptions": [
+                "1 time",
+                "5 times",
+                "6 times",
+                "It depends on whether the tests pass or fail"
+            ],
+            "correctOptionIndex": 1
+        },
+        {
+            "id": "unittest_6",
+            "type": "content",
+            "title": "setUpClass & tearDownClass",
+            "content": "# Class-Level Fixtures 🏛️\n\nSometimes, setting up resources is extremely slow (e.g., spinning up a Docker container, or establishing a remote database connection). You don't want to do this before *every single test*.\n\nEnter `@classmethod` fixtures!\n\n## `setUpClass(cls)`\n- Runs exactly **ONCE** before any tests in the class run.\n- Must be decorated with `@classmethod`.\n\n## `tearDownClass(cls)`\n- Runs exactly **ONCE** after all tests in the class have finished.\n- Also requires `@classmethod`.\n\n```python\nclass DatabaseTest(unittest.TestCase):\n    @classmethod\n    def setUpClass(cls):\n        print(\"Connecting to database...\")\n        cls.db = HeavyDatabaseConnection()\n        \n    @classmethod\n    def tearDownClass(cls):\n        print(\"Closing database connection...\")\n        cls.db.close()\n```"
+        },
+        {
+            "id": "unittest_7",
+            "type": "content",
+            "title": "Common Assertions",
+            "content": "# Assertions Arsenal 🛡️\n\nThe `TestCase` class provides numerous assert methods to check for and report failures. If an assertion fails, the test fails.\n\n## Equality & Identity\n- `assertEqual(a, b)`: Checks if `a == b`\n- `assertNotEqual(a, b)`: Checks if `a != b`\n- `assertIs(a, b)`: Checks if `a is b` (same memory address)\n- `assertIsNot(a, b)`: Checks if `a is not b`\n\n## Booleans & None\n- `assertTrue(x)`: Checks if `bool(x) is True`\n- `assertFalse(x)`: Checks if `bool(x) is False`\n- `assertIsNone(x)`: Checks if `x is None`\n- `assertIsNotNone(x)`: Checks if `x is not None`\n\n## Collections\n- `assertIn(a, b)`: Checks if `a in b`\n- `assertNotIn(a, b)`: Checks if `a not in b`\n- `assertIsInstance(a, b)`: Checks if `isinstance(a, b)`"
+        },
+        {
+            "id": "unittest_8",
+            "type": "content",
+            "title": "Assertions in Practice",
+            "content": "# Testing with Various Assertions 🎯\n\nLet's put our assertion arsenal to the test.\n\n<!-- FULL_CODE_START\nimport unittest\n\nclass AssertionDemonstration(unittest.TestCase):\n    def test_math(self):\n        self.assertEqual(10 * 10, 100)\n        self.assertNotEqual(10 + 10, 100)\n        \n    def test_truthiness(self):\n        my_list = [1, 2, 3]\n        empty_list = []\n        \n        self.assertTrue(my_list)      # Populated list is True\n        self.assertFalse(empty_list)  # Empty list is False\n        self.assertIsNone(None)\n        \n    def test_membership(self):\n        greeting = \"Hello, World!\"\n        self.assertIn(\"World\", greeting)\n        self.assertNotIn(\"Python\", greeting)\n        \n    def test_types(self):\n        self.assertIsInstance(42, int)\n        self.assertNotIsInstance(\"42\", int)\n\nif __name__ == '__main__':\n    unittest.main(verbosity=2, exit=False)\nFULL_CODE_END -->\n\n> 💡 **Tip:** Always use the most specific assertion possible. Use `assertIn(a, b)` instead of `assertTrue(a in b)` because `assertIn` provides a much more descriptive error message if it fails!"
+        },
+        {
+            "id": "unittest_9",
+            "type": "content",
+            "title": "Testing Exceptions",
+            "content": "# Asserting Exceptions 💥\n\nGood code shouldn't just handle happy paths; it must crash gracefully when given bad input. We use `assertRaises` to ensure our functions throw the correct exceptions.\n\n## Using `assertRaises`\n\nIt is best used as a context manager (using the `with` keyword).\n\n```python\nclass ExceptionTest(unittest.TestCase):\n    def test_divide_by_zero(self):\n        # We EXPECT a ZeroDivisionError to be raised here\n        with self.assertRaises(ZeroDivisionError):\n            result = 10 / 0\n```\n\n## Validating Exception Messages\n\nYou can also check if the exception contains specific text using `assertRaisesRegex`.\n\n```python\n    def test_value_error_msg(self):\n        with self.assertRaisesRegex(ValueError, \"invalid literal\"):\n            int(\"not_a_number\")\n```"
+        },
+        {
+            "id": "unittest_10",
+            "type": "content",
+            "title": "Skipping Tests",
+            "content": "# `@unittest.skip` ⏭️\n\nSometimes, you need to skip tests. Maybe a feature isn't implemented yet, or a test only works on Windows, but you are running on a Mac.\n\n## Unconditional Skip\n```python\n@unittest.skip(\"Feature X is not implemented yet\")\ndef test_feature_x(self):\n    pass\n```\n\n## Conditional Skips\n- `@unittest.skipIf(condition, reason)`: Skips if the condition is True.\n- `@unittest.skipUnless(condition, reason)`: Skips if the condition is False.\n\n```python\nimport sys\n\n@unittest.skipIf(sys.platform.startswith(\"win\"), \"Requires Unix\")\ndef test_unix_behavior(self):\n    pass\n```\n\nSkipped tests are reported as `s` in the test output, differentiating them from passes `.` and failures `F`."
+        },
+        {
+            "id": "unittest_quiz_2",
+            "type": "quiz",
+            "title": "Skip Check",
+            "content": "Test your knowledge on skipping tests in unittest.",
+            "quizQuestion": "Which decorator would you use to ONLY run a test when a specific library (e.g., `has_numpy`) is installed?",
+            "quizOptions": [
+                "@unittest.skipIf(has_numpy, 'Needs numpy')",
+                "@unittest.skipUnless(has_numpy, 'Needs numpy')",
+                "@unittest.skip('Needs numpy')",
+                "@unittest.expectedFailure"
+            ],
+            "correctOptionIndex": 1
+        },
+        {
+            "id": "unittest_11",
+            "type": "content",
+            "title": "Expected Failures",
+            "content": "# Expected Failures (`expectedFailure`) 📉\n\nWhat if you know a test is going to fail because of an existing bug, but you want to commit the test anyway to track it? \n\nInstead of letting the test suite fail (which might block your CI/CD pipeline), use `@unittest.expectedFailure`.\n\n## How it works\n\n- If the test **fails**, `unittest` considers it a \"success\" (because you expected it to fail!). It is marked as an `x` (expected failure).\n- If the test suddenly **passes**, `unittest` flags it as an `u` (unexpected success)!\n\n<!-- FULL_CODE_START\nimport unittest\n\nclass BugTrackerTest(unittest.TestCase):\n    \n    @unittest.expectedFailure\n    def test_known_bug(self):\n        \"\"\"This test highlights a known bug that isn't fixed yet.\"\"\"\n        # Imagine our sum function is currently broken and subtracts instead\n        def broken_sum(a, b): return a - b \n        \n        self.assertEqual(broken_sum(2, 2), 4) # This will fail, but that's expected!\n\nif __name__ == '__main__':\n    unittest.main(verbosity=2, exit=False)\nFULL_CODE_END -->"
+        },
+        {
+            "id": "unittest_12",
+            "type": "content",
+            "title": "Parametrized Tests with subTest",
+            "content": "# `subTest` for Parametrized Testing 🔁\n\nOften, you want to run the exact same test logic with multiple different inputs. If you put them in a `for` loop and one fails, the loop stops, and you don't know if the remaining items would have passed.\n\n`self.subTest()` solves this by treating each iteration as an independent test.\n\n<!-- FULL_CODE_START\nimport unittest\n\ndef is_even(n):\n    return n % 2 == 0\n\nclass NumberTest(unittest.TestCase):\n    def test_evens(self):\n        \"\"\"Test multiple numbers using subTest.\"\"\"\n        test_cases = [\n            (2, True),\n            (4, True),\n            (5, False),\n            (10, True)\n        ]\n        \n        for number, expected in test_cases:\n            # The subTest context manager isolates each loop iteration\n            with self.subTest(number=number, expected=expected):\n                self.assertEqual(is_even(number), expected)\n\nif __name__ == '__main__':\n    unittest.main(verbosity=2, exit=False)\nFULL_CODE_END -->\n\nEven if the number `5` failed (hypothetically), the test for `10` would still execute!"
+        },
+        {
+            "id": "unittest_13",
+            "type": "content",
+            "title": "Test Suites",
+            "content": "# Test Suites 📚\n\nAs your project grows, you'll have hundreds of tests. `unittest.TestSuite` allows you to group tests together and run them sequentially.\n\n## Creating a Suite\n\nYou can manually build a suite to run only specific tests, rather than discovering all of them.\n\n```python\nimport unittest\n\n# Assuming we have TestMath and TestString classes defined\n\ndef suite():\n    suite = unittest.TestSuite()\n    # Add a specific test method\n    suite.addTest(TestMath('test_addition'))\n    \n    # Or add an entire TestCase class\n    suite.addTest(unittest.makeSuite(TestString))\n    return suite\n\nif __name__ == '__main__':\n    runner = unittest.TextTestRunner()\n    runner.run(suite())\n```\n\nIn modern Python, you rarely build suites manually like this because `unittest` provides excellent automatic **Test Discovery** from the command line."
+        },
+        {
+            "id": "unittest_14",
+            "type": "content",
+            "title": "Command Line Interface",
+            "content": "# Running Tests via CLI 💻\n\nInstead of putting `unittest.main()` at the bottom of every file, you can run tests directly from your terminal.\n\n## Basic Execution\nRun a specific test module:\n```bash\npython -m unittest test_module.py\n```\n\nRun a specific test class:\n```bash\npython -m unittest test_module.TestClass\n```\n\nRun a specific test method:\n```bash\npython -m unittest test_module.TestClass.test_method\n```\n\n## Test Discovery\nRun all tests in the current directory and subdirectories automatically. It looks for files starting with `test_`:\n```bash\npython -m unittest discover\n```\n\n> 🛠️ **Helpful Flags:** Add `-v` for verbose output, or `-f` to fail fast (stop the test run immediately upon the first failure)."
+        },
+        {
+            "id": "unittest_15",
+            "type": "content",
+            "title": "Real World Example",
+            "content": "# Putting it all together 🧩\n\nLet's write a comprehensive test case for a simple `ShoppingCart` class.\n\n<!-- FULL_CODE_START\nimport unittest\n\nclass ShoppingCart:\n    def __init__(self):\n        self.items = {}\n        \n    def add_item(self, item, price):\n        if price < 0:\n            raise ValueError(\"Price cannot be negative\")\n        self.items[item] = price\n        \n    def total(self):\n        return sum(self.items.values())\n\nclass TestShoppingCart(unittest.TestCase):\n    def setUp(self):\n        self.cart = ShoppingCart()\n        \n    def test_add_item(self):\n        self.cart.add_item(\"Apple\", 1.00)\n        self.assertIn(\"Apple\", self.cart.items)\n        self.assertEqual(self.cart.items[\"Apple\"], 1.00)\n        \n    def test_total(self):\n        self.cart.add_item(\"Apple\", 1.00)\n        self.cart.add_item(\"Banana\", 2.50)\n        self.assertEqual(self.cart.total(), 3.50)\n        \n    def test_negative_price_raises_error(self):\n        with self.assertRaisesRegex(ValueError, \"cannot be negative\"):\n            self.cart.add_item(\"Debt\", -50.00)\n\nif __name__ == '__main__':\n    unittest.main(verbosity=2, exit=False)\nFULL_CODE_END -->"
+        },
+        {
+            "id": "unittest_quiz_3",
+            "type": "quiz",
+            "title": "Final Review",
+            "content": "Let's review the assertions used for exceptions.",
+            "quizQuestion": "Which of the following is the correct way to test that calling `my_func()` raises a `TypeError`?",
+            "quizOptions": [
+                "self.assertError(TypeError, my_func())",
+                "with self.assertRaises(TypeError): my_func()",
+                "self.assertTrue(my_func() == TypeError)",
+                "self.assertException(TypeError, my_func)"
+            ],
+            "correctOptionIndex": 1
+        },
+        {
+            "id": "unittest_16",
+            "type": "content",
+            "title": "Summary",
+            "content": "# Unit Testing Mastered! 🎉\n\nYou've learned the fundamentals of Python's built-in `unittest` module.\n\n## Key Takeaways\n\n- ✅ **TestCase:** Inherit from `unittest.TestCase` and prefix methods with `test_`.\n- ✅ **Fixtures:** Use `setUp` and `tearDown` for per-test initialization, and `@classmethod setUpClass` for per-class initialization.\n- ✅ **Assertions:** Utilize specific assertions like `assertEqual`, `assertTrue`, and `assertIn` for better error tracking.\n- ✅ **Exceptions:** Validate errors using `with self.assertRaises(Exception):`.\n- ✅ **Advanced Features:** Use `@unittest.skipIf` for conditional skipping, and `self.subTest()` for parametrized testing.\n\nWriting unit tests ensures your code works today, and prevents regressions tomorrow. Keep testing!"
+        }
+    ]
+}

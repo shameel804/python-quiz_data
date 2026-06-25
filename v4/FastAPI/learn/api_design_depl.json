@@ -1,0 +1,79 @@
+{
+    "id": "learn_api_design_depl",
+    "topicId": "api_design_depl",
+    "topicTitle": "API Design & Deployment",
+    "description": "Learn best practices for structuring your API, handling versioning, and deploying to production.",
+    "baseKP": 85,
+    "slides": [
+        {
+            "id": "deploy_1",
+            "type": "content",
+            "title": "API Structuring",
+            "content": "# APIRouter \ud83d\uddfa\ufe0f\n\nIf you put 100 endpoints in `main.py`, your file will be 3000 lines long and impossible to read.\nFastAPI provides `APIRouter` to split your API across multiple files.\n\n```python_not\n# routers/users.py\nfrom fastapi import APIRouter\n\n# Create a router specifically for users\nrouter = APIRouter(prefix=\"/users\", tags=[\"users\"])\n\n@router.get(\"/\")  # This actually maps to /users/\ndef get_users(): pass\n```"
+        },
+        {
+            "id": "deploy_2",
+            "type": "content",
+            "title": "Including Routers",
+            "content": "# Connecting Routers to Main \ud83e\udde9\n\nOnce you have multiple router files, you simply \"include\" them in your main `app` instance.\n\n```python_not\n# main.py\nfrom fastapi import FastAPI\nfrom routers import users, products\n\napp = FastAPI()\n\n# Mount the routers onto the main app\napp.include_router(users.router)\napp.include_router(products.router)\n```\nThis keeps your codebase clean, modular, and easy to maintain!"
+        },
+        {
+            "id": "deploy_3",
+            "type": "content",
+            "title": "API Versioning",
+            "content": "# Versioning your API \ud83c\udff7\ufe0f\n\nOnce people are using your API, you cannot make breaking changes (like changing a field name from `firstName` to `first_name`), or you will crash their apps!\n\nTo fix this, you use **Versioning**.\nThe easiest way in FastAPI is to use the `prefix` in `APIRouter`.\n\n```python_not\n# Mount v1 routers\napp.include_router(users_v1.router, prefix=\"/api/v1\")\n\n# Mount v2 routers (with breaking changes)\napp.include_router(users_v2.router, prefix=\"/api/v2\")\n```\nNow `/api/v1/users` and `/api/v2/users` can exist simultaneously!"
+        },
+        {
+            "id": "deploy_quiz_1",
+            "type": "quiz",
+            "title": "Knowledge Check: Architecture",
+            "content": "Test your architecture knowledge.",
+            "quizQuestion": "Which FastAPI feature allows you to cleanly split your endpoints across multiple Python files to keep your codebase organized?",
+            "quizOptions": [
+                "Depends()",
+                "APIRouter",
+                "BaseModel",
+                "Middleware"
+            ],
+            "correctOptionIndex": 1
+        },
+        {
+            "id": "deploy_4",
+            "type": "content",
+            "title": "Uvicorn and Gunicorn",
+            "content": "# The ASGI Servers \ud83e\udd84\n\nFastAPI is an **ASGI** framework (Asynchronous Server Gateway Interface). It requires an ASGI server to run.\n\n**Uvicorn** is the incredibly fast ASGI server you use for local development: \n`uvicorn main:app --reload`\n\nHowever, Uvicorn only runs on a single CPU core. If your server has 8 cores, you are wasting 7 of them!\n\nIn production, you use **Gunicorn** as a process manager to run *multiple* Uvicorn workers."
+        },
+        {
+            "id": "deploy_5",
+            "type": "content",
+            "title": "Running in Production",
+            "content": "# The Gunicorn Command \ud83c\udfed\n\nTo run FastAPI in production across multiple CPU cores, use this command:\n\n```bash\ngunicorn main:app -w 4 -k uvicorn.workers.UvicornWorker\n```\n\n- `-w 4`: Start 4 worker processes.\n- `-k uvicorn...`: Tell Gunicorn to use Uvicorn classes to handle the async ASGI code.\n\nIf one worker crashes, Gunicorn automatically restarts it. Your API stays online!"
+        },
+        {
+            "id": "deploy_6",
+            "type": "content",
+            "title": "Dockerizing FastAPI",
+            "content": "# Deploying with Docker \ud83d\udc33\n\nThe standard way to deploy FastAPI to AWS, Google Cloud, or DigitalOcean is to package it into a Docker container.\n\nCreate a `Dockerfile` in your project root:\n\n```dockerfile\n# Use the official Python base image\nFROM python:3.10-slim\n\n# Set the working directory\nWORKDIR /app\n\n# Copy requirements and install them\nCOPY requirements.txt .\nRUN pip install --no-cache-dir -r requirements.txt\n\n# Copy the rest of the code\nCOPY . .\n\n# Expose port 80\nEXPOSE 80\n\n# Command to run the application using Uvicorn directly\n# (Or use Gunicorn if running bare-metal without a container orchestrator)\nCMD [\"uvicorn\", \"main:app\", \"--host\", \"0.0.0.0\", \"--port\", \"80\"]\n```"
+        },
+        {
+            "id": "deploy_quiz_2",
+            "type": "quiz",
+            "title": "Knowledge Check: Deployment",
+            "content": "Test your deployment knowledge.",
+            "quizQuestion": "Why do we typically use Gunicorn alongside Uvicorn when running FastAPI on a production server?",
+            "quizOptions": [
+                "Because Uvicorn cannot serve static files like images.",
+                "To automatically generate the Swagger UI documentation.",
+                "Because Gunicorn acts as a process manager, spawning multiple Uvicorn workers to utilize multiple CPU cores and restarting them if they crash.",
+                "Because Gunicorn connects directly to the PostgreSQL database."
+            ],
+            "correctOptionIndex": 2
+        },
+        {
+            "id": "deploy_7",
+            "type": "content",
+            "title": "Summary",
+            "content": "# Summary \ud83c\udf89\n\nYou've completed the FastAPI course!\n\n## Key Takeaways\n- \u2705 **APIRouter:** Use routers to modularize your code into separate files (`app.include_router`).\n- \u2705 **Versioning:** Use the `prefix` argument in routers to create `/v1/` and `/v2/` APIs to avoid breaking existing clients.\n- \u2705 **Uvicorn:** The ultra-fast ASGI server used to run FastAPI.\n- \u2705 **Gunicorn:** The WSGI server used as a process manager in production to run multiple Uvicorn workers across all CPU cores.\n- \u2705 **Docker:** Containerize your FastAPI application to make deploying it to the cloud seamless and reliable."
+        }
+    ]
+}

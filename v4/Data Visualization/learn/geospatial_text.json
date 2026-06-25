@@ -1,0 +1,103 @@
+{
+    "id": "learn_geospatial_text",
+    "topicId": "geospatial_text",
+    "topicTitle": "Geospatial & Text Viz",
+    "description": "Go beyond standard charts. Learn to map geospatial coordinates using Folium, create WordClouds for text analysis, and draw complex networks with NetworkX.",
+    "baseKP": 75,
+    "slides": [
+        {
+            "id": "geo_text_1",
+            "type": "content",
+            "title": "Non-Standard Visualization",
+            "content": "# Beyond the Bar Chart 🗺️\n\nBar charts, line graphs, and scatter plots cover 90% of data visualization needs.\n\nBut what if your dataset contains latitude and longitude coordinates? What if your dataset is a collection of 50,000 tweets? What if your dataset maps the friendships between 500 people?\n\nStandard libraries struggle with this. We need specialized tools for Geospatial, Text, and Network data."
+        },
+        {
+            "id": "geo_text_2",
+            "type": "content",
+            "title": "Introduction to Folium",
+            "content": "# Interactive Maps: Folium 🌍\n\nFolium is a powerful Python library that wraps the famous `Leaflet.js` JavaScript library. It allows you to build stunning, interactive maps.\n\n```bash\npip install folium\n```\n\n```python_not\nimport folium\n\n# Create a map centered on New York City [Lat, Lon]\n# You can change the 'tiles' to 'Stamen Terrain', 'CartoDB positron', etc.\nm = folium.Map(location=[40.7128, -74.0060], zoom_start=12, tiles=\"OpenStreetMap\")\n\n# Save it to an HTML file to view in your browser!\nm.save(\"nyc_map.html\")\n```"
+        },
+        {
+            "id": "geo_text_3",
+            "type": "content",
+            "title": "Markers and Popups",
+            "content": "# Adding Data to Maps 📍\n\nAn empty map isn't very useful. Let's add markers for specific locations, complete with interactive popups!\n\n```python_not\nimport folium\n\nm = folium.Map(location=[40.7128, -74.0060], zoom_start=12)\n\n# Add a standard marker\nfolium.Marker(\n    location=[40.748817, -73.985428], # Empire State Building\n    popup=\"Empire State Building\",\n    tooltip=\"Click me!\"\n).add_to(m)\n\n# Add a customized circle marker\nfolium.CircleMarker(\n    location=[40.7580, -73.9855], # Times Square\n    radius=20,\n    color=\"red\",\n    fill=True,\n    fill_color=\"red\",\n    popup=\"Times Square\"\n).add_to(m)\n\nm.save(\"markers.html\")\n```"
+        },
+        {
+            "id": "geo_text_4",
+            "type": "content",
+            "title": "Choropleth Maps",
+            "content": "# Coloring Regions 🗺️\n\nA **Choropleth Map** colors entire geographic regions (like countries or states) based on a data value (like population or GDP).\n\nTo do this, Folium requires a GeoJSON file that defines the complex polygonal boundaries of the regions, and a Pandas DataFrame containing the data.\n\n```python_not\n# (Assuming you have 'states.json' and 'unemployment_data.csv')\n\nfolium.Choropleth(\n    geo_data='states.json',   # The polygon borders\n    name='choropleth',\n    data=df,                  # The Pandas DataFrame\n    columns=['State', 'Unemployment_Rate'],\n    key_on='feature.id',      # Links the GeoJSON ID to the DataFrame State column\n    fill_color='YlGn',        # Yellow to Green color scale\n    legend_name='Unemployment Rate (%)'\n).add_to(m)\n```"
+        },
+        {
+            "id": "geo_text_quiz_1",
+            "type": "quiz",
+            "title": "Folium Quiz",
+            "content": "Test your mapping knowledge.",
+            "quizQuestion": "When creating a Choropleth map in Folium, what are the two distinct pieces of data required?",
+            "quizOptions": [
+                "A 3D rendering engine and a CSV file.",
+                "A GeoJSON file (defining the complex geographic boundaries) and a Data structure (like a Pandas DataFrame containing the numerical values to color those boundaries).",
+                "A list of latitudes and a list of longitudes.",
+                "A Google Maps API Key and a Matplotlib figure."
+            ],
+            "correctOptionIndex": 1
+        },
+        {
+            "id": "geo_text_5",
+            "type": "content",
+            "title": "Text Visualization",
+            "content": "# Visualizing Words ☁️\n\nIf you have a large block of text (like a book, or thousands of product reviews), reading them all is impossible. \n\nA **WordCloud** provides a quick visual summary by sizing words based on their frequency. The more often a word appears, the larger it is drawn.\n\n```bash\npip install wordcloud\n```"
+        },
+        {
+            "id": "geo_text_6",
+            "type": "content",
+            "title": "Creating a WordCloud",
+            "content": "# Generating the Cloud ⛅\n\nThe `wordcloud` library handles removing common \"stopwords\" (like 'the', 'and', 'is') automatically!\n\n```python_not\nfrom wordcloud import WordCloud\nimport matplotlib.pyplot as plt\n\ntext_data = \"\"\"Python is a fantastic language. \nPython is used for data science, web development, \nand scripting. Data science heavily relies on Python!\"\"\"\n\n# Generate the cloud\nwordcloud = WordCloud(width=800, height=400, background_color='white').generate(text_data)\n\n# Display using Matplotlib\nplt.figure(figsize=(10, 5))\nplt.imshow(wordcloud, interpolation='bilinear')\nplt.axis(\"off\") # Hide the axes ticks\nplt.show()\n```"
+        },
+        {
+            "id": "geo_text_7",
+            "type": "content",
+            "title": "Network Analysis",
+            "content": "# Visualizing Relationships 🕸️\n\nSometimes data is best represented as a **Graph** (Nodes connected by Edges).\n- Social Networks (Users are Nodes, Friendships are Edges)\n- Transportation (Airports are Nodes, Flights are Edges)\n\n**NetworkX** is the standard Python library for analyzing complex networks.\n\n```bash\npip install networkx\n```"
+        },
+        {
+            "id": "geo_text_8",
+            "type": "content",
+            "title": "Drawing Networks",
+            "content": "# Using NetworkX 🌐\n\n```python_not\nimport networkx as nx\nimport matplotlib.pyplot as plt\n\n# Create an empty undirected graph\nG = nx.Graph()\n\n# Add nodes (Cities)\nG.add_nodes_from([\"NYC\", \"LA\", \"London\", \"Paris\"])\n\n# Add edges (Flights between cities)\nG.add_edges_from([(\"NYC\", \"LA\"), (\"NYC\", \"London\"), (\"London\", \"Paris\")])\n\n# Draw the graph using Matplotlib\n# nx.spring_layout calculates beautiful positions for the nodes automatically\npos = nx.spring_layout(G)\nnx.draw(G, pos, with_labels=True, node_color='lightblue', node_size=2000, font_weight='bold')\n\nplt.show()\n```"
+        },
+        {
+            "id": "geo_text_quiz_2",
+            "type": "quiz",
+            "title": "Network Quiz",
+            "content": "Check your NetworkX knowledge.",
+            "quizQuestion": "In Graph Theory and NetworkX, what do the terms 'Node' and 'Edge' typically represent?",
+            "quizOptions": [
+                "Node is the X-axis, Edge is the Y-axis.",
+                "Node represents an entity (like a Person or City), and an Edge represents the relationship or connection between two Nodes (like a Friendship or a Flight route).",
+                "Node is the color of the graph, Edge is the border.",
+                "Node is the raw data, Edge is the Machine Learning model."
+            ],
+            "correctOptionIndex": 1
+        },
+        {
+            "id": "geo_text_9",
+            "type": "content",
+            "title": "SVG Charts",
+            "content": "# Scalable Vector Graphics: Pygal 📉\n\nMost plotting libraries output PNGs or Canvas elements. \n\n**Pygal** is a unique library that specifically outputs SVG (Scalable Vector Graphics) files. SVGs are mathematical vectors, meaning they never lose resolution when zoomed in, and the file size is incredibly small. They are perfect for embedding in web pages.\n\n```bash\npip install pygal\n```"
+        },
+        {
+            "id": "geo_text_10",
+            "type": "content",
+            "title": "Creating a Pygal Chart",
+            "content": "# Exporting to SVG 📊\n\n```python_not\nimport pygal\n\n# Create a Bar chart object\nbar_chart = pygal.Bar()\n\nbar_chart.title = 'Browser usage evolution (in %)'\nbar_chart.x_labels = map(str, range(2002, 2013))\n\n# Add data series\nbar_chart.add('Firefox', [None, None, 0, 16.6,   25,   31, 36.4, 45.5, 46.3, 42.8, 37.1])\nbar_chart.add('Chrome',  [None, None, None, None, None, None,    0,  3.9, 10.8, 23.8, 35.3])\n\n# Render directly to an SVG file!\nbar_chart.render_to_file('bar_chart.svg')\n```"
+        },
+        {
+            "id": "geo_text_11",
+            "type": "content",
+            "title": "Summary",
+            "content": "# Specialized Viz Master! 🎉\n\nYou've expanded your toolkit beyond standard charts.\n\n## Key Takeaways\n\n- ✅ **Folium:** Build interactive Maps. Add specific `Markers`, or use GeoJSON to build colored regional `Choropleth` maps.\n- ✅ **WordCloud:** Summarize large blocks of text visually by sizing words based on their frequency (automatically ignoring stopwords).\n- ✅ **NetworkX:** Analyze and visualize complex relationship data using Graphs containing Nodes and Edges.\n- ✅ **Pygal:** Generate resolution-independent SVG files that look perfectly crisp on any screen size.\n\nUse the right tool for the right data!"
+        }
+    ]
+}

@@ -1,0 +1,97 @@
+{
+    "id": "learn_publishing_type",
+    "topicId": "publishing_type",
+    "topicTitle": "Publishing & Type Hints",
+    "description": "Share your code with the world and ensure it doesn't break. Learn to compile Wheels, publish to PyPI using Twine, and master advanced Type Hinting.",
+    "baseKP": 75,
+    "slides": [
+        {
+            "id": "pub_type_1",
+            "type": "content",
+            "title": "The Package Lifecycle",
+            "content": "# From Source to Server 📦\n\nYou've written a brilliant library. Now you want anyone in the world to be able to type `pip install your_library`.\n\nTo achieve this, you must \"Build\" your code into a distributable format, and then \"Publish\" it to PyPI (The Python Package Index)."
+        },
+        {
+            "id": "pub_type_2",
+            "type": "content",
+            "title": "Building the Package",
+            "content": "# Source vs Wheel ⚙️\n\nWe use the `build` module to compile our `pyproject.toml` project.\n\n```bash\npython -m build\n```\n\nThis generates a `dist/` folder containing two files:\n1. **A Source Archive (`.tar.gz`):** The raw Python files.\n2. **A Wheel (`.whl`):** A pre-compiled, zipped binary format. \n\nWhen users run `pip install`, pip prefers the Wheel because it installs instantly and doesn't require compiling C-extensions on the user's machine!"
+        },
+        {
+            "id": "pub_type_3",
+            "type": "content",
+            "title": "Publishing to PyPI",
+            "content": "# `twine` 🚀\n\nTo securely upload those `dist/` files to PyPI, you use a tool called **Twine**.\n\n> ⚠️ **DANGER:** If you upload a broken package to PyPI, you cannot simply delete it and upload it again with the same version number. PyPI forces version immutability to prevent breaking other people's apps!\n\nAlways practice on **TestPyPI** first!"
+        },
+        {
+            "id": "pub_type_4",
+            "type": "content",
+            "title": "Using TestPyPI",
+            "content": "# The Sandbox 🏖️\n\n```bash\n# Upload securely to the Test environment\npython -m twine upload --repository testpypi dist/*\n\n# Try downloading it yourself to ensure it actually works!\npip install --index-url https://test.pypi.org/simple/ your_library\n```\n\nIf it works perfectly, you run the final `twine upload dist/*` command to push to the real PyPI server."
+        },
+        {
+            "id": "pub_type_quiz_1",
+            "type": "quiz",
+            "title": "Publishing Quiz",
+            "content": "Check your distribution knowledge.",
+            "quizQuestion": "Why do modern Python build tools generate a `.whl` (Wheel) file alongside the `.tar.gz` source code?",
+            "quizOptions": [
+                "Wheels encrypt the Python code so users cannot see the source.",
+                "Wheels are pre-compiled and bundled archives that allow `pip` to install the package significantly faster without running complex build scripts or requiring a C-compiler on the user's machine.",
+                "Wheels automatically generate documentation.",
+                "Wheels are exclusively for macOS."
+            ],
+            "correctOptionIndex": 1
+        },
+        {
+            "id": "pub_type_5",
+            "type": "content",
+            "title": "The Need for Typing",
+            "content": "# Dynamic vs Static 🛡️\n\nBefore publishing your code, you must ensure it doesn't crash.\n\nPython is \"Dynamically Typed\". `x = 5` can become `x = \"hello\"` on the next line. This is incredibly flexible, but it is the #1 cause of runtime crashes in large codebases.\n\nModern Python solves this with **Type Hints**. They don't change how Python runs, but they allow IDEs and static analyzers to catch bugs *before* you run the code!"
+        },
+        {
+            "id": "pub_type_6",
+            "type": "content",
+            "title": "Basic Type Hints",
+            "content": "# Documenting Intent 📝\n\nBy adding a colon and a type, you tell other developers (and their IDEs) exactly what your function expects.\n\n```python_not\n# Without types: Is 'age' an int? A string like 'five'?\ndef register_user(name, age):\n    pass\n\n# With types:\ndef register_user(name: str, age: int) -> bool:\n    pass\n```\n\nIf a user tries to type `register_user(\"John\", \"Twenty\")`, their IDE (like VS Code or PyCharm) will immediately highlight it with a red error line!"
+        },
+        {
+            "id": "pub_type_7",
+            "type": "content",
+            "title": "Advanced Typing",
+            "content": "# The `typing` Module 🧬\n\nStandard types (`str`, `int`) aren't enough for complex data structures. You must import advanced types from the `typing` module.\n\n```python_not\nfrom typing import List, Dict, Optional, Union\n\n# A list containing only integers\nscores: List[int] = [95, 88, 100]\n\n# A dictionary with string keys and float values\nprices: Dict[str, float] = {\"apple\": 1.99, \"banana\": 0.50}\n\n# Optional: It can be an integer, OR it can be None!\nage: Optional[int] = None \n\n# Union: It can be an integer OR a float\nmeasurement: Union[int, float] = 5.5 \n```"
+        },
+        {
+            "id": "pub_type_8",
+            "type": "content",
+            "title": "Literals and TypeVars",
+            "content": "# Ultra-Specific Types 🎯\n\nSometimes you want to restrict a string to a specific set of exact words.\n\n```python_not\nfrom typing import Literal, TypeVar\n\n# The mode MUST be exactly one of these two strings\ndef open_file(path: str, mode: Literal[\"r\", \"w\"]) -> None:\n    pass\n\n# TypeVar allows Generic programming (e.g. T can be anything,\n# but 'a' and 'b' must be the EXACT SAME TYPE)\nT = TypeVar('T')\ndef get_first(a: T, b: T) -> T:\n    return a\n```"
+        },
+        {
+            "id": "pub_type_9",
+            "type": "content",
+            "title": "Protocols (Duck Typing)",
+            "content": "# Structural Subtyping 🦆\n\nPython loves \"Duck Typing\" (If it walks like a duck and quacks like a duck, it's a duck). \n\n`Protocol` allows you to enforce type safety on objects based *only* on the methods they have, without forcing them to inherit from a base class!\n\n```python_not\nfrom typing import Protocol\n\n# Define a Protocol\nclass Flyable(Protocol):\n    def fly(self) -> None:\n        ...\n\n# This class doesn't inherit from Flyable!\nclass Bird:\n    def fly(self) -> None:\n        print(\"Flap\")\n\n# But it satisfies the Protocol, so this is valid!\ndef launch(entity: Flyable):\n    entity.fly()\n    \nlaunch(Bird())\n```"
+        },
+        {
+            "id": "pub_type_quiz_2",
+            "type": "quiz",
+            "title": "Typing Quiz",
+            "content": "Ensure you understand type theory.",
+            "quizQuestion": "In Python type hinting, what does `Optional[str]` mean?",
+            "quizOptions": [
+                "It means the argument is not required and can be completely omitted from the function call.",
+                "It is exactly the same as `Union[str, None]`, meaning the variable must be either a string or explicitly the value `None`.",
+                "It means the string can contain optional characters.",
+                "It means the type checker should ignore this variable."
+            ],
+            "correctOptionIndex": 1
+        },
+        {
+            "id": "pub_type_10",
+            "type": "content",
+            "title": "Summary",
+            "content": "# Open Source Contributor! 🎉\n\nYou've learned how to package and type your code.\n\n## Key Takeaways\n\n- ✅ **Wheels:** Always use `python -m build` to generate `.whl` files for fast, compiled distribution.\n- ✅ **Twine:** Use `twine` to securely upload your builds. Always use TestPyPI first to avoid permanently burning version numbers.\n- ✅ **Type Hints:** Use `: type` and `-> type` to document intent and allow IDEs to catch bugs instantly.\n- ✅ **Advanced Types:** Use `List`, `Dict`, `Optional` (can be None), and `Union` (multiple types) from the `typing` module.\n- ✅ **Protocols:** The modern way to do Pythonic Duck Typing safely.\n\nNext, we'll learn how to force our CI/CD pipelines to read these Type Hints!"
+        }
+    ]
+}

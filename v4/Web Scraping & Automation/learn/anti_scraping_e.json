@@ -1,0 +1,135 @@
+{
+    "id": "learn_anti_scraping_e",
+    "topicId": "anti_scraping_e",
+    "topicTitle": "Anti-Scraping & Ethics",
+    "description": "Navigate the legal boundaries of web scraping and learn techniques to bypass basic anti-bot protections.",
+    "baseKP": 80,
+    "slides": [
+        {
+            "id": "anti_1",
+            "type": "content",
+            "title": "The Rules of the Road",
+            "content": "# Ethics and Legality \u2696\ufe0f\n\nBefore you scrape a website, you must understand the rules.\nWeb scraping exists in a legal gray area. \n\nGenerally, scraping **publicly available data** is considered legal in many jurisdictions (e.g., the US *hiQ Labs v. LinkedIn* ruling).\n\nHowever, you can still be sued or blocked for:\n1. Violating a site's Terms of Service (especially if you had to log in to see the data).\n2. Scraping copyrighted material or Personal Identifiable Information (PII).\n3. Crashing a server by sending too many requests (DDoS attack)."
+        },
+        {
+            "id": "anti_2",
+            "type": "content",
+            "title": "Robots.txt",
+            "content": "# The robots.txt File \ud83e\udd16\n\nAlmost every website has a file located at `https://example.com/robots.txt`.\nThis file tells search engines and bots which parts of the site they are allowed to scrape.\n\n```text\nUser-agent: *\nDisallow: /admin/\nDisallow: /private/\nAllow: /public/\n\nCrawl-delay: 10\n```\n- `User-agent: *` means these rules apply to ALL bots.\n- `Disallow` tells you where NOT to go.\n- `Crawl-delay: 10` asks you to wait 10 seconds between requests.\n\n**Always check `robots.txt` before scraping!**"
+        },
+        {
+            "id": "anti_3",
+            "type": "content",
+            "title": "Scrapy and Robots.txt",
+            "content": "# Enforcing the Rules \ud83d\uded1\n\nIn Python, you can parse `robots.txt` using the built-in `urllib.robotparser`.\n\nBut if you use Scrapy, it has built-in support!\nIn your Scrapy project's `settings.py`, you will find:\n\n```python_not\n# Obey robots.txt rules\nROBOTSTXT_OBEY = True\n```\nIf you set this to `True`, Scrapy will automatically read the site's `robots.txt` and refuse to scrape forbidden URLs!"
+        },
+        {
+            "id": "anti_quiz_1",
+            "type": "quiz",
+            "title": "Knowledge Check: Ethics",
+            "content": "Test your web scraping etiquette.",
+            "quizQuestion": "Where is the first place you should look to see if a website permits automated bots to crawl its pages?",
+            "quizOptions": [
+                "The website's HTML `<head>` tag.",
+                "The `robots.txt` file located at the root of the domain.",
+                "The site's SSL certificate.",
+                "The sitemap.xml file."
+            ],
+            "correctOptionIndex": 1
+        },
+        {
+            "id": "anti_4",
+            "type": "content",
+            "title": "Anti-Bot Protections",
+            "content": "# Why am I getting blocked? \ud83d\udee1\ufe0f\n\nIf a site detects you are a bot, it will return a `403 Forbidden` error, a `429 Too Many Requests` error, or show you a CAPTCHA.\n\nHow do they know you are a bot?\n1. **Bad Headers:** You didn't send a valid `User-Agent`.\n2. **IP Tracking:** You made 500 requests from the same IP address in 1 minute.\n3. **Browser Fingerprinting:** Cloudflare or Datadome ran JavaScript to check if your browser actually has a screen, a mouse, and standard fonts installed.\n4. **Honeypots:** You clicked a link hidden via CSS (`display: none`) that a real human couldn't see."
+        },
+        {
+            "id": "anti_5",
+            "type": "content",
+            "title": "Fake User-Agents",
+            "content": "# Faking your Browser \ud83c\udfad\n\nThe easiest way to bypass basic protections is to rotate your `User-Agent` header.\nInstead of hardcoding one, use the `fake_useragent` library!\n\n```bash\npip install fake-useragent\n```\n\n```python_not\nimport requests\nfrom fake_useragent import UserAgent\n\nua = UserAgent()\n# Generate a random user-agent string for Chrome, Safari, etc.\nheaders = {'User-Agent': ua.random}\n\nresponse = requests.get('https://example.com', headers=headers)\n```"
+        },
+        {
+            "id": "anti_6",
+            "type": "content",
+            "title": "Rotating Proxies",
+            "content": "# Hiding your IP Address \ud83d\udd75\ufe0f\u200d\u2642\ufe0f\n\nIf you make too many requests, your IP address will get banned.\nTo avoid this, you must route your traffic through different IP addresses (Proxies).\n\n```python_not\nimport requests\n\n# A dictionary of proxies (Usually provided by a paid proxy service)\nproxies = {\n  'http': 'http://10.10.1.10:3128',\n  'https': 'http://10.10.1.10:1080',\n}\n\nrequests.get('https://example.com', proxies=proxies)\n```\nIn production, you use a **Rotating Proxy API** that automatically assigns a new IP address to every single request."
+        },
+        {
+            "id": "anti_7",
+            "type": "content",
+            "title": "Bypassing Cloudflare",
+            "content": "# The Cloudflare Wall \u2601\ufe0f\n\nCloudflare protects millions of sites. If you try to scrape them with `requests`, you'll get a `403 Forbidden` because Cloudflare runs a complex JavaScript challenge to verify you're a real browser.\n\nSince `requests` cannot execute JavaScript, it fails instantly.\n\n**Solution 1: Playwright/Selenium** (since they run real browsers).\n**Solution 2: Cloudscraper**."
+        },
+        {
+            "id": "anti_8",
+            "type": "content",
+            "title": "Using Cloudscraper",
+            "content": "# Cloudscraper \ud83d\udee0\ufe0f\n\n`cloudscraper` is a Python library that extends `requests` to solve Cloudflare's JavaScript challenges automatically using a Node.js engine under the hood.\n\n```bash\npip install cloudscraper\n```\n\n```python_not\nimport cloudscraper\n\n# Create a scraper instance\nscraper = cloudscraper.create_scraper()\n\n# Use it exactly like requests!\nresponse = scraper.get(\"https://cloudflare-protected-site.com\")\nprint(response.text)\n```\n*Note: This only works on older/basic Cloudflare protections. For advanced CAPTCHAs, you need specialized services.*"
+        },
+        {
+            "id": "anti_quiz_2",
+            "type": "quiz",
+            "title": "Knowledge Check: Anti-Scraping",
+            "content": "Test your bot-evasion knowledge.",
+            "quizQuestion": "Why does a standard `requests.get()` fail when scraping a site protected by Cloudflare?",
+            "quizOptions": [
+                "Because requests cannot execute the JavaScript challenge required to prove it is a real browser.",
+                "Because Cloudflare blocks the Python programming language specifically.",
+                "Because requests automatically respects the robots.txt file.",
+                "Because Cloudflare requires you to send an XML payload."
+            ],
+            "correctOptionIndex": 0
+        },
+        {
+            "id": "anti_9",
+            "type": "content",
+            "title": "Honeypots",
+            "content": "# Avoid the Traps \ud83c\udf6f\n\nSome sites set \"Honeypots\" to catch scrapers.\nThey will put a link in the HTML:\n`<a href=\"/trap\" style=\"display: none;\">Click here</a>`\n\nSince a human can't see it, they will never click it. But a bot that scans the HTML for all `<a>` tags and follows them will click it immediately. Once the bot hits `/trap`, its IP is permanently banned.\n\n**Defense:** Check the CSS properties of elements, or only follow specific, targeted links instead of blindly following every `href`."
+        },
+        {
+            "id": "anti_10",
+            "type": "content",
+            "title": "Rate Limiting the Smart Way",
+            "content": "# Mimicking Humans \ud83d\udeb6\u200d\u2642\ufe0f\n\nHumans don't click links exactly every 1.000 seconds.\nIf you use `time.sleep(1)`, server logs will show a perfectly robotic pattern.\n\nYou should add **Jitter** (randomness) to your delays!\n\n```python_not\nimport time\nimport random\n\n# Wait between 1.5 and 3.5 seconds\ndelay = random.uniform(1.5, 3.5)\ntime.sleep(delay)\n```"
+        },
+        {
+            "id": "anti_11",
+            "type": "content",
+            "title": "Browser Fingerprinting",
+            "content": "# You leave a fingerprint \ud83d\udd0d\n\nAdvanced anti-bot systems (like Datadome or Akamai) don't just look at IP or User-Agent.\nThey check:\n- Canvas fingerprinting (how your GPU renders graphics).\n- Audio fingerprinting.\n- WebRTC IP leaks.\n- Mouse movement patterns.\n\nBypassing these requires highly specialized browsers (like Undetected-Chromedriver or Puppeteer-Stealth)."
+        },
+        {
+            "id": "anti_12",
+            "type": "content",
+            "title": "CAPTCHA Solvers",
+            "content": "# Defeating CAPTCHAs \ud83e\udde9\n\nWhen all else fails, a site will throw a reCAPTCHA or hCaptcha at you.\n\nTo bypass these automatically, developers use 3rd-party API services (like 2Captcha or Anti-Captcha).\nYou send the CAPTCHA site key to their API, human workers or AI in the background solve it, and they send you back a token to inject into the page.\n*(This is advanced and usually requires a paid API key).* \n\n**The golden rule of scraping:** The best way to beat a CAPTCHA is to avoid triggering it in the first place (using good proxies and humane delays)!"
+        },
+        {
+            "id": "anti_13",
+            "type": "content",
+            "title": "Web Scraping APIs",
+            "content": "# The Ultimate Solution \ud83d\ude80\n\nIf you are scraping at scale (millions of pages) and don't want to manage proxies, headless browsers, and CAPTCHA solvers yourself, use a **Scraping API** (e.g., ScraperAPI, Zyte, BrightData).\n\nYou send a simple request to their API, and they route it through millions of residential proxies, handle the JavaScript rendering, and solve CAPTCHAs for you.\n\n```python_not\nimport requests\n\npayload = {'api_key': 'YOUR_API_KEY', 'url': 'https://amazon.com'}\nr = requests.get('http://api.scraperapi.com', params=payload)\nprint(r.text)\n```"
+        },
+        {
+            "id": "anti_quiz_3",
+            "type": "quiz",
+            "title": "Knowledge Check: Advanced Evasion",
+            "content": "Test your evasion skills.",
+            "quizQuestion": "Why should you use `random.uniform(1, 3)` instead of `time.sleep(2)` between requests?",
+            "quizOptions": [
+                "It uses less CPU power.",
+                "It prevents the requests library from timing out.",
+                "It adds jitter, making your bot's behavior look more like a human, preventing detection.",
+                "It forces the server to respond faster."
+            ],
+            "correctOptionIndex": 2
+        },
+        {
+            "id": "anti_14",
+            "type": "content",
+            "title": "Summary",
+            "content": "# Summary \ud83c\udf89\n\nYou are now a stealthy (but ethical!) web scraper.\n\n## Key Takeaways\n- \u2705 **Ethics:** Always respect `robots.txt` and check a site's Terms of Service. Don't scrape PII.\n- \u2705 **User-Agents:** Use the `fake_useragent` library to disguise your Python script as a real browser.\n- \u2705 **Proxies:** Route your traffic through different IPs to avoid getting banned.\n- \u2705 **Cloudflare:** Use `cloudscraper` or Playwright to bypass basic JavaScript challenges.\n- \u2705 **Honeypots:** Don't blindly follow every invisible link on a page.\n- \u2705 **Jitter:** Add random delays between requests to mimic human clicking behavior.\n- \u2705 **Scraping APIs:** For enterprise-level scraping, offload proxy and CAPTCHA management to specialized services like Zyte or ScraperAPI."
+        }
+    ]
+}

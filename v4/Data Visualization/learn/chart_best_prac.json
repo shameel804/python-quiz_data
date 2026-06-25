@@ -1,0 +1,103 @@
+{
+    "id": "learn_chart_best_prac",
+    "topicId": "chart_best_prac",
+    "topicTitle": "Chart Best Practices",
+    "description": "Don't lie with statistics! Learn the principles of data storytelling, how to avoid deceptive charts, choose the right chart type, and design for colorblind accessibility.",
+    "baseKP": 75,
+    "slides": [
+        {
+            "id": "chart_bp_1",
+            "type": "content",
+            "title": "Data Storytelling",
+            "content": "# The Purpose of a Chart 🎯\n\nThe goal of Data Visualization is NOT to make a pretty picture. \n\nThe goal is to communicate a specific insight clearly, accurately, and efficiently to the human brain.\n\nUnfortunately, the default settings in most plotting libraries often produce charts that are confusing, cluttered, or actively deceptive. Mastering the technical tools is only step one; step two is mastering the design principles."
+        },
+        {
+            "id": "chart_bp_2",
+            "type": "content",
+            "title": "Choosing the Right Chart",
+            "content": "# Form Follows Function 📐\n\nDifferent chart types answer different questions.\n\n- **Comparison:** Use a Bar Chart. The human eye is excellent at comparing the lengths of straight bars.\n- **Trend over Time:** Use a Line Chart. Connecting the dots implies a chronological sequence.\n- **Distribution:** Use a Histogram, Boxplot, or Violin Plot to show where data is clustered.\n- **Relationship:** Use a Scatter Plot to see if variable X correlates with variable Y."
+        },
+        {
+            "id": "chart_bp_3",
+            "type": "content",
+            "title": "The Pie Chart Problem",
+            "content": "# Avoid Pie Charts 🥧\n\nIn the data visualization community, Pie Charts are highly controversial.\n\nThe human brain is terrible at accurately judging the area or angle of a slice. If you have a pie chart with slices of 30%, 35%, and 35%, they all look identical. You are forced to read the text labels, which defeats the purpose of the chart!\n\n**Best Practice:** Only use a pie chart if there are 2 or 3 categories maximum, and one category represents an overwhelming majority (e.g., 80%). Otherwise, use a standard Bar Chart."
+        },
+        {
+            "id": "chart_bp_4",
+            "type": "content",
+            "title": "Avoiding Deception",
+            "content": "# Start the Y-Axis at Zero 0️⃣\n\nThe most common way people lie with statistics is by truncating the Y-axis on a bar chart.\n\nImagine a company's revenue grew from $98,000 to $100,000 (a 2% increase). \n\nIf you start the Y-axis at $90,000, the bar for $100,000 will look *twice as tall* as the bar for $98,000, implying a 100% increase! This is highly deceptive.\n\n**Best Practice:** Bar charts MUST start at zero. Line charts have more leeway, as they are meant to highlight the delta (change) rather than absolute magnitude."
+        },
+        {
+            "id": "chart_bp_quiz_1",
+            "type": "quiz",
+            "title": "Chart Choice Quiz",
+            "content": "Test your design instincts.",
+            "quizQuestion": "Why is it generally recommended to use a Bar Chart instead of a Pie Chart when displaying 5 or more categories of data?",
+            "quizOptions": [
+                "Because Pie Charts take up too much memory to render.",
+                "Because the human brain struggles to accurately compare angles and areas (slices of a pie), whereas it is highly accurate at comparing the linear lengths of bars.",
+                "Because Pie Charts cannot be colored.",
+                "Because Matplotlib does not support Pie Charts."
+            ],
+            "correctOptionIndex": 1
+        },
+        {
+            "id": "chart_bp_5",
+            "type": "content",
+            "title": "Chartjunk",
+            "content": "# Erasing Chartjunk 🗑️\n\nEdward Tufte coined the term **Chartjunk** to describe elements of a chart that are not necessary to comprehend the data and only serve as distracting decoration.\n\nExamples of Chartjunk:\n1. 3D effects on 2D data (3D bar charts distort proportions).\n2. Unnecessary heavy gridlines.\n3. Excessive borders and background colors.\n\n**Best Practice:** Maximize your Data-to-Ink ratio. Every drop of \"ink\" on the chart should serve to explain the data. Remove the rest."
+        },
+        {
+            "id": "chart_bp_6",
+            "type": "content",
+            "title": "Decluttering Example",
+            "content": "# Less is More 🧼\n\nInstead of relying on legends and gridlines, label the data directly!\n\n```python_not\n# INSTEAD OF THIS (Cluttered):\n# ax.plot(x, y, label='Sales')\n# ax.legend()\n# ax.grid(True)\n\n# DO THIS (Clean):\nax.plot(x, y, color='blue', linewidth=3)\n\n# Remove all borders except the bottom axis\nax.spines['top'].set_visible(False)\nax.spines['right'].set_visible(False)\nax.spines['left'].set_visible(False)\n\n# Remove the Y-ticks and grid entirely\nax.set_yticks([])\n\n# Write the exact value directly at the end of the line!\nax.text(x[-1], y[-1], f'${y[-1]}', color='blue', fontsize=12, fontweight='bold')\n```"
+        },
+        {
+            "id": "chart_bp_7",
+            "type": "content",
+            "title": "Color and Accessibility",
+            "content": "# Designing for Everyone 👁️\n\nApproximately 8% of men and 0.5% of women suffer from Color Vision Deficiency (Colorblindness). The most common form is Red-Green colorblindness.\n\nIf you make a chart where \"Good\" is Green and \"Bad\" is Red, a massive portion of your audience cannot tell the difference between the two!\n\n**Best Practice:** \n1. Never rely *only* on color to convey meaning. Use shapes (circles vs triangles) or direct text labels alongside the color.\n2. Use colorblind-friendly palettes (like Seaborn's `colorblind` palette, or the famous `viridis` colormap)."
+        },
+        {
+            "id": "chart_bp_8",
+            "type": "content",
+            "title": "Contrast Ratios",
+            "content": "# WCAG Compliance 📝\n\nThe Web Content Accessibility Guidelines (WCAG) mandate specific contrast ratios between foreground text and background colors.\n\nPlacing light-grey text on a white background is an accessibility violation. Placing dark blue text on a black background is a violation.\n\nEnsure your chart titles, axis labels, and data points have high contrast so they can be read by users with low vision or users viewing their screens in bright sunlight."
+        },
+        {
+            "id": "chart_bp_quiz_2",
+            "type": "quiz",
+            "title": "Accessibility Quiz",
+            "content": "Check your accessibility knowledge.",
+            "quizQuestion": "Why is it a bad practice to rely purely on Red and Green to indicate 'Failure' and 'Success' in a chart?",
+            "quizOptions": [
+                "Because they are not professional corporate colors.",
+                "Because Red-Green colorblindness is extremely common, rendering the chart unreadable to a significant percentage of users.",
+                "Because Matplotlib cannot render the color red accurately.",
+                "Because it violates the Data-to-Ink ratio."
+            ],
+            "correctOptionIndex": 1
+        },
+        {
+            "id": "chart_bp_9",
+            "type": "content",
+            "title": "Aspect Ratios",
+            "content": "# The Aspect Ratio Trick 🔲\n\nBy manipulating the Aspect Ratio (width vs height) of a chart, you can completely alter the viewer's perception of the data.\n\nIf you want to make a trend look explosive and dramatic, you make the chart tall and narrow. If you want to make the same trend look stable and boring, you make the chart short and extremely wide.\n\n**Best Practice:** Aim for a 4:3 or 16:9 ratio. For line charts, try to adjust the ratio so the average slope of the line is approximately 45 degrees."
+        },
+        {
+            "id": "chart_bp_10",
+            "type": "content",
+            "title": "D3.js integration",
+            "content": "# Bridging to D3: `mpld3` 🌉\n\nIf you design the absolute perfect Matplotlib chart, but you want to embed it on a website with basic interactivity (like tooltips or zooming), you don't have to rewrite it in Javascript or Plotly.\n\nThe `mpld3` library converts standard Matplotlib figures into D3.js JSON representations!\n\n```bash\npip install mpld3\n```\n\n```python_not\nimport matplotlib.pyplot as plt\nimport mpld3\n\nfig, ax = plt.subplots()\nax.plot([1, 2, 3], [1, 4, 9], 'ro')\n\n# Generates an HTML file containing the D3.js code!\nmpld3.save_html(fig, \"interactive_plot.html\")\n```"
+        },
+        {
+            "id": "chart_bp_11",
+            "type": "content",
+            "title": "Summary",
+            "content": "# Design Master! 🎉\n\nYou've learned how to communicate insights ethically and beautifully.\n\n## Key Takeaways\n\n- ✅ **Chart Choice:** Use Bars for comparison, Lines for trends, and Scatter for relationships. Avoid Pie charts.\n- ✅ **Zero Baseline:** Bar charts must always start at 0 on the Y-axis to avoid deceptive visual scaling.\n- ✅ **Chartjunk:** Maximize your Data-to-Ink ratio. Delete heavy gridlines, borders, and 3D effects.\n- ✅ **Direct Labeling:** Instead of forcing users to match colors to a legend, put the text label directly next to the data line.\n- ✅ **Accessibility:** Never rely on Red/Green alone. Use colorblind-friendly palettes and ensure high contrast.\n\nGreat visualization is an exercise in empathy for the viewer."
+        }
+    ]
+}

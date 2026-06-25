@@ -1,0 +1,29 @@
+[
+  {
+    "title": "Code Coverage Concept",
+    "ques": "Explain what 'code coverage' means and how tools like `coverage.py` help improve test suites.",
+    "answer": {
+      "type": "text",
+      "content": "* **Code Coverage:** It is a metric that measures the percentage of your source code that is executed when your test suite runs.\n* **Role of `coverage.py`:** It helps identify untested parts of your code by tracking which lines and branches are executed. A high coverage percentage often correlates with a lower chance of undetected bugs, though it doesn't guarantee the logic is correct."
+    },
+    "explanation": "Coverage tools provide a roadmap for writing missing tests, ensuring that edge cases and error handling blocks are actually validated."
+  },
+  {
+    "title": "Test-Driven Development (TDD)",
+    "ques": "Describe the three steps of the TDD cycle: Red, Green, Refactor.",
+    "answer": {
+      "type": "text",
+      "content": "1.  **Red:** Write a test that fails because the feature or functionality is not yet implemented.\n2.  **Green:** Write the minimum amount of code necessary to make the failing test pass.\n3.  **Refactor:** Improve and clean up the code without changing its external behavior, ensuring it adheres to best practices while keeping the tests passing."
+    },
+    "explanation": "TDD flips the traditional development process by requiring tests to be written before the actual implementation code, leading to highly testable and robust designs."
+  },
+  {
+    "title": "Behavior-Driven Development (BDD)",
+    "ques": "What is the purpose of the Gherkin language in BDD frameworks like `pytest-bdd`? Give a simple Given-When-Then example.",
+    "answer": {
+      "type": "text",
+      "content": "Gherkin is a plain-text language used to describe software behaviors in a way that is understandable to both technical and non-technical stakeholders (like product owners). It serves as executable documentation.\n\n**Example:**\n* **Given** a user is on the login page\n* **When** they enter valid credentials\n* **Then** they should be redirected to the dashboard"
+    },
+    "explanation": "BDD focuses on the behavior of the application from the user's perspective, bridging the communication gap between developers and business analysts."
+  }
+]

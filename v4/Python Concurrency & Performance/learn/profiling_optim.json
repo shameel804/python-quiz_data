@@ -1,0 +1,135 @@
+{
+    "id": "learn_profiling_optim",
+    "topicId": "profiling_optim",
+    "topicTitle": "Profiling & Optimization",
+    "description": "Stop guessing why your code is slow. Learn to use cProfile, line_profiler, and tracemalloc to identify bottlenecks, and use slots, generators, and Cython to fix them.",
+    "baseKP": 75,
+    "slides": [
+        {
+            "id": "prof_opt_1",
+            "type": "content",
+            "title": "The Root of All Evil",
+            "content": "# Premature Optimization 🐢\n\n> *\"Premature optimization is the root of all evil.\"* - Donald Knuth\n\nWhen your application is slow, developers often start randomly rewriting code they *think* is slow. This wastes time, introduces bugs, and often fails to improve performance.\n\n**Never guess where the bottleneck is.**\n\nBefore you optimize anything, you must measure it. This process is called **Profiling**."
+        },
+        {
+            "id": "prof_opt_2",
+            "type": "content",
+            "title": "cProfile",
+            "content": "# Function Profiling: `cProfile` ⏱️\n\nPython has a built-in profiler called `cProfile`. It tracks every single function call in your program, how many times it was called, and exactly how much time was spent inside it.\n\nYou can run it from the command line without changing your code!\n\n```bash\n# Profile my_script.py and sort the output by cumulative time\npython -m cProfile -s cumtime my_script.py\n```\n\nOutput snippet:\n```\n   ncalls  tottime  percall  cumtime  percall filename:lineno(function)\n        1    0.000    0.000   12.500   12.500 my_script.py:1(<module>)\n     1000    0.050    0.000   12.000    0.012 database.py:45(fetch_data)\n 10000000   11.500    0.000   11.500    0.000 json.py:299(loads)\n```"
+        },
+        {
+            "id": "prof_opt_3",
+            "type": "content",
+            "title": "Interpreting cProfile",
+            "content": "# Reading the Report 📊\n\nUnderstanding the columns in `cProfile` is critical:\n\n- **ncalls:** Number of times the function was called. (High ncalls often means a loop could be optimized).\n- **tottime:** Total time spent *inside* this specific function (excluding calls made to other sub-functions).\n- **cumtime:** Cumulative time spent in this function *and* all sub-functions it called.\n\nIf a function has low `tottime` but high `cumtime`, it means it's just a wrapper delegating work to something else. The real culprit is deeper down!"
+        },
+        {
+            "id": "prof_opt_4",
+            "type": "content",
+            "title": "line_profiler",
+            "content": "# Micro Profiling: `line_profiler` 🔬\n\n`cProfile` tells you *which function* is slow. But what if the function is 200 lines long? Which *line* is slow?\n\nInstall the third-party `line_profiler` library.\n\n```bash\npip install line_profiler\n```\n\nAdd the `@profile` decorator to the suspect function. You do NOT need to import it!\n\n```python_not\n@profile\ndef process_data(data):\n    cleaned = [x.strip() for x in data]  # Is this slow?\n    results = database.save(cleaned)     # Or is this slow?\n    return results\n```"
+        },
+        {
+            "id": "prof_opt_5",
+            "type": "content",
+            "title": "Running line_profiler",
+            "content": "# Line-by-Line Execution 📉\n\nRun the script using the `kernprof` CLI tool provided by `line_profiler`.\n\n```bash\nkernprof -l -v my_script.py\n```\n\nOutput:\n```\nLine #      Hits         Time  Per Hit   % Time  Line Contents\n==============================================================\n     1                                           @profile\n     2                                           def process_data(data):\n     3      1000     250000.0    250.0      5.0      cleaned = [x.strip() for x in data]\n     4      1000    4750000.0   4750.0     95.0      results = database.save(cleaned)\n```\n\nBam! 95% of the time is spent saving to the database. Don't waste time optimizing the string stripping on line 3!"
+        },
+        {
+            "id": "prof_opt_quiz_1",
+            "type": "quiz",
+            "title": "Profiling Quiz",
+            "content": "Ensure you know your profiling tools.",
+            "quizQuestion": "Which tool should you use FIRST to get a high-level overview of which functions are consuming the most execution time in your application?",
+            "quizOptions": [
+                "line_profiler",
+                "tracemalloc",
+                "cProfile",
+                "time.sleep"
+            ],
+            "correctOptionIndex": 2
+        },
+        {
+            "id": "prof_opt_6",
+            "type": "content",
+            "title": "Memory Profiling",
+            "content": "# Finding Memory Leaks 🧠\n\nSometimes the issue isn't speed, but memory consumption. If your Python script crashes with an `OutOfMemoryError`, or your server RAM usage slowly creeps up over days, you have a memory leak.\n\nPython 3 includes the `tracemalloc` module to track memory allocations.\n\n```python_not\nimport tracemalloc\n\n# Start tracing memory allocations\ntracemalloc.start()\n\n# ... Run your suspicious code here ...\nmy_heavy_function()\n\n# Get a snapshot of memory usage\nsnapshot = tracemalloc.take_snapshot()\n\n# Display the top 5 memory hogs\ntop_stats = snapshot.statistics('lineno')\nfor stat in top_stats[:5]:\n    print(stat)\n```\n\nThis will output the exact filename and line number that allocated the most memory!"
+        },
+        {
+            "id": "prof_opt_7",
+            "type": "content",
+            "title": "Optimization: Generators",
+            "content": "# Optimizing Memory: Generators ♻️\n\nIf you find your application is using too much memory, the most common culprit is loading massive lists into RAM.\n\n**Always use Generators for large datasets.**\n\n```python_not\n# BAD: Loads 1 million records into RAM at once\ndef get_records():\n    return [process(row) for row in db.query_all()]\n\n# GOOD: Yields one record at a time. Memory usage is near zero!\ndef yield_records():\n    for row in db.query_all():\n        yield process(row)\n```\n\nBy replacing return lists with `yield`, you can process datasets infinitely larger than your available RAM."
+        },
+        {
+            "id": "prof_opt_8",
+            "type": "content",
+            "title": "Optimization: __slots__",
+            "content": "# The `__slots__` Magic 📦\n\nIn Python, every object you create has an internal dictionary (`__dict__`) to store its attributes. Dictionaries are flexible, but they have a massive memory overhead.\n\nIf you are creating millions of instances of a simple class (like a Data Transfer Object or ORM Model), you can define `__slots__`.\n\n```python_not\nclass Point:\n    # Tells Python: Do NOT create a __dict__.\n    # This object will ONLY ever have 'x' and 'y' attributes.\n    __slots__ = ['x', 'y']\n    \n    def __init__(self, x, y):\n        self.x = x\n        self.y = y\n```\n\nThis can reduce the memory footprint of your objects by up to 50%, and makes attribute access slightly faster!"
+        },
+        {
+            "id": "prof_opt_9",
+            "type": "content",
+            "title": "Optimization: lru_cache",
+            "content": "# Caching with `lru_cache` 💾\n\nIf your profiler shows that a specific, slow function is being called thousands of times with the *exact same inputs*, you should cache it.\n\nPython's `functools` provides the `@lru_cache` decorator. It saves the results of function calls in memory.\n\n```python_not\nfrom functools import lru_cache\n\n# Store the last 128 unique calls in memory\n@lru_cache(maxsize=128)\ndef expensive_math(x, y):\n    print(f\"Calculating for {x}, {y}...\")\n    # Imagine this takes 5 seconds\n    return x ** y\n\n# Takes 5 seconds\nprint(expensive_math(2, 10)) \n\n# Returns INSTANTLY from memory!\nprint(expensive_math(2, 10)) \n```"
+        },
+        {
+            "id": "prof_opt_quiz_2",
+            "type": "quiz",
+            "title": "Optimization Quiz",
+            "content": "Test your optimization knowledge.",
+            "quizQuestion": "Which technique should you use if your application is crashing due to running out of RAM while processing a massive 10GB CSV file?",
+            "quizOptions": [
+                "Use the `@lru_cache` decorator.",
+                "Define `__slots__` on your classes.",
+                "Replace lists with Generators (`yield`).",
+                "Compile the code with Cython."
+            ],
+            "correctOptionIndex": 2
+        },
+        {
+            "id": "prof_opt_10",
+            "type": "content",
+            "title": "When Python is Too Slow",
+            "content": "# Escaping Python 🚀\n\nSometimes, you profile your code, you use generators, you optimize your loops, and it's *still* too slow. \n\nPython is a dynamically typed, interpreted language. It is inherently slower at heavy number crunching than C or Rust.\n\nWhen you hit the limits of Python, you don't rewrite your whole app. You just rewrite the *bottleneck function* in a faster language."
+        },
+        {
+            "id": "prof_opt_11",
+            "type": "content",
+            "title": "Cython",
+            "content": "# Introduction to Cython 🐍⚡\n\n**Cython** is a superset of Python that allows you to add C-like static typing to your Python code. It then translates your code into pure C, compiles it, and lets you import it as a standard Python module!\n\n```cython\n# fast_math.pyx\n\n# We declare types using 'cdef'\ncdef int calculate_sum(int n):\n    cdef int total = 0\n    cdef int i\n    for i in range(n):\n        total += i\n    return total\n```\n\nOnce compiled, this loop will run at the exact speed of raw C, which can be 100x to 1000x faster than pure Python!"
+        },
+        {
+            "id": "prof_opt_12",
+            "type": "content",
+            "title": "Numba",
+            "content": "# Just-In-Time Compilation: Numba 🚄\n\nWriting and compiling Cython adds build-step complexity to your project.\n\nAn alternative for mathematical and NumPy-heavy code is **Numba**. \n\nNumba is a Just-In-Time (JIT) compiler. You just add a decorator, and the *first time* the function runs, Numba compiles it to machine code on the fly!\n\n```python_not\nfrom numba import jit\nimport numpy as np\n\n# The @jit decorator tells Numba to compile this function\n@jit(nopython=True)\ndef fast_array_sum(arr):\n    total = 0.0\n    for i in range(arr.size):\n        total += arr[i]\n    return total\n```\n\nIt requires almost zero code changes and provides massive speedups for array operations."
+        },
+        {
+            "id": "prof_opt_13",
+            "type": "content",
+            "title": "Algorithmic Complexity",
+            "content": "# Big O Notation 📐\n\nNo amount of Cython or multiprocessing will save you if you choose the wrong data structure.\n\n**Lookup in a List: O(N)**\nIf you have a list of 1,000,000 items, and you do `if item in my_list:`, Python has to check every single item. This is incredibly slow.\n\n**Lookup in a Set/Dict: O(1)**\nIf you convert that list to a `set`, `if item in my_set:` takes the exact same amount of time regardless of whether there are 10 items or 10 billion items, thanks to hash tables.\n\nAlways ensure you are using the correct data structures before looking at advanced optimization tools."
+        },
+        {
+            "id": "prof_opt_quiz_3",
+            "type": "quiz",
+            "title": "Compilation Quiz",
+            "content": "Check your understanding of compilation tools.",
+            "quizQuestion": "What is the primary difference between Cython and Numba?",
+            "quizOptions": [
+                "Cython is for math, Numba is for string manipulation.",
+                "Cython compiles code Ahead-Of-Time (requiring a build step), while Numba compiles code Just-In-Time (during execution).",
+                "Cython is slower than pure Python.",
+                "Numba requires you to manually declare static types like `cdef int`."
+            ],
+            "correctOptionIndex": 1
+        },
+        {
+            "id": "prof_opt_14",
+            "type": "content",
+            "title": "Summary",
+            "content": "# Optimization Master! 🎉\n\nYou've learned how to methodically make your code blazing fast.\n\n## Key Takeaways\n\n- ✅ **Never Guess:** Always use `cProfile` to find the slowest functions, and `line_profiler` to find the slowest lines.\n- ✅ **Memory:** Use `tracemalloc` to find leaks. Use **Generators** to process large datasets. Use `__slots__` for millions of small objects.\n- ✅ **Caching:** Use `@lru_cache` to memoize expensive function calls.\n- ✅ **Compilation:** When Python limits are reached, use `Cython` (AOT) or `Numba` (JIT) to compile bottlenecks into machine code.\n- ✅ **Algorithms:** Always check your data structures (Sets/Dicts vs Lists) before writing complex optimizations.\n\nCongratulations on completing the Performance module!"
+        }
+    ]
+}

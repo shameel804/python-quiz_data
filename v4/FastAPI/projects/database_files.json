@@ -1,0 +1,32 @@
+[
+  {
+    "title": "File Uploads \ud83d\udcc1",
+    "ques": "Create a `POST` route at `/upload/` that accepts an `UploadFile` and returns the file's original name.",
+    "answer": {
+      "type": "code",
+      "lang": "python",
+      "content": "from fastapi import UploadFile, File\n\n@app.post('/upload/')\nasync def upload_file(file: UploadFile = File(...)):\n    return {'filename': file.filename}"
+    },
+    "explanation": "`UploadFile` streams the data, making it efficient for large files, and provides metadata like the filename and content type."
+  },
+  {
+    "title": "Multiple File Uploads \ud83d\udcc2",
+    "ques": "Modify the previous route to accept a **list** of `UploadFile` objects and return a list of their filenames.",
+    "answer": {
+      "type": "code",
+      "lang": "python",
+      "content": "from typing import List\n\n@app.post('/upload_multiple/')\nasync def upload_multiple(files: List[UploadFile] = File(...)):\n    return {'filenames': [f.filename for f in files]}"
+    },
+    "explanation": "By using standard Python typing (`List`), FastAPI automatically handles accepting and parsing multiple files in a single request."
+  },
+  {
+    "title": "WebSockets Basics \ud83d\udd0c",
+    "ques": "Create a WebSocket endpoint at `/ws` that accepts a connection and continuously echoes back any text data it receives.",
+    "answer": {
+      "type": "code",
+      "lang": "python",
+      "content": "from fastapi import WebSocket\n\n@app.websocket('/ws')\nasync def websocket_endpoint(websocket: WebSocket):\n    await websocket.accept()\n    while True:\n        data = await websocket.receive_text()\n        await websocket.send_text(f'Message text was: {data}')"
+    },
+    "explanation": "WebSockets enable persistent, two-way communication between the client and the server, ideal for chat apps or live dashboards."
+  }
+]

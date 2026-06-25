@@ -1,0 +1,30 @@
+[
+  {
+    "title": "Bokeh ColumnDataSource",
+    "ques": "In the Bokeh library, what is the role of the `ColumnDataSource`?",
+    "answer": {
+      "type": "text",
+      "content": "The `ColumnDataSource` is the core fundamental data structure of Bokeh. It is essentially a dictionary mapping string column names to arrays of data. Using it (instead of passing raw lists or pandas Series directly to plots) allows you to easily share data across multiple plots, link selections (brushing), and efficiently update the data in interactive Bokeh server applications."
+    },
+    "explanation": "The ColumnDataSource standardizes how data flows into Bokeh glyphs."
+  },
+  {
+    "title": "Declarative Visualization with Altair",
+    "ques": "Describe the core philosophy behind Altair's declarative visualization approach.",
+    "answer": {
+      "type": "text",
+      "content": "In a declarative library like Altair, you define *what* you want the visualization to look like (mapping data columns to visual channels like x, y, color, and size) rather than writing the imperative code for *how* to draw the lines and axes. Altair translates your declarative Python code into Vega-Lite JSON specifications."
+    },
+    "explanation": "Declarative plotting leads to concise, highly readable code that focuses on the data relationships rather than boilerplate drawing commands."
+  },
+  {
+    "title": "Adding Tooltips in Altair",
+    "ques": "How do you add an interactive hover tooltip in an Altair chart?",
+    "answer": {
+      "type": "code",
+      "lang": "python",
+      "content": "import altair as alt\n\nchart = alt.Chart(df).mark_point().encode(\n    x='horsepower',\n    y='mpg',\n    tooltip=['name', 'origin']\n)"
+    },
+    "explanation": "In Altair, tooltips are treated just like any other visual encoding channel (like x, y, or color). You simply pass a list of column names to the `tooltip` parameter."
+  }
+]

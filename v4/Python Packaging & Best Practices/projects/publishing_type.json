@@ -1,0 +1,30 @@
+[
+  {
+    "title": "Building and Publishing",
+    "ques": "Name the two primary tools currently recommended by PyPA for building a package into a distribution archive and uploading it to PyPI.",
+    "answer": {
+      "type": "text",
+      "content": "1.  **`build`:** The recommended tool to create the distribution archives (Source Distribution `.tar.gz` and Wheel `.whl`) from your source code.\n2.  **`twine`:** A utility for securely uploading those generated archives to PyPI (or TestPyPI) over HTTPS."
+    },
+    "explanation": "Modern packaging splits the building process from the uploading process to ensure security and standardization."
+  },
+  {
+    "title": "Type Hints: The Basics",
+    "ques": "Write a short Python function `greet` that takes a `name` parameter (string) and returns a string, using standard type hints.",
+    "answer": {
+      "type": "code",
+      "lang": "python",
+      "content": "def greet(name: str) -> str:\n    return f\"Hello, {name}!\""
+    },
+    "explanation": "Type hints do not enforce types at runtime, but they provide critical information for IDE autocomplete features and static analysis tools."
+  },
+  {
+    "title": "Advanced Type Hints",
+    "ques": "When using the `typing` module, what is the difference between `Union[int, float]` and `Optional[str]`?",
+    "answer": {
+      "type": "text",
+      "content": "*   **`Union[int, float]`:** Indicates that the variable or return value can be *either* an integer or a floating-point number. (In Python 3.10+, this can be written as `int | float`).\n*   **`Optional[str]`:** Indicates that the variable can be a string, *or* it can be `None`. It is exactly equivalent to `Union[str, None]`."
+    },
+    "explanation": "Expressive type hints allow developers to clearly document edge cases, such as a function that might return None if a search fails."
+  }
+]

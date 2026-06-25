@@ -1,0 +1,29 @@
+[
+  {
+    "title": "The Global Interpreter Lock (GIL)",
+    "ques": "Explain what the Global Interpreter Lock (GIL) is in CPython and how it affects multithreading.",
+    "answer": {
+      "type": "text",
+      "content": "The GIL is a mutex in the standard CPython implementation that protects access to Python objects, preventing multiple native threads from executing Python bytecodes simultaneously. As a result, standard multithreading cannot achieve true parallelism for CPU-bound tasks in CPython, though it is still effective for I/O-bound tasks (where the GIL is released)."
+    },
+    "explanation": "The GIL makes CPython thread-safe but limits multithreading performance on multi-core processors for heavy computational tasks."
+  },
+  {
+    "title": "CPU-bound vs I/O-bound",
+    "ques": "Compare CPU-bound and I/O-bound tasks. Which concurrency model (threading or multiprocessing) is best suited for each in Python?",
+    "answer": {
+      "type": "text",
+      "content": "* **CPU-bound:** Tasks that spend most of their time performing calculations (e.g., image processing, data crunching). Because of the GIL, **multiprocessing** is best suited as it bypasses the GIL by creating separate processes.\n* **I/O-bound:** Tasks that spend most of their time waiting for external events (e.g., network requests, reading files). **Threading** (or AsyncIO) is well-suited here because threads release the GIL while waiting for I/O operations."
+    },
+    "explanation": "Choosing the right concurrency model depends entirely on the bottleneck of the specific task."
+  },
+  {
+    "title": "Inter-Process Communication (IPC)",
+    "ques": "Name two mechanisms provided by the `multiprocessing` module to safely share data between different processes.",
+    "answer": {
+      "type": "text",
+      "content": "1.  **`Queue`:** A thread and process-safe FIFO queue used for passing messages or data structures between processes.\n2.  **`Pipe`:** A two-way connection channel between two processes. It has two endpoints where one process can send data and the other can receive."
+    },
+    "explanation": "Since processes have separate memory spaces, explicit IPC mechanisms like Queues or Pipes are required to communicate safely."
+  }
+]

@@ -1,0 +1,29 @@
+[
+  {
+    "title": "Mocking HTTP Responses",
+    "ques": "Briefly explain why libraries like `responses` or `respx` are preferred over manual mocking for testing API integrations.",
+    "answer": {
+      "type": "text",
+      "content": "Libraries like `responses` intercept HTTP requests at a lower level, providing a cleaner and more realistic testing environment. Instead of manually patching `requests.get` everywhere, you can simply declare \"when this URL is called, return this JSON data.\" This makes tests less brittle to internal implementation changes."
+    },
+    "explanation": "Dedicated HTTP mocking libraries abstract away the complexities of the underlying HTTP client, making API tests easier to write and maintain."
+  },
+  {
+    "title": "Database Test Isolation",
+    "ques": "Why is 'transactional rollback' a common pattern when testing code that interacts with a database?",
+    "answer": {
+      "type": "text",
+      "content": "Transactional rollback ensures that changes made to the database during a test are undone (rolled back) at the end of the test. This prevents data from persisting between tests, maintaining test isolation and ensuring that the test environment remains clean and consistent."
+    },
+    "explanation": "Without rollbacks, tests could pollute the database, leading to flaky tests where one test fails depending on the execution order of other tests."
+  },
+  {
+    "title": "Test Data Generation",
+    "ques": "What is the primary benefit of using a library like `factory_boy` compared to manually creating test database records?",
+    "answer": {
+      "type": "text",
+      "content": "`factory_boy` allows you to define factories that automatically generate valid test objects with default values. This reduces boilerplate code, especially when dealing with complex database models that have many required fields or foreign key relationships. It makes tests more focused on the data relevant to the specific test scenario."
+    },
+    "explanation": "Factories streamline the setup phase of testing by abstracting the creation of model instances, making test code much more readable."
+  }
+]

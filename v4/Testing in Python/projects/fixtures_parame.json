@@ -1,0 +1,32 @@
+[
+  {
+    "title": "Understanding Fixtures",
+    "ques": "Define a basic pytest fixture named `sample_list` that returns the list `[1, 2, 3]`. Write a test function that uses this fixture.",
+    "answer": {
+      "type": "code",
+      "lang": "python",
+      "content": "import pytest\n\n@pytest.fixture\ndef sample_list():\n    return [1, 2, 3]\n\ndef test_list_length(sample_list):\n    assert len(sample_list) == 3"
+    },
+    "explanation": "Fixtures are a core feature of pytest used to provide a fixed baseline so that tests execute reliably. They are injected as arguments into test functions."
+  },
+  {
+    "title": "Fixture Scope and Teardown",
+    "ques": "How do you create a fixture with a 'module' scope that performs teardown actions using the `yield` statement?",
+    "answer": {
+      "type": "code",
+      "lang": "python",
+      "content": "import pytest\n\n@pytest.fixture(scope=\"module\")\ndef db_connection():\n    print(\"\\nConnecting to DB...\")\n    db = {\"connected\": True}\n    yield db\n    print(\"\\nClosing DB connection...\")\n    db[\"connected\"] = False"
+    },
+    "explanation": "The `scope` parameter determines how often a fixture is created (e.g., per function, module, session). The `yield` keyword splits the fixture into setup and teardown phases."
+  },
+  {
+    "title": "Parametrized Testing",
+    "ques": "Use `@pytest.mark.parametrize` to test a function `is_even(n)` with the inputs 2 (True), 4 (True), and 3 (False).",
+    "answer": {
+      "type": "code",
+      "lang": "python",
+      "content": "import pytest\n\ndef is_even(n):\n    return n % 2 == 0\n\n@pytest.mark.parametrize(\"input_val, expected\", [\n    (2, True),\n    (4, True),\n    (3, False)\n])\ndef test_is_even(input_val, expected):\n    assert is_even(input_val) == expected"
+    },
+    "explanation": "Parametrization allows you to run the same test function multiple times with different sets of arguments, significantly reducing code duplication."
+  }
+]

@@ -1,0 +1,141 @@
+{
+    "id": "learn_multiprocessing",
+    "topicId": "multiprocessing",
+    "topicTitle": "Multiprocessing Pool",
+    "description": "Learn how to easily distribute work across multiple CPU cores using multiprocessing.Pool, covering map, starmap, imap, apply_async, and chunksize tuning.",
+    "baseKP": 75,
+    "slides": [
+        {
+            "id": "mp_pool_1",
+            "type": "content",
+            "title": "The Problem with Raw Processes",
+            "content": "# Why a Pool? 🏊‍♂️\n\nIn the previous module, we learned how to spawn individual `Process` objects. But imagine you have 10,000 images to process.\n\nIf you spawn 10,000 processes simultaneously:\n1. Your OS will crash because it can't handle 10,000 process handles.\n2. You will run out of RAM.\n3. The CPU will spend more time context-switching than actually processing images.\n\nWe need a way to reuse a fixed number of processes. We need a **Worker Pool**."
+        },
+        {
+            "id": "mp_pool_2",
+            "type": "content",
+            "title": "Introducing multiprocessing.Pool",
+            "content": "# The `Pool` Class 🎱\n\nThe `multiprocessing.Pool` class manages a pool of worker processes. You submit jobs to the pool, and the pool distributes them to the available workers.\n\nWhen a worker finishes a job, it grabs the next one from the queue. This keeps your CPU cores at 100% utilization without overwhelming your system.\n\nBy default, `Pool()` creates a pool with a number of worker processes equal to the number of CPU cores on your machine (`os.cpu_count()`)."
+        },
+        {
+            "id": "mp_pool_3",
+            "type": "content",
+            "title": "Pool.map",
+            "content": "# `Pool.map()` 🗺️\n\nThe easiest way to use a Pool is the `map()` method. It behaves exactly like Python's built-in `map()` function, but it executes the function in parallel across the worker processes.\n\n```python_not\nfrom multiprocessing import Pool\nimport time\n\ndef square(n):\n    time.sleep(0.5) # Simulate heavy work\n    return n * n\n\nif __name__ == '__main__':\n    inputs = [1, 2, 3, 4, 5, 6, 7, 8]\n    \n    with Pool() as pool:\n        # Blocks until ALL results are ready\n        results = pool.map(square, inputs)\n        \n    print(results) # [1, 4, 9, 16, 25, 36, 49, 64]\n```\n\nBecause we have a pool of workers, the total execution time will be significantly less than 4 seconds!"
+        },
+        {
+            "id": "mp_pool_4",
+            "type": "content",
+            "title": "Pool.map_async",
+            "content": "# Non-Blocking Map 🏃‍♂️\n\n`Pool.map()` blocks your main program until every single job is finished. If you want your main program to keep doing other work while the pool churns through the data, use `map_async()`.\n\n```python_not\nif __name__ == '__main__':\n    inputs = range(100)\n    with Pool() as pool:\n        # Returns an AsyncResult object immediately\n        result_obj = pool.map_async(square, inputs)\n        \n        print(\"Main process is doing other things!\")\n        \n        # Now we wait for the results (with an optional timeout)\n        try:\n            results = result_obj.get(timeout=10)\n            print(f\"Got {len(results)} results.\")\n        except TimeoutError:\n            print(\"Took too long!\")\n```"
+        },
+        {
+            "id": "mp_pool_quiz_1",
+            "type": "quiz",
+            "title": "Pool.map Quiz",
+            "content": "Test your knowledge of the map method.",
+            "quizQuestion": "What is the primary difference between `Pool.map()` and `Pool.map_async()`?",
+            "quizOptions": [
+                "map() uses threads, map_async() uses processes.",
+                "map() blocks the main thread until all results are ready, map_async() returns an object immediately.",
+                "map_async() does not return the results in the original order.",
+                "map() cannot take multiple arguments, but map_async() can."
+            ],
+            "correctOptionIndex": 1
+        },
+        {
+            "id": "mp_pool_5",
+            "type": "content",
+            "title": "Pool.starmap",
+            "content": "# Multiple Arguments: `starmap()` ✨\n\nA limitation of `map()` is that it only passes a *single* argument to your target function. What if your function takes multiple arguments?\n\n```python_not\ndef multiply(a, b):\n    return a * b\n```\n\nYou must use `Pool.starmap()`. It expects an iterable of iterables (like a list of tuples), and unpacks each tuple as arguments to the function.\n\n```python_not\nif __name__ == '__main__':\n    # List of (a, b) tuples\n    inputs = [(1, 2), (3, 4), (5, 6)]\n    \n    with Pool() as pool:\n        # Equivalent to: [multiply(1, 2), multiply(3, 4), multiply(5, 6)]\n        results = pool.starmap(multiply, inputs)\n        \n    print(results) # [2, 12, 30]\n```"
+        },
+        {
+            "id": "mp_pool_6",
+            "type": "content",
+            "title": "Pool.apply",
+            "content": "# Submitting Single Jobs 🎯\n\n`map` and `starmap` are designed for submitting a large batch of identical tasks. \n\nIf you only want to submit a single, one-off task to the pool, use `apply()`.\n\n```python_not\nif __name__ == '__main__':\n    with Pool() as pool:\n        # apply() blocks until the result is ready\n        result = pool.apply(multiply, args=(10, 20))\n        print(result) # 200\n```\n\nHowever, `apply()` blocks the main thread, making it practically useless for concurrent execution. You usually want its asynchronous cousin."
+        },
+        {
+            "id": "mp_pool_7",
+            "type": "content",
+            "title": "Pool.apply_async",
+            "content": "# `apply_async()` 🚀\n\nThis is the most flexible way to use a Pool. You can submit diverse tasks one by one in a loop, without blocking, and attach callback functions to handle the results as soon as they finish!\n\n```python_not\ndef log_result(result):\n    # This callback runs in the MAIN process as soon as the job finishes\n    print(f\"Job finished successfully with result: {result}\")\n\ndef log_error(error):\n    print(f\"Job crashed! {error}\")\n\nif __name__ == '__main__':\n    with Pool() as pool:\n        for i in range(10):\n            # Fire and forget!\n            pool.apply_async(square, args=(i,), callback=log_result, error_callback=log_error)\n            \n        # Wait for all async jobs to finish before closing the pool\n        pool.close()\n        pool.join()\n```"
+        },
+        {
+            "id": "mp_pool_quiz_2",
+            "type": "quiz",
+            "title": "Starmap vs Apply",
+            "content": "Ensure you know which method to use.",
+            "quizQuestion": "If you have a list of 1,000 files, and you want to pass both the `filename` and an `output_dir` string to a parsing function in parallel, which is the cleanest method to use?",
+            "quizOptions": [
+                "Pool.map()",
+                "Pool.starmap()",
+                "Pool.apply()",
+                "Pool.apply_async()"
+            ],
+            "correctOptionIndex": 1
+        },
+        {
+            "id": "mp_pool_8",
+            "type": "content",
+            "title": "Pool.imap",
+            "content": "# Lazy Evaluation: `imap()` 🥱\n\n`Pool.map()` has a flaw: it consumes the entire input iterable, converts it to a list, processes it, and returns the *entire result list* at the end.\n\nIf you are processing 1 billion records, `map()` will load all 1 billion inputs and outputs into RAM at once, causing an OutOfMemory crash.\n\n`Pool.imap()` returns an **Iterator**. It yields results one by one, as they become ready (while maintaining the original input order).\n\n```python_not\nif __name__ == '__main__':\n    def number_generator():\n        for i in range(1000000):\n            yield i\n            \n    with Pool() as pool:\n        # Returns immediately, does not consume the generator!\n        result_iterator = pool.imap(square, number_generator())\n        \n        # Consume results one by one\n        for result in result_iterator:\n            print(result) # Processes and prints memory-efficiently\n```"
+        },
+        {
+            "id": "mp_pool_9",
+            "type": "content",
+            "title": "Pool.imap_unordered",
+            "content": "# Speed over Order: `imap_unordered()` 🏎️\n\n`imap()` guarantees that the output order matches the input order. If job 1 takes 10 minutes, and job 2 takes 1 second, `imap()` will stall for 10 minutes before yielding job 2's result!\n\nIf you don't care about the order, use `imap_unordered()`. It yields results the absolute millisecond they finish.\n\n```python_not\nimport random\nimport time\nfrom multiprocessing import Pool\n\ndef unpredictable_task(n):\n    time.sleep(random.random())\n    return n\n\nif __name__ == '__main__':\n    with Pool() as pool:\n        # The numbers will be printed in random order!\n        for result in pool.imap_unordered(unpredictable_task, range(10)):\n            print(f\"Finished: {result}\")\n```"
+        },
+        {
+            "id": "mp_pool_10",
+            "type": "content",
+            "title": "Understanding Chunksize",
+            "content": "# The `chunksize` Parameter 🧩\n\nWhen you pass 10,000 items to `map()`, how does the Pool give them to the workers? Does it give 1 item to Worker 1, 1 item to Worker 2, etc.?\n\nNo. Sending items between processes requires pickling/unpickling (IPC overhead). If the task is very fast (e.g., `x + 1`), the IPC overhead will take longer than the actual math!\n\nThe Pool groups inputs into **chunks** and sends a whole chunk to a worker at once. This drastically reduces IPC overhead."
+        },
+        {
+            "id": "mp_pool_11",
+            "type": "content",
+            "title": "Tuning Chunksize",
+            "content": "# Optimizing Performance 🎛️\n\nYou can manually set the `chunksize` in `map()`, `starmap()`, and `imap()`.\n\n```python_not\nwith Pool() as pool:\n    # Send 100 items at a time to each worker\n    results = pool.map(fast_math_function, large_data_list, chunksize=100)\n```\n\n## Rules of Thumb:\n- **Very fast tasks, millions of inputs:** Set a LARGE chunksize (1000+) to minimize IPC overhead.\n- **Very slow, uneven tasks:** Set `chunksize=1`. If you group 10 slow tasks together, one worker might get stuck for an hour while the other workers sit idle!\n- **If using `imap`:** The default chunksize is 1. You often need to increase it for better performance."
+        },
+        {
+            "id": "mp_pool_quiz_3",
+            "type": "quiz",
+            "title": "Chunksize Check",
+            "content": "Test your optimization knowledge.",
+            "quizQuestion": "If you are using `Pool.map` to process 1,000 video files, and some take 2 seconds while others take 30 minutes, what chunksize should you use?",
+            "quizOptions": [
+                "A large chunksize (e.g., 100) to minimize IPC overhead.",
+                "A chunksize of 1, so fast workers can constantly pick up new videos rather than waiting on a slow video in their chunk.",
+                "The default chunksize calculated by Python.",
+                "You cannot set chunksize for video files."
+            ],
+            "correctOptionIndex": 1
+        },
+        {
+            "id": "mp_pool_12",
+            "type": "content",
+            "title": "concurrent.futures.ProcessPoolExecutor",
+            "content": "# The Modern API 🌟\n\nPython 3 introduced the `concurrent.futures` module, which provides a higher-level, cleaner API over `multiprocessing.Pool`.\n\nIt uses `ProcessPoolExecutor`, which works exactly identically to `ThreadPoolExecutor` (from the Threading module), allowing you to easily swap between threads and processes by changing one word!\n\n```python_not\nimport concurrent.futures\n\ndef square(n): return n * n\n\nif __name__ == '__main__':\n    inputs = [1, 2, 3, 4, 5]\n    \n    # Swapping to ThreadPoolExecutor is a 1-word change!\n    with concurrent.futures.ProcessPoolExecutor() as executor:\n        # executor.map automatically yields results as an iterator\n        for result in executor.map(square, inputs):\n            print(result)\n```"
+        },
+        {
+            "id": "mp_pool_13",
+            "type": "content",
+            "title": "Futures",
+            "content": "# The `Future` Object 🔮\n\nIf you want the equivalent of `apply_async()`, you use `executor.submit()`, which returns a `Future` object.\n\nA `Future` represents a result that hasn't been computed yet.\n\n```python_not\nimport concurrent.futures\n\nif __name__ == '__main__':\n    with concurrent.futures.ProcessPoolExecutor() as executor:\n        # Submit returns a Future immediately\n        future = executor.submit(square, 10)\n        \n        print(\"Is it done?\", future.done())\n        \n        # Blocks until the result is ready\n        result = future.result()\n        print(\"Result:\", result)\n```"
+        },
+        {
+            "id": "mp_pool_14",
+            "type": "content",
+            "title": "Handling Exceptions in Pools",
+            "content": "# Silent Failures 🤫\n\nWhen a worker process crashes, it doesn't crash your main program immediately. The exception is caught, pickled, and sent back to the parent process.\n\nThe exception is only re-raised when you try to access the result (e.g., calling `.get()` or iterating over `map`).\n\n```python_not\nfrom multiprocessing import Pool\n\ndef risky_job(n):\n    if n == 5:\n        raise ValueError(\"I crashed!\")\n    return n\n\nif __name__ == '__main__':\n    with Pool() as pool:\n        result_obj = pool.map_async(risky_job, range(10))\n        \n        print(\"Main process continues...\")\n        \n        try:\n            # The ValueError explodes HERE, not when the worker crashed!\n            result_obj.get()\n        except ValueError as e:\n            print(\"Caught the crash!\", e)\n```"
+        },
+        {
+            "id": "mp_pool_15",
+            "type": "content",
+            "title": "Summary",
+            "content": "# Worker Pools Mastered! 🎉\n\nYou've learned how to efficiently distribute massive workloads across all your CPU cores.\n\n## Key Takeaways\n\n- ✅ **Pool vs Process:** Pools manage a fixed number of workers, preventing OS crashes from spawning too many processes.\n- ✅ **map & starmap:** Use for blocking, batch execution of identical tasks.\n- ✅ **imap & imap_unordered:** Use for lazy evaluation and processing massive datasets without running out of RAM.\n- ✅ **apply_async:** Use for firing off individual, diverse tasks with callbacks.\n- ✅ **chunksize:** Tune this parameter! High for fast tasks, 1 for slow/uneven tasks.\n- ✅ **concurrent.futures:** The modern, cleaner API for executing concurrent code.\n\nGo forth and write blazingly fast Python code!"
+        }
+    ]
+}

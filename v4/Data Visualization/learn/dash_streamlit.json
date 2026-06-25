@@ -1,0 +1,97 @@
+{
+    "id": "learn_dash_streamlit",
+    "topicId": "dash_streamlit",
+    "topicTitle": "Dash & Streamlit",
+    "description": "Turn your data scripts into fully functional, interactive web applications in minutes. Learn to use Dash (for enterprise) and Streamlit (for rapid prototyping).",
+    "baseKP": 75,
+    "slides": [
+        {
+            "id": "dash_st_1",
+            "type": "content",
+            "title": "The Data App Problem",
+            "content": "# Sharing Data 📤\n\nYou've written a beautiful Pandas script that analyzes sales data and generates Plotly charts. How do you share it with your boss?\n\nYou could send a static PDF, but they want to click drop-downs to filter by region.\n\nYou *could* spend 3 weeks building a React.js frontend and a FastAPI backend, but you are a Data Scientist, not a Full-Stack Web Developer.\n\nThis is where **Data App Frameworks** come in. They allow you to build full web apps using *only* Python."
+        },
+        {
+            "id": "dash_st_2",
+            "type": "content",
+            "title": "Introduction to Streamlit",
+            "content": "# Rapid Prototyping: Streamlit 🎈\n\nStreamlit is arguably the fastest way to build a data app. \n\nIts paradigm is incredibly simple: **The entire Python script reruns from top to bottom every time the user interacts with a widget on the screen.**\n\n```bash\npip install streamlit\n```\n\nTo run a Streamlit app, you don't run `python app.py`. You run:\n```bash\nstreamlit run app.py\n```"
+        },
+        {
+            "id": "dash_st_3",
+            "type": "content",
+            "title": "Writing a Streamlit App",
+            "content": "# The Streamlit Magic ✨\n\nStreamlit widgets return values directly into your script. It is synchronous and straightforward.\n\n```python_not\n# app.py\nimport streamlit as st\nimport pandas as pd\nimport numpy as np\n\nst.title(\"My First Streamlit App\")\n\n# Create a slider widget. Its value is assigned to 'num_points'\nnum_points = st.slider(\"Number of points\", min_value=10, max_value=1000)\n\n# Generate random data based on the slider!\ndata = pd.DataFrame(np.random.randn(num_points, 2), columns=['x', 'y'])\n\n# Display the data as a chart\nst.scatter_chart(data)\n```\n\nWhen the user moves the slider to 500, the script instantly restarts, reads `num_points=500`, generates new data, and updates the chart!"
+        },
+        {
+            "id": "dash_st_4",
+            "type": "content",
+            "title": "Streamlit Session State",
+            "content": "# Preserving Data 💾\n\nBecause the script reruns entirely on every click, normal variables are destroyed and recreated.\n\nIf you want to remember something across reruns (like a score, or whether a user clicked a button previously), you must use `st.session_state`.\n\n```python_not\nimport streamlit as st\n\n# Initialize the state variable if it doesn't exist\nif 'counter' not in st.session_state:\n    st.session_state.counter = 0\n\n# Create a button. If clicked, increment the state\nif st.button(\"Click Me!\"):\n    st.session_state.counter += 1\n\n# Display the state. It will survive reruns!\nst.write(f\"You clicked the button {st.session_state.counter} times.\")\n```"
+        },
+        {
+            "id": "dash_st_5",
+            "type": "content",
+            "title": "Streamlit Caching",
+            "content": "# Speeding it Up: `@st.cache_data` ⚡\n\nIf your script reruns every time a user clicks a dropdown, what happens if your script also downloads a 500MB CSV file from S3?\n\nThe app will freeze for 10 seconds on every click!\n\nTo prevent this, you decorate slow data-loading functions with `@st.cache_data`.\n\n```python_not\nimport streamlit as st\nimport time\n\n@st.cache_data\ndef load_massive_data():\n    # Streamlit runs this ONCE, and stores the result in RAM.\n    # On subsequent reruns, it skips this function entirely and returns the cached RAM data!\n    time.sleep(5) # Simulate slow network\n    return [\"Data1\", \"Data2\", \"Data3\"]\n\n# This is instant after the first run!\ndata = load_massive_data()\nst.write(data)\n```"
+        },
+        {
+            "id": "dash_st_quiz_1",
+            "type": "quiz",
+            "title": "Streamlit Quiz",
+            "content": "Check your understanding of Streamlit's architecture.",
+            "quizQuestion": "In Streamlit, what happens behind the scenes when a user interacts with a widget (like moving a slider)?",
+            "quizOptions": [
+                "Streamlit makes an asynchronous AJAX call to a specific callback function.",
+                "Streamlit reruns the entire Python script from top to bottom, updating the variables with the new widget values.",
+                "Streamlit sends the widget value to a separate Node.js server.",
+                "Streamlit throws an error unless you define an `@st.callback`."
+            ],
+            "correctOptionIndex": 1
+        },
+        {
+            "id": "dash_st_6",
+            "type": "content",
+            "title": "Introduction to Dash",
+            "content": "# Enterprise Apps: Dash 🏢\n\nStreamlit is great, but its top-to-bottom rerun model struggles with massive, highly complex, multi-page enterprise applications.\n\n**Dash** (created by the Plotly team) is the enterprise standard. It works entirely differently. \n\nInstead of rerunning the script, you define the UI Layout once, and then write specific `@callback` functions that tell Dash exactly which parts of the UI to update when a specific widget changes."
+        },
+        {
+            "id": "dash_st_7",
+            "type": "content",
+            "title": "The Dash Layout",
+            "content": "# HTML in Python 🧱\n\nIn Dash, you build the DOM tree using Python classes that represent HTML tags (`html.Div`, `html.H1`) and Dash Core Components (`dcc.Graph`, `dcc.Slider`).\n\n```python_not\nfrom dash import Dash, html, dcc\n\napp = Dash(__name__)\n\n# Define the UI once\napp.layout = html.Div([\n    html.H1(\"My Dash Dashboard\"),\n    \n    dcc.Dropdown(\n        id='city-dropdown',\n        options=[{'label': 'New York', 'value': 'NYC'}, {'label': 'London', 'value': 'LDN'}],\n        value='NYC'\n    ),\n    \n    # An empty container where the graph will go\n    dcc.Graph(id='my-graph')\n])\n\nif __name__ == '__main__':\n    app.run_server(debug=True)\n```"
+        },
+        {
+            "id": "dash_st_8",
+            "type": "content",
+            "title": "Dash Callbacks",
+            "content": "# Reactive Updates: `@callback` ⚡\n\nTo make the dropdown update the graph, we define a callback. We tell Dash: *\"Take the 'value' property of the 'city-dropdown', run this Python function, and output the result to the 'figure' property of the 'my-graph' component.\"*\n\n```python_not\nfrom dash import Input, Output, callback\nimport plotly.express as px\nimport pandas as pd\n\n# ... (app.layout code from previous slide) ...\n\n@callback(\n    Output(component_id='my-graph', component_property='figure'),\n    Input(component_id='city-dropdown', component_property='value')\n)\ndef update_graph(selected_city):\n    # This function ONLY runs when the dropdown changes!\n    \n    # (Normally you would filter a DataFrame based on selected_city here)\n    df = pd.DataFrame({'Year': [2020, 2021], 'Sales': [100, 200]})\n    \n    # Generate a Plotly figure\n    fig = px.bar(df, x=\"Year\", y=\"Sales\", title=f\"Sales in {selected_city}\")\n    \n    # Return the figure to the Output component\n    return fig\n```"
+        },
+        {
+            "id": "dash_st_9",
+            "type": "content",
+            "title": "Dash DataTables",
+            "content": "# Interactive Grids 📊\n\nDash includes incredibly powerful components for displaying tabular data. The `dash_table.DataTable` allows users to sort, filter, and edit data directly in the browser.\n\n```python_not\nfrom dash import dash_table\nimport pandas as pd\n\ndf = pd.read_csv('https://raw.githubusercontent.com/plotly/datasets/master/solar.csv')\n\napp.layout = html.Div([\n    dash_table.DataTable(\n        data=df.to_dict('records'),\n        columns=[{\"name\": i, \"id\": i} for i in df.columns],\n        filter_action=\"native\", # Adds search bars to columns\n        sort_action=\"native\",   # Allows sorting\n        page_size=10            # Adds pagination\n    )\n])\n```"
+        },
+        {
+            "id": "dash_st_quiz_2",
+            "type": "quiz",
+            "title": "Dash Quiz",
+            "content": "Test your knowledge of the Dash framework.",
+            "quizQuestion": "In Dash, what is the purpose of the `@callback` decorator?",
+            "quizOptions": [
+                "It authenticates the user before they can view the dashboard.",
+                "It defines the HTML layout of the application.",
+                "It links the Input of a UI component (like a dropdown's value) to a Python function, and maps the function's return value to the Output of another component (like a graph).",
+                "It automatically downloads data from an SQL database."
+            ],
+            "correctOptionIndex": 2
+        },
+        {
+            "id": "dash_st_10",
+            "type": "content",
+            "title": "Summary",
+            "content": "# Web App Developer! 🎉\n\nYou've learned how to turn scripts into scalable web applications.\n\n## Key Takeaways\n\n- ✅ **Data Apps:** Build frontends using only Python. No Javascript required.\n- ✅ **Streamlit:** Ideal for rapid prototyping. The entire script reruns top-to-bottom on every interaction.\n- ✅ **Streamlit State:** Use `@st.cache_data` to prevent slow data reloading, and `st.session_state` to remember variables across reruns.\n- ✅ **Dash:** Ideal for complex, enterprise-grade applications. It uses an HTML-like layout tree and asynchronous callbacks.\n- ✅ **Dash Callbacks:** Use `Input` and `Output` decorators to surgically update specific UI elements without reloading the whole page."
+        }
+    ]
+}

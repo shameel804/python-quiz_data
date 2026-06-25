@@ -1,0 +1,29 @@
+[
+  {
+    "title": "Producer-Consumer Pattern",
+    "ques": "Describe the producer-consumer pattern in async programming and mention the key data structure used to implement it safely.",
+    "answer": {
+      "type": "text",
+      "content": "The producer-consumer pattern involves one or more 'producer' tasks generating data and placing it into a buffer, while one or more 'consumer' tasks pull data from that buffer to process it. In Python's AsyncIO, this is safely implemented using `asyncio.Queue`, which coordinates the transfer of data between coroutines without race conditions."
+    },
+    "explanation": "This pattern decouples data generation from data processing, allowing both to operate at their own optimal speeds."
+  },
+  {
+    "title": "Semaphore-Limited Concurrency",
+    "ques": "Why would you use an `asyncio.Semaphore` when performing async network requests (e.g., scraping a website)?",
+    "answer": {
+      "type": "text",
+      "content": "A Semaphore limits the maximum number of concurrent tasks that can access a particular block of code. When scraping a website, launching thousands of concurrent requests might crash your application, exhaust file descriptors, or get your IP banned by the target server. A Semaphore acts as a throttle, ensuring that only a safe number of requests (e.g., 50) are active at any given time."
+    },
+    "explanation": "Semaphores prevent resource exhaustion and ensure polite behavior when interacting with external APIs."
+  },
+  {
+    "title": "Introduction to aiohttp",
+    "ques": "What is `aiohttp` and how does a `ClientSession` improve performance?",
+    "answer": {
+      "type": "text",
+      "content": "`aiohttp` is a popular asynchronous HTTP client/server library for Python. A `ClientSession` is used to maintain a pool of reusable connections (connection pooling). Reusing existing connections across multiple requests avoids the overhead of establishing a new TCP/TLS connection for every single request, drastically improving performance."
+    },
+    "explanation": "For async HTTP operations, a shared session is critical for maximizing network throughput and efficiency."
+  }
+]

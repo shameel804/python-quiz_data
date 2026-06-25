@@ -1,0 +1,32 @@
+[
+  {
+    "title": "File System Operations",
+    "ques": "Write a Python script using the `pathlib` module to create a new directory named 'deploy_logs' and inside it, create a file named 'app.log' with the text 'Deployment started'.",
+    "answer": {
+      "type": "code",
+      "lang": "python",
+      "content": "from pathlib import Path\n\nlog_dir = Path(\"deploy_logs\")\nlog_dir.mkdir(exist_ok=True)\n\nlog_file = log_dir / \"app.log\"\nlog_file.write_text(\"Deployment started\")"
+    },
+    "explanation": "`pathlib` provides an object-oriented interface to the filesystem, which is generally preferred over the older `os.path` module for modern Python scripts."
+  },
+  {
+    "title": "Running Shell Commands",
+    "ques": "Use the `subprocess` module to run the shell command `ls -l` and capture its output as a string. Print the output.",
+    "answer": {
+      "type": "code",
+      "lang": "python",
+      "content": "import subprocess\n\nresult = subprocess.run(['ls', '-l'], capture_output=True, text=True)\nif result.returncode == 0:\n    print(result.stdout)\nelse:\n    print(f\"Error: {result.stderr}\")"
+    },
+    "explanation": "The `subprocess` module allows you to spawn new processes, connect to their input/output/error pipes, and obtain their return codes. `capture_output=True` saves the output to the `result` object."
+  },
+  {
+    "title": "Environment Variables",
+    "ques": "How do you securely retrieve the value of an environment variable named `DATABASE_URL` using the `os` module, and provide a default value if it's missing?",
+    "answer": {
+      "type": "code",
+      "lang": "python",
+      "content": "import os\n\ndb_url = os.getenv(\"DATABASE_URL\", \"sqlite:///default.db\")\nprint(f\"Using database: {db_url}\")"
+    },
+    "explanation": "`os.getenv` safely fetches environment variables and allows you to specify a fallback value, preventing `KeyError` exceptions if the variable is not set in the environment."
+  }
+]

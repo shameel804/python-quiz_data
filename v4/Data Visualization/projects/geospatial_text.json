@@ -1,0 +1,29 @@
+[
+  {
+    "title": "Geospatial Mapping with Folium",
+    "ques": "What underlying JavaScript library does the Python package `folium` use to render interactive maps?",
+    "answer": {
+      "type": "text",
+      "content": "`folium` is a Python wrapper for **Leaflet.js**, which is a leading open-source JavaScript library for mobile-friendly interactive maps."
+    },
+    "explanation": "Folium allows Python developers to manipulate geospatial data and generate HTML/JS maps without writing any JavaScript."
+  },
+  {
+    "title": "Choropleth Maps",
+    "ques": "Define what a Choropleth map is and describe the two main data components required to build one.",
+    "answer": {
+      "type": "text",
+      "content": "A choropleth map uses shaded or patterned areas to display statistical variables across geographic regions (e.g., coloring states based on population). To build one, you need two things:\n1.  **Geospatial Data (GeoJSON or Shapefile):** Defines the boundaries/polygons of the regions.\n2.  **Tabular Data (Pandas DataFrame):** Contains the statistical values mapped to those regions (usually linked via a common ID or name)."
+    },
+    "explanation": "Libraries like Folium or Plotly take these two datasets and merge them visually to reveal spatial trends."
+  },
+  {
+    "title": "Text Visualization with WordCloud",
+    "ques": "Explain the basic concept of a Word Cloud (Tag Cloud) and its primary limitation.",
+    "answer": {
+      "type": "text",
+      "content": "A Word Cloud is a visual representation of text data where the size of each word indicates its frequency or importance within the text. **Primary Limitation:** While visually striking, word clouds lack precision. It is difficult for the human eye to accurately compare the sizes of words, especially when they have different lengths or are oriented differently. They also strip away all context and grammar."
+    },
+    "explanation": "Word clouds are good for quick, high-level sentiment or topic summaries but are poor choices for rigorous analytical comparisons."
+  }
+]

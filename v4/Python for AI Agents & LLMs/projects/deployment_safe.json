@@ -1,0 +1,29 @@
+[
+  {
+    "title": "Streaming LLM Responses",
+    "ques": "Why is 'streaming' highly recommended when deploying LLM-based applications via an API like FastAPI?",
+    "answer": {
+      "type": "text",
+      "content": "LLM generation is relatively slow. If an application waits for the entire response to be generated before returning the HTTP payload, the user experiences a long, frustrating delay (high time-to-first-byte). Streaming uses Server-Sent Events (SSE) or WebSockets to return chunks (tokens) of the response as soon as they are generated, providing immediate visual feedback and a vastly improved user experience."
+    },
+    "explanation": "Streaming masks the inherent latency of autoregressive generation models."
+  },
+  {
+    "title": "LLM Guardrails",
+    "ques": "What is the purpose of a library like `guardrails-ai` or `NeMo Guardrails`?",
+    "answer": {
+      "type": "text",
+      "content": "Guardrails are validation layers placed between the LLM and the user (or the system). They verify that the LLM's output conforms to specific structural requirements (e.g., ensuring output is valid JSON), semantic constraints (e.g., preventing profanity or PII leakage), and factual accuracy. If the output violates a rule, the guardrail can block it, redact it, or automatically prompt the LLM to correct itself."
+    },
+    "explanation": "Guardrails enforce safety, security, and predictability, making non-deterministic LLMs safer for enterprise deployment."
+  },
+  {
+    "title": "Observability with LangSmith",
+    "ques": "What role does an observability platform like LangSmith play in the LLM app lifecycle?",
+    "answer": {
+      "type": "text",
+      "content": "Observability platforms provide deep tracing and analytics for LLM applications. They log exactly what prompts were sent to the model, what the output was, how many tokens were consumed, and how long each step in a complex RAG chain took. This is crucial for debugging complex agent loops, monitoring API costs, evaluating model performance, and identifying latency bottlenecks in production."
+    },
+    "explanation": "You cannot manage what you cannot measure; observability is critical for moving LLM apps from prototypes to reliable production systems."
+  }
+]

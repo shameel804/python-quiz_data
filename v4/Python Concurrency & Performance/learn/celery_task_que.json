@@ -1,0 +1,135 @@
+{
+    "id": "learn_celery_task_que",
+    "topicId": "celery_task_que",
+    "topicTitle": "Celery & Task Queues",
+    "description": "Learn how to offload heavy background tasks to distributed worker queues using Celery, Redis, and RabbitMQ.",
+    "baseKP": 75,
+    "slides": [
+        {
+            "id": "celery_1",
+            "type": "content",
+            "title": "The Web Server Bottleneck",
+            "content": "# The Problem with Synchronous Web Apps 🌐\n\nImagine you have a Flask or Django web application. A user clicks \"Generate Monthly Report\". \n\nThe server receives the request, starts querying the database, aggregating data, and generating a PDF. This takes 45 seconds.\n\nDuring those 45 seconds:\n1. The user's browser is spinning, waiting for a response.\n2. The web server process is tied up. It cannot serve other users!\n\nWeb servers must be fast. Heavy work must be offloaded."
+        },
+        {
+            "id": "celery_2",
+            "type": "content",
+            "title": "Introduction to Task Queues",
+            "content": "# The Solution: Task Queues 📨\n\nInstead of generating the PDF immediately, the web server should:\n1. Put a \"message\" into a Queue that says: *\"Generate a PDF for User 123\"*.\n2. Instantly return a response to the user: *\"Your report is generating. We will email it to you.\"*\n\nSeparately, a pool of **Background Workers** constantly monitors the Queue. When they see a message, they grab it and do the heavy lifting.\n\nThis is a Distributed Producer-Consumer pattern."
+        },
+        {
+            "id": "celery_3",
+            "type": "content",
+            "title": "What is Celery?",
+            "content": "# Enter Celery 🌿\n\n**Celery** is the industry standard Task Queue for Python. \n\nIt handles all the complex plumbing:\n- Defining tasks.\n- Sending messages to the queue.\n- Spawning worker processes to execute tasks.\n- Handling retries if a task fails.\n- Storing the results of tasks.\n\nTo use Celery, you need a **Message Broker**. This is the actual database/service that holds the queue. The most common brokers are **Redis** and **RabbitMQ**."
+        },
+        {
+            "id": "celery_4",
+            "type": "content",
+            "title": "Setting up Celery",
+            "content": "# The Celery App ⚙️\n\nFirst, you install celery (`pip install celery redis`) and instantiate a Celery application, pointing it to your broker.\n\n```python_not\n# tasks.py\nfrom celery import Celery\n\n# We use Redis running on localhost as the broker\napp = Celery(\n    'my_tasks',\n    broker='redis://localhost:6379/0',\n    backend='redis://localhost:6379/1' # Optional: To store results\n)\n\n# Define a task using the @app.task decorator\n@app.task\ndef generate_pdf(user_id):\n    print(f\"Generating PDF for {user_id}...\")\n    # Heavy work here...\n    return f\"/path/to/report_{user_id}.pdf\"\n```"
+        },
+        {
+            "id": "celery_quiz_1",
+            "type": "quiz",
+            "title": "Celery Basics Quiz",
+            "content": "Test your understanding of the Celery architecture.",
+            "quizQuestion": "In a Celery architecture, what is the role of the 'Broker' (like Redis or RabbitMQ)?",
+            "quizOptions": [
+                "It executes the Python code.",
+                "It holds the message queue, acting as the middleman between the web server (producer) and the background workers (consumers).",
+                "It is a web server framework like Django.",
+                "It compiles Python into machine code for faster execution."
+            ],
+            "correctOptionIndex": 1
+        },
+        {
+            "id": "celery_5",
+            "type": "content",
+            "title": "Starting the Worker",
+            "content": "# Spawning Workers 👷‍♂️\n\nYou have defined the task. Now you need to start the background worker process that will execute it.\n\nYou do this from the terminal, outside of your Python script.\n\n```bash\n# Start a celery worker, pointing to the tasks.py file\ncelery -A tasks worker --loglevel=info\n```\n\nThis command spawns a master process and several child processes (equal to your CPU cores). They immediately connect to Redis and wait for messages."
+        },
+        {
+            "id": "celery_6",
+            "type": "content",
+            "title": "Calling Tasks with delay",
+            "content": "# Sending Work: `.delay()` 🚀\n\nBack in your main application (e.g., your Flask web route), you don't call the function directly. \n\nYou call the `.delay()` method on the task.\n\n```python_not\n# web_server.py\nfrom tasks import generate_pdf\n\ndef my_web_route():\n    user_id = 123\n    \n    # BAD: This runs synchronously and blocks the server!\n    # generate_pdf(user_id) \n    \n    # GOOD: This serializes the arguments and sends a message to Redis\n    # It returns instantly!\n    task_handle = generate_pdf.delay(user_id)\n    \n    return f\"Task {task_handle.id} dispatched!\"\n```"
+        },
+        {
+            "id": "celery_7",
+            "type": "content",
+            "title": "Retrieving Results",
+            "content": "# Getting the Result 📥\n\n`delay()` returns an `AsyncResult` object. If you configured a `backend` (like Redis) when initializing Celery, you can use this object to check the status or get the return value of the task.\n\n```python_not\n# Using the task_handle from the previous slide\n\nprint(task_handle.state) # 'PENDING', 'STARTED', 'SUCCESS', or 'FAILURE'\n\nif task_handle.ready():\n    # Get the return value. This will block if not ready!\n    result = task_handle.get()\n    print(f\"Result: {result}\")\n```\n\nUsually, web apps store the task ID in a database, and the frontend polls an API endpoint to check `state` until it is `SUCCESS`."
+        },
+        {
+            "id": "celery_8",
+            "type": "content",
+            "title": "Advanced Calling: apply_async",
+            "content": "# `.apply_async()` ⚙️\n\n`.delay()` is actually a shortcut for `.apply_async()`. \n\nIf you need advanced execution options (like countdowns, custom queues, or routing), you must use `.apply_async()`.\n\n```python_not\n# Execute this task exactly 60 seconds from now\ngenerate_pdf.apply_async(args=[user_id], countdown=60)\n\n# Execute this task on a specific day/time\ngenerate_pdf.apply_async(args=[user_id], eta=datetime(2025, 1, 1))\n\n# Send this task to a high-priority queue\ngenerate_pdf.apply_async(args=[user_id], queue='high_priority')\n```"
+        },
+        {
+            "id": "celery_quiz_2",
+            "type": "quiz",
+            "title": "Dispatching Quiz",
+            "content": "Check your understanding of task dispatch.",
+            "quizQuestion": "Which method would you use to tell Celery to execute a task in the background, but wait 5 minutes before starting it?",
+            "quizOptions": [
+                "task.delay(args, wait=300)",
+                "task.schedule(args, minutes=5)",
+                "task.apply_async(args, countdown=300)",
+                "time.sleep(300); task.delay(args)"
+            ],
+            "correctOptionIndex": 2
+        },
+        {
+            "id": "celery_9",
+            "type": "content",
+            "title": "Retries",
+            "content": "# Handling Failures 🔄\n\nNetwork requests fail. APIs go down. Background tasks should automatically retry when they encounter transient errors.\n\nCelery makes this easy.\n\n```python_not\nimport requests\n\n# Automatically retry up to 3 times, waiting 10 seconds between attempts\n@app.task(bind=True, max_retries=3, default_retry_delay=10)\ndef fetch_data(self, url):\n    try:\n        response = requests.get(url)\n        response.raise_for_status()\n        return response.json()\n    except requests.exceptions.RequestException as exc:\n        # Tell celery to put the task back in the queue!\n        raise self.retry(exc=exc)\n```"
+        },
+        {
+            "id": "celery_10",
+            "type": "content",
+            "title": "Workflows: Signatures",
+            "content": "# Task Signatures 🔏\n\nA **Signature** is an object that wraps the arguments and execution options of a task without actually calling it yet. It allows you to pass tasks around like variables.\n\n```python_not\n# Instead of delay(), use signature() or .s()\ntask_sig = generate_pdf.s(123)\n\nprint(type(task_sig)) # <class 'celery.canvas.Signature'>\n\n# Later on, execute the signature\ntask_sig.delay()\n```\n\nSignatures are the building blocks of Celery Workflows."
+        },
+        {
+            "id": "celery_11",
+            "type": "content",
+            "title": "Workflows: Chains",
+            "content": "# Chaining Tasks 🔗\n\nWhat if Task B depends on the output of Task A?\n\nYou can use `chain` (or the `|` operator) to string signatures together. The output of the first task is automatically passed as the first argument to the second task!\n\n```python_not\nfrom celery import chain\n\n@app.task\ndef add(x, y):\n    return x + y\n\n@app.task\ndef multiply(x, y):\n    return x * y\n\n# Calculate (2 + 2) * 10\n# The output of add(2, 2) is implicitly passed to multiply as the 'x' argument\nworkflow = chain(add.s(2, 2), multiply.s(10))\n\nresult = workflow.delay().get()\nprint(result) # 40\n```"
+        },
+        {
+            "id": "celery_12",
+            "type": "content",
+            "title": "Workflows: Groups and Chords",
+            "content": "# Groups and Chords 🎶\n\n## `group`\nExecutes a list of signatures in parallel.\n```python_not\nfrom celery import group\n# Dispatch 10 addition tasks simultaneously\njob = group(add.s(i, i) for i in range(10)).delay()\nprint(job.get()) # [0, 2, 4, 6, ...]\n```\n\n## `chord`\nExecutes a group of tasks in parallel, and when *all* of them finish, calls a final callback task with the list of their results!\n```python_not\nfrom celery import chord\n# Add numbers in parallel, then sum the total\njob = chord([add.s(1,1), add.s(2,2)])(sum_list.s())\n```"
+        },
+        {
+            "id": "celery_13",
+            "type": "content",
+            "title": "Celery Beat",
+            "content": "# Scheduled Tasks (Cron Jobs) ⏰\n\nCelery isn't just for on-demand tasks. It has a built-in scheduler called **Celery Beat** for recurring tasks (like a cron job).\n\n```python_not\n# Configure the schedule in your app configuration\napp.conf.beat_schedule = {\n    'send-daily-emails': {\n        'task': 'tasks.send_emails',\n        'schedule': 86400.0, # Every 24 hours\n        # Or use crontab: 'schedule': crontab(hour=7, minute=30)\n    },\n}\n```\n\nYou start the beat scheduler as a separate process:\n```bash\ncelery -A tasks beat\n```\n\nIt continuously checks the clock and drops messages into the queue when it's time!"
+        },
+        {
+            "id": "celery_quiz_3",
+            "type": "quiz",
+            "title": "Workflow Quiz",
+            "content": "Check your understanding of Celery workflows.",
+            "quizQuestion": "Which Celery feature allows you to execute 5 tasks in parallel, and only execute a 6th task when all 5 have successfully completed?",
+            "quizOptions": [
+                "chain",
+                "group",
+                "chord",
+                "apply_async"
+            ],
+            "correctOptionIndex": 2
+        },
+        {
+            "id": "celery_14",
+            "type": "content",
+            "title": "Summary",
+            "content": "# Distributed Master! 🎉\n\nYou've learned how to decouple your applications for massive scalability.\n\n## Key Takeaways\n\n- ✅ **Celery:** A distributed task queue that offloads heavy work from your main application to background workers.\n- ✅ **Broker:** The middleman (like Redis/RabbitMQ) that holds the message queue.\n- ✅ **.delay():** The standard way to send a task to the queue.\n- ✅ **.apply_async():** Use for advanced options like countdowns, ETAs, and routing.\n- ✅ **Workflows:** Use `chain` (sequential), `group` (parallel), and `chord` (parallel with callback) to orchestrate complex task dependencies.\n- ✅ **Celery Beat:** The built-in scheduler for recurring cron-like jobs.\n\nBy keeping your web servers fast and delegating the heavy lifting, your applications will scale beautifully."
+        }
+    ]
+}

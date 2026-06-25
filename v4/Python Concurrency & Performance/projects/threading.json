@@ -1,0 +1,30 @@
+[
+  {
+    "title": "Creating a Basic Thread",
+    "ques": "Write a Python script that defines a function `print_hello` and executes it in a separate thread using the `threading` module.",
+    "answer": {
+      "type": "code",
+      "lang": "python",
+      "content": "import threading\n\ndef print_hello():\n    print(\"Hello from a thread!\")\n\n# Create a thread object\nthread = threading.Thread(target=print_hello)\n\n# Start the thread\nthread.start()\n\n# Wait for the thread to complete\nthread.join()"
+    },
+    "explanation": "The `threading.Thread` class is used to create a new thread. `.start()` begins its execution, and `.join()` blocks the main program until the thread finishes."
+  },
+  {
+    "title": "Daemon Threads",
+    "ques": "What is a daemon thread, and when would you use one?",
+    "answer": {
+      "type": "text",
+      "content": "A daemon thread runs in the background and is automatically terminated when the main program (and all non-daemon threads) exits. They are typically used for background tasks like garbage collection, continuous logging, or monitoring, where the application doesn't need to wait for them to finish before shutting down."
+    },
+    "explanation": "Setting `daemon=True` when creating a thread prevents it from blocking the program from exiting."
+  },
+  {
+    "title": "Thread Synchronization",
+    "ques": "Why is a `threading.Lock` necessary when multiple threads modify a shared variable?",
+    "answer": {
+      "type": "text",
+      "content": "When multiple threads concurrently modify a shared resource (like updating a counter), race conditions can occur, leading to unpredictable and incorrect results. A `Lock` ensures that only one thread can access and modify the shared resource at a time, enforcing thread safety."
+    },
+    "explanation": "Locks (and other primitives like Semaphores) serialize access to critical sections of code, preventing data corruption in multithreaded environments."
+  }
+]

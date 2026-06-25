@@ -1,0 +1,29 @@
+[
+  {
+    "title": "The Singleton Pattern",
+    "ques": "What is the Singleton design pattern, and how is it often implemented implicitly in Python?",
+    "answer": {
+      "type": "text",
+      "content": "The Singleton pattern ensures that a class has only one instance and provides a global point of access to it. In Python, while you can implement this manually by overriding `__new__`, it is most commonly and safely implemented simply by creating a standard Python **module**. Since modules are only loaded once per interpreter session, defining global variables or objects inside a module acts as a thread-safe Singleton."
+    },
+    "explanation": "Python's module system naturally provides Singleton behavior without requiring complex object-oriented boilerplate."
+  },
+  {
+    "title": "The Factory Pattern",
+    "ques": "Describe a scenario where the Factory pattern is useful.",
+    "answer": {
+      "type": "text",
+      "content": "The Factory pattern is useful when you have a superclass with multiple subclasses, and you want to delegate the responsibility of instantiating the correct subclass to a separate function or method based on input data. For example, a `DocumentReaderFactory` might take a file path as input, check the extension, and return an instance of `PDFReader`, `WordReader`, or `CSVReader` without the client code needing to know the specific class names."
+    },
+    "explanation": "Factories encapsulate the logic of object creation, promoting loose coupling."
+  },
+  {
+    "title": "Decorators as a Pattern",
+    "ques": "How does Python's built-in `@decorator` syntax relate to the traditional Decorator design pattern?",
+    "answer": {
+      "type": "text",
+      "content": "The traditional Decorator pattern dynamically adds new behavior to an object without altering its structure. Python's `@decorator` syntax is a first-class implementation of this concept for functions and methods. A Python decorator is a higher-order function that takes a function as input, wraps it in another function that adds behavior (like logging, timing, or authentication checks), and returns the new wrapper function."
+    },
+    "explanation": "Python treats functions as objects, making the Decorator pattern incredibly easy to implement and apply."
+  }
+]

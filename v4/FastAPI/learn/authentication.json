@@ -1,0 +1,109 @@
+{
+    "id": "learn_authentication",
+    "topicId": "authentication",
+    "topicTitle": "Security & Authentication",
+    "description": "Learn how to secure your API using OAuth2, JWT tokens, and secure password hashing.",
+    "baseKP": 90,
+    "slides": [
+        {
+            "id": "auth_1",
+            "type": "content",
+            "title": "Authentication vs Authorization",
+            "content": "# The Security Foundations \ud83d\udd10\n\nBefore we write code, we must understand the difference:\n\n1. **Authentication (AuthN):** \"Who are you?\" (e.g., Verifying a username and password).\n2. **Authorization (AuthZ):** \"What are you allowed to do?\" (e.g., Checking if the logged-in user has 'admin' privileges).\n\nFastAPI provides tools to build both natively."
+        },
+        {
+            "id": "auth_2",
+            "type": "content",
+            "title": "Passwords are Dangerous",
+            "content": "# Hashing Passwords \ud83e\ude93\n\n**NEVER STORE PLAIN TEXT PASSWORDS IN YOUR DATABASE.**\nIf your database is hacked, the hackers will steal your users' passwords (which they probably reuse on their bank accounts).\n\nYou must **Hash** passwords. Hashing is a one-way mathematical function. `password123` becomes `x8f9q2...`. You cannot decrypt a hash back into the password!\n\nWhen a user logs in, you hash the password they typed, and see if it matches the hash in the database."
+        },
+        {
+            "id": "auth_3",
+            "type": "content",
+            "title": "Using Passlib",
+            "content": "# Hashing with bcrypt \ud83d\udee1\ufe0f\n\nThe standard library for hashing in Python is `passlib`. The recommended algorithm is `bcrypt`.\n\n```bash\npip install \"passlib[bcrypt]\"\n```\n\n```python_not\nfrom passlib.context import CryptContext\n\n# Configure passlib to use bcrypt\npwd_context = CryptContext(schemes=[\"bcrypt\"], deprecated=\"auto\")\n\ndef get_password_hash(password):\n    return pwd_context.hash(password)\n\ndef verify_password(plain_password, hashed_password):\n    return pwd_context.verify(plain_password, hashed_password)\n```"
+        },
+        {
+            "id": "auth_4",
+            "type": "content",
+            "title": "What is JWT?",
+            "content": "# JSON Web Tokens (JWT) \ud83c\udf9f\ufe0f\n\nIn modern APIs, we don't use server-side sessions or cookies to remember users. We use JWTs.\n\n1. User sends Username & Password.\n2. Server verifies them and creates a **JWT string** containing the user's ID and an expiration date.\n3. The server digitally signs the JWT with a secret key so it cannot be forged.\n4. Server sends the JWT to the User.\n5. The User sends this JWT in the `Authorization` header with every future request.\n6. The Server verifies the signature and knows who the user is without querying the database!"
+        },
+        {
+            "id": "auth_5",
+            "type": "content",
+            "title": "Creating a JWT",
+            "content": "# Generating Tokens \ud83c\udfed\n\nTo create JWTs, we use the `PyJWT` library.\n\n```bash\npip install PyJWT\n```\n\n```python_not\nimport jwt\nfrom datetime import datetime, timedelta\n\nSECRET_KEY = \"my-super-secret-key-do-not-share\" # Keep this safe!\nALGORITHM = \"HS256\"\n\ndef create_access_token(data: dict):\n    to_encode = data.copy()\n    \n    # Set token to expire in 30 minutes\n    expire = datetime.utcnow() + timedelta(minutes=30)\n    to_encode.update({\"exp\": expire})\n    \n    # Encode and sign the token\n    encoded_jwt = jwt.encode(to_encode, SECRET_KEY, algorithm=ALGORITHM)\n    return encoded_jwt\n```"
+        },
+        {
+            "id": "auth_quiz_1",
+            "type": "quiz",
+            "title": "Knowledge Check: Security Basics",
+            "content": "Test your security knowledge.",
+            "quizQuestion": "Why must you sign a JWT with a `SECRET_KEY`?",
+            "quizOptions": [
+                "To encrypt the data so no one can read the user's ID inside the token.",
+                "To compress the token so it takes up less bandwidth.",
+                "To prevent malicious users from forging their own tokens or altering the data inside.",
+                "Because it is required by the HTTP 2.0 specification."
+            ],
+            "correctOptionIndex": 2
+        },
+        {
+            "id": "auth_6",
+            "type": "content",
+            "title": "OAuth2 Password Flow",
+            "content": "# The Standard Login Flow \ud83d\udeaa\n\nFastAPI has built-in support for the standard \"OAuth2 Password Bearer\" flow.\nThis allows Swagger UI to automatically create a \"Authorize\" login button for you to test your API!\n\n```python_not\nfrom fastapi.security import OAuth2PasswordBearer\nfrom fastapi import Depends\n\n# This tells FastAPI: \"The URL that generates tokens is /token\"\noauth2_scheme = OAuth2PasswordBearer(tokenUrl=\"token\")\n\n@app.get(\"/users/me\")\ndef read_users_me(token: str = Depends(oauth2_scheme)):\n    # FastAPI automatically looks for the 'Authorization: Bearer <token>'\n    # header. If it's missing, it returns a 401 Unauthorized error!\n    return {\"token_received\": token}\n```"
+        },
+        {
+            "id": "auth_7",
+            "type": "content",
+            "title": "The Login Endpoint",
+            "content": "# Creating the /token Route \ud83d\udd11\n\nNow we must build the actual route that accepts a username/password and returns the JWT.\n\n```python_not\nfrom fastapi.security import OAuth2PasswordRequestForm\nfrom fastapi import Depends, HTTPException\n\n@app.post(\"/token\")\ndef login(form_data: OAuth2PasswordRequestForm = Depends()):\n    # 1. Fetch user from DB (pseudo-code)\n    user = fake_db.get(form_data.username)\n    \n    # 2. Verify password\n    if not user or not verify_password(form_data.password, user['hashed_pw']):\n        raise HTTPException(status_code=400, detail=\"Incorrect username or password\")\n        \n    # 3. Create token\n    access_token = create_access_token(data={\"sub\": user['username']})\n    \n    # 4. Return standard OAuth2 response\n    return {\"access_token\": access_token, \"token_type\": \"bearer\"}\n```"
+        },
+        {
+            "id": "auth_8",
+            "type": "content",
+            "title": "Verifying the Token",
+            "content": "# Decoding the JWT \ud83d\udd0d\n\nWhen a user hits a protected route, we must decode the token they sent to get their username.\n\n```python_not\nfrom fastapi import HTTPException, status\nimport jwt\n\ndef get_current_user(token: str = Depends(oauth2_scheme)):\n    try:\n        # Verify the signature and expiration\n        payload = jwt.decode(token, SECRET_KEY, algorithms=[ALGORITHM])\n        username: str = payload.get(\"sub\")\n        if username is None:\n            raise HTTPException(status_code=401, detail=\"Invalid credentials\")\n            \n        return username\n        \n    except jwt.ExpiredSignatureError:\n        raise HTTPException(status_code=401, detail=\"Token has expired\")\n    except jwt.PyJWTError:\n        raise HTTPException(status_code=401, detail=\"Could not validate credentials\")\n```"
+        },
+        {
+            "id": "auth_9",
+            "type": "content",
+            "title": "Protecting Routes",
+            "content": "# Bringing it all together \ud83d\udee1\ufe0f\n\nNow, protecting any endpoint is trivially easy! Just add the `get_current_user` dependency.\n\n```python_not\n@app.get(\"/secret-dashboard/\")\ndef secret_data(current_user: str = Depends(get_current_user)):\n    # If the user doesn't pass a valid token, this code NEVER runs.\n    # FastAPI automatically blocks them with a 401 Unauthorized error.\n    \n    return {\n        \"message\": f\"Welcome to the secret area, {current_user}!\",\n        \"bank_balance\": 1000000\n    }\n```"
+        },
+        {
+            "id": "auth_quiz_2",
+            "type": "quiz",
+            "title": "Knowledge Check: OAuth2",
+            "content": "Test your authentication knowledge.",
+            "quizQuestion": "In FastAPI, what does the `OAuth2PasswordBearer` dependency automatically do for you?",
+            "quizOptions": [
+                "It hashes passwords using bcrypt.",
+                "It automatically creates a database table for users.",
+                "It extracts the token from the 'Authorization' HTTP header and returns a 401 error if it is missing.",
+                "It automatically decodes the JWT and validates the secret signature."
+            ],
+            "correctOptionIndex": 2
+        },
+        {
+            "id": "auth_10",
+            "type": "content",
+            "title": "Security Scopes (Permissions)",
+            "content": "# Role-Based Access Control \ud83d\udc6e\n\nAuthentication tells us *who* the user is. Now we need Authorization (Scopes) to dictate *what* they can do.\n\nYou can add scopes to your OAuth2 scheme:\n\n```python_not\nfrom fastapi.security import SecurityScopes\n\noauth2_scheme = OAuth2PasswordBearer(\n    tokenUrl=\"token\",\n    scopes={\"me\": \"Read info about me\", \"items\": \"Read items\"}\n)\n```\nWhen you create the JWT token, you add a `\"scopes\": [\"me\", \"items\"]` list to the payload."
+        },
+        {
+            "id": "auth_11",
+            "type": "content",
+            "title": "Enforcing Scopes",
+            "content": "# Enforcing Permissions \u26d4\n\nNow, when you protect a route, you can declare exactly which scopes are required using `Security()` instead of `Depends()`.\n\n```python_not\nfrom fastapi import Security\n\n# Only users whose JWT contains the 'admin' scope can access this!\n@app.get(\"/admin/dashboard\")\ndef get_admin_data(current_user: User = Security(get_current_user, scopes=[\"admin\"])):\n    return {\"secret_data\": \"You are an admin!\"}\n```\nFastAPI automatically checks the scopes list inside the JWT. If the user doesn't have the `\"admin\"` scope, FastAPI returns a 403 Forbidden error!"
+        },
+        {
+            "id": "auth_12",
+            "type": "content",
+            "title": "Summary",
+            "content": "# Summary \ud83c\udf89\n\nYour API is now locked down and secure!\n\n## Key Takeaways\n- \u2705 **Hashing:** Never store plaintext passwords. Use `passlib` and `bcrypt` to hash them.\n- \u2705 **JWT:** JSON Web Tokens allow the server to verify a user's identity without storing session state in a database.\n- \u2705 **OAuth2PasswordBearer:** A FastAPI utility that automatically extracts tokens from the Authorization header and integrates perfectly with Swagger UI.\n- \u2705 **The Login Route:** An endpoint that accepts credentials, verifies the hash, and returns a signed JWT.\n- \u2705 **Route Protection:** Use `Depends(get_current_user)` to secure endpoints.\n- \u2705 **Scopes:** Add scopes (permissions) to your JWT, and enforce them using `Security(get_current_user, scopes=[\"admin\"])`."
+        }
+    ]
+}

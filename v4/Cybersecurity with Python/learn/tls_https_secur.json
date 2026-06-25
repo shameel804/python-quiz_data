@@ -1,0 +1,135 @@
+{
+    "id": "learn_tls_https_secur",
+    "topicId": "tls_https_secur",
+    "topicTitle": "TLS, HTTPS & Secure Coding",
+    "description": "Ensure data in transit is secure by mastering Python's ssl module, and learn how to write secure code to prevent common vulnerabilities like command injection.",
+    "baseKP": 75,
+    "slides": [
+        {
+            "id": "tls_sec_1",
+            "type": "content",
+            "title": "Data in Transit",
+            "content": "# The Man in the Middle 🕵️\n\nWe know how to hash passwords and encrypt files. But what happens when you send that data over the internet?\n\nIf you use plain HTTP or an unencrypted TCP socket, any router between you and the server (e.g., a public Wi-Fi hotspot) can read exactly what you are sending in plain text. This is a Man-In-The-Middle (MITM) attack.\n\nTo protect data in transit, we must use **TLS (Transport Layer Security)**, which is the protocol that powers HTTPS."
+        },
+        {
+            "id": "tls_sec_2",
+            "type": "content",
+            "title": "The ssl Module",
+            "content": "# Python's `ssl` Module 🔒\n\nPython's standard library includes the `ssl` module, which wraps raw network sockets with a secure TLS layer.\n\nIt handles the complex TLS handshake, certificate verification, and symmetric encryption automatically.\n\n```python_not\nimport socket\nimport ssl\n\n# Create a standard, unencrypted TCP socket\nraw_socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)\n\n# Create an SSL context with secure defaults\ncontext = ssl.create_default_context()\n\n# Wrap the socket to secure it!\nsecure_socket = context.wrap_socket(raw_socket, server_hostname=\"www.python.org\")\n\n# Connect securely\nsecure_socket.connect((\"www.python.org\", 443))\n```"
+        },
+        {
+            "id": "tls_sec_3",
+            "type": "content",
+            "title": "Certificate Verification",
+            "content": "# Trusting the Server 📜\n\nWhen you connect to `python.org`, how do you know you are actually talking to `python.org` and not a hacker intercepting the connection?\n\nThe server sends an **SSL Certificate** signed by a trusted Certificate Authority (CA). \n\nBy default, `ssl.create_default_context()` automatically verifies this certificate against your operating system's list of trusted CAs. If the certificate is invalid, expired, or self-signed, Python will raise an `ssl.SSLCertVerificationError`."
+        },
+        {
+            "id": "tls_sec_4",
+            "type": "content",
+            "title": "Ignoring Verification (Don't do it!)",
+            "content": "# The `verify=False` Trap 🪤\n\nOften, developers testing against local servers with self-signed certificates will disable certificate verification to make the error go away.\n\n```python_not\nimport requests\n\n# BAD: Disables certificate verification entirely!\nresponse = requests.get(\"https://untrusted-api.com\", verify=False)\n```\n\nIf you deploy `verify=False` to production, you have completely defeated TLS. A hacker can intercept the connection, provide a fake certificate, and read all the traffic!\n\n**Always verify certificates.** If using a self-signed cert, pass the path to your custom CA bundle instead."
+        },
+        {
+            "id": "tls_sec_5",
+            "type": "content",
+            "title": "The certifi Package",
+            "content": "# Updating Root Certificates: `certifi` 📦\n\nSometimes, a Python script will fail to verify a perfectly valid HTTPS website. This happens if the OS's list of trusted Certificate Authorities is outdated.\n\nTo ensure your script always has the latest CA list regardless of the operating system it runs on, use the `certifi` package.\n\n```python_not\nimport certifi\nimport ssl\n\n# Create a context explicitly using certifi's highly-updated CA bundle\ncontext = ssl.create_default_context(cafile=certifi.where())\n```\n\nThe popular `requests` library uses `certifi` by default!"
+        },
+        {
+            "id": "tls_sec_quiz_1",
+            "type": "quiz",
+            "title": "TLS Quiz",
+            "content": "Check your understanding of network security.",
+            "quizQuestion": "Why is it incredibly dangerous to use `verify=False` in the `requests` library when communicating with an external API?",
+            "quizOptions": [
+                "It forces the connection to use the slower HTTP protocol instead of HTTPS.",
+                "It disables certificate verification, leaving your application completely vulnerable to Man-In-The-Middle attacks where an attacker can secretly intercept and modify traffic.",
+                "It causes Python to ignore all HTTP error codes (like 404 or 500).",
+                "It prevents the use of asynchronous requests."
+            ],
+            "correctOptionIndex": 1
+        },
+        {
+            "id": "tls_sec_6",
+            "type": "content",
+            "title": "Secure Coding Practices",
+            "content": "# Defending the Application 🛡️\n\nSecuring the network is only half the battle. If you write insecure Python code, hackers won't bother attacking the network; they will attack the code directly.\n\nLet's review the most critical Secure Coding practices in Python."
+        },
+        {
+            "id": "tls_sec_7",
+            "type": "content",
+            "title": "Command Injection",
+            "content": "# The `subprocess` Danger Zone ⚠️\n\nIf your Python script runs a shell command that includes user input, you are vulnerable to **Command Injection**.\n\n```python_not\nimport os\n\ndef ping_server(ip_address):\n    # DANGEROUS! What if ip_address is \"8.8.8.8; rm -rf /\"?\n    os.system(f\"ping -c 1 {ip_address}\")\n```\n\nIf the user inputs `8.8.8.8; cat /etc/shadow`, the shell executes the ping, and then executes the command to read your secret password files!"
+        },
+        {
+            "id": "tls_sec_8",
+            "type": "content",
+            "title": "Safe subprocess Usage",
+            "content": "# Fixing Command Injection 🩹\n\nTo fix this, NEVER use `os.system`. Use `subprocess.run` and pass the command as a **List**, NOT a string. \n\nAlso, ensure `shell=False` (which is the default).\n\n```python_not\nimport subprocess\n\ndef safe_ping(ip_address):\n    # SAFE: Python executes 'ping' directly and passes the IP address \n    # purely as an argument. The shell (and its special characters like ';') \n    # is completely bypassed!\n    subprocess.run([\"ping\", \"-c\", \"1\", ip_address], shell=False)\n```"
+        },
+        {
+            "id": "tls_sec_9",
+            "type": "content",
+            "title": "The eval() and exec() Trap",
+            "content": "# Arbitrary Code Execution 💥\n\nPython has two functions that execute strings as Python code: `eval()` and `exec()`.\n\n```python_not\n# Imagine this comes from a user form\nuser_math = \"2 + 2\"\n\n# Seems harmless...\nresult = eval(user_math)\n```\n\nBut what if the user inputs `__import__('os').system('rm -rf /')`?\n\n`eval()` will execute it! The hacker just gained full control of your server.\n\n**Rule:** NEVER use `eval()` or `exec()` on untrusted input. If you need to safely parse a string as a Python literal (like a list or dict), use `ast.literal_eval()`."
+        },
+        {
+            "id": "tls_sec_quiz_2",
+            "type": "quiz",
+            "title": "Secure Coding Quiz",
+            "content": "Test your knowledge of Python vulnerabilities.",
+            "quizQuestion": "How do you prevent Command Injection vulnerabilities when using the `subprocess` module?",
+            "quizOptions": [
+                "Use `subprocess.call` instead of `subprocess.run`.",
+                "Ensure `shell=True` is passed to the function.",
+                "Pass the command and its arguments as a List of strings, and ensure `shell=False`.",
+                "Hash the user input before passing it to the command."
+            ],
+            "correctOptionIndex": 2
+        },
+        {
+            "id": "tls_sec_10",
+            "type": "content",
+            "title": "Dependency Vulnerabilities",
+            "content": "# The Supply Chain Attack 📦\n\nYou might write perfect code, but your application is still vulnerable if the libraries you `pip install` contain security flaws.\n\nHackers frequently discover bugs in popular libraries like Django or requests. If you don't update them, your app is compromised.\n\nHow do you know if your dependencies are vulnerable?"
+        },
+        {
+            "id": "tls_sec_11",
+            "type": "content",
+            "title": "Using pip-audit",
+            "content": "# Auditing Dependencies: `pip-audit` 🕵️‍♀️\n\n`pip-audit` is a fantastic tool maintained by the Python Packaging Authority (PyPA).\n\nIt scans your Python environment or `requirements.txt` file and checks every installed package against the PyPA vulnerability database.\n\n```bash\n# Install the auditor\npip install pip-audit\n\n# Scan your current environment\npip-audit\n\n# Scan a requirements file\npip-audit -r requirements.txt\n```\n\nIf it finds a vulnerable package, it will tell you exactly which version introduced the fix so you can upgrade!"
+        },
+        {
+            "id": "tls_sec_12",
+            "type": "content",
+            "title": "Static Application Security Testing",
+            "content": "# Automated Code Scanning 🤖\n\nYou shouldn't rely on humans to spot `eval()` or `subprocess(shell=True)` during code reviews. \n\nYou should use a Static Application Security Testing (SAST) tool. A SAST tool reads your source code and flags known security anti-patterns automatically.\n\nThe industry standard SAST tool for Python is **Bandit**."
+        },
+        {
+            "id": "tls_sec_13",
+            "type": "content",
+            "title": "Using Bandit",
+            "content": "# Running `bandit` 🦝\n\nBandit is incredibly easy to use. You run it against your project directory.\n\n```bash\npip install bandit\n\n# Recursively scan all python files in the 'src' folder\nbandit -r ./src/\n```\n\nBandit will output a report detailing any issues found, including the severity (High, Medium, Low), the exact line of code, and a link to documentation explaining the vulnerability and how to fix it.\n\n> 💡 **Best Practice:** Integrate `bandit` and `pip-audit` into your CI/CD pipeline (GitHub Actions) to automatically block insecure code from being merged!"
+        },
+        {
+            "id": "tls_sec_quiz_3",
+            "type": "quiz",
+            "title": "Security Tooling Quiz",
+            "content": "Check your understanding of security scanners.",
+            "quizQuestion": "Which tool would you use to automatically scan your Python source code for insecure practices like using `eval()` or hardcoded passwords?",
+            "quizOptions": [
+                "pip-audit",
+                "bandit",
+                "certifi",
+                "hashlib"
+            ],
+            "correctOptionIndex": 1
+        },
+        {
+            "id": "tls_sec_14",
+            "type": "content",
+            "title": "Summary",
+            "content": "# Security Champion! 🎉\n\nYou've learned how to secure the network and your source code.\n\n## Key Takeaways\n\n- ✅ **TLS/HTTPS:** Always use TLS to protect data in transit. Never use `verify=False` in production.\n- ✅ **certifi:** Use this package to ensure your app always has the latest list of trusted Certificate Authorities.\n- ✅ **Command Injection:** Never use `os.system`. Use `subprocess.run` with a list of arguments and `shell=False`.\n- ✅ **Arbitrary Code Execution:** Never use `eval()` or `exec()` on untrusted input.\n- ✅ **pip-audit:** Regularly scan your dependencies for known vulnerabilities.\n- ✅ **bandit:** Integrate this SAST tool into your CI/CD pipeline to automatically catch insecure Python code."
+        }
+    ]
+}

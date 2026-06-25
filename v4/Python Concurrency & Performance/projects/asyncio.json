@@ -1,0 +1,30 @@
+[
+  {
+    "title": "Basic Async Syntax",
+    "ques": "Write a simple async function `greet()` that prints 'Hello', waits for 1 second using `asyncio.sleep`, and then prints 'World'. Use `asyncio.run()` to execute it.",
+    "answer": {
+      "type": "code",
+      "lang": "python",
+      "content": "import asyncio\n\nasync def greet():\n    print(\"Hello\")\n    await asyncio.sleep(1)\n    print(\"World\")\n\nasyncio.run(greet())"
+    },
+    "explanation": "The `async def` syntax defines a coroutine. The `await` keyword is used to pause the coroutine until an awaitable (like `asyncio.sleep`) completes. `asyncio.run()` serves as the main entry point to the event loop."
+  },
+  {
+    "title": "Running Concurrent Tasks",
+    "ques": "Explain the purpose of `asyncio.gather` and provide a conceptual example of when to use it.",
+    "answer": {
+      "type": "text",
+      "content": "`asyncio.gather` is used to run multiple awaitable objects (like coroutines or Tasks) concurrently and wait for all of them to finish. It returns a list of their results in the order they were provided.\n**Conceptual Example:** You need to fetch data from three different APIs simultaneously. Instead of waiting for one to finish before starting the next, you can use `asyncio.gather` to execute all three network requests concurrently."
+    },
+    "explanation": "`gather` is essential for harnessing the true power of async I/O by orchestrating multiple non-blocking operations at once."
+  },
+  {
+    "title": "Creating Tasks",
+    "ques": "What is the difference between simply calling a coroutine and wrapping it in `asyncio.create_task()`?",
+    "answer": {
+      "type": "text",
+      "content": "Simply calling an async function creates a coroutine object but does not schedule it to run on the event loop. Wrapping it in `asyncio.create_task()` immediately schedules the coroutine for execution on the event loop in the background and returns a `Task` object, allowing you to perform other work concurrently before awaiting its completion."
+    },
+    "explanation": "`create_task` is the standard way to initiate concurrent background execution within an async workflow."
+  }
+]

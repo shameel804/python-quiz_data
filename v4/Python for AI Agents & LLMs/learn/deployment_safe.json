@@ -1,0 +1,103 @@
+{
+    "id": "learn_deployment_safe",
+    "topicId": "deployment_safe",
+    "topicTitle": "Deployment, Safety & Observability",
+    "description": "Take your AI into production. Deploy models using FastAPI with asynchronous streaming, enforce structured outputs with Guardrails, and monitor token costs using LangSmith.",
+    "baseKP": 75,
+    "slides": [
+        {
+            "id": "dep_safe_1",
+            "type": "content",
+            "title": "The Production Gap",
+            "content": "# Scripts vs Systems 🏭\n\nWriting a 20-line LangChain script that prints a poem to the terminal is easy.\n\nDeploying an AI assistant that handles 100 concurrent users, securely manages Personal Identifiable Information (PII), validates JSON outputs, and tracks API costs requires professional software engineering.\n\nWe must integrate our LLM logic into robust backend frameworks."
+        },
+        {
+            "id": "dep_safe_2",
+            "type": "content",
+            "title": "FastAPI + LLMs",
+            "content": "# The Standard Backend ⚡\n\nFastAPI is the industry standard for serving Python AI models.\n\n```bash\npip install fastapi uvicorn langchain-openai\n```\n\n```python_not\nfrom fastapi import FastAPI\nfrom pydantic import BaseModel\nfrom langchain_openai import ChatOpenAI\n\napp = FastAPI()\nllm = ChatOpenAI(model=\"gpt-3.5-turbo\")\n\nclass Query(BaseModel):\n    question: str\n\n@app.post(\"/ask\")\ndef ask_ai(query: Query):\n    # Synchronous call (blocks the server thread!)\n    response = llm.invoke(query.question)\n    return {\"answer\": response.content}\n```\n\nThis works, but `llm.invoke()` is synchronous. If the API takes 5 seconds to reply, FastAPI cannot serve other users during those 5 seconds!"
+        },
+        {
+            "id": "dep_safe_3",
+            "type": "content",
+            "title": "Async Inference",
+            "content": "# Scaling with AsyncIO 🔀\n\nTo handle hundreds of users, we must use asynchronous inference (`ainvoke`). \n\nWhile we wait for OpenAI's servers to respond, FastAPI can handle other requests.\n\n```python_not\n# Notice the 'async def'\n@app.post(\"/ask_async\")\nasync def ask_ai_async(query: Query):\n    # We 'await' the asynchronous LangChain method\n    response = await llm.ainvoke(query.question)\n    return {\"answer\": response.content}\n```"
+        },
+        {
+            "id": "dep_safe_4",
+            "type": "content",
+            "title": "Streaming Endpoints",
+            "content": "# Real-Time UX 🌊\n\nUsers hate waiting 10 seconds for a massive paragraph to load. We must stream the tokens as they are generated.\n\nFastAPI's `StreamingResponse` handles this perfectly in combination with LangChain's `.astream()` method.\n\n```python_not\nfrom fastapi.responses import StreamingResponse\n\n@app.post(\"/ask_stream\")\nasync def ask_ai_stream(query: Query):\n    \n    async def token_generator():\n        # Asynchronously iterate over the token stream\n        async for chunk in llm.astream(query.question):\n            # Yield the raw text chunk to the client\n            yield chunk.content\n            \n    return StreamingResponse(token_generator(), media_type=\"text/event-stream\")\n```"
+        },
+        {
+            "id": "dep_safe_quiz_1",
+            "type": "quiz",
+            "title": "Deployment Quiz",
+            "content": "Check your API serving knowledge.",
+            "quizQuestion": "When wrapping an LLM call inside a web framework like FastAPI, why is it critical to use asynchronous methods (like LangChain's `.ainvoke()`) instead of synchronous methods (like `.invoke()`)?",
+            "quizOptions": [
+                "Because asynchronous methods consume fewer API tokens.",
+                "Because synchronous methods are deprecated by OpenAI.",
+                "Because LLM API calls involve heavy network latency. An asynchronous call allows the FastAPI server to process other users' requests while waiting for the LLM to respond, preventing the server from freezing.",
+                "Because asynchronous methods automatically format the output as JSON."
+            ],
+            "correctOptionIndex": 2
+        },
+        {
+            "id": "dep_safe_5",
+            "type": "content",
+            "title": "The Reliability Problem",
+            "content": "# Untrustworthy AI 🤥\n\nLLMs are probabilistic. Even if you use Few-Shot prompting and explicit instructions to output valid JSON, the LLM might occasionally output `Here is your JSON: { ... }` instead of just `{ ... }`.\n\nThis will instantly crash your Python JSON parser.\n\nWe need a system to guarantee structural safety."
+        },
+        {
+            "id": "dep_safe_6",
+            "type": "content",
+            "title": "Guardrails AI",
+            "content": "# Validating Outputs 🛡️\n\n**Guardrails AI** is an open-source library that adds structural validation and self-correction to LLM outputs.\n\nYou define a Pydantic schema, and Guardrails ensures the LLM adheres to it. If the LLM fails, Guardrails can automatically ask the LLM to correct its own mistake!\n\n```bash\npip install guardrails-ai\n```"
+        },
+        {
+            "id": "dep_safe_7",
+            "type": "content",
+            "title": "Using Guardrails",
+            "content": "# Enforcing Structure 🧱\n\n```python_not\nfrom guardrails import Guard\nfrom pydantic import BaseModel, Field\nimport openai\n\n# 1. Define strict schema\nclass Pet(BaseModel):\n    name: str = Field(description=\"The pet's name\")\n    age: int = Field(description=\"The pet's age in years\")\n\n# 2. Create the Guard\nguard = Guard.from_pydantic(output_class=Pet)\n\n# 3. Call OpenAI through the Guard\nres = guard(openai.chat.completions.create, \n    prompt=\"I have a 3 year old dog named Fido.\"\n)\n\nprint(res.validated_output) \n# Guaranteed to be a valid Dictionary! {'name': 'Fido', 'age': 3}\n```"
+        },
+        {
+            "id": "dep_safe_8",
+            "type": "content",
+            "title": "Safety & PII",
+            "content": "# Protecting User Data 🔒\n\nYou cannot send Personal Identifiable Information (PII) like Social Security Numbers or Credit Cards to OpenAI's public servers. It violates compliance laws (GDPR/HIPAA).\n\nLibraries like Guardrails or Microsoft Presidio can intercept the prompt *before* it leaves your server, detecting and masking PII.\n\n> *\"My SSN is 123-45\"* becomes -> *\"My SSN is [MASKED_SSN]\"*\n\nThe LLM processes the masked data, and your system can unmask it upon return."
+        },
+        {
+            "id": "dep_safe_quiz_2",
+            "type": "quiz",
+            "title": "Safety Quiz",
+            "content": "Ensure you build secure systems.",
+            "quizQuestion": "What is the primary purpose of tools like Guardrails AI when building production LLM applications?",
+            "quizOptions": [
+                "To automatically fine-tune the LLM on your data.",
+                "To enforce strict structural validation on the LLM's output (ensuring valid JSON/schemas) and automatically retry if the LLM hallucinates an invalid format.",
+                "To reduce the token cost of the API calls.",
+                "To generate the FastAPI routing code."
+            ],
+            "correctOptionIndex": 1
+        },
+        {
+            "id": "dep_safe_9",
+            "type": "content",
+            "title": "Observability",
+            "content": "# Working in the Dark 🌑\n\nIf a user complains: *\"The AI gave me a terrible answer yesterday at 2 PM\"*, how do you debug it?\n\nBecause LCEL chains and Agents are highly complex, an error might be caused by a bad prompt, a failed Vector DB retrieval, or a hallucinated tool call.\n\nYou need **Observability** to trace every step of the pipeline."
+        },
+        {
+            "id": "dep_safe_10",
+            "type": "content",
+            "title": "Introduction to LangSmith",
+            "content": "# Tracing the Execution 🔍\n\n**LangSmith** (built by the LangChain team) is the industry standard for LLM observability.\n\nBy simply setting a few environment variables, LangSmith automatically traces every single LangChain execution in your app.\n\n```bash\nexport LANGCHAIN_TRACING_V2=true\nexport LANGCHAIN_ENDPOINT=\"https://api.smith.langchain.com\"\nexport LANGCHAIN_API_KEY=\"<your-api-key>\"\nexport LANGCHAIN_PROJECT=\"my_production_app\"\n```\n\nThat's it! Now, when your `AgentExecutor` runs, you can log into the LangSmith dashboard to see a beautiful visual tree of exactly how long the retriever took, exactly what the prompt looked like, and exactly how many tokens were consumed."
+        },
+        {
+            "id": "dep_safe_11",
+            "type": "content",
+            "title": "Summary",
+            "content": "# AI Production Engineer! 🎉\n\nYou've learned how to take experimental scripts into the real world.\n\n## Key Takeaways\n\n- ✅ **Async FastAPI:** Never block the main thread. Use `.ainvoke()` to handle heavy LLM latency while serving multiple users.\n- ✅ **Streaming:** Use `.astream()` with `StreamingResponse` to provide a fast, real-time typing effect to your users.\n- ✅ **Guardrails:** Don't trust LLM output. Enforce strict Pydantic schemas using Guardrails AI to prevent crashes.\n- ✅ **PII Masking:** Never send sensitive user data to public APIs. Mask it locally first.\n- ✅ **LangSmith:** Enable tracing to monitor complex Agent loops, debug bad responses, and track your exact token costs per request.\n\nYou have completed the AI course! Go build the future."
+        }
+    ]
+}

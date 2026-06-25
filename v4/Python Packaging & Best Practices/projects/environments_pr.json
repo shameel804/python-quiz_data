@@ -1,0 +1,29 @@
+[
+  {
+    "title": "Virtual Environments",
+    "ques": "Explain the purpose of a virtual environment in Python, and provide the command to create one named `venv` using the built-in module.",
+    "answer": {
+      "type": "text",
+      "content": "A virtual environment is an isolated directory tree that contains its own installation of Python and a set of separate packages. Its primary purpose is to prevent dependency conflicts between different projects. Without it, installing a package globally for one project might break another project that relies on a different version of the same package.\n\nCommand to create:\n`python -m venv venv`"
+    },
+    "explanation": "Virtual environments are the cornerstone of sane Python development, ensuring isolated and reproducible project workspaces."
+  },
+  {
+    "title": "Modern Environment Managers",
+    "ques": "What is `poetry` and how does it improve upon the traditional `pip` + `venv` workflow?",
+    "answer": {
+      "type": "text",
+      "content": "`poetry` is a modern dependency management and packaging tool. It improves upon traditional workflows by combining environment creation, dependency resolution (ensuring compatible versions of all sub-dependencies), and packaging into a single tool. It uses a single `pyproject.toml` file to track dependencies and a lock file (`poetry.lock`) to guarantee exact versions are installed everywhere."
+    },
+    "explanation": "Tools like Poetry or Pipenv abstract away the manual management of virtual environments and `requirements.txt` files."
+  },
+  {
+    "title": "The src Layout",
+    "ques": "What is the 'src' layout in Python project structure, and what common import issue does it prevent?",
+    "answer": {
+      "type": "text",
+      "content": "The 'src' layout places the actual application package inside a top-level `src/` directory (e.g., `project_root/src/my_package/`). This prevents a common issue where running tests from the project root accidentally imports the local code directory instead of the installed package, which can hide packaging errors. It forces the developer to install the package (e.g., `pip install -e .`) before testing."
+    },
+    "explanation": "The `src` layout is highly recommended by the Python Packaging Authority (PyPA) for robust, testable codebases."
+  }
+]

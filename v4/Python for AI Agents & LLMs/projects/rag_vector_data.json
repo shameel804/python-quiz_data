@@ -1,0 +1,29 @@
+[
+  {
+    "title": "What is RAG?",
+    "ques": "Define Retrieval-Augmented Generation (RAG) and explain why it is used.",
+    "answer": {
+      "type": "text",
+      "content": "RAG is a technique used to improve LLM responses by grounding them in external, factual knowledge bases. Instead of relying solely on the LLM's internal training data (which may be outdated or hallucinated), a RAG system first retrieves relevant documents from a database based on the user's query. These retrieved documents are then injected into the prompt context, and the LLM is asked to generate an answer based strictly on the provided context."
+    },
+    "explanation": "RAG mitigates hallucinations and allows LLMs to interact with private, proprietary data."
+  },
+  {
+    "title": "Text Embeddings",
+    "ques": "What are text embeddings, and what role do they play in a RAG system?",
+    "answer": {
+      "type": "text",
+      "content": "Text embeddings are high-dimensional numerical vectors that represent the semantic meaning of a piece of text. In RAG, documents and the user's query are converted into embeddings using models (like OpenAI's `text-embedding-ada-002`). By calculating the distance (e.g., cosine similarity) between the query vector and the document vectors, the system can quickly retrieve the most semantically relevant documents, even if they don't share exact keywords."
+    },
+    "explanation": "Embeddings enable semantic search, which is vastly superior to traditional keyword-based search for natural language queries."
+  },
+  {
+    "title": "Vector Databases",
+    "ques": "Name two popular vector databases and describe their primary function in a RAG pipeline.",
+    "answer": {
+      "type": "text",
+      "content": "Popular vector databases include **Chroma**, **Pinecone**, **FAISS**, and **Qdrant**. Their primary function is to store millions of embedding vectors along with their corresponding text chunks (metadata). They are highly optimized for performing ultra-fast similarity searches (Nearest Neighbor search) to instantly retrieve the most relevant chunks when a user submits a query."
+    },
+    "explanation": "Traditional relational databases are not optimized for mathematical similarity searches across dense, high-dimensional arrays."
+  }
+]

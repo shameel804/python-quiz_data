@@ -1,0 +1,135 @@
+{
+    "id": "learn_html_parsing_xp",
+    "topicId": "html_parsing_xp",
+    "topicTitle": "HTML Parsing & XPath",
+    "description": "Learn to extract the exact data you need from messy HTML using BeautifulSoup and XPath.",
+    "baseKP": 80,
+    "slides": [
+        {
+            "id": "htmlp_1",
+            "type": "content",
+            "title": "Introduction to Parsing",
+            "content": "# The Messy Web \ud83d\udd78\ufe0f\n\nWhen you use `requests` to get a webpage, you get back one giant string of HTML.\n\nExtracting data from that string using regular expressions or string splitting is a nightmare, because HTML is often broken, deeply nested, or randomly formatted.\n\nTo solve this, we use **Parsers**.\nA Parser takes raw HTML and converts it into a navigable tree structure (the Document Object Model, or DOM)."
+        },
+        {
+            "id": "htmlp_2",
+            "type": "content",
+            "title": "BeautifulSoup4",
+            "content": "# Beautiful Soup \ud83c\udf72\n\n`BeautifulSoup4` (BS4) is the most popular Python library for pulling data out of HTML and XML files.\n\n## Installation\n```bash\npip install beautifulsoup4 lxml\n```\n*(We also install `lxml` because it is a very fast underlying parser that BS4 can use)*\n\n## Creating the Soup\n```python_not\nfrom bs4 import BeautifulSoup\n\nhtml_doc = \"\"\"\n<html>\n  <body>\n    <h1 id=\"title\">Welcome!</h1>\n    <p class=\"story\">Once upon a time...</p>\n  </body>\n</html>\n\"\"\"\n\nsoup = BeautifulSoup(html_doc, 'lxml')\n```"
+        },
+        {
+            "id": "htmlp_3",
+            "type": "content",
+            "title": "Finding Single Elements",
+            "content": "# The `find` Method \ud83d\udd0d\n\nThe `.find()` method searches the tree and returns the **first** matching tag it finds.\n\n```python_not\n# Find the first <h1> tag\nheader = soup.find('h1')\nprint(header.text)  # Outputs: Welcome!\n\n# Find by ID\ntitle_elem = soup.find(id='title')\n\n# Find by Class\nstory_elem = soup.find('p', class_='story')\n# Note: We use class_ (with an underscore) because class is a reserved word in Python!\n```"
+        },
+        {
+            "id": "htmlp_4",
+            "type": "content",
+            "title": "Finding Multiple Elements",
+            "content": "# The `find_all` Method \ud83d\udd75\ufe0f\u200d\u2642\ufe0f\n\nThe `.find_all()` method scans the entire document and returns a *list* of all matching tags.\n\n```python_not\nhtml = \"\"\"\n<ul>\n    <li class=\"item\">Apple</li>\n    <li class=\"item\">Banana</li>\n    <li class=\"item\">Cherry</li>\n</ul>\n\"\"\"\nsoup = BeautifulSoup(html, 'lxml')\n\n# Find all <li> tags\nlist_items = soup.find_all('li')\n\nfor item in list_items:\n    print(item.text)\n```"
+        },
+        {
+            "id": "htmlp_5",
+            "type": "content",
+            "title": "CSS Selectors",
+            "content": "# Using CSS Selectors \ud83c\udfa8\n\nIf you know CSS, BS4 allows you to use CSS selectors via the `.select()` method!\n\nThis is often much faster to write than chained `find()` calls.\n\n```python_not\n# Find all elements with class 'item'\nitems = soup.select('.item')\n\n# Find an element with ID 'title'\ntitle = soup.select_one('#title')\n\n# Find all <a> tags inside a <div class=\"nav\">\nlinks = soup.select('div.nav a')\n```"
+        },
+        {
+            "id": "htmlp_quiz_1",
+            "type": "quiz",
+            "title": "Knowledge Check: BeautifulSoup",
+            "content": "Test your BeautifulSoup knowledge.",
+            "quizQuestion": "Why must you use `class_` instead of `class` when searching by CSS class in the `find()` method?",
+            "quizOptions": [
+                "Because HTML5 deprecated the 'class' attribute.",
+                "Because 'class' is a reserved keyword in the Python language.",
+                "To distinguish it from the 'id' attribute.",
+                "Because BeautifulSoup uses underscores for all HTML attributes."
+            ],
+            "correctOptionIndex": 1
+        },
+        {
+            "id": "htmlp_6",
+            "type": "content",
+            "title": "Extracting Attributes",
+            "content": "# Getting Link URLs and Images \ud83d\uddbc\ufe0f\n\nGetting text with `.text` is easy. But how do you get the `href` of a link, or the `src` of an image?\n\nBS4 tags act like Python dictionaries for their attributes!\n\n```python_not\nhtml = '<a href=\"https://google.com\" class=\"external\">Click here!</a>'\nsoup = BeautifulSoup(html, 'lxml')\n\nlink = soup.find('a')\n\n# Get the text\nprint(link.text)  # \"Click here!\"\n\n# Get the href attribute\nprint(link['href'])  # \"https://google.com\"\n\n# Get the class attribute (returns a list!)\nprint(link['class']) # ['external']\n```"
+        },
+        {
+            "id": "htmlp_7",
+            "type": "content",
+            "title": "Introduction to XPath",
+            "content": "# What is XPath? \ud83d\uddfa\ufe0f\n\nWhile CSS selectors are great, they have limitations (e.g., they cannot select elements based on their text content, and they cannot navigate \"up\" the tree to a parent).\n\n**XPath (XML Path Language)** is a query language designed specifically for navigating XML and HTML documents.\n\nIt is incredibly powerful and used heavily in advanced scraping frameworks like Scrapy and Selenium."
+        },
+        {
+            "id": "htmlp_8",
+            "type": "content",
+            "title": "lxml etree",
+            "content": "# Using lxml for XPath \ud83c\udf32\n\nBeautifulSoup does *not* support XPath. To use XPath in Python, we use the `lxml` library directly.\n\n```python_not\nfrom lxml import etree\n\nhtml_string = \"\"\"\n<div>\n    <p id=\"p1\">Hello</p>\n    <p class=\"bold\">World</p>\n</div>\n\"\"\"\n\n# Parse the HTML\ntree = etree.HTML(html_string)\n\n# Use XPath to find all <p> tags\nparagraphs = tree.xpath('//p')\nfor p in paragraphs:\n    print(p.text)\n```"
+        },
+        {
+            "id": "htmlp_9",
+            "type": "content",
+            "title": "Basic XPath Syntax",
+            "content": "# Writing XPath Queries \u270d\ufe0f\n\n- `/` : Selects from the root node (Absolute path).\n- `//`: Selects nodes from anywhere in the document (Relative path).\n- `@` : Selects attributes.\n\n## Examples\n```xpath_not\n/* Select all <div> elements anywhere in the document */\n//div\n\n/* Select the <a> tags that are direct children of <div> tags */\n//div/a\n\n/* Select the href attribute of all <a> tags */\n//a/@href\n```"
+        },
+        {
+            "id": "htmlp_10",
+            "type": "content",
+            "title": "XPath Predicates",
+            "content": "# Filtering with Predicates \ud83d\udee1\ufe0f\n\nPredicates are used to find a specific node or a node that contains a specific value. They are written in square brackets `[]`.\n\n```xpath_not\n/* Select the first <p> element */\n//p[1]\n\n/* Select the last <p> element */\n//p[last()]\n\n/* Select all <div> elements that have a class attribute */\n//div[@class]\n\n/* Select all <div> elements where the class is exactly \"container\" */\n//div[@class=\"container\"]\n```"
+        },
+        {
+            "id": "htmlp_quiz_2",
+            "type": "quiz",
+            "title": "Knowledge Check: XPath",
+            "content": "Test your XPath knowledge.",
+            "quizQuestion": "In XPath, what does the double slash `//` signify?",
+            "quizOptions": [
+                "A comment in the code.",
+                "Select elements starting precisely from the root node.",
+                "Select elements anywhere in the document, regardless of where they are.",
+                "Select the parent of the current element."
+            ],
+            "correctOptionIndex": 2
+        },
+        {
+            "id": "htmlp_11",
+            "type": "content",
+            "title": "Advanced Predicates",
+            "content": "# Contains and Text Matching \ud83e\udde0\n\nXPath can do things CSS selectors can't!\n\n## Contains\nUseful when an element has multiple classes (e.g., `<div class=\"btn btn-primary large\">`):\n```xpath_not\n//div[contains(@class, \"btn-primary\")]\n```\n\n## Text Matching\nFind an element based on the text inside it!\n```xpath_not\n/* Exact match */\n//button[text()=\"Submit\"]\n\n/* Partial match */\n//a[contains(text(), \"Click\")]\n```"
+        },
+        {
+            "id": "htmlp_12",
+            "type": "content",
+            "title": "XPath Axes",
+            "content": "# Traversing Axes \ud83e\udded\n\nXPath Axes allow you to navigate relative to the current node (up, down, sideways).\n\n- `parent::` - Selects the parent of the current node.\n- `following-sibling::` - Selects nodes after the current node at the same level.\n\n## Example\nImagine a table without IDs, but you know the label \"Price:\". You can find the label, and then select the sibling element next to it!\n```xpath_not\n//td[text()=\"Price:\"]/following-sibling::td[1]\n```\nThis is an incredibly powerful technique for scraping difficult sites!"
+        },
+        {
+            "id": "htmlp_13",
+            "type": "content",
+            "title": "Browser DevTools",
+            "content": "# The Easy Way \ud83d\udee0\ufe0f\n\nWriting complex CSS Selectors or XPaths from scratch is hard.\n\nYou can use your browser's Developer Tools (F12) to do it for you!\n1. Right-click the element on the webpage and select **Inspect**.\n2. In the DOM tree, right-click the highlighted HTML element.\n3. Go to **Copy** > **Copy XPath** or **Copy selector**.\n\n> \u26a0\ufe0f **Warning:** Browsers often generate absolute XPaths (e.g., `/html/body/div[2]/table/tbody/tr/td[3]`). These are very brittle and will break if the website changes slightly. It is always better to write your own relative XPaths using IDs or Classes!"
+        },
+        {
+            "id": "htmlp_quiz_3",
+            "type": "quiz",
+            "title": "Knowledge Check: XPath Capabilities",
+            "content": "Test your advanced scraping knowledge.",
+            "quizQuestion": "Which of the following can XPath do, that CSS Selectors CANNOT do?",
+            "quizOptions": [
+                "Select elements based on their ID attribute.",
+                "Select the parent element of a known child element.",
+                "Select elements based on multiple class names.",
+                "Select the first child of an element."
+            ],
+            "correctOptionIndex": 1
+        },
+        {
+            "id": "htmlp_14",
+            "type": "content",
+            "title": "Summary",
+            "content": "# Summary \ud83c\udf89\n\nYou now know how to extract the needle from the HTML haystack!\n\n## Key Takeaways\n- \u2705 **BeautifulSoup4:** The best tool for beginners. Parses HTML and makes it easily searchable using Python methods.\n- \u2705 **find & find_all:** BS4 methods to locate single or multiple elements.\n- \u2705 **CSS Selectors:** Use `soup.select()` for a concise way to query classes (`.class`) and IDs (`#id`).\n- \u2705 **XPath:** A powerful query language evaluated using the `lxml.etree` module.\n- \u2705 **Predicates:** Use `[]` in XPath to filter by attributes, index, or text content.\n- \u2705 **Text Matching:** XPath can find elements based on what they say using `text()=\"...\"`.\n- \u2705 **Axes:** XPath can traverse backwards up the HTML tree to find parent elements!"
+        }
+    ]
+}

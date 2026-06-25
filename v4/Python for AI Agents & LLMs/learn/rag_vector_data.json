@@ -1,0 +1,97 @@
+{
+    "id": "learn_rag_vector_data",
+    "topicId": "rag_vector_data",
+    "topicTitle": "RAG & Vector Databases",
+    "description": "Teach AI your private data. Build Retrieval-Augmented Generation (RAG) systems using Document Loaders, Text Splitters, Embeddings, and Vector Databases like Chroma.",
+    "baseKP": 75,
+    "slides": [
+        {
+            "id": "rag_vec_1",
+            "type": "content",
+            "title": "The Knowledge Cutoff",
+            "content": "# The AI Hallucination Problem 🔮\n\nLLMs like GPT-4 are trained on vast amounts of public internet data, but they have a Knowledge Cutoff date.\n\nMore importantly, they do not know *your* private data (your company's HR handbook, your private emails, or your proprietary codebase).\n\nIf you ask an LLM a question about your private data, it will either say \"I don't know\" or, worse, it will **Hallucinate** (confidently make up a fake answer)."
+        },
+        {
+            "id": "rag_vec_2",
+            "type": "content",
+            "title": "Introduction to RAG",
+            "content": "# Retrieval-Augmented Generation 📚\n\nHow do we fix this? We use **RAG**.\n\nRAG is a paradigm where we intercept the user's question, *Retrieve* relevant private documents from a database, and *Augment* the user's prompt by pasting those documents right into it!\n\n**The RAG Prompt:**\n> *\"Answer the user's question using ONLY the following context:\\n [PASTE PRIVATE DOCS HERE] \\n\\n Question: {user_question}\"* \n\nThis forces the AI to read your private data to find the answer!"
+        },
+        {
+            "id": "rag_vec_3",
+            "type": "content",
+            "title": "Step 1: Document Loaders",
+            "content": "# Ingesting Data 📥\n\nThe first step of RAG is loading your private data into Python.\n\nLangChain provides hundreds of **Document Loaders** for PDFs, CSVs, Notion pages, GitHub repos, and web pages.\n\n```bash\npip install pypdf\n```\n\n```python_not\nfrom langchain_community.document_loaders import PyPDFLoader\n\n# Load a massive 500-page PDF\nloader = PyPDFLoader(\"company_handbook.pdf\")\ndocuments = loader.load()\n\nprint(f\"Loaded {len(documents)} pages.\")\n```"
+        },
+        {
+            "id": "rag_vec_4",
+            "type": "content",
+            "title": "Step 2: Text Splitters",
+            "content": "# Chunking the Data 🔪\n\nYou cannot paste a 500-page PDF into an LLM prompt. It will exceed the token limit, and it costs too much money.\n\nWe must split the massive document into small, overlapping **Chunks** (e.g., 1000 characters each). \n\n```python_not\nfrom langchain_text_splitters import RecursiveCharacterTextSplitter\n\n# We want 1000 character chunks, with 200 characters of overlap \n# to ensure we don't cut a sentence in half!\ntext_splitter = RecursiveCharacterTextSplitter(\n    chunk_size=1000, \n    chunk_overlap=200\n)\n\n# Split the PDF\nchunks = text_splitter.split_documents(documents)\nprint(f\"Split into {len(chunks)} chunks.\")\n```"
+        },
+        {
+            "id": "rag_vec_5",
+            "type": "content",
+            "title": "Step 3: Embeddings",
+            "content": "# Turning Text into Math 🔢\n\nHow do we search these thousands of chunks to find the *one* chunk that answers the user's question? \n\nWe cannot use standard keyword search (SQL `LIKE '%word%'`) because the user might ask about \"vacation days\", but the document uses the phrase \"paid time off\".\n\nWe use **Embeddings**. An Embedding model takes a chunk of text and converts it into an array of thousands of floating-point numbers (a Vector) representing the *semantic meaning* of the text."
+        },
+        {
+            "id": "rag_vec_quiz_1",
+            "type": "quiz",
+            "title": "RAG Basics Quiz",
+            "content": "Check your understanding of the RAG pipeline.",
+            "quizQuestion": "Why must we use 'Text Splitters' to break our documents into small chunks before using them in a RAG system?",
+            "quizOptions": [
+                "Because Python cannot read files larger than 1MB.",
+                "To prevent the final augmented prompt from exceeding the LLM's maximum token limit, and to save API costs.",
+                "Because text splitters automatically translate the text into English.",
+                "To encrypt the data."
+            ],
+            "correctOptionIndex": 1
+        },
+        {
+            "id": "rag_vec_6",
+            "type": "content",
+            "title": "Step 4: Vector Databases",
+            "content": "# Storing the Math 🗄️\n\nOnce we convert all our chunks into Vectors, we store them in a specialized **Vector Database** (like Chroma, FAISS, or Pinecone).\n\n```bash\npip install chromadb langchain-chroma\n```\n\n```python_not\nfrom langchain_chroma import Chroma\nfrom langchain_openai import OpenAIEmbeddings\n\n# 1. Initialize the embedding model (This converts text to math)\nembedding_model = OpenAIEmbeddings()\n\n# 2. Pass our text chunks and the embedding model into the Chroma Database\n# Chroma calculates the vectors and stores them locally on disk\nvectorstore = Chroma.from_documents(\n    documents=chunks, \n    embedding=embedding_model, \n    persist_directory=\"./chroma_db\"\n)\n```"
+        },
+        {
+            "id": "rag_vec_7",
+            "type": "content",
+            "title": "Vector Similarity Search",
+            "content": "# Searching by Meaning 🔍\n\nWhen the user asks a question, we convert *their question* into a Vector using the same Embedding model.\n\nThe Vector Database then performs a mathematical calculation (Cosine Similarity) to find the text chunks whose vectors are closest to the question's vector in multi-dimensional space!\n\n```python_not\nuser_question = \"How many paid days off do I get?\"\n\n# The database finds the 3 most semantically similar chunks!\nresults = vectorstore.similarity_search(user_question, k=3)\n\nfor doc in results:\n    # This will find chunks mentioning \"vacation\", \"PTO\", etc., \n    # even if they don't contain the exact words in the question!\n    print(doc.page_content)\n```"
+        },
+        {
+            "id": "rag_vec_8",
+            "type": "content",
+            "title": "Step 5: The RAG Chain",
+            "content": "# Tying it all together 🔗\n\nNow we have the User's Question and the Retrieved Documents. We just need to feed them into the LLM using LCEL!\n\n```python_not\nfrom langchain_core.prompts import PromptTemplate\nfrom langchain_core.output_parsers import StrOutputParser\nfrom langchain_core.runnables import RunnablePassthrough\nfrom langchain_openai import ChatOpenAI\n\n# Create a Retriever from the database\nretriever = vectorstore.as_retriever()\n\nprompt = PromptTemplate.from_template(\n    \"Answer the question using ONLY the context: \\n {context} \\n Question: {question}\"\n)\n\n# Build the LCEL Chain\nrag_chain = (\n    {\"context\": retriever, \"question\": RunnablePassthrough()} \n    | prompt \n    | ChatOpenAI() \n    | StrOutputParser()\n)\n\n# Ask the question!\nprint(rag_chain.invoke(\"How many paid days off do I get?\"))\n```"
+        },
+        {
+            "id": "rag_vec_9",
+            "type": "content",
+            "title": "Metadata Filtering",
+            "content": "# Precision Retrieval 🎯\n\nWhat if you have HR handbooks for 5 different countries in the same database? If an employee in the UK asks about vacation days, you don't want the database returning chunks from the US handbook!\n\nYou solve this with **Metadata Filtering**. When uploading chunks, you attach metadata (like `{\"country\": \"UK\"}`). \n\nWhen querying the `retriever`, you apply a filter, so the vector database *only* searches mathematically through chunks matching that metadata!"
+        },
+        {
+            "id": "rag_vec_quiz_2",
+            "type": "quiz",
+            "title": "Vector Quiz",
+            "content": "Ensure you grasp the concept of Vector search.",
+            "quizQuestion": "How does a Vector Database find relevant documents differently than a traditional SQL database?",
+            "quizOptions": [
+                "It uses the `LIKE` operator to find exact keyword matches.",
+                "It converts text into mathematical arrays (Embeddings) representing semantic meaning, and searches for documents that are mathematically closest to the question, allowing it to find relevant concepts even if the exact words are different.",
+                "It sends the entire database to the LLM and asks the LLM to search it.",
+                "It sorts the documents alphabetically."
+            ],
+            "correctOptionIndex": 1
+        },
+        {
+            "id": "rag_vec_10",
+            "type": "content",
+            "title": "Summary",
+            "content": "# RAG Architect! 🎉\n\nYou've learned how to build enterprise-grade AI assistants that know your private data.\n\n## Key Takeaways\n\n- ✅ **Document Loaders:** Read data from PDFs, CSVs, and Web Pages.\n- ✅ **Text Splitters:** Break massive documents into small, overlapping chunks to fit within LLM token limits.\n- ✅ **Embeddings:** Convert chunks of text into semantic numerical vectors.\n- ✅ **Vector Databases:** Use Chroma or FAISS to store and rapidly search thousands of vectors using mathematical similarity.\n- ✅ **RAG Pipeline:** Retrieve the top `k` most similar chunks and paste them directly into the LLM prompt as context to prevent hallucinations!"
+        }
+    ]
+}

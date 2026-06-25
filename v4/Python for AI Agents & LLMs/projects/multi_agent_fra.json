@@ -1,0 +1,29 @@
+[
+  {
+    "title": "Multi-Agent Systems",
+    "ques": "What is a multi-agent framework, and what problem does it solve compared to a single autonomous agent?",
+    "answer": {
+      "type": "text",
+      "content": "A multi-agent framework (like CrewAI or AutoGen) orchestrates a system where multiple specialized AI agents interact and collaborate to solve a problem. Single agents often get confused, stuck in loops, or lose context when given massively complex tasks. Multi-agent systems solve this by dividing labor: assigning specific roles, goals, and tools to different agents (e.g., a 'Researcher' agent, a 'Coder' agent, and a 'QA' agent) who converse and pass data between each other."
+    },
+    "explanation": "Division of labor and specialized context windows lead to higher quality and more reliable outcomes for complex projects."
+  },
+  {
+    "title": "CrewAI Roles and Tasks",
+    "ques": "In the CrewAI framework, what are the three core components required to set up a workflow?",
+    "answer": {
+      "type": "text",
+      "content": "1.  **Agents:** Defined with specific roles, backstories, and available tools.\n2.  **Tasks:** Clear, specific objectives with expected output descriptions, assigned to specific Agents.\n3.  **Crew:** The orchestrator that binds the Agents and Tasks together and dictates the process flow (e.g., running tasks sequentially or hierarchically)."
+    },
+    "explanation": "CrewAI models AI workflows similarly to managing a team of human employees."
+  },
+  {
+    "title": "Tool Sharing in Multi-Agent Systems",
+    "ques": "Why is it beneficial to restrict certain tools to specific agents rather than giving all tools to one master agent?",
+    "answer": {
+      "type": "text",
+      "content": "Giving a single agent access to dozens of tools bloats its system prompt and overwhelms its decision-making capabilities, leading to errors and hallucinations. By restricting tools to specialized agents (e.g., only giving web search tools to the Researcher, and only code execution tools to the Coder), you focus the agent's context and significantly improve its accuracy and reliability."
+    },
+    "explanation": "Less noise and focused tooling leads to better LLM performance."
+  }
+]

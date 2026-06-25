@@ -1,0 +1,135 @@
+{
+    "id": "learn_coverage_tdd_bd",
+    "topicId": "coverage_tdd_bd",
+    "topicTitle": "Coverage, TDD & BDD",
+    "description": "Ensure your tests are effective using coverage.py, master the Red-Green-Refactor cycle of TDD, and write behavior-driven tests with Gherkin and pytest-bdd.",
+    "baseKP": 75,
+    "slides": [
+        {
+            "id": "cov_tdd_bdd_1",
+            "type": "content",
+            "title": "Introduction to Test Coverage",
+            "content": "# Are we testing enough? 📏\n\nYou've written a dozen tests, and they all pass! But how much of your actual application code is being executed during those tests? 50%? 90%? 100%?\n\n**Code Coverage** is a metric that measures the percentage of your source code lines that are executed when your test suite runs.\n\n## Why it matters\nIf a line of code is never run during testing, you have zero guarantee that it actually works. High coverage doesn't mean your code is bug-free, but low coverage almost certainly means there are hidden bugs waiting to explode."
+        },
+        {
+            "id": "cov_tdd_bdd_2",
+            "type": "content",
+            "title": "Using coverage.py",
+            "content": "# The `coverage` tool ☂️\n\nIn Python, the industry standard for measuring this metric is `coverage.py`. You install it via `pip install coverage` or the pytest plugin `pip install pytest-cov`.\n\n## Running with pytest-cov\n\n```bash\n# Run tests and measure coverage for the 'my_app' directory\npytest --cov=my_app\n```\n\nOutput looks like this:\n```\nName                 Stmts   Miss  Cover\n----------------------------------------\nmy_app/__init__.py       0      0   100%\nmy_app/auth.py          45     10    78%\nmy_app/utils.py         12      0   100%\n----------------------------------------\nTOTAL                   57     10    82%\n```"
+        },
+        {
+            "id": "cov_tdd_bdd_3",
+            "type": "content",
+            "title": "Generating Coverage Reports",
+            "content": "# Visualizing Coverage 📊\n\nSeeing that `auth.py` missed 10 lines is helpful, but *which* 10 lines?\n\nYou can generate detailed HTML reports!\n\n```bash\npytest --cov=my_app --cov-report=html\n```\n\nThis generates an `htmlcov/` folder. Open `index.html` in your browser, and you get a beautiful interface where you can click on `auth.py`. It will show your actual code, with covered lines highlighted in green and missed lines in red!"
+        },
+        {
+            "id": "cov_tdd_bdd_4",
+            "type": "content",
+            "title": "Branch Coverage",
+            "content": "# Statement vs. Branch Coverage 🌳\n\nBy default, `coverage.py` measures **Statement Coverage** (did this line execute?).\n\nBut look at this code:\n```python\ndef get_discount(is_vip):\n    discount = 0\n    if is_vip:\n        discount = 20\n    return discount\n```\nIf you write a test where `is_vip=True`, you will hit 100% statement coverage! But you never tested what happens if `is_vip=False`.\n\n**Branch Coverage** measures if all possible paths of an `if/else` statement were evaluated.\n\n```bash\n# Enable branch coverage\npytest --cov=my_app --cov-branch\n```"
+        },
+        {
+            "id": "cov_tdd_bdd_5",
+            "type": "content",
+            "title": "Configuring with .coveragerc",
+            "content": "# The `.coveragerc` file ⚙️\n\nYou don't want coverage to measure your test files, virtual environments, or `__init__.py` files.\n\nYou can configure `coverage.py` by placing a `.coveragerc` file in your project root.\n\n```ini\n[run]\nbranch = True\nomit =\n    venv/*\n    tests/*\n    **/__init__.py\n\n[report]\n# Fail the CI pipeline if coverage drops below 90%\nfail_under = 90\n\n# Ignore lines that contain 'pragma: no cover'\nexclude_lines =\n    pragma: no cover\n    def __repr__\n```\n\n> 💡 **Tip:** Adding `# pragma: no cover` to a line of Python code tells the coverage tool to ignore it completely."
+        },
+        {
+            "id": "cov_tdd_bdd_quiz_1",
+            "type": "quiz",
+            "title": "Coverage Check",
+            "content": "Test your knowledge of code coverage.",
+            "quizQuestion": "Why is 100% Statement Coverage NOT a guarantee that all logic paths are tested?",
+            "quizOptions": [
+                "Because statement coverage doesn't test database connections.",
+                "Because an 'if' statement can be executed, but the 'else' branch might be ignored if not tested explicitly.",
+                "Because the coverage tool ignores functions without return values.",
+                "Because coverage tools are notoriously inaccurate."
+            ],
+            "correctOptionIndex": 1
+        },
+        {
+            "id": "cov_tdd_bdd_6",
+            "type": "content",
+            "title": "Introduction to TDD",
+            "content": "# Test-Driven Development (TDD) 🚦\n\nNormally, developers write code, and then (maybe, eventually) write tests for it.\n\n**Test-Driven Development (TDD)** flips this upside down. You write the test **FIRST**, before writing any actual application code.\n\n## Why TDD?\n1. **Forces Architecture:** You design your API based on how it will be used (the test), leading to cleaner, more modular code.\n2. **100% Coverage:** Since you only write code to pass a test, your coverage is naturally near 100%.\n3. **Confidence:** You build a massive safety net from day one."
+        },
+        {
+            "id": "cov_tdd_bdd_7",
+            "type": "content",
+            "title": "Red-Green-Refactor",
+            "content": "# The Red-Green-Refactor Cycle 🔄\n\nTDD revolves around a strict, three-step loop:\n\n## 🔴 1. Red (Write a failing test)\nWrite a test for the specific feature you want to build. Run the test suite. It **MUST FAIL** (because the feature doesn't exist yet!). This proves the test is actually testing something.\n\n## 🟢 2. Green (Make it pass)\nWrite the *absolute minimum* amount of application code required to make the test pass. Don't worry about elegance or performance right now. Just get it green.\n\n## 🛠️ 3. Refactor (Clean it up)\nNow that the test is green, you can safely clean up your messy code, optimize it, and remove duplication. Since the test is protecting you, you know you aren't breaking anything!"
+        },
+        {
+            "id": "cov_tdd_bdd_8",
+            "type": "content",
+            "title": "TDD in Action",
+            "content": "# Example: TDD a Password Validator 🔐\n\n**Goal:** A function that ensures a password is at least 8 characters.\n\n**🔴 Step 1: Write the test (Red)**\n```python_not\ndef test_password_too_short():\n    assert validate_password(\"short\") is False\n```\n*Result: Fails! `NameError: validate_password is not defined`*\n\n**🟢 Step 2: Make it pass (Green)**\n```python_not\ndef validate_password(password):\n    return False\n```\n*Result: Passes! (Wait, really? Yes! We wrote the minimum code to pass the test).* \nBut wait, we need another test to force us to write real logic!\n\n**🔴 Step 1b: Write another test (Red)**\n```python_not\ndef test_password_long_enough():\n    assert validate_password(\"supersecret\") is True\n```\n*Result: Fails!*\n\n**🟢 Step 2b: Make it pass (Green)**\n```python_not\ndef validate_password(password):\n    return len(password) >= 8\n```\n*Result: Both tests pass!*"
+        },
+        {
+            "id": "cov_tdd_bdd_quiz_2",
+            "type": "quiz",
+            "title": "TDD Cycle Check",
+            "content": "Let's review the TDD cycle.",
+            "quizQuestion": "In the TDD cycle, why is the 'Red' step (ensuring the test fails initially) so important?",
+            "quizOptions": [
+                "It proves that the testing framework is installed correctly.",
+                "It proves that the test is actually capable of catching a failure and isn't just a false positive.",
+                "It warms up the Python interpreter for faster execution.",
+                "It forces the developer to take a break."
+            ],
+            "correctOptionIndex": 1
+        },
+        {
+            "id": "cov_tdd_bdd_9",
+            "type": "content",
+            "title": "Introduction to BDD",
+            "content": "# Behavior-Driven Development (BDD) 🗣️\n\nTDD is great for developers, but Product Managers and Business Analysts don't read Python. How do we ensure we are building the right features for the business?\n\n**Behavior-Driven Development (BDD)** bridges the gap between technical and non-technical teams.\n\nIn BDD, you write test specifications in plain English using a language called **Gherkin**. These English sentences are then executed as automated tests!"
+        },
+        {
+            "id": "cov_tdd_bdd_10",
+            "type": "content",
+            "title": "The Gherkin Syntax",
+            "content": "# Writing Features in Gherkin 🥒\n\nGherkin files (saved as `.feature`) use a Given-When-Then structure.\n\n```gherkin\nFeature: User Login\n  As a registered user\n  I want to log in to the application\n  So that I can access my dashboard\n\n  Scenario: Successful login with correct credentials\n    Given the user is on the login page\n    When the user enters \"alice\" as username\n    And the user enters \"secret123\" as password\n    And the user clicks the login button\n    Then the user should be redirected to the dashboard\n    And the user should see a \"Welcome, Alice!\" message\n```\n\nAnyone in the company can read, understand, and even write this file!"
+        },
+        {
+            "id": "cov_tdd_bdd_11",
+            "type": "content",
+            "title": "pytest-bdd",
+            "content": "# Automating Gherkin with `pytest-bdd` 🤖\n\nHow do we turn those English sentences into Python tests? We use the `pytest-bdd` plugin.\n\nYou create a Python file that links to the `.feature` file, and you write **Step Definitions**.\n\nA Step Definition is a Python function decorated with `@given`, `@when`, or `@then` that matches the exact text in the Gherkin file.\n\n```python_not\nfrom pytest_bdd import scenario, given, when, then, parsers\nimport pytest\n\n# Link to the feature file\n@scenario('login.feature', 'Successful login with correct credentials')\ndef test_successful_login():\n    pass # The test is driven by the steps below!\n```"
+        },
+        {
+            "id": "cov_tdd_bdd_12",
+            "type": "content",
+            "title": "Writing Step Definitions",
+            "content": "# Step Definitions in Action 🎬\n\nHere is how you wire up the Given, When, and Then steps.\n\n```python_not\n# The string exactly matches the text in the .feature file\n@given(\"the user is on the login page\")\ndef user_on_login_page(browser):\n    browser.navigate(\"/login\")\n\n# We can extract variables using parsers!\n@when(parsers.parse('the user enters \"{username}\" as username'))\ndef enter_username(browser, username):\n    browser.input_text(\"#username_field\", username)\n\n@when(parsers.parse('the user enters \"{password}\" as password'))\ndef enter_password(browser, password):\n    browser.input_text(\"#password_field\", password)\n\n@when(\"the user clicks the login button\")\ndef click_login(browser):\n    browser.click(\"#login_btn\")\n\n@then(\"the user should be redirected to the dashboard\")\ndef verify_redirect(browser):\n    assert browser.current_url == \"/dashboard\"\n```"
+        },
+        {
+            "id": "cov_tdd_bdd_13",
+            "type": "content",
+            "title": "BDD State Management",
+            "content": "# Passing State in pytest-bdd 🔗\n\nNotice in the previous slide, we used a `browser` argument. In `pytest-bdd`, step definitions automatically utilize `pytest` **fixtures**!\n\nIf you need to pass state between steps, you simply create a fixture.\n\n```python_not\nimport pytest\nfrom pytest_bdd import given, then\n\n# This fixture holds state across the scenario\n@pytest.fixture\ndef user_context():\n    return {}\n\n@given(\"an admin user\")\ndef setup_admin(user_context):\n    user_context[\"role\"] = \"admin\"\n\n@then(\"they have full access\")\ndef check_access(user_context):\n    assert user_context[\"role\"] == \"admin\"\n```\n\nThis beautiful integration with standard `pytest` fixtures makes `pytest-bdd` incredibly powerful."
+        },
+        {
+            "id": "cov_tdd_bdd_quiz_3",
+            "type": "quiz",
+            "title": "BDD Check",
+            "content": "Let's review BDD concepts.",
+            "quizQuestion": "In Gherkin syntax, what is the purpose of the 'Given' keyword?",
+            "quizOptions": [
+                "To define the action the user takes.",
+                "To define the expected outcome or assertion.",
+                "To define the initial state or preconditions of the scenario.",
+                "To define the variables parsed from the text."
+            ],
+            "correctOptionIndex": 2
+        },
+        {
+            "id": "cov_tdd_bdd_14",
+            "type": "content",
+            "title": "Summary",
+            "content": "# Master of Quality Assurance! 🎉\n\nYou've learned how to ensure your code is thoroughly and effectively tested.\n\n## Key Takeaways\n\n- ✅ **Coverage:** Use `pytest-cov` to measure Statement and Branch coverage, ensuring no code is left untested.\n- ✅ **Configuration:** Use `.coveragerc` to exclude irrelevant files and set failure thresholds.\n- ✅ **TDD:** Embrace the Red-Green-Refactor loop. Write the failing test *before* the application code.\n- ✅ **BDD:** Bridge the gap between business and engineering by writing plain English scenarios using Gherkin.\n- ✅ **pytest-bdd:** Automate Gherkin scenarios by mapping them to Python step definitions (`@given`, `@when`, `@then`).\n\nCombining these techniques guarantees that you are not only building the software right, but building the *right software*."
+        }
+    ]
+}

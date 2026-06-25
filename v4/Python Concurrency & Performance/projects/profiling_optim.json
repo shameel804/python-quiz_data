@@ -1,0 +1,30 @@
+[
+  {
+    "title": "Profiling Code",
+    "ques": "What is `cProfile` and how does it help optimize Python code?",
+    "answer": {
+      "type": "text",
+      "content": "`cProfile` is a built-in Python module that provides deterministic profiling of Python programs. It tracks how often each function is called and how much time was spent executing it. This helps developers identify the specific bottlenecks (the 'hot spots') in their code that take the most time, allowing them to focus optimization efforts where they matter most."
+    },
+    "explanation": "Optimization without profiling is just guessing. Profilers provide empirical data to guide performance improvements."
+  },
+  {
+    "title": "Optimizing Memory with __slots__",
+    "ques": "Explain how defining `__slots__` in a Python class reduces memory consumption.",
+    "answer": {
+      "type": "text",
+      "content": "By default, Python instances use a dictionary (`__dict__`) to store attributes, which incurs significant memory overhead. When you define `__slots__` with a list of attribute names, Python reserves a fixed amount of space for those specific attributes and prevents the creation of the `__dict__`. This can drastically reduce memory usage when creating millions of instances of a class."
+    },
+    "explanation": "`__slots__` is a targeted optimization for scenarios where a program needs to hold large numbers of lightweight objects in memory."
+  },
+  {
+    "title": "Caching with lru_cache",
+    "ques": "Use the `@lru_cache` decorator from the `functools` module to memoize a naive recursive Fibonacci function.",
+    "answer": {
+      "type": "code",
+      "lang": "python",
+      "content": "from functools import lru_cache\n\n@lru_cache(maxsize=None)\ndef fibonacci(n):\n    if n < 2:\n        return n\n    return fibonacci(n-1) + fibonacci(n-2)"
+    },
+    "explanation": "`@lru_cache` automatically caches the results of expensive function calls based on their inputs. For recursive functions like Fibonacci, this prevents exponential recalculations and changes the time complexity from exponential to linear."
+  }
+]

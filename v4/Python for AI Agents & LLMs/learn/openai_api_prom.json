@@ -1,0 +1,123 @@
+{
+    "id": "learn_openai_api_prom",
+    "topicId": "openai_api_prom",
+    "topicTitle": "OpenAI API & Prompt Engineering",
+    "description": "Learn to integrate ChatGPT directly into your Python apps using the OpenAI API. Master prompt engineering techniques like few-shot and chain-of-thought.",
+    "baseKP": 75,
+    "slides": [
+        {
+            "id": "openai_api_1",
+            "type": "content",
+            "title": "The Age of LLMs",
+            "content": "# AI in Python 🧠\n\nLarge Language Models (LLMs) like GPT-4 have fundamentally changed software engineering.\n\nInstead of writing complex regex or natural language processing algorithms to extract data from text, you can simply ask an AI to do it.\n\nPython is the undisputed language of AI. The easiest way to start is by using the official `openai` Python SDK."
+        },
+        {
+            "id": "openai_api_2",
+            "type": "content",
+            "title": "Introduction to the OpenAI SDK",
+            "content": "# Connecting to ChatGPT 🔌\n\nFirst, install the library and obtain an API Key from the OpenAI Developer dashboard.\n\n```bash\npip install openai\n```\n\n```python_not\nfrom openai import OpenAI\nimport os\n\n# The client automatically looks for the OPENAI_API_KEY environment variable\nclient = OpenAI()\n\n# Make a simple request\nresponse = client.chat.completions.create(\n    model=\"gpt-3.5-turbo\",\n    messages=[\n        {\"role\": \"user\", \"content\": \"Write a haiku about Python.\"}\n    ]\n)\n\nprint(response.choices[0].message.content)\n```"
+        },
+        {
+            "id": "openai_api_3",
+            "type": "content",
+            "title": "Understanding Roles",
+            "content": "# The Conversation History 💬\n\nLLMs don't have memory. Every time you make an API request, you must send the *entire* conversation history.\n\nThe history is an array of dictionaries. Each dictionary has a `role`:\n\n1. **`system`**: Instructions given to the AI *before* the conversation starts (e.g., \"You are a helpful pirate.\").\n2. **`user`**: The human's input.\n3. **`assistant`**: The AI's previous responses."
+        },
+        {
+            "id": "openai_api_4",
+            "type": "content",
+            "title": "Using Roles in Code",
+            "content": "# Managing History 📚\n\n```python_not\nclient = OpenAI()\n\n# The message history\nmessages = [\n    {\"role\": \"system\", \"content\": \"You are a sarcastic assistant.\"},\n    {\"role\": \"user\", \"content\": \"What is 2 + 2?\"},\n    {\"role\": \"assistant\", \"content\": \"Oh, wow, such a hard question. It's 4.\"},\n    {\"role\": \"user\", \"content\": \"And what is 4 + 4?\"}\n]\n\nresponse = client.chat.completions.create(\n    model=\"gpt-3.5-turbo\",\n    messages=messages\n)\n\n# The AI responds to the latest user message, keeping its sarcastic persona!\nprint(response.choices[0].message.content)\n```"
+        },
+        {
+            "id": "openai_api_quiz_1",
+            "type": "quiz",
+            "title": "Roles Quiz",
+            "content": "Check your understanding of the API structure.",
+            "quizQuestion": "In the OpenAI Chat Completions API, what is the purpose of the `system` role?",
+            "quizOptions": [
+                "It represents the human user typing the prompt.",
+                "It is used to send API keys to the server.",
+                "It represents the AI's previous responses in the conversation history.",
+                "It provides high-level instructions or a persona to the AI before the actual conversation begins."
+            ],
+            "correctOptionIndex": 3
+        },
+        {
+            "id": "openai_api_5",
+            "type": "content",
+            "title": "Tuning Parameters",
+            "content": "# Temperature and Tokens 🎛️\n\nYou can tweak how the model generates text using parameters.\n\n- **`temperature`**: Controls randomness (0.0 to 2.0). `0.0` is deterministic and analytical (good for coding). `1.0` is creative (good for poetry).\n- **`max_tokens`**: Limits the length of the response. (1 token ≈ 0.75 words).\n\n```python_not\nresponse = client.chat.completions.create(\n    model=\"gpt-3.5-turbo\",\n    messages=[{\"role\": \"user\", \"content\": \"Write a story.\" രാവിലെ}],\n    temperature=1.5, # Very random/creative!\n    max_tokens=50    # Cut the story off early\n)\n```"
+        },
+        {
+            "id": "openai_api_6",
+            "type": "content",
+            "title": "Streaming Responses",
+            "content": "# Streaming 🌊\n\nLLMs generate text one word at a time. If you wait for a 500-word response to finish before displaying it, your app will feel incredibly slow.\n\nSet `stream=True` to receive the text in real-time chunks, just like the ChatGPT website!\n\n```python_not\nstream = client.chat.completions.create(\n    model=\"gpt-3.5-turbo\",\n    messages=[{\"role\": \"user\", \"content\": \"Explain quantum physics.\" രാവിലെ}],\n    stream=True # Enable streaming!\n)\n\nfor chunk in stream:\n    # Extract the delta (the new characters)\n    content = chunk.choices[0].delta.content\n    if content is not None:\n        print(content, end=\"\", flush=True)\n```"
+        },
+        {
+            "id": "openai_api_7",
+            "type": "content",
+            "title": "Prompt Engineering Basics",
+            "content": "# Zero-Shot vs Few-Shot 🎯\n\n**Prompt Engineering** is the art of asking the AI the right way.\n\n**Zero-Shot Prompting:** Asking the AI to do something with zero examples.\n> *\"Translate this to French: Hello\"*\n\n**Few-Shot Prompting:** Giving the AI a few examples before asking the final question. This drastically improves accuracy and forces the AI to output the exact format you want!\n> *\"English: Dog | French: Chien\"*\n> *\"English: Cat | French: Chat\"*\n> *\"English: Hello | French: \"*"
+        },
+        {
+            "id": "openai_api_8",
+            "type": "content",
+            "title": "Chain-of-Thought",
+            "content": "# Thinking Step-by-Step 🔗\n\nLLMs are terrible at math and logic if you ask them for the answer immediately.\n\n**Chain-of-Thought (CoT)** prompting involves telling the AI to explain its reasoning *before* providing the final answer. Because the AI generates text sequentially, forcing it to write out its logic actually improves its \"thinking\" process!\n\n> **Bad Prompt:** *\"If John has 5 apples, gives 2 to Mary, buys 3 more, and cuts them all in half, how many pieces does he have?\"*\n\n> **Good Prompt (CoT):** *\"If John has 5 apples... [same question]... **Think step-by-step.**\"*"
+        },
+        {
+            "id": "openai_api_quiz_2",
+            "type": "quiz",
+            "title": "Prompting Quiz",
+            "content": "Test your prompt engineering skills.",
+            "quizQuestion": "What is the primary benefit of 'Few-Shot' prompting?",
+            "quizOptions": [
+                "It reduces the token cost of the API call to zero.",
+                "It provides the AI with examples of the desired input/output format, significantly increasing the accuracy and structural consistency of its response.",
+                "It forces the AI to stream the response.",
+                "It instructs the AI to browse the internet."
+            ],
+            "correctOptionIndex": 1
+        },
+        {
+            "id": "openai_api_9",
+            "type": "content",
+            "title": "Function Calling",
+            "content": "# Giving the AI Tools 🛠️\n\nLLMs only output text. They cannot browse the web or query your database.\n\nBut what if you *describe* your Python functions to the AI? \n\nThis is called **Function Calling**. You pass a JSON schema defining your Python functions. The AI reads the user's prompt, decides if it needs a function, and outputs a JSON object asking *you* to run the function for it!"
+        },
+        {
+            "id": "openai_api_10",
+            "type": "content",
+            "title": "Defining a Tool",
+            "content": "# The JSON Schema 📝\n\nLet's define a tool that checks the weather.\n\n```python_not\n# The actual Python function\ndef get_weather(location):\n    return \"72F and Sunny\" # (Mock response)\n\n# The JSON Schema describing the function to the AI\ntools = [{\n    \"type\": \"function\",\n    \"function\": {\n        \"name\": \"get_weather\",\n        \"description\": \"Get the current weather in a given location\",\n        \"parameters\": {\n            \"type\": \"object\",\n            \"properties\": {\n                \"location\": {\"type\": \"string\", \"description\": \"The city name\"},\n            },\n            \"required\": [\"location\"],\n        },\n    }\n}]\n```"
+        },
+        {
+            "id": "openai_api_11",
+            "type": "content",
+            "title": "Executing the Tool Call",
+            "content": "# The Tool Flow 🔄\n\nWhen we pass the `tools` array to the API, the AI will respond with a `tool_calls` object instead of normal text!\n\n```python_not\nresponse = client.chat.completions.create(\n    model=\"gpt-3.5-turbo\",\n    messages=[{\"role\": \"user\", \"content\": \"What's the weather in Miami?\"}],\n    tools=tools\n)\n\n# The AI realized it needs the weather function!\ntool_call = response.choices[0].message.tool_calls[0]\nprint(tool_call.function.name) # \"get_weather\"\nprint(tool_call.function.arguments) # '{\"location\": \"Miami\"}'\n```\n\nYour Python script then parses the JSON arguments, runs the actual `get_weather(\"Miami\")` function, and sends the result *back* to the AI so it can formulate a final answer!"
+        },
+        {
+            "id": "openai_api_quiz_3",
+            "type": "quiz",
+            "title": "Function Calling Quiz",
+            "content": "Ensure you understand how tools work.",
+            "quizQuestion": "In the OpenAI API, when you provide a 'tool' (function description) to the model, who actually executes the Python code?",
+            "quizOptions": [
+                "The OpenAI servers execute the Python code securely in a sandbox.",
+                "The model executes the code.",
+                "The model does NOT execute code; it returns a JSON object containing the function name and arguments, and YOUR Python script must execute the actual function.",
+                "The browser executes the code via JavaScript."
+            ],
+            "correctOptionIndex": 2
+        },
+        {
+            "id": "openai_api_12",
+            "type": "content",
+            "title": "Summary",
+            "content": "# AI Developer! 🎉\n\nYou've learned how to interact with the world's most powerful AI models.\n\n## Key Takeaways\n\n- ✅ **Roles:** Use `system` to set the persona, `user` for input, and `assistant` for history.\n- ✅ **Parameters:** Lower `temperature` for coding/logic; higher for creative writing.\n- ✅ **Streaming:** Use `stream=True` to provide real-time UI updates.\n- ✅ **Prompting:** Use Few-Shot (providing examples) and Chain-of-Thought (\"think step by step\") to drastically improve AI accuracy.\n- ✅ **Function Calling:** Define your Python functions as JSON schemas. The AI will return arguments, allowing your code to act as the AI's hands and eyes.\n\nNext, we'll learn how to use LangChain to orchestrate these calls automatically!"
+        }
+    ]
+}

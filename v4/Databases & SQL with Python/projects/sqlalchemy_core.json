@@ -1,0 +1,32 @@
+[
+  {
+    "title": "SQLAlchemy Engine \ud83d\ude82",
+    "ques": "Write Python code using SQLAlchemy to create an engine connecting to an SQLite database named `app.db`.",
+    "answer": {
+      "type": "code",
+      "lang": "python",
+      "content": "from sqlalchemy import create_engine\n\nengine = create_engine('sqlite:///app.db')\nprint(engine)"
+    },
+    "explanation": "The `Engine` is the starting point for any SQLAlchemy application, managing the connection pool and dialect."
+  },
+  {
+    "title": "Declarative Models \ud83c\udfdb",
+    "ques": "Define a simple SQLAlchemy ORM model named `User` with an integer `id` primary key and a string `username`.",
+    "answer": {
+      "type": "code",
+      "lang": "python",
+      "content": "from sqlalchemy.orm import declarative_base\nfrom sqlalchemy import Column, Integer, String\n\nBase = declarative_base()\n\nclass User(Base):\n    __tablename__ = 'users'\n    id = Column(Integer, primary_key=True)\n    username = Column(String(50))"
+    },
+    "explanation": "Declarative models map Python classes to database tables, allowing object-oriented database interactions."
+  },
+  {
+    "title": "Querying with Sessions \ud83d\udd75\ufe0f",
+    "ques": "Write a snippet to create a `Session` bound to an `engine` and query the first `User` where `username == 'admin'`.",
+    "answer": {
+      "type": "code",
+      "lang": "python",
+      "content": "from sqlalchemy.orm import sessionmaker\n\nSession = sessionmaker(bind=engine)\nsession = Session()\nadmin_user = session.query(User).filter_by(username='admin').first()"
+    },
+    "explanation": "The `Session` establishes all conversations with the database and represents a staging zone for all objects loaded or associated with it."
+  }
+]

@@ -1,0 +1,30 @@
+[
+  {
+    "title": "Basic Seaborn Plots",
+    "ques": "Write a snippet using `seaborn` to create a basic scatterplot comparing 'total_bill' and 'tip' from a pandas DataFrame named `df`.",
+    "answer": {
+      "type": "code",
+      "lang": "python",
+      "content": "import seaborn as sns\nimport matplotlib.pyplot as plt\n\nsns.scatterplot(data=df, x='total_bill', y='tip')\nplt.show()"
+    },
+    "explanation": "Seaborn provides a high-level interface over Matplotlib. It integrates deeply with Pandas DataFrames, allowing you to pass the DataFrame directly using the `data` parameter."
+  },
+  {
+    "title": "Distribution with Violin Plots",
+    "ques": "Why might you choose a `violinplot` over a standard `boxplot`?",
+    "answer": {
+      "type": "text",
+      "content": "A standard boxplot shows summary statistics (median, quartiles, and outliers) but hides the actual shape of the data distribution. A violin plot combines a boxplot with a kernel density estimate (KDE) on each side, showing both the summary statistics and the full distribution (e.g., revealing if the data is bimodal)."
+    },
+    "explanation": "Violin plots provide a richer visual summary of data density."
+  },
+  {
+    "title": "Faceted Grids",
+    "ques": "What is the purpose of `sns.FacetGrid`?",
+    "answer": {
+      "type": "text",
+      "content": "`FacetGrid` is used to create a grid of plots based on the values of one or more categorical variables. For example, if you have a dataset of cars, you could create a grid of scatterplots (weight vs MPG), with each subplot representing a different 'origin' country. It is a powerful way to visualize multi-dimensional relationships."
+    },
+    "explanation": "Faceting (or Trellis displays) allows you to condition your data across multiple subplots, making complex interactions easier to analyze."
+  }
+]

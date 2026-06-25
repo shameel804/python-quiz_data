@@ -1,0 +1,32 @@
+[
+  {
+    "title": "Defining a Pydantic Model \ud83c\udfd7",
+    "ques": "Create a Pydantic model named `Item` containing a string `name` and a float `price`.",
+    "answer": {
+      "type": "code",
+      "lang": "python",
+      "content": "from pydantic import BaseModel\n\nclass Item(BaseModel):\n    name: str\n    price: float"
+    },
+    "explanation": "Pydantic models define the structure and data types of your API payloads. They automatically handle validation and serialization."
+  },
+  {
+    "title": "Using Models in Requests \ud83d\udce5",
+    "ques": "Create a `POST` route at `/items/` that accepts an `Item` payload and returns it back.",
+    "answer": {
+      "type": "code",
+      "lang": "python",
+      "content": "@app.post('/items/')\ndef create_item(item: Item):\n    return item"
+    },
+    "explanation": "When you declare a parameter as a Pydantic model, FastAPI reads the request body as JSON and validates it against the model."
+  },
+  {
+    "title": "Field Validation \ud83d\udccf",
+    "ques": "Modify the `price` field in your Pydantic `Item` model to enforce that the price is greater than `0` using Pydantic's `Field`.",
+    "answer": {
+      "type": "code",
+      "lang": "python",
+      "content": "from pydantic import BaseModel, Field\n\nclass Item(BaseModel):\n    name: str\n    price: float = Field(gt=0, description=\"The price must be greater than zero\")"
+    },
+    "explanation": "The `Field` function adds extra validation rules and metadata (like descriptions for Swagger docs) directly to model attributes."
+  }
+]

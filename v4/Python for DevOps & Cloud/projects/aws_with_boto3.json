@@ -1,0 +1,31 @@
+[
+  {
+    "title": "Introduction to Boto3",
+    "ques": "What is `boto3` and how do you initialize an S3 resource client in Python?",
+    "answer": {
+      "type": "code",
+      "lang": "python",
+      "content": "import boto3\n\n# Initialize an S3 resource\ns3 = boto3.resource('s3')\n\n# Example: print all bucket names\nfor bucket in s3.buckets.all():\n    print(bucket.name)"
+    },
+    "explanation": "`boto3` is the official AWS SDK for Python. It allows developers to create, configure, and manage AWS services. The `resource` interface provides an object-oriented way to interact with AWS, while the `client` interface provides low-level API access."
+  },
+  {
+    "title": "Uploading Files to S3",
+    "ques": "Write a snippet using Boto3 to upload a local file named `data.csv` to an S3 bucket named `my-data-bucket`.",
+    "answer": {
+      "type": "code",
+      "lang": "python",
+      "content": "import boto3\n\ns3_client = boto3.client('s3')\n\n# Upload the file\ns3_client.upload_file(\n    'data.csv',          # Local file path\n    'my-data-bucket',    # Bucket name\n    'data.csv'           # Object name in S3\n)"
+    },
+    "explanation": "The `upload_file` method automatically handles multipart uploads for large files and provides a simple interface for transferring local data to the cloud."
+  },
+  {
+    "title": "Presigned URLs",
+    "ques": "What is a 'presigned URL' in AWS S3 and why is it useful?",
+    "answer": {
+      "type": "text",
+      "content": "A presigned URL is a dynamically generated URL that grants temporary access to a specific S3 object. It is highly useful because it allows an application to securely share a private file (like a user's uploaded profile picture) with a client's web browser for a limited time (e.g., 60 minutes) without making the entire bucket public."
+    },
+    "explanation": "Presigned URLs enforce the principle of least privilege, ensuring files remain secure while still being accessible to authorized users."
+  }
+]

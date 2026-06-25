@@ -1,0 +1,32 @@
+[
+  {
+    "title": "Grouping and Counting \ud83e\uddee",
+    "ques": "Write a query to count the number of users in each `country`. Use `GROUP BY`.",
+    "answer": {
+      "type": "code",
+      "lang": "sql",
+      "content": "SELECT country, COUNT(*) as user_count\nFROM users\nGROUP BY country;"
+    },
+    "explanation": "`GROUP BY` aggregates rows with the same values, and `COUNT(*)` calculates the number of rows in each group."
+  },
+  {
+    "title": "Filtering Aggregations \ud83c\udfaf",
+    "ques": "Write a query to find countries with more than 100 users. Use `GROUP BY` and `HAVING`.",
+    "answer": {
+      "type": "code",
+      "lang": "sql",
+      "content": "SELECT country, COUNT(*) as user_count\nFROM users\nGROUP BY country\nHAVING COUNT(*) > 100;"
+    },
+    "explanation": "The `HAVING` clause is used instead of `WHERE` to filter groups after an aggregation is applied."
+  },
+  {
+    "title": "Creating Indexes \u26a1",
+    "ques": "Write an SQL command to create an index named `idx_email` on the `email` column of the `users` table to speed up searches.",
+    "answer": {
+      "type": "code",
+      "lang": "sql",
+      "content": "CREATE INDEX idx_email ON users(email);"
+    },
+    "explanation": "Indexes significantly improve data retrieval speeds for columns frequently used in `WHERE` clauses."
+  }
+]

@@ -1,0 +1,135 @@
+{
+    "id": "learn_scrapy_framewor",
+    "topicId": "scrapy_framewor",
+    "topicTitle": "Scrapy Framework",
+    "description": "Learn the industry-standard framework for building fast, concurrent, and robust web crawlers.",
+    "baseKP": 90,
+    "slides": [
+        {
+            "id": "scrapy_1",
+            "type": "content",
+            "title": "What is Scrapy?",
+            "content": "# The Heavy Lifter \ud83c\udfd7\ufe0f\n\n`requests` + `BeautifulSoup` is great for small scripts. But what if you want to scrape 10,000 pages?\n\nIf you use `requests` in a `for` loop, it downloads one page at a time (synchronously). It will take hours.\n\n**Scrapy** is an open-source web-crawling framework written in Python. It is **Asynchronous** (built on Twisted), meaning it can download dozens of pages concurrently, making it blisteringly fast!"
+        },
+        {
+            "id": "scrapy_2",
+            "type": "content",
+            "title": "Creating a Scrapy Project",
+            "content": "# Project Architecture \ud83d\udcc1\n\nScrapy isn't just a library; it's a framework that generates a whole project structure for you.\n\n## Setup\n```bash\npip install scrapy\nscrapy startproject my_scraper\n```\n\nThis creates a directory with this structure:\n```text\nmy_scraper/\n    scrapy.cfg            # deploy configuration file\n    my_scraper/           # project's Python module\n        __init__.py\n        items.py          # project items definition file\n        middlewares.py    # project middlewares file\n        pipelines.py      # project pipelines file\n        settings.py       # project settings file\n        spiders/          # directory where you put your Spiders\n```"
+        },
+        {
+            "id": "scrapy_3",
+            "type": "content",
+            "title": "The Spider",
+            "content": "# Writing a Spider \ud83d\udd77\ufe0f\n\nSpiders are classes that define how a certain site will be scraped. You specify the initial URLs, how to follow pagination links, and how to extract data.\n\n```python_not\nimport scrapy\n\nclass QuotesSpider(scrapy.Spider):\n    name = \"quotes\"\n    start_urls = [\n        'http://quotes.toscrape.com/page/1/',\n    ]\n\n    def parse(self, response):\n        # Extract data\n        for quote in response.css('div.quote'):\n            yield {\n                'text': quote.css('span.text::text').get(),\n                'author': quote.css('small.author::text').get(),\n            }\n            \n        # Follow pagination link\n        next_page = response.css('li.next a::attr(href)').get()\n        if next_page is not None:\n            yield response.follow(next_page, callback=self.parse)\n```"
+        },
+        {
+            "id": "scrapy_4",
+            "type": "content",
+            "title": "CSS and XPath in Scrapy",
+            "content": "# Built-in Selectors \ud83c\udfaf\n\nNotice in the previous slide, we didn't import BeautifulSoup! Scrapy comes with its own extremely fast selector engine based on `lxml`.\n\nEvery `response` object has `.css()` and `.xpath()` methods built right in!\n\n```python_not\n# CSS Selector\ntitle = response.css('title::text').get()\n\n# XPath Equivalent\ntitle = response.xpath('//title/text()').get()\n\n# Getting multiple elements\nall_links = response.css('a::attr(href)').getall()\n```\n\n> \ud83d\udca1 **Tip:** `::text` and `::attr(name)` are special pseudo-selectors added by Scrapy to easily extract text and attributes using CSS syntax!"
+        },
+        {
+            "id": "scrapy_5",
+            "type": "content",
+            "title": "Yielding Data",
+            "content": "# The Power of Yield \ud83d\ude82\n\nIn Scrapy `parse` methods, you rarely use `return`. Instead, you use the `yield` keyword.\n\nWhen you `yield` a **Dictionary** (or an `Item`), Scrapy knows this is extracted data, and passes it to the Item Pipelines.\n\nWhen you `yield` a **Request** (e.g., `yield scrapy.Request(url)`), Scrapy adds that URL to its queue to be downloaded asynchronously!"
+        },
+        {
+            "id": "scrapy_quiz_1",
+            "type": "quiz",
+            "title": "Knowledge Check: Scrapy Basics",
+            "content": "Test your Scrapy knowledge.",
+            "quizQuestion": "Why is Scrapy significantly faster at scraping thousands of pages compared to a simple requests + BeautifulSoup loop?",
+            "quizOptions": [
+                "Because it uses BeautifulSoup under the hood.",
+                "Because it is written in C++.",
+                "Because it operates asynchronously, downloading multiple pages concurrently.",
+                "Because it bypasses the internet using cached DNS."
+            ],
+            "correctOptionIndex": 2
+        },
+        {
+            "id": "scrapy_6",
+            "type": "content",
+            "title": "Scrapy Items",
+            "content": "# Structured Data (Items) \ud83d\udce6\n\nWhile yielding dictionaries works, for large projects, it's better to define a strict structure for your scraped data. \n\nIn `items.py`, you define `Item` classes:\n\n```python_not\nimport scrapy\n\nclass ProductItem(scrapy.Item):\n    name = scrapy.Field()\n    price = scrapy.Field()\n    stock = scrapy.Field()\n```\n\nNow, in your spider, you use it like a dict:\n```python_not\nitem = ProductItem()\nitem['name'] = response.css('h1::text').get()\n# Scrapy will throw an error if you try to assign item['fake_field']!\nyield item\n```"
+        },
+        {
+            "id": "scrapy_7",
+            "type": "content",
+            "title": "Item Pipelines",
+            "content": "# Data Assembly Line \ud83c\udfed\n\nOnce a Spider yields an Item, it goes to the **Item Pipeline**. \nPipelines are Python classes used to cleanse, validate, or store the scraped data.\n\nExample `pipelines.py`:\n```python_not\nimport sqlite3\n\nclass DatabasePipeline:\n    def open_spider(self, spider):\n        self.conn = sqlite3.connect('scraped_data.db')\n        self.cursor = self.conn.cursor()\n        self.cursor.execute('CREATE TABLE products (name TEXT, price REAL)')\n\n    def process_item(self, item, spider):\n        # Clean price string '$19.99' -> 19.99\n        clean_price = float(item['price'].replace('$', ''))\n        \n        # Save to database\n        self.cursor.execute('INSERT INTO products VALUES (?, ?)', (item['name'], clean_price))\n        self.conn.commit()\n        return item\n\n    def close_spider(self, spider):\n        self.conn.close()\n```"
+        },
+        {
+            "id": "scrapy_8",
+            "type": "content",
+            "title": "Activating Pipelines",
+            "content": "# Settings Configuration \u2699\ufe0f\n\nPipelines don't run automatically! You must enable them in `settings.py`.\n\n```python_not\n# settings.py\nITEM_PIPELINES = {\n   'my_scraper.pipelines.DatabasePipeline': 300,\n}\n```\n\nThe integer `300` defines the execution order. If you have multiple pipelines (e.g., CleanDataPipeline, ValidatePipeline, DatabasePipeline), they execute from lowest to highest number."
+        },
+        {
+            "id": "scrapy_quiz_2",
+            "type": "quiz",
+            "title": "Knowledge Check: Pipelines",
+            "content": "Test your pipeline knowledge.",
+            "quizQuestion": "Where is the best place in a Scrapy project to write code that saves scraped data into a PostgreSQL database?",
+            "quizOptions": [
+                "Inside the Spider's parse() method.",
+                "In the items.py file.",
+                "In an Item Pipeline class.",
+                "In the settings.py file."
+            ],
+            "correctOptionIndex": 2
+        },
+        {
+            "id": "scrapy_9",
+            "type": "content",
+            "title": "The CrawlSpider",
+            "content": "# Automated Crawling \ud83d\udd78\ufe0f\n\nWriting `response.follow()` for pagination is easy, but what if you want to scrape an entire e-commerce site with thousands of categories and product links?\n\nScrapy provides the `CrawlSpider`, which uses **Rules** to automatically follow links!\n\n```python_not\nfrom scrapy.spiders import CrawlSpider, Rule\nfrom scrapy.linkextractors import LinkExtractor\n\nclass StoreSpider(CrawlSpider):\n    name = \"store\"\n    start_urls = ['http://store.example.com']\n\n    rules = (\n        # Follow category links automatically (don't parse them)\n        Rule(LinkExtractor(allow=r'/category/')), \n        \n        # Follow product links AND call parse_item to scrape data\n        Rule(LinkExtractor(allow=r'/product/'), callback='parse_item'),\n    )\n\n    def parse_item(self, response):\n        # Scrape the product page\n        pass\n```"
+        },
+        {
+            "id": "scrapy_10",
+            "type": "content",
+            "title": "LinkExtractors",
+            "content": "# Fine-Tuning Link Extraction \ud83d\udd17\n\n`LinkExtractor` objects are incredibly powerful. They use regular expressions and CSS/XPath selectors to find specific links to follow.\n\n```python_not\nLinkExtractor(\n    allow=r'/item/\\d+',          # Only follow links matching this regex\n    deny=r'/cart',               # NEVER follow these links\n    restrict_css='.pagination',  # Only look for links inside pagination divs!\n    tags=('a', 'area')           # Look for hrefs in these tags\n)\n```\nThis allows you to map out exactly how the spider traverses a massive website!"
+        },
+        {
+            "id": "scrapy_11",
+            "type": "content",
+            "title": "Middlewares",
+            "content": "# Scrapy Middlewares \ud83d\udee1\ufe0f\n\nMiddlewares sit between the Spider and the Internet. They intercept Requests going out, and Responses coming in.\n\n## Downloader Middleware Uses:\n- Rotating Proxies (changing IP addresses so you don't get banned)\n- Rotating User-Agents\n- Adding Custom Headers\n- Handling Captchas automatically\n\n```python_not\nclass RotateAgentMiddleware:\n    def process_request(self, request, spider):\n        request.headers['User-Agent'] = get_random_agent()\n        return None\n```"
+        },
+        {
+            "id": "scrapy_12",
+            "type": "content",
+            "title": "FormRequest",
+            "content": "# Logging In \ud83d\udd11\n\nTo login before scraping, use `scrapy.FormRequest`.\n\n```python_not\nclass LoginSpider(scrapy.Spider):\n    name = \"login_spider\"\n    start_urls = ['http://example.com/login']\n\n    def parse(self, response):\n        # Send the POST request\n        return scrapy.FormRequest.from_response(\n            response,\n            formdata={'username': 'admin', 'password': 'password123'},\n            callback=self.after_login\n        )\n\n    def after_login(self, response):\n        # Check if login succeeded\n        if \"Welcome\" in response.text:\n            self.logger.info(\"Logged in successfully!\")\n            # Proceed to scrape protected pages...\n```"
+        },
+        {
+            "id": "scrapy_13",
+            "type": "content",
+            "title": "Feed Exports",
+            "content": "# Exporting Data Automatically \ud83d\udcbe\n\nYou don't *have* to write a Pipeline to save data to a CSV or JSON file.\nScrapy has built-in \"Feed Exports\".\n\nYou can trigger this right from the command line!\n\n```bash\n# Scrape and save to JSON\nscrapy crawl quotes -o quotes.json\n\n# Scrape and save to CSV\nscrapy crawl quotes -o quotes.csv\n\n# Scrape and save to XML\nscrapy crawl quotes -o quotes.xml\n```"
+        },
+        {
+            "id": "scrapy_quiz_3",
+            "type": "quiz",
+            "title": "Knowledge Check: CrawlSpider",
+            "content": "Test your CrawlSpider knowledge.",
+            "quizQuestion": "What defines the behavior of how a CrawlSpider automatically traverses a website?",
+            "quizOptions": [
+                "A series of while loops in the parse() method.",
+                "A tuple of Rule() objects utilizing LinkExtractors.",
+                "A site map XML file provided to the engine.",
+                "The Item Pipeline."
+            ],
+            "correctOptionIndex": 1
+        },
+        {
+            "id": "scrapy_14",
+            "type": "content",
+            "title": "Summary",
+            "content": "# Summary \ud83c\udf89\n\nYou are now equipped to build industrial-grade web crawlers!\n\n## Key Takeaways\n- \u2705 **Asynchronous Power:** Scrapy downloads pages concurrently, making it extremely fast.\n- \u2705 **Spiders:** Define the starting URLs and parsing logic.\n- \u2705 **Items:** Define the strict data structure of the scraped payload.\n- \u2705 **Pipelines:** Process, clean, and store the Items yielded by the spider.\n- \u2705 **CrawlSpider & Rules:** Automate the discovery and following of links without writing complex pagination logic manually.\n- \u2705 **Middlewares:** Intercept requests to rotate proxies and user-agents to avoid IP bans.\n- \u2705 **Feed Exports:** Save data to CSV/JSON with a simple `-o filename` command line flag."
+        }
+    ]
+}

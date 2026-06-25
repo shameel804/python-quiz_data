@@ -1,0 +1,29 @@
+[
+  {
+    "title": "PromptTemplates",
+    "ques": "What is a `PromptTemplate` in LangChain and what problem does it solve?",
+    "answer": {
+      "type": "text",
+      "content": "A `PromptTemplate` is a reproducible way to generate prompts dynamically. Instead of manually concatenating strings in Python, you define a template string with placeholders (e.g., `\"Translate the following {language} sentence: {text}\"`). The template safely injects variables at runtime. It solves the problem of organizing, versioning, and reusing complex prompts across an application."
+    },
+    "explanation": "PromptTemplates separate the structure of the prompt from the dynamic user input."
+  },
+  {
+    "title": "LangChain Expression Language (LCEL)",
+    "ques": "In modern LangChain, what does a `RunnableSequence` (often created using the `|` pipe operator) represent?",
+    "answer": {
+      "type": "text",
+      "content": "A `RunnableSequence` represents a chain of operations. Using LCEL (LangChain Expression Language), you can chain components together using the pipe operator (`|`), similar to Unix pipes. For example, `chain = prompt | llm | output_parser`. Data flows sequentially from the prompt template, into the LLM, and the raw text output is parsed into a structured format by the output parser."
+    },
+    "explanation": "LCEL provides a unified, declarative interface for building complex LLM workflows with built-in support for streaming and async execution."
+  },
+  {
+    "title": "Memory in LangChain",
+    "ques": "Why is a 'Memory' component necessary when building a chatbot with LangChain?",
+    "answer": {
+      "type": "text",
+      "content": "LLMs and their APIs are inherently stateless; they do not remember previous interactions in a conversation. A Memory component (like `ConversationBufferMemory`) stores the history of the chat (user inputs and assistant outputs). Before sending a new prompt to the LLM, the memory component injects the previous chat history into the prompt, giving the LLM the illusion of continuous conversation."
+    },
+    "explanation": "Without memory, an LLM cannot answer follow-up questions or reference previous context."
+  }
+]

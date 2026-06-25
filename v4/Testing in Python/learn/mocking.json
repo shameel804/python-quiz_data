@@ -1,0 +1,135 @@
+{
+    "id": "learn_mocking",
+    "topicId": "mocking",
+    "topicTitle": "Mocking",
+    "description": "Learn how to isolate your tests using unittest.mock. Master patch, MagicMock, return values, side effects, and patching built-in functions.",
+    "baseKP": 75,
+    "slides": [
+        {
+            "id": "mocking_1",
+            "type": "content",
+            "title": "Introduction to Mocking",
+            "content": "# What is Mocking? 🎭\n\nWhen writing unit tests, your goal is to test a **single unit of code** in isolation. But what if your function talks to a database, makes an API request to a payment gateway, or relies on the current system time?\n\nYou don't want your tests to:\n1. Charge real credit cards. 💳\n2. Fail because the internet is down. 📶\n3. Take 10 seconds to run because of network latency. 🐌\n\n**Mocking** is the practice of replacing these real, external dependencies with fake objects (mocks) that simulate their behavior."
+        },
+        {
+            "id": "mocking_2",
+            "type": "content",
+            "title": "The MagicMock Object",
+            "content": "# `MagicMock` ✨\n\nPython provides the `unittest.mock` library. Its core component is the `MagicMock` class.\n\nA `MagicMock` object is incredibly flexible. It accepts any method call, accesses any attribute, and always returns *another* `MagicMock` by default!\n\n```python_not\nfrom unittest.mock import MagicMock\n\nmock_obj = MagicMock()\n\n# You can call methods that don't exist!\nmock_obj.do_something()\n\n# You can access attributes that don't exist!\nprint(mock_obj.fake_attribute) # Prints: <MagicMock id='...'>\n```\n\nThis makes it the perfect placeholder for a complex dependency. You can pass it into your function, and it will pretend to be whatever your function needs."
+        },
+        {
+            "id": "mocking_3",
+            "type": "content",
+            "title": "Controlling return_value",
+            "content": "# Setting `return_value` 🔙\n\nWhile a mock returning another mock is neat, you usually want it to return specific data.\n\nYou do this by setting the `return_value` attribute on the mock.\n\n```python_not\nfrom unittest.mock import MagicMock\n\n# Simulate a database connection\nmock_db = MagicMock()\n\n# Tell the mock what to return when get_user is called\nmock_db.get_user.return_value = {\"name\": \"Alice\", \"role\": \"admin\"}\n\n# Call the mock\nuser = mock_db.get_user(user_id=123)\n\nprint(user[\"name\"]) # Prints: Alice\n```\n\nNow, your test function can call `get_user()`, receive the fake user dictionary instantly, and proceed with testing its own logic!"
+        },
+        {
+            "id": "mocking_4",
+            "type": "content",
+            "title": "Verifying Calls",
+            "content": "# Did it get called? 📞\n\nMocking isn't just about controlling what comes *out* of a dependency; it's also about verifying what goes *in*.\n\nYou can assert that your code interacted with the mock correctly.\n\n```python_not\nmock_api = MagicMock()\n\n# Your code runs...\nmock_api.send_email(\"test@example.com\", \"Welcome!\")\n\n# Verify in your test:\nmock_api.send_email.assert_called_once()\n\n# Verify exact arguments:\nmock_api.send_email.assert_called_with(\"test@example.com\", \"Welcome!\")\n```\n\nIf the function was NOT called, or called with the wrong arguments, `assert_called_with` will fail the test."
+        },
+        {
+            "id": "mocking_quiz_1",
+            "type": "quiz",
+            "title": "MagicMock Check",
+            "content": "Let's review the MagicMock object.",
+            "quizQuestion": "How do you configure a mock method named `fetch_data` to return the string 'Success'?",
+            "quizOptions": [
+                "mock.fetch_data('Success')",
+                "mock.fetch_data.return_value = 'Success'",
+                "mock.fetch_data = 'Success'",
+                "mock.return_value('fetch_data', 'Success')"
+            ],
+            "correctOptionIndex": 1
+        },
+        {
+            "id": "mocking_5",
+            "type": "content",
+            "title": "Using side_effect",
+            "content": "# Simulating Errors: `side_effect` 💥\n\n`return_value` is great for happy paths, but what if you want to test how your code handles a network failure?\n\nYou use `side_effect`. If you assign an Exception class to `side_effect`, calling the mock will immediately raise that exception.\n\n```python_not\nfrom unittest.mock import MagicMock\nimport requests\n\nmock_requests = MagicMock()\n\n# Simulate a timeout error\nmock_requests.get.side_effect = requests.exceptions.Timeout\n\ntry:\n    # This will immediately raise the Timeout exception\n    mock_requests.get(\"https://api.github.com\")\nexcept requests.exceptions.Timeout:\n    print(\"Handled the timeout!\")\n```"
+        },
+        {
+            "id": "mocking_6",
+            "type": "content",
+            "title": "side_effect for Dynamic Returns",
+            "content": "# Dynamic Responses 🔀\n\n`side_effect` has another superpower! If you assign it a *list*, the mock will return the next item in the list each time it is called.\n\n```python_not\nfrom unittest.mock import MagicMock\n\nmock_dice = MagicMock()\nmock_dice.roll.side_effect = [1, 5, 6]\n\nprint(mock_dice.roll()) # 1\nprint(mock_dice.roll()) # 5\nprint(mock_dice.roll()) # 6\n# A 4th call would raise StopIteration\n```\n\nYou can also assign a function to `side_effect` to dynamically generate responses based on the arguments passed in!"
+        },
+        {
+            "id": "mocking_7",
+            "type": "content",
+            "title": "Introduction to patch",
+            "content": "# The `patch` Decorator 🩹\n\nPassing a `MagicMock` directly into a function is called Dependency Injection. But sometimes, a function imports and uses a library directly internally, so you can't pass the mock in.\n\n```python\n# my_module.py\nimport requests\n\ndef fetch_title():\n    # We can't pass a mock in here!\n    response = requests.get(\"https://example.com\")\n    return response.text\n```\n\nThis is where `unittest.mock.patch` comes in. It temporarily replaces the target object with a mock *during the execution of the test*."
+        },
+        {
+            "id": "mocking_8",
+            "type": "content",
+            "title": "Using patch as a Decorator",
+            "content": "# Patching in Action 🎯\n\nYou apply `@patch` to your test function, and `patch` passes the newly created mock object into your test as an argument.\n\n```python_not\nfrom unittest.mock import patch\nimport my_module\n\n# We patch the 'requests' module INSIDE 'my_module'\n@patch('my_module.requests')\ndef test_fetch_title(mock_requests):\n    # Setup the mock's behavior\n    mock_requests.get.return_value.text = \"Fake Title\"\n    \n    # Call our function\n    result = my_module.fetch_title()\n    \n    # Verify\n    assert result == \"Fake Title\"\n    mock_requests.get.assert_called_once_with(\"https://example.com\")\n```\n\nWhen the test finishes, `patch` magically restores the original `requests` module, keeping your environment clean!"
+        },
+        {
+            "id": "mocking_9",
+            "type": "content",
+            "title": "Where to Patch",
+            "content": "# The Golden Rule of Patching 🗺️\n\nThe most common mistake in mocking is patching the wrong location.\n\n**Rule:** Patch where an object is *used* (looked up), not where it is *defined*.\n\nIf `my_module.py` does this:\n```python\nfrom api_client import fetch_data\n```\n\nYou MUST patch `my_module.fetch_data`, NOT `api_client.fetch_data`.\n\n```python_not\n# CORRECT:\n@patch('my_module.fetch_data')\ndef test_correct(mock_fetch):\n    pass\n\n# INCORRECT (my_module already imported the real one!):\n@patch('api_client.fetch_data')\ndef test_wrong(mock_fetch):\n    pass\n```"
+        },
+        {
+            "id": "mocking_quiz_2",
+            "type": "quiz",
+            "title": "Patch Location Quiz",
+            "content": "Test your understanding of the golden rule of patching.",
+            "quizQuestion": "If `app.py` has `from os import getcwd` and uses `getcwd()`, what string should you pass to `@patch()` to mock it?",
+            "quizOptions": [
+                "@patch('os.getcwd')",
+                "@patch('app.getcwd')",
+                "@patch('getcwd')",
+                "@patch('app.os.getcwd')"
+            ],
+            "correctOptionIndex": 1
+        },
+        {
+            "id": "mocking_10",
+            "type": "content",
+            "title": "Using patch as a Context Manager",
+            "content": "# Patching with `with` 📦\n\nSometimes you only want to patch an object for a few lines of code, rather than the entire test function. You can use `patch` as a context manager.\n\n```python_not\nfrom unittest.mock import patch\nimport my_module\n\ndef test_partial_patch():\n    # Code here uses the REAL 'requests'\n    \n    with patch('my_module.requests') as mock_requests:\n        mock_requests.get.return_value.status_code = 200\n        \n        # Inside the block, requests is mocked\n        my_module.make_api_call()\n        \n        mock_requests.get.assert_called_once()\n        \n    # Outside the block, the REAL 'requests' is restored\n```"
+        },
+        {
+            "id": "mocking_11",
+            "type": "content",
+            "title": "Patching Built-ins",
+            "content": "# Patching Python Built-ins 🐍\n\nHow do you mock functions like `print()`, `open()`, or `input()`? They don't belong to a specific module you wrote.\n\nThey belong to the `builtins` module!\n\n```python_not\nfrom unittest.mock import patch\n\ndef greet_user():\n    name = input(\"Enter your name: \")\n    print(f\"Hello, {name}!\")\n\n# Patch 'builtins.input' and 'builtins.print'\n@patch('builtins.print')\n@patch('builtins.input')\ndef test_greet(mock_input, mock_print):\n    # Simulate user typing 'Alice'\n    mock_input.return_value = \"Alice\"\n    \n    greet_user()\n    \n    mock_print.assert_called_once_with(\"Hello, Alice!\")\n```\n\n> ⚠️ Note: Decorators are applied bottom-up, so `mock_input` is the first argument, and `mock_print` is the second."
+        },
+        {
+            "id": "mocking_12",
+            "type": "content",
+            "title": "Patching datetime",
+            "content": "# Time Travel: Mocking datetime ⏰\n\nTesting code that relies on `datetime.now()` is notoriously difficult because the time is always changing!\n\nYou can patch `datetime` to freeze time.\n\n```python_not\nfrom unittest.mock import patch\nimport datetime\n\ndef is_weekend():\n    today = datetime.datetime.now()\n    return today.weekday() >= 5\n\n# We patch the datetime class inside the datetime module\n@patch('datetime.datetime')\ndef test_is_weekend(mock_datetime):\n    # Set 'now()' to return a specific Sunday\n    mock_datetime.now.return_value = datetime.datetime(2023, 10, 1) \n    \n    assert is_weekend() is True\n```"
+        },
+        {
+            "id": "mocking_13",
+            "type": "content",
+            "title": "Alternative: freezegun",
+            "content": "# Pro Tip: Use freezegun ❄️\n\nWhile patching `datetime` works, it can get complicated (e.g., if you need to patch `date` as well, or handle C-extensions).\n\nThe community standard for time-travel testing in Python is a third-party library called **`freezegun`**.\n\n```python_not\nfrom freezegun import freeze_time\nimport datetime\n\n@freeze_time(\"2023-10-01\")\ndef test_with_freezegun():\n    # Anywhere in your code, datetime.now() will return Oct 1, 2023\n    today = datetime.datetime.now()\n    assert today.year == 2023\n    assert today.month == 10\n```\n\nIt is much cleaner and less error-prone than manually patching `datetime`."
+        },
+        {
+            "id": "mocking_quiz_3",
+            "type": "quiz",
+            "title": "Final Mocking Check",
+            "content": "Let's review the difference between return_value and side_effect.",
+            "quizQuestion": "Which attribute should you set on a mock if you want it to raise a `ConnectionError` when called?",
+            "quizOptions": [
+                "mock.return_value = ConnectionError",
+                "mock.raise_error = ConnectionError",
+                "mock.side_effect = ConnectionError",
+                "mock.exception = ConnectionError"
+            ],
+            "correctOptionIndex": 2
+        },
+        {
+            "id": "mocking_14",
+            "type": "content",
+            "title": "Summary",
+            "content": "# Mocking Mastered! 🎉\n\nYou now have the tools to isolate your code from the unpredictable outside world.\n\n## Key Takeaways\n\n- ✅ **MagicMock:** A flexible object that absorbs calls and attribute accesses.\n- ✅ **return_value:** Use this to force a mock to return a specific value.\n- ✅ **side_effect:** Use this to force a mock to raise an exception or return a sequence of values.\n- ✅ **@patch:** A decorator (or context manager) to temporarily replace real objects with mocks during a test.\n- ✅ **Where to patch:** Always patch the target *where it is used*, not where it is defined.\n- ✅ **Built-ins:** Patch `builtins.input` or `builtins.open` to simulate standard I/O.\n\nWith mocking, your unit tests will be blazing fast and perfectly reliable!"
+        }
+    ]
+}

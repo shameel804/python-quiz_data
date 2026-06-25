@@ -1,0 +1,30 @@
+[
+  {
+    "title": "OpenAI Chat Completions API",
+    "ques": "Write a basic script using the official `openai` Python package to send a prompt to the `gpt-4o` model and print its response.",
+    "answer": {
+      "type": "code",
+      "lang": "python",
+      "content": "import os\nfrom openai import OpenAI\n\nclient = OpenAI(api_key=os.environ.get(\"OPENAI_API_KEY\"))\n\nresponse = client.chat.completions.create(\n    model=\"gpt-4o\",\n    messages=[\n        {\"role\": \"system\", \"content\": \"You are a helpful assistant.\"},\n        {\"role\": \"user\", \"content\": \"What is 2+2?\"}\n    ]\n)\n\nprint(response.choices[0].message.content)"
+    },
+    "explanation": "The API uses a message list containing different roles (`system`, `user`, `assistant`) to maintain context and instruct the model's behavior."
+  },
+  {
+    "title": "Understanding Temperature",
+    "ques": "Explain the role of the `temperature` parameter in LLM API calls.",
+    "answer": {
+      "type": "text",
+      "content": "The `temperature` parameter controls the randomness or creativity of the model's output. A low temperature (e.g., 0.0 or 0.2) makes the output more focused, deterministic, and factual—ideal for coding or data extraction. A high temperature (e.g., 0.8 or 1.0) increases randomness, leading to more diverse and creative responses—ideal for brainstorming or creative writing."
+    },
+    "explanation": "Temperature adjusts the probability distribution of the next predicted token."
+  },
+  {
+    "title": "Function Calling (Tool Use)",
+    "ques": "Briefly describe the concept of 'Function Calling' in modern LLMs.",
+    "answer": {
+      "type": "text",
+      "content": "Function Calling allows you to provide an LLM with a JSON description of custom tools (functions) it can use. When the user asks a question, the LLM can decide to output a JSON object containing arguments to call one of those functions (e.g., `get_weather(location=\"London\")`) instead of generating a text response. The application runs the function and feeds the result back to the LLM to formulate a final answer."
+    },
+    "explanation": "Function calling is the bridge that allows LLMs to interact with external APIs, databases, and real-world actions."
+  }
+]

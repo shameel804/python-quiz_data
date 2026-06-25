@@ -1,0 +1,129 @@
+{
+    "id": "learn_owasp_top_10_we",
+    "topicId": "owasp_top_10_we",
+    "topicTitle": "OWASP Top 10 & Web Security",
+    "description": "Protect your web applications from the most critical security risks. Learn how to identify, exploit, and patch SQL Injection, XSS, and Broken Authentication.",
+    "baseKP": 75,
+    "slides": [
+        {
+            "id": "owasp_1",
+            "type": "content",
+            "title": "The OWASP Top 10",
+            "content": "# The Hall of Shame 🏆\n\nOWASP (Open Worldwide Application Security Project) is a nonprofit foundation dedicated to web security.\n\nEvery few years, they publish the **OWASP Top 10**, a consensus document representing the most critical security risks to web applications.\n\nAs a Python developer building web apps (with Django, Flask, or FastAPI), you must understand these vulnerabilities so you don't accidentally write them into your code."
+        },
+        {
+            "id": "owasp_2",
+            "type": "content",
+            "title": "A03: Injection",
+            "content": "# SQL Injection (SQLi) 💉\n\nInjection occurs when untrusted user data is sent to an interpreter as part of a command or query. The interpreter gets tricked into executing unintended commands.\n\nThe most famous is SQL Injection.\n\n```python_not\n# INSECURE CODE (Flask/SQLite example)\nuser_input = request.form['username']\n\n# String formatting directly into the query! DANGEROUS!\nquery = f\"SELECT * FROM users WHERE username = '{user_input}'\"\n\ncursor.execute(query)\n```\n\nWhat happens if the user inputs: `admin' --` ?\nThe query becomes: `SELECT * FROM users WHERE username = 'admin' --'`\nThe `--` comments out the rest of the query (like password checks), logging the hacker in as admin!"
+        },
+        {
+            "id": "owasp_3",
+            "type": "content",
+            "title": "Fixing SQL Injection",
+            "content": "# Parameterized Queries 🛡️\n\n**NEVER use string formatting (`f-strings`, `.format()`, or `%s`) to build SQL queries.**\n\nAlways use **Parameterized Queries**. The database driver handles the variables, ensuring they are treated purely as data, not as executable SQL.\n\n```python_not\n# SECURE CODE\nuser_input = request.form['username']\n\n# The '?' is a placeholder. The database driver safely injects the data.\nquery = \"SELECT * FROM users WHERE username = ?\"\n\n# Pass the variables as a tuple to the execute method\ncursor.execute(query, (user_input,))\n```\n\n> 💡 **Tip:** If you use an ORM (like SQLAlchemy or Django ORM), parameterization is handled automatically!"
+        },
+        {
+            "id": "owasp_4",
+            "type": "content",
+            "title": "A03: Cross-Site Scripting",
+            "content": "# Cross-Site Scripting (XSS) 🏴‍☠️\n\nXSS occurs when an application includes untrusted data in a web page without proper validation or escaping.\n\nIf a hacker posts a comment containing `<script>alert('Hacked')</script>`, and the server renders that comment directly to other users, the hacker's JavaScript will execute in *every other user's browser*!\n\nThis script can steal their session cookies and hijack their accounts."
+        },
+        {
+            "id": "owasp_5",
+            "type": "content",
+            "title": "Fixing XSS",
+            "content": "# Escaping HTML 🧼\n\nTo prevent XSS, you must **Escape** user input before rendering it in HTML. Escaping converts dangerous characters into safe HTML entities.\n\n- `<` becomes `&lt;`\n- `>` becomes `&gt;`\n\nIf the browser sees `&lt;script&gt;`, it will display the text \"<script>\" on the screen, but it will NOT execute it as code.\n\n> 💡 **Tip:** Modern templating engines like Jinja2 (used in Flask) and Django Templates automatically escape all variables by default! You only get XSS if you explicitly disable escaping (e.g., using `{{ var | safe }}`)."
+        },
+        {
+            "id": "owasp_quiz_1",
+            "type": "quiz",
+            "title": "Injection Quiz",
+            "content": "Test your knowledge of injection attacks.",
+            "quizQuestion": "What is the industry-standard method for preventing SQL Injection attacks?",
+            "quizOptions": [
+                "Using Regex to remove all single quotes from user input.",
+                "Encrypting the database.",
+                "Using Parameterized Queries (or an ORM) where the database driver separates the SQL command from the data.",
+                "Encoding the user input in Base64."
+            ],
+            "correctOptionIndex": 2
+        },
+        {
+            "id": "owasp_6",
+            "type": "content",
+            "title": "A01: Broken Access Control",
+            "content": "# The Number 1 Risk 🥇\n\nCurrently, Broken Access Control is the #1 risk on the OWASP Top 10.\n\nIt means a user can act outside of their intended permissions. \n\nExamples:\n1. A standard user navigates to `/admin/delete_user` and the server executes it because it only hid the button, but didn't check the user's role on the backend.\n2. Insecure Direct Object Reference (IDOR)."
+        },
+        {
+            "id": "owasp_7",
+            "type": "content",
+            "title": "Insecure Direct Object Reference",
+            "content": "# IDOR Explained 🪪\n\nIDOR happens when an application provides direct access to objects based on user-supplied input.\n\nImagine a URL: `https://bank.com/account?id=1234`\n\nA hacker simply changes the URL to `id=1235`.\n\nIf the server fetches account `1235` and returns it without checking if the currently logged-in user actually *owns* account `1235`, that is an IDOR vulnerability!\n\n**The Fix:** Always verify ownership.\n```python_not\n# INSECURE\naccount = db.get_account(request.args['id'])\n\n# SECURE\naccount = db.get_account(request.args['id'])\nif account.owner_id != current_user.id:\n    abort(403) # Forbidden!\n```"
+        },
+        {
+            "id": "owasp_8",
+            "type": "content",
+            "title": "A07: Identification and Authentication Failures",
+            "content": "# Broken Authentication 🔑\n\nIf authentication is broken, hackers can compromise passwords, keys, or session tokens.\n\nCommon failures:\n1. Permitting brute-force attacks (no rate limiting).\n2. Allowing weak passwords (e.g., \"password123\").\n3. Storing passwords in plain text or using weak hashes (MD5).\n4. Exposing Session IDs in the URL.\n\n**The Fix:** Implement strict password policies, use Argon2/bcrypt (as learned previously), and implement rate-limiting (e.g., using Redis) on login endpoints."
+        },
+        {
+            "id": "owasp_quiz_2",
+            "type": "quiz",
+            "title": "Access Control Quiz",
+            "content": "Check your understanding of Access Control.",
+            "quizQuestion": "An attacker changes the `user_id` parameter in an API request from their own ID to another user's ID, and the server successfully returns the other user's private data. What is this specific vulnerability called?",
+            "quizOptions": [
+                "Cross-Site Scripting (XSS)",
+                "SQL Injection (SQLi)",
+                "Insecure Direct Object Reference (IDOR)",
+                "Command Injection"
+            ],
+            "correctOptionIndex": 2
+        },
+        {
+            "id": "owasp_9",
+            "type": "content",
+            "title": "A05: Security Misconfiguration",
+            "content": "# Security Headers 🛡️\n\nModern web browsers have powerful built-in security features, but you must tell the browser to activate them by sending specific HTTP Headers from your Python server.\n\nIf you don't send them, your app is misconfigured.\n\nLet's look at the two most important security headers: HSTS and CSP."
+        },
+        {
+            "id": "owasp_10",
+            "type": "content",
+            "title": "Strict-Transport-Security (HSTS)",
+            "content": "# HSTS Header 🔒\n\nThe `Strict-Transport-Security` header tells the browser: *\"For the next year, never connect to my site using plain HTTP, even if the user manually types http:// in the address bar. Always force HTTPS.\"*\n\nThis prevents Man-In-The-Middle downgrade attacks.\n\n```python_not\n# Flask Example\n@app.after_request\ndef add_security_headers(response):\n    # Enforce HTTPS for 1 year (31536000 seconds)\n    response.headers['Strict-Transport-Security'] = 'max-age=31536000; includeSubDomains'\n    return response\n```"
+        },
+        {
+            "id": "owasp_11",
+            "type": "content",
+            "title": "Content-Security-Policy (CSP)",
+            "content": "# CSP Header 🛑\n\nThe `Content-Security-Policy` header is your best defense against Cross-Site Scripting (XSS).\n\nIt allows you to explicitly tell the browser which external domains are allowed to load scripts, images, or styles. If a hacker manages to inject a `<script src=\"http://evil.com/hack.js\">`, the browser will read the CSP, see that `evil.com` is not whitelisted, and block the script from executing!\n\n```python_not\n# Only allow scripts from our own domain ('self') and trusted-cdn.com\ncsp = \"default-src 'self'; script-src 'self' https://trusted-cdn.com;\"\nresponse.headers['Content-Security-Policy'] = csp\n```"
+        },
+        {
+            "id": "owasp_12",
+            "type": "content",
+            "title": "Testing Security Headers in Python",
+            "content": "# Automating Header Checks 🤖\n\nYou can easily write a Python script using the `requests` library to test if a website is sending the proper security headers.\n\n```python_not\nimport requests\n\nresponse = requests.get(\"https://www.github.com\")\nheaders = response.headers\n\nif 'Strict-Transport-Security' in headers:\n    print(\"✅ HSTS is enabled\")\nelse:\n    print(\"❌ HSTS is missing!\")\n    \nif 'Content-Security-Policy' in headers:\n    print(\"✅ CSP is enabled\")\nelse:\n    print(\"❌ CSP is missing!\")\n```\n\nThis is a great script to integrate into your CI/CD pipeline!"
+        },
+        {
+            "id": "owasp_quiz_3",
+            "type": "quiz",
+            "title": "Headers Quiz",
+            "content": "Test your knowledge of security headers.",
+            "quizQuestion": "Which HTTP header instructs the browser to ONLY load Javascript files from a specifically whitelisted set of domains, providing a massive layer of defense against XSS attacks?",
+            "quizOptions": [
+                "Strict-Transport-Security (HSTS)",
+                "X-Frame-Options",
+                "Content-Security-Policy (CSP)",
+                "Access-Control-Allow-Origin (CORS)"
+            ],
+            "correctOptionIndex": 2
+        },
+        {
+            "id": "owasp_13",
+            "type": "content",
+            "title": "Summary",
+            "content": "# Web Security Master! 🎉\n\nYou've learned how to defend against the most critical web vulnerabilities.\n\n## Key Takeaways\n\n- ✅ **SQL Injection:** Never use string formatting for SQL. Use Parameterized Queries or an ORM.\n- ✅ **XSS:** Always escape user input before rendering HTML. Use templating engines like Jinja2.\n- ✅ **Broken Access Control:** Never trust the UI to hide features. Always verify user permissions and object ownership on the backend (prevent IDOR).\n- ✅ **Broken Auth:** Use strong hashes, rate limiting, and secure sessions.\n- ✅ **Security Headers:** Configure your server to send HSTS (forces HTTPS) and CSP (whitelists script sources to prevent XSS execution).\n\nSecure coding is everyone's responsibility!"
+        }
+    ]
+}

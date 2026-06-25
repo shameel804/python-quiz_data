@@ -1,0 +1,147 @@
+{
+    "id": "learn_sqlalchemy_core",
+    "topicId": "sqlalchemy_core",
+    "topicTitle": "SQLAlchemy Core & ORM",
+    "description": "Master the Python SQL Toolkit and Object-Relational Mapper.",
+    "baseKP": 90,
+    "slides": [
+        {
+            "id": "sa_1",
+            "type": "content",
+            "title": "What is SQLAlchemy?",
+            "content": "# SQLAlchemy \ud83e\ude84\n\nSQLAlchemy is the Python SQL toolkit and Object Relational Mapper (ORM). It gives application developers the full power and flexibility of SQL.\n\n## Core vs ORM\nSQLAlchemy consists of two distinct components:\n1. **SQLAlchemy Core:** A SQL abstraction toolkit. You write Python that *generates* SQL queries. It's schema-centric.\n2. **SQLAlchemy ORM:** Built on top of Core. It maps Python *Classes* to Database *Tables*, and Python *Objects* to Database *Rows*.\n\nMost modern applications use both!"
+        },
+        {
+            "id": "sa_2",
+            "type": "content",
+            "title": "The Engine",
+            "content": "# The Engine \ud83d\ude82\n\nThe `Engine` is the starting point for any SQLAlchemy application. It's the \"home base\" for the actual database connection and connection pool.\n\n## Creating an Engine\n```python_not\nfrom sqlalchemy import create_engine\n\n# Connect to SQLite (in memory)\nengine = create_engine(\"sqlite:///:memory:\", echo=True)\n\n# Connect to PostgreSQL\n# engine = create_engine(\"postgresql://user:password@localhost/dbname\")\n```\n\n> \ud83d\udca1 **Tip:** Setting `echo=True` forces SQLAlchemy to log all the raw SQL it generates to the console. This is incredibly helpful for learning and debugging!"
+        },
+        {
+            "id": "sa_3",
+            "type": "content",
+            "title": "MetaData and Tables (Core)",
+            "content": "# MetaData & Tables \ud83d\uddfa\ufe0f\n\nIn SQLAlchemy Core, you define the structure of your database using `Table` and `MetaData` objects.\n\n- **MetaData:** A catalog that stores the definitions of all the tables in your database.\n- **Table:** Represents a single database table.\n\n```python_not\nfrom sqlalchemy import MetaData, Table, Column, Integer, String\n\nmetadata_obj = MetaData()\n\nusers_table = Table(\n    \"users\",\n    metadata_obj,\n    Column(\"id\", Integer, primary_key=True),\n    Column(\"name\", String(30)),\n    Column(\"email\", String)\n)\n\n# Create the tables in the database\nmetadata_obj.create_all(engine)\n```"
+        },
+        {
+            "id": "sa_4",
+            "type": "content",
+            "title": "Core Queries: Insert",
+            "content": "# Core Queries: Insert \ud83d\udce5\n\nOnce a table is defined, you can use SQLAlchemy's Expression Language to build queries.\n\n## Building an Insert Statement\n```python_not\nfrom sqlalchemy import insert\n\nstmt = insert(users_table).values(name=\"Alice\", email=\"alice@example.com\")\n```\n\n## Executing it\nYou need a connection to run the statement:\n```python_not\nwith engine.connect() as conn:\n    result = conn.execute(stmt)\n    conn.commit()  # Don't forget to commit!\n    print(result.inserted_primary_key)\n```"
+        },
+        {
+            "id": "sa_5",
+            "type": "content",
+            "title": "Core Queries: Select",
+            "content": "# Core Queries: Select \ud83d\udd0d\n\nSelecting data uses the `select()` construct.\n\n```python_not\nfrom sqlalchemy import select\n\n# Equivalent to: SELECT * FROM users WHERE name = 'Alice'\nstmt = select(users_table).where(users_table.c.name == 'Alice')\n\nwith engine.connect() as conn:\n    for row in conn.execute(stmt):\n        # row is a Row object (acts like a named tuple)\n        print(f\"{row.id}: {row.name} - {row.email}\")\n```\n\nNotice the use of `.c`! In Core, `users_table.c` is the collection of Columns for that table."
+        },
+        {
+            "id": "sa_quiz_1",
+            "type": "quiz",
+            "title": "Knowledge Check: Engine & Core",
+            "content": "Test your SQLAlchemy Core knowledge.",
+            "quizQuestion": "What does the `echo=True` argument do when creating an SQLAlchemy engine?",
+            "quizOptions": [
+                "It automatically commits all transactions.",
+                "It creates the database file if it doesn't exist.",
+                "It logs all generated SQL statements to standard output.",
+                "It enables connection pooling."
+            ],
+            "correctOptionIndex": 2
+        },
+        {
+            "id": "sa_6",
+            "type": "content",
+            "title": "Introduction to the ORM",
+            "content": "# The ORM (Object-Relational Mapper) \ud83e\ude84\n\nWhile Core uses `Table` objects, the ORM maps database tables to **Python Classes**, and rows to **Python Objects**.\n\nInstead of writing `insert(users_table).values(...)`, you simply create a Python object: `user = User(name=\"Alice\")` and tell SQLAlchemy to save it.\n\nThis makes development much faster and your code more \"Pythonic\"."
+        },
+        {
+            "id": "sa_7",
+            "type": "content",
+            "title": "Declarative Models",
+            "content": "# Declarative Base \ud83c\udfd7\ufe0f\n\nIn modern SQLAlchemy (2.0+), we use `DeclarativeBase` to define our models.\n\n```python_not\nfrom sqlalchemy.orm import DeclarativeBase\nfrom sqlalchemy.orm import Mapped, mapped_column\nfrom sqlalchemy import String\n\nclass Base(DeclarativeBase):\n    pass\n\nclass User(Base):\n    __tablename__ = \"users\"\n    \n    # Mapped[type] defines the Python type\n    # mapped_column() configures the DB constraints\n    id: Mapped[int] = mapped_column(primary_key=True)\n    name: Mapped[str] = mapped_column(String(30))\n    email: Mapped[str]\n```"
+        },
+        {
+            "id": "sa_8",
+            "type": "content",
+            "title": "The Session",
+            "content": "# The ORM Session \ud83d\udecb\ufe0f\n\nIn Core, we used an `Engine` and a `Connection`. In the ORM, the primary interface is the `Session`.\n\nThe `Session` acts as a \"holding zone\" for all the objects you've loaded or associated with the database. It tracks changes to your Python objects so it knows what `UPDATE` or `INSERT` statements to run when you call `commit()`.\n\n```python_not\nfrom sqlalchemy.orm import Session\n\nwith Session(engine) as session:\n    # Your ORM code goes here!\n    pass\n```"
+        },
+        {
+            "id": "sa_9",
+            "type": "content",
+            "title": "ORM: Insert and Select",
+            "content": "# Using the ORM \ud83d\udcbe\n\n## Inserting Data\n```python_not\n# Create a Python object\nalice = User(name=\"Alice\", email=\"alice@example.com\")\n\nwith Session(engine) as session:\n    session.add(alice)  # Add to the holding zone\n    session.commit()    # Push changes to the DB\n```\n\n## Selecting Data\n```python_not\nwith Session(engine) as session:\n    stmt = select(User).where(User.name == \"Alice\")\n    \n    # session.scalars() returns Python Objects, not just rows!\n    user = session.scalars(stmt).first()\n    print(user.email)\n```"
+        },
+        {
+            "id": "sa_quiz_2",
+            "type": "quiz",
+            "title": "Knowledge Check: The Session",
+            "content": "Test your ORM knowledge.",
+            "quizQuestion": "In SQLAlchemy ORM, what is the purpose of the `Session`?",
+            "quizOptions": [
+                "To generate raw SQL strings.",
+                "To define the schema and columns of a table.",
+                "To act as a staging area that tracks changes to mapped Python objects.",
+                "To handle HTTP cookies and user authentication."
+            ],
+            "correctOptionIndex": 2
+        },
+        {
+            "id": "sa_10",
+            "type": "content",
+            "title": "ORM: Update and Delete",
+            "content": "# ORM Updates and Deletes \u270f\ufe0f\n\nBecause the Session tracks objects, updating data is incredibly natural.\n\n## Updating\n```python_not\nwith Session(engine) as session:\n    # 1. Fetch the object\n    user = session.scalars(select(User).where(User.name == \"Alice\")).first()\n    \n    # 2. Modify the Python attribute\n    user.email = \"new_email@example.com\"\n    \n    # 3. Commit! SQLAlchemy knows it changed and runs an UPDATE\n    session.commit()\n```\n\n## Deleting\n```python_not\nwith Session(engine) as session:\n    user = session.scalars(select(User).where(User.name == \"Alice\")).first()\n    session.delete(user)\n    session.commit()\n```"
+        },
+        {
+            "id": "sa_11",
+            "type": "content",
+            "title": "Relationships (1:N)",
+            "content": "# ORM Relationships \ud83d\udc69\u200d\ud83d\udc67\u200d\ud83d\udc66\n\nThe true power of the ORM is navigating relationships using Python attributes!\nLet's add an Address model where one User has many Addresses.\n\n```python_not\nfrom sqlalchemy import ForeignKey\nfrom sqlalchemy.orm import relationship\n\nclass Address(Base):\n    __tablename__ = \"addresses\"\n    id: Mapped[int] = mapped_column(primary_key=True)\n    email_address: Mapped[str]\n    user_id: Mapped[int] = mapped_column(ForeignKey(\"users.id\"))\n    \n    # The magic linkage!\n    user: Mapped[\"User\"] = relationship(back_populates=\"addresses\")\n```"
+        },
+        {
+            "id": "sa_12",
+            "type": "content",
+            "title": "Updating the User Model",
+            "content": "# Bi-directional Relationships \ud83d\udd04\n\nWe also need to update the `User` class to know about its `Addresses`.\n\n```python_not\nfrom typing import List\n\nclass User(Base):\n    __tablename__ = \"users\"\n    id: Mapped[int] = mapped_column(primary_key=True)\n    name: Mapped[str] = mapped_column(String(30))\n    \n    # One-to-Many: A list of Addresses\n    addresses: Mapped[List[\"Address\"]] = relationship(\n        back_populates=\"user\", cascade=\"all, delete-orphan\"\n    )\n```\nNow `alice.addresses` will literally be a Python list of `Address` objects!"
+        },
+        {
+            "id": "sa_13",
+            "type": "content",
+            "title": "Using Relationships",
+            "content": "# Magic Python Attributes \u2728\n\nWith relationships configured, saving related data is beautiful:\n\n```python_not\nalice = User(name=\"Alice\", addresses=[\n    Address(email_address=\"alice@work.com\"),\n    Address(email_address=\"alice@home.com\")\n])\n\nwith Session(engine) as session:\n    # Adding Alice automatically adds her addresses too!\n    session.add(alice)\n    session.commit()\n```\nBehind the scenes, SQLAlchemy figures out the `user_id` foreign keys automatically!"
+        },
+        {
+            "id": "sa_14",
+            "type": "content",
+            "title": "Lazy vs Eager Loading",
+            "content": "# The N+1 Problem \ud83d\udc22\n\nWhen you load a `User`, does SQLAlchemy instantly load all their `Addresses` from the database?\n\n- **Lazy Loading (Default):** No. It waits until you actually type `alice.addresses` in your code. Then it runs a *second* SQL query to fetch them.\n- **Eager Loading:** Yes. It fetches the user AND their addresses in a single, complex `JOIN` query immediately.\n\nIf you loop over 100 users and access their addresses lazily, you will execute 101 SQL queries (The N+1 problem). This kills performance!"
+        },
+        {
+            "id": "sa_15",
+            "type": "content",
+            "title": "Eager Loading in Action",
+            "content": "# Fixing N+1 with Eager Loading \ud83c\udfce\ufe0f\n\nTo tell SQLAlchemy to eager load relationships, use `joinedload`.\n\n```python_not\nfrom sqlalchemy.orm import joinedload\n\nwith Session(engine) as session:\n    # This creates a single LEFT OUTER JOIN query\n    stmt = select(User).options(joinedload(User.addresses))\n    \n    users = session.scalars(stmt).unique().all()\n    \n    for user in users:\n        # No extra queries are fired here!\n        print(user.name, [a.email_address for a in user.addresses])\n```"
+        },
+        {
+            "id": "sa_quiz_3",
+            "type": "quiz",
+            "title": "Knowledge Check: Loading Strategies",
+            "content": "Test your ORM performance knowledge.",
+            "quizQuestion": "What is the N+1 problem in ORMs?",
+            "quizOptions": [
+                "When an INSERT query inserts an extra row by mistake.",
+                "When iterating over a collection triggers an additional database query for every single item, drastically slowing down performance.",
+                "When the database uses 1-based indexing instead of 0-based indexing.",
+                "When a relationship requires an extra junction table."
+            ],
+            "correctOptionIndex": 1
+        },
+        {
+            "id": "sa_16",
+            "type": "content",
+            "title": "Summary",
+            "content": "# Congratulations! \ud83c\udf89\n\nYou've unlocked SQLAlchemy!\n\n## Key Takeaways\n- \u2705 **Engine:** The core connection source and pool manager.\n- \u2705 **Core:** Uses `Table` objects and expression language to build SQL constructs programmatically.\n- \u2705 **ORM:** Maps database rows to Python classes (`DeclarativeBase`).\n- \u2705 **Session:** The \"staging area\" that tracks ORM objects and syncs them to the database on `commit()`.\n- \u2705 **Relationships:** Easily link tables using `relationship()`, allowing you to traverse foreign keys like normal Python lists and objects.\n- \u2705 **Loading Strategies:** Understand Lazy vs Eager loading (`joinedload`) to prevent the dreaded N+1 query performance bottleneck."
+        }
+    ]
+}

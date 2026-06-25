@@ -1,0 +1,32 @@
+[
+  {
+    "title": "Making GET Requests \ud83c\udf10",
+    "ques": "Write a Python script using the `requests` library to fetch data from `https://api.github.com` and print the HTTP status code.",
+    "answer": {
+      "type": "code",
+      "lang": "python",
+      "content": "import requests\n\nresponse = requests.get('https://api.github.com')\nprint(response.status_code)"
+    },
+    "explanation": "The `requests.get()` function retrieves data from a URL, and `status_code` confirms if the request was successful (e.g., 200 OK)."
+  },
+  {
+    "title": "Sending POST Data \u2709\ufe0f",
+    "ques": "Use the `requests` library to send a POST request to `https://httpbin.org/post` with a JSON payload `{\"user\": \"admin\"}`.",
+    "answer": {
+      "type": "code",
+      "lang": "python",
+      "content": "import requests\n\ndata = {'user': 'admin'}\nresponse = requests.post('https://httpbin.org/post', json=data)\nprint(response.json())"
+    },
+    "explanation": "Using the `json` parameter automatically sets the `Content-Type` header to `application/json` and serializes the dictionary."
+  },
+  {
+    "title": "Adding Custom Headers \ud83c\udfa9",
+    "ques": "Make a GET request to a URL and pass a custom `User-Agent` header to simulate a web browser request.",
+    "answer": {
+      "type": "code",
+      "lang": "python",
+      "content": "import requests\n\nheaders = {'User-Agent': 'Mozilla/5.0'}\nresponse = requests.get('https://httpbin.org/headers', headers=headers)\nprint(response.text)"
+    },
+    "explanation": "Custom headers are essential for web scraping to prevent servers from blocking default automated user agents."
+  }
+]

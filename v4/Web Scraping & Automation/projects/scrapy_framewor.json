@@ -1,0 +1,32 @@
+[
+  {
+    "title": "Creating a Basic Spider \ud83d\udd77",
+    "ques": "Define a simple Scrapy Spider class named `MySpider` that inherits from `scrapy.Spider` and sets the `name` to `'myspider'`.",
+    "answer": {
+      "type": "code",
+      "lang": "python",
+      "content": "import scrapy\n\nclass MySpider(scrapy.Spider):\n    name = 'myspider'\n    start_urls = ['http://example.com']\n\n    def parse(self, response):\n        pass"
+    },
+    "explanation": "A Spider requires a unique `name`, a list of `start_urls`, and a `parse` method to handle the downloaded response."
+  },
+  {
+    "title": "Yielding Data \ud83d\udce6",
+    "ques": "Inside a Scrapy `parse` method, write the code to extract the text of a `<title>` tag and yield it as a dictionary.",
+    "answer": {
+      "type": "code",
+      "lang": "python",
+      "content": "def parse(self, response):\n    title = response.css('title::text').get()\n    yield {'title': title}"
+    },
+    "explanation": "Spiders should `yield` dictionaries or Scrapy Items. Scrapy uses CSS selectors heavily for efficient extraction."
+  },
+  {
+    "title": "Following Links \ud83d\udd17",
+    "ques": "Write a line of code in Scrapy to follow a link stored in the variable `next_page` and pass the response to a callback named `self.parse`.",
+    "answer": {
+      "type": "code",
+      "lang": "python",
+      "content": "yield response.follow(next_page, callback=self.parse)"
+    },
+    "explanation": "`response.follow` provides a convenient way to construct a new Request from relative URLs."
+  }
+]

@@ -1,0 +1,29 @@
+[
+  {
+    "title": "The Hugging Face Pipeline",
+    "ques": "What is the `pipeline` abstraction in the `transformers` library used for?",
+    "answer": {
+      "type": "text",
+      "content": "The `pipeline` is a high-level, easy-to-use API that abstracts away the complex code required to perform inference with machine learning models. You can specify a task (like 'sentiment-analysis', 'text-generation', or 'translation') and optionally a model name, and the pipeline automatically handles downloading the model, tokenizing the input text, running the forward pass, and parsing the output."
+    },
+    "explanation": "Pipelines make state-of-the-art NLP models accessible to developers with just a few lines of code."
+  },
+  {
+    "title": "Tokenization",
+    "ques": "Why must text be processed by an `AutoTokenizer` before being fed into a Hugging Face model?",
+    "answer": {
+      "type": "text",
+      "content": "Deep learning models cannot process raw text strings; they only understand numbers. An `AutoTokenizer` converts strings into sequences of integer IDs based on a specific vocabulary. It also handles model-specific formatting, such as adding special tokens (like `[CLS]` or `[SEP]` in BERT) and padding or truncating sequences to a uniform length."
+    },
+    "explanation": "Every model is trained with a specific tokenizer. Using the wrong tokenizer will result in meaningless output."
+  },
+  {
+    "title": "Parameter-Efficient Fine-Tuning (PEFT)",
+    "ques": "Explain the concept of LoRA (Low-Rank Adaptation) in the context of fine-tuning Large Language Models.",
+    "answer": {
+      "type": "text",
+      "content": "Fine-tuning a massive LLM (like LLaMA with billions of parameters) conventionally requires immense VRAM and computing power because it updates all the model's weights. LoRA is a PEFT technique that freezes the original model weights and injects small, trainable rank-decomposition matrices into the network layers. This drastically reduces the number of trainable parameters (often by 99%), allowing large models to be fine-tuned on a single consumer GPU."
+    },
+    "explanation": "LoRA democratized the fine-tuning of open-source foundation models."
+  }
+]

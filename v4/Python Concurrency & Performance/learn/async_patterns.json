@@ -1,0 +1,147 @@
+{
+    "id": "learn_async_patterns",
+    "topicId": "async_patterns",
+    "topicTitle": "Async Patterns & HTTP",
+    "description": "Learn advanced asynchronous design patterns like producer-consumer queues and semaphore throttling, and master async HTTP requests with aiohttp.",
+    "baseKP": 75,
+    "slides": [
+        {
+            "id": "async_pat_1",
+            "type": "content",
+            "title": "Advanced AsyncIO",
+            "content": "# Moving Beyond the Basics 🏗️\n\nWe know how to use `async`/`await` and `asyncio.gather()`. But real-world applications require sophisticated patterns to handle massive concurrency without crashing external services or running out of memory.\n\nIn this module, we will explore two crucial concurrency patterns:\n1. **The Producer-Consumer Pattern**\n2. **Semaphore-Limited Concurrency**\n\nThen, we'll apply these patterns to high-speed web scraping using the `aiohttp` library."
+        },
+        {
+            "id": "async_pat_2",
+            "type": "content",
+            "title": "The Producer-Consumer Pattern",
+            "content": "# Decoupling Workflows 🏭\n\nThe Producer-Consumer pattern is an essential architectural design. It separates the code that *creates* work (the Producer) from the code that *executes* the work (the Consumer).\n\nThey communicate exclusively through a shared `Queue`.\n\n## Why use it?\n1. **Different Speeds:** If producing tasks is fast, but consuming them is slow (e.g., parsing a CSV vs downloading the URLs inside it), the queue acts as a buffer.\n2. **Scalability:** You can easily have 1 Producer and 50 Consumers reading from the exact same queue simultaneously!"
+        },
+        {
+            "id": "async_pat_3",
+            "type": "content",
+            "title": "Async Producer-Consumer Example",
+            "content": "# Code: Async Producer-Consumer 🐍\n\nLet's see how `asyncio.Queue` makes this pattern effortless.\n\n```python_not\nimport asyncio\nimport random\n\nasync def producer(queue, num_items):\n    print(\"Producer: Starting to produce items...\")\n    for i in range(num_items):\n        await asyncio.sleep(random.random()) # Variable production speed\n        item = f\"Task-{i}\"\n        await queue.put(item)\n        print(f\"Producer: Added {item} to queue\")\n        \n    # Signal to consumers that production is finished\n    await queue.put(None)\n```"
+        },
+        {
+            "id": "async_pat_4",
+            "type": "content",
+            "title": "Async Consumer",
+            "content": "# Code: The Async Consumer 🍽️\n\nThe consumer simply sits in an infinite loop, pulling items from the queue until it encounters the \"poison pill\" (in our case, `None`), which tells it to stop.\n\n```python_not\nasync def consumer(queue, consumer_id):\n    print(f\"Consumer {consumer_id}: Waiting for items...\")\n    while True:\n        item = await queue.get()\n        if item is None:\n            # Put the poison pill back for other consumers to see\n            await queue.put(None)\n            break\n            \n        print(f\"Consumer {consumer_id}: Processing {item}\")\n        await asyncio.sleep(1) # Simulate slow processing\n        queue.task_done() # Mark task as complete\n        \n    print(f\"Consumer {consumer_id}: Shutting down.\")\n```"
+        },
+        {
+            "id": "async_pat_5",
+            "type": "content",
+            "title": "Wiring the Pattern Together",
+            "content": "# The Orchestrator 🎼\n\nNow we start the producer and multiple consumers concurrently.\n\n```python_not\nasync def main():\n    queue = asyncio.Queue()\n    \n    # Start 1 Producer\n    prod_task = asyncio.create_task(producer(queue, 10))\n    \n    # Start 3 Consumers\n    consumers = [\n        asyncio.create_task(consumer(queue, i))\n        for i in range(3)\n    ]\n    \n    # Wait for the producer to finish generating items\n    await prod_task\n    \n    # Wait for the consumers to finish processing all items\n    await queue.join()\n\nasyncio.run(main())\n```"
+        },
+        {
+            "id": "async_pat_quiz_1",
+            "type": "quiz",
+            "title": "Queue Quiz",
+            "content": "Test your understanding of the asyncio Queue.",
+            "quizQuestion": "In the Producer-Consumer pattern, what is the purpose of `queue.task_done()`?",
+            "quizOptions": [
+                "It deletes the queue from memory.",
+                "It notifies the queue that a previously extracted item has been fully processed, allowing `queue.join()` to eventually unblock.",
+                "It tells the producer to stop producing items.",
+                "It terminates the current consumer coroutine."
+            ],
+            "correctOptionIndex": 1
+        },
+        {
+            "id": "async_pat_6",
+            "type": "content",
+            "title": "The Throttling Problem",
+            "content": "# The Danger of Gather 💣\n\n`asyncio.gather()` is great, but it is dangerous when dealing with external APIs. If you have 10,000 URLs to download, and you pass them all into `asyncio.gather()`, Python will attempt to open 10,000 network connections at the exact same millisecond.\n\nThis will result in:\n1. Your OS throwing a \"Too many open files\" error.\n2. The target server banning your IP address for a DDoS attack.\n3. The target server returning 429 Too Many Requests.\n\nWe must limit (throttle) our concurrency."
+        },
+        {
+            "id": "async_pat_7",
+            "type": "content",
+            "title": "Semaphore-Limited Concurrency",
+            "content": "# The Async Semaphore 🚦\n\nAn `asyncio.Semaphore` manages an internal counter. It limits how many coroutines can hold the semaphore simultaneously.\n\n```python_not\nimport asyncio\n\n# Only allow 5 concurrent operations\nsem = asyncio.Semaphore(5)\n\nasync def safe_download(url):\n    # The coroutine pauses here if 5 other coroutines already hold the semaphore\n    async with sem:\n        print(f\"Downloading {url}...\")\n        await asyncio.sleep(2) # Simulate download\n        return f\"{url} data\"\n```"
+        },
+        {
+            "id": "async_pat_8",
+            "type": "content",
+            "title": "Using the Semaphore",
+            "content": "# Safely Gathering 🛡️\n\nNow, we can safely use `asyncio.gather()` on 10,000 URLs without blowing up the server.\n\n```python_not\nasync def main():\n    urls = [f\"http://example.com/page{i}\" for i in range(100)]\n    \n    # We create 100 coroutines, but because of the semaphore inside \n    # safe_download, only 5 will execute their sleep(2) at any given time.\n    tasks = [safe_download(url) for url in urls]\n    \n    results = await asyncio.gather(*tasks)\n    print(f\"Finished downloading {len(results)} urls safely!\")\n\nasyncio.run(main())\n```"
+        },
+        {
+            "id": "async_pat_9",
+            "type": "content",
+            "title": "Introduction to aiohttp",
+            "content": "# Async HTTP: `aiohttp` 🌐\n\nThe standard `requests` library is synchronous. If you use it inside an `async def` function, it will block the entire event loop!\n\nTo make non-blocking HTTP requests, the industry standard is `aiohttp`.\n\n```bash\npip install aiohttp\n```\n\n`aiohttp` provides both an asynchronous HTTP client (for making requests) and an asynchronous HTTP server (for building web APIs)."
+        },
+        {
+            "id": "async_pat_10",
+            "type": "content",
+            "title": "The ClientSession",
+            "content": "# `aiohttp.ClientSession` 🧳\n\nIn `aiohttp`, you rarely make naked requests (like `requests.get()`). Instead, you create a `ClientSession`.\n\nA session maintains a pool of active connections. Reusing connections (Keep-Alive) drastically improves performance when making multiple requests to the same server.\n\n```python_not\nimport aiohttp\nimport asyncio\n\nasync def fetch_pokemon(session, id):\n    url = f\"https://pokeapi.co/api/v2/pokemon/{id}\"\n    # Async context manager for the request\n    async with session.get(url) as response:\n        # Async await for the JSON body parsing\n        data = await response.json()\n        return data['name']\n```"
+        },
+        {
+            "id": "async_pat_11",
+            "type": "content",
+            "title": "Session Management",
+            "content": "# Managing the Session 🏢\n\nYou should create a **single** `ClientSession` for your entire application (or one per group of related tasks) and pass it around.\n\nCreating a new session for every single request defeats the purpose of connection pooling and will severely degrade performance.\n\n```python_not\nasync def main():\n    # Create ONE session\n    async with aiohttp.ClientSession() as session:\n        \n        # Create 20 tasks, passing the SAME session to all of them\n        tasks = [fetch_pokemon(session, i) for i in range(1, 21)]\n        \n        # Execute them concurrently\n        names = await asyncio.gather(*tasks)\n        print(names)\n```"
+        },
+        {
+            "id": "async_pat_quiz_2",
+            "type": "quiz",
+            "title": "aiohttp Check",
+            "content": "Test your knowledge of the aiohttp library.",
+            "quizQuestion": "Why do you have to `await response.json()` in aiohttp, whereas in the `requests` library you just call `response.json()`?",
+            "quizOptions": [
+                "Because aiohttp converts JSON into a coroutine.",
+                "Because reading the body of the HTTP response from the network socket is an I/O operation that might block, so it must be awaited.",
+                "It's just a syntactic quirk of the library.",
+                "Because JSON parsing is a heavy CPU-bound task."
+            ],
+            "correctOptionIndex": 1
+        },
+        {
+            "id": "async_pat_12",
+            "type": "content",
+            "title": "Handling Errors in aiohttp",
+            "content": "# `raise_for_status()` 🚨\n\nBy default, `aiohttp` (just like `requests`) does not throw an exception if the server returns a 404 Not Found or a 500 Internal Server Error.\n\nIf you want the coroutine to crash on bad status codes, call `.raise_for_status()` immediately.\n\n```python_not\nasync def fetch_secure_data(session, url):\n    async with session.get(url) as response:\n        # If status is >= 400, this raises aiohttp.ClientResponseError\n        response.raise_for_status() \n        \n        return await response.text()\n```"
+        },
+        {
+            "id": "async_pat_13",
+            "type": "content",
+            "title": "Async Scraping Project",
+            "content": "# Putting it all together 🧩\n\nLet's combine `aiohttp`, `ClientSession`, and `Semaphore` to build a blazing fast, polite web scraper.\n\n```python_not\nimport aiohttp\nimport asyncio\n\n# Limit to 10 concurrent connections\nsem = asyncio.Semaphore(10)\n\nasync def scrape_page(session, url):\n    async with sem:  # Apply the throttle!\n        try:\n            async with session.get(url) as response:\n                response.raise_for_status()\n                html = await response.text()\n                return len(html)\n        except aiohttp.ClientError as e:\n            print(f\"Failed to scrape {url}: {e}\")\n            return 0\n```"
+        },
+        {
+            "id": "async_pat_14",
+            "type": "content",
+            "title": "The Scraping Orchestrator",
+            "content": "# The Scraper Main Loop 🚀\n\n```python_not\nasync def main():\n    urls = [f\"http://example.com/page{i}\" for i in range(1000)]\n    \n    # We configure the session to be polite and not timeout immediately\n    timeout = aiohttp.ClientTimeout(total=30)\n    \n    async with aiohttp.ClientSession(timeout=timeout) as session:\n        tasks = [scrape_page(session, url) for url in urls]\n        \n        print(\"Starting 1000 requests (max 10 at a time)...\")\n        results = await asyncio.gather(*tasks)\n        \n        total_bytes = sum(results)\n        print(f\"Downloaded {total_bytes} bytes across {len(results)} pages.\")\n```"
+        },
+        {
+            "id": "async_pat_15",
+            "type": "content",
+            "title": "Connection Limits in Session",
+            "content": "# Built-in Connection Limiting 🎛️\n\nWhile an `asyncio.Semaphore` is great for general throttling, `aiohttp.ClientSession` actually has built-in connection limiting!\n\nYou can configure the `TCPConnector` to limit connections globally or per-host.\n\n```python_not\nasync def main():\n    # Limit total connections to 100, and 10 per specific host\n    connector = aiohttp.TCPConnector(limit=100, limit_per_host=10)\n    \n    async with aiohttp.ClientSession(connector=connector) as session:\n        # Now you don't even need a Semaphore if your only \n        # concern is network limits!\n        pass\n```"
+        },
+        {
+            "id": "async_pat_quiz_3",
+            "type": "quiz",
+            "title": "Final Review",
+            "content": "Let's review best practices.",
+            "quizQuestion": "Why should you avoid creating a new `aiohttp.ClientSession()` for every single HTTP request?",
+            "quizOptions": [
+                "It causes a memory leak.",
+                "It defeats the purpose of connection pooling (Keep-Alive), drastically slowing down performance and wasting resources.",
+                "It will cause Python to raise a SyntaxError.",
+                "It automatically converts async requests into synchronous requests."
+            ],
+            "correctOptionIndex": 1
+        },
+        {
+            "id": "async_pat_16",
+            "type": "content",
+            "title": "Summary",
+            "content": "# Async Architect! 🎉\n\nYou've learned how to structure complex asynchronous applications.\n\n## Key Takeaways\n\n- ✅ **Producer-Consumer:** Use `asyncio.Queue` to decouple data generation from data processing, allowing dynamic scaling.\n- ✅ **Throttling:** Use `asyncio.Semaphore` to prevent `asyncio.gather` from overwhelming external APIs or the local OS.\n- ✅ **aiohttp:** The industry standard for asynchronous HTTP requests.\n- ✅ **ClientSession:** Always create one session per application to utilize connection pooling.\n- ✅ **I/O Awaits:** Remember that in `aiohttp`, even reading the response body (`.json()`, `.text()`) is an I/O operation that must be awaited.\n\nWith these patterns, you can scrape thousands of pages per second politely and efficiently!"
+        }
+    ]
+}

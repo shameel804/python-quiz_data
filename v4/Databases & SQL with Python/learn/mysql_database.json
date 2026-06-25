@@ -1,0 +1,141 @@
+{
+    "id": "learn_mysql_database",
+    "topicId": "mysql_database",
+    "topicTitle": "MySQL & Database Design",
+    "description": "Learn to use MySQL from Python and the principles of normalized database design.",
+    "baseKP": 85,
+    "slides": [
+        {
+            "id": "mysql_1",
+            "type": "content",
+            "title": "Introduction to MySQL",
+            "content": "# MySQL in Python \ud83d\udc2c\n\nMySQL is one of the world's most popular open-source relational databases, heavily used in web applications (like WordPress).\n\n## Connectors\nUnlike SQLite, Python needs a driver to talk to MySQL. The two most common are:\n1. `mysql-connector-python` (Official Oracle driver)\n2. `PyMySQL` (Pure Python driver, very popular)\n\n## Installing PyMySQL\n```bash\npip install pymysql\n```"
+        },
+        {
+            "id": "mysql_2",
+            "type": "content",
+            "title": "Connecting to MySQL",
+            "content": "# PyMySQL Connection \ud83d\udd0c\n\nConnecting using PyMySQL is very similar to `psycopg2`.\n\n```python_not\nimport pymysql\n\n# Connect to the database\nconnection = pymysql.connect(\n    host='localhost',\n    user='root',\n    password='password',\n    database='my_app_db',\n    cursorclass=pymysql.cursors.DictCursor\n)\n\n# Use 'with' to ensure the connection is closed\nwith connection:\n    with connection.cursor() as cursor:\n        cursor.execute(\"SELECT * FROM users LIMIT 1\")\n        result = cursor.fetchone()\n        print(result)\n```\nNotice the `DictCursor` is built-in!"
+        },
+        {
+            "id": "mysql_3",
+            "type": "content",
+            "title": "Stored Procedures",
+            "content": "# Stored Procedures \ud83d\udcdc\n\nA stored procedure is prepared SQL code that you save in the database, so the code can be reused.\n\nImagine a complex financial calculation. Instead of sending the math from Python to the DB, you tell the DB: \"Run the calculate_taxes procedure for User 5\".\n\n## Why use them?\n- **Performance:** Execution plan is pre-compiled.\n- **Security:** Reduces SQL injection risks and limits direct table access.\n- **Maintainability:** Logic is centralized in the database."
+        },
+        {
+            "id": "mysql_4",
+            "type": "content",
+            "title": "Calling Stored Procedures",
+            "content": "# Calling Procedures in Python \ud83d\udcde\n\nIf you have a stored procedure named `get_user_by_status` in MySQL, here is how you call it:\n\n```python_not\nwith connection.cursor() as cursor:\n    # Callproc takes the name, and a tuple of arguments\n    cursor.callproc('get_user_by_status', ('active',))\n    \n    # Fetch the results returned by the procedure\n    results = cursor.fetchall()\n    \n    for row in results:\n        print(row)\n```"
+        },
+        {
+            "id": "mysql_5",
+            "type": "content",
+            "title": "Introduction to Database Design",
+            "content": "# Database Design & Normalization \ud83d\udcd0\n\nDatabase Normalization is the process of organizing data to minimize **redundancy** (duplicate data) and prevent **data anomalies** (inconsistencies when inserting, updating, or deleting).\n\nIf your database isn't normalized, updating a user's address might require changing 50 different rows in the `orders` table. If you miss one, your data is corrupted!\n\nThe process follows rules called \"Normal Forms\" (1NF, 2NF, 3NF)."
+        },
+        {
+            "id": "mysql_quiz_1",
+            "type": "quiz",
+            "title": "Knowledge Check: MySQL",
+            "content": "Test your MySQL knowledge.",
+            "quizQuestion": "What is the primary benefit of a Stored Procedure?",
+            "quizOptions": [
+                "It automatically creates indexes on tables.",
+                "It pre-compiles and centralizes SQL logic inside the database.",
+                "It allows you to use JSONB data types.",
+                "It removes the need for PyMySQL."
+            ],
+            "correctOptionIndex": 1
+        },
+        {
+            "id": "mysql_6",
+            "type": "content",
+            "title": "First Normal Form (1NF)",
+            "content": "# First Normal Form (1NF) \ud83e\udd47\n\nThe rule for 1NF is simple: **Atomicity**.\n\nEach column must contain only *single, indivisible values*, and each row must be unique.\n\n## \u274c Bad (Not 1NF)\n| UserID | Name | Phones |\n|--------|------|--------|\n| 1 | Alice | 555-1234, 555-9876 |\n\n*The `Phones` column contains multiple values! How do you query for 555-9876?*\n\n## \u2705 Good (1NF)\n| UserID | Name | Phone |\n|--------|------|-------|\n| 1 | Alice | 555-1234 |\n| 1 | Alice | 555-9876 |\n\n*Now every column has a single value.*"
+        },
+        {
+            "id": "mysql_7",
+            "type": "content",
+            "title": "Second Normal Form (2NF)",
+            "content": "# Second Normal Form (2NF) \ud83e\udd48\n\nTo be in 2NF, a table must first be in 1NF. \nThe rule: **No Partial Dependencies**.\n\nEvery non-primary-key column must depend on the *entire* primary key.\n\n## \u274c Bad (Not 2NF)\n| OrderID | ProductID | ProductName | Quantity |\n|---------|-----------|-------------|----------|\n| 100 | P1 | Laptop | 1 |\n| 101 | P1 | Laptop | 2 |\n\n*Here, ProductName depends only on ProductID, not OrderID. If we update the Laptop name, we have to change multiple rows!*\n\n## \u2705 Good (2NF)\nMove Products to their own table!\n**Orders:** OrderID, ProductID, Quantity\n**Products:** ProductID, ProductName"
+        },
+        {
+            "id": "mysql_8",
+            "type": "content",
+            "title": "Third Normal Form (3NF)",
+            "content": "# Third Normal Form (3NF) \ud83e\udd49\n\nTo be in 3NF, a table must be in 2NF.\nThe rule: **No Transitive Dependencies**.\n\nNon-key columns cannot depend on *other non-key columns*. \"Every non-key attribute must provide a fact about the key, the whole key, and nothing but the key.\"\n\n## \u274c Bad (Not 3NF)\n| UserID | ZipCode | City |\n|--------|---------|------|\n| 1 | 90210 | Beverly Hills |\n\n*City depends on ZipCode, not just UserID.*\n\n## \u2705 Good (3NF)\n**Users:** UserID, ZipCode\n**Locations:** ZipCode, City"
+        },
+        {
+            "id": "mysql_quiz_2",
+            "type": "quiz",
+            "title": "Knowledge Check: Normalization",
+            "content": "Test your database design knowledge.",
+            "quizQuestion": "Which Normal Form ensures that a column like 'Tags' doesn't contain comma-separated values like 'python, sql, web'?",
+            "quizOptions": [
+                "First Normal Form (1NF)",
+                "Second Normal Form (2NF)",
+                "Third Normal Form (3NF)",
+                "Fourth Normal Form (4NF)"
+            ],
+            "correctOptionIndex": 0
+        },
+        {
+            "id": "mysql_9",
+            "type": "content",
+            "title": "ER Diagrams",
+            "content": "# Entity-Relationship Diagrams \ud83d\uddfa\ufe0f\n\nBefore you write `CREATE TABLE` scripts, you design your database using an ER Diagram.\n\nAn ER Diagram represents the data model visually:\n- **Entities:** Tables (e.g., `Users`, `Posts`). represented as rectangles.\n- **Attributes:** Columns (e.g., `Email`, `Created_At`), represented as ovals or listed inside the rectangle.\n- **Relationships:** How entities connect to each other (e.g., A User 'writes' a Post), represented as diamonds or lines."
+        },
+        {
+            "id": "mysql_10",
+            "type": "content",
+            "title": "Types of Relationships",
+            "content": "# Cardinality \ud83d\udd17\n\nWhen designing schemas, relationships fall into three categories:\n\n## 1:1 (One-to-One)\nA User has exactly one Profile. \n*Implementation:* Put the UserID as a Unique Foreign Key in the Profile table.\n\n## 1:N (One-to-Many)\nA User can write Many Posts. (Most common!)\n*Implementation:* Put the UserID as a Foreign Key in the Posts table.\n\n## M:N (Many-to-Many)\nA Student takes Many Courses, and a Course has Many Students.\n*Implementation:* Requires a third \"Junction\" or \"Join\" table containing StudentID and CourseID!"
+        },
+        {
+            "id": "mysql_11",
+            "type": "content",
+            "title": "Foreign Keys and Constraints",
+            "content": "# Maintaining Integrity \ud83d\udd10\n\nOnce you design your schema, you enforce the relationships using **Foreign Keys**.\n\nA Foreign Key is a column that references the Primary Key of another table.\n\n```sql_not\nCREATE TABLE Orders (\n    OrderID int NOT NULL PRIMARY KEY,\n    OrderNumber int NOT NULL,\n    UserID int,\n    FOREIGN KEY (UserID) REFERENCES Users(UserID)\n);\n```\nThis constraint guarantees that you can never create an order for a UserID that doesn't exist in the `Users` table!"
+        },
+        {
+            "id": "mysql_12",
+            "type": "content",
+            "title": "Cascading Deletes",
+            "content": "# ON DELETE CASCADE \ud83d\udca3\n\nWhat happens if you delete a User who has 5 Orders? \nBy default, the database throws an error to protect the Orders (since their Foreign Key would become invalid).\n\nIf you want the Orders to be deleted automatically when the User is deleted, use `ON DELETE CASCADE`.\n\n```sql_not\nFOREIGN KEY (UserID) \nREFERENCES Users(UserID) \nON DELETE CASCADE\n```\n\n*Alternative: `ON DELETE SET NULL` keeps the order but sets the UserID to NULL.*"
+        },
+        {
+            "id": "mysql_13",
+            "type": "content",
+            "title": "Schema Design Example",
+            "content": "# Designing a Blog Schema \ud83d\udcdd\n\nLet's design a normalized schema for a simple blog.\n\n**1. Users Table**\n- `id` (PK)\n- `username`\n- `email`\n\n**2. Posts Table (1:N with Users)**\n- `id` (PK)\n- `title`\n- `content`\n- `author_id` (FK to Users.id)\n\n**3. Tags Table**\n- `id` (PK)\n- `name`\n\n**4. Post_Tags Junction Table (M:N between Posts and Tags)**\n- `post_id` (FK to Posts.id)\n- `tag_id` (FK to Tags.id)\n- *Primary Key is the combination of (post_id, tag_id)*"
+        },
+        {
+            "id": "mysql_14",
+            "type": "content",
+            "title": "Schema Implementation Demo",
+            "content": "# SQLite Schema Demo \ud83d\udc0d\n\nLet's build that blog schema in Python!\n\n<!-- FULL_CODE_START\nimport sqlite3\n\nconn = sqlite3.connect(':memory:')\n\n# Enable Foreign Key support in SQLite (Off by default!)\nconn.execute(\"PRAGMA foreign_keys = ON\")\ncursor = conn.cursor()\n\n# Create Normalized Tables\ncursor.executescript('''\n    CREATE TABLE users (\n        id INTEGER PRIMARY KEY, \n        username TEXT UNIQUE\n    );\n    \n    CREATE TABLE posts (\n        id INTEGER PRIMARY KEY, \n        title TEXT, \n        author_id INTEGER,\n        FOREIGN KEY(author_id) REFERENCES users(id) ON DELETE CASCADE\n    );\n''')\n\ncursor.execute(\"INSERT INTO users (username) VALUES ('Alice')\")\nalice_id = cursor.lastrowid\ncursor.execute(\"INSERT INTO posts (title, author_id) VALUES ('My First Post', ?)\", (alice_id,))\n\nprint(\"Before Delete:\")\nprint(\"Users:\", cursor.execute(\"SELECT * FROM users\").fetchall())\nprint(\"Posts:\", cursor.execute(\"SELECT * FROM posts\").fetchall())\n\n# Because of ON DELETE CASCADE, Alice's post will also be deleted!\ncursor.execute(\"DELETE FROM users WHERE username = 'Alice'\")\n\nprint(\"\\nAfter Delete:\")\nprint(\"Users:\", cursor.execute(\"SELECT * FROM users\").fetchall())\nprint(\"Posts:\", cursor.execute(\"SELECT * FROM posts\").fetchall())\n\nconn.close()\nFULL_CODE_END -->"
+        },
+        {
+            "id": "mysql_quiz_3",
+            "type": "quiz",
+            "title": "Knowledge Check: Relationships",
+            "content": "Test your relationship modeling.",
+            "quizQuestion": "If a Book can have multiple Authors, and an Author can write multiple Books, how do you model this in a relational database?",
+            "quizOptions": [
+                "Put an AuthorID column in the Books table.",
+                "Put a BookID column in the Authors table.",
+                "Create a third junction table containing BookID and AuthorID.",
+                "Store a comma-separated list of AuthorIDs in the Books table."
+            ],
+            "correctOptionIndex": 2
+        },
+        {
+            "id": "mysql_15",
+            "type": "content",
+            "title": "Summary",
+            "content": "# Summary \ud83c\udf89\n\nYou've learned how to connect to MySQL and the art of Database Design!\n\n## Key Takeaways\n- \u2705 **MySQL:** Connect using `PyMySQL` or `mysql-connector`. Use Stored Procedures to centralize complex SQL logic on the database server.\n- \u2705 **Normalization:** Reduces data redundancy and anomalies.\n- \u2705 **1NF:** Values must be atomic (no lists/commas in a single column).\n- \u2705 **2NF:** No partial dependencies (extract repeated data to new tables).\n- \u2705 **3NF:** No transitive dependencies (non-key columns shouldn't depend on other non-key columns).\n- \u2705 **Relationships:** Use Foreign Keys to enforce 1:1 and 1:N connections. Use Junction tables for Many-to-Many.\n- \u2705 **Cascade:** Automatically propagate deletions from parent to child rows using `ON DELETE CASCADE`."
+        }
+    ]
+}

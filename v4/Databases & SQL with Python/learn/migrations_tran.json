@@ -1,0 +1,147 @@
+{
+    "id": "learn_migrations_tran",
+    "topicId": "migrations_tran",
+    "topicTitle": "Migrations & Transactions",
+    "description": "Learn to manage database schema changes with Alembic and ensure data integrity with ACID properties.",
+    "baseKP": 80,
+    "slides": [
+        {
+            "id": "mig_1",
+            "type": "content",
+            "title": "The Problem: Changing Schemas",
+            "content": "# The Schema Evolution Problem \ud83e\udd96\n\nImagine you deploy your app with a `Users` table.\nThree months later, you want to add a `profile_picture_url` column.\n\nHow do you update the production database without losing the existing users?\n1. \u274c Drop the table and recreate it. (You lose all data!)\n2. \u274c Manually connect to the DB and run `ALTER TABLE...` (Prone to human error, hard to track in version control).\n3. \u2705 Use **Database Migrations**."
+        },
+        {
+            "id": "mig_2",
+            "type": "content",
+            "title": "What is Alembic?",
+            "content": "# Alembic to the Rescue \ud83e\uddd9\u200d\u2642\ufe0f\n\nAlembic is a lightweight database migration tool specifically designed to be used with SQLAlchemy.\n\nIt allows you to:\n- Write scripts that modify your database schema.\n- Keep track of which scripts have been run.\n- \"Upgrade\" a database to the latest schema version.\n- \"Downgrade\" a database to an older schema version if something breaks.\n\nMigrations are treated like source code: they live in your Git repository!"
+        },
+        {
+            "id": "mig_3",
+            "type": "content",
+            "title": "Setting up Alembic",
+            "content": "# Initializing Alembic \ud83d\udee0\ufe0f\n\nTo get started, install Alembic and initialize it in your project directory.\n\n```bash\npip install alembic\nalembic init alembic\n```\n\nThis creates an `alembic.ini` file and an `alembic/` directory.\nYou must edit `alembic.ini` to point `sqlalchemy.url` to your actual database URL (e.g., `postgresql://user:pass@localhost/dbname`)."
+        },
+        {
+            "id": "mig_4",
+            "type": "content",
+            "title": "Creating a Revision",
+            "content": "# Creating a Migration Script \ud83d\udcdd\n\nA migration script is called a \"revision\". You create an empty one from the command line.\n\n```bash\nalembic revision -m \"create users table\"\n```\n\nThis generates a Python file in `alembic/versions/` (e.g., `1a2b3c4d_create_users_table.py`).\nYou then edit this file to define what the upgrade and downgrade do."
+        },
+        {
+            "id": "mig_5",
+            "type": "content",
+            "title": "Writing the Upgrade/Downgrade",
+            "content": "# Writing the Script \u270d\ufe0f\n\nInside the generated Python file, you use the `op` (operations) module to alter the DB.\n\n```python_not\nfrom alembic import op\nimport sqlalchemy as sa\n\ndef upgrade():\n    # What happens when we apply this migration\n    op.create_table(\n        'users',\n        sa.Column('id', sa.Integer, primary_key=True),\n        sa.Column('name', sa.String(50), nullable=False)\n    )\n\ndef downgrade():\n    # What happens if we rollback this migration\n    op.drop_table('users')\n```"
+        },
+        {
+            "id": "mig_quiz_1",
+            "type": "quiz",
+            "title": "Knowledge Check: Migrations",
+            "content": "Test your understanding of Alembic.",
+            "quizQuestion": "What is the purpose of the `downgrade()` function in an Alembic revision?",
+            "quizOptions": [
+                "To downgrade the version of PostgreSQL installed on the server.",
+                "To provide the exact opposite operations of upgrade(), allowing you to undo the schema changes if needed.",
+                "To compress the database to save disk space.",
+                "To delete the database entirely."
+            ],
+            "correctOptionIndex": 1
+        },
+        {
+            "id": "mig_6",
+            "type": "content",
+            "title": "Running Migrations",
+            "content": "# Applying Changes \ud83d\ude80\n\nOnce your script is written, you apply it to the database using the `upgrade` command.\n\n```bash\n# Upgrade to the newest revision\nalembic upgrade head\n```\n\nAlembic creates a special table in your database called `alembic_version`. It stores the ID of the current revision. This is how it knows what scripts have already been applied!\n\n## Rolling Back\n```bash\n# Downgrade by exactly one revision\nalembic downgrade -1\n```"
+        },
+        {
+            "id": "mig_7",
+            "type": "content",
+            "title": "Autogenerate",
+            "content": "# Alembic Autogenerate \ud83e\udd16\n\nWriting `op.create_table()` by hand is tedious. \nIf you are using SQLAlchemy ORM (Declarative Models), Alembic can **look at your Python classes, look at your current database, and automatically generate the migration script!**\n\nIn `alembic/env.py`, set `target_metadata = Base.metadata` (your SQLAlchemy Base).\n\nThen run:\n```bash\nalembic revision --autogenerate -m \"added email column\"\n```\nAlembic will create the Python script for you! *Always review it before running `upgrade`.*"
+        },
+        {
+            "id": "mig_8",
+            "type": "content",
+            "title": "Introduction to ACID",
+            "content": "# The ACID Properties \ud83e\uddea\n\nMoving away from schemas, let's talk about data integrity.\nA reliable relational database guarantees **ACID** properties for every transaction:\n\n1. **A**tomicity\n2. **C**onsistency\n3. **I**solation\n4. **D**urability\n\nLet's break these down."
+        },
+        {
+            "id": "mig_9",
+            "type": "content",
+            "title": "Atomicity and Consistency",
+            "content": "# A & C \ud83d\udd2c\n\n## Atomicity (All or Nothing)\nA transaction is treated as a single, indivisible unit. If you are transferring money, the debit and credit must BOTH succeed, or BOTH fail. There is no \"half-finished\" state.\n*(SQLAlchemy enforces this using `session.commit()` and `session.rollback()`)*\n\n## Consistency (Rule Abiding)\nA transaction can only bring the database from one valid state to another. \nIf a column has a `UNIQUE` or `NOT NULL` constraint, a transaction cannot leave the database violating those rules."
+        },
+        {
+            "id": "mig_10",
+            "type": "content",
+            "title": "Durability",
+            "content": "# Durability \ud83e\udea8\n\nOnce a transaction has been committed, it will remain committed even in the case of a system failure (e.g., power outage or crash).\n\nThe database engine writes the transaction to a non-volatile transaction log on the hard drive *before* acknowledging the commit.\n\nIf the server crashes 1 millisecond after your Python app receives a successful `commit()` response, your data is safe!"
+        },
+        {
+            "id": "mig_11",
+            "type": "content",
+            "title": "Isolation",
+            "content": "# Isolation \ud83d\udee1\ufe0f\n\nIsolation ensures that concurrent execution of transactions leaves the database in the same state that would have been obtained if the transactions were executed sequentially (one after the other).\n\nIf Alice and Bob try to buy the very last concert ticket at the exact same millisecond, Isolation rules dictate who gets it and who gets an error.\n\nDatabases offer different **Isolation Levels** to balance strictness and performance."
+        },
+        {
+            "id": "mig_quiz_2",
+            "type": "quiz",
+            "title": "Knowledge Check: ACID",
+            "content": "Test your ACID knowledge.",
+            "quizQuestion": "Which ACID property guarantees that a transaction is 'all or nothing'?",
+            "quizOptions": [
+                "Atomicity",
+                "Consistency",
+                "Isolation",
+                "Durability"
+            ],
+            "correctOptionIndex": 0
+        },
+        {
+            "id": "mig_12",
+            "type": "content",
+            "title": "Isolation Levels",
+            "content": "# Isolation Levels \ud83c\udf9a\ufe0f\n\nFrom least strict (fastest) to most strict (slowest):\n\n1. **Read Uncommitted:** A transaction can see uncommitted data from other transactions (Dirty Reads). Rarely used.\n2. **Read Committed:** (Default in Postgres) You only see data that has been committed. \n3. **Repeatable Read:** (Default in MySQL) If you read a row twice in the same transaction, you are guaranteed to get the same data, even if someone else committed an update in between.\n4. **Serializable:** The strictest. Transactions are completely isolated. Acts as if they executed one by one."
+        },
+        {
+            "id": "mig_13",
+            "type": "content",
+            "title": "Setting Isolation in SQLAlchemy",
+            "content": "# Controlling Isolation \ud83d\udc0d\n\nYou can configure the isolation level when creating your SQLAlchemy engine:\n\n```python_not\nfrom sqlalchemy import create_engine\n\nengine = create_engine(\n    \"postgresql://user:pass@localhost/db\",\n    isolation_level=\"SERIALIZABLE\"\n)\n```\n\n> \u26a0\ufe0f **Warning:** Using `SERIALIZABLE` prevents all concurrency anomalies, but your Python app must be prepared to catch serialization errors and retry the transaction if a deadlock occurs!"
+        },
+        {
+            "id": "mig_14",
+            "type": "content",
+            "title": "Savepoints",
+            "content": "# Savepoints \ud83d\udcbe\n\nSometimes you want to rollback *part* of a transaction without aborting the whole thing. You can use a `SAVEPOINT`.\n\n```python_not\nwith Session(engine) as session:\n    session.add(User(name=\"Alice\"))\n    \n    # Create a savepoint\n    with session.begin_nested():\n        try:\n            # Try something risky\n            session.add(User(name=\"Bob\"))\n        except Exception:\n            # Only Bob is rolled back if this fails!\n            pass \n            \n    # Alice is still committed here\n    session.commit()\n```"
+        },
+        {
+            "id": "mig_15",
+            "type": "content",
+            "title": "Handling Deadlocks",
+            "content": "# Dealing with Deadlocks \ud83d\udc80\n\nA deadlock occurs when Transaction A locks Row 1 and wants Row 2, while Transaction B locks Row 2 and wants Row 1. They wait for each other forever.\n\nDatabases detect this and kill one of the transactions, throwing an error.\n\nIn Python, you must handle this gracefully:\n```python_not\nimport time\n\nmax_retries = 3\nfor i in range(max_retries):\n    try:\n        with Session(engine) as session:\n            # ... do work ...\n            session.commit()\n            break  # Success!\n    except OperationalError as e:\n        if \"Deadlock\" in str(e):\n            time.sleep(0.1) # Wait and retry\n            continue\n```"
+        },
+        {
+            "id": "mig_quiz_3",
+            "type": "quiz",
+            "title": "Knowledge Check: Concurrency",
+            "content": "Test your advanced transaction knowledge.",
+            "quizQuestion": "What is a Savepoint used for?",
+            "quizOptions": [
+                "To back up the database to a file.",
+                "To save the current schema using Alembic.",
+                "To create a marker inside a transaction so you can partially rollback without aborting the entire transaction.",
+                "To permanently lock a row."
+            ],
+            "correctOptionIndex": 2
+        },
+        {
+            "id": "mig_16",
+            "type": "content",
+            "title": "Summary",
+            "content": "# Summary \ud83c\udf89\n\nYou are now ready for production databases!\n\n## Key Takeaways\n- \u2705 **Alembic:** The migration tool for SQLAlchemy. Never manually `ALTER TABLE` in production again.\n- \u2705 **Autogenerate:** Let Alembic write migration scripts for you based on your ORM models.\n- \u2705 **ACID:** The 4 pillars of reliable databases (Atomicity, Consistency, Isolation, Durability).\n- \u2705 **Isolation Levels:** Control how much concurrent transactions can see of each other. Stricter = Safer but Slower.\n- \u2705 **Savepoints:** Nested transactions (`session.begin_nested()`) allow partial rollbacks."
+        }
+    ]
+}

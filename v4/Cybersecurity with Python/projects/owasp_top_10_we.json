@@ -1,0 +1,29 @@
+[
+  {
+    "title": "SQL Injection (SQLi)",
+    "ques": "Explain how parameterized queries (or prepared statements) prevent SQL Injection attacks.",
+    "answer": {
+      "type": "text",
+      "content": "SQL Injection occurs when user input is directly concatenated into a SQL string, allowing attackers to manipulate the query structure. Parameterized queries prevent this by sending the SQL template and the data parameters to the database separately. The database driver ensures that the parameters are strictly treated as literal values, not as executable SQL commands, nullifying the attack."
+    },
+    "explanation": "Never use string formatting (e.g., f-strings) to insert variables into SQL commands."
+  },
+  {
+    "title": "Cross-Site Scripting (XSS)",
+    "ques": "What is XSS, and how do modern Python web frameworks (like Django or Jinja2) typically mitigate it?",
+    "answer": {
+      "type": "text",
+      "content": "XSS is a vulnerability where an attacker injects malicious JavaScript into a web page viewed by other users. Modern Python templating engines (like Django templates or Jinja2 in Flask) mitigate this by automatically HTML-escaping all variables rendered in the template. This converts dangerous characters like `<` into safe entities like `&lt;`, rendering the script harmless text rather than executable code."
+    },
+    "explanation": "Auto-escaping is the primary defense against XSS, ensuring untrusted data is displayed safely."
+  },
+  {
+    "title": "Insecure Direct Object References (IDOR)",
+    "ques": "Give an example of an IDOR vulnerability and a strategy to fix it.",
+    "answer": {
+      "type": "text",
+      "content": "**Example:** A banking app URL is `example.com/account?id=123`. A user modifies the URL to `id=124` and can successfully view another user's private data because the server didn't check permissions.\n**Fix:** Implementing robust access control. Before serving the resource, the server must verify that the currently authenticated user actually owns or has explicit permission to access the requested object ID. (Alternatively, using unguessable UUIDs instead of sequential integers provides defense-in-depth)."
+    },
+    "explanation": "IDOR stems from a lack of authorization checks when accessing resources based on user-supplied identifiers."
+  }
+]

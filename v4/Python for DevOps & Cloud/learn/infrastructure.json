@@ -1,0 +1,97 @@
+{
+    "id": "learn_infrastructure",
+    "topicId": "infrastructure",
+    "topicTitle": "Infrastructure as Code",
+    "description": "Stop clicking buttons in the Cloud Console! Learn to provision and manage cloud infrastructure using pure Python with Pulumi and the CDKTF (CDK for Terraform).",
+    "baseKP": 75,
+    "slides": [
+        {
+            "id": "iac_1",
+            "type": "content",
+            "title": "The ClickOps Problem",
+            "content": "# The Problem with \"ClickOps\" 🖱️\n\nWhen developers first learn AWS or Azure, they log into the web console, click \"Create VM\", select the RAM, and click \"Deploy\".\n\nThis is terrible for production because:\n1. It is not reproducible. How do you create an identical staging environment?\n2. It cannot be peer-reviewed. Did you accidentally make the database public?\n3. It cannot be version-controlled.\n\nReal DevOps engineers define infrastructure in code."
+        },
+        {
+            "id": "iac_2",
+            "type": "content",
+            "title": "Infrastructure as Code (IaC)",
+            "content": "# The IaC Revolution 🏗️\n\n**Infrastructure as Code (IaC)** means writing configuration files that define your desired infrastructure. A tool reads the file and makes API calls to the cloud provider to create it.\n\nThe industry standard IaC tool is **Terraform** (which uses a proprietary language called HCL).\n\nHowever, learning a proprietary configuration language is frustrating. What if we could define our infrastructure using loops, if-statements, and classes in pure Python?"
+        },
+        {
+            "id": "iac_3",
+            "type": "content",
+            "title": "Introduction to Pulumi",
+            "content": "# Pythonic IaC: Pulumi ⛰️\n\nPulumi is a modern IaC platform that allows you to define infrastructure using real programming languages, including Python.\n\nWith Pulumi, you write a Python script that declares resources. When you run `pulumi up`, Pulumi calculates the difference between your script and the actual cloud, and provisions the resources.\n\n```bash\n# Install the Pulumi CLI and the Python SDK\npip install pulumi pulumi-aws\n```"
+        },
+        {
+            "id": "iac_4",
+            "type": "content",
+            "title": "Writing Pulumi Code",
+            "content": "# Provisioning an S3 Bucket 🪣\n\nHere is how you create an AWS S3 bucket using Pulumi in Python.\n\n```python_not\n# __main__.py\nimport pulumi\nimport pulumi_aws as aws\n\n# Create an AWS resource (S3 Bucket)\n# The first argument is the logical name within Pulumi\nbucket = aws.s3.Bucket(\"my-first-pulumi-bucket\",\n    # We can pass properties to configure the bucket\n    versioning=aws.s3.BucketVersioningArgs(\n        enabled=True,\n    )\n)\n\n# Export the name of the bucket so we can see it after deployment\npulumi.export(\"bucket_name\", bucket.id)\n```"
+        },
+        {
+            "id": "iac_5",
+            "type": "content",
+            "title": "The Power of Python in IaC",
+            "content": "# Loops and Logic 🔄\n\nBecause Pulumi is just Python, you can use `for` loops to create multiple resources effortlessly. Doing this in standard Terraform HCL is complex and clunky.\n\n```python_not\nimport pulumi\nimport pulumi_aws as aws\n\nenvironments = [\"dev\", \"staging\", \"prod\"]\n\n# Create an SQS queue for each environment!\nfor env in environments:\n    queue = aws.sqs.Queue(f\"event-queue-{env}\",\n        visibility_timeout_seconds=30\n    )\n    \n    # Only enable FIFO (First-In-First-Out) in production\n    if env == \"prod\":\n        queue.fifo_queue = True\n```"
+        },
+        {
+            "id": "iac_quiz_1",
+            "type": "quiz",
+            "title": "IaC Concepts Quiz",
+            "content": "Test your understanding of IaC.",
+            "quizQuestion": "What is the primary advantage of using a tool like Pulumi over standard Terraform?",
+            "quizOptions": [
+                "Pulumi is created by AWS, so it integrates better.",
+                "Pulumi allows you to define infrastructure using standard, familiar programming languages (like Python) complete with loops, classes, and IDE autocompletion.",
+                "Pulumi does not require cloud credentials.",
+                "Pulumi executes faster because it bypasses the cloud API."
+            ],
+            "correctOptionIndex": 1
+        },
+        {
+            "id": "iac_6",
+            "type": "content",
+            "title": "CDK for Terraform (CDKTF)",
+            "content": "# Python meets Terraform 🤝\n\nIf your company already uses Terraform, you can still use Python!\n\nHashiCorp created the **CDK for Terraform (CDKTF)**. It allows you to write Python code, which the CDKTF then translates into standard Terraform JSON files under the hood.\n\nIt provides the best of both worlds: Python's expressiveness, and Terraform's massive ecosystem of providers."
+        },
+        {
+            "id": "iac_7",
+            "type": "content",
+            "title": "Writing CDKTF Code",
+            "content": "# Provisioning an EC2 Instance 💻\n\nHere is how you create an AWS EC2 instance using Python and CDKTF.\n\n```python_not\nfrom cdktf import App, TerraformStack\nfrom cdktf_cdktf_provider_aws.provider import AwsProvider\nfrom cdktf_cdktf_provider_aws.instance import Instance\n\nclass MyStack(TerraformStack):\n    def __init__(self, scope, id):\n        super().__init__(scope, id)\n\n        # Initialize the AWS Provider (region: us-west-1)\n        AwsProvider(self, \"AWS\", region=\"us-west-1\")\n\n        # Define the EC2 Instance\n        Instance(self, \"Compute\",\n            ami=\"ami-0c55b159cbfafe1f0\", # Ubuntu AMI\n            instance_type=\"t2.micro\",\n            tags={\"Name\": \"CDKTF-Demo-Instance\"}\n        )\n\napp = App()\nMyStack(app, \"aws_instance_project\")\napp.synth()\n```"
+        },
+        {
+            "id": "iac_8",
+            "type": "content",
+            "title": "State Management",
+            "content": "# The State File 🗃️\n\nBoth Pulumi and Terraform track the resources they create in a **State File**.\n\nWhen you change your Python code and run `pulumi up`, Pulumi compares your code to the State File. \n\nIf you deleted the `aws.sqs.Queue` code from your Python script, Pulumi knows it existed previously in the State File, and it will safely issue a DELETE command to the cloud provider!"
+        },
+        {
+            "id": "iac_9",
+            "type": "content",
+            "title": "Stack Outputs",
+            "content": "# Passing Data Between Stacks 🔗\n\nInfrastructure is often divided into \"Stacks\" (e.g., a Networking Stack and an Application Stack).\n\nThe Application Stack needs to know the ID of the VPC created by the Networking Stack. We use **Outputs**.\n\n```python_not\n# In Pulumi (Networking Stack)\nmy_vpc = aws.ec2.Vpc(\"main_vpc\", cidr_block=\"10.0.0.0/16\")\n\n# Export the ID so other stacks can read it\npulumi.export(\"vpc_id\", my_vpc.id)\n```\n\n```python_not\n# In Pulumi (Application Stack)\n# Read the output from the Networking stack\nnetwork = pulumi.StackReference(\"my-org/networking/prod\")\nvpc_id = network.get_output(\"vpc_id\")\n\n# Create a resource inside that VPC\naws.ec2.Subnet(\"app_subnet\", vpc_id=vpc_id, ...)\n```"
+        },
+        {
+            "id": "iac_quiz_2",
+            "type": "quiz",
+            "title": "State Quiz",
+            "content": "Check your understanding of IaC internals.",
+            "quizQuestion": "How does an IaC tool (like Pulumi or Terraform) know which resources it should delete when you run an update?",
+            "quizOptions": [
+                "It deletes everything in the cloud account and rebuilds it from scratch.",
+                "It searches the entire cloud account for any resource missing a specific tag.",
+                "It compares your current Python code against its internal 'State File' which tracks everything it previously created.",
+                "It doesn't delete resources automatically; you must manually delete them in the web console."
+            ],
+            "correctOptionIndex": 2
+        },
+        {
+            "id": "iac_10",
+            "type": "content",
+            "title": "Summary",
+            "content": "# IaC Pythonista! 🎉\n\nYou've learned the modern way to manage cloud infrastructure.\n\n## Key Takeaways\n\n- ✅ **ClickOps is bad:** Manual infrastructure changes are unversioned and error-prone.\n- ✅ **Infrastructure as Code (IaC):** Defining servers, databases, and networks using code.\n- ✅ **Pulumi:** A modern IaC tool built from the ground up to support real programming languages like Python.\n- ✅ **CDKTF:** A bridge that allows you to write Python code that compiles down to Terraform configuration.\n- ✅ **State:** The critical database these tools use to map your code to real-world cloud resources.\n\nBy treating your infrastructure just like your application code (with Git, code reviews, and CI/CD pipelines), you achieve true DevOps maturity."
+        }
+    ]
+}

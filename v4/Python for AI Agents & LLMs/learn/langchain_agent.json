@@ -1,0 +1,91 @@
+{
+    "id": "learn_langchain_agent",
+    "topicId": "langchain_agent",
+    "description": "Give your AI hands and eyes. Learn to build ReAct Agents using LangChain that can autonomously use Python functions, browse the web, and execute code.",
+    "topicTitle": "LangChain Agents & Tools",
+    "baseKP": 75,
+    "slides": [
+        {
+            "id": "lc_agent_1",
+            "type": "content",
+            "title": "Chains vs Agents",
+            "content": "# Autonomy 🤖\n\nA **Chain** (like `prompt | model | parser`) is deterministic. It runs a predetermined sequence of steps exactly as you wrote them.\n\nAn **Agent** is autonomous. You give an Agent a goal and a set of Tools (Python functions). The Agent uses an LLM as its \"brain\" to determine *which* tools to use, in *what order*, to achieve the goal.\n\nIf a tool fails, the Agent can read the error and try again!"
+        },
+        {
+            "id": "lc_agent_2",
+            "type": "content",
+            "title": "The ReAct Framework",
+            "content": "# Reasoning and Acting 🧠+💪\n\nThe most common Agent architecture is **ReAct (Reason + Act)**.\n\nThe Agent operates in a loop:\n1. **Thought:** The AI thinks about the user's prompt. *(\"I need to find the weather in NYC\")*\n2. **Action:** The AI selects a tool and provides arguments. *(`get_weather(\"NYC\")`)*\n3. **Observation:** Your Python code runs the tool and returns the result to the AI. *(\"It is 70 degrees.\")*\n4. **Thought:** The AI analyzes the observation. *(\"I have the answer now.\")*\n5. **Final Answer:** The AI responds to the user."
+        },
+        {
+            "id": "lc_agent_3",
+            "type": "content",
+            "title": "Defining Tools",
+            "content": "# The `@tool` Decorator 🛠️\n\nTo give an Agent tools, you must turn your Python functions into LangChain `Tool` objects.\n\nThe easiest way is using the `@tool` decorator. \n\n> ⚠️ **CRITICAL:** You MUST include a detailed docstring and type hints! LangChain uses these to generate the JSON Schema that teaches the AI how and when to use the tool.\n\n```python_not\nfrom langchain_core.tools import tool\n\n@tool\ndef multiply(a: int, b: int) -> int:\n    \"\"\"Multiply two integers together.\"\"\"\n    return a * b\n\n@tool\ndef get_word_length(word: str) -> int:\n    \"\"\"Returns the length of a word.\"\"\"\n    return len(word)\n\n# Group them in a list\ntools = [multiply, get_word_length]\n```"
+        },
+        {
+            "id": "lc_agent_4",
+            "type": "content",
+            "title": "Creating the Agent",
+            "content": "# The Agent Hub 🏭\n\nLangChain provides a massive repository of pre-written Agent prompts in the LangChain Hub.\n\nWe will pull the standard ReAct prompt and create the agent.\n\n```python_not\nfrom langchain import hub\nfrom langchain.agents import create_tool_calling_agent\nfrom langchain_openai import ChatOpenAI\n\n# 1. Pull the standard prompt template from the hub\nprompt = hub.pull(\"hwchase17/openai-functions-agent\")\n\n# 2. Initialize the LLM\nllm = ChatOpenAI(model=\"gpt-3.5-turbo\")\n\n# 3. Create the Agent (The Brain)\n# This binds the tools to the LLM\nagent = create_tool_calling_agent(llm, tools, prompt)\n```"
+        },
+        {
+            "id": "lc_agent_quiz_1",
+            "type": "quiz",
+            "title": "Agent vs Chain Quiz",
+            "content": "Check your understanding of AI architectures.",
+            "quizQuestion": "What is the primary difference between a LangChain 'Chain' and an 'Agent'?",
+            "quizOptions": [
+                "A Chain uses OpenAI, while an Agent uses Hugging Face.",
+                "A Chain executes a hardcoded sequence of steps, while an Agent uses an LLM to dynamically decide which tools to run and in what order.",
+                "A Chain can run Python code, but an Agent can only output text.",
+                "There is no difference; they are synonyms."
+            ],
+            "correctOptionIndex": 1
+        },
+        {
+            "id": "lc_agent_5",
+            "type": "content",
+            "title": "The Agent Executor",
+            "content": "# The Runtime Environment ⚙️\n\nThe `agent` object we created is just the brain. It knows *what* to do, but it cannot execute Python code itself.\n\nWe must wrap it in an `AgentExecutor`. This is the while-loop that actually runs the tools and feeds the observations back to the brain.\n\n```python_not\nfrom langchain.agents import AgentExecutor\n\n# Create the executor\nagent_executor = AgentExecutor(agent=agent, tools=tools, verbose=True)\n```"
+        },
+        {
+            "id": "lc_agent_6",
+            "type": "content",
+            "title": "Running the Agent",
+            "content": "# Multi-Tool Use 🤹\n\nLet's ask the Agent a complex question that requires it to use both tools sequentially!\n\n```python_not\n# Give the agent a complex goal\nresult = agent_executor.invoke({\n    \"input\": \"What is the length of the word 'hippopotamus' multiplied by 5?\"\n})\n\nprint(result[\"output\"])\n```\n\n**Behind the scenes (because `verbose=True`):**\n1. AI calls `get_word_length(\"hippopotamus\")`.\n2. Executor returns `12`.\n3. AI calls `multiply(12, 5)`.\n4. Executor returns `60`.\n5. AI outputs: \"The length of the word 'hippopotamus' multiplied by 5 is 60.\""
+        },
+        {
+            "id": "lc_agent_7",
+            "type": "content",
+            "title": "Structured Tools",
+            "content": "# Complex Inputs 📦\n\nThe `@tool` decorator is great for simple functions. But what if your tool needs to accept a complex Dictionary or a nested object?\n\nYou should use a `StructuredTool`. It allows you to use Pydantic models to strictly define the input schema, guaranteeing the AI sends exactly the right data structures!\n\n```python_not\nfrom langchain_core.tools import StructuredTool\nfrom pydantic import BaseModel, Field\n\nclass WeatherInput(BaseModel):\n    city: str = Field(description=\"The city name\")\n    unit: str = Field(description=\"celsius or fahrenheit\")\n\ndef get_weather(city: str, unit: str):\n    return f\"Sunny in {city}\"\n\n# Create a tool with strict Pydantic validation\nweather_tool = StructuredTool.from_function(\n    func=get_weather,\n    name=\"weather_tool\",\n    description=\"Gets the weather\",\n    args_schema=WeatherInput\n)\n```"
+        },
+        {
+            "id": "lc_agent_8",
+            "type": "content",
+            "title": "Pre-built Toolkits",
+            "content": "# LangChain Community 🤝\n\nYou don't have to write every tool from scratch. \n\nThe `langchain-community` package provides dozens of pre-built Toolkits. Want your agent to search Wikipedia? Browse the internet with DuckDuckGo? Execute SQL queries? Read local files?\n\n```bash\npip install langchain-community wikipedia\n```\n\n```python_not\nfrom langchain_community.tools import WikipediaQueryRun\nfrom langchain_community.utilities import WikipediaAPIWrapper\n\n# Instantly create a Wikipedia search tool!\napi_wrapper = WikipediaAPIWrapper(top_k_results=1, doc_content_chars_max=100)\nwiki_tool = WikipediaQueryRun(api_wrapper=api_wrapper)\n\n# Add it to your tools list!\ntools = [wiki_tool, multiply]\n```"
+        },
+        {
+            "id": "lc_agent_quiz_2",
+            "type": "quiz",
+            "title": "Tools Quiz",
+            "content": "Ensure you know how to build reliable tools.",
+            "quizQuestion": "When using the `@tool` decorator, why is it absolutely critical to include a detailed docstring and type hints (e.g., `def calc(a: int):`)?",
+            "quizOptions": [
+                "Because Python will crash without them.",
+                "LangChain uses the docstring and type hints to automatically generate the JSON Schema that tells the AI exactly what the tool does and how to format the arguments.",
+                "It makes the Python code execute faster.",
+                "It is purely for other human developers to read."
+            ],
+            "correctOptionIndex": 1
+        },
+        {
+            "id": "lc_agent_9",
+            "type": "content",
+            "title": "Summary",
+            "content": "# Autonomous Agent Developer! 🎉\n\nYou've learned how to build systems that can think and act.\n\n## Key Takeaways\n\n- ✅ **Agents:** Use an LLM as a reasoning engine to dynamically select tools to accomplish a goal.\n- ✅ **ReAct Loop:** The AI thinks, calls an action, observes the result, and repeats until the goal is met.\n- ✅ **@tool:** Decorate Python functions with `@tool`, ensuring you write clear docstrings and type hints to guide the AI.\n- ✅ **AgentExecutor:** The runtime environment that bridges the AI \"Brain\" with the actual execution of your Python tools.\n- ✅ **Toolkits:** Don't reinvent the wheel. Use `langchain-community` to give your Agent access to Wikipedia, SQL databases, and web search instantly."
+        }
+    ]
+}

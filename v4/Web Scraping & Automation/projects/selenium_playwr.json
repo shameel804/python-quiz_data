@@ -1,0 +1,32 @@
+[
+  {
+    "title": "Starting Selenium WebDriver \ud83c\udfce",
+    "ques": "Write a Python script to launch a Chrome browser using Selenium, navigate to `https://google.com`, and print the page title.",
+    "answer": {
+      "type": "code",
+      "lang": "python",
+      "content": "from selenium import webdriver\n\ndriver = webdriver.Chrome()\ndriver.get('https://google.com')\nprint(driver.title)\ndriver.quit()"
+    },
+    "explanation": "Selenium controls an actual web browser. Always call `quit()` to close the browser instance and free up system resources."
+  },
+  {
+    "title": "Finding Elements in Selenium \ud83c\udfaf",
+    "ques": "Use Selenium to find an input element by its `name` attribute equal to `'q'` and type the text `'Python'` into it.",
+    "answer": {
+      "type": "code",
+      "lang": "python",
+      "content": "from selenium.webdriver.common.by import By\n\nsearch_box = driver.find_element(By.NAME, 'q')\nsearch_box.send_keys('Python')"
+    },
+    "explanation": "`find_element` locates DOM elements, and `send_keys` simulates keyboard input."
+  },
+  {
+    "title": "Playwright Async Automation \ud83c\udfad",
+    "ques": "Write a basic async Playwright snippet to launch Chromium, open a new page, and navigate to `https://example.com`.",
+    "answer": {
+      "type": "code",
+      "lang": "python",
+      "content": "import asyncio\nfrom playwright.async_api import async_playwright\n\nasync def main():\n    async with async_playwright() as p:\n        browser = await p.chromium.launch()\n        page = await browser.new_page()\n        await page.goto('https://example.com')\n        await browser.close()\n\nasyncio.run(main())"
+    },
+    "explanation": "Playwright offers modern, fast, and asynchronous browser automation natively supporting multiple browser engines."
+  }
+]

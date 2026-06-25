@@ -1,0 +1,141 @@
+{
+    "id": "learn_pydantic_valida",
+    "topicId": "pydantic_valida",
+    "topicTitle": "Pydantic & Validation",
+    "description": "Master data modeling, request bodies, and complex validation using Pydantic.",
+    "baseKP": 85,
+    "slides": [
+        {
+            "id": "pyd_1",
+            "type": "content",
+            "title": "What is Pydantic?",
+            "content": "# The Power of Pydantic \ud83c\udfd7\ufe0f\n\nPydantic is a data validation and settings management library using Python type hints.\nFastAPI uses it heavily under the hood to parse and validate JSON request bodies.\n\nWhen a client sends a JSON payload via a `POST` or `PUT` request, you don't parse it manually. You define a Pydantic `BaseModel`, and FastAPI handles the rest!"
+        },
+        {
+            "id": "pyd_2",
+            "type": "content",
+            "title": "Creating a BaseModel",
+            "content": "# Defining a Schema \ud83d\udcdd\n\nTo declare a request body, create a class that inherits from `BaseModel`.\n\n```python_not\nfrom pydantic import BaseModel\n\nclass Item(BaseModel):\n    name: str\n    description: str | None = None  # Optional\n    price: float\n    tax: float | None = None        # Optional\n```\n\nBecause `description` and `tax` have default values (None), they are not required in the JSON payload."
+        },
+        {
+            "id": "pyd_3",
+            "type": "content",
+            "title": "Using the Model in FastAPI",
+            "content": "# Receiving JSON \ud83d\udce5\n\nAdd the model to your path operation as a parameter. FastAPI will automatically read the body of the HTTP request as JSON, convert it to the Pydantic model, and validate it!\n\n```python_not\nfrom fastapi import FastAPI\napp = FastAPI()\n\n@app.post(\"/items/\")\ndef create_item(item: Item):\n    # 'item' is now a fully instantiated Pydantic object!\n    total_price = item.price\n    if item.tax:\n        total_price += item.tax\n        \n    return {\"message\": f\"{item.name} costs {total_price}\"}\n```"
+        },
+        {
+            "id": "pyd_4",
+            "type": "content",
+            "title": "Automatic Validation",
+            "content": "# The 422 Unprocessable Entity \ud83d\udeab\n\nIf a client sends this JSON:\n```json\n{\n    \"name\": \"Laptop\",\n    \"price\": \"expensive\"\n}\n```\n\nBecause `price` must be a float, FastAPI intercepts the request *before* it even reaches your function!\nIt returns a helpful `422 Unprocessable Entity` error telling the client exactly what went wrong:\n\n```json\n{\n  \"detail\": [\n    {\n      \"loc\": [\"body\", \"price\"],\n      \"msg\": \"value is not a valid float\",\n      \"type\": \"type_error.float\"\n    }\n  ]\n}\n```"
+        },
+        {
+            "id": "pyd_5",
+            "type": "content",
+            "title": "The Field Function",
+            "content": "# Advanced Validation with Field \ud83d\udee1\ufe0f\n\nJust like `Path` and `Query` for URLs, Pydantic provides the `Field` function to validate data inside your models.\n\n```python_not\nfrom pydantic import BaseModel, Field\n\nclass Item(BaseModel):\n    # Required, max 50 chars\n    name: str = Field(..., max_length=50)\n    \n    # Optional, max 300 chars\n    description: str | None = Field(default=None, max_length=300)\n    \n    # Required, must be greater than 0\n    price: float = Field(..., gt=0)\n```\n*Note: The `...` (Ellipsis) is a special Python syntax often used in Pydantic to indicate a field is required when using `Field`.*"
+        },
+        {
+            "id": "pyd_quiz_1",
+            "type": "quiz",
+            "title": "Knowledge Check: Pydantic",
+            "content": "Test your Pydantic knowledge.",
+            "quizQuestion": "How does FastAPI know that a function parameter should be read from the JSON request body instead of the URL query string?",
+            "quizOptions": [
+                "You must add the `@request_body` decorator.",
+                "If the parameter's type hint is a Pydantic `BaseModel`, FastAPI automatically treats it as a request body.",
+                "You must name the parameter `body`.",
+                "FastAPI always assumes parameters are in the request body."
+            ],
+            "correctOptionIndex": 1
+        },
+        {
+            "id": "pyd_6",
+            "type": "content",
+            "title": "Nested Models",
+            "content": "# Complex JSON Hierarchies \ud83e\ude86\n\nJSON payloads often contain nested objects and lists. \nYou can define this by nesting Pydantic models!\n\n```python_not\nclass Image(BaseModel):\n    url: str\n    name: str\n\nclass Item(BaseModel):\n    name: str\n    description: str | None = None\n    price: float\n    tags: list[str] = []\n    \n    # Nested Model!\n    image: Image | None = None\n```\nNow, your API expects a JSON payload where `image` is an object containing `url` and `name`."
+        },
+        {
+            "id": "pyd_7",
+            "type": "content",
+            "title": "Deeply Nested Lists",
+            "content": "# Lists of Models \ud83d\udcdc\n\nYou can even have lists of nested models.\n\n```python_not\nclass Item(BaseModel):\n    name: str\n    price: float\n    \n    # A list of Image objects!\n    images: list[Image] | None = None\n```\n\nValid JSON for this:\n```json\n{\n    \"name\": \"Phone\",\n    \"price\": 599.99,\n    \"images\": [\n        {\"url\": \"img1.png\", \"name\": \"Front\"},\n        {\"url\": \"img2.png\", \"name\": \"Back\"}\n    ]\n}\n```\nFastAPI validates the entire tree recursively!"
+        },
+        {
+            "id": "pyd_8",
+            "type": "content",
+            "title": "Constrained Types",
+            "content": "# Built-in Constraints \ud83d\udccf\n\nInstead of using `Field(..., gt=0)`, Pydantic provides specific constrained types for cleaner code.\n\n```python_not\nfrom pydantic import BaseModel, constr, conint\n\nclass User(BaseModel):\n    # String between 2 and 50 characters\n    username: constr(min_length=2, max_length=50)\n    \n    # Integer strictly greater than 18\n    age: conint(gt=18)\n```\n*(Note: In newer Pydantic v2, `constr` is being replaced by `Annotated` types, but `constr` is still widely seen in existing codebases.)*"
+        },
+        {
+            "id": "pyd_9",
+            "type": "content",
+            "title": "Custom Validators",
+            "content": "# Custom Validation Logic \ud83d\udee0\ufe0f\n\nSometimes `min_length` isn't enough. What if you need to verify an email domain or check for profanity?\nUse the `@validator` decorator!\n\n```python_not\nfrom pydantic import BaseModel, validator\n\nclass UserSignup(BaseModel):\n    username: str\n    email: str\n\n    @validator('username')\n    def username_alphanumeric(cls, v):\n        if not v.isalnum():\n            raise ValueError('Username must be alphanumeric')\n        return v\n```\nIf `ValueError` is raised, FastAPI catches it and returns a 422 error to the user!"
+        },
+        {
+            "id": "pyd_10",
+            "type": "content",
+            "title": "Root Validators",
+            "content": "# Validating Multiple Fields \ud83e\udde9\n\nWhat if validation requires looking at *two* fields at the same time? (e.g., `password` and `confirm_password` must match).\n\nUse a `@root_validator`!\n\n```python_not\nfrom pydantic import BaseModel, root_validator\n\nclass PasswordChange(BaseModel):\n    password: str\n    confirm_password: str\n\n    @root_validator\n    def check_passwords_match(cls, values):\n        pw = values.get('password')\n        cpw = values.get('confirm_password')\n        if pw is not None and cpw is not None and pw != cpw:\n            raise ValueError('Passwords do not match')\n        return values\n```"
+        },
+        {
+            "id": "pyd_quiz_2",
+            "type": "quiz",
+            "title": "Knowledge Check: Validators",
+            "content": "Test your custom validation skills.",
+            "quizQuestion": "When should you use a `@root_validator` instead of a standard `@validator`?",
+            "quizOptions": [
+                "When validating a list of items.",
+                "When the validation logic depends on comparing multiple fields within the model.",
+                "When you want to validate URL query parameters.",
+                "When you need to validate the root URL ('/') of the API."
+            ],
+            "correctOptionIndex": 1
+        },
+        {
+            "id": "pyd_11",
+            "type": "content",
+            "title": "Response Models",
+            "content": "# Output Validation \ud83d\udce4\n\nPydantic isn't just for incoming data. It's for outgoing data too!\nYou can declare a `response_model` in your path operation.\n\n```python_not\nclass UserOut(BaseModel):\n    username: str\n    email: str\n\n@app.get(\"/user/\", response_model=UserOut)\ndef get_user():\n    # Even if this dict has extra fields (like a password)\n    # FastAPI will filter them out before sending the response!\n    return {\"username\": \"admin\", \"email\": \"admin@a.com\", \"password\": \"secret\"}\n```"
+        },
+        {
+            "id": "pyd_12",
+            "type": "content",
+            "title": "Why use Response Models?",
+            "content": "# The Benefits of Response Models \ud83c\udf1f\n\n1. **Data Filtering:** As seen on the last slide, it prevents accidental leakage of sensitive data (like passwords) by stripping out unmapped fields.\n2. **Type Casting:** If your database returns an integer `1`, but your response model says `string`, FastAPI converts it to `\"1\"`.\n3. **Documentation:** OpenAPI (Swagger UI) automatically reads the `response_model` and displays the exact JSON structure clients should expect to receive!"
+        },
+        {
+            "id": "pyd_13",
+            "type": "content",
+            "title": "Excluding Data",
+            "content": "# response_model_exclude_unset \u2702\ufe0f\n\nIf your response model has many optional fields, returning a JSON object with 20 `null` values is ugly and wastes bandwidth.\n\nYou can tell FastAPI to only include values that were explicitly set!\n\n```python_not\nclass Item(BaseModel):\n    name: str\n    description: str | None = None\n    tax: float = 10.5\n\n@app.get(\"/items/\", response_model=Item, response_model_exclude_unset=True)\ndef read_item():\n    # Because we don't set 'description' or 'tax', they are omitted from the JSON!\n    return {\"name\": \"Foo\"}\n```\nThe JSON sent to the client will simply be `{\"name\": \"Foo\"}`."
+        },
+        {
+            "id": "pyd_14",
+            "type": "content",
+            "title": "Multiple Models",
+            "content": "# The Standard Architecture \ud83c\udfdb\ufe0f\n\nA very common pattern in FastAPI is having different models for different stages of data.\n\n- `UserCreate`: Has `username`, `email`, and `password`.\n- `UserInDB`: Has `id`, `username`, `email`, and `hashed_password`.\n- `UserOut`: Has only `id`, `username`, and `email`.\n\n```python_not\n@app.post(\"/users/\", response_model=UserOut)\ndef create_user(user: UserCreate):\n    hashed_pw = hash_password(user.password)\n    db_user = save_to_db(user.username, user.email, hashed_pw)\n    return db_user # Returns UserInDB, but FastAPI filters it down to UserOut!\n```"
+        },
+        {
+            "id": "pyd_quiz_3",
+            "type": "quiz",
+            "title": "Knowledge Check: Response Models",
+            "content": "Test your response shaping knowledge.",
+            "quizQuestion": "What happens if your Python function returns a dictionary with a `password` key, but your `response_model` does not contain a `password` field?",
+            "quizOptions": [
+                "FastAPI throws a Server Error (500).",
+                "FastAPI includes the password in the response anyway.",
+                "FastAPI automatically removes the password from the JSON response.",
+                "FastAPI asks the client if they want the password."
+            ],
+            "correctOptionIndex": 2
+        },
+        {
+            "id": "pyd_15",
+            "type": "content",
+            "title": "Summary",
+            "content": "# Summary \ud83c\udf89\n\nYou are now a master of data validation!\n\n## Key Takeaways\n- \u2705 **Pydantic:** The engine behind FastAPI's JSON validation.\n- \u2705 **BaseModel:** Inherit from this to create schemas for request bodies.\n- \u2705 **Field:** Use this to add validation rules (like `max_length` or `gt`) to model attributes.\n- \u2705 **Nested Models:** Use models as types inside other models to validate complex, multi-level JSON.\n- \u2705 **Validators:** Use `@validator` and `@root_validator` to write custom Python logic for checking data rules.\n- \u2705 **Response Models:** Define what your API returns. FastAPI will automatically filter out sensitive data and document the schema in Swagger UI."
+        }
+    ]
+}

@@ -1,0 +1,29 @@
+[
+  {
+    "title": "Single Responsibility Principle (SRP)",
+    "ques": "Define the Single Responsibility Principle, the 'S' in SOLID.",
+    "answer": {
+      "type": "text",
+      "content": "The Single Responsibility Principle states that a class or module should have one, and only one, reason to change. It should encapsulate a single functional area of the software. For example, a `User` class should handle user data logic, but it should not contain the logic for saving itself to a database or rendering its data to an HTML template."
+    },
+    "explanation": "SRP prevents 'god classes' and makes code easier to test, understand, and maintain."
+  },
+  {
+    "title": "DRY and YAGNI",
+    "ques": "What do the acronyms DRY and YAGNI stand for, and what do they advise?",
+    "answer": {
+      "type": "text",
+      "content": "*   **DRY (Don't Repeat Yourself):** Advises that every piece of knowledge or logic must have a single, unambiguous representation in a system. Avoid copy-pasting code; use functions or classes instead.\n*   **YAGNI (You Aren't Gonna Need It):** Advises against over-engineering. Do not build features, abstractions, or layers based on anticipated future needs. Build only what is necessary right now."
+    },
+    "explanation": "These two principles balance each other: DRY encourages good abstraction, while YAGNI prevents unnecessary, speculative abstraction."
+  },
+  {
+    "title": "Early Returns (Bouncer Pattern)",
+    "ques": "How does using 'early returns' improve code readability?",
+    "answer": {
+      "type": "text",
+      "content": "Early returns (or guard clauses) involve checking for error conditions or edge cases at the very beginning of a function and returning immediately if they are met. This avoids deeply nested `if/else` blocks (often called the 'Arrow Anti-Pattern') and allows the primary 'happy path' logic to remain unindented at the main level of the function, making it much easier to read top-to-bottom."
+    },
+    "explanation": "Flattening code structure significantly reduces the cognitive load required to follow the execution flow."
+  }
+]

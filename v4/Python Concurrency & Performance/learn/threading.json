@@ -1,0 +1,147 @@
+{
+    "id": "learn_threading",
+    "topicId": "threading",
+    "topicTitle": "Threading",
+    "description": "Dive into concurrency with Python's threading module. Learn how to spawn threads, manage daemon threads, and use synchronization primitives like Locks, Events, and Semaphores.",
+    "baseKP": 75,
+    "slides": [
+        {
+            "id": "thread_1",
+            "type": "content",
+            "title": "Introduction to Concurrency",
+            "content": "# Doing Multiple Things at Once 🤹\n\nBy default, Python executes code sequentially. Line 2 doesn't run until Line 1 finishes. \n\nIf Line 1 is a request to download a 1GB file, your entire program freezes until the download is complete. The CPU is sitting idle, waiting for the network!\n\n**Concurrency** is the art of structuring your program to deal with multiple tasks at once. When one task has to wait (e.g., for disk I/O or network), the CPU can switch to another task."
+        },
+        {
+            "id": "thread_2",
+            "type": "content",
+            "title": "The threading Module",
+            "content": "# Enter the `threading` Module 🧵\n\nPython's built-in `threading` module allows you to run multiple threads within a single process. All threads share the same memory space, which makes communication easy, but requires careful synchronization.\n\n## Creating a Thread\n\nYou create a `Thread` object, pass it a target function, and call `start()`.\n\n```python\nimport threading\nimport time\n\ndef worker(name):\n    print(f\"Worker {name} starting...\")\n    time.sleep(2) # Simulate work\n    print(f\"Worker {name} finished!\")\n\n# Create the thread object\nt = threading.Thread(target=worker, args=(\"A\",))\n\n# Begin execution in the background\nt.start()\n\nprint(\"Main thread continues immediately!\")\n```"
+        },
+        {
+            "id": "thread_3",
+            "type": "content",
+            "title": "Joining Threads",
+            "content": "# Waiting for Completion: `join()` 🛑\n\nIn the previous slide, the main program prints \"Main thread continues\" and might even exit before the worker thread finishes!\n\nIf you need the main program to wait for a thread to complete before moving on, you use the `.join()` method.\n\n<!-- FULL_CODE_START\nimport threading\nimport time\n\ndef download_file(filename):\n    print(f\"Starting download of {filename}\")\n    time.sleep(2)  # Simulate network delay\n    print(f\"Finished downloading {filename}\")\n\n# Create two threads\nt1 = threading.Thread(target=download_file, args=(\"data_A.csv\",))\nt2 = threading.Thread(target=download_file, args=(\"data_B.csv\",))\n\nprint(\"Starting threads...\")\nt1.start()\nt2.start()\n\nprint(\"Waiting for threads to finish...\")\n# The program will block here until t1 finishes\nt1.join()\n# Then it will block here until t2 finishes\nt2.join()\n\nprint(\"All downloads complete! Moving to processing phase.\")\nFULL_CODE_END -->"
+        },
+        {
+            "id": "thread_4",
+            "type": "content",
+            "title": "Daemon Threads",
+            "content": "# Daemon Threads 👻\n\nBy default, a Python program will not exit until **all** non-daemon threads have completed. \n\nIf you have a background thread that runs an infinite loop (like a monitoring service or an auto-saver), it will prevent your program from ever closing!\n\n**Daemon threads** are background threads that automatically die the moment the main program exits.\n\n```python\nimport threading\nimport time\n\ndef background_monitor():\n    while True:\n        print(\"Monitoring system...\")\n        time.sleep(1)\n\n# Set daemon=True\nt = threading.Thread(target=background_monitor, daemon=True)\nt.start()\n\ntime.sleep(3)\nprint(\"Main program exiting. Daemon thread will instantly terminate.\")\n```"
+        },
+        {
+            "id": "thread_quiz_1",
+            "type": "quiz",
+            "title": "Thread Basics Check",
+            "content": "Let's check your understanding of thread lifecycle.",
+            "quizQuestion": "What is the primary purpose of the `.join()` method on a Thread object?",
+            "quizOptions": [
+                "To force the thread to terminate immediately.",
+                "To merge the thread's memory with the main process.",
+                "To block the calling thread until the target thread terminates.",
+                "To convert a daemon thread into a regular thread."
+            ],
+            "correctOptionIndex": 2
+        },
+        {
+            "id": "thread_5",
+            "type": "content",
+            "title": "Race Conditions",
+            "content": "# The Danger: Race Conditions 🏎️\n\nBecause all threads share the same memory, chaos erupts when multiple threads try to modify the exact same variable at the exact same time.\n\n<!-- FULL_CODE_START\nimport threading\nimport time\n\ncounter = 0\n\ndef increment():\n    global counter\n    for _ in range(100000):\n        # This operation is NOT atomic!\n        # It reads, adds, and writes. Threads can interrupt each other here.\n        counter += 1\n\nthreads = []\nfor _ in range(5):\n    t = threading.Thread(target=increment)\n    threads.append(t)\n    t.start()\n\nfor t in threads:\n    t.join()\n\n# You would expect 500,000. But run it, and you'll get a random lower number!\nprint(f\"Final counter value: {counter}\")\nFULL_CODE_END -->\n\nThis is called a **Race Condition**."
+        },
+        {
+            "id": "thread_6",
+            "type": "content",
+            "title": "Introduction to Locks",
+            "content": "# The Solution: Locks 🔒\n\nTo prevent race conditions, we use a **Lock** (Mutex). \n\nA Lock ensures that only one thread can execute a specific block of code at a time. If Thread A holds the lock, Thread B must wait (block) until Thread A releases it.\n\n```python\nimport threading\n\ncounter = 0\nlock = threading.Lock()\n\ndef safe_increment():\n    global counter\n    for _ in range(100000):\n        # Acquire the lock. Only one thread gets past this line.\n        lock.acquire()\n        try:\n            counter += 1\n        finally:\n            # Always release in a finally block to avoid deadlocks!\n            lock.release()\n```\n\nNow, the final counter will perfectly equal 500,000 every time."
+        },
+        {
+            "id": "thread_7",
+            "type": "content",
+            "title": "Locks with Context Managers",
+            "content": "# Locks the Pythonic Way 🐍\n\nManually calling `.acquire()` and `.release()` is dangerous. If an exception occurs before `.release()` is called, the lock remains locked forever, freezing your entire application (a Deadlock).\n\nYou should always use Locks as a context manager (the `with` statement).\n\n```python\nimport threading\n\ncounter = 0\nlock = threading.Lock()\n\ndef pythonic_increment():\n    global counter\n    for _ in range(100000):\n        # Automatically acquires the lock here...\n        with lock:\n            counter += 1\n        # ...and automatically releases it here, even if errors occur!\n```"
+        },
+        {
+            "id": "thread_8",
+            "type": "content",
+            "title": "Reentrant Locks (RLock)",
+            "content": "# The Reentrant Lock (`RLock`) 🔄\n\nWhat happens if a thread tries to acquire a standard `Lock` that it *already* owns?\n\n```python\nlock = threading.Lock()\n\nlock.acquire()\nlock.acquire() # DEADLOCK! The thread blocks itself, waiting for itself to release the lock.\n```\n\nAn `RLock` (Reentrant Lock) solves this. It allows the *same* thread to acquire the lock multiple times without blocking. It keeps an internal counter; the lock is only truly released when `.release()` has been called as many times as `.acquire()`.\n\nThis is crucial for recursive functions that require thread safety."
+        },
+        {
+            "id": "thread_quiz_2",
+            "type": "quiz",
+            "title": "Lock Quiz",
+            "content": "Test your understanding of thread synchronization.",
+            "quizQuestion": "Why is it highly recommended to use the `with lock:` context manager instead of manually calling `lock.acquire()` and `lock.release()`?",
+            "quizOptions": [
+                "It makes the thread run faster.",
+                "It guarantees the lock will be released even if an exception occurs inside the block.",
+                "It allows multiple threads to enter the locked block simultaneously.",
+                "It automatically converts a Lock into an RLock."
+            ],
+            "correctOptionIndex": 1
+        },
+        {
+            "id": "thread_9",
+            "type": "content",
+            "title": "Semaphores",
+            "content": "# Semaphores: Bouncers of the Thread World 🚦\n\nA Lock allows exactly **one** thread in. A `Semaphore` allows a **specific number** of threads in.\n\nThink of it like a bouncer at a club with a capacity of 3. The first 3 threads enter. The 4th thread must wait until one of the first 3 leaves.\n\n```python\nimport threading\nimport time\n\n# Allow a maximum of 3 threads to run this code simultaneously\npool_sema = threading.Semaphore(value=3)\n\ndef download_worker(id):\n    with pool_sema:\n        print(f\"Thread {id} is downloading...\")\n        time.sleep(2) # Simulating heavy bandwidth usage\n        print(f\"Thread {id} finished.\")\n```\n\nThis is incredibly useful for throttling API requests or limiting database connections."
+        },
+        {
+            "id": "thread_10",
+            "type": "content",
+            "title": "Events",
+            "content": "# Thread Communication: `Event` 📡\n\nSometimes, threads need to signal each other. For example, Thread A might be waiting for Thread B to finish initializing a database.\n\nAn `Event` is a simple boolean flag. Threads can wait for the flag to turn `True`.\n\n```python\nimport threading\nimport time\n\n# Event flag is initially False\ndatabase_ready = threading.Event()\n\ndef worker():\n    print(\"Worker waiting for database...\")\n    database_ready.wait() # Blocks until flag is True\n    print(\"Worker connected to database!\")\n\ndef initializer():\n    print(\"Initializing database...\")\n    time.sleep(3)\n    print(\"Database ready!\")\n    database_ready.set() # Changes flag to True, waking up the worker\n\nthreading.Thread(target=worker).start()\nthreading.Thread(target=initializer).start()\n```"
+        },
+        {
+            "id": "thread_11",
+            "type": "content",
+            "title": "Condition Variables",
+            "content": "# Advanced Communication: `Condition` 🔔\n\nA `Condition` is an advanced combination of a Lock and an Event. It is used for the classic **Producer-Consumer** problem.\n\nA Consumer waits for an item to be added to a queue. The Producer adds an item and uses `.notify()` to wake up a sleeping Consumer.\n\n```python\nimport threading\n\ncond = threading.Condition()\nitems = []\n\ndef consumer():\n    with cond:\n        while not items:\n            cond.wait()  # Sleep and release lock until notified\n        item = items.pop(0)\n        print(f\"Consumed {item}\")\n\ndef producer():\n    with cond:\n        items.append(\"Data\")\n        cond.notify() # Wake up one waiting thread\n```"
+        },
+        {
+            "id": "thread_12",
+            "type": "content",
+            "title": "Barriers",
+            "content": "# Thread Synchronization: `Barrier` 🚧\n\nSuppose you have 5 threads performing complex calculations, and they must all finish phase 1 before *any* of them can proceed to phase 2.\n\nYou use a `Barrier`. You tell the Barrier how many threads it should expect. When a thread reaches the barrier, it calls `.wait()` and freezes. Once the required number of threads have hit the barrier, it drops, and they all proceed simultaneously.\n\n```python\nimport threading\nimport time\nimport random\n\n# A barrier that waits for exactly 3 threads\nbarrier = threading.Barrier(3)\n\ndef runner(name):\n    print(f\"{name} is running phase 1...\")\n    time.sleep(random.randint(1, 3))\n    print(f\"{name} reached the barrier.\")\n    \n    barrier.wait() # Blocks until 3 threads arrive here\n    \n    print(f\"{name} started phase 2!\")\n```"
+        },
+        {
+            "id": "thread_quiz_3",
+            "type": "quiz",
+            "title": "Synchronization Quiz",
+            "content": "Match the synchronization primitive to the use case.",
+            "quizQuestion": "If you want to limit API requests to a third-party service to exactly 5 concurrent requests at a time, which tool should you use?",
+            "quizOptions": [
+                "threading.Lock()",
+                "threading.Event()",
+                "threading.Semaphore(5)",
+                "threading.Barrier(5)"
+            ],
+            "correctOptionIndex": 2
+        },
+        {
+            "id": "thread_13",
+            "type": "content",
+            "title": "The Global Interpreter Lock (GIL)",
+            "content": "# The Elephant in the Room: The GIL 🐘\n\nIf you use threads in C++ or Java, multiple threads run on multiple CPU cores simultaneously. \n\n**In Python (CPython specifically), this is NOT true.**\n\nCPython has a Global Interpreter Lock (GIL). The GIL ensures that **only one thread executes Python bytecode at any given time**, regardless of how many CPU cores you have.\n\nDoes this mean Python threads are useless? No! It just restricts their use cases."
+        },
+        {
+            "id": "thread_14",
+            "type": "content",
+            "title": "When to use Threads",
+            "content": "# I/O Bound vs CPU Bound 💻\n\nBecause of the GIL, Python threads cannot speed up **CPU-Bound** tasks (e.g., heavy math, image processing). If you run heavy math on 4 threads, it will actually be *slower* than running it on 1 thread due to context switching overhead.\n\nPython threads are excellent for **I/O-Bound** tasks.\nWhen a thread makes an HTTP request, queries a database, or reads a file, it releases the GIL while waiting! This allows other threads to execute.\n\n**Rule of Thumb:**\n- Network requests or file reading? Use Threads.\n- Number crunching? Use Multiprocessing (covered in the next module!)."
+        },
+        {
+            "id": "thread_15",
+            "type": "content",
+            "title": "ThreadPoolExecutor",
+            "content": "# The Modern Way: `ThreadPoolExecutor` 🚀\n\nManually creating `Thread` objects, starting them, and joining them is tedious. Python 3 provides a higher-level API in the `concurrent.futures` module.\n\n```python_not\nimport concurrent.futures\nimport time\n\ndef fetch_url(url):\n    time.sleep(1) # Simulate network\n    return f\"Downloaded {url}\"\n\nurls = [\"http://a.com\", \"http://b.com\", \"http://c.com\"]\n\n# Create a pool of 3 worker threads\nwith concurrent.futures.ThreadPoolExecutor(max_workers=3) as executor:\n    # Map the function to the list of inputs\n    results = executor.map(fetch_url, urls)\n    \n    for result in results:\n        print(result)\n```\n\nThis automatically handles thread creation, queuing, and joining in just a few lines of code!"
+        },
+        {
+            "id": "thread_16",
+            "type": "content",
+            "title": "Summary",
+            "content": "# Threading Mastered! 🎉\n\nYou've unlocked the power of concurrent programming in Python.\n\n## Key Takeaways\n\n- ✅ **Threads:** Use `threading.Thread` to run functions in the background.\n- ✅ **Daemon Threads:** Background tasks that die when the main program exits.\n- ✅ **Race Conditions:** Occur when threads modify shared data simultaneously.\n- ✅ **Synchronization:** Use `Lock`, `RLock`, `Semaphore`, `Event`, and `Barrier` to safely coordinate threads.\n- ✅ **The GIL:** Python threads run on a single CPU core. They are for **I/O-bound** tasks, not CPU-bound tasks.\n- ✅ **ThreadPoolExecutor:** The modern, clean way to manage pools of threads.\n\nNext, we'll learn how to defeat the GIL using Multiprocessing!"
+        }
+    ]
+}

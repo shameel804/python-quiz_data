@@ -1,0 +1,97 @@
+{
+    "id": "learn_multi_agent_fra",
+    "topicId": "multi_agent_fra",
+    "topicTitle": "Multi-Agent & Frameworks",
+    "description": "Scale your AI workflows. Learn how specialized Multi-Agent frameworks like CrewAI and AutoGen orchestrate teams of AI agents to solve complex problems together.",
+    "baseKP": 75,
+    "slides": [
+        {
+            "id": "multi_ag_1",
+            "type": "content",
+            "title": "The Limits of a Single Agent",
+            "content": "# Jack of All Trades, Master of None 🃏\n\nWe learned how to build a LangChain Agent with tools. But what if the goal is extremely complex: *\"Research the AI market, write a 10-page report, format it as markdown, and review it for grammatical errors.\"*\n\nIf you give one Agent 20 tools and a massive prompt, it gets confused. It will use the wrong tools, get stuck in loops, or forget the formatting instructions.\n\nTo solve this, we use **Multi-Agent Systems**."
+        },
+        {
+            "id": "multi_ag_2",
+            "type": "content",
+            "title": "Multi-Agent Systems",
+            "content": "# AI Teams 🤝\n\nInstead of one bloated agent, you create a Team of highly specialized Agents:\n1. **The Researcher:** Has web browsing tools. Only focuses on finding facts.\n2. **The Writer:** Has no tools. Only focuses on writing beautiful markdown.\n3. **The Editor:** Reviews the Writer's work. If it's bad, the Editor sends it back to the Writer to fix!\n\nThis division of labor drastically improves the quality and reliability of the output."
+        },
+        {
+            "id": "multi_ag_3",
+            "type": "content",
+            "title": "Introduction to CrewAI",
+            "content": "# Role-Playing AI: CrewAI 🛳️\n\nWhile LangChain is the underlying engine, frameworks like **CrewAI** are built on top of it specifically to orchestrate Multi-Agent teams effortlessly.\n\nCrewAI uses a role-playing paradigm. You define `Agents` with distinct personas, assign them `Tasks`, and group them into a `Crew`.\n\n```bash\npip install crewai langchain-openai\n```"
+        },
+        {
+            "id": "multi_ag_4",
+            "type": "content",
+            "title": "Defining Agents in CrewAI",
+            "content": "# Creating Personas 🎭\n\n```python_not\nfrom crewai import Agent\n\n# The Researcher Agent\nresearcher = Agent(\n    role='Senior Tech Researcher',\n    goal='Uncover the latest trends in AI',\n    backstory=\"\"\"You are a veteran researcher. You excel at finding \n    hidden facts and summarizing complex technical papers.\"\"\",\n    verbose=True,\n    allow_delegation=False\n)\n\n# The Writer Agent\nwriter = Agent(\n    role='Technical Content Strategist',\n    goal='Craft compelling content on tech advancements',\n    backstory=\"\"\"You are a renowned content strategist, known for \n    transforming complex concepts into engaging narratives.\"\"\",\n    verbose=True,\n    allow_delegation=True # Can ask the researcher for more info!\n)\n```"
+        },
+        {
+            "id": "multi_ag_5",
+            "type": "content",
+            "title": "Defining Tasks",
+            "content": "# Assigning the Work 📋\n\nTasks are specific assignments given to specific agents.\n\n```python_not\nfrom crewai import Task\n\n# Assign a task to the researcher\ntask1 = Task(\n    description='Research the impact of PEFT (LoRA) in 2024.',\n    expected_output='A 3-paragraph summary of LoRA trends.',\n    agent=researcher\n)\n\n# Assign a task to the writer (Depends on Task 1!)\ntask2 = Task(\n    description='Use the research to write a blog post.',\n    expected_output='A full markdown blog post.',\n    agent=writer\n)\n```"
+        },
+        {
+            "id": "multi_ag_6",
+            "type": "content",
+            "title": "Running the Crew",
+            "content": "# Orchestrating the Team 🚀\n\nFinally, we assemble the Crew and start the process. CrewAI automatically passes the output of `task1` as context into `task2`!\n\n```python_not\nfrom crewai import Crew, Process\n\n# Assemble the crew\ntech_crew = Crew(\n    agents=[researcher, writer],\n    tasks=[task1, task2],\n    process=Process.sequential # Run tasks in order\n)\n\n# Start the execution!\nresult = tech_crew.kickoff()\n\nprint(\"######################\")\nprint(\"FINAL BLOG POST:\")\nprint(result)\n```"
+        },
+        {
+            "id": "multi_ag_quiz_1",
+            "type": "quiz",
+            "title": "Multi-Agent Quiz",
+            "content": "Check your understanding of agent architecture.",
+            "quizQuestion": "Why is a Multi-Agent system (like a CrewAI team) generally more reliable for complex workflows than a single LangChain Agent?",
+            "quizOptions": [
+                "Because multiple agents cost less API tokens than one agent.",
+                "Because dividing a complex workflow into smaller tasks assigned to specialized agents with distinct roles prevents the AI from getting confused, hallucinating, or misusing tools.",
+                "Because it bypasses OpenAI's safety filters.",
+                "Because multiple agents run concurrently in a multi-threading pool."
+            ],
+            "correctOptionIndex": 1
+        },
+        {
+            "id": "multi_ag_7",
+            "type": "content",
+            "title": "LlamaIndex",
+            "content": "# The Data Framework: LlamaIndex 🦙\n\nWhile LangChain and CrewAI are great for tools and actions, **LlamaIndex** is the industry-leading framework specifically designed for building advanced RAG (Retrieval-Augmented Generation) systems.\n\nIt provides sophisticated tools for parsing PDFs, managing vector indices, and handling complex queries across massive document stores.\n\n```bash\npip install llama-index\n```"
+        },
+        {
+            "id": "multi_ag_8",
+            "type": "content",
+            "title": "LlamaIndex Basics",
+            "content": "# The VectorStoreIndex 📚\n\nBuilding a basic RAG engine in LlamaIndex requires shockingly little code compared to raw LangChain.\n\n```python_not\nfrom llama_index.core import VectorStoreIndex, SimpleDirectoryReader\n\n# Automatically read all documents in a directory!\ndocuments = SimpleDirectoryReader(\"data/\").load_data()\n\n# Automatically parse, chunk, embed, and store in an in-memory index\nindex = VectorStoreIndex.from_documents(documents)\n\n# Create a query engine\nquery_engine = index.as_query_engine()\n\n# Ask a question based on the documents!\nresponse = query_engine.query(\"What are the company's core values?\")\nprint(response)\n```"
+        },
+        {
+            "id": "multi_ag_9",
+            "type": "content",
+            "title": "Microsoft AutoGen",
+            "content": "# Conversational Agents: AutoGen 🤖💬🤖\n\nAnother highly popular Multi-Agent framework is Microsoft's **AutoGen**.\n\nWhile CrewAI focuses on sequential tasks (Task 1 -> Task 2), AutoGen focuses on **Conversational Patterns**. Agents \"chat\" with each other to solve a problem.\n\nYou can set up an environment where a Coder Agent writes Python code, an Execution Agent runs it locally, and a Critic Agent checks the output. They will argue and iterate until the code runs perfectly, with zero human intervention!"
+        },
+        {
+            "id": "multi_ag_quiz_2",
+            "type": "quiz",
+            "title": "Frameworks Quiz",
+            "content": "Know your ecosystem.",
+            "quizQuestion": "Which framework is specifically renowned for its deep optimization of Data Ingestion and Retrieval-Augmented Generation (RAG) pipelines?",
+            "quizOptions": [
+                "CrewAI",
+                "AutoGen",
+                "LlamaIndex",
+                "Matplotlib"
+            ],
+            "correctOptionIndex": 2
+        },
+        {
+            "id": "multi_ag_10",
+            "type": "content",
+            "title": "Summary",
+            "content": "# AI Orchestrator! 🎉\n\nYou've learned how to build complex AI systems that scale.\n\n## Key Takeaways\n\n- ✅ **Division of Labor:** Don't build one bloated Agent. Build specialized teams of Agents with distinct personas and limited toolsets.\n- ✅ **CrewAI:** A high-level framework for orchestrating sequential, role-based agent workflows using `Agents`, `Tasks`, and `Crews`.\n- ✅ **LlamaIndex:** The industry standard framework for building advanced RAG data pipelines and querying massive document indices.\n- ✅ **AutoGen:** A Microsoft framework focused on conversational agents that iteratively chat with each other to solve code and logic problems."
+        }
+    ]
+}

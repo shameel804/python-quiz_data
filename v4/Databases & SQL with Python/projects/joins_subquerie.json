@@ -1,0 +1,32 @@
+[
+  {
+    "title": "Inner Joins \ud83d\udd17",
+    "ques": "Write a query to retrieve the `order_id` and the customer's `name` by performing an `INNER JOIN` between the `orders` and `customers` tables on `customer_id`.",
+    "answer": {
+      "type": "code",
+      "lang": "sql",
+      "content": "SELECT orders.order_id, customers.name\nFROM orders\nINNER JOIN customers ON orders.customer_id = customers.id;"
+    },
+    "explanation": "An `INNER JOIN` returns only the rows where there is a match in both tables based on the specified join condition."
+  },
+  {
+    "title": "Using Subqueries \ud83d\udd75\ufe0f\u200d\u2642\ufe0f",
+    "ques": "Write a query to find all employees whose salary is above the company's average salary. Use a nested subquery.",
+    "answer": {
+      "type": "code",
+      "lang": "sql",
+      "content": "SELECT name, salary \nFROM employees \nWHERE salary > (SELECT AVG(salary) FROM employees);"
+    },
+    "explanation": "A subquery calculates the overall average salary first, and the outer query filters employees earning more than that average."
+  },
+  {
+    "title": "Common Table Expressions (CTEs) \ud83c\udfd7",
+    "ques": "Use a `WITH` clause to create a CTE named `RecentOrders` that selects all orders from the year 2023. Then, select all columns from this CTE.",
+    "answer": {
+      "type": "code",
+      "lang": "sql",
+      "content": "WITH RecentOrders AS (\n    SELECT * FROM orders WHERE YEAR(order_date) = 2023\n)\nSELECT * FROM RecentOrders;"
+    },
+    "explanation": "CTEs make complex queries more readable by breaking them down into temporary, reusable result sets."
+  }
+]

@@ -1,0 +1,129 @@
+{
+    "id": "learn_network_scannin",
+    "topicId": "network_scannin",
+    "topicTitle": "Network Scanning & Analysis",
+    "description": "Learn the tools of penetration testers. Use Python to craft custom packets with Scapy, scan ports, grab banners, and automate Nmap.",
+    "baseKP": 75,
+    "slides": [
+        {
+            "id": "net_scan_1",
+            "type": "content",
+            "title": "Network Analysis",
+            "content": "# Seeing the Invisible 📡\n\nTo secure a network, you must understand exactly what traffic is flowing through it. Penetration testers and security engineers use Network Scanning to map out the attack surface of an organization.\n\nPython provides incredible tools for this, ranging from the low-level `socket` library to high-level automation of industry-standard tools like `nmap`."
+        },
+        {
+            "id": "net_scan_2",
+            "type": "content",
+            "title": "The socket Module",
+            "content": "# Low-Level Networking 🔌\n\nThe built-in `socket` module provides access to the BSD socket interface. It allows you to create raw TCP and UDP connections directly.\n\n```python_not\nimport socket\n\n# Create a TCP/IP socket\ns = socket.socket(socket.AF_INET, socket.SOCK_STREAM)\n\n# Set a timeout so our script doesn't hang forever\ns.settimeout(2)\n\ntarget_ip = \"192.168.1.100\"\ntarget_port = 80\n\ntry:\n    # Attempt to connect\n    s.connect((target_ip, target_port))\n    print(f\"Port {target_port} is OPEN!\")\nexcept socket.error:\n    print(f\"Port {target_port} is CLOSED or FILTERED.\")\nfinally:\n    s.close()\n```"
+        },
+        {
+            "id": "net_scan_3",
+            "type": "content",
+            "title": "Building a Port Scanner",
+            "content": "# Automating Port Scans 🕵️\n\nWe can loop through a range of ports to build a simple port scanner.\n\n```python_not\nimport socket\nimport concurrent.futures\n\ntarget_ip = \"10.0.0.5\"\n\ndef scan_port(port):\n    with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as s:\n        s.settimeout(1)\n        # connect_ex returns 0 if successful, error code otherwise\n        result = s.connect_ex((target_ip, port))\n        if result == 0:\n            print(f\"Port {port} is OPEN\")\n\n# Use a ThreadPool to scan 100 ports concurrently!\nwith concurrent.futures.ThreadPoolExecutor(max_workers=50) as executor:\n    executor.map(scan_port, range(1, 1024))\n```"
+        },
+        {
+            "id": "net_scan_4",
+            "type": "content",
+            "title": "Banner Grabbing",
+            "content": "# Banner Grabbing 🏴‍☠️\n\nKnowing a port is open isn't enough. We need to know *what* service is running on it (e.g., Nginx, OpenSSH) and *what version* it is. This is called Banner Grabbing.\n\n```python_not\nimport socket\n\ndef grab_banner(ip, port):\n    try:\n        s = socket.socket()\n        s.settimeout(2)\n        s.connect((ip, port))\n        \n        # Receive up to 1024 bytes of the initial server greeting\n        banner = s.recv(1024).decode('utf-8').strip()\n        print(f\"[{port}] Banner: {banner}\")\n        \n        s.close()\n    except Exception:\n        print(f\"[{port}] No banner grabbed.\")\n\ngrab_banner(\"192.168.1.5\", 22) # Might output: SSH-2.0-OpenSSH_8.2p1\n```\n\nIf the version is outdated, the attacker immediately checks exploit databases for that specific version!"
+        },
+        {
+            "id": "net_scan_quiz_1",
+            "type": "quiz",
+            "title": "Scanning Quiz",
+            "content": "Test your knowledge of network reconnaissance.",
+            "quizQuestion": "What is the primary purpose of 'Banner Grabbing' during a network scan?",
+            "quizOptions": [
+                "To force the server to crash by sending an oversized banner.",
+                "To identify the specific software and version running on an open port, which is crucial for finding known vulnerabilities.",
+                "To download the homepage of a web server.",
+                "To bypass the firewall."
+            ],
+            "correctOptionIndex": 1
+        },
+        {
+            "id": "net_scan_5",
+            "type": "content",
+            "title": "Introduction to Scapy",
+            "content": "# Packet Crafting with Scapy 🛠️\n\nThe `socket` module is great, but the Operating System handles the underlying TCP handshake for you. What if you want to create a malformed packet, or spoof your IP address, or perform an exotic 'TCP SYN Stealth Scan'?\n\nYou need **Scapy**. It is the ultimate interactive packet manipulation program in Python.\n\n```bash\npip install scapy\n```"
+        },
+        {
+            "id": "net_scan_6",
+            "type": "content",
+            "title": "Crafting Packets",
+            "content": "# Layering Packets 🥞\n\nScapy allows you to build network packets layer by layer using the `/` operator.\n\n```python_not\nfrom scapy.all import IP, ICMP, TCP\n\n# Create an IP layer targeting a specific host\nip_layer = IP(dst=\"8.8.8.8\")\n\n# Create an ICMP (Ping) layer\nicmp_layer = ICMP()\n\n# Combine them to create a complete Ping packet!\nping_packet = ip_layer / icmp_layer\n\n# We can inspect the packet\nping_packet.show()\n```"
+        },
+        {
+            "id": "net_scan_7",
+            "type": "content",
+            "title": "Sending and Receiving",
+            "content": "# The `sr1` Function 📤📥\n\nTo send a packet and wait for exactly 1 reply, use `sr1` (Send/Receive 1).\n\n```python_not\nfrom scapy.all import sr1, IP, ICMP\n\nping_packet = IP(dst=\"8.8.8.8\") / ICMP()\n\n# Send the packet and wait for the response\n# verbose=0 hides Scapy's default debug output\nresponse = sr1(ping_packet, timeout=2, verbose=0)\n\nif response:\n    print(f\"Target is ALIVE! Reply from {response.src}\")\nelse:\n    print(\"Target is DOWN.\")\n```"
+        },
+        {
+            "id": "net_scan_8",
+            "type": "content",
+            "title": "TCP SYN Scan",
+            "content": "# Stealth Scanning 🥷\n\nA normal `socket` scan completes the full TCP 3-way handshake (SYN -> SYN-ACK -> ACK). This is loud and easily logged by firewalls.\n\nA Stealth Scan (SYN Scan) sends a SYN, waits for the SYN-ACK (proving the port is open), and then immediately sends an RST (Reset) to tear down the connection before it fully opens. This avoids many logs.\n\n```python_not\nfrom scapy.all import sr1, IP, TCP\n\ntarget = \"192.168.1.5\"\nport = 80\n\n# Craft a TCP SYN packet (flags=\"S\")\nsyn_packet = IP(dst=target) / TCP(dport=port, flags=\"S\")\n\nresponse = sr1(syn_packet, timeout=1, verbose=0)\n\n# Check if the response is a SYN-ACK (flags 0x12)\nif response and response.haslayer(TCP):\n    if response.getlayer(TCP).flags == 0x12:\n        print(f\"Port {port} is OPEN (Stealth)\")\n```"
+        },
+        {
+            "id": "net_scan_quiz_2",
+            "type": "quiz",
+            "title": "Scapy Quiz",
+            "content": "Check your Scapy knowledge.",
+            "quizQuestion": "In Scapy, how do you combine different network protocols (like IP and TCP) to construct a complete packet?",
+            "quizOptions": [
+                "By appending them to a Python list.",
+                "By using the `/` (division) operator to stack the layers.",
+                "By using the `socket.bind()` method.",
+                "By passing them as a dictionary."
+            ],
+            "correctOptionIndex": 1
+        },
+        {
+            "id": "net_scan_9",
+            "type": "content",
+            "title": "Introduction to Nmap",
+            "content": "# The Industry Standard: Nmap 🗺️\n\nWhile building scanners with Scapy is educational, in the real world, everyone uses **Nmap** (Network Mapper). It is a highly optimized C++ tool that handles OS detection, script execution, and firewall evasion.\n\nWe can control Nmap directly from Python using the `python-nmap` library."
+        },
+        {
+            "id": "net_scan_10",
+            "type": "content",
+            "title": "Using python-nmap",
+            "content": "# Automating Nmap 🤖\n\nFirst, ensure Nmap is installed on your OS. Then install the Python wrapper.\n\n```bash\npip install python-nmap\n```\n\n```python_not\nimport nmap\n\n# Initialize the scanner\nscanner = nmap.PortScanner()\n\ntarget = \"scanme.nmap.org\"\n\nprint(f\"Scanning {target}...\")\n# Run a scan on ports 22-80 with OS detection (-O) and service versions (-sV)\nscanner.scan(hosts=target, ports=\"22-80\", arguments=\"-O -sV\")\n\n# The results are available as a massive Python dictionary!\nfor host in scanner.all_hosts():\n    print(f\"Host: {host} ({scanner[host].hostname()})\")\n    print(f\"State: {scanner[host].state()}\")\n```"
+        },
+        {
+            "id": "net_scan_11",
+            "type": "content",
+            "title": "Parsing Nmap Results",
+            "content": "# Extracting Services 📋\n\nThe true power of `python-nmap` is parsing the output programmatically to trigger alerts or generate reports.\n\n```python_not\n# (Continuing from previous slide)\n\nfor protocol in scanner[host].all_protocols(): # e.g., 'tcp'\n    print(f\"Protocol: {protocol}\")\n    \n    # Get all scanned ports for this protocol\n    ports = scanner[host][protocol].keys()\n    \n    for port in ports:\n        state = scanner[host][protocol][port]['state']\n        name = scanner[host][protocol][port]['name']\n        version = scanner[host][protocol][port]['version']\n        \n        print(f\"Port: {port}\\tState: {state}\\tService: {name} {version}\")\n```"
+        },
+        {
+            "id": "net_scan_12",
+            "type": "content",
+            "title": "Integrating with Wireshark",
+            "content": "# Reading PCAP files 🦈\n\nNetwork administrators use Wireshark to capture raw network traffic into `.pcap` files.\n\nYou can use Scapy to read these files programmatically to search for specific malicious traffic (like a malware beacon) across gigabytes of data.\n\n```python_not\nfrom scapy.all import rdpcap, TCP\n\n# Read the capture file into memory\npackets = rdpcap(\"suspicious_traffic.pcap\")\n\nfor packet in packets:\n    # Only look at TCP packets\n    if packet.haslayer(TCP):\n        # Look for HTTP traffic on port 80\n        if packet[TCP].dport == 80 or packet[TCP].sport == 80:\n            # Print a summary of the packet\n            print(packet.summary())\n```"
+        },
+        {
+            "id": "net_scan_quiz_3",
+            "type": "quiz",
+            "title": "Review Quiz",
+            "content": "Let's review the tools.",
+            "quizQuestion": "Which tool provides the easiest programmatic way to perform highly complex scans including OS fingerprinting and service version detection?",
+            "quizOptions": [
+                "The built-in `socket` module.",
+                "Scapy",
+                "python-nmap",
+                "Wireshark"
+            ],
+            "correctOptionIndex": 2
+        },
+        {
+            "id": "net_scan_13",
+            "type": "content",
+            "title": "Summary",
+            "content": "# Network Ninja! 🎉\n\nYou've learned how to map and analyze networks.\n\n## Key Takeaways\n\n- ✅ **Sockets:** Use for simple, loud, fully-completed TCP handshakes and basic banner grabbing.\n- ✅ **Scapy:** The ultimate packet crafter. Use the `/` operator to stack layers (IP/TCP) and perform advanced techniques like stealth SYN scans.\n- ✅ **Nmap:** The industry standard scanner. Use `python-nmap` to automate execution and parse the output into Python dictionaries.\n- ✅ **PCAP Analysis:** Scapy can read Wireshark capture files, allowing you to script complex forensic analysis on historical network traffic.\n\nWith these tools, you can automate penetration tests and secure your perimeter."
+        }
+    ]
+}

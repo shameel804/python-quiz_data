@@ -1,0 +1,31 @@
+[
+  {
+    "title": "Connecting to MySQL \ud83d\udc2c",
+    "ques": "Write a Python snippet using `mysql-connector-python` to connect to a local MySQL server and print the connection object.",
+    "answer": {
+      "type": "code",
+      "lang": "python",
+      "content": "import mysql.connector\n\nconn = mysql.connector.connect(\n    host='localhost',\n    user='root',\n    password='password'\n)\nprint(conn)\nconn.close()"
+    },
+    "explanation": "`mysql.connector` provides a straightforward way to interact with MySQL databases directly from Python scripts."
+  },
+  {
+    "title": "Stored Procedures \ud83d\ude80",
+    "ques": "Write a SQL command to call a stored procedure named `GetEmployeeDetails` passing the parameter `101`.",
+    "answer": {
+      "type": "code",
+      "lang": "sql",
+      "content": "CALL GetEmployeeDetails(101);"
+    },
+    "explanation": "Stored procedures encapsulate complex logic on the database server. They are executed using the `CALL` statement."
+  },
+  {
+    "title": "Database Normalization Basics \ud83d\udcda",
+    "ques": "In your own words, briefly explain the goal of **First Normal Form (1NF)**.",
+    "answer": {
+      "type": "text",
+      "content": "**First Normal Form (1NF)** requires that a table has no repeating groups or arrays. Every column must contain atomic (indivisible) values, and each record must be unique."
+    },
+    "explanation": "Normalization helps reduce data redundancy and improves data integrity by structuring relations logically."
+  }
+]

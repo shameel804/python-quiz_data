@@ -1,0 +1,31 @@
+[
+  {
+    "title": "Faking User-Agents \ud83c\udfad",
+    "ques": "Use the `fake_useragent` library to generate a random user-agent string and pass it to a `requests.get` call.",
+    "answer": {
+      "type": "code",
+      "lang": "python",
+      "content": "from fake_useragent import UserAgent\nimport requests\n\nua = UserAgent()\nheaders = {'User-Agent': ua.random}\nresponse = requests.get('https://httpbin.org/headers', headers=headers)"
+    },
+    "explanation": "Rotating User-Agents makes your scraping script look like different browsers, reducing the chance of being blocked."
+  },
+  {
+    "title": "Using Proxies \ud83d\udee1",
+    "ques": "Modify a `requests.get()` call to route the HTTP traffic through a proxy server located at `http://10.10.1.10:3128`.",
+    "answer": {
+      "type": "code",
+      "lang": "python",
+      "content": "proxies = {\n    'http': 'http://10.10.1.10:3128',\n    'https': 'http://10.10.1.10:3128'\n}\nresponse = requests.get('http://example.org', proxies=proxies)"
+    },
+    "explanation": "Proxies mask your real IP address. Rotating proxies is a standard technique to bypass IP-based rate limiting."
+  },
+  {
+    "title": "Respecting robots.txt \ud83e\udd16",
+    "ques": "What is the primary purpose of a website's `robots.txt` file?",
+    "answer": {
+      "type": "text",
+      "content": "A `robots.txt` file specifies rules for web crawlers, indicating which parts of the website should not be scraped or crawled."
+    },
+    "explanation": "Ethical scraping requires checking and adhering to the guidelines outlined in a site's `robots.txt` file."
+  }
+]

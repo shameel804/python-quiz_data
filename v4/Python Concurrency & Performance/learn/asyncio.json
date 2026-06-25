@@ -1,0 +1,141 @@
+{
+    "id": "learn_asyncio",
+    "topicId": "asyncio",
+    "topicTitle": "AsyncIO",
+    "description": "Master asynchronous programming in Python. Learn the event loop, async/await syntax, coroutines, TaskGroups, and asyncio.Queue for ultra-fast I/O.",
+    "baseKP": 75,
+    "slides": [
+        {
+            "id": "async_1",
+            "type": "content",
+            "title": "The Concurrency Trilemma",
+            "content": "# Three Ways to Multitask 🔀\n\nWe've learned two ways to achieve concurrency so far:\n\n1. **Multiprocessing:** Best for CPU-bound tasks. Heaviest memory footprint. Bypasses the GIL.\n2. **Threading:** Best for I/O-bound tasks. Moderate memory footprint. Held back by the GIL.\n\nNow, we introduce the third and fastest way for I/O-bound tasks: **Asynchronous I/O (asyncio)**.\n\n3. **AsyncIO:** Best for extreme I/O-bound tasks (10,000+ network connections). Lightest memory footprint. Runs on a *single thread*!"
+        },
+        {
+            "id": "async_2",
+            "type": "content",
+            "title": "How Async Works",
+            "content": "# Cooperative Multitasking 🤝\n\nUnlike threads, which the Operating System randomly pauses and resumes (preemptive multitasking), `asyncio` uses **cooperative multitasking**.\n\nIn `asyncio`, tasks explicitly state when they are waiting for something (like a network response) using the `await` keyword. \n\nWhen a task hits an `await`, it says to the system: *\"I'm going to sleep now. You can run other tasks until my data arrives.\"*\n\nBecause everything runs on a single thread, there are **no race conditions** (mostly), and the memory overhead is incredibly tiny compared to spawning OS threads."
+        },
+        {
+            "id": "async_3",
+            "type": "content",
+            "title": "The Event Loop",
+            "content": "# The Conductor: Event Loop 🎼\n\nAt the core of `asyncio` is the **Event Loop**.\n\nThe Event Loop is a continuous `while True` loop that manages all the tasks. It constantly asks:\n1. *\"Is Task A's network request finished? No? Stay asleep.\"*\n2. *\"Is Task B's file read finished? Yes? Wake up Task B and let it continue.\"*\n\nYou start the event loop by calling `asyncio.run()`.\n\n```python_not\nimport asyncio\n\nasync def main():\n    print(\"Hello from the event loop!\")\n\n# This starts the loop, runs main(), and closes the loop.\nasyncio.run(main())\n```"
+        },
+        {
+            "id": "async_4",
+            "type": "content",
+            "title": "Coroutines",
+            "content": "# Coroutines and `async def` 🪄\n\nA function defined with `async def` is called a **Coroutine**.\n\nUnlike normal functions, calling a coroutine does *not* execute it. It returns a coroutine object.\n\n```python_not\nasync def fetch_data():\n    print(\"Fetching data...\")\n    return \"Data\"\n\n# This does NOTHING! It just creates the object.\ncoro = fetch_data() \nprint(coro) # <coroutine object fetch_data at 0x...>\n```\n\nTo actually execute a coroutine, you must either pass it to `asyncio.run()`, or use the `await` keyword from inside another coroutine."
+        },
+        {
+            "id": "async_5",
+            "type": "content",
+            "title": "The await Keyword",
+            "content": "# The Magic of `await` ⏳\n\nThe `await` keyword is how you execute a coroutine and wait for its result. It is the exact point where you yield control back to the Event Loop.\n\n```python_not\nimport asyncio\n\nasync def fetch_user():\n    print(\"Requesting user...\")\n    # Simulate network delay WITHOUT blocking the entire thread!\n    await asyncio.sleep(2) \n    return {\"name\": \"Alice\"}\n\nasync def main():\n    print(\"Starting main...\")\n    # Wait for fetch_user to finish before continuing\n    user = await fetch_user()\n    print(f\"Got user: {user['name']}\")\n\nasyncio.run(main())\n```\n\n> ⚠️ **Critical Rule:** You can only use `await` inside an `async def` function!"
+        },
+        {
+            "id": "async_quiz_1",
+            "type": "quiz",
+            "title": "Async Basics Quiz",
+            "content": "Test your understanding of the asyncio model.",
+            "quizQuestion": "Why is `asyncio` considered 'cooperative' multitasking?",
+            "quizOptions": [
+                "Because threads cooperate to share the GIL.",
+                "Because the OS scheduler asks permission before pausing a task.",
+                "Because tasks explicitly yield control back to the event loop using the `await` keyword.",
+                "Because all coroutines run on different CPUs simultaneously."
+            ],
+            "correctOptionIndex": 2
+        },
+        {
+            "id": "async_6",
+            "type": "content",
+            "title": "Concurrent Execution: asyncio.gather",
+            "content": "# Doing Things Concurrently ⚡\n\nIf you `await` three coroutines in a row, they execute sequentially. That defeats the purpose of async!\n\nTo run coroutines concurrently, use `asyncio.gather()`.\n\n```python_not\nimport asyncio\nimport time\n\nasync def slow_task(id, delay):\n    await asyncio.sleep(delay)\n    return f\"Task {id} done\"\n\nasync def main():\n    start = time.time()\n    \n    # This kicks off all 3 tasks simultaneously!\n    results = await asyncio.gather(\n        slow_task(1, 2), # Takes 2 seconds\n        slow_task(2, 3), # Takes 3 seconds\n        slow_task(3, 1)  # Takes 1 second\n    )\n    \n    print(results) # ['Task 1 done', 'Task 2 done', 'Task 3 done']\n    print(f\"Total time: {time.time() - start:.2f}s\") # Total time is only 3 seconds!\n\nasyncio.run(main())\n```"
+        },
+        {
+            "id": "async_7",
+            "type": "content",
+            "title": "Tasks vs Coroutines",
+            "content": "# Scheduling Tasks 📅\n\nWhen you use `await my_coro()`, you are waiting for it to finish immediately.\n\nWhat if you want to start a coroutine running in the background, do some other work, and then check on it later?\n\nYou wrap the coroutine in a **Task** using `asyncio.create_task()`.\n\n```python_not\nasync def main():\n    # Start the task in the background immediately\n    task1 = asyncio.create_task(slow_task(1, 5))\n    \n    print(\"Task 1 is running in the background!\")\n    print(\"I can do other stuff here...\")\n    await asyncio.sleep(1)\n    \n    # Now, wait for the task to finish and get the result\n    result = await task1\n    print(result)\n```"
+        },
+        {
+            "id": "async_8",
+            "type": "content",
+            "title": "TaskGroup",
+            "content": "# The Modern Way: `TaskGroup` 🏢\n\nIntroduced in Python 3.11, `asyncio.TaskGroup` provides a cleaner, safer way to spawn and wait for multiple tasks than `gather` or `create_task`.\n\nIt acts as a context manager. It automatically waits for all tasks inside the block to finish before exiting the block.\n\n```python_not\nimport asyncio\n\nasync def main():\n    async with asyncio.TaskGroup() as tg:\n        # Spawn tasks. They start running immediately.\n        task1 = tg.create_task(slow_task(1, 2))\n        task2 = tg.create_task(slow_task(2, 3))\n        \n    # The 'async with' block implicitly AWAITS all tasks here.\n    # We only reach this line when BOTH tasks are completely finished!\n    \n    print(task1.result())\n    print(task2.result())\n```\n\n`TaskGroup` handles errors beautifully: if one task crashes, it safely cancels the other tasks in the group."
+        },
+        {
+            "id": "async_quiz_2",
+            "type": "quiz",
+            "title": "Task Quiz",
+            "content": "Check your understanding of tasks vs coroutines.",
+            "quizQuestion": "What does `asyncio.create_task()` do?",
+            "quizOptions": [
+                "It executes a coroutine synchronously.",
+                "It schedules a coroutine to run on the event loop in the background and returns a Task object.",
+                "It creates a new OS thread.",
+                "It stops the event loop."
+            ],
+            "correctOptionIndex": 1
+        },
+        {
+            "id": "async_9",
+            "type": "content",
+            "title": "Cancellation",
+            "content": "# Cancelling Tasks ❌\n\nBecause tasks run cooperatively, you can easily tell them to stop. \n\nIf a task takes too long, you can call `.cancel()` on it. The next time the task hits an `await` statement, it will raise a `CancelledError`.\n\n```python_not\nasync def main():\n    task = asyncio.create_task(slow_task(1, 10)) # Takes 10 seconds\n    \n    await asyncio.sleep(2)\n    print(\"Taking too long! Cancelling...\")\n    \n    task.cancel()\n    \n    try:\n        await task\n    except asyncio.CancelledError:\n        print(\"Task was successfully cancelled.\")\n```"
+        },
+        {
+            "id": "async_10",
+            "type": "content",
+            "title": "Timeouts",
+            "content": "# Handling Timeouts ⏱️\n\nManually calling `.cancel()` is tedious. `asyncio` provides a helper called `asyncio.wait_for` to automatically enforce timeouts.\n\n```python_not\nimport asyncio\n\nasync def main():\n    try:\n        # Try to run the task, but cancel it if it takes > 2 seconds\n        result = await asyncio.wait_for(slow_task(1, 10), timeout=2.0)\n        print(result)\n    except asyncio.TimeoutError:\n        print(\"The task timed out!\")\n```\n\nThis is essential when making external HTTP requests, ensuring a slow API doesn't hang your entire program."
+        },
+        {
+            "id": "async_11",
+            "type": "content",
+            "title": "Blocking the Event Loop",
+            "content": "# The Cardinal Sin of Asyncio 😈\n\nThere is one rule you must **never** break in `asyncio`:\n\n**NEVER run blocking synchronous code inside a coroutine.**\n\n```python_not\nimport asyncio\nimport time # Synchronous sleep!\n\nasync def bad_coroutine():\n    print(\"Starting bad sleep...\")\n    # THIS BLOCKS THE ENTIRE EVENT LOOP!\n    time.sleep(5) \n    print(\"Done!\")\n```\n\nIf you use `time.sleep()`, or `requests.get()`, or any other blocking function, the Event Loop freezes. No other tasks can run. Your high-performance async app degrades into a single-threaded synchronous app."
+        },
+        {
+            "id": "async_12",
+            "type": "content",
+            "title": "Running Blocking Code",
+            "content": "# The Escape Hatch: `to_thread` 🚪\n\nWhat if you *must* use a blocking synchronous library (like `requests` or `bcrypt`) inside your async application?\n\nYou can offload that specific blocking function to a background thread using `asyncio.to_thread()`.\n\n```python_not\nimport asyncio\nimport requests\n\ndef blocking_network_call():\n    # This is a synchronous, blocking function\n    return requests.get(\"https://example.com\").text\n\nasync def main():\n    # Offload the blocking call to a thread, and AWAIT the thread!\n    # The event loop continues running other tasks while the thread works.\n    html = await asyncio.to_thread(blocking_network_call)\n    print(len(html))\n```\n\nThis keeps your event loop healthy and unblocked."
+        },
+        {
+            "id": "async_13",
+            "type": "content",
+            "title": "asyncio.Queue",
+            "content": "# Async Producer-Consumer: `asyncio.Queue` 📥\n\nJust like the `multiprocessing` module, `asyncio` has its own `Queue` specifically designed for coroutines. It is perfectly safe to use within the event loop.\n\n```python_not\nimport asyncio\n\nasync def producer(queue):\n    for i in range(5):\n        await asyncio.sleep(1)\n        await queue.put(f\"Item {i}\")\n        print(f\"Produced Item {i}\")\n\nasync def consumer(queue):\n    while True:\n        # Blocks (yields to event loop) until an item is available\n        item = await queue.get()\n        print(f\"Consumed {item}\")\n        queue.task_done() # Mark task as finished\n```"
+        },
+        {
+            "id": "async_14",
+            "type": "content",
+            "title": "Queue Workflows",
+            "content": "# Wiring up the Queue 🔌\n\nHere is how you connect the producer and consumer using the queue.\n\n```python_not\nasync def main():\n    queue = asyncio.Queue()\n    \n    # Start producer and consumer in the background\n    prod_task = asyncio.create_task(producer(queue))\n    cons_task = asyncio.create_task(consumer(queue))\n    \n    # Wait for the producer to finish adding items\n    await prod_task\n    \n    # Wait for the consumer to finish processing all items in the queue\n    await queue.join() \n    \n    # The consumer is an infinite loop, so we must cancel it manually now\n    cons_task.cancel()\n\nasyncio.run(main())\n```"
+        },
+        {
+            "id": "async_quiz_3",
+            "type": "quiz",
+            "title": "Blocking Code Quiz",
+            "content": "Ensure you know how to handle synchronous code.",
+            "quizQuestion": "Why is it dangerous to use `requests.get()` directly inside an `async def` function?",
+            "quizOptions": [
+                "It will cause a syntax error.",
+                "It blocks the entire event loop, preventing any other coroutines from running until the request finishes.",
+                "It automatically spawns a new process, bypassing the GIL.",
+                "It will cause the `requests` library to crash."
+            ],
+            "correctOptionIndex": 1
+        },
+        {
+            "id": "async_15",
+            "type": "content",
+            "title": "Summary",
+            "content": "# AsyncIO Mastered! 🎉\n\nYou've learned how to build hyper-scalable Python applications.\n\n## Key Takeaways\n\n- ✅ **Cooperative Multitasking:** Asyncio uses a single thread and an Event Loop. Tasks explicitly yield control using `await`.\n- ✅ **Coroutines:** Functions defined with `async def`. They must be awaited.\n- ✅ **Concurrent Execution:** Use `asyncio.TaskGroup` or `asyncio.gather` to run multiple coroutines simultaneously.\n- ✅ **Timeouts:** Use `asyncio.wait_for` to prevent hanging tasks.\n- ✅ **The Cardinal Sin:** NEVER run synchronous blocking code (like `time.sleep`) inside a coroutine. Offload it using `asyncio.to_thread()`.\n\nAsyncIO powers modern frameworks like FastAPI, allowing Python to handle tens of thousands of concurrent connections!"
+        }
+    ]
+}

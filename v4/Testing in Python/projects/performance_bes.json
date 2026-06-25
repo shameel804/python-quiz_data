@@ -1,0 +1,29 @@
+[
+  {
+    "title": "Performance Testing",
+    "ques": "What is the main difference between load testing with a tool like `locust` and micro-benchmarking with `pytest-benchmark`?",
+    "answer": {
+      "type": "text",
+      "content": "* **`locust` (Load Testing):** Simulates hundreds or thousands of concurrent users interacting with your system to evaluate how it handles high traffic and network loads.\n* **`pytest-benchmark` (Micro-benchmarking):** Measures the execution time of small, specific snippets of code or functions to identify bottlenecks at the code level."
+    },
+    "explanation": "Load testing focuses on system-wide performance under stress, while micro-benchmarking focuses on the algorithmic efficiency of individual functions."
+  },
+  {
+    "title": "The AAA Pattern",
+    "ques": "Explain the Arrange-Act-Assert (AAA) pattern used for structuring unit tests.",
+    "answer": {
+      "type": "text",
+      "content": "1.  **Arrange:** Set up the test data, initialize objects, and configure mocks.\n2.  **Act:** Invoke the specific method or function being tested.\n3.  **Assert:** Verify that the action produced the expected result (e.g., returned the correct value or updated the database)."
+    },
+    "explanation": "The AAA pattern provides a consistent and readable structure for unit tests, making it easy to understand the intent and flow of the test."
+  },
+  {
+    "title": "Snapshot Testing",
+    "ques": "In what scenarios is snapshot testing particularly useful?",
+    "answer": {
+      "type": "text",
+      "content": "Snapshot testing is highly useful for validating complex or large outputs, such as JSON API responses, serialized data structures, or UI components (like HTML/React trees). Instead of manually asserting every single field, a 'snapshot' of the expected output is saved, and subsequent test runs compare the actual output against this saved snapshot."
+    },
+    "explanation": "Snapshot tests help catch unintended regressions in large data structures without requiring tedious and verbose assertion blocks."
+  }
+]

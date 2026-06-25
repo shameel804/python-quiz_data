@@ -1,0 +1,147 @@
+{
+    "id": "learn_fixtures_parame",
+    "topicId": "fixtures_parame",
+    "topicTitle": "Fixtures & Parametrize",
+    "description": "Unlock pytest's most powerful features: dependency injection with fixtures, fixture scopes, tear-downs with yield, and data-driven testing with parametrize.",
+    "baseKP": 75,
+    "slides": [
+        {
+            "id": "fix_param_1",
+            "type": "content",
+            "title": "Introduction to Fixtures",
+            "content": "# What are Fixtures? 🛠️\n\nIn `unittest`, you use `setUp()` to prepare state before a test. In `pytest`, you use **fixtures**.\n\nA fixture is a function that provides data, objects, or state to your tests. However, unlike `setUp()`, fixtures use **Dependency Injection**.\n\n## The Problem with setUp()\n`setUp()` runs before *every* test in a class, even if a specific test doesn't need that setup. It also forces you to attach everything to `self`.\n\n## The pytest Fixture Solution\nIn `pytest`, you define a fixture, and tests simply request it by declaring it as an argument! If a test doesn't need it, it doesn't ask for it."
+        },
+        {
+            "id": "fix_param_2",
+            "type": "content",
+            "title": "Creating Your First Fixture",
+            "content": "# Your First Fixture 🏗️\n\nTo create a fixture, you write a standard function and decorate it with `@pytest.fixture`.\n\n```python_not\nimport pytest\n\n# Define the fixture\n@pytest.fixture\ndef sample_user():\n    return {\n        \"username\": \"jdoe\",\n        \"email\": \"jdoe@example.com\",\n        \"is_active\": True\n    }\n\n# Request the fixture by adding it as an argument\ndef test_user_is_active(sample_user):\n    assert sample_user[\"is_active\"] is True\n    \ndef test_user_email(sample_user):\n    assert \"@\" in sample_user[\"email\"]\n```\n\nWhen `pytest` runs `test_user_is_active`, it sees the `sample_user` argument, looks for a fixture with that exact name, runs the fixture function, and passes the returned dictionary into your test!"
+        },
+        {
+            "id": "fix_param_3",
+            "type": "content",
+            "title": "Modular Fixtures",
+            "content": "# Fixtures Using Fixtures 🧱\n\nFixtures are incredibly modular. A fixture can request *other* fixtures as arguments!\n\n```python_not\nimport pytest\n\n@pytest.fixture\ndef db_connection():\n    # Simulate connecting to a DB\n    return \"Database Connection Object\"\n\n@pytest.fixture\ndef user_repository(db_connection):\n    # This fixture requests the db_connection fixture!\n    class Repo:\n        def __init__(self, db):\n            self.db = db\n        def get_user(self):\n            return \"Alice\"\n    return Repo(db_connection)\n\n# The test only asks for what it directly needs\ndef test_get_user(user_repository):\n    assert user_repository.get_user() == \"Alice\"\n```\n\nThis builds a dependency graph. `pytest` automatically resolves the order in which fixtures need to be created."
+        },
+        {
+            "id": "fix_param_4",
+            "type": "content",
+            "title": "Fixture Scopes",
+            "content": "# Controlling Fixture Lifespan ⏳\n\nBy default, a fixture is invoked **once per test function** (Function scope). But what if creating the fixture is slow, like establishing a database connection?\n\nYou can change the `scope` of a fixture so it is created once and cached for multiple tests.\n\n```python_not\n@pytest.fixture(scope=\"session\")\ndef heavy_database():\n    print(\"\\nCreating heavy database... (This only happens ONCE!)\")\n    return Database()\n```\n\n## Available Scopes:\n1. **`function`** (default): Run once per test.\n2. **`class`**: Run once per class of tests.\n3. **`module`**: Run once per `.py` test file.\n4. **`package`**: Run once per package (folder of tests).\n5. **`session`**: Run exactly once for the entire `pytest` execution."
+        },
+        {
+            "id": "fix_param_quiz_1",
+            "type": "quiz",
+            "title": "Fixture Scope Check",
+            "content": "Let's test your understanding of fixture scopes.",
+            "quizQuestion": "If you have a fixture that takes 10 seconds to generate a massive dataset, and 5 different test files need to read from it, which scope should you use to minimize test time?",
+            "quizOptions": [
+                "scope='function'",
+                "scope='module'",
+                "scope='session'",
+                "scope='global'"
+            ],
+            "correctOptionIndex": 2
+        },
+        {
+            "id": "fix_param_5",
+            "type": "content",
+            "title": "Teardown with Yield",
+            "content": "# Cleaning Up: The `yield` Keyword 🧹\n\nWhat happens when a fixture allocates a resource (like a file or network connection) that needs to be closed after the test finishes?\n\nInstead of `return`, use `yield`! The code before `yield` is the **setup**, and the code after `yield` is the **teardown**.\n\n```python_not\nimport pytest\nimport os\n\n@pytest.fixture\ndef temporary_file():\n    # SETUP: Run before the test\n    f = open(\"temp.txt\", \"w\")\n    \n    # PAUSE: Yield the resource to the test\n    yield f\n    \n    # TEARDOWN: Run after the test completes\n    f.close()\n    os.remove(\"temp.txt\")\n```\n\n> 🛡️ **Safety:** The teardown code after `yield` is guaranteed to run, even if the test that used the fixture throws an exception or fails!"
+        },
+        {
+            "id": "fix_param_6",
+            "type": "content",
+            "title": "conftest.py",
+            "content": "# Sharing Fixtures Globally 🌍\n\nIf you define a fixture in `test_math.py`, you can only use it in `test_math.py`.\n\nWhat if you want to use the `temporary_file` fixture in `test_math.py`, `test_strings.py`, and `test_api.py`?\n\nEnter **`conftest.py`**.\n\n## The Magic of conftest.py\nIf you create a file named `conftest.py` in your tests directory and place your fixtures inside it, `pytest` will automatically discover them and make them available to **all tests in that directory and its subdirectories**.\n\n```python\n# conftest.py\nimport pytest\n\n@pytest.fixture\ndef global_user():\n    return {\"name\": \"Global Alice\"}\n```\n\n```python\n# test_anything.py\n# NO IMPORT NEEDED!\ndef test_global(global_user):\n    assert global_user[\"name\"] == \"Global Alice\"\n```"
+        },
+        {
+            "id": "fix_param_7",
+            "type": "content",
+            "title": "Built-in Fixtures",
+            "content": "# Built-in Fixtures 🎁\n\n`pytest` comes with several extremely useful built-in fixtures out of the box. You just ask for them!\n\n## `tmp_path`\nProvides a temporary directory path unique to the test invocation.\n```python_not\ndef test_file_creation(tmp_path):\n    # tmp_path is a pathlib.Path object\n    file = tmp_path / \"data.txt\"\n    file.write_text(\"hello\")\n    assert file.read_text() == \"hello\"\n```\n\n## `capsys`\nCaptures `sys.stdout` and `sys.stderr`. Great for testing `print` statements!\n```python_not\ndef test_print_output(capsys):\n    print(\"Hello World\")\n    captured = capsys.readouterr()\n    assert captured.out == \"Hello World\\n\"\n```\n\n## `monkeypatch`\nSafely modify dictionaries, environments, or objects for a single test."
+        },
+        {
+            "id": "fix_param_8",
+            "type": "content",
+            "title": "Introduction to Parametrize",
+            "content": "# Data-Driven Testing 📊\n\nOften, you want to test a single function against many different inputs and expected outputs.\n\nWriting a separate test function for each case is tedious. Putting them in a `for` loop inside one test is bad because if the first item fails, the loop stops, and you don't see the results of the rest.\n\n`pytest` solves this elegantly with `@pytest.mark.parametrize`."
+        },
+        {
+            "id": "fix_param_9",
+            "type": "content",
+            "title": "Using Parametrize",
+            "content": "# The `@parametrize` Decorator 🔁\n\nYou provide a string of comma-separated argument names, and a list of tuples containing the values.\n\n```python_not\nimport pytest\n\ndef is_even(n):\n    return n % 2 == 0\n\n@pytest.mark.parametrize(\"number, expected_result\", [\n    (2, True),\n    (3, False),\n    (0, True),\n    (-4, True),\n    (99, False)\n])\ndef test_is_even(number, expected_result):\n    assert is_even(number) == expected_result\n```\n\nWhen `pytest` runs this, it actually generates **5 separate, independent tests**! If the `(3, False)` case fails, the other 4 will still run and report their status."
+        },
+        {
+            "id": "fix_param_10",
+            "type": "content",
+            "title": "Stacking Parametrize",
+            "content": "# Combinatorial Explosions 💥\n\nYou can stack multiple `@parametrize` decorators to test all possible combinations of inputs (Cartesian product).\n\n```python_not\nimport pytest\n\n@pytest.mark.parametrize(\"x\", [0, 1])\n@pytest.mark.parametrize(\"y\", [2, 3])\ndef test_combinations(x, y):\n    print(f\"Testing: x={x}, y={y}\")\n    # This will run 4 times:\n    # (0, 2), (0, 3), (1, 2), (1, 3)\n    assert x < y\n```\n\nThis is incredibly useful for testing complex functions that take multiple boolean flags or enums, ensuring you cover every edge case."
+        },
+        {
+            "id": "fix_param_quiz_2",
+            "type": "quiz",
+            "title": "Parametrize Check",
+            "content": "Let's review parametrization.",
+            "quizQuestion": "If a test has `@pytest.mark.parametrize('a', [1, 2, 3])` and `@pytest.mark.parametrize('b', ['x', 'y'])`, how many total tests will pytest generate and execute?",
+            "quizOptions": [
+                "2",
+                "3",
+                "5",
+                "6"
+            ],
+            "correctOptionIndex": 3
+        },
+        {
+            "id": "fix_param_11",
+            "type": "content",
+            "title": "Parametrizing Fixtures",
+            "content": "# Fixtures that Parametrize 🔄\n\nDid you know you can parametrize *fixtures*? If a fixture is parametrized, any test requesting that fixture will run multiple times!\n\n```python_not\nimport pytest\n\n# The 'params' argument allows fixture parametrization\n@pytest.fixture(params=[\"mysql\", \"postgresql\", \"sqlite\"])\ndef db_engine(request):\n    # request.param holds the current parameter value\n    engine = setup_database(request.param)\n    yield engine\n    engine.close()\n\n# This test will run 3 times, once for each database!\ndef test_database_insert(db_engine):\n    assert db_engine.insert(\"data\") == True\n```\n\nThis is highly advanced but shows why `pytest` is the industry standard for complex infrastructure testing."
+        },
+        {
+            "id": "fix_param_12",
+            "type": "content",
+            "title": "Dynamic Parametrization",
+            "content": "# Dynamic Data 📈\n\nThe list of parameters in `@pytest.mark.parametrize` doesn't have to be hardcoded. It can be dynamically generated by a function or read from a file!\n\n```python_not\nimport pytest\nimport csv\n\ndef load_test_data():\n    # Imagine this reads a CSV file and returns a list of tuples\n    return [\n        (\"alice@example.com\", True),\n        (\"invalid-email\", False)\n    ]\n\n@pytest.mark.parametrize(\"email, is_valid\", load_test_data())\ndef test_email_validator(email, is_valid):\n    assert validate_email(email) == is_valid\n```\n\nThis allows you to separate your test data from your test logic entirely."
+        },
+        {
+            "id": "fix_param_13",
+            "type": "content",
+            "title": "Autouse Fixtures",
+            "content": "# Invisible Setup: `autouse=True` 👻\n\nSometimes you have a fixture that *every* test needs (e.g., initializing a mock logger, or setting an environment variable). It's annoying to add it as an argument to 500 test functions.\n\nYou can set `autouse=True` on a fixture.\n\n```python_not\nimport pytest\nimport os\n\n@pytest.fixture(autouse=True)\ndef mock_env_vars():\n    # This runs before EVERY test automatically\n    os.environ[\"TESTING_MODE\"] = \"1\"\n    yield\n    # Cleanup after test\n    del os.environ[\"TESTING_MODE\"]\n\n# Look, no arguments!\ndef test_env():\n    assert os.environ[\"TESTING_MODE\"] == \"1\"\n```\n\n> ⚠️ **Warning:** Use `autouse` sparingly! It makes tests harder to understand because the dependency is hidden."
+        },
+        {
+            "id": "fix_param_14",
+            "type": "content",
+            "title": "Combining Fixtures and Parametrize",
+            "content": "# The Ultimate Combo 🍔🍟\n\nYou can easily use fixtures and parametrize in the exact same test function.\n\n```python_not\nimport pytest\n\n@pytest.fixture\ndef mock_api():\n    return APIClient(token=\"fake_token\")\n\n@pytest.mark.parametrize(\"endpoint, expected_status\", [\n    (\"/users\", 200),\n    (\"/admin\", 403),\n    (\"/not-found\", 404)\n])\ndef test_api_routing(mock_api, endpoint, expected_status):\n    response = mock_api.get(endpoint)\n    assert response.status_code == expected_status\n```\n\nThe test correctly identifies `mock_api` as a fixture to inject, and `endpoint`/`expected_status` as parameters to iterate over."
+        },
+        {
+            "id": "fix_param_15",
+            "type": "content",
+            "title": "Id Formatting in Parametrize",
+            "content": "# Custom Test IDs 🏷️\n\nWhen you use parametrize, `pytest` auto-generates IDs for the test runs based on the inputs (e.g., `test_is_even[2-True]`).\n\nYou can provide custom, human-readable IDs using the `ids` parameter.\n\n```python_not\nimport pytest\n\n@pytest.mark.parametrize(\"number, expected\", [\n    (2, True),\n    (99, False)\n], ids=[\"positive_even_number\", \"large_odd_number\"])\ndef test_is_even(number, expected):\n    assert is_even(number) == expected\n```\n\nNow, when you run `pytest -v`, you'll see:\n`test_math.py::test_is_even[positive_even_number] PASSED`\n`test_math.py::test_is_even[large_odd_number] PASSED`"
+        },
+        {
+            "id": "fix_param_quiz_3",
+            "type": "quiz",
+            "title": "Review Quiz",
+            "content": "Let's review the `conftest.py` file.",
+            "quizQuestion": "What is the primary purpose of the `conftest.py` file in pytest?",
+            "quizOptions": [
+                "To configure the database connection string.",
+                "To store fixtures that can be shared across multiple test files automatically.",
+                "To tell pytest which files to ignore during test discovery.",
+                "To define the parametrize inputs globally."
+            ],
+            "correctOptionIndex": 1
+        },
+        {
+            "id": "fix_param_16",
+            "type": "content",
+            "title": "Summary",
+            "content": "# Fixtures & Parametrize Mastered! 🎉\n\nYou now know the secrets to writing scalable, DRY (Don't Repeat Yourself) tests in `pytest`.\n\n## Key Takeaways\n\n- ✅ **Fixtures:** Use `@pytest.fixture` to define setup code. Tests request them via arguments (Dependency Injection).\n- ✅ **Scopes:** Use `scope=\"session\"` or `\"module\"` to cache expensive fixtures.\n- ✅ **Yield:** Use `yield` instead of `return` in a fixture to perform teardown/cleanup operations.\n- ✅ **conftest.py:** Place fixtures here to share them globally without importing them.\n- ✅ **Parametrize:** Use `@pytest.mark.parametrize` to run the same test multiple times with different inputs, creating data-driven tests.\n\nWith these tools, you can test anything from a simple string manipulation function to a complex distributed database system!"
+        }
+    ]
+}

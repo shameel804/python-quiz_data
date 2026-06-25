@@ -1,0 +1,31 @@
+[
+  {
+    "title": "OAuth2 Password Request \ud83d\udd11",
+    "ques": "Create a route `/token` that accepts an `OAuth2PasswordRequestForm` dependency and returns a dummy access token dictionary.",
+    "answer": {
+      "type": "code",
+      "lang": "python",
+      "content": "from fastapi import Depends\nfrom fastapi.security import OAuth2PasswordRequestForm\n\n@app.post('/token')\ndef login(form_data: OAuth2PasswordRequestForm = Depends()):\n    return {'access_token': form_data.username + '_token', 'token_type': 'bearer'}"
+    },
+    "explanation": "FastAPI provides built-in utilities to quickly implement standard OAuth2 authentication flows."
+  },
+  {
+    "title": "Securing Routes \ud83d\udee1",
+    "ques": "Use `OAuth2PasswordBearer` to create a dependency scheme named `oauth2_scheme` pointed at `/token`. Inject it into a `/users/me` route.",
+    "answer": {
+      "type": "code",
+      "lang": "python",
+      "content": "from fastapi.security import OAuth2PasswordBearer\n\noauth2_scheme = OAuth2PasswordBearer(tokenUrl='/token')\n\n@app.get('/users/me')\ndef read_current_user(token: str = Depends(oauth2_scheme)):\n    return {'token': token}"
+    },
+    "explanation": "This dependency extracts the token from the `Authorization: Bearer <token>` header, denying access if it's missing."
+  },
+  {
+    "title": "JWT Concepts \ud83e\udde9",
+    "ques": "What are the three main parts of a JSON Web Token (JWT)?",
+    "answer": {
+      "type": "text",
+      "content": "A JWT consists of three parts separated by dots (`.`):\n1.  **Header:** Contains the token type and signing algorithm.\n2.  **Payload:** Contains the claims (the actual data, like user ID or expiration).\n3.  **Signature:** Used to verify that the token was not altered."
+    },
+    "explanation": "JWTs are a stateless way to transmit secure, verifiable information between parties, commonly used for API authentication."
+  }
+]
