@@ -51,9 +51,10 @@
         "q": "Name the built-in function used to get user input from the keyboard.",
         "type": "short_answer",
         "answers": [
-            "input"
+            "input",
+            "input()"
         ],
-        "isCaseSensitive": true
+        "isCaseSensitive": false
     },
     {
         "q": "What is the value of variable 'b' after unpacking?",
