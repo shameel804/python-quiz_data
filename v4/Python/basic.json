@@ -160,12 +160,16 @@
         ]
     },
     {
-        "q": "Name the keyword used to create a variable that should not change (constant convention).",
-        "type": "short_answer",
+        "q": "The str() function converts a value to a ______.",
+        "type": "fill_blank",
         "answers": [
-            "const"
+            "string"
         ],
-        "isCaseSensitive": true
+        "other_options": [
+            "text",
+            "char",
+            "word"
+        ]
     },
     {
         "q": "What is the output of this code?",
