@@ -150,13 +150,13 @@
         "correct": "True"
     },
     {
-        "q": "Which function converts a string to an integer?",
+        "q": "Which statement correctly describes constants in Python?",
         "type": "mcq",
         "o": [
-            "int()",
-            "str()",
-            "float()",
-            "bool()"
+            "Python uses uppercase variable names by convention for constants",
+            "Python uses the const keyword to create constants",
+            "Python uses the constant keyword to create constants",
+            "Python automatically prevents changes to uppercase variables"
         ]
     },
     {
